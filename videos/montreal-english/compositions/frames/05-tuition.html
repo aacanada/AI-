@@ -1,0 +1,81 @@
+<template>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <style>
+    @font-face{font-family:"Pretendard";font-weight:500;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-500.woff2") format("woff2");}
+    @font-face{font-family:"Pretendard";font-weight:700;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-700.woff2") format("woff2");}
+    @font-face{font-family:"Pretendard";font-weight:800;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-800.woff2") format("woff2");}
+    @font-face{font-family:"Pretendard";font-weight:900;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-900.woff2") format("woff2");}
+
+
+    #root { position:absolute; inset:0; width:1080px; height:1920px; overflow:hidden; font-family:"Pretendard",sans-serif; color:#111; }
+    .bg { position:absolute; inset:0; background:#fdfae7; }
+    .eyebrow { position:absolute; left:80px; top:250px; display:flex; align-items:center; gap:20px; font-size:40px; font-weight:700; color:#1e2bfa; letter-spacing:.04em; }
+    .eyebrow i { display:block; width:60px; height:5px; border-radius:3px; background:#1e2bfa; }
+    .h1 { position:absolute; left:80px; right:80px; font-size:96px; font-weight:800; line-height:1.15; letter-spacing:-.03em; }
+    .h1 em { font-style:normal; color:#1e2bfa; }
+    .card { position:absolute; background:rgba(30,43,250,0.04); border:1.5px solid rgba(30,43,250,0.2); border-radius:14px; }
+    .pill { position:absolute; padding:20px 40px; border-radius:100px; font-size:44px; font-weight:700; white-space:nowrap; }
+    .pill.soft { background:rgba(30,43,250,0.08); color:#1e2bfa; }
+    .pill.solid { background:#1e2bfa; color:#fdfae7; }
+    .num { font-variant-numeric:tabular-nums; }
+
+
+    .f5-title { top:330px; font-size:84px; }
+    .f5-base { position:absolute; left:80px; right:80px; top:1400px; height:4px; background:#111; opacity:.15; }
+    .f5-bar { position:absolute; bottom:520px; width:320px; border-radius:14px 14px 0 0; transform-origin:50% 100%; }
+    .f5-on { left:130px; height:800px; background:#c9c9d6; }
+    .f5-mt { left:630px; height:230px; background:#1e2bfa; }
+    .f5-val { position:absolute; width:420px; text-align:center; font-size:76px; font-weight:900; letter-spacing:-.03em; }
+    .f5-v1 { left:80px; top:500px; color:#6b6b6b; } .f5-v2 { left:580px; top:1070px; color:#1e2bfa; }
+    .f5-lab { position:absolute; top:1420px; width:420px; text-align:center; font-size:40px; font-weight:700; line-height:1.3; }
+    .f5-l1 { left:80px; color:#6b6b6b; } .f5-l2 { left:580px; color:#1e2bfa; }
+    .f5-save { position:absolute; left:560px; top:620px; padding:26px 40px; border-radius:20px; background:#1e2bfa; color:#fdfae7; text-align:center; }
+    .f5-save small { display:block; font-size:38px; font-weight:700; opacity:.85; }
+    .f5-save b { display:block; font-size:92px; font-weight:900; letter-spacing:-.03em; }
+    .f5-brk { position:absolute; left:470px; top:600px; width:60px; height:570px; border:5px solid #1e2bfa; border-left:none; border-radius:0 18px 18px 0; transform-origin:0 0; }
+
+  </style>
+  <div id="root" data-composition-id="05-tuition" data-start="0" data-duration="10.695" data-width="1080" data-height="1920">
+    <div id="f05-bg" class="bg clip" data-start="0" data-duration="10.695" data-track-index="0"></div>
+
+    <div class="eyebrow" id="f5-eye"><i></i>근거 ③ 부모님 학비 (1년)</div>
+    <div class="h1 f5-title" id="f5-title">학비 차이가 <em>이만큼</em></div>
+    <div class="f5-base"></div>
+    <div class="f5-bar f5-on" id="f5-b1"></div>
+    <div class="f5-bar f5-mt" id="f5-b2"></div>
+    <div class="f5-val f5-v1 num" id="f5-v1">약 $0</div>
+    <div class="f5-val f5-v2 num" id="f5-v2">$0</div>
+    <div class="f5-lab f5-l1" id="f5-l1">온타리오<br>대학부설</div>
+    <div class="f5-lab f5-l2" id="f5-l2">몬트리올<br>사립컬리지</div>
+    <div class="f5-brk" id="f5-brk"></div>
+    <div class="f5-save" id="f5-save"><small>1년 차액</small><b class="num">$14,000+</b></div>
+
+  </div>
+  <script>
+    (function(){
+      const tl = gsap.timeline({ paused: true });
+      const $ = (id) => document.getElementById(id);
+      const count = (id, to, at, d, fmt) => {
+        const el = $(id), st = { v: 0 };
+        tl.to(st, { v: to, duration: d, ease: "power2.out", onUpdate: () => { el.textContent = fmt(Math.round(st.v)); } }, at);
+      };
+
+      tl.fromTo("#f5-eye", {opacity:0, x:-40}, {opacity:1, x:0, duration:0.4, ease:"power3.out"}, 0.05);
+      tl.fromTo("#f5-title", {opacity:0, y:50}, {opacity:1, y:0, duration:0.5, ease:"power3.out"}, 0.3);
+      tl.fromTo("#f5-l1", {opacity:0, y:20}, {opacity:1, y:0, duration:0.4}, 1.35);
+      tl.fromTo("#f5-b1", {scaleY:0}, {scaleY:1, duration:1.4, ease:"power2.out"}, 1.5);
+      tl.fromTo("#f5-v1", {opacity:0}, {opacity:1, duration:0.3}, 2.6);
+      count("f5-v1", 20000, 2.6, 1.3, (n) => "약 $" + n.toLocaleString("en-US"));
+      tl.fromTo("#f5-l2", {opacity:0, y:20}, {opacity:1, y:0, duration:0.4}, 4.5);
+      tl.fromTo("#f5-b2", {scaleY:0}, {scaleY:1, duration:0.9, ease:"power2.out"}, 4.7);
+      tl.fromTo("#f5-v2", {opacity:0}, {opacity:1, duration:0.3}, 5.3);
+      count("f5-v2", 5750, 5.3, 0.9, (n) => "$" + n.toLocaleString("en-US"));
+      tl.fromTo("#f5-brk", {opacity:0, scaleY:0}, {opacity:1, scaleY:1, duration:0.6, ease:"power2.out"}, 7.2);
+      tl.fromTo("#f5-save", {opacity:0, scale:0.6}, {opacity:1, scale:1, duration:0.5, ease:"back.out(1.8)"}, 7.75);
+      tl.to("#f5-save", {scale:1.06, duration:0.3, ease:"power2.out"}, 8.5);
+      tl.to("#f5-save", {scale:1, duration:0.4, ease:"power2.inOut"}, 8.8);
+
+      window.__timelines["05-tuition"] = tl;
+    })();
+  </script>
+</template>

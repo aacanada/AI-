@@ -1,0 +1,53 @@
+<template>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <style>
+    @font-face{font-family:"Pretendard";font-weight:500;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-500.woff2") format("woff2");}
+    @font-face{font-family:"Pretendard";font-weight:700;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-700.woff2") format("woff2");}
+    @font-face{font-family:"Pretendard";font-weight:800;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-800.woff2") format("woff2");}
+    @font-face{font-family:"Pretendard";font-weight:900;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-900.woff2") format("woff2");}
+    #root { position:absolute; inset:0; width:1080px; height:1920px; overflow:hidden; font-family:"Pretendard",sans-serif; color:#111; }
+    .h01-bg { position:absolute; inset:0; background:#fdfae7; }
+    .h01-dots { position:absolute; right:70px; top:150px; width:180px; height:180px;
+      background-image:radial-gradient(#1e2bfa 5px, transparent 6px); background-size:60px 60px; opacity:.25; }
+    .h01-band { position:absolute; left:-100px; right:-100px; top:1220px; height:260px; background:rgba(30,43,250,0.06); transform:rotate(-6deg); }
+    .h01-eyebrow { position:absolute; left:80px; top:300px; display:flex; align-items:center; gap:20px;
+      font-size:40px; font-weight:700; color:#1e2bfa; letter-spacing:.04em; }
+    .h01-eyebrow i { display:block; width:60px; height:5px; border-radius:3px; background:#1e2bfa; }
+    .h01-city { position:absolute; left:80px; top:390px; font-size:190px; font-weight:900; letter-spacing:-.04em; line-height:1; }
+    .h01-eq { position:absolute; left:80px; top:620px; font-size:150px; font-weight:800; letter-spacing:-.03em; line-height:1; color:#111; }
+    .h01-eq span { color:#1e2bfa; }
+    .h01-q { position:absolute; right:60px; top:470px; font-size:460px; font-weight:900; color:#1e2bfa; line-height:1; transform-origin:50% 85%; }
+    .h01-chip { position:absolute; padding:26px 44px; border-radius:100px; font-size:52px; font-weight:700; }
+    .h01-chip.fr { left:80px; top:900px; background:rgba(30,43,250,0.08); color:#1e2bfa; border:2px solid rgba(30,43,250,0.2); }
+    .h01-worry { left:80px; top:1060px; background:#fff; color:#111; border:2px solid rgba(17,17,17,0.12); }
+    .h01-worry b { color:#dc2626; }
+  </style>
+  <div id="root" data-composition-id="01-hook" data-start="0" data-duration="4.34" data-width="1080" data-height="1920">
+    <div id="h01-bg" class="h01-bg clip" data-start="0" data-duration="4.34" data-track-index="0"></div>
+    <div class="h01-band"></div>
+    <div class="h01-dots"></div>
+    <div class="h01-eyebrow" id="h01-eyebrow"><i></i>학부모님들의 걱정</div>
+    <div class="h01-city" id="h01-city">몬트리올</div>
+    <div class="h01-eq" id="h01-eq"><span>=</span> 불어권</div>
+    <div class="h01-q" id="h01-q">?</div>
+    <div class="h01-chip fr" id="h01-fr">🇫🇷 Bonjour · Merci</div>
+    <div class="h01-chip h01-worry" id="h01-worry">우리 아이 영어는 <b>…괜찮을까?</b></div>
+  </div>
+  <script>
+    (function(){
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#h01-eyebrow", {opacity:0, x:-40}, {opacity:1, x:0, duration:0.4, ease:"power3.out"}, 0);
+      tl.fromTo("#h01-city", {opacity:0, y:80, scale:1.08}, {opacity:1, y:0, scale:1, duration:0.55, ease:"power4.out"}, 0.05);
+      tl.fromTo("#h01-eq", {opacity:0, y:60}, {opacity:1, y:0, duration:0.5, ease:"power3.out"}, 0.8);
+      tl.fromTo("#h01-q", {opacity:0, scale:0.3, rotation:-30}, {opacity:1, scale:1, rotation:0, duration:0.6, ease:"back.out(2)"}, 0.95);
+      tl.to("#h01-q", {rotation:12, duration:0.18, ease:"sine.inOut"}, 1.6);
+      tl.to("#h01-q", {rotation:-10, duration:0.22, ease:"sine.inOut"}, 1.78);
+      tl.to("#h01-q", {rotation:6, duration:0.2, ease:"sine.inOut"}, 2.0);
+      tl.to("#h01-q", {rotation:0, duration:0.25, ease:"sine.out"}, 2.2);
+      tl.fromTo("#h01-fr", {opacity:0, y:30}, {opacity:1, y:0, duration:0.4, ease:"power2.out"}, 1.3);
+      tl.fromTo("#h01-worry", {opacity:0, y:40, scale:0.92}, {opacity:1, y:0, scale:1, duration:0.45, ease:"back.out(1.6)"}, 2.0);
+      tl.to("#h01-city", {scale:1.03, duration:3.0, ease:"none", transformOrigin:"0% 50%"}, 0.65);
+      window.__timelines["01-hook"] = tl;
+    })();
+  </script>
+</template>

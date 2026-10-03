@@ -1,0 +1,76 @@
+<template>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <style>
+    @font-face{font-family:"Pretendard";font-weight:500;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-500.woff2") format("woff2");}
+    @font-face{font-family:"Pretendard";font-weight:700;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-700.woff2") format("woff2");}
+    @font-face{font-family:"Pretendard";font-weight:800;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-800.woff2") format("woff2");}
+    @font-face{font-family:"Pretendard";font-weight:900;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-900.woff2") format("woff2");}
+
+
+    #root { position:absolute; inset:0; width:1080px; height:1920px; overflow:hidden; font-family:"Pretendard",sans-serif; color:#111; }
+    .bg { position:absolute; inset:0; background:#fdfae7; }
+    .eyebrow { position:absolute; left:80px; top:250px; display:flex; align-items:center; gap:20px; font-size:40px; font-weight:700; color:#1e2bfa; letter-spacing:.04em; }
+    .eyebrow i { display:block; width:60px; height:5px; border-radius:3px; background:#1e2bfa; }
+    .h1 { position:absolute; left:80px; right:80px; font-size:96px; font-weight:800; line-height:1.15; letter-spacing:-.03em; }
+    .h1 em { font-style:normal; color:#1e2bfa; }
+    .card { position:absolute; background:rgba(30,43,250,0.04); border:1.5px solid rgba(30,43,250,0.2); border-radius:14px; }
+    .pill { position:absolute; padding:20px 40px; border-radius:100px; font-size:44px; font-weight:700; white-space:nowrap; }
+    .pill.soft { background:rgba(30,43,250,0.08); color:#1e2bfa; }
+    .pill.solid { background:#1e2bfa; color:#fdfae7; }
+    .num { font-variant-numeric:tabular-nums; }
+
+
+    .f8-rings { position:absolute; left:540px; top:900px; width:0; height:0; }
+    .f8-rings i { position:absolute; border:2px solid rgba(30,43,250,0.12); border-radius:50%; }
+    .f8-chips { position:absolute; left:80px; top:300px; display:flex; gap:24px; }
+    .f8-chips .pill { position:relative; }
+    .f8-h { top:440px; font-size:110px; font-weight:900; }
+    .f8-brand { position:absolute; left:80px; right:80px; top:820px; height:300px; display:flex; flex-direction:column; align-items:center; justify-content:center; background:#1e2bfa; border-radius:20px; color:#fdfae7; }
+    .f8-brand b { font-size:140px; font-weight:900; letter-spacing:-.02em; line-height:1; }
+    .f8-brand small { font-size:40px; font-weight:700; opacity:.85; margin-top:14px; }
+    .f8-c { left:80px; right:80px; text-align:center; font-size:54px; font-weight:800; background:#fff; color:#111; border:2px solid rgba(30,43,250,0.2); }
+    .f8-c1 { top:1170px; } .f8-c2 { top:1300px; }
+    .f8-fine { position:absolute; left:80px; right:80px; top:1440px; text-align:center; font-size:32px; font-weight:500; color:#6b6b6b; }
+
+  </style>
+  <div id="root" data-composition-id="08-cta" data-start="0" data-duration="7.433" data-width="1080" data-height="1920">
+    <div id="f08-bg" class="bg clip" data-start="0" data-duration="7.433" data-track-index="0"></div>
+
+    <div class="f8-rings" id="f8-rings">
+      <i style="left:-300px; top:-300px; width:600px; height:600px"></i>
+      <i style="left:-460px; top:-460px; width:920px; height:920px"></i>
+      <i style="left:-620px; top:-620px; width:1240px; height:1240px"></i>
+    </div>
+    <div class="f8-chips">
+      <div class="pill soft" id="f8-c-en">영어 ✓</div>
+      <div class="pill soft" id="f8-c-bud">예산 ✓</div>
+    </div>
+    <div class="h1 f8-h" id="f8-h"><em>몬트리올</em>도<br>꼭 알아보세요</div>
+    <div class="f8-brand" id="f8-brand"><b>AA Canada</b><small>캐나다 자녀무상교육 · 유학 · 이민</small></div>
+    <div class="pill f8-c f8-c1" id="f8-c1">💬 카카오톡 <span style="color:#1e2bfa">canlog</span></div>
+    <div class="pill f8-c f8-c2" id="f8-c2">📞 <span class="num">02-567-4345</span></div>
+    <div class="f8-fine" id="f8-fine">* 학비 프로모션·학생비자 접수는 선착순으로 제한될 수 있어요</div>
+
+  </div>
+  <script>
+    (function(){
+      const tl = gsap.timeline({ paused: true });
+      const $ = (id) => document.getElementById(id);
+      const count = (id, to, at, d, fmt) => {
+        const el = $(id), st = { v: 0 };
+        tl.to(st, { v: to, duration: d, ease: "power2.out", onUpdate: () => { el.textContent = fmt(Math.round(st.v)); } }, at);
+      };
+
+      tl.fromTo("#f8-c-en", {opacity:0, scale:0.6}, {opacity:1, scale:1, duration:0.35, ease:"back.out(2)"}, 0.05);
+      tl.fromTo("#f8-c-bud", {opacity:0, scale:0.6}, {opacity:1, scale:1, duration:0.35, ease:"back.out(2)"}, 0.55);
+      tl.fromTo("#f8-h", {opacity:0, y:60}, {opacity:1, y:0, duration:0.55, ease:"power3.out"}, 1.9);
+      tl.fromTo("#f8-rings", {opacity:0, scale:0.7}, {opacity:1, scale:1, duration:2.0, ease:"power2.out"}, 3.3);
+      tl.fromTo("#f8-brand", {opacity:0, y:60, scale:0.95}, {opacity:1, y:0, scale:1, duration:0.55, ease:"power3.out"}, 3.45);
+      tl.fromTo("#f8-c1", {opacity:0, y:30}, {opacity:1, y:0, duration:0.4, ease:"power3.out"}, 4.4);
+      tl.fromTo("#f8-c2", {opacity:0, y:30}, {opacity:1, y:0, duration:0.4, ease:"power3.out"}, 4.7);
+      tl.fromTo("#f8-fine", {opacity:0}, {opacity:1, duration:0.5}, 5.2);
+
+      window.__timelines["08-cta"] = tl;
+    })();
+  </script>
+</template>

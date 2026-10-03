@@ -1,0 +1,75 @@
+<template>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <style>
+    @font-face{font-family:"Pretendard";font-weight:500;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-500.woff2") format("woff2");}
+    @font-face{font-family:"Pretendard";font-weight:700;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-700.woff2") format("woff2");}
+    @font-face{font-family:"Pretendard";font-weight:800;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-800.woff2") format("woff2");}
+    @font-face{font-family:"Pretendard";font-weight:900;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-900.woff2") format("woff2");}
+
+
+    #root { position:absolute; inset:0; width:1080px; height:1920px; overflow:hidden; font-family:"Pretendard",sans-serif; color:#111; }
+    .bg { position:absolute; inset:0; background:#fdfae7; }
+    .eyebrow { position:absolute; left:80px; top:250px; display:flex; align-items:center; gap:20px; font-size:40px; font-weight:700; color:#1e2bfa; letter-spacing:.04em; }
+    .eyebrow i { display:block; width:60px; height:5px; border-radius:3px; background:#1e2bfa; }
+    .h1 { position:absolute; left:80px; right:80px; font-size:96px; font-weight:800; line-height:1.15; letter-spacing:-.03em; }
+    .h1 em { font-style:normal; color:#1e2bfa; }
+    .card { position:absolute; background:rgba(30,43,250,0.04); border:1.5px solid rgba(30,43,250,0.2); border-radius:14px; }
+    .pill { position:absolute; padding:20px 40px; border-radius:100px; font-size:44px; font-weight:700; white-space:nowrap; }
+    .pill.soft { background:rgba(30,43,250,0.08); color:#1e2bfa; }
+    .pill.solid { background:#1e2bfa; color:#fdfae7; }
+    .num { font-variant-numeric:tabular-nums; }
+
+
+    .f4-title { top:330px; }
+    .f4-wrap { position:absolute; left:110px; top:520px; width:860px; height:997px; border-radius:14px; overflow:hidden;
+      border:1.5px solid rgba(30,43,250,0.2); background:#fff; }
+    .f4-img { position:absolute; left:0; top:0; width:860px; height:997px; transform-origin:50% 100%; }
+    .f4-call { position:absolute; left:470px; top:1330px; padding:20px 36px; border-radius:100px; background:#dc2626; color:#fff; font-size:46px; font-weight:800; white-space:nowrap; }
+    .f4-res { left:80px; right:80px; top:560px; height:560px; padding:56px; background:#fdfae7; }
+    .f4-lab { font-size:52px; font-weight:700; color:#6b6b6b; }
+    .f4-n { margin-top:40px; font-size:240px; font-weight:900; color:#1e2bfa; line-height:1.05; letter-spacing:-.04em; }
+    .f4-track { position:relative; height:44px; border-radius:6px; background:rgba(30,43,250,0.08); margin-top:26px; overflow:hidden; }
+    .f4-fill { position:absolute; left:0; top:0; bottom:0; width:80%; background:#1e2bfa; border-radius:6px; transform-origin:0 50%; }
+    .f4-fr { position:absolute; right:0; top:0; bottom:0; width:20%; display:flex; align-items:center; justify-content:center; font-size:28px; font-weight:700; color:#dc2626; }
+    .f4-keys { display:flex; justify-content:space-between; margin-top:16px; font-size:36px; font-weight:700; }
+
+  </style>
+  <div id="root" data-composition-id="04-timetable" data-start="0" data-duration="7.77" data-width="1080" data-height="1920">
+    <div id="f04-bg" class="bg clip" data-start="0" data-duration="7.77" data-track-index="0"></div>
+
+    <div class="eyebrow" id="f4-eye"><i></i>근거 ② 수업</div>
+    <div class="h1 f4-title" id="f4-title">실제 <em>시간표</em>를 보면</div>
+    <div class="f4-wrap" id="f4-wrap"><img class="f4-img" id="f4-img" src="assets/timetable.webp" alt=""></div>
+    <div class="f4-call" id="f4-call">불어는 하루 1시간</div>
+    <div class="card f4-res" id="f4-res">
+      <div class="f4-lab">전체 수업 중 영어</div>
+      <div class="f4-n num" id="f4-n">0%</div>
+      <div class="f4-track"><div class="f4-fill" id="f4-fill"></div><div class="f4-fr" id="f4-fr">불어</div></div>
+      <div class="f4-keys"><span style="color:#1e2bfa">English</span><span style="color:#dc2626">Français</span></div>
+    </div>
+
+  </div>
+  <script>
+    (function(){
+      const tl = gsap.timeline({ paused: true });
+      const $ = (id) => document.getElementById(id);
+      const count = (id, to, at, d, fmt) => {
+        const el = $(id), st = { v: 0 };
+        tl.to(st, { v: to, duration: d, ease: "power2.out", onUpdate: () => { el.textContent = fmt(Math.round(st.v)); } }, at);
+      };
+
+      tl.fromTo("#f4-eye", {opacity:0, x:-40}, {opacity:1, x:0, duration:0.4, ease:"power3.out"}, 0.05);
+      tl.fromTo("#f4-title", {opacity:0, y:50}, {opacity:1, y:0, duration:0.5, ease:"power3.out"}, 0.9);
+      tl.fromTo("#f4-wrap", {opacity:0, y:120}, {opacity:1, y:0, duration:0.6, ease:"power3.out"}, 1.1);
+      tl.fromTo("#f4-img", {scale:1}, {scale:1.35, duration:2.6, ease:"power1.inOut"}, 1.6);
+      tl.fromTo("#f4-call", {opacity:0, scale:0.5}, {opacity:1, scale:1, duration:0.4, ease:"back.out(2)"}, 2.6);
+      tl.fromTo("#f4-res", {opacity:0, y:80}, {opacity:1, y:0, duration:0.5, ease:"power3.out"}, 4.2);
+      tl.to(["#f4-wrap","#f4-call"], {opacity:0.0, duration:0.4}, 4.2);
+      count("f4-n", 80, 4.9, 0.9, (n) => n + "%");
+      tl.fromTo("#f4-fill", {scaleX:0}, {scaleX:1, duration:0.9, ease:"power2.out"}, 4.9);
+      tl.fromTo("#f4-fr", {opacity:0}, {opacity:1, duration:0.3}, 5.7);
+
+      window.__timelines["04-timetable"] = tl;
+    })();
+  </script>
+</template>

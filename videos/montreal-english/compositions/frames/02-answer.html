@@ -1,0 +1,71 @@
+<template>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <style>
+    @font-face{font-family:"Pretendard";font-weight:500;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-500.woff2") format("woff2");}
+    @font-face{font-family:"Pretendard";font-weight:700;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-700.woff2") format("woff2");}
+    @font-face{font-family:"Pretendard";font-weight:800;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-800.woff2") format("woff2");}
+    @font-face{font-family:"Pretendard";font-weight:900;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-900.woff2") format("woff2");}
+
+
+    #root { position:absolute; inset:0; width:1080px; height:1920px; overflow:hidden; font-family:"Pretendard",sans-serif; color:#111; }
+    .bg { position:absolute; inset:0; background:#fdfae7; }
+    .eyebrow { position:absolute; left:80px; top:250px; display:flex; align-items:center; gap:20px; font-size:40px; font-weight:700; color:#1e2bfa; letter-spacing:.04em; }
+    .eyebrow i { display:block; width:60px; height:5px; border-radius:3px; background:#1e2bfa; }
+    .h1 { position:absolute; left:80px; right:80px; font-size:96px; font-weight:800; line-height:1.15; letter-spacing:-.03em; }
+    .h1 em { font-style:normal; color:#1e2bfa; }
+    .card { position:absolute; background:rgba(30,43,250,0.04); border:1.5px solid rgba(30,43,250,0.2); border-radius:14px; }
+    .pill { position:absolute; padding:20px 40px; border-radius:100px; font-size:44px; font-weight:700; white-space:nowrap; }
+    .pill.soft { background:rgba(30,43,250,0.08); color:#1e2bfa; }
+    .pill.solid { background:#1e2bfa; color:#fdfae7; }
+    .num { font-variant-numeric:tabular-nums; }
+
+
+    .f2-tag { left:80px; top:250px; }
+    .f2-sky { position:absolute; left:80px; right:80px; top:420px; height:300px; }
+    .f2-sky path { fill:none; stroke:#1e2bfa; stroke-width:6; stroke-linecap:round; stroke-linejoin:round; }
+    .f2-eye { top:860px; }
+    .f2-h { top:940px; font-size:132px; font-weight:900; }
+    .f2-w { display:inline-block; }
+    .f2-stamp { position:absolute; right:90px; top:770px; width:200px; height:200px; border-radius:50%; background:#1e2bfa; color:#fdfae7;
+      display:flex; align-items:center; justify-content:center; font-size:120px; font-weight:900; }
+    .f2-band { position:absolute; left:-120px; right:-120px; top:1330px; height:220px; background:rgba(30,43,250,0.07); transform:rotate(-6deg); }
+
+  </style>
+  <div id="root" data-composition-id="02-answer" data-start="0" data-duration="6.662" data-width="1080" data-height="1920">
+    <div id="f02-bg" class="bg clip" data-start="0" data-duration="6.662" data-track-index="0"></div>
+
+    <div class="f2-band"></div>
+    <div class="pill soft f2-tag" id="f2-tag">상담 질문 1위</div>
+    <svg class="f2-sky" viewBox="0 0 920 300" id="f2-sky">
+      <path id="f2-skypath" d="M0 280 H120 V200 H170 V140 H200 V200 H260 V230 H330 V110 L360 60 L390 110 V230 H450 V170 H520 V250 H560 V90 H600 V40 H630 V90 H670 V250 H740 V190 H800 V230 H860 V180 H920 V280"/>
+      <path id="f2-mtn" d="M0 280 Q200 210 420 250 T920 230" opacity=".35"/>
+    </svg>
+    <div class="eyebrow f2-eye" id="f2-eye"><i></i>결론부터</div>
+    <div class="h1 f2-h"><span class="f2-w" id="f2-w1">영어,</span><br><span class="f2-w" id="f2-w2"><em>충분히</em></span> <span class="f2-w" id="f2-w3">늘어요</span></div>
+    <div class="f2-stamp" id="f2-stamp">✓</div>
+
+  </div>
+  <script>
+    (function(){
+      const tl = gsap.timeline({ paused: true });
+      const $ = (id) => document.getElementById(id);
+      const count = (id, to, at, d, fmt) => {
+        const el = $(id), st = { v: 0 };
+        tl.to(st, { v: to, duration: d, ease: "power2.out", onUpdate: () => { el.textContent = fmt(Math.round(st.v)); } }, at);
+      };
+
+      tl.fromTo("#f2-tag", {opacity:0, y:30}, {opacity:1, y:0, duration:0.45, ease:"power3.out"}, 0.05);
+      const p = $("f2-skypath"), L = 3200; p.style.strokeDasharray = L;
+      tl.fromTo(p, {strokeDashoffset:L}, {strokeDashoffset:0, duration:2.2, ease:"power1.inOut"}, 0.15);
+      tl.fromTo("#f2-mtn", {opacity:0}, {opacity:0.35, duration:1.0}, 0.8);
+      tl.fromTo("#f2-eye", {opacity:0, x:-40}, {opacity:1, x:0, duration:0.4, ease:"power3.out"}, 2.4);
+      tl.fromTo("#f2-w1", {opacity:0, y:60}, {opacity:1, y:0, duration:0.45, ease:"power3.out"}, 4.0);
+      tl.fromTo("#f2-w2", {opacity:0, y:60}, {opacity:1, y:0, duration:0.45, ease:"power3.out"}, 4.3);
+      tl.fromTo("#f2-w3", {opacity:0, y:60}, {opacity:1, y:0, duration:0.45, ease:"power3.out"}, 4.75);
+      tl.fromTo("#f2-stamp", {opacity:0, scale:2.2, rotation:-25}, {opacity:1, scale:1, rotation:0, duration:0.4, ease:"back.out(2)"}, 5.05);
+      tl.fromTo("#f2-sky", {y:0}, {y:-20, duration:6.1, ease:"none"}, 0);
+
+      window.__timelines["02-answer"] = tl;
+    })();
+  </script>
+</template>

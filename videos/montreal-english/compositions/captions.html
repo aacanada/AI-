@@ -1,0 +1,227 @@
+<template id="captions-template" data-composition-id="captions" data-width="1080" data-height="1920">
+<script src="assets/vendor/gsap.min.js"></script>
+
+
+<style data-brand-tokens>
+      @font-face { font-family: 'Pretendard'; src: url('assets/fonts/Pretendard-500.woff2') format('woff2'); font-weight: 500; font-style: normal; font-display: block; }
+      @font-face { font-family: 'Pretendard'; src: url('assets/fonts/Pretendard-700.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: block; }
+      @font-face { font-family: 'Pretendard'; src: url('assets/fonts/Pretendard-800.woff2') format('woff2'); font-weight: 800; font-style: normal; font-display: block; }
+      @font-face { font-family: 'Pretendard'; src: url('assets/fonts/Pretendard-900.woff2') format('woff2'); font-weight: 900; font-style: normal; font-display: block; }
+      :root {
+      --bg: #fdfae7;
+      --primary: #1e2bfa;
+      --text: #111111;
+      --text-muted: #6b6b6b;
+      --text-light: #9a9a9a;
+      --accent-light: rgba(30,43,250,0.08);
+      --accent-medium: rgba(30,43,250,0.15);
+      --border: rgba(30,43,250,0.2);
+      --card-bg: rgba(30,43,250,0.04);
+      --positive: #059669;
+      --negative: #dc2626;
+      --cap-ink: #111111;
+      --cap-canvas: #fdfae7;
+      --cap-accent: #1e2bfa;
+      --cap-accent-2: #6b6b6b;
+      --font-display: "Pretendard", system-ui, serif;
+      --font-body: "Pretendard", system-ui, sans-serif;
+      --cap-band-top: 1600px;
+      --cap-band-height: 320px;
+      }
+    </style>
+
+<style>
+  #captions-root {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .caption-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 20;
+    pointer-events: none;
+  }
+  /* the keep-out band, from captionBand(H) — frame content stays above it */
+  .caption-stage {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: var(--cap-band-top, 900px);
+    height: var(--cap-band-height, 180px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .caption-group {
+    /* every group is absolutely stacked over the SAME band — exactly one shown at a
+       time via opacity. Must be absolute: in-flow groups would lay out side-by-side. */
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+  }
+
+  /* THE tinted card — 4% cobalt fill, 1.5px 20%-cobalt border, soft 14px corners,
+     NO shadow (the tinted card does the lift; cast depth is forbidden) */
+  .caption-pill {
+    max-width: 78%;
+    padding: 20px 44px 24px;
+    background: color-mix(in srgb, var(--cap-accent, #1e2bfa) 4%, var(--cap-canvas, #fdfae7));
+    border: 1.5px solid color-mix(in srgb, var(--cap-accent, #1e2bfa) 20%, transparent);
+    border-radius: 14px;
+  }
+  .caption-line {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.1em 0.34em;
+    font-family: "Pretendard", system-ui, sans-serif;
+    font-weight: 600;
+    font-size: clamp(40px, 4.4vw, 58px);
+    line-height: 1.16;
+    letter-spacing: -0.02em;
+  }
+
+  /* upcoming — muted gray, no chip */
+  .caption-word {
+    display: inline-block;
+    padding: 0 0.18em;
+    border-radius: 0.32em;
+    color: color-mix(in srgb, var(--cap-ink, #111111) 52%, var(--cap-canvas, #fdfae7));
+  }
+  /* current word — THE solid cobalt chip (the single-accent gesture; pill-rounded
+     fill, NO shadow), cream reading on top */
+  .caption-word.is-active {
+    color: var(--cap-canvas, #fdfae7);
+    background: var(--cap-accent, #1e2bfa);
+    box-shadow: none;
+  }
+  /* already spoken — solid near-black ink, chip cleared */
+  .caption-word.is-spoken {
+    color: var(--cap-ink, #111111);
+    background: transparent;
+    box-shadow: none;
+  }
+
+  /* optional per-word accents (dormant until a word-classer tags them) */
+  /* brand / key term — cobalt, the system's one accent on a key word */
+  .caption-word.cap-brand {
+    color: var(--cap-accent, #1e2bfa);
+  }
+  /* numerals / data — cobalt 700, the figure voice */
+  .caption-word.cap-num {
+    font-family: "Pretendard", system-ui, sans-serif;
+    font-weight: 700;
+    color: var(--cap-accent, #1e2bfa);
+  }
+  /* emphasis — a directional-red hairline underline (inline only, never a fill) */
+  .caption-word.cap-cta {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-decoration-color: var(--cap-accent-2, #dc2626);
+    text-underline-offset: 0.1em;
+  }
+
+  @media (max-aspect-ratio: 9/16) {
+    .caption-pill {
+      max-width: 92%;
+    }
+    .caption-line {
+      font-size: clamp(34px, 5.4vw, 48px);
+    }
+  }
+</style>
+
+<div
+  id="captions-root"
+  data-composition-id="captions"
+  data-timeline-locked
+  data-start="0"
+  data-duration="58.334"
+  data-fps="30"
+  data-width="1080"
+  data-height="1920"
+>
+  <div class="caption-layer" aria-hidden="true">
+    <div id="caption-stage" class="caption-stage"></div>
+  </div>
+</div>
+
+<script>
+  // captions.mjs injects the engine's scene-aware groups + real duration here.
+  var GROUPS = [{"id":"caption-group-0","frame":1,"start":0,"end":1.567,"text":"몬트리올은 불어권이라,","words":[{"id":"caption-word-0-0","text":"몬트리올은","start":0,"end":0.766},{"id":"caption-word-0-1","text":"불어권이라,","start":0.824,"end":1.521}]},{"id":"caption-group-1","frame":1,"start":1.567,"end":1.95,"text":"우리 아이","words":[{"id":"caption-word-1-0","text":"우리","start":1.567,"end":1.741},{"id":"caption-word-1-1","text":"아이","start":1.8,"end":1.892}]},{"id":"caption-group-2","frame":1,"start":1.95,"end":2.508,"text":"영어가 안","words":[{"id":"caption-word-2-0","text":"영어가","start":1.95,"end":2.357},{"id":"caption-word-2-1","text":"안","start":2.38,"end":2.438}]},{"id":"caption-group-3","frame":1,"start":2.508,"end":3.51,"text":"늘면 어떡하죠?","words":[{"id":"caption-word-3-0","text":"늘면","start":2.508,"end":2.821},{"id":"caption-word-3-1","text":"어떡하죠?","start":2.868,"end":3.39}]},{"id":"caption-group-4","frame":2,"start":3.84,"end":5.454,"text":"상담하면서 정말 많이 듣는","words":[{"id":"caption-word-4-0","text":"상담하면서","start":3.84,"end":4.548},{"id":"caption-word-4-1","text":"정말","start":4.595,"end":4.885},{"id":"caption-word-4-2","text":"많이","start":4.908,"end":5.129},{"id":"caption-word-4-3","text":"듣는","start":5.187,"end":5.419}]},{"id":"caption-group-5","frame":2,"start":5.454,"end":6.301,"text":"질문인데요.","words":[{"id":"caption-word-5-0","text":"질문인데요.","start":5.454,"end":6.255}]},{"id":"caption-group-6","frame":2,"start":6.301,"end":7.768,"text":"결론부터 말씀드리면,","words":[{"id":"caption-word-6-0","text":"결론부터","start":6.301,"end":6.812},{"id":"caption-word-6-1","text":"말씀드리면,","start":6.847,"end":7.648}]},{"id":"caption-group-7","frame":2,"start":7.892,"end":8.6,"text":"영어 충분히","words":[{"id":"caption-word-7-0","text":"영어","start":7.892,"end":8.147},{"id":"caption-word-7-1","text":"충분히","start":8.194,"end":8.565}]},{"id":"caption-group-8","frame":2,"start":8.6,"end":9.672,"text":"늘 수 있습니다.","words":[{"id":"caption-word-8-0","text":"늘","start":8.6,"end":8.716},{"id":"caption-word-8-1","text":"수","start":8.774,"end":8.844},{"id":"caption-word-8-2","text":"있습니다.","start":8.867,"end":9.552}]},{"id":"caption-group-9","frame":3,"start":10.002,"end":11.035,"text":"사실 아이 영어는","words":[{"id":"caption-word-9-0","text":"사실","start":10.002,"end":10.315},{"id":"caption-word-9-1","text":"아이","start":10.35,"end":10.513},{"id":"caption-word-9-2","text":"영어는","start":10.571,"end":10.989}]},{"id":"caption-group-10","frame":3,"start":11.035,"end":13.288,"text":"수업보다 친구들이랑 놀고 떠들면서","words":[{"id":"caption-word-10-0","text":"수업보다","start":11.035,"end":11.511},{"id":"caption-word-10-1","text":"친구들이랑","start":11.558,"end":12.196},{"id":"caption-word-10-2","text":"놀고","start":12.231,"end":12.51},{"id":"caption-word-10-3","text":"떠들면서","start":12.556,"end":13.23}]},{"id":"caption-group-11","frame":3,"start":13.288,"end":13.938,"text":"늘어요.","words":[{"id":"caption-word-11-0","text":"늘어요.","start":13.288,"end":13.822}]},{"id":"caption-group-12","frame":3,"start":13.938,"end":15.463,"text":"영어 학교에 다니면","words":[{"id":"caption-word-12-0","text":"영어","start":13.938,"end":14.158},{"id":"caption-word-12-1","text":"학교에","start":14.205,"end":14.704},{"id":"caption-word-12-2","text":"다니면","start":14.75,"end":15.343}]},{"id":"caption-group-13","frame":3,"start":15.668,"end":17.502,"text":"쉬는 시간이든 점심시간이든,","words":[{"id":"caption-word-13-0","text":"쉬는","start":15.668,"end":15.981},{"id":"caption-word-13-1","text":"시간이든","start":16.016,"end":16.55},{"id":"caption-word-13-2","text":"점심시간이든,","start":16.597,"end":17.479}]},{"id":"caption-group-14","frame":3,"start":17.502,"end":18.888,"text":"친구들과는 100%","words":[{"id":"caption-word-14-0","text":"친구들과는","start":17.502,"end":18.269},{"id":"caption-word-14-1","text":"100%","start":18.35,"end":18.768}]},{"id":"caption-group-15","frame":3,"start":19.012,"end":20.478,"text":"영어로만 소통합니다.","words":[{"id":"caption-word-15-0","text":"영어로만","start":19.012,"end":19.522},{"id":"caption-word-15-1","text":"소통합니다.","start":19.557,"end":20.358}]},{"id":"caption-group-16","frame":4,"start":20.708,"end":21.846,"text":"수업도 마찬가지예요.","words":[{"id":"caption-word-16-0","text":"수업도","start":20.708,"end":21.021},{"id":"caption-word-16-1","text":"마찬가지예요.","start":21.068,"end":21.811}]},{"id":"caption-group-17","frame":4,"start":21.846,"end":23.208,"text":"실제 시간표를 보면","words":[{"id":"caption-word-17-0","text":"실제","start":21.846,"end":22.113},{"id":"caption-word-17-1","text":"시간표를","start":22.159,"end":22.658},{"id":"caption-word-17-2","text":"보면","start":22.682,"end":23.088}]},{"id":"caption-group-18","frame":4,"start":23.332,"end":23.959,"text":"불어는 하루","words":[{"id":"caption-word-18-0","text":"불어는","start":23.332,"end":23.692},{"id":"caption-word-18-1","text":"하루","start":23.75,"end":23.912}]},{"id":"caption-group-19","frame":4,"start":23.959,"end":24.946,"text":"한 시간뿐이고,","words":[{"id":"caption-word-19-0","text":"한","start":23.959,"end":24.052},{"id":"caption-word-19-1","text":"시간뿐이고,","start":24.087,"end":24.911}]},{"id":"caption-group-20","frame":4,"start":24.946,"end":26.617,"text":"전체 수업의 80%를","words":[{"id":"caption-word-20-0","text":"전체","start":24.946,"end":25.248},{"id":"caption-word-20-1","text":"수업의","start":25.329,"end":25.782},{"id":"caption-word-20-2","text":"80%를","start":25.863,"end":26.583}]},{"id":"caption-group-21","frame":4,"start":26.617,"end":27.748,"text":"영어로 배웁니다.","words":[{"id":"caption-word-21-0","text":"영어로","start":26.617,"end":26.919},{"id":"caption-word-21-1","text":"배웁니다.","start":26.966,"end":27.628}]},{"id":"caption-group-22","frame":5,"start":27.978,"end":29.371,"text":"게다가 부모님 학비는","words":[{"id":"caption-word-22-0","text":"게다가","start":27.978,"end":28.338},{"id":"caption-word-22-1","text":"부모님","start":28.396,"end":28.779},{"id":"caption-word-22-2","text":"학비는","start":28.826,"end":29.29}]},{"id":"caption-group-23","frame":5,"start":29.371,"end":31.774,"text":"온타리오 대학부설이 1년에 약","words":[{"id":"caption-word-23-0","text":"온타리오","start":29.371,"end":29.847},{"id":"caption-word-23-1","text":"대학부설이","start":29.894,"end":30.648},{"id":"caption-word-23-2","text":"1년에","start":30.741,"end":31.357},{"id":"caption-word-23-3","text":"약","start":31.473,"end":31.751}]},{"id":"caption-group-24","frame":5,"start":31.774,"end":32.541,"text":"2만 달러,","words":[{"id":"caption-word-24-0","text":"2만","start":31.774,"end":32.088},{"id":"caption-word-24-1","text":"달러,","start":32.146,"end":32.506}]},{"id":"caption-group-25","frame":5,"start":32.541,"end":35.188,"text":"몬트리올 사립컬리지는 5,750달러.","words":[{"id":"caption-word-25-0","text":"몬트리올","start":32.541,"end":33.04},{"id":"caption-word-25-1","text":"사립컬리지는","start":33.075,"end":33.887},{"id":"caption-word-25-2","text":"5,750달러.","start":33.98,"end":35.141}]},{"id":"caption-group-26","frame":5,"start":35.188,"end":36.097,"text":"1년에 만","words":[{"id":"caption-word-26-0","text":"1년에","start":35.188,"end":35.641},{"id":"caption-word-26-1","text":"만","start":35.699,"end":35.977}]},{"id":"caption-group-27","frame":5,"start":36.186,"end":36.767,"text":"4천 달러","words":[{"id":"caption-word-27-0","text":"4천","start":36.186,"end":36.43},{"id":"caption-word-27-1","text":"달러","start":36.477,"end":36.72}]},{"id":"caption-group-28","frame":5,"start":36.767,"end":37.943,"text":"넘게 차이가 나요.","words":[{"id":"caption-word-28-0","text":"넘게","start":36.767,"end":37.022},{"id":"caption-word-28-1","text":"차이가","start":37.08,"end":37.37},{"id":"caption-word-28-2","text":"나요.","start":37.417,"end":37.823}]},{"id":"caption-group-29","frame":6,"start":38.173,"end":39.299,"text":"이 차액으로 매일","words":[{"id":"caption-word-29-0","text":"이","start":38.173,"end":38.289},{"id":"caption-word-29-1","text":"차액으로","start":38.37,"end":38.962},{"id":"caption-word-29-2","text":"매일","start":39.032,"end":39.253}]},{"id":"caption-group-30","frame":6,"start":39.299,"end":40.518,"text":"한 시간씩 원어민","words":[{"id":"caption-word-30-0","text":"한","start":39.299,"end":39.392},{"id":"caption-word-30-1","text":"시간씩","start":39.438,"end":39.973},{"id":"caption-word-30-2","text":"원어민","start":40.019,"end":40.449}]},{"id":"caption-group-31","frame":6,"start":40.518,"end":42.283,"text":"튜터를 붙여줘도 1년에 만","words":[{"id":"caption-word-31-0","text":"튜터를","start":40.518,"end":40.89},{"id":"caption-word-31-1","text":"붙여줘도","start":40.913,"end":41.517},{"id":"caption-word-31-2","text":"1년에","start":41.633,"end":42.039},{"id":"caption-word-31-3","text":"만","start":42.086,"end":42.236}]},{"id":"caption-group-32","frame":6,"start":42.283,"end":42.643,"text":"달러.","words":[{"id":"caption-word-32-0","text":"달러.","start":42.283,"end":42.596}]},{"id":"caption-group-33","frame":6,"start":42.643,"end":43.785,"text":"오히려 남습니다.","words":[{"id":"caption-word-33-0","text":"오히려","start":42.643,"end":42.956},{"id":"caption-word-33-1","text":"남습니다.","start":42.991,"end":43.665}]},{"id":"caption-group-34","frame":6,"start":43.839,"end":45.232,"text":"처음의 답답한 적응기를","words":[{"id":"caption-word-34-0","text":"처음의","start":43.839,"end":44.152},{"id":"caption-word-34-1","text":"답답한","start":44.175,"end":44.605},{"id":"caption-word-34-2","text":"적응기를","start":44.651,"end":45.174}]},{"id":"caption-group-35","frame":6,"start":45.232,"end":46.265,"text":"훨씬 빨리 넘길","words":[{"id":"caption-word-35-0","text":"훨씬","start":45.232,"end":45.638},{"id":"caption-word-35-1","text":"빨리","start":45.685,"end":45.905},{"id":"caption-word-35-2","text":"넘길","start":45.952,"end":46.23}]},{"id":"caption-group-36","frame":6,"start":46.265,"end":46.838,"text":"수 있죠.","words":[{"id":"caption-word-36-0","text":"수","start":46.265,"end":46.335},{"id":"caption-word-36-1","text":"있죠.","start":46.381,"end":46.718}]},{"id":"caption-group-37","frame":7,"start":47.068,"end":49.518,"text":"여기에 불어까지 자연스럽게 익히는","words":[{"id":"caption-word-37-0","text":"여기에","start":47.068,"end":47.463},{"id":"caption-word-37-1","text":"불어까지","start":47.532,"end":48.055},{"id":"caption-word-37-2","text":"자연스럽게","start":48.09,"end":48.914},{"id":"caption-word-37-3","text":"익히는","start":49.065,"end":49.471}]},{"id":"caption-group-38","frame":7,"start":49.518,"end":50.671,"text":"건 덤이고요.","words":[{"id":"caption-word-38-0","text":"건","start":49.518,"end":49.727},{"id":"caption-word-38-1","text":"덤이고요.","start":49.843,"end":50.551}]},{"id":"caption-group-39","frame":8,"start":50.901,"end":51.423,"text":"영어도,","words":[{"id":"caption-word-39-0","text":"영어도,","start":50.901,"end":51.4}]},{"id":"caption-group-40","frame":8,"start":51.423,"end":52.844,"text":"예산도 챙기고 싶다면","words":[{"id":"caption-word-40-0","text":"예산도","start":51.423,"end":51.772},{"id":"caption-word-40-1","text":"챙기고","start":51.818,"end":52.143},{"id":"caption-word-40-2","text":"싶다면","start":52.19,"end":52.724}]},{"id":"caption-group-41","frame":8,"start":52.875,"end":54.419,"text":"몬트리올도 꼭 알아보세요.","words":[{"id":"caption-word-41-0","text":"몬트리올도","start":52.875,"end":53.478},{"id":"caption-word-41-1","text":"꼭","start":53.513,"end":53.687},{"id":"caption-word-41-2","text":"알아보세요.","start":53.745,"end":54.349}]},{"id":"caption-group-42","frame":8,"start":54.419,"end":56.454,"text":"AA 캐나다가 함께하겠습니다.","words":[{"id":"caption-word-42-0","text":"AA","start":54.419,"end":54.756},{"id":"caption-word-42-1","text":"캐나다가","start":54.825,"end":55.22},{"id":"caption-word-42-2","text":"함께하겠습니다.","start":55.243,"end":56.334}]}];
+  var DURATION = 58.334;
+
+  (function () {
+    var stage = document.getElementById("caption-stage");
+
+    // build DOM: one .caption-group per group, .caption-word per word
+    GROUPS.forEach(function (group, g) {
+      var groupEl = document.createElement("div");
+      groupEl.className = "caption-group";
+      groupEl.id = "caption-group-" + g;
+      var pill = document.createElement("div");
+      pill.className = "caption-pill";
+      var line = document.createElement("div");
+      line.className = "caption-line";
+      (group.words || []).forEach(function (w, i) {
+        var span = document.createElement("span");
+        span.className = "caption-word";
+        span.id = "caption-word-" + g + "-" + i;
+        span.textContent = String(w.text);
+        line.appendChild(span);
+      });
+      pill.appendChild(line);
+      groupEl.appendChild(pill);
+      stage.appendChild(groupEl);
+    });
+
+    window.__timelines = window.__timelines || {};
+    var tl = gsap.timeline({ paused: true });
+
+    GROUPS.forEach(function (group, g) {
+      var groupEl = document.getElementById("caption-group-" + g);
+      var words = group.words || [];
+      var next = GROUPS[g + 1];
+      var isLast = g === GROUPS.length - 1;
+      var start = Math.max(0, Number(group.start));
+      var end = isLast ? DURATION : Math.min(Number(next.start), Number(group.end) + 0.3);
+      if (end <= start) end = start + 0.01;
+
+      // group on/off — exactly one group visible at a time
+      tl.set(groupEl, { opacity: 1 }, start);
+      tl.set(groupEl, { opacity: 0 }, end);
+
+      // 3-state karaoke via className SETS — seek-safe (gsap.set applies on the
+      // engine's frame-by-frame seek; .call callbacks would NOT fire).
+      words.forEach(function (w, i) {
+        var el = document.getElementById("caption-word-" + g + "-" + i);
+        var at = Math.max(start, Number(w.start));
+        tl.set(el, { className: "caption-word" }, start); // upcoming (also resets on reverse-seek)
+        tl.set(el, { className: "caption-word is-active" }, at); // current
+        tl.fromTo(el, { scale: 0.985 }, { scale: 1, duration: 0.18, ease: "power1.out" }, at);
+        if (i + 1 < words.length) {
+          var nextAt = Math.max(start, Number(words[i + 1].start));
+          tl.set(el, { className: "caption-word is-spoken" }, nextAt); // demote when next activates
+        }
+      });
+      if (words.length) {
+        var lastEl = document.getElementById("caption-word-" + g + "-" + (words.length - 1));
+        var lastSpoken = Math.min(end, Number(words[words.length - 1].end) + 0.1);
+        tl.set(lastEl, { className: "caption-word is-spoken" }, lastSpoken);
+      }
+    });
+
+    // full-span anchor so the sub-comp timeline spans the whole video
+    tl.to({}, { duration: DURATION }, 0);
+    window.__timelines["captions"] = tl;
+  })();
+</script>
+
+<style>
+  .caption-line { line-height: 1.1 !important; }
+</style>
+</template>

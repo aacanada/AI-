@@ -1,0 +1,84 @@
+<template>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <style>
+    @font-face{font-family:"Pretendard";font-weight:500;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-500.woff2") format("woff2");}
+    @font-face{font-family:"Pretendard";font-weight:700;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-700.woff2") format("woff2");}
+    @font-face{font-family:"Pretendard";font-weight:800;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-800.woff2") format("woff2");}
+    @font-face{font-family:"Pretendard";font-weight:900;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-900.woff2") format("woff2");}
+
+
+    #root { position:absolute; inset:0; width:1080px; height:1920px; overflow:hidden; font-family:"Pretendard",sans-serif; color:#111; }
+    .bg { position:absolute; inset:0; background:#fdfae7; }
+    .eyebrow { position:absolute; left:80px; top:250px; display:flex; align-items:center; gap:20px; font-size:40px; font-weight:700; color:#1e2bfa; letter-spacing:.04em; }
+    .eyebrow i { display:block; width:60px; height:5px; border-radius:3px; background:#1e2bfa; }
+    .h1 { position:absolute; left:80px; right:80px; font-size:96px; font-weight:800; line-height:1.15; letter-spacing:-.03em; }
+    .h1 em { font-style:normal; color:#1e2bfa; }
+    .card { position:absolute; background:rgba(30,43,250,0.04); border:1.5px solid rgba(30,43,250,0.2); border-radius:14px; }
+    .pill { position:absolute; padding:20px 40px; border-radius:100px; font-size:44px; font-weight:700; white-space:nowrap; }
+    .pill.soft { background:rgba(30,43,250,0.08); color:#1e2bfa; }
+    .pill.solid { background:#1e2bfa; color:#fdfae7; }
+    .num { font-variant-numeric:tabular-nums; }
+
+
+    .f6-title { top:330px; font-size:84px; }
+    .f6-eqs { position:absolute; left:80px; right:80px; top:500px; }
+    .f6-row { display:flex; justify-content:space-between; align-items:baseline; padding:18px 8px; border-bottom:2px solid rgba(30,43,250,0.15); font-size:60px; font-weight:800; }
+    .f6-row span:first-child { color:#6b6b6b; font-size:44px; font-weight:700; }
+    .f6-tot { margin-top:16px; border-bottom:none; }
+    .f6-tot b { font-size:110px; font-weight:900; color:#1e2bfa; letter-spacing:-.03em; }
+    .f6-left { left:80px; top:1060px; }
+    .f6-chart { position:absolute; left:80px; right:80px; top:1180px; height:400px; padding:30px 40px; }
+    .f6-svg { position:absolute; left:40px; top:30px; width:840px; height:340px; }
+    .f6-svg path { fill:none; stroke-width:9; stroke-linecap:round; }
+    .f6-lg { position:absolute; font-size:34px; font-weight:700; }
+
+  </style>
+  <div id="root" data-composition-id="06-tutor" data-start="0" data-duration="9.395" data-width="1080" data-height="1920">
+    <div id="f06-bg" class="bg clip" data-start="0" data-duration="9.395" data-track-index="0"></div>
+
+    <div class="eyebrow" id="f6-eye"><i></i>근거 ④ 매일 원어민 튜터</div>
+    <div class="h1 f6-title" id="f6-title">차액으로 <em>매일 1시간</em></div>
+    <div class="f6-eqs">
+      <div class="f6-row" id="f6-r1"><span>원어민 튜터</span><span class="num">$40 / 시간</span></div>
+      <div class="f6-row" id="f6-r2"><span>매일</span><span>× 주 5회</span></div>
+      <div class="f6-row" id="f6-r3"><span>1년</span><span>× 50주</span></div>
+      <div class="f6-row f6-tot" id="f6-r4"><span>=</span><b class="num">$10,000</b></div>
+    </div>
+    <div class="pill solid f6-left" id="f6-left">그래도 $4,000+ 남아요</div>
+    <div class="card f6-chart" id="f6-chart">
+      <svg class="f6-svg" viewBox="0 0 840 340">
+        <path id="f6-slow" d="M10 320 C 300 315, 420 300, 560 220 S 760 60, 830 40" stroke="#c9c9d6"/>
+        <path id="f6-fast" d="M10 320 C 120 300, 200 200, 330 130 S 650 40, 830 20" stroke="#1e2bfa"/>
+      </svg>
+      <div class="f6-lg" id="f6-lg1" style="left:600px; top:300px; color:#9a9a9a">혼자 적응</div>
+      <div class="f6-lg" id="f6-lg2" style="left:40px; top:20px; color:#1e2bfa">튜터와 함께 → 적응기 단축</div>
+    </div>
+
+  </div>
+  <script>
+    (function(){
+      const tl = gsap.timeline({ paused: true });
+      const $ = (id) => document.getElementById(id);
+      const count = (id, to, at, d, fmt) => {
+        const el = $(id), st = { v: 0 };
+        tl.to(st, { v: to, duration: d, ease: "power2.out", onUpdate: () => { el.textContent = fmt(Math.round(st.v)); } }, at);
+      };
+
+      tl.fromTo("#f6-eye", {opacity:0, x:-40}, {opacity:1, x:0, duration:0.4, ease:"power3.out"}, 0.0);
+      tl.fromTo("#f6-title", {opacity:0, y:50}, {opacity:1, y:0, duration:0.5, ease:"power3.out"}, 0.6);
+      tl.fromTo("#f6-r1", {opacity:0, x:60}, {opacity:1, x:0, duration:0.4, ease:"power3.out"}, 1.8);
+      tl.fromTo("#f6-r2", {opacity:0, x:60}, {opacity:1, x:0, duration:0.4, ease:"power3.out"}, 2.3);
+      tl.fromTo("#f6-r3", {opacity:0, x:60}, {opacity:1, x:0, duration:0.4, ease:"power3.out"}, 2.8);
+      tl.fromTo("#f6-r4", {opacity:0, scale:0.8}, {opacity:1, scale:1, duration:0.45, ease:"back.out(1.8)", transformOrigin:"100% 50%"}, 3.45);
+      tl.fromTo("#f6-left", {opacity:0, y:30, scale:0.9}, {opacity:1, y:0, scale:1, duration:0.45, ease:"back.out(1.8)"}, 4.45);
+      tl.fromTo("#f6-chart", {opacity:0, y:50}, {opacity:1, y:0, duration:0.45, ease:"power3.out"}, 5.5);
+      const slow = $("f6-slow"), fast = $("f6-fast"); slow.style.strokeDasharray = 1100; fast.style.strokeDasharray = 1100;
+      tl.fromTo(slow, {strokeDashoffset:1100}, {strokeDashoffset:0, duration:1.4, ease:"power1.inOut"}, 5.8);
+      tl.fromTo("#f6-lg1", {opacity:0}, {opacity:1, duration:0.3}, 6.6);
+      tl.fromTo(fast, {strokeDashoffset:1100}, {strokeDashoffset:0, duration:1.0, ease:"power2.out"}, 7.0);
+      tl.fromTo("#f6-lg2", {opacity:0, y:10}, {opacity:1, y:0, duration:0.3}, 7.5);
+
+      window.__timelines["06-tutor"] = tl;
+    })();
+  </script>
+</template>

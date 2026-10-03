@@ -1,0 +1,63 @@
+<template>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <style>
+    @font-face{font-family:"Pretendard";font-weight:500;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-500.woff2") format("woff2");}
+    @font-face{font-family:"Pretendard";font-weight:700;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-700.woff2") format("woff2");}
+    @font-face{font-family:"Pretendard";font-weight:800;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-800.woff2") format("woff2");}
+    @font-face{font-family:"Pretendard";font-weight:900;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-900.woff2") format("woff2");}
+
+
+    #root { position:absolute; inset:0; width:1080px; height:1920px; overflow:hidden; font-family:"Pretendard",sans-serif; color:#111; }
+    .bg { position:absolute; inset:0; background:#fdfae7; }
+    .eyebrow { position:absolute; left:80px; top:250px; display:flex; align-items:center; gap:20px; font-size:40px; font-weight:700; color:#1e2bfa; letter-spacing:.04em; }
+    .eyebrow i { display:block; width:60px; height:5px; border-radius:3px; background:#1e2bfa; }
+    .h1 { position:absolute; left:80px; right:80px; font-size:96px; font-weight:800; line-height:1.15; letter-spacing:-.03em; }
+    .h1 em { font-style:normal; color:#1e2bfa; }
+    .card { position:absolute; background:rgba(30,43,250,0.04); border:1.5px solid rgba(30,43,250,0.2); border-radius:14px; }
+    .pill { position:absolute; padding:20px 40px; border-radius:100px; font-size:44px; font-weight:700; white-space:nowrap; }
+    .pill.soft { background:rgba(30,43,250,0.08); color:#1e2bfa; }
+    .pill.solid { background:#1e2bfa; color:#fdfae7; }
+    .num { font-variant-numeric:tabular-nums; }
+
+
+    .f7-tag { left:80px; top:330px; }
+    .f7-row { position:absolute; left:80px; right:80px; height:220px; padding:0 56px; display:flex; align-items:center; justify-content:space-between; font-size:104px; font-weight:900; letter-spacing:-.03em; }
+    .f7-row b { width:140px; height:140px; border-radius:50%; background:#1e2bfa; color:#fdfae7; display:flex; align-items:center; justify-content:center; font-size:84px; }
+    .f7-r1 { top:520px; } .f7-r2 { top:860px; }
+    .f7-plus { position:absolute; left:0; right:0; top:745px; text-align:center; font-size:96px; font-weight:900; color:#1e2bfa; }
+    .f7-sum { position:absolute; left:80px; right:80px; top:1190px; text-align:center; font-size:96px; font-weight:900; }
+    .f7-ul { position:absolute; left:260px; right:260px; top:1320px; height:14px; border-radius:7px; background:#1e2bfa; transform-origin:0 50%; }
+
+  </style>
+  <div id="root" data-composition-id="07-bilingual" data-start="0" data-duration="4.333" data-width="1080" data-height="1920">
+    <div id="f07-bg" class="bg clip" data-start="0" data-duration="4.333" data-track-index="0"></div>
+
+    <div class="pill soft f7-tag" id="f7-tag">🎁 보너스</div>
+    <div class="card f7-row f7-r1" id="f7-r1"><span>English</span><b>✓</b></div>
+    <div class="f7-plus" id="f7-plus">+</div>
+    <div class="card f7-row f7-r2" id="f7-r2"><span>Français</span><b>✓</b></div>
+    <div class="f7-sum" id="f7-sum">= <span style="color:#1e2bfa">바이링구얼</span></div>
+    <div class="f7-ul" id="f7-ul"></div>
+
+  </div>
+  <script>
+    (function(){
+      const tl = gsap.timeline({ paused: true });
+      const $ = (id) => document.getElementById(id);
+      const count = (id, to, at, d, fmt) => {
+        const el = $(id), st = { v: 0 };
+        tl.to(st, { v: to, duration: d, ease: "power2.out", onUpdate: () => { el.textContent = fmt(Math.round(st.v)); } }, at);
+      };
+
+      tl.fromTo("#f7-tag", {opacity:0, y:30}, {opacity:1, y:0, duration:0.4, ease:"power3.out"}, 0.0);
+      tl.fromTo("#f7-r1", {opacity:0, x:-80}, {opacity:1, x:0, duration:0.45, ease:"power3.out"}, 0.1);
+      tl.fromTo("#f7-plus", {opacity:0, scale:0.3}, {opacity:1, scale:1, duration:0.35, ease:"back.out(2)"}, 0.45);
+      tl.fromTo("#f7-r2", {opacity:0, x:80}, {opacity:1, x:0, duration:0.45, ease:"power3.out"}, 0.6);
+      tl.fromTo("#f7-r2 b", {scale:2, opacity:0}, {scale:1, opacity:1, duration:0.35, ease:"back.out(2)"}, 1.0);
+      tl.fromTo("#f7-sum", {opacity:0, y:40}, {opacity:1, y:0, duration:0.45, ease:"power3.out"}, 2.3);
+      tl.fromTo("#f7-ul", {scaleX:0}, {scaleX:1, duration:0.5, ease:"power2.out"}, 2.75);
+
+      window.__timelines["07-bilingual"] = tl;
+    })();
+  </script>
+</template>
