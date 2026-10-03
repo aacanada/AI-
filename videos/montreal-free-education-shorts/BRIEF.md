@@ -7,7 +7,7 @@ destination: youtube-shorts
 aspect: 1080x1920
 language: ko
 audience: "자녀 동반 캐나다 유학/무상교육을 알아보는 한국 학부모 (불어권이라는 이유로 몬트리올을 배제하는 사람들)"
-length: 45s
+length: 50s
 angle: listicle
 vo_mode: restructured
 ---

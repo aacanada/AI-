@@ -1,0 +1,65 @@
+<template>
+<style>
+@font-face{font-family:'Pretendard';src:url('assets/fonts/Pretendard-Regular.woff2') format('woff2');font-weight:400;font-style:normal;}@font-face{font-family:'Pretendard';src:url('assets/fonts/Pretendard-SemiBold.woff2') format('woff2');font-weight:600;font-style:normal;}@font-face{font-family:'Pretendard';src:url('assets/fonts/Pretendard-Bold.woff2') format('woff2');font-weight:700;font-style:normal;}@font-face{font-family:'Pretendard';src:url('assets/fonts/Pretendard-ExtraBold.woff2') format('woff2');font-weight:800;font-style:normal;}@font-face{font-family:'Pretendard';src:url('assets/fonts/Pretendard-Black.woff2') format('woff2');font-weight:900;font-style:normal;}
+#root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Pretendard',sans-serif;color:#111111;}
+.f02-bg{position:absolute;inset:0;background:#fdfae7;}
+.f02-abs{position:absolute;}
+.f02-eyebrow{position:absolute;left:60px;top:120px;font-size:34px;font-weight:700;letter-spacing:0.08em;color:#1e2bfa;}
+.f02-tag{position:absolute;right:60px;top:108px;padding:12px 28px;border-radius:100px;background:rgba(30,43,250,0.08);color:#1e2bfa;font-size:30px;font-weight:700;}
+.f02-track{position:absolute;left:60px;right:60px;top:1556px;height:6px;border-radius:6px;background:rgba(30,43,250,0.08);}
+.f02-fill{position:absolute;left:0;top:0;height:6px;border-radius:6px;background:#1e2bfa;transform-origin:left center;}
+.f02-card{position:absolute;background:rgba(30,43,250,0.04);border:1.5px solid rgba(30,43,250,0.2);border-radius:14px;}
+.f02-pill{position:absolute;border-radius:100px;background:#1e2bfa;color:#fdfae7;font-weight:800;white-space:nowrap;}
+.f02-num{position:absolute;left:60px;top:170px;font-size:190px;line-height:1;font-weight:900;color:#1e2bfa;letter-spacing:-0.04em;}
+.f02-num-eyebrow{position:absolute;left:330px;top:200px;font-size:40px;font-weight:700;letter-spacing:0.06em;color:#1e2bfa;}
+.f02-num-sub{position:absolute;left:330px;top:258px;font-size:34px;font-weight:600;color:#6b6b6b;}
+.f02-title{position:absolute;left:60px;right:60px;top:400px;font-size:92px;line-height:1.1;font-weight:900;letter-spacing:-0.02em;}
+.f02-w{display:inline-block;}
+
+
+#f02-cardA{left:60px;right:60px;top:300px;height:400px;}
+#f02-a1{position:absolute;left:0;right:0;top:70px;text-align:center;font-size:150px;line-height:1;font-weight:900;color:#1e2bfa;letter-spacing:-0.03em;}
+#f02-a2{position:absolute;left:0;right:0;top:240px;text-align:center;font-size:104px;line-height:1;font-weight:800;}
+#f02-arrow{position:absolute;left:490px;top:722px;width:100px;height:120px;}
+#f02-cardB{left:60px;right:60px;top:862px;height:400px;}
+#f02-b1{position:absolute;left:0;right:0;top:66px;text-align:center;font-size:66px;font-weight:700;color:#6b6b6b;}
+#f02-b2wrap{position:absolute;left:0;right:0;top:190px;display:flex;justify-content:center;}
+#f02-b2{position:relative;font-size:120px;line-height:1.1;font-weight:900;letter-spacing:-0.02em;}
+#f02-hl{position:absolute;left:-6px;top:54%;width:calc(4em + 12px);height:36%;background:rgba(30,43,250,0.15);border-radius:8px;transform-origin:left center;}
+#f02-b2t{position:relative;}
+#f02-badge{left:50%;top:1340px;margin-left:-420px;width:840px;height:130px;line-height:130px;text-align:center;font-size:58px;}
+
+</style>
+<div id="root" data-composition-id="02-thesis" data-width="1080" data-height="1920" data-duration="7.152">
+<div class="clip f02-bg" id="f02-bg" data-start="0" data-duration="7.152" data-track-index="0"></div>
+<div class="f02-eyebrow" id="f02-eyebrow">WHY MONTRÉAL</div><div class="f02-tag" id="f02-tag">AA Canada</div><div class="f02-track"><div class="f02-fill" id="f02-fill" style="width:28.571%"></div></div>
+<div class="f02-card" id="f02-cardA"><div id="f02-a1">캐나다 2위</div><div id="f02-a2">대도시</div></div>
+<svg id="f02-arrow" viewBox="0 0 100 120"><path id="f02-arrowp" d="M50 6 V100 M18 70 L50 104 L82 70" fill="none" stroke="#1e2bfa" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<div class="f02-card" id="f02-cardB"><div id="f02-b1">그런데 생활비는</div><div id="f02-b2wrap"><div id="f02-b2"><div id="f02-hl"></div><span id="f02-b2t">중소도시 수준</span></div></div></div>
+<div class="f02-pill" id="f02-badge">자녀 무상교육 가성비 No.1</div>
+</div>
+<script>
+(function(){
+const tl = gsap.timeline({ paused: true });
+const fmt = (v) => String(Math.round(v)).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+tl.fromTo("#f02-fill",{scaleX:0.5000},{scaleX:1,duration:0.8,ease:"power3.out"},0.1);
+
+tl.fromTo("#f02-eyebrow",{opacity:0,x:-30},{opacity:1,x:0,duration:0.5,ease:"power3.out"},0);
+tl.fromTo("#f02-tag",{opacity:0},{opacity:1,duration:0.5},0);
+tl.fromTo("#f02-cardA",{y:120,opacity:0},{y:0,opacity:1,duration:0.6,ease:"power3.out"},0.05);
+tl.fromTo("#f02-a1",{y:40,opacity:0},{y:0,opacity:1,duration:0.5,ease:"power3.out"},0.95);
+tl.fromTo("#f02-a2",{y:40,opacity:0},{y:0,opacity:1,duration:0.5,ease:"power3.out"},1.75);
+const ap = document.getElementById("f02-arrowp"); const al = 230;
+ap.style.strokeDasharray = al;
+tl.fromTo(ap,{strokeDashoffset:al},{strokeDashoffset:0,duration:0.6,ease:"power2.inOut"},2.1);
+tl.fromTo("#f02-cardB",{y:120,opacity:0},{y:0,opacity:1,duration:0.6,ease:"power3.out"},2.35);
+tl.fromTo("#f02-b1",{y:30,opacity:0},{y:0,opacity:1,duration:0.45,ease:"power3.out"},2.5);
+tl.fromTo("#f02-b2",{y:40,opacity:0},{y:0,opacity:1,duration:0.5,ease:"power3.out"},2.95);
+tl.fromTo("#f02-hl",{scaleX:0},{scaleX:1,duration:0.6,ease:"power2.inOut"},3.35);
+tl.fromTo("#f02-badge",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.5,ease:"back.out(1.5)"},5.35);
+
+window.__timelines["02-thesis"] = tl;
+})();
+</script>
+</template>

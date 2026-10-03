@@ -1,0 +1,68 @@
+<template>
+<style>
+@font-face{font-family:'Pretendard';src:url('assets/fonts/Pretendard-Regular.woff2') format('woff2');font-weight:400;font-style:normal;}@font-face{font-family:'Pretendard';src:url('assets/fonts/Pretendard-SemiBold.woff2') format('woff2');font-weight:600;font-style:normal;}@font-face{font-family:'Pretendard';src:url('assets/fonts/Pretendard-Bold.woff2') format('woff2');font-weight:700;font-style:normal;}@font-face{font-family:'Pretendard';src:url('assets/fonts/Pretendard-ExtraBold.woff2') format('woff2');font-weight:800;font-style:normal;}@font-face{font-family:'Pretendard';src:url('assets/fonts/Pretendard-Black.woff2') format('woff2');font-weight:900;font-style:normal;}
+#root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Pretendard',sans-serif;color:#111111;}
+.f03-bg{position:absolute;inset:0;background:#fdfae7;}
+.f03-abs{position:absolute;}
+.f03-eyebrow{position:absolute;left:60px;top:120px;font-size:34px;font-weight:700;letter-spacing:0.08em;color:#1e2bfa;}
+.f03-tag{position:absolute;right:60px;top:108px;padding:12px 28px;border-radius:100px;background:rgba(30,43,250,0.08);color:#1e2bfa;font-size:30px;font-weight:700;}
+.f03-track{position:absolute;left:60px;right:60px;top:1556px;height:6px;border-radius:6px;background:rgba(30,43,250,0.08);}
+.f03-fill{position:absolute;left:0;top:0;height:6px;border-radius:6px;background:#1e2bfa;transform-origin:left center;}
+.f03-card{position:absolute;background:rgba(30,43,250,0.04);border:1.5px solid rgba(30,43,250,0.2);border-radius:14px;}
+.f03-pill{position:absolute;border-radius:100px;background:#1e2bfa;color:#fdfae7;font-weight:800;white-space:nowrap;}
+.f03-num{position:absolute;left:60px;top:170px;font-size:190px;line-height:1;font-weight:900;color:#1e2bfa;letter-spacing:-0.04em;}
+.f03-num-eyebrow{position:absolute;left:330px;top:200px;font-size:40px;font-weight:700;letter-spacing:0.06em;color:#1e2bfa;}
+.f03-num-sub{position:absolute;left:330px;top:258px;font-size:34px;font-weight:600;color:#6b6b6b;}
+.f03-title{position:absolute;left:60px;right:60px;top:400px;font-size:92px;line-height:1.1;font-weight:900;letter-spacing:-0.02em;}
+.f03-w{display:inline-block;}
+
+
+#f03-parent{left:60px;right:60px;top:560px;height:190px;}
+#f03-child{left:60px;right:60px;top:880px;height:170px;}
+.f03-nodelabel{position:absolute;left:40px;top:0;height:100%;display:flex;align-items:center;gap:20px;font-size:60px;font-weight:900;}
+.f03-ico{width:84px;height:84px;border-radius:50%;background:rgba(30,43,250,0.08);display:flex;align-items:center;justify-content:center;}
+.f03-chips{position:absolute;right:30px;top:0;height:100%;display:flex;flex-direction:column;justify-content:center;gap:14px;}
+.f03-chip{padding:10px 30px;border-radius:100px;background:rgba(30,43,250,0.08);color:#1e2bfa;font-size:44px;font-weight:800;text-align:center;}
+#f03-arrow{position:absolute;left:500px;top:758px;width:80px;height:118px;}
+#f03-free{right:30px;top:42px;height:86px;line-height:86px;padding:0 36px;font-size:46px;}
+.f03-ben{left:60px;right:60px;height:118px;display:flex;align-items:center;gap:28px;padding-left:34px;font-size:56px;font-weight:800;}
+.f03-step{width:64px;height:64px;border-radius:50%;background:#1e2bfa;display:flex;align-items:center;justify-content:center;flex:none;}
+
+</style>
+<div id="root" data-composition-id="03-college" data-width="1080" data-height="1920" data-duration="10.774">
+<div class="clip f03-bg" id="f03-bg" data-start="0" data-duration="10.774" data-track-index="0"></div>
+<div class="f03-tag" id="f03-tag">AA Canada</div><div class="f03-track"><div class="f03-fill" id="f03-fill" style="width:42.857%"></div></div>
+<div class="f03-num" id="f03-num">01</div><div class="f03-num-eyebrow" id="f03-ne">장점 ①</div><div class="f03-num-sub" id="f03-ns">부모 학교 등록</div><div class="f03-title" id="f03-title"><span class="f03-w f03-t-w">자녀</span> <span class="f03-w f03-t-w">공립</span> <span class="f03-w f03-t-w">무상교육</span></div>
+<div class="f03-card" id="f03-parent"><div class="f03-nodelabel"><div class="f03-ico"><svg viewBox="0 0 48 48" width="52" height="52"><circle cx="24" cy="16" r="9" fill="#1e2bfa"/><path d="M8 44c0-9 7-15 16-15s16 6 16 15z" fill="#1e2bfa"/></svg></div>부모</div>
+<div class="f03-chips"><div class="f03-chip" id="f03-c1">사설어학원</div><div class="f03-chip" id="f03-c2">사립컬리지</div></div></div>
+<svg id="f03-arrow" viewBox="0 0 80 118"><path id="f03-arrowp" d="M40 6 V100 M14 74 L40 104 L66 74" fill="none" stroke="#1e2bfa" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<div class="f03-card" id="f03-child"><div class="f03-nodelabel"><div class="f03-ico"><svg viewBox="0 0 48 48" width="46" height="46"><circle cx="24" cy="18" r="8" fill="#1e2bfa"/><path d="M12 44c0-7 5-12 12-12s12 5 12 12z" fill="#1e2bfa"/></svg></div>자녀</div><div class="f03-pill" id="f03-free">공립학교 무상교육</div></div>
+<div class="f03-card f03-ben" id="f03-b0" style="top:1090px"><div class="f03-step"><svg viewBox="0 0 40 40" width="40" height="40"><path d="M10 21 L17 28 L30 13" fill="none" stroke="#fdfae7" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>학비 저렴</div><div class="f03-card f03-ben" id="f03-b1" style="top:1240px"><div class="f03-step"><svg viewBox="0 0 40 40" width="40" height="40"><path d="M10 21 L17 28 L30 13" fill="none" stroke="#fdfae7" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>학업 부담 적당</div><div class="f03-card f03-ben" id="f03-b2" style="top:1390px"><div class="f03-step"><svg viewBox="0 0 40 40" width="40" height="40"><path d="M10 21 L17 28 L30 13" fill="none" stroke="#fdfae7" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>등하교 케어 OK</div>
+</div>
+<script>
+(function(){
+const tl = gsap.timeline({ paused: true });
+const fmt = (v) => String(Math.round(v)).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+tl.fromTo("#f03-fill",{scaleX:0.6667},{scaleX:1,duration:0.8,ease:"power3.out"},0.1);
+
+tl.fromTo("#f03-tag",{opacity:0},{opacity:1,duration:0.4},0);
+tl.fromTo("#f03-num",{y:80,opacity:0},{y:0,opacity:1,duration:0.55,ease:"power3.out"},0);
+tl.fromTo(["#f03-ne","#f03-ns"],{x:-30,opacity:0},{x:0,opacity:1,duration:0.45,stagger:0.12,ease:"power3.out"},0.15);
+tl.fromTo(".f03-t-w",{y:50,opacity:0},{y:0,opacity:1,duration:0.45,stagger:0.18,ease:"power3.out"},0.35);
+
+tl.fromTo("#f03-parent",{y:80,opacity:0},{y:0,opacity:1,duration:0.55,ease:"power3.out"},1.0);
+tl.fromTo("#f03-c1",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.4,ease:"back.out(1.6)"},1.2);
+tl.fromTo("#f03-c2",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.4,ease:"back.out(1.6)"},2.2);
+const ap = document.getElementById("f03-arrowp"); ap.style.strokeDasharray = 220;
+tl.fromTo(ap,{strokeDashoffset:220},{strokeDashoffset:0,duration:0.55,ease:"power2.inOut"},3.5);
+tl.fromTo("#f03-child",{y:80,opacity:0},{y:0,opacity:1,duration:0.55,ease:"power3.out"},3.8);
+tl.fromTo("#f03-free",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.45,ease:"back.out(1.5)"},4.5);
+tl.fromTo("#f03-b0",{x:-120,opacity:0},{x:0,opacity:1,duration:0.5,ease:"power3.out"},5.75);
+tl.fromTo("#f03-b1",{x:-120,opacity:0},{x:0,opacity:1,duration:0.5,ease:"power3.out"},7.15);
+tl.fromTo("#f03-b2",{x:-120,opacity:0},{x:0,opacity:1,duration:0.5,ease:"power3.out"},8.85);
+
+window.__timelines["03-college"] = tl;
+})();
+</script>
+</template>

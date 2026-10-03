@@ -1,0 +1,55 @@
+<template>
+<style>
+@font-face{font-family:'Pretendard';src:url('assets/fonts/Pretendard-Regular.woff2') format('woff2');font-weight:400;font-style:normal;}@font-face{font-family:'Pretendard';src:url('assets/fonts/Pretendard-SemiBold.woff2') format('woff2');font-weight:600;font-style:normal;}@font-face{font-family:'Pretendard';src:url('assets/fonts/Pretendard-Bold.woff2') format('woff2');font-weight:700;font-style:normal;}@font-face{font-family:'Pretendard';src:url('assets/fonts/Pretendard-ExtraBold.woff2') format('woff2');font-weight:800;font-style:normal;}@font-face{font-family:'Pretendard';src:url('assets/fonts/Pretendard-Black.woff2') format('woff2');font-weight:900;font-style:normal;}
+#root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Pretendard',sans-serif;color:#111111;}
+.f07-bg{position:absolute;inset:0;background:#fdfae7;}
+.f07-abs{position:absolute;}
+.f07-eyebrow{position:absolute;left:60px;top:120px;font-size:34px;font-weight:700;letter-spacing:0.08em;color:#1e2bfa;}
+.f07-tag{position:absolute;right:60px;top:108px;padding:12px 28px;border-radius:100px;background:rgba(30,43,250,0.08);color:#1e2bfa;font-size:30px;font-weight:700;}
+.f07-track{position:absolute;left:60px;right:60px;top:1556px;height:6px;border-radius:6px;background:rgba(30,43,250,0.08);}
+.f07-fill{position:absolute;left:0;top:0;height:6px;border-radius:6px;background:#1e2bfa;transform-origin:left center;}
+.f07-card{position:absolute;background:rgba(30,43,250,0.04);border:1.5px solid rgba(30,43,250,0.2);border-radius:14px;}
+.f07-pill{position:absolute;border-radius:100px;background:#1e2bfa;color:#fdfae7;font-weight:800;white-space:nowrap;}
+.f07-num{position:absolute;left:60px;top:170px;font-size:190px;line-height:1;font-weight:900;color:#1e2bfa;letter-spacing:-0.04em;}
+.f07-num-eyebrow{position:absolute;left:330px;top:200px;font-size:40px;font-weight:700;letter-spacing:0.06em;color:#1e2bfa;}
+.f07-num-sub{position:absolute;left:330px;top:258px;font-size:34px;font-weight:600;color:#6b6b6b;}
+.f07-title{position:absolute;left:60px;right:60px;top:400px;font-size:92px;line-height:1.1;font-weight:900;letter-spacing:-0.02em;}
+.f07-w{display:inline-block;}
+
+
+.f07-band{position:absolute;left:-10%;bottom:0;width:120%;height:420px;background:rgba(30,43,250,0.08);clip-path:polygon(0 45%,100% 0,100% 100%,0 100%);}
+.f07-dots{position:absolute;left:70px;top:170px;width:120px;height:120px;background-image:radial-gradient(rgba(30,43,250,0.15) 7px,transparent 8px);background-size:40px 40px;}
+#f07-line{position:absolute;left:510px;top:580px;width:60px;height:4px;border-radius:2px;background:#1e2bfa;}
+#f07-mark{position:absolute;left:0;right:0;top:630px;text-align:center;font-size:172px;line-height:1.1;font-weight:900;letter-spacing:-0.03em;white-space:nowrap;}
+.f07-ch{display:inline-block;}
+.f07-aa{color:#1e2bfa;}
+#f07-sub{position:absolute;left:0;right:0;top:860px;text-align:center;font-size:58px;font-weight:700;color:#6b6b6b;}
+#f07-cta{left:50%;top:1010px;margin-left:-410px;width:820px;height:128px;line-height:128px;text-align:center;font-size:52px;}
+
+</style>
+<div id="root" data-composition-id="07-cta" data-width="1080" data-height="1920" data-duration="3.715">
+<div class="clip f07-bg" id="f07-bg" data-start="0" data-duration="3.715" data-track-index="0"></div>
+<div class="f07-band"></div><div class="f07-dots"></div>
+<div id="f07-line"></div><div id="f07-mark"><span class="f07-ch f07-aa">A</span><span class="f07-ch f07-aa">A</span><span class="f07-ch">&nbsp;</span><span class="f07-ch">C</span><span class="f07-ch">a</span><span class="f07-ch">n</span><span class="f07-ch">a</span><span class="f07-ch">d</span><span class="f07-ch">a</span></div>
+<div id="f07-sub">몬트리올 자녀무상교육 전문</div>
+<div class="f07-pill" id="f07-cta">프로필 링크에서 상담 신청 →</div>
+<div class="f07-track"><div class="f07-fill" id="f07-fill" style="width:100.000%"></div></div>
+</div>
+<script>
+(function(){
+const tl = gsap.timeline({ paused: true });
+const fmt = (v) => String(Math.round(v)).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+tl.fromTo("#f07-fill",{scaleX:0.8571},{scaleX:1,duration:0.8,ease:"power3.out"},0.1);
+
+tl.fromTo("#f07-line",{scaleX:0},{scaleX:1,duration:0.5,ease:"power3.out"},0);
+tl.fromTo(".f07-ch",{y:90,opacity:0,rotation:8},{y:0,opacity:1,rotation:0,duration:0.5,stagger:0.06,ease:"power3.out"},0.05);
+tl.fromTo("#f07-sub",{y:30,opacity:0},{y:0,opacity:1,duration:0.5,ease:"power3.out"},0.7);
+tl.fromTo("#f07-cta",{scale:0.7,opacity:0},{scale:1,opacity:1,duration:0.45,ease:"back.out(1.5)"},1.3);
+tl.to("#f07-cta",{scale:0.95,duration:0.12,ease:"power2.in"},2.8);
+tl.to("#f07-cta",{scale:1,duration:0.35,ease:"back.out(2)"},2.92);
+
+window.__timelines["07-cta"] = tl;
+})();
+</script>
+</template>
