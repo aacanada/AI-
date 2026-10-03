@@ -1,7 +1,7 @@
 # SCRIPT — montreal-free-education-shorts
 
-**Voice:** ElevenLabs multilingual v2 (Korean), warm female
-**Voice settings:** stability 0.45 · similarity 0.75 · style 0.25
+**Voice:** ElevenLabs "네 번째" (사용자 본인 클론 보이스, 9qtE9eIaqHMUAfRp4QTW) · eleven_multilingual_v2
+**Voice settings:** 클론 기본값
 **Voice direction:** 밝고 신뢰감 있는 상담사 톤. 쇼츠답게 빠르지만 또박또박.
 
 ---
@@ -25,7 +25,7 @@
 **Time:** 12.0 – 22.0s
 **Delivery:** 세 가지 혜택을 리듬 있게 끊어서.
 
-    첫째, 부모님이 사립컬리지를 다니면, 동반 자녀는 공립학교 무상교육. 학비는 저렴하고, 학업 부담은 적당하고, 아이 등하교 챙기기도 좋아요.
+    첫째, 부모님이 사설어학원이나 사립컬리지를 다니면, 동반 자녀는 공립학교 무상교육. 학비는 저렴하고, 학업 부담은 적당하고, 아이 등하교 챙기기도 좋아요.
 
 ## Line 4 — 둘째 (Frame 4)
 
