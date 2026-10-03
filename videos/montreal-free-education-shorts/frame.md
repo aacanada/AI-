@@ -11,15 +11,15 @@ unit: the frame — 1920×1080 primary; 9:16 and 1:1 documented
 principle: atoms are sacred · composition is free · numbers come from the script
 
 colors:
-  bg: "#fdfae7"
-  primary: "#1e2bfa"
-  text: "#111111"
-  text-muted: "#6b6b6b"
-  text-light: "#9a9a9a"
-  accent-light: "rgba(30,43,250,0.08)"
-  accent-medium: "rgba(30,43,250,0.15)"
-  border: "rgba(30,43,250,0.2)"
-  card-bg: "rgba(30,43,250,0.04)"
+  bg: "#0e1a3a"
+  primary: "#ffc531"
+  text: "#ffffff"
+  text-muted: "#b8c0d9"
+  text-light: "#8d97b5"
+  accent-light: "rgba(255,197,49,0.14)"
+  accent-medium: "rgba(255,197,49,0.30)"
+  border: "rgba(255,255,255,0.18)"
+  card-bg: "rgba(255,255,255,0.06)"
   positive: "#059669"
   negative: "#dc2626"
 
@@ -111,6 +111,8 @@ components:
 ---
 
 # Blue Professional — Frame (video / frame layer)
+
+## Theme override (2026-10-03): user chose "Navy + Gold" — navy #0e1a3a ground, gold #ffc531 single accent, white headlines. Frontmatter colors updated accordingly.
 
 ## Brand adaptation (READ FIRST — the frontmatter is the source of truth)
 

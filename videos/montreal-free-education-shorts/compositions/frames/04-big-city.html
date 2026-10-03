@@ -1,48 +1,48 @@
 <template>
 <style>
 @font-face{font-family:'Pretendard';src:url('assets/fonts/Pretendard-Regular.woff2') format('woff2');font-weight:400;font-style:normal;}@font-face{font-family:'Pretendard';src:url('assets/fonts/Pretendard-SemiBold.woff2') format('woff2');font-weight:600;font-style:normal;}@font-face{font-family:'Pretendard';src:url('assets/fonts/Pretendard-Bold.woff2') format('woff2');font-weight:700;font-style:normal;}@font-face{font-family:'Pretendard';src:url('assets/fonts/Pretendard-ExtraBold.woff2') format('woff2');font-weight:800;font-style:normal;}@font-face{font-family:'Pretendard';src:url('assets/fonts/Pretendard-Black.woff2') format('woff2');font-weight:900;font-style:normal;}
-#root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Pretendard',sans-serif;color:#111111;}
-.f04-bg{position:absolute;inset:0;background:#fdfae7;}
+#root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Pretendard',sans-serif;color:#ffffff;}
+.f04-bg{position:absolute;inset:0;background:#0e1a3a;}
 .f04-abs{position:absolute;}
-.f04-eyebrow{position:absolute;left:60px;top:120px;font-size:34px;font-weight:700;letter-spacing:0.08em;color:#1e2bfa;}
-.f04-tag{position:absolute;right:60px;top:108px;padding:12px 28px;border-radius:100px;background:rgba(30,43,250,0.08);color:#1e2bfa;font-size:30px;font-weight:700;}
-.f04-track{position:absolute;left:60px;right:60px;top:1556px;height:6px;border-radius:6px;background:rgba(30,43,250,0.08);}
-.f04-fill{position:absolute;left:0;top:0;height:6px;border-radius:6px;background:#1e2bfa;transform-origin:left center;}
-.f04-card{position:absolute;background:rgba(30,43,250,0.04);border:1.5px solid rgba(30,43,250,0.2);border-radius:14px;}
-.f04-pill{position:absolute;border-radius:100px;background:#1e2bfa;color:#fdfae7;font-weight:800;white-space:nowrap;}
-.f04-num{position:absolute;left:60px;top:170px;font-size:190px;line-height:1;font-weight:900;color:#1e2bfa;letter-spacing:-0.04em;}
-.f04-num-eyebrow{position:absolute;left:330px;top:200px;font-size:40px;font-weight:700;letter-spacing:0.06em;color:#1e2bfa;}
-.f04-num-sub{position:absolute;left:330px;top:258px;font-size:34px;font-weight:600;color:#6b6b6b;}
+.f04-eyebrow{position:absolute;left:60px;top:120px;font-size:34px;font-weight:700;letter-spacing:0.08em;color:#ffc531;}
+.f04-tag{position:absolute;right:60px;top:108px;padding:12px 28px;border-radius:100px;background:rgba(255,197,49,0.14);color:#ffc531;font-size:30px;font-weight:700;}
+.f04-track{position:absolute;left:60px;right:60px;top:1556px;height:6px;border-radius:6px;background:rgba(255,197,49,0.14);}
+.f04-fill{position:absolute;left:0;top:0;height:6px;border-radius:6px;background:#ffc531;transform-origin:left center;}
+.f04-card{position:absolute;background:rgba(255,255,255,0.06);border:1.5px solid rgba(255,255,255,0.18);border-radius:14px;}
+.f04-pill{position:absolute;border-radius:100px;background:#ffc531;color:#0e1a3a;font-weight:800;white-space:nowrap;}
+.f04-num{position:absolute;left:60px;top:170px;font-size:190px;line-height:1;font-weight:900;color:#ffc531;letter-spacing:-0.04em;}
+.f04-num-eyebrow{position:absolute;left:330px;top:200px;font-size:40px;font-weight:700;letter-spacing:0.06em;color:#ffc531;}
+.f04-num-sub{position:absolute;left:330px;top:258px;font-size:34px;font-weight:600;color:#b8c0d9;}
 .f04-title{position:absolute;left:60px;right:60px;top:400px;font-size:92px;line-height:1.1;font-weight:900;letter-spacing:-0.02em;}
 .f04-w{display:inline-block;}
 
 
-#f04-win{position:absolute;left:40px;top:520px;width:1000px;height:750px;overflow:hidden;border-radius:14px;border:1.5px solid rgba(30,43,250,0.2);background:#fff;}
+#f04-win{position:absolute;left:40px;top:520px;width:1000px;height:750px;overflow:hidden;border-radius:14px;border:1.5px solid rgba(255,255,255,0.18);background:#fff;}
 #f04-stage{position:absolute;left:0;top:0;width:1081px;height:608px;transform-origin:0 0;}
 #f04-img{position:absolute;left:0;top:0;width:1081px;height:608px;display:block;}
 .f04-dim{position:absolute;background:#ffffff;}
 #f04-hl{position:absolute;left:0;top:0;width:1081px;height:608px;overflow:visible;}
 #f04-rank{left:870px;top:540px;height:64px;line-height:64px;padding:0 26px;font-size:38px;}
 #f04-statwrap{position:absolute;left:60px;right:60px;top:1278px;height:130px;display:flex;align-items:baseline;justify-content:center;gap:20px;}
-#f04-statlab{font-size:50px;font-weight:800;color:#6b6b6b;}
-#f04-stat{display:inline-block;font-size:128px;line-height:1;font-weight:900;color:#1e2bfa;font-variant-numeric:tabular-nums;transform-origin:center bottom;}
-#f04-statu{font-size:72px;font-weight:900;color:#1e2bfa;}
+#f04-statlab{font-size:50px;font-weight:800;color:#b8c0d9;}
+#f04-stat{display:inline-block;font-size:128px;line-height:1;font-weight:900;color:#ffc531;font-variant-numeric:tabular-nums;transform-origin:center bottom;}
+#f04-statu{font-size:72px;font-weight:900;color:#ffc531;}
 .f04-chip{top:1420px;width:300px;height:116px;display:flex;align-items:center;justify-content:center;gap:14px;font-size:42px;font-weight:800;}
 
 </style>
-<div id="root" data-composition-id="04-big-city" data-width="1080" data-height="1920" data-duration="9.009">
-<div class="clip f04-bg" id="f04-bg" data-start="0" data-duration="9.009" data-track-index="0"></div>
+<div id="root" data-composition-id="04-big-city" data-width="1080" data-height="1920" data-duration="9.509">
+<div class="clip f04-bg" id="f04-bg" data-start="0" data-duration="9.509" data-track-index="0"></div>
 <div class="f04-tag" id="f04-tag">AA Canada</div><div class="f04-track"><div class="f04-fill" id="f04-fill" style="width:57.143%"></div></div>
 <div class="f04-num" id="f04-num">02</div><div class="f04-num-eyebrow" id="f04-ne">장점 ②</div><div class="f04-num-sub" id="f04-ns">도시별 인구 (천 명)</div><div class="f04-title" id="f04-title"><span class="f04-w f04-t-w">캐나다</span> <span class="f04-w f04-t-w">2위</span> <span class="f04-w f04-t-w">대도시</span></div>
 <div id="f04-win"><div id="f04-stage">
 <img id="f04-img" src="assets/images/population-chart.png" alt="캐나다 주요 도시별 인구"/>
 <div class="f04-dim" id="f04-dimA" style="left:0;top:0;width:1081px;height:64px"></div>
 <div class="f04-dim" id="f04-dimB" style="left:0;top:112px;width:1081px;height:496px"></div>
-<svg id="f04-hl" viewBox="0 0 1081 608"><rect id="f04-hlr" x="322" y="64" width="578" height="48" rx="12" fill="none" stroke="#1e2bfa" stroke-width="5"/></svg>
+<svg id="f04-hl" viewBox="0 0 1081 608"><rect id="f04-hlr" x="322" y="64" width="578" height="48" rx="12" fill="none" stroke="#ffc531" stroke-width="5"/></svg>
 </div></div>
 <div class="f04-pill" id="f04-rank">2위</div>
 <div id="f04-statwrap"><span id="f04-statlab">인구 약</span><span id="f04-stat">0</span><span id="f04-statu">만</span></div>
-<div class="f04-card f04-chip" id="f04-ch0" style="left:60px"><svg viewBox="0 0 48 48" width="52" height="52"><path d="M4 18 L24 8 L44 18 L24 28 Z" fill="#1e2bfa"/><path d="M12 23 V33 C12 37 36 37 36 33 V23 L24 29 Z" fill="#1e2bfa" opacity="0.7"/></svg>교육수준</div><div class="f04-card f04-chip" id="f04-ch1" style="left:390px"><svg viewBox="0 0 48 48" width="52" height="52"><path d="M6 10 H12 L17 32 H38 L42 16 H14" fill="none" stroke="#1e2bfa" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="19" cy="40" r="3.5" fill="#1e2bfa"/><circle cx="35" cy="40" r="3.5" fill="#1e2bfa"/></svg>생활편의</div><div class="f04-card f04-chip" id="f04-ch2" style="left:720px"><svg viewBox="0 0 48 48" width="52" height="52"><path d="M18 34 V10 L40 6 V30" fill="none" stroke="#1e2bfa" stroke-width="4.5" stroke-linejoin="round"/><ellipse cx="13" cy="35" rx="6" ry="5" fill="#1e2bfa"/><ellipse cx="35" cy="31" rx="6" ry="5" fill="#1e2bfa"/></svg>문화환경</div>
+<div class="f04-card f04-chip" id="f04-ch0" style="left:60px"><svg viewBox="0 0 48 48" width="52" height="52"><path d="M4 18 L24 8 L44 18 L24 28 Z" fill="#ffc531"/><path d="M12 23 V33 C12 37 36 37 36 33 V23 L24 29 Z" fill="#ffc531" opacity="0.7"/></svg>교육수준</div><div class="f04-card f04-chip" id="f04-ch1" style="left:390px"><svg viewBox="0 0 48 48" width="52" height="52"><path d="M6 10 H12 L17 32 H38 L42 16 H14" fill="none" stroke="#ffc531" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="19" cy="40" r="3.5" fill="#ffc531"/><circle cx="35" cy="40" r="3.5" fill="#ffc531"/></svg>생활편의</div><div class="f04-card f04-chip" id="f04-ch2" style="left:720px"><svg viewBox="0 0 48 48" width="52" height="52"><path d="M18 34 V10 L40 6 V30" fill="none" stroke="#ffc531" stroke-width="4.5" stroke-linejoin="round"/><ellipse cx="13" cy="35" rx="6" ry="5" fill="#ffc531"/><ellipse cx="35" cy="31" rx="6" ry="5" fill="#ffc531"/></svg>문화환경</div>
 </div>
 <script>
 (function(){

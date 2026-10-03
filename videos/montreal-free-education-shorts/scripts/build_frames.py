@@ -10,8 +10,8 @@ FONTS = "".join(
     f"@font-face{{font-family:'Pretendard';src:url('assets/fonts/Pretendard-{n}.woff2') format('woff2');font-weight:{w};font-style:normal;}}"
     for n, w in [("Regular", 400), ("SemiBold", 600), ("Bold", 700), ("ExtraBold", 800), ("Black", 900)]
 )
-C = dict(bg="#fdfae7", p="#1e2bfa", t="#111111", m="#6b6b6b", l="#8a8a8a",
-         al="rgba(30,43,250,0.08)", am="rgba(30,43,250,0.15)", bd="rgba(30,43,250,0.2)", cb="rgba(30,43,250,0.04)")
+C = dict(bg="#0e1a3a", p="#ffc531", t="#ffffff", m="#b8c0d9", l="#8d97b5",
+         al="rgba(255,197,49,0.14)", am="rgba(255,197,49,0.30)", bd="rgba(255,255,255,0.18)", cb="rgba(255,255,255,0.06)")
 import json
 if os.environ.get("THEME"):
     C.update(json.loads(os.environ["THEME"]))
@@ -273,8 +273,8 @@ html = f"""{chrome(px,5)}
 <div id="{px}-win"><div id="{px}-stage">
 <img id="{px}-img" src="assets/images/statcan-rent-2026q2.jpg" alt="Statistics Canada 2베드룸 평균 렌트 2026년 2분기"/>
 <svg id="{px}-rings" viewBox="0 0 1054 1349">
-<rect id="{px}-r-van" x="20" y="758" width="204" height="128" rx="18" fill="none" stroke="{C['t']}" stroke-width="6"/>
-<rect id="{px}-r-tor" x="793" y="963" width="204" height="128" rx="18" fill="none" stroke="{C['t']}" stroke-width="6"/>
+<rect id="{px}-r-van" x="20" y="758" width="204" height="128" rx="18" fill="none" stroke="#0e1a3a" stroke-width="6"/>
+<rect id="{px}-r-tor" x="793" y="963" width="204" height="128" rx="18" fill="none" stroke="#0e1a3a" stroke-width="6"/>
 <rect id="{px}-r-mtlg" x="540" y="690" width="220" height="144" rx="22" fill="{C['am']}" stroke="none"/>
 <rect id="{px}-r-mtl" x="548" y="698" width="204" height="128" rx="18" fill="none" stroke="{C['p']}" stroke-width="9"/>
 </svg>

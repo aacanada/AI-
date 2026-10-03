@@ -1,41 +1,41 @@
 <template>
 <style>
 @font-face{font-family:'Pretendard';src:url('assets/fonts/Pretendard-Regular.woff2') format('woff2');font-weight:400;font-style:normal;}@font-face{font-family:'Pretendard';src:url('assets/fonts/Pretendard-SemiBold.woff2') format('woff2');font-weight:600;font-style:normal;}@font-face{font-family:'Pretendard';src:url('assets/fonts/Pretendard-Bold.woff2') format('woff2');font-weight:700;font-style:normal;}@font-face{font-family:'Pretendard';src:url('assets/fonts/Pretendard-ExtraBold.woff2') format('woff2');font-weight:800;font-style:normal;}@font-face{font-family:'Pretendard';src:url('assets/fonts/Pretendard-Black.woff2') format('woff2');font-weight:900;font-style:normal;}
-#root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Pretendard',sans-serif;color:#111111;}
-.f05-bg{position:absolute;inset:0;background:#fdfae7;}
+#root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Pretendard',sans-serif;color:#ffffff;}
+.f05-bg{position:absolute;inset:0;background:#0e1a3a;}
 .f05-abs{position:absolute;}
-.f05-eyebrow{position:absolute;left:60px;top:120px;font-size:34px;font-weight:700;letter-spacing:0.08em;color:#1e2bfa;}
-.f05-tag{position:absolute;right:60px;top:108px;padding:12px 28px;border-radius:100px;background:rgba(30,43,250,0.08);color:#1e2bfa;font-size:30px;font-weight:700;}
-.f05-track{position:absolute;left:60px;right:60px;top:1556px;height:6px;border-radius:6px;background:rgba(30,43,250,0.08);}
-.f05-fill{position:absolute;left:0;top:0;height:6px;border-radius:6px;background:#1e2bfa;transform-origin:left center;}
-.f05-card{position:absolute;background:rgba(30,43,250,0.04);border:1.5px solid rgba(30,43,250,0.2);border-radius:14px;}
-.f05-pill{position:absolute;border-radius:100px;background:#1e2bfa;color:#fdfae7;font-weight:800;white-space:nowrap;}
-.f05-num{position:absolute;left:60px;top:170px;font-size:190px;line-height:1;font-weight:900;color:#1e2bfa;letter-spacing:-0.04em;}
-.f05-num-eyebrow{position:absolute;left:330px;top:200px;font-size:40px;font-weight:700;letter-spacing:0.06em;color:#1e2bfa;}
-.f05-num-sub{position:absolute;left:330px;top:258px;font-size:34px;font-weight:600;color:#6b6b6b;}
+.f05-eyebrow{position:absolute;left:60px;top:120px;font-size:34px;font-weight:700;letter-spacing:0.08em;color:#ffc531;}
+.f05-tag{position:absolute;right:60px;top:108px;padding:12px 28px;border-radius:100px;background:rgba(255,197,49,0.14);color:#ffc531;font-size:30px;font-weight:700;}
+.f05-track{position:absolute;left:60px;right:60px;top:1556px;height:6px;border-radius:6px;background:rgba(255,197,49,0.14);}
+.f05-fill{position:absolute;left:0;top:0;height:6px;border-radius:6px;background:#ffc531;transform-origin:left center;}
+.f05-card{position:absolute;background:rgba(255,255,255,0.06);border:1.5px solid rgba(255,255,255,0.18);border-radius:14px;}
+.f05-pill{position:absolute;border-radius:100px;background:#ffc531;color:#0e1a3a;font-weight:800;white-space:nowrap;}
+.f05-num{position:absolute;left:60px;top:170px;font-size:190px;line-height:1;font-weight:900;color:#ffc531;letter-spacing:-0.04em;}
+.f05-num-eyebrow{position:absolute;left:330px;top:200px;font-size:40px;font-weight:700;letter-spacing:0.06em;color:#ffc531;}
+.f05-num-sub{position:absolute;left:330px;top:258px;font-size:34px;font-weight:600;color:#b8c0d9;}
 .f05-title{position:absolute;left:60px;right:60px;top:400px;font-size:92px;line-height:1.1;font-weight:900;letter-spacing:-0.02em;}
 .f05-w{display:inline-block;}
 
 
-#f05-win{position:absolute;left:60px;top:500px;width:960px;height:900px;overflow:hidden;border-radius:14px;border:1.5px solid rgba(30,43,250,0.2);background:#f2f2f2;}
+#f05-win{position:absolute;left:60px;top:500px;width:960px;height:900px;overflow:hidden;border-radius:14px;border:1.5px solid rgba(255,255,255,0.18);background:#f2f2f2;}
 #f05-stage{position:absolute;left:0;top:0;width:1054px;height:1349px;transform-origin:0 0;}
 #f05-img{position:absolute;left:0;top:0;width:1054px;height:1349px;display:block;}
 #f05-rings{position:absolute;left:0;top:0;width:1054px;height:1349px;overflow:visible;}
 #f05-badge{left:50%;top:1424px;margin-left:-440px;width:880px;height:112px;line-height:112px;text-align:center;font-size:52px;}
-#f05-ns{color:#6b6b6b;}
+#f05-ns{color:#b8c0d9;}
 
 </style>
-<div id="root" data-composition-id="05-rent" data-width="1080" data-height="1920" data-duration="10.449">
-<div class="clip f05-bg" id="f05-bg" data-start="0" data-duration="10.449" data-track-index="0"></div>
+<div id="root" data-composition-id="05-rent" data-width="1080" data-height="1920" data-duration="10.949">
+<div class="clip f05-bg" id="f05-bg" data-start="0" data-duration="10.949" data-track-index="0"></div>
 <div class="f05-tag" id="f05-tag">AA Canada</div><div class="f05-track"><div class="f05-fill" id="f05-fill" style="width:71.429%"></div></div>
 <div class="f05-num" id="f05-num">03</div><div class="f05-num-eyebrow" id="f05-ne">장점 ③</div><div class="f05-num-sub" id="f05-ns">출처: Statistics Canada · 2026년 2분기</div><div class="f05-title" id="f05-title"><span class="f05-w f05-t-w">가성비</span></div>
 <div id="f05-win"><div id="f05-stage">
 <img id="f05-img" src="assets/images/statcan-rent-2026q2.jpg" alt="Statistics Canada 2베드룸 평균 렌트 2026년 2분기"/>
 <svg id="f05-rings" viewBox="0 0 1054 1349">
-<rect id="f05-r-van" x="20" y="758" width="204" height="128" rx="18" fill="none" stroke="#111111" stroke-width="6"/>
-<rect id="f05-r-tor" x="793" y="963" width="204" height="128" rx="18" fill="none" stroke="#111111" stroke-width="6"/>
-<rect id="f05-r-mtlg" x="540" y="690" width="220" height="144" rx="22" fill="rgba(30,43,250,0.15)" stroke="none"/>
-<rect id="f05-r-mtl" x="548" y="698" width="204" height="128" rx="18" fill="none" stroke="#1e2bfa" stroke-width="9"/>
+<rect id="f05-r-van" x="20" y="758" width="204" height="128" rx="18" fill="none" stroke="#0e1a3a" stroke-width="6"/>
+<rect id="f05-r-tor" x="793" y="963" width="204" height="128" rx="18" fill="none" stroke="#0e1a3a" stroke-width="6"/>
+<rect id="f05-r-mtlg" x="540" y="690" width="220" height="144" rx="22" fill="rgba(255,197,49,0.30)" stroke="none"/>
+<rect id="f05-r-mtl" x="548" y="698" width="204" height="128" rx="18" fill="none" stroke="#ffc531" stroke-width="9"/>
 </svg>
 </div></div>
 <div class="f05-pill" id="f05-badge">3대 대도시 중 압도적으로 저렴</div>
