@@ -18,7 +18,7 @@ music: none
 ## Frame 1 — 훅: 걱정 짚기
 
 - scene: 큰 타이포 "몬트리올 = 불어권?" — 물음표가 흔들린다
-- duration: 3.794s
+- duration: 4.03s
 - transition_in: cut
 - status: animated
 - voiceover: "몬트리올은 불어권이라, 우리 아이 영어가 안 늘면 어떡하죠?"
@@ -32,7 +32,7 @@ Scene 1 (0.0–0.8s): eyebrow "학부모님들의 걱정" + "몬트리올" slams
 ## Frame 2 — 반전
 
 - scene: "결론부터: 영어, 충분히 늘어요" — 체크 마크 스탬프
-- duration: 6.116s
+- duration: 6.76s
 - transition_in: push-slide UP
 - status: animated
 - voiceover: "상담하면서 정말 많이 듣는 질문인데요. 결론부터 말씀드리면, 영어 충분히 늘 수 있습니다."
@@ -46,7 +46,7 @@ Scene 1 (0.0–2.4s): tag "상담 질문 1위" + small Montreal skyline line-art
 ## Frame 3 — 핵심: 수업 중 친구들과 100% 영어
 
 - scene: 한국 교실(선생님→학생 일방향) vs 캐나다 교실(학생끼리 영어 대화) → "수업 중 친구들과의 소통 100% English" → "이게 영어가 느는 핵심"
-- duration: 14.421s
+- duration: 15.86s
 - transition_in: crossfade
 - status: animated
 - voiceover: "캐나다 수업은 한국처럼 선생님 설명만 듣는 게 아니에요. 짝 활동, 모둠 토론, 발표까지, 수업 내내 친구들과 계속 이야기해야 하죠. 영어 학교에서는 이 소통이 100% 영어예요. 바로 이게, 아이 영어가 느는 핵심입니다."
@@ -60,7 +60,7 @@ Scene 1 (0.0–3.7s): eyebrow "근거 ① 수업 시간" + "캐나다 수업 = �
 ## Frame 4 — 근거②: 수업도 80% 영어
 
 - scene: 실제 시간표 → "불어는 하루 1시간" → "전체 수업 중 영어 80%"
-- duration: 5.319s
+- duration: 5.91s
 - transition_in: push-slide LEFT
 - status: animated
 - voiceover: "시간표를 봐도 불어는 하루 한 시간뿐이고, 전체 수업의 80%를 영어로 배웁니다."
@@ -74,7 +74,7 @@ Scene 1 (0.0–2.6s): timetable card rises, slow zoom; callout on "불어는". �
 ## Frame 5 — 근거③: 학비 차이
 
 - scene: 막대 비교 온타리오 대학부설 ~$20,000 vs 몬트리올 사립컬리지 $12,000 → "1년 차액 $8,000"
-- duration: 8.059s
+- duration: 9.49s
 - transition_in: crossfade
 - status: animated
 - voiceover: "게다가 부모님 학비는 온타리오 대학부설이 1년에 약 2만 달러, 몬트리올 사립컬리지는 만 2천 달러. 1년에 8천 달러나 차이가 나요."
@@ -88,7 +88,7 @@ Scene 1: Ontario bar grows, "$20,000" on "2만 달러". → Scene 2: Montreal ba
 ## Frame 6 — 근거④: 원어민 튜터
 
 - scene: "$40/시간 × 4회 × 50주 = $8,000" → "학비 차액만으로 OK" → 적응기 단축 곡선
-- duration: 9.406s
+- duration: 10.21s
 - transition_in: push-slide LEFT
 - status: animated
 - voiceover: "이 차액이면 시간당 40달러 원어민 튜터를 일주일에 네 번, 1년 내내 붙여줄 수 있어요. 처음의 답답한 적응기를 훨씬 빨리 넘길 수 있죠."
@@ -102,7 +102,7 @@ Scene 1: rows on "시간당" / "일주일에" / "1년". → Scene 2: "= $8,000" 
 ## Frame 7 — CTA
 
 - scene: AA Canada · 카카오톡 canlog · 02-567-4345 · 선착순 안내
-- duration: 7.712s
+- duration: 7.862s
 - transition_in: crossfade
 - status: animated
 - voiceover: "영어도, 예산도 챙기고 싶다면 몬트리올도 꼭 알아보세요. AA캐나다가 함께하겠습니다."

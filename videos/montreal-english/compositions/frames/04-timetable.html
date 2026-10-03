@@ -34,8 +34,8 @@
     .f4-keys { display:flex; justify-content:space-between; margin-top:16px; font-size:36px; font-weight:700; }
 
   </style>
-  <div id="root" data-composition-id="04-timetable" data-start="0" data-duration="5.819" data-width="1080" data-height="1920">
-    <div id="f04-bg" class="bg clip" data-start="0" data-duration="5.819" data-track-index="0"></div>
+  <div id="root" data-composition-id="04-timetable" data-start="0" data-duration="5.91" data-width="1080" data-height="1920">
+    <div id="f04-bg" class="bg clip" data-start="0" data-duration="5.91" data-track-index="0"></div>
     <div class="sh-stage" id="f04-stage">
 
       <div class="eyebrow" id="f4-eye"><i></i>근거 ② 시간표</div>
@@ -64,12 +64,12 @@
       tl.fromTo("#f4-title", {opacity:0, y:50}, {opacity:1, y:0, duration:0.5, ease:"power3.out"}, 0.1);
       tl.fromTo("#f4-wrap", {opacity:0, y:120}, {opacity:1, y:0, duration:0.55, ease:"power3.out"}, 0.2);
       tl.fromTo("#f4-img", {scale:1}, {scale:1.3, duration:2.2, ease:"power1.inOut"}, 0.6);
-      tl.fromTo("#f4-call", {opacity:0, scale:0.5}, {opacity:1, scale:1, duration:0.4, ease:"back.out(2)"}, 0.77);
-      tl.fromTo("#f4-res", {opacity:0, y:80}, {opacity:1, y:0, duration:0.5, ease:"power3.out"}, 2.53);
-      tl.to(["#f4-wrap","#f4-call"], {opacity:0, duration:0.4}, 2.53);
-      count("f4-n", 80, 3.11, 0.8, (n) => n + "%");
-      tl.fromTo("#f4-fill", {scaleX:0}, {scaleX:1, duration:0.8, ease:"power2.out"}, 3.11);
-      tl.fromTo("#f4-fr", {opacity:0}, {opacity:1, duration:0.3}, 4.14);
+      tl.fromTo("#f4-call", {opacity:0, scale:0.5}, {opacity:1, scale:1, duration:0.4, ease:"back.out(2)"}, 1.34);
+      tl.fromTo("#f4-res", {opacity:0, y:80}, {opacity:1, y:0, duration:0.5, ease:"power3.out"}, 2.96);
+      tl.to(["#f4-wrap","#f4-call"], {opacity:0, duration:0.4}, 2.96);
+      count("f4-n", 80, 3.84, 0.8, (n) => n + "%");
+      tl.fromTo("#f4-fill", {scaleX:0}, {scaleX:1, duration:0.8, ease:"power2.out"}, 3.84);
+      tl.fromTo("#f4-fr", {opacity:0}, {opacity:1, duration:0.3}, 4.62);
 
       window.__timelines["04-timetable"] = tl;
     })();

@@ -11,7 +11,7 @@ Timing comes from ElevenLabs speech-to-text on the actual audio, mapped back ont
 SCRIPT.md wording, so captions show the script spelling even if the voice ad-libbed.
 A whole-script recording is cut into per-line clips at the silences between lines.
 
-  python3 import_audio.py --project videos/<slug> [--ids …|--file …] [--dry-run]
+  python3 import_audio.py --project videos/<slug> [--ids …|--file …] [--speed 1.1] [--dry-run]
 """
 import argparse, os, sys, tempfile
 sys.path.insert(0, os.path.dirname(__file__))
@@ -21,6 +21,7 @@ ap = argparse.ArgumentParser()
 ap.add_argument("--project", required=True)
 ap.add_argument("--ids", default="")
 ap.add_argument("--file", default="")
+ap.add_argument("--speed", type=float, default=1.0, help="tempo change, pitch kept (e.g. 1.1 = 10%% faster)")
 ap.add_argument("--dry-run", action="store_true", help="only report which history items would be used")
 a = ap.parse_args()
 
@@ -37,27 +38,33 @@ def sim_line(item_text, line_text):
 
 
 def pick_from_history():
-    """→ ("lines", {frame: item}) or ("full", item). Newest matching take wins."""
+    """→ ("full", item) or ("lines", {frame: item}).
+
+    A whole-script take wins: that is what the user makes on the website (per-line takes are
+    usually our own API retakes). Newest whole-script take first; per-line only when there is none.
+    """
     hist = V.history()  # newest first
     full = [h for h in hist if sim_line(h["text"], full_text) >= 0.8]
+    if full:
+        for other in full[1:3]:
+            print(f"  (older whole-script take: {other['history_item_id']} · {other.get('model_id')})")
+        return "full", full[0]
     per = {}
     for l in lines:
         for h in hist:
             if sim_line(h["text"], l["text"]) >= 0.85:
                 per[l["frame"]] = h
                 break
-    if len(per) == len(lines) and (not full or max(h["date_unix"] for h in per.values()) >= full[0]["date_unix"]):
+    if len(per) == len(lines):
         return "lines", per
-    if full:
-        return "full", full[0]
     missing = [l["frame"] for l in lines if l["frame"] not in per]
-    raise SystemExit(f"✗ no history match for line(s) {missing} and no whole-script take — "
+    raise SystemExit(f"✗ no whole-script take and no history match for line(s) {missing} — "
                      "generate them on the ElevenLabs site, or pass --ids / --file")
 
 
 def import_line(frame, src, text):
     wav = os.path.join(proj, f"assets/voice/{frame:02d}.wav")
-    V.to_wav(src, wav, pad=V.pad_for(frame, frames))
+    V.to_wav(src, wav, pad=V.pad_for(frame, frames), speed=a.speed)
     heard_text, heard = V.stt(wav)
     words = V.align_words(text, heard)
     print(f"✓ line {frame}: {V.ffprobe_duration(wav):.2f}s | heard: {heard_text}")
@@ -67,6 +74,10 @@ def import_line(frame, src, text):
 
 def import_full(src):
     """Cut one whole-script recording into per-line clips at the gaps between lines."""
+    if a.speed != 1.0:
+        fast = os.path.join(tmpdir, "full_speed.wav")
+        V.to_wav(src, fast, speed=a.speed)
+        src = fast
     heard_text, heard = V.stt(src)
     words = V.align_words(full_text, heard)
     total = V.ffprobe_duration(src)
@@ -117,7 +128,7 @@ else:
             h = pick[l["frame"]]
             print(f"  line {l['frame']} ← {h['history_item_id']} ({h.get('voice_name','?')}) {h['text'][:40]}")
     else:
-        print(f"  whole script ← {pick['history_item_id']} ({pick.get('voice_name','?')}) {pick['text'][:40]}…")
+        print(f"  whole script ← {pick['history_item_id']} ({pick.get('model_id','?')}) {pick['text'][:40]}…")
     if a.dry_run:
         sys.exit(0)
     if mode == "lines":

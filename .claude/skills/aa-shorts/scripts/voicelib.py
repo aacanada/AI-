@@ -91,13 +91,14 @@ def ffprobe_duration(path):
     return float(r.stdout)
 
 
-def to_wav(src, dst, pad=0.0, start=None, end=None):
+def to_wav(src, dst, pad=0.0, start=None, end=None, speed=1.0):
     cmd = ["ffmpeg", "-y", "-loglevel", "error"]
     if start is not None:
         cmd += ["-ss", f"{start:.3f}"]
     if end is not None:
         cmd += ["-to", f"{end:.3f}"]
-    cmd += ["-i", src, "-af", f"apad=pad_dur={pad}", "-ar", "44100", "-ac", "1", dst]
+    af = (f"atempo={speed}," if speed != 1.0 else "") + f"apad=pad_dur={pad}"
+    cmd += ["-i", src, "-af", af, "-ar", "44100", "-ac", "1", dst]
     subprocess.run(cmd, check=True)
 
 
@@ -143,8 +144,16 @@ def stt(path):
 def history(page_size=100):
     r = requests.get(f"{API}/history", params={"page_size": page_size}, headers={"xi-api-key": key()}, timeout=60)
     r.raise_for_status()
-    # only text-to-speech takes carry script text (dubbing / STS items have none)
-    return [h for h in r.json()["history"] if h.get("text")]
+    out = []
+    for h in r.json()["history"]:
+        if not h.get("text") and h.get("source") == "TTS":
+            # eleven_v4 takes made on the website leave `text` empty; recover it from the alignment
+            d = requests.get(f"{API}/history/{h['history_item_id']}", headers={"xi-api-key": key()}, timeout=60).json()
+            al = (d.get("alignments") or {}).get("alignment") or {}
+            h["text"] = re.sub(r"\s+", " ", "".join(al.get("characters", []))).strip()
+        if h.get("text"):
+            out.append(h)
+    return out
 
 
 def history_audio(item_id, dst):

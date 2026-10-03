@@ -1,887 +1,833 @@
 {
-  "total_duration_s": 54.827,
+  "total_duration_s": 60.122,
   "width": 1080,
   "height": 1920,
   "groups": [
     {
       "id": "caption-group-0",
       "frame": 1,
-      "start": 0,
-      "end": 1.614,
+      "start": 0.14,
+      "end": 1.68,
       "text": "몬트리올은 불어권이라,",
       "words": [
         {
           "id": "caption-word-0-0",
           "text": "몬트리올은",
-          "start": 0,
-          "end": 0.906
+          "start": 0.14,
+          "end": 0.6
         },
         {
           "id": "caption-word-0-1",
           "text": "불어권이라,",
-          "start": 0.964,
-          "end": 1.591
+          "start": 0.74,
+          "end": 1.6
         }
       ]
     },
     {
       "id": "caption-group-1",
       "frame": 1,
-      "start": 1.614,
-      "end": 1.985,
+      "start": 1.68,
+      "end": 2.1,
       "text": "우리 아이",
       "words": [
         {
           "id": "caption-word-1-0",
           "text": "우리",
-          "start": 1.614,
-          "end": 1.765
+          "start": 1.68,
+          "end": 1.8
         },
         {
           "id": "caption-word-1-1",
           "text": "아이",
-          "start": 1.823,
-          "end": 1.939
+          "start": 1.86,
+          "end": 1.98
         }
       ]
     },
     {
       "id": "caption-group-2",
       "frame": 1,
-      "start": 1.985,
-      "end": 2.508,
+      "start": 2.12,
+      "end": 2.5,
       "text": "영어가 안",
       "words": [
         {
           "id": "caption-word-2-0",
           "text": "영어가",
-          "start": 1.985,
-          "end": 2.345
+          "start": 2.12,
+          "end": 2.3
         },
         {
           "id": "caption-word-2-1",
           "text": "안",
-          "start": 2.38,
-          "end": 2.45
+          "start": 2.4,
+          "end": 2.42
         }
       ]
     },
     {
       "id": "caption-group-3",
       "frame": 1,
-      "start": 2.508,
-      "end": 3.464,
+      "start": 2.5,
+      "end": 3.42,
       "text": "늘면 어떡하죠?",
       "words": [
         {
           "id": "caption-word-3-0",
           "text": "늘면",
-          "start": 2.508,
-          "end": 2.798
+          "start": 2.5,
+          "end": 2.64
         },
         {
           "id": "caption-word-3-1",
           "text": "어떡하죠?",
-          "start": 2.844,
-          "end": 3.344
+          "start": 2.7,
+          "end": 3.3
         }
       ]
     },
     {
       "id": "caption-group-4",
       "frame": 2,
-      "start": 3.794,
-      "end": 5.582,
-      "text": "상담하면서 정말 많이 듣는",
+      "start": 4.31,
+      "end": 5.01,
+      "text": "상담하면서",
       "words": [
         {
           "id": "caption-word-4-0",
           "text": "상담하면서",
-          "start": 3.794,
-          "end": 4.642
-        },
-        {
-          "id": "caption-word-4-1",
-          "text": "정말",
-          "start": 4.688,
-          "end": 4.967
-        },
-        {
-          "id": "caption-word-4-2",
-          "text": "많이",
-          "start": 5.013,
-          "end": 5.222
-        },
-        {
-          "id": "caption-word-4-3",
-          "text": "듣는",
-          "start": 5.268,
-          "end": 5.524
+          "start": 4.31,
+          "end": 4.89
         }
       ]
     },
     {
       "id": "caption-group-5",
       "frame": 2,
-      "start": 5.582,
-      "end": 6.468,
-      "text": "질문인데요.",
+      "start": 5.15,
+      "end": 5.67,
+      "text": "정말 많이",
       "words": [
         {
           "id": "caption-word-5-0",
-          "text": "질문인데요.",
-          "start": 5.582,
-          "end": 6.348
+          "text": "정말",
+          "start": 5.15,
+          "end": 5.35
+        },
+        {
+          "id": "caption-word-5-1",
+          "text": "많이",
+          "start": 5.49,
+          "end": 5.59
         }
       ]
     },
     {
       "id": "caption-group-6",
       "frame": 2,
-      "start": 6.557,
-      "end": 7.799,
-      "text": "결론부터 말씀드리면,",
+      "start": 5.67,
+      "end": 6.65,
+      "text": "듣는 질문인데요.",
       "words": [
         {
           "id": "caption-word-6-0",
-          "text": "결론부터",
-          "start": 6.557,
-          "end": 6.964
+          "text": "듣는",
+          "start": 5.67,
+          "end": 5.85
         },
         {
           "id": "caption-word-6-1",
-          "text": "말씀드리면,",
-          "start": 6.987,
-          "end": 7.765
+          "text": "질문인데요.",
+          "start": 5.97,
+          "end": 6.53
         }
       ]
     },
     {
       "id": "caption-group-7",
       "frame": 2,
-      "start": 7.799,
-      "end": 8.542,
-      "text": "영어 충분히",
+      "start": 7.13,
+      "end": 8.49,
+      "text": "결론부터 말씀드리면,",
       "words": [
         {
           "id": "caption-word-7-0",
-          "text": "영어",
-          "start": 7.799,
-          "end": 8.043
+          "text": "결론부터",
+          "start": 7.13,
+          "end": 7.43
         },
         {
           "id": "caption-word-7-1",
-          "text": "충분히",
-          "start": 8.101,
-          "end": 8.484
+          "text": "말씀드리면,",
+          "start": 7.55,
+          "end": 8.37
         }
       ]
     },
     {
       "id": "caption-group-8",
       "frame": 2,
-      "start": 8.542,
-      "end": 9.58,
-      "text": "늘 수 있습니다.",
+      "start": 8.55,
+      "end": 8.87,
+      "text": "영어",
       "words": [
         {
           "id": "caption-word-8-0",
-          "text": "늘",
-          "start": 8.542,
-          "end": 8.682
-        },
-        {
-          "id": "caption-word-8-1",
-          "text": "수",
-          "start": 8.751,
-          "end": 8.821
-        },
-        {
-          "id": "caption-word-8-2",
-          "text": "있습니다.",
-          "start": 8.856,
-          "end": 9.46
+          "text": "영어",
+          "start": 8.55,
+          "end": 8.75
         }
       ]
     },
     {
       "id": "caption-group-9",
-      "frame": 3,
-      "start": 9.91,
-      "end": 11.466,
-      "text": "캐나다 수업은 한국처럼",
+      "frame": 2,
+      "start": 9.03,
+      "end": 9.51,
+      "text": "충분히 늘",
       "words": [
         {
           "id": "caption-word-9-0",
-          "text": "캐나다",
-          "start": 9.91,
-          "end": 10.293
+          "text": "충분히",
+          "start": 9.03,
+          "end": 9.31
         },
         {
           "id": "caption-word-9-1",
-          "text": "수업은",
-          "start": 10.363,
-          "end": 10.769
-        },
-        {
-          "id": "caption-word-9-2",
-          "text": "한국처럼",
-          "start": 10.839,
-          "end": 11.408
+          "text": "늘",
+          "start": 9.41,
+          "end": 9.45
         }
       ]
     },
     {
       "id": "caption-group-10",
-      "frame": 3,
-      "start": 11.466,
-      "end": 12.685,
-      "text": "선생님 설명만 듣는",
+      "frame": 2,
+      "start": 9.51,
+      "end": 10.13,
+      "text": "수 있습니다.",
       "words": [
         {
           "id": "caption-word-10-0",
-          "text": "선생님",
-          "start": 11.466,
-          "end": 11.849
+          "text": "수",
+          "start": 9.51,
+          "end": 9.55
         },
         {
           "id": "caption-word-10-1",
-          "text": "설명만",
-          "start": 11.895,
-          "end": 12.348
-        },
-        {
-          "id": "caption-word-10-2",
-          "text": "듣는",
-          "start": 12.406,
-          "end": 12.627
+          "text": "있습니다.",
+          "start": 9.65,
+          "end": 10.01
         }
       ]
     },
     {
       "id": "caption-group-11",
       "frame": 3,
-      "start": 12.685,
-      "end": 13.42,
-      "text": "게 아니에요.",
+      "start": 11.12,
+      "end": 12.64,
+      "text": "캐나다 수업은 한국처럼",
       "words": [
         {
           "id": "caption-word-11-0",
-          "text": "게",
-          "start": 12.685,
-          "end": 12.731
+          "text": "캐나다",
+          "start": 11.12,
+          "end": 11.36
         },
         {
           "id": "caption-word-11-1",
-          "text": "아니에요.",
-          "start": 12.789,
-          "end": 13.3
+          "text": "수업은",
+          "start": 11.46,
+          "end": 11.92
+        },
+        {
+          "id": "caption-word-11-2",
+          "text": "한국처럼",
+          "start": 12.06,
+          "end": 12.52
         }
       ]
     },
     {
       "id": "caption-group-12",
       "frame": 3,
-      "start": 13.625,
-      "end": 14.357,
-      "text": "짝 활동,",
+      "start": 12.64,
+      "end": 13.64,
+      "text": "선생님 설명만 듣는",
       "words": [
         {
           "id": "caption-word-12-0",
-          "text": "짝",
-          "start": 13.625,
-          "end": 13.811
+          "text": "선생님",
+          "start": 12.64,
+          "end": 12.9
         },
         {
           "id": "caption-word-12-1",
-          "text": "활동,",
-          "start": 13.834,
-          "end": 14.333
+          "text": "설명만",
+          "start": 13.04,
+          "end": 13.36
+        },
+        {
+          "id": "caption-word-12-2",
+          "text": "듣는",
+          "start": 13.44,
+          "end": 13.58
         }
       ]
     },
     {
       "id": "caption-group-13",
       "frame": 3,
-      "start": 14.357,
-      "end": 15.076,
-      "text": "모둠 토론,",
+      "start": 13.64,
+      "end": 14.38,
+      "text": "게 아니에요.",
       "words": [
         {
           "id": "caption-word-13-0",
-          "text": "모둠",
-          "start": 14.357,
-          "end": 14.682
+          "text": "게",
+          "start": 13.64,
+          "end": 13.68
         },
         {
           "id": "caption-word-13-1",
-          "text": "토론,",
-          "start": 14.751,
-          "end": 15.053
+          "text": "아니에요.",
+          "start": 13.78,
+          "end": 14.26
         }
       ]
     },
     {
       "id": "caption-group-14",
       "frame": 3,
-      "start": 15.076,
-      "end": 15.9,
-      "text": "발표까지,",
+      "start": 14.84,
+      "end": 15.54,
+      "text": "짝 활동,",
       "words": [
         {
           "id": "caption-word-14-0",
-          "text": "발표까지,",
-          "start": 15.076,
-          "end": 15.819
+          "text": "짝",
+          "start": 14.84,
+          "end": 14.9
+        },
+        {
+          "id": "caption-word-14-1",
+          "text": "활동,",
+          "start": 15.08,
+          "end": 15.42
         }
       ]
     },
     {
       "id": "caption-group-15",
       "frame": 3,
-      "start": 15.9,
-      "end": 16.922,
-      "text": "수업 내내 친구들과",
+      "start": 15.64,
+      "end": 16.28,
+      "text": "모둠 토론,",
       "words": [
         {
           "id": "caption-word-15-0",
-          "text": "수업",
-          "start": 15.9,
-          "end": 16.098
+          "text": "모둠",
+          "start": 15.64,
+          "end": 15.86
         },
         {
           "id": "caption-word-15-1",
-          "text": "내내",
-          "start": 16.156,
-          "end": 16.365
-        },
-        {
-          "id": "caption-word-15-2",
-          "text": "친구들과",
-          "start": 16.411,
-          "end": 16.887
+          "text": "토론,",
+          "start": 15.96,
+          "end": 16.16
         }
       ]
     },
     {
       "id": "caption-group-16",
       "frame": 3,
-      "start": 16.922,
-      "end": 18.199,
-      "text": "계속 이야기해야 하죠.",
+      "start": 16.42,
+      "end": 17.38,
+      "text": "발표까지,",
       "words": [
         {
           "id": "caption-word-16-0",
-          "text": "계속",
-          "start": 16.922,
-          "end": 17.154
-        },
-        {
-          "id": "caption-word-16-1",
-          "text": "이야기해야",
-          "start": 17.177,
-          "end": 17.758
-        },
-        {
-          "id": "caption-word-16-2",
-          "text": "하죠.",
-          "start": 17.839,
-          "end": 18.153
+          "text": "발표까지,",
+          "start": 16.42,
+          "end": 17.3
         }
       ]
     },
     {
       "id": "caption-group-17",
       "frame": 3,
-      "start": 18.199,
-      "end": 19.952,
-      "text": "영어 학교에서는 이 소통이",
+      "start": 17.38,
+      "end": 17.7,
+      "text": "수업",
       "words": [
         {
           "id": "caption-word-17-0",
-          "text": "영어",
-          "start": 18.199,
-          "end": 18.42
-        },
-        {
-          "id": "caption-word-17-1",
-          "text": "학교에서는",
-          "start": 18.478,
-          "end": 19.302
-        },
-        {
-          "id": "caption-word-17-2",
-          "text": "이",
-          "start": 19.383,
-          "end": 19.418
-        },
-        {
-          "id": "caption-word-17-3",
-          "text": "소통이",
-          "start": 19.476,
-          "end": 19.906
+          "text": "수업",
+          "start": 17.38,
+          "end": 17.58
         }
       ]
     },
     {
       "id": "caption-group-18",
       "frame": 3,
-      "start": 19.952,
-      "end": 21.148,
-      "text": "100% 영어예요.",
+      "start": 17.8,
+      "end": 18.64,
+      "text": "내내 친구들과",
       "words": [
         {
           "id": "caption-word-18-0",
-          "text": "100%",
-          "start": 19.952,
-          "end": 20.556
+          "text": "내내",
+          "start": 17.8,
+          "end": 17.98
         },
         {
           "id": "caption-word-18-1",
-          "text": "영어예요.",
-          "start": 20.614,
-          "end": 21.125
+          "text": "친구들과",
+          "start": 18.14,
+          "end": 18.52
         }
       ]
     },
     {
       "id": "caption-group-19",
       "frame": 3,
-      "start": 21.148,
-      "end": 21.965,
-      "text": "바로 이게,",
+      "start": 18.78,
+      "end": 20,
+      "text": "계속 이야기해야 하죠.",
       "words": [
         {
           "id": "caption-word-19-0",
-          "text": "바로",
-          "start": 21.148,
-          "end": 21.369
+          "text": "계속",
+          "start": 18.78,
+          "end": 18.98
         },
         {
           "id": "caption-word-19-1",
-          "text": "이게,",
-          "start": 21.438,
-          "end": 21.845
+          "text": "이야기해야",
+          "start": 19.06,
+          "end": 19.52
+        },
+        {
+          "id": "caption-word-19-2",
+          "text": "하죠.",
+          "start": 19.58,
+          "end": 19.88
         }
       ]
     },
     {
       "id": "caption-group-20",
       "frame": 3,
-      "start": 22.019,
-      "end": 23.157,
-      "text": "아이 영어가 느는",
+      "start": 20.56,
+      "end": 21.6,
+      "text": "영어 학교에서는 이",
       "words": [
         {
           "id": "caption-word-20-0",
-          "text": "아이",
-          "start": 22.019,
-          "end": 22.344
+          "text": "영어",
+          "start": 20.56,
+          "end": 20.794
         },
         {
           "id": "caption-word-20-1",
-          "text": "영어가",
-          "start": 22.46,
-          "end": 22.843
+          "text": "학교에서는",
+          "start": 20.794,
+          "end": 21.38
         },
         {
           "id": "caption-word-20-2",
-          "text": "느는",
-          "start": 22.901,
-          "end": 23.11
+          "text": "이",
+          "start": 21.46,
+          "end": 21.5
         }
       ]
     },
     {
       "id": "caption-group-21",
       "frame": 3,
-      "start": 23.157,
-      "end": 24.101,
-      "text": "핵심입니다.",
+      "start": 21.6,
+      "end": 22.16,
+      "text": "소통이",
       "words": [
         {
           "id": "caption-word-21-0",
-          "text": "핵심입니다.",
-          "start": 23.157,
-          "end": 23.981
+          "text": "소통이",
+          "start": 21.6,
+          "end": 22.04
         }
       ]
     },
     {
       "id": "caption-group-22",
-      "frame": 4,
-      "start": 24.331,
-      "end": 25.538,
-      "text": "시간표를 봐도 불어는",
+      "frame": 3,
+      "start": 22.36,
+      "end": 23.26,
+      "text": "100% 영어예요.",
       "words": [
         {
           "id": "caption-word-22-0",
-          "text": "시간표를",
-          "start": 24.331,
-          "end": 24.795
+          "text": "100%",
+          "start": 22.36,
+          "end": 22.62
         },
         {
           "id": "caption-word-22-1",
-          "text": "봐도",
-          "start": 24.819,
-          "end": 25.051
-        },
-        {
-          "id": "caption-word-22-2",
-          "text": "불어는",
-          "start": 25.097,
-          "end": 25.469
+          "text": "영어예요.",
+          "start": 22.8,
+          "end": 23.14
         }
       ]
     },
     {
       "id": "caption-group-23",
-      "frame": 4,
-      "start": 25.538,
-      "end": 26.966,
-      "text": "하루 한 시간뿐이고,",
+      "frame": 3,
+      "start": 23.7,
+      "end": 24.54,
+      "text": "바로 이게,",
       "words": [
         {
           "id": "caption-word-23-0",
-          "text": "하루",
-          "start": 25.538,
-          "end": 25.747
+          "text": "바로",
+          "start": 23.7,
+          "end": 23.82
         },
         {
           "id": "caption-word-23-1",
-          "text": "한",
-          "start": 25.794,
-          "end": 25.898
-        },
-        {
-          "id": "caption-word-23-2",
-          "text": "시간뿐이고,",
-          "start": 25.956,
-          "end": 26.85
+          "text": "이게,",
+          "start": 23.92,
+          "end": 24.42
         }
       ]
     },
     {
       "id": "caption-group-24",
-      "frame": 4,
-      "start": 26.966,
-      "end": 28.476,
-      "text": "전체 수업의 80%를",
+      "frame": 3,
+      "start": 24.54,
+      "end": 25.08,
+      "text": "아이 영어가",
       "words": [
         {
           "id": "caption-word-24-0",
-          "text": "전체",
-          "start": 26.966,
-          "end": 27.233
+          "text": "아이",
+          "start": 24.54,
+          "end": 24.66
         },
         {
           "id": "caption-word-24-1",
-          "text": "수업의",
-          "start": 27.28,
-          "end": 27.57
-        },
-        {
-          "id": "caption-word-24-2",
-          "text": "80%를",
-          "start": 27.64,
-          "end": 28.441
+          "text": "영어가",
+          "start": 24.8,
+          "end": 25
         }
       ]
     },
     {
       "id": "caption-group-25",
-      "frame": 4,
-      "start": 28.476,
-      "end": 29.42,
-      "text": "영어로 배웁니다.",
+      "frame": 3,
+      "start": 25.08,
+      "end": 26.08,
+      "text": "느는 핵심입니다.",
       "words": [
         {
           "id": "caption-word-25-0",
-          "text": "영어로",
-          "start": 28.476,
-          "end": 28.789
+          "text": "느는",
+          "start": 25.08,
+          "end": 25.3
         },
         {
           "id": "caption-word-25-1",
-          "text": "배웁니다.",
-          "start": 28.824,
-          "end": 29.3
+          "text": "핵심입니다.",
+          "start": 25.46,
+          "end": 25.96
         }
       ]
     },
     {
       "id": "caption-group-26",
-      "frame": 5,
-      "start": 29.65,
-      "end": 30.927,
-      "text": "게다가 부모님 학비는",
+      "frame": 4,
+      "start": 26.99,
+      "end": 28.55,
+      "text": "시간표를 봐도 불어는 하루",
       "words": [
         {
           "id": "caption-word-26-0",
-          "text": "게다가",
-          "start": 29.65,
-          "end": 29.998
+          "text": "시간표를",
+          "start": 26.99,
+          "end": 27.35
         },
         {
           "id": "caption-word-26-1",
-          "text": "부모님",
-          "start": 30.045,
-          "end": 30.393
+          "text": "봐도",
+          "start": 27.45,
+          "end": 27.85
         },
         {
           "id": "caption-word-26-2",
-          "text": "학비는",
-          "start": 30.428,
-          "end": 30.846
+          "text": "불어는",
+          "start": 27.99,
+          "end": 28.21
+        },
+        {
+          "id": "caption-word-26-3",
+          "text": "하루",
+          "start": 28.31,
+          "end": 28.43
         }
       ]
     },
     {
       "id": "caption-group-27",
-      "frame": 5,
-      "start": 30.927,
-      "end": 32.692,
-      "text": "온타리오 대학부설이 1년에 약",
+      "frame": 4,
+      "start": 28.57,
+      "end": 29.65,
+      "text": "한 시간뿐이고,",
       "words": [
         {
           "id": "caption-word-27-0",
-          "text": "온타리오",
-          "start": 30.927,
-          "end": 31.45
+          "text": "한",
+          "start": 28.57,
+          "end": 28.59
         },
         {
           "id": "caption-word-27-1",
-          "text": "대학부설이",
-          "start": 31.508,
-          "end": 32.088
-        },
-        {
-          "id": "caption-word-27-2",
-          "text": "1년에",
-          "start": 32.158,
-          "end": 32.425
-        },
-        {
-          "id": "caption-word-27-3",
-          "text": "약",
-          "start": 32.471,
-          "end": 32.611
+          "text": "시간뿐이고,",
+          "start": 28.67,
+          "end": 29.53
         }
       ]
     },
     {
       "id": "caption-group-28",
-      "frame": 5,
-      "start": 32.692,
-      "end": 33.296,
-      "text": "2만 달러,",
+      "frame": 4,
+      "start": 29.71,
+      "end": 30.37,
+      "text": "전체 수업의",
       "words": [
         {
           "id": "caption-word-28-0",
-          "text": "2만",
-          "start": 32.692,
-          "end": 32.878
+          "text": "전체",
+          "start": 29.71,
+          "end": 29.91
         },
         {
           "id": "caption-word-28-1",
-          "text": "달러,",
-          "start": 32.947,
-          "end": 33.272
+          "text": "수업의",
+          "start": 29.99,
+          "end": 30.25
         }
       ]
     },
     {
       "id": "caption-group-29",
-      "frame": 5,
-      "start": 33.296,
-      "end": 35.025,
-      "text": "몬트리올 사립컬리지는 만 2천",
+      "frame": 4,
+      "start": 30.69,
+      "end": 32.01,
+      "text": "80%를 영어로 배웁니다.",
       "words": [
         {
           "id": "caption-word-29-0",
-          "text": "몬트리올",
-          "start": 33.296,
-          "end": 33.737
+          "text": "80%를",
+          "start": 30.69,
+          "end": 31.09
         },
         {
           "id": "caption-word-29-1",
-          "text": "사립컬리지는",
-          "start": 33.772,
-          "end": 34.398
+          "text": "영어로",
+          "start": 31.27,
+          "end": 31.45
         },
         {
           "id": "caption-word-29-2",
-          "text": "만",
-          "start": 34.422,
-          "end": 34.677
-        },
-        {
-          "id": "caption-word-29-3",
-          "text": "2천",
-          "start": 34.77,
-          "end": 34.979
+          "text": "배웁니다.",
+          "start": 31.53,
+          "end": 31.89
         }
       ]
     },
     {
       "id": "caption-group-30",
       "frame": 5,
-      "start": 35.025,
-      "end": 35.35,
-      "text": "달러.",
+      "start": 32.88,
+      "end": 34.44,
+      "text": "게다가 부모님 학비는",
       "words": [
         {
           "id": "caption-word-30-0",
-          "text": "달러.",
-          "start": 35.025,
-          "end": 35.304
+          "text": "게다가",
+          "start": 32.88,
+          "end": 33.26
+        },
+        {
+          "id": "caption-word-30-1",
+          "text": "부모님",
+          "start": 33.34,
+          "end": 33.6
+        },
+        {
+          "id": "caption-word-30-2",
+          "text": "학비는",
+          "start": 33.719,
+          "end": 34.32
         }
       ]
     },
     {
       "id": "caption-group-31",
       "frame": 5,
-      "start": 35.35,
-      "end": 36.407,
-      "text": "1년에 8천 달러나",
+      "start": 34.44,
+      "end": 36.22,
+      "text": "온타리오 대학부설이 1년에 약",
       "words": [
         {
           "id": "caption-word-31-0",
-          "text": "1년에",
-          "start": 35.35,
-          "end": 35.676
+          "text": "온타리오",
+          "start": 34.44,
+          "end": 34.78
         },
         {
           "id": "caption-word-31-1",
-          "text": "8천",
-          "start": 35.757,
-          "end": 36.001
+          "text": "대학부설이",
+          "start": 34.86,
+          "end": 35.46
         },
         {
           "id": "caption-word-31-2",
-          "text": "달러나",
-          "start": 36.047,
-          "end": 36.349
+          "text": "1년에",
+          "start": 35.58,
+          "end": 35.86
+        },
+        {
+          "id": "caption-word-31-3",
+          "text": "약",
+          "start": 36.02,
+          "end": 36.1
         }
       ]
     },
     {
       "id": "caption-group-32",
       "frame": 5,
-      "start": 36.407,
-      "end": 37.479,
-      "text": "차이가 나요.",
+      "start": 36.29,
+      "end": 36.84,
+      "text": "2만 달러,",
       "words": [
         {
           "id": "caption-word-32-0",
-          "text": "차이가",
-          "start": 36.407,
-          "end": 36.686
+          "text": "2만",
+          "start": 36.29,
+          "end": 36.4
         },
         {
           "id": "caption-word-32-1",
-          "text": "나요.",
-          "start": 36.732,
-          "end": 37.359
+          "text": "달러,",
+          "start": 36.56,
+          "end": 36.72
         }
       ]
     },
     {
       "id": "caption-group-33",
-      "frame": 6,
-      "start": 37.709,
-      "end": 38.835,
-      "text": "이 차액이면 시간당",
+      "frame": 5,
+      "start": 37.24,
+      "end": 38.7,
+      "text": "몬트리올 사립컬리지는 만",
       "words": [
         {
           "id": "caption-word-33-0",
-          "text": "이",
-          "start": 37.709,
-          "end": 37.779
+          "text": "몬트리올",
+          "start": 37.24,
+          "end": 37.54
         },
         {
           "id": "caption-word-33-1",
-          "text": "차액이면",
-          "start": 37.86,
-          "end": 38.324
+          "text": "사립컬리지는",
+          "start": 37.64,
+          "end": 38.36
         },
         {
           "id": "caption-word-33-2",
-          "text": "시간당",
-          "start": 38.44,
-          "end": 38.812
+          "text": "만",
+          "start": 38.54,
+          "end": 38.58
         }
       ]
     },
     {
       "id": "caption-group-34",
-      "frame": 6,
-      "start": 38.835,
-      "end": 39.605,
-      "text": "40달러",
+      "frame": 5,
+      "start": 38.78,
+      "end": 39.32,
+      "text": "2천 달러.",
       "words": [
         {
           "id": "caption-word-34-0",
-          "text": "40달러",
-          "start": 38.835,
-          "end": 39.485
+          "text": "2천",
+          "start": 38.78,
+          "end": 38.9
+        },
+        {
+          "id": "caption-word-34-1",
+          "text": "달러.",
+          "start": 39.04,
+          "end": 39.2
         }
       ]
     },
     {
       "id": "caption-group-35",
-      "frame": 6,
-      "start": 39.729,
-      "end": 40.766,
-      "text": "원어민 튜터를",
+      "frame": 5,
+      "start": 39.74,
+      "end": 40.14,
+      "text": "1년에",
       "words": [
         {
           "id": "caption-word-35-0",
-          "text": "원어민",
-          "start": 39.729,
-          "end": 40.101
-        },
-        {
-          "id": "caption-word-35-1",
-          "text": "튜터를",
-          "start": 40.124,
-          "end": 40.646
+          "text": "1년에",
+          "start": 39.74,
+          "end": 40.02
         }
       ]
     },
     {
       "id": "caption-group-36",
-      "frame": 6,
-      "start": 40.855,
-      "end": 41.753,
-      "text": "일주일에",
+      "frame": 5,
+      "start": 40.31,
+      "end": 40.86,
+      "text": "8천 달러나",
       "words": [
         {
           "id": "caption-word-36-0",
-          "text": "일주일에",
-          "start": 40.855,
-          "end": 41.633
+          "text": "8천",
+          "start": 40.31,
+          "end": 40.42
+        },
+        {
+          "id": "caption-word-36-1",
+          "text": "달러나",
+          "start": 40.54,
+          "end": 40.76
         }
       ]
     },
     {
       "id": "caption-group-37",
-      "frame": 6,
-      "start": 41.912,
-      "end": 42.33,
-      "text": "네 번,",
+      "frame": 5,
+      "start": 40.86,
+      "end": 41.54,
+      "text": "차이가 나요.",
       "words": [
         {
           "id": "caption-word-37-0",
-          "text": "네",
-          "start": 41.912,
-          "end": 42.016
+          "text": "차이가",
+          "start": 40.86,
+          "end": 41.04
         },
         {
           "id": "caption-word-37-1",
-          "text": "번,",
-          "start": 42.098,
-          "end": 42.283
+          "text": "나요.",
+          "start": 41.14,
+          "end": 41.42
         }
       ]
     },
@@ -889,221 +835,302 @@
       "id": "caption-group-38",
       "frame": 6,
       "start": 42.33,
-      "end": 42.922,
-      "text": "1년 내내",
+      "end": 43.73,
+      "text": "이 차액이면 시간당",
       "words": [
         {
           "id": "caption-word-38-0",
-          "text": "1년",
+          "text": "이",
           "start": 42.33,
-          "end": 42.632
+          "end": 42.39
         },
         {
           "id": "caption-word-38-1",
-          "text": "내내",
-          "start": 42.678,
-          "end": 42.875
+          "text": "차액이면",
+          "start": 42.53,
+          "end": 43.13
+        },
+        {
+          "id": "caption-word-38-2",
+          "text": "시간당",
+          "start": 43.23,
+          "end": 43.61
         }
       ]
     },
     {
       "id": "caption-group-39",
       "frame": 6,
-      "start": 42.922,
-      "end": 43.351,
-      "text": "붙여줄 수",
+      "start": 43.81,
+      "end": 46.17,
+      "text": "40달러 원어민 튜터를 일주일에",
       "words": [
         {
           "id": "caption-word-39-0",
-          "text": "붙여줄",
-          "start": 42.922,
-          "end": 43.235
+          "text": "40달러",
+          "start": 43.81,
+          "end": 44.63
         },
         {
           "id": "caption-word-39-1",
-          "text": "수",
-          "start": 43.282,
-          "end": 43.328
+          "text": "원어민",
+          "start": 44.79,
+          "end": 45.01
+        },
+        {
+          "id": "caption-word-39-2",
+          "text": "튜터를",
+          "start": 45.11,
+          "end": 45.55
+        },
+        {
+          "id": "caption-word-39-3",
+          "text": "일주일에",
+          "start": 45.67,
+          "end": 46.05
         }
       ]
     },
     {
       "id": "caption-group-40",
       "frame": 6,
-      "start": 43.351,
-      "end": 43.735,
-      "text": "있어요.",
+      "start": 46.21,
+      "end": 46.55,
+      "text": "네 번,",
       "words": [
         {
           "id": "caption-word-40-0",
-          "text": "있어요.",
-          "start": 43.351,
-          "end": 43.677
+          "text": "네",
+          "start": 46.21,
+          "end": 46.25
+        },
+        {
+          "id": "caption-word-40-1",
+          "text": "번,",
+          "start": 46.41,
+          "end": 46.43
         }
       ]
     },
     {
       "id": "caption-group-41",
       "frame": 6,
-      "start": 43.735,
-      "end": 45.209,
-      "text": "처음의 답답한 적응기를",
+      "start": 46.81,
+      "end": 47.51,
+      "text": "1년 내내",
       "words": [
         {
           "id": "caption-word-41-0",
-          "text": "처음의",
-          "start": 43.735,
-          "end": 44.106
+          "text": "1년",
+          "start": 46.81,
+          "end": 47.05
         },
         {
           "id": "caption-word-41-1",
-          "text": "답답한",
-          "start": 44.129,
-          "end": 44.64
-        },
-        {
-          "id": "caption-word-41-2",
-          "text": "적응기를",
-          "start": 44.709,
-          "end": 45.185
+          "text": "내내",
+          "start": 47.23,
+          "end": 47.39
         }
       ]
     },
     {
       "id": "caption-group-42",
       "frame": 6,
-      "start": 45.209,
-      "end": 45.766,
-      "text": "훨씬 빨리",
+      "start": 47.51,
+      "end": 48.31,
+      "text": "붙여줄 수 있어요.",
       "words": [
         {
           "id": "caption-word-42-0",
-          "text": "훨씬",
-          "start": 45.209,
-          "end": 45.476
+          "text": "붙여줄",
+          "start": 47.51,
+          "end": 47.73
         },
         {
           "id": "caption-word-42-1",
-          "text": "빨리",
-          "start": 45.499,
-          "end": 45.72
+          "text": "수",
+          "start": 47.77,
+          "end": 47.81
+        },
+        {
+          "id": "caption-word-42-2",
+          "text": "있어요.",
+          "start": 47.91,
+          "end": 48.19
         }
       ]
     },
     {
       "id": "caption-group-43",
       "frame": 6,
-      "start": 45.766,
-      "end": 46.884,
-      "text": "넘길 수 있죠.",
+      "start": 48.79,
+      "end": 49.07,
+      "text": "처음의",
       "words": [
         {
           "id": "caption-word-43-0",
-          "text": "넘길",
-          "start": 45.766,
-          "end": 46.091
-        },
-        {
-          "id": "caption-word-43-1",
-          "text": "수",
-          "start": 46.138,
-          "end": 46.207
-        },
-        {
-          "id": "caption-word-43-2",
-          "text": "있죠.",
-          "start": 46.265,
-          "end": 46.764
+          "text": "처음의",
+          "start": 48.79,
+          "end": 48.95
         }
       ]
     },
     {
       "id": "caption-group-44",
-      "frame": 7,
-      "start": 47.115,
-      "end": 47.812,
-      "text": "영어도,",
+      "frame": 6,
+      "start": 49.21,
+      "end": 50.25,
+      "text": "답답한 적응기를",
       "words": [
         {
           "id": "caption-word-44-0",
-          "text": "영어도,",
-          "start": 47.115,
-          "end": 47.765
+          "text": "답답한",
+          "start": 49.21,
+          "end": 49.51
+        },
+        {
+          "id": "caption-word-44-1",
+          "text": "적응기를",
+          "start": 49.67,
+          "end": 50.13
         }
       ]
     },
     {
       "id": "caption-group-45",
-      "frame": 7,
-      "start": 47.812,
-      "end": 49.042,
-      "text": "예산도 챙기고 싶다면",
+      "frame": 6,
+      "start": 50.33,
+      "end": 50.97,
+      "text": "훨씬 빨리",
       "words": [
         {
           "id": "caption-word-45-0",
-          "text": "예산도",
-          "start": 47.812,
-          "end": 48.172
+          "text": "훨씬",
+          "start": 50.33,
+          "end": 50.61
         },
         {
           "id": "caption-word-45-1",
-          "text": "챙기고",
-          "start": 48.218,
-          "end": 48.531
-        },
-        {
-          "id": "caption-word-45-2",
-          "text": "싶다면",
-          "start": 48.589,
-          "end": 49.019
+          "text": "빨리",
+          "start": 50.75,
+          "end": 50.85
         }
       ]
     },
     {
       "id": "caption-group-46",
-      "frame": 7,
-      "start": 49.042,
-      "end": 50.648,
-      "text": "몬트리올도 꼭 알아보세요.",
+      "frame": 6,
+      "start": 50.99,
+      "end": 51.65,
+      "text": "넘길 수 있죠.",
       "words": [
         {
           "id": "caption-word-46-0",
-          "text": "몬트리올도",
-          "start": 49.042,
-          "end": 49.658
+          "text": "넘길",
+          "start": 50.99,
+          "end": 51.15
         },
         {
           "id": "caption-word-46-1",
-          "text": "꼭",
-          "start": 49.704,
-          "end": 49.867
+          "text": "수",
+          "start": 51.21,
+          "end": 51.23
         },
         {
           "id": "caption-word-46-2",
-          "text": "알아보세요.",
-          "start": 49.936,
-          "end": 50.528
+          "text": "있죠.",
+          "start": 51.37,
+          "end": 51.53
         }
       ]
     },
     {
       "id": "caption-group-47",
       "frame": 7,
-      "start": 50.807,
-      "end": 52.947,
-      "text": "AA캐나다가 함께하겠습니다.",
+      "start": 52.64,
+      "end": 53.22,
+      "text": "영어도,",
       "words": [
         {
           "id": "caption-word-47-0",
-          "text": "AA캐나다가",
-          "start": 50.807,
-          "end": 51.62
+          "text": "영어도,",
+          "start": 52.64,
+          "end": 53.1
+        }
+      ]
+    },
+    {
+      "id": "caption-group-48",
+      "frame": 7,
+      "start": 53.24,
+      "end": 54.66,
+      "text": "예산도 챙기고 싶다면",
+      "words": [
+        {
+          "id": "caption-word-48-0",
+          "text": "예산도",
+          "start": 53.24,
+          "end": 53.54
         },
         {
-          "id": "caption-word-47-1",
+          "id": "caption-word-48-1",
+          "text": "챙기고",
+          "start": 53.64,
+          "end": 53.84
+        },
+        {
+          "id": "caption-word-48-2",
+          "text": "싶다면",
+          "start": 53.98,
+          "end": 54.54
+        }
+      ]
+    },
+    {
+      "id": "caption-group-49",
+      "frame": 7,
+      "start": 54.68,
+      "end": 56.04,
+      "text": "몬트리올도 꼭 알아보세요.",
+      "words": [
+        {
+          "id": "caption-word-49-0",
+          "text": "몬트리올도",
+          "start": 54.68,
+          "end": 55.2
+        },
+        {
+          "id": "caption-word-49-1",
+          "text": "꼭",
+          "start": 55.38,
+          "end": 55.4
+        },
+        {
+          "id": "caption-word-49-2",
+          "text": "알아보세요.",
+          "start": 55.52,
+          "end": 55.92
+        }
+      ]
+    },
+    {
+      "id": "caption-group-50",
+      "frame": 7,
+      "start": 56.48,
+      "end": 58.12,
+      "text": "AA캐나다가 함께하겠습니다.",
+      "words": [
+        {
+          "id": "caption-word-50-0",
+          "text": "AA캐나다가",
+          "start": 56.48,
+          "end": 57.24
+        },
+        {
+          "id": "caption-word-50-1",
           "text": "함께하겠습니다.",
-          "start": 51.736,
-          "end": 52.827
+          "start": 57.36,
+          "end": 58
         }
       ]
     }
