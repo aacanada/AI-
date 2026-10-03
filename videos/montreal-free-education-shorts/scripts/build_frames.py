@@ -193,96 +193,103 @@ tl.fromTo("#{px}-free",{{scale:0.6,opacity:0}},{{scale:1,opacity:1,duration:0.45
 """ + "".join(f'tl.fromTo("#{px}-b{i}",{{x:-120,opacity:0}},{{x:0,opacity:1,duration:0.5,ease:"{E}"}},{t});\n' for i,(_,_,t) in enumerate(bens))
 write("03-college", 3, css, html, js)
 
-# ---------- Frame 4 — big city ----------
+# ---------- Frame 4 — big city (user's population chart image) ----------
 px = "f04"
-rows = [("토론토",7108.87),("몬트리올",4597.84),("밴쿠버",3088.04),("캘거리",1836.01),("오타와",1700.01),("에드먼턴",1692.39)]
-MAXW = 560
+# window shows the chart part of population-chart.png (native 1081x608; chart starts at x=270)
+W4, H4 = 1000, 750
+K4 = W4 / 811                      # overview scale: native x 270..1081 fills the window
+ZX4, ZY4, ZS4 = 610, 88, 1.65       # Montréal row (native) and zoom scale
 css = f"""
-.{px}-row{{position:absolute;left:60px;right:60px;height:70px;display:flex;align-items:center;}}
-.{px}-lab{{width:230px;font-size:42px;font-weight:700;color:{C['m']};}}
-.{px}-bar{{height:46px;border-radius:6px;background:#d9d6c6;transform-origin:left center;}}
-.{px}-val{{margin-left:18px;font-size:38px;font-weight:700;color:{C['m']};font-variant-numeric:tabular-nums;}}
-.{px}-hot .{px}-lab{{color:{C['t']};font-weight:900;}}
-.{px}-hot .{px}-bar{{background:{C['p']};}}
-.{px}-hot .{px}-val{{color:{C['p']};font-weight:900;}}
-#{px}-rank{{left:850px;top:0;height:56px;line-height:56px;padding:0 22px;font-size:34px;}}
-#{px}-unit{{position:absolute;right:60px;top:1066px;font-size:30px;font-weight:600;color:{C['l']};}}
-#{px}-statwrap{{position:absolute;left:60px;right:60px;top:1110px;height:170px;display:flex;align-items:baseline;justify-content:center;gap:24px;}}
-#{px}-statlab{{font-size:56px;font-weight:800;color:{C['m']};}}
-#{px}-stat{{display:inline-block;font-size:168px;line-height:1;font-weight:900;color:{C['p']};font-variant-numeric:tabular-nums;transform-origin:center bottom;}}
-#{px}-statu{{font-size:90px;font-weight:900;color:{C['p']};}}
-.{px}-chip{{top:1330px;width:300px;height:180px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;font-size:44px;font-weight:800;}}
+#{px}-win{{position:absolute;left:40px;top:520px;width:{W4}px;height:{H4}px;overflow:hidden;border-radius:14px;border:1.5px solid {C['bd']};background:#fff;}}
+#{px}-stage{{position:absolute;left:0;top:0;width:1081px;height:608px;transform-origin:0 0;}}
+#{px}-img{{position:absolute;left:0;top:0;width:1081px;height:608px;display:block;}}
+.{px}-dim{{position:absolute;background:#ffffff;}}
+#{px}-hl{{position:absolute;left:0;top:0;width:1081px;height:608px;overflow:visible;}}
+#{px}-rank{{left:870px;top:540px;height:64px;line-height:64px;padding:0 26px;font-size:38px;}}
+#{px}-statwrap{{position:absolute;left:60px;right:60px;top:1278px;height:130px;display:flex;align-items:baseline;justify-content:center;gap:20px;}}
+#{px}-statlab{{font-size:50px;font-weight:800;color:{C['m']};}}
+#{px}-stat{{display:inline-block;font-size:128px;line-height:1;font-weight:900;color:{C['p']};font-variant-numeric:tabular-nums;transform-origin:center bottom;}}
+#{px}-statu{{font-size:72px;font-weight:900;color:{C['p']};}}
+.{px}-chip{{top:1420px;width:300px;height:116px;display:flex;align-items:center;justify-content:center;gap:14px;font-size:42px;font-weight:800;}}
 """
 ICONS = {
- "교육수준": f'<svg viewBox="0 0 48 48" width="64" height="64"><path d="M4 18 L24 8 L44 18 L24 28 Z" fill="{C["p"]}"/><path d="M12 23 V33 C12 37 36 37 36 33 V23 L24 29 Z" fill="{C["p"]}" opacity="0.7"/></svg>',
- "생활편의": f'<svg viewBox="0 0 48 48" width="64" height="64"><path d="M6 10 H12 L17 32 H38 L42 16 H14" fill="none" stroke="{C["p"]}" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="19" cy="40" r="3.5" fill="{C["p"]}"/><circle cx="35" cy="40" r="3.5" fill="{C["p"]}"/></svg>',
- "문화환경": f'<svg viewBox="0 0 48 48" width="64" height="64"><path d="M18 34 V10 L40 6 V30" fill="none" stroke="{C["p"]}" stroke-width="4.5" stroke-linejoin="round"/><ellipse cx="13" cy="35" rx="6" ry="5" fill="{C["p"]}"/><ellipse cx="35" cy="31" rx="6" ry="5" fill="{C["p"]}"/></svg>',
+ "교육수준": f'<svg viewBox="0 0 48 48" width="52" height="52"><path d="M4 18 L24 8 L44 18 L24 28 Z" fill="{C["p"]}"/><path d="M12 23 V33 C12 37 36 37 36 33 V23 L24 29 Z" fill="{C["p"]}" opacity="0.7"/></svg>',
+ "생활편의": f'<svg viewBox="0 0 48 48" width="52" height="52"><path d="M6 10 H12 L17 32 H38 L42 16 H14" fill="none" stroke="{C["p"]}" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="19" cy="40" r="3.5" fill="{C["p"]}"/><circle cx="35" cy="40" r="3.5" fill="{C["p"]}"/></svg>',
+ "문화환경": f'<svg viewBox="0 0 48 48" width="52" height="52"><path d="M18 34 V10 L40 6 V30" fill="none" stroke="{C["p"]}" stroke-width="4.5" stroke-linejoin="round"/><ellipse cx="13" cy="35" rx="6" ry="5" fill="{C["p"]}"/><ellipse cx="35" cy="31" rx="6" ry="5" fill="{C["p"]}"/></svg>',
 }
 chips = [("교육수준",60,5.35),("생활편의",390,6.45),("문화환경",720,7.35)]
 html = f"""{chrome(px,4)}
-{list_head(px,'02','장점 ②','도시 규모','캐나다 2위 대도시')}
-""" + "".join(
-    f'<div class="{px}-row{" "+px+"-hot" if i==1 else ""}" id="{px}-r{i}" style="top:{580+i*78}px"><div class="{px}-lab">{n}</div><div class="{px}-bar" id="{px}-bar{i}" style="width:{v/rows[0][1]*MAXW:.0f}px"></div><div class="{px}-val">{fmt_v}</div>'
-    + (f'<div class="{px}-pill" id="{px}-rank" style="position:absolute">2위</div>' if i==1 else '') + '</div>'
-    for i,(n,v) in enumerate(rows) for fmt_v in [f"{round(v):,}"]) + f"""
-<div id="{px}-unit">단위: 천 명 · 광역권 인구</div>
+{list_head(px,'02','장점 ②','도시별 인구 (천 명)','캐나다 2위 대도시')}
+<div id="{px}-win"><div id="{px}-stage">
+<img id="{px}-img" src="assets/images/population-chart.png" alt="캐나다 주요 도시별 인구"/>
+<div class="{px}-dim" id="{px}-dimA" style="left:0;top:0;width:1081px;height:64px"></div>
+<div class="{px}-dim" id="{px}-dimB" style="left:0;top:112px;width:1081px;height:496px"></div>
+<svg id="{px}-hl" viewBox="0 0 1081 608"><rect id="{px}-hlr" x="322" y="64" width="578" height="48" rx="12" fill="none" stroke="{C['p']}" stroke-width="5"/></svg>
+</div></div>
+<div class="{px}-pill" id="{px}-rank">2위</div>
 <div id="{px}-statwrap"><span id="{px}-statlab">인구 약</span><span id="{px}-stat">0</span><span id="{px}-statu">만</span></div>
 """ + "".join(f'<div class="{px}-card {px}-chip" id="{px}-ch{i}" style="left:{x}px">{ICONS[t]}{t}</div>' for i,(t,x,_) in enumerate(chips))
+zx = max(W4 - 1081*ZS4, min(0, W4/2 - ZX4*ZS4)); zy = max(H4 - 608*ZS4, min(0, H4/2 - ZY4*ZS4))
 js = chrome_js(px,4) + list_head_js(px,0.6) + f"""
-tl.fromTo(".{px}-row",{{opacity:0}},{{opacity:1,duration:0.3,stagger:0.1}},1.55);
-tl.fromTo(".{px}-bar",{{scaleX:0}},{{scaleX:1,duration:0.7,stagger:0.1,ease:"{E}"}},1.6);
-tl.fromTo("#{px}-unit",{{opacity:0}},{{opacity:1,duration:0.4}},2.0);
-tl.fromTo("#{px}-rank",{{scale:0.5,opacity:0}},{{scale:1,opacity:1,duration:0.4,ease:"back.out(1.6)"}},2.4);
-tl.fromTo("#{px}-statwrap",{{opacity:0,y:30}},{{opacity:1,y:0,duration:0.4,ease:"{E}"}},2.4);
+tl.fromTo("#{px}-win",{{clipPath:"inset(0% 0% 100% 0% round 14px)"}},{{clipPath:"inset(0% 0% 0% 0% round 14px)",duration:0.8,ease:"power2.inOut"}},1.45);
+tl.fromTo("#{px}-stage",{{x:{-270*K4:.1f},y:24,scale:{K4*0.96:.4f}}},{{x:{-270*K4:.1f},y:0,scale:{K4:.4f},duration:0.85,ease:"{E}"}},1.45);
+tl.fromTo(".{px}-dim",{{opacity:0}},{{opacity:0.72,duration:0.5,ease:"power2.out"}},2.45);
+tl.to("#{px}-stage",{{x:{zx:.1f},y:{zy:.1f},scale:{ZS4},duration:0.9,ease:"power3.inOut"}},2.35);
+const hr = document.getElementById("{px}-hlr"); const hp = 2*(578+48);
+hr.style.strokeDasharray = hp;
+tl.fromTo(hr,{{strokeDashoffset:hp}},{{strokeDashoffset:0,duration:0.6,ease:"power2.inOut"}},2.9);
+tl.fromTo("#{px}-rank",{{scale:0.5,opacity:0}},{{scale:1,opacity:1,duration:0.4,ease:"back.out(1.6)"}},3.0);
+tl.fromTo("#{px}-statwrap",{{opacity:0,y:30}},{{opacity:1,y:0,duration:0.4,ease:"{E}"}},2.5);
 const st = {{v:0}}; const se = document.getElementById("{px}-stat");
-tl.fromTo(st,{{v:0}},{{v:460,duration:1.3,ease:"power2.out",onUpdate:()=>{{se.textContent=fmt(st.v);}}}},2.5);
-tl.fromTo(se,{{scale:0.55}},{{scale:1,duration:1.3,ease:"power2.out"}},2.5);
-""" + "".join(f'tl.fromTo("#{px}-ch{i}",{{y:60,opacity:0}},{{y:0,opacity:1,duration:0.5,ease:"{E}"}},{t});\n' for i,(_,_,t) in enumerate(chips))
+tl.fromTo(st,{{v:0}},{{v:460,duration:1.3,ease:"power2.out",onUpdate:()=>{{se.textContent=fmt(st.v);}}}},2.6);
+tl.fromTo(se,{{scale:0.55}},{{scale:1,duration:1.3,ease:"power2.out",immediateRender:false}},2.6);
+tl.to("#{px}-stage",{{x:{-270*K4:.1f},y:0,scale:{K4:.4f},duration:1.0,ease:"power3.inOut"}},4.8);
+tl.to("#{px}-rank",{{opacity:0,duration:0.3}},4.8);
+tl.to(".{px}-dim",{{opacity:0.55,duration:0.6}},4.9);
+""" + "".join(f'tl.fromTo("#{px}-ch{i}",{{y:50,opacity:0}},{{y:0,opacity:1,duration:0.5,ease:"{E}"}},{t});\n' for i,(_,_,t) in enumerate(chips))
 write("04-big-city", 4, css, html, js)
 
-# ---------- Frame 5 — rent ----------
+# ---------- Frame 5 — rent (user's Statistics Canada image) ----------
 px = "f05"
-bars = [("밴쿠버",3030,140,2.05,False),("토론토",2650,430,3.85,False),("몬트리올",1820,720,5.65,True)]
-BASE = 1240; MAXH = 560
+W5, H5 = 960, 900
+K5 = W5 / 1054
+OVY = -100                          # overview: native y ~110..1098 (title + map)
+CITIES = [("van",122,822,2.0,1.95),("tor",895,1027,2.0,3.75),("mtl",650,762,2.3,5.5)]
+def tgt(cx, cy, sc):
+    return (max(W5 - 1054*sc, min(0, W5/2 - cx*sc)), max(H5 - 1349*sc, min(0, H5/2 - cy*sc)))
 css = f"""
-#{px}-sub{{position:absolute;left:60px;top:540px;font-size:44px;font-weight:700;color:{C['m']};}}
-#{px}-base{{position:absolute;left:60px;right:60px;top:{BASE}px;height:4px;background:{C['t']};opacity:0.8;transform-origin:left center;}}
-.{px}-bar{{position:absolute;width:220px;border-radius:14px 14px 0 0;background:#d9d6c6;transform-origin:center bottom;}}
-.{px}-hot{{background:{C['p']};}}
-.{px}-city{{position:absolute;width:220px;top:{BASE+18}px;text-align:center;font-size:46px;font-weight:800;color:{C['m']};}}
-.{px}-val{{position:absolute;width:300px;text-align:center;font-size:60px;font-weight:900;color:{C['m']};font-variant-numeric:tabular-nums;}}
-#{px}-v2{{font-size:92px;color:{C['p']};transform-origin:center bottom;}}
-#{px}-city2{{color:{C['p']};font-weight:900;}}
-#{px}-guide{{position:absolute;left:140px;width:800px;height:0;border-top:4px dashed {C['am']};}}
-#{px}-badge{{left:50%;top:1352px;margin-left:-440px;width:880px;height:124px;line-height:124px;text-align:center;font-size:54px;}}
-#{px}-src{{position:absolute;left:0;right:0;top:1494px;text-align:center;font-size:30px;font-weight:600;color:{C['l']};}}
+#{px}-win{{position:absolute;left:60px;top:500px;width:{W5}px;height:{H5}px;overflow:hidden;border-radius:14px;border:1.5px solid {C['bd']};background:#f2f2f2;}}
+#{px}-stage{{position:absolute;left:0;top:0;width:1054px;height:1349px;transform-origin:0 0;}}
+#{px}-img{{position:absolute;left:0;top:0;width:1054px;height:1349px;display:block;}}
+#{px}-rings{{position:absolute;left:0;top:0;width:1054px;height:1349px;overflow:visible;}}
+#{px}-badge{{left:50%;top:1424px;margin-left:-440px;width:880px;height:112px;line-height:112px;text-align:center;font-size:52px;}}
+#{px}-ns{{color:{C['m']};}}
 """
 html = f"""{chrome(px,5)}
-{list_head(px,'03','장점 ③','생활비','가성비')}
-<div id="{px}-sub">2베드룸 평균 렌트 (월)</div>
-<div id="{px}-guide" style="top:{BASE - round(3030/3030*MAXH)}px"></div>
-""" + "".join(
-    f'<div class="{px}-bar{" "+px+"-hot" if hot else ""}" id="{px}-bar{i}" style="left:{x}px;top:{BASE-round(v/3030*MAXH)}px;height:{round(v/3030*MAXH)}px"></div>'
-    f'<div class="{px}-val" id="{px}-v{i}" style="left:{x-40}px;top:{BASE-round(v/3030*MAXH)-(110 if hot else 80)}px">{"$0" if hot else "$"+format(v,",")}</div>'
-    f'<div class="{px}-city" id="{px}-city{i}" style="left:{x}px">{n}</div>'
-    for i,(n,v,x,_,hot) in enumerate(bars)) + f"""
-<div class="{px}-base" id="{px}-base"></div>
-<div class="{px}-pill" id="{px}-badge">3대 대도시 중 압도적으로 저렴</div>
-<div id="{px}-src">출처: Statistics Canada · 2026년 2분기</div>"""
+{list_head(px,'03','장점 ③','출처: Statistics Canada · 2026년 2분기','가성비')}
+<div id="{px}-win"><div id="{px}-stage">
+<img id="{px}-img" src="assets/images/statcan-rent-2026q2.jpg" alt="Statistics Canada 2베드룸 평균 렌트 2026년 2분기"/>
+<svg id="{px}-rings" viewBox="0 0 1054 1349">
+<rect id="{px}-r-van" x="20" y="758" width="204" height="128" rx="18" fill="none" stroke="{C['t']}" stroke-width="6"/>
+<rect id="{px}-r-tor" x="793" y="963" width="204" height="128" rx="18" fill="none" stroke="{C['t']}" stroke-width="6"/>
+<rect id="{px}-r-mtlg" x="540" y="690" width="220" height="144" rx="22" fill="{C['am']}" stroke="none"/>
+<rect id="{px}-r-mtl" x="548" y="698" width="204" height="128" rx="18" fill="none" stroke="{C['p']}" stroke-width="9"/>
+</svg>
+</div></div>
+<div class="{px}-pill" id="{px}-badge">3대 대도시 중 압도적으로 저렴</div>"""
 js = chrome_js(px,5) + list_head_js(px,0.45) + f"""
-tl.fromTo("#{px}-sub",{{opacity:0,y:20}},{{opacity:1,y:0,duration:0.45,ease:"{E}"}},1.05);
-tl.fromTo("#{px}-base",{{scaleX:0}},{{scaleX:1,duration:0.6,ease:"power2.inOut"}},1.2);
-""" + "".join(
-    f'tl.fromTo("#{px}-bar{i}",{{scaleY:0}},{{scaleY:1,duration:0.75,ease:"{E}"}},{t});\n'
-    f'tl.fromTo("#{px}-city{i}",{{opacity:0,y:20}},{{opacity:1,y:0,duration:0.4,ease:"{E}"}},{t});\n'
-    f'tl.fromTo("#{px}-v{i}",{{opacity:0,y:30}},{{opacity:1,y:0,duration:0.45,ease:"{E}"}},{t+0.35});\n'
-    for i,(_,_,_,t,_) in enumerate(bars)) + f"""
-const rv = {{v:0}}; const re2 = document.getElementById("{px}-v2");
-tl.fromTo(rv,{{v:0}},{{v:1820,duration:1.1,ease:"power2.out",onUpdate:()=>{{re2.textContent="$"+fmt(rv.v);}}}},6.0);
-tl.fromTo(re2,{{scale:0.6}},{{scale:1,duration:1.1,ease:"power2.out",immediateRender:false}},6.0);
-tl.fromTo("#{px}-guide",{{opacity:0,scaleX:0}},{{opacity:1,scaleX:1,transformOrigin:"left center",duration:0.6,ease:"power2.inOut"}},7.0);
-tl.fromTo("#{px}-badge",{{scale:0.6,opacity:0}},{{scale:1,opacity:1,duration:0.5,ease:"back.out(1.5)"}},8.25);
-tl.fromTo("#{px}-src",{{opacity:0}},{{opacity:1,duration:0.5}},8.6);
+tl.fromTo("#{px}-win",{{clipPath:"inset(0% 0% 100% 0% round 14px)"}},{{clipPath:"inset(0% 0% 0% 0% round 14px)",duration:0.8,ease:"power2.inOut"}},0.7);
+tl.fromTo("#{px}-stage",{{x:0,y:{OVY+30},scale:{K5*0.96:.4f}}},{{x:0,y:{OVY},scale:{K5:.4f},duration:1.1,ease:"{E}"}},0.7);
+"""
+for key,cx,cy,sc,t in CITIES:
+    zx,zy = tgt(cx,cy,sc)
+    per = 2*(204+128)
+    js += f'tl.to("#{px}-stage",{{x:{zx:.1f},y:{zy:.1f},scale:{sc},duration:0.75,ease:"power3.inOut"}},{t});\n'
+    js += f'(function(){{const r=document.getElementById("{px}-r-{key}"); r.style.strokeDasharray={per}; tl.fromTo(r,{{strokeDashoffset:{per}}},{{strokeDashoffset:0,duration:0.55,ease:"power2.inOut"}},{t+0.6});}})();\n'
+js += f"""
+tl.fromTo("#{px}-r-mtlg",{{opacity:0,scale:0.85,transformOrigin:"50% 50%"}},{{opacity:1,scale:1,duration:0.5,ease:"{E}"}},6.25);
+tl.to("#{px}-stage",{{x:0,y:{OVY},scale:{K5:.4f},duration:1.0,ease:"power3.inOut"}},7.75);
+tl.fromTo("#{px}-badge",{{scale:0.6,opacity:0}},{{scale:1,opacity:1,duration:0.5,ease:"back.out(1.5)"}},8.55);
 """
 write("05-rent", 5, css, html, js)
 
