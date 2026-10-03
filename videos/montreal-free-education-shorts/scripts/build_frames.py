@@ -12,6 +12,9 @@ FONTS = "".join(
 )
 C = dict(bg="#fdfae7", p="#1e2bfa", t="#111111", m="#6b6b6b", l="#8a8a8a",
          al="rgba(30,43,250,0.08)", am="rgba(30,43,250,0.15)", bd="rgba(30,43,250,0.2)", cb="rgba(30,43,250,0.04)")
+import json
+if os.environ.get("THEME"):
+    C.update(json.loads(os.environ["THEME"]))
 
 def base_css(px):
     return f"""{FONTS}
