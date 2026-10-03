@@ -2,7 +2,7 @@
 format: 1080x1920
 duration: 60s
 message: "몬트리올에서도 아이 영어 충분히 늘어요"
-arc: 걱정(훅) → 반전 → 근거①친구 100% → 근거②수업 80% → 근거③학비 차이 → 근거④매일 튜터 → 보너스 바이링구얼 → CTA
+arc: 걱정(훅) → 반전 → 핵심: 수업 중 친구들과 100% 영어 → 시간표 80% 영어 → 학비 차이 $8,000 → 차액으로 원어민 튜터 → CTA
 audience: 몬트리올=불어권이라 제외하는 한국 학부모 (자녀무상교육 검토 중)
 mode: autonomous
 music: none
@@ -32,7 +32,7 @@ Scene 1 (0.0–0.8s): eyebrow "학부모님들의 걱정" + "몬트리올" slams
 ## Frame 2 — 반전
 
 - scene: "결론부터: 영어, 충분히 늘어요" — 체크 마크 스탬프
-- duration: 6.023s
+- duration: 6.116s
 - transition_in: push-slide UP
 - status: animated
 - voiceover: "상담하면서 정말 많이 듣는 질문인데요. 결론부터 말씀드리면, 영어 충분히 늘 수 있습니다."
@@ -43,86 +43,72 @@ Scene 1 (0.0–0.8s): eyebrow "학부모님들의 걱정" + "몬트리올" slams
 
 Scene 1 (0.0–2.4s): tag "상담 질문 1위" + small Montreal skyline line-art draws. → Scene 2 (2.4–4.0s): eyebrow "결론부터" on "결론부터". → Scene 3 (4.0–6.1s): "영어, 충분히 늘어요" rises word by word on "영어 충분히"; check stamp lands.
 
-## Frame 3 — 근거①: 친구들과는 100% 영어
+## Frame 3 — 핵심: 수업 중 친구들과 100% 영어
 
-- scene: 쉬는 시간·점심시간 말풍선이 전부 영어 → "친구들과는 100% 영어"
-- duration: 10.52s
+- scene: 한국 교실(선생님→학생 일방향) vs 캐나다 교실(학생끼리 영어 대화) → "수업 중 친구들과의 소통 100% English" → "이게 영어가 느는 핵심"
+- duration: 14.421s
 - transition_in: crossfade
 - status: animated
-- voiceover: "사실 아이 영어는 수업보다 친구들이랑 놀고 떠들면서 늘어요. 영어 학교에 다니면 쉬는 시간이든 점심시간이든, 친구들과는 100% 영어로만 소통합니다."
-- src: compositions/frames/03-friends.html
+- voiceover: "캐나다 수업은 한국처럼 선생님 설명만 듣는 게 아니에요. 짝 활동, 모둠 토론, 발표까지, 수업 내내 친구들과 계속 이야기해야 하죠. 영어 학교에서는 이 소통이 100% 영어예요. 바로 이게, 아이 영어가 느는 핵심입니다."
+- src: compositions/frames/03-classroom.html
 - blueprint: compose
-- focal: stat "100%" count-up
-- roles: kid avatar circles with English speech bubbles (foreground subject); "쉬는 시간"/"점심시간" chips (supporting); stat card (foreground)
+- focal: stat "100%" + key banner "이게 영어가 느는 핵심"
+- roles: two classroom diagram cards (foreground); activity chips 짝 활동/모둠 토론/발표 (supporting); stat card (foreground); key banner (foreground)
 
-Scene 1 (0.0–3.3s): eyebrow "근거 ①" + 3 kid avatars; bubbles "Wanna play?", "Me too!", "Let's go!" pop on "친구들이랑 놀고 떠들면서". → Scene 2 (3.9–7.5s): chips "쉬는 시간" then "점심시간" on cue; more bubbles "Pass the ball!", "So funny 😂". → Scene 3 (7.5–10.7s): metric card "친구들과는" + "100%" counts up on "100%", label "English".
+Scene 1 (0.0–3.7s): eyebrow "근거 ① 수업 시간" + "캐나다 수업 = 대화"; 한국 교실 card on "한국처럼", 캐나다 교실 card on "아니에요" (Korean card dims). → Scene 2 (3.7–8.0s): chips 짝 활동 / 모둠 토론 / 발표 on cue; English bubbles pop in the Canadian classroom. → Scene 3 (8.3–14.4s): stat card, "100%" counts up on "100%"; key banner lands on "바로 이게", pulses on "핵심입니다".
 
 ## Frame 4 — 근거②: 수업도 80% 영어
 
-- scene: 실제 시간표 — 영어 노란 형광, 불어 빨간 동그라미 → "수업도 80% 영어"
-- duration: 7.873s
+- scene: 실제 시간표 → "불어는 하루 1시간" → "전체 수업 중 영어 80%"
+- duration: 5.319s
 - transition_in: push-slide LEFT
 - status: animated
-- voiceover: "수업도 마찬가지예요. 실제 시간표를 보면 불어는 하루 한 시간뿐이고, 전체 수업의 80%를 영어로 배웁니다."
+- voiceover: "시간표를 봐도 불어는 하루 한 시간뿐이고, 전체 수업의 80%를 영어로 배웁니다."
 - src: compositions/frames/04-timetable.html
 - blueprint: compose
 - focal: assets/timetable.webp — 실제 영어 중심 학교 시간표 (user-supplied)
-- roles: timetable photo card (foreground subject); "불어 = 하루 1시간" callout (supporting); "80%" bar (foreground)
+- roles: timetable photo card (foreground); callout (supporting); 80% bar card (foreground)
 
-Scene 1 (0.0–1.1s): eyebrow "근거 ②" + "실제 시간표" card slides up. → Scene 2 (1.1–4.2s): camera eases toward the timetable; callout "불어는 하루 1시간" pops on "불어는". → Scene 3 (4.2–7.2s): timetable recedes; "수업의 80% = 영어" with bar filling 0→80% on "80%를".
+Scene 1 (0.0–2.6s): timetable card rises, slow zoom; callout on "불어는". → Scene 2 (2.6–5.3s): result card replaces it; 80% counts up and bar fills on "80%를".
 
 ## Frame 5 — 근거③: 학비 차이
 
-- scene: 막대 비교 온타리오 대학부설 ~$20,000 vs 몬트리올 사립컬리지 $5,750 → 차액 "$14,000+"
-- duration: 10.613s
+- scene: 막대 비교 온타리오 대학부설 ~$20,000 vs 몬트리올 사립컬리지 $12,000 → "1년 차액 $8,000"
+- duration: 8.059s
 - transition_in: crossfade
 - status: animated
-- voiceover: "게다가 부모님 학비는 온타리오 대학부설이 1년에 약 2만 달러, 몬트리올 사립컬리지는 5,750달러. 1년에 만 4천 달러 넘게 차이가 나요."
+- voiceover: "게다가 부모님 학비는 온타리오 대학부설이 1년에 약 2만 달러, 몬트리올 사립컬리지는 만 2천 달러. 1년에 8천 달러나 차이가 나요."
 - src: compositions/frames/05-tuition.html
 - blueprint: compose
-- focal: two vertical bars + "$14,000+" difference
-- roles: Ontario bar (gray, supporting); Montreal bar (cobalt, foreground); difference bracket + stat (foreground)
+- focal: "$8,000" difference card
+- roles: Ontario bar (gray); Montreal bar (cobalt, 60% height); bracket + difference card (foreground)
 
-Scene 1 (0.0–1.4s): eyebrow "근거 ③ 부모님 학비 (연)". → Scene 2 (1.4–4.5s): Ontario bar grows, "$20,000" counts up on "2만 달러". → Scene 3 (4.5–7.2s): Montreal bar grows short, "$5,750" on "5,750달러". → Scene 4 (7.2–10.2s): bracket draws between tops; "1년 $14,000+ 절약" lands on "만 4천 달러".
+Scene 1: Ontario bar grows, "$20,000" on "2만 달러". → Scene 2: Montreal bar grows, "$12,000" on "만 2천". → Scene 3: bracket + "1년 차액 $8,000" on "8천 달러나".
 
-## Frame 6 — 근거④: 매일 원어민 튜터
+## Frame 6 — 근거④: 원어민 튜터
 
-- scene: 계산식 "$40 × 주 5회 × 50주 = $10,000" → "그래도 남아요" → 성장 곡선의 느린 시작이 짧아짐
-- duration: 8.663s
+- scene: "$40/시간 × 4회 × 50주 = $8,000" → "학비 차액만으로 OK" → 적응기 단축 곡선
+- duration: 9.406s
 - transition_in: push-slide LEFT
 - status: animated
-- voiceover: "이 차액으로 매일 한 시간씩 원어민 튜터를 붙여줘도 1년에 만 달러. 오히려 남습니다. 처음의 답답한 적응기를 훨씬 빨리 넘길 수 있죠."
+- voiceover: "이 차액이면 시간당 40달러 원어민 튜터를 일주일에 네 번, 1년 내내 붙여줄 수 있어요. 처음의 답답한 적응기를 훨씬 빨리 넘길 수 있죠."
 - src: compositions/frames/06-tutor.html
 - blueprint: compose
-- focal: equation stack ending "= $10,000"
-- roles: equation lines (foreground subject); "그래도 남아요" chip (supporting); growth curve comparison (supporting)
+- focal: equation stack ending "= $8,000"
+- roles: equation rows (foreground); OK chip (supporting); growth curves (supporting)
 
-Scene 1 (0.0–3.4s): eyebrow "근거 ④ 매일 원어민 튜터"; "$40 / 시간", "× 주 5회", "× 50주" stack on "매일 한 시간씩… 튜터를". → Scene 2 (3.4–5.6s): "= $10,000 / 년" lands, then "그래도 $4,000+ 남아요" chip on "오히려 남습니다". → Scene 3 (5.6–8.9s): two growth curves draw — gray slow start vs cobalt faster climb, label "적응기 단축" on "훨씬 빨리".
+Scene 1: rows on "시간당" / "일주일에" / "1년". → Scene 2: "= $8,000" + "학비 차액만으로 OK ✓". → Scene 3: curves draw on "답답한" / "훨씬 빨리".
 
-## Frame 7 — 보너스: 바이링구얼
-
-- scene: "English ✓ + Français ✓"
-- duration: 3.322s
-- transition_in: crossfade
-- status: animated
-- voiceover: "여기에 불어까지 자연스럽게 익히는 건 덤이고요."
-- src: compositions/frames/07-bilingual.html
-- blueprint: compose
-- focal: two check rows "English ✓" "Français ✓"
-- roles: rows (foreground subject); "보너스" tag (supporting)
-
-Scene 1 (0.0–1.0s): tag "보너스" + "English ✓" row. → Scene 2 (1.0–3.8s): "+ Français ✓" row stamps on "불어까지"; "= 바이링구얼" underline on "덤이고요".
-
-## Frame 8 — CTA
+## Frame 7 — CTA
 
 - scene: AA Canada · 카카오톡 canlog · 02-567-4345 · 선착순 안내
-- duration: 7.201s
+- duration: 7.712s
 - transition_in: crossfade
 - status: animated
 - voiceover: "영어도, 예산도 챙기고 싶다면 몬트리올도 꼭 알아보세요. AA캐나다가 함께하겠습니다."
-- src: compositions/frames/08-cta.html
+- src: compositions/frames/07-cta.html
 - blueprint: compose
-- focal: "몬트리올도 꼭 알아보세요" headline + AA Canada wordmark
-- roles: headline (foreground subject); contact pills (supporting); fine print (supporting); concentric rings (background atmosphere)
+- focal: "몬트리올도 꼭 알아보세요" + AA Canada wordmark
+- roles: headline (foreground); contact pills + fine print (supporting); rings (background)
 
-Scene 1 (0.0–2.6s): "영어 ✓ 예산 ✓" chips tick on cue. → Scene 2 (2.6–3.5s): headline "몬트리올도 꼭 알아보세요". → Scene 3 (3.5–7.4s): "AA Canada" wordmark, then 카카오톡 canlog / 02-567-4345 pills and fine print "학비 프로모션·학생비자 접수는 선착순으로 제한될 수 있어요"; settle.
+Scene 1: 영어 ✓ / 예산 ✓ chips. → Scene 2: headline. → Scene 3: AA Canada wordmark, contacts, fine print; settle.

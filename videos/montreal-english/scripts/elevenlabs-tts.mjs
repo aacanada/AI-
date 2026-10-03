@@ -73,14 +73,16 @@ const SAY = [
   [/(\d+)%/g, "$1퍼센트"],
   [/^AA캐나다/g, "에이에이 캐나다"],
   [/^5,750달러/g, "오천칠백오십 달러"],
+  [/^40달러/g, "사십 달러"],
   // This cloned voice tends to add an "어…" filler at these commas.
   [/^점심시간이든,$/g, "점심시간이든"],
   [/^달러,$/g, "달러."],
+  [/^발표까지,$/g, "발표까지"],
 ];
 const spoken = (word) => SAY.reduce((w, [re, to]) => w.replace(re, to), word);
 
 // Trailing silence per frame (s): a breath between lines, a longer hold on the CTA.
-const PAD = { 1: 0.45, 2: 0.45, 8: 2.0 };
+const PAD = { 1: 0.45, 2: 0.45, 7: 2.0 };
 const PAD_DEFAULT = 0.35;
 
 const pad2 = (n) => String(n).padStart(2, "0");

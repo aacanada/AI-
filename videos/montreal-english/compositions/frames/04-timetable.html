@@ -9,6 +9,7 @@
 
     #root { position:absolute; inset:0; width:1080px; height:1920px; overflow:hidden; font-family:"Pretendard",sans-serif; color:#111; }
     .bg { position:absolute; inset:0; background:#fdfae7; }
+    .sh-stage { position:absolute; left:0; top:0; width:1080px; height:1920px; transform-origin:50% 0; transform:translateY(170px) scale(0.85); }
     .eyebrow { position:absolute; left:80px; top:250px; display:flex; align-items:center; gap:20px; font-size:40px; font-weight:700; color:#1e2bfa; letter-spacing:.04em; }
     .eyebrow i { display:block; width:60px; height:5px; border-radius:3px; background:#1e2bfa; }
     .h1 { position:absolute; left:80px; right:80px; font-size:96px; font-weight:800; line-height:1.15; letter-spacing:-.03em; }
@@ -20,12 +21,11 @@
     .num { font-variant-numeric:tabular-nums; }
 
 
-    .f4-title { top:330px; }
-    .f4-wrap { position:absolute; left:110px; top:520px; width:860px; height:997px; border-radius:14px; overflow:hidden;
-      border:1.5px solid rgba(30,43,250,0.2); background:#fff; }
+    .f4-title { top:320px; }
+    .f4-wrap { position:absolute; left:110px; top:500px; width:860px; height:997px; border-radius:14px; overflow:hidden; border:1.5px solid rgba(30,43,250,0.2); background:#fff; }
     .f4-img { position:absolute; left:0; top:0; width:860px; height:997px; transform-origin:50% 100%; }
-    .f4-call { position:absolute; left:470px; top:1330px; padding:20px 36px; border-radius:100px; background:#dc2626; color:#fff; font-size:46px; font-weight:800; white-space:nowrap; }
-    .f4-res { left:80px; right:80px; top:560px; height:560px; padding:56px; background:#fdfae7; }
+    .f4-call { position:absolute; left:470px; top:1310px; padding:20px 36px; border-radius:100px; background:#dc2626; color:#fff; font-size:46px; font-weight:800; white-space:nowrap; }
+    .f4-res { left:80px; right:80px; top:540px; height:580px; padding:56px; background:#fdfae7; }
     .f4-lab { font-size:52px; font-weight:700; color:#6b6b6b; }
     .f4-n { margin-top:40px; font-size:240px; font-weight:900; color:#1e2bfa; line-height:1.05; letter-spacing:-.04em; }
     .f4-track { position:relative; height:44px; border-radius:6px; background:rgba(30,43,250,0.08); margin-top:26px; overflow:hidden; }
@@ -33,22 +33,21 @@
     .f4-fr { position:absolute; right:0; top:0; bottom:0; width:20%; display:flex; align-items:center; justify-content:center; font-size:28px; font-weight:700; color:#dc2626; }
     .f4-keys { display:flex; justify-content:space-between; margin-top:16px; font-size:36px; font-weight:700; }
 
-    .sh-stage { position:absolute; left:0; top:0; width:1080px; height:1920px; transform-origin:50% 0; transform:translateY(170px) scale(0.85); }
   </style>
-  <div id="root" data-composition-id="04-timetable" data-start="0" data-duration="8.373" data-width="1080" data-height="1920">
-    <div id="f04-bg" class="bg clip" data-start="0" data-duration="8.373" data-track-index="0"></div>
+  <div id="root" data-composition-id="04-timetable" data-start="0" data-duration="5.819" data-width="1080" data-height="1920">
+    <div id="f04-bg" class="bg clip" data-start="0" data-duration="5.819" data-track-index="0"></div>
     <div class="sh-stage" id="f04-stage">
 
-    <div class="eyebrow" id="f4-eye"><i></i>근거 ② 수업</div>
-    <div class="h1 f4-title" id="f4-title">실제 <em>시간표</em>를 보면</div>
-    <div class="f4-wrap" id="f4-wrap"><img class="f4-img" id="f4-img" src="assets/timetable.webp" alt=""></div>
-    <div class="f4-call" id="f4-call">불어는 하루 1시간</div>
-    <div class="card f4-res" id="f4-res">
-      <div class="f4-lab">전체 수업 중 영어</div>
-      <div class="f4-n num" id="f4-n">0%</div>
-      <div class="f4-track"><div class="f4-fill" id="f4-fill"></div><div class="f4-fr" id="f4-fr">불어</div></div>
-      <div class="f4-keys"><span style="color:#1e2bfa">English</span><span style="color:#dc2626">Français</span></div>
-    </div>
+      <div class="eyebrow" id="f4-eye"><i></i>근거 ② 시간표</div>
+      <div class="h1 f4-title" id="f4-title">수업도 <em>영어</em> 중심</div>
+      <div class="f4-wrap" id="f4-wrap" data-layout-allow-overflow><img class="f4-img" id="f4-img" src="assets/timetable.webp" alt=""></div>
+      <div class="f4-call" id="f4-call">불어는 하루 1시간</div>
+      <div class="card f4-res" id="f4-res">
+        <div class="f4-lab">전체 수업 중 영어</div>
+        <div class="f4-n num" id="f4-n">0%</div>
+        <div class="f4-track"><div class="f4-fill" id="f4-fill"></div><div class="f4-fr" id="f4-fr">불어</div></div>
+        <div class="f4-keys"><span style="color:#1e2bfa">English</span><span style="color:#dc2626">Français</span></div>
+      </div>
 
     </div>
   </div>
@@ -61,16 +60,16 @@
         tl.to(st, { v: to, duration: d, ease: "power2.out", onUpdate: () => { el.textContent = fmt(Math.round(st.v)); } }, at);
       };
 
-      tl.fromTo("#f4-eye", {opacity:0, x:-40}, {opacity:1, x:0, duration:0.4, ease:"power3.out"}, 0.05);
-      tl.fromTo("#f4-title", {opacity:0, y:50}, {opacity:1, y:0, duration:0.5, ease:"power3.out"}, 1.15);
-      tl.fromTo("#f4-wrap", {opacity:0, y:120}, {opacity:1, y:0, duration:0.6, ease:"power3.out"}, 1.43);
-      tl.fromTo("#f4-img", {scale:1}, {scale:1.35, duration:2.6, ease:"power1.inOut"}, 1.94);
-      tl.fromTo("#f4-call", {opacity:0, scale:0.5}, {opacity:1, scale:1, duration:0.4, ease:"back.out(2)"}, 2.61);
-      tl.fromTo("#f4-res", {opacity:0, y:80}, {opacity:1, y:0, duration:0.5, ease:"power3.out"}, 4.39);
-      tl.to(["#f4-wrap","#f4-call"], {opacity:0.0, duration:0.4}, 4.39);
-      count("f4-n", 80, 5.33, 0.9, (n) => n + "%");
-      tl.fromTo("#f4-fill", {scaleX:0}, {scaleX:1, duration:0.9, ease:"power2.out"}, 5.33);
-      tl.fromTo("#f4-fr", {opacity:0}, {opacity:1, duration:0.3}, 6.26);
+      tl.fromTo("#f4-eye", {opacity:0, x:-40}, {opacity:1, x:0, duration:0.4, ease:"power3.out"}, 0.0);
+      tl.fromTo("#f4-title", {opacity:0, y:50}, {opacity:1, y:0, duration:0.5, ease:"power3.out"}, 0.1);
+      tl.fromTo("#f4-wrap", {opacity:0, y:120}, {opacity:1, y:0, duration:0.55, ease:"power3.out"}, 0.2);
+      tl.fromTo("#f4-img", {scale:1}, {scale:1.3, duration:2.2, ease:"power1.inOut"}, 0.6);
+      tl.fromTo("#f4-call", {opacity:0, scale:0.5}, {opacity:1, scale:1, duration:0.4, ease:"back.out(2)"}, 0.77);
+      tl.fromTo("#f4-res", {opacity:0, y:80}, {opacity:1, y:0, duration:0.5, ease:"power3.out"}, 2.53);
+      tl.to(["#f4-wrap","#f4-call"], {opacity:0, duration:0.4}, 2.53);
+      count("f4-n", 80, 3.11, 0.8, (n) => n + "%");
+      tl.fromTo("#f4-fill", {scaleX:0}, {scaleX:1, duration:0.8, ease:"power2.out"}, 3.11);
+      tl.fromTo("#f4-fr", {opacity:0}, {opacity:1, duration:0.3}, 4.14);
 
       window.__timelines["04-timetable"] = tl;
     })();

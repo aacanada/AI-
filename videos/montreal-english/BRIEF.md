@@ -2,7 +2,7 @@
 workflow: faceless-explainer
 flow: automation
 storyboard: no
-message: "몬트리올에서도 아이 영어 충분히 늘어요 — 친구들과 100% 영어, 수업 80% 영어, 아낀 학비로 매일 원어민 튜터"
+message: "캐나다 수업은 친구들과의 대화이고 그 소통이 100% 영어 — 이게 영어가 느는 핵심. 수업 80% 영어, 학비 차액 $8,000로 원어민 튜터까지"
 destination: shorts
 aspect: 1080x1920
 language: ko
@@ -28,7 +28,7 @@ AA Canada 원장님 본인 목소리(ElevenLabs 저장 음성)로 읽는 세로 
 ## Customizations
 
 - 내레이션: ElevenLabs `eleven_multilingual_v2`, 저장 음성 `$ELEVENLABS_VOICE_ID`, `/with-timestamps`로 정확한 한글 단어 타이밍 (scripts/elevenlabs-tts.mjs).
-- 숫자 카운트업: 100%, 80%, $5,750 / $20,000 막대 비교, $40 × 5 × 50 = $10,000 계산식.
+- 숫자 카운트업: 100%, 80%, $20,000 / $12,000 막대 비교(차액 $8,000), $40 × 주 4회 × 50주 = $8,000 계산식.
 - 한글 카라오케 자막(하단).
 
 ## Notes
