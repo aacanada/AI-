@@ -18,7 +18,7 @@ music: none
 ## Frame 1 — 훅: 걱정 짚기
 
 - scene: 큰 타이포 "몬트리올 = 불어권?" — 물음표가 흔들린다
-- duration: 3.84s
+- duration: 3.794s
 - transition_in: cut
 - status: animated
 - voiceover: "몬트리올은 불어권이라, 우리 아이 영어가 안 늘면 어떡하죠?"
@@ -32,7 +32,7 @@ Scene 1 (0.0–0.8s): eyebrow "학부모님들의 걱정" + "몬트리올" slams
 ## Frame 2 — 반전
 
 - scene: "결론부터: 영어, 충분히 늘어요" — 체크 마크 스탬프
-- duration: 6.162s
+- duration: 6.023s
 - transition_in: push-slide UP
 - status: animated
 - voiceover: "상담하면서 정말 많이 듣는 질문인데요. 결론부터 말씀드리면, 영어 충분히 늘 수 있습니다."
@@ -46,7 +46,7 @@ Scene 1 (0.0–2.4s): tag "상담 질문 1위" + small Montreal skyline line-art
 ## Frame 3 — 근거①: 친구들과는 100% 영어
 
 - scene: 쉬는 시간·점심시간 말풍선이 전부 영어 → "친구들과는 100% 영어"
-- duration: 10.706s
+- duration: 10.52s
 - transition_in: crossfade
 - status: animated
 - voiceover: "사실 아이 영어는 수업보다 친구들이랑 놀고 떠들면서 늘어요. 영어 학교에 다니면 쉬는 시간이든 점심시간이든, 친구들과는 100% 영어로만 소통합니다."
@@ -60,7 +60,7 @@ Scene 1 (0.0–3.3s): eyebrow "근거 ①" + 3 kid avatars; bubbles "Wanna play?
 ## Frame 4 — 근거②: 수업도 80% 영어
 
 - scene: 실제 시간표 — 영어 노란 형광, 불어 빨간 동그라미 → "수업도 80% 영어"
-- duration: 7.27s
+- duration: 7.873s
 - transition_in: push-slide LEFT
 - status: animated
 - voiceover: "수업도 마찬가지예요. 실제 시간표를 보면 불어는 하루 한 시간뿐이고, 전체 수업의 80%를 영어로 배웁니다."
@@ -74,7 +74,7 @@ Scene 1 (0.0–1.1s): eyebrow "근거 ②" + "실제 시간표" card slides up. 
 ## Frame 5 — 근거③: 학비 차이
 
 - scene: 막대 비교 온타리오 대학부설 ~$20,000 vs 몬트리올 사립컬리지 $5,750 → 차액 "$14,000+"
-- duration: 10.195s
+- duration: 10.613s
 - transition_in: crossfade
 - status: animated
 - voiceover: "게다가 부모님 학비는 온타리오 대학부설이 1년에 약 2만 달러, 몬트리올 사립컬리지는 5,750달러. 1년에 만 4천 달러 넘게 차이가 나요."
@@ -88,7 +88,7 @@ Scene 1 (0.0–1.4s): eyebrow "근거 ③ 부모님 학비 (연)". → Scene 2 (
 ## Frame 6 — 근거④: 매일 원어민 튜터
 
 - scene: 계산식 "$40 × 주 5회 × 50주 = $10,000" → "그래도 남아요" → 성장 곡선의 느린 시작이 짧아짐
-- duration: 8.895s
+- duration: 8.663s
 - transition_in: push-slide LEFT
 - status: animated
 - voiceover: "이 차액으로 매일 한 시간씩 원어민 튜터를 붙여줘도 1년에 만 달러. 오히려 남습니다. 처음의 답답한 적응기를 훨씬 빨리 넘길 수 있죠."
@@ -102,7 +102,7 @@ Scene 1 (0.0–3.4s): eyebrow "근거 ④ 매일 원어민 튜터"; "$40 / 시�
 ## Frame 7 — 보너스: 바이링구얼
 
 - scene: "English ✓ + Français ✓"
-- duration: 3.833s
+- duration: 3.322s
 - transition_in: crossfade
 - status: animated
 - voiceover: "여기에 불어까지 자연스럽게 익히는 건 덤이고요."
@@ -116,7 +116,7 @@ Scene 1 (0.0–1.0s): tag "보너스" + "English ✓" row. → Scene 2 (1.0–3.
 ## Frame 8 — CTA
 
 - scene: AA Canada · 카카오톡 canlog · 02-567-4345 · 선착순 안내
-- duration: 7.433s
+- duration: 7.201s
 - transition_in: crossfade
 - status: animated
 - voiceover: "영어도, 예산도 챙기고 싶다면 몬트리올도 꼭 알아보세요. AA캐나다가 함께하겠습니다."

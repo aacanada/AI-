@@ -10,7 +10,7 @@ audience: "캐나다 자녀무상교육을 알아보며 '불어권이라 영어�
 length: 60s
 angle: listicle
 vo_mode: verbatim
-voice: elevenlabs:MC17PGTXcuo3TyI1IMXP
+voice: elevenlabs:9qtE9eIaqHMUAfRp4QTW
 ---
 
 ## Intent
@@ -33,6 +33,9 @@ AA Canada 원장님 본인 목소리(ElevenLabs 저장 음성)로 읽는 세로 
 
 ## Notes
 
-- 대본 Line 8의 "AA캐나다"는 TTS 발음 안정성을 위해 SCRIPT.md에서 "에이에이 캐나다"로 표기; 자막에는 "AA"로 표시.
+- 발음 교정은 scripts/elevenlabs-tts.mjs의 SAY 표에서 음성에만 적용, 자막은 대본 표기 유지:
+  불어권→불어꿘, N%→N퍼센트, AA캐나다→에이에이 캐나다, 5,750달러→오천칠백오십 달러.
+  이 음성은 일부 쉼표에서 "어…"를 넣는 경향이 있어 해당 쉼표는 음성용 텍스트에서만 제거.
+- 유튜브 쇼츠 자막은 항상 상단 배치 (자막 밴드 y 170–360px, 본문은 그 아래 안전영역).
 - BGM 없음: HeyGen 미로그인 상태라 음원 라이브러리 검색 불가. 업로드 시 플랫폼 음원 추가 권장.
 - CTA 연락처: 카카오톡 canlog · 02-567-4345.

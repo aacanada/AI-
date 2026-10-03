@@ -30,9 +30,11 @@
       display:flex; align-items:center; justify-content:center; font-size:120px; font-weight:900; }
     .f2-band { position:absolute; left:-120px; right:-120px; top:1330px; height:220px; background:rgba(30,43,250,0.07); transform:rotate(-6deg); }
 
+    .sh-stage { position:absolute; left:0; top:0; width:1080px; height:1920px; transform-origin:50% 0; transform:translateY(170px) scale(0.85); }
   </style>
-  <div id="root" data-composition-id="02-answer" data-start="0" data-duration="6.662" data-width="1080" data-height="1920">
-    <div id="f02-bg" class="bg clip" data-start="0" data-duration="6.662" data-track-index="0"></div>
+  <div id="root" data-composition-id="02-answer" data-start="0" data-duration="6.523" data-width="1080" data-height="1920">
+    <div id="f02-bg" class="bg clip" data-start="0" data-duration="6.523" data-track-index="0"></div>
+    <div class="sh-stage" id="f02-stage">
 
     <div class="f2-band"></div>
     <div class="pill soft f2-tag" id="f2-tag">상담 질문 1위</div>
@@ -44,6 +46,7 @@
     <div class="h1 f2-h"><span class="f2-w" id="f2-w1">영어,</span><br><span class="f2-w" id="f2-w2"><em>충분히</em></span> <span class="f2-w" id="f2-w3">늘어요</span></div>
     <div class="f2-stamp" id="f2-stamp">✓</div>
 
+    </div>
   </div>
   <script>
     (function(){
@@ -57,12 +60,12 @@
       tl.fromTo("#f2-tag", {opacity:0, y:30}, {opacity:1, y:0, duration:0.45, ease:"power3.out"}, 0.05);
       const p = $("f2-skypath"), L = 3200; p.style.strokeDasharray = L;
       tl.fromTo(p, {strokeDashoffset:L}, {strokeDashoffset:0, duration:2.2, ease:"power1.inOut"}, 0.15);
-      tl.fromTo("#f2-mtn", {opacity:0}, {opacity:0.35, duration:1.0}, 0.8);
-      tl.fromTo("#f2-eye", {opacity:0, x:-40}, {opacity:1, x:0, duration:0.4, ease:"power3.out"}, 2.4);
-      tl.fromTo("#f2-w1", {opacity:0, y:60}, {opacity:1, y:0, duration:0.45, ease:"power3.out"}, 4.0);
-      tl.fromTo("#f2-w2", {opacity:0, y:60}, {opacity:1, y:0, duration:0.45, ease:"power3.out"}, 4.3);
-      tl.fromTo("#f2-w3", {opacity:0, y:60}, {opacity:1, y:0, duration:0.45, ease:"power3.out"}, 4.75);
-      tl.fromTo("#f2-stamp", {opacity:0, scale:2.2, rotation:-25}, {opacity:1, scale:1, rotation:0, duration:0.4, ease:"back.out(2)"}, 5.05);
+      tl.fromTo("#f2-mtn", {opacity:0}, {opacity:0.35, duration:1.0}, 0.79);
+      tl.fromTo("#f2-eye", {opacity:0, x:-40}, {opacity:1, x:0, duration:0.4, ease:"power3.out"}, 2.61);
+      tl.fromTo("#f2-w1", {opacity:0, y:60}, {opacity:1, y:0, duration:0.45, ease:"power3.out"}, 3.84);
+      tl.fromTo("#f2-w2", {opacity:0, y:60}, {opacity:1, y:0, duration:0.45, ease:"power3.out"}, 4.09);
+      tl.fromTo("#f2-w3", {opacity:0, y:60}, {opacity:1, y:0, duration:0.45, ease:"power3.out"}, 4.51);
+      tl.fromTo("#f2-stamp", {opacity:0, scale:2.2, rotation:-25}, {opacity:1, scale:1, rotation:0, duration:0.4, ease:"back.out(2)"}, 4.8);
       tl.fromTo("#f2-sky", {y:0}, {y:-20, duration:6.1, ease:"none"}, 0);
 
       window.__timelines["02-answer"] = tl;

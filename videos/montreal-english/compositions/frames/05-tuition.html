@@ -34,9 +34,11 @@
     .f5-save b { display:block; font-size:92px; font-weight:900; letter-spacing:-.03em; }
     .f5-brk { position:absolute; left:470px; top:600px; width:60px; height:570px; border:5px solid #1e2bfa; border-left:none; border-radius:0 18px 18px 0; transform-origin:0 0; }
 
+    .sh-stage { position:absolute; left:0; top:0; width:1080px; height:1920px; transform-origin:50% 0; transform:translateY(170px) scale(0.85); }
   </style>
-  <div id="root" data-composition-id="05-tuition" data-start="0" data-duration="10.695" data-width="1080" data-height="1920">
-    <div id="f05-bg" class="bg clip" data-start="0" data-duration="10.695" data-track-index="0"></div>
+  <div id="root" data-composition-id="05-tuition" data-start="0" data-duration="11.113" data-width="1080" data-height="1920">
+    <div id="f05-bg" class="bg clip" data-start="0" data-duration="11.113" data-track-index="0"></div>
+    <div class="sh-stage" id="f05-stage">
 
     <div class="eyebrow" id="f5-eye"><i></i>근거 ③ 부모님 학비 (1년)</div>
     <div class="h1 f5-title" id="f5-title">학비 차이가 <em>이만큼</em></div>
@@ -50,6 +52,7 @@
     <div class="f5-brk" id="f5-brk"></div>
     <div class="f5-save" id="f5-save"><small>1년 차액</small><b class="num">$14,000+</b></div>
 
+    </div>
   </div>
   <script>
     (function(){
@@ -60,20 +63,20 @@
         tl.to(st, { v: to, duration: d, ease: "power2.out", onUpdate: () => { el.textContent = fmt(Math.round(st.v)); } }, at);
       };
 
-      tl.fromTo("#f5-eye", {opacity:0, x:-40}, {opacity:1, x:0, duration:0.4, ease:"power3.out"}, 0.05);
-      tl.fromTo("#f5-title", {opacity:0, y:50}, {opacity:1, y:0, duration:0.5, ease:"power3.out"}, 0.3);
-      tl.fromTo("#f5-l1", {opacity:0, y:20}, {opacity:1, y:0, duration:0.4}, 1.35);
-      tl.fromTo("#f5-b1", {scaleY:0}, {scaleY:1, duration:1.4, ease:"power2.out"}, 1.5);
-      tl.fromTo("#f5-v1", {opacity:0}, {opacity:1, duration:0.3}, 2.6);
-      count("f5-v1", 20000, 2.6, 1.3, (n) => "약 $" + n.toLocaleString("en-US"));
-      tl.fromTo("#f5-l2", {opacity:0, y:20}, {opacity:1, y:0, duration:0.4}, 4.5);
-      tl.fromTo("#f5-b2", {scaleY:0}, {scaleY:1, duration:0.9, ease:"power2.out"}, 4.7);
-      tl.fromTo("#f5-v2", {opacity:0}, {opacity:1, duration:0.3}, 5.3);
-      count("f5-v2", 5750, 5.3, 0.9, (n) => "$" + n.toLocaleString("en-US"));
-      tl.fromTo("#f5-brk", {opacity:0, scaleY:0}, {opacity:1, scaleY:1, duration:0.6, ease:"power2.out"}, 7.2);
-      tl.fromTo("#f5-save", {opacity:0, scale:0.6}, {opacity:1, scale:1, duration:0.5, ease:"back.out(1.8)"}, 7.75);
-      tl.to("#f5-save", {scale:1.06, duration:0.3, ease:"power2.out"}, 8.5);
-      tl.to("#f5-save", {scale:1, duration:0.4, ease:"power2.inOut"}, 8.8);
+      tl.fromTo("#f5-eye", {opacity:0, x:-40}, {opacity:1, x:0, duration:0.4, ease:"power3.out"}, 0.06);
+      tl.fromTo("#f5-title", {opacity:0, y:50}, {opacity:1, y:0, duration:0.5, ease:"power3.out"}, 0.38);
+      tl.fromTo("#f5-l1", {opacity:0, y:20}, {opacity:1, y:0, duration:0.4}, 1.52);
+      tl.fromTo("#f5-b1", {scaleY:0}, {scaleY:1, duration:1.4, ease:"power2.out"}, 1.65);
+      tl.fromTo("#f5-v1", {opacity:0}, {opacity:1, duration:0.3}, 2.54);
+      count("f5-v1", 20000, 2.54, 1.3, (n) => "약 $" + n.toLocaleString("en-US"));
+      tl.fromTo("#f5-l2", {opacity:0, y:20}, {opacity:1, y:0, duration:0.4}, 3.93);
+      tl.fromTo("#f5-b2", {scaleY:0}, {scaleY:1, duration:0.9, ease:"power2.out"}, 4.15);
+      tl.fromTo("#f5-v2", {opacity:0}, {opacity:1, duration:0.3}, 4.79);
+      count("f5-v2", 5750, 4.79, 0.9, (n) => "$" + n.toLocaleString("en-US"));
+      tl.fromTo("#f5-brk", {opacity:0, scaleY:0}, {opacity:1, scaleY:1, duration:0.6, ease:"power2.out"}, 7.45);
+      tl.fromTo("#f5-save", {opacity:0, scale:0.6}, {opacity:1, scale:1, duration:0.5, ease:"back.out(1.8)"}, 7.93);
+      tl.to("#f5-save", {scale:1.06, duration:0.3, ease:"power2.out"}, 8.73);
+      tl.to("#f5-save", {scale:1, duration:0.4, ease:"power2.inOut"}, 9.05);
 
       window.__timelines["05-tuition"] = tl;
     })();

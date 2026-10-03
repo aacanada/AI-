@@ -35,9 +35,11 @@
     .f3-n { font-size:200px; font-weight:900; color:#1e2bfa; line-height:1; letter-spacing:-.04em; }
     .f3-en { font-size:60px; font-weight:800; color:#111; }
 
+    .sh-stage { position:absolute; left:0; top:0; width:1080px; height:1920px; transform-origin:50% 0; transform:translateY(170px) scale(0.85); }
   </style>
-  <div id="root" data-composition-id="03-friends" data-start="0" data-duration="11.206" data-width="1080" data-height="1920">
-    <div id="f03-bg" class="bg clip" data-start="0" data-duration="11.206" data-track-index="0"></div>
+  <div id="root" data-composition-id="03-friends" data-start="0" data-duration="11.02" data-width="1080" data-height="1920">
+    <div id="f03-bg" class="bg clip" data-start="0" data-duration="11.02" data-track-index="0"></div>
+    <div class="sh-stage" id="f03-stage">
 
     <div class="eyebrow" id="f3-eye"><i></i>근거 ① 친구</div>
     <div class="h1 f3-title" id="f3-title">영어는 <em>놀면서</em> 늘어요</div>
@@ -56,6 +58,7 @@
       <div class="f3-stat"><span class="f3-n num" id="f3-n">0%</span><span class="f3-en" id="f3-en">English</span></div>
     </div>
 
+    </div>
   </div>
   <script>
     (function(){
@@ -66,21 +69,21 @@
         tl.to(st, { v: to, duration: d, ease: "power2.out", onUpdate: () => { el.textContent = fmt(Math.round(st.v)); } }, at);
       };
 
-      tl.fromTo("#f3-eye", {opacity:0, x:-40}, {opacity:1, x:0, duration:0.4, ease:"power3.out"}, 0.05);
-      tl.fromTo("#f3-title", {opacity:0, y:50}, {opacity:1, y:0, duration:0.5, ease:"power3.out"}, 0.2);
-      ["#f3-k1","#f3-k2","#f3-k3"].forEach((k,i) => tl.fromTo(k, {opacity:0, scale:0.4}, {opacity:1, scale:1, duration:0.45, ease:"back.out(1.8)"}, 0.9 + i*0.15));
+      tl.fromTo("#f3-eye", {opacity:0, x:-40}, {opacity:1, x:0, duration:0.4, ease:"power3.out"}, 0.04);
+      tl.fromTo("#f3-title", {opacity:0, y:50}, {opacity:1, y:0, duration:0.5, ease:"power3.out"}, 0.17);
+      ["#f3-k1","#f3-k2","#f3-k3"].forEach((k,i) => tl.fromTo(k, {opacity:0, scale:0.4}, {opacity:1, scale:1, duration:0.45, ease:"back.out(1.8)"}, 0.77 + i*0.15));
       const pop = (id, at) => tl.fromTo(id, {opacity:0, scale:0.5, y:20}, {opacity:1, scale:1, y:0, duration:0.35, ease:"back.out(2)", transformOrigin:"20% 100%"}, at);
-      pop("#f3-b1", 1.55); pop("#f3-b2", 2.25); pop("#f3-b3", 2.6);
-      tl.fromTo("#f3-c1", {opacity:0, y:30}, {opacity:1, y:0, duration:0.4, ease:"power3.out"}, 5.6);
-      pop("#f3-b4", 5.9);
-      tl.fromTo("#f3-c2", {opacity:0, y:30}, {opacity:1, y:0, duration:0.4, ease:"power3.out"}, 6.55);
-      pop("#f3-b5", 6.85);
-      tl.fromTo("#f3-card", {opacity:0, y:60}, {opacity:1, y:0, duration:0.5, ease:"power3.out"}, 7.4);
-      count("f3-n", 100, 8.2, 0.9, (n) => n + "%");
-      tl.fromTo("#f3-n", {scale:0.6}, {scale:1, duration:0.9, ease:"power2.out", transformOrigin:"0% 80%"}, 8.2);
-      tl.fromTo("#f3-en", {opacity:0, x:-20}, {opacity:1, x:0, duration:0.4, ease:"power2.out"}, 9.0);
-      tl.to(["#f3-k1","#f3-k3"], {y:-14, duration:1.6, ease:"sine.inOut"}, 3.0);
-      tl.to("#f3-k2", {y:12, duration:1.6, ease:"sine.inOut"}, 3.0);
+      pop("#f3-b1", 1.66); pop("#f3-b2", 2.41); pop("#f3-b3", 2.93);
+      tl.fromTo("#f3-c1", {opacity:0, y:30}, {opacity:1, y:0, duration:0.4, ease:"power3.out"}, 5.87);
+      pop("#f3-b4", 6.11);
+      tl.fromTo("#f3-c2", {opacity:0, y:30}, {opacity:1, y:0, duration:0.4, ease:"power3.out"}, 6.66);
+      pop("#f3-b5", 6.94);
+      tl.fromTo("#f3-card", {opacity:0, y:60}, {opacity:1, y:0, duration:0.5, ease:"power3.out"}, 7.45);
+      count("f3-n", 100, 8.09, 0.9, (n) => n + "%");
+      tl.fromTo("#f3-n", {scale:0.6}, {scale:1, duration:0.9, ease:"power2.out", transformOrigin:"0% 80%"}, 8.09);
+      tl.fromTo("#f3-en", {opacity:0, x:-20}, {opacity:1, x:0, duration:0.4, ease:"power2.out"}, 8.86);
+      tl.to(["#f3-k1","#f3-k3"], {y:-14, duration:1.6, ease:"sine.inOut"}, 3.32);
+      tl.to("#f3-k2", {y:12, duration:1.6, ease:"sine.inOut"}, 3.32);
 
       window.__timelines["03-friends"] = tl;
     })();

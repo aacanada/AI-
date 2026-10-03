@@ -65,6 +65,24 @@ function toWords(al) {
   return words.map((w, i) => ({ id: `w${i}`, text: w.text, start: +w.start.toFixed(3), end: +w.end.toFixed(3) }));
 }
 
+// Pronunciation fixes — applied to the SPOKEN text only; captions keep the script's spelling.
+// Each rule rewrites part of one script word; the aligned spoken tokens are folded back
+// onto the original word so caption timing stays exact.
+const SAY = [
+  [/불어권/g, "불어꿘"],
+  [/(\d+)%/g, "$1퍼센트"],
+  [/^AA캐나다/g, "에이에이 캐나다"],
+  [/^5,750달러/g, "오천칠백오십 달러"],
+  // This cloned voice tends to add an "어…" filler at these commas.
+  [/^점심시간이든,$/g, "점심시간이든"],
+  [/^달러,$/g, "달러."],
+];
+const spoken = (word) => SAY.reduce((w, [re, to]) => w.replace(re, to), word);
+
+// Trailing silence per frame (s): a breath between lines, a longer hold on the CTA.
+const PAD = { 1: 0.45, 2: 0.45, 8: 2.0 };
+const PAD_DEFAULT = 0.35;
+
 const pad2 = (n) => String(n).padStart(2, "0");
 const lines = parseScript(readFileSync(join(ROOT, "SCRIPT.md"), "utf8"));
 const metaPath = join(ROOT, "audio_meta.json");
@@ -75,12 +93,14 @@ mkdirSync(join(ROOT, "assets/voice"), { recursive: true });
 for (const [i, line] of lines.entries()) {
   const id = pad2(line.frame);
   if (only && !only.has(id)) continue;
+  const orig = line.text.split(/\s+/);
+  const say = orig.map(spoken);
   const body = {
-    text: line.text,
+    text: say.join(" "),
     model_id: MODEL,
     voice_settings: SETTINGS,
-    previous_text: lines[i - 1]?.text,
-    next_text: lines[i + 1]?.text,
+    previous_text: lines[i - 1] && lines[i - 1].text.split(/\s+/).map(spoken).join(" "),
+    next_text: lines[i + 1] && lines[i + 1].text.split(/\s+/).map(spoken).join(" "),
   };
   const res = await fetch(
     `https://api.elevenlabs.io/v1/text-to-speech/${VOICE}/with-timestamps?output_format=mp3_44100_128`,
@@ -91,13 +111,24 @@ for (const [i, line] of lines.entries()) {
   const mp3 = join(ROOT, `assets/voice/${id}.mp3`);
   const wav = join(ROOT, `assets/voice/${id}.wav`);
   writeFileSync(mp3, Buffer.from(data.audio_base64, "base64"));
-  const ff = spawnSync("ffmpeg", ["-y", "-loglevel", "error", "-i", mp3, "-ar", "44100", "-ac", "1", wav]);
+  const pad = PAD[line.frame] ?? PAD_DEFAULT;
+  const ff = spawnSync("ffmpeg", ["-y", "-loglevel", "error", "-i", mp3, "-af", `apad=pad_dur=${pad}`, "-ar", "44100", "-ac", "1", wav]);
   if (ff.status !== 0) throw new Error(`line ${id}: ffmpeg failed`);
   rmSync(mp3);
   const dur = Number(
     spawnSync("ffprobe", ["-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", wav]).stdout.toString(),
   );
-  const words = toWords(data.alignment);
+  // Fold spoken tokens back onto the script's words (caption text = script spelling).
+  const toks = toWords(data.alignment);
+  const words = [];
+  let k = 0;
+  orig.forEach((w, j) => {
+    const n = say[j].split(" ").length;
+    const span = toks.slice(k, k + n);
+    k += n;
+    if (span.length) words.push({ id: `w${j}`, text: w, start: span[0].start, end: span.at(-1).end });
+  });
+  if (k !== toks.length) console.warn(`  ⚠ line ${id}: ${toks.length} spoken tokens vs ${k} expected`);
   voices.set(line.frame, { frame: line.frame, path: `assets/voice/${id}.wav`, duration_s: +dur.toFixed(3), words });
   console.log(`✓ voice ${id}: ${dur.toFixed(2)}s, ${words.length} words`);
 }

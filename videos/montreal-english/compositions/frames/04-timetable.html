@@ -33,9 +33,11 @@
     .f4-fr { position:absolute; right:0; top:0; bottom:0; width:20%; display:flex; align-items:center; justify-content:center; font-size:28px; font-weight:700; color:#dc2626; }
     .f4-keys { display:flex; justify-content:space-between; margin-top:16px; font-size:36px; font-weight:700; }
 
+    .sh-stage { position:absolute; left:0; top:0; width:1080px; height:1920px; transform-origin:50% 0; transform:translateY(170px) scale(0.85); }
   </style>
-  <div id="root" data-composition-id="04-timetable" data-start="0" data-duration="7.77" data-width="1080" data-height="1920">
-    <div id="f04-bg" class="bg clip" data-start="0" data-duration="7.77" data-track-index="0"></div>
+  <div id="root" data-composition-id="04-timetable" data-start="0" data-duration="8.373" data-width="1080" data-height="1920">
+    <div id="f04-bg" class="bg clip" data-start="0" data-duration="8.373" data-track-index="0"></div>
+    <div class="sh-stage" id="f04-stage">
 
     <div class="eyebrow" id="f4-eye"><i></i>근거 ② 수업</div>
     <div class="h1 f4-title" id="f4-title">실제 <em>시간표</em>를 보면</div>
@@ -48,6 +50,7 @@
       <div class="f4-keys"><span style="color:#1e2bfa">English</span><span style="color:#dc2626">Français</span></div>
     </div>
 
+    </div>
   </div>
   <script>
     (function(){
@@ -59,15 +62,15 @@
       };
 
       tl.fromTo("#f4-eye", {opacity:0, x:-40}, {opacity:1, x:0, duration:0.4, ease:"power3.out"}, 0.05);
-      tl.fromTo("#f4-title", {opacity:0, y:50}, {opacity:1, y:0, duration:0.5, ease:"power3.out"}, 0.9);
-      tl.fromTo("#f4-wrap", {opacity:0, y:120}, {opacity:1, y:0, duration:0.6, ease:"power3.out"}, 1.1);
-      tl.fromTo("#f4-img", {scale:1}, {scale:1.35, duration:2.6, ease:"power1.inOut"}, 1.6);
-      tl.fromTo("#f4-call", {opacity:0, scale:0.5}, {opacity:1, scale:1, duration:0.4, ease:"back.out(2)"}, 2.6);
-      tl.fromTo("#f4-res", {opacity:0, y:80}, {opacity:1, y:0, duration:0.5, ease:"power3.out"}, 4.2);
-      tl.to(["#f4-wrap","#f4-call"], {opacity:0.0, duration:0.4}, 4.2);
-      count("f4-n", 80, 4.9, 0.9, (n) => n + "%");
-      tl.fromTo("#f4-fill", {scaleX:0}, {scaleX:1, duration:0.9, ease:"power2.out"}, 4.9);
-      tl.fromTo("#f4-fr", {opacity:0}, {opacity:1, duration:0.3}, 5.7);
+      tl.fromTo("#f4-title", {opacity:0, y:50}, {opacity:1, y:0, duration:0.5, ease:"power3.out"}, 1.15);
+      tl.fromTo("#f4-wrap", {opacity:0, y:120}, {opacity:1, y:0, duration:0.6, ease:"power3.out"}, 1.43);
+      tl.fromTo("#f4-img", {scale:1}, {scale:1.35, duration:2.6, ease:"power1.inOut"}, 1.94);
+      tl.fromTo("#f4-call", {opacity:0, scale:0.5}, {opacity:1, scale:1, duration:0.4, ease:"back.out(2)"}, 2.61);
+      tl.fromTo("#f4-res", {opacity:0, y:80}, {opacity:1, y:0, duration:0.5, ease:"power3.out"}, 4.39);
+      tl.to(["#f4-wrap","#f4-call"], {opacity:0.0, duration:0.4}, 4.39);
+      count("f4-n", 80, 5.33, 0.9, (n) => n + "%");
+      tl.fromTo("#f4-fill", {scaleX:0}, {scaleX:1, duration:0.9, ease:"power2.out"}, 5.33);
+      tl.fromTo("#f4-fr", {opacity:0}, {opacity:1, duration:0.3}, 6.26);
 
       window.__timelines["04-timetable"] = tl;
     })();
