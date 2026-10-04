@@ -46,12 +46,17 @@
 | 로드맵 | `.road` `.road-fill` `.step(.goal)` `.node` `.step-box` | 단계별 경로 |
 | 체인 | `.pill-label` `.chain` `.chip(.final)` `.arrow` `.skip` `.note` | 지름길·프로세스 |
 | CTA | `.ornament` `.logo` `.logo-sub` `.cta-btn` | 마지막 장면 |
+| 스크린샷 카드 | `.shot` > `.shot-inner[data-layout-allow-overflow]` > `img[data-img="img-01"]` + `.hl-box` | 첨부 이미지(가로형) |
+| 휴대폰 프레임 | `.shot.phone` (내부 동일) | 세로 캡처, 카톡·앱 화면 |
+| 고정 창 | `.shot.window` (높이 860) | 긴 페이지·서류의 일부만 |
+| 이미지 라벨/설명 | `.shot-tag` (예: "실제 상담 캡처"), `.shot-cap` | 출처·기준 표기 |
 
 ## 타임라인 헬퍼 (템플릿 스크립트에 정의됨)
 - `c(id, 앵커)` → 그 말이 시작되는 절대 시각. 없는 앵커면 에러로 알려 준다.
 - `S[id]`, `sEnd(id)` → 장면 시작/끝.
 - `from(sel, at, fromVars?, toVars?)` 기본: 아래에서 페이드업.
 - `slideIn(sel, at, dx)`, `pulse(sel, at, scale)`, `countUp(sel, 숫자, at)`, `enterKicker(stageSel, id)`, `exit(stageSel, id)`.
+- 이미지: `shotIn(sel, at)`, `spot(hlSel, at)`, `focusShot(sel, {x,y,w,h}, at)` (영역이 폭 60% 이하일 때 확대 효과가 큼), `unfocusShot(sel, at)`, `scrollShot(sel, at, dur, from%, to%)`. 이미지 크기는 `images.json`에서 주입되므로 로딩과 무관하게 정확하다.
 - 장면마다: `enterKicker` → 제목 `from(... S[id]+0.1)` → 요소들을 각 앵커에 → `exit`.
 
 ## HyperFrames 주의 (실수하면 렌더가 깨짐)

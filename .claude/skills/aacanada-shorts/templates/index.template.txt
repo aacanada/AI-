@@ -179,6 +179,23 @@
       .logo-sub { font-size: 42px; font-weight: 700; color: var(--slate); }
       .cta-btn { padding: 36px 74px; border-radius: 999px; background: var(--gold-grad); color: var(--ink); font-size: 60px; font-weight: 900; }
 
+      /* ═══ SCREENSHOTS (user-attached images) ═══ */
+      .shot-tag { display: inline-flex; align-items: center; gap: 12px; font-size: 28px; font-weight: 800; color: var(--gold); letter-spacing: 0.14em; }
+      .shot-tag::before { content: ""; width: 12px; height: 12px; border-radius: 50%; background: var(--gold); }
+      .shot {
+        position: relative; width: 940px; overflow: hidden; border-radius: 26px; background: #fff;
+        border: 1.5px solid var(--hair); box-shadow: 0 40px 90px rgba(0, 0, 0, 0.55), 0 0 0 10px rgba(201, 169, 110, 0.06);
+      }
+      .shot.window { height: 860px; }                      /* tall capture shown through a window (scroll / focus) */
+      .shot.phone { width: 520px; height: 900px; border-radius: 54px; border: 12px solid #1c2440; background: #000; }
+      .shot-inner { position: relative; width: 100%; transform-origin: 0 0; }
+      .shot-inner img { display: block; width: 100%; height: auto; }
+      .hl-box {
+        position: absolute; border: 5px solid var(--gold-2); border-radius: 12px;
+        box-shadow: 0 0 0 4000px rgba(7, 10, 18, 0.5);    /* spotlight: dims everything outside the box */
+      }
+      .shot-cap { width: 940px; text-align: center; font-size: 34px; font-weight: 700; color: var(--slate); }
+
       /* ═══ CAPTIONS (Shorts safe zone: y 1340–1520) ═══ */
       .cap { display: flex; justify-content: center; align-items: flex-start; padding-top: 1350px; }
       .cap-pill {
@@ -368,6 +385,42 @@
           onUpdate: () => { el.textContent = prefix + (Math.round(o.v / 25) * 25).toLocaleString("en-US"); } }, at);
       };
       const enterKicker = (stage, id) => from(stage + " .kicker", S[id] + 0.02, { opacity: 0, y: 20 });
+
+      // ── screenshots: IMAGES = {img-01: {w, h}} from images.json ──
+      const IMAGES = %%IMAGES%%;
+      document.querySelectorAll("img[data-img]").forEach((im) => {
+        const m = IMAGES[im.dataset.img];
+        if (m) im.style.aspectRatio = m.w + " / " + m.h;   // reserve exact height before the image decodes
+      });
+      // geometry of a .shot: window size + displayed image size (no dependency on image load)
+      // reads CSS sizes (works even while the scene clip is still hidden)
+      const shotGeo = (sel) => {
+        const box = document.querySelector(sel), im = box.querySelector("img[data-img]"), m = IMAGES[im.dataset.img];
+        const cs = getComputedStyle(box), b = (k) => parseFloat(cs[k]) || 0;
+        const ww = parseFloat(cs.width) - b("borderLeftWidth") - b("borderRightWidth");
+        const iw = ww, ih = iw * m.h / m.w;
+        const windowed = box.classList.contains("window") || box.classList.contains("phone");
+        const wh = windowed ? parseFloat(cs.height) - b("borderTopWidth") - b("borderBottomWidth") : ih;
+        return { ww, wh, iw, ih };
+      };
+      const shotIn = (sel, at) => from(sel, at, { opacity: 0, y: 70, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.7, ease: "power3.out" });
+      // pan a tall capture from top to bottom (window/phone shots), e.g. scrollShot("#shot1", c(id,"앵커"), 4)
+      const scrollShot = (sel, at, dur, fromPct = 0, toPct = 100) => {
+        const g = shotGeo(sel), max = Math.max(g.ih - g.wh, 0);
+        tl.fromTo(sel + " .shot-inner", { y: -max * fromPct / 100 }, { y: -max * toPct / 100, duration: dur, ease: "sine.inOut" }, at);
+      };
+      // zoom into a region given in % of the image {x,y,w,h}; keeps the image covering the window
+      const focusShot = (sel, r, at, dur = 0.9) => {
+        const g = shotGeo(sel);
+        const rx = g.iw * r.x / 100, ry = g.ih * r.y / 100, rw = g.iw * r.w / 100, rh = g.ih * r.h / 100;
+        const k = Math.max(1, Math.min(g.ww * 0.88 / rw, g.wh * 0.7 / rh, 3.2));
+        let x = g.ww / 2 - (rx + rw / 2) * k, y = g.wh / 2 - (ry + rh / 2) * k;
+        x = Math.min(0, Math.max(g.ww - g.iw * k, x)); y = Math.min(0, Math.max(g.wh - g.ih * k, y));
+        tl.to(sel + " .shot-inner", { x, y, scale: k, duration: dur, ease: "power3.inOut" }, at);
+      };
+      const unfocusShot = (sel, at, dur = 0.7) => tl.to(sel + " .shot-inner", { x: 0, y: 0, scale: 1, duration: dur, ease: "power3.inOut" }, at);
+      // spotlight box (.hl-box placed with left/top/width/height in %) fades in at `at`
+      const spot = (sel, at) => from(sel, at, { opacity: 0, scale: 1.12 }, { opacity: 1, scale: 1, duration: 0.45, ease: "power3.out" });
 
       // ── global layers ──
       tl.fromTo("#glow-a", { x: 0, y: 0 }, { x: 240, y: 260, duration: TOTAL, ease: "sine.inOut" }, 0);

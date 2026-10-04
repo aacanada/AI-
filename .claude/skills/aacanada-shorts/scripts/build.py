@@ -8,7 +8,7 @@ sync after any re-voice.
 Template placeholders:
   %%S_<scene-id>%%  → data-start/data-duration for that scene's <section>
   %%TOTAL%% %%CAPTIONS%% %%AUDIO%% %%COUNTERS%% %%CUES%% %%STARTS%% %%DURS%%
-  %%BRAND%% %%TOPIC%% %%BGM_VOLUME%%
+  %%BRAND%% %%TOPIC%% %%BGM_VOLUME%% %%IMAGES%% (images.json from prep_images.py, or {})
 """
 import json, os, re, subprocess, sys
 
@@ -83,7 +83,10 @@ html = (html.replace("%%TOTAL%%", f"{TOTAL:.3f}")
             .replace("%%DURS%%", json.dumps(dur))
             .replace("%%BRAND%%", st.get("brand", "AA CANADA"))
             .replace("%%TOPIC%%", st.get("topic", ""))
-            .replace("%%BGM_VOLUME%%", str(st.get("bgm_volume", 0.12))))
+            .replace("%%BGM_VOLUME%%", str(st.get("bgm_volume", 0.12)))
+            .replace("%%IMAGES%%", json.dumps(
+                {m["id"]: {"w": m["w"], "h": m["h"]} for m in json.load(open("images.json"))}
+                if os.path.exists("images.json") else {})))
 left = sorted(set(re.findall(r"%%[A-Z_0-9a-z\-]+%%", html)))
 if left:
     sys.exit(f"unfilled placeholders: {left} (scene ids in template must match scenes.json)")

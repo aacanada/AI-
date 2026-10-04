@@ -1,0 +1,40 @@
+<!-- Tested screenshot scenes. Paste sections between SCENES START/END and the JS between SCENE TIMELINE START/END.
+     img-01 = wide web capture (spotlight on a table row), img-02 = tall phone capture (scroll). -->
+
+      <section id="s-fee" class="clip" %%S_01-fee%% data-track-index="1">
+        <div id="fee-stage" class="stage">
+          <div class="kicker">실제 자료</div>
+          <div id="fee-title" class="title">학비표로 <span class="gold">직접 확인</span></div>
+          <div id="fee-shot" class="shot">
+            <div class="shot-inner" data-layout-allow-overflow>
+              <img data-img="img-01" src="public/images/img-01.jpg" alt="" />
+              <div id="fee-hl" class="hl-box" style="left:2.5%; top:42.5%; width:95%; height:11.5%"></div>
+            </div>
+          </div>
+          <div id="fee-cap" class="shot-cap">52주 등록 기준 · CAD</div>
+        </div>
+      </section>
+
+      <section id="s-chat" class="clip" %%S_02-chat%% data-track-index="1">
+        <div id="chat-stage" class="stage">
+          <div id="chat-tag" class="shot-tag">실제 상담 캡처</div>
+          <div id="chat-shot" class="shot phone">
+            <div class="shot-inner" data-layout-allow-overflow><img data-img="img-02" src="public/images/img-02.jpg" alt="" /></div>
+          </div>
+        </div>
+      </section>
+
+<script>
+      enterKicker("#fee-stage", "01-fee");
+      from("#fee-title", S["01-fee"] + 0.1);
+      shotIn("#fee-shot", S["01-fee"] + 0.3);
+      from("#fee-cap", S["01-fee"] + 0.6, { opacity: 0, y: 20 });
+      focusShot("#fee-shot", { x: 2.5, y: 42.5, w: 95, h: 11.5 }, c("01-fee", "오십이") - 0.2);
+      spot("#fee-hl", c("01-fee", "오십이") + 0.5);
+      exit("#fee-stage", "01-fee");
+
+      from("#chat-tag", S["02-chat"] + 0.02, { opacity: 0, y: 20 });
+      shotIn("#chat-shot", S["02-chat"] + 0.15);
+      scrollShot("#chat-shot", S["02-chat"] + 0.8, D["02-chat"] - 1.4, 0, 60);
+      exit("#chat-stage", "02-chat");
+</script>

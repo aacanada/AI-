@@ -26,7 +26,7 @@ cp gsap-*/package/dist/gsap.min.js "$PROJ/public/gsap.min.js"
 popd >/dev/null
 rm -rf "$TMP"
 
-cp "$SKILL_DIR/scripts/gen_tts.py" "$SKILL_DIR/scripts/gen_bgm.py" "$SKILL_DIR/scripts/build.py" "$PROJ/"
+cp "$SKILL_DIR/scripts/gen_tts.py" "$SKILL_DIR/scripts/gen_bgm.py" "$SKILL_DIR/scripts/build.py" "$SKILL_DIR/scripts/prep_images.py" "$PROJ/"
 [ -f "$PROJ/src/index.template.txt" ] || cp "$SKILL_DIR/templates/index.template.txt" "$PROJ/src/index.template.txt"
 [ -f "$PROJ/scenes.json" ] || cp "$SKILL_DIR/templates/scenes.example.json" "$PROJ/scenes.json"
 echo "ready: $PROJ"
