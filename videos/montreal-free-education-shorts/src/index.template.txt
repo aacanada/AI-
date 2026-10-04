@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>몬트리올 사설어학원 자녀무상교육 · AA Canada</title>
+    <script src="public/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Pretendard"; font-weight: 500; src: url("public/fonts/Pretendard-Medium.woff2") format("woff2"); }
+      @font-face { font-family: "Pretendard"; font-weight: 700; src: url("public/fonts/Pretendard-Bold.woff2") format("woff2"); }
+      @font-face { font-family: "Pretendard"; font-weight: 800; src: url("public/fonts/Pretendard-ExtraBold.woff2") format("woff2"); }
+      @font-face { font-family: "Pretendard"; font-weight: 900; src: url("public/fonts/Pretendard-Black.woff2") format("woff2"); }
+
+      :root {
+        --ink: #0a1430;
+        --ink-2: #13224d;
+        --blue: #2f6bff;
+        --red: #ff3b3b;
+        --yellow: #ffd23f;
+        --paper: #f8f5ee;
+        --muted: #aab6d6;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--ink); }
+      #root {
+        position: relative; width: 100%; height: 100%; overflow: hidden;
+        background: var(--ink); color: var(--paper);
+        font-family: "Pretendard", sans-serif; word-break: keep-all;
+      }
+      .clip { position: absolute; inset: 0; }
+
+      /* ── background ───────────────────────────── */
+      #bg { background: radial-gradient(120% 70% at 50% 30%, #1a3170 0%, var(--ink) 62%); }
+      .glow { position: absolute; border-radius: 50%; filter: blur(90px); }
+      #glow-a { width: 760px; height: 760px; left: -260px; top: 180px; background: rgba(47, 107, 255, 0.35); }
+      #glow-b { width: 640px; height: 640px; right: -240px; top: 900px; background: rgba(255, 59, 59, 0.22); }
+      .grid {
+        position: absolute; inset: -200px;
+        background-image:
+          linear-gradient(rgba(255,255,255,0.045) 2px, transparent 2px),
+          linear-gradient(90deg, rgba(255,255,255,0.045) 2px, transparent 2px);
+        background-size: 90px 90px;
+      }
+
+      /* ── persistent chrome ────────────────────── */
+      #topbar { pointer-events: none; }
+      .brand {
+        position: absolute; left: 60px; top: 120px; height: 72px; padding: 0 26px;
+        display: flex; align-items: center; gap: 14px;
+        background: var(--paper); color: var(--ink); border-radius: 18px;
+        font-weight: 900; font-size: 34px; letter-spacing: 0.02em;
+      }
+      .brand-dot { width: 18px; height: 18px; border-radius: 50%; background: var(--red); }
+      .topic {
+        position: absolute; right: 60px; top: 120px; height: 72px; padding: 0 24px;
+        display: flex; align-items: center; border: 3px solid rgba(248,245,238,0.35);
+        border-radius: 18px; font-weight: 700; font-size: 30px; color: var(--paper);
+      }
+      .progress { position: absolute; left: 0; top: 0; height: 12px; width: 1080px; background: rgba(255,255,255,0.08); }
+      #progress-fill { position: absolute; left: 0; top: 0; height: 12px; width: 1080px; background: var(--red); transform-origin: 0 50%; }
+
+      /* ── stage ─────────────────────────────────── */
+      .stage {
+        position: absolute; left: 60px; right: 60px; top: 260px; height: 1020px;
+        display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 36px;
+      }
+      .kicker {
+        font-size: 38px; font-weight: 800; color: var(--yellow); letter-spacing: 0.04em;
+      }
+      .h1 { font-size: 92px; font-weight: 900; line-height: 1.12; text-align: center; letter-spacing: -0.02em; }
+      .h2 { font-size: 66px; font-weight: 900; line-height: 1.18; text-align: center; letter-spacing: -0.02em; }
+      .hl { color: var(--yellow); }
+      .red { color: var(--red); }
+      .line { display: block; }
+
+      /* scene 1 */
+      .myth {
+        position: relative; width: 900px; padding: 40px 48px; border-radius: 32px;
+        background: rgba(255,255,255,0.07); border: 3px solid rgba(255,255,255,0.14);
+      }
+      .myth-tag { display: inline-block; font-size: 32px; font-weight: 800; color: var(--muted); margin-bottom: 14px; }
+      .myth-text { font-size: 60px; font-weight: 900; line-height: 1.2; }
+      .stamp {
+        position: absolute; right: 36px; top: 50%; width: 150px; height: 150px; margin-top: -75px;
+        border-radius: 50%; border: 10px solid var(--red); color: var(--red);
+        display: flex; align-items: center; justify-content: center;
+        font-size: 92px; font-weight: 900;
+      }
+      #no-slam {
+        width: 900px; padding: 30px 0; border-radius: 32px; background: var(--red);
+        text-align: center; font-size: 120px; font-weight: 900; color: var(--paper);
+      }
+
+      /* scene 2 */
+      .eq { display: flex; align-items: center; gap: 26px; }
+      .card {
+        width: 400px; padding: 44px 30px; border-radius: 36px; text-align: center;
+        background: var(--paper); color: var(--ink);
+      }
+      .card.blue { background: var(--blue); color: var(--paper); }
+      .card-big { font-size: 84px; font-weight: 900; line-height: 1.05; }
+      .card-sub { margin-top: 16px; font-size: 38px; font-weight: 800; line-height: 1.25; }
+      .plus { font-size: 90px; font-weight: 900; color: var(--yellow); }
+      .badge {
+        width: 900px; padding: 40px 40px; border-radius: 36px; text-align: center;
+        background: linear-gradient(135deg, var(--red), #c81d3a);
+      }
+      .badge-top { font-size: 36px; font-weight: 800; opacity: 0.92; }
+      .badge-main { margin-top: 10px; font-size: 76px; font-weight: 900; line-height: 1.1; }
+
+      /* scene 3 */
+      .rows { display: flex; flex-direction: column; gap: 30px; width: 940px; }
+      .row {
+        display: flex; align-items: center; gap: 30px; padding: 34px 38px; border-radius: 30px;
+        background: rgba(255,255,255,0.08); border: 3px solid rgba(255,255,255,0.12);
+      }
+      .check {
+        flex: 0 0 auto; width: 96px; height: 96px; border-radius: 50%; background: var(--yellow); color: var(--ink);
+        display: flex; align-items: center; justify-content: center; font-size: 60px; font-weight: 900;
+      }
+      .row-main { font-size: 56px; font-weight: 900; line-height: 1.15; }
+      .row-sub { margin-top: 8px; font-size: 34px; font-weight: 700; color: var(--muted); }
+      .strike { text-decoration: line-through; text-decoration-color: var(--red); text-decoration-thickness: 6px; }
+
+      /* scene 4 */
+      .tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; width: 960px; }
+      .tile {
+        padding: 34px 32px; border-radius: 30px; min-height: 290px;
+        background: rgba(255,255,255,0.08); border: 3px solid rgba(255,255,255,0.13);
+        display: flex; flex-direction: column; justify-content: center;
+      }
+      .tile-k { font-size: 32px; font-weight: 800; color: var(--yellow); }
+      .tile-v { margin-top: 12px; font-size: 54px; font-weight: 900; line-height: 1.15; letter-spacing: -0.01em; }
+      .tile-s { margin-top: 12px; font-size: 32px; font-weight: 700; color: var(--muted); }
+
+      /* scene 5 */
+      .receipt {
+        width: 940px; padding: 46px 50px; border-radius: 40px; background: var(--paper); color: var(--ink);
+      }
+      .r-line { display: flex; justify-content: space-between; align-items: flex-end; padding: 18px 0; }
+      .r-k { font-size: 44px; font-weight: 800; }
+      .r-s { font-size: 30px; font-weight: 700; color: #56607a; margin-top: 6px; }
+      .r-v { font-size: 64px; font-weight: 900; letter-spacing: -0.02em; }
+      .r-div { height: 6px; border-radius: 3px; background: var(--ink); margin: 18px 0; }
+      .r-total-k { font-size: 40px; font-weight: 800; }
+      .r-total-v { font-size: 120px; font-weight: 900; color: var(--red); letter-spacing: -0.03em; line-height: 1; margin-top: 10px; }
+
+      /* scene 6 */
+      .bubbles { display: flex; gap: 36px; }
+      .bubble {
+        width: 430px; height: 430px; border-radius: 50%;
+        display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+      }
+      .bubble.en { background: var(--blue); }
+      .bubble.enfr { background: linear-gradient(135deg, var(--blue) 0%, var(--blue) 50%, var(--red) 50%, var(--red) 100%); }
+      .bubble-big { font-size: 96px; font-weight: 900; letter-spacing: 0.02em; }
+      .bubble-sub { margin-top: 14px; font-size: 40px; font-weight: 800; }
+
+      /* scene 7 */
+      .road { position: relative; width: 960px; display: flex; flex-direction: column; gap: 22px; }
+      .road-line { position: absolute; left: 49px; top: 50px; bottom: 50px; width: 8px; background: rgba(255,255,255,0.18); border-radius: 4px; }
+      #road-fill { position: absolute; left: 49px; top: 50px; width: 8px; height: 760px; background: var(--yellow); border-radius: 4px; transform-origin: 50% 0; }
+      .step { position: relative; display: flex; align-items: center; gap: 30px; }
+      .node {
+        flex: 0 0 auto; width: 106px; height: 106px; border-radius: 50%; background: var(--ink-2);
+        border: 6px solid var(--yellow); color: var(--yellow);
+        display: flex; align-items: center; justify-content: center; font-size: 48px; font-weight: 900;
+      }
+      .step-box { flex: 1; padding: 22px 30px; border-radius: 26px; background: rgba(255,255,255,0.08); }
+      .step-main { font-size: 46px; font-weight: 900; line-height: 1.15; }
+      .step-sub { margin-top: 6px; font-size: 30px; font-weight: 700; color: var(--muted); }
+      .step.goal .node { background: var(--yellow); color: var(--ink); }
+      .step.goal .step-box { background: var(--paper); color: var(--ink); }
+      .step.goal .step-sub { color: #56607a; }
+
+      /* scene 8 */
+      .ft-label {
+        padding: 14px 34px; border-radius: 999px; background: var(--yellow); color: var(--ink);
+        font-size: 40px; font-weight: 900; letter-spacing: 0.08em;
+      }
+      .chain { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+      .chip {
+        width: 760px; padding: 34px 20px; border-radius: 30px; text-align: center;
+        background: var(--paper); color: var(--ink); font-size: 60px; font-weight: 900;
+      }
+      .chip.final { background: var(--blue); color: var(--paper); }
+      .arrow { font-size: 64px; font-weight: 900; color: var(--yellow); line-height: 1; }
+      .skip {
+        font-size: 44px; font-weight: 800; color: var(--muted);
+      }
+      .skip .strike { color: var(--paper); }
+      .note {
+        width: 900px; padding: 28px 30px; border-radius: 28px; text-align: center;
+        border: 3px dashed rgba(248,245,238,0.45); font-size: 40px; font-weight: 800;
+      }
+
+      /* scene 9 */
+      .logo {
+        padding: 34px 60px; border-radius: 40px; background: var(--paper); color: var(--ink);
+        font-size: 128px; font-weight: 900; letter-spacing: 0.02em; line-height: 1;
+      }
+      .logo-sub { font-size: 44px; font-weight: 800; color: var(--muted); }
+      .cta-btn {
+        padding: 38px 70px; border-radius: 999px; background: var(--red); color: var(--paper);
+        font-size: 64px; font-weight: 900;
+      }
+
+      /* captions */
+      .cap { display: flex; justify-content: center; align-items: flex-start; padding-top: 1340px; }
+      .cap-pill {
+        display: block; max-width: 980px; padding: 18px 34px; border-radius: 22px;
+        background: rgba(5, 10, 28, 0.82); color: var(--paper);
+        font-size: 56px; font-weight: 900; line-height: 1.25; text-align: center; letter-spacing: -0.01em;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="%%TOTAL%%" data-width="1080" data-height="1920">
+
+      <!-- background -->
+      <div id="bg" class="clip" data-start="0" data-duration="%%TOTAL%%" data-track-index="0">
+        <div id="grid" class="grid"></div>
+        <div id="glow-a" class="glow" data-layout-allow-overflow></div>
+        <div id="glow-b" class="glow" data-layout-allow-overflow></div>
+      </div>
+
+      <!-- S1 hook -->
+      <section id="s1" class="clip" %%S_01%% data-track-index="1">
+        <div id="s1-stage" class="stage">
+          <div id="m1" class="myth">
+            <span class="myth-tag">오해 ①</span>
+            <div class="myth-text"><span class="line">몬트리올 자녀무상교육</span><span class="line">이제 안 된다?</span></div>
+            <div id="m1-x" class="stamp">✕</div>
+          </div>
+          <div id="m2" class="myth">
+            <span class="myth-tag">오해 ②</span>
+            <div class="myth-text"><span class="line">학생비자로</span><span class="line">어학연수 불가?</span></div>
+            <div id="m2-x" class="stamp">✕</div>
+          </div>
+          <div id="no-slam">아닙니다!</div>
+        </div>
+      </section>
+
+      <!-- S2 answer -->
+      <section id="s2" class="clip" %%S_02%% data-track-index="1">
+        <div id="s2-stage" class="stage">
+          <div class="kicker">사설어학원으로 가능합니다</div>
+          <div class="eq">
+            <div id="c-parent" class="card"><div class="card-big">부모</div><div class="card-sub">사설어학원 수강</div></div>
+            <div id="c-plus" class="plus">+</div>
+            <div id="c-child" class="card blue"><div class="card-big">자녀</div><div class="card-sub">공립 무상교육</div></div>
+          </div>
+          <div id="s2-badge" class="badge">
+            <div class="badge-top">몬트리올 실제 송출 중인 유일한 유학원</div>
+            <div class="badge-main">AA Canada 독점</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- S3 why -->
+      <section id="s3" class="clip" %%S_03%% data-track-index="1">
+        <div id="s3-stage" class="stage">
+          <div id="s3-title" class="h2">왜 <span class="hl">사설어학원</span>인가?</div>
+          <div class="rows">
+            <div id="r1" class="row"><div class="check">✓</div><div><div class="row-main">학비가 저렴</div><div class="row-sub">대학부설 <span class="strike">연 약 $20,000</span> 대비</div></div></div>
+            <div id="r2" class="row"><div class="check">✓</div><div><div class="row-main">자녀 등하교 케어 OK</div><div class="row-sub">오후 1시 반 수업 종료</div></div></div>
+            <div id="r3" class="row"><div class="check">✓</div><div><div class="row-main">학업 부담이 적음</div><div class="row-sub">가족 정착에 집중</div></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- S4 details -->
+      <section id="s4" class="clip" %%S_04%% data-track-index="1">
+        <div id="s4-stage" class="stage">
+          <div id="s4-title" class="h2">프로그램 <span class="hl">한눈에</span></div>
+          <div class="tiles">
+            <div id="t1" class="tile"><div class="tile-k">비자 기간</div><div class="tile-v">2년 3개월 ~ 3년</div><div class="tile-s">처음부터 · 연장 불필요</div></div>
+            <div id="t2" class="tile"><div class="tile-k">수업 언어</div><div class="tile-v">영어 / 불어</div><div class="tile-s">중간에 변경 가능</div></div>
+            <div id="t3" class="tile"><div class="tile-k">시작일</div><div class="tile-v">매주 시작</div><div class="tile-s">입국 후 변경 가능</div></div>
+            <div id="t4" class="tile"><div class="tile-k">수업 시간</div><div class="tile-v">09:00 ~ 13:30</div><div class="tile-s">월 ~ 금</div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- S5 cost -->
+      <section id="s5" class="clip" %%S_05%% data-track-index="1">
+        <div id="s5-stage" class="stage">
+          <div id="s5-title" class="h2">2년 무상교육 <span class="hl">학비 계산</span></div>
+          <div id="receipt" class="receipt">
+            <div id="rl1" class="r-line"><div><div class="r-k">최초 52주 등록</div><div class="r-s">수업 종료까지 약 1년 3개월</div></div><div class="r-v">$17,075</div></div>
+            <div id="rl2" class="r-line"><div><div class="r-k">25주 추가 등록</div><div class="r-s">자녀 무상교육 2년 완성</div></div><div class="r-v">$8,125</div></div>
+            <div id="rdiv" class="r-div"></div>
+            <div id="rtot">
+              <div class="r-total-k">부모 전체 학비 (2년)</div>
+              <div id="total-num" class="r-total-v">$25,200</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- S6 kids -->
+      <section id="s6" class="clip" %%S_06%% data-track-index="1">
+        <div id="s6-stage" class="stage">
+          <div id="s6-title" class="h2">우리 아이는 <span class="hl">이렇게</span></div>
+          <div class="bubbles">
+            <div id="b1" class="bubble en"><div class="bubble-big">EN</div><div class="bubble-sub">영어 중심</div></div>
+            <div id="b2" class="bubble enfr"><div class="bubble-big">EN+FR</div><div class="bubble-sub">영·불 이중언어</div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- S7 long-term -->
+      <section id="s7" class="clip" %%S_07%% data-track-index="1">
+        <div id="s7-stage" class="stage">
+          <div id="s7-title" class="h2">장기 플랜 <span class="hl">로드맵</span></div>
+          <div class="road">
+            <div class="road-line"></div>
+            <div id="road-fill"></div>
+            <div id="p1" class="step"><div class="node">1</div><div class="step-box"><div class="step-main">불어 회화 중하급</div><div class="step-sub">어학원 + 퀘벡 정부 불어수업</div></div></div>
+            <div id="p2" class="step"><div class="node">2</div><div class="step-box"><div class="step-main">LMIA 면제 지역 이동</div><div class="step-sub">Francophone Mobility</div></div></div>
+            <div id="p3" class="step"><div class="node">3</div><div class="step-box"><div class="step-main">취업비자 전환</div><div class="step-sub">예산 최소화 · 영주권 연결</div></div></div>
+            <div id="p4" class="step"><div class="node">4</div><div class="step-box"><div class="step-main">풀타임 + 자녀 무상교육</div><div class="step-sub">일하면서 무상교육 계속</div></div></div>
+            <div id="p5" class="step goal"><div class="node">★</div><div class="step-box"><div class="step-main">대학도 영주권자 학비</div><div class="step-sub">영주권 없이 적용</div></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- S8 fast track -->
+      <section id="s8" class="clip" %%S_08%% data-track-index="1">
+        <div id="s8-stage" class="stage">
+          <div id="ft" class="ft-label">FAST TRACK</div>
+          <div class="chain">
+            <div id="f1" class="chip">불어 점수 확보</div>
+            <div id="fa1" class="arrow">↓</div>
+            <div id="f2" class="chip">1년만 학업</div>
+            <div id="fa2" class="arrow">↓</div>
+            <div id="f3" class="chip final">바로 취업비자</div>
+          </div>
+          <div id="fskip" class="skip"><span class="strike">어학원 추가 등록</span> 필요 없음</div>
+          <div id="fnote" class="note">희망 시 유료 취업알선 · 비자 지원</div>
+        </div>
+      </section>
+
+      <!-- S9 CTA -->
+      <section id="s9" class="clip" %%S_09%% data-track-index="1">
+        <div id="s9-stage" class="stage">
+          <div id="cta-k" class="kicker">몬트리올 자녀무상교육</div>
+          <div id="logo" class="logo">AA Canada</div>
+          <div id="logo-sub" class="logo-sub">캐나다 전문 유학원</div>
+          <div id="cta" class="cta-btn">지금 문의하세요 →</div>
+        </div>
+      </section>
+
+      <!-- chrome -->
+      <div id="topbar" class="clip" data-start="0" data-duration="%%TOTAL%%" data-track-index="10">
+        <div class="progress"><div id="progress-fill"></div></div>
+        <div id="brand" class="brand"><div class="brand-dot"></div>AA CANADA</div>
+        <div id="topic" class="topic">몬트리올 자녀무상교육</div>
+      </div>
+
+      <!-- captions -->
+      %%CAPTIONS%%
+
+      <!-- audio -->
+      %%AUDIO%%
+      <audio id="bgm" src="assets/music/bgm-fit.mp3" data-start="0" data-duration="%%TOTAL%%" data-track-index="31" data-volume="0.13"></audio>
+    </div>
+
+    <script>
+      const CUE = %%CUES%%;
+      const S = %%STARTS%%;
+      const D = %%DURS%%;
+      const TOTAL = %%TOTAL%%;
+      const c = (id, sub) => CUE[id + "|" + sub];
+      const sEnd = (id) => S[id] + D[id];
+
+      const tl = gsap.timeline({ paused: true });
+      const pop = { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: "back.out(1.6)" };
+      const rise = { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" };
+      const from = (sel, at, vars = { opacity: 0, y: 60 }, to = rise) => tl.fromTo(sel, vars, { ...to }, at);
+      const exit = (sel, id) => tl.to(sel, { opacity: 0, y: -40, duration: 0.22, ease: "power2.in" }, sEnd(id) - 0.24);
+
+      // background drift (whole video)
+      tl.fromTo("#grid", { x: 0, y: 0 }, { x: -90, y: -180, duration: TOTAL, ease: "none" }, 0);
+      tl.fromTo("#glow-a", { x: 0, y: 0 }, { x: 220, y: 260, duration: TOTAL, ease: "sine.inOut" }, 0);
+      tl.fromTo("#glow-b", { x: 0, y: 0 }, { x: -200, y: -320, duration: TOTAL, ease: "sine.inOut" }, 0);
+      tl.fromTo("#progress-fill", { scaleX: 0 }, { scaleX: 1, duration: TOTAL, ease: "none" }, 0);
+      tl.fromTo(["#brand", "#topic"], { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.5, stagger: 0.1, ease: "power3.out" }, 0.05);
+
+      // captions: each pill pops when its clip starts
+      document.querySelectorAll(".cap").forEach((el) => {
+        const at = parseFloat(el.dataset.start);
+        tl.fromTo(el.querySelector(".cap-pill"), { opacity: 0, y: 24, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.18, ease: "power2.out" }, at);
+      });
+
+      // S1 hook
+      from("#m1", S["01-hook"] + 0.05, { opacity: 0, y: 80, scale: 0.92 }, pop);
+      from("#m1-x", c("01-hook", "학생비자") - 0.35, { opacity: 0, scale: 2.4, rotation: -20 }, { opacity: 1, scale: 1, rotation: -8, duration: 0.25, ease: "power4.in" });
+      from("#m2", c("01-hook", "학생비자"), { opacity: 0, y: 80, scale: 0.92 }, pop);
+      from("#m2-x", c("01-hook", "아닙니다") - 0.3, { opacity: 0, scale: 2.4, rotation: 20 }, { opacity: 1, scale: 1, rotation: 8, duration: 0.25, ease: "power4.in" });
+      tl.to(["#m1", "#m2"], { opacity: 0.35, duration: 0.25 }, c("01-hook", "아닙니다"));
+      from("#no-slam", c("01-hook", "아닙니다"), { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "power4.out" });
+      tl.fromTo("#s1-stage", { x: 0 }, { keyframes: [{ x: -14, duration: 0.05 }, { x: 12, duration: 0.05 }, { x: -6, duration: 0.05 }, { x: 0, duration: 0.05 }] }, c("01-hook", "아닙니다") + 0.28);
+      exit("#s1-stage", "01-hook");
+
+      // S2 answer
+      from("#s2-stage .kicker", S["02-answer"] + 0.02);
+      from("#c-parent", c("02-answer", "부모가"), { opacity: 0, x: -120 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" });
+      from("#c-plus", c("02-answer", "자녀는") - 0.15, { opacity: 0, scale: 0.2 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2)" });
+      from("#c-child", c("02-answer", "자녀는"), { opacity: 0, x: 120 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" });
+      from("#s2-badge", c("02-answer", "현재"), { opacity: 0, y: 80, scale: 0.92 }, pop);
+      tl.fromTo("#s2-badge .badge-main", { scale: 1 }, { keyframes: [{ scale: 1.08, duration: 0.18 }, { scale: 1, duration: 0.25 }] }, c("02-answer", "에이에이"));
+      exit("#s2-stage", "02-answer");
+
+      // S3 why
+      from("#s3-title", S["03-why"] + 0.02);
+      from("#r1", c("03-why", "연간"), { opacity: 0, x: -80 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" });
+      from("#r2", c("03-why", "자녀 등하교"), { opacity: 0, x: -80 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" });
+      from("#r3", c("03-why", "학업 부담"), { opacity: 0, x: -80 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" });
+      tl.fromTo("#r1 .check", { scale: 0 }, { scale: 1, duration: 0.35, ease: "back.out(2.4)" }, c("03-why", "학비가"));
+      tl.fromTo("#r2 .check", { scale: 0 }, { scale: 1, duration: 0.35, ease: "back.out(2.4)" }, c("03-why", "자녀 등하교") + 0.3);
+      tl.fromTo("#r3 .check", { scale: 0 }, { scale: 1, duration: 0.35, ease: "back.out(2.4)" }, c("03-why", "학업 부담") + 0.3);
+      exit("#s3-stage", "03-why");
+
+      // S4 details
+      from("#s4-title", S["04-details"] + 0.02);
+      from("#t1", c("04-details", "처음부터"), { opacity: 0, y: 60, scale: 0.9 }, pop);
+      tl.fromTo("#t1 .tile-s", { color: "#aab6d6" }, { color: "#ffd23f", duration: 0.3 }, c("04-details", "비자 연장"));
+      from("#t2", c("04-details", "영어나"), { opacity: 0, y: 60, scale: 0.9 }, pop);
+      from("#t3", c("04-details", "매주"), { opacity: 0, y: 60, scale: 0.9 }, pop);
+      from("#t4", c("04-details", "수업은"), { opacity: 0, y: 60, scale: 0.9 }, pop);
+      exit("#s4-stage", "04-details");
+
+      // S5 cost
+      from("#s5-title", S["05-cost"] + 0.02);
+      from("#receipt", S["05-cost"] + 0.12, { opacity: 0, y: 100 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" });
+      from("#rl1", c("05-cost", "첫 오십이"), { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.4, ease: "power3.out" });
+      from("#rl2", c("05-cost", "이후"), { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.4, ease: "power3.out" });
+      tl.fromTo("#rdiv", { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: "power2.out" }, c("05-cost", "이년 자녀"));
+      from("#rtot", c("05-cost", "이년 자녀") + 0.15, { opacity: 0, y: 40 }, rise);
+      const money = { v: 0 };
+      const numEl = document.getElementById("total-num");
+      tl.fromTo(money, { v: 0 }, {
+        v: 25200, duration: 1.1, ease: "power2.out",
+        onUpdate: () => { numEl.textContent = "$" + (Math.round(money.v / 25) * 25).toLocaleString("en-US"); },
+      }, c("05-cost", "총 이만") - 0.2);
+      tl.fromTo("#total-num", { opacity: 0 }, { opacity: 1, duration: 0.15 }, c("05-cost", "총 이만") - 0.2);
+      tl.fromTo("#total-num", { scale: 1 }, { keyframes: [{ scale: 1.12, duration: 0.18 }, { scale: 1, duration: 0.3 }] }, c("05-cost", "총 이만") + 0.95);
+      exit("#s5-stage", "05-cost");
+
+      // S6 kids
+      from("#s6-title", S["06-kids"] + 0.02);
+      from("#b1", c("06-kids", "아이는"), { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.8)" });
+      from("#b2", c("06-kids", "또는"), { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.8)" });
+      exit("#s6-stage", "06-kids");
+
+      // S7 long-term roadmap
+      from("#s7-title", S["07-longterm"] + 0.02);
+      tl.fromTo("#road-fill", { scaleY: 0 }, { scaleY: 1, duration: c("07-longterm", "대학 진학") - c("07-longterm", "중하급") + 0.4, ease: "none" }, c("07-longterm", "중하급"));
+      [["#p1", "중하급"], ["#p2", "엘엠아이에이"], ["#p3", "취업비자로"], ["#p4", "풀타임"], ["#p5", "대학 진학"]].forEach(([sel, sub]) => {
+        from(sel, c("07-longterm", sub), { opacity: 0, x: 80 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" });
+      });
+      tl.fromTo("#p5 .node", { scale: 1 }, { keyframes: [{ scale: 1.2, duration: 0.2 }, { scale: 1, duration: 0.3 }] }, c("07-longterm", "대학 진학") + 0.5);
+      exit("#s7-stage", "07-longterm");
+
+      // S8 fast track
+      from("#ft", S["08-fast"] + 0.02, { opacity: 0, scale: 0.6 }, pop);
+      from("#f1", c("08-fast", "불어 점수"), { opacity: 0, y: 50 }, rise);
+      from("#fa1", c("08-fast", "일년만") - 0.15, { opacity: 0, y: -20 }, rise);
+      from("#f2", c("08-fast", "일년만"), { opacity: 0, y: 50 }, rise);
+      from("#fa2", c("08-fast", "어학원 추가") - 0.15, { opacity: 0, y: -20 }, rise);
+      from("#fskip", c("08-fast", "어학원 추가"), { opacity: 0, y: 30 }, rise);
+      from("#f3", c("08-fast", "어학원 추가") + 0.9, { opacity: 0, y: 50, scale: 0.9 }, pop);
+      from("#fnote", c("08-fast", "원하시면"), { opacity: 0, y: 40 }, rise);
+      exit("#s8-stage", "08-fast");
+
+      // S9 CTA
+      from("#cta-k", S["09-cta"] + 0.02);
+      from("#logo", S["09-cta"] + 0.1, { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.55, ease: "back.out(1.7)" });
+      from("#logo-sub", S["09-cta"] + 0.35);
+      from("#cta", c("09-cta", "지금"), { opacity: 0, y: 60, scale: 0.9 }, pop);
+      tl.fromTo("#cta", { scale: 1 }, { keyframes: [{ scale: 1.06, duration: 0.35, ease: "sine.inOut" }, { scale: 1, duration: 0.35, ease: "sine.inOut" }], repeat: 2 }, c("09-cta", "지금") + 0.6);
+
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
