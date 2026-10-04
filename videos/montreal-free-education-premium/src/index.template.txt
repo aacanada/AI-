@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>%%TOPIC%% · %%BRAND%%</title>
+    <script src="public/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Pretendard"; font-weight: 500; src: url("public/fonts/Pretendard-Medium.woff2") format("woff2"); }
+      @font-face { font-family: "Pretendard"; font-weight: 700; src: url("public/fonts/Pretendard-Bold.woff2") format("woff2"); }
+      @font-face { font-family: "Pretendard"; font-weight: 800; src: url("public/fonts/Pretendard-ExtraBold.woff2") format("woff2"); }
+      @font-face { font-family: "Pretendard"; font-weight: 900; src: url("public/fonts/Pretendard-Black.woff2") format("woff2"); }
+      @font-face { font-family: "Playfair"; font-weight: 600; src: url("public/fonts/PlayfairDisplay-600.woff2") format("woff2"); }
+      @font-face { font-family: "Playfair"; font-weight: 700; src: url("public/fonts/PlayfairDisplay-700.woff2") format("woff2"); }
+      @font-face { font-family: "Playfair"; font-weight: 800; src: url("public/fonts/PlayfairDisplay-800.woff2") format("woff2"); }
+      @font-face { font-family: "Playfair"; font-weight: 600; font-style: italic; src: url("public/fonts/PlayfairDisplay-600i.woff2") format("woff2"); }
+
+      /* ═══ DESIGN TOKENS — midnight navy · champagne gold · ivory ═══ */
+      :root {
+        --bg: #070a12;
+        --navy: #0e1528;
+        --navy-2: #18223f;
+        --gold: #c9a96e;
+        --gold-2: #e6cf9f;
+        --gold-deep: #9c7b45;
+        --ivory: #f4efe6;
+        --slate: #9aa3b8;
+        --wine: #c95a55;
+        --ink: #0d1322;
+        --hair: rgba(201, 169, 110, 0.34);
+        --glass: linear-gradient(180deg, rgba(255, 255, 255, 0.065), rgba(255, 255, 255, 0.022));
+        --gold-grad: linear-gradient(135deg, #ecd7a6 0%, #c9a96e 48%, #a8844c 100%);
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--bg); }
+      #root {
+        position: relative; width: 100%; height: 100%; overflow: hidden;
+        background: var(--bg); color: var(--ivory);
+        font-family: "Pretendard", sans-serif; word-break: keep-all;
+        font-variant-numeric: lining-nums;
+      }
+      .clip { position: absolute; inset: 0; }
+      .serif { font-family: "Playfair", "Pretendard", serif; }
+      .gold { color: var(--gold-2); }
+      .line { display: block; }
+
+      /* ═══ BACKGROUND ═══ */
+      #bg { background: radial-gradient(110% 60% at 50% 22%, #1a2547 0%, #0b1020 55%, var(--bg) 100%); }
+      .glow { position: absolute; border-radius: 50%; filter: blur(110px); }
+      #glow-a { width: 820px; height: 820px; left: -300px; top: 120px; background: rgba(58, 84, 160, 0.30); }
+      #glow-b { width: 700px; height: 700px; right: -280px; top: 1000px; background: rgba(201, 169, 110, 0.16); }
+      #sweep {
+        position: absolute; top: -400px; left: -900px; width: 520px; height: 2800px;
+        background: linear-gradient(90deg, transparent, rgba(230, 207, 159, 0.07), transparent);
+        transform-origin: 50% 50%;
+      }
+      .frame-line { position: absolute; inset: 30px; border: 1.5px solid rgba(201, 169, 110, 0.22); border-radius: 40px; }
+
+      /* ═══ CHROME (brand · lesson counter · progress) ═══ */
+      .progress { position: absolute; left: 0; top: 0; height: 6px; width: 1080px; background: rgba(201, 169, 110, 0.12); }
+      #progress-fill { position: absolute; left: 0; top: 0; height: 6px; width: 1080px; background: var(--gold-grad); transform-origin: 0 50%; }
+      .brand {
+        position: absolute; left: 84px; top: 112px; display: flex; align-items: center; gap: 18px;
+        font-family: "Playfair", serif; font-weight: 700; font-size: 36px; letter-spacing: 0.2em; color: var(--gold-2);
+      }
+      .brand-rule { width: 64px; height: 2px; background: var(--gold); }
+      .topic { position: absolute; left: 84px; top: 166px; font-size: 28px; font-weight: 700; color: var(--slate); letter-spacing: 0.04em; }
+      .counter { display: flex; justify-content: flex-end; padding: 112px 84px 0 0; }
+      .counter-txt { font-family: "Playfair", serif; font-weight: 600; font-style: italic; font-size: 36px; color: var(--gold-2); height: 48px; }
+      .counter-txt i { color: var(--slate); }
+
+      /* ═══ STAGE + TYPE ═══ */
+      .stage {
+        position: absolute; left: 70px; right: 70px; top: 270px; height: 1010px;
+        display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 34px;
+      }
+      .kicker {
+        display: flex; align-items: center; gap: 20px;
+        font-size: 30px; font-weight: 800; letter-spacing: 0.26em; color: var(--gold);
+      }
+      .kicker::before, .kicker::after { content: ""; width: 56px; height: 2px; background: var(--hair); }
+      .title { font-size: 72px; font-weight: 800; line-height: 1.18; text-align: center; letter-spacing: -0.025em; }
+      .title-xl { font-size: 104px; font-weight: 900; line-height: 1.08; text-align: center; letter-spacing: -0.03em; }
+
+      /* ═══ COMPONENTS ═══ */
+      /* glass card */
+      .glass { background: var(--glass); border: 1.5px solid var(--hair); border-radius: 30px; }
+      /* myth card + stamp */
+      .myth { position: relative; width: 920px; padding: 40px 50px; }
+      .myth-tag { display: block; font-size: 30px; font-weight: 800; color: var(--gold); letter-spacing: 0.12em; margin-bottom: 14px; }
+      .myth-text { font-size: 58px; font-weight: 800; line-height: 1.22; padding-right: 160px; }
+      .stamp {
+        position: absolute; right: 44px; top: 50%; width: 140px; height: 140px; margin-top: -70px;
+        border-radius: 50%; border: 7px solid var(--wine); color: var(--wine);
+        display: flex; align-items: center; justify-content: center; font-size: 84px; font-weight: 900;
+      }
+      /* verdict slab */
+      .verdict {
+        width: 920px; padding: 34px 0; border-radius: 30px; background: var(--gold-grad); color: var(--ink);
+        text-align: center; font-size: 112px; font-weight: 900; letter-spacing: -0.02em;
+      }
+      /* equation */
+      .eq { display: flex; align-items: center; gap: 24px; }
+      .card { width: 410px; padding: 46px 30px; text-align: center; }
+      .card.ivory { background: var(--ivory); color: var(--ink); border-radius: 30px; }
+      .card-big { font-size: 86px; font-weight: 900; line-height: 1.05; }
+      .card-sub { margin-top: 16px; font-size: 36px; font-weight: 700; line-height: 1.3; color: var(--slate); }
+      .card.ivory .card-sub { color: #4d566c; }
+      .op { font-family: "Playfair", serif; font-size: 96px; font-weight: 700; color: var(--gold); }
+      /* gold badge */
+      .badge { width: 920px; padding: 40px 44px; text-align: center; border-radius: 30px; background: var(--navy-2); border: 2px solid var(--gold); }
+      .badge-top { font-size: 34px; font-weight: 700; color: var(--slate); }
+      .badge-main { margin-top: 10px; font-size: 76px; font-weight: 900; line-height: 1.1; color: var(--gold-2); }
+      /* check rows */
+      .rows { display: flex; flex-direction: column; gap: 26px; width: 940px; }
+      .row { display: flex; align-items: center; gap: 30px; padding: 34px 40px; }
+      .check {
+        flex: 0 0 auto; width: 92px; height: 92px; border-radius: 50%; border: 3px solid var(--gold); color: var(--gold-2);
+        display: flex; align-items: center; justify-content: center; font-size: 52px; font-weight: 900;
+      }
+      .row-main { font-size: 54px; font-weight: 800; line-height: 1.15; }
+      .row-sub { margin-top: 8px; font-size: 32px; font-weight: 700; color: var(--slate); }
+      .strike { text-decoration: line-through; text-decoration-color: var(--wine); text-decoration-thickness: 5px; }
+      /* info tiles 2×2 */
+      .tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; width: 960px; }
+      .tile { padding: 36px 34px; min-height: 280px; display: flex; flex-direction: column; justify-content: center; }
+      .tile-k { font-size: 30px; font-weight: 800; color: var(--gold); letter-spacing: 0.06em; }
+      .tile-v { margin-top: 14px; font-size: 52px; font-weight: 900; line-height: 1.15; letter-spacing: -0.015em; }
+      .tile-s { margin-top: 12px; font-size: 30px; font-weight: 700; color: var(--slate); }
+      /* receipt (ivory paper) */
+      .receipt { width: 940px; padding: 50px 54px; border-radius: 34px; background: var(--ivory); color: var(--ink); }
+      .r-line { display: flex; justify-content: space-between; align-items: flex-end; padding: 18px 0; }
+      .r-k { font-size: 42px; font-weight: 800; }
+      .r-s { font-size: 28px; font-weight: 700; color: #5a6276; margin-top: 6px; }
+      .r-v { font-family: "Playfair", serif; font-size: 66px; font-weight: 700; }
+      .r-div { height: 3px; background: var(--gold-deep); margin: 20px 0; transform-origin: 0 50%; }
+      .r-total-k { font-size: 38px; font-weight: 800; color: #5a6276; }
+      .r-total-v { font-family: "Playfair", serif; font-size: 132px; font-weight: 800; line-height: 1.05; margin-top: 6px; color: var(--ink); }
+      .r-total-u { width: 380px; height: 8px; background: var(--gold-grad); border-radius: 4px; transform-origin: 0 50%; }
+      /* language bubbles */
+      .bubbles { display: flex; gap: 40px; }
+      .bubble {
+        width: 420px; height: 420px; border-radius: 50%; border: 4px solid var(--gold);
+        display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+        background: radial-gradient(circle at 35% 30%, #24315a, var(--navy));
+      }
+      .bubble.split { background: linear-gradient(135deg, #22305a 0%, #22305a 50%, #6e2a33 50%, #6e2a33 100%); }
+      .bubble-big { font-family: "Playfair", serif; font-size: 100px; font-weight: 700; color: var(--gold-2); }
+      .bubble-sub { margin-top: 10px; font-size: 38px; font-weight: 800; }
+      /* roadmap */
+      .road { position: relative; width: 960px; display: flex; flex-direction: column; gap: 22px; }
+      .road-line { position: absolute; left: 51px; top: 50px; bottom: 50px; width: 4px; background: rgba(201, 169, 110, 0.18); }
+      .road-fill { position: absolute; left: 51px; top: 50px; bottom: 50px; width: 4px; background: var(--gold); transform-origin: 50% 0; }
+      .step { position: relative; display: flex; align-items: center; gap: 30px; }
+      .node {
+        flex: 0 0 auto; width: 106px; height: 106px; border-radius: 50%; background: var(--navy);
+        border: 3px solid var(--gold); color: var(--gold-2);
+        display: flex; align-items: center; justify-content: center; font-family: "Playfair", serif; font-size: 50px; font-weight: 700;
+      }
+      .step-box { flex: 1; padding: 22px 32px; }
+      .step-main { font-size: 44px; font-weight: 800; line-height: 1.18; }
+      .step-sub { margin-top: 6px; font-size: 29px; font-weight: 700; color: var(--slate); }
+      .step.goal .node { background: var(--gold-grad); color: var(--ink); }
+      .step.goal .step-box { background: var(--ivory); color: var(--ink); border-color: transparent; }
+      .step.goal .step-sub { color: #5a6276; }
+      /* chain (fast track) */
+      .pill-label { padding: 14px 38px; border-radius: 999px; border: 2px solid var(--gold); color: var(--gold-2); font-family: "Playfair", serif; font-size: 40px; font-weight: 700; letter-spacing: 0.14em; }
+      .chain { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+      .chip { width: 780px; padding: 32px 20px; text-align: center; font-size: 58px; font-weight: 800; }
+      .chip.final { background: var(--gold-grad); color: var(--ink); border: none; border-radius: 30px; }
+      .arrow { font-size: 56px; font-weight: 900; color: var(--gold); line-height: 1; }
+      .skip { font-size: 42px; font-weight: 800; color: var(--slate); }
+      .skip .strike { color: var(--ivory); }
+      .note { width: 920px; padding: 28px 30px; border-radius: 26px; text-align: center; border: 1.5px dashed var(--hair); font-size: 38px; font-weight: 700; color: var(--gold-2); }
+      /* CTA */
+      .logo { font-family: "Playfair", serif; font-size: 150px; font-weight: 800; line-height: 1; color: var(--gold-2); letter-spacing: 0.01em; }
+      .ornament { display: flex; align-items: center; gap: 22px; color: var(--gold); font-size: 30px; font-weight: 800; letter-spacing: 0.3em; }
+      .ornament::before, .ornament::after { content: ""; width: 120px; height: 2px; background: var(--hair); }
+      .logo-sub { font-size: 42px; font-weight: 700; color: var(--slate); }
+      .cta-btn { padding: 36px 74px; border-radius: 999px; background: var(--gold-grad); color: var(--ink); font-size: 60px; font-weight: 900; }
+
+      /* ═══ CAPTIONS (Shorts safe zone: y 1340–1520) ═══ */
+      .cap { display: flex; justify-content: center; align-items: flex-start; padding-top: 1350px; }
+      .cap-pill {
+        display: block; max-width: 960px; padding: 18px 36px; border-radius: 20px;
+        background: rgba(7, 10, 18, 0.84); border: 1.5px solid rgba(201, 169, 110, 0.38); color: var(--ivory);
+        font-size: 54px; font-weight: 800; line-height: 1.28; text-align: center; letter-spacing: -0.01em;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="%%TOTAL%%" data-width="1080" data-height="1920">
+
+      <div id="bg" class="clip" data-start="0" data-duration="%%TOTAL%%" data-track-index="0">
+        <div id="glow-a" class="glow" data-layout-allow-overflow></div>
+        <div id="glow-b" class="glow" data-layout-allow-overflow></div>
+        <div id="sweep" data-layout-allow-overflow></div>
+        <div class="frame-line"></div>
+      </div>
+
+      <!-- ═══ SCENES START — one <section> per scenes.json entry, %%S_<id>%% gives its timing ═══ -->
+
+      <section id="s-hook" class="clip" %%S_01-hook%% data-track-index="1">
+        <div id="hook-stage" class="stage">
+          <div class="kicker">오늘의 질문</div>
+          <div id="m1" class="myth glass">
+            <span class="myth-tag">오해 01</span>
+            <div class="myth-text"><span class="line">몬트리올 자녀무상교육,</span><span class="line">이제 안 된다?</span></div>
+            <div id="m1-x" class="stamp">✕</div>
+          </div>
+          <div id="m2" class="myth glass">
+            <span class="myth-tag">오해 02</span>
+            <div class="myth-text"><span class="line">학생비자로</span><span class="line">어학연수 불가?</span></div>
+            <div id="m2-x" class="stamp">✕</div>
+          </div>
+          <div id="verdict" class="verdict">아닙니다!</div>
+        </div>
+      </section>
+
+      <section id="s-answer" class="clip" %%S_02-answer%% data-track-index="1">
+        <div id="answer-stage" class="stage">
+          <div class="kicker">정답</div>
+          <div id="answer-title" class="title">사설어학원으로 <span class="gold">가능합니다</span></div>
+          <div class="eq">
+            <div id="c-parent" class="card ivory"><div class="card-big">부모</div><div class="card-sub">사설어학원 수강</div></div>
+            <div id="c-op" class="op">+</div>
+            <div id="c-child" class="card glass"><div class="card-big gold">자녀</div><div class="card-sub">공립 무상교육</div></div>
+          </div>
+          <div id="answer-badge" class="badge">
+            <div class="badge-top">몬트리올 실제 송출 중인 유일한 유학원</div>
+            <div class="badge-main">AA Canada 독점</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="s-why" class="clip" %%S_03-why%% data-track-index="1">
+        <div id="why-stage" class="stage">
+          <div class="kicker">POINT · 장점</div>
+          <div id="why-title" class="title">왜 <span class="gold">사설어학원</span>인가</div>
+          <div class="rows">
+            <div id="r1" class="row glass"><div class="check">✓</div><div><div class="row-main">학비가 저렴</div><div class="row-sub">대학부설 <span class="strike">연 약 $20,000</span> 대비</div></div></div>
+            <div id="r2" class="row glass"><div class="check">✓</div><div><div class="row-main">자녀 등하교 케어 가능</div><div class="row-sub">오후 1시 반 수업 종료</div></div></div>
+            <div id="r3" class="row glass"><div class="check">✓</div><div><div class="row-main">학업 부담이 적음</div><div class="row-sub">가족 정착에 집중</div></div></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="s-details" class="clip" %%S_04-details%% data-track-index="1">
+        <div id="details-stage" class="stage">
+          <div class="kicker">POINT · 프로그램</div>
+          <div id="details-title" class="title">한눈에 보는 <span class="gold">프로그램</span></div>
+          <div class="tiles">
+            <div id="t1" class="tile glass"><div class="tile-k">비자 기간</div><div class="tile-v">2년 3개월 ~ 3년</div><div class="tile-s">처음부터 · 연장 불필요</div></div>
+            <div id="t2" class="tile glass"><div class="tile-k">수업 언어</div><div class="tile-v">영어 / 불어</div><div class="tile-s">중간에 변경 가능</div></div>
+            <div id="t3" class="tile glass"><div class="tile-k">시작일</div><div class="tile-v">매주 시작</div><div class="tile-s">입국 후 변경 가능</div></div>
+            <div id="t4" class="tile glass"><div class="tile-k">수업 시간</div><div class="tile-v"><span class="serif">09:00 – 13:30</span></div><div class="tile-s">월 ~ 금</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="s-cost" class="clip" %%S_05-cost%% data-track-index="1">
+        <div id="cost-stage" class="stage">
+          <div class="kicker">POINT · 학비</div>
+          <div id="cost-title" class="title">2년 무상교육 <span class="gold">학비 계산</span></div>
+          <div id="receipt" class="receipt">
+            <div id="rl1" class="r-line"><div><div class="r-k">최초 52주 등록</div><div class="r-s">수업 종료까지 약 1년 3개월</div></div><div class="r-v">$17,075</div></div>
+            <div id="rl2" class="r-line"><div><div class="r-k">25주 추가 등록</div><div class="r-s">자녀 무상교육 2년 완성</div></div><div class="r-v">$8,125</div></div>
+            <div id="rdiv" class="r-div"></div>
+            <div id="rtot">
+              <div class="r-total-k">부모 전체 학비 (2년)</div>
+              <div id="total-num" class="r-total-v">$25,200</div>
+              <div id="total-u" class="r-total-u"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="s-kids" class="clip" %%S_06-kids%% data-track-index="1">
+        <div id="kids-stage" class="stage">
+          <div class="kicker">POINT · 자녀 언어</div>
+          <div id="kids-title" class="title">우리 아이는 <span class="gold">이렇게</span></div>
+          <div class="bubbles">
+            <div id="b1" class="bubble"><div class="bubble-big">EN</div><div class="bubble-sub">영어 중심</div></div>
+            <div id="b2" class="bubble split"><div class="bubble-big">EN·FR</div><div class="bubble-sub">영·불 이중언어</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="s-long" class="clip" %%S_07-longterm%% data-track-index="1">
+        <div id="long-stage" class="stage">
+          <div class="kicker">LONG-TERM PLAN</div>
+          <div id="long-title" class="title">장기 플랜 <span class="gold">로드맵</span></div>
+          <div class="road">
+            <div class="road-line"></div>
+            <div id="road-fill" class="road-fill"></div>
+            <div id="p1" class="step"><div class="node">1</div><div class="step-box glass"><div class="step-main">불어 회화 중하급</div><div class="step-sub">어학원 + 퀘벡 정부 불어수업</div></div></div>
+            <div id="p2" class="step"><div class="node">2</div><div class="step-box glass"><div class="step-main">LMIA 면제 지역 이동</div><div class="step-sub">Francophone Mobility</div></div></div>
+            <div id="p3" class="step"><div class="node">3</div><div class="step-box glass"><div class="step-main">취업비자 전환</div><div class="step-sub">예산 최소화 · 영주권 연결</div></div></div>
+            <div id="p4" class="step"><div class="node">4</div><div class="step-box glass"><div class="step-main">풀타임 + 자녀 무상교육</div><div class="step-sub">일하면서 무상교육 계속</div></div></div>
+            <div id="p5" class="step goal"><div class="node">★</div><div class="step-box glass"><div class="step-main">대학도 영주권자 학비</div><div class="step-sub">영주권 없이 적용</div></div></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="s-fast" class="clip" %%S_08-fast%% data-track-index="1">
+        <div id="fast-stage" class="stage">
+          <div id="ft" class="pill-label">FAST TRACK</div>
+          <div class="chain">
+            <div id="f1" class="chip glass">불어 점수 확보</div>
+            <div id="fa1" class="arrow">↓</div>
+            <div id="f2" class="chip glass">1년만 학업</div>
+            <div id="fa2" class="arrow">↓</div>
+            <div id="f3" class="chip final">바로 취업비자</div>
+          </div>
+          <div id="fskip" class="skip"><span class="strike">어학원 추가 등록</span> 필요 없음</div>
+          <div id="fnote" class="note">희망 시 유료 취업알선 · 비자 지원</div>
+        </div>
+      </section>
+
+      <section id="s-cta" class="clip" %%S_09-cta%% data-track-index="1">
+        <div id="cta-stage" class="stage">
+          <div id="cta-k" class="ornament">몬트리올 자녀무상교육</div>
+          <div id="logo" class="logo">AA Canada</div>
+          <div id="logo-sub" class="logo-sub">캐나다 전문 유학원</div>
+          <div id="cta" class="cta-btn">지금 상담 문의 →</div>
+        </div>
+      </section>
+
+      <!-- ═══ SCENES END ═══ -->
+
+      <div id="chrome" class="clip" data-start="0" data-duration="%%TOTAL%%" data-track-index="10">
+        <div class="progress"><div id="progress-fill"></div></div>
+        <div id="brand" class="brand"><span>%%BRAND%%</span><span class="brand-rule"></span></div>
+        <div id="topic" class="topic">%%TOPIC%%</div>
+      </div>
+      %%COUNTERS%%
+
+      %%CAPTIONS%%
+
+      %%AUDIO%%
+      <audio id="bgm" src="assets/music/bgm-fit.mp3" data-start="0" data-duration="%%TOTAL%%" data-track-index="31" data-volume="%%BGM_VOLUME%%"></audio>
+    </div>
+
+    <script>
+      const CUE = %%CUES%%;
+      const S = %%STARTS%%;
+      const D = %%DURS%%;
+      const TOTAL = %%TOTAL%%;
+      const c = (id, sub) => {
+        const t = CUE[id + "|" + sub];
+        if (t === undefined) throw new Error("missing cue " + id + "|" + sub + " — add it to scenes.json cues");
+        return t;
+      };
+      const sEnd = (id) => S[id] + D[id];
+
+      const tl = gsap.timeline({ paused: true });
+      // premium motion: soft, unhurried eases; small travel distances
+      const rise = { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" };
+      const pop = { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(1.4)" };
+      const from = (sel, at, vars = { opacity: 0, y: 46 }, to = rise) => tl.fromTo(sel, vars, { ...to }, at);
+      const slideIn = (sel, at, dx = -60) => from(sel, at, { opacity: 0, x: dx }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" });
+      const exit = (sel, id) => tl.to(sel, { opacity: 0, y: -30, duration: 0.24, ease: "power2.in" }, sEnd(id) - 0.26);
+      const pulse = (sel, at, s = 1.08) => tl.fromTo(sel, { scale: 1 }, { keyframes: [{ scale: s, duration: 0.2 }, { scale: 1, duration: 0.3 }] }, at);
+      const countUp = (sel, to, at, dur = 1.1, prefix = "$") => {
+        const el = document.querySelector(sel), o = { v: 0 };
+        tl.fromTo(sel, { opacity: 0 }, { opacity: 1, duration: 0.15 }, at);
+        tl.fromTo(o, { v: 0 }, { v: to, duration: dur, ease: "power2.out",
+          onUpdate: () => { el.textContent = prefix + (Math.round(o.v / 25) * 25).toLocaleString("en-US"); } }, at);
+      };
+      const enterKicker = (stage, id) => from(stage + " .kicker", S[id] + 0.02, { opacity: 0, y: 20 });
+
+      // ── global layers ──
+      tl.fromTo("#glow-a", { x: 0, y: 0 }, { x: 240, y: 260, duration: TOTAL, ease: "sine.inOut" }, 0);
+      tl.fromTo("#glow-b", { x: 0, y: 0 }, { x: -220, y: -340, duration: TOTAL, ease: "sine.inOut" }, 0);
+      tl.fromTo("#sweep", { x: 0, rotation: 18 }, { x: 2600, rotation: 18, duration: TOTAL, ease: "none" }, 0);
+      tl.fromTo("#progress-fill", { scaleX: 0 }, { scaleX: 1, duration: TOTAL, ease: "none" }, 0);
+      tl.fromTo(["#brand", "#topic"], { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.6, stagger: 0.12, ease: "power3.out" }, 0.05);
+      document.querySelectorAll(".counter").forEach((el) => {
+        tl.fromTo(el.querySelector(".counter-txt"), { opacity: 0, y: -12 }, { opacity: 1, y: 0, duration: 0.35, ease: "power2.out" }, parseFloat(el.dataset.start));
+      });
+      document.querySelectorAll(".cap").forEach((el) => {
+        tl.fromTo(el.querySelector(".cap-pill"), { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.2, ease: "power2.out" }, parseFloat(el.dataset.start));
+      });
+
+      // ═══ SCENE TIMELINE START ═══
+      // 01 hook
+      enterKicker("#hook-stage", "01-hook");
+      from("#m1", S["01-hook"] + 0.08, { opacity: 0, y: 60, scale: 0.96 }, pop);
+      from("#m1-x", c("01-hook", "학생비자") - 0.35, { opacity: 0, scale: 2.2, rotation: -16 }, { opacity: 1, scale: 1, rotation: -8, duration: 0.26, ease: "power4.in" });
+      from("#m2", c("01-hook", "학생비자"), { opacity: 0, y: 60, scale: 0.96 }, pop);
+      from("#m2-x", c("01-hook", "아닙니다") - 0.3, { opacity: 0, scale: 2.2, rotation: 16 }, { opacity: 1, scale: 1, rotation: 8, duration: 0.26, ease: "power4.in" });
+      tl.to(["#m1", "#m2"], { opacity: 0.35, duration: 0.3 }, c("01-hook", "아닙니다"));
+      from("#verdict", c("01-hook", "아닙니다"), { opacity: 0, scale: 1.25 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power3.out" });
+      exit("#hook-stage", "01-hook");
+
+      // 02 answer
+      enterKicker("#answer-stage", "02-answer");
+      from("#answer-title", S["02-answer"] + 0.1);
+      slideIn("#c-parent", c("02-answer", "부모가"), -90);
+      from("#c-op", c("02-answer", "자녀는") - 0.15, { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" });
+      slideIn("#c-child", c("02-answer", "자녀는"), 90);
+      from("#answer-badge", c("02-answer", "현재"), { opacity: 0, y: 60, scale: 0.96 }, pop);
+      pulse("#answer-badge .badge-main", c("02-answer", "에이에이"));
+      exit("#answer-stage", "02-answer");
+
+      // 03 why
+      enterKicker("#why-stage", "03-why");
+      from("#why-title", S["03-why"] + 0.1);
+      slideIn("#r1", c("03-why", "연간"));
+      slideIn("#r2", c("03-why", "자녀 등하교"));
+      slideIn("#r3", c("03-why", "학업 부담"));
+      [["#r1", "학비가"], ["#r2", "자녀 등하교"], ["#r3", "학업 부담"]].forEach(([r, sub], i) =>
+        tl.fromTo(r + " .check", { scale: 0 }, { scale: 1, duration: 0.4, ease: "back.out(2.2)" }, c("03-why", sub) + (i ? 0.3 : 0)));
+      exit("#why-stage", "03-why");
+
+      // 04 details
+      enterKicker("#details-stage", "04-details");
+      from("#details-title", S["04-details"] + 0.1);
+      [["#t1", "처음부터"], ["#t2", "영어나"], ["#t3", "매주"], ["#t4", "수업은"]].forEach(([t, sub]) =>
+        from(t, c("04-details", sub), { opacity: 0, y: 50, scale: 0.95 }, pop));
+      tl.fromTo("#t1 .tile-s", { color: "#9aa3b8" }, { color: "#e6cf9f", duration: 0.3 }, c("04-details", "비자 연장"));
+      tl.fromTo("#t2 .tile-s", { color: "#9aa3b8" }, { color: "#e6cf9f", duration: 0.3 }, c("04-details", "중간에"));
+      exit("#details-stage", "04-details");
+
+      // 05 cost
+      enterKicker("#cost-stage", "05-cost");
+      from("#cost-title", S["05-cost"] + 0.1);
+      from("#receipt", S["05-cost"] + 0.2, { opacity: 0, y: 80 }, rise);
+      slideIn("#rl1", c("05-cost", "첫 오십이"));
+      slideIn("#rl2", c("05-cost", "이후"));
+      tl.fromTo("#rdiv", { scaleX: 0 }, { scaleX: 1, duration: 0.45, ease: "power2.out" }, c("05-cost", "이년 자녀"));
+      from("#rtot", c("05-cost", "이년 자녀") + 0.15, { opacity: 0, y: 30 });
+      countUp("#total-num", 25200, c("05-cost", "총 이만") - 0.2);
+      tl.fromTo("#total-u", { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power2.out" }, c("05-cost", "총 이만") + 0.9);
+      exit("#cost-stage", "05-cost");
+
+      // 06 kids
+      enterKicker("#kids-stage", "06-kids");
+      from("#kids-title", S["06-kids"] + 0.1);
+      from("#b1", c("06-kids", "아이는"), { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.55, ease: "back.out(1.6)" });
+      from("#b2", c("06-kids", "또는"), { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.55, ease: "back.out(1.6)" });
+      exit("#kids-stage", "06-kids");
+
+      // 07 long-term
+      enterKicker("#long-stage", "07-longterm");
+      from("#long-title", S["07-longterm"] + 0.1);
+      tl.fromTo("#road-fill", { scaleY: 0 }, { scaleY: 1, duration: c("07-longterm", "대학 진학") - c("07-longterm", "중하급") + 0.4, ease: "none" }, c("07-longterm", "중하급"));
+      [["#p1", "중하급"], ["#p2", "엘엠아이에이"], ["#p3", "취업비자로"], ["#p4", "풀타임"], ["#p5", "대학 진학"]].forEach(([p, sub]) => slideIn(p, c("07-longterm", sub), 70));
+      pulse("#p5 .node", c("07-longterm", "대학 진학") + 0.5, 1.18);
+      exit("#long-stage", "07-longterm");
+
+      // 08 fast track
+      from("#ft", S["08-fast"] + 0.02, { opacity: 0, scale: 0.8 }, pop);
+      from("#f1", c("08-fast", "불어 점수"));
+      from("#fa1", c("08-fast", "일년만") - 0.15, { opacity: 0, y: -16 });
+      from("#f2", c("08-fast", "일년만"));
+      from("#fa2", c("08-fast", "어학원 추가") - 0.15, { opacity: 0, y: -16 });
+      from("#fskip", c("08-fast", "어학원 추가"), { opacity: 0, y: 24 });
+      from("#f3", c("08-fast", "어학원 추가") + 0.9, { opacity: 0, y: 40, scale: 0.95 }, pop);
+      from("#fnote", c("08-fast", "원하시면"), { opacity: 0, y: 30 });
+      exit("#fast-stage", "08-fast");
+
+      // 09 CTA
+      from("#cta-k", S["09-cta"] + 0.02, { opacity: 0, y: 20 });
+      from("#logo", S["09-cta"] + 0.12, { opacity: 0, scale: 0.85, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.7, ease: "power3.out" });
+      from("#logo-sub", S["09-cta"] + 0.4, { opacity: 0, y: 20 });
+      from("#cta", c("09-cta", "지금"), { opacity: 0, y: 40, scale: 0.95 }, pop);
+      tl.fromTo("#cta", { scale: 1 }, { keyframes: [{ scale: 1.04, duration: 0.4, ease: "sine.inOut" }, { scale: 1, duration: 0.4, ease: "sine.inOut" }], repeat: 1 }, c("09-cta", "지금") + 0.6);
+      // ═══ SCENE TIMELINE END ═══
+
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
