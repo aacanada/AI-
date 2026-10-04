@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "preferences": {
+    "aspect": {
+      "value": "1080x1920",
+      "confirmed_in": [
+        "montreal-education-shorts"
+      ],
+      "updated_at": "2026-10-04T12:54:10.558Z"
+    },
+    "language": {
+      "value": "ko",
+      "confirmed_in": [
+        "montreal-education-shorts"
+      ],
+      "updated_at": "2026-10-04T12:54:10.612Z"
+    },
+    "flow": {
+      "value": "automation",
+      "confirmed_in": [
+        "montreal-education-shorts"
+      ],
+      "updated_at": "2026-10-04T12:54:10.670Z"
+    },
+    "storyboard": {
+      "value": "yes",
+      "confirmed_in": [
+        "montreal-education-shorts"
+      ],
+      "updated_at": "2026-10-04T12:54:10.724Z"
+    },
+    "style_preset.faceless-explainer": {
+      "value": "blue-professional",
+      "confirmed_in": [
+        "montreal-education-shorts"
+      ],
+      "updated_at": "2026-10-04T12:54:10.807Z"
+    }
+  },
+  "sightings": {}
+}
