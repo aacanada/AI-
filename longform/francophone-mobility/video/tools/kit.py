@@ -7,7 +7,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-DURS = json.loads(Path("/tmp/claude-0/durs.json").read_text()) if Path("/tmp/claude-0/durs.json").exists() else None
+DURS = json.loads((Path(__file__).parent / "durations.json").read_text())  # voice length + 0.6s per scene
 CHAPTERS = ["INTRO", "WORK PERMIT · LMIA", "LMIA의 벽", "LMIA 면제 루트", "왜 몬트리올", "불어 레벨 로드맵", "정리"]
 
 COMMON_CSS = """
