@@ -119,7 +119,7 @@ build(12, 3, "$230", css="""
 #§key .a .b { color:#1F4FA0; } #§key .a .r { color:#C8102E; }
 """, html="""
   <div id="§L" class="card"><div class="§k">LMIA</div>
-    <ul><li>구인광고 4주 이상<span class="st"></span></li><li>신청비 $1,000 + 컨설턴트<span class="st"></span></li>
+    <ul><li>구인광고 8주 이상<span class="st"></span></li><li>신청비 $1,000 + 컨설턴트<span class="st"></span></li>
       <li>길면 1년 이상 심사<span class="st"></span></li><li>복잡한 서류 · 인터뷰<span class="st"></span></li></ul></div>
   <div id="§R" class="card"><div class="§k">FRANCOPHONE MOBILITY</div>
     <div class="t">이민성 고용주 포털에 잡오퍼 등록 +</div><div class="big" id="§fee">$230</div></div>
@@ -141,7 +141,7 @@ tl.fromTo("#§key", { opacity: 0, x: 80 }, { opacity: 1, x: 0, duration: 0.6, ea
 """, glow=(1300, -200))
 
 # ---------------------------------------------------------------- 13 Montreal
-build(13, 4, "MONTRÉAL", css="""
+build(13, 4, "MONTREAL", css="""
 #§k { position:absolute; left:120px; top:150px; font-family:"Space Mono"; font-weight:700; font-size: 28px; letter-spacing:.14em; color:#1F4FA0; }
 #§q { position:absolute; left:120px; top: 200px; font-size: 64px; }
 #§city { position:absolute; left:110px; top: 300px; font-family:"Black Han Sans"; font-size: 260px; line-height: 1; color:#1E1C24; letter-spacing:-0.02em; }
@@ -178,17 +178,17 @@ build(13, 4, "MONTRÉAL", css="""
   <div id="§pay"><div class="t">피했던 몬트리올이, 사실은 <b>영어권 취업으로 가는 가장 빠른 길</b></div></div>
 """, js="""
 left("#§k", 0.2); up("#§q", 0.4, 0.6);
-tl.fromTo("#§city", { opacity: 0, y: 80, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.8, ease: E.e }, 5.6);
-slam("#§fear", 11.4, -5);
-draw("#§fearx", 13.6, 0.4);
-tl.to("#§fear", { opacity: 0.4, duration: 0.4 }, 14.1);
-pop("#§b1", 17.8); pop("#§b2", 18.3);
-tl.to("#§b1", { y: -14, duration: 1.2, ease: E.s, yoyo: true, repeat: 7 }, 19.0);
-tl.to("#§b2", { y: -14, duration: 1.2, ease: E.s, yoyo: true, repeat: 7 }, 19.6);
-up("#§both", 19.4);
-tl.to("#§fear, #§fearx", { opacity: 0, duration: 0.4 }, 27.8);
-left("#§t1", 28.5); left("#§t2", 29.6); left("#§t3", 30.7);
-tl.fromTo("#§pay", { yPercent: 100 }, { yPercent: 0, duration: 0.7, ease: E.e }, 34.0);
+tl.fromTo("#§city", { opacity: 0, y: 80, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.8, ease: E.e }, 5.3);
+slam("#§fear", 10.7, -5);
+draw("#§fearx", 12.9, 0.4);
+tl.to("#§fear", { opacity: 0.4, duration: 0.4 }, 13.4);
+pop("#§b1", 16.7); pop("#§b2", 17.2);
+tl.to("#§b1", { y: -14, duration: 1.2, ease: E.s, yoyo: true, repeat: 7 }, 17.9);
+tl.to("#§b2", { y: -14, duration: 1.2, ease: E.s, yoyo: true, repeat: 7 }, 18.5);
+up("#§both", 18.3);
+tl.to("#§fear, #§fearx", { opacity: 0, duration: 0.4 }, 26.0);
+left("#§t1", 26.7); left("#§t2", 27.8); left("#§t3", 28.9);
+tl.fromTo("#§pay", { yPercent: 100 }, { yPercent: 0, duration: 0.7, ease: E.e }, 31.9);
 """, glow=(1200, 100))
 
 # ---------------------------------------------------------------- stairs shared

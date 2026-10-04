@@ -72,7 +72,7 @@
 
   <div id="s13-bg" data-layout-allow-overflow></div>
   <div id="s13-glow" data-layout-allow-overflow style="left:1200px; top:100px;"></div>
-  <div id="s13-ghost" data-layout-allow-overflow data-t="MONTRÉAL"></div>
+  <div id="s13-ghost" data-layout-allow-overflow data-t="MONTREAL"></div>
   <div id="s13-top"><div id="s13-chap"><span class="num">CH 04</span><span class="name">왜 몬트리올</span></div>
     <div id="s13-brand">AA <b>CANADA</b></div></div>
   <div id="s13-rail"><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i class=""></i></div>
@@ -95,7 +95,7 @@
       <script>
 (function () {
 
-const D = 40.99;
+const D = 38.45;
 const tl = gsap.timeline({ paused: true });
 const E = { o: "power3.out", b: "back.out(1.7)", e: "expo.out", s: "sine.inOut" };
 function up(sel, t, d = 0.6, y = 46) { tl.fromTo(sel, { opacity: 0, y: y }, { opacity: 1, y: 0, duration: d, ease: E.o }, t); }
@@ -122,17 +122,17 @@ tl.fromTo("#s13-rail", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 0.1);
 
 
 left("#s13-k", 0.2); up("#s13-q", 0.4, 0.6);
-tl.fromTo("#s13-city", { opacity: 0, y: 80, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.8, ease: E.e }, 5.6);
-slam("#s13-fear", 11.4, -5);
-draw("#s13-fearx", 13.6, 0.4);
-tl.to("#s13-fear", { opacity: 0.4, duration: 0.4 }, 14.1);
-pop("#s13-b1", 17.8); pop("#s13-b2", 18.3);
-tl.to("#s13-b1", { y: -14, duration: 1.2, ease: E.s, yoyo: true, repeat: 7 }, 19.0);
-tl.to("#s13-b2", { y: -14, duration: 1.2, ease: E.s, yoyo: true, repeat: 7 }, 19.6);
-up("#s13-both", 19.4);
-tl.to("#s13-fear, #s13-fearx", { opacity: 0, duration: 0.4 }, 27.8);
-left("#s13-t1", 28.5); left("#s13-t2", 29.6); left("#s13-t3", 30.7);
-tl.fromTo("#s13-pay", { yPercent: 100 }, { yPercent: 0, duration: 0.7, ease: E.e }, 34.0);
+tl.fromTo("#s13-city", { opacity: 0, y: 80, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.8, ease: E.e }, 5.3);
+slam("#s13-fear", 10.7, -5);
+draw("#s13-fearx", 12.9, 0.4);
+tl.to("#s13-fear", { opacity: 0.4, duration: 0.4 }, 13.4);
+pop("#s13-b1", 16.7); pop("#s13-b2", 17.2);
+tl.to("#s13-b1", { y: -14, duration: 1.2, ease: E.s, yoyo: true, repeat: 7 }, 17.9);
+tl.to("#s13-b2", { y: -14, duration: 1.2, ease: E.s, yoyo: true, repeat: 7 }, 18.5);
+up("#s13-both", 18.3);
+tl.to("#s13-fear, #s13-fearx", { opacity: 0, duration: 0.4 }, 26.0);
+left("#s13-t1", 26.7); left("#s13-t2", 27.8); left("#s13-t3", 28.9);
+tl.fromTo("#s13-pay", { yPercent: 100 }, { yPercent: 0, duration: 0.7, ease: E.e }, 31.9);
 
 window.__timelines["s13"] = tl;
 })();

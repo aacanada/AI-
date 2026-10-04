@@ -242,7 +242,7 @@ build(6, 2, "1,000 $", css="""
 """, html="""
   <div id="§cc"><div class="k">CHAPTER 2</div><h1 class="hl">고용주가 해야 할 일</h1><p>LMIA 한 번을 위해 필요한 것들</p></div>
   <div id="§list">
-    <div class="§it" id="§i1"><div class="bx"><span class="ck">✓</span></div><div class="tx">캐나다인 대상 구인광고 <em>4주 이상</em></div></div>
+    <div class="§it" id="§i1"><div class="bx"><span class="ck">✓</span></div><div class="tx">캐나다인 대상 구인광고 <em>8주 이상</em></div></div>
     <div class="§it" id="§i2"><div class="bx"><span class="ck">✓</span></div><div class="tx">신청비 <em id="§fee">$1,000</em> + 컨설턴트 비용<small>보통 수천 달러 추가</small></div></div>
     <div class="§it" id="§i3"><div class="bx"><span class="ck">✓</span></div><div class="tx">지원자가 왜 부적합했는지 설명</div></div>
     <div class="§it" id="§i4"><div class="bx"><span class="ck">✓</span></div><div class="tx">재무제표 · 정규직 고용 이력 제출</div></div>
@@ -254,7 +254,7 @@ build(6, 2, "1,000 $", css="""
 left("#§cc .k", 0.2); up("#§cc h1", 0.35, 0.7); up("#§cc p", 0.7);
 fade("#§gauge", 1.0);
 tl.set("#§gauge .fl", { scaleX: 0 }, 0);
-const T = [3.9, 11.0, 17.1, 19.5, 25.1, 30.6];
+const T = [3.3, 9.3, 14.5, 16.9, 21.2, 25.9];
 const P = [15, 35, 52, 68, 86, 100];
 T.forEach((t, i) => {
   const k = "#§i" + (i + 1);
@@ -263,7 +263,7 @@ T.forEach((t, i) => {
   tl.to("#§gauge .fl", { scaleX: P[i] / 100, duration: 0.7, ease: E.o }, t + 0.4);
   count("#§pct", t + 0.4, i ? P[i - 1] : 0, P[i], 0.7, v => v + "%");
 });
-count("#§fee", 11.3, 0, 1000, 1.0, v => "$" + v.toLocaleString("en-US"));
+count("#§fee", 9.6, 0, 1000, 1.0, v => "$" + v.toLocaleString("en-US"));
 """, glow=(-300, 500))
 
 # ---------------------------------------------------------------- 07 conditions

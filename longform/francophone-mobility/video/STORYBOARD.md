@@ -1,6 +1,6 @@
 ---
 format: 1920x1080
-duration: 410s
+duration: 402s
 message: "LMIA의 벽을 불어 NCLC 5로 건너뛰고, 몬트리올에서 영어·불어를 함께 준비한다"
 arc: Hook → Work permit/LMIA → LMIA의 어려움 → PGWP → Francophone Mobility → 몬트리올 → 레벨별 로드맵 → CTA
 audience: 캐나다 취업·이민을 고민하는 한국인
@@ -49,7 +49,7 @@ audience: 캐나다 취업·이민을 고민하는 한국인
 ## Frame 6 — CH2 LMIA 절차
 - status: animated
 - src: compositions/s06.html
-- duration: 34.82s
+- duration: 29.52s
 - transition_in: push-slide LEFT
 - scene: CH2 LMIA 절차
 - voiceover: ../SCRIPT.md Line 6
@@ -105,7 +105,7 @@ audience: 캐나다 취업·이민을 고민하는 한국인
 ## Frame 13 — CH4 왜 몬트리올인가
 - status: animated
 - src: compositions/s13.html
-- duration: 40.99s
+- duration: 38.45s
 - transition_in: push-slide LEFT
 - scene: CH4 왜 몬트리올인가
 - voiceover: ../SCRIPT.md Line 13
