@@ -1,0 +1,57 @@
+<template>
+<style>
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Medium.woff2") format("woff2");font-weight:500;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2");font-weight:600;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");font-weight:700;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");font-weight:800;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Black.woff2") format("woff2");font-weight:900;font-style:normal;}
+
+#root{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;font-family:"Pretendard",sans-serif;color:#111;}
+.f09-cta-bg{position:absolute;inset:0;background:#fdfae7;}
+.f09-cta-stage{position:absolute;inset:0;}
+.f09-cta-eyebrow{position:absolute;left:80px;top:150px;display:flex;align-items:center;gap:18px;}
+.f09-cta-eyebrow .line{width:60px;height:6px;border-radius:3px;background:#1e2bfa;display:block;}
+.f09-cta-eyebrow .txt{font-size:34px;font-weight:700;letter-spacing:0.06em;color:#1e2bfa;}
+.f09-cta-brand{position:absolute;right:80px;top:138px;padding:14px 28px;border-radius:100px;background:rgba(30,43,250,0.08);color:#1e2bfa;font-size:28px;font-weight:700;letter-spacing:0.08em;}
+.f09-cta-card{background:rgba(30,43,250,0.04);border:2px solid rgba(30,43,250,0.2);border-radius:20px;}
+.f09-cta-rings{position:absolute;left:540px;top:820px;width:0;height:0;}
+.f09-cta-rings i{position:absolute;display:block;border-radius:50%;border:2px solid rgba(30,43,250,0.15);transform:translate(-50%,-50%);left:0;top:0;}
+.f09-cta-t{position:absolute;left:80px;right:80px;top:470px;text-align:center;}
+.f09-cta-t .a{font-size:150px;font-weight:900;letter-spacing:-0.05em;color:#1e2bfa;line-height:1.05;}
+.f09-cta-t .b{margin-top:10px;font-size:110px;font-weight:900;letter-spacing:-0.04em;line-height:1.1;}
+.f09-cta-btnw{position:absolute;left:0;right:0;top:1000px;display:flex;justify-content:center;}
+.f09-cta-btn{padding:44px 90px;border-radius:100px;background:#1e2bfa;color:#fdfae7;font-size:66px;font-weight:900;box-shadow:0 20px 50px rgba(30,43,250,0.3);}
+.f09-cta-s{position:absolute;left:80px;right:80px;top:1220px;text-align:center;font-size:44px;font-weight:700;color:#6b6b6b;}
+.f09-cta-logo{position:absolute;left:0;right:0;top:300px;text-align:center;font-size:44px;font-weight:900;letter-spacing:0.2em;color:#111;}
+
+</style>
+<div id="root" data-composition-id="09-cta" data-width="1080" data-height="1920" data-duration="5">
+  <div class="f09-cta-bg clip" id="f09-cta-bg" data-start="0" data-duration="5" data-track-index="0"></div>
+  <div class="f09-cta-stage clip" id="f09-cta-stage" data-start="0" data-duration="5" data-track-index="1">
+    
+    <div class="f09-cta-rings" id="f09-cta-rings"><i style="width:700px;height:700px"></i><i style="width:1000px;height:1000px"></i><i style="width:1300px;height:1300px"></i></div>
+<div class="f09-cta-logo" id="f09-cta-logo">AA CANADA</div>
+<div class="f09-cta-t"><div class="a" id="f09-cta-a">몬트리올</div><div class="b" id="f09-cta-b">자녀무상교육</div></div>
+<div class="f09-cta-btnw"><div class="f09-cta-btn" id="f09-cta-btn">상담 신청하기</div></div>
+<div class="f09-cta-s" id="f09-cta-s">프로필 링크 · DM 문의</div>
+
+  </div>
+</div>
+<script src="assets/vendor/gsap.min.js"></script>
+<script>
+(function(){
+  const tl = gsap.timeline({ paused: true });
+  const S = (s) => "#f09-cta-" + s;
+
+  tl.fromTo(S("rings"), {opacity:0, scale:0.6}, {opacity:1, scale:1, duration:1.4, ease:"power2.out"}, 0);
+  tl.fromTo(S("logo"), {opacity:0}, {opacity:1, duration:0.5}, 0.1);
+  tl.fromTo(S("a"), {opacity:0, y:50}, {opacity:1, y:0, duration:0.55, ease:"power3.out"}, 0.2);
+  tl.fromTo(S("b"), {opacity:0, y:50}, {opacity:1, y:0, duration:0.55, ease:"power3.out"}, 0.7);
+  tl.fromTo(S("btn"), {opacity:0, scale:0.5}, {opacity:1, scale:1, duration:0.55, ease:"back.out(2.2)"}, 1.9);
+  tl.fromTo(S("btn"), {scale:1}, {keyframes:[{scale:0.93, duration:0.12},{scale:1, duration:0.3, ease:"back.out(3)"}]}, 2.9);
+  tl.fromTo(S("s"), {opacity:0, y:20}, {opacity:1, y:0, duration:0.45}, 3.1);
+
+  window.__timelines["09-cta"] = tl;
+})();
+</script>
+</template>

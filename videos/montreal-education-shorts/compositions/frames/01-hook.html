@@ -1,0 +1,70 @@
+<template>
+<style>
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Medium.woff2") format("woff2");font-weight:500;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2");font-weight:600;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");font-weight:700;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");font-weight:800;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Black.woff2") format("woff2");font-weight:900;font-style:normal;}
+
+#root{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;font-family:"Pretendard",sans-serif;color:#111;}
+.f01-hook-bg{position:absolute;inset:0;background:#fdfae7;}
+.f01-hook-stage{position:absolute;inset:0;}
+.f01-hook-eyebrow{position:absolute;left:80px;top:150px;display:flex;align-items:center;gap:18px;}
+.f01-hook-eyebrow .line{width:60px;height:6px;border-radius:3px;background:#1e2bfa;display:block;}
+.f01-hook-eyebrow .txt{font-size:34px;font-weight:700;letter-spacing:0.06em;color:#1e2bfa;}
+.f01-hook-brand{position:absolute;right:80px;top:138px;padding:14px 28px;border-radius:100px;background:rgba(30,43,250,0.08);color:#1e2bfa;font-size:28px;font-weight:700;letter-spacing:0.08em;}
+.f01-hook-card{background:rgba(30,43,250,0.04);border:2px solid rgba(30,43,250,0.2);border-radius:20px;}
+
+.f01-hook-cam{position:absolute;inset:0;}
+.f01-hook-q{position:absolute;left:80px;right:80px;top:330px;}
+.f01-hook-city{font-size:190px;font-weight:900;letter-spacing:-0.04em;line-height:1;}
+.f01-hook-fr{position:relative;display:inline-block;margin-top:30px;font-size:120px;font-weight:800;color:#6b6b6b;letter-spacing:-0.03em;}
+.f01-hook-qm{display:inline-block;color:#1e2bfa;}
+.f01-hook-strike{position:absolute;left:-10px;right:-10px;top:52%;height:16px;border-radius:8px;background:#dc2626;transform-origin:left center;display:block;}
+.f01-hook-ans{position:absolute;left:80px;right:80px;top:880px;}
+.f01-hook-pill{display:inline-block;padding:18px 36px;border-radius:100px;background:rgba(30,43,250,0.08);color:#1e2bfa;font-size:48px;font-weight:700;}
+.f01-hook-head{margin-top:36px;font-size:112px;font-weight:800;letter-spacing:-0.03em;line-height:1.1;}
+.f01-hook-one{margin-top:10px;font-size:360px;font-weight:900;line-height:0.95;color:#1e2bfa;letter-spacing:-0.05em;display:block;width:max-content;transform-origin:left bottom;}
+.f01-hook-one small{font-size:150px;margin-left:10px;letter-spacing:-0.03em;}
+
+</style>
+<div id="root" data-composition-id="01-hook" data-width="1080" data-height="1920" data-duration="6">
+  <div class="f01-hook-bg clip" id="f01-hook-bg" data-start="0" data-duration="6" data-track-index="0"></div>
+  <div class="f01-hook-stage clip" id="f01-hook-stage" data-start="0" data-duration="6" data-track-index="1">
+    <div class="f01-hook-eyebrow" id="f01-hook-eyebrow"><span class="line"></span><span class="txt">AA CANADA · 캐나다 유학</span></div>
+    
+<div class="f01-hook-cam" id="f01-hook-cam">
+<div class="f01-hook-q">
+  <div class="f01-hook-city" id="f01-hook-city">몬트리올</div>
+  <div class="f01-hook-fr" id="f01-hook-fr">= 불어권<span class="f01-hook-qm" id="f01-hook-qm">?</span><span class="f01-hook-strike" id="f01-hook-strike"></span></div>
+</div>
+<div class="f01-hook-ans">
+  <div class="f01-hook-pill" id="f01-hook-pill">캐나다 교육환경</div>
+  <div class="f01-hook-head" id="f01-hook-head">가장 좋은 곳은</div>
+  <div class="f01-hook-one" id="f01-hook-one">1<small>위</small></div>
+</div>
+</div>
+
+  </div>
+</div>
+<script src="assets/vendor/gsap.min.js"></script>
+<script>
+(function(){
+  const tl = gsap.timeline({ paused: true });
+  const S = (s) => "#f01-hook-" + s;
+  tl.fromTo(S("eyebrow"), {opacity:0, x:-30}, {opacity:1, x:0, duration:0.5, ease:"power3.out"}, 0.05);
+
+  tl.fromTo(S("cam"), {scale:1}, {scale:1.04, duration:6, ease:"none", transformOrigin:"50% 40%"}, 0);
+  tl.fromTo(S("city"), {opacity:0, y:60}, {opacity:1, y:0, duration:0.6, ease:"power3.out"}, 0.15);
+  tl.fromTo(S("fr"), {opacity:0, y:40}, {opacity:1, y:0, duration:0.5, ease:"power3.out"}, 0.6);
+  tl.fromTo(S("qm"), {rotation:0}, {keyframes:[{rotation:-14,duration:0.15},{rotation:12,duration:0.15},{rotation:-8,duration:0.15},{rotation:0,duration:0.2}]}, 1.1);
+  tl.fromTo(S("strike"), {scaleX:0}, {scaleX:1, duration:0.4, ease:"power2.inOut"}, 2.4);
+  tl.fromTo(S("fr"), {opacity:1}, {opacity:0.45, duration:0.4}, 2.7);
+  tl.fromTo(S("pill"), {opacity:0, y:30}, {opacity:1, y:0, duration:0.45, ease:"power3.out"}, 2.8);
+  tl.fromTo(S("head"), {opacity:0, y:40}, {opacity:1, y:0, duration:0.5, ease:"power3.out"}, 3.3);
+  tl.fromTo(S("one"), {opacity:0, scale:0.4}, {opacity:1, scale:1, duration:0.7, ease:"back.out(2)"}, 4.1);
+
+  window.__timelines["01-hook"] = tl;
+})();
+</script>
+</template>

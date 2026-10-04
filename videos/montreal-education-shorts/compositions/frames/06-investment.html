@@ -1,0 +1,57 @@
+<template>
+<style>
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Medium.woff2") format("woff2");font-weight:500;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2");font-weight:600;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");font-weight:700;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");font-weight:800;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Black.woff2") format("woff2");font-weight:900;font-style:normal;}
+
+#root{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;font-family:"Pretendard",sans-serif;color:#111;}
+.f06-investment-bg{position:absolute;inset:0;background:#fdfae7;}
+.f06-investment-stage{position:absolute;inset:0;}
+.f06-investment-eyebrow{position:absolute;left:80px;top:150px;display:flex;align-items:center;gap:18px;}
+.f06-investment-eyebrow .line{width:60px;height:6px;border-radius:3px;background:#1e2bfa;display:block;}
+.f06-investment-eyebrow .txt{font-size:34px;font-weight:700;letter-spacing:0.06em;color:#1e2bfa;}
+.f06-investment-brand{position:absolute;right:80px;top:138px;padding:14px 28px;border-radius:100px;background:rgba(30,43,250,0.08);color:#1e2bfa;font-size:28px;font-weight:700;letter-spacing:0.08em;}
+.f06-investment-card{background:rgba(30,43,250,0.04);border:2px solid rgba(30,43,250,0.2);border-radius:20px;}
+
+.f06-investment-t{position:absolute;left:80px;top:250px;font-size:100px;font-weight:900;letter-spacing:-0.04em;line-height:1.1;}
+.f06-investment-t em{font-style:normal;color:#1e2bfa;}
+.f06-investment-list{position:absolute;left:80px;right:80px;top:640px;display:flex;flex-direction:column;gap:34px;}
+.f06-investment-item{display:flex;align-items:center;gap:40px;padding:36px 44px;height:250px;}
+.f06-investment-ic{flex:none;width:170px;height:170px;border-radius:24px;background:rgba(30,43,250,0.08);display:flex;align-items:center;justify-content:center;}
+.f06-investment-item b{display:block;font-size:66px;font-weight:900;letter-spacing:-0.03em;}
+.f06-investment-item span{display:block;margin-top:8px;font-size:36px;font-weight:600;color:#6b6b6b;}
+
+</style>
+<div id="root" data-composition-id="06-investment" data-width="1080" data-height="1920" data-duration="8">
+  <div class="f06-investment-bg clip" id="f06-investment-bg" data-start="0" data-duration="8" data-track-index="0"></div>
+  <div class="f06-investment-stage clip" id="f06-investment-stage" data-start="0" data-duration="8" data-track-index="1">
+    <div class="f06-investment-eyebrow" id="f06-investment-eyebrow"><span class="line"></span><span class="txt">03 · 교육 투자</span></div><div class="f06-investment-brand" id="f06-investment-brand">AA CANADA</div>
+    
+<div class="f06-investment-t" id="f06-investment-t">퀘벡주는<span style="display:block;height:0"></span><em>교육 투자</em>를<span style="display:block;height:0"></span>아끼지 않습니다</div>
+<div class="f06-investment-list">
+  <div class="f06-investment-item f06-investment-card" id="f06-investment-i1"><div class="f06-investment-ic"><svg viewBox="0 0 120 120" width="150" height="150"><rect x="14" y="22" width="92" height="66" rx="12" fill="none" stroke="#1e2bfa" stroke-width="7"/><line x1="14" y1="58" x2="106" y2="58" stroke="#1e2bfa" stroke-width="6"/><rect x="26" y="32" width="28" height="18" rx="3" fill="rgba(30,43,250,0.2)"/><rect x="66" y="32" width="28" height="18" rx="3" fill="rgba(30,43,250,0.2)"/><circle cx="36" cy="94" r="10" fill="#1e2bfa"/><circle cx="84" cy="94" r="10" fill="#1e2bfa"/><path d="M64 62 L54 76 H62 L56 86 L70 70 H62 L68 62 Z" fill="#059669"/></svg></div><div><b>전기 스쿨버스</b><span>Electric school bus</span></div></div>
+  <div class="f06-investment-item f06-investment-card" id="f06-investment-i2"><div class="f06-investment-ic"><svg viewBox="0 0 120 120" width="150" height="150"><rect x="16" y="14" width="88" height="92" rx="10" fill="none" stroke="#1e2bfa" stroke-width="7"/><line x1="16" y1="34" x2="104" y2="34" stroke="#1e2bfa" stroke-width="6"/><rect x="52" y="34" width="16" height="14" fill="#1e2bfa"/><path d="M40 90 L60 62 L80 90 Z" fill="rgba(30,43,250,0.25)" stroke="#1e2bfa" stroke-width="5" stroke-linejoin="round"/><line x1="30" y1="92" x2="90" y2="92" stroke="#1e2bfa" stroke-width="6"/></svg></div><div><b>학교마다 3D 프린터</b><span>3D printer</span></div></div>
+  <div class="f06-investment-item f06-investment-card" id="f06-investment-i3"><div class="f06-investment-ic"><svg viewBox="0 0 120 120" width="150" height="150"><rect x="10" y="18" width="100" height="66" rx="8" fill="none" stroke="#1e2bfa" stroke-width="7"/><path d="M26 64 L44 48 L58 58 L80 36 L94 44" fill="none" stroke="#1e2bfa" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><line x1="60" y1="84" x2="60" y2="104" stroke="#1e2bfa" stroke-width="7"/><line x1="38" y1="106" x2="82" y2="106" stroke="#1e2bfa" stroke-width="7" stroke-linecap="round"/></svg></div><div><b>교실엔 스마트보드</b><span>Smart board</span></div></div>
+</div>
+
+  </div>
+</div>
+<script src="assets/vendor/gsap.min.js"></script>
+<script>
+(function(){
+  const tl = gsap.timeline({ paused: true });
+  const S = (s) => "#f06-investment-" + s;
+  tl.fromTo(S("eyebrow"), {opacity:0, x:-30}, {opacity:1, x:0, duration:0.5, ease:"power3.out"}, 0.05);
+  tl.fromTo(S("brand"), {opacity:0}, {opacity:1, duration:0.5}, 0.1);
+
+  tl.fromTo(S("t"), {opacity:0, y:50}, {opacity:1, y:0, duration:0.6, ease:"power3.out"}, 0.2);
+  tl.fromTo(S("i1"), {opacity:0, x:120}, {opacity:1, x:0, duration:0.55, ease:"power3.out"}, 2.6);
+  tl.fromTo(S("i2"), {opacity:0, x:120}, {opacity:1, x:0, duration:0.55, ease:"power3.out"}, 3.9);
+  tl.fromTo(S("i3"), {opacity:0, x:120}, {opacity:1, x:0, duration:0.55, ease:"power3.out"}, 5.3);
+
+  window.__timelines["06-investment"] = tl;
+})();
+</script>
+</template>

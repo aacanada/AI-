@@ -1,0 +1,84 @@
+<template>
+<style>
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Medium.woff2") format("woff2");font-weight:500;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2");font-weight:600;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");font-weight:700;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");font-weight:800;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Black.woff2") format("woff2");font-weight:900;font-style:normal;}
+
+#root{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;font-family:"Pretendard",sans-serif;color:#111;}
+.f04-math-chart-bg{position:absolute;inset:0;background:#fdfae7;}
+.f04-math-chart-stage{position:absolute;inset:0;}
+.f04-math-chart-eyebrow{position:absolute;left:80px;top:150px;display:flex;align-items:center;gap:18px;}
+.f04-math-chart-eyebrow .line{width:60px;height:6px;border-radius:3px;background:#1e2bfa;display:block;}
+.f04-math-chart-eyebrow .txt{font-size:34px;font-weight:700;letter-spacing:0.06em;color:#1e2bfa;}
+.f04-math-chart-brand{position:absolute;right:80px;top:138px;padding:14px 28px;border-radius:100px;background:rgba(30,43,250,0.08);color:#1e2bfa;font-size:28px;font-weight:700;letter-spacing:0.08em;}
+.f04-math-chart-card{background:rgba(30,43,250,0.04);border:2px solid rgba(30,43,250,0.2);border-radius:20px;}
+
+.f04-math-chart-h{position:absolute;left:80px;top:240px;font-size:60px;font-weight:800;letter-spacing:-0.02em;}
+.f04-math-chart-res{position:absolute;left:80px;top:340px;display:flex;align-items:baseline;gap:14px;}
+.f04-math-chart-res .p{font-size:64px;font-weight:800;}
+.f04-math-chart-res .n{font-size:180px;font-weight:900;color:#1e2bfa;letter-spacing:-0.04em;line-height:1;}
+.f04-math-chart-res .u{font-size:64px;font-weight:800;color:#1e2bfa;}
+.f04-math-chart-badge{margin-left:18px;padding:12px 30px;border-radius:100px;background:#1e2bfa;color:#fdfae7;font-size:56px;font-weight:900;align-self:center;display:block;}
+.f04-math-chart-bar{position:absolute;background:rgba(30,43,250,0.18);border-radius:10px 10px 0 0;transform-origin:50% 100%;}
+.f04-math-chart-bar.can{background:#6b6b6b;}
+.f04-math-chart-bar.qc{background:rgba(30,43,250,0.18);}
+.f04-math-chart-qcfill{position:absolute;background:#1e2bfa;border-radius:10px 10px 0 0;transform-origin:50% 100%;}
+.f04-math-chart-val{position:absolute;text-align:center;font-size:30px;font-weight:700;color:#6b6b6b;}
+.f04-math-chart-val.qc{color:#1e2bfa;font-size:40px;font-weight:900;top:auto;}
+.f04-math-chart-pl{position:absolute;text-align:center;font-size:28px;font-weight:700;color:#9a9a9a;letter-spacing:0.04em;}
+.f04-math-chart-pl.qc{color:#1e2bfa;font-size:34px;font-weight:900;}
+.f04-math-chart-pl.can{color:#111;}
+.f04-math-chart-base{position:absolute;left:70px;right:70px;height:3px;background:#111;opacity:0.5;}
+.f04-math-chart-avg{position:absolute;left:70px;right:70px;height:0;border-top:5px dashed #dc2626;transform-origin:left center;}
+.f04-math-chart-leg{position:absolute;left:80px;right:80px;top:1440px;display:flex;justify-content:center;gap:50px;font-size:36px;font-weight:700;color:#6b6b6b;}
+.f04-math-chart-leg i{display:inline-block;width:60px;height:0;border-top:5px dashed #dc2626;vertical-align:middle;margin-right:14px;}
+.f04-math-chart-leg u{text-decoration:none;display:inline-block;width:34px;height:34px;border-radius:6px;background:#1e2bfa;vertical-align:middle;margin-right:14px;}
+.f04-math-chart-pin{position:absolute;padding:12px 26px;border-radius:100px;background:#111;color:#fdfae7;font-size:34px;font-weight:800;white-space:nowrap;}
+
+</style>
+<div id="root" data-composition-id="04-math-chart" data-width="1080" data-height="1920" data-duration="8">
+  <div class="f04-math-chart-bg clip" id="f04-math-chart-bg" data-start="0" data-duration="8" data-track-index="0"></div>
+  <div class="f04-math-chart-stage clip" id="f04-math-chart-stage" data-start="0" data-duration="8" data-track-index="1">
+    <div class="f04-math-chart-eyebrow" id="f04-math-chart-eyebrow"><span class="line"></span><span class="txt">01 · 수학</span></div><div class="f04-math-chart-brand" id="f04-math-chart-brand">AA CANADA</div>
+    
+<div class="f04-math-chart-h" id="f04-math-chart-h">PCAP 수학 평균점수</div>
+<div class="f04-math-chart-res" id="f04-math-chart-res"><span class="p">퀘벡주</span><span class="n" id="f04-math-chart-n">0</span><span class="u">점</span><span class="f04-math-chart-badge" id="f04-math-chart-badge">1위</span></div>
+<div class="f04-math-chart-bar " id="f04-math-chart-bar-BC" style="left:86px;top:970px;height:360px;width:68px"></div><div class="f04-math-chart-bar " id="f04-math-chart-bar-AB" style="left:170px;top:868px;height:462px;width:68px"></div><div class="f04-math-chart-bar " id="f04-math-chart-bar-SK" style="left:254px;top:1024px;height:306px;width:68px"></div><div class="f04-math-chart-bar " id="f04-math-chart-bar-MB" style="left:338px;top:1060px;height:270px;width:68px"></div><div class="f04-math-chart-bar " id="f04-math-chart-bar-ON" style="left:422px;top:838px;height:492px;width:68px"></div><div class="f04-math-chart-bar qc" id="f04-math-chart-bar-QC" style="left:506px;top:688px;height:642px;width:68px"></div><div class="f04-math-chart-bar " id="f04-math-chart-bar-NB" style="left:590px;top:952px;height:378px;width:68px"></div><div class="f04-math-chart-bar " id="f04-math-chart-bar-NS" style="left:674px;top:922px;height:408px;width:68px"></div><div class="f04-math-chart-bar " id="f04-math-chart-bar-PE" style="left:758px;top:928px;height:402px;width:68px"></div><div class="f04-math-chart-bar " id="f04-math-chart-bar-NL" style="left:842px;top:1030px;height:300px;width:68px"></div><div class="f04-math-chart-bar can" id="f04-math-chart-bar-CAN" style="left:926px;top:850px;height:480px;width:68px"></div>
+<div class="f04-math-chart-qcfill" id="f04-math-chart-qcfill" style="left:506px;top:688px;height:642px;width:68px"></div>
+<div class="f04-math-chart-val " id="f04-math-chart-val-BC" style="left:70px;top:918px;width:100px">490</div><div class="f04-math-chart-pl " style="left:70px;top:1348px;width:100px">BC</div><div class="f04-math-chart-val " id="f04-math-chart-val-AB" style="left:154px;top:816px;width:100px">507</div><div class="f04-math-chart-pl " style="left:154px;top:1348px;width:100px">AB</div><div class="f04-math-chart-val " id="f04-math-chart-val-SK" style="left:238px;top:972px;width:100px">481</div><div class="f04-math-chart-pl " style="left:238px;top:1348px;width:100px">SK</div><div class="f04-math-chart-val " id="f04-math-chart-val-MB" style="left:322px;top:1008px;width:100px">475</div><div class="f04-math-chart-pl " style="left:322px;top:1348px;width:100px">MB</div><div class="f04-math-chart-val " id="f04-math-chart-val-ON" style="left:406px;top:786px;width:100px">512</div><div class="f04-math-chart-pl " style="left:406px;top:1348px;width:100px">ON</div><div class="f04-math-chart-val qc" id="f04-math-chart-val-QC" style="left:490px;top:636px;width:100px">537</div><div class="f04-math-chart-pl qc" style="left:490px;top:1348px;width:100px">QC</div><div class="f04-math-chart-val " id="f04-math-chart-val-NB" style="left:574px;top:900px;width:100px">493</div><div class="f04-math-chart-pl " style="left:574px;top:1348px;width:100px">NB</div><div class="f04-math-chart-val " id="f04-math-chart-val-NS" style="left:658px;top:870px;width:100px">498</div><div class="f04-math-chart-pl " style="left:658px;top:1348px;width:100px">NS</div><div class="f04-math-chart-val " id="f04-math-chart-val-PE" style="left:742px;top:876px;width:100px">497</div><div class="f04-math-chart-pl " style="left:742px;top:1348px;width:100px">PE</div><div class="f04-math-chart-val " id="f04-math-chart-val-NL" style="left:826px;top:978px;width:100px">480</div><div class="f04-math-chart-pl " style="left:826px;top:1348px;width:100px">NL</div><div class="f04-math-chart-val can" id="f04-math-chart-val-CAN" style="left:910px;top:798px;width:100px">510</div><div class="f04-math-chart-pl can" style="left:910px;top:1348px;width:100px">CAN</div>
+<div class="f04-math-chart-base" style="top:1330px"></div>
+<div class="f04-math-chart-avg" id="f04-math-chart-avg" style="top:850px"></div>
+<div class="f04-math-chart-pin" id="f04-math-chart-pin" style="left:426px;top:558px">몬트리올</div>
+<div class="f04-math-chart-leg" id="f04-math-chart-leg"><span><i></i>캐나다 평균 510</span><span><u></u>퀘벡 537</span></div>
+
+  </div>
+</div>
+<script src="assets/vendor/gsap.min.js"></script>
+<script>
+(function(){
+  const tl = gsap.timeline({ paused: true });
+  const S = (s) => "#f04-math-chart-" + s;
+  tl.fromTo(S("eyebrow"), {opacity:0, x:-30}, {opacity:1, x:0, duration:0.5, ease:"power3.out"}, 0.05);
+  tl.fromTo(S("brand"), {opacity:0}, {opacity:1, duration:0.5}, 0.1);
+
+  tl.fromTo(S("h"), {opacity:0, y:30}, {opacity:1, y:0, duration:0.5, ease:"power3.out"}, 0.15);
+  const order = ["BC","AB","SK","MB","ON","QC","NB","NS","PE","NL","CAN"];
+  order.forEach((p,i) => {
+    tl.fromTo(S("bar-"+p), {scaleY:0}, {scaleY:1, duration:0.6, ease:"power3.out"}, 0.4 + i*0.12);
+    tl.fromTo(S("val-"+p), {opacity:0}, {opacity:1, duration:0.3}, 0.8 + i*0.12);
+  });
+  tl.fromTo(S("avg"), {scaleX:0}, {scaleX:1, duration:0.7, ease:"power2.inOut"}, 2.0);
+  tl.fromTo(S("leg"), {opacity:0}, {opacity:1, duration:0.4}, 2.4);
+  tl.fromTo(S("qcfill"), {scaleY:0}, {scaleY:1, duration:0.8, ease:"power4.out"}, 3.9);
+  tl.fromTo(S("res"), {opacity:0, y:30}, {opacity:1, y:0, duration:0.4, ease:"power3.out"}, 3.9);
+  const cnt = {v:0};
+  tl.fromTo(cnt, {v:0}, {v:537, duration:1.3, ease:"power2.out", onUpdate:() => { const el=document.querySelector(S("n")); if(el) el.textContent = Math.round(cnt.v); }}, 3.9);
+  tl.fromTo(S("badge"), {opacity:0, scale:0.3}, {opacity:1, scale:1, duration:0.5, ease:"back.out(2.5)"}, 5.4);
+  tl.fromTo(S("pin"), {opacity:0, y:-30}, {opacity:1, y:0, duration:0.45, ease:"back.out(2)"}, 5.9);
+
+  window.__timelines["04-math-chart"] = tl;
+})();
+</script>
+</template>

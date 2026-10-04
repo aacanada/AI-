@@ -1,0 +1,63 @@
+<template>
+<style>
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Medium.woff2") format("woff2");font-weight:500;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2");font-weight:600;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");font-weight:700;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");font-weight:800;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Black.woff2") format("woff2");font-weight:900;font-style:normal;}
+
+#root{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;font-family:"Pretendard",sans-serif;color:#111;}
+.f03-pcap-bg{position:absolute;inset:0;background:#fdfae7;}
+.f03-pcap-stage{position:absolute;inset:0;}
+.f03-pcap-eyebrow{position:absolute;left:80px;top:150px;display:flex;align-items:center;gap:18px;}
+.f03-pcap-eyebrow .line{width:60px;height:6px;border-radius:3px;background:#1e2bfa;display:block;}
+.f03-pcap-eyebrow .txt{font-size:34px;font-weight:700;letter-spacing:0.06em;color:#1e2bfa;}
+.f03-pcap-brand{position:absolute;right:80px;top:138px;padding:14px 28px;border-radius:100px;background:rgba(30,43,250,0.08);color:#1e2bfa;font-size:28px;font-weight:700;letter-spacing:0.08em;}
+.f03-pcap-card{background:rgba(30,43,250,0.04);border:2px solid rgba(30,43,250,0.2);border-radius:20px;}
+
+.f03-pcap-title{position:absolute;left:80px;top:300px;font-size:250px;font-weight:900;letter-spacing:-0.05em;line-height:1;color:#1e2bfa;}
+.f03-pcap-sub{position:absolute;left:86px;top:570px;font-size:38px;font-weight:600;color:#6b6b6b;letter-spacing:0.02em;}
+.f03-pcap-list{position:absolute;left:80px;right:80px;top:680px;display:flex;flex-direction:column;gap:26px;}
+.f03-pcap-item{display:flex;align-items:center;gap:30px;padding:30px 36px;}
+.f03-pcap-num{width:72px;height:72px;border-radius:50%;background:#1e2bfa;color:#fdfae7;display:flex;align-items:center;justify-content:center;font-size:38px;font-weight:800;flex:none;}
+.f03-pcap-item b{font-size:58px;font-weight:800;letter-spacing:-0.02em;}
+.f03-pcap-src{position:absolute;left:80px;right:80px;top:1270px;display:flex;align-items:center;gap:30px;padding:22px;}
+.f03-pcap-src img{width:420px;height:236px;object-fit:cover;object-position:50% 70%;border-radius:12px;display:block;}
+.f03-pcap-src span{font-size:34px;font-weight:600;color:#6b6b6b;line-height:1.4;}
+
+</style>
+<div id="root" data-composition-id="03-pcap" data-width="1080" data-height="1920" data-duration="7">
+  <div class="f03-pcap-bg clip" id="f03-pcap-bg" data-start="0" data-duration="7" data-track-index="0"></div>
+  <div class="f03-pcap-stage clip" id="f03-pcap-stage" data-start="0" data-duration="7" data-track-index="1">
+    <div class="f03-pcap-eyebrow" id="f03-pcap-eyebrow"><span class="line"></span><span class="txt">01 · 수학</span></div><div class="f03-pcap-brand" id="f03-pcap-brand">AA CANADA</div>
+    
+<div class="f03-pcap-title" id="f03-pcap-title">PCAP</div>
+<div class="f03-pcap-sub" id="f03-pcap-sub">Pan-Canadian Assessment Program</div>
+<div class="f03-pcap-list">
+  <div class="f03-pcap-item f03-pcap-card" id="f03-pcap-i1"><div class="f03-pcap-num">1</div><b>캐나다 전국 학업성취도 평가</b></div>
+  <div class="f03-pcap-item f03-pcap-card" id="f03-pcap-i2"><div class="f03-pcap-num">2</div><b>중학교 2학년 대상</b></div>
+  <div class="f03-pcap-item f03-pcap-card" id="f03-pcap-i3"><div class="f03-pcap-num">3</div><b>주(州)별 실력 비교</b></div>
+</div>
+<div class="f03-pcap-src f03-pcap-card" id="f03-pcap-src"><img src="public/pcap-chart.png" alt="PCAP 수학 결과 원본 차트"><span>출처<span style="display:block"></span>CMEC · PCAP<span style="display:block"></span>수학 평균점수</span></div>
+
+  </div>
+</div>
+<script src="assets/vendor/gsap.min.js"></script>
+<script>
+(function(){
+  const tl = gsap.timeline({ paused: true });
+  const S = (s) => "#f03-pcap-" + s;
+  tl.fromTo(S("eyebrow"), {opacity:0, x:-30}, {opacity:1, x:0, duration:0.5, ease:"power3.out"}, 0.05);
+  tl.fromTo(S("brand"), {opacity:0}, {opacity:1, duration:0.5}, 0.1);
+
+  tl.fromTo(S("title"), {opacity:0, y:80}, {opacity:1, y:0, duration:0.7, ease:"power4.out"}, 0.3);
+  tl.fromTo(S("sub"), {opacity:0}, {opacity:1, duration:0.5}, 0.9);
+  tl.fromTo(S("i1"), {opacity:0, x:-60}, {opacity:1, x:0, duration:0.5, ease:"power3.out"}, 1.6);
+  tl.fromTo(S("i2"), {opacity:0, x:-60}, {opacity:1, x:0, duration:0.5, ease:"power3.out"}, 3.4);
+  tl.fromTo(S("i3"), {opacity:0, x:-60}, {opacity:1, x:0, duration:0.5, ease:"power3.out"}, 4.5);
+  tl.fromTo(S("src"), {opacity:0, y:40}, {opacity:1, y:0, duration:0.6, ease:"power3.out"}, 5.4);
+
+  window.__timelines["03-pcap"] = tl;
+})();
+</script>
+</template>

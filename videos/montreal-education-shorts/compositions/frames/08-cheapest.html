@@ -1,0 +1,71 @@
+<template>
+<style>
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Medium.woff2") format("woff2");font-weight:500;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2");font-weight:600;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");font-weight:700;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");font-weight:800;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Black.woff2") format("woff2");font-weight:900;font-style:normal;}
+
+#root{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;font-family:"Pretendard",sans-serif;color:#111;}
+.f08-cheapest-bg{position:absolute;inset:0;background:#fdfae7;}
+.f08-cheapest-stage{position:absolute;inset:0;}
+.f08-cheapest-eyebrow{position:absolute;left:80px;top:150px;display:flex;align-items:center;gap:18px;}
+.f08-cheapest-eyebrow .line{width:60px;height:6px;border-radius:3px;background:#1e2bfa;display:block;}
+.f08-cheapest-eyebrow .txt{font-size:34px;font-weight:700;letter-spacing:0.06em;color:#1e2bfa;}
+.f08-cheapest-brand{position:absolute;right:80px;top:138px;padding:14px 28px;border-radius:100px;background:rgba(30,43,250,0.08);color:#1e2bfa;font-size:28px;font-weight:700;letter-spacing:0.08em;}
+.f08-cheapest-card{background:rgba(30,43,250,0.04);border:2px solid rgba(30,43,250,0.2);border-radius:20px;}
+
+.f08-cheapest-q{position:absolute;left:80px;top:270px;font-size:56px;font-weight:800;color:#6b6b6b;}
+.f08-cheapest-h{position:absolute;left:80px;top:350px;font-size:96px;font-weight:900;letter-spacing:-0.04em;line-height:1.15;}
+.f08-cheapest-h em{font-style:normal;color:#1e2bfa;}
+.f08-cheapest-grid{position:absolute;left:80px;right:80px;top:640px;display:grid;grid-template-columns:1fr 1fr;gap:30px;}
+.f08-cheapest-city{height:300px;display:flex;flex-direction:column;align-items:center;justify-content:center;transform-origin:50% 50%;}
+.f08-cheapest-city b{font-size:76px;font-weight:900;letter-spacing:-0.03em;}
+.f08-cheapest-city span{margin-top:8px;font-size:32px;font-weight:600;color:#6b6b6b;letter-spacing:0.04em;}
+.f08-cheapest-mtl{position:relative;}
+.f08-cheapest-mtlfill{position:absolute;inset:-2px;border-radius:20px;background:#1e2bfa;}
+.f08-cheapest-mtl b,.f08-cheapest-mtl span{position:relative;}
+.f08-cheapest-badge{position:absolute;right:-14px;top:-30px;padding:14px 30px;border-radius:100px;background:#dc2626;color:#fff;font-size:40px;font-weight:900;white-space:nowrap;}
+.f08-cheapest-foot{position:absolute;left:80px;right:80px;top:1340px;text-align:center;font-size:62px;font-weight:900;letter-spacing:-0.03em;line-height:1.3;}
+.f08-cheapest-foot em{font-style:normal;color:#1e2bfa;}
+
+</style>
+<div id="root" data-composition-id="08-cheapest" data-width="1080" data-height="1920" data-duration="7">
+  <div class="f08-cheapest-bg clip" id="f08-cheapest-bg" data-start="0" data-duration="7" data-track-index="0"></div>
+  <div class="f08-cheapest-stage clip" id="f08-cheapest-stage" data-start="0" data-duration="7" data-track-index="1">
+    <div class="f08-cheapest-eyebrow" id="f08-cheapest-eyebrow"><span class="line"></span><span class="txt">반전</span></div><div class="f08-cheapest-brand" id="f08-cheapest-brand">AA CANADA</div>
+    
+<div class="f08-cheapest-q" id="f08-cheapest-q">그런데 더 놀라운 건,</div>
+<div class="f08-cheapest-h" id="f08-cheapest-h">자녀무상교육으로<span style="display:block"></span><em>가장 저렴한</em> 도시는?</div>
+<div class="f08-cheapest-grid">
+  <div class="f08-cheapest-city f08-cheapest-card" id="f08-cheapest-van"><b>밴쿠버</b><span>VANCOUVER</span></div>
+  <div class="f08-cheapest-city f08-cheapest-card" id="f08-cheapest-tor"><b>토론토</b><span>TORONTO</span></div>
+  <div class="f08-cheapest-city f08-cheapest-card" id="f08-cheapest-lon"><b>런던</b><span>LONDON, ON</span></div>
+  <div class="f08-cheapest-city f08-cheapest-card f08-cheapest-mtl" id="f08-cheapest-mtl"><div class="f08-cheapest-mtlfill" id="f08-cheapest-mtlfill"></div><b id="f08-cheapest-mtlb">몬트리올</b><span id="f08-cheapest-mtls">MONTRÉAL</span><div class="f08-cheapest-badge" id="f08-cheapest-badge">가장 저렴!</div></div>
+</div>
+<div class="f08-cheapest-foot" id="f08-cheapest-foot">최고의 교육환경 <em>+</em> 최저 비용</div>
+
+  </div>
+</div>
+<script src="assets/vendor/gsap.min.js"></script>
+<script>
+(function(){
+  const tl = gsap.timeline({ paused: true });
+  const S = (s) => "#f08-cheapest-" + s;
+  tl.fromTo(S("eyebrow"), {opacity:0, x:-30}, {opacity:1, x:0, duration:0.5, ease:"power3.out"}, 0.05);
+  tl.fromTo(S("brand"), {opacity:0}, {opacity:1, duration:0.5}, 0.1);
+
+  tl.fromTo(S("q"), {opacity:0, y:20}, {opacity:1, y:0, duration:0.4}, 0.1);
+  tl.fromTo(S("h"), {opacity:0, y:40}, {opacity:1, y:0, duration:0.55, ease:"power3.out"}, 0.9);
+  tl.fromTo([S("van"),S("tor"),S("lon"),S("mtl")], {opacity:0, y:50}, {opacity:1, y:0, duration:0.45, ease:"power3.out", stagger:0.2}, 2.0);
+  tl.fromTo(S("mtlfill"), {opacity:0}, {opacity:1, duration:0.35}, 4.3);
+  tl.fromTo([S("mtlb"),S("mtls")], {color:"#111111"}, {color:"#fdfae7", duration:0.35}, 4.3);
+  tl.fromTo(S("mtl"), {scale:1}, {scale:1.1, duration:0.5, ease:"back.out(2.5)"}, 4.3);
+  tl.fromTo([S("van"),S("tor"),S("lon")], {opacity:1}, {opacity:0.35, duration:0.4}, 4.3);
+  tl.fromTo(S("badge"), {opacity:0, scale:0.3, rotation:-12}, {opacity:1, scale:1, rotation:-6, duration:0.5, ease:"back.out(2.5)"}, 4.8);
+  tl.fromTo(S("foot"), {opacity:0, y:30}, {opacity:1, y:0, duration:0.5, ease:"power3.out"}, 5.6);
+
+  window.__timelines["08-cheapest"] = tl;
+})();
+</script>
+</template>

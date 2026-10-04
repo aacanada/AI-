@@ -1,0 +1,69 @@
+<template>
+<style>
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Medium.woff2") format("woff2");font-weight:500;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2");font-weight:600;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");font-weight:700;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");font-weight:800;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Black.woff2") format("woff2");font-weight:900;font-style:normal;}
+
+#root{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;font-family:"Pretendard",sans-serif;color:#111;}
+.f02-two-pillars-bg{position:absolute;inset:0;background:#fdfae7;}
+.f02-two-pillars-stage{position:absolute;inset:0;}
+.f02-two-pillars-eyebrow{position:absolute;left:80px;top:150px;display:flex;align-items:center;gap:18px;}
+.f02-two-pillars-eyebrow .line{width:60px;height:6px;border-radius:3px;background:#1e2bfa;display:block;}
+.f02-two-pillars-eyebrow .txt{font-size:34px;font-weight:700;letter-spacing:0.06em;color:#1e2bfa;}
+.f02-two-pillars-brand{position:absolute;right:80px;top:138px;padding:14px 28px;border-radius:100px;background:rgba(30,43,250,0.08);color:#1e2bfa;font-size:28px;font-weight:700;letter-spacing:0.08em;}
+.f02-two-pillars-card{background:rgba(30,43,250,0.04);border:2px solid rgba(30,43,250,0.2);border-radius:20px;}
+
+.f02-two-pillars-lab{position:absolute;left:80px;font-size:40px;font-weight:700;letter-spacing:0.1em;color:#6b6b6b;}
+.f02-two-pillars-row{position:absolute;left:80px;right:80px;display:flex;gap:30px;justify-content:center;}
+.f02-two-pillars-tile{width:290px;height:290px;display:flex;align-items:center;justify-content:center;font-size:150px;font-weight:900;color:#111;}
+.f02-two-pillars-big{height:340px;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:24px;background:#1e2bfa;color:#fdfae7;}
+.f02-two-pillars-big b{font-size:150px;font-weight:900;letter-spacing:-0.04em;line-height:1;}
+.f02-two-pillars-big span{margin-top:14px;font-size:36px;font-weight:600;opacity:0.85;letter-spacing:0.06em;}
+.f02-two-pillars-arrow{position:absolute;left:0;right:0;top:880px;display:flex;justify-content:center;}
+.f02-two-pillars-eq{position:absolute;left:80px;right:80px;top:1420px;text-align:center;font-size:64px;font-weight:800;letter-spacing:-0.02em;}
+.f02-two-pillars-eq em{font-style:normal;color:#1e2bfa;}
+
+</style>
+<div id="root" data-composition-id="02-two-pillars" data-width="1080" data-height="1920" data-duration="5">
+  <div class="f02-two-pillars-bg clip" id="f02-two-pillars-bg" data-start="0" data-duration="5" data-track-index="0"></div>
+  <div class="f02-two-pillars-stage clip" id="f02-two-pillars-stage" data-start="0" data-duration="5" data-track-index="1">
+    <div class="f02-two-pillars-eyebrow" id="f02-two-pillars-eyebrow"><span class="line"></span><span class="txt">캐나다 교육의 핵심</span></div><div class="f02-two-pillars-brand" id="f02-two-pillars-brand">AA CANADA</div>
+    
+<div class="f02-two-pillars-lab" id="f02-two-pillars-lab1" style="top:300px">KOREA · 한국</div>
+<div class="f02-two-pillars-row" style="top:380px">
+  <div class="f02-two-pillars-tile f02-two-pillars-card" id="f02-two-pillars-t1">국</div>
+  <div class="f02-two-pillars-tile f02-two-pillars-card" id="f02-two-pillars-t2">영</div>
+  <div class="f02-two-pillars-tile f02-two-pillars-card" id="f02-two-pillars-t3">수</div>
+</div>
+<div class="f02-two-pillars-arrow" id="f02-two-pillars-arrow"><svg width="120" height="200" viewBox="0 0 120 200"><path d="M60 10 V170 M20 130 L60 175 L100 130" fill="none" stroke="#1e2bfa" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div class="f02-two-pillars-lab" id="f02-two-pillars-lab2" style="top:1000px">CANADA · 캐나다</div>
+<div class="f02-two-pillars-row" style="top:1070px">
+  <div class="f02-two-pillars-big" id="f02-two-pillars-b1"><b>언어</b><span>LANGUAGE</span></div>
+  <div class="f02-two-pillars-big" id="f02-two-pillars-b2"><b>수학</b><span>MATH</span></div>
+</div>
+<div class="f02-two-pillars-eq" id="f02-two-pillars-eq">핵심은 <em>언어 + 수학</em></div>
+
+  </div>
+</div>
+<script src="assets/vendor/gsap.min.js"></script>
+<script>
+(function(){
+  const tl = gsap.timeline({ paused: true });
+  const S = (s) => "#f02-two-pillars-" + s;
+  tl.fromTo(S("eyebrow"), {opacity:0, x:-30}, {opacity:1, x:0, duration:0.5, ease:"power3.out"}, 0.05);
+  tl.fromTo(S("brand"), {opacity:0}, {opacity:1, duration:0.5}, 0.1);
+
+  tl.fromTo(S("lab1"), {opacity:0}, {opacity:1, duration:0.4}, 0.1);
+  tl.fromTo([S("t1"),S("t2"),S("t3")], {opacity:0, y:50, scale:0.9}, {opacity:1, y:0, scale:1, duration:0.5, ease:"back.out(1.7)", stagger:0.25}, 0.3);
+  tl.fromTo(S("arrow"), {opacity:0, y:-30}, {opacity:1, y:0, duration:0.5, ease:"power2.out"}, 1.9);
+  tl.fromTo(S("lab2"), {opacity:0}, {opacity:1, duration:0.4}, 2.2);
+  tl.fromTo(S("b1"), {opacity:0, scale:0.6}, {opacity:1, scale:1, duration:0.55, ease:"back.out(2)"}, 2.6);
+  tl.fromTo(S("b2"), {opacity:0, scale:0.6}, {opacity:1, scale:1, duration:0.55, ease:"back.out(2)"}, 3.15);
+  tl.fromTo(S("eq"), {opacity:0, y:30}, {opacity:1, y:0, duration:0.5, ease:"power3.out"}, 3.9);
+
+  window.__timelines["02-two-pillars"] = tl;
+})();
+</script>
+</template>

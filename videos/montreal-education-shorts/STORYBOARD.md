@@ -14,7 +14,7 @@ music: bright hopeful light corporate underscore
 - voiceover: "몬트리올은 불어권이라 고민되시나요? 그런데 캐나다에서 교육환경이 가장 좋은 곳, 바로 몬트리올입니다."
 - duration: 6s
 - transition_in: cut
-- status: outline
+- status: animated
 - src: compositions/frames/01-hook.html
 - type: hook
 - persuasion: Common-belief vs reality
@@ -30,7 +30,7 @@ keyMessage: 몬트리올이 캐나다 교육환경 최고다.
 - voiceover: "우리나라에서 국·영·수가 중요하듯, 캐나다에서도 핵심은 언어와 수학입니다."
 - duration: 5s
 - transition_in: push-slide UP
-- status: outline
+- status: animated
 - src: compositions/frames/02-two-pillars.html
 - type: product_intro
 - persuasion: Anchoring on a familiar referent + Frame-then-fill
@@ -46,7 +46,7 @@ keyMessage: 캐나다 교육의 두 기둥은 언어와 수학.
 - voiceover: "먼저 수학. 캐나다 전국 학업성취도 평가, PCAP은 전국 중학교 2학년을 대상으로 주별 실력을 비교하는 시험입니다."
 - duration: 7s
 - transition_in: push-slide UP
-- status: outline
+- status: animated
 - src: compositions/frames/03-pcap.html
 - type: feature_showcase
 - persuasion: Signposting + Citation / source
@@ -62,7 +62,7 @@ keyMessage: PCAP은 캐나다 공식 전국 비교 시험이다.
 - voiceover: "결과를 보면, 캐나다 평균은 510점. 그런데 몬트리올이 있는 퀘벡주는 537점, 압도적 1위입니다."
 - duration: 8s
 - transition_in: crossfade
-- status: outline
+- status: animated
 - src: compositions/frames/04-math-chart.html
 - type: social_proof
 - persuasion: Statistical proof + Comparison
@@ -78,7 +78,7 @@ keyMessage: 퀘벡(몬트리올) 수학점수 537점, 전국 1위.
 - voiceover: "언어는요? 몬트리올 아이들은 영어와 불어를 모국어처럼 둘 다 구사하는 경우가 정말 많습니다."
 - duration: 7s
 - transition_in: push-slide UP
-- status: outline
+- status: animated
 - src: compositions/frames/05-bilingual.html
 - type: feature_showcase
 - persuasion: Concretization + Before/after (불어권=약점 → 강점)
@@ -94,7 +94,7 @@ keyMessage: 불어권은 약점이 아니라 이중언어라는 강점.
 - voiceover: "퀘벡주는 교육 투자도 아끼지 않습니다. 전기 스쿨버스, 학교마다 3D 프린터, 교실엔 스마트보드까지."
 - duration: 8s
 - transition_in: push-slide UP
-- status: outline
+- status: animated
 - src: compositions/frames/06-investment.html
 - type: feature_showcase
 - persuasion: Rule of three + Concretization
@@ -110,7 +110,7 @@ keyMessage: 퀘벡은 교육에 아낌없이 투자한다.
 - voiceover: "결국, 몬트리올의 학업환경은 캐나다 최고 수준입니다."
 - duration: 5s
 - transition_in: zoom-through
-- status: outline
+- status: animated
 - src: compositions/frames/07-verdict.html
 - type: branding
 - persuasion: Distillation
@@ -126,7 +126,7 @@ keyMessage: 몬트리올 = 캐나다 최고 수준 학업환경.
 - voiceover: "그런데 더 놀라운 건, 자녀무상교육으로 가장 저렴하게 갈 수 있는 도시도 바로 몬트리올이라는 겁니다."
 - duration: 7s
 - transition_in: crossfade
-- status: outline
+- status: animated
 - src: compositions/frames/08-cheapest.html
 - type: benefit_highlight
 - persuasion: Counterintuitive claim (최고인데 최저가)
@@ -142,7 +142,7 @@ keyMessage: 최고의 교육환경이 가장 저렴하기도 하다.
 - voiceover: "몬트리올 자녀무상교육, AA캐나다와 상담해 보세요."
 - duration: 5s
 - transition_in: zoom-through
-- status: outline
+- status: animated
 - src: compositions/frames/09-cta.html
 - type: cta
 - persuasion: Callback (훅의 '몬트리올' 재등장) + Direct address
@@ -151,3 +151,7 @@ keyMessage: 최고의 교육환경이 가장 저렴하기도 하다.
 
 narrativeRole: 상담 행동으로 연결.
 keyMessage: AA캐나다에 상담 신청.
+
+## Video direction
+
+크림 배경(#fdfae7) + 코발트(#1e2bfa) 단일 강조색, Pretendard 900 대형 타이포. 모든 프레임 상단에 코발트 eyebrow(섹션 번호)로 리스티클 흐름 표시. 장면 간 전환은 push-slide UP(리스트 진행) / crossfade(데이터·반전) / zoom-through(결론·CTA) 세 가지만 반복. 하단 17%는 자막(내레이션 싱크) 영역으로 비워둠.
