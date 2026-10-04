@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+
+@font-face { font-family: "Black Han Sans"; src: url("assets/fonts/BlackHanSans.woff2") format("woff2"); font-weight: 400; }
+@font-face { font-family: "IBM Plex Sans KR"; src: url("assets/fonts/PlexKR-400.woff2") format("woff2"); font-weight: 400; }
+@font-face { font-family: "IBM Plex Sans KR"; src: url("assets/fonts/PlexKR-700.woff2") format("woff2"); font-weight: 700; }
+#root { position: absolute; inset: 0; overflow: hidden; background: #F4EFE6; color: #1E1C24;
+  font-family: "IBM Plex Sans KR", sans-serif; word-break: keep-all; }
+#root * { box-sizing: border-box; }
+#s13-bg { position: absolute; inset: -60px; background-image:
+  linear-gradient(rgba(30,28,36,0.07) 2px, transparent 2px),
+  linear-gradient(90deg, rgba(30,28,36,0.07) 2px, transparent 2px);
+  background-size: 120px 120px; }
+#s13-glow { position: absolute; width: 1100px; height: 1100px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,16,46,0.16) 0%, rgba(200,16,46,0) 65%); }
+#s13-ghost { position: absolute; left: 0; bottom: 40px; white-space: nowrap; font-family: "Black Han Sans";
+  font-size: 380px; line-height: 1; color: rgba(30,28,36,0.06); letter-spacing: -0.02em; }
+#s13-ghost::before { content: attr(data-t); }
+#s13-top { position: absolute; left: 120px; right: 120px; top: 56px; height: 44px; display: flex;
+  align-items: center; justify-content: space-between; }
+#s13-chap { display: flex; align-items: center; gap: 18px; font-family: "Space Mono", monospace; font-size: 22px;
+  font-weight: 700; letter-spacing: 0.08em; color: #1E1C24; }
+#s13-chap .num { background: #1E1C24; color: #F4EFE6; padding: 4px 12px; }
+#s13-chap .name { font-family: "IBM Plex Sans KR"; letter-spacing: 0; font-size: 24px; }
+#s13-brand { font-family: "Space Mono", monospace; font-weight: 700; font-size: 22px; letter-spacing: 0.18em; }
+#s13-brand b { color: #C8102E; }
+#s13-rail { position: absolute; left: 120px; right: 120px; bottom: 52px; height: 8px; display: flex; gap: 10px; }
+#s13-rail i { display: block; flex: 1; height: 8px; background: rgba(30,28,36,0.14); }
+#s13-rail i.done { background: rgba(30,28,36,0.45); }
+#s13-rail i.on { background: #C8102E; }
+.hl { font-family: "Black Han Sans", sans-serif; font-weight: 400; letter-spacing: -0.02em; line-height: 1.12; margin: 0; }
+.mono { font-family: "Space Mono", monospace; font-weight: 700; letter-spacing: 0.06em; }
+.red { color: #C8102E; }
+.blue { color: #1F4FA0; }
+.muted { color: #6A645C; }
+.card { position: absolute; background: #FBF8F2; border: 4px solid #1E1C24; box-shadow: 12px 12px 0 #1E1C24; }
+.chip { display: inline-block; padding: 10px 26px; border: 3px solid #1E1C24; border-radius: 999px; font-weight: 700; font-size: 34px; background: #FBF8F2; }
+.stamp { position: absolute; border: 8px solid #C8102E; color: #C8102E; font-family: "Black Han Sans"; padding: 8px 34px;
+  font-size: 64px; letter-spacing: 0.02em; background: rgba(244,239,230,0.92); white-space: nowrap; }
+.rule { display: block; height: 4px; background: #1E1C24; transform-origin: left center; }
+
+
+#s13-k { position:absolute; left:120px; top:150px; font-family:"Space Mono"; font-weight:700; font-size: 28px; letter-spacing:.14em; color:#1F4FA0; }
+#s13-q { position:absolute; left:120px; top: 200px; font-size: 64px; }
+#s13-city { position:absolute; left:110px; top: 300px; font-family:"Black Han Sans"; font-size: 260px; line-height: 1; color:#1E1C24; letter-spacing:-0.02em; }
+#s13-fear { left: 1100px; top: 340px; transform-origin: center; }
+#s13-fearx { position:absolute; left: 1080px; top: 380px; width: 640px; height: 12px; background:#1E1C24; transform-origin:left center; }
+#s13-bub { position:absolute; left: 120px; top: 640px; width: 1000px; height: 180px; }
+.s13-bb { position:absolute; top: 0; padding: 22px 40px; font-family:"Black Han Sans"; font-size: 72px; border: 4px solid #1E1C24; }
+.s13-bb::after { content:""; position:absolute; left: 50px; bottom: -30px; border-top: 30px solid #1E1C24; border-right: 30px solid transparent; }
+#s13-b1 { left: 0; background:#1F4FA0; color:#FBF8F2; } #s13-b2 { left: 470px; background:#C8102E; color:#FBF8F2; }
+#s13-both { position:absolute; left: 120px; top: 850px; font-size: 42px; font-weight:700; }
+#s13-tl { position:absolute; left: 1100px; top: 470px; width: 720px; }
+.s13-st { display:flex; gap: 24px; align-items:flex-start; margin-bottom: 26px; }
+.s13-st .d { flex:none; width: 54px; height: 54px; border-radius: 50%; background:#1E1C24; color:#F4EFE6; display:flex; align-items:center; justify-content:center;
+  font-family:"Black Han Sans"; font-size: 30px; margin-top: 4px; }
+.s13-st .tx { font-size: 36px; font-weight:700; line-height:1.3; }
+.s13-st .tx small { display:block; font-size: 26px; font-weight:400; color:#6A645C; }
+.s13-st.b .d { background:#1F4FA0; } .s13-st.r .d { background:#C8102E; }
+#s13-pay { position:absolute; left: 0; right: 0; bottom: 0; height: 170px; background:#1E1C24; color:#F4EFE6; display:flex; align-items:center; padding: 0 120px; }
+#s13-pay .t { font-size: 52px; font-weight:700; }
+#s13-pay .t b { color:#ff8a98; font-weight:700; }
+
+      </style>
+      <div id="root" data-composition-id="s13" data-width="1920" data-height="1080">
+
+  <div id="s13-bg" data-layout-allow-overflow></div>
+  <div id="s13-glow" data-layout-allow-overflow style="left:1200px; top:100px;"></div>
+  <div id="s13-ghost" data-layout-allow-overflow data-t="MONTRÉAL"></div>
+  <div id="s13-top"><div id="s13-chap"><span class="num">CH 04</span><span class="name">왜 몬트리올</span></div>
+    <div id="s13-brand">AA <b>CANADA</b></div></div>
+  <div id="s13-rail"><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i><i class=""></i></div>
+
+  <div id="s13-k">CHAPTER 4</div>
+  <h1 id="s13-q" class="hl">불어는 어디서 준비할까?</h1>
+  <div id="s13-city">몬트리올</div>
+  <div id="s13-fear" class="stamp">"불어권이라 부담돼요"</div>
+  <div id="s13-fearx"></div>
+  <div id="s13-bub"><div class="s13-bb" id="s13-b1">Bonjour</div><div class="s13-bb" id="s13-b2">Hi!</div></div>
+  <div id="s13-both">영어와 불어를 <span class="red">함께</span> 쓰는 도시 · 영어만으로도 생활 가능</div>
+  <div id="s13-tl">
+    <div class="s13-st b" id="s13-t1"><div class="d">1</div><div class="tx">몬트리올 어학연수 1~2년<small>영어 + 불어 동시에</small></div></div>
+    <div class="s13-st r" id="s13-t2"><div class="d">2</div><div class="tx">토론토 · 밴쿠버 · 런던 등<small>영어권 지역에서 취업</small></div></div>
+    <div class="s13-st" id="s13-t3"><div class="d">3</div><div class="tx">LMIA 면제 취업비자로 전환<small>Francophone Mobility</small></div></div>
+  </div>
+  <div id="s13-pay"><div class="t">피했던 몬트리올이, 사실은 <b>영어권 취업으로 가는 가장 빠른 길</b></div></div>
+
+      </div>
+      <script>
+(function () {
+
+const D = 40.99;
+const tl = gsap.timeline({ paused: true });
+const E = { o: "power3.out", b: "back.out(1.7)", e: "expo.out", s: "sine.inOut" };
+function up(sel, t, d = 0.6, y = 46) { tl.fromTo(sel, { opacity: 0, y: y }, { opacity: 1, y: 0, duration: d, ease: E.o }, t); }
+function left(sel, t, d = 0.6, x = -70) { tl.fromTo(sel, { opacity: 0, x: x }, { opacity: 1, x: 0, duration: d, ease: E.e }, t); }
+function right(sel, t, d = 0.6) { left(sel, t, d, 70); }
+function pop(sel, t, d = 0.55) { tl.fromTo(sel, { opacity: 0, scale: 0.55 }, { opacity: 1, scale: 1, duration: d, ease: E.b }, t); }
+function fade(sel, t, d = 0.5) { tl.fromTo(sel, { opacity: 0 }, { opacity: 1, duration: d, ease: "power1.out" }, t); }
+function draw(sel, t, d = 0.7) { tl.fromTo(sel, { scaleX: 0 }, { scaleX: 1, duration: d, ease: "power2.inOut" }, t); }
+function slam(sel, t, rot = -6) { tl.fromTo(sel, { opacity: 0, scale: 2.1, rotation: rot - 8 }, { opacity: 1, scale: 1, rotation: rot, duration: 0.32, ease: "power4.in" }, t); }
+function dim(sel, t, to = 0.28) { tl.to(sel, { opacity: to, duration: 0.5, ease: "power1.inOut" }, t); }
+function stag(sel, t, each = 0.12, y = 40) { tl.fromTo(sel, { opacity: 0, y: y }, { opacity: 1, y: 0, duration: 0.55, ease: E.o, stagger: each }, t); }
+function count(sel, t, from, to, d, fmt) {
+  const el = document.querySelector(sel); const o = { v: from };
+  tl.to(o, { v: to, duration: d, ease: "power2.out", onUpdate: () => { el.textContent = fmt(Math.round(o.v)); } }, t);
+  tl.set(o, { v: from }, 0);
+}
+// chrome + ambient
+fade("#s13-bg", 0, 0.4);
+tl.fromTo("#s13-bg", { x: 0, y: 0 }, { x: -60, y: -30, duration: D, ease: "none" }, 0);
+tl.fromTo("#s13-glow", { scale: 0.9, opacity: 0.7 }, { scale: 1.15, opacity: 1, duration: D / 2, ease: E.s, yoyo: true, repeat: 1 }, 0);
+tl.fromTo("#s13-ghost", { x: 40 }, { x: -260, duration: D, ease: "none" }, 0);
+tl.fromTo("#s13-top", { opacity: 0, y: -24 }, { opacity: 1, y: 0, duration: 0.5, ease: E.o }, 0.1);
+tl.fromTo("#s13-rail", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 0.1);
+
+
+left("#s13-k", 0.2); up("#s13-q", 0.4, 0.6);
+tl.fromTo("#s13-city", { opacity: 0, y: 80, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.8, ease: E.e }, 5.6);
+slam("#s13-fear", 11.4, -5);
+draw("#s13-fearx", 13.6, 0.4);
+tl.to("#s13-fear", { opacity: 0.4, duration: 0.4 }, 14.1);
+pop("#s13-b1", 17.8); pop("#s13-b2", 18.3);
+tl.to("#s13-b1", { y: -14, duration: 1.2, ease: E.s, yoyo: true, repeat: 7 }, 19.0);
+tl.to("#s13-b2", { y: -14, duration: 1.2, ease: E.s, yoyo: true, repeat: 7 }, 19.6);
+up("#s13-both", 19.4);
+tl.to("#s13-fear, #s13-fearx", { opacity: 0, duration: 0.4 }, 27.8);
+left("#s13-t1", 28.5); left("#s13-t2", 29.6); left("#s13-t3", 30.7);
+tl.fromTo("#s13-pay", { yPercent: 100 }, { yPercent: 0, duration: 0.7, ease: E.e }, 34.0);
+
+window.__timelines["s13"] = tl;
+})();
+      </script>
+    </template>
+  </body>
+</html>

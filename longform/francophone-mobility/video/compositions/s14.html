@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+
+@font-face { font-family: "Black Han Sans"; src: url("assets/fonts/BlackHanSans.woff2") format("woff2"); font-weight: 400; }
+@font-face { font-family: "IBM Plex Sans KR"; src: url("assets/fonts/PlexKR-400.woff2") format("woff2"); font-weight: 400; }
+@font-face { font-family: "IBM Plex Sans KR"; src: url("assets/fonts/PlexKR-700.woff2") format("woff2"); font-weight: 700; }
+#root { position: absolute; inset: 0; overflow: hidden; background: #F4EFE6; color: #1E1C24;
+  font-family: "IBM Plex Sans KR", sans-serif; word-break: keep-all; }
+#root * { box-sizing: border-box; }
+#s14-bg { position: absolute; inset: -60px; background-image:
+  linear-gradient(rgba(30,28,36,0.07) 2px, transparent 2px),
+  linear-gradient(90deg, rgba(30,28,36,0.07) 2px, transparent 2px);
+  background-size: 120px 120px; }
+#s14-glow { position: absolute; width: 1100px; height: 1100px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,16,46,0.16) 0%, rgba(200,16,46,0) 65%); }
+#s14-ghost { position: absolute; left: 0; bottom: 40px; white-space: nowrap; font-family: "Black Han Sans";
+  font-size: 380px; line-height: 1; color: rgba(30,28,36,0.06); letter-spacing: -0.02em; }
+#s14-ghost::before { content: attr(data-t); }
+#s14-top { position: absolute; left: 120px; right: 120px; top: 56px; height: 44px; display: flex;
+  align-items: center; justify-content: space-between; }
+#s14-chap { display: flex; align-items: center; gap: 18px; font-family: "Space Mono", monospace; font-size: 22px;
+  font-weight: 700; letter-spacing: 0.08em; color: #1E1C24; }
+#s14-chap .num { background: #1E1C24; color: #F4EFE6; padding: 4px 12px; }
+#s14-chap .name { font-family: "IBM Plex Sans KR"; letter-spacing: 0; font-size: 24px; }
+#s14-brand { font-family: "Space Mono", monospace; font-weight: 700; font-size: 22px; letter-spacing: 0.18em; }
+#s14-brand b { color: #C8102E; }
+#s14-rail { position: absolute; left: 120px; right: 120px; bottom: 52px; height: 8px; display: flex; gap: 10px; }
+#s14-rail i { display: block; flex: 1; height: 8px; background: rgba(30,28,36,0.14); }
+#s14-rail i.done { background: rgba(30,28,36,0.45); }
+#s14-rail i.on { background: #C8102E; }
+.hl { font-family: "Black Han Sans", sans-serif; font-weight: 400; letter-spacing: -0.02em; line-height: 1.12; margin: 0; }
+.mono { font-family: "Space Mono", monospace; font-weight: 700; letter-spacing: 0.06em; }
+.red { color: #C8102E; }
+.blue { color: #1F4FA0; }
+.muted { color: #6A645C; }
+.card { position: absolute; background: #FBF8F2; border: 4px solid #1E1C24; box-shadow: 12px 12px 0 #1E1C24; }
+.chip { display: inline-block; padding: 10px 26px; border: 3px solid #1E1C24; border-radius: 999px; font-weight: 700; font-size: 34px; background: #FBF8F2; }
+.stamp { position: absolute; border: 8px solid #C8102E; color: #C8102E; font-family: "Black Han Sans"; padding: 8px 34px;
+  font-size: 64px; letter-spacing: 0.02em; background: rgba(244,239,230,0.92); white-space: nowrap; }
+.rule { display: block; height: 4px; background: #1E1C24; transform-origin: left center; }
+
+
+#s14-k { position:absolute; left:120px; top:150px; font-family:"Space Mono"; font-weight:700; font-size: 28px; letter-spacing:.14em; color:#1F4FA0; }
+#s14-h { position:absolute; left:120px; top:200px; font-size: 92px; }
+#s14-sk { position:absolute; left:120px; top: 380px; display:flex; gap: 22px; }
+#s14-sk div { width: 250px; padding: 24px 0; text-align:center; border: 4px solid #1E1C24; background:#FBF8F2; font-size: 40px; font-weight:700; }
+#s14-scale { position:absolute; left: 120px; top: 560px; width: 1680px; display:flex; gap: 8px; }
+#s14-scale div { flex: 1; height: 90px; border: 3px solid #1E1C24; display:flex; align-items:center; justify-content:center;
+  font-family:"Space Mono"; font-weight:700; font-size: 34px; background:#FBF8F2; }
+#s14-scale div.l5 { background:#1F4FA0; color:#FBF8F2; border-color:#1F4FA0; }
+#s14-scale div.l7 { background:#C8102E; color:#FBF8F2; border-color:#C8102E; }
+#s14-names { position:absolute; left: 120px; top: 720px; display:flex; gap: 40px; }
+.s14-nm { padding: 22px 34px; border: 4px solid #1E1C24; font-size: 38px; font-weight:700; background:#FBF8F2; }
+.s14-nm .m { font-family:"Space Mono"; font-weight:700; margin-right: 14px; }
+.s14-nm.fr { border-color:#1F4FA0; color:#1F4FA0; }
+#s14-road { position:absolute; left: 1180px; top: 720px; width: 620px; padding: 26px 34px; background:#1E1C24; color:#F4EFE6; font-size: 40px; font-weight:700; }
+
+      </style>
+      <div id="root" data-composition-id="s14" data-width="1920" data-height="1080">
+
+  <div id="s14-bg" data-layout-allow-overflow></div>
+  <div id="s14-glow" data-layout-allow-overflow style="left:1300px; top:400px;"></div>
+  <div id="s14-ghost" data-layout-allow-overflow data-t="CLB · NCLC"></div>
+  <div id="s14-top"><div id="s14-chap"><span class="num">CH 05</span><span class="name">불어 레벨 로드맵</span></div>
+    <div id="s14-brand">AA <b>CANADA</b></div></div>
+  <div id="s14-rail"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i></div>
+
+  <div id="s14-k">CHAPTER 5</div>
+  <h1 id="s14-h" class="hl">불어는 <span class="blue">어느 정도</span> 해야 할까?</h1>
+  <div id="s14-sk"><div>말하기</div><div>듣기</div><div>읽기</div><div>쓰기</div></div>
+  <div id="s14-scale"><div>1</div><div>2</div><div>3</div><div>4</div><div class="l5">5</div><div>6</div><div class="l7">7</div><div>8</div><div>9</div><div>10</div><div>11</div><div>12</div></div>
+  <div id="s14-names"><div class="s14-nm"><span class="m">EN</span>CLB</div><div class="s14-nm fr"><span class="m">FR</span>NCLC</div></div>
+  <div id="s14-road">→ 레벨별로 열리는 3단계 로드맵</div>
+
+      </div>
+      <script>
+(function () {
+
+const D = 15.05;
+const tl = gsap.timeline({ paused: true });
+const E = { o: "power3.out", b: "back.out(1.7)", e: "expo.out", s: "sine.inOut" };
+function up(sel, t, d = 0.6, y = 46) { tl.fromTo(sel, { opacity: 0, y: y }, { opacity: 1, y: 0, duration: d, ease: E.o }, t); }
+function left(sel, t, d = 0.6, x = -70) { tl.fromTo(sel, { opacity: 0, x: x }, { opacity: 1, x: 0, duration: d, ease: E.e }, t); }
+function right(sel, t, d = 0.6) { left(sel, t, d, 70); }
+function pop(sel, t, d = 0.55) { tl.fromTo(sel, { opacity: 0, scale: 0.55 }, { opacity: 1, scale: 1, duration: d, ease: E.b }, t); }
+function fade(sel, t, d = 0.5) { tl.fromTo(sel, { opacity: 0 }, { opacity: 1, duration: d, ease: "power1.out" }, t); }
+function draw(sel, t, d = 0.7) { tl.fromTo(sel, { scaleX: 0 }, { scaleX: 1, duration: d, ease: "power2.inOut" }, t); }
+function slam(sel, t, rot = -6) { tl.fromTo(sel, { opacity: 0, scale: 2.1, rotation: rot - 8 }, { opacity: 1, scale: 1, rotation: rot, duration: 0.32, ease: "power4.in" }, t); }
+function dim(sel, t, to = 0.28) { tl.to(sel, { opacity: to, duration: 0.5, ease: "power1.inOut" }, t); }
+function stag(sel, t, each = 0.12, y = 40) { tl.fromTo(sel, { opacity: 0, y: y }, { opacity: 1, y: 0, duration: 0.55, ease: E.o, stagger: each }, t); }
+function count(sel, t, from, to, d, fmt) {
+  const el = document.querySelector(sel); const o = { v: from };
+  tl.to(o, { v: to, duration: d, ease: "power2.out", onUpdate: () => { el.textContent = fmt(Math.round(o.v)); } }, t);
+  tl.set(o, { v: from }, 0);
+}
+// chrome + ambient
+fade("#s14-bg", 0, 0.4);
+tl.fromTo("#s14-bg", { x: 0, y: 0 }, { x: -60, y: -30, duration: D, ease: "none" }, 0);
+tl.fromTo("#s14-glow", { scale: 0.9, opacity: 0.7 }, { scale: 1.15, opacity: 1, duration: D / 2, ease: E.s, yoyo: true, repeat: 1 }, 0);
+tl.fromTo("#s14-ghost", { x: 40 }, { x: -260, duration: D, ease: "none" }, 0);
+tl.fromTo("#s14-top", { opacity: 0, y: -24 }, { opacity: 1, y: 0, duration: 0.5, ease: E.o }, 0.1);
+tl.fromTo("#s14-rail", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 0.1);
+
+
+left("#s14-k", 0.2); up("#s14-h", 0.4, 0.6);
+stag("#s14-sk div", 2.3, 0.15, 30);
+tl.fromTo("#s14-scale div", { opacity: 0, scaleY: 0.3 }, { opacity: 1, scaleY: 1, duration: 0.35, ease: E.o, stagger: 0.07 }, 3.4);
+pop("#s14-names .s14-nm:nth-child(1)", 8.1); pop("#s14-names .s14-nm:nth-child(2)", 8.6);
+tl.fromTo("#s14-road", { opacity: 0, x: 80 }, { opacity: 1, x: 0, duration: 0.6, ease: E.e }, 11.1);
+
+window.__timelines["s14"] = tl;
+})();
+      </script>
+    </template>
+  </body>
+</html>

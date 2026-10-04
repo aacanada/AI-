@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+
+@font-face { font-family: "Black Han Sans"; src: url("assets/fonts/BlackHanSans.woff2") format("woff2"); font-weight: 400; }
+@font-face { font-family: "IBM Plex Sans KR"; src: url("assets/fonts/PlexKR-400.woff2") format("woff2"); font-weight: 400; }
+@font-face { font-family: "IBM Plex Sans KR"; src: url("assets/fonts/PlexKR-700.woff2") format("woff2"); font-weight: 700; }
+#root { position: absolute; inset: 0; overflow: hidden; background: #F4EFE6; color: #1E1C24;
+  font-family: "IBM Plex Sans KR", sans-serif; word-break: keep-all; }
+#root * { box-sizing: border-box; }
+#s18-bg { position: absolute; inset: -60px; background-image:
+  linear-gradient(rgba(30,28,36,0.07) 2px, transparent 2px),
+  linear-gradient(90deg, rgba(30,28,36,0.07) 2px, transparent 2px);
+  background-size: 120px 120px; }
+#s18-glow { position: absolute; width: 1100px; height: 1100px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,16,46,0.16) 0%, rgba(200,16,46,0) 65%); }
+#s18-ghost { position: absolute; left: 0; bottom: 40px; white-space: nowrap; font-family: "Black Han Sans";
+  font-size: 380px; line-height: 1; color: rgba(30,28,36,0.06); letter-spacing: -0.02em; }
+#s18-ghost::before { content: attr(data-t); }
+#s18-top { position: absolute; left: 120px; right: 120px; top: 56px; height: 44px; display: flex;
+  align-items: center; justify-content: space-between; }
+#s18-chap { display: flex; align-items: center; gap: 18px; font-family: "Space Mono", monospace; font-size: 22px;
+  font-weight: 700; letter-spacing: 0.08em; color: #1E1C24; }
+#s18-chap .num { background: #1E1C24; color: #F4EFE6; padding: 4px 12px; }
+#s18-chap .name { font-family: "IBM Plex Sans KR"; letter-spacing: 0; font-size: 24px; }
+#s18-brand { font-family: "Space Mono", monospace; font-weight: 700; font-size: 22px; letter-spacing: 0.18em; }
+#s18-brand b { color: #C8102E; }
+#s18-rail { position: absolute; left: 120px; right: 120px; bottom: 52px; height: 8px; display: flex; gap: 10px; }
+#s18-rail i { display: block; flex: 1; height: 8px; background: rgba(30,28,36,0.14); }
+#s18-rail i.done { background: rgba(30,28,36,0.45); }
+#s18-rail i.on { background: #C8102E; }
+.hl { font-family: "Black Han Sans", sans-serif; font-weight: 400; letter-spacing: -0.02em; line-height: 1.12; margin: 0; }
+.mono { font-family: "Space Mono", monospace; font-weight: 700; letter-spacing: 0.06em; }
+.red { color: #C8102E; }
+.blue { color: #1F4FA0; }
+.muted { color: #6A645C; }
+.card { position: absolute; background: #FBF8F2; border: 4px solid #1E1C24; box-shadow: 12px 12px 0 #1E1C24; }
+.chip { display: inline-block; padding: 10px 26px; border: 3px solid #1E1C24; border-radius: 999px; font-weight: 700; font-size: 34px; background: #FBF8F2; }
+.stamp { position: absolute; border: 8px solid #C8102E; color: #C8102E; font-family: "Black Han Sans"; padding: 8px 34px;
+  font-size: 64px; letter-spacing: 0.02em; background: rgba(244,239,230,0.92); white-space: nowrap; }
+.rule { display: block; height: 4px; background: #1E1C24; transform-origin: left center; }
+
+
+#s18-h { position:absolute; left:120px; top:150px; font-size: 84px; }
+#s18-grid { position:absolute; left: 120px; top: 300px; width: 1680px; display:grid; grid-template-columns: repeat(3, 1fr); gap: 26px 30px; }
+.s18-n { padding: 26px 30px; border: 4px solid #1E1C24; background:#FBF8F2; min-height: 250px; position:relative; }
+.s18-n .i { font-family:"Space Mono"; font-weight:700; font-size: 24px; color:#6A645C; }
+.s18-n .t { font-family:"Black Han Sans"; font-size: 50px; margin-top: 12px; line-height:1.15; }
+.s18-n .s { font-size: 28px; font-weight:700; margin-top: 12px; color:#6A645C; line-height:1.35; }
+.s18-n.r { background:#C8102E; border-color:#C8102E; color:#FBF8F2; }
+.s18-n.r .i, .s18-n.r .s { color:#FBF8F2; }
+.s18-n.b { background:#1F4FA0; border-color:#1F4FA0; color:#FBF8F2; }
+.s18-n.b .i, .s18-n.b .s { color:#FBF8F2; }
+.s18-n.k { background:#1E1C24; border-color:#1E1C24; color:#F4EFE6; }
+.s18-n.k .i, .s18-n.k .s { color:#e2dccf; }
+
+      </style>
+      <div id="root" data-composition-id="s18" data-width="1920" data-height="1080">
+
+  <div id="s18-bg" data-layout-allow-overflow></div>
+  <div id="s18-glow" data-layout-allow-overflow style="left:700px; top:300px;"></div>
+  <div id="s18-ghost" data-layout-allow-overflow data-t="ROADMAP"></div>
+  <div id="s18-top"><div id="s18-chap"><span class="num">END</span><span class="name">정리</span></div>
+    <div id="s18-brand">AA <b>CANADA</b></div></div>
+  <div id="s18-rail"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i></div>
+
+  <h1 id="s18-h" class="hl">오늘의 <span class="red">로드맵</span> 정리</h1>
+  <div id="s18-grid">
+    <div class="s18-n" id="s18-n1"><div class="i">01</div><div class="t">Work permit = LMIA</div><div class="s">워크퍼밋에는 원칙적으로 LMIA 필요</div></div>
+    <div class="s18-n" id="s18-n2"><div class="i">02</div><div class="t">LMIA는 너무 어렵다</div><div class="s">고용주도 구직자도 부담</div></div>
+    <div class="s18-n" id="s18-n3"><div class="i">03</div><div class="t">유학 후 PGWP</div><div class="s">가능하지만 시간과 비용 ↑</div></div>
+    <div class="s18-n b" id="s18-n4"><div class="i">04</div><div class="t">몬트리올 영어 + 불어</div><div class="s">1~2년 어학연수로 함께 준비</div></div>
+    <div class="s18-n r" id="s18-n5"><div class="i">05</div><div class="t">NCLC 5 → 취업 · PNP · FCIP</div><div class="s">말하기·듣기 5 → Francophone Mobility<br>네 영역 5 → 주정부이민 · FCIP</div></div>
+    <div class="s18-n k" id="s18-n6"><div class="i">06</div><div class="t">NCLC 7 → Express Entry</div><div class="s">불어 능력자 카테고리 추첨</div></div>
+  </div>
+
+      </div>
+      <script>
+(function () {
+
+const D = 32.36;
+const tl = gsap.timeline({ paused: true });
+const E = { o: "power3.out", b: "back.out(1.7)", e: "expo.out", s: "sine.inOut" };
+function up(sel, t, d = 0.6, y = 46) { tl.fromTo(sel, { opacity: 0, y: y }, { opacity: 1, y: 0, duration: d, ease: E.o }, t); }
+function left(sel, t, d = 0.6, x = -70) { tl.fromTo(sel, { opacity: 0, x: x }, { opacity: 1, x: 0, duration: d, ease: E.e }, t); }
+function right(sel, t, d = 0.6) { left(sel, t, d, 70); }
+function pop(sel, t, d = 0.55) { tl.fromTo(sel, { opacity: 0, scale: 0.55 }, { opacity: 1, scale: 1, duration: d, ease: E.b }, t); }
+function fade(sel, t, d = 0.5) { tl.fromTo(sel, { opacity: 0 }, { opacity: 1, duration: d, ease: "power1.out" }, t); }
+function draw(sel, t, d = 0.7) { tl.fromTo(sel, { scaleX: 0 }, { scaleX: 1, duration: d, ease: "power2.inOut" }, t); }
+function slam(sel, t, rot = -6) { tl.fromTo(sel, { opacity: 0, scale: 2.1, rotation: rot - 8 }, { opacity: 1, scale: 1, rotation: rot, duration: 0.32, ease: "power4.in" }, t); }
+function dim(sel, t, to = 0.28) { tl.to(sel, { opacity: to, duration: 0.5, ease: "power1.inOut" }, t); }
+function stag(sel, t, each = 0.12, y = 40) { tl.fromTo(sel, { opacity: 0, y: y }, { opacity: 1, y: 0, duration: 0.55, ease: E.o, stagger: each }, t); }
+function count(sel, t, from, to, d, fmt) {
+  const el = document.querySelector(sel); const o = { v: from };
+  tl.to(o, { v: to, duration: d, ease: "power2.out", onUpdate: () => { el.textContent = fmt(Math.round(o.v)); } }, t);
+  tl.set(o, { v: from }, 0);
+}
+// chrome + ambient
+fade("#s18-bg", 0, 0.4);
+tl.fromTo("#s18-bg", { x: 0, y: 0 }, { x: -60, y: -30, duration: D, ease: "none" }, 0);
+tl.fromTo("#s18-glow", { scale: 0.9, opacity: 0.7 }, { scale: 1.15, opacity: 1, duration: D / 2, ease: E.s, yoyo: true, repeat: 1 }, 0);
+tl.fromTo("#s18-ghost", { x: 40 }, { x: -260, duration: D, ease: "none" }, 0);
+tl.fromTo("#s18-top", { opacity: 0, y: -24 }, { opacity: 1, y: 0, duration: 0.5, ease: E.o }, 0.1);
+tl.fromTo("#s18-rail", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 0.1);
+
+
+up("#s18-h", 0.2, 0.6);
+const T = [0.8, 8.6, 12.8, 17.0, 20.7, 26.5];
+T.forEach((t, i) => tl.fromTo("#s18-n" + (i + 1), { opacity: 0, y: 50, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.55, ease: E.b }, t));
+tl.to("#s18-n1, #s18-n2, #s18-n3", { opacity: 0.5, duration: 0.5 }, 17.0);
+
+window.__timelines["s18"] = tl;
+})();
+      </script>
+    </template>
+  </body>
+</html>

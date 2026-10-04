@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+
+@font-face { font-family: "Black Han Sans"; src: url("assets/fonts/BlackHanSans.woff2") format("woff2"); font-weight: 400; }
+@font-face { font-family: "IBM Plex Sans KR"; src: url("assets/fonts/PlexKR-400.woff2") format("woff2"); font-weight: 400; }
+@font-face { font-family: "IBM Plex Sans KR"; src: url("assets/fonts/PlexKR-700.woff2") format("woff2"); font-weight: 700; }
+#root { position: absolute; inset: 0; overflow: hidden; background: #F4EFE6; color: #1E1C24;
+  font-family: "IBM Plex Sans KR", sans-serif; word-break: keep-all; }
+#root * { box-sizing: border-box; }
+#s16-bg { position: absolute; inset: -60px; background-image:
+  linear-gradient(rgba(30,28,36,0.07) 2px, transparent 2px),
+  linear-gradient(90deg, rgba(30,28,36,0.07) 2px, transparent 2px);
+  background-size: 120px 120px; }
+#s16-glow { position: absolute; width: 1100px; height: 1100px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,16,46,0.16) 0%, rgba(200,16,46,0) 65%); }
+#s16-ghost { position: absolute; left: 0; bottom: 40px; white-space: nowrap; font-family: "Black Han Sans";
+  font-size: 380px; line-height: 1; color: rgba(30,28,36,0.06); letter-spacing: -0.02em; }
+#s16-ghost::before { content: attr(data-t); }
+#s16-top { position: absolute; left: 120px; right: 120px; top: 56px; height: 44px; display: flex;
+  align-items: center; justify-content: space-between; }
+#s16-chap { display: flex; align-items: center; gap: 18px; font-family: "Space Mono", monospace; font-size: 22px;
+  font-weight: 700; letter-spacing: 0.08em; color: #1E1C24; }
+#s16-chap .num { background: #1E1C24; color: #F4EFE6; padding: 4px 12px; }
+#s16-chap .name { font-family: "IBM Plex Sans KR"; letter-spacing: 0; font-size: 24px; }
+#s16-brand { font-family: "Space Mono", monospace; font-weight: 700; font-size: 22px; letter-spacing: 0.18em; }
+#s16-brand b { color: #C8102E; }
+#s16-rail { position: absolute; left: 120px; right: 120px; bottom: 52px; height: 8px; display: flex; gap: 10px; }
+#s16-rail i { display: block; flex: 1; height: 8px; background: rgba(30,28,36,0.14); }
+#s16-rail i.done { background: rgba(30,28,36,0.45); }
+#s16-rail i.on { background: #C8102E; }
+.hl { font-family: "Black Han Sans", sans-serif; font-weight: 400; letter-spacing: -0.02em; line-height: 1.12; margin: 0; }
+.mono { font-family: "Space Mono", monospace; font-weight: 700; letter-spacing: 0.06em; }
+.red { color: #C8102E; }
+.blue { color: #1F4FA0; }
+.muted { color: #6A645C; }
+.card { position: absolute; background: #FBF8F2; border: 4px solid #1E1C24; box-shadow: 12px 12px 0 #1E1C24; }
+.chip { display: inline-block; padding: 10px 26px; border: 3px solid #1E1C24; border-radius: 999px; font-weight: 700; font-size: 34px; background: #FBF8F2; }
+.stamp { position: absolute; border: 8px solid #C8102E; color: #C8102E; font-family: "Black Han Sans"; padding: 8px 34px;
+  font-size: 64px; letter-spacing: 0.02em; background: rgba(244,239,230,0.92); white-space: nowrap; }
+.rule { display: block; height: 4px; background: #1E1C24; transform-origin: left center; }
+
+
+#s16-stairs { position:absolute; left: 120px; bottom: 120px; width: 900px; height: 600px; }
+.s16-sp { position:absolute; bottom: 0; width: 300px; background:#E6DFD3; border: 4px solid #1E1C24; display:flex; flex-direction:column;
+  justify-content:flex-start; padding: 24px; }
+.s16-sp .lv { font-family:"Black Han Sans"; font-size: 64px; line-height:1; color:#1E1C24; }
+.s16-sp .sk { font-size: 24px; font-weight:700; margin-top: 8px; color:#1E1C24; }
+#s16-sp1 { left: 0; height: 200px; } #s16-sp2 { left: 300px; height: 360px; } #s16-sp3 { left: 600px; height: 520px; }
+.s16-sp.on { background:#1F4FA0; border-color:#1F4FA0; }
+.s16-sp.on .lv, .s16-sp.on .sk { color:#FBF8F2; }
+.s16-sp.done { background:#C9D3E6; }
+#s16-flag { position:absolute; left: 820px; bottom: 520px; width: 8px; height: 150px; background:#1E1C24; }
+#s16-flag i { position:absolute; left: 8px; top: 0; width: 110px; height: 70px; background:#C8102E; }
+
+#s16-info { position:absolute; left: 1110px; top: 160px; width: 700px; }
+#s16-info .k { font-family:"Space Mono"; font-weight:700; font-size: 28px; letter-spacing:.12em; color:#1F4FA0; }
+#s16-info h1 { font-size: 70px; margin-top: 12px; }
+#s16-info .res { margin-top: 30px; font-size: 44px; font-weight: 700; padding: 22px 30px; background:#1E1C24; color:#F4EFE6; }
+#s16-info .res b { color:#9fb8e8; }
+#s16-skills { display:flex; gap: 14px; margin-top: 28px; }
+#s16-skills span { flex:1; text-align:center; font-size: 30px; font-weight:700; padding: 14px 0; border: 4px solid #1E1C24; background:#FBF8F2; }
+#s16-skills span.on { background:#1F4FA0; border-color:#1F4FA0; color:#FBF8F2; }
+
+#s16-cards { display:flex; flex-direction:column; gap: 18px; margin-top: 26px; }
+#s16-cards div { padding: 20px 26px; border: 4px solid #1E1C24; background:#FBF8F2; font-size: 32px; font-weight:700; line-height:1.35; }
+#s16-cards div .m { display:block; font-family:"Space Mono"; font-size: 20px; color:#1F4FA0; margin-bottom: 4px; }
+#s16-cards div b { color:#C8102E; }
+
+      </style>
+      <div id="root" data-composition-id="s16" data-width="1920" data-height="1080">
+
+  <div id="s16-bg" data-layout-allow-overflow></div>
+  <div id="s16-glow" data-layout-allow-overflow style="left:-200px; top:500px;"></div>
+  <div id="s16-ghost" data-layout-allow-overflow data-t="STEP 2"></div>
+  <div id="s16-top"><div id="s16-chap"><span class="num">CH 05</span><span class="name">불어 레벨 로드맵</span></div>
+    <div id="s16-brand">AA <b>CANADA</b></div></div>
+  <div id="s16-rail"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i></div>
+
+  <div id="s16-stairs">
+    <div class="s16-sp done" id="s16-sp1"><div class="lv">NCLC 5</div><div class="sk">말하기 · 듣기</div></div>
+    <div class="s16-sp on" id="s16-sp2"><div class="lv">NCLC 5</div><div class="sk">네 영역 모두</div></div>
+    <div class="s16-sp " id="s16-sp3"><div class="lv">NCLC 7</div><div class="sk">네 영역 모두</div></div>
+    
+  </div>
+  <div id="s16-info"><div class="k">STEP 2</div><h1 class="hl">NCLC 5 · 네 영역 모두</h1>
+    <div id="s16-skills"><span class="on">말하기</span><span class="on">듣기</span><span id="s16-s3">읽기</span><span id="s16-s4">쓰기</span></div>
+    <div class="res" id="s16-res">→ <b>영주권</b>으로 가는 길이 넓어집니다</div>
+    <div id="s16-cards"><div id="s16-c1"><span class="m">PROVINCIAL NOMINEE</span>주정부이민 · 불어 가능자 연방 쿼터 <b>5,000명</b></div>
+      <div id="s16-c2"><span class="m">FCIP</span>프랑코폰 커뮤니티 이민 파일럿</div></div>
+  </div>
+
+      </div>
+      <script>
+(function () {
+
+const D = 18.83;
+const tl = gsap.timeline({ paused: true });
+const E = { o: "power3.out", b: "back.out(1.7)", e: "expo.out", s: "sine.inOut" };
+function up(sel, t, d = 0.6, y = 46) { tl.fromTo(sel, { opacity: 0, y: y }, { opacity: 1, y: 0, duration: d, ease: E.o }, t); }
+function left(sel, t, d = 0.6, x = -70) { tl.fromTo(sel, { opacity: 0, x: x }, { opacity: 1, x: 0, duration: d, ease: E.e }, t); }
+function right(sel, t, d = 0.6) { left(sel, t, d, 70); }
+function pop(sel, t, d = 0.55) { tl.fromTo(sel, { opacity: 0, scale: 0.55 }, { opacity: 1, scale: 1, duration: d, ease: E.b }, t); }
+function fade(sel, t, d = 0.5) { tl.fromTo(sel, { opacity: 0 }, { opacity: 1, duration: d, ease: "power1.out" }, t); }
+function draw(sel, t, d = 0.7) { tl.fromTo(sel, { scaleX: 0 }, { scaleX: 1, duration: d, ease: "power2.inOut" }, t); }
+function slam(sel, t, rot = -6) { tl.fromTo(sel, { opacity: 0, scale: 2.1, rotation: rot - 8 }, { opacity: 1, scale: 1, rotation: rot, duration: 0.32, ease: "power4.in" }, t); }
+function dim(sel, t, to = 0.28) { tl.to(sel, { opacity: to, duration: 0.5, ease: "power1.inOut" }, t); }
+function stag(sel, t, each = 0.12, y = 40) { tl.fromTo(sel, { opacity: 0, y: y }, { opacity: 1, y: 0, duration: 0.55, ease: E.o, stagger: each }, t); }
+function count(sel, t, from, to, d, fmt) {
+  const el = document.querySelector(sel); const o = { v: from };
+  tl.to(o, { v: to, duration: d, ease: "power2.out", onUpdate: () => { el.textContent = fmt(Math.round(o.v)); } }, t);
+  tl.set(o, { v: from }, 0);
+}
+// chrome + ambient
+fade("#s16-bg", 0, 0.4);
+tl.fromTo("#s16-bg", { x: 0, y: 0 }, { x: -60, y: -30, duration: D, ease: "none" }, 0);
+tl.fromTo("#s16-glow", { scale: 0.9, opacity: 0.7 }, { scale: 1.15, opacity: 1, duration: D / 2, ease: E.s, yoyo: true, repeat: 1 }, 0);
+tl.fromTo("#s16-ghost", { x: 40 }, { x: -260, duration: D, ease: "none" }, 0);
+tl.fromTo("#s16-top", { opacity: 0, y: -24 }, { opacity: 1, y: 0, duration: 0.5, ease: E.o }, 0.1);
+tl.fromTo("#s16-rail", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 0.1);
+
+
+tl.fromTo(".s16-sp", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.5, ease: E.o, stagger: 0.12 }, 0.2);
+tl.fromTo(".s16-sp.on", { scale: 1 }, { scale: 1.05, duration: 0.5, ease: E.b, yoyo: true, repeat: 1, transformOrigin: "bottom center" }, 0.9);
+left("#s16-info .k", 0.4); up("#s16-info h1", 0.6, 0.6);
+
+stag("#s16-skills span", 1.2, 0.12, 20);
+tl.to("#s16-s3, #s16-s4", { backgroundColor: "#1F4FA0", borderColor: "#1F4FA0", color: "#FBF8F2", duration: 0.35, stagger: 0.3 }, 2.6);
+tl.fromTo("#s16-res", { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 0.6, ease: E.e }, 5.8);
+left("#s16-c1", 9.1); left("#s16-c2", 12.6);
+
+window.__timelines["s16"] = tl;
+})();
+      </script>
+    </template>
+  </body>
+</html>

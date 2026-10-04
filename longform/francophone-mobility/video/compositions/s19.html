@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+
+@font-face { font-family: "Black Han Sans"; src: url("assets/fonts/BlackHanSans.woff2") format("woff2"); font-weight: 400; }
+@font-face { font-family: "IBM Plex Sans KR"; src: url("assets/fonts/PlexKR-400.woff2") format("woff2"); font-weight: 400; }
+@font-face { font-family: "IBM Plex Sans KR"; src: url("assets/fonts/PlexKR-700.woff2") format("woff2"); font-weight: 700; }
+#root { position: absolute; inset: 0; overflow: hidden; background: #F4EFE6; color: #1E1C24;
+  font-family: "IBM Plex Sans KR", sans-serif; word-break: keep-all; }
+#root * { box-sizing: border-box; }
+#s19-bg { position: absolute; inset: -60px; background-image:
+  linear-gradient(rgba(30,28,36,0.07) 2px, transparent 2px),
+  linear-gradient(90deg, rgba(30,28,36,0.07) 2px, transparent 2px);
+  background-size: 120px 120px; }
+#s19-glow { position: absolute; width: 1100px; height: 1100px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,16,46,0.16) 0%, rgba(200,16,46,0) 65%); }
+#s19-ghost { position: absolute; left: 0; bottom: 40px; white-space: nowrap; font-family: "Black Han Sans";
+  font-size: 380px; line-height: 1; color: rgba(30,28,36,0.06); letter-spacing: -0.02em; }
+#s19-ghost::before { content: attr(data-t); }
+#s19-top { position: absolute; left: 120px; right: 120px; top: 56px; height: 44px; display: flex;
+  align-items: center; justify-content: space-between; }
+#s19-chap { display: flex; align-items: center; gap: 18px; font-family: "Space Mono", monospace; font-size: 22px;
+  font-weight: 700; letter-spacing: 0.08em; color: #1E1C24; }
+#s19-chap .num { background: #1E1C24; color: #F4EFE6; padding: 4px 12px; }
+#s19-chap .name { font-family: "IBM Plex Sans KR"; letter-spacing: 0; font-size: 24px; }
+#s19-brand { font-family: "Space Mono", monospace; font-weight: 700; font-size: 22px; letter-spacing: 0.18em; }
+#s19-brand b { color: #C8102E; }
+#s19-rail { position: absolute; left: 120px; right: 120px; bottom: 52px; height: 8px; display: flex; gap: 10px; }
+#s19-rail i { display: block; flex: 1; height: 8px; background: rgba(30,28,36,0.14); }
+#s19-rail i.done { background: rgba(30,28,36,0.45); }
+#s19-rail i.on { background: #C8102E; }
+.hl { font-family: "Black Han Sans", sans-serif; font-weight: 400; letter-spacing: -0.02em; line-height: 1.12; margin: 0; }
+.mono { font-family: "Space Mono", monospace; font-weight: 700; letter-spacing: 0.06em; }
+.red { color: #C8102E; }
+.blue { color: #1F4FA0; }
+.muted { color: #6A645C; }
+.card { position: absolute; background: #FBF8F2; border: 4px solid #1E1C24; box-shadow: 12px 12px 0 #1E1C24; }
+.chip { display: inline-block; padding: 10px 26px; border: 3px solid #1E1C24; border-radius: 999px; font-weight: 700; font-size: 34px; background: #FBF8F2; }
+.stamp { position: absolute; border: 8px solid #C8102E; color: #C8102E; font-family: "Black Han Sans"; padding: 8px 34px;
+  font-size: 64px; letter-spacing: 0.02em; background: rgba(244,239,230,0.92); white-space: nowrap; }
+.rule { display: block; height: 4px; background: #1E1C24; transform-origin: left center; }
+
+
+#s19-logo { position:absolute; left:120px; top:170px; }
+#s19-logo .w { font-family:"Black Han Sans"; font-size: 132px; line-height: .95; }
+#s19-logo .w b { color:#C8102E; font-weight:400; }
+#s19-logo .s { font-size: 40px; font-weight:700; margin-top: 18px; }
+#s19-logo .s span { color:#C8102E; }
+#s19-ct { position:absolute; left: 1040px; top: 180px; width: 760px; }
+.s19-row { display:flex; align-items:center; gap: 24px; padding: 22px 0; border-bottom: 4px solid #1E1C24; }
+.s19-row .m { width: 170px; font-family:"Space Mono"; font-weight:700; font-size: 24px; letter-spacing:.08em; color:#6A645C; }
+.s19-row .v { font-size: 42px; font-weight:700; }
+#s19-night { position:absolute; left: 1040px; top: 660px; padding: 16px 30px; background:#1F4FA0; color:#FBF8F2; font-size: 36px; font-weight:700; }
+#s19-btns { position:absolute; left: 120px; top: 760px; display:flex; gap: 26px; }
+.s19-btn { padding: 26px 48px; font-size: 44px; font-weight:700; border: 4px solid #1E1C24; background:#FBF8F2; }
+.s19-btn.r { background:#C8102E; border-color:#C8102E; color:#FBF8F2; }
+#s19-fadeout { position:absolute; inset: 0; background:#F4EFE6; opacity: 0; }
+
+      </style>
+      <div id="root" data-composition-id="s19" data-width="1920" data-height="1080">
+
+  <div id="s19-bg" data-layout-allow-overflow></div>
+  <div id="s19-glow" data-layout-allow-overflow style="left:1000px; top:200px;"></div>
+  <div id="s19-ghost" data-layout-allow-overflow data-t="AA CANADA"></div>
+  <div id="s19-top"><div id="s19-chap"><span class="num">END</span><span class="name">정리</span></div>
+    <div id="s19-brand">AA <b>CANADA</b></div></div>
+  <div id="s19-rail"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i></div>
+
+  <div id="s19-logo"><div class="w">AA <b>CANADA</b></div><div class="s">몬트리올 현지 직영 · <span>어학연수부터 영주권까지</span></div></div>
+  <div id="s19-ct">
+    <div class="s19-row"><div class="m">TEL</div><div class="v">02-567-4345</div></div>
+    <div class="s19-row"><div class="m">MOBILE</div><div class="v">010-4857-4345</div></div>
+    <div class="s19-row"><div class="m">KAKAO</div><div class="v">canlog</div></div>
+    <div class="s19-row"><div class="m">CAFE</div><div class="v">cafe.naver.com/aamontreal</div></div>
+  </div>
+  <div id="s19-night">야간 · 주말 상담 가능</div>
+  <div id="s19-btns"><div class="s19-btn r">구독</div><div class="s19-btn">좋아요</div></div>
+  <div id="s19-fadeout"></div>
+
+      </div>
+      <script>
+(function () {
+
+const D = 20.9;
+const tl = gsap.timeline({ paused: true });
+const E = { o: "power3.out", b: "back.out(1.7)", e: "expo.out", s: "sine.inOut" };
+function up(sel, t, d = 0.6, y = 46) { tl.fromTo(sel, { opacity: 0, y: y }, { opacity: 1, y: 0, duration: d, ease: E.o }, t); }
+function left(sel, t, d = 0.6, x = -70) { tl.fromTo(sel, { opacity: 0, x: x }, { opacity: 1, x: 0, duration: d, ease: E.e }, t); }
+function right(sel, t, d = 0.6) { left(sel, t, d, 70); }
+function pop(sel, t, d = 0.55) { tl.fromTo(sel, { opacity: 0, scale: 0.55 }, { opacity: 1, scale: 1, duration: d, ease: E.b }, t); }
+function fade(sel, t, d = 0.5) { tl.fromTo(sel, { opacity: 0 }, { opacity: 1, duration: d, ease: "power1.out" }, t); }
+function draw(sel, t, d = 0.7) { tl.fromTo(sel, { scaleX: 0 }, { scaleX: 1, duration: d, ease: "power2.inOut" }, t); }
+function slam(sel, t, rot = -6) { tl.fromTo(sel, { opacity: 0, scale: 2.1, rotation: rot - 8 }, { opacity: 1, scale: 1, rotation: rot, duration: 0.32, ease: "power4.in" }, t); }
+function dim(sel, t, to = 0.28) { tl.to(sel, { opacity: to, duration: 0.5, ease: "power1.inOut" }, t); }
+function stag(sel, t, each = 0.12, y = 40) { tl.fromTo(sel, { opacity: 0, y: y }, { opacity: 1, y: 0, duration: 0.55, ease: E.o, stagger: each }, t); }
+function count(sel, t, from, to, d, fmt) {
+  const el = document.querySelector(sel); const o = { v: from };
+  tl.to(o, { v: to, duration: d, ease: "power2.out", onUpdate: () => { el.textContent = fmt(Math.round(o.v)); } }, t);
+  tl.set(o, { v: from }, 0);
+}
+// chrome + ambient
+fade("#s19-bg", 0, 0.4);
+tl.fromTo("#s19-bg", { x: 0, y: 0 }, { x: -60, y: -30, duration: D, ease: "none" }, 0);
+tl.fromTo("#s19-glow", { scale: 0.9, opacity: 0.7 }, { scale: 1.15, opacity: 1, duration: D / 2, ease: E.s, yoyo: true, repeat: 1 }, 0);
+tl.fromTo("#s19-ghost", { x: 40 }, { x: -260, duration: D, ease: "none" }, 0);
+tl.fromTo("#s19-top", { opacity: 0, y: -24 }, { opacity: 1, y: 0, duration: 0.5, ease: E.o }, 0.1);
+tl.fromTo("#s19-rail", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 0.1);
+
+
+tl.fromTo("#s19-logo .w", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.7, ease: E.b }, 0.3);
+up("#s19-logo .s", 1.0);
+stag("#s19-ct .s19-row", 6.0, 0.25, 30);
+pop("#s19-night", 11.8);
+stag("#s19-btns .s19-btn", 15.5, 0.3, 40);
+tl.to("#s19-btns .s19-btn.r", { scale: 1.08, duration: 0.4, ease: E.s, yoyo: true, repeat: 3 }, 16.6);
+tl.fromTo("#s19-fadeout", { opacity: 0 }, { opacity: 1, duration: 1.0, ease: "power1.in" }, D - 1.1);
+
+window.__timelines["s19"] = tl;
+})();
+      </script>
+    </template>
+  </body>
+</html>

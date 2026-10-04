@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+
+@font-face { font-family: "Black Han Sans"; src: url("assets/fonts/BlackHanSans.woff2") format("woff2"); font-weight: 400; }
+@font-face { font-family: "IBM Plex Sans KR"; src: url("assets/fonts/PlexKR-400.woff2") format("woff2"); font-weight: 400; }
+@font-face { font-family: "IBM Plex Sans KR"; src: url("assets/fonts/PlexKR-700.woff2") format("woff2"); font-weight: 700; }
+#root { position: absolute; inset: 0; overflow: hidden; background: #F4EFE6; color: #1E1C24;
+  font-family: "IBM Plex Sans KR", sans-serif; word-break: keep-all; }
+#root * { box-sizing: border-box; }
+#s07-bg { position: absolute; inset: -60px; background-image:
+  linear-gradient(rgba(30,28,36,0.07) 2px, transparent 2px),
+  linear-gradient(90deg, rgba(30,28,36,0.07) 2px, transparent 2px);
+  background-size: 120px 120px; }
+#s07-glow { position: absolute; width: 1100px; height: 1100px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,16,46,0.16) 0%, rgba(200,16,46,0) 65%); }
+#s07-ghost { position: absolute; left: 0; bottom: 40px; white-space: nowrap; font-family: "Black Han Sans";
+  font-size: 380px; line-height: 1; color: rgba(30,28,36,0.06); letter-spacing: -0.02em; }
+#s07-ghost::before { content: attr(data-t); }
+#s07-top { position: absolute; left: 120px; right: 120px; top: 56px; height: 44px; display: flex;
+  align-items: center; justify-content: space-between; }
+#s07-chap { display: flex; align-items: center; gap: 18px; font-family: "Space Mono", monospace; font-size: 22px;
+  font-weight: 700; letter-spacing: 0.08em; color: #1E1C24; }
+#s07-chap .num { background: #1E1C24; color: #F4EFE6; padding: 4px 12px; }
+#s07-chap .name { font-family: "IBM Plex Sans KR"; letter-spacing: 0; font-size: 24px; }
+#s07-brand { font-family: "Space Mono", monospace; font-weight: 700; font-size: 22px; letter-spacing: 0.18em; }
+#s07-brand b { color: #C8102E; }
+#s07-rail { position: absolute; left: 120px; right: 120px; bottom: 52px; height: 8px; display: flex; gap: 10px; }
+#s07-rail i { display: block; flex: 1; height: 8px; background: rgba(30,28,36,0.14); }
+#s07-rail i.done { background: rgba(30,28,36,0.45); }
+#s07-rail i.on { background: #C8102E; }
+.hl { font-family: "Black Han Sans", sans-serif; font-weight: 400; letter-spacing: -0.02em; line-height: 1.12; margin: 0; }
+.mono { font-family: "Space Mono", monospace; font-weight: 700; letter-spacing: 0.06em; }
+.red { color: #C8102E; }
+.blue { color: #1F4FA0; }
+.muted { color: #6A645C; }
+.card { position: absolute; background: #FBF8F2; border: 4px solid #1E1C24; box-shadow: 12px 12px 0 #1E1C24; }
+.chip { display: inline-block; padding: 10px 26px; border: 3px solid #1E1C24; border-radius: 999px; font-weight: 700; font-size: 34px; background: #FBF8F2; }
+.stamp { position: absolute; border: 8px solid #C8102E; color: #C8102E; font-family: "Black Han Sans"; padding: 8px 34px;
+  font-size: 64px; letter-spacing: 0.02em; background: rgba(244,239,230,0.92); white-space: nowrap; }
+.rule { display: block; height: 4px; background: #1E1C24; transform-origin: left center; }
+
+
+#s07-h { position:absolute; left:120px; top:160px; width: 1680px; font-size: 84px; }
+#s07-row { position:absolute; left:120px; top: 430px; width: 1680px; display:flex; gap: 48px; }
+.s07-c { flex: 1; height: 300px; border: 4px solid #1E1C24; background:#FBF8F2; padding: 40px; position:relative; box-shadow: 10px 10px 0 #1E1C24; }
+.s07-c .ic { font-family:"Space Mono"; font-weight:700; font-size: 26px; letter-spacing:.1em; color:#6A645C; }
+.s07-c .t { font-family:"Black Han Sans"; font-size: 72px; margin-top: 26px; }
+.s07-c .ok { position:absolute; right: 30px; top: 26px; font-family:"Black Han Sans"; font-size: 60px; color:#1F4FA0; }
+.s07-c .no { position:absolute; right: 26px; top: 6px; font-family:"Black Han Sans"; font-size: 120px; line-height: 1; color:#C8102E; }
+#s07-stamp { left: 640px; top: 800px; }
+
+      </style>
+      <div id="root" data-composition-id="s07" data-width="1920" data-height="1080">
+
+  <div id="s07-bg" data-layout-allow-overflow></div>
+  <div id="s07-glow" data-layout-allow-overflow style="left:500px; top:300px;"></div>
+  <div id="s07-ghost" data-layout-allow-overflow data-t="NO"></div>
+  <div id="s07-top"><div id="s07-chap"><span class="num">CH 02</span><span class="name">LMIA의 벽</span></div>
+    <div id="s07-brand">AA <b>CANADA</b></div></div>
+  <div id="s07-rail"><i class="done"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></div>
+
+  <h1 id="s07-h" class="hl">조건 중 <span class="red">하나라도</span> 맞지 않으면?</h1>
+  <div id="s07-row">
+    <div class="s07-c" id="s07-c1"><div class="ic">UNEMPLOYMENT</div><div class="t">지역 실업률</div><div class="ok">✓</div></div>
+    <div class="s07-c" id="s07-c2"><div class="ic">WAGE</div><div class="t">급여 수준</div><div class="ok">✓</div><div class="no">✕</div></div>
+    <div class="s07-c" id="s07-c3"><div class="ic">STAFF</div><div class="t">직원 현황</div><div class="ok">✓</div></div>
+  </div>
+  <div id="s07-stamp" class="stamp">진행 자체가 불가</div>
+
+      </div>
+      <script>
+(function () {
+
+const D = 10.21;
+const tl = gsap.timeline({ paused: true });
+const E = { o: "power3.out", b: "back.out(1.7)", e: "expo.out", s: "sine.inOut" };
+function up(sel, t, d = 0.6, y = 46) { tl.fromTo(sel, { opacity: 0, y: y }, { opacity: 1, y: 0, duration: d, ease: E.o }, t); }
+function left(sel, t, d = 0.6, x = -70) { tl.fromTo(sel, { opacity: 0, x: x }, { opacity: 1, x: 0, duration: d, ease: E.e }, t); }
+function right(sel, t, d = 0.6) { left(sel, t, d, 70); }
+function pop(sel, t, d = 0.55) { tl.fromTo(sel, { opacity: 0, scale: 0.55 }, { opacity: 1, scale: 1, duration: d, ease: E.b }, t); }
+function fade(sel, t, d = 0.5) { tl.fromTo(sel, { opacity: 0 }, { opacity: 1, duration: d, ease: "power1.out" }, t); }
+function draw(sel, t, d = 0.7) { tl.fromTo(sel, { scaleX: 0 }, { scaleX: 1, duration: d, ease: "power2.inOut" }, t); }
+function slam(sel, t, rot = -6) { tl.fromTo(sel, { opacity: 0, scale: 2.1, rotation: rot - 8 }, { opacity: 1, scale: 1, rotation: rot, duration: 0.32, ease: "power4.in" }, t); }
+function dim(sel, t, to = 0.28) { tl.to(sel, { opacity: to, duration: 0.5, ease: "power1.inOut" }, t); }
+function stag(sel, t, each = 0.12, y = 40) { tl.fromTo(sel, { opacity: 0, y: y }, { opacity: 1, y: 0, duration: 0.55, ease: E.o, stagger: each }, t); }
+function count(sel, t, from, to, d, fmt) {
+  const el = document.querySelector(sel); const o = { v: from };
+  tl.to(o, { v: to, duration: d, ease: "power2.out", onUpdate: () => { el.textContent = fmt(Math.round(o.v)); } }, t);
+  tl.set(o, { v: from }, 0);
+}
+// chrome + ambient
+fade("#s07-bg", 0, 0.4);
+tl.fromTo("#s07-bg", { x: 0, y: 0 }, { x: -60, y: -30, duration: D, ease: "none" }, 0);
+tl.fromTo("#s07-glow", { scale: 0.9, opacity: 0.7 }, { scale: 1.15, opacity: 1, duration: D / 2, ease: E.s, yoyo: true, repeat: 1 }, 0);
+tl.fromTo("#s07-ghost", { x: 40 }, { x: -260, duration: D, ease: "none" }, 0);
+tl.fromTo("#s07-top", { opacity: 0, y: -24 }, { opacity: 1, y: 0, duration: 0.5, ease: E.o }, 0.1);
+tl.fromTo("#s07-rail", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 0.1);
+
+
+up("#s07-h", 0.25, 0.6);
+stag(".s07-c", 0.8, 0.18, 60);
+stag(".s07-c .ok", 1.8, 0.25, 10);
+tl.set("#s07-c2 .no", { opacity: 0 }, 0);
+tl.to("#s07-c2 .ok", { opacity: 0, duration: 0.2 }, 5.1);
+tl.fromTo("#s07-c2 .no", { opacity: 0, scale: 2 }, { opacity: 1, scale: 1, duration: 0.3, ease: "power4.in" }, 5.1);
+tl.to("#s07-c1, #s07-c3", { opacity: 0.35, duration: 0.5 }, 5.6);
+tl.to("#s07-c2", { borderColor: "#C8102E", boxShadow: "10px 10px 0 #C8102E", duration: 0.3 }, 5.4);
+slam("#s07-stamp", 6.2, -4);
+
+window.__timelines["s07"] = tl;
+})();
+      </script>
+    </template>
+  </body>
+</html>
