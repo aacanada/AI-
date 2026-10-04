@@ -37,7 +37,7 @@
       id="root"
       data-composition-id="main"
       data-start="0"
-      data-duration="58"
+      data-duration="62.14"
       data-width="1080"
       data-height="1920"
     >
@@ -47,88 +47,172 @@
         data-composition-id="01-hook"
         data-composition-src="compositions/frames/01-hook.html"
         data-start="0"
-        data-duration="6.5"
+        data-duration="6.73"
         data-track-index="0"
       ></div>
+      <audio
+        id="el-01-hook-voice"
+        src="assets/voice/01.mp3"
+        data-start="0"
+        data-duration="6.23"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
 
       <div
         id="el-02-two-pillars"
         class="scene"
         data-composition-id="02-two-pillars"
         data-composition-src="compositions/frames/02-two-pillars.html"
-        data-start="6"
-        data-duration="5.5"
+        data-start="6.23"
+        data-duration="5.11"
         data-track-index="1"
       ></div>
+      <audio
+        id="el-02-two-pillars-voice"
+        src="assets/voice/02.mp3"
+        data-start="6.23"
+        data-duration="4.61"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
 
       <div
         id="el-03-pcap"
         class="scene"
         data-composition-id="03-pcap"
         data-composition-src="compositions/frames/03-pcap.html"
-        data-start="11"
-        data-duration="7.5"
+        data-start="10.84"
+        data-duration="10.31"
         data-track-index="0"
       ></div>
+      <audio
+        id="el-03-pcap-voice"
+        src="assets/voice/03.mp3"
+        data-start="10.84"
+        data-duration="9.81"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
 
       <div
         id="el-04-math-chart"
         class="scene"
         data-composition-id="04-math-chart"
         data-composition-src="compositions/frames/04-math-chart.html"
-        data-start="18"
-        data-duration="8.5"
+        data-start="20.65"
+        data-duration="9.47"
         data-track-index="1"
       ></div>
+      <audio
+        id="el-04-math-chart-voice"
+        src="assets/voice/04.mp3"
+        data-start="20.65"
+        data-duration="8.97"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
 
       <div
         id="el-05-bilingual"
         class="scene"
         data-composition-id="05-bilingual"
         data-composition-src="compositions/frames/05-bilingual.html"
-        data-start="26"
-        data-duration="7.5"
+        data-start="29.619999999999997"
+        data-duration="7.25"
         data-track-index="0"
       ></div>
+      <audio
+        id="el-05-bilingual-voice"
+        src="assets/voice/05.mp3"
+        data-start="29.619999999999997"
+        data-duration="6.75"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
 
       <div
         id="el-06-investment"
         class="scene"
         data-composition-id="06-investment"
         data-composition-src="compositions/frames/06-investment.html"
-        data-start="33"
-        data-duration="8.4"
+        data-start="36.37"
+        data-duration="10.18"
         data-track-index="1"
       ></div>
+      <audio
+        id="el-06-investment-voice"
+        src="assets/voice/06.mp3"
+        data-start="36.37"
+        data-duration="9.78"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
 
       <div
         id="el-07-verdict"
         class="scene"
         data-composition-id="07-verdict"
         data-composition-src="compositions/frames/07-verdict.html"
-        data-start="41"
-        data-duration="5.5"
+        data-start="46.15"
+        data-duration="4.98"
         data-track-index="0"
       ></div>
+      <audio
+        id="el-07-verdict-voice"
+        src="assets/voice/07.mp3"
+        data-start="46.15"
+        data-duration="4.48"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
 
       <div
         id="el-08-cheapest"
         class="scene"
         data-composition-id="08-cheapest"
         data-composition-src="compositions/frames/08-cheapest.html"
-        data-start="46"
-        data-duration="7.4"
+        data-start="50.629999999999995"
+        data-duration="6.91"
         data-track-index="1"
       ></div>
+      <audio
+        id="el-08-cheapest-voice"
+        src="assets/voice/08.mp3"
+        data-start="50.629999999999995"
+        data-duration="6.51"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
 
       <div
         id="el-09-cta"
         class="scene"
         data-composition-id="09-cta"
         data-composition-src="compositions/frames/09-cta.html"
-        data-start="53"
+        data-start="57.13999999999999"
         data-duration="5"
         data-track-index="0"
+      ></div>
+      <audio
+        id="el-09-cta-voice"
+        src="assets/voice/09.mp3"
+        data-start="57.13999999999999"
+        data-duration="5"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <!-- captions -->
+      <div
+        id="el-captions"
+        data-track-kind="captions"
+        class="scene"
+        data-composition-id="captions"
+        data-composition-src="compositions/captions.html"
+        data-start="0"
+        data-duration="62.14"
+        data-track-index="2"
       ></div>
 
     </div>
@@ -138,31 +222,31 @@
       window.__timelines["main"] = gsap.timeline({ paused: true });
       // ── frame transitions (injected by transitions.mjs) ──
       (function () { var tl = window.__timelines["main"];
-        tl.to("#el-01-hook", { y: -1920, duration: 0.5, ease: "power3.inOut" }, 6);
-        tl.fromTo("#el-02-two-pillars", { y: 1920, opacity: 1 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.inOut" }, 6);
-        tl.addLabel("hf:transition:01-hook:02-two-pillars:push-slide", 6);
-        tl.to("#el-02-two-pillars", { y: -1920, duration: 0.5, ease: "power3.inOut" }, 11);
-        tl.fromTo("#el-03-pcap", { y: 1920, opacity: 1 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.inOut" }, 11);
-        tl.addLabel("hf:transition:02-two-pillars:03-pcap:push-slide", 11);
-        tl.to("#el-03-pcap", { opacity: 0, duration: 0.5, ease: "power2.inOut" }, 18);
-        tl.fromTo("#el-04-math-chart", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 18);
-        tl.addLabel("hf:transition:03-pcap:04-math-chart:crossfade", 18);
-        tl.to("#el-04-math-chart", { y: -1920, duration: 0.5, ease: "power3.inOut" }, 26);
-        tl.fromTo("#el-05-bilingual", { y: 1920, opacity: 1 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.inOut" }, 26);
-        tl.addLabel("hf:transition:04-math-chart:05-bilingual:push-slide", 26);
-        tl.to("#el-05-bilingual", { y: -1920, duration: 0.5, ease: "power3.inOut" }, 33);
-        tl.fromTo("#el-06-investment", { y: 1920, opacity: 1 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.inOut" }, 33);
-        tl.addLabel("hf:transition:05-bilingual:06-investment:push-slide", 33);
-        tl.to("#el-06-investment", { scale: 2.5, opacity: 0, filter: "blur(8px)", duration: 0.4, ease: "power3.in" }, 41);
-        tl.fromTo("#el-07-verdict", { scale: 0.5, opacity: 0, filter: "blur(8px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power3.out" }, 41);
-        tl.addLabel("hf:transition:06-investment:07-verdict:zoom-through", 41);
-        tl.to("#el-07-verdict", { opacity: 0, duration: 0.5, ease: "power2.inOut" }, 46);
-        tl.fromTo("#el-08-cheapest", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 46);
-        tl.addLabel("hf:transition:07-verdict:08-cheapest:crossfade", 46);
-        tl.to("#el-08-cheapest", { scale: 2.5, opacity: 0, filter: "blur(8px)", duration: 0.4, ease: "power3.in" }, 53);
-        tl.fromTo("#el-09-cta", { scale: 0.5, opacity: 0, filter: "blur(8px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power3.out" }, 53);
-        tl.addLabel("hf:transition:08-cheapest:09-cta:zoom-through", 53);
-        tl.to({}, { duration: 58 }, 0); // full-span anchor — main.duration() == composition total (Studio master duration)
+        tl.to("#el-01-hook", { y: -1920, duration: 0.5, ease: "power3.inOut" }, 6.23);
+        tl.fromTo("#el-02-two-pillars", { y: 1920, opacity: 1 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.inOut" }, 6.23);
+        tl.addLabel("hf:transition:01-hook:02-two-pillars:push-slide", 6.23);
+        tl.to("#el-02-two-pillars", { y: -1920, duration: 0.5, ease: "power3.inOut" }, 10.84);
+        tl.fromTo("#el-03-pcap", { y: 1920, opacity: 1 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.inOut" }, 10.84);
+        tl.addLabel("hf:transition:02-two-pillars:03-pcap:push-slide", 10.84);
+        tl.to("#el-03-pcap", { opacity: 0, duration: 0.5, ease: "power2.inOut" }, 20.65);
+        tl.fromTo("#el-04-math-chart", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 20.65);
+        tl.addLabel("hf:transition:03-pcap:04-math-chart:crossfade", 20.65);
+        tl.to("#el-04-math-chart", { y: -1920, duration: 0.5, ease: "power3.inOut" }, 29.62);
+        tl.fromTo("#el-05-bilingual", { y: 1920, opacity: 1 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.inOut" }, 29.62);
+        tl.addLabel("hf:transition:04-math-chart:05-bilingual:push-slide", 29.62);
+        tl.to("#el-05-bilingual", { y: -1920, duration: 0.5, ease: "power3.inOut" }, 36.37);
+        tl.fromTo("#el-06-investment", { y: 1920, opacity: 1 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.inOut" }, 36.37);
+        tl.addLabel("hf:transition:05-bilingual:06-investment:push-slide", 36.37);
+        tl.to("#el-06-investment", { scale: 2.5, opacity: 0, filter: "blur(8px)", duration: 0.4, ease: "power3.in" }, 46.15);
+        tl.fromTo("#el-07-verdict", { scale: 0.5, opacity: 0, filter: "blur(8px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power3.out" }, 46.15);
+        tl.addLabel("hf:transition:06-investment:07-verdict:zoom-through", 46.15);
+        tl.to("#el-07-verdict", { opacity: 0, duration: 0.5, ease: "power2.inOut" }, 50.63);
+        tl.fromTo("#el-08-cheapest", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 50.63);
+        tl.addLabel("hf:transition:07-verdict:08-cheapest:crossfade", 50.63);
+        tl.to("#el-08-cheapest", { scale: 2.5, opacity: 0, filter: "blur(8px)", duration: 0.4, ease: "power3.in" }, 57.14);
+        tl.fromTo("#el-09-cta", { scale: 0.5, opacity: 0, filter: "blur(8px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power3.out" }, 57.14);
+        tl.addLabel("hf:transition:08-cheapest:09-cta:zoom-through", 57.14);
+        tl.to({}, { duration: 62.14 }, 0); // full-span anchor — main.duration() == composition total (Studio master duration)
       })();
     </script>
   </body>

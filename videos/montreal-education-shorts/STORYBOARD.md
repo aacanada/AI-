@@ -12,7 +12,7 @@ music: bright hopeful light corporate underscore
 
 - scene: "몬트리올 = 불어권?" 물음표가 흔들리다 X로 지워지고 "캐나다 교육환경 1위"가 꽂힘
 - voiceover: "몬트리올은 불어권이라 고민되시나요? 그런데 캐나다에서 교육환경이 가장 좋은 곳, 바로 몬트리올입니다."
-- duration: 6s
+- duration: 6.23s
 - transition_in: cut
 - status: animated
 - src: compositions/frames/01-hook.html
@@ -28,7 +28,7 @@ keyMessage: 몬트리올이 캐나다 교육환경 최고다.
 
 - scene: "국·영·수" 세 블록이 "언어 + 수학" 두 블록으로 재배열 (한국 ↔ 캐나다 라벨)
 - voiceover: "우리나라에서 국·영·수가 중요하듯, 캐나다에서도 핵심은 언어와 수학입니다."
-- duration: 5s
+- duration: 4.61s
 - transition_in: push-slide UP
 - status: animated
 - src: compositions/frames/02-two-pillars.html
@@ -44,7 +44,7 @@ keyMessage: 캐나다 교육의 두 기둥은 언어와 수학.
 
 - scene: "PCAP" 큰 타이틀 + 3줄 설명 카드 (캐나다 전국 학업성취도 평가 / 중2 대상 / 주별 비교)
 - voiceover: "먼저 수학. 캐나다 전국 학업성취도 평가, PCAP은 전국 중학교 2학년을 대상으로 주별 실력을 비교하는 시험입니다."
-- duration: 7s
+- duration: 9.81s
 - transition_in: push-slide UP
 - status: animated
 - src: compositions/frames/03-pcap.html
@@ -60,7 +60,7 @@ keyMessage: PCAP은 캐나다 공식 전국 비교 시험이다.
 
 - scene: 세로 막대 차트 — 10개 주 막대가 차례로 자라고, 캐나다 평균 510 점선, 마지막에 QC 537이 코발트로 솟으며 카운트업 + "1위" 배지
 - voiceover: "결과를 보면, 캐나다 평균은 510점. 그런데 몬트리올이 있는 퀘벡주는 537점, 압도적 1위입니다."
-- duration: 8s
+- duration: 8.97s
 - transition_in: crossfade
 - status: animated
 - src: compositions/frames/04-math-chart.html
@@ -76,7 +76,7 @@ keyMessage: 퀘벡(몬트리올) 수학점수 537점, 전국 1위.
 
 - scene: "Hello" / "Bonjour" 말풍선이 양쪽에서 나와 가운데서 겹치며 "이중언어" 하이라이트
 - voiceover: "언어는요? 몬트리올 아이들은 영어와 불어를 모국어처럼 둘 다 구사하는 경우가 정말 많습니다."
-- duration: 7s
+- duration: 6.75s
 - transition_in: push-slide UP
 - status: animated
 - src: compositions/frames/05-bilingual.html
@@ -92,7 +92,7 @@ keyMessage: 불어권은 약점이 아니라 이중언어라는 강점.
 
 - scene: 아이콘 카드 3장이 순서대로 쌓임 — ⚡ 전기 스쿨버스 / 🖨 3D 프린터 / 🖥 스마트보드
 - voiceover: "퀘벡주는 교육 투자도 아끼지 않습니다. 전기 스쿨버스, 학교마다 3D 프린터, 교실엔 스마트보드까지."
-- duration: 8s
+- duration: 9.78s
 - transition_in: push-slide UP
 - status: animated
 - src: compositions/frames/06-investment.html
@@ -108,7 +108,7 @@ keyMessage: 퀘벡은 교육에 아낌없이 투자한다.
 
 - scene: 앞의 수학·언어·투자 3개 칩이 모여 "캐나다 최고 수준 학업환경" 타이틀로 합쳐짐
 - voiceover: "결국, 몬트리올의 학업환경은 캐나다 최고 수준입니다."
-- duration: 5s
+- duration: 4.48s
 - transition_in: zoom-through
 - status: animated
 - src: compositions/frames/07-verdict.html
@@ -124,7 +124,7 @@ keyMessage: 몬트리올 = 캐나다 최고 수준 학업환경.
 
 - scene: 도시 4개(몬트리올·밴쿠버·토론토·런던) 칩 중 몬트리올이 "가장 저렴" 배지와 함께 앞으로 튀어나옴 (금액 없이 순위감만)
 - voiceover: "그런데 더 놀라운 건, 자녀무상교육으로 가장 저렴하게 갈 수 있는 도시도 바로 몬트리올이라는 겁니다."
-- duration: 7s
+- duration: 6.51s
 - transition_in: crossfade
 - status: animated
 - src: compositions/frames/08-cheapest.html

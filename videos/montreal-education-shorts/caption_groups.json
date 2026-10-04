@@ -1,0 +1,931 @@
+{
+  "total_duration_s": 62.14,
+  "width": 1080,
+  "height": 1920,
+  "groups": [
+    {
+      "id": "caption-group-0",
+      "frame": 1,
+      "start": 0,
+      "end": 2.171,
+      "text": "몬트리올은 불어권이라 고민되시나요?",
+      "words": [
+        {
+          "id": "caption-word-0-0",
+          "text": "몬트리올은",
+          "start": 0,
+          "end": 0.743
+        },
+        {
+          "id": "caption-word-0-1",
+          "text": "불어권이라",
+          "start": 0.778,
+          "end": 1.335
+        },
+        {
+          "id": "caption-word-0-2",
+          "text": "고민되시나요?",
+          "start": 1.486,
+          "end": 2.148
+        }
+      ]
+    },
+    {
+      "id": "caption-group-1",
+      "frame": 1,
+      "start": 2.171,
+      "end": 4.261,
+      "text": "그런데 캐나다에서 교육환경이 가장",
+      "words": [
+        {
+          "id": "caption-word-1-0",
+          "text": "그런데",
+          "start": 2.171,
+          "end": 2.473
+        },
+        {
+          "id": "caption-word-1-1",
+          "text": "캐나다에서",
+          "start": 2.543,
+          "end": 3.17
+        },
+        {
+          "id": "caption-word-1-2",
+          "text": "교육환경이",
+          "start": 3.216,
+          "end": 3.855
+        },
+        {
+          "id": "caption-word-1-3",
+          "text": "가장",
+          "start": 3.901,
+          "end": 4.203
+        }
+      ]
+    },
+    {
+      "id": "caption-group-2",
+      "frame": 1,
+      "start": 4.261,
+      "end": 4.795,
+      "text": "좋은 곳,",
+      "words": [
+        {
+          "id": "caption-word-2-0",
+          "text": "좋은",
+          "start": 4.261,
+          "end": 4.54
+        },
+        {
+          "id": "caption-word-2-1",
+          "text": "곳,",
+          "start": 4.586,
+          "end": 4.76
+        }
+      ]
+    },
+    {
+      "id": "caption-group-3",
+      "frame": 1,
+      "start": 4.795,
+      "end": 5.971,
+      "text": "바로 몬트리올입니다.",
+      "words": [
+        {
+          "id": "caption-word-3-0",
+          "text": "바로",
+          "start": 4.795,
+          "end": 5.004
+        },
+        {
+          "id": "caption-word-3-1",
+          "text": "몬트리올입니다.",
+          "start": 5.027,
+          "end": 5.851
+        }
+      ]
+    },
+    {
+      "id": "caption-group-4",
+      "frame": 2,
+      "start": 6.23,
+      "end": 8.192,
+      "text": "우리나라에서 국·영·수가 중요하듯,",
+      "words": [
+        {
+          "id": "caption-word-4-0",
+          "text": "우리나라에서",
+          "start": 6.23,
+          "end": 6.903
+        },
+        {
+          "id": "caption-word-4-1",
+          "text": "국·영·수가",
+          "start": 6.961,
+          "end": 7.542
+        },
+        {
+          "id": "caption-word-4-2",
+          "text": "중요하듯,",
+          "start": 7.6,
+          "end": 8.157
+        }
+      ]
+    },
+    {
+      "id": "caption-group-5",
+      "frame": 2,
+      "start": 8.192,
+      "end": 10.576,
+      "text": "캐나다에서도 핵심은 언어와 수학입니다.",
+      "words": [
+        {
+          "id": "caption-word-5-0",
+          "text": "캐나다에서도",
+          "start": 8.192,
+          "end": 8.889
+        },
+        {
+          "id": "caption-word-5-1",
+          "text": "핵심은",
+          "start": 8.947,
+          "end": 9.388
+        },
+        {
+          "id": "caption-word-5-2",
+          "text": "언어와",
+          "start": 9.446,
+          "end": 9.829
+        },
+        {
+          "id": "caption-word-5-3",
+          "text": "수학입니다.",
+          "start": 9.887,
+          "end": 10.456
+        }
+      ]
+    },
+    {
+      "id": "caption-group-6",
+      "frame": 3,
+      "start": 10.84,
+      "end": 11.645,
+      "text": "먼저 수학.",
+      "words": [
+        {
+          "id": "caption-word-6-0",
+          "text": "먼저",
+          "start": 10.84,
+          "end": 11.142
+        },
+        {
+          "id": "caption-word-6-1",
+          "text": "수학.",
+          "start": 11.188,
+          "end": 11.525
+        }
+      ]
+    },
+    {
+      "id": "caption-group-7",
+      "frame": 3,
+      "start": 11.85,
+      "end": 13.487,
+      "text": "캐나다 전국 학업성취도",
+      "words": [
+        {
+          "id": "caption-word-7-0",
+          "text": "캐나다",
+          "start": 11.85,
+          "end": 12.291
+        },
+        {
+          "id": "caption-word-7-1",
+          "text": "전국",
+          "start": 12.349,
+          "end": 12.709
+        },
+        {
+          "id": "caption-word-7-2",
+          "text": "학업성취도",
+          "start": 12.744,
+          "end": 13.429
+        }
+      ]
+    },
+    {
+      "id": "caption-group-8",
+      "frame": 3,
+      "start": 13.487,
+      "end": 14.195,
+      "text": "평가,",
+      "words": [
+        {
+          "id": "caption-word-8-0",
+          "text": "평가,",
+          "start": 13.487,
+          "end": 14.079
+        }
+      ]
+    },
+    {
+      "id": "caption-group-9",
+      "frame": 3,
+      "start": 14.195,
+      "end": 16.9,
+      "text": "PCAP은 전국 중학교 2학년을",
+      "words": [
+        {
+          "id": "caption-word-9-0",
+          "text": "PCAP은",
+          "start": 14.195,
+          "end": 15.124
+        },
+        {
+          "id": "caption-word-9-1",
+          "text": "전국",
+          "start": 15.205,
+          "end": 15.53
+        },
+        {
+          "id": "caption-word-9-2",
+          "text": "중학교",
+          "start": 15.577,
+          "end": 16.111
+        },
+        {
+          "id": "caption-word-9-3",
+          "text": "2학년을",
+          "start": 16.285,
+          "end": 16.866
+        }
+      ]
+    },
+    {
+      "id": "caption-group-10",
+      "frame": 3,
+      "start": 16.9,
+      "end": 17.636,
+      "text": "대상으로",
+      "words": [
+        {
+          "id": "caption-word-10-0",
+          "text": "대상으로",
+          "start": 16.9,
+          "end": 17.516
+        }
+      ]
+    },
+    {
+      "id": "caption-group-11",
+      "frame": 3,
+      "start": 17.725,
+      "end": 19.153,
+      "text": "주별 실력을 비교하는",
+      "words": [
+        {
+          "id": "caption-word-11-0",
+          "text": "주별",
+          "start": 17.725,
+          "end": 18.108
+        },
+        {
+          "id": "caption-word-11-1",
+          "text": "실력을",
+          "start": 18.154,
+          "end": 18.572
+        },
+        {
+          "id": "caption-word-11-2",
+          "text": "비교하는",
+          "start": 18.607,
+          "end": 19.095
+        }
+      ]
+    },
+    {
+      "id": "caption-group-12",
+      "frame": 3,
+      "start": 19.153,
+      "end": 20.387,
+      "text": "시험입니다.",
+      "words": [
+        {
+          "id": "caption-word-12-0",
+          "text": "시험입니다.",
+          "start": 19.153,
+          "end": 20.267
+        }
+      ]
+    },
+    {
+      "id": "caption-group-13",
+      "frame": 4,
+      "start": 20.65,
+      "end": 21.861,
+      "text": "결과를 보면,",
+      "words": [
+        {
+          "id": "caption-word-13-0",
+          "text": "결과를",
+          "start": 20.65,
+          "end": 21.172
+        },
+        {
+          "id": "caption-word-13-1",
+          "text": "보면,",
+          "start": 21.196,
+          "end": 21.741
+        }
+      ]
+    },
+    {
+      "id": "caption-group-14",
+      "frame": 4,
+      "start": 22.252,
+      "end": 23.889,
+      "text": "캐나다 평균은 510점.",
+      "words": [
+        {
+          "id": "caption-word-14-0",
+          "text": "캐나다",
+          "start": 22.252,
+          "end": 22.554
+        },
+        {
+          "id": "caption-word-14-1",
+          "text": "평균은",
+          "start": 22.589,
+          "end": 23.007
+        },
+        {
+          "id": "caption-word-14-2",
+          "text": "510점.",
+          "start": 23.158,
+          "end": 23.854
+        }
+      ]
+    },
+    {
+      "id": "caption-group-15",
+      "frame": 4,
+      "start": 23.889,
+      "end": 24.566,
+      "text": "그런데",
+      "words": [
+        {
+          "id": "caption-word-15-0",
+          "text": "그런데",
+          "start": 23.889,
+          "end": 24.446
+        }
+      ]
+    },
+    {
+      "id": "caption-group-16",
+      "frame": 4,
+      "start": 24.69,
+      "end": 26.668,
+      "text": "몬트리올이 있는 퀘벡주는",
+      "words": [
+        {
+          "id": "caption-word-16-0",
+          "text": "몬트리올이",
+          "start": 24.69,
+          "end": 25.352
+        },
+        {
+          "id": "caption-word-16-1",
+          "text": "있는",
+          "start": 25.41,
+          "end": 25.735
+        },
+        {
+          "id": "caption-word-16-2",
+          "text": "퀘벡주는",
+          "start": 25.828,
+          "end": 26.548
+        }
+      ]
+    },
+    {
+      "id": "caption-group-17",
+      "frame": 4,
+      "start": 26.873,
+      "end": 28.057,
+      "text": "537점,",
+      "words": [
+        {
+          "id": "caption-word-17-0",
+          "text": "537점,",
+          "start": 26.873,
+          "end": 27.976
+        }
+      ]
+    },
+    {
+      "id": "caption-group-18",
+      "frame": 4,
+      "start": 28.057,
+      "end": 29.361,
+      "text": "압도적 1위입니다.",
+      "words": [
+        {
+          "id": "caption-word-18-0",
+          "text": "압도적",
+          "start": 28.057,
+          "end": 28.475
+        },
+        {
+          "id": "caption-word-18-1",
+          "text": "1위입니다.",
+          "start": 28.545,
+          "end": 29.241
+        }
+      ]
+    },
+    {
+      "id": "caption-group-19",
+      "frame": 5,
+      "start": 29.62,
+      "end": 30.56,
+      "text": "언어는요?",
+      "words": [
+        {
+          "id": "caption-word-19-0",
+          "text": "언어는요?",
+          "start": 29.62,
+          "end": 30.514
+        }
+      ]
+    },
+    {
+      "id": "caption-group-20",
+      "frame": 5,
+      "start": 30.56,
+      "end": 32.546,
+      "text": "몬트리올 아이들은 영어와 불어를",
+      "words": [
+        {
+          "id": "caption-word-20-0",
+          "text": "몬트리올",
+          "start": 30.56,
+          "end": 31.106
+        },
+        {
+          "id": "caption-word-20-1",
+          "text": "아이들은",
+          "start": 31.153,
+          "end": 31.594
+        },
+        {
+          "id": "caption-word-20-2",
+          "text": "영어와",
+          "start": 31.629,
+          "end": 32.046
+        },
+        {
+          "id": "caption-word-20-3",
+          "text": "불어를",
+          "start": 32.093,
+          "end": 32.511
+        }
+      ]
+    },
+    {
+      "id": "caption-group-21",
+      "frame": 5,
+      "start": 32.546,
+      "end": 34.148,
+      "text": "모국어처럼 둘 다 구사하는",
+      "words": [
+        {
+          "id": "caption-word-21-0",
+          "text": "모국어처럼",
+          "start": 32.546,
+          "end": 33.254
+        },
+        {
+          "id": "caption-word-21-1",
+          "text": "둘",
+          "start": 33.324,
+          "end": 33.544
+        },
+        {
+          "id": "caption-word-21-2",
+          "text": "다",
+          "start": 33.579,
+          "end": 33.672
+        },
+        {
+          "id": "caption-word-21-3",
+          "text": "구사하는",
+          "start": 33.718,
+          "end": 34.125
+        }
+      ]
+    },
+    {
+      "id": "caption-group-22",
+      "frame": 5,
+      "start": 34.148,
+      "end": 36.102,
+      "text": "경우가 정말 많습니다.",
+      "words": [
+        {
+          "id": "caption-word-22-0",
+          "text": "경우가",
+          "start": 34.148,
+          "end": 34.717
+        },
+        {
+          "id": "caption-word-22-1",
+          "text": "정말",
+          "start": 34.833,
+          "end": 35.146
+        },
+        {
+          "id": "caption-word-22-2",
+          "text": "많습니다.",
+          "start": 35.181,
+          "end": 35.982
+        }
+      ]
+    },
+    {
+      "id": "caption-group-23",
+      "frame": 6,
+      "start": 36.37,
+      "end": 37.728,
+      "text": "퀘벡주는 교육 투자도",
+      "words": [
+        {
+          "id": "caption-word-23-0",
+          "text": "퀘벡주는",
+          "start": 36.37,
+          "end": 36.962
+        },
+        {
+          "id": "caption-word-23-1",
+          "text": "교육",
+          "start": 37.043,
+          "end": 37.264
+        },
+        {
+          "id": "caption-word-23-2",
+          "text": "투자도",
+          "start": 37.287,
+          "end": 37.647
+        }
+      ]
+    },
+    {
+      "id": "caption-group-24",
+      "frame": 6,
+      "start": 37.728,
+      "end": 38.924,
+      "text": "아끼지 않습니다.",
+      "words": [
+        {
+          "id": "caption-word-24-0",
+          "text": "아끼지",
+          "start": 37.728,
+          "end": 38.111
+        },
+        {
+          "id": "caption-word-24-1",
+          "text": "않습니다.",
+          "start": 38.158,
+          "end": 38.878
+        }
+      ]
+    },
+    {
+      "id": "caption-group-25",
+      "frame": 6,
+      "start": 38.924,
+      "end": 39.996,
+      "text": "전기 스쿨버스,",
+      "words": [
+        {
+          "id": "caption-word-25-0",
+          "text": "전기",
+          "start": 38.924,
+          "end": 39.261
+        },
+        {
+          "id": "caption-word-25-1",
+          "text": "스쿨버스,",
+          "start": 39.319,
+          "end": 39.876
+        }
+      ]
+    },
+    {
+      "id": "caption-group-26",
+      "frame": 6,
+      "start": 40.12,
+      "end": 41.865,
+      "text": "학교마다 3D 프린터,",
+      "words": [
+        {
+          "id": "caption-word-26-0",
+          "text": "학교마다",
+          "start": 40.12,
+          "end": 40.619
+        },
+        {
+          "id": "caption-word-26-1",
+          "text": "3D",
+          "start": 40.712,
+          "end": 40.886
+        },
+        {
+          "id": "caption-word-26-2",
+          "text": "프린터,",
+          "start": 41.037,
+          "end": 41.745
+        }
+      ]
+    },
+    {
+      "id": "caption-group-27",
+      "frame": 6,
+      "start": 42.558,
+      "end": 43.259,
+      "text": "교실엔",
+      "words": [
+        {
+          "id": "caption-word-27-0",
+          "text": "교실엔",
+          "start": 42.558,
+          "end": 43.139
+        }
+      ]
+    },
+    {
+      "id": "caption-group-28",
+      "frame": 6,
+      "start": 44.253,
+      "end": 45.871,
+      "text": "스마트보드까지.",
+      "words": [
+        {
+          "id": "caption-word-28-0",
+          "text": "스마트보드까지.",
+          "start": 44.253,
+          "end": 45.751
+        }
+      ]
+    },
+    {
+      "id": "caption-group-29",
+      "frame": 7,
+      "start": 46.15,
+      "end": 46.781,
+      "text": "결국,",
+      "words": [
+        {
+          "id": "caption-word-29-0",
+          "text": "결국,",
+          "start": 46.15,
+          "end": 46.661
+        }
+      ]
+    },
+    {
+      "id": "caption-group-30",
+      "frame": 7,
+      "start": 46.986,
+      "end": 49.552,
+      "text": "몬트리올의 학업환경은 캐나다 최고",
+      "words": [
+        {
+          "id": "caption-word-30-0",
+          "text": "몬트리올의",
+          "start": 46.986,
+          "end": 47.683
+        },
+        {
+          "id": "caption-word-30-1",
+          "text": "학업환경은",
+          "start": 47.752,
+          "end": 48.611
+        },
+        {
+          "id": "caption-word-30-2",
+          "text": "캐나다",
+          "start": 48.762,
+          "end": 49.18
+        },
+        {
+          "id": "caption-word-30-3",
+          "text": "최고",
+          "start": 49.261,
+          "end": 49.494
+        }
+      ]
+    },
+    {
+      "id": "caption-group-31",
+      "frame": 7,
+      "start": 49.552,
+      "end": 50.357,
+      "text": "수준입니다.",
+      "words": [
+        {
+          "id": "caption-word-31-0",
+          "text": "수준입니다.",
+          "start": 49.552,
+          "end": 50.237
+        }
+      ]
+    },
+    {
+      "id": "caption-group-32",
+      "frame": 8,
+      "start": 50.63,
+      "end": 51.71,
+      "text": "그런데 더 놀라운",
+      "words": [
+        {
+          "id": "caption-word-32-0",
+          "text": "그런데",
+          "start": 50.63,
+          "end": 50.978
+        },
+        {
+          "id": "caption-word-32-1",
+          "text": "더",
+          "start": 51.036,
+          "end": 51.164
+        },
+        {
+          "id": "caption-word-32-2",
+          "text": "놀라운",
+          "start": 51.21,
+          "end": 51.652
+        }
+      ]
+    },
+    {
+      "id": "caption-group-33",
+      "frame": 8,
+      "start": 51.71,
+      "end": 52,
+      "text": "건,",
+      "words": [
+        {
+          "id": "caption-word-33-0",
+          "text": "건,",
+          "start": 51.71,
+          "end": 51.977
+        }
+      ]
+    },
+    {
+      "id": "caption-group-34",
+      "frame": 8,
+      "start": 52,
+      "end": 54.043,
+      "text": "자녀무상교육으로 가장 저렴하게 갈",
+      "words": [
+        {
+          "id": "caption-word-34-0",
+          "text": "자녀무상교육으로",
+          "start": 52,
+          "end": 52.998
+        },
+        {
+          "id": "caption-word-34-1",
+          "text": "가장",
+          "start": 53.056,
+          "end": 53.358
+        },
+        {
+          "id": "caption-word-34-2",
+          "text": "저렴하게",
+          "start": 53.416,
+          "end": 53.846
+        },
+        {
+          "id": "caption-word-34-3",
+          "text": "갈",
+          "start": 53.892,
+          "end": 54.009
+        }
+      ]
+    },
+    {
+      "id": "caption-group-35",
+      "frame": 8,
+      "start": 54.043,
+      "end": 54.485,
+      "text": "수 있는",
+      "words": [
+        {
+          "id": "caption-word-35-0",
+          "text": "수",
+          "start": 54.043,
+          "end": 54.148
+        },
+        {
+          "id": "caption-word-35-1",
+          "text": "있는",
+          "start": 54.194,
+          "end": 54.45
+        }
+      ]
+    },
+    {
+      "id": "caption-group-36",
+      "frame": 8,
+      "start": 54.485,
+      "end": 55.959,
+      "text": "도시도 바로 몬트리올이라는",
+      "words": [
+        {
+          "id": "caption-word-36-0",
+          "text": "도시도",
+          "start": 54.485,
+          "end": 54.868
+        },
+        {
+          "id": "caption-word-36-1",
+          "text": "바로",
+          "start": 54.914,
+          "end": 55.1
+        },
+        {
+          "id": "caption-word-36-2",
+          "text": "몬트리올이라는",
+          "start": 55.146,
+          "end": 55.936
+        }
+      ]
+    },
+    {
+      "id": "caption-group-37",
+      "frame": 8,
+      "start": 55.959,
+      "end": 56.88,
+      "text": "겁니다.",
+      "words": [
+        {
+          "id": "caption-word-37-0",
+          "text": "겁니다.",
+          "start": 55.959,
+          "end": 56.76
+        }
+      ]
+    },
+    {
+      "id": "caption-group-38",
+      "frame": 9,
+      "start": 57.14,
+      "end": 58.731,
+      "text": "몬트리올 자녀무상교육,",
+      "words": [
+        {
+          "id": "caption-word-38-0",
+          "text": "몬트리올",
+          "start": 57.14,
+          "end": 57.697
+        },
+        {
+          "id": "caption-word-38-1",
+          "text": "자녀무상교육,",
+          "start": 57.72,
+          "end": 58.696
+        }
+      ]
+    },
+    {
+      "id": "caption-group-39",
+      "frame": 9,
+      "start": 58.731,
+      "end": 60.882,
+      "text": "AA캐나다와 상담해 보세요.",
+      "words": [
+        {
+          "id": "caption-word-39-0",
+          "text": "AA캐나다와",
+          "start": 58.731,
+          "end": 59.694
+        },
+        {
+          "id": "caption-word-39-1",
+          "text": "상담해",
+          "start": 59.729,
+          "end": 60.112
+        },
+        {
+          "id": "caption-word-39-2",
+          "text": "보세요.",
+          "start": 60.147,
+          "end": 60.762
+        }
+      ]
+    }
+  ]
+}

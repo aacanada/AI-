@@ -26,9 +26,9 @@
 .f03-pcap-src span{font-size:34px;font-weight:600;color:#6b6b6b;line-height:1.4;}
 
 </style>
-<div id="root" data-composition-id="03-pcap" data-width="1080" data-height="1920" data-duration="7">
-  <div class="f03-pcap-bg clip" id="f03-pcap-bg" data-start="0" data-duration="7" data-track-index="0"></div>
-  <div class="f03-pcap-stage clip" id="f03-pcap-stage" data-start="0" data-duration="7" data-track-index="1">
+<div id="root" data-composition-id="03-pcap" data-width="1080" data-height="1920" data-duration="10.31">
+  <div class="f03-pcap-bg clip" id="f03-pcap-bg" data-start="0" data-duration="10.31" data-track-index="0"></div>
+  <div class="f03-pcap-stage clip" id="f03-pcap-stage" data-start="0" data-duration="10.31" data-track-index="1">
     <div class="f03-pcap-eyebrow" id="f03-pcap-eyebrow"><span class="line"></span><span class="txt">01 · 수학</span></div><div class="f03-pcap-brand" id="f03-pcap-brand">AA CANADA</div>
     
 <div class="f03-pcap-title" id="f03-pcap-title">PCAP</div>
@@ -50,12 +50,13 @@
   tl.fromTo(S("eyebrow"), {opacity:0, x:-30}, {opacity:1, x:0, duration:0.5, ease:"power3.out"}, 0.05);
   tl.fromTo(S("brand"), {opacity:0}, {opacity:1, duration:0.5}, 0.1);
 
-  tl.fromTo(S("title"), {opacity:0, y:80}, {opacity:1, y:0, duration:0.7, ease:"power4.out"}, 0.3);
+  tl.fromTo(S("title"), {opacity:0, y:80}, {opacity:1, y:0, duration:0.7, ease:"power4.out"}, 0.2);
   tl.fromTo(S("sub"), {opacity:0}, {opacity:1, duration:0.5}, 0.9);
-  tl.fromTo(S("i1"), {opacity:0, x:-60}, {opacity:1, x:0, duration:0.5, ease:"power3.out"}, 1.6);
-  tl.fromTo(S("i2"), {opacity:0, x:-60}, {opacity:1, x:0, duration:0.5, ease:"power3.out"}, 3.4);
-  tl.fromTo(S("i3"), {opacity:0, x:-60}, {opacity:1, x:0, duration:0.5, ease:"power3.out"}, 4.5);
-  tl.fromTo(S("src"), {opacity:0, y:40}, {opacity:1, y:0, duration:0.6, ease:"power3.out"}, 5.4);
+  tl.fromTo(S("i1"), {opacity:0, x:-60}, {opacity:1, x:0, duration:0.5, ease:"power3.out"}, 1.0);
+  tl.fromTo(S("i2"), {opacity:0, x:-60}, {opacity:1, x:0, duration:0.5, ease:"power3.out"}, 4.6);
+  tl.fromTo(S("i3"), {opacity:0, x:-60}, {opacity:1, x:0, duration:0.5, ease:"power3.out"}, 6.8);
+  tl.fromTo(S("title"), {scale:1}, {keyframes:[{scale:1.04, duration:0.2},{scale:1, duration:0.3}], transformOrigin:"0% 50%"}, 3.4);
+  tl.fromTo(S("src"), {opacity:0, y:40}, {opacity:1, y:0, duration:0.6, ease:"power3.out"}, 8.0);
 
   window.__timelines["03-pcap"] = tl;
 })();

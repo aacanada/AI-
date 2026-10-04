@@ -28,9 +28,9 @@
 .f01-hook-one small{font-size:150px;margin-left:10px;letter-spacing:-0.03em;}
 
 </style>
-<div id="root" data-composition-id="01-hook" data-width="1080" data-height="1920" data-duration="6">
-  <div class="f01-hook-bg clip" id="f01-hook-bg" data-start="0" data-duration="6" data-track-index="0"></div>
-  <div class="f01-hook-stage clip" id="f01-hook-stage" data-start="0" data-duration="6" data-track-index="1">
+<div id="root" data-composition-id="01-hook" data-width="1080" data-height="1920" data-duration="6.73">
+  <div class="f01-hook-bg clip" id="f01-hook-bg" data-start="0" data-duration="6.73" data-track-index="0"></div>
+  <div class="f01-hook-stage clip" id="f01-hook-stage" data-start="0" data-duration="6.73" data-track-index="1">
     <div class="f01-hook-eyebrow" id="f01-hook-eyebrow"><span class="line"></span><span class="txt">AA CANADA · 캐나다 유학</span></div>
     
 <div class="f01-hook-cam" id="f01-hook-cam">
@@ -54,15 +54,15 @@
   const S = (s) => "#f01-hook-" + s;
   tl.fromTo(S("eyebrow"), {opacity:0, x:-30}, {opacity:1, x:0, duration:0.5, ease:"power3.out"}, 0.05);
 
-  tl.fromTo(S("cam"), {scale:1}, {scale:1.04, duration:6, ease:"none", transformOrigin:"50% 40%"}, 0);
+  tl.fromTo(S("cam"), {scale:1}, {scale:1.04, duration:6.2, ease:"none", transformOrigin:"50% 40%"}, 0);
   tl.fromTo(S("city"), {opacity:0, y:60}, {opacity:1, y:0, duration:0.6, ease:"power3.out"}, 0.15);
   tl.fromTo(S("fr"), {opacity:0, y:40}, {opacity:1, y:0, duration:0.5, ease:"power3.out"}, 0.6);
   tl.fromTo(S("qm"), {rotation:0}, {keyframes:[{rotation:-14,duration:0.15},{rotation:12,duration:0.15},{rotation:-8,duration:0.15},{rotation:0,duration:0.2}]}, 1.1);
-  tl.fromTo(S("strike"), {scaleX:0}, {scaleX:1, duration:0.4, ease:"power2.inOut"}, 2.4);
-  tl.fromTo(S("fr"), {opacity:1}, {opacity:0.45, duration:0.4}, 2.7);
-  tl.fromTo(S("pill"), {opacity:0, y:30}, {opacity:1, y:0, duration:0.45, ease:"power3.out"}, 2.8);
-  tl.fromTo(S("head"), {opacity:0, y:40}, {opacity:1, y:0, duration:0.5, ease:"power3.out"}, 3.3);
-  tl.fromTo(S("one"), {opacity:0, scale:0.4}, {opacity:1, scale:1, duration:0.7, ease:"back.out(2)"}, 4.1);
+  tl.fromTo(S("strike"), {scaleX:0}, {scaleX:1, duration:0.4, ease:"power2.inOut"}, 2.1);
+  tl.fromTo(S("fr"), {opacity:1}, {opacity:0.45, duration:0.4}, 2.4);
+  tl.fromTo(S("pill"), {opacity:0, y:30}, {opacity:1, y:0, duration:0.45, ease:"power3.out"}, 2.6);
+  tl.fromTo(S("head"), {opacity:0, y:40}, {opacity:1, y:0, duration:0.5, ease:"power3.out"}, 3.8);
+  tl.fromTo(S("one"), {opacity:0, scale:0.4}, {opacity:1, scale:1, duration:0.7, ease:"back.out(2)"}, 4.7);
 
   window.__timelines["01-hook"] = tl;
 })();

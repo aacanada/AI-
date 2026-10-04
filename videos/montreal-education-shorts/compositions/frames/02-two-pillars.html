@@ -26,9 +26,9 @@
 .f02-two-pillars-eq em{font-style:normal;color:#1e2bfa;}
 
 </style>
-<div id="root" data-composition-id="02-two-pillars" data-width="1080" data-height="1920" data-duration="5">
-  <div class="f02-two-pillars-bg clip" id="f02-two-pillars-bg" data-start="0" data-duration="5" data-track-index="0"></div>
-  <div class="f02-two-pillars-stage clip" id="f02-two-pillars-stage" data-start="0" data-duration="5" data-track-index="1">
+<div id="root" data-composition-id="02-two-pillars" data-width="1080" data-height="1920" data-duration="5.11">
+  <div class="f02-two-pillars-bg clip" id="f02-two-pillars-bg" data-start="0" data-duration="5.11" data-track-index="0"></div>
+  <div class="f02-two-pillars-stage clip" id="f02-two-pillars-stage" data-start="0" data-duration="5.11" data-track-index="1">
     <div class="f02-two-pillars-eyebrow" id="f02-two-pillars-eyebrow"><span class="line"></span><span class="txt">캐나다 교육의 핵심</span></div><div class="f02-two-pillars-brand" id="f02-two-pillars-brand">AA CANADA</div>
     
 <div class="f02-two-pillars-lab" id="f02-two-pillars-lab1" style="top:300px">KOREA · 한국</div>
@@ -56,12 +56,12 @@
   tl.fromTo(S("brand"), {opacity:0}, {opacity:1, duration:0.5}, 0.1);
 
   tl.fromTo(S("lab1"), {opacity:0}, {opacity:1, duration:0.4}, 0.1);
-  tl.fromTo([S("t1"),S("t2"),S("t3")], {opacity:0, y:50, scale:0.9}, {opacity:1, y:0, scale:1, duration:0.5, ease:"back.out(1.7)", stagger:0.25}, 0.3);
+  tl.fromTo([S("t1"),S("t2"),S("t3")], {opacity:0, y:50, scale:0.9}, {opacity:1, y:0, scale:1, duration:0.5, ease:"back.out(1.7)", stagger:0.22}, 0.5);
   tl.fromTo(S("arrow"), {opacity:0, y:-30}, {opacity:1, y:0, duration:0.5, ease:"power2.out"}, 1.9);
-  tl.fromTo(S("lab2"), {opacity:0}, {opacity:1, duration:0.4}, 2.2);
-  tl.fromTo(S("b1"), {opacity:0, scale:0.6}, {opacity:1, scale:1, duration:0.55, ease:"back.out(2)"}, 2.6);
-  tl.fromTo(S("b2"), {opacity:0, scale:0.6}, {opacity:1, scale:1, duration:0.55, ease:"back.out(2)"}, 3.15);
-  tl.fromTo(S("eq"), {opacity:0, y:30}, {opacity:1, y:0, duration:0.5, ease:"power3.out"}, 3.9);
+  tl.fromTo(S("lab2"), {opacity:0}, {opacity:1, duration:0.4}, 2.0);
+  tl.fromTo(S("b1"), {opacity:0, scale:0.6}, {opacity:1, scale:1, duration:0.55, ease:"back.out(2)"}, 3.1);
+  tl.fromTo(S("b2"), {opacity:0, scale:0.6}, {opacity:1, scale:1, duration:0.55, ease:"back.out(2)"}, 3.6);
+  tl.fromTo(S("eq"), {opacity:0, y:30}, {opacity:1, y:0, duration:0.4, ease:"power3.out"}, 4.05);
 
   window.__timelines["02-two-pillars"] = tl;
 })();
