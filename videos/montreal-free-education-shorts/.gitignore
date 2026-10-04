@@ -1,0 +1,6 @@
+snapshots/
+renders/
+.hyperframes/
+node_modules/
+transcript_raw.json
+transcribe.err

@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>AA Canada · 몬트리올 자녀무상교육</title>
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Pretendard"; font-weight: 600; src: url("assets/Pretendard-SemiBold.woff2") format("woff2"); }
+      @font-face { font-family: "Pretendard"; font-weight: 700; src: url("assets/Pretendard-Bold.woff2") format("woff2"); }
+      @font-face { font-family: "Pretendard"; font-weight: 800; src: url("assets/Pretendard-ExtraBold.woff2") format("woff2"); }
+      @font-face { font-family: "Pretendard"; font-weight: 900; src: url("assets/Pretendard-Black.woff2") format("woff2"); }
+      :root {
+        --bg: #0e0e12;
+        --ink: #ffffff;
+        --yellow: #ffe14d;
+        --red: #ff2d3d;
+        --green: #35d07f;
+        --muted: #a7a7b3;
+        --panel: #1c1c24;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--bg); }
+      #root {
+        position: relative; width: 100%; height: 100%; overflow: hidden;
+        background: var(--bg); color: var(--ink);
+        font-family: "Pretendard", sans-serif; font-weight: 700; letter-spacing: -0.02em;
+        word-break: keep-all;
+      }
+      .bg { position: absolute; inset: 0; overflow: hidden; }
+      #stripe {
+        position: absolute; left: -300px; top: 760px; width: 1700px; height: 380px;
+        background: linear-gradient(90deg, rgba(255,45,61,0) 0%, rgba(255,45,61,0.16) 50%, rgba(255,45,61,0) 100%);
+        rotate: -14deg;
+      }
+      .glow { position: absolute; left: 140px; top: 260px; width: 800px; height: 800px; border-radius: 50%;
+        background: radial-gradient(circle, rgba(255,225,77,0.10) 0%, rgba(255,225,77,0) 65%); }
+      .topbar { position: absolute; left: 0; right: 0; top: 0; height: 12px; background: rgba(255,255,255,0.08); }
+      #progress { display: block; width: 100%; height: 100%; background: var(--yellow); transform-origin: left center; }
+      .brand { position: absolute; left: 60px; top: 70px; display: flex; align-items: center; gap: 16px;
+        font-size: 34px; font-weight: 900; letter-spacing: 0.04em; }
+      .brand i { display: block; width: 18px; height: 40px; background: var(--red); }
+      .brand-r { position: absolute; right: 60px; top: 76px; font-size: 28px; font-weight: 700; color: var(--muted); }
+
+      .scene { width: 100%; height: 100%; }
+      .grp {
+        position: absolute; left: 60px; right: 60px; top: 190px; height: 1130px;
+        display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px;
+        text-align: center;
+      }
+      .pill { display: inline-block; padding: 14px 34px; border-radius: 999px; font-size: 38px; font-weight: 800; background: var(--panel); }
+      .pill.red { background: var(--red); color: #fff; }
+      .pill.green-pill { background: var(--green); color: #0e0e12; font-size: 48px; padding: 18px 44px; }
+      .kicker { font-size: 50px; font-weight: 700; color: var(--muted); }
+      .sub { font-size: 46px; font-weight: 600; color: #e8e8ee; }
+      .sub b { color: var(--yellow); font-weight: 900; }
+      .mega { font-size: 200px; font-weight: 900; line-height: 1; letter-spacing: -0.04em; }
+      .giant { font-size: 400px; font-weight: 900; line-height: 0.95; letter-spacing: -0.05em; }
+      .giant small { font-size: 120px; letter-spacing: 0; margin-left: 10px; }
+      .title-xl { white-space: nowrap; font-size: 150px; font-weight: 900; line-height: 1.05; letter-spacing: -0.03em; }
+      .big2 { font-size: 92px; font-weight: 900; line-height: 1.15; }
+      .yellow { color: var(--yellow); }
+      .white { color: #fff; }
+      .dim { color: #6f6f7a; }
+      .hl-red { background: var(--red); padding: 0 24px; color: #fff; }
+
+      .strike-wrap { position: relative; display: inline-block; }
+      .strike { position: absolute; left: -4%; width: 108%; top: 50%; height: 18px; margin-top: -9px;
+        background: var(--red); border-radius: 9px; transform-origin: left center; }
+
+      .stamp { display: inline-block; padding: 16px 36px; border: 8px solid var(--red); color: var(--red);
+        font-size: 60px; font-weight: 900; border-radius: 16px; letter-spacing: 0.02em; }
+      .stamp.green { border-color: var(--green); color: var(--green); }
+      .stamp.big { font-size: 130px; padding: 18px 60px; border-width: 12px; }
+
+      .card { display: flex; align-items: center; gap: 36px; width: 900px; padding: 40px 50px;
+        background: var(--panel); border-radius: 28px; text-align: left; border-left: 14px solid var(--yellow); }
+      .card.red-card { border-left-color: var(--red); }
+      .card .num { font-size: 52px; font-weight: 900; color: var(--muted); min-width: 110px; }
+      .card-t { font-size: 46px; font-weight: 700; color: #d8d8e0; }
+      .card-b { font-size: 92px; font-weight: 900; line-height: 1.1; }
+      .arrow-down { width: 0; height: 0; border-left: 46px solid transparent; border-right: 46px solid transparent; border-top: 56px solid var(--yellow); }
+      .arrow-right { width: 0; height: 0; border-top: 40px solid transparent; border-bottom: 40px solid transparent; border-left: 52px solid var(--yellow); }
+
+      .bar-row { width: 940px; display: flex; flex-direction: column; gap: 18px; align-items: flex-start; }
+      .bar-label { font-size: 44px; color: #d8d8e0; }
+      .bar-track { width: 100%; height: 90px; background: var(--panel); border-radius: 18px; overflow: hidden; }
+      .bar-fill { display: block; width: 100%; height: 100%; transform-origin: left center; }
+      .redfill { background: linear-gradient(90deg, #b3121f, var(--red)); }
+      .bar-val { align-self: flex-end; font-size: 110px; font-weight: 900; color: var(--red); line-height: 1; }
+
+      .tiles { display: flex; gap: 30px; margin-top: 20px; }
+      .tile { width: 440px; padding: 34px 20px; background: var(--panel); border-radius: 26px; }
+      .tile.hot { background: var(--yellow); color: #0e0e12; }
+      .tile-l { font-size: 40px; font-weight: 700; opacity: 0.85; }
+      .tile-v { font-size: 110px; font-weight: 900; line-height: 1.1; letter-spacing: -0.03em; }
+      .checks { display: flex; gap: 26px; }
+      .chk { font-size: 46px; font-weight: 800; padding: 16px 30px; border-radius: 16px; border: 4px solid var(--green); color: var(--green); }
+      .chk::before { content: "✓ "; }
+
+      .swap { display: flex; align-items: center; gap: 44px; margin-top: 30px; }
+      .clock { white-space: nowrap; font-size: 140px; font-weight: 900; color: var(--yellow); letter-spacing: -0.04em; line-height: 1; }
+      .clock span { color: #fff; margin: 0 10px; }
+      .day { position: relative; width: 940px; height: 230px; margin-top: 10px; }
+      .day-track { position: absolute; left: 0; right: 0; top: 90px; height: 50px; background: var(--panel); border-radius: 25px; }
+      .day-class { position: absolute; left: 13.6%; width: 36.4%; top: 80px; height: 70px; background: var(--yellow);
+        color: #0e0e12; border-radius: 16px; font-size: 42px; font-weight: 900; display: flex; align-items: center;
+        justify-content: center; transform-origin: left center; }
+      .day-mk { position: absolute; top: 0; width: 180px; margin-left: -90px; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+      .day-mk span { font-size: 34px; font-weight: 800; color: var(--green); white-space: nowrap; }
+      .day-mk i { order: 2; display: block; width: 10px; height: 74px; background: var(--green); border-radius: 5px; }
+      .day-tick { position: absolute; top: 172px; width: 120px; margin-left: -10px; font-size: 32px; color: var(--muted); text-align: left; }
+
+      .duo { font-size: 110px; font-weight: 900; color: #58cc02; letter-spacing: -0.02em; }
+      .row-x { display: flex; align-items: center; gap: 28px; width: 920px; padding: 30px 40px; border-radius: 22px; background: var(--panel); font-size: 54px; font-weight: 800; text-align: left; }
+      .row-x.ok { background: rgba(53,208,127,0.16); border: 4px solid var(--green); }
+      .mark { display: flex; align-items: center; justify-content: center; width: 84px; height: 84px; border-radius: 50%; font-size: 52px; font-weight: 900; flex: none; }
+      .mark.x { background: var(--red); color: #fff; }
+      .mark.o { background: var(--green); color: #0e0e12; }
+
+      .lcard { display: flex; align-items: center; gap: 34px; width: 940px; padding: 30px 40px; background: var(--panel); border-radius: 24px; font-size: 56px; font-weight: 700; text-align: left; }
+      .lcard b { color: var(--yellow); font-weight: 900; }
+      .lcard.hot { border: 5px solid var(--yellow); }
+      .badge { display: flex; align-items: center; justify-content: center; width: 120px; height: 100px; border-radius: 18px; background: var(--yellow); color: #0e0e12; font-size: 46px; font-weight: 900; flex: none; }
+      .chips { display: flex; gap: 24px; }
+      .chip { padding: 16px 44px; border-radius: 999px; background: #2a62ff; font-size: 50px; font-weight: 900; }
+      .save { padding: 18px 44px; border-radius: 18px; background: var(--green); color: #0e0e12; font-size: 62px; font-weight: 800; }
+      .save b { font-weight: 900; }
+
+      .opt { display: flex; align-items: center; gap: 30px; width: 900px; padding: 30px 40px; border-radius: 24px; background: var(--panel); font-size: 62px; font-weight: 900; text-align: left; }
+      .opt-l { display: flex; align-items: center; justify-content: center; width: 96px; height: 96px; border-radius: 50%; background: var(--yellow); color: #0e0e12; font-size: 56px; flex: none; }
+
+      .cmp { display: flex; align-items: center; gap: 30px; }
+      .cmp-col { width: 420px; padding: 34px 10px; border-radius: 26px; background: var(--panel); }
+      .cmp-h { font-size: 44px; color: #d8d8e0; }
+      .cmp-v { font-size: 82px; font-weight: 900; letter-spacing: -0.03em; }
+      .cmp-vs { font-size: 50px; font-weight: 900; color: var(--muted); }
+
+      .logo { font-size: 150px; font-weight: 900; letter-spacing: 0.02em; line-height: 1; }
+      .cta { padding: 34px 64px; border-radius: 999px; background: var(--yellow); color: #0e0e12; font-size: 64px; font-weight: 900; }
+      .disc { font-size: 30px; font-weight: 600; color: var(--muted); margin-top: 30px; }
+
+            .cap { width: 100%; height: 100%; }
+      .cap-box {
+        position: absolute; left: 70px; top: 1360px; width: 940px; height: auto;
+        padding: 22px 34px; border-radius: 22px; background: rgba(0,0,0,0.78);
+        font-size: 52px; font-weight: 800; line-height: 1.32; text-align: center; color: #fff;
+      }
+      .cap-box .hl { color: var(--yellow); white-space: nowrap; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-width="1080" data-height="1920" data-duration="{{DURATION}}">
+      <div class="bg" id="bg"><div class="glow" id="glow"></div><div id="stripe" data-layout-allow-overflow></div></div>
+      <div class="topbar" id="topbar"><span id="progress"></span></div>
+      <div class="brand" id="brand"><i></i>AA CANADA</div>
+      <div class="brand-r" id="brand-r">몬트리올 자녀무상교육</div>
+{{SCENES}}
+{{CAPTIONS}}
+      <audio id="narration" src="public/narration.m4a" data-start="0" data-duration="{{DURATION}}" data-track-index="3"></audio>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+{{TIMELINE}}
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
