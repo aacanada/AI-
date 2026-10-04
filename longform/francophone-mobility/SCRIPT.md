@@ -1,6 +1,6 @@
 # SCRIPT — LMIA 없이 캐나다 취업하기: Francophone Mobility 로드맵
 
-**Format:** 1920x1080 (16:9 유튜브 롱폼) · 예상 길이 약 9~10분
+**Format:** 1920x1080 (16:9 유튜브 롱폼) · 예상 길이 약 8~9분 (내레이션 약 2,250음절 기준. 각 Line의 Time은 대략적인 안내이며, 실제 타이밍은 TTS 생성 후 자동으로 맞춰집니다)
 **Voice:** 숏폼과 같은 한국어 보이스 사용 (Kokoro는 한국어 미지원 → HeyGen / ElevenLabs 등)
 **Voice settings:** stability 0.45 · similarity 0.75 · style 0.15
 **Voice direction:** 상담실장이 1:1로 설명해 주듯 차분하고 친근하게. 숫자·레벨은 또박또박 끊어 말하고, 각 챕터 끝은 다음 내용이 궁금해지도록 살짝 올려서 마무리.
