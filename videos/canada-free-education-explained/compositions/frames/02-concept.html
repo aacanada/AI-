@@ -1,0 +1,66 @@
+<template>
+<style>
+
+@font-face{font-family:"Noto Sans KR";font-weight:400;font-style:normal;src:url("assets/fonts/NotoSansKR-400.ttf") format("truetype");}
+@font-face{font-family:"Noto Sans KR";font-weight:700;font-style:normal;src:url("assets/fonts/NotoSansKR-700.ttf") format("truetype");}
+@font-face{font-family:"Noto Sans KR";font-weight:900;font-style:normal;src:url("assets/fonts/NotoSansKR-900.ttf") format("truetype");}
+#root{position:absolute;inset:0;overflow:hidden;font-family:"Noto Sans KR",sans-serif;color:#1C1410;container-type:size;}
+#root .con-bg{position:absolute;inset:0;background:#FFFFFF;}
+#root .con-bg.red{background:#D8000F;}
+#root .con-label{position:absolute;left:90px;top:170px;font-weight:700;font-size:30px;letter-spacing:6px;color:#D8000F;}
+#root .con-label.inv{color:#FFFFFF;}
+#root .con-pbar-track{position:absolute;left:90px;right:90px;top:1588px;height:12px;background:rgba(28,20,16,.08);}
+#root .con-pbar-track.inv{background:rgba(255,255,255,.25);}
+#root .con-pbar{position:absolute;left:0;top:0;bottom:0;background:#D8000F;transform-origin:left center;}
+#root .con-pbar.inv{background:#FFFFFF;}
+#root .con-count{position:absolute;right:90px;top:1538px;font-weight:700;font-size:28px;letter-spacing:4px;color:#1C1410;}
+#root .con-count.inv{color:#FFFFFF;}
+#root .con-blk{position:absolute;display:block;z-index:2;}
+#root .con-label,#root .con-count,#root .con-pbar-track{z-index:2;}
+
+
+#root .con-q{left:90px;top:300px;font-size:64px;font-weight:700;}
+#root .con-old{left:90px;top:440px;font-size:120px;font-weight:900;letter-spacing:-4px;line-height:1.1;font-family:"Noto Sans KR";}
+#root .con-oldk{left:94px;top:590px;font-size:64px;font-weight:700;color:#8a8580;}
+#root .con-strike{left:80px;top:518px;width:860px;height:18px;background:#D8000F;transform-origin:left center;}
+#root .con-arrow{left:90px;top:700px;line-height:1;font-size:90px;font-weight:900;color:#1C1410;}
+#root .con-new{left:90px;top:840px;line-height:1.1;font-size:100px;font-weight:900;letter-spacing:-4px;}
+#root .con-big{left:80px;top:1080px;font-size:250px;font-weight:900;color:#D8000F;letter-spacing:-12px;line-height:1;transform-origin:left center;white-space:nowrap;}
+#root .con-sub{left:96px;top:1400px;font-size:54px;font-weight:700;border-left:10px solid #D8000F;padding-left:28px;}
+</style>
+<div id="root" data-composition-id="02-concept" data-width="1080" data-height="1920" data-duration="6">
+  <div id="con-bg" class="clip con-bg" data-start="0" data-duration="6" data-track-index="0"></div>
+  
+  <div class="con-label" id="con-label">AA CANADA · 자녀무상교육</div>
+  <div class="con-count" id="con-count">02 / 08</div>
+  <div class="con-pbar-track"><div class="con-pbar" id="con-pbar" style="width:25%"></div></div>
+  
+  <div class="con-blk con-q" id="con-q">정확한 개념은?</div>
+  <div class="con-blk con-old" id="con-old">Free education</div>
+  <div class="con-blk con-oldk" id="con-oldk">무상교육</div>
+  <div class="con-blk con-strike" id="con-strike"></div>
+  <div class="con-blk con-arrow" id="con-arrow">↓</div>
+  <div class="con-blk con-new" id="con-new">Tuition exemption</div>
+  <div class="con-blk con-big" id="con-big">학비면제</div>
+  <div class="con-blk con-sub" id="con-sub">학비를 ‘면제’받는 제도</div>
+</div>
+<script>
+(function(){
+  const tl = gsap.timeline({ paused: true });
+  
+  tl.fromTo("#con-label",{opacity:0,y:-20},{opacity:1,y:0,duration:0.5,ease:"power3.out"},0);
+  tl.fromTo("#con-count",{opacity:0},{opacity:1,duration:0.5},0.1);
+  tl.fromTo("#con-pbar",{scaleX:0.500},{scaleX:1,duration:0.8,ease:"power3.out"},0.1);
+  
+  tl.fromTo("#con-q",{opacity:0,y:40},{opacity:1,y:0,duration:0.5,ease:"power3.out"},0.05);
+  tl.fromTo(["#con-old","#con-oldk"],{opacity:0,y:60},{opacity:1,y:0,duration:0.6,ease:"power3.out",stagger:0.15},0.35);
+  tl.fromTo("#con-strike",{scaleX:0},{scaleX:1,duration:0.45,ease:"power3.inOut"},1.45);
+  tl.to(["#con-old","#con-oldk"],{opacity:0.3,duration:0.4},1.8);
+  tl.fromTo("#con-arrow",{opacity:0,y:-30},{opacity:1,y:0,duration:0.4,ease:"power3.out"},2.3);
+  tl.fromTo("#con-new",{opacity:0,y:60},{opacity:1,y:0,duration:0.55,ease:"power3.out"},2.5);
+  tl.fromTo("#con-big",{opacity:0,scale:1.35,rotation:-4},{opacity:1,scale:1,rotation:-4,duration:0.6,ease:"expo.out"},3.1);
+  tl.fromTo("#con-sub",{opacity:0,x:-40},{opacity:1,x:0,duration:0.5,ease:"power3.out"},4.2);
+  window.__timelines["02-concept"] = tl;
+})();
+</script>
+</template>

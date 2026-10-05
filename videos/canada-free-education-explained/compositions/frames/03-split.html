@@ -1,0 +1,78 @@
+<template>
+<style>
+
+@font-face{font-family:"Noto Sans KR";font-weight:400;font-style:normal;src:url("assets/fonts/NotoSansKR-400.ttf") format("truetype");}
+@font-face{font-family:"Noto Sans KR";font-weight:700;font-style:normal;src:url("assets/fonts/NotoSansKR-700.ttf") format("truetype");}
+@font-face{font-family:"Noto Sans KR";font-weight:900;font-style:normal;src:url("assets/fonts/NotoSansKR-900.ttf") format("truetype");}
+#root{position:absolute;inset:0;overflow:hidden;font-family:"Noto Sans KR",sans-serif;color:#1C1410;container-type:size;}
+#root .spl-bg{position:absolute;inset:0;background:#FFFFFF;}
+#root .spl-bg.red{background:#D8000F;}
+#root .spl-label{position:absolute;left:90px;top:170px;font-weight:700;font-size:30px;letter-spacing:6px;color:#D8000F;}
+#root .spl-label.inv{color:#FFFFFF;}
+#root .spl-pbar-track{position:absolute;left:90px;right:90px;top:1588px;height:12px;background:rgba(28,20,16,.08);}
+#root .spl-pbar-track.inv{background:rgba(255,255,255,.25);}
+#root .spl-pbar{position:absolute;left:0;top:0;bottom:0;background:#D8000F;transform-origin:left center;}
+#root .spl-pbar.inv{background:#FFFFFF;}
+#root .spl-count{position:absolute;right:90px;top:1538px;font-weight:700;font-size:28px;letter-spacing:4px;color:#1C1410;}
+#root .spl-count.inv{color:#FFFFFF;}
+#root .spl-blk{position:absolute;display:block;z-index:2;}
+#root .spl-label,#root .spl-count,#root .spl-pbar-track{z-index:2;}
+
+
+#root .spl-h{left:90px;right:90px;top:290px;font-size:62px;white-space:nowrap;font-weight:900;letter-spacing:-2px;line-height:1.25;}
+#root .spl-h b{color:#D8000F;}
+#root .spl-node{left:390px;top:540px;width:300px;height:130px;border:6px solid #1C1410;display:flex;align-items:center;justify-content:center;font-size:60px;font-weight:900;background:#FFFFFF;}
+#root .spl-svg{left:0;top:670px;width:1080px;height:200px;overflow:visible;}
+#root .spl-card{top:870px;width:430px;height:600px;padding:44px 36px;}
+#root .spl-card .en{font-size:46px;font-weight:900;line-height:1.15;letter-spacing:-1px;}
+#root .spl-card .ko{font-size:40px;font-weight:700;margin-top:14px;}
+#root .spl-card .hr{height:4px;margin:40px 0 36px;}
+#root .spl-card .res{font-size:40px;font-weight:700;}
+#root .spl-card .val{font-size:120px;font-weight:900;line-height:1.1;margin-top:10px;letter-spacing:-4px;}
+#root .spl-left{left:90px;border:6px solid #1C1410;background:#FFFFFF;}
+#root .spl-left .hr{background:#1C1410;}
+#root .spl-left .ko{color:#8a8580;}
+#root .spl-right{left:560px;background:#D8000F;color:#FFFFFF;transform-origin:center center;}
+#root .spl-right .hr{background:#FFFFFF;}
+#root .spl-right .val{text-shadow:4px 4px 0 rgba(28,20,16,.25), 8px 8px 0 rgba(28,20,16,.18), 12px 12px 0 rgba(28,20,16,.12);}
+</style>
+<div id="root" data-composition-id="03-split" data-width="1080" data-height="1920" data-duration="6">
+  <div id="spl-bg" class="clip spl-bg" data-start="0" data-duration="6" data-track-index="0"></div>
+  
+  <div class="spl-label" id="spl-label">AA CANADA · 자녀무상교육</div>
+  <div class="spl-count" id="spl-count">03 / 08</div>
+  <div class="spl-pbar-track"><div class="spl-pbar" id="spl-pbar" style="width:37.5%"></div></div>
+  
+  <div class="spl-blk spl-h" id="spl-h">교육청은 학생을 <b>두 가지</b>로 나눠요</div>
+  <div class="spl-blk spl-node" id="spl-node">학생</div>
+  <svg class="spl-blk spl-svg" id="spl-svg" viewBox="0 0 1080 200">
+    <path id="spl-pl" d="M540 0 V90 H305 V200" fill="none" stroke="#1C1410" stroke-width="6"/>
+    <path id="spl-pr" d="M540 0 V90 H775 V200" fill="none" stroke="#D8000F" stroke-width="6"/>
+  </svg>
+  <div class="spl-blk spl-card spl-left" id="spl-left">
+    <div class="en">International students</div><div class="ko">국제학생</div>
+    <div class="hr"></div><div class="res">학비</div><div class="val">납부</div>
+  </div>
+  <div class="spl-blk spl-card spl-right" id="spl-right">
+    <div class="en">Residents</div><div class="ko">거주자</div>
+    <div class="hr" style="margin-top:94px"></div><div class="res">학비</div><div class="val">면제</div>
+  </div>
+</div>
+<script>
+(function(){
+  const tl = gsap.timeline({ paused: true });
+  
+  tl.fromTo("#spl-label",{opacity:0,y:-20},{opacity:1,y:0,duration:0.5,ease:"power3.out"},0);
+  tl.fromTo("#spl-count",{opacity:0},{opacity:1,duration:0.5},0.1);
+  tl.fromTo("#spl-pbar",{scaleX:0.667},{scaleX:1,duration:0.8,ease:"power3.out"},0.1);
+  
+  tl.fromTo("#spl-h",{opacity:0,y:50},{opacity:1,y:0,duration:0.55,ease:"power3.out"},0.05);
+  tl.fromTo("#spl-node",{opacity:0,scale:0.6},{opacity:1,scale:1,duration:0.5,ease:"back.out(1.6)"},0.6);
+  tl.fromTo(["#spl-pl","#spl-pr"],{strokeDasharray:600,strokeDashoffset:600},{strokeDashoffset:0,duration:0.9,ease:"power2.inOut"},1.2);
+  tl.fromTo("#spl-left",{opacity:0,y:80},{opacity:1,y:0,duration:0.6,ease:"power3.out"},2.4);
+  tl.fromTo("#spl-right",{opacity:0,y:80},{opacity:1,y:0,duration:0.6,ease:"power3.out"},3.8);
+  tl.fromTo("#spl-right",{scale:1},{scale:1.04,duration:0.5,ease:"power3.out",immediateRender:false},4.6);
+  window.__timelines["03-split"] = tl;
+})();
+</script>
+</template>

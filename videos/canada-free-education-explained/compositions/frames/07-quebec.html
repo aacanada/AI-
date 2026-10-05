@@ -1,0 +1,58 @@
+<template>
+<style>
+
+@font-face{font-family:"Noto Sans KR";font-weight:400;font-style:normal;src:url("assets/fonts/NotoSansKR-400.ttf") format("truetype");}
+@font-face{font-family:"Noto Sans KR";font-weight:700;font-style:normal;src:url("assets/fonts/NotoSansKR-700.ttf") format("truetype");}
+@font-face{font-family:"Noto Sans KR";font-weight:900;font-style:normal;src:url("assets/fonts/NotoSansKR-900.ttf") format("truetype");}
+#root{position:absolute;inset:0;overflow:hidden;font-family:"Noto Sans KR",sans-serif;color:#1C1410;container-type:size;}
+#root .qc-bg{position:absolute;inset:0;background:#FFFFFF;}
+#root .qc-bg.red{background:#D8000F;}
+#root .qc-label{position:absolute;left:90px;top:170px;font-weight:700;font-size:30px;letter-spacing:6px;color:#D8000F;}
+#root .qc-label.inv{color:#FFFFFF;}
+#root .qc-pbar-track{position:absolute;left:90px;right:90px;top:1588px;height:12px;background:rgba(28,20,16,.08);}
+#root .qc-pbar-track.inv{background:rgba(255,255,255,.25);}
+#root .qc-pbar{position:absolute;left:0;top:0;bottom:0;background:#D8000F;transform-origin:left center;}
+#root .qc-pbar.inv{background:#FFFFFF;}
+#root .qc-count{position:absolute;right:90px;top:1538px;font-weight:700;font-size:28px;letter-spacing:4px;color:#1C1410;}
+#root .qc-count.inv{color:#FFFFFF;}
+#root .qc-blk{position:absolute;display:block;z-index:2;}
+#root .qc-label,#root .qc-count,#root .qc-pbar-track{z-index:2;}
+
+
+#root .qc-a{left:90px;right:90px;top:300px;font-size:64px;font-weight:700;color:#FFFFFF;line-height:1.35;}
+#root .qc-box{left:90px;top:500px;padding:26px 44px;background:#FFFFFF;color:#D8000F;font-size:100px;font-weight:900;letter-spacing:-3px;clip-path:inset(0 100% 0 0);}
+#root .qc-big{left:80px;top:770px;line-height:1.1;font-size:210px;font-weight:900;color:#FFFFFF;letter-spacing:-10px;line-height:1;text-shadow:4px 4px 0 rgba(28,20,16,.25), 8px 8px 0 rgba(28,20,16,.18), 12px 12px 0 rgba(28,20,16,.12);transform-origin:left center;white-space:nowrap;}
+#root .qc-big2{left:96px;top:1030px;font-size:150px;font-weight:900;color:#FFFFFF;letter-spacing:-6px;text-shadow:4px 4px 0 rgba(28,20,16,.25), 8px 8px 0 rgba(28,20,16,.18), 12px 12px 0 rgba(28,20,16,.12);}
+#root .qc-pin{left:90px;top:1340px;display:flex;align-items:center;gap:24px;padding:22px 36px;border:5px solid #FFFFFF;color:#FFFFFF;font-size:54px;font-weight:900;transform-origin:left center;}
+#root .qc-dot{width:30px;height:30px;border-radius:50%;background:#FFFFFF;}
+</style>
+<div id="root" data-composition-id="07-quebec" data-width="1080" data-height="1920" data-duration="5">
+  <div id="qc-bg" class="clip qc-bg red" data-start="0" data-duration="5" data-track-index="0"></div>
+  
+  <div class="qc-label inv" id="qc-label">AA CANADA · 자녀무상교육</div>
+  <div class="qc-count inv" id="qc-count">07 / 08</div>
+  <div class="qc-pbar-track inv"><div class="qc-pbar inv" id="qc-pbar" style="width:87.5%"></div></div>
+  
+  <div class="qc-blk qc-a" id="qc-a">사설어학원 학생비자만 있어도</div>
+  <div class="qc-blk qc-box" id="qc-box">퀘벡 · 노바스코샤</div>
+  <div class="qc-blk qc-big" id="qc-big">조건 없이</div>
+  <div class="qc-blk qc-big2" id="qc-big2">무상교육</div>
+  <div class="qc-blk qc-pin" id="qc-pin"><div class="qc-dot"></div>몬트리올 MONTRÉAL</div>
+</div>
+<script>
+(function(){
+  const tl = gsap.timeline({ paused: true });
+  
+  tl.fromTo("#qc-label",{opacity:0,y:-20},{opacity:1,y:0,duration:0.5,ease:"power3.out"},0);
+  tl.fromTo("#qc-count",{opacity:0},{opacity:1,duration:0.5},0.1);
+  tl.fromTo("#qc-pbar",{scaleX:0.857},{scaleX:1,duration:0.8,ease:"power3.out"},0.1);
+  
+  tl.fromTo("#qc-a",{opacity:0,y:40},{opacity:1,y:0,duration:0.5,ease:"power3.out"},0.05);
+  tl.fromTo("#qc-box",{clipPath:"inset(0 100% 0 0)"},{clipPath:"inset(0 0% 0 0)",duration:0.6,ease:"power3.inOut"},1.0);
+  tl.fromTo("#qc-big",{opacity:0,scale:1.4,rotation:-5},{opacity:1,scale:1,rotation:-5,duration:0.6,ease:"expo.out"},2.2);
+  tl.fromTo("#qc-big2",{opacity:0,y:50},{opacity:1,y:0,duration:0.5,ease:"power3.out"},2.6);
+  tl.fromTo("#qc-pin",{opacity:0,scale:0.7},{opacity:1,scale:1,duration:0.5,ease:"back.out(1.7)"},3.4);
+  window.__timelines["07-quebec"] = tl;
+})();
+</script>
+</template>

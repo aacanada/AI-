@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "preferences": {
+    "destination": {
+      "value": "shorts",
+      "confirmed_in": [
+        "canada-free-education-explained"
+      ],
+      "updated_at": "2026-10-05T10:30:41.298Z"
+    },
+    "aspect": {
+      "value": "1080x1920",
+      "confirmed_in": [
+        "canada-free-education-explained"
+      ],
+      "updated_at": "2026-10-05T10:30:41.372Z"
+    },
+    "language": {
+      "value": "ko",
+      "confirmed_in": [
+        "canada-free-education-explained"
+      ],
+      "updated_at": "2026-10-05T10:30:41.424Z"
+    },
+    "flow": {
+      "value": "automation",
+      "confirmed_in": [
+        "canada-free-education-explained"
+      ],
+      "updated_at": "2026-10-05T10:30:41.492Z"
+    },
+    "storyboard": {
+      "value": "no",
+      "confirmed_in": [
+        "canada-free-education-explained"
+      ],
+      "updated_at": "2026-10-05T10:30:41.556Z"
+    },
+    "style_preset.faceless-explainer": {
+      "value": "bold-poster",
+      "confirmed_in": [
+        "canada-free-education-explained"
+      ],
+      "updated_at": "2026-10-05T10:30:56.906Z"
+    }
+  },
+  "sightings": {}
+}

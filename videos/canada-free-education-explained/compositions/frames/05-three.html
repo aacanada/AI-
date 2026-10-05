@@ -1,0 +1,54 @@
+<template>
+<style>
+
+@font-face{font-family:"Noto Sans KR";font-weight:400;font-style:normal;src:url("assets/fonts/NotoSansKR-400.ttf") format("truetype");}
+@font-face{font-family:"Noto Sans KR";font-weight:700;font-style:normal;src:url("assets/fonts/NotoSansKR-700.ttf") format("truetype");}
+@font-face{font-family:"Noto Sans KR";font-weight:900;font-style:normal;src:url("assets/fonts/NotoSansKR-900.ttf") format("truetype");}
+#root{position:absolute;inset:0;overflow:hidden;font-family:"Noto Sans KR",sans-serif;color:#1C1410;container-type:size;}
+#root .thr-bg{position:absolute;inset:0;background:#FFFFFF;}
+#root .thr-bg.red{background:#D8000F;}
+#root .thr-label{position:absolute;left:90px;top:170px;font-weight:700;font-size:30px;letter-spacing:6px;color:#D8000F;}
+#root .thr-label.inv{color:#FFFFFF;}
+#root .thr-pbar-track{position:absolute;left:90px;right:90px;top:1588px;height:12px;background:rgba(28,20,16,.08);}
+#root .thr-pbar-track.inv{background:rgba(255,255,255,.25);}
+#root .thr-pbar{position:absolute;left:0;top:0;bottom:0;background:#D8000F;transform-origin:left center;}
+#root .thr-pbar.inv{background:#FFFFFF;}
+#root .thr-count{position:absolute;right:90px;top:1538px;font-weight:700;font-size:28px;letter-spacing:4px;color:#1C1410;}
+#root .thr-count.inv{color:#FFFFFF;}
+#root .thr-blk{position:absolute;display:block;z-index:2;}
+#root .thr-label,#root .thr-count,#root .thr-pbar-track{z-index:2;}
+
+
+#root .thr-a{left:90px;right:90px;top:300px;font-size:66px;font-weight:700;color:#FFFFFF;line-height:1.35;}
+#root .thr-num{left:150px;top:620px;font-size:600px;font-weight:900;color:#FFFFFF;line-height:0.8;text-shadow:4px 4px 0 rgba(28,20,16,.25), 8px 8px 0 rgba(28,20,16,.18), 12px 12px 0 rgba(28,20,16,.12);transform-origin:center center;letter-spacing:-20px;}
+#root .thr-unit{left:540px;top:860px;font-size:200px;font-weight:900;color:#FFFFFF;text-shadow:4px 4px 0 rgba(28,20,16,.25), 8px 8px 0 rgba(28,20,16,.18), 12px 12px 0 rgba(28,20,16,.12);}
+#root .thr-sub{left:90px;right:90px;top:1300px;font-size:64px;font-weight:900;color:#FFFFFF;line-height:1.3;border-top:6px solid #FFFFFF;padding-top:40px;}
+</style>
+<div id="root" data-composition-id="05-three" data-width="1080" data-height="1920" data-duration="4">
+  <div id="thr-bg" class="clip thr-bg red" data-start="0" data-duration="4" data-track-index="0"></div>
+  
+  <div class="thr-label inv" id="thr-label">AA CANADA · 자녀무상교육</div>
+  <div class="thr-count inv" id="thr-count">05 / 08</div>
+  <div class="thr-pbar-track inv"><div class="thr-pbar inv" id="thr-pbar" style="width:62.5%"></div></div>
+  
+  <div class="thr-blk thr-a" id="thr-a">단, 부모가 <b>어떤 공부</b>를 하느냐에 따라</div>
+  <div class="thr-blk thr-num" id="thr-num">3</div>
+  <div class="thr-blk thr-unit" id="thr-unit">가지</div>
+  <div class="thr-blk thr-sub" id="thr-sub">지역별 학비면제 조건이 달라요</div>
+</div>
+<script>
+(function(){
+  const tl = gsap.timeline({ paused: true });
+  
+  tl.fromTo("#thr-label",{opacity:0,y:-20},{opacity:1,y:0,duration:0.5,ease:"power3.out"},0);
+  tl.fromTo("#thr-count",{opacity:0},{opacity:1,duration:0.5},0.1);
+  tl.fromTo("#thr-pbar",{scaleX:0.800},{scaleX:1,duration:0.8,ease:"power3.out"},0.1);
+  
+  tl.fromTo("#thr-a",{opacity:0,y:40},{opacity:1,y:0,duration:0.5,ease:"power3.out"},0.05);
+  tl.fromTo("#thr-num",{opacity:0,scale:1.5,rotation:-6},{opacity:1,scale:1,rotation:-6,duration:0.6,ease:"expo.out"},0.8);
+  tl.fromTo("#thr-unit",{opacity:0,x:60},{opacity:1,x:0,duration:0.45,ease:"power3.out"},1.2);
+  tl.fromTo("#thr-sub",{opacity:0,y:40},{opacity:1,y:0,duration:0.5,ease:"power3.out"},2.0);
+  window.__timelines["05-three"] = tl;
+})();
+</script>
+</template>

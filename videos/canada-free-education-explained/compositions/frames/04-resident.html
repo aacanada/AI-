@@ -1,0 +1,73 @@
+<template>
+<style>
+
+@font-face{font-family:"Noto Sans KR";font-weight:400;font-style:normal;src:url("assets/fonts/NotoSansKR-400.ttf") format("truetype");}
+@font-face{font-family:"Noto Sans KR";font-weight:700;font-style:normal;src:url("assets/fonts/NotoSansKR-700.ttf") format("truetype");}
+@font-face{font-family:"Noto Sans KR";font-weight:900;font-style:normal;src:url("assets/fonts/NotoSansKR-900.ttf") format("truetype");}
+#root{position:absolute;inset:0;overflow:hidden;font-family:"Noto Sans KR",sans-serif;color:#1C1410;container-type:size;}
+#root .res-bg{position:absolute;inset:0;background:#FFFFFF;}
+#root .res-bg.red{background:#D8000F;}
+#root .res-label{position:absolute;left:90px;top:170px;font-weight:700;font-size:30px;letter-spacing:6px;color:#D8000F;}
+#root .res-label.inv{color:#FFFFFF;}
+#root .res-pbar-track{position:absolute;left:90px;right:90px;top:1588px;height:12px;background:rgba(28,20,16,.08);}
+#root .res-pbar-track.inv{background:rgba(255,255,255,.25);}
+#root .res-pbar{position:absolute;left:0;top:0;bottom:0;background:#D8000F;transform-origin:left center;}
+#root .res-pbar.inv{background:#FFFFFF;}
+#root .res-count{position:absolute;right:90px;top:1538px;font-weight:700;font-size:28px;letter-spacing:4px;color:#1C1410;}
+#root .res-count.inv{color:#FFFFFF;}
+#root .res-blk{position:absolute;display:block;z-index:2;}
+#root .res-label,#root .res-count,#root .res-pbar-track{z-index:2;}
+
+
+#root .res-h{left:90px;top:290px;font-size:110px;font-weight:900;color:#D8000F;letter-spacing:-4px;line-height:1;}
+#root .res-hk{left:96px;top:420px;font-size:56px;font-weight:700;}
+#root .res-card{left:90px;right:90px;border-left:14px solid #D8000F;padding:26px 0 26px 40px;}
+#root .res-card .t{font-size:62px;font-weight:900;letter-spacing:-2px;}
+#root .res-card .d{font-size:44px;font-weight:400;margin-top:12px;color:#4a423d;}
+#root .res-c1{top:560px;}
+#root .res-c2{top:800px;}
+#root .res-chips{display:flex;gap:24px;margin-top:22px;}
+#root .res-chip{position:relative;padding:16px 30px;border:5px solid #1C1410;font-size:48px;font-weight:900;}
+#root .res-chipfill{position:absolute;inset:-5px;background:#D8000F;transform-origin:left center;}
+#root .res-chiptxt{position:relative;}
+#root .res-banner{left:90px;right:90px;top:1180px;height:300px;background:#1C1410;color:#FFFFFF;padding:44px 50px;clip-path:inset(0 100% 0 0);}
+#root .res-banner .a{font-size:50px;font-weight:700;}
+#root .res-banner .b{font-size:92px;font-weight:900;letter-spacing:-3px;margin-top:16px;}
+#root .res-banner .b span{color:#D8000F;}
+</style>
+<div id="root" data-composition-id="04-resident" data-width="1080" data-height="1920" data-duration="7">
+  <div id="res-bg" class="clip res-bg" data-start="0" data-duration="7" data-track-index="0"></div>
+  
+  <div class="res-label" id="res-label">AA CANADA · 자녀무상교육</div>
+  <div class="res-count" id="res-count">04 / 08</div>
+  <div class="res-pbar-track"><div class="res-pbar" id="res-pbar" style="width:50%"></div></div>
+  
+  <div class="res-blk res-h" id="res-h">Residents</div>
+  <div class="res-blk res-hk" id="res-hk">거주자는 두 종류</div>
+  <div class="res-blk res-card res-c1" id="res-c1"><div class="t">영구거주자</div><div class="d">시민권자 · 영주권자</div></div>
+  <div class="res-blk res-card res-c2" id="res-c2"><div class="t">임시거주자</div><div class="d">부모가 이 비자를 가진 경우</div>
+    <div class="res-chips"><div class="res-chip" id="res-chip1"><span class="res-chiptxt">Work permit</span></div>
+    <div class="res-chip" id="res-chip2"><div class="res-chipfill" id="res-chipfill"></div><span class="res-chiptxt" id="res-chip2t">Study permit</span></div></div>
+  </div>
+  <div class="res-blk res-banner" id="res-banner"><div class="a">부모 학생비자 = 동반자녀는</div><div class="b"><span>Resident</span> → 학비 0</div></div>
+</div>
+<script>
+(function(){
+  const tl = gsap.timeline({ paused: true });
+  
+  tl.fromTo("#res-label",{opacity:0,y:-20},{opacity:1,y:0,duration:0.5,ease:"power3.out"},0);
+  tl.fromTo("#res-count",{opacity:0},{opacity:1,duration:0.5},0.1);
+  tl.fromTo("#res-pbar",{scaleX:0.750},{scaleX:1,duration:0.8,ease:"power3.out"},0.1);
+  
+  tl.fromTo("#res-h",{opacity:0,x:-80},{opacity:1,x:0,duration:0.6,ease:"power3.out"},0.05);
+  tl.fromTo("#res-hk",{opacity:0,y:30},{opacity:1,y:0,duration:0.5,ease:"power3.out"},0.4);
+  tl.fromTo("#res-c1",{opacity:0,x:-60},{opacity:1,x:0,duration:0.55,ease:"power3.out"},1.2);
+  tl.fromTo("#res-c2",{opacity:0,x:-60},{opacity:1,x:0,duration:0.55,ease:"power3.out"},2.4);
+  tl.fromTo("#res-chipfill",{scaleX:0},{scaleX:1,duration:0.45,ease:"power3.inOut"},3.8);
+  tl.fromTo("#res-chip2t",{color:"#1C1410"},{color:"#FFFFFF",duration:0.2},3.95);
+  tl.fromTo("#res-chip1",{opacity:1},{opacity:0.35,duration:0.4},3.9);
+  tl.fromTo("#res-banner",{clipPath:"inset(0 100% 0 0)"},{clipPath:"inset(0 0% 0 0)",duration:0.7,ease:"power3.inOut"},5.0);
+  window.__timelines["04-resident"] = tl;
+})();
+</script>
+</template>
