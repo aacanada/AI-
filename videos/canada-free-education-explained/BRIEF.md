@@ -7,7 +7,7 @@ destination: shorts
 aspect: 1080x1920
 language: ko
 audience: "캐나다 자녀 동반 유학을 고민하는 한국 학부모"
-length: 68s
+length: 79s
 voice: elevenlabs:9qtE9eIaqHMUAfRp4QTW
 angle: concept
 ---

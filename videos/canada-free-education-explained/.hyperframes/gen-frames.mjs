@@ -211,79 +211,96 @@ frame({ id: "04-resident", p: "res", n: 4, dur: D(4),
 // ---------- 05 three ----------
 frame({ id: "05-three", p: "thr", n: 5, dur: D(5), inv: true,
   css: `
-#root .thr-a{left:90px;right:90px;top:300px;font-size:66px;font-weight:700;color:${BG};line-height:1.35;}
-#root .thr-num{left:150px;top:620px;font-size:600px;font-weight:900;color:${BG};line-height:0.8;text-shadow:${SHADOW};transform-origin:center center;letter-spacing:-20px;}
-#root .thr-unit{left:540px;top:860px;font-size:200px;font-weight:900;color:${BG};text-shadow:${SHADOW};}
-#root .thr-sub{left:90px;right:90px;top:1300px;font-size:64px;font-weight:900;color:${BG};line-height:1.3;border-top:6px solid ${BG};padding-top:40px;}`,
+#root .thr-a{left:90px;right:90px;top:280px;font-size:60px;font-weight:700;color:${BG};line-height:1.35;}
+#root .thr-num{left:150px;top:690px;font-size:600px;font-weight:900;color:${BG};line-height:0.8;text-shadow:${SHADOW};transform-origin:center center;letter-spacing:-20px;}
+#root .thr-unit{left:520px;top:920px;font-size:200px;font-weight:900;color:${BG};text-shadow:${SHADOW};}
+#root .thr-sub{left:90px;right:90px;top:1340px;font-size:64px;font-weight:900;color:${BG};line-height:1.3;border-top:6px solid ${BG};padding-top:40px;}`,
   html: `
-  <div class="thr-blk thr-a" id="thr-a">단, 부모가 <b>어떤 공부</b>를 하느냐에 따라</div>
-  <div class="thr-blk thr-num" id="thr-num">3</div>
-  <div class="thr-blk thr-unit" id="thr-unit">가지</div>
-  <div class="thr-blk thr-sub" id="thr-sub">지역별 학비면제 조건이 달라요</div>`,
+  <div class="thr-blk thr-a" id="thr-a">단, 부모가 <b>어떤 과정</b>을 공부하느냐에 따라</div>
+  <div class="thr-blk thr-num" id="thr-num">4</div>
+  <div class="thr-blk thr-unit" id="thr-unit">단계</div>
+  <div class="thr-blk thr-sub" id="thr-sub">학비면제 지역이 달라져요</div>`,
   js: `
   tl.fromTo("#thr-a",{opacity:0,y:40},{opacity:1,y:0,duration:0.5,ease:"power3.out"},0.05);
   tl.fromTo("#thr-sub",{opacity:0,y:40},{opacity:1,y:0,duration:0.5,ease:"power3.out"},${c(5,6,-0.1)});
-  tl.fromTo("#thr-num",{opacity:0,scale:1.5,rotation:-6},{opacity:1,scale:1,rotation:-6,duration:0.55,ease:"expo.out"},${c(5,8,-0.1)});
-  tl.fromTo("#thr-unit",{opacity:0,x:60},{opacity:1,x:0,duration:0.4,ease:"power3.out"},${c(5,9,-0.05)});`
+  tl.fromTo("#thr-num",{opacity:0,scale:1.5,rotation:-6},{opacity:1,scale:1,rotation:-6,duration:0.55,ease:"expo.out"},${c(5,9,-0.1)});
+  tl.fromTo("#thr-unit",{opacity:0,x:60},{opacity:1,x:0,duration:0.4,ease:"power3.out"},${c(5,10,-0.05)});`
 });
 
-// ---------- 06 grid ----------
-const rows = [
-  ["01", "정규과정", "컬리지 · 대학 학위과정", "캐나다 전 지역", "AB·SK·NB는 정규과정만 인정", false],
-  ["02", "조건부입학 영어과정", "정규과정 입학 조건의 어학연수", "온타리오 · 매니토바 일부", "BC 일부는 사설도 최대 1년", false],
-  ["03", "사설어학원", "목적 상관없이 학생비자만 있으면", "퀘벡 · 노바스코샤", "조건 없이 무상교육", true],
+// ---------- 06 rings (four nested tiers) ----------
+const BOTTOM = 1560;
+const rings = [ // r, title, sub lines, region
+  [165, "정규과정", ["석박사 · 대학교", "공립 College"], "캐나다 전 지역"],
+  [270, "조건부입학", ["공립 대학부설"], "온타리오 · 매니토바"],
+  [375, "조건부입학", ["사설어학원 · 대학부설"], "BC"],
+  [480, "제한없음", ["사설어학원 · 사립컬리지"], "노바스코샤 · 퀘벡"],
 ];
+// label block top: inner circle centered vertically; outer rings in the band above the next-inner circle
+const labelTop = (i) => i === 0 ? BOTTOM - 2 * rings[0][0] + 50 : BOTTOM - 2 * rings[i][0] + 28;
 frame({ id: "06-grid", p: "grd", n: 6, dur: D(6),
   css: `
-#root .grd-h{left:90px;right:90px;top:280px;font-size:80px;font-weight:900;letter-spacing:-3px;}
+#root .grd-h{left:90px;right:90px;top:270px;font-size:80px;font-weight:900;letter-spacing:-3px;}
 #root .grd-h b{color:${RED};}
-#root .grd-box{left:90px;right:90px;top:430px;height:1110px;border:6px solid ${INK};}
-#root .grd-row{position:absolute;left:0;right:0;height:366px;padding:34px 36px;}
-#root .grd-row + .grd-row{border-top:3px solid ${INK};}
-#root .grd-num{position:absolute;left:36px;top:30px;font-size:96px;font-weight:900;color:${RED};line-height:1;transform:rotate(-6deg);}
-#root .grd-t{position:absolute;left:190px;top:34px;right:30px;font-size:60px;font-weight:900;letter-spacing:-2px;line-height:1.1;}
-#root .grd-d{position:absolute;left:192px;top:112px;right:30px;font-size:38px;color:#5a524d;}
-#root .grd-reg{position:absolute;left:190px;top:186px;padding:12px 24px;border:4px solid ${INK};font-size:48px;font-weight:900;}
-#root .grd-note{position:absolute;left:192px;top:282px;font-size:34px;font-weight:700;color:#5a524d;}
-#root .grd-row.hot .grd-reg{background:${RED};border-color:${RED};color:${BG};transform-origin:center center;}
-#root .grd-row.hot .grd-note{color:${RED};font-weight:900;font-size:40px;}`,
+#root .grd-hs{left:94px;top:385px;font-size:36px;font-weight:700;color:#5a524d;}
+#root .grd-ring{position:absolute;border-radius:50%;border:5px solid ${INK};transform-origin:50% 100%;z-index:1;}
+#root .grd-ring.r0{background:${BG};}
+#root .grd-ring.r1{background:${LIGHT};}
+#root .grd-ring.r2{background:${BG};}
+#root .grd-ring.r3{background:${LIGHT};}
+#root .grd-redfill{position:absolute;inset:0;border-radius:50%;background:${RED};}
+#root .grd-lab{left:0;right:0;text-align:center;z-index:3;}
+#root .grd-lab .t{font-size:42px;font-weight:900;letter-spacing:-1px;line-height:1.15;}
+#root .grd-lab .s{font-size:28px;font-weight:700;color:#5a524d;line-height:1.3;}
+#root .grd-lab .g{display:inline-block;margin-top:8px;font-size:36px;font-weight:900;color:${RED};line-height:1.2;}
+#root .grd-note{left:90px;top:1500px;font-size:30px;font-weight:700;color:#5a524d;}`,
   html: `
-  <div class="grd-blk grd-h" id="grd-h">학생비자, <b>무슨 공부?</b></div>
-  <div class="grd-blk grd-box" id="grd-box">
-  ${rows.map((r, i) => `<div class="grd-row${r[5] ? " hot" : ""}" id="grd-r${i}" style="top:${i * 368}px">
-      <div class="grd-num">${r[0]}</div><div class="grd-t">${r[1]}</div><div class="grd-d">${r[2]}</div>
-      <div class="grd-reg" id="grd-reg${i}">${r[3]}</div><div class="grd-note" id="grd-note${i}">${r[4]}</div></div>`).join("\n  ")}
-  </div>`,
+  <div class="grd-blk grd-h" id="grd-h">학생비자, <b>무슨 과정?</b></div>
+  <div class="grd-blk grd-hs" id="grd-hs">바깥 원일수록 인정 범위가 넓어져요</div>
+  ${rings.slice().reverse().map(([r], k) => { const i = 3 - k; return `<div class="grd-ring r${i}" id="grd-ring${i}" style="left:${540 - r}px;top:${BOTTOM - 2 * r}px;width:${2 * r}px;height:${2 * r}px">${i === 3 ? '<div class="grd-redfill" id="grd-redfill"></div>' : ""}</div>`; }).join("\n  ")}
+  ${rings.map(([r, t, subs, g], i) => `<div class="grd-blk grd-lab" id="grd-lab${i}" style="top:${labelTop(i)}px">
+    <div class="t" id="grd-t${i}">${t}</div>${subs.map(x => `<div class="s" id="grd-s${i}">${x}</div>`).join("")}<div class="g" id="grd-g${i}">${g}</div></div>`).join("\n  ")}
+  <div class="grd-blk grd-note" id="grd-note">*교육청별 상이</div>`,
   js: `
   tl.fromTo("#grd-h",{opacity:0,y:40},{opacity:1,y:0,duration:0.5,ease:"power3.out"},0.0);
-  tl.fromTo("#grd-box",{clipPath:"inset(0 0 100% 0)"},{clipPath:"inset(0 0 0% 0)",duration:0.6,ease:"power3.inOut"},0.1);
-  [[${c(6,0)},${c(6,6,-0.1)},${c(6,9,0.3)},0],[${c(6,10,-0.1)},${c(6,16,-0.1)},${c(6,18,0.1)},1],[${c(6,20,-0.1)},${c(6,22,-0.1)},${c(6,24,0.1)},2]].forEach(([t,tr,tn,i])=>{
-    tl.fromTo("#grd-r"+i+" .grd-num, #grd-r"+i+" .grd-t, #grd-r"+i+" .grd-d",{opacity:0,x:-50},{opacity:1,x:0,duration:0.5,ease:"power3.out",stagger:0.12},t);
-    tl.fromTo("#grd-reg"+i,{opacity:0,scale:i===2?1.6:0.9},{opacity:1,scale:1,duration:i===2?0.45:0.4,ease:i===2?"expo.out":"power3.out"},tr);
-    tl.fromTo("#grd-note"+i,{opacity:0,y:20},{opacity:1,y:0,duration:0.4,ease:"power3.out"},tn);
-  });`
+  tl.fromTo("#grd-hs",{opacity:0},{opacity:1,duration:0.4},0.3);
+  [[${c(6,0)},${c(6,1,-0.1)},${c(6,7,-0.1)},0],[${c(6,11,-0.1)},${c(6,12,-0.1)},${c(6,19,-0.1)},1],[${c(6,22,-0.1)},${c(6,23,-0.1)},${c(6,28,-0.1)},2],[${c(6,29,-0.1)},${c(6,31,-0.1)},${c(6,38,-0.1)},3]].forEach(([tr,tt,tg,i])=>{
+    tl.fromTo("#grd-ring"+i,{scale:0.86,opacity:0},{scale:1,opacity:1,duration:0.6,ease:"power3.out"},tr);
+    tl.fromTo("#grd-lab"+i+" .t, #grd-lab"+i+" .s",{opacity:0,y:20},{opacity:1,y:0,duration:0.4,ease:"power3.out",stagger:0.1},tt);
+    tl.fromTo("#grd-g"+i,{opacity:0,scale:0.8},{opacity:1,scale:1,duration:0.4,ease:"back.out(1.7)"},tg);
+  });
+  tl.fromTo("#grd-note",{opacity:0},{opacity:1,duration:0.4},${c(6,20)});
+  tl.fromTo("#grd-redfill",{opacity:0},{opacity:1,duration:0.5,ease:"power2.out"},${c(6,33,-0.1)});
+  tl.fromTo("#grd-t3, #grd-s3, #grd-g3",{color:"${INK}"},{color:"${BG}",duration:0.3,immediateRender:false},${c(6,33,0)});`
 });
 
 // ---------- 07 quebec ----------
 frame({ id: "07-quebec", p: "qc", n: 7, dur: D(7), inv: true,
   css: `
-#root .qc-a{left:90px;right:90px;top:300px;font-size:64px;font-weight:700;color:${BG};line-height:1.35;}
-#root .qc-box{left:90px;top:500px;padding:26px 44px;background:${BG};color:${RED};font-size:100px;font-weight:900;letter-spacing:-3px;clip-path:inset(0 100% 0 0);}
-#root .qc-big{left:80px;top:770px;line-height:1.1;font-size:210px;font-weight:900;color:${BG};letter-spacing:-10px;line-height:1;text-shadow:${SHADOW};transform-origin:left center;white-space:nowrap;}
-#root .qc-big2{left:96px;top:1030px;font-size:150px;font-weight:900;color:${BG};letter-spacing:-6px;text-shadow:${SHADOW};}
-#root .qc-pin{left:90px;top:1340px;display:flex;align-items:center;gap:24px;padding:22px 36px;border:5px solid ${BG};color:${BG};font-size:54px;font-weight:900;transform-origin:left center;}
-#root .qc-dot{width:30px;height:30px;border-radius:50%;background:${BG};}`,
+#root .qc-a{left:90px;right:90px;top:290px;font-size:64px;font-weight:700;color:${BG};line-height:1.35;}
+#root .qc-box{left:90px;top:400px;padding:16px 48px;background:${BG};color:${RED};font-size:130px;font-weight:900;letter-spacing:-3px;line-height:1.15;clip-path:inset(0 100% 0 0);}
+#root .qc-row{left:90px;font-size:72px;font-weight:900;color:${BG};display:flex;align-items:center;gap:26px;}
+#root .qc-row i{font-style:normal;display:flex;align-items:center;justify-content:center;width:84px;height:84px;border:5px solid ${BG};font-size:56px;}
+#root .qc-r1{top:660px;}
+#root .qc-r2{top:790px;}
+#root .qc-big{left:80px;top:1010px;font-size:130px;font-weight:900;color:${BG};letter-spacing:-6px;line-height:1.15;text-shadow:${SHADOW};transform-origin:left center;white-space:nowrap;}
+#root .qc-big2{left:96px;top:1190px;font-size:140px;font-weight:900;color:${BG};letter-spacing:-6px;line-height:1.15;text-shadow:${SHADOW};white-space:nowrap;}
+#root .qc-pin{left:90px;top:1420px;display:flex;align-items:center;gap:24px;padding:18px 34px;border:5px solid ${BG};color:${BG};font-size:50px;font-weight:900;transform-origin:left center;}
+#root .qc-dot{width:28px;height:28px;border-radius:50%;background:${BG};}`,
   html: `
-  <div class="qc-blk qc-a" id="qc-a">사설어학원 학생비자만 있어도</div>
-  <div class="qc-blk qc-box" id="qc-box">퀘벡 · 노바스코샤</div>
-  <div class="qc-blk qc-big" id="qc-big">조건 없이</div>
-  <div class="qc-blk qc-big2" id="qc-big2">무상교육</div>
-  <div class="qc-blk qc-pin" id="qc-pin"><div class="qc-dot"></div>몬트리올 MONTRÉAL</div>`,
+  <div class="qc-blk qc-a" id="qc-a">특히, 몬트리올이 있는</div>
+  <div class="qc-blk qc-box" id="qc-box">퀘벡</div>
+  <div class="qc-blk qc-row qc-r1" id="qc-r1"><i>✓</i>사설어학원</div>
+  <div class="qc-blk qc-row qc-r2" id="qc-r2"><i>✓</i>사립컬리지</div>
+  <div class="qc-blk qc-big" id="qc-big">학생비자만으로</div>
+  <div class="qc-blk qc-big2" id="qc-big2">자녀 무상교육</div>
+  <div class="qc-blk qc-pin" id="qc-pin"><div class="qc-dot"></div>MONTRÉAL</div>`,
   js: `
+  tl.fromTo("#qc-a",{opacity:0,y:40},{opacity:1,y:0,duration:0.45,ease:"power3.out"},0.05);
   tl.fromTo("#qc-pin",{opacity:0,scale:0.7},{opacity:1,scale:1,duration:0.5,ease:"back.out(1.7)"},${c(7,1,-0.05)});
-  tl.fromTo("#qc-box",{clipPath:"inset(0 100% 0 0)"},{clipPath:"inset(0 0% 0 0)",duration:0.55,ease:"power3.inOut"},${c(7,3,-0.1)});
-  tl.fromTo("#qc-a",{opacity:0,y:40},{opacity:1,y:0,duration:0.5,ease:"power3.out"},${c(7,4,-0.1)});
-  tl.fromTo("#qc-big",{opacity:0,scale:1.4,rotation:-5},{opacity:1,scale:1,rotation:-5,duration:0.55,ease:"expo.out"},${c(7,7,-0.1)});
+  tl.fromTo("#qc-box",{clipPath:"inset(0 100% 0 0)"},{clipPath:"inset(0 0% 0 0)",duration:0.5,ease:"power3.inOut"},${c(7,3,-0.1)});
+  tl.fromTo("#qc-r1",{opacity:0,x:-50},{opacity:1,x:0,duration:0.45,ease:"power3.out"},${c(7,4,-0.1)});
+  tl.fromTo("#qc-r2",{opacity:0,x:-50},{opacity:1,x:0,duration:0.45,ease:"power3.out"},${c(7,6,-0.1)});
+  tl.fromTo("#qc-big",{opacity:0,scale:1.4,rotation:-5},{opacity:1,scale:1,rotation:-5,duration:0.55,ease:"expo.out"},${c(7,8,-0.1)});
   tl.fromTo("#qc-big2",{opacity:0,y:50},{opacity:1,y:0,duration:0.5,ease:"power3.out"},${c(7,9,-0.1)});`
 });
 
