@@ -26,8 +26,8 @@
 #root .qc-pin{left:90px;top:1340px;display:flex;align-items:center;gap:24px;padding:22px 36px;border:5px solid #FFFFFF;color:#FFFFFF;font-size:54px;font-weight:900;transform-origin:left center;}
 #root .qc-dot{width:30px;height:30px;border-radius:50%;background:#FFFFFF;}
 </style>
-<div id="root" data-composition-id="07-quebec" data-width="1080" data-height="1920" data-duration="5">
-  <div id="qc-bg" class="clip qc-bg red" data-start="0" data-duration="5" data-track-index="0"></div>
+<div id="root" data-composition-id="07-quebec" data-width="1080" data-height="1920" data-duration="7.47">
+  <div id="qc-bg" class="clip qc-bg red" data-start="0" data-duration="7.47" data-track-index="0"></div>
   
   <div class="qc-label inv" id="qc-label">AA CANADA · 자녀무상교육</div>
   <div class="qc-count inv" id="qc-count">07 / 08</div>
@@ -47,11 +47,11 @@
   tl.fromTo("#qc-count",{opacity:0},{opacity:1,duration:0.5},0.1);
   tl.fromTo("#qc-pbar",{scaleX:0.857},{scaleX:1,duration:0.8,ease:"power3.out"},0.1);
   
-  tl.fromTo("#qc-a",{opacity:0,y:40},{opacity:1,y:0,duration:0.5,ease:"power3.out"},0.05);
-  tl.fromTo("#qc-box",{clipPath:"inset(0 100% 0 0)"},{clipPath:"inset(0 0% 0 0)",duration:0.6,ease:"power3.inOut"},1.0);
-  tl.fromTo("#qc-big",{opacity:0,scale:1.4,rotation:-5},{opacity:1,scale:1,rotation:-5,duration:0.6,ease:"expo.out"},2.2);
-  tl.fromTo("#qc-big2",{opacity:0,y:50},{opacity:1,y:0,duration:0.5,ease:"power3.out"},2.6);
-  tl.fromTo("#qc-pin",{opacity:0,scale:0.7},{opacity:1,scale:1,duration:0.5,ease:"back.out(1.7)"},3.4);
+  tl.fromTo("#qc-pin",{opacity:0,scale:0.7},{opacity:1,scale:1,duration:0.5,ease:"back.out(1.7)"},0.182);
+  tl.fromTo("#qc-box",{clipPath:"inset(0 100% 0 0)"},{clipPath:"inset(0 0% 0 0)",duration:0.55,ease:"power3.inOut"},0.945);
+  tl.fromTo("#qc-a",{opacity:0,y:40},{opacity:1,y:0,duration:0.5,ease:"power3.out"},1.7);
+  tl.fromTo("#qc-big",{opacity:0,scale:1.4,rotation:-5},{opacity:1,scale:1,rotation:-5,duration:0.55,ease:"expo.out"},3.929);
+  tl.fromTo("#qc-big2",{opacity:0,y:50},{opacity:1,y:0,duration:0.5,ease:"power3.out"},4.532);
   window.__timelines["07-quebec"] = tl;
 })();
 </script>

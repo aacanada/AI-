@@ -1,6 +1,6 @@
 ---
 format: 1080x1920
-duration: 45s
+duration: 68s
 message: "자녀무상교육은 '공짜'가 아니라 '학비면제' — 부모 학생비자 종류와 지역에 따라 조건이 다르다"
 arc: Hook → 개념 뒤집기 → 분류 → 거주자 구조 → 전환 → 3가지 유형 → 퀘벡 강조 → CTA
 audience: 캐나다 자녀 동반 유학을 고민하는 한국 학부모
@@ -12,7 +12,7 @@ music: none
 
 - **palette system** — frame.md(bold-poster): white `#FFFFFF` 기본 바탕, ink `#1C1410` 본문·선, red `#D8000F` 유일한 액센트(핵심 단어, 숫자, 진행바, 레드 패널), off-white `#F5F2EF` 보조 띠. 다섯 번째 색 없음. 캐나다 레드와 겹치는 것이 의도.
 - **type** — Noto Sans KR 900(디스플레이, 기울임 −4°~−6°), 700(카드 제목), 400(보조). 영어 용어(Tuition exemption 등)는 같은 패밀리.
-- **silent short** — 내레이션·자막 없음. 화면 텍스트가 곧 메시지이므로, 일반 규칙의 "화면 텍스트 짧게"는 "한 번에 한 메시지, 읽을 시간 확보"로 적용. 각 텍스트 블록은 등장 후 최소 1.2초 이상 정지해 읽히게 한다.
+- **narrated short** — ElevenLabs 클론 음성(네 번째) 내레이션, 자막 트랙 없음(화면 타이포가 핵심 단어를 보여줌). 각 공개는 해당 단어 발화 시점에 맞춤. 화면 텍스트가 곧 메시지이므로, 일반 규칙의 "화면 텍스트 짧게"는 "한 번에 한 메시지, 읽을 시간 확보"로 적용. 각 텍스트 블록은 등장 후 최소 1.2초 이상 정지해 읽히게 한다.
 - **motion grammar** — power3/expo.out 계열의 빠르고 단단한 진입, 바운스 없음. 각 프레임은 박자(약 0.6–1.0s 간격)에 맞춰 순차 공개, 뒤쪽 50%에도 공개가 이어진다. 홀드 중에는 정지(호흡 애니메이션 금지).
 - **rhythm** — Frame 5("3가지")는 짧은 브레이크/전환 박자, Frame 7(퀘벡)은 클라이맥스 후 홀드.
 - **chrome** — 매 프레임 하단 레드 진행바(0.83 높이 위, 프레임 번호에 비례) + 상단 작은 라벨 "AA CANADA · 자녀무상교육".
@@ -20,8 +20,9 @@ music: none
 
 ## Frame 1 — Hook
 
-- scene: "캐나다 자녀무상교육" 위로 거대한 레드 기울임 "진짜 공짜일까?"
-- duration: 4s
+- scene: "캐나다 / 자녀무상교육 조건," 위로 거대한 레드 기울임 "지역별 차이" + "알고 가시나요?"
+- voiceover: "캐나다 자녀무상교육 조건, 지역별 차이 알고 가시나요?"
+- duration: 4.46s
 - poster: 3s
 - transition_in: cut
 - status: animated
@@ -35,7 +36,8 @@ Scene 1 (0.0–1.0s): 상단 라벨 + "캐나다" → "자녀무상교육" 두 �
 ## Frame 2 — 공짜가 아니라 학비면제
 
 - scene: "Free education"에 취소선 → "Tuition exemption = 학비면제"
-- duration: 6s
+- voiceover: "흔히 무상교육이라고 부르지만, 정확한 개념은 학비면제, 튜이션 익젬션입니다."
+- duration: 7.1s
 - poster: 5s
 - transition_in: cut
 - status: animated
@@ -49,7 +51,8 @@ Scene 1 (0.0–1.4s): 라벨 "정확한 개념은?" + "Free education" "(무상�
 ## Frame 3 — 교육청의 두 가지 분류
 
 - scene: 학생을 두 갈래로 나누는 분기 다이어그램 — International students(학비 납부) vs Residents(학비 면제)
-- duration: 6s
+- voiceover: "교육청은 학생을 두 가지로 나눕니다. 학비를 내는 국제학생, 그리고 학비가 면제되는 거주자죠."
+- duration: 7.1s
 - poster: 5s
 - transition_in: cut
 - status: animated
@@ -63,7 +66,8 @@ Scene 1 (0.0–1.2s): 헤더 등장, 중앙 노드 "학생" 박스 팝. → Scen
 ## Frame 4 — 학생비자 부모의 자녀 = Resident
 
 - scene: Residents 아래 두 가지(영구거주자 / 임시거주자) 트리, Study permit이 강조되며 "동반자녀 학비 0"
-- duration: 7s
+- voiceover: "거주자에는 시민권자, 영주권자 같은 영구거주자와, 부모가 워크퍼밋이나 스터디퍼밋을 가진 임시거주자가 있어요. 그래서 부모가 학생비자를 받으면, 동반 자녀도 거주자로 학비가 면제됩니다."
+- duration: 14.44s
 - poster: 6s
 - transition_in: cut
 - status: animated
@@ -77,7 +81,8 @@ Scene 1 (0.0–1.2s): "Residents (거주자)" 헤더 슬라이드. → Scene 2 (
 ## Frame 5 — 그런데, 조건은 3가지
 
 - scene: 레드 풀 패널 위 거대한 흰색 "3" (−6°) + "공부 종류에 따라 조건이 달라요"
-- duration: 4s
+- voiceover: "단, 부모가 어떤 공부를 하느냐에 따라, 지역별 조건이 세 가지로 갈립니다."
+- duration: 5.75s
 - poster: 3s
 - transition_in: cut
 - status: animated
@@ -91,7 +96,8 @@ Scene 1 (0.0–0.8s): 라벨 "단, 부모가 어떤 공부를 하느냐에 따�
 ## Frame 6 — 학생비자 3가지 유형
 
 - scene: 더블 보더 그리드 3행 — 01 정규과정 / 02 조건부입학 영어과정 / 03 사설어학원, 각 행 오른쪽에 적용 지역
-- duration: 10s
+- voiceover: "첫째, 컬리지나 대학 학위과정 같은 정규과정은 캐나다 모든 지역에서 인정돼요. 둘째, 정규과정 입학을 위한 조건부 영어과정은 온타리오와 매니토바 일부에서 인정됩니다. 셋째, 사설어학원은 퀘벡과 노바스코샤에서 인정돼요."
+- duration: 15.79s
 - poster: 9s
 - transition_in: cut
 - status: animated
@@ -105,7 +111,8 @@ Scene 1 (0.0–1.0s): 헤더 "학생비자, 무슨 공부?" + 그리드 외곽�
 ## Frame 7 — 몬트리올이 있는 퀘벡
 
 - scene: 레드 패널, "사설어학원 학생비자만 있어도" → "퀘벡·노바스코샤" → "조건 없이 무상교육" + MONTRÉAL 태그
-- duration: 5s
+- voiceover: "즉, 몬트리올이 있는 퀘벡에서는 사설어학원 학생비자만 있어도, 조건 없이 자녀 무상교육이 가능합니다."
+- duration: 7.47s
 - poster: 4s
 - transition_in: cut
 - status: animated
@@ -119,7 +126,8 @@ Scene 1 (0.0–1.0s): 상단 "사설어학원 학생비자만 있어도" 등장.
 ## Frame 8 — AA Canada CTA
 
 - scene: 흰 바탕, "우리 아이에게 맞는 지역은?" + 레드 −5° "AA Canada" + "캐나다 전문 유학원 · 무료 상담"
-- duration: 4s
+- voiceover: "우리 아이에게 맞는 지역, 캐나다 전문 유학원 에이에이 캐나다와 상담해 보세요."
+- duration: 6.18s
 - poster: 3.5s
 - transition_in: cut
 - status: animated

@@ -7,7 +7,8 @@ destination: shorts
 aspect: 1080x1920
 language: ko
 audience: "캐나다 자녀 동반 유학을 고민하는 한국 학부모"
-length: 45s
+length: 68s
+voice: elevenlabs:9qtE9eIaqHMUAfRp4QTW
 angle: concept
 ---
 
@@ -22,5 +23,6 @@ AA Canada 유학원의 쇼츠. 원문 문서 「자녀무상교육 제도의 이
 ## Notes
 
 - 사용자 요청: "파일 안에 이미지는 촌스러우니까 그대로 사용하진 말아줘" — docx의 image1.png는 사용하지 않음. 모든 비주얼은 새로 디자인(타이포/다이어그램).
-- 한국어 TTS 엔진이 이 환경에서 불가(Kokoro 한국어 미지원, 외부 TTS 네트워크 차단) → 내레이션 없이 화면 텍스트 중심의 무음 쇼츠. 음악은 업로드 시 앱에서 추가.
+- 내레이션: ElevenLabs 클론 음성 "네 번째"(9qtE9eIaqHMUAfRp4QTW), eleven_multilingual_v2. 자막 트랙 생략(화면 타이포가 메시지 담당, 하단은 쇼츠 UI 영역).
+- 훅 문구 변경 요청: "캐나다 자녀무상교육 조건, 지역별 차이 알고 가시나요?"
 - 폰트: Noto Sans KR(로컬 public/fonts), GSAP 로컬(public/vendor) — CDN 차단 환경.

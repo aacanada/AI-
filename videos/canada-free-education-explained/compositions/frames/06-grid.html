@@ -32,8 +32,8 @@
 #root .grd-row.hot .grd-reg{background:#D8000F;border-color:#D8000F;color:#FFFFFF;transform-origin:center center;}
 #root .grd-row.hot .grd-note{color:#D8000F;font-weight:900;font-size:40px;}
 </style>
-<div id="root" data-composition-id="06-grid" data-width="1080" data-height="1920" data-duration="10">
-  <div id="grd-bg" class="clip grd-bg" data-start="0" data-duration="10" data-track-index="0"></div>
+<div id="root" data-composition-id="06-grid" data-width="1080" data-height="1920" data-duration="15.79">
+  <div id="grd-bg" class="clip grd-bg" data-start="0" data-duration="15.79" data-track-index="0"></div>
   
   <div class="grd-label" id="grd-label">AA CANADA · 자녀무상교육</div>
   <div class="grd-count" id="grd-count">06 / 08</div>
@@ -60,12 +60,12 @@
   tl.fromTo("#grd-count",{opacity:0},{opacity:1,duration:0.5},0.1);
   tl.fromTo("#grd-pbar",{scaleX:0.833},{scaleX:1,duration:0.8,ease:"power3.out"},0.1);
   
-  tl.fromTo("#grd-h",{opacity:0,y:40},{opacity:1,y:0,duration:0.5,ease:"power3.out"},0.05);
-  tl.fromTo("#grd-box",{clipPath:"inset(0 0 100% 0)"},{clipPath:"inset(0 0 0% 0)",duration:0.7,ease:"power3.inOut"},0.4);
-  [[1.0,0],[3.6,1],[6.2,2]].forEach(([t,i])=>{
+  tl.fromTo("#grd-h",{opacity:0,y:40},{opacity:1,y:0,duration:0.5,ease:"power3.out"},0.0);
+  tl.fromTo("#grd-box",{clipPath:"inset(0 0 100% 0)"},{clipPath:"inset(0 0 0% 0)",duration:0.6,ease:"power3.inOut"},0.1);
+  [[0.046,2.977,4.642,0],[4.927,8.967,10.584,1],[11.475,12.636,14.345,2]].forEach(([t,tr,tn,i])=>{
     tl.fromTo("#grd-r"+i+" .grd-num, #grd-r"+i+" .grd-t, #grd-r"+i+" .grd-d",{opacity:0,x:-50},{opacity:1,x:0,duration:0.5,ease:"power3.out",stagger:0.12},t);
-    tl.fromTo("#grd-reg"+i,{opacity:0,scale:i===2?1.6:0.9},{opacity:1,scale:1,duration:i===2?0.45:0.4,ease:i===2?"expo.out":"power3.out"},t+(i===2?1.1:0.8));
-    tl.fromTo("#grd-note"+i,{opacity:0,y:20},{opacity:1,y:0,duration:0.4,ease:"power3.out"},t+(i===2?1.7:1.3));
+    tl.fromTo("#grd-reg"+i,{opacity:0,scale:i===2?1.6:0.9},{opacity:1,scale:1,duration:i===2?0.45:0.4,ease:i===2?"expo.out":"power3.out"},tr);
+    tl.fromTo("#grd-note"+i,{opacity:0,y:20},{opacity:1,y:0,duration:0.4,ease:"power3.out"},tn);
   });
   window.__timelines["06-grid"] = tl;
 })();

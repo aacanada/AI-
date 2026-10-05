@@ -36,8 +36,8 @@
 #root .spl-right .hr{background:#FFFFFF;}
 #root .spl-right .val{text-shadow:4px 4px 0 rgba(28,20,16,.25), 8px 8px 0 rgba(28,20,16,.18), 12px 12px 0 rgba(28,20,16,.12);}
 </style>
-<div id="root" data-composition-id="03-split" data-width="1080" data-height="1920" data-duration="6">
-  <div id="spl-bg" class="clip spl-bg" data-start="0" data-duration="6" data-track-index="0"></div>
+<div id="root" data-composition-id="03-split" data-width="1080" data-height="1920" data-duration="7.1">
+  <div id="spl-bg" class="clip spl-bg" data-start="0" data-duration="7.1" data-track-index="0"></div>
   
   <div class="spl-label" id="spl-label">AA CANADA · 자녀무상교육</div>
   <div class="spl-count" id="spl-count">03 / 08</div>
@@ -66,12 +66,12 @@
   tl.fromTo("#spl-count",{opacity:0},{opacity:1,duration:0.5},0.1);
   tl.fromTo("#spl-pbar",{scaleX:0.667},{scaleX:1,duration:0.8,ease:"power3.out"},0.1);
   
-  tl.fromTo("#spl-h",{opacity:0,y:50},{opacity:1,y:0,duration:0.55,ease:"power3.out"},0.05);
-  tl.fromTo("#spl-node",{opacity:0,scale:0.6},{opacity:1,scale:1,duration:0.5,ease:"back.out(1.6)"},0.6);
-  tl.fromTo(["#spl-pl","#spl-pr"],{strokeDasharray:600,strokeDashoffset:600},{strokeDashoffset:0,duration:0.9,ease:"power2.inOut"},1.2);
-  tl.fromTo("#spl-left",{opacity:0,y:80},{opacity:1,y:0,duration:0.6,ease:"power3.out"},2.4);
-  tl.fromTo("#spl-right",{opacity:0,y:80},{opacity:1,y:0,duration:0.6,ease:"power3.out"},3.8);
-  tl.fromTo("#spl-right",{scale:1},{scale:1.04,duration:0.5,ease:"power3.out",immediateRender:false},4.6);
+  tl.fromTo("#spl-h",{opacity:0,y:50},{opacity:1,y:0,duration:0.5,ease:"power3.out"},0.05);
+  tl.fromTo("#spl-node",{opacity:0,scale:0.6},{opacity:1,scale:1,duration:0.5,ease:"back.out(1.6)"},0.701);
+  tl.fromTo(["#spl-pl","#spl-pr"],{strokeDasharray:600,strokeDashoffset:600},{strokeDashoffset:0,duration:0.8,ease:"power2.inOut"},1.219);
+  tl.fromTo("#spl-left",{opacity:0,y:80},{opacity:1,y:0,duration:0.55,ease:"power3.out"},2.338);
+  tl.fromTo("#spl-right",{opacity:0,y:80},{opacity:1,y:0,duration:0.55,ease:"power3.out"},4.265);
+  tl.fromTo("#spl-right",{scale:1},{scale:1.04,duration:0.5,ease:"power3.out",immediateRender:false},5.155);
   window.__timelines["03-split"] = tl;
 })();
 </script>

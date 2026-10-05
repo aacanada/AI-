@@ -35,8 +35,8 @@
 #root .res-banner .b{font-size:92px;font-weight:900;letter-spacing:-3px;margin-top:16px;}
 #root .res-banner .b span{color:#D8000F;}
 </style>
-<div id="root" data-composition-id="04-resident" data-width="1080" data-height="1920" data-duration="7">
-  <div id="res-bg" class="clip res-bg" data-start="0" data-duration="7" data-track-index="0"></div>
+<div id="root" data-composition-id="04-resident" data-width="1080" data-height="1920" data-duration="14.44">
+  <div id="res-bg" class="clip res-bg" data-start="0" data-duration="14.44" data-track-index="0"></div>
   
   <div class="res-label" id="res-label">AA CANADA · 자녀무상교육</div>
   <div class="res-count" id="res-count">04 / 08</div>
@@ -59,14 +59,16 @@
   tl.fromTo("#res-count",{opacity:0},{opacity:1,duration:0.5},0.1);
   tl.fromTo("#res-pbar",{scaleX:0.750},{scaleX:1,duration:0.8,ease:"power3.out"},0.1);
   
-  tl.fromTo("#res-h",{opacity:0,x:-80},{opacity:1,x:0,duration:0.6,ease:"power3.out"},0.05);
-  tl.fromTo("#res-hk",{opacity:0,y:30},{opacity:1,y:0,duration:0.5,ease:"power3.out"},0.4);
-  tl.fromTo("#res-c1",{opacity:0,x:-60},{opacity:1,x:0,duration:0.55,ease:"power3.out"},1.2);
-  tl.fromTo("#res-c2",{opacity:0,x:-60},{opacity:1,x:0,duration:0.55,ease:"power3.out"},2.4);
-  tl.fromTo("#res-chipfill",{scaleX:0},{scaleX:1,duration:0.45,ease:"power3.inOut"},3.8);
-  tl.fromTo("#res-chip2t",{color:"#1C1410"},{color:"#FFFFFF",duration:0.2},3.95);
-  tl.fromTo("#res-chip1",{opacity:1},{opacity:0.35,duration:0.4},3.9);
-  tl.fromTo("#res-banner",{clipPath:"inset(0 100% 0 0)"},{clipPath:"inset(0 0% 0 0)",duration:0.7,ease:"power3.inOut"},5.0);
+  tl.fromTo("#res-h",{opacity:0,x:-80},{opacity:1,x:0,duration:0.55,ease:"power3.out"},0.05);
+  tl.fromTo("#res-hk",{opacity:0,y:30},{opacity:1,y:0,duration:0.45,ease:"power3.out"},0.35);
+  tl.fromTo("#res-c1",{opacity:0,x:-60},{opacity:1,x:0,duration:0.5,ease:"power3.out"},0.539);
+  tl.fromTo("#res-c2",{opacity:0,x:-60},{opacity:1,x:0,duration:0.5,ease:"power3.out"},4.532);
+  tl.fromTo("#res-chip1",{opacity:0,y:20},{opacity:1,y:0,duration:0.4,ease:"power3.out"},5.302);
+  tl.fromTo("#res-chip2",{opacity:0,y:20},{opacity:1,y:0,duration:0.4,ease:"power3.out"},6.231);
+  tl.fromTo("#res-chipfill",{scaleX:0},{scaleX:1,duration:0.45,ease:"power3.inOut"},9.049);
+  tl.fromTo("#res-chip2t",{color:"#1C1410"},{color:"#FFFFFF",duration:0.2},9.199);
+  tl.to("#res-chip1",{opacity:0.35,duration:0.4},9.149);
+  tl.fromTo("#res-banner",{clipPath:"inset(0 100% 0 0)"},{clipPath:"inset(0 0% 0 0)",duration:0.7,ease:"power3.inOut"},11.046);
   window.__timelines["04-resident"] = tl;
 })();
 </script>

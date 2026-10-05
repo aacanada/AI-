@@ -19,26 +19,26 @@
 #root .hook-label,#root .hook-count,#root .hook-pbar-track{z-index:2;}
 
 
-#root .hook-l1,#root .hook-l2{left:90px;right:90px;font-weight:900;color:#1C1410;letter-spacing:-4px;line-height:1.05;}
-#root .hook-l1{top:330px;font-size:120px;}
-#root .hook-l2{top:495px;font-size:150px;}
-#root .hook-small{left:96px;top:735px;line-height:1;font-size:80px;font-weight:700;color:#1C1410;}
-#root .hook-big{left:70px;top:880px;font-size:230px;font-weight:900;color:#D8000F;letter-spacing:-10px;line-height:1;transform-origin:left center;white-space:nowrap;}
-#root .hook-rule{left:90px;top:1190px;width:900px;height:22px;background:#1C1410;transform-origin:left center;}
-#root .hook-tag{left:90px;top:1280px;padding:18px 34px;border:4px solid #1C1410;font-size:48px;font-weight:900;color:#1C1410;}
+#root .hook-l1{left:90px;right:90px;top:330px;font-size:110px;font-weight:900;letter-spacing:-4px;line-height:1.1;}
+#root .hook-l2{left:90px;right:90px;top:470px;font-size:96px;font-weight:900;letter-spacing:-4px;line-height:1.1;white-space:nowrap;}
+#root .hook-l2 b{color:#D8000F;}
+#root .hook-big{left:70px;top:680px;font-size:190px;font-weight:900;color:#D8000F;letter-spacing:-8px;line-height:1.1;transform-origin:left center;white-space:nowrap;}
+#root .hook-tail{left:96px;top:960px;font-size:110px;font-weight:900;letter-spacing:-4px;line-height:1.1;}
+#root .hook-rule{left:90px;top:1170px;width:900px;height:22px;background:#1C1410;transform-origin:left center;}
+#root .hook-tag{left:90px;top:1260px;padding:18px 34px;border:4px solid #1C1410;font-size:48px;font-weight:900;color:#1C1410;}
 #root .hook-tag b{color:#D8000F;}
 </style>
-<div id="root" data-composition-id="01-hook" data-width="1080" data-height="1920" data-duration="4">
-  <div id="hook-bg" class="clip hook-bg" data-start="0" data-duration="4" data-track-index="0"></div>
+<div id="root" data-composition-id="01-hook" data-width="1080" data-height="1920" data-duration="4.46">
+  <div id="hook-bg" class="clip hook-bg" data-start="0" data-duration="4.46" data-track-index="0"></div>
   
   <div class="hook-label" id="hook-label">AA CANADA · 자녀무상교육</div>
   <div class="hook-count" id="hook-count">01 / 08</div>
   <div class="hook-pbar-track"><div class="hook-pbar" id="hook-pbar" style="width:12.5%"></div></div>
   
   <div class="hook-blk hook-l1" id="hook-l1">캐나다</div>
-  <div class="hook-blk hook-l2" id="hook-l2">자녀무상교육</div>
-  <div class="hook-blk hook-small" id="hook-small" data-layout-allow-overlap>진짜</div>
-  <div class="hook-blk hook-big" id="hook-big">공짜일까?</div>
+  <div class="hook-blk hook-l2" id="hook-l2">자녀무상교육 <b>조건,</b></div>
+  <div class="hook-blk hook-big" id="hook-big">지역별 차이</div>
+  <div class="hook-blk hook-tail" id="hook-tail">알고 가시나요?</div>
   <div class="hook-blk hook-rule" id="hook-rule"></div>
   <div class="hook-blk hook-tag" id="hook-tag"><b>1분</b> 정리</div>
 </div>
@@ -50,12 +50,12 @@
   tl.fromTo("#hook-count",{opacity:0},{opacity:1,duration:0.5},0.1);
   tl.fromTo("#hook-pbar",{scaleX:0.000},{scaleX:1,duration:0.8,ease:"power3.out"},0.1);
   
-  tl.fromTo("#hook-l1",{opacity:0,y:80},{opacity:1,y:0,duration:0.6,ease:"power3.out"},0.05);
-  tl.fromTo("#hook-l2",{opacity:0,y:80},{opacity:1,y:0,duration:0.6,ease:"power3.out"},0.25);
-  tl.fromTo("#hook-small",{opacity:0,x:-40},{opacity:1,x:0,duration:0.45,ease:"power3.out"},1.0);
-  tl.fromTo("#hook-big",{opacity:0,scale:1.35,rotation:-5},{opacity:1,scale:1,rotation:-5,duration:0.55,ease:"expo.out"},1.25);
-  tl.fromTo("#hook-rule",{scaleX:0},{scaleX:1,duration:0.6,ease:"power3.inOut"},2.2);
-  tl.fromTo("#hook-tag",{opacity:0,y:30},{opacity:1,y:0,duration:0.5,ease:"power3.out"},2.7);
+  tl.fromTo("#hook-l1",{opacity:0,y:80},{opacity:1,y:0,duration:0.5,ease:"power3.out"},0.05);
+  tl.fromTo("#hook-l2",{opacity:0,y:80},{opacity:1,y:0,duration:0.5,ease:"power3.out"},0.433);
+  tl.fromTo("#hook-big",{opacity:0,scale:1.35,rotation:-5},{opacity:1,scale:1,rotation:-5,duration:0.55,ease:"expo.out"},2.151);
+  tl.fromTo("#hook-tail",{opacity:0,x:-50},{opacity:1,x:0,duration:0.45,ease:"power3.out"},2.859);
+  tl.fromTo("#hook-rule",{scaleX:0},{scaleX:1,duration:0.5,ease:"power3.inOut"},3.226);
+  tl.fromTo("#hook-tag",{opacity:0,y:30},{opacity:1,y:0,duration:0.4,ease:"power3.out"},3.526);
   window.__timelines["01-hook"] = tl;
 })();
 </script>

@@ -1,5 +1,9 @@
 // Generates compositions/frames/*.html (one <template> fragment per storyboard frame).
-import { writeFileSync } from "node:fs";
+import { writeFileSync, readFileSync } from "node:fs";
+const META = JSON.parse(readFileSync("audio_meta.json", "utf8"));
+const V = Object.fromEntries(META.voices.map(v => [v.frame, v]));
+const D = (n) => V[n].duration_s;                       // frame duration = real voice length
+const c = (n, i, off = 0) => +(V[n].words[i].start + off).toFixed(3); // word-cue time
 
 const RED = "#D8000F", INK = "#1C1410", BG = "#FFFFFF", LIGHT = "#F5F2EF";
 const TOTAL = 8;
@@ -64,65 +68,65 @@ ${css}
 const SHADOW = "4px 4px 0 rgba(28,20,16,.25), 8px 8px 0 rgba(28,20,16,.18), 12px 12px 0 rgba(28,20,16,.12)";
 
 // ---------- 01 hook ----------
-frame({ id: "01-hook", p: "hook", n: 1, dur: 4,
+frame({ id: "01-hook", p: "hook", n: 1, dur: D(1),
   css: `
-#root .hook-l1,#root .hook-l2{left:90px;right:90px;font-weight:900;color:${INK};letter-spacing:-4px;line-height:1.05;}
-#root .hook-l1{top:330px;font-size:120px;}
-#root .hook-l2{top:495px;font-size:150px;}
-#root .hook-small{left:96px;top:735px;line-height:1;font-size:80px;font-weight:700;color:${INK};}
-#root .hook-big{left:70px;top:880px;font-size:230px;font-weight:900;color:${RED};letter-spacing:-10px;line-height:1;transform-origin:left center;white-space:nowrap;}
-#root .hook-rule{left:90px;top:1190px;width:900px;height:22px;background:${INK};transform-origin:left center;}
-#root .hook-tag{left:90px;top:1280px;padding:18px 34px;border:4px solid ${INK};font-size:48px;font-weight:900;color:${INK};}
+#root .hook-l1{left:90px;right:90px;top:330px;font-size:110px;font-weight:900;letter-spacing:-4px;line-height:1.1;}
+#root .hook-l2{left:90px;right:90px;top:470px;font-size:96px;font-weight:900;letter-spacing:-4px;line-height:1.1;white-space:nowrap;}
+#root .hook-l2 b{color:${RED};}
+#root .hook-big{left:70px;top:680px;font-size:190px;font-weight:900;color:${RED};letter-spacing:-8px;line-height:1.1;transform-origin:left center;white-space:nowrap;}
+#root .hook-tail{left:96px;top:960px;font-size:110px;font-weight:900;letter-spacing:-4px;line-height:1.1;}
+#root .hook-rule{left:90px;top:1170px;width:900px;height:22px;background:${INK};transform-origin:left center;}
+#root .hook-tag{left:90px;top:1260px;padding:18px 34px;border:4px solid ${INK};font-size:48px;font-weight:900;color:${INK};}
 #root .hook-tag b{color:${RED};}`,
   html: `
   <div class="hook-blk hook-l1" id="hook-l1">캐나다</div>
-  <div class="hook-blk hook-l2" id="hook-l2">자녀무상교육</div>
-  <div class="hook-blk hook-small" id="hook-small" data-layout-allow-overlap>진짜</div>
-  <div class="hook-blk hook-big" id="hook-big">공짜일까?</div>
+  <div class="hook-blk hook-l2" id="hook-l2">자녀무상교육 <b>조건,</b></div>
+  <div class="hook-blk hook-big" id="hook-big">지역별 차이</div>
+  <div class="hook-blk hook-tail" id="hook-tail">알고 가시나요?</div>
   <div class="hook-blk hook-rule" id="hook-rule"></div>
   <div class="hook-blk hook-tag" id="hook-tag"><b>1분</b> 정리</div>`,
   js: `
-  tl.fromTo("#hook-l1",{opacity:0,y:80},{opacity:1,y:0,duration:0.6,ease:"power3.out"},0.05);
-  tl.fromTo("#hook-l2",{opacity:0,y:80},{opacity:1,y:0,duration:0.6,ease:"power3.out"},0.25);
-  tl.fromTo("#hook-small",{opacity:0,x:-40},{opacity:1,x:0,duration:0.45,ease:"power3.out"},1.0);
-  tl.fromTo("#hook-big",{opacity:0,scale:1.35,rotation:-5},{opacity:1,scale:1,rotation:-5,duration:0.55,ease:"expo.out"},1.25);
-  tl.fromTo("#hook-rule",{scaleX:0},{scaleX:1,duration:0.6,ease:"power3.inOut"},2.2);
-  tl.fromTo("#hook-tag",{opacity:0,y:30},{opacity:1,y:0,duration:0.5,ease:"power3.out"},2.7);`
+  tl.fromTo("#hook-l1",{opacity:0,y:80},{opacity:1,y:0,duration:0.5,ease:"power3.out"},${c(1,0,-0.1)});
+  tl.fromTo("#hook-l2",{opacity:0,y:80},{opacity:1,y:0,duration:0.5,ease:"power3.out"},${c(1,1,-0.1)});
+  tl.fromTo("#hook-big",{opacity:0,scale:1.35,rotation:-5},{opacity:1,scale:1,rotation:-5,duration:0.55,ease:"expo.out"},${c(1,3,-0.1)});
+  tl.fromTo("#hook-tail",{opacity:0,x:-50},{opacity:1,x:0,duration:0.45,ease:"power3.out"},${c(1,5,-0.1)});
+  tl.fromTo("#hook-rule",{scaleX:0},{scaleX:1,duration:0.5,ease:"power3.inOut"},${c(1,6)});
+  tl.fromTo("#hook-tag",{opacity:0,y:30},{opacity:1,y:0,duration:0.4,ease:"power3.out"},${c(1,6,0.3)});`
 });
 
 // ---------- 02 concept ----------
-frame({ id: "02-concept", p: "con", n: 2, dur: 6,
+frame({ id: "02-concept", p: "con", n: 2, dur: D(2),
   css: `
 #root .con-q{left:90px;top:300px;font-size:64px;font-weight:700;}
 #root .con-old{left:90px;top:440px;font-size:120px;font-weight:900;letter-spacing:-4px;line-height:1.1;font-family:"Noto Sans KR";}
 #root .con-oldk{left:94px;top:590px;font-size:64px;font-weight:700;color:#8a8580;}
 #root .con-strike{left:80px;top:518px;width:860px;height:18px;background:${RED};transform-origin:left center;}
-#root .con-arrow{left:90px;top:700px;line-height:1;font-size:90px;font-weight:900;color:${INK};}
+#root .con-arrow{left:90px;top:700px;line-height:1;font-size:64px;font-weight:900;color:${INK};}
 #root .con-new{left:90px;top:840px;line-height:1.1;font-size:100px;font-weight:900;letter-spacing:-4px;}
 #root .con-big{left:80px;top:1080px;font-size:250px;font-weight:900;color:${RED};letter-spacing:-12px;line-height:1;transform-origin:left center;white-space:nowrap;}
 #root .con-sub{left:96px;top:1400px;font-size:54px;font-weight:700;border-left:10px solid ${RED};padding-left:28px;}`,
   html: `
-  <div class="con-blk con-q" id="con-q">정확한 개념은?</div>
+  <div class="con-blk con-q" id="con-q">흔히 부르는 말</div>
   <div class="con-blk con-old" id="con-old">Free education</div>
   <div class="con-blk con-oldk" id="con-oldk">무상교육</div>
   <div class="con-blk con-strike" id="con-strike"></div>
-  <div class="con-blk con-arrow" id="con-arrow">↓</div>
+  <div class="con-blk con-arrow" id="con-arrow">↓ 정확한 개념</div>
   <div class="con-blk con-new" id="con-new">Tuition exemption</div>
   <div class="con-blk con-big" id="con-big">학비면제</div>
   <div class="con-blk con-sub" id="con-sub">학비를 ‘면제’받는 제도</div>`,
   js: `
   tl.fromTo("#con-q",{opacity:0,y:40},{opacity:1,y:0,duration:0.5,ease:"power3.out"},0.05);
-  tl.fromTo(["#con-old","#con-oldk"],{opacity:0,y:60},{opacity:1,y:0,duration:0.6,ease:"power3.out",stagger:0.15},0.35);
-  tl.fromTo("#con-strike",{scaleX:0},{scaleX:1,duration:0.45,ease:"power3.inOut"},1.45);
-  tl.to(["#con-old","#con-oldk"],{opacity:0.3,duration:0.4},1.8);
-  tl.fromTo("#con-arrow",{opacity:0,y:-30},{opacity:1,y:0,duration:0.4,ease:"power3.out"},2.3);
-  tl.fromTo("#con-new",{opacity:0,y:60},{opacity:1,y:0,duration:0.55,ease:"power3.out"},2.5);
-  tl.fromTo("#con-big",{opacity:0,scale:1.35,rotation:-4},{opacity:1,scale:1,rotation:-4,duration:0.6,ease:"expo.out"},3.1);
-  tl.fromTo("#con-sub",{opacity:0,x:-40},{opacity:1,x:0,duration:0.5,ease:"power3.out"},4.2);`
+  tl.fromTo(["#con-old","#con-oldk"],{opacity:0,y:60},{opacity:1,y:0,duration:0.55,ease:"power3.out",stagger:0.15},${c(2,1,-0.15)});
+  tl.fromTo("#con-strike",{scaleX:0},{scaleX:1,duration:0.45,ease:"power3.inOut"},${c(2,2)});
+  tl.to(["#con-old","#con-oldk"],{opacity:0.3,duration:0.4},${c(2,2,0.35)});
+  tl.fromTo("#con-arrow",{opacity:0,y:-30},{opacity:1,y:0,duration:0.4,ease:"power3.out"},${c(2,3,-0.1)});
+  tl.fromTo("#con-big",{opacity:0,scale:1.35,rotation:-4},{opacity:1,scale:1,rotation:-4,duration:0.6,ease:"expo.out"},${c(2,5,-0.1)});
+  tl.fromTo("#con-new",{opacity:0,y:60},{opacity:1,y:0,duration:0.5,ease:"power3.out"},${c(2,6,-0.1)});
+  tl.fromTo("#con-sub",{opacity:0,x:-40},{opacity:1,x:0,duration:0.5,ease:"power3.out"},${c(2,7,0.5)});`
 });
 
 // ---------- 03 split ----------
-frame({ id: "03-split", p: "spl", n: 3, dur: 6,
+frame({ id: "03-split", p: "spl", n: 3, dur: D(3),
   css: `
 #root .spl-h{left:90px;right:90px;top:290px;font-size:62px;white-space:nowrap;font-weight:900;letter-spacing:-2px;line-height:1.25;}
 #root .spl-h b{color:${RED};}
@@ -156,16 +160,16 @@ frame({ id: "03-split", p: "spl", n: 3, dur: 6,
     <div class="hr" style="margin-top:94px"></div><div class="res">학비</div><div class="val">면제</div>
   </div>`,
   js: `
-  tl.fromTo("#spl-h",{opacity:0,y:50},{opacity:1,y:0,duration:0.55,ease:"power3.out"},0.05);
-  tl.fromTo("#spl-node",{opacity:0,scale:0.6},{opacity:1,scale:1,duration:0.5,ease:"back.out(1.6)"},0.6);
-  tl.fromTo(["#spl-pl","#spl-pr"],{strokeDasharray:600,strokeDashoffset:600},{strokeDashoffset:0,duration:0.9,ease:"power2.inOut"},1.2);
-  tl.fromTo("#spl-left",{opacity:0,y:80},{opacity:1,y:0,duration:0.6,ease:"power3.out"},2.4);
-  tl.fromTo("#spl-right",{opacity:0,y:80},{opacity:1,y:0,duration:0.6,ease:"power3.out"},3.8);
-  tl.fromTo("#spl-right",{scale:1},{scale:1.04,duration:0.5,ease:"power3.out",immediateRender:false},4.6);`
+  tl.fromTo("#spl-h",{opacity:0,y:50},{opacity:1,y:0,duration:0.5,ease:"power3.out"},0.05);
+  tl.fromTo("#spl-node",{opacity:0,scale:0.6},{opacity:1,scale:1,duration:0.5,ease:"back.out(1.6)"},${c(3,1,-0.1)});
+  tl.fromTo(["#spl-pl","#spl-pr"],{strokeDasharray:600,strokeDashoffset:600},{strokeDashoffset:0,duration:0.8,ease:"power2.inOut"},${c(3,2)});
+  tl.fromTo("#spl-left",{opacity:0,y:80},{opacity:1,y:0,duration:0.55,ease:"power3.out"},${c(3,5,-0.1)});
+  tl.fromTo("#spl-right",{opacity:0,y:80},{opacity:1,y:0,duration:0.55,ease:"power3.out"},${c(3,8,-0.1)});
+  tl.fromTo("#spl-right",{scale:1},{scale:1.04,duration:0.5,ease:"power3.out",immediateRender:false},${c(3,10)});`
 });
 
 // ---------- 04 resident ----------
-frame({ id: "04-resident", p: "res", n: 4, dur: 7,
+frame({ id: "04-resident", p: "res", n: 4, dur: D(4),
   css: `
 #root .res-h{left:90px;top:290px;font-size:110px;font-weight:900;color:${RED};letter-spacing:-4px;line-height:1;}
 #root .res-hk{left:96px;top:420px;font-size:56px;font-weight:700;}
@@ -192,18 +196,20 @@ frame({ id: "04-resident", p: "res", n: 4, dur: 7,
   </div>
   <div class="res-blk res-banner" id="res-banner"><div class="a">부모 학생비자 = 동반자녀는</div><div class="b"><span>Resident</span> → 학비 0</div></div>`,
   js: `
-  tl.fromTo("#res-h",{opacity:0,x:-80},{opacity:1,x:0,duration:0.6,ease:"power3.out"},0.05);
-  tl.fromTo("#res-hk",{opacity:0,y:30},{opacity:1,y:0,duration:0.5,ease:"power3.out"},0.4);
-  tl.fromTo("#res-c1",{opacity:0,x:-60},{opacity:1,x:0,duration:0.55,ease:"power3.out"},1.2);
-  tl.fromTo("#res-c2",{opacity:0,x:-60},{opacity:1,x:0,duration:0.55,ease:"power3.out"},2.4);
-  tl.fromTo("#res-chipfill",{scaleX:0},{scaleX:1,duration:0.45,ease:"power3.inOut"},3.8);
-  tl.fromTo("#res-chip2t",{color:"${INK}"},{color:"${BG}",duration:0.2},3.95);
-  tl.fromTo("#res-chip1",{opacity:1},{opacity:0.35,duration:0.4},3.9);
-  tl.fromTo("#res-banner",{clipPath:"inset(0 100% 0 0)"},{clipPath:"inset(0 0% 0 0)",duration:0.7,ease:"power3.inOut"},5.0);`
+  tl.fromTo("#res-h",{opacity:0,x:-80},{opacity:1,x:0,duration:0.55,ease:"power3.out"},0.05);
+  tl.fromTo("#res-hk",{opacity:0,y:30},{opacity:1,y:0,duration:0.45,ease:"power3.out"},0.35);
+  tl.fromTo("#res-c1",{opacity:0,x:-60},{opacity:1,x:0,duration:0.5,ease:"power3.out"},${c(4,1,-0.1)});
+  tl.fromTo("#res-c2",{opacity:0,x:-60},{opacity:1,x:0,duration:0.5,ease:"power3.out"},${c(4,5,-0.1)});
+  tl.fromTo("#res-chip1",{opacity:0,y:20},{opacity:1,y:0,duration:0.4,ease:"power3.out"},${c(4,6,-0.05)});
+  tl.fromTo("#res-chip2",{opacity:0,y:20},{opacity:1,y:0,duration:0.4,ease:"power3.out"},${c(4,7,-0.05)});
+  tl.fromTo("#res-chipfill",{scaleX:0},{scaleX:1,duration:0.45,ease:"power3.inOut"},${c(4,12,-0.1)});
+  tl.fromTo("#res-chip2t",{color:"${INK}"},{color:"${BG}",duration:0.2},${c(4,12,0.05)});
+  tl.to("#res-chip1",{opacity:0.35,duration:0.4},${c(4,12)});
+  tl.fromTo("#res-banner",{clipPath:"inset(0 100% 0 0)"},{clipPath:"inset(0 0% 0 0)",duration:0.7,ease:"power3.inOut"},${c(4,15,-0.1)});`
 });
 
 // ---------- 05 three ----------
-frame({ id: "05-three", p: "thr", n: 5, dur: 4, inv: true,
+frame({ id: "05-three", p: "thr", n: 5, dur: D(5), inv: true,
   css: `
 #root .thr-a{left:90px;right:90px;top:300px;font-size:66px;font-weight:700;color:${BG};line-height:1.35;}
 #root .thr-num{left:150px;top:620px;font-size:600px;font-weight:900;color:${BG};line-height:0.8;text-shadow:${SHADOW};transform-origin:center center;letter-spacing:-20px;}
@@ -216,9 +222,9 @@ frame({ id: "05-three", p: "thr", n: 5, dur: 4, inv: true,
   <div class="thr-blk thr-sub" id="thr-sub">지역별 학비면제 조건이 달라요</div>`,
   js: `
   tl.fromTo("#thr-a",{opacity:0,y:40},{opacity:1,y:0,duration:0.5,ease:"power3.out"},0.05);
-  tl.fromTo("#thr-num",{opacity:0,scale:1.5,rotation:-6},{opacity:1,scale:1,rotation:-6,duration:0.6,ease:"expo.out"},0.8);
-  tl.fromTo("#thr-unit",{opacity:0,x:60},{opacity:1,x:0,duration:0.45,ease:"power3.out"},1.2);
-  tl.fromTo("#thr-sub",{opacity:0,y:40},{opacity:1,y:0,duration:0.5,ease:"power3.out"},2.0);`
+  tl.fromTo("#thr-sub",{opacity:0,y:40},{opacity:1,y:0,duration:0.5,ease:"power3.out"},${c(5,6,-0.1)});
+  tl.fromTo("#thr-num",{opacity:0,scale:1.5,rotation:-6},{opacity:1,scale:1,rotation:-6,duration:0.55,ease:"expo.out"},${c(5,8,-0.1)});
+  tl.fromTo("#thr-unit",{opacity:0,x:60},{opacity:1,x:0,duration:0.4,ease:"power3.out"},${c(5,9,-0.05)});`
 });
 
 // ---------- 06 grid ----------
@@ -227,7 +233,7 @@ const rows = [
   ["02", "조건부입학 영어과정", "정규과정 입학 조건의 어학연수", "온타리오 · 매니토바 일부", "BC 일부는 사설도 최대 1년", false],
   ["03", "사설어학원", "목적 상관없이 학생비자만 있으면", "퀘벡 · 노바스코샤", "조건 없이 무상교육", true],
 ];
-frame({ id: "06-grid", p: "grd", n: 6, dur: 10,
+frame({ id: "06-grid", p: "grd", n: 6, dur: D(6),
   css: `
 #root .grd-h{left:90px;right:90px;top:280px;font-size:80px;font-weight:900;letter-spacing:-3px;}
 #root .grd-h b{color:${RED};}
@@ -249,17 +255,17 @@ frame({ id: "06-grid", p: "grd", n: 6, dur: 10,
       <div class="grd-reg" id="grd-reg${i}">${r[3]}</div><div class="grd-note" id="grd-note${i}">${r[4]}</div></div>`).join("\n  ")}
   </div>`,
   js: `
-  tl.fromTo("#grd-h",{opacity:0,y:40},{opacity:1,y:0,duration:0.5,ease:"power3.out"},0.05);
-  tl.fromTo("#grd-box",{clipPath:"inset(0 0 100% 0)"},{clipPath:"inset(0 0 0% 0)",duration:0.7,ease:"power3.inOut"},0.4);
-  [[1.0,0],[3.6,1],[6.2,2]].forEach(([t,i])=>{
+  tl.fromTo("#grd-h",{opacity:0,y:40},{opacity:1,y:0,duration:0.5,ease:"power3.out"},0.0);
+  tl.fromTo("#grd-box",{clipPath:"inset(0 0 100% 0)"},{clipPath:"inset(0 0 0% 0)",duration:0.6,ease:"power3.inOut"},0.1);
+  [[${c(6,0)},${c(6,6,-0.1)},${c(6,9,0.3)},0],[${c(6,10,-0.1)},${c(6,16,-0.1)},${c(6,18,0.1)},1],[${c(6,20,-0.1)},${c(6,22,-0.1)},${c(6,24,0.1)},2]].forEach(([t,tr,tn,i])=>{
     tl.fromTo("#grd-r"+i+" .grd-num, #grd-r"+i+" .grd-t, #grd-r"+i+" .grd-d",{opacity:0,x:-50},{opacity:1,x:0,duration:0.5,ease:"power3.out",stagger:0.12},t);
-    tl.fromTo("#grd-reg"+i,{opacity:0,scale:i===2?1.6:0.9},{opacity:1,scale:1,duration:i===2?0.45:0.4,ease:i===2?"expo.out":"power3.out"},t+(i===2?1.1:0.8));
-    tl.fromTo("#grd-note"+i,{opacity:0,y:20},{opacity:1,y:0,duration:0.4,ease:"power3.out"},t+(i===2?1.7:1.3));
+    tl.fromTo("#grd-reg"+i,{opacity:0,scale:i===2?1.6:0.9},{opacity:1,scale:1,duration:i===2?0.45:0.4,ease:i===2?"expo.out":"power3.out"},tr);
+    tl.fromTo("#grd-note"+i,{opacity:0,y:20},{opacity:1,y:0,duration:0.4,ease:"power3.out"},tn);
   });`
 });
 
 // ---------- 07 quebec ----------
-frame({ id: "07-quebec", p: "qc", n: 7, dur: 5, inv: true,
+frame({ id: "07-quebec", p: "qc", n: 7, dur: D(7), inv: true,
   css: `
 #root .qc-a{left:90px;right:90px;top:300px;font-size:64px;font-weight:700;color:${BG};line-height:1.35;}
 #root .qc-box{left:90px;top:500px;padding:26px 44px;background:${BG};color:${RED};font-size:100px;font-weight:900;letter-spacing:-3px;clip-path:inset(0 100% 0 0);}
@@ -274,15 +280,15 @@ frame({ id: "07-quebec", p: "qc", n: 7, dur: 5, inv: true,
   <div class="qc-blk qc-big2" id="qc-big2">무상교육</div>
   <div class="qc-blk qc-pin" id="qc-pin"><div class="qc-dot"></div>몬트리올 MONTRÉAL</div>`,
   js: `
-  tl.fromTo("#qc-a",{opacity:0,y:40},{opacity:1,y:0,duration:0.5,ease:"power3.out"},0.05);
-  tl.fromTo("#qc-box",{clipPath:"inset(0 100% 0 0)"},{clipPath:"inset(0 0% 0 0)",duration:0.6,ease:"power3.inOut"},1.0);
-  tl.fromTo("#qc-big",{opacity:0,scale:1.4,rotation:-5},{opacity:1,scale:1,rotation:-5,duration:0.6,ease:"expo.out"},2.2);
-  tl.fromTo("#qc-big2",{opacity:0,y:50},{opacity:1,y:0,duration:0.5,ease:"power3.out"},2.6);
-  tl.fromTo("#qc-pin",{opacity:0,scale:0.7},{opacity:1,scale:1,duration:0.5,ease:"back.out(1.7)"},3.4);`
+  tl.fromTo("#qc-pin",{opacity:0,scale:0.7},{opacity:1,scale:1,duration:0.5,ease:"back.out(1.7)"},${c(7,1,-0.05)});
+  tl.fromTo("#qc-box",{clipPath:"inset(0 100% 0 0)"},{clipPath:"inset(0 0% 0 0)",duration:0.55,ease:"power3.inOut"},${c(7,3,-0.1)});
+  tl.fromTo("#qc-a",{opacity:0,y:40},{opacity:1,y:0,duration:0.5,ease:"power3.out"},${c(7,4,-0.1)});
+  tl.fromTo("#qc-big",{opacity:0,scale:1.4,rotation:-5},{opacity:1,scale:1,rotation:-5,duration:0.55,ease:"expo.out"},${c(7,7,-0.1)});
+  tl.fromTo("#qc-big2",{opacity:0,y:50},{opacity:1,y:0,duration:0.5,ease:"power3.out"},${c(7,9,-0.1)});`
 });
 
 // ---------- 08 cta ----------
-frame({ id: "08-cta", p: "cta", n: 8, dur: 4,
+frame({ id: "08-cta", p: "cta", n: 8, dur: D(8),
   css: `
 #root .cta-q{left:90px;right:90px;top:320px;font-size:88px;font-weight:900;letter-spacing:-3px;line-height:1.3;}
 #root .cta-q b{color:${RED};}
@@ -299,10 +305,10 @@ frame({ id: "08-cta", p: "cta", n: 8, dur: 4,
   <div class="cta-blk cta-chips" id="cta-chips"><div class="cta-chip hot">자녀무상교육</div><div class="cta-chip">유학 후 이민</div><div class="cta-chip">영주권</div></div>
   <div class="cta-blk cta-btn" id="cta-btn">프로필 링크에서 상담 신청</div>`,
   js: `
-  tl.fromTo("#cta-q",{opacity:0,y:50},{opacity:1,y:0,duration:0.55,ease:"power3.out"},0.05);
-  tl.fromTo("#cta-big",{opacity:0,scale:1.35,rotation:-5},{opacity:1,scale:1,rotation:-5,duration:0.6,ease:"expo.out"},0.9);
-  tl.fromTo("#cta-sub",{opacity:0,x:-40},{opacity:1,x:0,duration:0.45,ease:"power3.out"},1.7);
-  tl.fromTo("#cta-chips .cta-chip",{opacity:0,y:30},{opacity:1,y:0,duration:0.4,ease:"power3.out",stagger:0.12},2.0);
-  tl.fromTo("#cta-btn",{opacity:0,y:40},{opacity:1,y:0,duration:0.5,ease:"power3.out"},2.7);`
+  tl.fromTo("#cta-q",{opacity:0,y:50},{opacity:1,y:0,duration:0.5,ease:"power3.out"},0.03);
+  tl.fromTo("#cta-sub",{opacity:0,x:-40},{opacity:1,x:0,duration:0.45,ease:"power3.out"},${c(8,4,-0.1)});
+  tl.fromTo("#cta-big",{opacity:0,scale:1.35,rotation:-5},{opacity:1,scale:1,rotation:-5,duration:0.55,ease:"expo.out"},${c(8,7,-0.1)});
+  tl.fromTo("#cta-chips .cta-chip",{opacity:0,y:30},{opacity:1,y:0,duration:0.4,ease:"power3.out",stagger:0.12},${c(8,9,-0.1)});
+  tl.fromTo("#cta-btn",{opacity:0,y:40},{opacity:1,y:0,duration:0.5,ease:"power3.out"},${c(8,10,0.2)});`
 });
 console.log("frames written");

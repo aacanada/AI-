@@ -42,6 +42,13 @@
         "canada-free-education-explained"
       ],
       "updated_at": "2026-10-05T10:30:56.906Z"
+    },
+    "voice": {
+      "value": "elevenlabs:9qtE9eIaqHMUAfRp4QTW",
+      "confirmed_in": [
+        "canada-free-education-explained"
+      ],
+      "updated_at": "2026-10-05T10:46:13.328Z"
     }
   },
   "sightings": {}
