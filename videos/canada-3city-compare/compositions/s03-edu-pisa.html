@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /><title>교육 PISA</title></head>
+  <body>
+    <template>
+      <style>
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Regular.woff2") format("woff2");font-weight:400;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Medium.woff2") format("woff2");font-weight:500;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2");font-weight:600;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");font-weight:700;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");font-weight:800;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Black.woff2") format("woff2");font-weight:900;font-style:normal;}
+
+#s03-edu-pisa{position:absolute;inset:0;
+  --paper:#F5F2EA; --paper2:#ECE7DA; --ink:#1C2431; --ink2:#4E5767; --rule:#C9C1AE;
+  --van:#5B3FA0; --tor:#13845A; --mtl:#D2343F; --marker:#F7D046;font-family:"Pretendard",sans-serif;color:var(--ink);overflow:hidden;}
+#s03-edu-pisa *{box-sizing:border-box;margin:0;padding:0;}
+#s03-edu-pisa .stage{position:absolute;inset:0;padding:150px 120px 170px;}
+#s03-edu-pisa .ghost{position:absolute;right:-40px;bottom:120px;font-size:300px;font-weight:900;color:var(--ink);opacity:.06;white-space:nowrap;letter-spacing:-.04em;line-height:1;}
+#s03-edu-pisa .chap{display:flex;align-items:center;gap:26px;height:96px;}
+#s03-edu-pisa .chap .n{width:84px;height:84px;border-radius:50%;background:var(--ink);color:var(--paper);font-size:44px;font-weight:900;display:flex;align-items:center;justify-content:center;flex:none;}
+#s03-edu-pisa .chap h2{font-size:66px;font-weight:900;letter-spacing:-.02em;}
+#s03-edu-pisa .chap .sub{font-size:34px;font-weight:600;color:var(--ink2);padding-left:24px;border-left:4px solid var(--rule);}
+#s03-edu-pisa .van{--c:var(--van);} #s03-edu-pisa .tor{--c:var(--tor);} #s03-edu-pisa .mtl{--c:var(--mtl);}
+#s03-edu-pisa .cc{color:var(--c);}
+#s03-edu-pisa .pill{display:inline-flex;align-items:center;gap:14px;font-size:34px;font-weight:800;color:var(--c);}
+#s03-edu-pisa .pill::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--c);}
+#s03-edu-pisa .mk{position:relative;display:inline-block;isolation:isolate;}
+#s03-edu-pisa .mk .mkb{position:absolute;left:-8px;right:-8px;bottom:4%;height:46%;background:var(--marker);display:block;transform-origin:left center;transform:scaleX(0);border-radius:4px;}
+#s03-edu-pisa .mk .mkt{position:relative;}
+#s03-edu-pisa .card{position:relative;background:#FBF9F4;border:3px solid var(--rule);border-radius:22px;overflow:hidden;}
+#s03-edu-pisa .card.cityc{border-color:var(--c);}
+#s03-edu-pisa .card .bar{position:absolute;left:0;top:0;right:0;height:14px;background:var(--c);}
+#s03-edu-pisa .note{font-size:34px;font-weight:600;color:var(--ink2);}
+#s03-edu-pisa .big{font-weight:900;letter-spacing:-.03em;font-variant-numeric:tabular-nums;}
+#s03-edu-pisa .tag{display:inline-flex;align-items:center;padding:12px 26px;border-radius:999px;background:var(--ink);color:var(--paper);font-size:32px;font-weight:700;}
+#s03-edu-pisa .tag.lite{background:var(--paper2);color:var(--ink);border:3px solid var(--rule);}
+#s03-edu-pisa .arrow{font-weight:900;color:var(--ink2);}
+#s03-edu-pisa .src{position:absolute;right:120px;bottom:178px;font-size:22px;font-weight:600;color:var(--ink2);}
+
+
+#s03-edu-pisa .lc{position:absolute;left:120px;top:290px;width:560px;display:flex;flex-direction:column;gap:30px;}
+#s03-edu-pisa .lt{font-size:40px;font-weight:800;line-height:1.35;}
+#s03-edu-pisa .ls{font-size:30px;font-weight:600;color:var(--ink2);line-height:1.4;}
+#s03-edu-pisa .tags{display:flex;gap:16px;}
+#s03-edu-pisa .chart{position:absolute;left:740px;right:120px;top:270px;}
+#s03-edu-pisa .row{display:grid;grid-template-columns:190px 1fr;align-items:center;height:44px;}
+#s03-edu-pisa .rn{font-size:25px;font-weight:700;color:var(--ink2);}
+#s03-edu-pisa .row.hl .rn{color:var(--c);font-weight:900;}
+#s03-edu-pisa .row.oecd .rn{color:var(--ink);font-weight:900;}
+#s03-edu-pisa .trk{position:relative;height:100%;}
+#s03-edu-pisa .wh{position:absolute;top:50%;height:3px;background:#9C9480;transform-origin:left center;}
+#s03-edu-pisa .bx{position:absolute;top:9px;bottom:9px;background:#BDB39C;border-radius:5px;transform-origin:left center;}
+#s03-edu-pisa .row.hl .bx{background:var(--c);} #s03-edu-pisa .row.oecd .bx{background:var(--ink);}
+#s03-edu-pisa .mn{position:absolute;top:5px;bottom:5px;width:6px;background:var(--marker);border-radius:3px;}
+#s03-edu-pisa .ax{display:grid;grid-template-columns:190px 1fr;margin-top:10px;}
+#s03-edu-pisa .axt{position:relative;height:40px;border-top:3px solid var(--ink2);}
+#s03-edu-pisa .axt span{position:absolute;top:8px;font-size:22px;font-weight:700;color:var(--ink2);transform:translateX(-50%);}
+#s03-edu-pisa .gl{position:absolute;top:0;bottom:50px;left:190px;right:0;}
+#s03-edu-pisa .gl i{position:absolute;top:0;bottom:0;width:2px;background:rgba(28,36,49,.12);}
+#s03-edu-pisa .dir{position:absolute;right:120px;top:205px;font-size:30px;font-weight:800;}
+#s03-edu-pisa .callout{position:absolute;left:120px;top:760px;font-size:40px;font-weight:900;color:var(--mtl);}
+      </style>
+      <div id="s03-edu-pisa" data-composition-id="s03-edu-pisa" data-width="1920" data-height="1080">
+        <div class="ghost">PISA</div>
+        <div class="stage">
+
+<div class="chap" data-at="85.6" data-fx="left"><div class="n">1</div><h2>교육환경</h2><div class="sub">학업성취도 비교</div></div>
+<div class="lc">
+  <div class="lt" data-at="87.58" data-fx="up">캐나다는 주마다<br/>교육제도가 다릅니다</div>
+  <div class="ls" data-at="94.26" data-fx="up">그나마 객관적으로 비교할 수 있는 지표 2가지 — 주별 비교</div>
+  <div class="tags"><span class="tag" data-at="96.5" data-fx="pop">PISA</span><span class="tag lite" data-at="97.2" data-fx="pop">PCAP</span></div>
+  <div class="ls" data-at="110.62" data-fx="up"><b style="color:var(--ink)">PISA</b> — OECD가 주관하는<br/>국제 학생 평가 프로그램</div>
+</div>
+<div class="dir" data-at="117.14" data-fx="right">오른쪽으로 갈수록 <span class="mk" data-at="117.8" data-fx="mark"><span class="mkb"></span><span class="mkt">수학 점수 ↑</span></span></div>
+<div class="chart">
+  <div class="gl"><i style="left:3.33%"></i><i style="left:20.00%"></i><i style="left:36.67%"></i><i style="left:53.33%"></i><i style="left:70.00%"></i><i style="left:86.67%"></i></div>
+  <div class="row  " data-at="110.80" data-fx="fade"><div class="rn">매니토바</div><div class="trk" data-at="121.78" data-fx="dim"><div class="wh" data-at="110.80" data-fx="barx" style="left:7.33%;width:calc(81.00% - 7.33%)"></div><div class="bx" data-at="110.80" data-fx="barx" style="left:24.00%;width:calc(63.67% - 24.00%)"></div><div class="mn" style="left:44.00%"></div></div></div><div class="row  " data-at="110.92" data-fx="fade"><div class="rn">서스캐처원</div><div class="trk" data-at="121.78" data-fx="dim"><div class="wh" data-at="110.92" data-fx="barx" style="left:6.33%;width:calc(80.33% - 6.33%)"></div><div class="bx" data-at="110.92" data-fx="barx" style="left:22.33%;width:calc(62.33% - 22.33%)"></div><div class="mn" style="left:42.50%"></div></div></div><div class="row  " data-at="111.04" data-fx="fade"><div class="rn">뉴펀들랜드</div><div class="trk" data-at="121.78" data-fx="dim"><div class="wh" data-at="111.04" data-fx="barx" style="left:3.33%;width:calc(77.67% - 3.33%)"></div><div class="bx" data-at="111.04" data-fx="barx" style="left:19.33%;width:calc(59.00% - 19.33%)"></div><div class="mn" style="left:39.00%"></div></div></div><div class="row  " data-at="111.16" data-fx="fade"><div class="rn">PEI</div><div class="trk" data-at="121.78" data-fx="dim"><div class="wh" data-at="111.16" data-fx="barx" style="left:8.00%;width:calc(83.67% - 8.00%)"></div><div class="bx" data-at="111.16" data-fx="barx" style="left:24.33%;width:calc(67.67% - 24.33%)"></div><div class="mn" style="left:44.33%"></div></div></div><div class="row  " data-at="111.28" data-fx="fade"><div class="rn">뉴브런즈윅</div><div class="trk" data-at="121.78" data-fx="dim"><div class="wh" data-at="111.28" data-fx="barx" style="left:5.33%;width:calc(81.67% - 5.33%)"></div><div class="bx" data-at="111.28" data-fx="barx" style="left:21.33%;width:calc(63.33% - 21.33%)"></div><div class="mn" style="left:43.00%"></div></div></div><div class="row oecd " data-at="111.40" data-fx="fade"><div class="rn">OECD 평균</div><div class="trk"><div class="wh" data-at="111.40" data-fx="barx" style="left:5.33%;width:calc(83.33% - 5.33%)"></div><div class="bx" data-at="111.40" data-fx="barx" style="left:23.00%;width:calc(65.33% - 23.00%)"></div><div class="mn" style="left:44.17%"></div></div></div><div class="row  " data-at="111.52" data-fx="fade"><div class="rn">노바스코샤</div><div class="trk" data-at="121.78" data-fx="dim"><div class="wh" data-at="111.52" data-fx="barx" style="left:5.33%;width:calc(83.33% - 5.33%)"></div><div class="bx" data-at="111.52" data-fx="barx" style="left:21.00%;width:calc(64.33% - 21.00%)"></div><div class="mn" style="left:43.33%"></div></div></div><div class="row  hl tor" data-at="111.64" data-fx="fade"><div class="rn">온타리오</div><div class="trk"><div class="wh" data-at="111.64" data-fx="barx" style="left:12.33%;width:calc(92.33% - 12.33%)"></div><div class="bx" data-at="111.64" data-fx="barx" style="left:30.33%;width:calc(72.33% - 30.33%)"></div><div class="mn" style="left:51.83%"></div></div></div><div class="row  hl van" data-at="111.76" data-fx="fade"><div class="rn">BC</div><div class="trk"><div class="wh" data-at="111.76" data-fx="barx" style="left:12.67%;width:calc(92.33% - 12.67%)"></div><div class="bx" data-at="111.76" data-fx="barx" style="left:30.33%;width:calc(73.67% - 30.33%)"></div><div class="mn" style="left:52.50%"></div></div></div><div class="row  hl mtl" data-at="111.88" data-fx="fade"><div class="rn">퀘벡</div><div class="trk"><div class="wh" data-at="111.88" data-fx="barx" style="left:17.00%;width:calc(97.00% - 17.00%)"></div><div class="bx" data-at="111.88" data-fx="barx" style="left:37.00%;width:calc(81.33% - 37.00%)"></div><div class="mn" style="left:57.83%"></div></div></div><div class="row  " data-at="112.00" data-fx="fade"><div class="rn">캐나다</div><div class="trk" data-at="121.78" data-fx="dim"><div class="wh" data-at="112.00" data-fx="barx" style="left:11.67%;width:calc(93.00% - 11.67%)"></div><div class="bx" data-at="112.00" data-fx="barx" style="left:30.33%;width:calc(74.33% - 30.33%)"></div><div class="mn" style="left:52.67%"></div></div></div><div class="row  " data-at="112.12" data-fx="fade"><div class="rn">앨버타</div><div class="trk" data-at="121.78" data-fx="dim"><div class="wh" data-at="112.12" data-fx="barx" style="left:12.33%;width:calc(98.00% - 12.33%)"></div><div class="bx" data-at="112.12" data-fx="barx" style="left:31.00%;width:calc(77.33% - 31.00%)"></div><div class="mn" style="left:54.83%"></div></div></div>
+  <div class="ax"><div></div><div class="axt"><span style="left:3.33%">350</span><span style="left:20.00%">400</span><span style="left:36.67%">450</span><span style="left:53.33%">500</span><span style="left:70.00%">550</span><span style="left:86.67%">600</span></div></div>
+</div>
+<div class="callout" data-at="131.06" data-fx="pop"><span class="mk" data-at="131.6" data-fx="mark"><span class="mkb"></span><span class="mkt">퀘벡이 가장 오른쪽</span></span></div>
+<div class="src">자료: OECD PISA 주별 수학 점수 분포 (10~90 백분위, 노란 선 = 평균)</div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          var S = 85.27, D = 49.76, root = document.getElementById("s03-edu-pisa");
+          var tl = gsap.timeline({ paused: true });
+          var stage = root.querySelector(".stage"), ghost = root.querySelector(".ghost");
+          tl.fromTo(stage, { x: 90, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 0);
+          tl.fromTo(stage, { x: 0, opacity: 1 }, { x: -90, opacity: 0, duration: 0.45, ease: "power2.in", immediateRender: false }, D - 0.45);
+          if (ghost) tl.fromTo(ghost, { x: 0 }, { x: -220, duration: D, ease: "none" }, 0);
+          var FX = {
+            up: [{ y: 36, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, ease: "power3.out" }],
+            left: [{ x: -50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.55, ease: "expo.out" }],
+            right: [{ x: 60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.55, ease: "expo.out" }],
+            pop: [{ scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.6, ease: "back.out(1.7)" }],
+            fade: [{ opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power1.out" }],
+            barx: [{ scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "power3.out" }],
+            bary: [{ scaleY: 0 }, { scaleY: 1, duration: 0.9, ease: "power3.out" }]
+          };
+          function fmt(v, el) {
+            var dec = +(el.getAttribute("data-dec") || 0), s = v.toFixed(dec);
+            if (el.hasAttribute("data-comma")) s = Number(s).toLocaleString("en-US", { minimumFractionDigits: dec, maximumFractionDigits: dec });
+            return (el.getAttribute("data-pre") || "") + s + (el.getAttribute("data-suf") || "");
+          }
+          root.querySelectorAll("[data-at]").forEach(function (el) {
+            var t = Math.max(0, +el.getAttribute("data-at") - S);
+            (el.getAttribute("data-fx") || "up").split(" ").forEach(function (fx) {
+              if (FX[fx]) tl.fromTo(el, FX[fx][0], FX[fx][1], t);
+              else if (fx === "mark") { var b = el.querySelector(".mkb"); if (b) tl.fromTo(b, { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power2.inOut" }, t + 0.15); }
+              else if (fx === "count") {
+                var o = { v: +(el.getAttribute("data-from") || 0) }, to = +el.getAttribute("data-to");
+                el.textContent = fmt(o.v, el);
+                tl.fromTo(o, { v: o.v }, { v: to, duration: 1.1, ease: "power2.out", onUpdate: function () { el.textContent = fmt(o.v, el); } }, t);
+              } else if (fx === "ring") {
+                var c = el.querySelector(".ringv"), C = 2 * Math.PI * +c.getAttribute("r"), p = +el.getAttribute("data-p");
+                c.style.strokeDasharray = C; tl.fromTo(c, { strokeDashoffset: C }, { strokeDashoffset: C * (1 - p), duration: 1.2, ease: "power3.out" }, t);
+              } else if (fx === "dim") tl.fromTo(el, { opacity: 1 }, { opacity: 0.22, duration: 0.5, ease: "power1.out", immediateRender: false }, t);
+            });
+          });
+          root.querySelectorAll("[data-out]").forEach(function (el) {
+            var t = +el.getAttribute("data-out") - S;
+            tl.fromTo(el, { opacity: 1, y: 0 }, { opacity: 0, y: -24, duration: 0.4, ease: "power2.in", immediateRender: false }, t);
+          });
+          window.__timelines["s03-edu-pisa"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

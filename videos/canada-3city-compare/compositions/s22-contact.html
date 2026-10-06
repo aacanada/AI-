@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /><title>상담 안내</title></head>
+  <body>
+    <template>
+      <style>
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Regular.woff2") format("woff2");font-weight:400;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Medium.woff2") format("woff2");font-weight:500;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2");font-weight:600;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");font-weight:700;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");font-weight:800;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Black.woff2") format("woff2");font-weight:900;font-style:normal;}
+
+#s22-contact{position:absolute;inset:0;
+  --paper:#F5F2EA; --paper2:#ECE7DA; --ink:#1C2431; --ink2:#4E5767; --rule:#C9C1AE;
+  --van:#5B3FA0; --tor:#13845A; --mtl:#D2343F; --marker:#F7D046;font-family:"Pretendard",sans-serif;color:var(--ink);overflow:hidden;}
+#s22-contact *{box-sizing:border-box;margin:0;padding:0;}
+#s22-contact .stage{position:absolute;inset:0;padding:150px 120px 170px;}
+#s22-contact .ghost{position:absolute;right:-40px;bottom:120px;font-size:300px;font-weight:900;color:var(--ink);opacity:.06;white-space:nowrap;letter-spacing:-.04em;line-height:1;}
+#s22-contact .chap{display:flex;align-items:center;gap:26px;height:96px;}
+#s22-contact .chap .n{width:84px;height:84px;border-radius:50%;background:var(--ink);color:var(--paper);font-size:44px;font-weight:900;display:flex;align-items:center;justify-content:center;flex:none;}
+#s22-contact .chap h2{font-size:66px;font-weight:900;letter-spacing:-.02em;}
+#s22-contact .chap .sub{font-size:34px;font-weight:600;color:var(--ink2);padding-left:24px;border-left:4px solid var(--rule);}
+#s22-contact .van{--c:var(--van);} #s22-contact .tor{--c:var(--tor);} #s22-contact .mtl{--c:var(--mtl);}
+#s22-contact .cc{color:var(--c);}
+#s22-contact .pill{display:inline-flex;align-items:center;gap:14px;font-size:34px;font-weight:800;color:var(--c);}
+#s22-contact .pill::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--c);}
+#s22-contact .mk{position:relative;display:inline-block;isolation:isolate;}
+#s22-contact .mk .mkb{position:absolute;left:-8px;right:-8px;bottom:4%;height:46%;background:var(--marker);display:block;transform-origin:left center;transform:scaleX(0);border-radius:4px;}
+#s22-contact .mk .mkt{position:relative;}
+#s22-contact .card{position:relative;background:#FBF9F4;border:3px solid var(--rule);border-radius:22px;overflow:hidden;}
+#s22-contact .card.cityc{border-color:var(--c);}
+#s22-contact .card .bar{position:absolute;left:0;top:0;right:0;height:14px;background:var(--c);}
+#s22-contact .note{font-size:34px;font-weight:600;color:var(--ink2);}
+#s22-contact .big{font-weight:900;letter-spacing:-.03em;font-variant-numeric:tabular-nums;}
+#s22-contact .tag{display:inline-flex;align-items:center;padding:12px 26px;border-radius:999px;background:var(--ink);color:var(--paper);font-size:32px;font-weight:700;}
+#s22-contact .tag.lite{background:var(--paper2);color:var(--ink);border:3px solid var(--rule);}
+#s22-contact .arrow{font-weight:900;color:var(--ink2);}
+#s22-contact .src{position:absolute;right:120px;bottom:178px;font-size:22px;font-weight:600;color:var(--ink2);}
+
+
+#s22-contact .brand{font-size:110px;font-weight:900;letter-spacing:-.02em;}
+#s22-contact .brand span{color:var(--mtl);}
+#s22-contact .bs{font-size:38px;font-weight:700;color:var(--ink2);margin-top:8px;}
+#s22-contact .svc{display:flex;gap:18px;margin-top:40px;align-items:center;}
+#s22-contact .svc .free{font-size:40px;font-weight:900;margin-left:12px;}
+#s22-contact .ct{position:absolute;left:120px;right:120px;top:600px;display:grid;grid-template-columns:repeat(3,1fr);gap:36px;}
+#s22-contact .cb{padding:36px 38px;background:#FBF9F4;border:3px solid var(--ink);border-radius:22px;}
+#s22-contact .cl{font-size:28px;font-weight:800;color:var(--ink2);}
+#s22-contact .cv{font-size:50px;font-weight:900;margin-top:8px;font-variant-numeric:tabular-nums;}
+#s22-contact .cs{font-size:24px;font-weight:700;color:var(--ink2);margin-top:6px;}
+#s22-contact .bye{position:absolute;right:120px;top:170px;text-align:right;font-size:36px;font-weight:800;color:var(--ink2);line-height:1.5;}
+      </style>
+      <div id="s22-contact" data-composition-id="s22-contact" data-width="1920" data-height="1080">
+        
+        <div class="stage">
+
+<div class="brand" data-at="1158" data-fx="up">AA <span>CANADA</span></div>
+<div class="bs" data-at="1158.6" data-fx="up">어느 도시든 자세한 진행 절차와 상담은 편하게 문의 주세요</div>
+<div class="svc"><div class="tag lite" data-at="1164.86" data-fx="pop">입학 수속</div><div class="tag lite" data-at="1165.6" data-fx="pop">비자 대행</div><div class="tag lite" data-at="1166.3" data-fx="pop">출국 준비 가이드</div><div class="free" data-at="1167.2" data-fx="up"><span class="mk" data-at="1167.8" data-fx="mark"><span class="mkb"></span><span class="mkt">전부 무료 진행</span></span></div></div>
+<div class="ct">
+  <div class="cb" data-at="1170.65" data-fx="pop"><div class="cl">전화</div><div class="cv">02-567-4345</div></div>
+  <div class="cb" data-at="1174.26" data-fx="pop"><div class="cl">휴대폰</div><div class="cv">010-4857-4345</div><div class="cs">평일 야간 · 주말 상담 가능</div></div>
+  <div class="cb" data-at="1179.45" data-fx="pop"><div class="cl">카카오톡</div><div class="cv">canlog</div></div>
+</div>
+<div class="bye" data-at="1184.44" data-fx="right">구독 · 좋아요 부탁드려요<br/><span style="color:var(--ink);font-weight:900" data-at="1191.13" data-fx="fade">감사합니다</span></div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          var S = 1157.72, D = 38.63, root = document.getElementById("s22-contact");
+          var tl = gsap.timeline({ paused: true });
+          var stage = root.querySelector(".stage"), ghost = root.querySelector(".ghost");
+          tl.fromTo(stage, { x: 90, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 0);
+          
+          if (ghost) tl.fromTo(ghost, { x: 0 }, { x: -220, duration: D, ease: "none" }, 0);
+          var FX = {
+            up: [{ y: 36, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, ease: "power3.out" }],
+            left: [{ x: -50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.55, ease: "expo.out" }],
+            right: [{ x: 60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.55, ease: "expo.out" }],
+            pop: [{ scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.6, ease: "back.out(1.7)" }],
+            fade: [{ opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power1.out" }],
+            barx: [{ scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "power3.out" }],
+            bary: [{ scaleY: 0 }, { scaleY: 1, duration: 0.9, ease: "power3.out" }]
+          };
+          function fmt(v, el) {
+            var dec = +(el.getAttribute("data-dec") || 0), s = v.toFixed(dec);
+            if (el.hasAttribute("data-comma")) s = Number(s).toLocaleString("en-US", { minimumFractionDigits: dec, maximumFractionDigits: dec });
+            return (el.getAttribute("data-pre") || "") + s + (el.getAttribute("data-suf") || "");
+          }
+          root.querySelectorAll("[data-at]").forEach(function (el) {
+            var t = Math.max(0, +el.getAttribute("data-at") - S);
+            (el.getAttribute("data-fx") || "up").split(" ").forEach(function (fx) {
+              if (FX[fx]) tl.fromTo(el, FX[fx][0], FX[fx][1], t);
+              else if (fx === "mark") { var b = el.querySelector(".mkb"); if (b) tl.fromTo(b, { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power2.inOut" }, t + 0.15); }
+              else if (fx === "count") {
+                var o = { v: +(el.getAttribute("data-from") || 0) }, to = +el.getAttribute("data-to");
+                el.textContent = fmt(o.v, el);
+                tl.fromTo(o, { v: o.v }, { v: to, duration: 1.1, ease: "power2.out", onUpdate: function () { el.textContent = fmt(o.v, el); } }, t);
+              } else if (fx === "ring") {
+                var c = el.querySelector(".ringv"), C = 2 * Math.PI * +c.getAttribute("r"), p = +el.getAttribute("data-p");
+                c.style.strokeDasharray = C; tl.fromTo(c, { strokeDashoffset: C }, { strokeDashoffset: C * (1 - p), duration: 1.2, ease: "power3.out" }, t);
+              } else if (fx === "dim") tl.fromTo(el, { opacity: 1 }, { opacity: 0.22, duration: 0.5, ease: "power1.out", immediateRender: false }, t);
+            });
+          });
+          root.querySelectorAll("[data-out]").forEach(function (el) {
+            var t = +el.getAttribute("data-out") - S;
+            tl.fromTo(el, { opacity: 1, y: 0 }, { opacity: 0, y: -24, duration: 0.4, ease: "power2.in", immediateRender: false }, t);
+          });
+          window.__timelines["s22-contact"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

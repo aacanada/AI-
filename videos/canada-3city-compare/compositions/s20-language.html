@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /><title>자녀 언어향상</title></head>
+  <body>
+    <template>
+      <style>
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Regular.woff2") format("woff2");font-weight:400;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Medium.woff2") format("woff2");font-weight:500;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2");font-weight:600;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");font-weight:700;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");font-weight:800;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Black.woff2") format("woff2");font-weight:900;font-style:normal;}
+
+#s20-language{position:absolute;inset:0;
+  --paper:#F5F2EA; --paper2:#ECE7DA; --ink:#1C2431; --ink2:#4E5767; --rule:#C9C1AE;
+  --van:#5B3FA0; --tor:#13845A; --mtl:#D2343F; --marker:#F7D046;font-family:"Pretendard",sans-serif;color:var(--ink);overflow:hidden;}
+#s20-language *{box-sizing:border-box;margin:0;padding:0;}
+#s20-language .stage{position:absolute;inset:0;padding:150px 120px 170px;}
+#s20-language .ghost{position:absolute;right:-40px;bottom:120px;font-size:300px;font-weight:900;color:var(--ink);opacity:.06;white-space:nowrap;letter-spacing:-.04em;line-height:1;}
+#s20-language .chap{display:flex;align-items:center;gap:26px;height:96px;}
+#s20-language .chap .n{width:84px;height:84px;border-radius:50%;background:var(--ink);color:var(--paper);font-size:44px;font-weight:900;display:flex;align-items:center;justify-content:center;flex:none;}
+#s20-language .chap h2{font-size:66px;font-weight:900;letter-spacing:-.02em;}
+#s20-language .chap .sub{font-size:34px;font-weight:600;color:var(--ink2);padding-left:24px;border-left:4px solid var(--rule);}
+#s20-language .van{--c:var(--van);} #s20-language .tor{--c:var(--tor);} #s20-language .mtl{--c:var(--mtl);}
+#s20-language .cc{color:var(--c);}
+#s20-language .pill{display:inline-flex;align-items:center;gap:14px;font-size:34px;font-weight:800;color:var(--c);}
+#s20-language .pill::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--c);}
+#s20-language .mk{position:relative;display:inline-block;isolation:isolate;}
+#s20-language .mk .mkb{position:absolute;left:-8px;right:-8px;bottom:4%;height:46%;background:var(--marker);display:block;transform-origin:left center;transform:scaleX(0);border-radius:4px;}
+#s20-language .mk .mkt{position:relative;}
+#s20-language .card{position:relative;background:#FBF9F4;border:3px solid var(--rule);border-radius:22px;overflow:hidden;}
+#s20-language .card.cityc{border-color:var(--c);}
+#s20-language .card .bar{position:absolute;left:0;top:0;right:0;height:14px;background:var(--c);}
+#s20-language .note{font-size:34px;font-weight:600;color:var(--ink2);}
+#s20-language .big{font-weight:900;letter-spacing:-.03em;font-variant-numeric:tabular-nums;}
+#s20-language .tag{display:inline-flex;align-items:center;padding:12px 26px;border-radius:999px;background:var(--ink);color:var(--paper);font-size:32px;font-weight:700;}
+#s20-language .tag.lite{background:var(--paper2);color:var(--ink);border:3px solid var(--rule);}
+#s20-language .arrow{font-weight:900;color:var(--ink2);}
+#s20-language .src{position:absolute;right:120px;bottom:178px;font-size:22px;font-weight:600;color:var(--ink2);}
+
+
+#s20-language .qa{position:absolute;left:120px;right:120px;top:290px;display:flex;flex-direction:column;gap:34px;}
+#s20-language .l1{font-size:40px;font-weight:700;color:var(--ink2);}
+#s20-language .q{font-size:62px;font-weight:900;}
+#s20-language .q span{color:var(--mtl);}
+#s20-language .a{font-size:62px;font-weight:900;}
+#s20-language .son{display:inline-flex;align-items:center;gap:16px;font-size:36px;font-weight:800;padding:18px 30px;background:#FBF9F4;border:3px solid var(--mtl);border-radius:18px;}
+#s20-language .fr{position:absolute;left:120px;right:120px;display:flex;align-items:center;gap:22px;}
+#s20-language .fr.r1{top:330px;} #s20-language .fr.r2{top:600px;}
+#s20-language .rl{width:190px;flex:none;font-size:32px;font-weight:900;color:var(--paper);background:var(--ink);border-radius:14px;padding:16px 0;text-align:center;}
+#s20-language .box{font-size:36px;font-weight:800;padding:26px 30px;background:#FBF9F4;border:3px solid var(--rule);border-radius:18px;}
+#s20-language .ar{font-size:44px;font-weight:900;color:var(--ink2);}
+      </style>
+      <div id="s20-language" data-composition-id="s20-language" data-width="1920" data-height="1080">
+        
+        <div class="stage">
+
+<div class="chap" data-at="1062.8" data-fx="left"><div class="n">+</div><h2>자녀 언어향상</h2><div class="sub">몬트리올에서도 영어가 늘까?</div></div>
+<div class="qa" data-out="1091.6">
+  <div class="l1" data-at="1069.18" data-fx="up">어느 도시든 시간이 지나면 아이들 영어는 충분히 늘어요</div>
+  <div class="q" data-at="1074.55" data-fx="up">"<span>불어 환경</span>이라 영어가 안 늘면 어쩌지?"</div>
+  <div class="a" data-at="1082.9" data-fx="up">→ 몬트리올에서도 <span class="mk" data-at="1084" data-fx="mark"><span class="mkb"></span><span class="mkt">영어는 충분히 늡니다</span></span></div>
+  <div data-at="1087.19" data-fx="pop"><span class="son">몬트리올에 사는 제 아들도 제1언어가 영어예요</span></div>
+</div>
+<div class="fr r1"><div class="rl" data-at="1092.18" data-fx="left">예산</div><div class="box" data-at="1093" data-fx="right">몬트리올은 저렴</div><div class="ar" data-at="1095.5" data-fx="fade">→</div><div class="box" data-at="1096" data-fx="right">아낀 비용으로 <span class="mk" data-at="1097" data-fx="mark"><span class="mkb"></span><span class="mkt">튜터</span></span></div><div class="ar" data-at="1102.8" data-fx="fade">→</div><div class="box" data-at="1103.22" data-fx="right">학교 적응 · 영어 향상</div></div>
+<div class="fr r2"><div class="rl" data-at="1109.75" data-fx="left">장기 플랜</div><div class="box" data-at="1112.63" data-fx="right"><span class="mk" data-at="1113.6" data-fx="mark"><span class="mkb"></span><span class="mkt">영어 + 불어</span></span> 자연스럽게</div><div class="ar" data-at="1118.6" data-fx="fade">→</div><div class="box" data-at="1119.06" data-fx="right">3년 이상 후 귀국 → 서울프랑스학교 등 외국인학교</div></div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          var S = 1062.52, D = 67.81, root = document.getElementById("s20-language");
+          var tl = gsap.timeline({ paused: true });
+          var stage = root.querySelector(".stage"), ghost = root.querySelector(".ghost");
+          tl.fromTo(stage, { x: 90, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 0);
+          tl.fromTo(stage, { x: 0, opacity: 1 }, { x: -90, opacity: 0, duration: 0.45, ease: "power2.in", immediateRender: false }, D - 0.45);
+          if (ghost) tl.fromTo(ghost, { x: 0 }, { x: -220, duration: D, ease: "none" }, 0);
+          var FX = {
+            up: [{ y: 36, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, ease: "power3.out" }],
+            left: [{ x: -50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.55, ease: "expo.out" }],
+            right: [{ x: 60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.55, ease: "expo.out" }],
+            pop: [{ scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.6, ease: "back.out(1.7)" }],
+            fade: [{ opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power1.out" }],
+            barx: [{ scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "power3.out" }],
+            bary: [{ scaleY: 0 }, { scaleY: 1, duration: 0.9, ease: "power3.out" }]
+          };
+          function fmt(v, el) {
+            var dec = +(el.getAttribute("data-dec") || 0), s = v.toFixed(dec);
+            if (el.hasAttribute("data-comma")) s = Number(s).toLocaleString("en-US", { minimumFractionDigits: dec, maximumFractionDigits: dec });
+            return (el.getAttribute("data-pre") || "") + s + (el.getAttribute("data-suf") || "");
+          }
+          root.querySelectorAll("[data-at]").forEach(function (el) {
+            var t = Math.max(0, +el.getAttribute("data-at") - S);
+            (el.getAttribute("data-fx") || "up").split(" ").forEach(function (fx) {
+              if (FX[fx]) tl.fromTo(el, FX[fx][0], FX[fx][1], t);
+              else if (fx === "mark") { var b = el.querySelector(".mkb"); if (b) tl.fromTo(b, { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power2.inOut" }, t + 0.15); }
+              else if (fx === "count") {
+                var o = { v: +(el.getAttribute("data-from") || 0) }, to = +el.getAttribute("data-to");
+                el.textContent = fmt(o.v, el);
+                tl.fromTo(o, { v: o.v }, { v: to, duration: 1.1, ease: "power2.out", onUpdate: function () { el.textContent = fmt(o.v, el); } }, t);
+              } else if (fx === "ring") {
+                var c = el.querySelector(".ringv"), C = 2 * Math.PI * +c.getAttribute("r"), p = +el.getAttribute("data-p");
+                c.style.strokeDasharray = C; tl.fromTo(c, { strokeDashoffset: C }, { strokeDashoffset: C * (1 - p), duration: 1.2, ease: "power3.out" }, t);
+              } else if (fx === "dim") tl.fromTo(el, { opacity: 1 }, { opacity: 0.22, duration: 0.5, ease: "power1.out", immediateRender: false }, t);
+            });
+          });
+          root.querySelectorAll("[data-out]").forEach(function (el) {
+            var t = +el.getAttribute("data-out") - S;
+            tl.fromTo(el, { opacity: 1, y: 0 }, { opacity: 0, y: -24, duration: 0.4, ease: "power2.in", immediateRender: false }, t);
+          });
+          window.__timelines["s20-language"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /><title>인구 밴쿠버</title></head>
+  <body>
+    <template>
+      <style>
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Regular.woff2") format("woff2");font-weight:400;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Medium.woff2") format("woff2");font-weight:500;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2");font-weight:600;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");font-weight:700;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");font-weight:800;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Black.woff2") format("woff2");font-weight:900;font-style:normal;}
+
+#s13-pop-van{position:absolute;inset:0;
+  --paper:#F5F2EA; --paper2:#ECE7DA; --ink:#1C2431; --ink2:#4E5767; --rule:#C9C1AE;
+  --van:#5B3FA0; --tor:#13845A; --mtl:#D2343F; --marker:#F7D046;font-family:"Pretendard",sans-serif;color:var(--ink);overflow:hidden;}
+#s13-pop-van *{box-sizing:border-box;margin:0;padding:0;}
+#s13-pop-van .stage{position:absolute;inset:0;padding:150px 120px 170px;}
+#s13-pop-van .ghost{position:absolute;right:-40px;bottom:120px;font-size:300px;font-weight:900;color:var(--ink);opacity:.06;white-space:nowrap;letter-spacing:-.04em;line-height:1;}
+#s13-pop-van .chap{display:flex;align-items:center;gap:26px;height:96px;}
+#s13-pop-van .chap .n{width:84px;height:84px;border-radius:50%;background:var(--ink);color:var(--paper);font-size:44px;font-weight:900;display:flex;align-items:center;justify-content:center;flex:none;}
+#s13-pop-van .chap h2{font-size:66px;font-weight:900;letter-spacing:-.02em;}
+#s13-pop-van .chap .sub{font-size:34px;font-weight:600;color:var(--ink2);padding-left:24px;border-left:4px solid var(--rule);}
+#s13-pop-van .van{--c:var(--van);} #s13-pop-van .tor{--c:var(--tor);} #s13-pop-van .mtl{--c:var(--mtl);}
+#s13-pop-van .cc{color:var(--c);}
+#s13-pop-van .pill{display:inline-flex;align-items:center;gap:14px;font-size:34px;font-weight:800;color:var(--c);}
+#s13-pop-van .pill::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--c);}
+#s13-pop-van .mk{position:relative;display:inline-block;isolation:isolate;}
+#s13-pop-van .mk .mkb{position:absolute;left:-8px;right:-8px;bottom:4%;height:46%;background:var(--marker);display:block;transform-origin:left center;transform:scaleX(0);border-radius:4px;}
+#s13-pop-van .mk .mkt{position:relative;}
+#s13-pop-van .card{position:relative;background:#FBF9F4;border:3px solid var(--rule);border-radius:22px;overflow:hidden;}
+#s13-pop-van .card.cityc{border-color:var(--c);}
+#s13-pop-van .card .bar{position:absolute;left:0;top:0;right:0;height:14px;background:var(--c);}
+#s13-pop-van .note{font-size:34px;font-weight:600;color:var(--ink2);}
+#s13-pop-van .big{font-weight:900;letter-spacing:-.03em;font-variant-numeric:tabular-nums;}
+#s13-pop-van .tag{display:inline-flex;align-items:center;padding:12px 26px;border-radius:999px;background:var(--ink);color:var(--paper);font-size:32px;font-weight:700;}
+#s13-pop-van .tag.lite{background:var(--paper2);color:var(--ink);border:3px solid var(--rule);}
+#s13-pop-van .arrow{font-weight:900;color:var(--ink2);}
+#s13-pop-van .src{position:absolute;right:120px;bottom:178px;font-size:22px;font-weight:600;color:var(--ink2);}
+
+
+#s13-pop-van .basis{font-size:32px;font-weight:700;color:var(--ink2);}
+#s13-pop-van .ring{position:absolute;left:120px;top:340px;width:400px;height:400px;color:var(--c);}
+#s13-pop-van .ring svg{position:absolute;inset:0;}
+#s13-pop-van .rc{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+#s13-pop-van .rv{font-size:96px;}
+#s13-pop-van .rl{font-size:24px;font-weight:700;color:var(--ink2);text-align:center;line-height:1.3;margin-top:6px;}
+#s13-pop-van .pb{position:absolute;left:640px;right:120px;top:350px;display:flex;flex-direction:column;gap:30px;}
+#s13-pop-van .pr{display:grid;grid-template-columns:230px 1fr 150px;align-items:center;column-gap:24px;}
+#s13-pop-van .pn{font-size:38px;font-weight:800;}
+#s13-pop-van .pt{height:46px;background:#E8E2D2;border-radius:10px;overflow:hidden;}
+#s13-pop-van .pf{height:100%;background:var(--c);border-radius:10px;transform-origin:left center;}
+#s13-pop-van .pv{font-size:44px;font-weight:900;text-align:right;font-variant-numeric:tabular-nums;}
+#s13-pop-van .pnote{grid-column:2/4;font-size:26px;font-weight:700;color:var(--c);margin-top:6px;}
+#s13-pop-van .ptags{position:absolute;left:640px;right:120px;top:700px;display:flex;flex-wrap:wrap;gap:20px 24px;}
+#s13-pop-van .ptags .tag{font-size:32px;}
+      </style>
+      <div id="s13-pop-van" data-composition-id="s13-pop-van" data-width="1920" data-height="1080">
+        <div class="ghost">2021</div>
+        <div class="stage">
+
+<div class="chap" data-at="751.88" data-fx="left"><div class="n">6</div><h2>인구 구성</h2><div class="sub">2021 인구조사</div></div>
+<div class="van">
+<div class="head2" style="display:flex;align-items:center;gap:30px;margin-top:22px"><div class="pill van" data-at="752.1800000000001" data-fx="left">밴쿠버</div><div class="basis" data-at="759.22" data-fx="up">메트로 밴쿠버 기준</div><div class="basis" style="color:var(--ink)" data-at="762.71" data-fx="up">아시아계 비율 최상위 도시</div></div>
+<div class="ring" data-at="767.67" data-fx="ring" data-p="0.545">
+  <svg viewBox="0 0 400 400" width="400" height="400"><circle cx="200" cy="200" r="160" fill="none" stroke="#E2DCCB" stroke-width="44"/>
+  <circle class="ringv" cx="200" cy="200" r="160" fill="none" stroke="currentColor" stroke-width="44" stroke-linecap="butt" transform="rotate(-90 200 200)"/></svg>
+  <div class="rc"><span class="big rv" data-at="767.67" data-fx="count" data-to="54.5" data-pre="" data-suf="%" data-dec="1" >0%</span><div class="rl">소수 민족<br/>Visible Minority</div></div></div>
+<div class="pb"><div class="pr" data-at="773.05" data-fx="up"><div class="pn">중국계</div><div class="pt"><div class="pf" data-at="773.05" data-fx="barx" style="width:86.33333333333333%"></div></div><div class="pv">25.9%</div></div><div class="pr" data-at="776.2" data-fx="up"><div class="pn">남아시아계</div><div class="pt"><div class="pf" data-at="776.2" data-fx="barx" style="width:23%"></div></div><div class="pv">6.9%</div></div><div class="pr" data-at="780.22" data-fx="up"><div class="pn">필리핀계</div><div class="pt"><div class="pf" data-at="780.22" data-fx="barx" style="width:19.666666666666668%"></div></div><div class="pv">5.9%</div></div></div>
+<div class="ptags"><div class="tag" data-at="783.29" data-fx="pop">이민자 42%</div><div class="tag lite" data-at="786.65" data-fx="pop">그중 절반 이상 아시아 출신</div><div class="tag lite" data-at="789.94" data-fx="pop">리치몬드·버나비 소수 민족 60~80%</div></div>
+</div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          var S = 751.58, D = 46.88, root = document.getElementById("s13-pop-van");
+          var tl = gsap.timeline({ paused: true });
+          var stage = root.querySelector(".stage"), ghost = root.querySelector(".ghost");
+          tl.fromTo(stage, { x: 90, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 0);
+          tl.fromTo(stage, { x: 0, opacity: 1 }, { x: -90, opacity: 0, duration: 0.45, ease: "power2.in", immediateRender: false }, D - 0.45);
+          if (ghost) tl.fromTo(ghost, { x: 0 }, { x: -220, duration: D, ease: "none" }, 0);
+          var FX = {
+            up: [{ y: 36, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, ease: "power3.out" }],
+            left: [{ x: -50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.55, ease: "expo.out" }],
+            right: [{ x: 60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.55, ease: "expo.out" }],
+            pop: [{ scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.6, ease: "back.out(1.7)" }],
+            fade: [{ opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power1.out" }],
+            barx: [{ scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "power3.out" }],
+            bary: [{ scaleY: 0 }, { scaleY: 1, duration: 0.9, ease: "power3.out" }]
+          };
+          function fmt(v, el) {
+            var dec = +(el.getAttribute("data-dec") || 0), s = v.toFixed(dec);
+            if (el.hasAttribute("data-comma")) s = Number(s).toLocaleString("en-US", { minimumFractionDigits: dec, maximumFractionDigits: dec });
+            return (el.getAttribute("data-pre") || "") + s + (el.getAttribute("data-suf") || "");
+          }
+          root.querySelectorAll("[data-at]").forEach(function (el) {
+            var t = Math.max(0, +el.getAttribute("data-at") - S);
+            (el.getAttribute("data-fx") || "up").split(" ").forEach(function (fx) {
+              if (FX[fx]) tl.fromTo(el, FX[fx][0], FX[fx][1], t);
+              else if (fx === "mark") { var b = el.querySelector(".mkb"); if (b) tl.fromTo(b, { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power2.inOut" }, t + 0.15); }
+              else if (fx === "count") {
+                var o = { v: +(el.getAttribute("data-from") || 0) }, to = +el.getAttribute("data-to");
+                el.textContent = fmt(o.v, el);
+                tl.fromTo(o, { v: o.v }, { v: to, duration: 1.1, ease: "power2.out", onUpdate: function () { el.textContent = fmt(o.v, el); } }, t);
+              } else if (fx === "ring") {
+                var c = el.querySelector(".ringv"), C = 2 * Math.PI * +c.getAttribute("r"), p = +el.getAttribute("data-p");
+                c.style.strokeDasharray = C; tl.fromTo(c, { strokeDashoffset: C }, { strokeDashoffset: C * (1 - p), duration: 1.2, ease: "power3.out" }, t);
+              } else if (fx === "dim") tl.fromTo(el, { opacity: 1 }, { opacity: 0.22, duration: 0.5, ease: "power1.out", immediateRender: false }, t);
+            });
+          });
+          root.querySelectorAll("[data-out]").forEach(function (el) {
+            var t = +el.getAttribute("data-out") - S;
+            tl.fromTo(el, { opacity: 1, y: 0 }, { opacity: 0, y: -24, duration: 0.4, ease: "power2.in", immediateRender: false }, t);
+          });
+          window.__timelines["s13-pop-van"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

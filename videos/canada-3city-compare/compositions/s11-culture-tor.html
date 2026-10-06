@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /><title>문화 토론토</title></head>
+  <body>
+    <template>
+      <style>
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Regular.woff2") format("woff2");font-weight:400;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Medium.woff2") format("woff2");font-weight:500;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2");font-weight:600;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");font-weight:700;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");font-weight:800;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Black.woff2") format("woff2");font-weight:900;font-style:normal;}
+
+#s11-culture-tor{position:absolute;inset:0;
+  --paper:#F5F2EA; --paper2:#ECE7DA; --ink:#1C2431; --ink2:#4E5767; --rule:#C9C1AE;
+  --van:#5B3FA0; --tor:#13845A; --mtl:#D2343F; --marker:#F7D046;font-family:"Pretendard",sans-serif;color:var(--ink);overflow:hidden;}
+#s11-culture-tor *{box-sizing:border-box;margin:0;padding:0;}
+#s11-culture-tor .stage{position:absolute;inset:0;padding:150px 120px 170px;}
+#s11-culture-tor .ghost{position:absolute;right:-40px;bottom:120px;font-size:300px;font-weight:900;color:var(--ink);opacity:.06;white-space:nowrap;letter-spacing:-.04em;line-height:1;}
+#s11-culture-tor .chap{display:flex;align-items:center;gap:26px;height:96px;}
+#s11-culture-tor .chap .n{width:84px;height:84px;border-radius:50%;background:var(--ink);color:var(--paper);font-size:44px;font-weight:900;display:flex;align-items:center;justify-content:center;flex:none;}
+#s11-culture-tor .chap h2{font-size:66px;font-weight:900;letter-spacing:-.02em;}
+#s11-culture-tor .chap .sub{font-size:34px;font-weight:600;color:var(--ink2);padding-left:24px;border-left:4px solid var(--rule);}
+#s11-culture-tor .van{--c:var(--van);} #s11-culture-tor .tor{--c:var(--tor);} #s11-culture-tor .mtl{--c:var(--mtl);}
+#s11-culture-tor .cc{color:var(--c);}
+#s11-culture-tor .pill{display:inline-flex;align-items:center;gap:14px;font-size:34px;font-weight:800;color:var(--c);}
+#s11-culture-tor .pill::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--c);}
+#s11-culture-tor .mk{position:relative;display:inline-block;isolation:isolate;}
+#s11-culture-tor .mk .mkb{position:absolute;left:-8px;right:-8px;bottom:4%;height:46%;background:var(--marker);display:block;transform-origin:left center;transform:scaleX(0);border-radius:4px;}
+#s11-culture-tor .mk .mkt{position:relative;}
+#s11-culture-tor .card{position:relative;background:#FBF9F4;border:3px solid var(--rule);border-radius:22px;overflow:hidden;}
+#s11-culture-tor .card.cityc{border-color:var(--c);}
+#s11-culture-tor .card .bar{position:absolute;left:0;top:0;right:0;height:14px;background:var(--c);}
+#s11-culture-tor .note{font-size:34px;font-weight:600;color:var(--ink2);}
+#s11-culture-tor .big{font-weight:900;letter-spacing:-.03em;font-variant-numeric:tabular-nums;}
+#s11-culture-tor .tag{display:inline-flex;align-items:center;padding:12px 26px;border-radius:999px;background:var(--ink);color:var(--paper);font-size:32px;font-weight:700;}
+#s11-culture-tor .tag.lite{background:var(--paper2);color:var(--ink);border:3px solid var(--rule);}
+#s11-culture-tor .arrow{font-weight:900;color:var(--ink2);}
+#s11-culture-tor .src{position:absolute;right:120px;bottom:178px;font-size:22px;font-weight:600;color:var(--ink2);}
+
+
+#s11-culture-tor .head2{display:flex;align-items:center;gap:36px;margin-top:26px;height:80px;}
+#s11-culture-tor .head2 .pill{font-size:52px;}
+#s11-culture-tor .head2 .pill::before{width:30px;height:30px;}
+#s11-culture-tor .tl{font-size:40px;font-weight:800;}
+#s11-culture-tor .tl2{font-size:32px;font-weight:600;color:var(--ink2);}
+#s11-culture-tor .att{position:absolute;left:120px;right:120px;top:380px;bottom:180px;display:grid;grid-template-columns:1fr 1fr;grid-auto-flow:column;column-gap:60px;row-gap:14px;}
+#s11-culture-tor .ai{display:flex;align-items:center;gap:26px;border-bottom:3px solid var(--rule);}
+#s11-culture-tor .ain{width:58px;height:58px;flex:none;border-radius:50%;background:var(--c);color:#fff;font-size:30px;font-weight:900;display:flex;align-items:center;justify-content:center;}
+#s11-culture-tor .aname{font-size:38px;font-weight:800;}
+#s11-culture-tor .adesc{font-size:27px;font-weight:600;color:var(--ink2);margin-top:4px;}
+      </style>
+      <div id="s11-culture-tor" data-composition-id="s11-culture-tor" data-width="1920" data-height="1080">
+        <div class="ghost">TORONTO</div>
+        <div class="stage">
+
+<div class="chap" data-at="552.2" data-fx="left"><div class="n">5</div><h2>문화적 환경</h2><div class="sub">세 도시의 분위기</div></div>
+<div class="head2 tor"><div class="pill tor" data-at="552.6" data-fx="left">토론토</div><div class="tl" data-at="554.3" data-fx="up">다문화 + 대형 박물관·공연</div><div class="tl2" data-at="564.38" data-fx="up"><span class="mk" data-at="565.2" data-fx="mark"><span class="mkb"></span><span class="mkt">일 년 내내</span></span> 축제와 행사</div></div>
+<div class="tor"><div class="att" style="grid-template-rows:repeat(5,1fr)"><div class="ai" data-at="568.34" data-fx="right"><div class="ain">1</div><div><div class="aname">로열 온타리오 박물관</div><div class="adesc">캐나다 최대 박물관, 공룡 화석부터 세계 유물까지</div></div></div><div class="ai" data-at="576.86" data-fx="right"><div class="ain">2</div><div><div class="aname">온타리오 과학 센터</div><div class="adesc">직접 만지고 체험하는 전시</div></div></div><div class="ai" data-at="582.9" data-fx="right"><div class="ain">3</div><div><div class="aname">리플리스 아쿠아리움</div><div class="adesc">CN 타워 옆, 상어 터널 대형 수족관</div></div></div><div class="ai" data-at="589.4" data-fx="right"><div class="ain">4</div><div><div class="aname">CN 타워</div><div class="adesc">유리 바닥 전망대에서 도시 전경</div></div></div><div class="ai" data-at="597.72" data-fx="right"><div class="ain">5</div><div><div class="aname">하이 파크</div><div class="adesc">동물원·놀이터·호수, 봄 벚꽃 축제</div></div></div><div class="ai" data-at="603.83" data-fx="right"><div class="ain">6</div><div><div class="aname">토론토 아일랜드 공원</div><div class="adesc">페리로 가는 섬, 해변과 놀이공원</div></div></div><div class="ai" data-at="611.19" data-fx="right"><div class="ain">7</div><div><div class="aname">카사 로마</div><div class="adesc">중세로 여행 온 듯한 성과 정원</div></div></div><div class="ai" data-at="618.23" data-fx="right"><div class="ain">8</div><div><div class="aname">디스틸러리 지구</div><div class="adesc">빅토리아 시대 건물 속 공방과 상점</div></div></div><div class="ai" data-at="628.54" data-fx="right"><div class="ain">9</div><div><div class="aname">메이플 리프스 · 랩터스</div><div class="adesc">아이스하키·농구 경기 관람</div></div></div><div class="ai" data-at="636" data-fx="right"><div class="ain">10</div><div><div class="aname">다문화 축제</div><div class="adesc">연중 여러 나라의 음식과 공연</div></div></div></div></div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          var S = 551.9, D = 93.05, root = document.getElementById("s11-culture-tor");
+          var tl = gsap.timeline({ paused: true });
+          var stage = root.querySelector(".stage"), ghost = root.querySelector(".ghost");
+          tl.fromTo(stage, { x: 90, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 0);
+          tl.fromTo(stage, { x: 0, opacity: 1 }, { x: -90, opacity: 0, duration: 0.45, ease: "power2.in", immediateRender: false }, D - 0.45);
+          if (ghost) tl.fromTo(ghost, { x: 0 }, { x: -220, duration: D, ease: "none" }, 0);
+          var FX = {
+            up: [{ y: 36, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, ease: "power3.out" }],
+            left: [{ x: -50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.55, ease: "expo.out" }],
+            right: [{ x: 60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.55, ease: "expo.out" }],
+            pop: [{ scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.6, ease: "back.out(1.7)" }],
+            fade: [{ opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power1.out" }],
+            barx: [{ scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "power3.out" }],
+            bary: [{ scaleY: 0 }, { scaleY: 1, duration: 0.9, ease: "power3.out" }]
+          };
+          function fmt(v, el) {
+            var dec = +(el.getAttribute("data-dec") || 0), s = v.toFixed(dec);
+            if (el.hasAttribute("data-comma")) s = Number(s).toLocaleString("en-US", { minimumFractionDigits: dec, maximumFractionDigits: dec });
+            return (el.getAttribute("data-pre") || "") + s + (el.getAttribute("data-suf") || "");
+          }
+          root.querySelectorAll("[data-at]").forEach(function (el) {
+            var t = Math.max(0, +el.getAttribute("data-at") - S);
+            (el.getAttribute("data-fx") || "up").split(" ").forEach(function (fx) {
+              if (FX[fx]) tl.fromTo(el, FX[fx][0], FX[fx][1], t);
+              else if (fx === "mark") { var b = el.querySelector(".mkb"); if (b) tl.fromTo(b, { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power2.inOut" }, t + 0.15); }
+              else if (fx === "count") {
+                var o = { v: +(el.getAttribute("data-from") || 0) }, to = +el.getAttribute("data-to");
+                el.textContent = fmt(o.v, el);
+                tl.fromTo(o, { v: o.v }, { v: to, duration: 1.1, ease: "power2.out", onUpdate: function () { el.textContent = fmt(o.v, el); } }, t);
+              } else if (fx === "ring") {
+                var c = el.querySelector(".ringv"), C = 2 * Math.PI * +c.getAttribute("r"), p = +el.getAttribute("data-p");
+                c.style.strokeDasharray = C; tl.fromTo(c, { strokeDashoffset: C }, { strokeDashoffset: C * (1 - p), duration: 1.2, ease: "power3.out" }, t);
+              } else if (fx === "dim") tl.fromTo(el, { opacity: 1 }, { opacity: 0.22, duration: 0.5, ease: "power1.out", immediateRender: false }, t);
+            });
+          });
+          root.querySelectorAll("[data-out]").forEach(function (el) {
+            var t = +el.getAttribute("data-out") - S;
+            tl.fromTo(el, { opacity: 1, y: 0 }, { opacity: 0, y: -24, duration: 0.4, ease: "power2.in", immediateRender: false }, t);
+          });
+          window.__timelines["s11-culture-tor"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

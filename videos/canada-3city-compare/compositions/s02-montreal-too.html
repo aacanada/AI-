@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /><title>몬트리올도 함께</title></head>
+  <body>
+    <template>
+      <style>
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Regular.woff2") format("woff2");font-weight:400;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Medium.woff2") format("woff2");font-weight:500;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2");font-weight:600;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");font-weight:700;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");font-weight:800;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Black.woff2") format("woff2");font-weight:900;font-style:normal;}
+
+#s02-montreal-too{position:absolute;inset:0;
+  --paper:#F5F2EA; --paper2:#ECE7DA; --ink:#1C2431; --ink2:#4E5767; --rule:#C9C1AE;
+  --van:#5B3FA0; --tor:#13845A; --mtl:#D2343F; --marker:#F7D046;font-family:"Pretendard",sans-serif;color:var(--ink);overflow:hidden;}
+#s02-montreal-too *{box-sizing:border-box;margin:0;padding:0;}
+#s02-montreal-too .stage{position:absolute;inset:0;padding:150px 120px 170px;}
+#s02-montreal-too .ghost{position:absolute;right:-40px;bottom:120px;font-size:300px;font-weight:900;color:var(--ink);opacity:.06;white-space:nowrap;letter-spacing:-.04em;line-height:1;}
+#s02-montreal-too .chap{display:flex;align-items:center;gap:26px;height:96px;}
+#s02-montreal-too .chap .n{width:84px;height:84px;border-radius:50%;background:var(--ink);color:var(--paper);font-size:44px;font-weight:900;display:flex;align-items:center;justify-content:center;flex:none;}
+#s02-montreal-too .chap h2{font-size:66px;font-weight:900;letter-spacing:-.02em;}
+#s02-montreal-too .chap .sub{font-size:34px;font-weight:600;color:var(--ink2);padding-left:24px;border-left:4px solid var(--rule);}
+#s02-montreal-too .van{--c:var(--van);} #s02-montreal-too .tor{--c:var(--tor);} #s02-montreal-too .mtl{--c:var(--mtl);}
+#s02-montreal-too .cc{color:var(--c);}
+#s02-montreal-too .pill{display:inline-flex;align-items:center;gap:14px;font-size:34px;font-weight:800;color:var(--c);}
+#s02-montreal-too .pill::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--c);}
+#s02-montreal-too .mk{position:relative;display:inline-block;isolation:isolate;}
+#s02-montreal-too .mk .mkb{position:absolute;left:-8px;right:-8px;bottom:4%;height:46%;background:var(--marker);display:block;transform-origin:left center;transform:scaleX(0);border-radius:4px;}
+#s02-montreal-too .mk .mkt{position:relative;}
+#s02-montreal-too .card{position:relative;background:#FBF9F4;border:3px solid var(--rule);border-radius:22px;overflow:hidden;}
+#s02-montreal-too .card.cityc{border-color:var(--c);}
+#s02-montreal-too .card .bar{position:absolute;left:0;top:0;right:0;height:14px;background:var(--c);}
+#s02-montreal-too .note{font-size:34px;font-weight:600;color:var(--ink2);}
+#s02-montreal-too .big{font-weight:900;letter-spacing:-.03em;font-variant-numeric:tabular-nums;}
+#s02-montreal-too .tag{display:inline-flex;align-items:center;padding:12px 26px;border-radius:999px;background:var(--ink);color:var(--paper);font-size:32px;font-weight:700;}
+#s02-montreal-too .tag.lite{background:var(--paper2);color:var(--ink);border:3px solid var(--rule);}
+#s02-montreal-too .arrow{font-weight:900;color:var(--ink2);}
+#s02-montreal-too .src{position:absolute;right:120px;bottom:178px;font-size:22px;font-weight:600;color:var(--ink2);}
+
+
+#s02-montreal-too .h{font-size:84px;font-weight:900;letter-spacing:-.03em;}
+#s02-montreal-too .h2{font-size:44px;font-weight:700;color:var(--ink2);margin-top:20px;}
+#s02-montreal-too .mtag{display:flex;flex-direction:column;align-items:flex-start;gap:10px;margin-top:18px;}
+#s02-montreal-too .strike{position:relative;font-size:28px;font-weight:700;color:var(--ink2);}
+#s02-montreal-too .strike i{position:absolute;left:-6px;right:-6px;top:50%;height:5px;background:var(--mtl);transform-origin:left center;display:block;}
+#s02-montreal-too .second{font-size:36px;font-weight:900;}
+#s02-montreal-too .crit{position:absolute;left:120px;right:120px;top:300px;}
+#s02-montreal-too .h3{position:absolute;left:120px;top:150px;font-size:72px;font-weight:900;}
+
+#s02-montreal-too .crit{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+#s02-montreal-too .ct{display:flex;align-items:center;gap:26px;height:150px;padding:0 36px;background:#FBF9F4;border:3px solid var(--rule);border-radius:22px;}
+#s02-montreal-too .ctn{width:76px;height:76px;flex:none;border-radius:50%;background:var(--ink);color:var(--paper);font-size:40px;font-weight:900;display:flex;align-items:center;justify-content:center;}
+#s02-montreal-too .ct:last-child .ctn{background:var(--marker);color:var(--ink);}
+#s02-montreal-too .ctt{font-size:42px;font-weight:800;}
+
+#s02-montreal-too .crow{position:absolute;left:120px;right:120px;top:560px;height:310px;display:grid;grid-template-columns:repeat(3,1fr);gap:40px;}
+#s02-montreal-too .crow .card{padding:40px 44px 0;}
+#s02-montreal-too .cn{font-size:70px;font-weight:900;letter-spacing:-.03em;line-height:1.15;}
+#s02-montreal-too .cp{font-size:30px;font-weight:600;color:var(--ink2);margin-top:8px;}
+#s02-montreal-too .card.empty{border:4px dashed var(--rule);background:transparent;display:flex;align-items:center;justify-content:center;}
+#s02-montreal-too .q{font-size:140px;font-weight:900;color:var(--rule);}
+      </style>
+      <div id="s02-montreal-too" data-composition-id="s02-montreal-too" data-width="1920" data-height="1080">
+        
+        <div class="stage">
+
+<div data-out="70.2"><div class="h" data-at="42.3" data-fx="up">여기에 <span class="cc mtl">몬트리올</span>도 함께</div>
+<div class="h2" data-at="59.32" data-fx="up">자녀 교육 · 문화 환경 · 생활 편의성 → 대도시의 특징 그대로</div></div>
+<div data-out="70.2"><div class="crow"><div class="card cityc van"><div class="bar"></div><div class="cn cc">밴쿠버</div><div class="cp">브리티시컬럼비아 · BC</div></div><div class="card cityc tor"><div class="bar"></div><div class="cn cc">토론토</div><div class="cp">온타리오 · ON</div></div><div class="card cityc mtl" data-at="43.6" data-fx="pop"><div class="bar"></div><div class="cn cc">몬트리올</div><div class="cp">퀘벡 · QC</div><div class="mtag"><span class="strike" data-at="47.83" data-fx="fade">한국에선 '중소도시' 취급?<i data-at="54.6" data-fx="barx"></i></span><span class="second" data-at="54.87" data-fx="up"><span class="mk" data-at="55.3" data-fx="mark"><span class="mkb"></span><span class="mkt">캐나다 2번째 대도시</span></span></span></div></div></div></div>
+<div class="h3" data-at="75.77" data-fx="up">부모님들이 가장 많이 보시는 기준</div>
+<div class="crit"><div class="ct" data-at="76.40" data-fx="pop"><span class="ctn">1</span><span class="ctt">교육환경</span></div><div class="ct" data-at="76.85" data-fx="pop"><span class="ctn">2</span><span class="ctt">거주비</span></div><div class="ct" data-at="77.30" data-fx="pop"><span class="ctn">3</span><span class="ctt">학비 (조기유학)</span></div><div class="ct" data-at="77.75" data-fx="pop"><span class="ctn">4</span><span class="ctt">부모 학비 (무상교육)</span></div><div class="ct" data-at="78.20" data-fx="pop"><span class="ctn">5</span><span class="ctt">문화적 환경</span></div><div class="ct" data-at="78.65" data-fx="pop"><span class="ctn">6</span><span class="ctt">인구 구성</span></div><div class="ct" data-at="79.10" data-fx="pop"><span class="ctn">7</span><span class="ctt">날씨</span></div><div class="ct" data-at="79.55" data-fx="pop"><span class="ctn">8</span><span class="ctt">자동차</span></div><div class="ct" data-at="80.00" data-fx="pop"><span class="ctn">+</span><span class="ctt">자녀 언어향상</span></div></div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          var S = 41.85, D = 43.42, root = document.getElementById("s02-montreal-too");
+          var tl = gsap.timeline({ paused: true });
+          var stage = root.querySelector(".stage"), ghost = root.querySelector(".ghost");
+          
+          tl.fromTo(stage, { x: 0, opacity: 1 }, { x: -90, opacity: 0, duration: 0.45, ease: "power2.in", immediateRender: false }, D - 0.45);
+          if (ghost) tl.fromTo(ghost, { x: 0 }, { x: -220, duration: D, ease: "none" }, 0);
+          var FX = {
+            up: [{ y: 36, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, ease: "power3.out" }],
+            left: [{ x: -50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.55, ease: "expo.out" }],
+            right: [{ x: 60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.55, ease: "expo.out" }],
+            pop: [{ scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.6, ease: "back.out(1.7)" }],
+            fade: [{ opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power1.out" }],
+            barx: [{ scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "power3.out" }],
+            bary: [{ scaleY: 0 }, { scaleY: 1, duration: 0.9, ease: "power3.out" }]
+          };
+          function fmt(v, el) {
+            var dec = +(el.getAttribute("data-dec") || 0), s = v.toFixed(dec);
+            if (el.hasAttribute("data-comma")) s = Number(s).toLocaleString("en-US", { minimumFractionDigits: dec, maximumFractionDigits: dec });
+            return (el.getAttribute("data-pre") || "") + s + (el.getAttribute("data-suf") || "");
+          }
+          root.querySelectorAll("[data-at]").forEach(function (el) {
+            var t = Math.max(0, +el.getAttribute("data-at") - S);
+            (el.getAttribute("data-fx") || "up").split(" ").forEach(function (fx) {
+              if (FX[fx]) tl.fromTo(el, FX[fx][0], FX[fx][1], t);
+              else if (fx === "mark") { var b = el.querySelector(".mkb"); if (b) tl.fromTo(b, { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power2.inOut" }, t + 0.15); }
+              else if (fx === "count") {
+                var o = { v: +(el.getAttribute("data-from") || 0) }, to = +el.getAttribute("data-to");
+                el.textContent = fmt(o.v, el);
+                tl.fromTo(o, { v: o.v }, { v: to, duration: 1.1, ease: "power2.out", onUpdate: function () { el.textContent = fmt(o.v, el); } }, t);
+              } else if (fx === "ring") {
+                var c = el.querySelector(".ringv"), C = 2 * Math.PI * +c.getAttribute("r"), p = +el.getAttribute("data-p");
+                c.style.strokeDasharray = C; tl.fromTo(c, { strokeDashoffset: C }, { strokeDashoffset: C * (1 - p), duration: 1.2, ease: "power3.out" }, t);
+              } else if (fx === "dim") tl.fromTo(el, { opacity: 1 }, { opacity: 0.22, duration: 0.5, ease: "power1.out", immediateRender: false }, t);
+            });
+          });
+          root.querySelectorAll("[data-out]").forEach(function (el) {
+            var t = +el.getAttribute("data-out") - S;
+            tl.fromTo(el, { opacity: 1, y: 0 }, { opacity: 0, y: -24, duration: 0.4, ease: "power2.in", immediateRender: false }, t);
+          });
+          window.__timelines["s02-montreal-too"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

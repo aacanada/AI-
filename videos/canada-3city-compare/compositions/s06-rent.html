@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /><title>거주비</title></head>
+  <body>
+    <template>
+      <style>
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Regular.woff2") format("woff2");font-weight:400;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Medium.woff2") format("woff2");font-weight:500;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2");font-weight:600;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");font-weight:700;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");font-weight:800;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Black.woff2") format("woff2");font-weight:900;font-style:normal;}
+
+#s06-rent{position:absolute;inset:0;
+  --paper:#F5F2EA; --paper2:#ECE7DA; --ink:#1C2431; --ink2:#4E5767; --rule:#C9C1AE;
+  --van:#5B3FA0; --tor:#13845A; --mtl:#D2343F; --marker:#F7D046;font-family:"Pretendard",sans-serif;color:var(--ink);overflow:hidden;}
+#s06-rent *{box-sizing:border-box;margin:0;padding:0;}
+#s06-rent .stage{position:absolute;inset:0;padding:150px 120px 170px;}
+#s06-rent .ghost{position:absolute;right:-40px;bottom:120px;font-size:300px;font-weight:900;color:var(--ink);opacity:.06;white-space:nowrap;letter-spacing:-.04em;line-height:1;}
+#s06-rent .chap{display:flex;align-items:center;gap:26px;height:96px;}
+#s06-rent .chap .n{width:84px;height:84px;border-radius:50%;background:var(--ink);color:var(--paper);font-size:44px;font-weight:900;display:flex;align-items:center;justify-content:center;flex:none;}
+#s06-rent .chap h2{font-size:66px;font-weight:900;letter-spacing:-.02em;}
+#s06-rent .chap .sub{font-size:34px;font-weight:600;color:var(--ink2);padding-left:24px;border-left:4px solid var(--rule);}
+#s06-rent .van{--c:var(--van);} #s06-rent .tor{--c:var(--tor);} #s06-rent .mtl{--c:var(--mtl);}
+#s06-rent .cc{color:var(--c);}
+#s06-rent .pill{display:inline-flex;align-items:center;gap:14px;font-size:34px;font-weight:800;color:var(--c);}
+#s06-rent .pill::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--c);}
+#s06-rent .mk{position:relative;display:inline-block;isolation:isolate;}
+#s06-rent .mk .mkb{position:absolute;left:-8px;right:-8px;bottom:4%;height:46%;background:var(--marker);display:block;transform-origin:left center;transform:scaleX(0);border-radius:4px;}
+#s06-rent .mk .mkt{position:relative;}
+#s06-rent .card{position:relative;background:#FBF9F4;border:3px solid var(--rule);border-radius:22px;overflow:hidden;}
+#s06-rent .card.cityc{border-color:var(--c);}
+#s06-rent .card .bar{position:absolute;left:0;top:0;right:0;height:14px;background:var(--c);}
+#s06-rent .note{font-size:34px;font-weight:600;color:var(--ink2);}
+#s06-rent .big{font-weight:900;letter-spacing:-.03em;font-variant-numeric:tabular-nums;}
+#s06-rent .tag{display:inline-flex;align-items:center;padding:12px 26px;border-radius:999px;background:var(--ink);color:var(--paper);font-size:32px;font-weight:700;}
+#s06-rent .tag.lite{background:var(--paper2);color:var(--ink);border:3px solid var(--rule);}
+#s06-rent .arrow{font-weight:900;color:var(--ink2);}
+#s06-rent .src{position:absolute;right:120px;bottom:178px;font-size:22px;font-weight:600;color:var(--ink2);}
+
+
+#s06-rent .lc{position:absolute;left:120px;top:290px;width:560px;display:flex;flex-direction:column;gap:30px;}
+#s06-rent .lt{font-size:40px;font-weight:800;line-height:1.35;}
+#s06-rent .ls{font-size:30px;font-weight:600;color:var(--ink2);line-height:1.4;}
+#s06-rent .tb{position:absolute;left:760px;right:120px;top:262px;}
+#s06-rent .tr{position:relative;display:grid;grid-template-columns:80px 1fr 200px 170px;align-items:center;height:38px;font-size:25px;font-weight:600;padding:0 18px;}
+#s06-rent .tr.th{height:44px;font-size:22px;font-weight:800;color:var(--ink2);border-bottom:3px solid var(--ink2);}
+#s06-rent .tr span{position:relative;z-index:1;font-variant-numeric:tabular-nums;}
+#s06-rent .tr span.r{text-align:right;}
+#s06-rent .hl{position:absolute;inset:2px 0;border-radius:8px;background:var(--c);opacity:.2;transform-origin:left center;}
+#s06-rent .tr.van,#s06-rent .tr.tor,#s06-rent .tr.mtl{font-weight:900;font-size:27px;}
+#s06-rent .tr.van span,#s06-rent .tr.tor span,#s06-rent .tr.mtl span{color:var(--c);}
+#s06-rent .mid .hl{background:#B9B09A;}
+#s06-rent .yy{position:absolute;right:0;top:0;width:190px;height:614px;border:4px solid var(--marker);border-radius:12px;}
+#s06-rent .big2{font-size:42px;font-weight:900;line-height:1.3;}
+      </style>
+      <div id="s06-rent" data-composition-id="s06-rent" data-width="1920" data-height="1080">
+        <div class="ghost">RENT</div>
+        <div class="stage">
+
+<div class="chap" data-at="213.4" data-fx="left"><div class="n">2</div><h2>거주비</h2><div class="sub">1베드룸 월 렌트비 (CAD)</div></div>
+<div class="lc">
+  <div class="lt" data-at="215.58" data-fx="up">도시 선택의 핵심 = <span class="mk" data-at="217" data-fx="mark"><span class="mkb"></span><span class="mkt">예산</span></span><br/>그래서 렌트비가 중요해요</div>
+  <div class="ls" data-at="223.58" data-fx="up">대도시니까 렌트비가 비싼 건 어느 정도 감안해야 합니다</div>
+  <div class="big2" data-at="255.38" data-fx="up">몬트리올은 대도시인데<br/><span class="mk" data-at="256.5" data-fx="mark"><span class="mkb"></span><span class="mkt">렌트비는 중소도시 수준</span></span></div>
+  <div class="ls" data-at="260.22" data-fx="up">다행히 전년 대비 전체적으로 안정되는 추세</div>
+</div>
+<div class="tb">
+  <div class="tr th" data-at="228.95" data-fx="fade"><span>순위</span><span>도시</span><span class="r">1베드룸</span><span class="r">전년 대비</span></div>
+  <div class="tr van" data-at="229.10" data-fx="fade"><div class="hl" data-at="230.2" data-fx="barx"></div><span>1</span><span>밴쿠버, BC</span><span class="r">$2,500</span><span class="r">-7.4%</span></div><div class="tr " data-at="229.18" data-fx="fade"><span>2</span><span>버나비, BC</span><span class="r">$2,380</span><span class="r">-4.8%</span></div><div class="tr tor" data-at="229.26" data-fx="fade"><div class="hl" data-at="235" data-fx="barx"></div><span>3</span><span>토론토, ON</span><span class="r">$2,220</span><span class="r">-11.9%</span></div><div class="tr mid" data-at="229.34" data-fx="fade"><div class="hl" data-at="249.43" data-fx="barx"></div><span>4</span><span>핼리팩스, NS</span><span class="r">$2,100</span><span class="r">+1.0%</span></div><div class="tr " data-at="229.42" data-fx="fade"><span>5</span><span>빅토리아, BC</span><span class="r">$2,020</span><span class="r">-6.5%</span></div><div class="tr mid" data-at="229.50" data-fx="fade"><div class="hl" data-at="249.43" data-fx="barx"></div><span>6</span><span>오타와, ON</span><span class="r">$1,980</span><span class="r">-1.0%</span></div><div class="tr " data-at="229.58" data-fx="fade"><span>7</span><span>켈로나, BC</span><span class="r">$1,890</span><span class="r">-4.1%</span></div><div class="tr " data-at="229.66" data-fx="fade"><span>8</span><span>오샤와, ON</span><span class="r">$1,790</span><span class="r">-6.8%</span></div><div class="tr " data-at="229.74" data-fx="fade"><span>9</span><span>배리, ON</span><span class="r">$1,760</span><span class="r">-8.8%</span></div><div class="tr mid" data-at="229.82" data-fx="fade"><div class="hl" data-at="249.43" data-fx="barx"></div><span>10</span><span>킹스턴, ON</span><span class="r">$1,750</span><span class="r">+0.6%</span></div><div class="tr mid" data-at="229.90" data-fx="fade"><div class="hl" data-at="249.43" data-fx="barx"></div><span>10</span><span>키치너, ON</span><span class="r">$1,750</span><span class="r">-9.3%</span></div><div class="tr mtl" data-at="229.98" data-fx="fade"><div class="hl" data-at="240" data-fx="barx"></div><span>12</span><span>몬트리올, QC</span><span class="r">$1,710</span><span class="r">-2.3%</span></div><div class="tr " data-at="230.06" data-fx="fade"><span>13</span><span>해밀턴, ON</span><span class="r">$1,700</span><span class="r">0.0%</span></div><div class="tr " data-at="230.14" data-fx="fade"><span>14</span><span>캘거리, AB</span><span class="r">$1,670</span><span class="r">-9.2%</span></div><div class="tr " data-at="230.22" data-fx="fade"><span>15</span><span>런던, ON</span><span class="r">$1,650</span><span class="r">-2.4%</span></div>
+  <div class="yy" data-at="260.8" data-fx="pop"></div>
+</div>
+<div class="src">자료: 캐나다 도시별 1베드룸 평균 렌트 순위 (월별 리포트)</div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          var S = 213.14, D = 57.28, root = document.getElementById("s06-rent");
+          var tl = gsap.timeline({ paused: true });
+          var stage = root.querySelector(".stage"), ghost = root.querySelector(".ghost");
+          tl.fromTo(stage, { x: 90, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 0);
+          tl.fromTo(stage, { x: 0, opacity: 1 }, { x: -90, opacity: 0, duration: 0.45, ease: "power2.in", immediateRender: false }, D - 0.45);
+          if (ghost) tl.fromTo(ghost, { x: 0 }, { x: -220, duration: D, ease: "none" }, 0);
+          var FX = {
+            up: [{ y: 36, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, ease: "power3.out" }],
+            left: [{ x: -50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.55, ease: "expo.out" }],
+            right: [{ x: 60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.55, ease: "expo.out" }],
+            pop: [{ scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.6, ease: "back.out(1.7)" }],
+            fade: [{ opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power1.out" }],
+            barx: [{ scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "power3.out" }],
+            bary: [{ scaleY: 0 }, { scaleY: 1, duration: 0.9, ease: "power3.out" }]
+          };
+          function fmt(v, el) {
+            var dec = +(el.getAttribute("data-dec") || 0), s = v.toFixed(dec);
+            if (el.hasAttribute("data-comma")) s = Number(s).toLocaleString("en-US", { minimumFractionDigits: dec, maximumFractionDigits: dec });
+            return (el.getAttribute("data-pre") || "") + s + (el.getAttribute("data-suf") || "");
+          }
+          root.querySelectorAll("[data-at]").forEach(function (el) {
+            var t = Math.max(0, +el.getAttribute("data-at") - S);
+            (el.getAttribute("data-fx") || "up").split(" ").forEach(function (fx) {
+              if (FX[fx]) tl.fromTo(el, FX[fx][0], FX[fx][1], t);
+              else if (fx === "mark") { var b = el.querySelector(".mkb"); if (b) tl.fromTo(b, { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power2.inOut" }, t + 0.15); }
+              else if (fx === "count") {
+                var o = { v: +(el.getAttribute("data-from") || 0) }, to = +el.getAttribute("data-to");
+                el.textContent = fmt(o.v, el);
+                tl.fromTo(o, { v: o.v }, { v: to, duration: 1.1, ease: "power2.out", onUpdate: function () { el.textContent = fmt(o.v, el); } }, t);
+              } else if (fx === "ring") {
+                var c = el.querySelector(".ringv"), C = 2 * Math.PI * +c.getAttribute("r"), p = +el.getAttribute("data-p");
+                c.style.strokeDasharray = C; tl.fromTo(c, { strokeDashoffset: C }, { strokeDashoffset: C * (1 - p), duration: 1.2, ease: "power3.out" }, t);
+              } else if (fx === "dim") tl.fromTo(el, { opacity: 1 }, { opacity: 0.22, duration: 0.5, ease: "power1.out", immediateRender: false }, t);
+            });
+          });
+          root.querySelectorAll("[data-out]").forEach(function (el) {
+            var t = +el.getAttribute("data-out") - S;
+            tl.fromTo(el, { opacity: 1, y: 0 }, { opacity: 0, y: -24, duration: 0.4, ease: "power2.in", immediateRender: false }, t);
+          });
+          window.__timelines["s06-rent"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

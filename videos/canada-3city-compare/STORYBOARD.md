@@ -19,6 +19,10 @@ mode: collaborative
 - **Held frame**: 22번 마무리 "우리 가족의 우선순위" — 움직임 거의 없이 문장만 남김.
 - **Truthfulness**: 모든 수치는 블로그 원문·사용자 제공 이미지·녹음 그대로. 차트는 사용자 이미지 수치를 재구성.
 
+## Changes from v1
+
+- 사용자: "바로 완성본 만들어줘" — 스케치 단계 생략, 계획 그대로 빌드.
+
 ## Still open
 
 - 몬트리올 부모 학비: 녹음이 "1년에 만 천 불에서 만 이천 오백 불"로 들림 → 화면에 **$11,000~12,500** 으로 표기 예정. 맞는지 확인 필요.
@@ -30,7 +34,7 @@ mode: collaborative
 - duration: 41.85s
 - start: 0
 - transition_in: cut
-- status: outline
+- status: animated
 - src: compositions/s01-opening.html
 - voiceover: "안녕하세요, AA캐나다입니다 … 결국 같은 결론에 도착하게 됩니다."
 
@@ -40,7 +44,7 @@ mode: collaborative
 - duration: 43.42s
 - start: 41.85
 - transition_in: push-left
-- status: outline
+- status: animated
 - src: compositions/s02-montreal-too.html
 - voiceover: "그래서 오늘은 이 두 도시에 몬트리올까지 … 세 도시를 비교해 보겠습니다."
 
@@ -50,7 +54,7 @@ mode: collaborative
 - duration: 49.76s
 - start: 85.27
 - transition_in: push-left
-- status: outline
+- status: animated
 - src: compositions/s03-edu-pisa.html
 
 ## Frame 4 — ① 교육환경: PCAP
@@ -59,7 +63,7 @@ mode: collaborative
 - duration: 39.36s
 - start: 135.03
 - transition_in: push-left
-- status: outline
+- status: animated
 - src: compositions/s04-edu-pcap.html
 
 ## Frame 5 — ① 교육환경: 학년별 경향
@@ -68,7 +72,7 @@ mode: collaborative
 - duration: 38.75s
 - start: 174.39
 - transition_in: push-left
-- status: outline
+- status: animated
 - src: compositions/s05-edu-grades.html
 
 ## Frame 6 — ② 거주비
@@ -77,7 +81,7 @@ mode: collaborative
 - duration: 57.28s
 - start: 213.14
 - transition_in: push-left
-- status: outline
+- status: animated
 - src: compositions/s06-rent.html
 
 ## Frame 7 — ③ 학비: 조기유학
@@ -86,7 +90,7 @@ mode: collaborative
 - duration: 69.76s
 - start: 270.42
 - transition_in: push-left
-- status: outline
+- status: animated
 - src: compositions/s07-tuition-kids.html
 
 ## Frame 8 — ④ 부모 학비: 토론토·밴쿠버
@@ -95,7 +99,7 @@ mode: collaborative
 - duration: 75.31s
 - start: 340.18
 - transition_in: push-left
-- status: outline
+- status: animated
 - src: compositions/s08-parent-tor-van.html
 
 ## Frame 9 — ④ 부모 학비: 몬트리올
@@ -104,7 +108,7 @@ mode: collaborative
 - duration: 62.24s
 - start: 415.51
 - transition_in: push-left
-- status: outline
+- status: animated
 - src: compositions/s09-parent-mtl.html
 
 ## Frame 10 — ⑤ 문화: 밴쿠버
@@ -113,7 +117,7 @@ mode: collaborative
 - duration: 74.15s
 - start: 477.75
 - transition_in: push-left
-- status: outline
+- status: animated
 - src: compositions/s10-culture-van.html
 
 ## Frame 11 — ⑤ 문화: 토론토
@@ -122,7 +126,7 @@ mode: collaborative
 - duration: 93.05s
 - start: 551.90
 - transition_in: push-left
-- status: outline
+- status: animated
 - src: compositions/s11-culture-tor.html
 
 ## Frame 12 — ⑤ 문화: 몬트리올
@@ -131,7 +135,7 @@ mode: collaborative
 - duration: 106.63s
 - start: 644.95
 - transition_in: push-left
-- status: outline
+- status: animated
 - src: compositions/s12-culture-mtl.html
 
 ## Frame 13 — ⑥ 인구: 밴쿠버
@@ -140,7 +144,7 @@ mode: collaborative
 - duration: 46.88s
 - start: 751.58
 - transition_in: push-left
-- status: outline
+- status: animated
 - src: compositions/s13-pop-van.html
 
 ## Frame 14 — ⑥ 인구: 토론토
@@ -149,7 +153,7 @@ mode: collaborative
 - duration: 40.54s
 - start: 798.46
 - transition_in: push-left
-- status: outline
+- status: animated
 - src: compositions/s14-pop-tor.html
 
 ## Frame 15 — ⑥ 인구: 몬트리올
@@ -158,7 +162,7 @@ mode: collaborative
 - duration: 38.46s
 - start: 839.00
 - transition_in: push-left
-- status: outline
+- status: animated
 - src: compositions/s15-pop-mtl.html
 
 ## Frame 16 — ⑥ 인구: 인도인 증가
@@ -167,7 +171,7 @@ mode: collaborative
 - duration: 29.22s
 - start: 877.46
 - transition_in: push-left
-- status: outline
+- status: animated
 - src: compositions/s16-pop-india.html
 
 ## Frame 17 — ⑥ 인구: 한인
@@ -176,7 +180,7 @@ mode: collaborative
 - duration: 77.92s
 - start: 906.68
 - transition_in: push-left
-- status: outline
+- status: animated
 - src: compositions/s17-pop-korean.html
 
 ## Frame 18 — ⑦ 날씨
@@ -185,7 +189,7 @@ mode: collaborative
 - duration: 45.57s
 - start: 984.60
 - transition_in: push-left
-- status: outline
+- status: animated
 - src: compositions/s18-weather.html
 
 ## Frame 19 — ⑧ 자동차
@@ -194,7 +198,7 @@ mode: collaborative
 - duration: 32.35s
 - start: 1030.17
 - transition_in: push-left
-- status: outline
+- status: animated
 - src: compositions/s19-car.html
 
 ## Frame 20 — + 자녀 언어향상
@@ -203,7 +207,7 @@ mode: collaborative
 - duration: 67.81s
 - start: 1062.52
 - transition_in: push-left
-- status: outline
+- status: animated
 - src: compositions/s20-language.html
 
 ## Frame 21 — 마무리
@@ -212,7 +216,7 @@ mode: collaborative
 - duration: 27.39s
 - start: 1130.33
 - transition_in: push-left
-- status: outline
+- status: animated
 - src: compositions/s21-wrap.html
 
 ## Frame 22 — 상담 안내
@@ -221,5 +225,5 @@ mode: collaborative
 - duration: 38.63s
 - start: 1157.72
 - transition_in: crossfade
-- status: outline
+- status: animated
 - src: compositions/s22-contact.html

@@ -1,55 +1,102 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=1920, height=1080" />
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <title>밴쿠버 vs 토론토 vs 몬트리올 — 8가지 기준 비교</title>
+    <script src="assets/vendor/gsap.min.js"></script>
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      html,
-      body {
-        margin: 0;
-        width: 1920px;
-        height: 1080px;
-        overflow: hidden;
-        background: #0a0a0a;
-      }
-      #root {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: Inter, ui-sans-serif, system-ui, sans-serif;
-      }
-      #title {
-        color: #f4f4f5;
-        font-size: 72px;
-        font-weight: 600;
-        letter-spacing: -0.03em;
-      }
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Regular.woff2") format("woff2");font-weight:400;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Medium.woff2") format("woff2");font-weight:500;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2");font-weight:600;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");font-weight:700;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");font-weight:800;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Black.woff2") format("woff2");font-weight:900;font-style:normal;}
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; background: #F5F2EA; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; font-family: "Pretendard", sans-serif; 
+  --paper:#F5F2EA; --paper2:#ECE7DA; --ink:#1C2431; --ink2:#4E5767; --rule:#C9C1AE;
+  --van:#5B3FA0; --tor:#13845A; --mtl:#D2343F; --marker:#F7D046; }
+      #bg { position: absolute; inset: 0; background: var(--paper); }
+      #grid { position: absolute; inset: -60px; background-image: linear-gradient(rgba(28,36,49,.07) 2px, transparent 2px), linear-gradient(90deg, rgba(28,36,49,.07) 2px, transparent 2px); background-size: 60px 60px; }
+      #glow { position: absolute; width: 1400px; height: 1400px; left: 900px; top: -500px; border-radius: 50%; background: radial-gradient(circle, rgba(247,208,70,.28), rgba(247,208,70,0) 65%); }
+      #spine { position: absolute; left: 120px; right: 120px; top: 38px; height: 64px; display: flex; gap: 12px; }
+      #spine .sp { flex: 1; display: flex; align-items: center; justify-content: center; gap: 10px; border-radius: 14px; border: 3px solid var(--rule); background: #FBF9F4; color: var(--ink2); font-size: 24px; font-weight: 700; }
+      #spine .spn { font-weight: 900; }
+      #brand { position: absolute; right: 120px; bottom: 60px; font-size: 24px; font-weight: 800; color: var(--ink2); letter-spacing: .04em; }
     </style>
   </head>
   <body>
-    <div
-      id="root"
-      data-composition-id="main"
-      data-start="0"
-      data-duration="10"
-      data-width="1920"
-      data-height="1080"
-    >
-      <h1 id="title" class="clip" data-start="0" data-duration="10" data-track-index="0">Title</h1>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="1196.35" data-width="1920" data-height="1080">
+      <div id="bg-layer" class="clip" data-start="0" data-duration="1196.35" data-track-index="0">
+        <div id="bg"></div><div id="grid"></div><div id="glow"></div>
+        <div id="brand">AA CANADA</div>
+      </div>
+      <div id="spine-layer" class="clip" data-start="85.27" data-duration="1045.06" data-track-index="3">
+        <div id="spine"><div class="sp" id="sp0"><span class="spn">1</span><span class="spt">교육환경</span></div><div class="sp" id="sp1"><span class="spn">2</span><span class="spt">거주비</span></div><div class="sp" id="sp2"><span class="spn">3</span><span class="spt">학비</span></div><div class="sp" id="sp3"><span class="spn">4</span><span class="spt">부모 학비</span></div><div class="sp" id="sp4"><span class="spn">5</span><span class="spt">문화</span></div><div class="sp" id="sp5"><span class="spn">6</span><span class="spt">인구</span></div><div class="sp" id="sp6"><span class="spn">7</span><span class="spt">날씨</span></div><div class="sp" id="sp7"><span class="spn">8</span><span class="spt">자동차</span></div><div class="sp" id="sp8"><span class="spn">+</span><span class="spt">언어</span></div></div>
+      </div>
+      <div id="slot-s01-opening" data-composition-id="s01-opening" data-composition-src="compositions/s01-opening.html"
+        data-start="0" data-duration="41.85" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <div id="slot-s02-montreal-too" data-composition-id="s02-montreal-too" data-composition-src="compositions/s02-montreal-too.html"
+        data-start="41.85" data-duration="43.42" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <div id="slot-s03-edu-pisa" data-composition-id="s03-edu-pisa" data-composition-src="compositions/s03-edu-pisa.html"
+        data-start="85.27" data-duration="49.76" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <div id="slot-s04-edu-pcap" data-composition-id="s04-edu-pcap" data-composition-src="compositions/s04-edu-pcap.html"
+        data-start="135.03" data-duration="39.36" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <div id="slot-s05-edu-grades" data-composition-id="s05-edu-grades" data-composition-src="compositions/s05-edu-grades.html"
+        data-start="174.39" data-duration="38.75" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <div id="slot-s06-rent" data-composition-id="s06-rent" data-composition-src="compositions/s06-rent.html"
+        data-start="213.14" data-duration="57.28" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <div id="slot-s07-tuition-kids" data-composition-id="s07-tuition-kids" data-composition-src="compositions/s07-tuition-kids.html"
+        data-start="270.42" data-duration="69.76" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <div id="slot-s08-parent-tor-van" data-composition-id="s08-parent-tor-van" data-composition-src="compositions/s08-parent-tor-van.html"
+        data-start="340.18" data-duration="75.33" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <div id="slot-s09-parent-mtl" data-composition-id="s09-parent-mtl" data-composition-src="compositions/s09-parent-mtl.html"
+        data-start="415.51" data-duration="62.24" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <div id="slot-s10-culture-van" data-composition-id="s10-culture-van" data-composition-src="compositions/s10-culture-van.html"
+        data-start="477.75" data-duration="74.15" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <div id="slot-s11-culture-tor" data-composition-id="s11-culture-tor" data-composition-src="compositions/s11-culture-tor.html"
+        data-start="551.9" data-duration="93.05" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <div id="slot-s12-culture-mtl" data-composition-id="s12-culture-mtl" data-composition-src="compositions/s12-culture-mtl.html"
+        data-start="644.95" data-duration="106.63" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <div id="slot-s13-pop-van" data-composition-id="s13-pop-van" data-composition-src="compositions/s13-pop-van.html"
+        data-start="751.58" data-duration="46.88" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <div id="slot-s14-pop-tor" data-composition-id="s14-pop-tor" data-composition-src="compositions/s14-pop-tor.html"
+        data-start="798.46" data-duration="40.54" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <div id="slot-s15-pop-mtl" data-composition-id="s15-pop-mtl" data-composition-src="compositions/s15-pop-mtl.html"
+        data-start="839" data-duration="38.46" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <div id="slot-s16-pop-india" data-composition-id="s16-pop-india" data-composition-src="compositions/s16-pop-india.html"
+        data-start="877.46" data-duration="29.22" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <div id="slot-s17-pop-korean" data-composition-id="s17-pop-korean" data-composition-src="compositions/s17-pop-korean.html"
+        data-start="906.68" data-duration="77.92" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <div id="slot-s18-weather" data-composition-id="s18-weather" data-composition-src="compositions/s18-weather.html"
+        data-start="984.6" data-duration="45.57" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <div id="slot-s19-car" data-composition-id="s19-car" data-composition-src="compositions/s19-car.html"
+        data-start="1030.17" data-duration="32.35" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <div id="slot-s20-language" data-composition-id="s20-language" data-composition-src="compositions/s20-language.html"
+        data-start="1062.52" data-duration="67.81" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <div id="slot-s21-wrap" data-composition-id="s21-wrap" data-composition-src="compositions/s21-wrap.html"
+        data-start="1130.33" data-duration="27.39" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <div id="slot-s22-contact" data-composition-id="s22-contact" data-composition-src="compositions/s22-contact.html"
+        data-start="1157.72" data-duration="38.63" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <audio id="narration" src="assets/audio/narration.m4a" data-start="0" data-duration="1196.35" data-track-index="4" data-volume="1"></audio>
     </div>
     <script>
-      const tl = gsap.timeline({ paused: true });
-      // Example: tl.fromTo("#title", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6 }, 0);
+      var tl = gsap.timeline({ paused: true });
+      tl.fromTo("#grid", { x: 0, y: 0 }, { x: -60, y: -60, duration: 1196.35, ease: "none" }, 0);
+      tl.fromTo("#glow", { scale: 1 }, { scale: 1.12, duration: 8, ease: "sine.inOut", yoyo: true, repeat: 148 }, 0);
+      tl.fromTo("#spine", { y: -30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 85.27);
+      tl.fromTo("#spine", { opacity: 1 }, { opacity: 0, duration: 0.45, ease: "power2.in", immediateRender: false }, 1129.8799999999999);
+      var CH = [85.27,213.14,270.42,340.18,477.75,751.58,984.6,1030.17,1062.52];
+      CH.forEach(function (t, i) {
+        var el = document.getElementById("sp" + i), end = CH[i + 1] || 1130.33;
+        tl.fromTo(el, { backgroundColor: "#FBF9F4", color: "#4E5767", borderColor: "#C9C1AE" },
+          { backgroundColor: "#1C2431", color: "#F5F2EA", borderColor: "#1C2431", duration: 0.35, ease: "power2.out", immediateRender: false }, t);
+        if (end < 1130.33)
+          tl.fromTo(el, { backgroundColor: "#1C2431", color: "#F5F2EA", borderColor: "#1C2431" },
+            { backgroundColor: "#F7D046", color: "#1C2431", borderColor: "#F7D046", duration: 0.35, ease: "power2.out", immediateRender: false }, end);
+      });
       window.__timelines["main"] = tl;
-      tl.seek(0);
     </script>
   </body>
 </html>

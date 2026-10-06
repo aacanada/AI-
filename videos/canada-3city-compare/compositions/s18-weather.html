@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /><title>날씨</title></head>
+  <body>
+    <template>
+      <style>
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Regular.woff2") format("woff2");font-weight:400;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Medium.woff2") format("woff2");font-weight:500;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2");font-weight:600;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");font-weight:700;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");font-weight:800;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Black.woff2") format("woff2");font-weight:900;font-style:normal;}
+
+#s18-weather{position:absolute;inset:0;
+  --paper:#F5F2EA; --paper2:#ECE7DA; --ink:#1C2431; --ink2:#4E5767; --rule:#C9C1AE;
+  --van:#5B3FA0; --tor:#13845A; --mtl:#D2343F; --marker:#F7D046;font-family:"Pretendard",sans-serif;color:var(--ink);overflow:hidden;}
+#s18-weather *{box-sizing:border-box;margin:0;padding:0;}
+#s18-weather .stage{position:absolute;inset:0;padding:150px 120px 170px;}
+#s18-weather .ghost{position:absolute;right:-40px;bottom:120px;font-size:300px;font-weight:900;color:var(--ink);opacity:.06;white-space:nowrap;letter-spacing:-.04em;line-height:1;}
+#s18-weather .chap{display:flex;align-items:center;gap:26px;height:96px;}
+#s18-weather .chap .n{width:84px;height:84px;border-radius:50%;background:var(--ink);color:var(--paper);font-size:44px;font-weight:900;display:flex;align-items:center;justify-content:center;flex:none;}
+#s18-weather .chap h2{font-size:66px;font-weight:900;letter-spacing:-.02em;}
+#s18-weather .chap .sub{font-size:34px;font-weight:600;color:var(--ink2);padding-left:24px;border-left:4px solid var(--rule);}
+#s18-weather .van{--c:var(--van);} #s18-weather .tor{--c:var(--tor);} #s18-weather .mtl{--c:var(--mtl);}
+#s18-weather .cc{color:var(--c);}
+#s18-weather .pill{display:inline-flex;align-items:center;gap:14px;font-size:34px;font-weight:800;color:var(--c);}
+#s18-weather .pill::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--c);}
+#s18-weather .mk{position:relative;display:inline-block;isolation:isolate;}
+#s18-weather .mk .mkb{position:absolute;left:-8px;right:-8px;bottom:4%;height:46%;background:var(--marker);display:block;transform-origin:left center;transform:scaleX(0);border-radius:4px;}
+#s18-weather .mk .mkt{position:relative;}
+#s18-weather .card{position:relative;background:#FBF9F4;border:3px solid var(--rule);border-radius:22px;overflow:hidden;}
+#s18-weather .card.cityc{border-color:var(--c);}
+#s18-weather .card .bar{position:absolute;left:0;top:0;right:0;height:14px;background:var(--c);}
+#s18-weather .note{font-size:34px;font-weight:600;color:var(--ink2);}
+#s18-weather .big{font-weight:900;letter-spacing:-.03em;font-variant-numeric:tabular-nums;}
+#s18-weather .tag{display:inline-flex;align-items:center;padding:12px 26px;border-radius:999px;background:var(--ink);color:var(--paper);font-size:32px;font-weight:700;}
+#s18-weather .tag.lite{background:var(--paper2);color:var(--ink);border:3px solid var(--rule);}
+#s18-weather .arrow{font-weight:900;color:var(--ink2);}
+#s18-weather .src{position:absolute;right:120px;bottom:178px;font-size:22px;font-weight:600;color:var(--ink2);}
+
+
+#s18-weather .verdict{position:absolute;right:120px;top:166px;font-size:40px;font-weight:900;}
+#s18-weather .pan{position:absolute;top:300px;width:760px;height:440px;}
+#s18-weather .pan.p1{left:120px;} #s18-weather .pan.p2{right:120px;}
+#s18-weather .ph{position:absolute;left:0;top:-14px;font-size:40px;font-weight:900;}
+#s18-weather .zero{position:absolute;left:0;right:0;height:0;border-top:3px dashed var(--ink2);}
+#s18-weather .zero span{position:absolute;right:0;top:-36px;font-size:24px;font-weight:800;color:var(--ink2);}
+#s18-weather .bars{position:absolute;left:120px;right:40px;top:0;bottom:0;display:flex;gap:60px;}
+#s18-weather .wb{position:relative;flex:1;height:100%;}
+#s18-weather .wf{position:absolute;left:24px;right:24px;background:var(--c);border-radius:14px;transform-origin:bottom center;}
+#s18-weather .wv{position:absolute;left:0;right:0;text-align:center;font-size:36px;font-weight:900;font-variant-numeric:tabular-nums;}
+#s18-weather .wv.lo{color:var(--ink2);font-size:30px;}
+#s18-weather .wn{position:absolute;left:-10px;right:-10px;bottom:-56px;text-align:center;font-size:30px;font-weight:900;}
+#s18-weather .foot{position:absolute;left:120px;top:848px;font-size:34px;font-weight:800;}
+      </style>
+      <div id="s18-weather" data-composition-id="s18-weather" data-width="1920" data-height="1080">
+        <div class="ghost">°C</div>
+        <div class="stage">
+
+<div class="chap" data-at="984.9" data-fx="left"><div class="n">7</div><h2>날씨</h2><div class="sub">일평균 최고·최저 기온</div></div>
+<div class="verdict" data-at="991.35" data-fx="right">솔직히 비교 불가 — <span class="mk" data-at="993.8" data-fx="mark"><span class="mkb"></span><span class="mkt">밴쿠버 압도적</span></span></div>
+<div class="pan p1" data-at="995.48" data-fx="fade"><div class="ph">1월</div><div class="zero" style="bottom:146.66666666666666px"><span>0°C</span></div>
+  <div class="bars"><div class="wb van"><div class="wf" data-at="996.95" data-fx="bary" style="bottom:166.22222222222223px;height:39.111111111111114px"></div><div class="wv" style="bottom:213.33333333333334px" data-at="997.35" data-fx="fade">6°</div><div class="wv lo" style="bottom:120.22222222222223px" data-at="997.35" data-fx="fade">2°</div><div class="wn cc">밴쿠버</div></div><div class="wb tor"><div class="wf" data-at="1002.1" data-fx="bary" style="bottom:68.44444444444444px;height:68.44444444444444px"></div><div class="wv" style="bottom:144.88888888888889px" data-at="1002.5" data-fx="fade">-1°</div><div class="wv lo" style="bottom:22.444444444444443px" data-at="1002.5" data-fx="fade">-8°</div><div class="wn cc">토론토</div></div><div class="wb mtl"><div class="wf" data-at="1006.3" data-fx="bary" style="bottom:29.333333333333332px;height:68.44444444444444px"></div><div class="wv" style="bottom:105.77777777777777px" data-at="1006.6999999999999" data-fx="fade">-5°</div><div class="wv lo" style="bottom:-16.666666666666668px" data-at="1006.6999999999999" data-fx="fade">-12°</div><div class="wn cc">몬트리올</div></div></div></div>
+<div class="pan p2" data-at="1011.96" data-fx="fade"><div class="ph">7월</div><div class="zero" style="bottom:146.66666666666666px"><span>0°C</span></div>
+  <div class="bars"><div class="wb van"><div class="wf" data-at="1012.5" data-fx="bary" style="bottom:283.5555555555556px;height:78.22222222222217px"></div><div class="wv" style="bottom:369.77777777777777px" data-at="1012.9" data-fx="fade">22°</div><div class="wv lo" style="bottom:237.5555555555556px" data-at="1012.9" data-fx="fade">14°</div><div class="wn cc">밴쿠버</div></div><div class="wb tor"><div class="wf" data-at="1018.36" data-fx="bary" style="bottom:312.8888888888889px;height:78.22222222222217px"></div><div class="wv" style="bottom:399.1111111111111px" data-at="1018.76" data-fx="fade">25°</div><div class="wv lo" style="bottom:266.8888888888889px" data-at="1018.76" data-fx="fade">17°</div><div class="wn cc">토론토</div></div><div class="wb mtl"><div class="wf" data-at="1019.6" data-fx="bary" style="bottom:312.8888888888889px;height:87.99999999999994px"></div><div class="wv" style="bottom:408.88888888888886px" data-at="1020" data-fx="fade">26°</div><div class="wv lo" style="bottom:266.8888888888889px" data-at="1020" data-fx="fade">17°</div><div class="wn cc">몬트리올</div></div></div></div>
+<div class="foot" data-at="1023.16" data-fx="up"><span class="cc van" style="--c:var(--van)">밴쿠버</span>는 여름·겨울 기온차가 작고 <span class="mk" data-at="1025" data-fx="mark"><span class="mkb"></span><span class="mkt">전체적으로 온화</span></span></div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          var S = 984.6, D = 45.57, root = document.getElementById("s18-weather");
+          var tl = gsap.timeline({ paused: true });
+          var stage = root.querySelector(".stage"), ghost = root.querySelector(".ghost");
+          tl.fromTo(stage, { x: 90, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 0);
+          tl.fromTo(stage, { x: 0, opacity: 1 }, { x: -90, opacity: 0, duration: 0.45, ease: "power2.in", immediateRender: false }, D - 0.45);
+          if (ghost) tl.fromTo(ghost, { x: 0 }, { x: -220, duration: D, ease: "none" }, 0);
+          var FX = {
+            up: [{ y: 36, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, ease: "power3.out" }],
+            left: [{ x: -50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.55, ease: "expo.out" }],
+            right: [{ x: 60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.55, ease: "expo.out" }],
+            pop: [{ scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.6, ease: "back.out(1.7)" }],
+            fade: [{ opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power1.out" }],
+            barx: [{ scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "power3.out" }],
+            bary: [{ scaleY: 0 }, { scaleY: 1, duration: 0.9, ease: "power3.out" }]
+          };
+          function fmt(v, el) {
+            var dec = +(el.getAttribute("data-dec") || 0), s = v.toFixed(dec);
+            if (el.hasAttribute("data-comma")) s = Number(s).toLocaleString("en-US", { minimumFractionDigits: dec, maximumFractionDigits: dec });
+            return (el.getAttribute("data-pre") || "") + s + (el.getAttribute("data-suf") || "");
+          }
+          root.querySelectorAll("[data-at]").forEach(function (el) {
+            var t = Math.max(0, +el.getAttribute("data-at") - S);
+            (el.getAttribute("data-fx") || "up").split(" ").forEach(function (fx) {
+              if (FX[fx]) tl.fromTo(el, FX[fx][0], FX[fx][1], t);
+              else if (fx === "mark") { var b = el.querySelector(".mkb"); if (b) tl.fromTo(b, { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power2.inOut" }, t + 0.15); }
+              else if (fx === "count") {
+                var o = { v: +(el.getAttribute("data-from") || 0) }, to = +el.getAttribute("data-to");
+                el.textContent = fmt(o.v, el);
+                tl.fromTo(o, { v: o.v }, { v: to, duration: 1.1, ease: "power2.out", onUpdate: function () { el.textContent = fmt(o.v, el); } }, t);
+              } else if (fx === "ring") {
+                var c = el.querySelector(".ringv"), C = 2 * Math.PI * +c.getAttribute("r"), p = +el.getAttribute("data-p");
+                c.style.strokeDasharray = C; tl.fromTo(c, { strokeDashoffset: C }, { strokeDashoffset: C * (1 - p), duration: 1.2, ease: "power3.out" }, t);
+              } else if (fx === "dim") tl.fromTo(el, { opacity: 1 }, { opacity: 0.22, duration: 0.5, ease: "power1.out", immediateRender: false }, t);
+            });
+          });
+          root.querySelectorAll("[data-out]").forEach(function (el) {
+            var t = +el.getAttribute("data-out") - S;
+            tl.fromTo(el, { opacity: 1, y: 0 }, { opacity: 0, y: -24, duration: 0.4, ease: "power2.in", immediateRender: false }, t);
+          });
+          window.__timelines["s18-weather"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

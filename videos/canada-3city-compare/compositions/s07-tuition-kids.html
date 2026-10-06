@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /><title>학비 조기유학</title></head>
+  <body>
+    <template>
+      <style>
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Regular.woff2") format("woff2");font-weight:400;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Medium.woff2") format("woff2");font-weight:500;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2");font-weight:600;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");font-weight:700;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");font-weight:800;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Black.woff2") format("woff2");font-weight:900;font-style:normal;}
+
+#s07-tuition-kids{position:absolute;inset:0;
+  --paper:#F5F2EA; --paper2:#ECE7DA; --ink:#1C2431; --ink2:#4E5767; --rule:#C9C1AE;
+  --van:#5B3FA0; --tor:#13845A; --mtl:#D2343F; --marker:#F7D046;font-family:"Pretendard",sans-serif;color:var(--ink);overflow:hidden;}
+#s07-tuition-kids *{box-sizing:border-box;margin:0;padding:0;}
+#s07-tuition-kids .stage{position:absolute;inset:0;padding:150px 120px 170px;}
+#s07-tuition-kids .ghost{position:absolute;right:-40px;bottom:120px;font-size:300px;font-weight:900;color:var(--ink);opacity:.06;white-space:nowrap;letter-spacing:-.04em;line-height:1;}
+#s07-tuition-kids .chap{display:flex;align-items:center;gap:26px;height:96px;}
+#s07-tuition-kids .chap .n{width:84px;height:84px;border-radius:50%;background:var(--ink);color:var(--paper);font-size:44px;font-weight:900;display:flex;align-items:center;justify-content:center;flex:none;}
+#s07-tuition-kids .chap h2{font-size:66px;font-weight:900;letter-spacing:-.02em;}
+#s07-tuition-kids .chap .sub{font-size:34px;font-weight:600;color:var(--ink2);padding-left:24px;border-left:4px solid var(--rule);}
+#s07-tuition-kids .van{--c:var(--van);} #s07-tuition-kids .tor{--c:var(--tor);} #s07-tuition-kids .mtl{--c:var(--mtl);}
+#s07-tuition-kids .cc{color:var(--c);}
+#s07-tuition-kids .pill{display:inline-flex;align-items:center;gap:14px;font-size:34px;font-weight:800;color:var(--c);}
+#s07-tuition-kids .pill::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--c);}
+#s07-tuition-kids .mk{position:relative;display:inline-block;isolation:isolate;}
+#s07-tuition-kids .mk .mkb{position:absolute;left:-8px;right:-8px;bottom:4%;height:46%;background:var(--marker);display:block;transform-origin:left center;transform:scaleX(0);border-radius:4px;}
+#s07-tuition-kids .mk .mkt{position:relative;}
+#s07-tuition-kids .card{position:relative;background:#FBF9F4;border:3px solid var(--rule);border-radius:22px;overflow:hidden;}
+#s07-tuition-kids .card.cityc{border-color:var(--c);}
+#s07-tuition-kids .card .bar{position:absolute;left:0;top:0;right:0;height:14px;background:var(--c);}
+#s07-tuition-kids .note{font-size:34px;font-weight:600;color:var(--ink2);}
+#s07-tuition-kids .big{font-weight:900;letter-spacing:-.03em;font-variant-numeric:tabular-nums;}
+#s07-tuition-kids .tag{display:inline-flex;align-items:center;padding:12px 26px;border-radius:999px;background:var(--ink);color:var(--paper);font-size:32px;font-weight:700;}
+#s07-tuition-kids .tag.lite{background:var(--paper2);color:var(--ink);border:3px solid var(--rule);}
+#s07-tuition-kids .arrow{font-weight:900;color:var(--ink2);}
+#s07-tuition-kids .src{position:absolute;right:120px;bottom:178px;font-size:22px;font-weight:600;color:var(--ink2);}
+
+
+#s07-tuition-kids .paths{position:absolute;left:120px;right:120px;top:300px;display:grid;grid-template-columns:1fr 1fr;gap:50px;}
+#s07-tuition-kids .pc{padding:54px 50px;min-height:420px;}
+#s07-tuition-kids .pk{font-size:58px;font-weight:900;}
+#s07-tuition-kids .pd{font-size:34px;font-weight:700;color:var(--ink2);margin-top:16px;line-height:1.4;}
+#s07-tuition-kids .who{margin-top:44px;display:inline-flex;}
+#s07-tuition-kids .cols{position:absolute;left:120px;right:120px;top:330px;height:540px;display:grid;grid-template-columns:repeat(3,1fr);gap:40px;}
+#s07-tuition-kids .cols .card{padding:56px 40px 0;display:flex;flex-direction:column;gap:12px;}
+#s07-tuition-kids .lab{font-size:28px;font-weight:800;color:var(--ink2);margin-top:14px;}
+#s07-tuition-kids .v1{font-size:76px;}
+#s07-tuition-kids .v2{font-size:46px;font-weight:900;}
+#s07-tuition-kids .ft{font-size:27px;font-weight:700;color:var(--ink2);}
+#s07-tuition-kids .unit{position:absolute;right:120px;top:270px;font-size:26px;font-weight:700;color:var(--ink2);}
+      </style>
+      <div id="s07-tuition-kids" data-composition-id="s07-tuition-kids" data-width="1920" data-height="1080">
+        
+        <div class="stage">
+
+<div class="chap" data-at="270.7" data-fx="left"><div class="n">3</div><h2>학비</h2><div class="sub">조기유학 케이스</div></div>
+<div class="paths" data-out="295.8">
+  <div class="card pc" data-at="270.9" data-fx="pop"><div class="pk">조기유학</div><div class="pd">자녀 학비를 직접 납부</div><div class="tag who" data-at="283.45" data-fx="pop">자녀 1명 · 단기 플랜</div></div>
+  <div class="card pc" data-at="275.54" data-fx="pop"><div class="pk">무상교육</div><div class="pd">부모 비자로 공립학교 학비 면제</div><div class="tag who" data-at="289.94" data-fx="pop">자녀 2명 이상 · 장기 플랜</div></div>
+</div>
+<div class="unit" data-at="296.6" data-fx="fade">1년 기준 · CAD</div>
+<div class="cols">
+  <div class="card cityc van" data-at="296.8" data-fx="pop"><div class="bar"></div><div class="pill van" >밴쿠버</div><div class="lab">공립 (보험료 포함)</div><div><span class="big v1" data-at="302.14" data-fx="count" data-to="18000" data-pre="약 $" data-suf="" data-dec="0" data-comma>약 $0</span></div><div class="lab">사립</div><div class="v2" data-at="305" data-fx="up">$20,000~35,000</div><div class="ft" data-at="309.62" data-fx="up">명문 사립은 더 높음</div></div>
+  <div class="card cityc tor" data-at="297.2" data-fx="pop"><div class="bar"></div><div class="pill tor" >토론토</div><div class="lab">공립 (보험료 포함)</div><div><span class="big v1" data-at="312.25" data-fx="count" data-to="18000" data-pre="약 $" data-suf="" data-dec="0" data-comma>약 $0</span></div><div class="lab">사립</div><div class="v2" data-at="316.5" data-fx="up">$20,000~35,000</div></div>
+  <div class="card cityc mtl" data-at="297.6" data-fx="pop"><div class="bar"></div><div class="pill mtl" >몬트리올</div><div class="lab">공립 (보험료 포함)</div><div><span class="big v1" data-at="321.05" data-fx="count" data-to="14000" data-pre="약 $" data-suf="" data-dec="0" data-comma>약 $0</span></div><div class="lab">사립</div><div class="v2" data-at="327.54" data-fx="up">$20,000~35,000</div><div class="ft" style="font-size:32px;color:var(--ink)" data-at="332.02" data-fx="up"><span class="mk" data-at="333.5" data-fx="mark"><span class="mkb"></span><span class="mkt">반값 수준 불어 사립</span></span></div></div>
+</div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          var S = 270.42, D = 69.76, root = document.getElementById("s07-tuition-kids");
+          var tl = gsap.timeline({ paused: true });
+          var stage = root.querySelector(".stage"), ghost = root.querySelector(".ghost");
+          tl.fromTo(stage, { x: 90, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 0);
+          tl.fromTo(stage, { x: 0, opacity: 1 }, { x: -90, opacity: 0, duration: 0.45, ease: "power2.in", immediateRender: false }, D - 0.45);
+          if (ghost) tl.fromTo(ghost, { x: 0 }, { x: -220, duration: D, ease: "none" }, 0);
+          var FX = {
+            up: [{ y: 36, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, ease: "power3.out" }],
+            left: [{ x: -50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.55, ease: "expo.out" }],
+            right: [{ x: 60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.55, ease: "expo.out" }],
+            pop: [{ scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.6, ease: "back.out(1.7)" }],
+            fade: [{ opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power1.out" }],
+            barx: [{ scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "power3.out" }],
+            bary: [{ scaleY: 0 }, { scaleY: 1, duration: 0.9, ease: "power3.out" }]
+          };
+          function fmt(v, el) {
+            var dec = +(el.getAttribute("data-dec") || 0), s = v.toFixed(dec);
+            if (el.hasAttribute("data-comma")) s = Number(s).toLocaleString("en-US", { minimumFractionDigits: dec, maximumFractionDigits: dec });
+            return (el.getAttribute("data-pre") || "") + s + (el.getAttribute("data-suf") || "");
+          }
+          root.querySelectorAll("[data-at]").forEach(function (el) {
+            var t = Math.max(0, +el.getAttribute("data-at") - S);
+            (el.getAttribute("data-fx") || "up").split(" ").forEach(function (fx) {
+              if (FX[fx]) tl.fromTo(el, FX[fx][0], FX[fx][1], t);
+              else if (fx === "mark") { var b = el.querySelector(".mkb"); if (b) tl.fromTo(b, { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power2.inOut" }, t + 0.15); }
+              else if (fx === "count") {
+                var o = { v: +(el.getAttribute("data-from") || 0) }, to = +el.getAttribute("data-to");
+                el.textContent = fmt(o.v, el);
+                tl.fromTo(o, { v: o.v }, { v: to, duration: 1.1, ease: "power2.out", onUpdate: function () { el.textContent = fmt(o.v, el); } }, t);
+              } else if (fx === "ring") {
+                var c = el.querySelector(".ringv"), C = 2 * Math.PI * +c.getAttribute("r"), p = +el.getAttribute("data-p");
+                c.style.strokeDasharray = C; tl.fromTo(c, { strokeDashoffset: C }, { strokeDashoffset: C * (1 - p), duration: 1.2, ease: "power3.out" }, t);
+              } else if (fx === "dim") tl.fromTo(el, { opacity: 1 }, { opacity: 0.22, duration: 0.5, ease: "power1.out", immediateRender: false }, t);
+            });
+          });
+          root.querySelectorAll("[data-out]").forEach(function (el) {
+            var t = +el.getAttribute("data-out") - S;
+            tl.fromTo(el, { opacity: 1, y: 0 }, { opacity: 0, y: -24, duration: 0.4, ease: "power2.in", immediateRender: false }, t);
+          });
+          window.__timelines["s07-tuition-kids"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

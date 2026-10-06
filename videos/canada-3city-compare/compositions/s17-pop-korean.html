@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /><title>한인 인구</title></head>
+  <body>
+    <template>
+      <style>
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Regular.woff2") format("woff2");font-weight:400;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Medium.woff2") format("woff2");font-weight:500;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2");font-weight:600;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");font-weight:700;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");font-weight:800;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Black.woff2") format("woff2");font-weight:900;font-style:normal;}
+
+#s17-pop-korean{position:absolute;inset:0;
+  --paper:#F5F2EA; --paper2:#ECE7DA; --ink:#1C2431; --ink2:#4E5767; --rule:#C9C1AE;
+  --van:#5B3FA0; --tor:#13845A; --mtl:#D2343F; --marker:#F7D046;font-family:"Pretendard",sans-serif;color:var(--ink);overflow:hidden;}
+#s17-pop-korean *{box-sizing:border-box;margin:0;padding:0;}
+#s17-pop-korean .stage{position:absolute;inset:0;padding:150px 120px 170px;}
+#s17-pop-korean .ghost{position:absolute;right:-40px;bottom:120px;font-size:300px;font-weight:900;color:var(--ink);opacity:.06;white-space:nowrap;letter-spacing:-.04em;line-height:1;}
+#s17-pop-korean .chap{display:flex;align-items:center;gap:26px;height:96px;}
+#s17-pop-korean .chap .n{width:84px;height:84px;border-radius:50%;background:var(--ink);color:var(--paper);font-size:44px;font-weight:900;display:flex;align-items:center;justify-content:center;flex:none;}
+#s17-pop-korean .chap h2{font-size:66px;font-weight:900;letter-spacing:-.02em;}
+#s17-pop-korean .chap .sub{font-size:34px;font-weight:600;color:var(--ink2);padding-left:24px;border-left:4px solid var(--rule);}
+#s17-pop-korean .van{--c:var(--van);} #s17-pop-korean .tor{--c:var(--tor);} #s17-pop-korean .mtl{--c:var(--mtl);}
+#s17-pop-korean .cc{color:var(--c);}
+#s17-pop-korean .pill{display:inline-flex;align-items:center;gap:14px;font-size:34px;font-weight:800;color:var(--c);}
+#s17-pop-korean .pill::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--c);}
+#s17-pop-korean .mk{position:relative;display:inline-block;isolation:isolate;}
+#s17-pop-korean .mk .mkb{position:absolute;left:-8px;right:-8px;bottom:4%;height:46%;background:var(--marker);display:block;transform-origin:left center;transform:scaleX(0);border-radius:4px;}
+#s17-pop-korean .mk .mkt{position:relative;}
+#s17-pop-korean .card{position:relative;background:#FBF9F4;border:3px solid var(--rule);border-radius:22px;overflow:hidden;}
+#s17-pop-korean .card.cityc{border-color:var(--c);}
+#s17-pop-korean .card .bar{position:absolute;left:0;top:0;right:0;height:14px;background:var(--c);}
+#s17-pop-korean .note{font-size:34px;font-weight:600;color:var(--ink2);}
+#s17-pop-korean .big{font-weight:900;letter-spacing:-.03em;font-variant-numeric:tabular-nums;}
+#s17-pop-korean .tag{display:inline-flex;align-items:center;padding:12px 26px;border-radius:999px;background:var(--ink);color:var(--paper);font-size:32px;font-weight:700;}
+#s17-pop-korean .tag.lite{background:var(--paper2);color:var(--ink);border:3px solid var(--rule);}
+#s17-pop-korean .arrow{font-weight:900;color:var(--ink2);}
+#s17-pop-korean .src{position:absolute;right:120px;bottom:178px;font-size:22px;font-weight:600;color:var(--ink2);}
+
+
+#s17-pop-korean .rows{position:absolute;left:120px;right:120px;top:290px;display:flex;flex-direction:column;gap:26px;}
+#s17-pop-korean .kr{display:grid;grid-template-columns:270px 560px 1fr;align-items:center;gap:36px;height:178px;padding:0 36px;background:#FBF9F4;border:3px solid var(--rule);border-radius:22px;}
+#s17-pop-korean .kr .pill{font-size:46px;}
+#s17-pop-korean .tot{font-size:26px;font-weight:700;color:var(--ink2);margin-top:8px;}
+#s17-pop-korean .cnt{font-size:72px;}
+#s17-pop-korean .cnt small{font-size:30px;font-weight:700;color:var(--ink2);margin-left:6px;}
+#s17-pop-korean .bt{height:22px;background:#E8E2D2;border-radius:8px;overflow:hidden;margin-top:12px;}
+#s17-pop-korean .bf{height:100%;background:var(--c);border-radius:8px;transform-origin:left center;}
+#s17-pop-korean .nt{display:flex;flex-direction:column;gap:8px;}
+#s17-pop-korean .n1{font-size:31px;font-weight:800;}
+#s17-pop-korean .n2{font-size:27px;font-weight:700;color:var(--ink2);}
+      </style>
+      <div id="s17-pop-korean" data-composition-id="s17-pop-korean" data-width="1920" data-height="1080">
+        
+        <div class="stage">
+
+<div class="chap" data-at="906.9" data-fx="left"><div class="n">6</div><h2>인구 구성</h2><div class="sub">한인 인구</div></div>
+<div class="rows">
+  <div class="kr tor" data-at="910.5" data-fx="right"><div><div class="pill tor" >토론토</div><div class="tot">전체 인구 620만</div></div>
+    <div><div><span class="big cnt" data-at="911.96" data-fx="count" data-to="84000" data-pre="" data-suf="" data-dec="0" data-comma>0</span><small>명</small></div><div class="bt"><div class="bf" data-at="912.2" data-fx="barx" style="width:93.33333333333333%"></div></div></div>
+    <div class="nt"><div class="n1" data-at="917.43" data-fx="up"><span class="mk" data-at="918.4" data-fx="mark"><span class="mkb"></span><span class="mkt">생활 편의성 최고</span></span></div><div class="n2" data-at="921.78" data-fx="up">한인타운 · 마트 · 식당 · 병원 · 학원</div><div class="n2" data-at="930.3" data-fx="up">노스요크 · 리치몬드힐 · 마캄</div></div></div>
+  <div class="kr van" data-at="937.78" data-fx="right"><div><div class="pill van" >밴쿠버</div><div class="tot">전체 인구 264만</div></div>
+    <div><div><span class="big cnt" data-at="939.42" data-fx="count" data-to="63000" data-pre="" data-suf="" data-dec="0" data-comma>0</span><small>명</small></div><div class="bt"><div class="bf" data-at="939.6" data-fx="barx" style="width:70%"></div></div></div>
+    <div class="nt"><div class="n1" data-at="944.57" data-fx="up">토론토 다음으로 편리</div><div class="n2" data-at="948.41" data-fx="up">코퀴틀람 · 버나비 · 포트코퀴틀람</div><div class="n2" data-at="958.26" data-fx="up">따뜻하고 습도 낮은 날씨도 인기 요인</div></div></div>
+  <div class="kr mtl" data-at="966.52" data-fx="right"><div><div class="pill mtl" >몬트리올</div><div class="tot">전체 인구 430만</div></div>
+    <div><div><span class="big cnt" data-at="968" data-fx="count" data-to="11000" data-pre="" data-suf="" data-dec="0" data-comma>0</span><small>명</small></div><div class="bt"><div class="bf" data-at="968.2" data-fx="barx" style="width:12.222222222222221%"></div></div></div>
+    <div class="nt"><div class="n1" data-at="973.21" data-fx="up">불어 환경 → 한인 커뮤니티 작음</div><div class="n2" data-at="977.98" data-fx="up">한인 편의시설이 확실히 적어요</div></div></div>
+</div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          var S = 906.68, D = 77.92, root = document.getElementById("s17-pop-korean");
+          var tl = gsap.timeline({ paused: true });
+          var stage = root.querySelector(".stage"), ghost = root.querySelector(".ghost");
+          tl.fromTo(stage, { x: 90, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 0);
+          tl.fromTo(stage, { x: 0, opacity: 1 }, { x: -90, opacity: 0, duration: 0.45, ease: "power2.in", immediateRender: false }, D - 0.45);
+          if (ghost) tl.fromTo(ghost, { x: 0 }, { x: -220, duration: D, ease: "none" }, 0);
+          var FX = {
+            up: [{ y: 36, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, ease: "power3.out" }],
+            left: [{ x: -50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.55, ease: "expo.out" }],
+            right: [{ x: 60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.55, ease: "expo.out" }],
+            pop: [{ scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.6, ease: "back.out(1.7)" }],
+            fade: [{ opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power1.out" }],
+            barx: [{ scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "power3.out" }],
+            bary: [{ scaleY: 0 }, { scaleY: 1, duration: 0.9, ease: "power3.out" }]
+          };
+          function fmt(v, el) {
+            var dec = +(el.getAttribute("data-dec") || 0), s = v.toFixed(dec);
+            if (el.hasAttribute("data-comma")) s = Number(s).toLocaleString("en-US", { minimumFractionDigits: dec, maximumFractionDigits: dec });
+            return (el.getAttribute("data-pre") || "") + s + (el.getAttribute("data-suf") || "");
+          }
+          root.querySelectorAll("[data-at]").forEach(function (el) {
+            var t = Math.max(0, +el.getAttribute("data-at") - S);
+            (el.getAttribute("data-fx") || "up").split(" ").forEach(function (fx) {
+              if (FX[fx]) tl.fromTo(el, FX[fx][0], FX[fx][1], t);
+              else if (fx === "mark") { var b = el.querySelector(".mkb"); if (b) tl.fromTo(b, { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power2.inOut" }, t + 0.15); }
+              else if (fx === "count") {
+                var o = { v: +(el.getAttribute("data-from") || 0) }, to = +el.getAttribute("data-to");
+                el.textContent = fmt(o.v, el);
+                tl.fromTo(o, { v: o.v }, { v: to, duration: 1.1, ease: "power2.out", onUpdate: function () { el.textContent = fmt(o.v, el); } }, t);
+              } else if (fx === "ring") {
+                var c = el.querySelector(".ringv"), C = 2 * Math.PI * +c.getAttribute("r"), p = +el.getAttribute("data-p");
+                c.style.strokeDasharray = C; tl.fromTo(c, { strokeDashoffset: C }, { strokeDashoffset: C * (1 - p), duration: 1.2, ease: "power3.out" }, t);
+              } else if (fx === "dim") tl.fromTo(el, { opacity: 1 }, { opacity: 0.22, duration: 0.5, ease: "power1.out", immediateRender: false }, t);
+            });
+          });
+          root.querySelectorAll("[data-out]").forEach(function (el) {
+            var t = +el.getAttribute("data-out") - S;
+            tl.fromTo(el, { opacity: 1, y: 0 }, { opacity: 0, y: -24, duration: 0.4, ease: "power2.in", immediateRender: false }, t);
+          });
+          window.__timelines["s17-pop-korean"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

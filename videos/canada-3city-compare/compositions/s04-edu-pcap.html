@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /><title>교육 PCAP</title></head>
+  <body>
+    <template>
+      <style>
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Regular.woff2") format("woff2");font-weight:400;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Medium.woff2") format("woff2");font-weight:500;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2");font-weight:600;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");font-weight:700;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");font-weight:800;font-style:normal;}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Black.woff2") format("woff2");font-weight:900;font-style:normal;}
+
+#s04-edu-pcap{position:absolute;inset:0;
+  --paper:#F5F2EA; --paper2:#ECE7DA; --ink:#1C2431; --ink2:#4E5767; --rule:#C9C1AE;
+  --van:#5B3FA0; --tor:#13845A; --mtl:#D2343F; --marker:#F7D046;font-family:"Pretendard",sans-serif;color:var(--ink);overflow:hidden;}
+#s04-edu-pcap *{box-sizing:border-box;margin:0;padding:0;}
+#s04-edu-pcap .stage{position:absolute;inset:0;padding:150px 120px 170px;}
+#s04-edu-pcap .ghost{position:absolute;right:-40px;bottom:120px;font-size:300px;font-weight:900;color:var(--ink);opacity:.06;white-space:nowrap;letter-spacing:-.04em;line-height:1;}
+#s04-edu-pcap .chap{display:flex;align-items:center;gap:26px;height:96px;}
+#s04-edu-pcap .chap .n{width:84px;height:84px;border-radius:50%;background:var(--ink);color:var(--paper);font-size:44px;font-weight:900;display:flex;align-items:center;justify-content:center;flex:none;}
+#s04-edu-pcap .chap h2{font-size:66px;font-weight:900;letter-spacing:-.02em;}
+#s04-edu-pcap .chap .sub{font-size:34px;font-weight:600;color:var(--ink2);padding-left:24px;border-left:4px solid var(--rule);}
+#s04-edu-pcap .van{--c:var(--van);} #s04-edu-pcap .tor{--c:var(--tor);} #s04-edu-pcap .mtl{--c:var(--mtl);}
+#s04-edu-pcap .cc{color:var(--c);}
+#s04-edu-pcap .pill{display:inline-flex;align-items:center;gap:14px;font-size:34px;font-weight:800;color:var(--c);}
+#s04-edu-pcap .pill::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--c);}
+#s04-edu-pcap .mk{position:relative;display:inline-block;isolation:isolate;}
+#s04-edu-pcap .mk .mkb{position:absolute;left:-8px;right:-8px;bottom:4%;height:46%;background:var(--marker);display:block;transform-origin:left center;transform:scaleX(0);border-radius:4px;}
+#s04-edu-pcap .mk .mkt{position:relative;}
+#s04-edu-pcap .card{position:relative;background:#FBF9F4;border:3px solid var(--rule);border-radius:22px;overflow:hidden;}
+#s04-edu-pcap .card.cityc{border-color:var(--c);}
+#s04-edu-pcap .card .bar{position:absolute;left:0;top:0;right:0;height:14px;background:var(--c);}
+#s04-edu-pcap .note{font-size:34px;font-weight:600;color:var(--ink2);}
+#s04-edu-pcap .big{font-weight:900;letter-spacing:-.03em;font-variant-numeric:tabular-nums;}
+#s04-edu-pcap .tag{display:inline-flex;align-items:center;padding:12px 26px;border-radius:999px;background:var(--ink);color:var(--paper);font-size:32px;font-weight:700;}
+#s04-edu-pcap .tag.lite{background:var(--paper2);color:var(--ink);border:3px solid var(--rule);}
+#s04-edu-pcap .arrow{font-weight:900;color:var(--ink2);}
+#s04-edu-pcap .src{position:absolute;right:120px;bottom:178px;font-size:22px;font-weight:600;color:var(--ink2);}
+
+
+#s04-edu-pcap .lc{position:absolute;left:120px;top:290px;width:520px;display:flex;flex-direction:column;gap:28px;}
+#s04-edu-pcap .lt{font-size:40px;font-weight:800;line-height:1.35;}
+#s04-edu-pcap .ls{font-size:30px;font-weight:600;color:var(--ink2);line-height:1.4;}
+#s04-edu-pcap .ch{position:absolute;left:720px;right:120px;top:300px;height:520px;display:flex;align-items:flex-end;gap:22px;border-bottom:3px solid var(--ink2);}
+#s04-edu-pcap .b{position:relative;flex:1;height:100%;}
+#s04-edu-pcap .bf{position:absolute;left:0;right:0;bottom:0;background:#D8D0BC;border-radius:8px 8px 0 0;transform-origin:bottom center;}
+#s04-edu-pcap .b.van .bf,#s04-edu-pcap .b.tor .bf,#s04-edu-pcap .b.mtl .bf{background:var(--c);} #s04-edu-pcap .b.can .bf{background:var(--ink);}
+#s04-edu-pcap .bv{position:absolute;left:-10px;right:-10px;text-align:center;font-size:28px;font-weight:900;font-variant-numeric:tabular-nums;}
+#s04-edu-pcap .bn{position:absolute;left:-14px;right:-14px;bottom:-48px;text-align:center;font-size:26px;font-weight:800;color:var(--ink2);}
+#s04-edu-pcap .avg{position:absolute;left:720px;right:120px;height:0;border-top:4px dashed var(--ink);}
+#s04-edu-pcap .avg span{position:absolute;left:0;top:-48px;font-size:26px;font-weight:800;background:var(--paper);padding:0 8px;}
+#s04-edu-pcap .callout{position:absolute;left:120px;top:690px;font-size:46px;font-weight:900;}
+      </style>
+      <div id="s04-edu-pcap" data-composition-id="s04-edu-pcap" data-width="1920" data-height="1080">
+        <div class="ghost">PCAP</div>
+        <div class="stage">
+
+<div class="chap" data-at="135.3" data-fx="left"><div class="n">1</div><h2>교육환경</h2><div class="sub">PCAP</div></div>
+<div class="lc">
+  <div class="lt" data-at="135.6" data-fx="up">PCAP — 캐나다 전국<br/>학업성취도 평가</div>
+  <div class="ls" data-at="138.17" data-fx="up">캐나다 교육부 장관 협의회(CMEC)가 만든 평가</div>
+  <div class="ls" data-at="146.42" data-fx="up">주별 수학 점수</div>
+</div>
+<div class="ch"><div class="b van"><div class="bf" data-at="146.60" data-fx="bary" style="height:234px"></div><div class="bv" style="bottom:242px" data-at="148.34" data-fx="pop"><span class="mk" data-at="148.34" data-fx="mark"><span class="mkb"></span><span class="mkt">490</span></span></div><div class="bn">BC</div></div><div class="b "><div class="bf" data-at="146.70" data-fx="bary" style="height:278.2px"></div><div class="bv" style="bottom:286.2px" data-at="146.70" data-fx="pop">507</div><div class="bn">AB</div></div><div class="b "><div class="bf" data-at="146.80" data-fx="bary" style="height:210.60000000000002px"></div><div class="bv" style="bottom:218.60000000000002px" data-at="146.80" data-fx="pop">481</div><div class="bn">SK</div></div><div class="b "><div class="bf" data-at="146.90" data-fx="bary" style="height:195px"></div><div class="bv" style="bottom:203px" data-at="146.90" data-fx="pop">475</div><div class="bn">MB</div></div><div class="b tor"><div class="bf" data-at="147.00" data-fx="bary" style="height:291.20000000000005px"></div><div class="bv" style="bottom:299.20000000000005px" data-at="150.6" data-fx="pop"><span class="mk" data-at="150.6" data-fx="mark"><span class="mkb"></span><span class="mkt">512</span></span></div><div class="bn">ON</div></div><div class="b mtl"><div class="bf" data-at="147.10" data-fx="bary" style="height:356.20000000000005px"></div><div class="bv" style="bottom:364.20000000000005px" data-at="152.92" data-fx="pop"><span class="mk" data-at="152.92" data-fx="mark"><span class="mkb"></span><span class="mkt">537</span></span></div><div class="bn">QC</div></div><div class="b "><div class="bf" data-at="147.20" data-fx="bary" style="height:241.8px"></div><div class="bv" style="bottom:249.8px" data-at="147.20" data-fx="pop">493</div><div class="bn">NB</div></div><div class="b "><div class="bf" data-at="147.30" data-fx="bary" style="height:254.79999999999998px"></div><div class="bv" style="bottom:262.79999999999995px" data-at="147.30" data-fx="pop">498</div><div class="bn">NS</div></div><div class="b "><div class="bf" data-at="147.40" data-fx="bary" style="height:252.2px"></div><div class="bv" style="bottom:260.2px" data-at="147.40" data-fx="pop">497</div><div class="bn">PE</div></div><div class="b "><div class="bf" data-at="147.50" data-fx="bary" style="height:208px"></div><div class="bv" style="bottom:216px" data-at="147.50" data-fx="pop">480</div><div class="bn">NL</div></div><div class="b can"><div class="bf" data-at="147.60" data-fx="bary" style="height:286px"></div><div class="bv" style="bottom:294px" data-at="147.60" data-fx="pop"><span class="mk" data-at="147.60" data-fx="mark"><span class="mkb"></span><span class="mkt">510</span></span></div><div class="bn">캐나다</div></div></div>
+<div class="avg" style="top:534px" data-at="156.31" data-fx="fade"><span>캐나다 평균 510</span></div>
+<div class="callout" data-at="160.12" data-fx="up"><span class="cc mtl" style="--c:var(--mtl)">퀘벡</span>, 꽤 높은 편</div>
+<div class="src" data-at="163.9" data-fx="fade">※ 학업성취도가 절대적인 기준은 아닙니다 · 자료: CMEC PCAP</div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          var S = 135.03, D = 39.36, root = document.getElementById("s04-edu-pcap");
+          var tl = gsap.timeline({ paused: true });
+          var stage = root.querySelector(".stage"), ghost = root.querySelector(".ghost");
+          tl.fromTo(stage, { x: 90, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 0);
+          tl.fromTo(stage, { x: 0, opacity: 1 }, { x: -90, opacity: 0, duration: 0.45, ease: "power2.in", immediateRender: false }, D - 0.45);
+          if (ghost) tl.fromTo(ghost, { x: 0 }, { x: -220, duration: D, ease: "none" }, 0);
+          var FX = {
+            up: [{ y: 36, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, ease: "power3.out" }],
+            left: [{ x: -50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.55, ease: "expo.out" }],
+            right: [{ x: 60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.55, ease: "expo.out" }],
+            pop: [{ scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.6, ease: "back.out(1.7)" }],
+            fade: [{ opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power1.out" }],
+            barx: [{ scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "power3.out" }],
+            bary: [{ scaleY: 0 }, { scaleY: 1, duration: 0.9, ease: "power3.out" }]
+          };
+          function fmt(v, el) {
+            var dec = +(el.getAttribute("data-dec") || 0), s = v.toFixed(dec);
+            if (el.hasAttribute("data-comma")) s = Number(s).toLocaleString("en-US", { minimumFractionDigits: dec, maximumFractionDigits: dec });
+            return (el.getAttribute("data-pre") || "") + s + (el.getAttribute("data-suf") || "");
+          }
+          root.querySelectorAll("[data-at]").forEach(function (el) {
+            var t = Math.max(0, +el.getAttribute("data-at") - S);
+            (el.getAttribute("data-fx") || "up").split(" ").forEach(function (fx) {
+              if (FX[fx]) tl.fromTo(el, FX[fx][0], FX[fx][1], t);
+              else if (fx === "mark") { var b = el.querySelector(".mkb"); if (b) tl.fromTo(b, { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power2.inOut" }, t + 0.15); }
+              else if (fx === "count") {
+                var o = { v: +(el.getAttribute("data-from") || 0) }, to = +el.getAttribute("data-to");
+                el.textContent = fmt(o.v, el);
+                tl.fromTo(o, { v: o.v }, { v: to, duration: 1.1, ease: "power2.out", onUpdate: function () { el.textContent = fmt(o.v, el); } }, t);
+              } else if (fx === "ring") {
+                var c = el.querySelector(".ringv"), C = 2 * Math.PI * +c.getAttribute("r"), p = +el.getAttribute("data-p");
+                c.style.strokeDasharray = C; tl.fromTo(c, { strokeDashoffset: C }, { strokeDashoffset: C * (1 - p), duration: 1.2, ease: "power3.out" }, t);
+              } else if (fx === "dim") tl.fromTo(el, { opacity: 1 }, { opacity: 0.22, duration: 0.5, ease: "power1.out", immediateRender: false }, t);
+            });
+          });
+          root.querySelectorAll("[data-out]").forEach(function (el) {
+            var t = +el.getAttribute("data-out") - S;
+            tl.fromTo(el, { opacity: 1, y: 0 }, { opacity: 0, y: -24, duration: 0.4, ease: "power2.in", immediateRender: false }, t);
+          });
+          window.__timelines["s04-edu-pcap"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>
