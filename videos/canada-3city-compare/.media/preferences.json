@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "preferences": {
+    "destination": {
+      "value": "youtube",
+      "confirmed_in": [
+        "canada-3city-compare"
+      ],
+      "updated_at": "2026-10-06T14:17:35.432Z"
+    },
+    "aspect": {
+      "value": "1920x1080",
+      "confirmed_in": [
+        "canada-3city-compare"
+      ],
+      "updated_at": "2026-10-06T14:17:35.484Z"
+    },
+    "language": {
+      "value": "ko",
+      "confirmed_in": [
+        "canada-3city-compare"
+      ],
+      "updated_at": "2026-10-06T14:17:35.534Z"
+    },
+    "flow": {
+      "value": "automation",
+      "confirmed_in": [
+        "canada-3city-compare"
+      ],
+      "updated_at": "2026-10-06T14:17:35.583Z"
+    },
+    "storyboard": {
+      "value": "yes",
+      "confirmed_in": [
+        "canada-3city-compare"
+      ],
+      "updated_at": "2026-10-06T14:17:35.638Z"
+    }
+  },
+  "sightings": {}
+}
