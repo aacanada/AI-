@@ -1,3 +1,4 @@
+import { CAPTURE_SCENES } from "./capture-scenes.mjs";
 // Scene data. Every data-at is an absolute narration time (s) taken from
 // assets/audio/narration-asr.json segment starts.
 
@@ -105,6 +106,7 @@ const popCss = `
 
 // ---------- scenes ----------
 const S = {};
+Object.assign(S, CAPTURE_SCENES({ at, mk, chap, pill, CITY }));
 
 S["s01-opening"] = {
   title: "오프닝", noExit: true,
@@ -147,97 +149,6 @@ ${cityCardCss}`,
 ${critGrid(76.4, 0.45)}`,
 };
 
-// PISA box plot (values read from the user's chart: p10, p25, mean-lo, mean-hi, p75, p90)
-const PISA = [
-  ["매니토바", 362, 412, 467, 477, 531, 583], ["서스캐처원", 359, 407, 462, 473, 527, 581],
-  ["뉴펀들랜드", 350, 398, 448, 466, 517, 573], ["PEI", 364, 413, 459, 487, 543, 591],
-  ["뉴브런즈윅", 356, 404, 464, 474, 530, 585], ["OECD 평균", 356, 409, 472, 473, 536, 590, "oecd"],
-  ["노바스코샤", 356, 403, 462, 478, 533, 590], ["온타리오", 377, 431, 489, 502, 557, 617, "tor"],
-  ["BC", 378, 431, 489, 506, 561, 617, "van"], ["퀘벡", 391, 451, 506, 521, 584, 631, "mtl"],
-  ["캐나다", 375, 431, 495, 501, 563, 619], ["앨버타", 377, 433, 494, 515, 572, 634],
-];
-const px = (v) => (((v - 340) / 300) * 100).toFixed(2) + "%";
-S["s03-edu-pisa"] = {
-  title: "교육 PISA", ghost: "PISA",
-  css: `
-#S .lc{position:absolute;left:120px;top:290px;width:560px;display:flex;flex-direction:column;gap:30px;}
-#S .lt{font-size:40px;font-weight:800;line-height:1.35;}
-#S .ls{font-size:30px;font-weight:600;color:var(--ink2);line-height:1.4;}
-#S .tags{display:flex;gap:16px;}
-#S .chart{position:absolute;left:740px;right:120px;top:270px;}
-#S .row{display:grid;grid-template-columns:190px 1fr;align-items:center;height:44px;}
-#S .rn{font-size:25px;font-weight:700;color:var(--ink2);}
-#S .row.hl .rn{color:var(--c);font-weight:900;}
-#S .row.oecd .rn{color:var(--ink);font-weight:900;}
-#S .trk{position:relative;height:100%;}
-#S .wh{position:absolute;top:50%;height:3px;background:#9C9480;transform-origin:left center;}
-#S .bx{position:absolute;top:9px;bottom:9px;background:#BDB39C;border-radius:5px;transform-origin:left center;}
-#S .row.hl .bx{background:var(--c);} #S .row.oecd .bx{background:var(--ink);}
-#S .mn{position:absolute;top:5px;bottom:5px;width:6px;background:var(--marker);border-radius:3px;}
-#S .ax{display:grid;grid-template-columns:190px 1fr;margin-top:10px;}
-#S .axt{position:relative;height:40px;border-top:3px solid var(--ink2);}
-#S .axt span{position:absolute;top:8px;font-size:22px;font-weight:700;color:var(--ink2);transform:translateX(-50%);}
-#S .gl{position:absolute;top:0;bottom:50px;left:190px;right:0;}
-#S .gl i{position:absolute;top:0;bottom:0;width:2px;background:rgba(28,36,49,.12);}
-#S .dir{position:absolute;right:120px;top:205px;font-size:30px;font-weight:800;}
-#S .callout{position:absolute;left:120px;top:760px;font-size:40px;font-weight:900;color:var(--mtl);}`,
-  html: `
-${chap("1", "교육환경", "학업성취도 비교", 85.6)}
-<div class="lc">
-  <div class="lt" ${at(87.58)}>캐나다는 주마다<br/>교육제도가 다릅니다</div>
-  <div class="ls" ${at(94.26)}>그나마 객관적으로 비교할 수 있는 지표 2가지 — 주별 비교</div>
-  <div class="tags"><span class="tag" ${at(96.5, "pop")}>PISA</span><span class="tag lite" ${at(97.2, "pop")}>PCAP</span></div>
-  <div class="ls" ${at(110.62)}><b style="color:var(--ink)">PISA</b> — OECD가 주관하는<br/>국제 학생 평가 프로그램</div>
-</div>
-<div class="dir" ${at(117.14, "right")}>오른쪽으로 갈수록 ${mk("수학 점수 ↑", 117.8)}</div>
-<div class="chart">
-  <div class="gl">${[350, 400, 450, 500, 550, 600].map((v) => `<i style="left:${px(v)}"></i>`).join("")}</div>
-  ${PISA.map(([n, p10, p25, m1, m2, p75, p90, c], i) => {
-    const hl = c && c !== "oecd";
-    const cls = `row ${c === "oecd" ? "oecd" : ""} ${hl ? "hl " + c : ""}`;
-    const t = (110.8 + i * 0.12).toFixed(2);
-    const inner = `<div class="trk"><div class="wh" ${at(t, "barx")} style="left:${px(p10)};width:calc(${px(p90)} - ${px(p10)})"></div><div class="bx" ${at(t, "barx")} style="left:${px(p25)};width:calc(${px(p75)} - ${px(p25)})"></div><div class="mn" style="left:${px((m1 + m2) / 2)}"></div></div>`;
-    return `<div class="${cls}" ${at(t, "fade")}><div class="rn">${n}</div>${c ? inner : `<div class="trk" ${at(121.78, "dim")}>${inner.slice(17, -6)}</div>`}</div>`;
-  }).join("")}
-  <div class="ax"><div></div><div class="axt">${[350, 400, 450, 500, 550, 600].map((v) => `<span style="left:${px(v)}">${v}</span>`).join("")}</div></div>
-</div>
-<div class="callout" ${at(131.06, "pop")}>${mk("퀘벡이 가장 오른쪽", 131.6)}</div>
-<div class="src">자료: OECD PISA 주별 수학 점수 분포 (10~90 백분위, 노란 선 = 평균)</div>`,
-};
-
-const PCAP = [["BC", 490, "van"], ["AB", 507], ["SK", 481], ["MB", 475], ["ON", 512, "tor"], ["QC", 537, "mtl"], ["NB", 493], ["NS", 498], ["PE", 497], ["NL", 480], ["캐나다", 510, "can"]];
-const py = (v) => ((v - 400) / 200) * 520;
-S["s04-edu-pcap"] = {
-  title: "교육 PCAP", ghost: "PCAP",
-  css: `
-#S .lc{position:absolute;left:120px;top:290px;width:520px;display:flex;flex-direction:column;gap:28px;}
-#S .lt{font-size:40px;font-weight:800;line-height:1.35;}
-#S .ls{font-size:30px;font-weight:600;color:var(--ink2);line-height:1.4;}
-#S .ch{position:absolute;left:720px;right:120px;top:300px;height:520px;display:flex;align-items:flex-end;gap:22px;border-bottom:3px solid var(--ink2);}
-#S .b{position:relative;flex:1;height:100%;}
-#S .bf{position:absolute;left:0;right:0;bottom:0;background:#D8D0BC;border-radius:8px 8px 0 0;transform-origin:bottom center;}
-#S .b.van .bf,#S .b.tor .bf,#S .b.mtl .bf{background:var(--c);} #S .b.can .bf{background:var(--ink);}
-#S .bv{position:absolute;left:-10px;right:-10px;text-align:center;font-size:28px;font-weight:900;font-variant-numeric:tabular-nums;}
-#S .bn{position:absolute;left:-14px;right:-14px;bottom:-48px;text-align:center;font-size:26px;font-weight:800;color:var(--ink2);}
-#S .avg{position:absolute;left:720px;right:120px;height:0;border-top:4px dashed var(--ink);}
-#S .avg span{position:absolute;left:0;top:-48px;font-size:26px;font-weight:800;background:var(--paper);padding:0 8px;}
-#S .callout{position:absolute;left:120px;top:690px;font-size:46px;font-weight:900;}`,
-  html: `
-${chap("1", "교육환경", "PCAP", 135.3)}
-<div class="lc">
-  <div class="lt" ${at(135.6)}>PCAP — 캐나다 전국<br/>학업성취도 평가</div>
-  <div class="ls" ${at(138.17)}>캐나다 교육부 장관 협의회(CMEC)가 만든 평가</div>
-  <div class="ls" ${at(146.42)}>주별 수학 점수</div>
-</div>
-<div class="ch">${PCAP.map(([n, v, c], i) => {
-    const t = (146.6 + i * 0.1).toFixed(2), h = py(v), bt = c && c !== "can" ? { BC: 148.34, ON: 150.6, QC: 152.92 }[n] : t;
-    return `<div class="b ${c || ""}"><div class="bf" ${at(t, "bary")} style="height:${h}px"></div><div class="bv" style="bottom:${h + 8}px" ${at(bt, "pop")}>${c ? mk(v, bt) : v}</div><div class="bn">${n}</div></div>`;
-  }).join("")}</div>
-<div class="avg" style="top:${300 + 520 - py(510)}px" ${at(156.31, "fade")}><span>캐나다 평균 510</span></div>
-<div class="callout" ${at(160.12, "up")}><span class="cc mtl" style="--c:var(--mtl)">퀘벡</span>, 꽤 높은 편</div>
-<div class="src" ${at(163.9, "fade")}>※ 학업성취도가 절대적인 기준은 아닙니다 · 자료: CMEC PCAP</div>`,
-};
-
 S["s05-edu-grades"] = {
   title: "학년별 경향",
   css: `
@@ -260,49 +171,6 @@ ${chap("1", "교육환경", "학년별로 많이 가는 도시", 174.6)}
     <div class="row" ${at(200.89)}><b>단기</b>영어에 집중</div>
     <div class="row" ${at(204.86)}><b>장기</b>영어 + 불어</div></div>
 </div>`,
-};
-
-const RENT = [
-  ["1", "밴쿠버, BC", "$2,500", "-7.4%", "van"], ["2", "버나비, BC", "$2,380", "-4.8%"], ["3", "토론토, ON", "$2,220", "-11.9%", "tor"],
-  ["4", "핼리팩스, NS", "$2,100", "+1.0%", "mid"], ["5", "빅토리아, BC", "$2,020", "-6.5%"], ["6", "오타와, ON", "$1,980", "-1.0%", "mid"],
-  ["7", "켈로나, BC", "$1,890", "-4.1%"], ["8", "오샤와, ON", "$1,790", "-6.8%"], ["9", "배리, ON", "$1,760", "-8.8%"],
-  ["10", "킹스턴, ON", "$1,750", "+0.6%", "mid"], ["10", "키치너, ON", "$1,750", "-9.3%", "mid"], ["12", "몬트리올, QC", "$1,710", "-2.3%", "mtl"],
-  ["13", "해밀턴, ON", "$1,700", "0.0%"], ["14", "캘거리, AB", "$1,670", "-9.2%"], ["15", "런던, ON", "$1,650", "-2.4%"],
-];
-S["s06-rent"] = {
-  title: "거주비", ghost: "RENT",
-  css: `
-#S .lc{position:absolute;left:120px;top:290px;width:560px;display:flex;flex-direction:column;gap:30px;}
-#S .lt{font-size:40px;font-weight:800;line-height:1.35;}
-#S .ls{font-size:30px;font-weight:600;color:var(--ink2);line-height:1.4;}
-#S .tb{position:absolute;left:760px;right:120px;top:262px;}
-#S .tr{position:relative;display:grid;grid-template-columns:80px 1fr 200px 170px;align-items:center;height:38px;font-size:25px;font-weight:600;padding:0 18px;}
-#S .tr.th{height:44px;font-size:22px;font-weight:800;color:var(--ink2);border-bottom:3px solid var(--ink2);}
-#S .tr span{position:relative;z-index:1;font-variant-numeric:tabular-nums;}
-#S .tr span.r{text-align:right;}
-#S .hl{position:absolute;inset:2px 0;border-radius:8px;background:var(--c);opacity:.2;transform-origin:left center;}
-#S .tr.van,#S .tr.tor,#S .tr.mtl{font-weight:900;font-size:27px;}
-#S .tr.van span,#S .tr.tor span,#S .tr.mtl span{color:var(--c);}
-#S .mid .hl{background:#B9B09A;}
-#S .yy{position:absolute;right:0;top:0;width:190px;height:${44 + 15 * 38}px;border:4px solid var(--marker);border-radius:12px;}
-#S .big2{font-size:42px;font-weight:900;line-height:1.3;}`,
-  html: `
-${chap("2", "거주비", "1베드룸 월 렌트비 (CAD)", 213.4)}
-<div class="lc">
-  <div class="lt" ${at(215.58)}>도시 선택의 핵심 = ${mk("예산", 217)}<br/>그래서 렌트비가 중요해요</div>
-  <div class="ls" ${at(223.58)}>대도시니까 렌트비가 비싼 건 어느 정도 감안해야 합니다</div>
-  <div class="big2" ${at(255.38)}>몬트리올은 대도시인데<br/>${mk("렌트비는 중소도시 수준", 256.5)}</div>
-  <div class="ls" ${at(260.22)}>다행히 전년 대비 전체적으로 안정되는 추세</div>
-</div>
-<div class="tb">
-  <div class="tr th" ${at(228.95, "fade")}><span>순위</span><span>도시</span><span class="r">1베드룸</span><span class="r">전년 대비</span></div>
-  ${RENT.map(([r, n, p, y, c], i) => {
-    const t = (229.1 + i * 0.08).toFixed(2), ht = { van: 230.2, tor: 235.0, mtl: 240.0, mid: 249.43 }[c];
-    return `<div class="tr ${c || ""}" ${at(t, "fade")}>${c ? `<div class="hl" ${at(ht, "barx")}></div>` : ""}<span>${r}</span><span>${n}</span><span class="r">${p}</span><span class="r">${y}</span></div>`;
-  }).join("")}
-  <div class="yy" ${at(260.8, "pop")}></div>
-</div>
-<div class="src">자료: 캐나다 도시별 1베드룸 평균 렌트 순위 (월별 리포트)</div>`,
 };
 
 S["s07-tuition-kids"] = {
@@ -541,36 +409,6 @@ ${chap("6", "인구 구성", "한인 인구", 906.9)}
     <div><div>${count(11000, 968.0, { cls: "big cnt" })}<small>명</small></div><div class="bt"><div class="bf" ${at(968.2, "barx")} style="width:${(11000 / 90000) * 100}%"></div></div></div>
     <div class="nt"><div class="n1" ${at(973.21)}>불어 환경 → 한인 커뮤니티 작음</div><div class="n2" ${at(977.98)}>한인 편의시설이 확실히 적어요</div></div></div>
 </div>`,
-};
-
-// weather: axis -15..30 over 520px
-const ty = (v) => ((v + 15) / 45) * 440;
-const wbar = (c, lo, hi, t) =>
-  `<div class="wb ${c}"><div class="wf" ${at(t, "bary")} style="bottom:${ty(lo)}px;height:${ty(hi) - ty(lo)}px"></div><div class="wv" style="bottom:${ty(hi) + 8}px" ${at(t + 0.4, "fade")}>${hi}°</div><div class="wv lo" style="bottom:${ty(lo) - 46}px" ${at(t + 0.4, "fade")}>${lo}°</div><div class="wn cc">${CITY[c][0]}</div></div>`;
-S["s18-weather"] = {
-  title: "날씨", ghost: "°C",
-  css: `
-#S .verdict{position:absolute;right:120px;top:166px;font-size:40px;font-weight:900;}
-#S .pan{position:absolute;top:300px;width:760px;height:440px;}
-#S .pan.p1{left:120px;} #S .pan.p2{right:120px;}
-#S .ph{position:absolute;left:0;top:-14px;font-size:40px;font-weight:900;}
-#S .zero{position:absolute;left:0;right:0;height:0;border-top:3px dashed var(--ink2);}
-#S .zero span{position:absolute;right:0;top:-36px;font-size:24px;font-weight:800;color:var(--ink2);}
-#S .bars{position:absolute;left:120px;right:40px;top:0;bottom:0;display:flex;gap:60px;}
-#S .wb{position:relative;flex:1;height:100%;}
-#S .wf{position:absolute;left:24px;right:24px;background:var(--c);border-radius:14px;transform-origin:bottom center;}
-#S .wv{position:absolute;left:0;right:0;text-align:center;font-size:36px;font-weight:900;font-variant-numeric:tabular-nums;}
-#S .wv.lo{color:var(--ink2);font-size:30px;}
-#S .wn{position:absolute;left:-10px;right:-10px;bottom:-56px;text-align:center;font-size:30px;font-weight:900;}
-#S .foot{position:absolute;left:120px;top:848px;font-size:34px;font-weight:800;}`,
-  html: `
-${chap("7", "날씨", "일평균 최고·최저 기온", 984.9)}
-<div class="verdict" ${at(991.35, "right")}>솔직히 비교 불가 — ${mk("밴쿠버 압도적", 993.8)}</div>
-<div class="pan p1" ${at(995.48, "fade")}><div class="ph">1월</div><div class="zero" style="bottom:${ty(0)}px"><span>0°C</span></div>
-  <div class="bars">${wbar("van", 2, 6, 996.95)}${wbar("tor", -8, -1, 1002.1)}${wbar("mtl", -12, -5, 1006.3)}</div></div>
-<div class="pan p2" ${at(1011.96, "fade")}><div class="ph">7월</div><div class="zero" style="bottom:${ty(0)}px"><span>0°C</span></div>
-  <div class="bars">${wbar("van", 14, 22, 1012.5)}${wbar("tor", 17, 25, 1018.36)}${wbar("mtl", 17, 26, 1019.6)}</div></div>
-<div class="foot" ${at(1023.16)}><span class="cc van" style="--c:var(--van)">밴쿠버</span>는 여름·겨울 기온차가 작고 ${mk("전체적으로 온화", 1025)}</div>`,
 };
 
 S["s19-car"] = {

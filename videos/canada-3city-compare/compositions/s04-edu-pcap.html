@@ -36,24 +36,25 @@
 #s04-edu-pcap .tag{display:inline-flex;align-items:center;padding:12px 26px;border-radius:999px;background:var(--ink);color:var(--paper);font-size:32px;font-weight:700;}
 #s04-edu-pcap .tag.lite{background:var(--paper2);color:var(--ink);border:3px solid var(--rule);}
 #s04-edu-pcap .arrow{font-weight:900;color:var(--ink2);}
+#s04-edu-pcap .doc{position:absolute;background:#fff;border:3px solid var(--rule);border-radius:18px;overflow:hidden;box-shadow:0 26px 60px rgba(28,36,49,.22);}
+#s04-edu-pcap .doc .cam{position:absolute;left:0;top:0;width:100%;height:100%;transform-origin:0 0;}
+#s04-edu-pcap .doc img{display:block;width:100%;height:100%;}
+#s04-edu-pcap .hb{position:absolute;border:5px solid var(--c);border-radius:8px;box-shadow:0 0 0 4px rgba(255,255,255,.7);}
+#s04-edu-pcap .hb b{position:absolute;right:-5px;bottom:100%;margin-bottom:6px;white-space:nowrap;background:var(--c);color:#fff;font-size:22px;font-weight:800;padding:4px 12px;border-radius:8px;}
+#s04-edu-pcap .hb.in b{bottom:auto;top:50%;right:8px;margin:0;transform:translateY(-50%);font-size:20px;padding:2px 10px;}
+#s04-edu-pcap .hb.ink{--c:var(--ink);} #s04-edu-pcap .hb.mark{--c:#E0B417;}
+#s04-edu-pcap .capt{position:absolute;left:14px;top:14px;z-index:2;background:var(--ink);color:var(--paper);font-size:20px;font-weight:800;padding:6px 14px;border-radius:8px;}
 #s04-edu-pcap .src{position:absolute;right:120px;bottom:178px;font-size:22px;font-weight:600;color:var(--ink2);}
 
 
-#s04-edu-pcap .lc{position:absolute;left:120px;top:290px;width:520px;display:flex;flex-direction:column;gap:28px;}
+#s04-edu-pcap .lc{position:absolute;left:120px;top:290px;width:540px;display:flex;flex-direction:column;gap:28px;}
 #s04-edu-pcap .lt{font-size:40px;font-weight:800;line-height:1.35;}
 #s04-edu-pcap .ls{font-size:30px;font-weight:600;color:var(--ink2);line-height:1.4;}
-#s04-edu-pcap .ch{position:absolute;left:720px;right:120px;top:300px;height:520px;display:flex;align-items:flex-end;gap:22px;border-bottom:3px solid var(--ink2);}
-#s04-edu-pcap .b{position:relative;flex:1;height:100%;}
-#s04-edu-pcap .bf{position:absolute;left:0;right:0;bottom:0;background:#D8D0BC;border-radius:8px 8px 0 0;transform-origin:bottom center;}
-#s04-edu-pcap .b.van .bf,#s04-edu-pcap .b.tor .bf,#s04-edu-pcap .b.mtl .bf{background:var(--c);} #s04-edu-pcap .b.can .bf{background:var(--ink);}
-#s04-edu-pcap .bv{position:absolute;left:-10px;right:-10px;text-align:center;font-size:28px;font-weight:900;font-variant-numeric:tabular-nums;}
-#s04-edu-pcap .bn{position:absolute;left:-14px;right:-14px;bottom:-48px;text-align:center;font-size:26px;font-weight:800;color:var(--ink2);}
-#s04-edu-pcap .avg{position:absolute;left:720px;right:120px;height:0;border-top:4px dashed var(--ink);}
-#s04-edu-pcap .avg span{position:absolute;left:0;top:-48px;font-size:26px;font-weight:800;background:var(--paper);padding:0 8px;}
-#s04-edu-pcap .callout{position:absolute;left:120px;top:690px;font-size:46px;font-weight:900;}
+#s04-edu-pcap .tags{display:flex;gap:16px;}
+#s04-edu-pcap .callout{font-size:44px;font-weight:900;line-height:1.3;}
       </style>
       <div id="s04-edu-pcap" data-composition-id="s04-edu-pcap" data-width="1920" data-height="1080">
-        <div class="ghost">PCAP</div>
+        
         <div class="stage">
 
 <div class="chap" data-at="135.3" data-fx="left"><div class="n">1</div><h2>교육환경</h2><div class="sub">PCAP</div></div>
@@ -61,11 +62,10 @@
   <div class="lt" data-at="135.6" data-fx="up">PCAP — 캐나다 전국<br/>학업성취도 평가</div>
   <div class="ls" data-at="138.17" data-fx="up">캐나다 교육부 장관 협의회(CMEC)가 만든 평가</div>
   <div class="ls" data-at="146.42" data-fx="up">주별 수학 점수</div>
+  <div class="callout" data-at="160.12" data-fx="up"><span style="color:var(--mtl)">퀘벡</span>, <span class="mk" data-at="160.8" data-fx="mark"><span class="mkb"></span><span class="mkt">꽤 높은 편</span></span></div>
+  <div class="ls" data-at="163.9" data-fx="up">※ 학업성취도가 절대적인 기준은 아닙니다</div>
 </div>
-<div class="ch"><div class="b van"><div class="bf" data-at="146.60" data-fx="bary" style="height:234px"></div><div class="bv" style="bottom:242px" data-at="148.34" data-fx="pop"><span class="mk" data-at="148.34" data-fx="mark"><span class="mkb"></span><span class="mkt">490</span></span></div><div class="bn">BC</div></div><div class="b "><div class="bf" data-at="146.70" data-fx="bary" style="height:278.2px"></div><div class="bv" style="bottom:286.2px" data-at="146.70" data-fx="pop">507</div><div class="bn">AB</div></div><div class="b "><div class="bf" data-at="146.80" data-fx="bary" style="height:210.60000000000002px"></div><div class="bv" style="bottom:218.60000000000002px" data-at="146.80" data-fx="pop">481</div><div class="bn">SK</div></div><div class="b "><div class="bf" data-at="146.90" data-fx="bary" style="height:195px"></div><div class="bv" style="bottom:203px" data-at="146.90" data-fx="pop">475</div><div class="bn">MB</div></div><div class="b tor"><div class="bf" data-at="147.00" data-fx="bary" style="height:291.20000000000005px"></div><div class="bv" style="bottom:299.20000000000005px" data-at="150.6" data-fx="pop"><span class="mk" data-at="150.6" data-fx="mark"><span class="mkb"></span><span class="mkt">512</span></span></div><div class="bn">ON</div></div><div class="b mtl"><div class="bf" data-at="147.10" data-fx="bary" style="height:356.20000000000005px"></div><div class="bv" style="bottom:364.20000000000005px" data-at="152.92" data-fx="pop"><span class="mk" data-at="152.92" data-fx="mark"><span class="mkb"></span><span class="mkt">537</span></span></div><div class="bn">QC</div></div><div class="b "><div class="bf" data-at="147.20" data-fx="bary" style="height:241.8px"></div><div class="bv" style="bottom:249.8px" data-at="147.20" data-fx="pop">493</div><div class="bn">NB</div></div><div class="b "><div class="bf" data-at="147.30" data-fx="bary" style="height:254.79999999999998px"></div><div class="bv" style="bottom:262.79999999999995px" data-at="147.30" data-fx="pop">498</div><div class="bn">NS</div></div><div class="b "><div class="bf" data-at="147.40" data-fx="bary" style="height:252.2px"></div><div class="bv" style="bottom:260.2px" data-at="147.40" data-fx="pop">497</div><div class="bn">PE</div></div><div class="b "><div class="bf" data-at="147.50" data-fx="bary" style="height:208px"></div><div class="bv" style="bottom:216px" data-at="147.50" data-fx="pop">480</div><div class="bn">NL</div></div><div class="b can"><div class="bf" data-at="147.60" data-fx="bary" style="height:286px"></div><div class="bv" style="bottom:294px" data-at="147.60" data-fx="pop"><span class="mk" data-at="147.60" data-fx="mark"><span class="mkb"></span><span class="mkt">510</span></span></div><div class="bn">캐나다</div></div></div>
-<div class="avg" style="top:534px" data-at="156.31" data-fx="fade"><span>캐나다 평균 510</span></div>
-<div class="callout" data-at="160.12" data-fx="up"><span class="cc mtl" style="--c:var(--mtl)">퀘벡</span>, 꽤 높은 편</div>
-<div class="src" data-at="163.9" data-fx="fade">※ 학업성취도가 절대적인 기준은 아닙니다 · 자료: CMEC PCAP</div>
+<div class="doc cap2" data-at="135.6" data-fx="right"  style="right:120px;top:262px;width:1040px;height:615px"><div class="cam"><img src="assets/captures/pcap.png" alt="" /><div class="hb van" data-at="148.34" data-fx="pop" style="left:10.638%;top:49.600%;width:6.619%;height:45.000%"><b>BC 490</b></div><div class="hb tor" data-at="150.6" data-fx="pop" style="left:42.553%;top:40.000%;width:6.619%;height:54.600%"><b>ON 512</b></div><div class="hb mtl" data-at="152.92" data-fx="pop" style="left:50.591%;top:30.000%;width:6.619%;height:64.600%"><b>QC 537</b></div><div class="hb ink" data-at="156.31" data-fx="pop" style="left:9.456%;top:40.800%;width:88.061%;height:3.600%"><b>캐나다 평균 510</b></div></div><div class="capt">실제 자료 캡처</div></div>
         </div>
       </div>
       <script>
@@ -109,6 +109,10 @@
             var t = +el.getAttribute("data-out") - S;
             tl.fromTo(el, { opacity: 1, y: 0 }, { opacity: 0, y: -24, duration: 0.4, ease: "power2.in", immediateRender: false }, t);
           });
+          (function(){var cam=root.querySelector(".cap2 .cam"),W=1040,H=615,IW=846,IH=500;
+          function st(s,cx,cy){var px=cx*W/IW,py=cy*H/IH,x=W/2-px*s,y=H/2-py*s;x=Math.min(0,Math.max(W-W*s,x));y=Math.min(0,Math.max(H-H*s,y));return{scale:s,x:x,y:y};}
+          var prev={scale:1,x:0,y:0};
+          [[152.92,1.45,455,300,1.2],[156,1,423,250,1.2]].forEach(function(z){var nx=st(z[1],z[2],z[3]);tl.fromTo(cam,prev,Object.assign({duration:z[4]||1.2,ease:"power2.inOut",immediateRender:false},nx),Math.max(0,z[0]-S));prev=nx;});})();
           window.__timelines["s04-edu-pcap"] = tl;
         })();
       </script>

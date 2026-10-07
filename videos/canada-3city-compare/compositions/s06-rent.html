@@ -36,41 +36,35 @@
 #s06-rent .tag{display:inline-flex;align-items:center;padding:12px 26px;border-radius:999px;background:var(--ink);color:var(--paper);font-size:32px;font-weight:700;}
 #s06-rent .tag.lite{background:var(--paper2);color:var(--ink);border:3px solid var(--rule);}
 #s06-rent .arrow{font-weight:900;color:var(--ink2);}
+#s06-rent .doc{position:absolute;background:#fff;border:3px solid var(--rule);border-radius:18px;overflow:hidden;box-shadow:0 26px 60px rgba(28,36,49,.22);}
+#s06-rent .doc .cam{position:absolute;left:0;top:0;width:100%;height:100%;transform-origin:0 0;}
+#s06-rent .doc img{display:block;width:100%;height:100%;}
+#s06-rent .hb{position:absolute;border:5px solid var(--c);border-radius:8px;box-shadow:0 0 0 4px rgba(255,255,255,.7);}
+#s06-rent .hb b{position:absolute;right:-5px;bottom:100%;margin-bottom:6px;white-space:nowrap;background:var(--c);color:#fff;font-size:22px;font-weight:800;padding:4px 12px;border-radius:8px;}
+#s06-rent .hb.in b{bottom:auto;top:50%;right:8px;margin:0;transform:translateY(-50%);font-size:20px;padding:2px 10px;}
+#s06-rent .hb.ink{--c:var(--ink);} #s06-rent .hb.mark{--c:#E0B417;}
+#s06-rent .capt{position:absolute;left:14px;top:14px;z-index:2;background:var(--ink);color:var(--paper);font-size:20px;font-weight:800;padding:6px 14px;border-radius:8px;}
 #s06-rent .src{position:absolute;right:120px;bottom:178px;font-size:22px;font-weight:600;color:var(--ink2);}
 
 
-#s06-rent .lc{position:absolute;left:120px;top:290px;width:560px;display:flex;flex-direction:column;gap:30px;}
+#s06-rent .lc{position:absolute;left:120px;top:290px;width:540px;display:flex;flex-direction:column;gap:28px;}
 #s06-rent .lt{font-size:40px;font-weight:800;line-height:1.35;}
 #s06-rent .ls{font-size:30px;font-weight:600;color:var(--ink2);line-height:1.4;}
-#s06-rent .tb{position:absolute;left:760px;right:120px;top:262px;}
-#s06-rent .tr{position:relative;display:grid;grid-template-columns:80px 1fr 200px 170px;align-items:center;height:38px;font-size:25px;font-weight:600;padding:0 18px;}
-#s06-rent .tr.th{height:44px;font-size:22px;font-weight:800;color:var(--ink2);border-bottom:3px solid var(--ink2);}
-#s06-rent .tr span{position:relative;z-index:1;font-variant-numeric:tabular-nums;}
-#s06-rent .tr span.r{text-align:right;}
-#s06-rent .hl{position:absolute;inset:2px 0;border-radius:8px;background:var(--c);opacity:.2;transform-origin:left center;}
-#s06-rent .tr.van,#s06-rent .tr.tor,#s06-rent .tr.mtl{font-weight:900;font-size:27px;}
-#s06-rent .tr.van span,#s06-rent .tr.tor span,#s06-rent .tr.mtl span{color:var(--c);}
-#s06-rent .mid .hl{background:#B9B09A;}
-#s06-rent .yy{position:absolute;right:0;top:0;width:190px;height:614px;border:4px solid var(--marker);border-radius:12px;}
-#s06-rent .big2{font-size:42px;font-weight:900;line-height:1.3;}
+#s06-rent .tags{display:flex;gap:16px;}
+#s06-rent .callout{font-size:44px;font-weight:900;line-height:1.3;}
       </style>
       <div id="s06-rent" data-composition-id="s06-rent" data-width="1920" data-height="1080">
-        <div class="ghost">RENT</div>
+        
         <div class="stage">
 
 <div class="chap" data-at="213.4" data-fx="left"><div class="n">2</div><h2>거주비</h2><div class="sub">1베드룸 월 렌트비 (CAD)</div></div>
 <div class="lc">
   <div class="lt" data-at="215.58" data-fx="up">도시 선택의 핵심 = <span class="mk" data-at="217" data-fx="mark"><span class="mkb"></span><span class="mkt">예산</span></span><br/>그래서 렌트비가 중요해요</div>
   <div class="ls" data-at="223.58" data-fx="up">대도시니까 렌트비가 비싼 건 어느 정도 감안해야 합니다</div>
-  <div class="big2" data-at="255.38" data-fx="up">몬트리올은 대도시인데<br/><span class="mk" data-at="256.5" data-fx="mark"><span class="mkb"></span><span class="mkt">렌트비는 중소도시 수준</span></span></div>
+  <div class="callout" data-at="255.38" data-fx="up">몬트리올은 대도시인데<br/><span class="mk" data-at="256.5" data-fx="mark"><span class="mkb"></span><span class="mkt">렌트비는 중소도시 수준</span></span></div>
   <div class="ls" data-at="260.22" data-fx="up">다행히 전년 대비 전체적으로 안정되는 추세</div>
 </div>
-<div class="tb">
-  <div class="tr th" data-at="228.95" data-fx="fade"><span>순위</span><span>도시</span><span class="r">1베드룸</span><span class="r">전년 대비</span></div>
-  <div class="tr van" data-at="229.10" data-fx="fade"><div class="hl" data-at="230.2" data-fx="barx"></div><span>1</span><span>밴쿠버, BC</span><span class="r">$2,500</span><span class="r">-7.4%</span></div><div class="tr " data-at="229.18" data-fx="fade"><span>2</span><span>버나비, BC</span><span class="r">$2,380</span><span class="r">-4.8%</span></div><div class="tr tor" data-at="229.26" data-fx="fade"><div class="hl" data-at="235" data-fx="barx"></div><span>3</span><span>토론토, ON</span><span class="r">$2,220</span><span class="r">-11.9%</span></div><div class="tr mid" data-at="229.34" data-fx="fade"><div class="hl" data-at="249.43" data-fx="barx"></div><span>4</span><span>핼리팩스, NS</span><span class="r">$2,100</span><span class="r">+1.0%</span></div><div class="tr " data-at="229.42" data-fx="fade"><span>5</span><span>빅토리아, BC</span><span class="r">$2,020</span><span class="r">-6.5%</span></div><div class="tr mid" data-at="229.50" data-fx="fade"><div class="hl" data-at="249.43" data-fx="barx"></div><span>6</span><span>오타와, ON</span><span class="r">$1,980</span><span class="r">-1.0%</span></div><div class="tr " data-at="229.58" data-fx="fade"><span>7</span><span>켈로나, BC</span><span class="r">$1,890</span><span class="r">-4.1%</span></div><div class="tr " data-at="229.66" data-fx="fade"><span>8</span><span>오샤와, ON</span><span class="r">$1,790</span><span class="r">-6.8%</span></div><div class="tr " data-at="229.74" data-fx="fade"><span>9</span><span>배리, ON</span><span class="r">$1,760</span><span class="r">-8.8%</span></div><div class="tr mid" data-at="229.82" data-fx="fade"><div class="hl" data-at="249.43" data-fx="barx"></div><span>10</span><span>킹스턴, ON</span><span class="r">$1,750</span><span class="r">+0.6%</span></div><div class="tr mid" data-at="229.90" data-fx="fade"><div class="hl" data-at="249.43" data-fx="barx"></div><span>10</span><span>키치너, ON</span><span class="r">$1,750</span><span class="r">-9.3%</span></div><div class="tr mtl" data-at="229.98" data-fx="fade"><div class="hl" data-at="240" data-fx="barx"></div><span>12</span><span>몬트리올, QC</span><span class="r">$1,710</span><span class="r">-2.3%</span></div><div class="tr " data-at="230.06" data-fx="fade"><span>13</span><span>해밀턴, ON</span><span class="r">$1,700</span><span class="r">0.0%</span></div><div class="tr " data-at="230.14" data-fx="fade"><span>14</span><span>캘거리, AB</span><span class="r">$1,670</span><span class="r">-9.2%</span></div><div class="tr " data-at="230.22" data-fx="fade"><span>15</span><span>런던, ON</span><span class="r">$1,650</span><span class="r">-2.4%</span></div>
-  <div class="yy" data-at="260.8" data-fx="pop"></div>
-</div>
-<div class="src">자료: 캐나다 도시별 1베드룸 평균 렌트 순위 (월별 리포트)</div>
+<div class="doc cap3" data-at="228.95" data-fx="right"  style="right:120px;top:250px;width:880px;height:636px"><div class="cam"><img src="assets/captures/rent.png" alt="" /><div class="hb van in" data-at="229.6" data-fx="pop" style="left:0.456%;top:13.228%;width:99.089%;height:5.354%"><b>밴쿠버 1위 $2,500</b></div><div class="hb tor in" data-at="234.8" data-fx="pop" style="left:0.456%;top:24.409%;width:99.089%;height:5.512%"><b>토론토 3위 $2,220</b></div><div class="hb mtl in" data-at="240" data-fx="pop" style="left:0.456%;top:75.748%;width:99.089%;height:5.512%"><b>몬트리올 12위 $1,710</b></div><div class="hb ink in" data-at="249.43" data-fx="pop" style="left:0.456%;top:30.236%;width:99.089%;height:5.354%"><b>핼리팩스</b></div><div class="hb ink in" data-at="250" data-fx="pop" style="left:0.456%;top:41.575%;width:99.089%;height:5.512%"><b>오타와</b></div><div class="hb ink in" data-at="250.6" data-fx="pop" style="left:0.456%;top:64.409%;width:99.089%;height:5.512%"><b>킹스턴</b></div><div class="hb ink in" data-at="251.2" data-fx="pop" style="left:0.456%;top:70.079%;width:99.089%;height:5.512%"><b>키치너</b></div><div class="hb mark" data-at="260.22" data-fx="pop" style="left:55.581%;top:8.189%;width:10.023%;height:89.764%"><b>전년 대비</b></div></div><div class="capt">실제 자료 캡처</div></div>
         </div>
       </div>
       <script>
@@ -114,6 +108,10 @@
             var t = +el.getAttribute("data-out") - S;
             tl.fromTo(el, { opacity: 1, y: 0 }, { opacity: 0, y: -24, duration: 0.4, ease: "power2.in", immediateRender: false }, t);
           });
+          (function(){var cam=root.querySelector(".cap3 .cam"),W=880,H=636,IW=878,IH=635;
+          function st(s,cx,cy){var px=cx*W/IW,py=cy*H/IH,x=W/2-px*s,y=H/2-py*s;x=Math.min(0,Math.max(W-W*s,x));y=Math.min(0,Math.max(H-H*s,y));return{scale:s,x:x,y:y};}
+          var prev={scale:1,x:0,y:0};
+          [[229.3,1.55,300,100,1.2],[234.55,1.55,300,172,1],[238.9,1.55,300,498,1.4],[249.2,1,439,317,1.2],[260.22,1.3,530,330,1.2]].forEach(function(z){var nx=st(z[1],z[2],z[3]);tl.fromTo(cam,prev,Object.assign({duration:z[4]||1.2,ease:"power2.inOut",immediateRender:false},nx),Math.max(0,z[0]-S));prev=nx;});})();
           window.__timelines["s06-rent"] = tl;
         })();
       </script>
