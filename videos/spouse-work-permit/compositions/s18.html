@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+        [data-composition-id="s18"]{position:absolute;inset:0;}
+      </style>
+      <div id="s18-root" data-composition-id="s18" data-width="1920" data-height="1080" data-duration="17.85">
+        <div class="sc">
+
+<div class="glow" style="left:510px;top:60px;width:900px;height:900px;"></div>
+<div class="logo" style="position:absolute;left:0;right:0;top:250px;display:flex;justify-content:center;align-items:center;gap:30px;">
+  <svg width="120" height="120" viewBox="0 0 64 64"><path fill="#C8281E" d="M32 4l5 11 7-4-2 14 9-6 2 6 9-2-5 12 4 3-15 9 2 8-14-3v12h-4V52l-14 3 2-8-15-9 4-3-5-12 9 2 2-6 9 6-2-14 7 4z"/></svg>
+  <div style="font-size:130px;font-weight:900;letter-spacing:-0.03em;">AA Canada</div>
+</div>
+<div class="line1" style="position:absolute;left:0;right:0;top:440px;text-align:center;font-size:50px;font-weight:700;">유학 단계부터 영주권까지, <span style="color:var(--red);">가족 맞춤 경로 설계</span></div>
+<div class="line2 row" style="position:absolute;left:0;right:0;top:560px;justify-content:center;gap:24px;">
+  <div class="pill" style="font-size:36px;">💬 댓글로 질문</div><div class="pill" style="font-size:36px;background:var(--ink);color:#FBF8F2;">1:1 상담 문의</div>
+</div>
+<div class="line3" style="position:absolute;left:0;right:0;top:720px;text-align:center;font-size:44px;font-weight:600;color:var(--ink-soft);">시청해 주셔서 감사합니다</div>
+
+        </div>
+      </div>
+      <script>
+
+const R='[data-composition-id="s18"] ';
+const tl=gsap.timeline({paused:true});
+const $=(s)=>R+s;
+function rise(s,t,o){o=o||{};tl.fromTo($(s),{opacity:0,y:o.y==null?40:o.y,x:o.x||0,scale:o.s||1},{opacity:1,y:0,x:0,scale:1,duration:o.d||0.6,ease:o.e||'power3.out',stagger:o.st||0},t);}
+function popin(s,t,o){o=o||{};tl.fromTo($(s),{opacity:0,scale:o.s||0.6},{opacity:1,scale:1,duration:o.d||0.55,ease:o.e||'back.out(1.7)',stagger:o.st||0},t);}
+function slide(s,t,dx,o){o=o||{};tl.fromTo($(s),{opacity:0,x:dx},{opacity:1,x:0,duration:o.d||0.7,ease:o.e||'expo.out',stagger:o.st||0},t);}
+function stamp(s,t,rot){tl.fromTo($(s),{opacity:0,scale:1.9,rotation:rot-14},{opacity:1,scale:1,rotation:rot,duration:0.42,ease:'power4.in'},t);
+  tl.fromTo($(s),{y:0},{y:4,duration:0.08,yoyo:true,repeat:1,ease:'none',immediateRender:false},t+0.42);}
+function draw(s,t,d,e){tl.fromTo($(s),{strokeDashoffset:1},{strokeDashoffset:0,duration:d||0.9,ease:e||'power2.inOut'},t);}
+function bar(s,t,o){o=o||{};tl.fromTo($(s),{scaleX:0},{scaleX:1,duration:o.d||0.8,ease:o.e||'power3.out',stagger:o.st||0},t);}
+function barY(s,t,o){o=o||{};tl.fromTo($(s),{scaleY:0},{scaleY:1,duration:o.d||0.9,ease:o.e||'power3.out',stagger:o.st||0},t);}
+function strike(s,t){tl.fromTo($(s),{scaleX:0},{scaleX:1,duration:0.35,ease:'power2.in'},t);}
+function dim(s,t,v){tl.fromTo($(s),{opacity:1},{opacity:v==null?0.28:v,duration:0.5,ease:'power1.inOut'},t);}
+function count(s,t,from,to,d,suffix){const el=document.querySelector($(s));const o={v:from};
+  tl.fromTo(o,{v:from},{v:to,duration:d||1,ease:'power2.out',onUpdate:()=>{el.textContent=Math.round(o.v)+(suffix||'');}},t);}
+function ambient(dur){if(document.querySelector($('.ghost')))tl.fromTo($('.ghost'),{x:0},{x:-160,duration:dur,ease:'none'},0);
+  if(document.querySelector($('.glow')))tl.fromTo($('.glow'),{scale:0.9,opacity:0.7},{scale:1.08,opacity:1,duration:dur/4,ease:'sine.inOut',yoyo:true,repeat:3},0);}
+
+
+tl.fromTo($('.glow'),{scale:0.8,opacity:0},{scale:1,opacity:1,duration:2,ease:'sine.out'},0.2);
+rise('.logo',0.6,{y:40,s:0.92,e:'expo.out',d:1.0});
+rise('.line1',2.12,{y:30});
+rise('.line2',9.19,{y:30,e:'back.out(1.5)'});
+rise('.line3',13.01,{y:20});
+tl.to($('.sc'),{opacity:0,duration:1.2,ease:'power1.in'},16.45);
+
+window.__timelines["s18"]=tl;
+      </script>
+    </template>
+  </body>
+</html>

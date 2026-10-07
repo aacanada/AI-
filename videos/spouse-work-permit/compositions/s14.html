@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+        [data-composition-id="s14"]{position:absolute;inset:0;}
+      </style>
+      <div id="s14-root" data-composition-id="s14" data-width="1920" data-height="1080" data-duration="24.86">
+        <div class="sc">
+
+<div class="ghost" data-layout-allow-overflow data-layout-allow-occlusion style="left:760px;top:480px;">MYTH</div>
+<div class="kicker">PART 05 · 자주 하는 오해</div>
+<div class="h1 hh">상담에서 자주 나오는 <em>오해 3가지</em></div>
+<div class="card m0" style="left:120px;top:330px;width:1680px;height:240px;"></div>
+<div class="mq0" style="position:absolute;left:170px;top:360px;">
+  <div class="mono" style="font-size:26px;font-weight:700;color:var(--red);">오해 01</div>
+  <div style="font-size:46px;font-weight:800;margin-top:8px;">“취업비자니까 무조건 되겠지”</div>
+</div>
+<div class="ma0 row" style="position:absolute;left:170px;top:480px;gap:18px;"><div class="ic ok" style="width:52px;height:52px;font-size:28px;">→</div><div style="font-size:38px;font-weight:700;">직종 레벨(TEER) + 16개월 조건, 둘 다 봅니다</div></div>
+<div class="stamp no mx0" style="left:1500px;top:380px;font-size:48px;">아닙니다</div><div class="card m1" style="left:120px;top:600px;width:1680px;height:240px;"></div>
+<div class="mq1" style="position:absolute;left:170px;top:630px;">
+  <div class="mono" style="font-size:26px;font-weight:700;color:var(--red);">오해 02</div>
+  <div style="font-size:46px;font-weight:800;margin-top:8px;">“학사 공부하면 되는 걸로 알았는데요”</div>
+</div>
+<div class="ma1 row" style="position:absolute;left:170px;top:750px;gap:18px;"><div class="ic ok" style="width:52px;height:52px;font-size:28px;">→</div><div style="font-size:38px;font-weight:700;">일반 학사 ✗ · 인정된 전문학위만 해당</div></div>
+<div class="stamp no mx1" style="left:1500px;top:650px;font-size:48px;">아닙니다</div>
+
+        </div>
+      </div>
+      <script>
+
+const R='[data-composition-id="s14"] ';
+const tl=gsap.timeline({paused:true});
+const $=(s)=>R+s;
+function rise(s,t,o){o=o||{};tl.fromTo($(s),{opacity:0,y:o.y==null?40:o.y,x:o.x||0,scale:o.s||1},{opacity:1,y:0,x:0,scale:1,duration:o.d||0.6,ease:o.e||'power3.out',stagger:o.st||0},t);}
+function popin(s,t,o){o=o||{};tl.fromTo($(s),{opacity:0,scale:o.s||0.6},{opacity:1,scale:1,duration:o.d||0.55,ease:o.e||'back.out(1.7)',stagger:o.st||0},t);}
+function slide(s,t,dx,o){o=o||{};tl.fromTo($(s),{opacity:0,x:dx},{opacity:1,x:0,duration:o.d||0.7,ease:o.e||'expo.out',stagger:o.st||0},t);}
+function stamp(s,t,rot){tl.fromTo($(s),{opacity:0,scale:1.9,rotation:rot-14},{opacity:1,scale:1,rotation:rot,duration:0.42,ease:'power4.in'},t);
+  tl.fromTo($(s),{y:0},{y:4,duration:0.08,yoyo:true,repeat:1,ease:'none',immediateRender:false},t+0.42);}
+function draw(s,t,d,e){tl.fromTo($(s),{strokeDashoffset:1},{strokeDashoffset:0,duration:d||0.9,ease:e||'power2.inOut'},t);}
+function bar(s,t,o){o=o||{};tl.fromTo($(s),{scaleX:0},{scaleX:1,duration:o.d||0.8,ease:o.e||'power3.out',stagger:o.st||0},t);}
+function barY(s,t,o){o=o||{};tl.fromTo($(s),{scaleY:0},{scaleY:1,duration:o.d||0.9,ease:o.e||'power3.out',stagger:o.st||0},t);}
+function strike(s,t){tl.fromTo($(s),{scaleX:0},{scaleX:1,duration:0.35,ease:'power2.in'},t);}
+function dim(s,t,v){tl.fromTo($(s),{opacity:1},{opacity:v==null?0.28:v,duration:0.5,ease:'power1.inOut'},t);}
+function count(s,t,from,to,d,suffix){const el=document.querySelector($(s));const o={v:from};
+  tl.fromTo(o,{v:from},{v:to,duration:d||1,ease:'power2.out',onUpdate:()=>{el.textContent=Math.round(o.v)+(suffix||'');}},t);}
+function ambient(dur){if(document.querySelector($('.ghost')))tl.fromTo($('.ghost'),{x:0},{x:-160,duration:dur,ease:'none'},0);
+  if(document.querySelector($('.glow')))tl.fromTo($('.glow'),{scale:0.9,opacity:0.7},{scale:1.08,opacity:1,duration:dur/4,ease:'sine.inOut',yoyo:true,repeat:3},0);}
+
+
+ambient(24.16);
+rise('.kicker',0.9,{y:0,x:-30});
+rise('.hh',0.95,{y:50,e:'expo.out',d:0.9});
+rise('.m0',6.26,{y:40});
+slide('.mq0',6.46,-40);
+stamp('.mx0',9.18,-7);
+rise('.ma0',10.47,{y:20});
+rise('.m1',14.280000000000001,{y:40});
+slide('.mq1',14.48,-40);
+stamp('.mx1',18.53,6);
+rise('.ma1',19.43,{y:20});
+
+window.__timelines["s14"]=tl;
+      </script>
+    </template>
+  </body>
+</html>

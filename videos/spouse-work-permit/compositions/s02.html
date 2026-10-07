@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+        [data-composition-id="s02"]{position:absolute;inset:0;}
+      </style>
+      <div id="s02-root" data-composition-id="s02" data-width="1920" data-height="1080" data-duration="13.44">
+        <div class="sc">
+
+<div class="ghost" data-layout-allow-overflow data-layout-allow-occlusion style="left:900px;top:470px;">INCOME</div>
+<div class="kicker">왜 다들 궁금해할까?</div>
+<div class="h1">배우자가 일할 수 있으면<br/>가족 <em>생활비 부담</em>이 확 줄어듭니다</div>
+<div class="card" style="left:120px;top:480px;width:1680px;height:360px;"></div>
+<div class="tag" style="position:absolute;left:180px;top:520px;">한 달 생활비를 누가 채우나 (개념도)</div>
+<div style="position:absolute;left:180px;top:590px;width:1560px;">
+  <div class="row" style="gap:28px;">
+    <div style="width:300px;font-size:34px;font-weight:700;">주 신청자 수입만</div>
+    <div style="flex:1;height:64px;background:var(--paper-2);border-radius:12px;position:relative;overflow:hidden;">
+      <div class="b1" style="position:absolute;left:0;top:0;bottom:0;width:48%;background:var(--ink);transform-origin:left center;"></div>
+      <div class="b1g" style="position:absolute;left:48%;top:0;bottom:0;right:0;background:repeating-linear-gradient(135deg,rgba(200,40,30,.35) 0 14px,rgba(200,40,30,.12) 14px 28px);transform-origin:left center;"></div>
+    </div>
+    <div class="b1t" style="width:200px;font-size:34px;font-weight:800;color:var(--red);">부족분 ↑</div>
+  </div>
+  <div class="row r2" style="gap:28px;margin-top:44px;">
+    <div style="width:300px;font-size:34px;font-weight:700;">+ 배우자 수입</div>
+    <div style="flex:1;height:64px;background:var(--paper-2);border-radius:12px;position:relative;overflow:hidden;">
+      <div class="b2" style="position:absolute;left:0;top:0;bottom:0;width:48%;background:var(--ink);transform-origin:left center;"></div>
+      <div class="b3" style="position:absolute;left:48%;top:0;bottom:0;width:44%;background:var(--green);transform-origin:left center;"></div>
+    </div>
+    <div class="b3t" style="width:200px;font-size:34px;font-weight:800;color:var(--green);">부담 ↓</div>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <script>
+
+const R='[data-composition-id="s02"] ';
+const tl=gsap.timeline({paused:true});
+const $=(s)=>R+s;
+function rise(s,t,o){o=o||{};tl.fromTo($(s),{opacity:0,y:o.y==null?40:o.y,x:o.x||0,scale:o.s||1},{opacity:1,y:0,x:0,scale:1,duration:o.d||0.6,ease:o.e||'power3.out',stagger:o.st||0},t);}
+function popin(s,t,o){o=o||{};tl.fromTo($(s),{opacity:0,scale:o.s||0.6},{opacity:1,scale:1,duration:o.d||0.55,ease:o.e||'back.out(1.7)',stagger:o.st||0},t);}
+function slide(s,t,dx,o){o=o||{};tl.fromTo($(s),{opacity:0,x:dx},{opacity:1,x:0,duration:o.d||0.7,ease:o.e||'expo.out',stagger:o.st||0},t);}
+function stamp(s,t,rot){tl.fromTo($(s),{opacity:0,scale:1.9,rotation:rot-14},{opacity:1,scale:1,rotation:rot,duration:0.42,ease:'power4.in'},t);
+  tl.fromTo($(s),{y:0},{y:4,duration:0.08,yoyo:true,repeat:1,ease:'none',immediateRender:false},t+0.42);}
+function draw(s,t,d,e){tl.fromTo($(s),{strokeDashoffset:1},{strokeDashoffset:0,duration:d||0.9,ease:e||'power2.inOut'},t);}
+function bar(s,t,o){o=o||{};tl.fromTo($(s),{scaleX:0},{scaleX:1,duration:o.d||0.8,ease:o.e||'power3.out',stagger:o.st||0},t);}
+function barY(s,t,o){o=o||{};tl.fromTo($(s),{scaleY:0},{scaleY:1,duration:o.d||0.9,ease:o.e||'power3.out',stagger:o.st||0},t);}
+function strike(s,t){tl.fromTo($(s),{scaleX:0},{scaleX:1,duration:0.35,ease:'power2.in'},t);}
+function dim(s,t,v){tl.fromTo($(s),{opacity:1},{opacity:v==null?0.28:v,duration:0.5,ease:'power1.inOut'},t);}
+function count(s,t,from,to,d,suffix){const el=document.querySelector($(s));const o={v:from};
+  tl.fromTo(o,{v:from},{v:to,duration:d||1,ease:'power2.out',onUpdate:()=>{el.textContent=Math.round(o.v)+(suffix||'');}},t);}
+function ambient(dur){if(document.querySelector($('.ghost')))tl.fromTo($('.ghost'),{x:0},{x:-160,duration:dur,ease:'none'},0);
+  if(document.querySelector($('.glow')))tl.fromTo($('.glow'),{scale:0.9,opacity:0.7},{scale:1.08,opacity:1,duration:dur/4,ease:'sine.inOut',yoyo:true,repeat:3},0);}
+
+
+ambient(12.74);
+rise('.kicker',0.25,{y:0,x:-30});
+rise('.h1',0.45,{y:50,e:'expo.out',d:0.9});
+rise('.card',1.2,{y:30});
+rise('.tag',1.4,{y:10});
+bar('.b1',1.6);
+bar('.b1g',2.2,{d:0.6});
+rise('.b1t',2.6,{y:10});
+rise('.r2',6.02,{y:20});
+bar('.b2',6.22);
+bar('.b3',7.25,{d:1.0,e:'power2.out'});
+popin('.b3t',9.11);
+
+window.__timelines["s02"]=tl;
+      </script>
+    </template>
+  </body>
+</html>

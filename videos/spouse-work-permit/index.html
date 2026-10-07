@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>캐나다 배우자 워크퍼밋 — AA Canada</title>
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      @font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Light.woff2") format("woff2");font-weight:300;font-style:normal;}@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Regular.woff2") format("woff2");font-weight:400;font-style:normal;}@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Medium.woff2") format("woff2");font-weight:500;font-style:normal;}@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2");font-weight:600;font-style:normal;}@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");font-weight:700;font-style:normal;}@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");font-weight:800;font-style:normal;}@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Black.woff2") format("woff2");font-weight:900;font-style:normal;}
+      * { margin:0; padding:0; box-sizing:border-box; }
+      html, body { width:1920px; height:1080px; overflow:hidden; background:#F4EFE6; }
+      #root { position:relative; width:100%; height:100%; overflow:hidden; font-family:"Pretendard",sans-serif; color:#18233A; }
+      
+:root{--paper:#F4EFE6;--paper-2:#EAE2D4;--paper-3:#DED3C0;--ink:#18233A;--ink-soft:#4A5468;
+--red:#C8281E;--green:#1F7A4D;--amber:#9A6212;--line:#C9BBA3;}
+.sc{position:absolute;inset:0;font-family:"Pretendard",sans-serif;color:var(--ink);word-break:keep-all;}
+.sc .mono{font-family:"JetBrains Mono",monospace;}
+.sc .ghost{position:absolute;font-family:"Pretendard",sans-serif;font-weight:900;font-size:420px;letter-spacing:-0.04em;
+  color:var(--ink);opacity:.07;white-space:nowrap;line-height:1;pointer-events:none;}
+.sc .glow{position:absolute;width:900px;height:900px;border-radius:50%;
+  background:radial-gradient(circle,rgba(200,40,30,.16) 0%,rgba(200,40,30,0) 65%);}
+.sc .kicker{position:absolute;left:120px;top:150px;font-family:"JetBrains Mono",monospace;font-size:24px;font-weight:700;
+  letter-spacing:.12em;color:var(--red);display:flex;align-items:center;gap:16px;}
+.sc .kicker::before{content:"";display:block;width:56px;height:4px;background:var(--red);}
+.sc .h1{position:absolute;left:120px;top:196px;font-size:84px;font-weight:900;letter-spacing:-0.035em;line-height:1.12;width:1680px;}
+.sc .h1 em{font-style:normal;color:var(--red);}
+.sc .card{position:absolute;background:#FBF8F2;border:3px solid var(--ink);border-radius:22px;box-shadow:10px 10px 0 var(--paper-3);}
+.sc .pill{display:inline-flex;align-items:center;padding:12px 26px;border-radius:999px;border:3px solid var(--ink);
+  font-size:32px;font-weight:700;background:#FBF8F2;white-space:nowrap;}
+.sc .stamp{position:absolute;display:flex;align-items:center;justify-content:center;padding:10px 30px;border:7px solid currentColor;
+  border-radius:16px;font-size:52px;font-weight:900;letter-spacing:.02em;white-space:nowrap;background:rgba(251,248,242,.85);}
+.sc .ok{color:var(--green);} .sc .no{color:var(--red);} .sc .warn{color:var(--amber);}
+.sc .tag{font-family:"JetBrains Mono",monospace;font-size:24px;font-weight:700;letter-spacing:.08em;color:var(--ink-soft);}
+.sc .body{font-size:40px;font-weight:500;line-height:1.45;color:var(--ink);}
+.sc .muted{color:var(--ink-soft);}
+.sc .row{display:flex;align-items:center;gap:24px;}
+.sc .ic{flex:none;width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:38px;font-weight:900;color:#FBF8F2;}
+.sc .ic.ok{background:var(--green);color:#FBF8F2;} .sc .ic.no{background:var(--red);color:#FBF8F2;} .sc .ic.warn{background:var(--amber);color:#FBF8F2;}
+.sc .ic.ink{background:var(--ink);color:#FBF8F2;}
+.sc svg .draw{fill:none;stroke-linecap:round;stroke-linejoin:round;}
+
+      #paper { position:absolute; inset:0; background:#F4EFE6; }
+      #grid { position:absolute; inset:-80px; opacity:.55;
+        background-image:linear-gradient(rgba(24,35,58,.06) 2px,transparent 2px),linear-gradient(90deg,rgba(24,35,58,.06) 2px,transparent 2px);
+        background-size:80px 80px; }
+      #grain { position:absolute; inset:0; opacity:.35; mix-blend-mode:multiply;
+        background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='7'/><feColorMatrix values='0 0 0 0 .55 0 0 0 0 .48 0 0 0 0 .38 0 0 0 .55 0'/></filter><rect width='240' height='240' filter='url(%23n)'/></svg>"); }
+      #edge { position:absolute; left:0; top:0; bottom:0; width:14px; background:#C8281E; }
+      .host { position:absolute; inset:0; }
+      #brand { position:absolute; right:80px; top:56px; display:flex; align-items:center; gap:14px; font-weight:900; font-size:30px; letter-spacing:-0.01em; z-index:20; }
+      #chapters { position:absolute; left:120px; top:60px; display:flex; gap:10px; z-index:20; }
+      #chapters .ch { font-size:22px; font-weight:700; padding:8px 16px; border-radius:999px; color:#4A5468; background:rgba(222,211,192,.55); display:flex; gap:8px; align-items:center; }
+      #chapters .ch .mono { font-family:"JetBrains Mono",monospace; font-size:18px; }
+      #capbar { position:absolute; left:0; right:0; bottom:0; height:190px; z-index:29;
+        background:linear-gradient(to top, rgba(244,239,230,.98) 0%, rgba(244,239,230,.9) 70%, rgba(244,239,230,0) 100%); }
+      .cap { position:absolute; left:160px; right:160px; bottom:62px; z-index:30; display:flex; justify-content:center; }
+      .cap span { font-size:46px; font-weight:700; line-height:1.3; color:#18233A; text-align:center; letter-spacing:-0.01em;
+        background:#FBF8F2; padding:10px 28px; border-radius:14px; border:3px solid #18233A; word-break:keep-all; }
+      #wipe { position:absolute; inset:0; z-index:40; pointer-events:none; }
+      #wipe .pn { position:absolute; left:0; top:0; bottom:0; width:100%; transform-origin:left center; }
+      #wipe .pnR { background:#C8281E; }
+      #wipe .pnN { background:#18233A; }
+      .wt { position:absolute; left:140px; top:410px; color:#F4EFE6; opacity:0; }
+      .wipeNum { font-family:"JetBrains Mono",monospace; font-size:40px; font-weight:700; color:#F2B8B2; letter-spacing:.14em; }
+            .wipeTitle { font-size:110px; font-weight:900; letter-spacing:-0.04em; margin-top:10px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="415.69" data-width="1920" data-height="1080">
+      <div id="paper"></div>
+      <div id="grid"></div>
+      <div id="grain"></div>
+      <div id="edge"></div>
+      <div id="host-s01" class="host" data-composition-id="s01" data-composition-src="compositions/s01.html" data-start="0.0" data-duration="20.27" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="host-s02" class="host" data-composition-id="s02" data-composition-src="compositions/s02.html" data-start="19.57" data-duration="13.44" data-track-index="1" data-width="1920" data-height="1080" style="opacity:0"></div>
+      <div id="host-s03" class="host" data-composition-id="s03" data-composition-src="compositions/s03.html" data-start="32.31" data-duration="21.35" data-track-index="1" data-width="1920" data-height="1080" style="opacity:0"></div>
+      <div id="host-s04" class="host" data-composition-id="s04" data-composition-src="compositions/s04.html" data-start="52.96" data-duration="25.95" data-track-index="1" data-width="1920" data-height="1080" style="opacity:0"></div>
+      <div id="host-s05" class="host" data-composition-id="s05" data-composition-src="compositions/s05.html" data-start="78.21" data-duration="20.04" data-track-index="1" data-width="1920" data-height="1080" style="opacity:0"></div>
+      <div id="host-s06" class="host" data-composition-id="s06" data-composition-src="compositions/s06.html" data-start="97.55" data-duration="24.89" data-track-index="1" data-width="1920" data-height="1080" style="opacity:0"></div>
+      <div id="host-s07" class="host" data-composition-id="s07" data-composition-src="compositions/s07.html" data-start="121.74" data-duration="14.43" data-track-index="1" data-width="1920" data-height="1080" style="opacity:0"></div>
+      <div id="host-s08" class="host" data-composition-id="s08" data-composition-src="compositions/s08.html" data-start="135.47" data-duration="14.11" data-track-index="1" data-width="1920" data-height="1080" style="opacity:0"></div>
+      <div id="host-s09" class="host" data-composition-id="s09" data-composition-src="compositions/s09.html" data-start="148.88" data-duration="42.94" data-track-index="1" data-width="1920" data-height="1080" style="opacity:0"></div>
+      <div id="host-s10" class="host" data-composition-id="s10" data-composition-src="compositions/s10.html" data-start="191.12" data-duration="28.85" data-track-index="1" data-width="1920" data-height="1080" style="opacity:0"></div>
+      <div id="host-s11" class="host" data-composition-id="s11" data-composition-src="compositions/s11.html" data-start="219.27" data-duration="35.71" data-track-index="1" data-width="1920" data-height="1080" style="opacity:0"></div>
+      <div id="host-s12" class="host" data-composition-id="s12" data-composition-src="compositions/s12.html" data-start="254.28" data-duration="16.91" data-track-index="1" data-width="1920" data-height="1080" style="opacity:0"></div>
+      <div id="host-s13" class="host" data-composition-id="s13" data-composition-src="compositions/s13.html" data-start="270.49" data-duration="28.55" data-track-index="1" data-width="1920" data-height="1080" style="opacity:0"></div>
+      <div id="host-s14" class="host" data-composition-id="s14" data-composition-src="compositions/s14.html" data-start="298.34" data-duration="24.86" data-track-index="1" data-width="1920" data-height="1080" style="opacity:0"></div>
+      <div id="host-s15" class="host" data-composition-id="s15" data-composition-src="compositions/s15.html" data-start="322.5" data-duration="20.52" data-track-index="1" data-width="1920" data-height="1080" style="opacity:0"></div>
+      <div id="host-s16" class="host" data-composition-id="s16" data-composition-src="compositions/s16.html" data-start="342.32" data-duration="37.28" data-track-index="1" data-width="1920" data-height="1080" style="opacity:0"></div>
+      <div id="host-s17" class="host" data-composition-id="s17" data-composition-src="compositions/s17.html" data-start="378.9" data-duration="19.64" data-track-index="1" data-width="1920" data-height="1080" style="opacity:0"></div>
+      <div id="host-s18" class="host" data-composition-id="s18" data-composition-src="compositions/s18.html" data-start="397.84" data-duration="17.85" data-track-index="1" data-width="1920" data-height="1080" style="opacity:0"></div>
+      <div id="brand"><svg width="40" height="40" viewBox="0 0 64 64"><path fill="#C8281E" d="M32 4l5 11 7-4-2 14 9-6 2 6 9-2-5 12 4 3-15 9 2 8-14-3v12h-4V52l-14 3 2-8-15-9 4-3-5-12 9 2 2-6 9 6-2-14 7 4z"/></svg>AA CANADA</div>
+      <div id="chapters" style="opacity:0"><div class="ch" id="ch0"><span class="mono">01</span>기본 원리</div><div class="ch" id="ch1"><span class="mono">02</span>규정 변화</div><div class="ch" id="ch2"><span class="mono">03</span>취업비자</div><div class="ch" id="ch3"><span class="mono">04</span>학생비자</div><div class="ch" id="ch4"><span class="mono">05</span>오해</div><div class="ch" id="ch5"><span class="mono">06</span>준비</div></div>
+      <div id="capbar"></div>
+      <div id="host-captions" data-composition-id="captions" data-composition-src="compositions/captions.html" data-track-kind="captions" data-start="0" data-duration="415.69" data-track-index="3" data-width="1920" data-height="1080" style="position:absolute;inset:0;z-index:30;"></div>
+      <div id="wipe"><div class="pn pnR" id="pnR"></div><div class="pn pnN" id="pnN"></div>
+<div class="wt" id="wt0"><div class="wipeNum">PART 01</div><div class="wipeTitle">배우자 오픈 워크퍼밋이 뭔가요?</div></div><div class="wt" id="wt1"><div class="wipeNum">PART 02</div><div class="wipeTitle">규정이 어떻게 바뀌었나</div></div><div class="wt" id="wt2"><div class="wipeNum">PART 03</div><div class="wipeTitle">주 신청자가 취업비자일 때</div></div><div class="wt" id="wt3"><div class="wipeNum">PART 04</div><div class="wipeTitle">주 신청자가 학생비자일 때</div></div><div class="wt" id="wt4"><div class="wipeNum">PART 05</div><div class="wipeTitle">자주 하는 오해 3가지</div></div><div class="wt" id="wt5"><div class="wipeNum">PART 06</div><div class="wipeTitle">그래서 어떻게 준비하나요?</div></div><div class="wt" id="wt6"><div class="wipeNum">SUMMARY</div><div class="wipeTitle">한 장으로 정리</div></div></div>
+      <audio id="narration" src="assets/narration.m4a" data-start="0" data-duration="415.69" data-track-index="5" data-volume="1"></audio>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      function chapterWipe(T, outSel, inSel, txt) {
+        // red then navy panel sweep in from the left, chapter title holds, panels sweep off to the right
+        const a = T - 0.55;
+        tl.fromTo('#pnR', {scaleX:0, transformOrigin:'left center'}, {scaleX:1, duration:0.45, ease:'power3.in'}, a);
+        tl.fromTo('#pnN', {scaleX:0, transformOrigin:'left center'}, {scaleX:1, duration:0.45, ease:'power3.in'}, a + 0.1);
+        tl.set(outSel, {opacity:0}, a + 0.56);
+        tl.set(inSel, {opacity:1}, a + 0.56);
+        tl.fromTo(txt, {opacity:0, x:-40}, {opacity:1, x:0, duration:0.4, ease:'power3.out'}, a + 0.55);
+        tl.fromTo(txt, {opacity:1, x:0}, {opacity:0, x:40, duration:0.3, ease:'power2.in', immediateRender:false}, a + 1.55);
+        tl.set('#pnR', {transformOrigin:'right center'}, a + 1.7);
+        tl.set('#pnN', {transformOrigin:'right center'}, a + 1.7);
+        tl.to('#pnN', {scaleX:0, duration:0.5, ease:'power3.inOut'}, a + 1.7);
+        tl.to('#pnR', {scaleX:0, duration:0.5, ease:'power3.inOut'}, a + 1.8);
+      }
+      function setChapter(t, idx) {
+        for (let i = 0; i < 6; i++) {
+          const on = i === idx;
+          tl.to('#ch' + i, {backgroundColor: on ? '#18233A' : 'rgba(222,211,192,0.55)', color: on ? '#F4EFE6' : '#4A5468', duration:0.3}, t);
+        }
+      }
+      tl.set(['#pnR','#pnN'], {scaleX:0}, 0);
+      tl.fromTo('#grid', {x:0, y:0}, {x:-80, y:-40, duration:415.69, ease:'none'}, 0);
+      tl.set('#host-s02',{opacity:1},19.57);
+      tl.fromTo('#host-s01',{x:0},{x:-1920,duration:0.7,ease:'power3.inOut',immediateRender:false},19.57);
+      tl.fromTo('#host-s02',{x:1920},{x:0,duration:0.7,ease:'power3.inOut'},19.57);
+      tl.set('#host-s03',{opacity:1},32.31);
+      tl.fromTo('#host-s02',{x:0},{x:-1920,duration:0.7,ease:'power3.inOut',immediateRender:false},32.31);
+      tl.fromTo('#host-s03',{x:1920},{x:0,duration:0.7,ease:'power3.inOut'},32.31);
+      chapterWipe(52.96,'#host-s03','#host-s04','#wt0');
+      tl.set('#host-s05',{opacity:1},78.21);
+      tl.fromTo('#host-s04',{x:0},{x:-1920,duration:0.7,ease:'power3.inOut',immediateRender:false},78.21);
+      tl.fromTo('#host-s05',{x:1920},{x:0,duration:0.7,ease:'power3.inOut'},78.21);
+      chapterWipe(97.55,'#host-s05','#host-s06','#wt1');
+      tl.set('#host-s07',{opacity:1},121.74);
+      tl.fromTo('#host-s06',{x:0},{x:-1920,duration:0.7,ease:'power3.inOut',immediateRender:false},121.74);
+      tl.fromTo('#host-s07',{x:1920},{x:0,duration:0.7,ease:'power3.inOut'},121.74);
+      chapterWipe(135.47,'#host-s07','#host-s08','#wt2');
+      tl.set('#host-s09',{opacity:1},148.88);
+      tl.fromTo('#host-s08',{x:0},{x:-1920,duration:0.7,ease:'power3.inOut',immediateRender:false},148.88);
+      tl.fromTo('#host-s09',{x:1920},{x:0,duration:0.7,ease:'power3.inOut'},148.88);
+      tl.set('#host-s10',{opacity:1},191.12);
+      tl.fromTo('#host-s09',{x:0},{x:-1920,duration:0.7,ease:'power3.inOut',immediateRender:false},191.12);
+      tl.fromTo('#host-s10',{x:1920},{x:0,duration:0.7,ease:'power3.inOut'},191.12);
+      chapterWipe(219.27,'#host-s10','#host-s11','#wt3');
+      tl.set('#host-s12',{opacity:1},254.28);
+      tl.fromTo('#host-s11',{x:0},{x:-1920,duration:0.7,ease:'power3.inOut',immediateRender:false},254.28);
+      tl.fromTo('#host-s12',{x:1920},{x:0,duration:0.7,ease:'power3.inOut'},254.28);
+      tl.set('#host-s13',{opacity:1},270.49);
+      tl.fromTo('#host-s12',{x:0},{x:-1920,duration:0.7,ease:'power3.inOut',immediateRender:false},270.49);
+      tl.fromTo('#host-s13',{x:1920},{x:0,duration:0.7,ease:'power3.inOut'},270.49);
+      chapterWipe(298.34,'#host-s13','#host-s14','#wt4');
+      tl.set('#host-s15',{opacity:1},322.5);
+      tl.fromTo('#host-s14',{x:0},{x:-1920,duration:0.7,ease:'power3.inOut',immediateRender:false},322.5);
+      tl.fromTo('#host-s15',{x:1920},{x:0,duration:0.7,ease:'power3.inOut'},322.5);
+      chapterWipe(342.32,'#host-s15','#host-s16','#wt5');
+      chapterWipe(378.9,'#host-s16','#host-s17','#wt6');
+      tl.fromTo('#host-s17',{opacity:1,filter:'blur(0px)'},{opacity:0,filter:'blur(14px)',duration:0.8,ease:'sine.inOut'},397.84);
+      tl.fromTo('#host-s18',{opacity:0,filter:'blur(14px)'},{opacity:1,filter:'blur(0px)',duration:0.8,ease:'sine.inOut'},397.84);
+      setChapter(53.56,0);
+      setChapter(98.14999999999999,1);
+      setChapter(136.07,2);
+      setChapter(219.87,3);
+      setChapter(298.94,4);
+      setChapter(342.92,5);
+      tl.fromTo('#chapters',{opacity:0,y:-20},{opacity:1,y:0,duration:0.6,ease:'power3.out'},53.160000000000004);
+      tl.fromTo('#chapters',{opacity:1},{opacity:0,duration:0.5,immediateRender:false},378.9);
+      tl.fromTo('#brand',{opacity:1},{opacity:0,duration:0.6},397.84);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

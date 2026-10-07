@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+        [data-composition-id="s11"]{position:absolute;inset:0;}
+      </style>
+      <div id="s11-root" data-composition-id="s11" data-width="1920" data-height="1080" data-duration="35.71">
+        <div class="sc">
+
+<div class="ghost" data-layout-allow-overflow data-layout-allow-occlusion style="left:760px;top:480px;">DEGREE</div>
+<div class="kicker">PART 04 · 주 신청자가 학생비자</div>
+<div class="h1 hh">직종이 아니라 <em>학위 과정의 수준</em>을 봅니다</div>
+<div class="tag lab" style="position:absolute;left:124px;top:330px;color:var(--green);">가능한 경우 · 3가지</div>
+<div class="card d0" style="left:120px;top:380px;width:520px;height:250px;padding:34px 36px;border-color:var(--green);">
+  <div class="row" style="gap:16px;"><div class="ic ok" style="width:54px;height:54px;font-size:30px;">✓</div><div style="font-size:52px;font-weight:900;">석사</div></div>
+  <div class="muted" style="font-size:30px;font-weight:600;margin-top:22px;line-height:1.35;">16개월 이상 과정</div>
+</div><div class="card d1" style="left:690px;top:380px;width:520px;height:250px;padding:34px 36px;border-color:var(--green);">
+  <div class="row" style="gap:16px;"><div class="ic ok" style="width:54px;height:54px;font-size:30px;">✓</div><div style="font-size:52px;font-weight:900;">박사</div></div>
+  <div class="muted" style="font-size:30px;font-weight:600;margin-top:22px;line-height:1.35;">박사 과정</div>
+</div><div class="card d2" style="left:1260px;top:380px;width:520px;height:250px;padding:34px 36px;border-color:var(--green);">
+  <div class="row" style="gap:16px;"><div class="ic ok" style="width:54px;height:54px;font-size:30px;">✓</div><div style="font-size:52px;font-weight:900;">전문학위</div></div>
+  <div class="muted" style="font-size:30px;font-weight:600;margin-top:22px;line-height:1.35;">IRCC가 인정한 과정</div>
+</div>
+<div class="prof" style="position:absolute;left:1180px;top:660px;width:640px;">
+  <div class="tag">전문학위 예시</div>
+  <div class="row" style="gap:12px;flex-wrap:wrap;margin-top:14px;">
+    <div class="pill p" style="font-size:28px;padding:8px 20px;">법학</div><div class="pill p" style="font-size:28px;padding:8px 20px;">의학</div><div class="pill p" style="font-size:28px;padding:8px 20px;">약학</div><div class="pill p" style="font-size:28px;padding:8px 20px;">간호</div><div class="pill p" style="font-size:28px;padding:8px 20px;">교육</div><div class="pill p" style="font-size:28px;padding:8px 20px;">공학</div>
+  </div>
+</div>
+<div class="note row" style="position:absolute;left:120px;top:690px;width:1020px;gap:20px;">
+  <div class="ic warn">!</div><div class="body" style="font-weight:600;">정확한 목록은 <b>IRCC 공식 사이트</b>에서 꼭 확인하세요</div>
+</div>
+
+        </div>
+      </div>
+      <script>
+
+const R='[data-composition-id="s11"] ';
+const tl=gsap.timeline({paused:true});
+const $=(s)=>R+s;
+function rise(s,t,o){o=o||{};tl.fromTo($(s),{opacity:0,y:o.y==null?40:o.y,x:o.x||0,scale:o.s||1},{opacity:1,y:0,x:0,scale:1,duration:o.d||0.6,ease:o.e||'power3.out',stagger:o.st||0},t);}
+function popin(s,t,o){o=o||{};tl.fromTo($(s),{opacity:0,scale:o.s||0.6},{opacity:1,scale:1,duration:o.d||0.55,ease:o.e||'back.out(1.7)',stagger:o.st||0},t);}
+function slide(s,t,dx,o){o=o||{};tl.fromTo($(s),{opacity:0,x:dx},{opacity:1,x:0,duration:o.d||0.7,ease:o.e||'expo.out',stagger:o.st||0},t);}
+function stamp(s,t,rot){tl.fromTo($(s),{opacity:0,scale:1.9,rotation:rot-14},{opacity:1,scale:1,rotation:rot,duration:0.42,ease:'power4.in'},t);
+  tl.fromTo($(s),{y:0},{y:4,duration:0.08,yoyo:true,repeat:1,ease:'none',immediateRender:false},t+0.42);}
+function draw(s,t,d,e){tl.fromTo($(s),{strokeDashoffset:1},{strokeDashoffset:0,duration:d||0.9,ease:e||'power2.inOut'},t);}
+function bar(s,t,o){o=o||{};tl.fromTo($(s),{scaleX:0},{scaleX:1,duration:o.d||0.8,ease:o.e||'power3.out',stagger:o.st||0},t);}
+function barY(s,t,o){o=o||{};tl.fromTo($(s),{scaleY:0},{scaleY:1,duration:o.d||0.9,ease:o.e||'power3.out',stagger:o.st||0},t);}
+function strike(s,t){tl.fromTo($(s),{scaleX:0},{scaleX:1,duration:0.35,ease:'power2.in'},t);}
+function dim(s,t,v){tl.fromTo($(s),{opacity:1},{opacity:v==null?0.28:v,duration:0.5,ease:'power1.inOut'},t);}
+function count(s,t,from,to,d,suffix){const el=document.querySelector($(s));const o={v:from};
+  tl.fromTo(o,{v:from},{v:to,duration:d||1,ease:'power2.out',onUpdate:()=>{el.textContent=Math.round(o.v)+(suffix||'');}},t);}
+function ambient(dur){if(document.querySelector($('.ghost')))tl.fromTo($('.ghost'),{x:0},{x:-160,duration:dur,ease:'none'},0);
+  if(document.querySelector($('.glow')))tl.fromTo($('.glow'),{scale:0.9,opacity:0.7},{scale:1.08,opacity:1,duration:dur/4,ease:'sine.inOut',yoyo:true,repeat:3},0);}
+
+
+ambient(35.01);
+rise('.kicker',0.9,{y:0,x:-30});
+rise('.hh',4.59,{y:50,e:'expo.out',d:0.9});
+rise('.lab',11.6,{y:10});
+rise('.d0',18.4,{y:60,e:'back.out(1.4)'});
+rise('.d1',20.35,{y:60,e:'back.out(1.4)'});
+rise('.d2',21.97,{y:60,e:'back.out(1.4)'});
+rise('.prof .tag',25.37,{y:10});
+popin('.p',26.16,{st:0.1});
+slide('.note',31.19,-60);
+
+window.__timelines["s11"]=tl;
+      </script>
+    </template>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+        [data-composition-id="s06"]{position:absolute;inset:0;}
+      </style>
+      <div id="s06-root" data-composition-id="s06" data-width="1920" data-height="1080" data-duration="24.89">
+        <div class="sc">
+
+<div class="ghost" data-layout-allow-overflow data-layout-allow-occlusion style="left:700px;top:470px;">BEFORE</div>
+<div class="kicker">PART 02 · 규정 변화</div>
+<div class="h1">대상이 <em>크게 줄었습니다</em></div>
+<div style="position:absolute;left:120px;top:470px;width:1680px;height:8px;background:var(--ink);transform-origin:left center;" class="axis"></div>
+<div class="before" style="position:absolute;left:140px;top:340px;width:700px;">
+  <div class="tag">예전</div>
+  <div style="font-size:40px;font-weight:700;margin-top:8px;">학생이든 취업비자든</div>
+</div>
+<div class="before2 card" style="left:140px;top:520px;width:700px;padding:32px 36px;">
+  <div class="body" style="font-weight:700;">대부분의 배우자가<br/>오픈 워크퍼밋 가능</div>
+</div>
+<div class="mark" style="position:absolute;left:960px;top:446px;width:56px;height:56px;border-radius:50%;background:var(--red);border:8px solid var(--paper);"></div>
+<div class="date mono" style="position:absolute;left:880px;top:360px;font-size:44px;font-weight:700;color:var(--red);">2025.01.21</div>
+<div class="after card" style="left:1100px;top:520px;width:700px;padding:32px 36px;border-color:var(--red);">
+  <div class="body" style="font-weight:700;">일부 경우에만 가능<br/><span class="muted" style="font-weight:500;font-size:34px;">→ 다음 파트에서 자세히</span></div>
+</div>
+<div class="stamp no st" style="left:1440px;top:340px;">대상 축소</div>
+<div class="warnrow row" style="position:absolute;left:140px;top:770px;gap:22px;">
+  <div class="ic warn">!</div>
+  <div class="body" style="font-weight:600;">예전 블로그·유튜브 보고 <s style="color:var(--red)">“나도 되겠지”</s> → 뒤늦게 안 된다는 걸 알게 되는 경우</div>
+</div>
+
+        </div>
+      </div>
+      <script>
+
+const R='[data-composition-id="s06"] ';
+const tl=gsap.timeline({paused:true});
+const $=(s)=>R+s;
+function rise(s,t,o){o=o||{};tl.fromTo($(s),{opacity:0,y:o.y==null?40:o.y,x:o.x||0,scale:o.s||1},{opacity:1,y:0,x:0,scale:1,duration:o.d||0.6,ease:o.e||'power3.out',stagger:o.st||0},t);}
+function popin(s,t,o){o=o||{};tl.fromTo($(s),{opacity:0,scale:o.s||0.6},{opacity:1,scale:1,duration:o.d||0.55,ease:o.e||'back.out(1.7)',stagger:o.st||0},t);}
+function slide(s,t,dx,o){o=o||{};tl.fromTo($(s),{opacity:0,x:dx},{opacity:1,x:0,duration:o.d||0.7,ease:o.e||'expo.out',stagger:o.st||0},t);}
+function stamp(s,t,rot){tl.fromTo($(s),{opacity:0,scale:1.9,rotation:rot-14},{opacity:1,scale:1,rotation:rot,duration:0.42,ease:'power4.in'},t);
+  tl.fromTo($(s),{y:0},{y:4,duration:0.08,yoyo:true,repeat:1,ease:'none',immediateRender:false},t+0.42);}
+function draw(s,t,d,e){tl.fromTo($(s),{strokeDashoffset:1},{strokeDashoffset:0,duration:d||0.9,ease:e||'power2.inOut'},t);}
+function bar(s,t,o){o=o||{};tl.fromTo($(s),{scaleX:0},{scaleX:1,duration:o.d||0.8,ease:o.e||'power3.out',stagger:o.st||0},t);}
+function barY(s,t,o){o=o||{};tl.fromTo($(s),{scaleY:0},{scaleY:1,duration:o.d||0.9,ease:o.e||'power3.out',stagger:o.st||0},t);}
+function strike(s,t){tl.fromTo($(s),{scaleX:0},{scaleX:1,duration:0.35,ease:'power2.in'},t);}
+function dim(s,t,v){tl.fromTo($(s),{opacity:1},{opacity:v==null?0.28:v,duration:0.5,ease:'power1.inOut'},t);}
+function count(s,t,from,to,d,suffix){const el=document.querySelector($(s));const o={v:from};
+  tl.fromTo(o,{v:from},{v:to,duration:d||1,ease:'power2.out',onUpdate:()=>{el.textContent=Math.round(o.v)+(suffix||'');}},t);}
+function ambient(dur){if(document.querySelector($('.ghost')))tl.fromTo($('.ghost'),{x:0},{x:-160,duration:dur,ease:'none'},0);
+  if(document.querySelector($('.glow')))tl.fromTo($('.glow'),{scale:0.9,opacity:0.7},{scale:1.08,opacity:1,duration:dur/4,ease:'sine.inOut',yoyo:true,repeat:3},0);}
+
+
+ambient(24.19);
+rise('.kicker',0.9,{y:0,x:-30});
+rise('.h1',7.34,{y:50,e:'expo.out',d:0.9});
+bar('.axis',1.1,{d:1.2,e:'power2.inOut'});
+rise('.before',1.4,{y:20});
+rise('.before2',3.48,{y:30});
+popin('.mark',7.64,{s:0.2});
+rise('.date',7.79,{y:20});
+slide('.after',10.11,80);
+stamp('.st',11.11,-7);
+rise('.warnrow',14.33,{y:30});
+
+window.__timelines["s06"]=tl;
+      </script>
+    </template>
+  </body>
+</html>

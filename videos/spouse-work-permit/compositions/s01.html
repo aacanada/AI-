@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+        [data-composition-id="s01"]{position:absolute;inset:0;}
+      </style>
+      <div id="s01-root" data-composition-id="s01" data-width="1920" data-height="1080" data-duration="20.27">
+        <div class="sc">
+
+<div class="ghost" data-layout-allow-overflow data-layout-allow-occlusion style="left:760px;top:420px;">SPOUSE</div>
+<div class="glow" style="left:980px;top:120px;"></div>
+<div class="kicker">AA CANADA · 캐나다 유학 &amp; 이민</div>
+<div style="position:absolute;left:120px;top:228px;font-size:150px;font-weight:900;letter-spacing:-0.045em;line-height:1.05;" class="t1">캐나다</div>
+<div style="position:absolute;left:120px;top:390px;font-size:150px;font-weight:900;letter-spacing:-0.045em;line-height:1.05;" class="t2">배우자 <span style="color:var(--red)">워크퍼밋</span></div>
+<div style="position:absolute;left:126px;top:580px;font-size:42px;font-weight:500;color:var(--ink-soft);" class="t3">누가 가능하고, 누가 안 되는지 — 한 번에 정리</div>
+<div class="rule" style="position:absolute;left:126px;top:560px;width:900px;height:5px;background:var(--ink);transform-origin:left center;"></div>
+<div class="card qcard" style="left:1060px;top:640px;width:740px;padding:36px 44px 40px;">
+  <div class="mono" style="font-size:22px;font-weight:700;color:var(--red);letter-spacing:.12em;">상담에서 가장 많이 듣는 질문</div>
+  <div style="font-size:52px;font-weight:800;line-height:1.3;margin-top:14px;letter-spacing:-0.02em;">“배우자도 캐나다에서<br/>일할 수 있나요?”</div>
+</div>
+<div class="qtail" style="position:absolute;left:1690px;top:850px;width:0;height:0;border-left:44px solid transparent;border-top:50px solid var(--ink);"></div>
+
+        </div>
+      </div>
+      <script>
+
+const R='[data-composition-id="s01"] ';
+const tl=gsap.timeline({paused:true});
+const $=(s)=>R+s;
+function rise(s,t,o){o=o||{};tl.fromTo($(s),{opacity:0,y:o.y==null?40:o.y,x:o.x||0,scale:o.s||1},{opacity:1,y:0,x:0,scale:1,duration:o.d||0.6,ease:o.e||'power3.out',stagger:o.st||0},t);}
+function popin(s,t,o){o=o||{};tl.fromTo($(s),{opacity:0,scale:o.s||0.6},{opacity:1,scale:1,duration:o.d||0.55,ease:o.e||'back.out(1.7)',stagger:o.st||0},t);}
+function slide(s,t,dx,o){o=o||{};tl.fromTo($(s),{opacity:0,x:dx},{opacity:1,x:0,duration:o.d||0.7,ease:o.e||'expo.out',stagger:o.st||0},t);}
+function stamp(s,t,rot){tl.fromTo($(s),{opacity:0,scale:1.9,rotation:rot-14},{opacity:1,scale:1,rotation:rot,duration:0.42,ease:'power4.in'},t);
+  tl.fromTo($(s),{y:0},{y:4,duration:0.08,yoyo:true,repeat:1,ease:'none',immediateRender:false},t+0.42);}
+function draw(s,t,d,e){tl.fromTo($(s),{strokeDashoffset:1},{strokeDashoffset:0,duration:d||0.9,ease:e||'power2.inOut'},t);}
+function bar(s,t,o){o=o||{};tl.fromTo($(s),{scaleX:0},{scaleX:1,duration:o.d||0.8,ease:o.e||'power3.out',stagger:o.st||0},t);}
+function barY(s,t,o){o=o||{};tl.fromTo($(s),{scaleY:0},{scaleY:1,duration:o.d||0.9,ease:o.e||'power3.out',stagger:o.st||0},t);}
+function strike(s,t){tl.fromTo($(s),{scaleX:0},{scaleX:1,duration:0.35,ease:'power2.in'},t);}
+function dim(s,t,v){tl.fromTo($(s),{opacity:1},{opacity:v==null?0.28:v,duration:0.5,ease:'power1.inOut'},t);}
+function count(s,t,from,to,d,suffix){const el=document.querySelector($(s));const o={v:from};
+  tl.fromTo(o,{v:from},{v:to,duration:d||1,ease:'power2.out',onUpdate:()=>{el.textContent=Math.round(o.v)+(suffix||'');}},t);}
+function ambient(dur){if(document.querySelector($('.ghost')))tl.fromTo($('.ghost'),{x:0},{x:-160,duration:dur,ease:'none'},0);
+  if(document.querySelector($('.glow')))tl.fromTo($('.glow'),{scale:0.9,opacity:0.7},{scale:1.08,opacity:1,duration:dur/4,ease:'sine.inOut',yoyo:true,repeat:3},0);}
+
+
+rise('.kicker',0.3,{y:0,x:-30});
+rise('.t1',0.5,{y:60,e:'expo.out',d:0.9});
+rise('.t2',0.75,{y:60,e:'expo.out',d:0.9});
+bar('.rule',1.3,{d:0.9});
+rise('.t3',1.6,{y:20});
+popin('.qcard',14.99,{s:0.7});
+rise('.qtail',15.39,{y:-20,d:0.3});
+
+window.__timelines["s01"]=tl;
+      </script>
+    </template>
+  </body>
+</html>

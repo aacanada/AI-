@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+        [data-composition-id="s13"]{position:absolute;inset:0;}
+      </style>
+      <div id="s13-root" data-composition-id="s13" data-width="1920" data-height="1080" data-duration="28.55">
+        <div class="sc">
+
+<div class="ghost" data-layout-allow-overflow data-layout-allow-occlusion style="left:820px;top:480px;">2026</div>
+<div class="kicker" style="color:var(--amber);">최근 추가된 조건</div>
+<div class="h1"><span class="mono" style="color:var(--amber);font-size:76px;">2026.03</span> 지침 업데이트</div>
+<div class="tag" style="position:absolute;left:124px;top:340px;">학생의 학기 진행</div>
+<div class="sem m0" style="position:absolute;left:120px;top:390px;width:310px;height:110px;border-radius:14px;background:var(--paper-3);display:flex;align-items:center;justify-content:center;font-size:34px;font-weight:800;color:var(--ink);">1학기</div><div class="sem m1" style="position:absolute;left:450px;top:390px;width:310px;height:110px;border-radius:14px;background:var(--paper-3);display:flex;align-items:center;justify-content:center;font-size:34px;font-weight:800;color:var(--ink);">2학기</div><div class="sem m2" style="position:absolute;left:780px;top:390px;width:310px;height:110px;border-radius:14px;background:var(--paper-3);display:flex;align-items:center;justify-content:center;font-size:34px;font-weight:800;color:var(--ink);">3학기</div><div class="sem m3" style="position:absolute;left:1110px;top:390px;width:310px;height:110px;border-radius:14px;background:var(--paper-3);display:flex;align-items:center;justify-content:center;font-size:34px;font-weight:800;color:var(--ink);">4학기</div><div class="sem m4" style="position:absolute;left:1440px;top:390px;width:310px;height:110px;border-radius:14px;background:var(--amber);display:flex;align-items:center;justify-content:center;font-size:34px;font-weight:800;color:#FBF8F2;">마지막 학기</div>
+<div class="warnc card" style="left:1000px;top:540px;width:800px;padding:30px 36px;border-color:var(--amber);">
+  <div style="font-size:40px;font-weight:800;line-height:1.35;">마지막 학기에 신청하면<br/><span style="color:var(--amber);">배우자 신청이 거절될 수 있음</span></div>
+  <div class="muted" style="font-size:30px;font-weight:600;margin-top:12px;">졸업 앞두고는 신청 타이밍 반드시 확인</div>
+</div>
+<div class="arrowdn" style="position:absolute;left:1440px;top:500px;width:0;height:0;border-left:22px solid transparent;border-right:22px solid transparent;border-top:34px solid var(--amber);"></div>
+<div class="kids card" style="left:120px;top:560px;width:820px;padding:30px 36px;">
+  <div class="tag">함께 기억하세요</div>
+  <div style="font-size:40px;font-weight:800;margin-top:12px;line-height:1.35;">자녀는 이 카테고리로<br/>오픈 워크퍼밋을 받을 수 <span style="color:var(--red)">없습니다</span></div>
+</div>
+
+        </div>
+      </div>
+      <script>
+
+const R='[data-composition-id="s13"] ';
+const tl=gsap.timeline({paused:true});
+const $=(s)=>R+s;
+function rise(s,t,o){o=o||{};tl.fromTo($(s),{opacity:0,y:o.y==null?40:o.y,x:o.x||0,scale:o.s||1},{opacity:1,y:0,x:0,scale:1,duration:o.d||0.6,ease:o.e||'power3.out',stagger:o.st||0},t);}
+function popin(s,t,o){o=o||{};tl.fromTo($(s),{opacity:0,scale:o.s||0.6},{opacity:1,scale:1,duration:o.d||0.55,ease:o.e||'back.out(1.7)',stagger:o.st||0},t);}
+function slide(s,t,dx,o){o=o||{};tl.fromTo($(s),{opacity:0,x:dx},{opacity:1,x:0,duration:o.d||0.7,ease:o.e||'expo.out',stagger:o.st||0},t);}
+function stamp(s,t,rot){tl.fromTo($(s),{opacity:0,scale:1.9,rotation:rot-14},{opacity:1,scale:1,rotation:rot,duration:0.42,ease:'power4.in'},t);
+  tl.fromTo($(s),{y:0},{y:4,duration:0.08,yoyo:true,repeat:1,ease:'none',immediateRender:false},t+0.42);}
+function draw(s,t,d,e){tl.fromTo($(s),{strokeDashoffset:1},{strokeDashoffset:0,duration:d||0.9,ease:e||'power2.inOut'},t);}
+function bar(s,t,o){o=o||{};tl.fromTo($(s),{scaleX:0},{scaleX:1,duration:o.d||0.8,ease:o.e||'power3.out',stagger:o.st||0},t);}
+function barY(s,t,o){o=o||{};tl.fromTo($(s),{scaleY:0},{scaleY:1,duration:o.d||0.9,ease:o.e||'power3.out',stagger:o.st||0},t);}
+function strike(s,t){tl.fromTo($(s),{scaleX:0},{scaleX:1,duration:0.35,ease:'power2.in'},t);}
+function dim(s,t,v){tl.fromTo($(s),{opacity:1},{opacity:v==null?0.28:v,duration:0.5,ease:'power1.inOut'},t);}
+function count(s,t,from,to,d,suffix){const el=document.querySelector($(s));const o={v:from};
+  tl.fromTo(o,{v:from},{v:to,duration:d||1,ease:'power2.out',onUpdate:()=>{el.textContent=Math.round(o.v)+(suffix||'');}},t);}
+function ambient(dur){if(document.querySelector($('.ghost')))tl.fromTo($('.ghost'),{x:0},{x:-160,duration:dur,ease:'none'},0);
+  if(document.querySelector($('.glow')))tl.fromTo($('.glow'),{scale:0.9,opacity:0.7},{scale:1.08,opacity:1,duration:dur/4,ease:'sine.inOut',yoyo:true,repeat:3},0);}
+
+
+ambient(27.85);
+rise('.kicker',0.3,{y:0,x:-30});
+rise('.h1',3.78,{y:50,e:'expo.out',d:0.9});
+rise('.tag',5.78,{y:10});
+rise('.sem',6.24,{y:30,st:0.1});
+tl.fromTo($('.m4'),{scale:1},{scale:1.08,duration:0.35,yoyo:true,repeat:1,ease:'power2.out',immediateRender:false},8.04);
+rise('.arrowdn',9.39,{y:-20});
+rise('.warnc',9.57,{y:40});
+slide('.kids',19.61,-80);
+
+window.__timelines["s13"]=tl;
+      </script>
+    </template>
+  </body>
+</html>

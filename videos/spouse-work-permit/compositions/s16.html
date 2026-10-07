@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+        [data-composition-id="s16"]{position:absolute;inset:0;}
+      </style>
+      <div id="s16-root" data-composition-id="s16" data-width="1920" data-height="1080" data-duration="37.28">
+        <div class="sc">
+
+<div class="ghost" data-layout-allow-overflow data-layout-allow-occlusion style="left:640px;top:480px;">BUDGET</div>
+<div class="kicker">PART 06 · 준비 방법</div>
+<div class="h1 hh">가족 예산, <em>이렇게</em> 짜세요</div>
+<div class="rule0 card" style="left:120px;top:330px;width:1680px;padding:30px 40px;border-color:var(--red);">
+  <div class="row" style="gap:22px;"><div class="ic no">✕</div>
+  <div style="font-size:42px;font-weight:800;">배우자 워크퍼밋을 <span style="position:relative;display:inline-block;">‘당연히’<span class="strk" style="position:absolute;left:-4px;right:-4px;top:52%;height:6px;background:var(--red);transform-origin:left center;"></span></span> 받는다고 가정하고 생활비 계산하지 않기</div></div>
+</div>
+<div class="s1 card" style="left:120px;top:500px;width:520px;height:220px;padding:30px 34px;">
+  <div class="tag">STEP 1</div><div style="font-size:38px;font-weight:800;margin-top:10px;line-height:1.3;">주 신청자의 과정·직종이<br/>해당되는지 확인</div>
+</div>
+<div class="s2 card" style="left:700px;top:500px;width:520px;height:220px;padding:30px 34px;">
+  <div class="tag">해당 안 되면</div><div style="font-size:38px;font-weight:800;margin-top:10px;line-height:1.3;">배우자 수입 <span style="color:var(--red)">0원</span>을<br/>기준으로 예산</div>
+</div>
+<div class="s3 card" style="left:1280px;top:500px;width:520px;height:220px;padding:30px 34px;border-color:var(--green);">
+  <div class="tag" style="color:var(--green);">수입이 생기면</div><div style="font-size:38px;font-weight:800;margin-top:10px;line-height:1.3;">그건 <span style="color:var(--green)">여유 자금</span></div>
+</div>
+<div class="chk" style="position:absolute;left:120px;top:770px;width:1680px;">
+  <div class="row" style="gap:26px;">
+    <div class="tag" style="width:260px;">해당돼도 꼭 확인</div>
+    <div class="pill c0" style="font-size:32px;"><span style="color:var(--green);margin-right:12px;">✓</span>신청 시점</div><div class="pill c1" style="font-size:32px;"><span style="color:var(--green);margin-right:12px;">✓</span>남은 허가 기간</div><div class="pill c2" style="font-size:32px;"><span style="color:var(--green);margin-right:12px;">✓</span>마지막 학기 여부</div>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <script>
+
+const R='[data-composition-id="s16"] ';
+const tl=gsap.timeline({paused:true});
+const $=(s)=>R+s;
+function rise(s,t,o){o=o||{};tl.fromTo($(s),{opacity:0,y:o.y==null?40:o.y,x:o.x||0,scale:o.s||1},{opacity:1,y:0,x:0,scale:1,duration:o.d||0.6,ease:o.e||'power3.out',stagger:o.st||0},t);}
+function popin(s,t,o){o=o||{};tl.fromTo($(s),{opacity:0,scale:o.s||0.6},{opacity:1,scale:1,duration:o.d||0.55,ease:o.e||'back.out(1.7)',stagger:o.st||0},t);}
+function slide(s,t,dx,o){o=o||{};tl.fromTo($(s),{opacity:0,x:dx},{opacity:1,x:0,duration:o.d||0.7,ease:o.e||'expo.out',stagger:o.st||0},t);}
+function stamp(s,t,rot){tl.fromTo($(s),{opacity:0,scale:1.9,rotation:rot-14},{opacity:1,scale:1,rotation:rot,duration:0.42,ease:'power4.in'},t);
+  tl.fromTo($(s),{y:0},{y:4,duration:0.08,yoyo:true,repeat:1,ease:'none',immediateRender:false},t+0.42);}
+function draw(s,t,d,e){tl.fromTo($(s),{strokeDashoffset:1},{strokeDashoffset:0,duration:d||0.9,ease:e||'power2.inOut'},t);}
+function bar(s,t,o){o=o||{};tl.fromTo($(s),{scaleX:0},{scaleX:1,duration:o.d||0.8,ease:o.e||'power3.out',stagger:o.st||0},t);}
+function barY(s,t,o){o=o||{};tl.fromTo($(s),{scaleY:0},{scaleY:1,duration:o.d||0.9,ease:o.e||'power3.out',stagger:o.st||0},t);}
+function strike(s,t){tl.fromTo($(s),{scaleX:0},{scaleX:1,duration:0.35,ease:'power2.in'},t);}
+function dim(s,t,v){tl.fromTo($(s),{opacity:1},{opacity:v==null?0.28:v,duration:0.5,ease:'power1.inOut'},t);}
+function count(s,t,from,to,d,suffix){const el=document.querySelector($(s));const o={v:from};
+  tl.fromTo(o,{v:from},{v:to,duration:d||1,ease:'power2.out',onUpdate:()=>{el.textContent=Math.round(o.v)+(suffix||'');}},t);}
+function ambient(dur){if(document.querySelector($('.ghost')))tl.fromTo($('.ghost'),{x:0},{x:-160,duration:dur,ease:'none'},0);
+  if(document.querySelector($('.glow')))tl.fromTo($('.glow'),{scale:0.9,opacity:0.7},{scale:1.08,opacity:1,duration:dur/4,ease:'sine.inOut',yoyo:true,repeat:3},0);}
+
+
+ambient(36.58);
+rise('.kicker',0.9,{y:0,x:-30});
+rise('.hh',1.68,{y:50,e:'expo.out',d:0.9});
+rise('.rule0',6.04,{y:30});
+strike('.strk',8.37);
+rise('.s1',12.61,{y:40});
+rise('.s2',18.49,{y:40});
+rise('.s3',23.91,{y:40,e:'back.out(1.5)'});
+rise('.chk .tag',28.69,{y:10});
+popin('.c0',31.33);
+popin('.c1',32.46);
+popin('.c2',33.98);
+
+window.__timelines["s16"]=tl;
+      </script>
+    </template>
+  </body>
+</html>

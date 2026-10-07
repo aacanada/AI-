@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+        [data-composition-id="s04"]{position:absolute;inset:0;}
+      </style>
+      <div id="s04-root" data-composition-id="s04" data-width="1920" data-height="1080" data-duration="25.95">
+        <div class="sc">
+
+<div class="ghost" data-layout-allow-overflow data-layout-allow-occlusion style="left:640px;top:470px;">OPEN</div>
+<div class="glow" style="left:1100px;top:120px;"></div>
+<div class="kicker">PART 01 · 기본 개념</div>
+<div class="h1">배우자 오픈 워크퍼밋 = <em>열려 있는</em> 취업 허가</div>
+<div style="position:absolute;left:120px;top:380px;width:980px;">
+  <div class="row f0" style="margin-bottom:34px;"><div class="ic ok">✓</div><div class="body" style="font-weight:700;">특정 회사에 묶이지 않음</div></div><div class="row f1" style="margin-bottom:34px;"><div class="ic ok">✓</div><div class="body" style="font-weight:700;">LMIA(노동시장영향평가) 필요 없음</div></div><div class="row f2" style="margin-bottom:34px;"><div class="ic ok">✓</div><div class="body" style="font-weight:700;">캐나다 어느 지역 · 어느 직장이든</div></div><div class="row f3" style="margin-bottom:34px;"><div class="ic ok">✓</div><div class="body" style="font-weight:700;">풀타임 근무도 가능</div></div>
+</div>
+<div class="card permit" style="left:1180px;top:360px;width:620px;height:430px;padding:40px;">
+  <div class="row" style="justify-content:space-between;">
+    <div class="mono" style="font-size:22px;font-weight:700;letter-spacing:.14em;color:var(--ink-soft);">WORK PERMIT</div>
+    <svg width="64" height="64" viewBox="0 0 64 64"><path fill="#C8281E" d="M32 4l5 11 7-4-2 14 9-6 2 6 9-2-5 12 4 3-15 9 2 8-14-3v12h-4V52l-14 3 2-8-15-9 4-3-5-12 9 2 2-6 9 6-2-14 7 4z"/></svg>
+  </div>
+  <div style="font-size:64px;font-weight:900;letter-spacing:-0.03em;margin-top:26px;">OPEN</div>
+  <div style="font-size:30px;font-weight:600;color:var(--ink-soft);margin-top:6px;">고용주 · 직종 · 지역 제한 없음</div>
+  <div style="margin-top:34px;height:4px;background:var(--line);"></div>
+  <div class="row" style="margin-top:26px;gap:16px;">
+    <div style="width:120px;height:18px;border-radius:9px;background:var(--paper-3);"></div>
+    <div style="width:220px;height:18px;border-radius:9px;background:var(--paper-3);"></div>
+  </div>
+  <div class="row" style="margin-top:16px;gap:16px;">
+    <div style="width:260px;height:18px;border-radius:9px;background:var(--paper-3);"></div>
+  </div>
+</div>
+<div class="stamp ok st" style="left:1470px;top:690px;font-size:46px;">LMIA 면제</div>
+
+        </div>
+      </div>
+      <script>
+
+const R='[data-composition-id="s04"] ';
+const tl=gsap.timeline({paused:true});
+const $=(s)=>R+s;
+function rise(s,t,o){o=o||{};tl.fromTo($(s),{opacity:0,y:o.y==null?40:o.y,x:o.x||0,scale:o.s||1},{opacity:1,y:0,x:0,scale:1,duration:o.d||0.6,ease:o.e||'power3.out',stagger:o.st||0},t);}
+function popin(s,t,o){o=o||{};tl.fromTo($(s),{opacity:0,scale:o.s||0.6},{opacity:1,scale:1,duration:o.d||0.55,ease:o.e||'back.out(1.7)',stagger:o.st||0},t);}
+function slide(s,t,dx,o){o=o||{};tl.fromTo($(s),{opacity:0,x:dx},{opacity:1,x:0,duration:o.d||0.7,ease:o.e||'expo.out',stagger:o.st||0},t);}
+function stamp(s,t,rot){tl.fromTo($(s),{opacity:0,scale:1.9,rotation:rot-14},{opacity:1,scale:1,rotation:rot,duration:0.42,ease:'power4.in'},t);
+  tl.fromTo($(s),{y:0},{y:4,duration:0.08,yoyo:true,repeat:1,ease:'none',immediateRender:false},t+0.42);}
+function draw(s,t,d,e){tl.fromTo($(s),{strokeDashoffset:1},{strokeDashoffset:0,duration:d||0.9,ease:e||'power2.inOut'},t);}
+function bar(s,t,o){o=o||{};tl.fromTo($(s),{scaleX:0},{scaleX:1,duration:o.d||0.8,ease:o.e||'power3.out',stagger:o.st||0},t);}
+function barY(s,t,o){o=o||{};tl.fromTo($(s),{scaleY:0},{scaleY:1,duration:o.d||0.9,ease:o.e||'power3.out',stagger:o.st||0},t);}
+function strike(s,t){tl.fromTo($(s),{scaleX:0},{scaleX:1,duration:0.35,ease:'power2.in'},t);}
+function dim(s,t,v){tl.fromTo($(s),{opacity:1},{opacity:v==null?0.28:v,duration:0.5,ease:'power1.inOut'},t);}
+function count(s,t,from,to,d,suffix){const el=document.querySelector($(s));const o={v:from};
+  tl.fromTo(o,{v:from},{v:to,duration:d||1,ease:'power2.out',onUpdate:()=>{el.textContent=Math.round(o.v)+(suffix||'');}},t);}
+function ambient(dur){if(document.querySelector($('.ghost')))tl.fromTo($('.ghost'),{x:0},{x:-160,duration:dur,ease:'none'},0);
+  if(document.querySelector($('.glow')))tl.fromTo($('.glow'),{scale:0.9,opacity:0.7},{scale:1.08,opacity:1,duration:dur/4,ease:'sine.inOut',yoyo:true,repeat:3},0);}
+
+
+ambient(25.25);
+rise('.kicker',0.9,{y:0,x:-30});
+rise('.h1',1.05,{y:50,e:'expo.out',d:0.9});
+tl.fromTo($('.permit'),{opacity:0,y:80,rotation:6},{opacity:1,y:0,rotation:-2,duration:1.0,ease:'expo.out'},1.5);
+tl.fromTo($('.permit'),{y:0},{y:-14,duration:3,ease:'sine.inOut',yoyo:true,repeat:5,immediateRender:false},2.5);
+slide('.f0',6.33,-60);
+slide('.f1',10.25,-60);
+slide('.f2',15.74,-60);
+slide('.f3',22.62,-60);
+stamp('.st',11.04,-8);
+
+window.__timelines["s04"]=tl;
+      </script>
+    </template>
+  </body>
+</html>

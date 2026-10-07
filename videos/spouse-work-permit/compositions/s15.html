@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+        [data-composition-id="s15"]{position:absolute;inset:0;}
+      </style>
+      <div id="s15-root" data-composition-id="s15" data-width="1920" data-height="1080" data-duration="20.52">
+        <div class="sc">
+
+<div class="ghost" data-layout-allow-overflow data-layout-allow-occlusion style="left:760px;top:480px;">PGWP</div>
+<div class="kicker">오해 03</div>
+<div class="h1" style="font-size:66px;">“컬리지 졸업하면 그때 배우자 워크퍼밋 받으면 되죠?”</div>
+<div class="card f0" style="left:120px;top:380px;width:520px;height:250px;padding:34px 36px;">
+  <div class="tag">지금</div>
+  <div style="font-size:50px;font-weight:900;margin-top:12px;">학생비자</div>
+  <div class="muted" style="font-size:30px;font-weight:600;margin-top:10px;">컬리지 재학</div>
+</div><div class="card f1" style="left:700px;top:380px;width:520px;height:250px;padding:34px 36px;">
+  <div class="tag">졸업 후</div>
+  <div style="font-size:50px;font-weight:900;margin-top:12px;">PGWP</div>
+  <div class="muted" style="font-size:30px;font-weight:600;margin-top:10px;">졸업 후 취업비자</div>
+</div><div class="card f2" style="left:1280px;top:380px;width:520px;height:250px;padding:34px 36px;border-color:var(--red);">
+  <div class="tag">판단 기준</div>
+  <div style="font-size:50px;font-weight:900;margin-top:12px;">직종 TEER</div>
+  <div class="muted" style="font-size:30px;font-weight:600;margin-top:10px;">취업비자 기준으로 다시 판단</div>
+</div>
+<svg style="position:absolute;left:640px;top:470px;" width="1200" height="80" viewBox="0 0 1200 80">
+  <path class="draw a0" pathLength="1" stroke-dasharray="1" d="M4 40 H 56 M 36 20 L 58 40 L 36 60" stroke="#18233A" stroke-width="8"/>
+  <path class="draw a1" pathLength="1" stroke-dasharray="1" d="M584 40 H 636 M 616 20 L 638 40 L 616 60" stroke="#18233A" stroke-width="8"/>
+</svg>
+<div class="stamp no big" style="left:540px;top:700px;font-size:60px;">학생일 때와 기준이 완전히 달라짐</div>
+
+        </div>
+      </div>
+      <script>
+
+const R='[data-composition-id="s15"] ';
+const tl=gsap.timeline({paused:true});
+const $=(s)=>R+s;
+function rise(s,t,o){o=o||{};tl.fromTo($(s),{opacity:0,y:o.y==null?40:o.y,x:o.x||0,scale:o.s||1},{opacity:1,y:0,x:0,scale:1,duration:o.d||0.6,ease:o.e||'power3.out',stagger:o.st||0},t);}
+function popin(s,t,o){o=o||{};tl.fromTo($(s),{opacity:0,scale:o.s||0.6},{opacity:1,scale:1,duration:o.d||0.55,ease:o.e||'back.out(1.7)',stagger:o.st||0},t);}
+function slide(s,t,dx,o){o=o||{};tl.fromTo($(s),{opacity:0,x:dx},{opacity:1,x:0,duration:o.d||0.7,ease:o.e||'expo.out',stagger:o.st||0},t);}
+function stamp(s,t,rot){tl.fromTo($(s),{opacity:0,scale:1.9,rotation:rot-14},{opacity:1,scale:1,rotation:rot,duration:0.42,ease:'power4.in'},t);
+  tl.fromTo($(s),{y:0},{y:4,duration:0.08,yoyo:true,repeat:1,ease:'none',immediateRender:false},t+0.42);}
+function draw(s,t,d,e){tl.fromTo($(s),{strokeDashoffset:1},{strokeDashoffset:0,duration:d||0.9,ease:e||'power2.inOut'},t);}
+function bar(s,t,o){o=o||{};tl.fromTo($(s),{scaleX:0},{scaleX:1,duration:o.d||0.8,ease:o.e||'power3.out',stagger:o.st||0},t);}
+function barY(s,t,o){o=o||{};tl.fromTo($(s),{scaleY:0},{scaleY:1,duration:o.d||0.9,ease:o.e||'power3.out',stagger:o.st||0},t);}
+function strike(s,t){tl.fromTo($(s),{scaleX:0},{scaleX:1,duration:0.35,ease:'power2.in'},t);}
+function dim(s,t,v){tl.fromTo($(s),{opacity:1},{opacity:v==null?0.28:v,duration:0.5,ease:'power1.inOut'},t);}
+function count(s,t,from,to,d,suffix){const el=document.querySelector($(s));const o={v:from};
+  tl.fromTo(o,{v:from},{v:to,duration:d||1,ease:'power2.out',onUpdate:()=>{el.textContent=Math.round(o.v)+(suffix||'');}},t);}
+function ambient(dur){if(document.querySelector($('.ghost')))tl.fromTo($('.ghost'),{x:0},{x:-160,duration:dur,ease:'none'},0);
+  if(document.querySelector($('.glow')))tl.fromTo($('.glow'),{scale:0.9,opacity:0.7},{scale:1.08,opacity:1,duration:dur/4,ease:'sine.inOut',yoyo:true,repeat:3},0);}
+
+
+ambient(19.82);
+rise('.kicker',0.3,{y:0,x:-30});
+rise('.h1',0.45,{y:40,e:'expo.out',d:0.9});
+rise('.f0',5.75,{y:50});
+draw('.a0',7.27,0.5);
+rise('.f1',8.02,{y:50});
+draw('.a1',10.3,0.5);
+rise('.f2',11.06,{y:50,e:'back.out(1.5)'});
+stamp('.big',16.16,-3);
+
+window.__timelines["s15"]=tl;
+      </script>
+    </template>
+  </body>
+</html>
