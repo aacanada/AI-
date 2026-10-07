@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<style>
+@font-face{font-family:"Pretendard";src:url("../assets/fonts/Pretendard-Bold.woff2") format("woff2");font-weight:700;}
+@font-face{font-family:"Pretendard";src:url("../assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");font-weight:800;}
+@font-face{font-family:"Pretendard";src:url("../assets/fonts/Pretendard-Black.woff2") format("woff2");font-weight:900;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{width:1280px;height:720px;overflow:hidden;}
+body{font-family:"Pretendard",sans-serif;}
+.t{position:relative;width:1280px;height:720px;overflow:hidden;padding:52px 60px;}
+/* dark variant */
+.dark{background:#16202E;color:#fff;}
+.dark .grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 2px,transparent 2px),linear-gradient(90deg,rgba(255,255,255,.05) 2px,transparent 2px);background-size:48px 48px;}
+.dark .glow{position:absolute;right:-220px;top:-260px;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(247,208,70,.32),rgba(247,208,70,0) 62%);}
+/* light variant */
+.light{background:#F5F2EA;color:#1C2431;}
+.light .grid{position:absolute;inset:0;background-image:linear-gradient(rgba(28,36,49,.07) 2px,transparent 2px),linear-gradient(90deg,rgba(28,36,49,.07) 2px,transparent 2px);background-size:48px 48px;}
+.light .glow{position:absolute;right:-220px;top:-260px;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(247,208,70,.45),rgba(247,208,70,0) 62%);}
+
+.content{position:relative;z-index:1;}
+.kicker{display:inline-flex;align-items:center;gap:14px;font-size:68px;font-weight:900;letter-spacing:-.03em;line-height:1;}
+.kicker .flag{display:inline-block;width:20px;height:62px;background:#D2343F;border-radius:4px;}
+.cities{display:flex;gap:14px;margin-top:30px;}
+.city{font-size:62px;font-weight:900;color:#fff;padding:10px 26px 14px;border-radius:18px;letter-spacing:-.03em;line-height:1;box-shadow:0 8px 0 rgba(0,0,0,.25);}
+.van{background:#5B3FA0;transform:rotate(-2deg);} .tor{background:#13845A;transform:rotate(1.5deg);} .mtl{background:#D2343F;transform:rotate(-1.5deg);}
+.big{margin-top:40px;font-size:148px;font-weight:900;letter-spacing:-.05em;line-height:1.02;}
+.big .y{display:inline-block;background:#F7D046;color:#16202E;padding:0 22px 8px;border-radius:14px;transform:rotate(-1.5deg);}
+.big .w{display:block;margin-top:8px;}
+.card{position:absolute;z-index:1;right:56px;top:228px;width:300px;padding:22px 26px;border-radius:22px;transform:rotate(3deg);}
+.dark .card{background:#FBF9F4;color:#1C2431;box-shadow:0 18px 40px rgba(0,0,0,.45);}
+.light .card{background:#1C2431;color:#fff;box-shadow:0 18px 40px rgba(28,36,49,.3);}
+.card h3{font-size:26px;font-weight:900;margin-bottom:10px;}
+.card li{list-style:none;font-size:27px;font-weight:800;line-height:1.5;display:flex;gap:10px;align-items:center;}
+.card li::before{content:"✓";color:#13845A;font-weight:900;}
+.light .card li::before{color:#F7D046;}
+.brand{position:absolute;z-index:1;right:60px;bottom:40px;font-size:30px;font-weight:900;letter-spacing:.04em;}
+.brand span{color:#D2343F;}
+</style>
+</head>
+<body>
+<div class="t VARIANT">
+  <div class="grid"></div><div class="glow"></div>
+  <div class="content">
+    <div class="kicker"><span class="flag"></span>캐나다 자녀무상교육</div>
+    <div class="cities"><span class="city van">밴쿠버</span><span class="city tor">토론토</span><span class="city mtl">몬트리올</span></div>
+    <div class="big"><span class="y">8가지 기준</span><span class="w">완벽 비교</span></div>
+  </div>
+  <div class="card"><h3>이것까지 비교했어요</h3><ul>
+    <li>교육환경</li><li>렌트비</li><li>학비</li><li>부모 학비</li><li>문화 환경</li><li>인구 구성</li><li>날씨</li><li>자동차</li></ul></div>
+  <div class="brand">AA <span>CANADA</span></div>
+</div>
+</body>
+</html>
