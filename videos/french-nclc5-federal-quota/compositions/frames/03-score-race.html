@@ -1,0 +1,374 @@
+<template>
+<style>
+@font-face{font-family:"Pretendard";font-weight:800;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");}
+@font-face{font-family:"Pretendard";font-weight:700;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");}
+@font-face{font-family:"Pretendard";font-weight:500;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Medium.woff2") format("woff2");}
+@font-face{font-family:"Pretendard";font-weight:900;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Black.woff2") format("woff2");}
+</style>
+<script src="assets/vendor/gsap.min.js"></script>
+<div id="root" data-composition-id="03-score-race" data-width="1080" data-height="1920" data-duration="12.103">
+  <style>
+    #root {
+      position: relative;
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      font-family: "Pretendard", sans-serif;
+      container-type: size;
+    }
+    [data-composition-id="03-score-race"] .s03-bg {
+      position: absolute;
+      inset: 0;
+      background: #fdfae7;
+    }
+    [data-composition-id="03-score-race"] .s03-stage {
+      position: absolute;
+      inset: 0;
+    }
+    [data-composition-id="03-score-race"] .s03-cam {
+      position: absolute;
+      inset: 0;
+      transform-origin: 50% 45%;
+    }
+    /* ---------- title ---------- */
+    [data-composition-id="03-score-race"] .s03-title {
+      position: absolute;
+      left: 60px;
+      right: 60px;
+      top: 150px;
+      color: #111111;
+    }
+    [data-composition-id="03-score-race"] .s03-accent-line {
+      width: 60px;
+      height: 4px;
+      border-radius: 2px;
+      background: #1e2bfa;
+      margin-bottom: 34px;
+    }
+    [data-composition-id="03-score-race"] .s03-line1 {
+      font-size: 84px;
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+    }
+    [data-composition-id="03-score-race"] .s03-word {
+      display: inline-block;
+      margin-right: 0.22em;
+    }
+    [data-composition-id="03-score-race"] .s03-line2 {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 112px;
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: #1e2bfa;
+      white-space: nowrap;
+    }
+    /* ---------- ranked stack ---------- */
+    [data-composition-id="03-score-race"] .s03-stack {
+      position: absolute;
+      left: 0;
+      top: 600px;
+      width: 1080px;
+      height: 930px;
+    }
+    [data-composition-id="03-score-race"] .s03-rank {
+      position: absolute;
+      left: 40px;
+      width: 70px;
+      height: 110px;
+      line-height: 110px;
+      text-align: center;
+      font-size: 40px;
+      font-weight: 800;
+      color: #9a9a9a;
+      font-variant-numeric: tabular-nums;
+    }
+    [data-composition-id="03-score-race"] .s03-card {
+      position: absolute;
+      left: 130px;
+      width: 890px;
+      height: 110px;
+      box-sizing: border-box;
+      background: rgba(30,43,250,0.04);
+      border: 1.5px solid rgba(30,43,250,0.2);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      padding: 0 32px 0 26px;
+    }
+    [data-composition-id="03-score-race"] .s03-card-hl {
+      position: absolute;
+      inset: -1.5px;
+      border-radius: 14px;
+      border: 3px solid #1e2bfa;
+      background: rgba(30,43,250,0.08);
+      opacity: 0;
+    }
+    [data-composition-id="03-score-race"] .s03-avatar {
+      position: relative;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: rgba(30,43,250,0.15);
+      flex: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    [data-composition-id="03-score-race"] .s03-avatar svg {
+      width: 34px;
+      height: 34px;
+    }
+    [data-composition-id="03-score-race"] .s03-score {
+      position: relative;
+      width: 110px;
+      margin-left: 22px;
+      font-size: 58px;
+      font-weight: 800;
+      color: #1e2bfa;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.02em;
+      flex: none;
+    }
+    [data-composition-id="03-score-race"] .s03-track {
+      position: relative;
+      flex: 1;
+      height: 28px;
+      border-radius: 6px;
+      background: rgba(30,43,250,0.08);
+      overflow: hidden;
+    }
+    [data-composition-id="03-score-race"] .s03-fill {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: 6px;
+      background: #1e2bfa;
+      transform-origin: left center;
+    }
+    /* ---------- cut-off line ---------- */
+    [data-composition-id="03-score-race"] .s03-cut {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 0;
+      z-index: 5;
+    }
+    [data-composition-id="03-score-race"] .s03-cut-line {
+      position: absolute;
+      left: 30px;
+      width: 1020px;
+      top: -3px;
+      height: 0;
+      border-top: 6px dashed #dc2626;
+      transform-origin: left center;
+    }
+    [data-composition-id="03-score-race"] .s03-cut-pill {
+      position: absolute;
+      right: 40px;
+      top: -40px;
+      height: 80px;
+      box-sizing: border-box;
+      padding: 0 30px 0 32px;
+      border-radius: 100px;
+      background: #dc2626;
+      color: #fdfae7;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      transform-origin: right center;
+    }
+    [data-composition-id="03-score-race"] .s03-cut-label {
+      font-size: 36px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+    }
+    [data-composition-id="03-score-race"] .s03-cut-numwrap {
+      width: 84px;
+      display: flex;
+      justify-content: center;
+    }
+    [data-composition-id="03-score-race"] .s03-cut-num {
+      display: inline-block;
+      font-size: 54px;
+      font-weight: 900;
+      font-variant-numeric: tabular-nums;
+      transform-origin: center center;
+    }
+    /* ---------- -3점 callout ---------- */
+    [data-composition-id="03-score-race"] .s03-ring {
+      position: absolute;
+      left: 186px;
+      top: 374px;
+      width: 200px;
+      height: 130px;
+      box-sizing: border-box;
+      border: 5px solid #dc2626;
+      border-radius: 50%;
+      z-index: 6;
+    }
+    [data-composition-id="03-score-race"] .s03-gap {
+      position: absolute;
+      left: 404px;
+      top: 404px;
+      height: 70px;
+      box-sizing: border-box;
+      padding: 0 26px;
+      border-radius: 100px;
+      background: #fdfae7;
+      border: 4px solid #dc2626;
+      color: #dc2626;
+      font-size: 42px;
+      font-weight: 900;
+      line-height: 62px;
+      white-space: nowrap;
+      z-index: 6;
+    }
+    [data-composition-id="03-score-race"] .s03-progress {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 324px;
+      height: 3px;
+      background: #1e2bfa;
+    }
+  </style>
+
+  <!-- full-bleed ground -->
+  <div class="s03-bg clip" data-start="0" data-duration="12.103" data-track-index="0"></div>
+
+  <div class="s03-stage clip" data-start="0" data-duration="12.103" data-track-index="1">
+    <div class="s03-cam">
+      <div class="s03-title">
+        <div class="s03-accent-line"></div>
+        <div class="s03-line1"><span class="s03-word">거의</span><span class="s03-word">모든</span><span class="s03-word">주정부가</span></div>
+        <div class="s03-line2">점수 경쟁으로</div>
+      </div>
+
+      <div class="s03-stack">
+        <!-- rank column (static slots) -->
+        <div class="s03-rank" style="top:0px">1</div>
+        <div class="s03-rank" style="top:128px">2</div>
+        <div class="s03-rank" style="top:256px">3</div>
+        <div class="s03-rank" style="top:384px">4</div>
+        <div class="s03-rank" style="top:512px">5</div>
+        <div class="s03-rank" style="top:640px">6</div>
+        <div class="s03-rank" style="top:768px">7</div>
+
+        <!-- cards are populated by script (sorted slot positions); arrival order is shuffled -->
+        <div class="s03-cards"></div>
+
+        <div class="s03-cut">
+          <div class="s03-cut-line"></div>
+          <div class="s03-cut-pill">
+            <span class="s03-cut-label">커트라인</span>
+            <span class="s03-cut-numwrap"><span class="s03-cut-num">68</span></span>
+          </div>
+        </div>
+
+        <div class="s03-ring"></div>
+        <div class="s03-gap">-3점</div>
+      </div>
+    </div>
+    <div class="s03-progress"></div>
+  </div>
+
+  <script>
+    (function () {
+      var ID = "03-score-race";
+      var root = document.querySelector('[data-composition-id="' + ID + '"]');
+      var q = function (s) { return root.querySelector(s); };
+      var qa = function (s) { return Array.prototype.slice.call(root.querySelectorAll(s)); };
+
+      var PITCH = 128;
+      var SORTED = [92, 88, 85, 81, 77, 73, 69];        // final slot order
+      var ARRIVAL = [81, 69, 92, 77, 85, 73, 88];       // shuffled order they cascade in
+      var AVATAR = '<svg viewBox="0 0 24 24" fill="#1e2bfa"><circle cx="12" cy="8" r="4.2"/><path d="M3.5 21c0-4.6 3.8-7.6 8.5-7.6s8.5 3 8.5 7.6z"/></svg>';
+
+      var host = q(".s03-cards");
+      var cards = {};
+      SORTED.forEach(function (score, slot) {
+        var el = document.createElement("div");
+        el.className = "s03-card";
+        el.style.top = slot * PITCH + "px";
+        el.innerHTML =
+          '<div class="s03-card-hl"></div>' +
+          '<div class="s03-avatar">' + AVATAR + '</div>' +
+          '<div class="s03-score">' + score + '</div>' +
+          '<div class="s03-track"><span class="s03-fill"></span></div>';
+        host.appendChild(el);
+        cards[score] = { el: el, slot: slot };
+      });
+
+      var tl = gsap.timeline({ paused: true });
+
+      // slow camera drift under the whole shot
+      tl.fromTo(q(".s03-cam"), { scale: 1 }, { scale: 1.03, duration: 11.703, ease: "none" }, 0);
+
+      // ---- Scene 1 (0.0–2.6): per-word title, then cobalt line on "주정부가" (2.0)
+      tl.fromTo(q(".s03-accent-line"), { scaleX: 0, transformOrigin: "left center" }, { scaleX: 1, duration: 0.5, ease: "power3.out" }, 0.05);
+      tl.fromTo(qa(".s03-word"),
+        { opacity: 0, y: 46, filter: "blur(8px)" },
+        { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.55, ease: "power3.out", stagger: 0.32 }, 0.1);
+      tl.fromTo(q(".s03-line2"),
+        { opacity: 0, y: 70, scale: 0.92, transformOrigin: "left bottom" },
+        { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: "back.out(1.6)" }, 2.0);
+
+      // ---- Scene 2 (2.6–6.8): shuffled cascade, then FLIP re-sort on "높은 점수부터" (3.6)
+      ARRIVAL.forEach(function (score, i) {
+        var c = cards[score];
+        var off = (i - c.slot) * PITCH; // sits at arrival slot first
+        var at = 2.6 + i * 0.09;
+        tl.fromTo(c.el, { opacity: 0, x: -90, y: off }, { opacity: 1, x: 0, y: off, duration: 0.5, ease: "power3.out" }, at);
+        tl.fromTo(c.el.querySelector(".s03-fill"), { scaleX: 0 }, { scaleX: score / 100, duration: 0.7, ease: "power3.out" }, at + 0.1);
+      });
+      ARRIVAL.forEach(function (score, i) {
+        var c = cards[score];
+        tl.to(c.el, { y: 0, duration: 0.95, ease: "power3.inOut" }, 3.6 + c.slot * 0.03);
+      });
+      tl.fromTo(qa(".s03-rank"), { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.4, ease: "power2.out", stagger: 0.06 }, 4.45);
+      // "높은 점수부터 뽑는" — the top of the ranking lights up
+      [92, 88, 85].forEach(function (score, k) {
+        tl.fromTo(cards[score].el.querySelector(".s03-card-hl"), { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power2.out" }, 4.9 + k * 0.12);
+      });
+      tl.fromTo(qa(".s03-rank").slice(0, 3), { color: "#9a9a9a" }, { color: "#1e2bfa", duration: 0.4, ease: "power2.out", stagger: 0.12 }, 4.9);
+
+      // ---- Scene 3 (6.8–9.0): red cut-off line appears at the bottom, climbs card by card, counts 68 -> 84
+      var cut = q(".s03-cut");
+      var STOPS = [887, 759, 631, 503, 375];     // gaps below 69 / 73 / 77 / 81 / 85
+      tl.fromTo(cut, { y: STOPS[0], opacity: 0 }, { y: STOPS[0], opacity: 1, duration: 0.2, ease: "none" }, 6.9);
+      tl.fromTo(q(".s03-cut-line"), { scaleX: 0 }, { scaleX: 1, duration: 0.45, ease: "power3.out" }, 6.9);
+      tl.fromTo(q(".s03-cut-pill"), { scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.8)" }, 7.0);
+
+      var dimOrder = [69, 73, 77, 81];
+      for (var s = 1; s < STOPS.length; s++) {
+        var t0 = 7.4 + (s - 1) * 0.4;
+        tl.to(cut, { y: STOPS[s], duration: 0.34, ease: "power2.inOut" }, t0);
+        tl.to(cards[dimOrder[s - 1]].el, { opacity: 0.25, duration: 0.3, ease: "power2.out" }, t0 + 0.14);
+        tl.to(qa(".s03-rank")[cards[dimOrder[s - 1]].slot], { opacity: 0.25, duration: 0.3, ease: "power2.out" }, t0 + 0.14);
+      }
+
+      // count-up with dynamic scale (value + scale share timing and ease)
+      var num = q(".s03-cut-num");
+      var state = { v: 68 };
+      tl.to(state, {
+        v: 84, duration: 1.55, ease: "power1.inOut",
+        onUpdate: function () { num.textContent = Math.round(state.v); }
+      }, 7.4);
+      tl.fromTo(num, { scale: 0.6 }, { scale: 1, duration: 1.55, ease: "power1.inOut" }, 7.4);
+
+      // ---- Scene 4 (9.0–11.7): "-3점" marker circles the first card under the line, then holds
+      tl.fromTo(q(".s03-ring"), { scale: 0, rotation: -12, opacity: 1 }, { scale: 1, rotation: -4, duration: 0.6, ease: "back.out(1.7)" }, 9.05);
+      tl.fromTo(q(".s03-gap"), { opacity: 0, x: -30, scale: 0.7, rotation: 0 }, { opacity: 1, x: 0, scale: 1, rotation: -3, duration: 0.5, ease: "back.out(1.8)" }, 9.3);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</div>
+</template>

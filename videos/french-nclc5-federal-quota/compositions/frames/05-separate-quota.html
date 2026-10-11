@@ -1,0 +1,295 @@
+<template id="05-separate-quota-template">
+  <div id="root" data-composition-id="05-separate-quota" data-width="1080" data-height="1920" data-start="0" data-duration="11.831">
+    <style>
+      @font-face{font-family:"Pretendard";font-weight:800;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");}
+      @font-face{font-family:"Pretendard";font-weight:700;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");}
+      @font-face{font-family:"Pretendard";font-weight:500;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Medium.woff2") format("woff2");}
+      @font-face{font-family:"Pretendard";font-weight:900;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Black.woff2") format("woff2");}
+
+      #root {
+        position: relative;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        font-family: "Pretendard", sans-serif;
+        color: #111111;
+      }
+      [class~="05-separate-quota-bg"] {
+        position: absolute; left: 0; top: 0; width: 1080px; height: 1920px;
+        background: #fdfae7;
+      }
+      [class~="05-separate-quota-bloom"] {
+        position: absolute; left: 40px; top: 1010px; width: 1000px; height: 640px;
+        background: radial-gradient(ellipse at center, rgba(30,43,250,0.13) 0%, rgba(30,43,250,0.05) 40%, rgba(30,43,250,0) 70%);
+        opacity: 0;
+      }
+      [class~="05-separate-quota-stage"] {
+        position: absolute; left: 0; top: 0; width: 1080px; height: 1920px;
+      }
+
+      /* ---- title ---- */
+      [class~="05-separate-quota-accent"] {
+        position: absolute; left: 510px; top: 190px; width: 60px; height: 4px;
+        border-radius: 2px; background: #1e2bfa;
+      }
+      [class~="05-separate-quota-title"] {
+        position: absolute; left: 0; top: 230px; width: 1080px;
+        display: flex; justify-content: center; align-items: baseline; gap: 34px;
+        font-size: 132px; font-weight: 800; line-height: 1.08; letter-spacing: -0.02em;
+        color: #111111;
+      }
+      [class~="05-separate-quota-w1"], [class~="05-separate-quota-w2"] { display: inline-block; position: relative; }
+      [class~="05-separate-quota-underline"] {
+        position: absolute; left: 0; right: 0; bottom: -10px; height: 10px;
+        border-radius: 6px; background: #1e2bfa;
+      }
+
+      /* ---- nominee token ---- */
+      [class~="05-separate-quota-token"] {
+        position: absolute; left: 440px; top: 470px; width: 200px; height: 270px;
+        z-index: 20;
+      }
+      [class~="05-separate-quota-disc"] {
+        position: absolute; left: 25px; top: 0; width: 150px; height: 150px;
+        border-radius: 50%; background: #1e2bfa;
+        display: flex; align-items: center; justify-content: center;
+      }
+      [class~="05-separate-quota-disc"] svg { width: 88px; height: 88px; display: block; }
+      [class~="05-separate-quota-tag"] {
+        position: absolute; left: -60px; top: 172px; width: 320px; height: 64px;
+        border-radius: 100px; background: rgba(30,43,250,0.08);
+        border: 1.5px solid rgba(30,43,250,0.2);
+        display: flex; align-items: center; justify-content: center;
+        font-size: 34px; font-weight: 700; color: #1e2bfa; letter-spacing: -0.01em;
+      }
+
+      /* ---- cards (two-layer: float wrapper + entry card) ---- */
+      [class~="05-separate-quota-cards"] {
+        position: absolute; left: 0; top: 0; width: 1080px; height: 1920px;
+        perspective: 1800px; perspective-origin: 540px 1140px;
+        transform-style: preserve-3d;
+      }
+      [class~="05-separate-quota-float"] {
+        position: absolute; left: 90px; width: 900px;
+        transform-style: preserve-3d;
+      }
+      [class~="05-separate-quota-float-top"] { top: 790px; height: 320px; }
+      [class~="05-separate-quota-float-bot"] { top: 1170px; height: 390px; }
+      [class~="05-separate-quota-card"] {
+        position: absolute; left: 0; top: 0; width: 900px; height: 100%;
+        box-sizing: border-box; border-radius: 14px;
+        background: rgba(30,43,250,0.04);
+        border: 1.5px solid rgba(30,43,250,0.2);
+        transform-style: preserve-3d;
+        overflow: hidden;
+      }
+      [class~="05-separate-quota-card-bot"] {
+        background: rgba(30,43,250,0.08);
+        border-left: 6px solid #1e2bfa;
+      }
+      [class~="05-separate-quota-hilite"] {
+        position: absolute; left: 0; top: 0; width: 100%; height: 100%;
+        background: rgba(30,43,250,0.07); opacity: 0;
+      }
+      [class~="05-separate-quota-eyebrow"] {
+        position: absolute; left: 56px; top: 50px;
+        font-size: 30px; font-weight: 700; letter-spacing: 0.08em; color: #6b6b6b;
+      }
+      [class~="05-separate-quota-card-bot"] [class~="05-separate-quota-eyebrow"] { color: #1e2bfa; }
+      [class~="05-separate-quota-label"] {
+        position: absolute; left: 56px; top: 98px;
+        font-size: 58px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; color: #111111;
+      }
+      [class~="05-separate-quota-tally"] {
+        position: absolute; left: 56px; top: 186px;
+        display: flex; align-items: baseline; gap: 22px;
+      }
+      [class~="05-separate-quota-tally-k"] { font-size: 32px; font-weight: 500; color: #6b6b6b; }
+      [class~="05-separate-quota-tally-v"] {
+        display: inline-block;
+        font-size: 104px; font-weight: 800; line-height: 1; letter-spacing: -0.02em; color: #9a9a9a;
+      }
+      [class~="05-separate-quota-counter"] {
+        position: absolute; left: 56px; top: 190px; height: 160px; width: 520px;
+        overflow: hidden;
+      }
+      [class~="05-separate-quota-num"] {
+        position: absolute; left: 0; top: 0; height: 160px;
+        display: flex; align-items: baseline; gap: 16px;
+        font-size: 150px; font-weight: 800; line-height: 1.05; letter-spacing: -0.03em; color: #1e2bfa;
+      }
+      [class~="05-separate-quota-num"] small { font-size: 46px; font-weight: 700; letter-spacing: 0; }
+      [class~="05-separate-quota-slot"] {
+        position: absolute; left: 640px; top: 150px; width: 170px; height: 170px;
+        border-radius: 50%; border: 2px dashed rgba(30,43,250,0.3);
+        box-sizing: border-box;
+      }
+
+      /* ---- badges (on parent, never inside a tilted card) ---- */
+      [class~="05-separate-quota-badge"] {
+        position: absolute; height: 76px; padding: 0 30px 0 18px;
+        border-radius: 100px; background: #fdfae7; box-sizing: border-box;
+        display: flex; align-items: center; gap: 12px;
+        font-size: 36px; font-weight: 800; letter-spacing: -0.01em;
+        z-index: 30;
+      }
+      [class~="05-separate-quota-badge"] i {
+        width: 48px; height: 48px; border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+      }
+      [class~="05-separate-quota-badge"] svg { width: 26px; height: 26px; display: block; }
+      [class~="05-separate-quota-badge-x"] {
+        left: 690px; top: 752px; border: 2px solid rgba(220,38,38,0.4); color: #dc2626;
+      }
+      [class~="05-separate-quota-badge-x"] i { background: #dc2626; }
+      [class~="05-separate-quota-badge-ok"] {
+        left: 892px; top: 1128px; width: 84px; height: 84px; padding: 0; justify-content: center;
+        border: 2px solid rgba(5,150,105,0.4); color: #059669;
+      }
+      [class~="05-separate-quota-badge-ok"] i { background: #059669; }
+
+      [class~="05-separate-quota-progress"] {
+        position: absolute; left: 0; bottom: 0; width: 540px; height: 3px; background: #1e2bfa;
+      }
+    </style>
+
+    <div class="clip 05-separate-quota-bg" data-start="0" data-duration="11.831" data-track-index="0">
+      <div class="05-separate-quota-bloom"></div>
+    </div>
+
+    <div class="clip 05-separate-quota-stage" data-start="0" data-duration="11.831" data-track-index="1">
+      <div class="05-separate-quota-accent"></div>
+      <div class="05-separate-quota-title">
+        <span class="05-separate-quota-w1">핵심은</span>
+        <span class="05-separate-quota-w2">이것<span class="05-separate-quota-underline"></span></span>
+      </div>
+
+      <div class="05-separate-quota-cards">
+        <div class="05-separate-quota-float 05-separate-quota-float-top">
+          <div class="05-separate-quota-card 05-separate-quota-card-top">
+            <div class="05-separate-quota-copy 05-separate-quota-eyebrow">주정부</div>
+            <div class="05-separate-quota-copy 05-separate-quota-label">주정부 자기 쿼터</div>
+            <div class="05-separate-quota-copy 05-separate-quota-tally">
+              <span class="05-separate-quota-tally-k">차감</span>
+              <span class="05-separate-quota-tally-v">-0</span>
+            </div>
+          </div>
+        </div>
+        <div class="05-separate-quota-float 05-separate-quota-float-bot">
+          <div class="05-separate-quota-card 05-separate-quota-card-bot">
+            <div class="05-separate-quota-hilite"></div>
+            <div class="05-separate-quota-copy 05-separate-quota-eyebrow">연방</div>
+            <div class="05-separate-quota-copy 05-separate-quota-label">연방 불어권 5,000 TO</div>
+            <div class="05-separate-quota-copy 05-separate-quota-counter">
+              <div class="05-separate-quota-num 05-separate-quota-num-a" data-layout-allow-overlap>5,000<small>TO</small></div>
+              <div class="05-separate-quota-num 05-separate-quota-num-b" data-layout-allow-overlap>4,999<small>TO</small></div>
+            </div>
+            <div class="05-separate-quota-copy 05-separate-quota-slot"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="05-separate-quota-badge 05-separate-quota-badge-x">
+        <i><svg viewBox="0 0 26 26"><path d="M6 6 L20 20 M20 6 L6 20" stroke="#fdfae7" stroke-width="4.5" stroke-linecap="round" fill="none"/></svg></i>
+        <span>차감 안 됨</span>
+      </div>
+      <div class="05-separate-quota-badge 05-separate-quota-badge-ok">
+        <i><svg viewBox="0 0 26 26"><path d="M5 13.5 L10.5 19 L21 7.5" stroke="#fdfae7" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></i>
+      </div>
+
+      <div class="05-separate-quota-token">
+        <div class="05-separate-quota-disc">
+          <svg viewBox="0 0 88 88"><circle cx="44" cy="30" r="15" fill="#fdfae7"/><path d="M16 76 C16 58 28 50 44 50 C60 50 72 58 72 76 Z" fill="#fdfae7"/></svg>
+        </div>
+        <div class="05-separate-quota-tag">불어 NCLC 5</div>
+      </div>
+
+      <div class="05-separate-quota-progress"></div>
+    </div>
+
+    <script src="assets/vendor/gsap.min.js"></script>
+    <script>
+      (function () {
+        var FID = "05-separate-quota";
+        var host = document.querySelector('[data-composition-id="' + FID + '"]') || document;
+        function q(name) { return host.querySelector('[class~="' + FID + '-' + name + '"]'); }
+        function qa(name) { return host.querySelectorAll('[class~="' + FID + '-' + name + '"]'); }
+
+        var tl = gsap.timeline({ paused: true });
+        var DUR = 11.331;
+
+        // Voice cues (seconds from frame start)
+        var T = { title: 0.1, token: 1.3, cards: 3.1, quota: 5.9, dim: 7.3, travel: 8.4 };
+
+        // Scene 1 — title slam (kinetic-beat-slam: distinct entrance per phrase on one beat grid)
+        var PULSE = 0.45;
+        var BEATS = [T.title, T.title + PULSE, T.title + PULSE * 2];
+        tl.fromTo(q("w1"), { scale: 1.5, filter: "blur(16px)", opacity: 0 },
+          { scale: 1, filter: "blur(0px)", opacity: 1, duration: 0.5, ease: "power4.out" }, BEATS[0]);
+        tl.fromTo(q("w2"), { x: 240, opacity: 0 },
+          { x: 0, opacity: 1, duration: 0.45, ease: "expo.out" }, BEATS[1]);
+        tl.fromTo(q("underline"), { scaleX: 0, transformOrigin: "0% 50%" },
+          { scaleX: 1, duration: 0.4, ease: "circ.out" }, BEATS[2]);
+        tl.fromTo(q("accent"), { scaleX: 0, opacity: 0 },
+          { scaleX: 1, opacity: 1, duration: 0.4, ease: "power3.out" }, BEATS[0] + 0.1);
+
+        // Scene 2 — nominee token appears on "주정부가"
+        tl.fromTo(q("disc"), { scale: 0, opacity: 0 },
+          { scale: 1, opacity: 1, duration: 0.6, ease: "back.out(1.8)" }, T.token);
+        tl.fromTo(q("tag"), { y: 24, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, T.token + 0.25);
+
+        // Scene 2 — split-tilt cards on "노미니를 주면": opposite wings, mirrored rotateY, stacked
+        var TILT = 10, OVER = 10, SLIDE = 460, ENTRY = 0.95;
+        tl.fromTo(q("card-top"), { x: -SLIDE, rotationY: TILT + OVER, scale: 0.85, opacity: 0 },
+          { x: 0, rotationY: TILT, scale: 1, opacity: 1, duration: ENTRY, ease: "power3.out" }, T.cards);
+        tl.fromTo(q("card-bot"), { x: SLIDE, rotationY: -TILT - OVER, scale: 0.85, opacity: 0 },
+          { x: 0, rotationY: -TILT, scale: 1, opacity: 1, duration: ENTRY, ease: "power3.out" }, T.cards + 0.2);
+        tl.fromTo(qa("copy"), { y: 18, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.45, stagger: 0.08, ease: "power2.out" }, T.cards + 0.5);
+        tl.set(q("num-b"), { yPercent: 100 }, 0);
+
+        // Counter-phase idle float (explicit, finite) — top up while bottom down; returns to 0 before travel
+        var AMP = 5, HALF = 0.95, idle0 = T.cards + 1.3;
+        var topF = q("float-top"), botF = q("float-bot");
+        for (var i = 0; i < 4; i++) {
+          var s = (i % 2 === 0) ? 1 : 0;
+          tl.to(topF, { y: -AMP * s, duration: HALF, ease: "sine.inOut" }, idle0 + i * HALF);
+          tl.to(botF, { y: AMP * s, duration: HALF, ease: "sine.inOut" }, idle0 + i * HALF);
+        }
+
+        // Scene 3 — "-0" tally holds; red ✕ badge spring-pops on the top card's edge
+        tl.fromTo(q("tally-v"), { scale: 1 }, { scale: 1.12, duration: 0.18, ease: "power2.out" }, T.quota);
+        tl.to(q("tally-v"), { scale: 1, duration: 0.35, ease: "power2.inOut" }, T.quota + 0.18);
+        tl.fromTo(q("badge-x"), { scale: 0, opacity: 0, rotation: -8 },
+          { scale: 1, opacity: 1, rotation: 0, duration: 0.6, ease: "back.out(1.7)" }, T.quota + 0.1);
+        // "빠지지 않습니다" — top card dims
+        tl.to(q("card-top"), { opacity: 0.5, duration: 0.6, ease: "power2.out" }, T.dim);
+
+        // Scene 4 — nominee travels down into the bottom (federal) card
+        var TRAVEL = 0.95;
+        tl.to(q("tag"), { opacity: 0, y: -10, duration: 0.3, ease: "power2.in" }, T.travel);
+        tl.to(q("token"), { x: 278, y: 850, scale: 0.72, duration: TRAVEL, ease: "power2.inOut" }, T.travel);
+        tl.fromTo(q("bloom"), { opacity: 0 }, { opacity: 1, duration: 0.7, ease: "power2.out" }, T.travel + 0.4);
+        tl.fromTo(q("hilite"), { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.out" }, T.travel + TRAVEL - 0.1);
+        tl.fromTo(q("slot"), { scale: 1 }, { scale: 1.12, duration: 0.2, ease: "power2.out" }, T.travel + TRAVEL - 0.05);
+        tl.to(q("slot"), { scale: 1, duration: 0.3, ease: "power2.inOut" }, T.travel + TRAVEL + 0.15);
+
+        // counter ticks 5,000 → 4,999
+        var tick = T.travel + TRAVEL + 0.05;
+        tl.fromTo(q("num-a"), { yPercent: 0 }, { yPercent: -100, duration: 0.45, ease: "power3.inOut" }, tick);
+        tl.fromTo(q("num-b"), { yPercent: 100 }, { yPercent: 0, duration: 0.45, ease: "power3.inOut" }, tick);
+
+        // green ✓ badge pops, then hold still
+        tl.fromTo(q("badge-ok"), { scale: 0, opacity: 0, rotation: 8 },
+          { scale: 1, opacity: 1, rotation: 0, duration: 0.6, ease: "back.out(1.7)" }, tick + 0.35);
+
+        // pad timeline to the frame duration (hold)
+        tl.set({}, {}, DUR);
+
+        window.__timelines = window.__timelines || {};
+        window.__timelines[FID] = tl;
+      })();
+    </script>
+  </div>
+</template>

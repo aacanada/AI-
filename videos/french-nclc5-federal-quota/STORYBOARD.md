@@ -23,7 +23,7 @@ music: none
 - voiceover: "캐나다 주정부 이민, 요즘 점수 경쟁 너무 치열하죠? 그런데 불어 하나로, 이 경쟁에서 아예 빠져나오는 방법이 있습니다."
 - duration: 7.755s
 - transition_in: cut
-- status: outline
+- status: animated
 - src: compositions/frames/01-hook.html
 - type: hook
 - persuasion: Pain validation + Counterintuitive claim
@@ -48,7 +48,7 @@ Scene 4 (5.6–7.75s): on "빠져나오는"(6.0s) hard in-place token swap (`dis
 - voiceover: "주정부 이민은 주마다, 1년에 노미니를 줄 수 있는 숫자, 즉 쿼터가 정해져 있습니다. 그런데 지원자는, 쿼터보다 훨씬 많습니다."
 - duration: 9.242s
 - transition_in: push-slide UP
-- status: outline
+- status: animated
 - src: compositions/frames/02-quota.html
 - type: pain_point
 - persuasion: Concretization (abstract quota → a box that overflows)
@@ -72,7 +72,7 @@ Scene 3 (6.4–9.24s): on "지원자는"(6.8s) applicant dots pour in from top a
 - voiceover: "그래서 요즘, 거의 모든 주정부가 점수를 매기고, 높은 점수부터 뽑는 방식으로 바뀌고 있습니다. 커트라인은 계속 올라가고, 몇 점 차이로 기회를 놓치는 분들이 정말 많습니다."
 - duration: 11.703s
 - transition_in: push-slide UP
-- status: outline
+- status: animated
 - src: compositions/frames/03-score-race.html
 - type: pain_point
 - persuasion: Causal chain (부족한 쿼터 → 점수제 → 커트라인 상승)
@@ -89,7 +89,7 @@ Adapt: keep the count-up signature on the cut-off number; the "chart" is a sorte
 Scene 1 (0.0–2.6s): title "거의 모든 주정부가" per-word reveal in the upper third; on "주정부가"(2.0s) the next line "점수 경쟁으로" lands in cobalt.
 Scene 2 (2.6–6.8s): on "점수를 매기고"(2.6s) 7 applicant cards (score 92, 88, 85, 81, 77, 73, 69) cascade in as a vertical ranked stack (`stat-bars-and-fills`, bar length ∝ score), index-staggered; on "높은 점수부터"(3.6s) they re-sort top-to-bottom by score with a smooth FLIP-like slide.
 Scene 3 (6.8–9.0s): on "커트라인은"(6.9s) a red dashed horizontal line labeled "커트라인" appears at the bottom of the stack with a number counter; on "계속 올라가고"(7.4s) it climbs upward card by card while its counter counts up 68 → 84 (`counting-dynamic-scale`); cards below the line grey out to 25%.
-Scene 4 (9.0–11.7s): on "몇 점 차이로"(8.5s) a small callout "-2점" flags the first greyed card just under the line (`css-marker-patterns` circle); holds still.
+Scene 4 (9.0–11.7s): on "몇 점 차이로"(8.5s) a small callout "-3점" flags the first greyed card just under the line (`css-marker-patterns` circle); holds still.
 
 ## Frame 4 — 연방 5,000개 TO
 
@@ -97,7 +97,7 @@ Scene 4 (9.0–11.7s): on "몇 점 차이로"(8.5s) a small callout "-2점" flag
 - voiceover: "그런데 2026년, 연방정부가 중요한 발표를 했습니다. 불어를 하는 이민자를 위해, 연방 몫으로 5,000개의 정원을 따로 마련한 겁니다."
 - duration: 9.567s
 - transition_in: zoom-through
-- status: outline
+- status: animated
 - src: compositions/frames/04-federal-5000.html
 - type: product_intro
 - persuasion: Statistical proof + Concept announcement
@@ -120,7 +120,7 @@ Scene 3 (7.3–9.57s): on "5,000개의"(7.4s) the hero number counts 0 → 5,000
 - voiceover: "핵심은 이겁니다. 주정부가 불어 점수 보유자에게 노미니를 주면, 그 숫자가 주정부 자기 쿼터에서 빠지지 않습니다. 연방이 따로 배정한 5,000개를 쓰는 거죠."
 - duration: 11.331s
 - transition_in: push-slide LEFT
-- status: outline
+- status: animated
 - src: compositions/frames/05-separate-quota.html
 - type: feature_showcase
 - persuasion: Comparison of two options
@@ -145,7 +145,7 @@ Scene 4 (8.3–11.33s): on "연방이 따로 배정한 5,000개를"(8.4s) the no
 - voiceover: "쉽게 말하면, 모두가 서 있는 긴 줄이 아니라, 불어권 전용 창구에 따로 서는 겁니다."
 - duration: 5.016s
 - transition_in: push-slide LEFT
-- status: outline
+- status: animated
 - src: compositions/frames/06-two-lines.html
 - type: benefit_highlight
 - persuasion: Analogy / metaphor (전용 창구)
@@ -168,7 +168,7 @@ Scene 2 (2.9–5.02s): on "불어권 전용 창구에"(3.0s) a short cobalt lane
 - voiceover: "그럼 불어를 얼마나 잘해야 할까요? 원어민 수준이어야 할 것 같지만, 아닙니다. 기준은 NCLC 5, 중하 수준입니다. 듣기, 말하기, 읽기, 쓰기, 네 영역 모두 5레벨이면 됩니다."
 - duration: 11.61s
 - transition_in: crossfade
-- status: outline
+- status: animated
 - src: compositions/frames/07-nclc5.html
 - type: feature_showcase
 - persuasion: Question→answer pairing + Progressive disclosure
@@ -193,7 +193,7 @@ Scene 4 (7.7–11.61s): 2×2 grid below the badge assembles one card per word �
 - voiceover: "연방 익스프레스 엔트리 불어 카테고리가 7레벨을 요구하는 것과 비교하면, 문턱이 훨씬 낮습니다. 중하 수준의 불어 하나로, 치열한 쿼터 경쟁에서 분리된다는 것. 이건 정말, 엄청난 장점입니다."
 - duration: 12.121s
 - transition_in: crossfade
-- status: outline
+- status: animated
 - src: compositions/frames/08-big-advantage.html
 - type: benefit_highlight
 - persuasion: Contrast (NCLC 7 vs NCLC 5) + Distillation
@@ -218,7 +218,7 @@ Scene 4 (10.3–12.12s): on "엄청난 장점"(11.0s) the payoff "엄청난 장�
 - voiceover: "물론 각 주정부 프로그램의 기본 자격, 예를 들어 직업이나 경력 조건은 갖춰야 합니다. 하지만 같은 자격이라면, 불어가 있는 사람이 훨씬 유리한 위치에 서게 됩니다."
 - duration: 9.985s
 - transition_in: crossfade
-- status: outline
+- status: animated
 - src: compositions/frames/09-caveat.html
 - type: social_proof
 - persuasion: Counterexample (한계 명시) → reassurance
@@ -240,7 +240,7 @@ Scene 2 (5.2–9.98s): on "하지만 같은 자격이라면"(5.2s) a second line
 - voiceover: "그럼 불어 5레벨은 어디서 준비할까요? 불어와 영어를 함께 쓰는 도시, 몬트리올입니다. 몬트리올 어학연수로 불어 5레벨을 만들고, 그 점수로 영주권 경쟁의 판을 바꾸세요. 자세한 로드맵은, AA Canada에 문의 주세요."
 - duration: 15.047s
 - transition_in: zoom-through
-- status: outline
+- status: animated
 - src: compositions/frames/10-cta.html
 - type: cta
 - persuasion: Signposting (3-step path) + Callback (판을 바꾸다 ↔ 경쟁에서 빠져나오다)

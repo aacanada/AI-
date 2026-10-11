@@ -1,0 +1,352 @@
+<template>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <style>
+    @font-face{font-family:"Pretendard";font-weight:800;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");}
+    @font-face{font-family:"Pretendard";font-weight:700;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");}
+    @font-face{font-family:"Pretendard";font-weight:500;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Medium.woff2") format("woff2");}
+    @font-face{font-family:"Pretendard";font-weight:900;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Black.woff2") format("woff2");}
+  </style>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      font-family: "Pretendard", sans-serif;
+      color: #111111;
+    }
+    /* ---------- background layers (full-bleed clip) ---------- */
+    [id="01-hook-bg"] {
+      position: absolute;
+      inset: 0;
+      background: #fdfae7;
+      container-type: size;
+    }
+    [id="01-hook-band"] {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1920px;
+      background: rgba(30, 43, 250, 0.08);
+      clip-path: polygon(0 1080px, 1080px 760px, 1080px 1180px, 0 1500px);
+    }
+    [id="01-hook-dots"] {
+      position: absolute;
+      top: 150px;
+      right: 96px;
+      display: grid;
+      grid-template-columns: repeat(3, 14px);
+      gap: 26px;
+    }
+    [id="01-hook-dots"] i {
+      display: block;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #1e2bfa;
+      opacity: 0.35;
+    }
+    [id="01-hook-progress"] {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 108px;
+      height: 3px;
+      background: #1e2bfa;
+    }
+    /* ---------- content ---------- */
+    [id="01-hook-stage"] {
+      position: absolute;
+      inset: 0;
+    }
+    [id="01-hook-eyebrow-wrap"] {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 360px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 28px;
+    }
+    [id="01-hook-accent-line"] {
+      width: 60px;
+      height: 4px;
+      border-radius: 2px;
+      background: #1e2bfa;
+    }
+    [id="01-hook-eyebrow"] {
+      padding: 18px 40px;
+      border-radius: 100px;
+      background: rgba(30, 43, 250, 0.08);
+      border: 1.5px solid rgba(30, 43, 250, 0.2);
+      color: #1e2bfa;
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+    /* hero slot — centered on y = 700 */
+    [id="01-hook-hero-slot"] {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 540px;
+      height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    [id="01-hook-hero-a"],
+    [id="01-hook-hero-b"] {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    [id="01-hook-hero-a-inner"] {
+      position: relative;
+      font-size: 210px;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      white-space: nowrap;
+      color: #111111;
+    }
+    [id="01-hook-strike"] {
+      position: absolute;
+      left: -24px;
+      right: -24px;
+      top: 50%;
+      height: 26px;
+      margin-top: -8px;
+      border-radius: 13px;
+      background: #1e2bfa;
+      transform-origin: 0% 50%;
+    }
+    [id="01-hook-hero-b"] {
+      flex-direction: column;
+      gap: 6px;
+      opacity: 0;
+    }
+    [id="01-hook-hero-b"] div {
+      font-size: 140px;
+      font-weight: 900;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      white-space: nowrap;
+      color: #111111;
+      text-align: center;
+    }
+    [id="01-hook-hero-b"] span {
+      color: #1e2bfa;
+    }
+    /* score chips */
+    [id="01-hook-chips"] {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 930px;
+      display: flex;
+      justify-content: center;
+    }
+    [class~="01-hook-chip"] {
+      width: 168px;
+      height: 128px;
+      margin: 0 -14px;
+      border-radius: 14px;
+      background: #fbf8ec;
+      border: 1.5px solid rgba(30, 43, 250, 0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+    }
+    [class~="01-hook-chip"] b {
+      font-size: 64px;
+      font-weight: 800;
+      line-height: 1;
+      color: #1e2bfa;
+    }
+    [class~="01-hook-chip"] em {
+      font-style: normal;
+      font-size: 22px;
+      font-weight: 500;
+      color: #6b6b6b;
+    }
+    /* french pill */
+    [id="01-hook-pill-wrap"] {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 1170px;
+      display: flex;
+      justify-content: center;
+    }
+    [id="01-hook-pill"] {
+      padding: 26px 64px;
+      border-radius: 100px;
+      background: #1e2bfa;
+      color: #fdfae7;
+      font-size: 64px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+    }
+  </style>
+
+  <div id="root" data-composition-id="01-hook" data-width="1080" data-height="1920" data-duration="8.255">
+    <div id="01-hook-bg" class="clip" data-start="0" data-duration="8.255" data-track-index="0">
+      <div id="01-hook-band"></div>
+      <div id="01-hook-dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div id="01-hook-progress"></div>
+    </div>
+
+    <div id="01-hook-stage" class="clip" data-start="0" data-duration="8.255" data-track-index="1">
+      <div id="01-hook-eyebrow-wrap">
+        <div id="01-hook-accent-line"></div>
+        <div id="01-hook-eyebrow">캐나다 주정부 이민</div>
+      </div>
+
+      <div id="01-hook-hero-slot">
+        <div id="01-hook-hero-a">
+          <div id="01-hook-hero-a-inner">점수 경쟁<div id="01-hook-strike"></div></div>
+        </div>
+        <div id="01-hook-hero-b">
+          <div>경쟁에서</div>
+          <div><span>빠져나오는</span> 법</div>
+        </div>
+      </div>
+
+      <div id="01-hook-chips">
+        <div class="01-hook-chip"><b>72</b><em>점</em></div>
+        <div class="01-hook-chip"><b>75</b><em>점</em></div>
+        <div class="01-hook-chip"><b>78</b><em>점</em></div>
+        <div class="01-hook-chip"><b>81</b><em>점</em></div>
+        <div class="01-hook-chip"><b>84</b><em>점</em></div>
+      </div>
+
+      <div id="01-hook-pill-wrap">
+        <div id="01-hook-pill">불어 하나로</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var $ = function (id) { return document.getElementById(id); };
+      var DUR = 7.755;
+      var tl = gsap.timeline({ paused: true });
+
+      var bandEl = $("01-hook-band");
+      var dotsEl = $("01-hook-dots");
+      var accentEl = $("01-hook-accent-line");
+      var eyebrowEl = $("01-hook-eyebrow");
+      var heroA = $("01-hook-hero-a");
+      var heroAInner = $("01-hook-hero-a-inner");
+      var heroB = $("01-hook-hero-b");
+      var strikeEl = $("01-hook-strike");
+      var chips = Array.prototype.slice.call(document.querySelectorAll('[class~="01-hook-chip"]'));
+      var chipsWrap = $("01-hook-chips");
+      var pillEl = $("01-hook-pill");
+
+      // VO beat grid (seconds from frame start)
+      var BEATS = { eyebrow: 0.12, slam: 1.5, crowded: 2.6, french: 4.0, swap: 6.0 };
+
+      // ---- ambient background (finite, slow) ----
+      tl.fromTo(bandEl, { y: 40 }, { y: -40, duration: DUR, ease: "none" }, 0);
+      tl.fromTo(dotsEl, { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.6, ease: "power2.out" }, 0);
+      tl.to(dotsEl, { y: 24, duration: DUR - 0.6, ease: "sine.inOut" }, 0.6);
+
+      // ---- Scene 1: eyebrow pill springs in (smooth settle) ----
+      tl.fromTo(accentEl, { scaleX: 0 }, { scaleX: 1, duration: 0.45, ease: "power3.out" }, 0);
+      tl.fromTo(
+        eyebrowEl,
+        { y: 60, scale: 0.6, opacity: 0 },
+        { y: 0, scale: 1, opacity: 1, duration: 0.7, ease: "back.out(2)" },
+        BEATS.eyebrow
+      );
+
+      // ---- Scene 2: hero slam (kinetic-beat-slam: scale+blur slam, power4.out) ----
+      tl.fromTo(
+        heroAInner,
+        { scale: 1.6, filter: "blur(18px)", opacity: 0 },
+        { scale: 1, filter: "blur(0px)", opacity: 1, duration: 0.5, ease: "power4.out" },
+        BEATS.slam
+      );
+      // impact shudder on the slot (explicit keyframes, no yoyo)
+      tl.to(heroA, { y: 10, duration: 0.06, ease: "power2.out" }, BEATS.slam + 0.42)
+        .to(heroA, { y: 0, duration: 0.22, ease: "power2.out" }, BEATS.slam + 0.48);
+
+      // score chips: shove in from the right (distinct axis + expo.out), then jostle = "crowded"
+      chips.forEach(function (c, i) {
+        tl.fromTo(
+          c,
+          { x: 260, opacity: 0, rotation: 8 },
+          { x: 0, opacity: 1, rotation: (i % 2 === 0 ? -3 : 3), duration: 0.45, ease: "expo.out" },
+          BEATS.crowded + i * 0.07
+        );
+      });
+      var JIT = [[-8, 6], [7, -5], [-6, 4], [9, -7], [-5, 5]];
+      chips.forEach(function (c, i) {
+        var t0 = BEATS.crowded + 0.6 + i * 0.03;
+        tl.to(c, { x: JIT[i][0], y: JIT[i][1], duration: 0.09, ease: "power1.inOut" }, t0)
+          .to(c, { x: -JIT[i][0] * 0.6, y: -JIT[i][1] * 0.6, duration: 0.09, ease: "power1.inOut" }, t0 + 0.09)
+          .to(c, { x: JIT[i][0] * 0.3, y: 0, duration: 0.09, ease: "power1.inOut" }, t0 + 0.18)
+          .to(c, { x: 0, duration: 0.2, ease: "power2.out" }, t0 + 0.27);
+      });
+      tl.fromTo(chipsWrap, { scaleX: 1.04 }, { scaleX: 0.96, duration: 0.5, ease: "power2.inOut" }, BEATS.crowded + 0.6);
+
+      // ---- Scene 3: cobalt strike sweeps L->R, chips dim, pill enters ----
+      tl.fromTo(strikeEl, { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power3.inOut" }, BEATS.french);
+      tl.to(heroAInner, { color: "#9a9a9a", duration: 0.35, ease: "power1.out" }, BEATS.french + 0.3);
+      tl.to(chipsWrap, { opacity: 0.3, duration: 0.4, ease: "power1.out" }, BEATS.french);
+      tl.fromTo(
+        pillEl,
+        { y: 80, scale: 0.7, opacity: 0 },
+        { y: 0, scale: 1, opacity: 1, duration: 0.6, ease: "back.out(1.8)" },
+        BEATS.french + 0.15
+      );
+
+      // ---- Scene 4: discrete-text-sequence hard in-place token swap ----
+      // Sparse state array, reverse-searched each frame; jumps are INSTANT.
+      var SEQUENCE = [
+        { t: 0.0, state: "a" },
+        { t: BEATS.swap, state: "b" }
+      ];
+      function stateAt(time) {
+        for (var i = SEQUENCE.length - 1; i >= 0; i--) {
+          if (time >= SEQUENCE[i].t) return SEQUENCE[i].state;
+        }
+        return "a";
+      }
+      var driver = { t: 0 };
+      tl.to(
+        driver,
+        {
+          t: DUR,
+          duration: DUR,
+          ease: "none",
+          onUpdate: function () {
+            var s = stateAt(driver.t);
+            heroA.style.visibility = s === "a" ? "visible" : "hidden";
+            heroB.style.opacity = s === "b" ? "1" : "0";
+          }
+        },
+        0
+      );
+      // tiny weight-snap on the landed token (settle only, then hold still)
+      tl.fromTo(heroB, { scale: 1.06 }, { scale: 1, duration: 0.25, ease: "power3.out" }, BEATS.swap);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["01-hook"] = tl;
+    })();
+  </script>
+</template>

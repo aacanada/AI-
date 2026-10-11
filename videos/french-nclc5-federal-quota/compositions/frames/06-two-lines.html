@@ -1,0 +1,211 @@
+<template>
+  <style>
+    @font-face{font-family:"Pretendard";font-weight:800;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");}
+    @font-face{font-family:"Pretendard";font-weight:700;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");}
+    @font-face{font-family:"Pretendard";font-weight:500;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Medium.woff2") format("woff2");}
+    @font-face{font-family:"Pretendard";font-weight:900;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Black.woff2") format("woff2");}
+  </style>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      font-family: "Pretendard", sans-serif;
+      color: #111111;
+    }
+    #root .clip { position: absolute; inset: 0; }
+    #root #twolines-06-bg { background: #fdfae7; }
+    #root .twolines-06-eyebrow {
+      position: absolute; left: 60px; top: 120px;
+      display: flex; align-items: center; gap: 20px;
+    }
+    #root .twolines-06-accent { width: 60px; height: 4px; border-radius: 2px; background: #1e2bfa; }
+    #root .twolines-06-eyebrow-text {
+      font-size: 32px; font-weight: 700; letter-spacing: 0.08em; color: #1e2bfa;
+    }
+    #root .twolines-06-card {
+      position: absolute; left: 60px; width: 960px;
+      background: rgba(30,43,250,0.04);
+      border: 1.5px solid rgba(30,43,250,0.2);
+      border-radius: 14px;
+      box-sizing: border-box;
+    }
+    #root #twolines-06-card-a { top: 250px; height: 700px; }
+    #root #twolines-06-card-b { top: 1010px; height: 540px; }
+    #root .twolines-06-label {
+      position: absolute; left: 48px; top: 40px;
+      font-size: 50px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1;
+      white-space: nowrap;
+    }
+    #root #twolines-06-label-a { color: #6b6b6b; }
+    #root .twolines-06-num { color: #1e2bfa; font-weight: 800; }
+    #root .twolines-06-dot-sep { color: #9a9a9a; font-weight: 500; padding: 0 10px; }
+    #root .twolines-06-rope {
+      position: absolute; height: 4px; border-radius: 2px;
+      background: rgba(154,154,154,0.35);
+    }
+    #root .twolines-06-svg {
+      position: absolute; left: 0; top: 0; width: 1080px; height: 1920px;
+      overflow: visible;
+    }
+    #root .twolines-06-svg .twolines-06-stroke {
+      fill: none; stroke: #1e2bfa; stroke-width: 6;
+      stroke-linecap: round; stroke-linejoin: round;
+    }
+    #root .twolines-06-svg .twolines-06-chev {
+      fill: none; stroke: rgba(30,43,250,0.35); stroke-width: 6;
+      stroke-linecap: round; stroke-linejoin: round;
+    }
+    #root .twolines-06-wrap {
+      position: absolute; left: 0; top: 0; width: 1080px; height: 1300px;
+    }
+    #root .twolines-06-person {
+      position: absolute; top: 50%; left: 50%;
+      width: 56px; height: 80px;
+      will-change: transform;
+    }
+    #root .twolines-06-head {
+      position: absolute; left: 14px; top: 0; width: 28px; height: 28px;
+      border-radius: 50%; background: #9a9a9a;
+    }
+    #root .twolines-06-body {
+      position: absolute; left: 2px; top: 34px; width: 52px; height: 46px;
+      border-radius: 26px 26px 10px 10px; background: #9a9a9a;
+    }
+    #root #twolines-06-halo {
+      position: absolute; left: 670px; top: 1240px; width: 140px; height: 140px;
+      border-radius: 50%; background: rgba(30,43,250,0.08);
+      border: 1.5px solid rgba(30,43,250,0.2); box-sizing: border-box;
+    }
+    #root .twolines-06-progress {
+      position: absolute; left: 0; bottom: 0; width: 648px; height: 3px;
+      background: #1e2bfa;
+    }
+  </style>
+
+  <div id="root" data-composition-id="06-two-lines" data-width="1080" data-height="1920" data-start="0" data-duration="5.516">
+    <div id="twolines-06-bg" class="clip" data-start="0" data-duration="5.516" data-track-index="0"></div>
+
+    <div id="twolines-06-stage" class="clip" data-start="0" data-duration="5.516" data-track-index="1">
+      <div class="twolines-06-eyebrow" id="twolines-06-eyebrow">
+        <div class="twolines-06-accent"></div>
+        <div class="twolines-06-eyebrow-text">두 개의 줄</div>
+      </div>
+
+      <div class="twolines-06-card" id="twolines-06-card-a">
+        <div class="twolines-06-label" id="twolines-06-label-a">일반 점수 경쟁</div>
+      </div>
+      <div class="twolines-06-rope" id="twolines-06-rope-1" style="left:130px; top:573px; width:760px;"></div>
+      <div class="twolines-06-rope" id="twolines-06-rope-2" style="left:190px; top:723px; width:760px;"></div>
+
+      <div class="twolines-06-card" id="twolines-06-card-b">
+        <div class="twolines-06-label" id="twolines-06-label-b">불어권 전용 창구<span class="twolines-06-dot-sep">·</span><span class="twolines-06-num">연방 5,000</span></div>
+      </div>
+      <div id="twolines-06-halo"></div>
+
+      <svg class="twolines-06-svg" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+        <!-- short lane outline -->
+        <path id="twolines-06-lane" class="twolines-06-stroke" d="M 190 1230 L 760 1230 A 80 80 0 0 1 840 1310 A 80 80 0 0 1 760 1390 L 190 1390 A 80 80 0 0 1 110 1310 A 80 80 0 0 1 190 1230 Z" />
+        <!-- lane direction chevrons -->
+        <path id="twolines-06-chev-1" class="twolines-06-chev" d="M 230 1285 L 255 1310 L 230 1335" />
+        <path id="twolines-06-chev-2" class="twolines-06-chev" d="M 340 1285 L 365 1310 L 340 1335" />
+        <path id="twolines-06-chev-3" class="twolines-06-chev" d="M 450 1285 L 475 1310 L 450 1335" />
+        <!-- window / booth icon -->
+        <path id="twolines-06-booth" class="twolines-06-stroke" d="M 880 1420 L 880 1200 A 14 14 0 0 1 894 1186 L 976 1186 A 14 14 0 0 1 990 1200 L 990 1420" />
+        <path id="twolines-06-window" class="twolines-06-stroke" d="M 902 1226 L 968 1226 L 968 1296 L 902 1296 Z" />
+        <path id="twolines-06-counter" class="twolines-06-stroke" d="M 868 1320 L 1002 1320" />
+      </svg>
+
+      <div class="twolines-06-wrap" id="twolines-06-wrap"></div>
+
+      <div class="twolines-06-progress"></div>
+    </div>
+  </div>
+
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script>
+    (function () {
+      var FID = "06-two-lines";
+      var root = document.querySelector('[data-composition-id="' + FID + '"]');
+      var $ = function (sel) { return root.querySelector(sel); };
+      var tl = gsap.timeline({ paused: true });
+
+      var GREY = "#9a9a9a";
+      var COBALT = "#1e2bfa";
+
+      // ---- Build the long queue: 3 serpentine rows x 8 persons (24) ----
+      var wrap = $("#twolines-06-wrap");
+      var CX = 540, CY = 650; // wrap center in canvas px
+      var rowsY = [500, 650, 800];
+      var persons = [];
+      for (var r = 0; r < 3; r++) {
+        for (var c = 0; c < 8; c++) {
+          var col = (r % 2 === 0) ? c : (7 - c); // serpentine order
+          var px = 162 + col * 108;
+          var el = document.createElement("div");
+          el.className = "twolines-06-person";
+          el.innerHTML = '<div class="twolines-06-head"></div><div class="twolines-06-body"></div>';
+          el.dataset.targetX = String(px - CX);
+          el.dataset.targetY = String(rowsY[r] - CY);
+          wrap.appendChild(el);
+          persons.push(el);
+        }
+      }
+
+      // ---- Setup: measure SVG paths for the draw ----
+      var drawIds = ["#twolines-06-lane", "#twolines-06-chev-1", "#twolines-06-chev-2", "#twolines-06-chev-3",
+                     "#twolines-06-booth", "#twolines-06-window", "#twolines-06-counter"];
+      drawIds.forEach(function (id) {
+        var p = $(id);
+        var len = p.getTotalLength() * 1.02;
+        p.style.strokeDasharray = String(len);
+        p.style.strokeDashoffset = String(len);
+      });
+
+      // ---- Scene 1 (0.0–2.9s): stage + long queue assembles ----
+      tl.fromTo($("#twolines-06-eyebrow"), { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.05);
+      tl.fromTo($("#twolines-06-card-a"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0.1);
+      tl.fromTo($("#twolines-06-label-a"), { opacity: 0, x: -24 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 0.3);
+      tl.fromTo([$("#twolines-06-rope-1"), $("#twolines-06-rope-2")], { opacity: 0, scaleX: 0.6 }, { opacity: 1, scaleX: 1, duration: 0.7, ease: "power2.out", stagger: 0.1 }, 0.7);
+
+      // center-outward-expansion: persons radiate from the queue center on "모두가 서 있는 긴 줄" (0.9s)
+      var ENTRY_AT = 0.9, STAGGER = 0.045, EXPAND_DUR = 1.2, START_PROGRESS = 0.3;
+      persons.forEach(function (el, i) {
+        var tx = Number(el.dataset.targetX), ty = Number(el.dataset.targetY);
+        tl.fromTo(el,
+          { xPercent: -50, yPercent: -50, x: tx * START_PROGRESS, y: ty * START_PROGRESS, scale: 0.6, opacity: 0 },
+          { x: tx, y: ty, scale: 1, opacity: 1, duration: EXPAND_DUR, ease: "power3.out" },
+          ENTRY_AT + i * STAGGER);
+      });
+
+      // ---- Scene 2 (2.9–5.02s): short cobalt lane draws in, one person moves over ----
+      tl.fromTo($("#twolines-06-card-b"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 2.9);
+      tl.fromTo($("#twolines-06-label-b"), { opacity: 0, x: -24 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 3.0);
+
+      // svg-path-draw: lane, then chevrons, then the window booth
+      tl.to($("#twolines-06-lane"), { strokeDashoffset: 0, duration: 0.7, ease: "power2.out" }, 3.0);
+      tl.to($("#twolines-06-chev-1"), { strokeDashoffset: 0, duration: 0.25, ease: "power2.out" }, 3.3);
+      tl.to($("#twolines-06-chev-2"), { strokeDashoffset: 0, duration: 0.25, ease: "power2.out" }, 3.4);
+      tl.to($("#twolines-06-chev-3"), { strokeDashoffset: 0, duration: 0.25, ease: "power2.out" }, 3.5);
+      tl.to($("#twolines-06-booth"), { strokeDashoffset: 0, duration: 0.55, ease: "power2.out" }, 3.5);
+      tl.to($("#twolines-06-window"), { strokeDashoffset: 0, duration: 0.4, ease: "power2.out" }, 3.9);
+      tl.to($("#twolines-06-counter"), { strokeDashoffset: 0, duration: 0.3, ease: "power2.out" }, 4.1);
+
+      // The mover: back of the long queue (last in serpentine order) lifts out and glides to the lane front
+      var mover = persons[persons.length - 1];
+      var mx = Number(mover.dataset.targetX), my = Number(mover.dataset.targetY);
+      var FRONT_X = 740 - CX, FRONT_Y = 1310 - CY;
+      tl.fromTo(mover, { x: mx, y: my, scale: 1 }, { x: mx, y: my - 44, scale: 1.15, duration: 0.35, ease: "power2.out", immediateRender: false }, 3.4);
+      tl.fromTo(mover, { x: mx, y: my - 44 }, { x: FRONT_X, y: FRONT_Y, duration: 0.95, ease: "power2.inOut", immediateRender: false }, 3.75);
+      tl.fromTo(mover.querySelectorAll(".twolines-06-head, .twolines-06-body"),
+        { backgroundColor: GREY }, { backgroundColor: COBALT, duration: 0.6, ease: "power1.out", immediateRender: false }, 3.85);
+      tl.fromTo(mover, { scale: 1.15 }, { scale: 1.1, duration: 0.25, ease: "power2.out", immediateRender: false }, 4.7);
+      tl.fromTo($("#twolines-06-halo"), { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "power3.out" }, 4.6);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines[FID] = tl;
+    })();
+  </script>
+</template>

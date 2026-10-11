@@ -1,0 +1,331 @@
+<template>
+  <style>
+    @font-face{font-family:"Pretendard";font-weight:800;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");}
+    @font-face{font-family:"Pretendard";font-weight:700;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");}
+    @font-face{font-family:"Pretendard";font-weight:500;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Medium.woff2") format("woff2");}
+    @font-face{font-family:"Pretendard";font-weight:900;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Black.woff2") format("woff2");}
+  </style>
+  <style>
+    #root {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      font-family: "Pretendard", sans-serif;
+      color: #111111;
+    }
+    #a08-bg {
+      position: absolute;
+      inset: 0;
+      background: #fdfae7;
+    }
+    #a08-stage {
+      position: absolute;
+      inset: 0;
+    }
+    .a08-abs { position: absolute; }
+
+    /* header */
+    #a08-header {
+      left: 54px;
+      right: 54px;
+      top: 120px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .a08-eyebrow-wrap { display: flex; align-items: center; gap: 22px; }
+    .a08-accent-line { width: 60px; height: 4px; border-radius: 2px; background: #1e2bfa; }
+    .a08-eyebrow { font-size: 34px; font-weight: 700; letter-spacing: 0.04em; color: #1e2bfa; }
+    .a08-tag {
+      padding: 12px 26px;
+      border-radius: 100px;
+      background: rgba(30,43,250,0.08);
+      color: #1e2bfa;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    /* chart */
+    #a08-chart-wrap, #a08-chart-drift { position: absolute; inset: 0; }
+    #a08-chart-wrap { transform-origin: 540px 860px; }
+    #a08-chart-drift { transform-origin: 540px 860px; }
+    .a08-grid {
+      left: 110px;
+      width: 900px;
+      height: 0;
+      border-top: 3px dashed rgba(30,43,250,0.2);
+    }
+    #a08-grid7 { top: 600px; }
+    #a08-grid5 { top: 800px; }
+    .a08-axis {
+      left: 40px;
+      width: 56px;
+      text-align: center;
+      font-size: 40px;
+      font-weight: 800;
+      color: #9a9a9a;
+      line-height: 1;
+    }
+    #a08-axis7 { top: 580px; }
+    #a08-axis5 { top: 780px; }
+    #a08-baseline {
+      left: 110px;
+      width: 900px;
+      top: 1298px;
+      height: 4px;
+      border-radius: 2px;
+      background: rgba(17,17,17,0.18);
+    }
+    .a08-bar {
+      width: 220px;
+      border-radius: 14px 14px 6px 6px;
+      transform-origin: 50% 100%;
+    }
+    #a08-bar-ee {
+      left: 200px;
+      top: 600px;
+      height: 700px;
+      background: #9a9a9a;
+      opacity: 0.55;
+    }
+    #a08-bar-to {
+      left: 660px;
+      top: 800px;
+      height: 500px;
+      background: #1e2bfa;
+    }
+    .a08-val {
+      width: 300px;
+      text-align: center;
+      line-height: 1;
+    }
+    .a08-val small {
+      display: block;
+      font-size: 34px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      margin-bottom: 8px;
+    }
+    .a08-val b {
+      display: block;
+      font-size: 120px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+    }
+    #a08-val-ee { left: 160px; top: 420px; color: #6b6b6b; }
+    #a08-val-to { left: 620px; top: 620px; color: #1e2bfa; }
+    .a08-name {
+      top: 1330px;
+      width: 380px;
+      text-align: center;
+      font-size: 38px;
+      font-weight: 700;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+    }
+    #a08-name-ee { left: 120px; color: #6b6b6b; }
+    #a08-name-to { left: 580px; color: #111111; }
+    #a08-arrow {
+      left: 510px;
+      top: 612px;
+      width: 60px;
+      height: 180px;
+      transform-origin: 50% 0%;
+    }
+    #a08-chip {
+      left: 430px;
+      top: 880px;
+      width: 220px;
+      height: 84px;
+      border-radius: 100px;
+      background: rgba(30,43,250,0.08);
+      border: 1.5px solid rgba(30,43,250,0.2);
+      color: #1e2bfa;
+      font-size: 40px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      letter-spacing: -0.02em;
+    }
+
+    /* type stack */
+    #a08-type-drift, #a08-type-wrap { position: absolute; inset: 0; }
+    #a08-type-drift { transform-origin: 540px 760px; }
+    #a08-type-wrap { transform-origin: 540px 620px; }
+    #a08-stack {
+      left: 54px;
+      right: 54px;
+      top: 300px;
+      text-align: center;
+    }
+    .a08-line { display: block; letter-spacing: -0.02em; line-height: 1.12; }
+    #a08-l1 { font-size: 84px; font-weight: 800; color: #111111; }
+    #a08-l2 { font-size: 96px; font-weight: 800; color: #6b6b6b; margin-top: 34px; }
+    #a08-l3 { font-size: 300px; font-weight: 900; color: #1e2bfa; line-height: 1; margin-top: 30px; letter-spacing: -0.04em; }
+    #a08-payoff {
+      left: 0;
+      right: 0;
+      top: 1150px;
+      text-align: center;
+    }
+    #a08-payoff-text {
+      display: inline-block;
+      font-size: 156px;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      color: #111111;
+    }
+    #a08-marker {
+      left: 160px;
+      width: 760px;
+      top: 1330px;
+      height: 24px;
+      border-radius: 6px;
+      background: #1e2bfa;
+      transform-origin: 0% 50%;
+    }
+
+    #a08-progress {
+      left: 0;
+      bottom: 0;
+      width: 864px;
+      height: 3px;
+      background: #1e2bfa;
+    }
+  </style>
+
+  <div id="root" data-composition-id="08-big-advantage" data-width="1080" data-height="1920" data-duration="12.621">
+    <div id="a08-bg" class="clip" data-start="0" data-duration="12.621" data-track-index="0"></div>
+
+    <div id="a08-stage" class="clip" data-start="0" data-duration="12.621" data-track-index="1">
+      <div id="a08-header" class="a08-abs">
+        <div class="a08-eyebrow-wrap">
+          <div class="a08-accent-line"></div>
+          <div class="a08-eyebrow">불어 요구 수준</div>
+        </div>
+        <div class="a08-tag">NCLC</div>
+      </div>
+
+      <!-- Scenes 1–2: two-bar comparison -->
+      <div id="a08-chart-wrap">
+        <div id="a08-chart-drift">
+          <div id="a08-grid7" class="a08-abs a08-grid"></div>
+          <div id="a08-grid5" class="a08-abs a08-grid"></div>
+          <div id="a08-axis7" class="a08-abs a08-axis">7</div>
+          <div id="a08-axis5" class="a08-abs a08-axis">5</div>
+          <div id="a08-bar-ee" class="a08-abs a08-bar"></div>
+          <div id="a08-bar-to" class="a08-abs a08-bar"></div>
+          <div id="a08-baseline" class="a08-abs"></div>
+          <div id="a08-val-ee" class="a08-abs a08-val"><small>NCLC</small><b id="a08-num-ee">0</b></div>
+          <div id="a08-val-to" class="a08-abs a08-val"><small>NCLC</small><b id="a08-num-to">0</b></div>
+          <div id="a08-name-ee" class="a08-abs a08-name">Express Entry<br>불어 카테고리</div>
+          <div id="a08-name-to" class="a08-abs a08-name">연방 불어권 TO</div>
+          <svg id="a08-arrow" class="a08-abs" viewBox="0 0 60 180" aria-hidden="true">
+            <line x1="30" y1="4" x2="30" y2="150" stroke="#1e2bfa" stroke-width="8" stroke-linecap="round"></line>
+            <polyline points="8,128 30,170 52,128" fill="none" stroke="#1e2bfa" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"></polyline>
+          </svg>
+          <div id="a08-chip" class="a08-abs">문턱 ↓</div>
+        </div>
+      </div>
+
+      <!-- Scenes 3–4: type stack + payoff -->
+      <div id="a08-type-drift">
+        <div id="a08-type-wrap">
+          <div id="a08-stack" class="a08-abs">
+            <span id="a08-l1" class="a08-line">중하 수준 불어 하나로</span>
+            <span id="a08-l2" class="a08-line">쿼터 경쟁과</span>
+            <span id="a08-l3" class="a08-line">분리</span>
+          </div>
+          <div id="a08-payoff" class="a08-abs"><span id="a08-payoff-text">엄청난 장점</span></div>
+          <div id="a08-marker" class="a08-abs"></div>
+        </div>
+      </div>
+
+      <div id="a08-progress" class="a08-abs"></div>
+    </div>
+  </div>
+
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script>
+    (function () {
+      var D = 12.121;
+      var tl = gsap.timeline({ paused: true });
+
+      // type stack waits behind the chart until the zoom-through cut
+      tl.set("#a08-type-wrap", { opacity: 0 }, 0);
+
+      // ---------- header + chart chrome (establish) ----------
+      tl.fromTo("#a08-header", { y: -24, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: "power3.out" }, 0.05);
+      tl.fromTo(["#a08-baseline", "#a08-grid7", "#a08-grid5"], { scaleX: 0, transformOrigin: "0% 50%" },
+        { scaleX: 1, duration: 0.6, ease: "power2.out", stagger: 0.06 }, 0.1);
+      tl.fromTo(["#a08-axis7", "#a08-axis5"], { opacity: 0, x: -16 }, { opacity: 1, x: 0, duration: 0.4, ease: "power2.out", stagger: 0.06 }, 0.25);
+
+      // slow camera drift under Scenes 1–2
+      tl.fromTo("#a08-chart-drift", { scale: 1 }, { scale: 1.035, duration: 5.85, ease: "none" }, 0);
+
+      // ---------- Scene 1 (0.5s): left grey bar grows to 7 ----------
+      var T1 = 0.5;
+      tl.fromTo("#a08-bar-ee", { scaleY: 0 }, { scaleY: 1, duration: 1.1, ease: "power3.out" }, T1);
+      tl.fromTo("#a08-name-ee", { y: 24, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, T1 + 0.1);
+      tl.fromTo("#a08-val-ee", { y: 280, opacity: 0, scale: 0.6 }, { y: 0, opacity: 1, scale: 1, duration: 1.1, ease: "power3.out" }, T1);
+      var cEE = { v: 0 };
+      var numEE = document.getElementById("a08-num-ee");
+      tl.fromTo(cEE, { v: 0 }, { v: 7, duration: 1.1, ease: "power3.out",
+        onUpdate: function () { numEE.textContent = String(Math.round(cEE.v)); } }, T1);
+      tl.fromTo("#a08-grid7", { borderTopColor: "rgba(30,43,250,0.2)" }, { borderTopColor: "rgba(30,43,250,0.45)", duration: 0.3, ease: "power2.out" }, T1 + 1.0);
+
+      // ---------- Scene 2 (3.6s): right cobalt bar grows only to 5 ----------
+      var T2 = 3.6;
+      tl.fromTo("#a08-bar-to", { scaleY: 0 }, { scaleY: 1, duration: 0.9, ease: "power3.out" }, T2);
+      tl.fromTo("#a08-name-to", { y: 24, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, T2 + 0.1);
+      tl.fromTo("#a08-val-to", { y: 200, opacity: 0, scale: 0.6 }, { y: 0, opacity: 1, scale: 1, duration: 0.9, ease: "power3.out" }, T2);
+      var cTO = { v: 0 };
+      var numTO = document.getElementById("a08-num-to");
+      tl.fromTo(cTO, { v: 0 }, { v: 5, duration: 0.9, ease: "power3.out",
+        onUpdate: function () { numTO.textContent = String(Math.round(cTO.v)); } }, T2);
+      tl.fromTo("#a08-grid5", { borderTopColor: "rgba(30,43,250,0.2)" }, { borderTopColor: "rgba(30,43,250,0.55)", duration: 0.3, ease: "power2.out" }, T2 + 0.8);
+
+      // 4.7s "문턱이 훨씬 낮습니다": arrow draws down 7 -> 5, chip pops
+      var T2b = 4.7;
+      tl.fromTo("#a08-arrow", { scaleY: 0, opacity: 0 }, { scaleY: 1, opacity: 1, duration: 0.45, ease: "power2.out" }, T2b);
+      tl.fromTo("#a08-chip", { scale: 0.4, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: "back.out(2.2)" }, T2b + 0.2);
+
+      // ---------- Scene 3 (6.0s): zoom-through seam into the type stack ----------
+      var CUT = 6.05;
+      // exit: chart surface accelerates toward viewer (full-frame surface -> 18px blur)
+      tl.fromTo("#a08-chart-wrap", { scale: 1, filter: "blur(0px)" }, { scale: 1.2, filter: "blur(18px)", duration: 0.2, ease: "power3.in" }, CUT - 0.2);
+      tl.fromTo("#a08-chart-wrap", { opacity: 1 }, { opacity: 0.15, duration: 0.2, ease: "none" }, CUT - 0.2);
+      tl.set("#a08-chart-wrap", { opacity: 0 }, CUT);
+      // hard cut + entry: type stack continues forward from behind
+      tl.set("#a08-type-wrap", { opacity: 0.15, scale: 0.75, filter: "blur(18px)" }, CUT);
+      tl.to("#a08-type-wrap", { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.5, ease: "expo.out" }, CUT);
+      tl.fromTo("#a08-type-drift", { scale: 1 }, { scale: 1.03, duration: D - CUT, ease: "none" }, CUT);
+
+      // phrase onsets (one beat array from the voice)
+      var BEATS = [6.1, 8.4, 9.3, 11.0];
+      tl.fromTo("#a08-l1", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, BEATS[0]);
+      tl.fromTo("#a08-l2", { x: -320, opacity: 0 }, { x: 0, opacity: 1, duration: 0.45, ease: "expo.out" }, BEATS[1]);
+      tl.fromTo("#a08-l3", { scale: 1.5, filter: "blur(16px)", opacity: 0 }, { scale: 1, filter: "blur(0px)", opacity: 1, duration: 0.5, ease: "power4.out" }, BEATS[2]);
+
+      // ---------- Scene 4 (10.3s): stack settles up, payoff slams ----------
+      tl.to("#a08-stack", { y: -60, duration: 0.6, ease: "power2.inOut" }, 10.3);
+      tl.to(["#a08-l1", "#a08-l2"], { opacity: 0.45, duration: 0.6, ease: "power2.inOut" }, 10.3);
+      tl.fromTo("#a08-payoff-text", { scale: 1.6, y: 40, filter: "blur(16px)", opacity: 0 },
+        { scale: 1, y: 0, filter: "blur(0px)", opacity: 1, duration: 0.45, ease: "power4.out" }, BEATS[3]);
+      tl.fromTo("#a08-marker", { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "circ.out" }, BEATS[3] + 0.35);
+
+      // guard: timeline spans the full frame
+      tl.set({}, {}, D);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["08-big-advantage"] = tl;
+    })();
+  </script>
+</template>
