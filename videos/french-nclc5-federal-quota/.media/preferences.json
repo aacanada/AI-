@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "preferences": {
+    "voice": {
+      "value": "9qtE9eIaqHMUAfRp4QTW",
+      "confirmed_in": [
+        "french-nclc5-federal-quota"
+      ],
+      "updated_at": "2026-10-11T12:36:27.305Z"
+    },
+    "style_preset.faceless-explainer": {
+      "value": "blue-professional",
+      "confirmed_in": [
+        "french-nclc5-federal-quota"
+      ],
+      "updated_at": "2026-10-11T12:36:27.373Z"
+    }
+  },
+  "sightings": {}
+}

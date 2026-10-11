@@ -1,0 +1,226 @@
+<template id="captions-template" data-composition-id="captions" data-width="1080" data-height="1920">
+<script src="assets/vendor/gsap.min.js"></script>
+
+
+<style data-brand-tokens>
+      @font-face { font-family: 'Pretendard'; src: url('assets/fonts/Pretendard-Black.woff2') format('woff2'); font-weight: 800; font-style: normal; font-display: block; }
+      @font-face { font-family: 'Pretendard'; src: url('assets/fonts/Pretendard-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: block; }
+      @font-face { font-family: 'Pretendard'; src: url('assets/fonts/Pretendard-Medium.woff2') format('woff2'); font-weight: 500; font-style: normal; font-display: block; }
+      :root {
+      --bg: #fdfae7;
+      --primary: #1e2bfa;
+      --text: #111111;
+      --text-muted: #6b6b6b;
+      --text-light: #9a9a9a;
+      --accent-light: rgba(30,43,250,0.08);
+      --accent-medium: rgba(30,43,250,0.15);
+      --border: rgba(30,43,250,0.2);
+      --card-bg: rgba(30,43,250,0.04);
+      --positive: #059669;
+      --negative: #dc2626;
+      --cap-ink: #111111;
+      --cap-canvas: #fdfae7;
+      --cap-accent: #1e2bfa;
+      --cap-accent-2: #6b6b6b;
+      --font-display: "Pretendard", system-ui, serif;
+      --font-body: "Pretendard", system-ui, sans-serif;
+      --cap-band-top: 1600px;
+      --cap-band-height: 320px;
+      }
+    </style>
+
+<style>
+  #captions-root {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .caption-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 20;
+    pointer-events: none;
+  }
+  /* the keep-out band, from captionBand(H) — frame content stays above it */
+  .caption-stage {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: var(--cap-band-top, 900px);
+    height: var(--cap-band-height, 180px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .caption-group {
+    /* every group is absolutely stacked over the SAME band — exactly one shown at a
+       time via opacity. Must be absolute: in-flow groups would lay out side-by-side. */
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+  }
+
+  /* THE tinted card — 4% cobalt fill, 1.5px 20%-cobalt border, soft 14px corners,
+     NO shadow (the tinted card does the lift; cast depth is forbidden) */
+  .caption-pill {
+    max-width: 78%;
+    padding: 20px 44px 24px;
+    background: color-mix(in srgb, var(--cap-accent, #1e2bfa) 4%, var(--cap-canvas, #fdfae7));
+    border: 1.5px solid color-mix(in srgb, var(--cap-accent, #1e2bfa) 20%, transparent);
+    border-radius: 14px;
+  }
+  .caption-line {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.1em 0.34em;
+    font-family: "Pretendard", system-ui, sans-serif;
+    font-weight: 600;
+    font-size: clamp(40px, 4.4vw, 58px);
+    line-height: 1.16;
+    letter-spacing: -0.02em;
+  }
+
+  /* upcoming — muted gray, no chip */
+  .caption-word {
+    display: inline-block;
+    padding: 0 0.18em;
+    border-radius: 0.32em;
+    color: color-mix(in srgb, var(--cap-ink, #111111) 52%, var(--cap-canvas, #fdfae7));
+  }
+  /* current word — THE solid cobalt chip (the single-accent gesture; pill-rounded
+     fill, NO shadow), cream reading on top */
+  .caption-word.is-active {
+    color: var(--cap-canvas, #fdfae7);
+    background: var(--cap-accent, #1e2bfa);
+    box-shadow: none;
+  }
+  /* already spoken — solid near-black ink, chip cleared */
+  .caption-word.is-spoken {
+    color: var(--cap-ink, #111111);
+    background: transparent;
+    box-shadow: none;
+  }
+
+  /* optional per-word accents (dormant until a word-classer tags them) */
+  /* brand / key term — cobalt, the system's one accent on a key word */
+  .caption-word.cap-brand {
+    color: var(--cap-accent, #1e2bfa);
+  }
+  /* numerals / data — cobalt 700, the figure voice */
+  .caption-word.cap-num {
+    font-family: "Pretendard", system-ui, sans-serif;
+    font-weight: 700;
+    color: var(--cap-accent, #1e2bfa);
+  }
+  /* emphasis — a directional-red hairline underline (inline only, never a fill) */
+  .caption-word.cap-cta {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-decoration-color: var(--cap-accent-2, #dc2626);
+    text-underline-offset: 0.1em;
+  }
+
+  @media (max-aspect-ratio: 9/16) {
+    .caption-pill {
+      max-width: 92%;
+    }
+    .caption-line {
+      font-size: clamp(34px, 5.4vw, 48px);
+    }
+  }
+</style>
+
+<div
+  id="captions-root"
+  data-composition-id="captions"
+  data-timeline-locked
+  data-start="0"
+  data-duration="103.377"
+  data-fps="30"
+  data-width="1080"
+  data-height="1920"
+>
+  <div class="caption-layer" aria-hidden="true">
+    <div id="caption-stage" class="caption-stage"></div>
+  </div>
+</div>
+
+<script>
+  // captions.mjs injects the engine's scene-aware groups + real duration here.
+  var GROUPS = [{"id":"caption-group-0","frame":1,"start":0,"end":1.184,"text":"캐나다 주정부 이민,","words":[{"id":"caption-word-0-0","text":"캐나다","start":0,"end":0.441},{"id":"caption-word-0-1","text":"주정부","start":0.488,"end":0.871},{"id":"caption-word-0-2","text":"이민,","start":0.952,"end":1.161}]},{"id":"caption-group-1","frame":1,"start":1.184,"end":2.194,"text":"요즘 점수 경쟁","words":[{"id":"caption-word-1-0","text":"요즘","start":1.184,"end":1.451},{"id":"caption-word-1-1","text":"점수","start":1.509,"end":1.776},{"id":"caption-word-1-2","text":"경쟁","start":1.823,"end":2.159}]},{"id":"caption-group-2","frame":1,"start":2.194,"end":3.402,"text":"너무 치열하죠?","words":[{"id":"caption-word-2-0","text":"너무","start":2.194,"end":2.543},{"id":"caption-word-2-1","text":"치열하죠?","start":2.589,"end":3.355}]},{"id":"caption-group-3","frame":1,"start":3.402,"end":4.795,"text":"그런데 불어 하나로,","words":[{"id":"caption-word-3-0","text":"그런데","start":3.402,"end":3.924},{"id":"caption-word-3-1","text":"불어","start":3.994,"end":4.249},{"id":"caption-word-3-2","text":"하나로,","start":4.307,"end":4.748}]},{"id":"caption-group-4","frame":1,"start":4.795,"end":5.979,"text":"이 경쟁에서 아예","words":[{"id":"caption-word-4-0","text":"이","start":4.795,"end":4.911},{"id":"caption-word-4-1","text":"경쟁에서","start":4.957,"end":5.619},{"id":"caption-word-4-2","text":"아예","start":5.689,"end":5.933}]},{"id":"caption-group-5","frame":1,"start":5.979,"end":7.755,"text":"빠져나오는 방법이 있습니다.","words":[{"id":"caption-word-5-0","text":"빠져나오는","start":5.979,"end":6.629},{"id":"caption-word-5-1","text":"방법이","start":6.664,"end":7.059},{"id":"caption-word-5-2","text":"있습니다.","start":7.082,"end":7.755}]},{"id":"caption-group-6","frame":2,"start":7.755,"end":8.92,"text":"주정부 이민은","words":[{"id":"caption-word-6-0","text":"주정부","start":7.755,"end":8.173},{"id":"caption-word-6-1","text":"이민은","start":8.266,"end":8.8}]},{"id":"caption-group-7","frame":2,"start":9.032,"end":9.907,"text":"주마다,","words":[{"id":"caption-word-7-0","text":"주마다,","start":9.032,"end":9.787}]},{"id":"caption-group-8","frame":2,"start":10.367,"end":11.958,"text":"1년에 노미니를 줄 수","words":[{"id":"caption-word-8-0","text":"1년에","start":10.367,"end":11.041},{"id":"caption-word-8-1","text":"노미니를","start":11.099,"end":11.621},{"id":"caption-word-8-2","text":"줄","start":11.656,"end":11.795},{"id":"caption-word-8-3","text":"수","start":11.842,"end":11.911}]},{"id":"caption-group-9","frame":2,"start":11.958,"end":12.759,"text":"있는 숫자,","words":[{"id":"caption-word-9-0","text":"있는","start":11.958,"end":12.202},{"id":"caption-word-9-1","text":"숫자,","start":12.26,"end":12.724}]},{"id":"caption-group-10","frame":2,"start":12.759,"end":13.386,"text":"즉 쿼터가","words":[{"id":"caption-word-10-0","text":"즉","start":12.759,"end":12.887},{"id":"caption-word-10-1","text":"쿼터가","start":12.921,"end":13.339}]},{"id":"caption-group-11","frame":2,"start":13.386,"end":14.233,"text":"정해져 있습니다.","words":[{"id":"caption-word-11-0","text":"정해져","start":13.386,"end":13.711},{"id":"caption-word-11-1","text":"있습니다.","start":13.746,"end":14.21}]},{"id":"caption-group-12","frame":2,"start":14.233,"end":15.36,"text":"그런데 지원자는,","words":[{"id":"caption-word-12-0","text":"그런데","start":14.233,"end":14.524},{"id":"caption-word-12-1","text":"지원자는,","start":14.605,"end":15.302}]},{"id":"caption-group-13","frame":2,"start":15.36,"end":16.997,"text":"쿼터보다 훨씬 많습니다.","words":[{"id":"caption-word-13-0","text":"쿼터보다","start":15.36,"end":15.789},{"id":"caption-word-13-1","text":"훨씬","start":15.836,"end":16.324},{"id":"caption-word-13-2","text":"많습니다.","start":16.382,"end":16.997}]},{"id":"caption-group-14","frame":3,"start":16.997,"end":18.092,"text":"그래서 요즘,","words":[{"id":"caption-word-14-0","text":"그래서","start":16.997,"end":17.322},{"id":"caption-word-14-1","text":"요즘,","start":17.369,"end":17.972}]},{"id":"caption-group-15","frame":3,"start":18.46,"end":19.598,"text":"거의 모든 주정부가","words":[{"id":"caption-word-15-0","text":"거의","start":18.46,"end":18.68},{"id":"caption-word-15-1","text":"모든","start":18.727,"end":18.971},{"id":"caption-word-15-2","text":"주정부가","start":19.006,"end":19.551}]},{"id":"caption-group-16","frame":3,"start":19.598,"end":20.561,"text":"점수를 매기고,","words":[{"id":"caption-word-16-0","text":"점수를","start":19.598,"end":20.004},{"id":"caption-word-16-1","text":"매기고,","start":20.039,"end":20.538}]},{"id":"caption-group-17","frame":3,"start":20.561,"end":21.877,"text":"높은 점수부터","words":[{"id":"caption-word-17-0","text":"높은","start":20.561,"end":20.921},{"id":"caption-word-17-1","text":"점수부터","start":20.979,"end":21.757}]},{"id":"caption-group-18","frame":3,"start":22.117,"end":23.394,"text":"뽑는 방식으로 바뀌고","words":[{"id":"caption-word-18-0","text":"뽑는","start":22.117,"end":22.489},{"id":"caption-word-18-1","text":"방식으로","start":22.535,"end":22.965},{"id":"caption-word-18-2","text":"바뀌고","start":22.988,"end":23.359}]},{"id":"caption-group-19","frame":3,"start":23.394,"end":23.916,"text":"있습니다.","words":[{"id":"caption-word-19-0","text":"있습니다.","start":23.394,"end":23.881}]},{"id":"caption-group-20","frame":3,"start":23.916,"end":25.495,"text":"커트라인은 계속 올라가고,","words":[{"id":"caption-word-20-0","text":"커트라인은","start":23.916,"end":24.392},{"id":"caption-word-20-1","text":"계속","start":24.439,"end":24.671},{"id":"caption-word-20-2","text":"올라가고,","start":24.717,"end":25.46}]},{"id":"caption-group-21","frame":3,"start":25.495,"end":25.96,"text":"몇 점","words":[{"id":"caption-word-21-0","text":"몇","start":25.495,"end":25.669},{"id":"caption-word-21-1","text":"점","start":25.716,"end":25.89}]},{"id":"caption-group-22","frame":3,"start":25.96,"end":27.214,"text":"차이로 기회를 놓치는","words":[{"id":"caption-word-22-0","text":"차이로","start":25.96,"end":26.354},{"id":"caption-word-22-1","text":"기회를","start":26.447,"end":26.83},{"id":"caption-word-22-2","text":"놓치는","start":26.854,"end":27.19}]},{"id":"caption-group-23","frame":3,"start":27.214,"end":28.7,"text":"분들이 정말 많습니다.","words":[{"id":"caption-word-23-0","text":"분들이","start":27.214,"end":27.492},{"id":"caption-word-23-1","text":"정말","start":27.527,"end":27.852},{"id":"caption-word-23-2","text":"많습니다.","start":27.875,"end":28.7}]},{"id":"caption-group-24","frame":4,"start":28.7,"end":30.291,"text":"그런데 2026년,","words":[{"id":"caption-word-24-0","text":"그런데","start":28.7,"end":29.153},{"id":"caption-word-24-1","text":"2026년,","start":29.199,"end":30.174}]},{"id":"caption-group-25","frame":4,"start":30.291,"end":32.779,"text":"연방정부가 중요한 발표를 했습니다.","words":[{"id":"caption-word-25-0","text":"연방정부가","start":30.291,"end":31.126},{"id":"caption-word-25-1","text":"중요한","start":31.173,"end":31.498},{"id":"caption-word-25-2","text":"발표를","start":31.544,"end":31.974},{"id":"caption-word-25-3","text":"했습니다.","start":32.02,"end":32.659}]},{"id":"caption-group-26","frame":4,"start":32.972,"end":34.482,"text":"불어를 하는 이민자를","words":[{"id":"caption-word-26-0","text":"불어를","start":32.972,"end":33.356},{"id":"caption-word-26-1","text":"하는","start":33.39,"end":33.611},{"id":"caption-word-26-2","text":"이민자를","start":33.727,"end":34.424}]},{"id":"caption-group-27","frame":4,"start":34.482,"end":35.167,"text":"위해,","words":[{"id":"caption-word-27-0","text":"위해,","start":34.482,"end":35.085}]},{"id":"caption-group-28","frame":4,"start":35.167,"end":36.629,"text":"연방 몫으로 5,000개의","words":[{"id":"caption-word-28-0","text":"연방","start":35.167,"end":35.55},{"id":"caption-word-28-1","text":"몫으로","start":35.596,"end":36.002},{"id":"caption-word-28-2","text":"5,000개의","start":36.118,"end":36.583}]},{"id":"caption-group-29","frame":4,"start":36.629,"end":37.837,"text":"정원을 따로 마련한","words":[{"id":"caption-word-29-0","text":"정원을","start":36.629,"end":37.07},{"id":"caption-word-29-1","text":"따로","start":37.105,"end":37.372},{"id":"caption-word-29-2","text":"마련한","start":37.419,"end":37.79}]},{"id":"caption-group-30","frame":4,"start":37.837,"end":38.267,"text":"겁니다.","words":[{"id":"caption-word-30-0","text":"겁니다.","start":37.837,"end":38.266}]},{"id":"caption-group-31","frame":5,"start":38.267,"end":39.444,"text":"핵심은 이겁니다.","words":[{"id":"caption-word-31-0","text":"핵심은","start":38.267,"end":38.708},{"id":"caption-word-31-1","text":"이겁니다.","start":38.766,"end":39.324}]},{"id":"caption-group-32","frame":5,"start":39.521,"end":40.682,"text":"주정부가 불어 점수","words":[{"id":"caption-word-32-0","text":"주정부가","start":39.521,"end":40.09},{"id":"caption-word-32-1","text":"불어","start":40.136,"end":40.334},{"id":"caption-word-32-2","text":"점수","start":40.38,"end":40.635}]},{"id":"caption-group-33","frame":5,"start":40.682,"end":42.601,"text":"보유자에게 노미니를 주면,","words":[{"id":"caption-word-33-0","text":"보유자에게","start":40.682,"end":41.274},{"id":"caption-word-33-1","text":"노미니를","start":41.32,"end":41.831},{"id":"caption-word-33-2","text":"주면,","start":41.889,"end":42.481}]},{"id":"caption-group-34","frame":5,"start":43.143,"end":43.995,"text":"그 숫자가","words":[{"id":"caption-word-34-0","text":"그","start":43.143,"end":43.271},{"id":"caption-word-34-1","text":"숫자가","start":43.329,"end":43.875}]},{"id":"caption-group-35","frame":5,"start":44.142,"end":45.581,"text":"주정부 자기 쿼터에서","words":[{"id":"caption-word-35-0","text":"주정부","start":44.142,"end":44.536},{"id":"caption-word-35-1","text":"자기","start":44.583,"end":44.803},{"id":"caption-word-35-2","text":"쿼터에서","start":44.861,"end":45.523}]},{"id":"caption-group-36","frame":5,"start":45.581,"end":46.649,"text":"빠지지 않습니다.","words":[{"id":"caption-word-36-0","text":"빠지지","start":45.581,"end":45.941},{"id":"caption-word-36-1","text":"않습니다.","start":45.976,"end":46.615}]},{"id":"caption-group-37","frame":5,"start":46.649,"end":48.035,"text":"연방이 따로 배정한","words":[{"id":"caption-word-37-0","text":"연방이","start":46.649,"end":47.149},{"id":"caption-word-37-1","text":"따로","start":47.195,"end":47.439},{"id":"caption-word-37-2","text":"배정한","start":47.485,"end":47.915}]},{"id":"caption-group-38","frame":5,"start":48.112,"end":49.598,"text":"5,000개를 쓰는 거죠.","words":[{"id":"caption-word-38-0","text":"5,000개를","start":48.112,"end":48.867},{"id":"caption-word-38-1","text":"쓰는","start":48.89,"end":49.192},{"id":"caption-word-38-2","text":"거죠.","start":49.238,"end":49.598}]},{"id":"caption-group-39","frame":6,"start":49.598,"end":50.469,"text":"쉽게 말하면,","words":[{"id":"caption-word-39-0","text":"쉽게","start":49.598,"end":49.923},{"id":"caption-word-39-1","text":"말하면,","start":49.97,"end":50.446}]},{"id":"caption-group-40","frame":6,"start":50.469,"end":51.049,"text":"모두가 서","words":[{"id":"caption-word-40-0","text":"모두가","start":50.469,"end":50.852},{"id":"caption-word-40-1","text":"서","start":50.887,"end":50.991}]},{"id":"caption-group-41","frame":6,"start":51.049,"end":51.595,"text":"있는 긴","words":[{"id":"caption-word-41-0","text":"있는","start":51.049,"end":51.27},{"id":"caption-word-41-1","text":"긴","start":51.316,"end":51.525}]},{"id":"caption-group-42","frame":6,"start":51.595,"end":52.551,"text":"줄이 아니라,","words":[{"id":"caption-word-42-0","text":"줄이","start":51.595,"end":51.839},{"id":"caption-word-42-1","text":"아니라,","start":51.885,"end":52.431}]},{"id":"caption-group-43","frame":6,"start":52.628,"end":53.302,"text":"불어권 전용","words":[{"id":"caption-word-43-0","text":"불어권","start":52.628,"end":52.977},{"id":"caption-word-43-1","text":"전용","start":53.023,"end":53.267}]},{"id":"caption-group-44","frame":6,"start":53.302,"end":53.847,"text":"창구에 따로","words":[{"id":"caption-word-44-0","text":"창구에","start":53.302,"end":53.569},{"id":"caption-word-44-1","text":"따로","start":53.592,"end":53.812}]},{"id":"caption-group-45","frame":6,"start":53.847,"end":54.614,"text":"서는 겁니다.","words":[{"id":"caption-word-45-0","text":"서는","start":53.847,"end":54.056},{"id":"caption-word-45-1","text":"겁니다.","start":54.091,"end":54.614}]},{"id":"caption-group-46","frame":7,"start":54.614,"end":55.938,"text":"그럼 불어를 얼마나","words":[{"id":"caption-word-46-0","text":"그럼","start":54.614,"end":54.869},{"id":"caption-word-46-1","text":"불어를","start":54.962,"end":55.415},{"id":"caption-word-46-2","text":"얼마나","start":55.438,"end":55.903}]},{"id":"caption-group-47","frame":7,"start":55.938,"end":56.986,"text":"잘해야 할까요?","words":[{"id":"caption-word-47-0","text":"잘해야","start":55.938,"end":56.274},{"id":"caption-word-47-1","text":"할까요?","start":56.332,"end":56.866}]},{"id":"caption-group-48","frame":7,"start":57.099,"end":58.48,"text":"원어민 수준이어야 할 것","words":[{"id":"caption-word-48-0","text":"원어민","start":57.099,"end":57.54},{"id":"caption-word-48-1","text":"수준이어야","start":57.586,"end":58.167},{"id":"caption-word-48-2","text":"할","start":58.201,"end":58.283},{"id":"caption-word-48-3","text":"것","start":58.341,"end":58.457}]},{"id":"caption-group-49","frame":7,"start":58.48,"end":59.107,"text":"같지만,","words":[{"id":"caption-word-49-0","text":"같지만,","start":58.48,"end":59.084}]},{"id":"caption-group-50","frame":7,"start":59.107,"end":59.912,"text":"아닙니다.","words":[{"id":"caption-word-50-0","text":"아닙니다.","start":59.107,"end":59.792}]},{"id":"caption-group-51","frame":7,"start":59.955,"end":61.073,"text":"기준은 NCLC","words":[{"id":"caption-word-51-0","text":"기준은","start":59.955,"end":60.396},{"id":"caption-word-51-1","text":"NCLC","start":60.442,"end":60.953}]},{"id":"caption-group-52","frame":7,"start":61.15,"end":61.406,"text":"5,","words":[{"id":"caption-word-52-0","text":"5,","start":61.15,"end":61.383}]},{"id":"caption-group-53","frame":7,"start":61.406,"end":62.451,"text":"중하 수준입니다.","words":[{"id":"caption-word-53-0","text":"중하","start":61.406,"end":61.673},{"id":"caption-word-53-1","text":"수준입니다.","start":61.719,"end":62.393}]},{"id":"caption-group-54","frame":7,"start":62.451,"end":62.915,"text":"듣기,","words":[{"id":"caption-word-54-0","text":"듣기,","start":62.451,"end":62.891}]},{"id":"caption-group-55","frame":7,"start":62.915,"end":63.449,"text":"말하기,","words":[{"id":"caption-word-55-0","text":"말하기,","start":62.915,"end":63.391}]},{"id":"caption-group-56","frame":7,"start":63.449,"end":63.925,"text":"읽기,","words":[{"id":"caption-word-56-0","text":"읽기,","start":63.449,"end":63.902}]},{"id":"caption-group-57","frame":7,"start":63.925,"end":64.354,"text":"쓰기,","words":[{"id":"caption-word-57-0","text":"쓰기,","start":63.925,"end":64.319}]},{"id":"caption-group-58","frame":7,"start":64.354,"end":64.877,"text":"네 영역","words":[{"id":"caption-word-58-0","text":"네","start":64.354,"end":64.424},{"id":"caption-word-58-1","text":"영역","start":64.505,"end":64.83}]},{"id":"caption-group-59","frame":7,"start":64.877,"end":66.224,"text":"모두 5레벨이면 됩니다.","words":[{"id":"caption-word-59-0","text":"모두","start":64.877,"end":65.179},{"id":"caption-word-59-1","text":"5레벨이면","start":65.202,"end":65.782},{"id":"caption-word-59-2","text":"됩니다.","start":65.84,"end":66.224}]},{"id":"caption-group-60","frame":8,"start":66.224,"end":67.896,"text":"연방 익스프레스 엔트리 불어","words":[{"id":"caption-word-60-0","text":"연방","start":66.224,"end":66.596},{"id":"caption-word-60-1","text":"익스프레스","start":66.677,"end":67.234},{"id":"caption-word-60-2","text":"엔트리","start":67.281,"end":67.606},{"id":"caption-word-60-3","text":"불어","start":67.652,"end":67.838}]},{"id":"caption-group-61","frame":8,"start":67.896,"end":69.823,"text":"카테고리가 7레벨을 요구하는 것과","words":[{"id":"caption-word-61-0","text":"카테고리가","start":67.896,"end":68.442},{"id":"caption-word-61-1","text":"7레벨을","start":68.558,"end":69.022},{"id":"caption-word-61-2","text":"요구하는","start":69.068,"end":69.463},{"id":"caption-word-61-3","text":"것과","start":69.498,"end":69.788}]},{"id":"caption-group-62","frame":8,"start":69.823,"end":70.895,"text":"비교하면,","words":[{"id":"caption-word-62-0","text":"비교하면,","start":69.823,"end":70.775}]},{"id":"caption-group-63","frame":8,"start":70.972,"end":72.366,"text":"문턱이 훨씬 낮습니다.","words":[{"id":"caption-word-63-0","text":"문턱이","start":70.972,"end":71.356},{"id":"caption-word-63-1","text":"훨씬","start":71.379,"end":71.681},{"id":"caption-word-63-2","text":"낮습니다.","start":71.704,"end":72.331}]},{"id":"caption-group-64","frame":8,"start":72.366,"end":73.074,"text":"중하 수준의","words":[{"id":"caption-word-64-0","text":"중하","start":72.366,"end":72.621},{"id":"caption-word-64-1","text":"수준의","start":72.679,"end":73.027}]},{"id":"caption-group-65","frame":8,"start":73.074,"end":74.03,"text":"불어 하나로,","words":[{"id":"caption-word-65-0","text":"불어","start":73.074,"end":73.283},{"id":"caption-word-65-1","text":"하나로,","start":73.341,"end":73.91}]},{"id":"caption-group-66","frame":8,"start":74.177,"end":75.558,"text":"치열한 쿼터 경쟁에서","words":[{"id":"caption-word-66-0","text":"치열한","start":74.177,"end":74.525},{"id":"caption-word-66-1","text":"쿼터","start":74.595,"end":74.85},{"id":"caption-word-66-2","text":"경쟁에서","start":74.896,"end":75.535}]},{"id":"caption-group-67","frame":8,"start":75.558,"end":76.591,"text":"분리된다는 것.","words":[{"id":"caption-word-67-0","text":"분리된다는","start":75.558,"end":76.336},{"id":"caption-word-67-1","text":"것.","start":76.394,"end":76.545}]},{"id":"caption-group-68","frame":8,"start":76.591,"end":77.207,"text":"이건 정말,","words":[{"id":"caption-word-68-0","text":"이건","start":76.591,"end":76.742},{"id":"caption-word-68-1","text":"정말,","start":76.789,"end":77.184}]},{"id":"caption-group-69","frame":8,"start":77.207,"end":78.345,"text":"엄청난 장점입니다.","words":[{"id":"caption-word-69-0","text":"엄청난","start":77.207,"end":77.66},{"id":"caption-word-69-1","text":"장점입니다.","start":77.683,"end":78.345}]},{"id":"caption-group-70","frame":9,"start":78.345,"end":79.425,"text":"물론 각 주정부","words":[{"id":"caption-word-70-0","text":"물론","start":78.345,"end":78.67},{"id":"caption-word-70-1","text":"각","start":78.717,"end":78.902},{"id":"caption-word-70-2","text":"주정부","start":78.949,"end":79.367}]},{"id":"caption-group-71","frame":9,"start":79.425,"end":80.845,"text":"프로그램의 기본 자격,","words":[{"id":"caption-word-71-0","text":"프로그램의","start":79.425,"end":79.912},{"id":"caption-word-71-1","text":"기본","start":79.936,"end":80.226},{"id":"caption-word-71-2","text":"자격,","start":80.272,"end":80.725}]},{"id":"caption-group-72","frame":9,"start":80.957,"end":82.083,"text":"예를 들어 직업이나","words":[{"id":"caption-word-72-0","text":"예를","start":80.957,"end":81.189},{"id":"caption-word-72-1","text":"들어","start":81.236,"end":81.445},{"id":"caption-word-72-2","text":"직업이나","start":81.515,"end":82.025}]},{"id":"caption-group-73","frame":9,"start":82.083,"end":83.175,"text":"경력 조건은 갖춰야","words":[{"id":"caption-word-73-0","text":"경력","start":82.083,"end":82.385},{"id":"caption-word-73-1","text":"조건은","start":82.42,"end":82.792},{"id":"caption-word-73-2","text":"갖춰야","start":82.815,"end":83.128}]},{"id":"caption-group-74","frame":9,"start":83.175,"end":83.546,"text":"합니다.","words":[{"id":"caption-word-74-0","text":"합니다.","start":83.175,"end":83.523}]},{"id":"caption-group-75","frame":9,"start":83.546,"end":85.195,"text":"하지만 같은 자격이라면,","words":[{"id":"caption-word-75-0","text":"하지만","start":83.546,"end":83.918},{"id":"caption-word-75-1","text":"같은","start":83.964,"end":84.313},{"id":"caption-word-75-2","text":"자격이라면,","start":84.359,"end":85.16}]},{"id":"caption-group-76","frame":9,"start":85.195,"end":85.706,"text":"불어가 있는","words":[{"id":"caption-word-76-0","text":"불어가","start":85.195,"end":85.462},{"id":"caption-word-76-1","text":"있는","start":85.497,"end":85.671}]},{"id":"caption-group-77","frame":9,"start":85.706,"end":86.906,"text":"사람이 훨씬","words":[{"id":"caption-word-77-0","text":"사람이","start":85.706,"end":86.043},{"id":"caption-word-77-1","text":"훨씬","start":86.089,"end":86.786}]},{"id":"caption-group-78","frame":9,"start":86.983,"end":87.738,"text":"유리한 위치에","words":[{"id":"caption-word-78-0","text":"유리한","start":86.983,"end":87.378},{"id":"caption-word-78-1","text":"위치에","start":87.436,"end":87.703}]},{"id":"caption-group-79","frame":9,"start":87.738,"end":88.33,"text":"서게 됩니다.","words":[{"id":"caption-word-79-0","text":"서게","start":87.738,"end":87.923},{"id":"caption-word-79-1","text":"됩니다.","start":87.97,"end":88.33}]},{"id":"caption-group-80","frame":10,"start":88.33,"end":90.489,"text":"그럼 불어 5레벨은 어디서","words":[{"id":"caption-word-80-0","text":"그럼","start":88.33,"end":88.678},{"id":"caption-word-80-1","text":"불어","start":88.818,"end":89.212},{"id":"caption-word-80-2","text":"5레벨은","start":89.375,"end":90.06},{"id":"caption-word-80-3","text":"어디서","start":90.095,"end":90.455}]},{"id":"caption-group-81","frame":10,"start":90.489,"end":91.209,"text":"준비할까요?","words":[{"id":"caption-word-81-0","text":"준비할까요?","start":90.489,"end":91.174}]},{"id":"caption-group-82","frame":10,"start":91.209,"end":92.417,"text":"불어와 영어를 함께","words":[{"id":"caption-word-82-0","text":"불어와","start":91.209,"end":91.569},{"id":"caption-word-82-1","text":"영어를","start":91.627,"end":92.034},{"id":"caption-word-82-2","text":"함께","start":92.092,"end":92.37}]},{"id":"caption-group-83","frame":10,"start":92.417,"end":93.148,"text":"쓰는 도시,","words":[{"id":"caption-word-83-0","text":"쓰는","start":92.417,"end":92.672},{"id":"caption-word-83-1","text":"도시,","start":92.707,"end":93.102}]},{"id":"caption-group-84","frame":10,"start":93.148,"end":94.325,"text":"몬트리올입니다.","words":[{"id":"caption-word-84-0","text":"몬트리올입니다.","start":93.148,"end":94.205}]},{"id":"caption-group-85","frame":10,"start":94.437,"end":96.445,"text":"몬트리올 어학연수로 불어 5레벨을","words":[{"id":"caption-word-85-0","text":"몬트리올","start":94.437,"end":94.924},{"id":"caption-word-85-1","text":"어학연수로","start":94.971,"end":95.621},{"id":"caption-word-85-2","text":"불어","start":95.656,"end":95.83},{"id":"caption-word-85-3","text":"5레벨을","start":95.923,"end":96.422}]},{"id":"caption-group-86","frame":10,"start":96.445,"end":97.165,"text":"만들고,","words":[{"id":"caption-word-86-0","text":"만들고,","start":96.445,"end":97.049}]},{"id":"caption-group-87","frame":10,"start":97.165,"end":98.156,"text":"그 점수로","words":[{"id":"caption-word-87-0","text":"그","start":97.165,"end":97.293},{"id":"caption-word-87-1","text":"점수로","start":97.339,"end":98.036}]},{"id":"caption-group-88","frame":10,"start":98.349,"end":99.522,"text":"영주권 경쟁의 판을","words":[{"id":"caption-word-88-0","text":"영주권","start":98.349,"end":98.756},{"id":"caption-word-88-1","text":"경쟁의","start":98.791,"end":99.208},{"id":"caption-word-88-2","text":"판을","start":99.255,"end":99.499}]},{"id":"caption-group-89","frame":10,"start":99.522,"end":100.102,"text":"바꾸세요.","words":[{"id":"caption-word-89-0","text":"바꾸세요.","start":99.522,"end":100.068}]},{"id":"caption-group-90","frame":10,"start":100.102,"end":101.383,"text":"자세한 로드맵은,","words":[{"id":"caption-word-90-0","text":"자세한","start":100.102,"end":100.474},{"id":"caption-word-90-1","text":"로드맵은,","start":100.532,"end":101.263}]},{"id":"caption-group-91","frame":10,"start":101.426,"end":103.496,"text":"AA Canada에 문의 주세요.","words":[{"id":"caption-word-91-0","text":"AA","start":101.426,"end":101.739},{"id":"caption-word-91-1","text":"Canada에","start":101.856,"end":102.378},{"id":"caption-word-91-2","text":"문의","start":102.436,"end":102.668},{"id":"caption-word-91-3","text":"주세요.","start":102.715,"end":103.376}]}];
+  var DURATION = 103.377;
+
+  (function () {
+    var stage = document.getElementById("caption-stage");
+
+    // build DOM: one .caption-group per group, .caption-word per word
+    GROUPS.forEach(function (group, g) {
+      var groupEl = document.createElement("div");
+      groupEl.className = "caption-group";
+      groupEl.id = "caption-group-" + g;
+      var pill = document.createElement("div");
+      pill.className = "caption-pill";
+      var line = document.createElement("div");
+      line.className = "caption-line";
+      (group.words || []).forEach(function (w, i) {
+        var span = document.createElement("span");
+        span.className = "caption-word";
+        span.id = "caption-word-" + g + "-" + i;
+        span.textContent = String(w.text);
+        line.appendChild(span);
+      });
+      pill.appendChild(line);
+      groupEl.appendChild(pill);
+      stage.appendChild(groupEl);
+    });
+
+    window.__timelines = window.__timelines || {};
+    var tl = gsap.timeline({ paused: true });
+
+    GROUPS.forEach(function (group, g) {
+      var groupEl = document.getElementById("caption-group-" + g);
+      var words = group.words || [];
+      var next = GROUPS[g + 1];
+      var isLast = g === GROUPS.length - 1;
+      var start = Math.max(0, Number(group.start));
+      var end = isLast ? DURATION : Math.min(Number(next.start), Number(group.end) + 0.3);
+      if (end <= start) end = start + 0.01;
+
+      // group on/off — exactly one group visible at a time
+      tl.set(groupEl, { opacity: 1 }, start);
+      tl.set(groupEl, { opacity: 0 }, end);
+
+      // 3-state karaoke via className SETS — seek-safe (gsap.set applies on the
+      // engine's frame-by-frame seek; .call callbacks would NOT fire).
+      words.forEach(function (w, i) {
+        var el = document.getElementById("caption-word-" + g + "-" + i);
+        var at = Math.max(start, Number(w.start));
+        tl.set(el, { className: "caption-word" }, start); // upcoming (also resets on reverse-seek)
+        tl.set(el, { className: "caption-word is-active" }, at); // current
+        tl.fromTo(el, { scale: 0.985 }, { scale: 1, duration: 0.18, ease: "power1.out" }, at);
+        if (i + 1 < words.length) {
+          var nextAt = Math.max(start, Number(words[i + 1].start));
+          tl.set(el, { className: "caption-word is-spoken" }, nextAt); // demote when next activates
+        }
+      });
+      if (words.length) {
+        var lastEl = document.getElementById("caption-word-" + g + "-" + (words.length - 1));
+        var lastSpoken = Math.min(end, Number(words[words.length - 1].end) + 0.1);
+        tl.set(lastEl, { className: "caption-word is-spoken" }, lastSpoken);
+      }
+    });
+
+    // full-span anchor so the sub-comp timeline spans the whole video
+    tl.to({}, { duration: DURATION }, 0);
+    window.__timelines["captions"] = tl;
+  })();
+</script>
+
+<style>
+  .caption-line { line-height: 1.1 !important; }
+</style>
+</template>
