@@ -1,0 +1,164 @@
+<template id="09-caveat-template">
+  <div id="root" data-composition-id="09-caveat" data-width="1080" data-height="1920" data-duration="9.985">
+    <style>
+      @font-face{font-family:"Pretendard";font-weight:800;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");}
+      @font-face{font-family:"Pretendard";font-weight:700;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");}
+      @font-face{font-family:"Pretendard";font-weight:500;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Medium.woff2") format("woff2");}
+      @font-face{font-family:"Pretendard";font-weight:900;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Black.woff2") format("woff2");}
+
+      #root {
+        position: relative;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        font-family: "Pretendard", sans-serif;
+        color: #111111;
+      }
+      .\30 9-caveat-bg {
+        position: absolute; inset: 0;
+        background: #fdfae7;
+      }
+      .\30 9-caveat-stage {
+        position: absolute; inset: 0;
+      }
+      #\30 9-caveat-card {
+        position: absolute;
+        left: 80px; top: 400px;
+        width: 920px; height: 560px;
+        box-sizing: border-box;
+        padding: 64px 64px 0 64px;
+        background: rgba(30,43,250,0.04);
+        border: 1.5px solid rgba(30,43,250,0.2);
+        border-radius: 14px;
+      }
+      #\30 9-caveat-eyebrow {
+        display: inline-flex; align-items: center; gap: 14px;
+        padding: 12px 30px;
+        border-radius: 100px;
+        background: rgba(30,43,250,0.08);
+        color: #1e2bfa;
+        font-weight: 700; font-size: 36px; letter-spacing: 0.08em;
+      }
+      #\30 9-caveat-head {
+        margin-top: 44px;
+        font-weight: 800; font-size: 78px; line-height: 1.18;
+        letter-spacing: -0.02em; color: #111111;
+      }
+      .\30 9-caveat-chips {
+        position: absolute; left: 64px; top: 424px;
+        display: flex; gap: 20px;
+      }
+      .\30 9-caveat-chip {
+        padding: 14px 38px;
+        border-radius: 100px;
+        border: 1.5px solid rgba(30,43,250,0.2);
+        background: rgba(30,43,250,0.08);
+        color: #1e2bfa;
+        font-weight: 700; font-size: 44px; line-height: 1.1;
+      }
+      #\30 9-caveat-link {
+        position: absolute; left: 538px; top: 990px;
+        width: 4px; height: 110px;
+        border-radius: 2px;
+        background: rgba(30,43,250,0.35);
+        transform-origin: 50% 0%;
+      }
+      #\30 9-caveat-same {
+        position: absolute; left: 0; width: 1080px; top: 1130px;
+        text-align: center;
+        font-weight: 500; font-size: 58px; letter-spacing: -0.02em;
+        color: #6b6b6b;
+      }
+      #\30 9-caveat-win {
+        position: absolute; left: 0; width: 1080px; top: 1250px;
+        display: flex; justify-content: center; align-items: center; gap: 28px;
+        color: #1e2bfa;
+        font-weight: 900; font-size: 112px; letter-spacing: -0.02em; line-height: 1;
+        transform-origin: 50% 50%;
+      }
+      #\30 9-caveat-arrow {
+        width: 96px; height: 112px; display: block;
+      }
+      #\30 9-caveat-underline {
+        position: absolute; left: 240px; top: 1400px;
+        width: 600px; height: 6px; border-radius: 6px;
+        background: #1e2bfa;
+        transform-origin: 0% 50%;
+      }
+      .\30 9-caveat-progress {
+        position: absolute; left: 0; bottom: 0;
+        width: 972px; height: 3px;
+        background: #1e2bfa;
+      }
+    </style>
+
+    <div class="09-caveat-bg clip" data-start="0" data-duration="9.985" data-track-index="0"></div>
+
+    <div class="09-caveat-stage clip" data-start="0" data-duration="9.985" data-track-index="1">
+      <div id="09-caveat-card">
+        <div id="09-caveat-eyebrow"><span>※</span><span>주의</span></div>
+        <div id="09-caveat-head">주정부 프로그램<br>기본 자격은 필요</div>
+        <div class="09-caveat-chips">
+          <div class="09-caveat-chip" id="09-caveat-chip-job">직업</div>
+          <div class="09-caveat-chip" id="09-caveat-chip-exp">경력</div>
+        </div>
+      </div>
+
+      <div id="09-caveat-link"></div>
+      <div id="09-caveat-same">같은 자격이라면</div>
+      <div id="09-caveat-win">
+        <span>불어 가능자</span>
+        <svg id="09-caveat-arrow" viewBox="0 0 96 112" aria-hidden="true">
+          <path d="M48 104 L48 18" stroke="#1e2bfa" stroke-width="14" stroke-linecap="round" fill="none"/>
+          <path d="M14 50 L48 14 L82 50" stroke="#1e2bfa" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+        <span>유리</span>
+      </div>
+      <div id="09-caveat-underline"></div>
+    </div>
+
+    <div class="09-caveat-progress clip" data-start="0" data-duration="9.985" data-track-index="2"></div>
+
+    <script src="assets/vendor/gsap.min.js"></script>
+    <script>
+      (function () {
+        window.__timelines = window.__timelines || {};
+        var q = function (id) { return document.getElementById(id); };
+        var tl = gsap.timeline({ paused: true });
+
+        // Scene 1 — the one restrained move: card slide-up crossfade into center
+        tl.fromTo(q("09-caveat-card"), { y: 70, opacity: 0, scale: 0.97 },
+          { y: 0, opacity: 1, scale: 1, duration: 0.9, ease: "power3.out" }, 0.15);
+        tl.fromTo(q("09-caveat-eyebrow"), { y: 16, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 0.35);
+        // "기본 자격" (1.6s) — the caveat line lands
+        tl.fromTo(q("09-caveat-head"), { y: 40, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.7, ease: "power3.out" }, 1.55);
+        // "직업이나" (3.2s), "경력" (3.7s) — chips pop
+        tl.fromTo(q("09-caveat-chip-job"), { scale: 0.6, opacity: 0 },
+          { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(2)" }, 3.2);
+        tl.fromTo(q("09-caveat-chip-exp"), { scale: 0.6, opacity: 0 },
+          { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(2)" }, 3.7);
+
+        // Scene 2 — "하지만 같은 자격이라면" (5.2s)
+        tl.fromTo(q("09-caveat-link"), { scaleY: 0, opacity: 0 },
+          { scaleY: 1, opacity: 1, duration: 0.5, ease: "power2.out" }, 5.15);
+        tl.fromTo(q("09-caveat-same"), { y: 30, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.6, ease: "power2.out" }, 5.3);
+        // "불어가 있는 사람이" (6.8s) — cobalt conclusion settles
+        tl.fromTo(q("09-caveat-win"), { y: 50, opacity: 0, scale: 0.94 },
+          { y: 0, opacity: 1, scale: 1, duration: 0.8, ease: "power3.out" }, 6.8);
+        tl.fromTo(q("09-caveat-arrow"), { y: 30, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.6, ease: "back.out(2.2)" }, 7.05);
+        tl.fromTo(q("09-caveat-underline"), { scaleX: 0 },
+          { scaleX: 1, duration: 0.7, ease: "power2.inOut" }, 7.3);
+
+        // Hold — one subtle breathing pulse on the conclusion (explicit, no repeat)
+        tl.to(q("09-caveat-win"), { scale: 1.025, duration: 1.1, ease: "sine.inOut" }, 7.8);
+        tl.to(q("09-caveat-win"), { scale: 1.0, duration: 1.05, ease: "sine.inOut" }, 8.9);
+
+        window.__timelines["09-caveat"] = tl;
+      })();
+    </script>
+  </div>
+</template>
