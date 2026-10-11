@@ -1,0 +1,171 @@
+<template id="04-federal-5000-template">
+  <div id="root" data-composition-id="04-federal-5000" data-start="0" data-duration="9.567" data-width="1080" data-height="1920">
+    <style>
+      @font-face{font-family:"Pretendard";font-weight:800;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");}
+      @font-face{font-family:"Pretendard";font-weight:700;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");}
+      @font-face{font-family:"Pretendard";font-weight:500;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Medium.woff2") format("woff2");}
+      @font-face{font-family:"Pretendard";font-weight:900;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Black.woff2") format("woff2");}
+
+      #root {
+        position: relative;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        font-family: "Pretendard", sans-serif;
+      }
+      #f04-bg {
+        position: absolute; left: 0; top: 0; width: 1080px; height: 1920px;
+        background: #fdfae7;
+      }
+      #f04-stage {
+        position: absolute; left: 0; top: 0; width: 1080px; height: 1920px;
+        transform-origin: 540px 880px;
+      }
+      #f04-glow {
+        position: absolute; left: 40px; top: 380px; width: 1000px; height: 1000px;
+        border-radius: 50%;
+        background: radial-gradient(circle at center, rgba(30,43,250,0.55) 0%, rgba(30,43,250,0.22) 38%, rgba(30,43,250,0) 70%);
+        opacity: 0;
+        z-index: 1;
+      }
+      #f04-accent-line {
+        position: absolute; left: 510px; top: 250px; width: 60px; height: 4px;
+        border-radius: 2px; background: #1e2bfa; z-index: 2;
+      }
+      #f04-eyebrow {
+        position: absolute; left: 0; right: 0; top: 284px;
+        margin: 0 auto; width: max-content;
+        padding: 18px 40px;
+        border-radius: 100px;
+        background: rgba(30,43,250,0.08);
+        border: 1.5px solid rgba(30,43,250,0.2);
+        color: #1e2bfa;
+        font-weight: 800; font-size: 40px; letter-spacing: 0.08em;
+        line-height: 1;
+        z-index: 2;
+      }
+      #f04-headline {
+        position: absolute; left: 54px; right: 54px; top: 400px;
+        text-align: center;
+        color: #111111;
+        font-weight: 800; font-size: 88px; line-height: 1.1; letter-spacing: -0.02em;
+        z-index: 2;
+      }
+      .f04-word { display: inline-block; margin: 0 12px; }
+      #f04-card {
+        position: absolute; left: 90px; right: 90px; top: 1240px; height: 150px;
+        box-sizing: border-box;
+        border-radius: 14px;
+        background: rgba(30,43,250,0.04);
+        border: 1.5px solid rgba(30,43,250,0.2);
+        display: flex; align-items: center; justify-content: center; gap: 24px;
+        color: #111111;
+        font-weight: 800; font-size: 60px; letter-spacing: -0.02em;
+        z-index: 2;
+      }
+      #f04-card-dot {
+        width: 22px; height: 22px; border-radius: 50%; background: #1e2bfa; flex: none;
+      }
+      #f04-count-wrap {
+        position: absolute; left: 40px; top: 715px; width: 1000px; height: 330px;
+        display: flex; align-items: center; justify-content: center;
+        z-index: 3;
+      }
+      #f04-counter {
+        display: inline-block;
+        font-weight: 900; font-size: 330px; line-height: 1;
+        color: #1e2bfa;
+        letter-spacing: -0.03em;
+        font-variant-numeric: tabular-nums;
+        font-feature-settings: "tnum" 1;
+        transform-origin: center center;
+      }
+      #f04-label {
+        position: absolute; left: 0; right: 0; top: 1080px;
+        text-align: center;
+        color: #111111;
+        font-weight: 800; font-size: 58px; letter-spacing: -0.02em; line-height: 1.1;
+        z-index: 3;
+      }
+      #f04-label .f04-label-unit { color: #1e2bfa; }
+      #f04-progress {
+        position: absolute; left: 0; top: 1917px; width: 432px; height: 3px;
+        background: #1e2bfa;
+      }
+    </style>
+
+    <div id="f04-bg" class="clip" data-start="0" data-duration="9.567" data-track-index="0"></div>
+
+    <div id="f04-stage" class="clip" data-start="0" data-duration="9.567" data-track-index="1">
+      <div id="f04-glow"></div>
+      <div id="f04-accent-line"></div>
+      <div id="f04-eyebrow">2026 · 연방정부</div>
+      <div id="f04-headline"><span class="f04-word">연방정부의</span><span class="f04-word">새</span><span class="f04-word">발표</span></div>
+      <div id="f04-card"><span id="f04-card-dot"></span><span>불어 사용 이민자 전용</span></div>
+      <div id="f04-count-wrap"><span id="f04-counter">0</span></div>
+      <div id="f04-label"><span class="f04-label-unit">개</span> · 연방 별도 정원(TO)</div>
+    </div>
+
+    <div id="f04-progress" class="clip" data-start="0" data-duration="9.567" data-track-index="2"></div>
+
+    <script src="assets/vendor/gsap.min.js"></script>
+    <script>
+      (function () {
+        window.__timelines = window.__timelines || {};
+        var tl = gsap.timeline({ paused: true });
+        var DUR = 9.567;
+
+        // Slow continuous camera zoom-in under the whole shot
+        tl.fromTo("#f04-stage", { scale: 1 }, { scale: 1.045, duration: DUR, ease: "none" }, 0);
+
+        // Scene 1 — eyebrow pill springs in on "2026년"
+        tl.fromTo("#f04-accent-line", { scaleX: 0, opacity: 0 }, { scaleX: 1, opacity: 1, duration: 0.5, ease: "power3.out" }, 0.2);
+        tl.fromTo("#f04-eyebrow", { scale: 0.6, opacity: 0, y: 20 }, { scale: 1, opacity: 1, y: 0, duration: 0.7, ease: "back.out(1.8)" }, 0.3);
+
+        // Headline per-word reveal on "중요한 발표"
+        tl.fromTo("#f04-headline .f04-word",
+          { y: 50, opacity: 0, filter: "blur(10px)" },
+          { y: 0, opacity: 1, filter: "blur(0px)", duration: 0.55, ease: "power3.out", stagger: 0.16 },
+          2.5);
+
+        // Scene 2 — card slides up into the middle; glow blooms behind it
+        tl.fromTo("#f04-card", { y: -355, opacity: 0, scale: 0.96 }, { y: -435, opacity: 1, scale: 1, duration: 0.8, ease: "power3.out" }, 4.3);
+        tl.fromTo("#f04-glow", { opacity: 0, scale: 0.85 }, { opacity: 0.28, scale: 1, duration: 1.0, ease: "power2.out" }, 4.1);
+        var glow = document.getElementById("f04-glow");
+        var phase = { p: 0 };
+        tl.to(phase, {
+          p: Math.PI * 2 * 1.5,
+          duration: DUR - 5.1,
+          ease: "none",
+          onUpdate: function () {
+            var s = Math.sin(phase.p);
+            glow.style.opacity = String(0.28 + s * 0.03);
+            glow.style.transform = "scale(" + (1 + s * 0.02) + ")";
+          }
+        }, 5.1);
+
+        // Scene 3 — card glides down to make room; hero number counts 0 → 5,000 with scale growth
+        tl.to("#f04-card", { y: 0, scale: 0.94, duration: 0.7, ease: "power3.inOut" }, 7.3);
+
+        var counter = document.getElementById("f04-counter");
+        var state = { value: 0 };
+        var COUNT_AT = 7.4, COUNT_DUR = 1.5, START_SCALE = 0.5;
+        tl.fromTo("#f04-count-wrap", { opacity: 0 }, { opacity: 1, duration: 0.25, ease: "power1.out" }, COUNT_AT);
+        tl.fromTo(state, { value: 0 }, {
+          value: 5000,
+          duration: COUNT_DUR,
+          ease: "power3.out",
+          onUpdate: function () {
+            counter.textContent = Math.round(state.value).toLocaleString("en-US");
+          }
+        }, COUNT_AT);
+        tl.fromTo(counter, { scale: START_SCALE }, { scale: 1, duration: COUNT_DUR, ease: "power3.out" }, COUNT_AT);
+
+        // Label settles under the number on "따로 마련한"
+        tl.fromTo("#f04-label", { y: 24, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power2.out" }, 8.4);
+
+        window.__timelines["04-federal-5000"] = tl;
+      })();
+    </script>
+  </div>
+</template>

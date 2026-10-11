@@ -1,0 +1,287 @@
+<template id="07-nclc5-template">
+  <div id="root" data-composition-id="07-nclc5" data-width="1080" data-height="1920" data-start="0" data-duration="11.61">
+    <style>
+      @font-face{font-family:"Pretendard";font-weight:800;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");}
+      @font-face{font-family:"Pretendard";font-weight:700;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");}
+      @font-face{font-family:"Pretendard";font-weight:500;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Medium.woff2") format("woff2");}
+      @font-face{font-family:"Pretendard";font-weight:900;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Black.woff2") format("woff2");}
+
+      #root {
+        position: relative;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        container-type: size;
+        font-family: "Pretendard", sans-serif;
+        color: #111111;
+      }
+      .n7-bg {
+        position: absolute;
+        inset: 0;
+        background: #fdfae7;
+      }
+      .n7-cam {
+        position: absolute;
+        inset: 0;
+        transform-origin: 50% 45%;
+      }
+      /* eyebrow */
+      .n7-eyebrow {
+        position: absolute;
+        left: 0; right: 0;
+        top: 196px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+      }
+      .n7-accent-line { width: 60px; height: 4px; border-radius: 2px; background: #1e2bfa; }
+      /* Scene 1 — question line */
+      .n7-question {
+        position: absolute;
+        left: 54px; right: 54px;
+        top: 250px;
+        text-align: center;
+        font-size: 84px;
+        font-weight: 800;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        color: #111111;
+      }
+      .n7-word { display: inline-block; margin: 0 10px; }
+      /* Scene 2 — native-level card */
+      .n7-native {
+        position: absolute;
+        left: 0; right: 0;
+        margin: 0 auto;
+        top: 520px;
+        width: 640px;
+        height: 200px;
+        border-radius: 14px;
+        background: rgba(30,43,250,0.04);
+        border: 1.5px solid rgba(30,43,250,0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .n7-native-wrap { position: relative; display: inline-block; }
+      .n7-native-text {
+        position: relative;
+        z-index: 0;
+        font-size: 92px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        color: #111111;
+      }
+      .n7-strike {
+        position: absolute;
+        inset: 0 -18px;
+        z-index: 1;
+      }
+      .n7-strike-line {
+        position: absolute;
+        display: block;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 8px;
+        margin-top: -4px;
+        border-radius: 4px;
+        background: #dc2626;
+        transform-origin: left center;
+      }
+      /* Scene 3 — hero badge */
+      .n7-badge {
+        position: absolute;
+        left: 0; right: 0;
+        margin: 0 auto;
+        top: 620px;
+        width: 820px;
+        height: 280px;
+        border-radius: 14px;
+        background: rgba(30,43,250,0.08);
+        border: 1.5px solid rgba(30,43,250,0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .n7-badge-text {
+        font-size: 210px;
+        font-weight: 900;
+        line-height: 1;
+        letter-spacing: -0.02em;
+        color: #1e2bfa;
+      }
+      .n7-pill {
+        position: absolute;
+        left: 0; right: 0;
+        margin: 0 auto;
+        top: 934px;
+        width: 380px;
+        height: 100px;
+        border-radius: 100px;
+        background: #1e2bfa;
+        color: #fdfae7;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 54px;
+        font-weight: 800;
+        letter-spacing: -0.01em;
+      }
+      /* Scene 4 — 2×2 skill grid */
+      .n7-grid {
+        position: absolute;
+        left: 124px;
+        top: 1092px;
+        width: 832px;
+        height: 456px;
+      }
+      .n7-card {
+        position: absolute;
+        width: 400px;
+        height: 212px;
+        border-radius: 14px;
+        background: rgba(30,43,250,0.04);
+        border: 1.5px solid rgba(30,43,250,0.2);
+        box-sizing: border-box;
+        padding: 0 34px 0 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .n7-c1 { left: 0; top: 0; }
+      .n7-c2 { left: 432px; top: 0; }
+      .n7-c3 { left: 0; top: 244px; }
+      .n7-c4 { left: 432px; top: 244px; }
+      .n7-card-label {
+        font-size: 68px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        color: #111111;
+      }
+      .n7-five {
+        width: 104px;
+        height: 104px;
+        border-radius: 50%;
+        background: #1e2bfa;
+        color: #fdfae7;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 64px;
+        font-weight: 900;
+        line-height: 1;
+      }
+      .n7-bracket {
+        position: absolute;
+        left: 92px;
+        top: 1060px;
+        width: 896px;
+        height: 520px;
+        overflow: visible;
+      }
+      .n7-progress {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 756px;
+        height: 3px;
+        background: #1e2bfa;
+      }
+    </style>
+
+    <div id="n7-bg" class="clip n7-bg" data-start="0" data-duration="11.61" data-track-index="0"></div>
+
+    <div id="n7-cam" class="n7-cam">
+      <div class="n7-question" id="n7-question">
+        <span class="n7-word" id="n7-w1">불어,</span><span class="n7-word" id="n7-w2">얼마나</span><span class="n7-word" id="n7-w3">잘해야</span><span class="n7-word" id="n7-w4">할까?</span>
+      </div>
+
+      <div class="n7-native" id="n7-native">
+        <span class="n7-native-wrap">
+          <span class="n7-native-text">원어민 수준?</span>
+          <span class="n7-strike">
+            <span class="n7-strike-line" id="n7-strike-fwd"></span>
+            <span class="n7-strike-line" id="n7-strike-bwd"></span>
+          </span>
+        </span>
+      </div>
+
+      <div class="n7-badge" id="n7-badge"><span class="n7-badge-text">NCLC 5</span></div>
+      <div class="n7-pill" id="n7-pill">중하 수준</div>
+
+      <svg class="n7-bracket" id="n7-bracket" viewBox="0 0 896 520" fill="none">
+        <path id="n7-br-l" d="M48,3 L3,3 L3,517 L48,517" stroke="#1e2bfa" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" pathLength="1"/>
+        <path id="n7-br-r" d="M848,3 L893,3 L893,517 L848,517" stroke="#1e2bfa" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" pathLength="1"/>
+      </svg>
+
+      <div class="n7-grid" id="n7-grid">
+        <div class="n7-card n7-c1" id="n7-card1"><span class="n7-card-label">듣기</span><span class="n7-five" id="n7-five1">5</span></div>
+        <div class="n7-card n7-c2" id="n7-card2"><span class="n7-card-label">말하기</span><span class="n7-five" id="n7-five2">5</span></div>
+        <div class="n7-card n7-c3" id="n7-card3"><span class="n7-card-label">읽기</span><span class="n7-five" id="n7-five3">5</span></div>
+        <div class="n7-card n7-c4" id="n7-card4"><span class="n7-card-label">쓰기</span><span class="n7-five" id="n7-five4">5</span></div>
+      </div>
+    </div>
+
+    <div class="n7-progress" id="n7-progress"></div>
+
+    <script src="assets/vendor/gsap.min.js"></script>
+    <script>
+      (function () {
+        window.__timelines = window.__timelines || {};
+        var tl = gsap.timeline({ paused: true });
+        var D = 11.61;
+
+        // Macro camera: slow steady push-in under the whole shot
+        tl.fromTo("#n7-cam", { scale: 1 }, { scale: 1.03, duration: D, ease: "none" }, 0);
+
+        // Scene 1 (0.0–2.4s): question line, per-word reveal
+        tl.fromTo(["#n7-w1", "#n7-w2", "#n7-w3", "#n7-w4"],
+          { opacity: 0, y: 40 },
+          { opacity: 1, y: 0, duration: 0.45, ease: "power3.out", stagger: 0.42 }, 0.1);
+
+        // Scene 2 (2.4–5.2s): "원어민 수준?" card appears, gets struck, shrinks/dims away
+        tl.fromTo("#n7-native",
+          { opacity: 0, scale: 0.9, y: 30 },
+          { opacity: 1, scale: 1, y: 0, duration: 0.5, ease: "back.out(1.6)" }, 2.5);
+        tl.fromTo("#n7-strike-fwd", { scaleX: 0, rotation: -10 }, { scaleX: 1, rotation: -10, duration: 0.3, ease: "power2.out" }, 4.5);
+        tl.fromTo("#n7-strike-bwd", { scaleX: 0, rotation: 10 }, { scaleX: 1, rotation: 10, duration: 0.3, ease: "power2.out" }, 4.65);
+        // scale-swap: shrink + dim + lift out of the badge's slot
+        tl.to("#n7-native", { scale: 0.5, y: -130, opacity: 0.35, duration: 0.55, ease: "power3.inOut" }, 5.05);
+        tl.to("#n7-question", { opacity: 0.55, duration: 0.5, ease: "power2.out" }, 5.1);
+
+        // Scene 3 (5.2–7.7s): hero badge spring-settles; pill settles under it
+        tl.fromTo("#n7-badge",
+          { opacity: 0, scale: 0.55, y: 40 },
+          { opacity: 1, scale: 1, y: 0, duration: 0.75, ease: "back.out(1.7)" }, 5.8);
+        tl.fromTo("#n7-pill",
+          { opacity: 0, scale: 0.7, y: 30 },
+          { opacity: 1, scale: 1, y: 0, duration: 0.5, ease: "back.out(1.8)" }, 6.8);
+
+        // Scene 4 (7.7–11.61s): 2×2 grid assembles one card per spoken skill, each stamped "5"
+        var cues = [7.8, 8.3, 8.8, 9.3];
+        for (var i = 0; i < 4; i++) {
+          var n = i + 1;
+          tl.fromTo("#n7-card" + n,
+            { opacity: 0, y: 36, scale: 0.94 },
+            { opacity: 1, y: 0, scale: 1, duration: 0.42, ease: "power3.out" }, cues[i]);
+          tl.fromTo("#n7-five" + n,
+            { opacity: 0, scale: 0, rotation: -25 },
+            { opacity: 1, scale: 1, rotation: 0, duration: 0.4, ease: "back.out(2.4)" }, cues[i] + 0.16);
+        }
+
+        // "네 영역 모두" (9.7s): thin cobalt bracket wraps all four
+        tl.fromTo(["#n7-br-l", "#n7-br-r"],
+          { strokeDasharray: 1, strokeDashoffset: 1 },
+          { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut" }, 9.7);
+        tl.fromTo("#n7-grid", { scale: 1 }, { scale: 1.015, duration: 0.5, ease: "power2.out" }, 9.75);
+
+        // hold to the end
+        tl.set({}, {}, D);
+
+        window.__timelines["07-nclc5"] = tl;
+      })();
+    </script>
+  </div>
+</template>
