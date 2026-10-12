@@ -218,10 +218,10 @@
     { scale: 1, opacity: 1, duration: 0.5, ease: "power3.out" }, CUE.where);
   tl.fromTo("#f01-qmark", { scale: 0.2, rotation: -18, opacity: 0 },
     { scale: 1, rotation: 0, opacity: 1, duration: 0.55, ease: "back.out(2)" }, CUE.where);
-  tl.fromTo(".f01-chip-dim", { opacity: 1 }, { opacity: 0.4, duration: 0.4, ease: "power2.out" }, CUE.where + 0.1);
+  tl.fromTo(".f01-chip-dim", { opacity: 1 }, { opacity: 0.4, duration: 0.4, ease: "power2.out", immediateRender: false }, CUE.where + 0.1);
   tl.fromTo("#f01-ring", { opacity: 0, scale: 1.12 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, CUE.where + 0.1);
   tl.fromTo("#f01-mtl-label", { color: "#111111" }, { color: "#1e2bfa", duration: 0.3, ease: "power2.out" }, CUE.where + 0.1);
-  tl.fromTo("#f01-chip-mtl", { scale: 1 }, { scale: 1.06, duration: 0.45, ease: "power3.out" }, CUE.where + 0.1);
+  tl.fromTo("#f01-chip-mtl", { scale: 1 }, { scale: 1.06, duration: 0.45, ease: "power3.out", immediateRender: false }, CUE.where + 0.1);
 
   window.__timelines["01-hook"] = tl;
 })();

@@ -1,0 +1,287 @@
+<template>
+  <style>
+    @font-face{font-family:"Pretendard";font-weight:800;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");}
+    @font-face{font-family:"Pretendard";font-weight:700;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");}
+    @font-face{font-family:"Pretendard";font-weight:500;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Medium.woff2") format("woff2");}
+
+    #root {
+      position: relative;
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      font-family: "Pretendard", sans-serif;
+      color: #111111;
+    }
+    .f03-bg {
+      position: absolute;
+      inset: 0;
+      background: #fdfae7;
+    }
+    .f03-stage {
+      position: absolute;
+      inset: 0;
+    }
+
+    /* — header: accent line + eyebrow pill — */
+    .f03-accent-line {
+      position: absolute;
+      left: 72px;
+      top: 128px;
+      width: 60px;
+      height: 4px;
+      border-radius: 2px;
+      background: #1e2bfa;
+      transform-origin: left center;
+    }
+    .f03-eyebrow {
+      position: absolute;
+      left: 72px;
+      top: 156px;
+      padding: 14px 34px;
+      border-radius: 100px;
+      background: rgba(30,43,250,0.08);
+      color: #1e2bfa;
+      font-size: 38px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      line-height: 1;
+    }
+
+    /* — skyline silhouette strip — */
+    .f03-skyline {
+      position: absolute;
+      left: 72px;
+      top: 270px;
+      width: 936px;
+      height: 260px;
+      overflow: visible;
+    }
+    .f03-skyline path {
+      fill: rgba(30,43,250,0.08);
+      fill-opacity: 0;
+      stroke: rgba(30,43,250,0.45);
+      stroke-width: 4;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .f03-skyline line {
+      stroke: rgba(30,43,250,0.2);
+      stroke-width: 3;
+      stroke-linecap: round;
+    }
+
+    /* — comparison cards — */
+    .f03-persp {
+      position: absolute;
+      left: 72px;
+      width: 936px;
+      height: 400px;
+      perspective: 1600px;
+    }
+    #f03-persp-top { top: 590px; }
+    #f03-persp-bot { top: 1070px; }
+    .f03-float {
+      position: absolute;
+      inset: 0;
+    }
+    .f03-card {
+      position: absolute;
+      inset: 0;
+      box-sizing: border-box;
+      padding: 56px 56px;
+      border-radius: 14px;
+      background: rgba(30,43,250,0.04);
+      border: 1.5px solid rgba(30,43,250,0.2);
+      box-shadow: none;
+    }
+    .f03-row {
+      position: relative;
+      height: 112px;
+    }
+    .f03-label {
+      position: absolute;
+      left: 0;
+      top: 22px;
+      font-size: 60px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      color: #111111;
+    }
+    .f03-badge {
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: 22px 40px;
+      border-radius: 100px;
+      background: rgba(30,43,250,0.08);
+      color: #1e2bfa;
+      font-size: 62px;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.01em;
+      transform-origin: center center;
+    }
+    .f03-chip {
+      position: absolute;
+      right: 0;
+      top: 14px;
+      padding: 18px 34px;
+      border-radius: 100px;
+      border: 2px solid rgba(5,150,105,0.35);
+      color: #059669;
+      font-size: 52px;
+      font-weight: 800;
+      line-height: 1;
+      transform-origin: center center;
+    }
+    .f03-track {
+      position: relative;
+      margin-top: 64px;
+      width: 100%;
+      height: 104px;
+      border-radius: 6px;
+      background: rgba(30,43,250,0.08);
+      overflow: hidden;
+    }
+    .f03-fill {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 6px;
+      background: #1e2bfa;
+      transform-origin: left center;
+    }
+    .f03-endlabel {
+      position: absolute;
+      left: 360px; /* 40% of track (~328px) + gap */
+      top: 0;
+      height: 104px;
+      display: flex;
+      align-items: center;
+      color: #1e2bfa;
+      font-size: 46px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+    }
+
+    /* — progress strip (frame 3 of 9) — */
+    .f03-progress {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 360px;
+      height: 3px;
+      background: #1e2bfa;
+    }
+  </style>
+
+  <div id="root" data-composition-id="03-rent" data-width="1080" data-height="1920" data-start="0" data-duration="4.815">
+    <div id="f03-bg" class="f03-bg clip" data-start="0" data-duration="4.815" data-track-index="0"></div>
+
+    <div id="f03-stage" class="f03-stage clip" data-start="0" data-duration="4.815" data-track-index="1">
+      <div id="f03-accent-line" class="f03-accent-line"></div>
+      <div id="f03-eyebrow" class="f03-eyebrow">몬트리올</div>
+
+      <svg id="f03-skyline" class="f03-skyline" viewBox="0 0 936 260" xmlns="http://www.w3.org/2000/svg">
+        <path id="f03-sky-path" d="M0 250 L0 214 C40 176 110 146 180 162 L180 122 L215 122 L215 92 L250 92 L250 150 L290 150 L290 62 L305 40 L320 62 L320 150 L360 150 L360 102 L410 102 L410 32 L440 32 L440 102 L470 102 L470 72 L520 72 L520 130 L560 130 L560 52 L585 20 L610 52 L610 140 L650 140 L650 110 L700 110 L700 160 L740 160 L740 92 L780 92 L780 170 L830 170 C862 176 900 194 936 212 L936 250 Z" />
+        <line id="f03-sky-base" x1="0" y1="252" x2="936" y2="252" />
+      </svg>
+
+      <div id="f03-persp-top" class="f03-persp">
+        <div id="f03-float-top" class="f03-float">
+          <div id="f03-card-top" class="f03-card">
+            <div class="f03-row">
+              <div class="f03-label">도시 규모</div>
+              <div id="f03-badge-top" class="f03-badge">캐나다 2위</div>
+            </div>
+            <div class="f03-track">
+              <div id="f03-fill-top" class="f03-fill"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="f03-persp-bot" class="f03-persp">
+        <div id="f03-float-bot" class="f03-float">
+          <div id="f03-card-bot" class="f03-card">
+            <div class="f03-row">
+              <div class="f03-label">렌트비</div>
+              <div id="f03-chip-bot" class="f03-chip">↓ 저렴</div>
+            </div>
+            <div class="f03-track">
+              <div id="f03-fill-bot" class="f03-fill"></div>
+              <div id="f03-endlabel" class="f03-endlabel">중소도시 수준</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="f03-progress" class="f03-progress"></div>
+    </div>
+  </div>
+
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script>
+    (function () {
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      const DUR = 4.815;
+
+      // Scene 1 — eyebrow + skyline draw (svg-path-draw)
+      tl.fromTo("#f03-accent-line", { scaleX: 0 }, { scaleX: 1, duration: 0.45, ease: "power2.out" }, 0.05);
+      tl.fromTo("#f03-eyebrow", { y: -24, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 0.1);
+
+      const sky = document.getElementById("f03-sky-path");
+      const skyLen = sky.getTotalLength() * 1.02;
+      sky.style.strokeDasharray = String(skyLen);
+      sky.style.strokeDashoffset = String(skyLen);
+      const base = document.getElementById("f03-sky-base");
+      const baseLen = base.getTotalLength();
+      base.style.strokeDasharray = String(baseLen);
+      base.style.strokeDashoffset = String(baseLen);
+      tl.to(base, { strokeDashoffset: 0, duration: 0.6, ease: "power2.out" }, 0.15);
+      tl.to(sky, { strokeDashoffset: 0, duration: 1.15, ease: "power2.out" }, 0.25);
+      tl.to(sky, { fillOpacity: 1, duration: 0.5, ease: "power1.out" }, 1.3);
+
+      // Top card — arrives from the left wing with a book-open tilt (comparison-split, stacked)
+      tl.fromTo("#f03-card-top",
+        { x: -260, rotationY: 22, scale: 0.88, opacity: 0, transformOrigin: "0% 50%" },
+        { x: 0, rotationY: 4, scale: 1, opacity: 1, duration: 0.7, ease: "power3.out" }, 0.4);
+      // "두 번째" — 캐나다 2위 badge spring-pop (the overshoot)
+      tl.fromTo("#f03-badge-top", { scale: 0.4, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: "back.out(2.2)" }, 0.66);
+      // "대도시인데" — bar grows near full
+      tl.fromTo("#f03-fill-top", { scaleX: 0 }, { scaleX: 0.95, duration: 1.0, ease: "power2.out" }, 1.1);
+
+      // Scene 2 — "렌트비는": bottom card from the right wing, mirrored tilt
+      tl.fromTo("#f03-card-bot",
+        { x: 260, rotationY: -22, scale: 0.88, opacity: 0, transformOrigin: "100% 50%" },
+        { x: 0, rotationY: -4, scale: 1, opacity: 1, duration: 0.7, ease: "power3.out" }, 1.78);
+      // "중소도시" — bar stops short at ~40%
+      tl.fromTo("#f03-fill-bot", { scaleX: 0 }, { scaleX: 0.4, duration: 0.85, ease: "power2.out" }, 2.6);
+      tl.fromTo("#f03-endlabel", { x: -28, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 2.95);
+      // "수준입니다" — ↓ 저렴 chip pops
+      tl.fromTo("#f03-chip-bot", { scale: 0.4, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: "back.out(2.4)" }, 3.14);
+
+      // Phase-opposed idle float on the outer layer (deterministic, seek-safe)
+      const floatTop = document.getElementById("f03-float-top");
+      const floatBot = document.getElementById("f03-float-bot");
+      const idle = { t: 0 };
+      tl.to(idle, {
+        t: DUR,
+        duration: DUR,
+        ease: "none",
+        onUpdate: function () {
+          const w = idle.t * 2.4;
+          gsap.set(floatTop, { y: Math.sin(w) * 4 });
+          gsap.set(floatBot, { y: Math.sin(w + Math.PI) * 4 });
+        }
+      }, 0);
+
+      window.__timelines["03-rent"] = tl;
+    })();
+  </script>
+</template>
