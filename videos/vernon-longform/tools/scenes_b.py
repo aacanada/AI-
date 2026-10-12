@@ -183,10 +183,13 @@ R .stp .sd{font-weight:500;font-size:28px;margin-top:10px;line-height:1.5}
           </div>
           <div class="pol" id="s10-din" style="left:1480px;top:60px;width:320px;height:250px"><div class="ph"><img src="{P}22-homestay-kitchen.jpg" alt="" /></div></div>
 {_ck_html}
-          <div class="abs hd" id="s10-lv" style="left:120px;top:300px;font-size:50px">관리 강도는 가정에 맞게</div>
-          <div class="stp" id="s10-s0" style="left:120px;top:620px;height:280px;background:#7FB236"><div class="sn">정착 프로그램</div><div class="sd">현지 정착 지원</div></div>
-          <div class="stp" id="s10-s1" style="left:690px;top:500px;height:400px;background:#1F8A99"><div class="sn">가디언 케어</div><div class="sd">월 1회 면담 · 출결·성적 관리 · 생활 전반</div></div>
-          <div class="stp" id="s10-s2" style="left:1260px;top:380px;height:520px;background:#16324F"><div class="sn">에듀 가이드</div><div class="sd">1:1 튜터링 · 에세이 첨삭 · 대학 진학 프로젝트까지</div></div>""",
+          <div class="abs hd" id="s10-lv" style="left:120px;top:290px;font-size:50px">관리 프로그램은 세 가지</div>
+          <div class="chip sand" id="s10-g0" style="left:120px;top:380px">어머님 동반</div>
+          <div class="chip solid" id="s10-g1" style="left:690px;top:380px">아이만 유학</div>
+          <div class="abs" id="s10-gl" style="left:690px;top:446px;width:1090px;height:4px;background:#16324F"></div>
+          <div class="stp" id="s10-s0" style="left:120px;top:620px;height:280px;background:#4E8A1E"><div class="sn" style="font-size:42px">독립형 정착 프로그램</div><div class="sd">현지 정착 지원</div></div>
+          <div class="stp" id="s10-s1" style="left:690px;top:540px;height:360px;background:#1F8A99"><div class="sn">가디언 지원</div><div class="sd">월 1회 면담 · 출결·성적 관리 · 생활 전반</div></div>
+          <div class="stp" id="s10-s2" style="left:1260px;top:470px;height:430px;background:#16324F"><div class="sn" style="font-size:42px">맞춤형 학업관리</div><div class="l" style="font-size:24px;color:#7FD3DE;margin-top:6px">EDU GUIDE</div><div class="sd">1:1 튜터링 · 에세이 첨삭 · 대학 진학 프로젝트까지</div></div>""",
     js="""
 inn('#s10-st',R[0],{r0:-14,r:-4,s:0.6,y:0});inn('#s10-t',R[0]+0.3,{y:24});
 inn('#s10-o1',R[1]+0.3,{y:40});inn('#s10-plus',R[1]+2.4,{s:0,y:0});inn('#s10-o2',R[1]+2.6,{y:40});
@@ -205,9 +208,11 @@ inn('#s10-k0',R[6],{x:30,y:0});inn('#s10-k1',R[6]+1.8,{x:30,y:0});inn('#s10-k2',
 inn('#s10-k3',R[7]+0.6,{x:30,y:0});inn('#s10-k4',R[8],{x:30,y:0});
 outt(['#s10-tt','#s10-din','#s10-k0','#s10-k1','#s10-k2','#s10-k3','#s10-k4'].concat(Object.keys(rowAt).map(k=>'#s10-'+k)),R[9]-0.4,{y:-20});
 inn('#s10-lv',R[9],{y:20});
-tl.fromTo('#s10-s0',{y:300,opacity:0},{y:0,opacity:1,duration:0.8,ease:'power3.out'},R[10]);
-tl.fromTo('#s10-s1',{y:420,opacity:0},{y:0,opacity:1,duration:0.8,ease:'power3.out'},R[10]+1.9);
-tl.fromTo('#s10-s2',{y:540,opacity:0},{y:0,opacity:1,duration:0.8,ease:'power3.out'},R[11]);
+inn('#s10-g0',R[10],{s:0.6,y:0});
+tl.fromTo('#s10-s0',{y:300,opacity:0},{y:0,opacity:1,duration:0.8,ease:'power3.out'},R[10]+0.4);
+inn('#s10-g1',R[11],{s:0.6,y:0});grow('#s10-gl',R[11]+0.2,0.7);
+tl.fromTo('#s10-s1',{y:380,opacity:0},{y:0,opacity:1,duration:0.8,ease:'power3.out'},R[11]+0.5);
+tl.fromTo('#s10-s2',{y:450,opacity:0},{y:0,opacity:1,duration:0.8,ease:'power3.out'},R[12]);
 """,
 )
 
@@ -256,36 +261,40 @@ inn('#s11-c',R[6],{y:24});grow('#s11-hl',R[6]+1.4,0.6);
 
 # ---------------------------------------------------------------- 12 cost
 COST = [
-    ("기본형", 29900, ["학비 · 홈스테이", "가디언 지정 · 의료보험", "교육청 활동비"], "#16324F"),
-    ("+ 정착 프로그램", 33900, ["기본형 포함", "현지 정착 지원"], "#16324F"),
-    ("가디언 케어", 37500, ["월 1회 면담", "출결 · 성적 관리"], "#16324F"),
-    ("에듀 가이드", 44150, ["1:1 튜터링 · 첨삭", "대학 진학 프로젝트"], "#146A77"),
+    ("독립형 정착 프로그램", "SS", 33900, ["현지 정착 지원", "어머님과 함께 생활 적응"], "#4E8A1E"),
+    ("가디언 지원", "", 37500, ["월 1회 면담", "출결 · 성적 · 생활 관리"], "#1F8A99"),
+    ("맞춤형 학업관리", "EDU GUIDE", 44150, ["1:1 튜터링 · 에세이 첨삭", "대학 진학 프로젝트"], "#16324F"),
 ]
 _cost = []
-for i, (n, v, items, col) in enumerate(COST):
-    x = 120 + i * 430
-    border = "border:5px solid #1F8A99;" if i == 3 else ""
+for i, (n, sub, v, items, col) in enumerate(COST):
+    x = 120 + i * 580
     li = "".join(f'<div class="ci">✓ {t}</div>' for t in items)
-    _cost.append(f'<div class="card cc" id="s12-c{i}" style="left:{x}px;top:270px;{border}"><div class="l cn" style="color:{col}">{n}</div><div class="h cv" id="s12-v{i}" style="color:{col}">$0</div>{li}</div>')
+    subh = f'<div class="l cs" style="color:{col}">{sub}</div>' if sub else '<div class="l cs">&nbsp;</div>'
+    _cost.append(f'<div class="card cc" id="s12-c{i}" style="left:{x}px;top:330px;border-top:10px solid {col}"><div class="hd cn">{n}</div>{subh}<div class="h cv" id="s12-v{i}" style="color:{col}">$0</div>{li}</div>')
 _cost_html = "\n".join("          " + x for x in _cost)
 
 S["12-cost"] = dict(
     bg="""        <div class="ghost" style="left:-40px;top:720px">CAD</div>""",
     css="""
-R .cc{width:400px;height:430px;padding:36px}
-R .cc .cn{font-size:26px}
-R .cc .cv{font-size:76px;margin:14px 0 24px;font-variant-numeric:tabular-nums}
-R .cc .ci{font-weight:500;font-size:28px;line-height:1.8}
+R .cc{width:540px;height:440px;padding:34px}
+R .cc .cn{font-size:38px}
+R .cc .cs{font-size:22px;margin-top:4px;color:#4A5F78}
+R .cc .cv{font-size:80px;margin:12px 0 18px;font-variant-numeric:tabular-nums}
+R .cc .ci{font-weight:500;font-size:28px;line-height:1.75}
 """,
     body=f"""
           <div class="abs hd" id="s12-t" style="left:120px;top:92px;font-size:66px">비용은 투명하게</div>
           <div class="chip lake" id="s12-p" style="left:700px;top:104px">2026.9 – 2027.6 · 두 학기 · 캐나다달러</div>
+          <div class="abs b" id="s12-inc" style="left:122px;top:190px;font-size:30px;color:#4A5F78">학비 · 홈스테이 · 의료보험 · 가디언 지정 · 교육청 활동비 포함</div>
+          <div class="chip sand" id="s12-g0" style="left:120px;top:250px">어머님 동반</div>
+          <div class="chip solid" id="s12-g1" style="left:700px;top:250px">아이만 유학</div>
 {_cost_html}
-          <div class="abs b" id="s12-fn" style="left:120px;top:760px;font-size:30px;color:#4A5F78">항공료 · 개인 용돈 별도 · 2026년 10월 기준, 금액은 바뀔 수 있습니다</div>""",
+          <div class="abs b" id="s12-fn" style="left:120px;top:800px;font-size:30px;color:#4A5F78">항공료 · 개인 용돈 별도 · 2026년 10월 기준, 금액은 바뀔 수 있습니다</div>""",
     js="""
-inn('#s12-t',R[0],{y:24});inn('#s12-p',R[0]+1.0,{s:0.7,y:0});
-const CT=[R[1]+0.5,R[2],R[2]+2.9,R[3]];const V=[29900,33900,37500,44150];
-for(let i=0;i<4;i++){inn('#s12-c'+i,CT[i],{y:60,d:0.7});count('#s12-v'+i,0,V[i],CT[i]+0.2,1.3,v=>'$'+Math.round(v).toLocaleString('en-US'));
+inn('#s12-t',R[0],{y:24});inn('#s12-p',R[0]+1.0,{s:0.7,y:0});inn('#s12-inc',R[0]+4.0,{y:12});
+inn('#s12-g0',R[1],{s:0.6,y:0});inn('#s12-g1',R[2],{s:0.6,y:0});
+const CT=[R[1]+0.2,R[2]+0.3,R[3]];const V=[33900,37500,44150];
+for(let i=0;i<3;i++){inn('#s12-c'+i,CT[i],{y:60,d:0.7});count('#s12-v'+i,0,V[i],CT[i]+0.2,1.3,v=>'$'+Math.round(v).toLocaleString('en-US'));
   tl.fromTo('#s12-c'+i+' .ci',{opacity:0,x:-14},{opacity:1,x:0,duration:0.4,stagger:0.35,ease:'power2.out'},CT[i]+0.9);}
 inn('#s12-fn',R[4],{y:12});
 """,

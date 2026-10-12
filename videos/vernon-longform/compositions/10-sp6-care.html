@@ -52,7 +52,7 @@
 #s10 .stp .sd{font-weight:500;font-size:28px;margin-top:10px;line-height:1.5}
 
       </style>
-      <div id="s10" data-composition-id="s10" data-width="1920" data-height="1080" data-duration="54.21">
+      <div id="s10" data-composition-id="s10" data-width="1920" data-height="1080" data-duration="59.87">
         <div class="bg"></div>
         <div class="grain"></div>
         <div class="glow" style="left:1100px;top:150px;width:800px;height:800px"></div>
@@ -104,17 +104,20 @@
           <div class="ck" id="s10-k2" style="left:1330px;top:520px"><b>✓</b>정기 카운셀링</div>
           <div class="ck" id="s10-k3" style="left:1330px;top:610px"><b>✓</b>휴대폰 사용 지도</div>
           <div class="ck" id="s10-k4" style="left:1330px;top:700px"><b>✓</b>월 1회 이상 한식</div>
-          <div class="abs hd" id="s10-lv" style="left:120px;top:300px;font-size:50px">관리 강도는 가정에 맞게</div>
-          <div class="stp" id="s10-s0" style="left:120px;top:620px;height:280px;background:#7FB236"><div class="sn">정착 프로그램</div><div class="sd">현지 정착 지원</div></div>
-          <div class="stp" id="s10-s1" style="left:690px;top:500px;height:400px;background:#1F8A99"><div class="sn">가디언 케어</div><div class="sd">월 1회 면담 · 출결·성적 관리 · 생활 전반</div></div>
-          <div class="stp" id="s10-s2" style="left:1260px;top:380px;height:520px;background:#16324F"><div class="sn">에듀 가이드</div><div class="sd">1:1 튜터링 · 에세이 첨삭 · 대학 진학 프로젝트까지</div></div>
+          <div class="abs hd" id="s10-lv" style="left:120px;top:290px;font-size:50px">관리 프로그램은 세 가지</div>
+          <div class="chip sand" id="s10-g0" style="left:120px;top:380px">어머님 동반</div>
+          <div class="chip solid" id="s10-g1" style="left:690px;top:380px">아이만 유학</div>
+          <div class="abs" id="s10-gl" style="left:690px;top:446px;width:1090px;height:4px;background:#16324F"></div>
+          <div class="stp" id="s10-s0" style="left:120px;top:620px;height:280px;background:#4E8A1E"><div class="sn" style="font-size:42px">독립형 정착 프로그램</div><div class="sd">현지 정착 지원</div></div>
+          <div class="stp" id="s10-s1" style="left:690px;top:540px;height:360px;background:#1F8A99"><div class="sn">가디언 지원</div><div class="sd">월 1회 면담 · 출결·성적 관리 · 생활 전반</div></div>
+          <div class="stp" id="s10-s2" style="left:1260px;top:470px;height:430px;background:#16324F"><div class="sn" style="font-size:42px">맞춤형 학업관리</div><div class="l" style="font-size:24px;color:#7FD3DE;margin-top:6px">EDU GUIDE</div><div class="sd">1:1 튜터링 · 에세이 첨삭 · 대학 진학 프로젝트까지</div></div>
         </div>
       </div>
       <script>
         (function () {
           const root = document.getElementById("s10");
-          const D = 54.21;
-          const R = [0.94, 4.48, 10.14, 14.54, 22.2, 24.06, 29.48, 35.34, 40.96, 43.58, 46.26, 49.92];
+          const D = 59.87;
+          const R = [0.94, 4.48, 10.14, 14.56, 22.2, 24.04, 29.5, 35.34, 41.0, 43.48, 45.28, 49.82, 53.76];
 
 const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
 const tl=gsap.timeline({paused:true});
@@ -161,9 +164,11 @@ inn('#s10-k0',R[6],{x:30,y:0});inn('#s10-k1',R[6]+1.8,{x:30,y:0});inn('#s10-k2',
 inn('#s10-k3',R[7]+0.6,{x:30,y:0});inn('#s10-k4',R[8],{x:30,y:0});
 outt(['#s10-tt','#s10-din','#s10-k0','#s10-k1','#s10-k2','#s10-k3','#s10-k4'].concat(Object.keys(rowAt).map(k=>'#s10-'+k)),R[9]-0.4,{y:-20});
 inn('#s10-lv',R[9],{y:20});
-tl.fromTo('#s10-s0',{y:300,opacity:0},{y:0,opacity:1,duration:0.8,ease:'power3.out'},R[10]);
-tl.fromTo('#s10-s1',{y:420,opacity:0},{y:0,opacity:1,duration:0.8,ease:'power3.out'},R[10]+1.9);
-tl.fromTo('#s10-s2',{y:540,opacity:0},{y:0,opacity:1,duration:0.8,ease:'power3.out'},R[11]);
+inn('#s10-g0',R[10],{s:0.6,y:0});
+tl.fromTo('#s10-s0',{y:300,opacity:0},{y:0,opacity:1,duration:0.8,ease:'power3.out'},R[10]+0.4);
+inn('#s10-g1',R[11],{s:0.6,y:0});grow('#s10-gl',R[11]+0.2,0.7);
+tl.fromTo('#s10-s1',{y:380,opacity:0},{y:0,opacity:1,duration:0.8,ease:'power3.out'},R[11]+0.5);
+tl.fromTo('#s10-s2',{y:450,opacity:0},{y:0,opacity:1,duration:0.8,ease:'power3.out'},R[12]);
 
           ambient();
           window.__timelines["s10"] = tl;
