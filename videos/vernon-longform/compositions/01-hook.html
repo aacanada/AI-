@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+
+@font-face{font-family:Pretendard;font-weight:500;src:url(assets/fonts/Pretendard-Medium.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:700;src:url(assets/fonts/Pretendard-Bold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:800;src:url(assets/fonts/Pretendard-ExtraBold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:900;src:url(assets/fonts/Pretendard-Black.woff2) format("woff2")}
+@font-face{font-family:Yellowtail;font-weight:400;src:url(assets/fonts/Yellowtail-Regular.ttf) format("truetype")}
+
+
+#s01{position:absolute;inset:0;overflow:hidden;background:#FAF6EF;color:#16324F;font-family:Pretendard,sans-serif}
+#s01 *{box-sizing:border-box}
+#s01 .bg{position:absolute;inset:0;background:#FAF6EF}
+#s01 .grain{position:absolute;inset:0;opacity:.5;background-image:radial-gradient(rgba(22,50,79,.07) 1.2px,transparent 1.3px);background-size:9px 9px}
+#s01 .glow{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(31,138,153,.20) 0%,rgba(31,138,153,0) 70%)}
+#s01 .glow.warm{background:radial-gradient(circle,rgba(232,87,43,.14) 0%,rgba(232,87,43,0) 70%)}
+#s01 .ghost{position:absolute;font-weight:900;color:rgba(22,50,79,.07);font-size:300px;letter-spacing:-.04em;white-space:nowrap;line-height:1}
+#s01 .stage{position:absolute;inset:0}
+#s01 .abs{position:absolute}
+#s01 .h{font-weight:900;letter-spacing:-.03em;line-height:1.1}
+#s01 .hd{font-weight:800;letter-spacing:-.02em;line-height:1.2}
+#s01 .b{font-weight:500;line-height:1.45}
+#s01 .l{font-weight:700;letter-spacing:.08em}
+#s01 .script{font-family:Yellowtail,cursive;line-height:1.05;white-space:nowrap}
+#s01 .sticker{position:absolute;background:#E8572B;color:#fff;font-weight:800;font-size:24px;letter-spacing:.12em;padding:10px 24px;border-radius:99px;white-space:nowrap}
+#s01 .chip{position:absolute;background:#FAF6EF;border:3px solid #16324F;border-radius:99px;padding:10px 24px;font-weight:700;font-size:28px;white-space:nowrap;color:#16324F}
+#s01 .chip.lake{border-color:#1F8A99;color:#146A77}
+#s01 .chip.solid{background:#16324F;color:#FAF6EF}
+#s01 .chip.sand{background:#F3C969;border-color:#F3C969}
+#s01 .pol{position:absolute;background:#fff;padding:16px 16px 60px;box-shadow:0 20px 44px rgba(22,50,79,.26)}
+#s01 .pol .ph{position:relative;width:100%;height:100%;overflow:hidden}
+#s01 .pol img,#s01 .ph img{display:block;width:100%;height:100%;object-fit:cover}
+#s01 .pol .cap{position:absolute;left:0;right:0;bottom:12px;text-align:center;font-family:Yellowtail,cursive;font-size:32px;color:#16324F}
+#s01 .card{position:absolute;background:#fff;border:3px solid rgba(22,50,79,.14);border-radius:24px;box-shadow:0 12px 30px rgba(22,50,79,.13)}
+#s01 .panel{position:absolute;background:rgba(22,50,79,.93);border-radius:28px;color:#FAF6EF}
+#s01 .full{position:absolute;inset:0;overflow:hidden}
+#s01 .full img{width:100%;height:100%;object-fit:cover;display:block}
+#s01 .hlbar{position:absolute;background:#F3C969;height:22px;transform-origin:0 50%}
+#s01 .wipe{position:absolute;inset:0;background:#1F8A99;z-index:50}
+#s01 .flash{position:absolute;inset:0;background:#FAF6EF;z-index:60;opacity:0}
+
+#s01 .w{color:#FAF6EF}
+#s01 #s01-photo{position:absolute;inset:0;overflow:hidden;opacity:0}
+#s01 #s01-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+#s01 #s01-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,50,79,0) 30%,rgba(22,50,79,.86) 92%);opacity:0}
+#s01 .pin{position:absolute;width:44px;height:44px;border-radius:50% 50% 50% 0;background:#FAF6EF}
+
+      </style>
+      <div id="s01" data-composition-id="s01" data-width="1920" data-height="1080" data-duration="26.57">
+        <div class="bg"></div>
+        <div class="grain"></div>
+        <div class="abs" id="s01-dark" style="inset:0;background:#16324F"></div>
+        <svg class="ghost" aria-hidden="true" style="left:-40px;top:560px;width:1500px;height:330px;overflow:visible"><text x="0" y="270" font-family="Pretendard" font-weight="900" font-size="300" fill="rgba(250,246,239,.05)" letter-spacing="-8">고교학점제</text></svg>
+        <div class="stage">
+
+          <div class="abs l w" id="s01-k1" style="left:160px;top:250px;font-size:28px;color:#F3C969">중3 · 고1 자녀를 둔 부모님</div>
+          <div class="abs h w" id="s01-k2" style="left:154px;top:300px;font-size:104px">요즘 고민, 많으시죠</div>
+          <div class="abs h w" id="s01-k3" style="left:154px;top:470px;font-size:150px">5등급 내신</div>
+          <div class="chip" id="s01-k3b" style="left:160px;top:410px;background:transparent;border-color:#F3C969;color:#F3C969">고교학점제</div>
+          <svg class="abs" id="s01-crack" style="left:140px;top:440px;width:900px;height:240px" viewBox="0 0 900 240"><path d="M10 120 L120 96 L190 150 L280 70 L360 140 L450 90 L520 170 L610 110 L700 150 L790 80 L890 120" fill="none" stroke="#E8572B" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="abs b w" id="s01-k4" style="left:160px;top:690px;font-size:38px;color:rgba(250,246,239,.8)">한 번 미끄러지면 되돌리기 어려운 구조</div>
+          <div class="abs" id="s01-map" style="left:0;top:0;width:1920px;height:1080px">
+            <div class="abs" style="left:260px;top:560px;width:1400px;height:4px;background:rgba(250,246,239,.25)" id="s01-line"></div>
+            <div class="pin" id="s01-p1" style="left:300px;top:500px"></div>
+            <div class="abs hd w" id="s01-p1t" style="left:250px;top:600px;font-size:40px">밴쿠버</div>
+            <div class="pin" id="s01-p2" style="left:1560px;top:500px"></div>
+            <div class="abs hd w" id="s01-p2t" style="left:1510px;top:600px;font-size:40px">토론토</div>
+            <div class="abs hd w" id="s01-q" style="left:900px;top:380px;width:120px;text-align:center;font-size:120px;color:#F3C969">?</div>
+            <div class="abs b w" id="s01-k5" style="left:560px;top:690px;width:800px;text-align:center;font-size:38px;color:rgba(250,246,239,.85)">대부분의 조기유학 이야기는 여기서 멈춥니다</div>
+          </div>
+          <div id="s01-photo"><img src="assets/photos/01c-hero-lake-jump-notext.jpg" alt="" /></div>
+          <div id="s01-shade"></div>
+          <div class="abs script" id="s01-t1" style="left:150px;top:520px;font-size:130px;color:#fff">Vernon,</div>
+          <div class="abs h" id="s01-t2" style="left:150px;top:660px;font-size:104px;color:#fff">아는 사람만 아는 캐나다</div>
+          <div class="abs b" id="s01-t3" style="left:156px;top:792px;font-size:34px;color:rgba(250,246,239,.92)">브리티시컬럼비아주 · 오카나간 밸리</div>
+          <div class="flash" id="s01-flash"></div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const root = document.getElementById("s01");
+          const D = 26.57;
+          const R = [1.44, 6.24, 11.12, 16.76, 20.74];
+
+const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
+const tl=gsap.timeline({paused:true});
+function inn(el,at,o){o=o||{};if(typeof el==='string')el=q(el);
+  tl.fromTo(el,{opacity:0,x:o.x||0,y:(o.y===undefined?30:o.y),scale:(o.s===undefined?1:o.s),rotation:(o.r0===undefined?(o.r||0):o.r0)},
+  {opacity:1,x:0,y:0,scale:1,rotation:o.r||0,duration:o.d||0.6,ease:o.e||'power3.out'},at);}
+function outt(el,at,o){o=o||{};if(typeof el==='string')el=q(el);
+  tl.to(el,{opacity:0,y:o.y||0,x:o.x||0,scale:(o.s===undefined?1:o.s),duration:o.d||0.45,ease:'power2.in'},at);}
+function pol(el,at,rot){if(typeof el==='string')el=q(el);
+  tl.fromTo(el,{opacity:0,y:-180,rotation:rot*2.4,scale:1.06},{opacity:1,y:0,rotation:rot,scale:1,duration:0.85,ease:'power3.out'},at);}
+function kb(el,at,dur,a,b){if(typeof el==='string')el=q(el);a=a||{};b=b||{};
+  tl.fromTo(el,{scale:a.s||1,xPercent:a.x||0,yPercent:a.y||0},{scale:b.s||1.07,xPercent:b.x||0,yPercent:b.y||0,duration:dur,ease:'none'},at);}
+function count(el,from,to,at,dur,fmt){if(typeof el==='string')el=q(el);const st={v:from};
+  tl.fromTo(st,{v:from},{v:to,duration:dur,ease:'power2.out',immediateRender:false,onUpdate:()=>{el.textContent=fmt(st.v);}},at);}
+function grow(el,at,d,origin){if(typeof el==='string')el=q(el);
+  tl.fromTo(el,{scaleX:0,opacity:0,transformOrigin:origin||'0% 50%'},{scaleX:1,opacity:1,duration:d||0.8,ease:'power3.inOut'},at);}
+function draw(path,at,d){if(typeof path==='string')path=q(path);const L=path.getTotalLength();
+  path.style.strokeDasharray=L;tl.fromTo(path,{strokeDashoffset:L},{strokeDashoffset:0,duration:d||1,ease:'power2.inOut'},at);}
+function ambient(){
+  qa('.ghost').forEach((g,i)=>tl.fromTo(g,{x:0},{x:(i%2?160:-160),duration:D,ease:'none'},0));
+  qa('.glow').forEach((g,i)=>{const c=4+i;const n=Math.max(0,Math.floor(D/c)-1);
+    tl.fromTo(g,{scale:0.92},{scale:1.08,duration:c/2,ease:'sine.inOut',yoyo:true,repeat:n},0);});
+  tl.fromTo(q('.stage'),{opacity:0},{opacity:1,duration:0.45,ease:'power1.out'},0);
+  tl.fromTo(q('.stage'),{scale:1,transformOrigin:'50% 45%'},{scale:1.03,duration:D,ease:'none'},0);
+  if(q('.wipe'))tl.fromTo(q('.wipe'),{xPercent:0},{xPercent:-101,duration:0.75,ease:'power3.inOut'},0.05);
+  tl.to(q('.stage'),{opacity:0,duration:0.5,ease:'power1.in'},D-0.55);
+}
+
+
+inn('#s01-k1',R[0],{y:20});inn('#s01-k2',R[0]+0.2,{y:40});
+outt('#s01-k1',R[1]-0.4);outt('#s01-k2',R[1]-0.4,{y:-30});
+inn('#s01-k3b',R[1],{s:0.7});inn('#s01-k3',R[1]+0.25,{y:50,d:0.7});
+draw('#s01-crack path',R[1]+2.0,0.7);
+tl.to('#s01-k3',{x:-14,duration:0.08,ease:'none',repeat:3,yoyo:true},R[1]+2.6);
+inn('#s01-k4',R[1]+2.4,{y:20});
+outt(['#s01-k3','#s01-k3b','#s01-crack','#s01-k4'],R[2]-0.4);
+grow('#s01-line',R[2],1.0);
+inn('#s01-p1',R[2]+0.6,{y:-60,e:'power3.out'});inn('#s01-p1t',R[2]+0.8,{y:10});
+inn('#s01-p2',R[2]+1.4,{y:-60});inn('#s01-p2t',R[2]+1.6,{y:10});
+inn('#s01-k5',R[2]+2.6,{y:20});
+inn('#s01-q',R[3]-0.2,{y:-200,d:0.7});
+tl.fromTo('#s01-flash',{opacity:0},{opacity:1,duration:0.12,ease:'none'},R[3]+1.6);
+tl.set('#s01-photo',{opacity:1},R[3]+1.72);tl.set(['#s01-map','#s01-dark'],{opacity:0},R[3]+1.72);
+tl.to('#s01-flash',{opacity:0,duration:0.6,ease:'power2.out'},R[3]+1.74);
+kb('#s01-photo img',R[3]+1.72,D-R[3]-1.72,{s:1.0,y:-2},{s:1.09,y:2});
+tl.fromTo('#s01-shade',{opacity:0},{opacity:1,duration:1.2},R[4]-0.6);
+inn('#s01-t1',R[4]-0.2,{y:30,r0:-10,r:-5,d:0.9});inn('#s01-t2',R[4]+0.5,{y:40});inn('#s01-t3',R[4]+1.2,{y:16});
+
+          ambient();
+          window.__timelines["s01"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+
+@font-face{font-family:Pretendard;font-weight:500;src:url(assets/fonts/Pretendard-Medium.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:700;src:url(assets/fonts/Pretendard-Bold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:800;src:url(assets/fonts/Pretendard-ExtraBold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:900;src:url(assets/fonts/Pretendard-Black.woff2) format("woff2")}
+@font-face{font-family:Yellowtail;font-weight:400;src:url(assets/fonts/Yellowtail-Regular.ttf) format("truetype")}
+
+
+#s10{position:absolute;inset:0;overflow:hidden;background:#FAF6EF;color:#16324F;font-family:Pretendard,sans-serif}
+#s10 *{box-sizing:border-box}
+#s10 .bg{position:absolute;inset:0;background:#FAF6EF}
+#s10 .grain{position:absolute;inset:0;opacity:.5;background-image:radial-gradient(rgba(22,50,79,.07) 1.2px,transparent 1.3px);background-size:9px 9px}
+#s10 .glow{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(31,138,153,.20) 0%,rgba(31,138,153,0) 70%)}
+#s10 .glow.warm{background:radial-gradient(circle,rgba(232,87,43,.14) 0%,rgba(232,87,43,0) 70%)}
+#s10 .ghost{position:absolute;font-weight:900;color:rgba(22,50,79,.07);font-size:300px;letter-spacing:-.04em;white-space:nowrap;line-height:1}
+#s10 .stage{position:absolute;inset:0}
+#s10 .abs{position:absolute}
+#s10 .h{font-weight:900;letter-spacing:-.03em;line-height:1.1}
+#s10 .hd{font-weight:800;letter-spacing:-.02em;line-height:1.2}
+#s10 .b{font-weight:500;line-height:1.45}
+#s10 .l{font-weight:700;letter-spacing:.08em}
+#s10 .script{font-family:Yellowtail,cursive;line-height:1.05;white-space:nowrap}
+#s10 .sticker{position:absolute;background:#E8572B;color:#fff;font-weight:800;font-size:24px;letter-spacing:.12em;padding:10px 24px;border-radius:99px;white-space:nowrap}
+#s10 .chip{position:absolute;background:#FAF6EF;border:3px solid #16324F;border-radius:99px;padding:10px 24px;font-weight:700;font-size:28px;white-space:nowrap;color:#16324F}
+#s10 .chip.lake{border-color:#1F8A99;color:#146A77}
+#s10 .chip.solid{background:#16324F;color:#FAF6EF}
+#s10 .chip.sand{background:#F3C969;border-color:#F3C969}
+#s10 .pol{position:absolute;background:#fff;padding:16px 16px 60px;box-shadow:0 20px 44px rgba(22,50,79,.26)}
+#s10 .pol .ph{position:relative;width:100%;height:100%;overflow:hidden}
+#s10 .pol img,#s10 .ph img{display:block;width:100%;height:100%;object-fit:cover}
+#s10 .pol .cap{position:absolute;left:0;right:0;bottom:12px;text-align:center;font-family:Yellowtail,cursive;font-size:32px;color:#16324F}
+#s10 .card{position:absolute;background:#fff;border:3px solid rgba(22,50,79,.14);border-radius:24px;box-shadow:0 12px 30px rgba(22,50,79,.13)}
+#s10 .panel{position:absolute;background:rgba(22,50,79,.93);border-radius:28px;color:#FAF6EF}
+#s10 .full{position:absolute;inset:0;overflow:hidden}
+#s10 .full img{width:100%;height:100%;object-fit:cover;display:block}
+#s10 .hlbar{position:absolute;background:#F3C969;height:22px;transform-origin:0 50%}
+#s10 .wipe{position:absolute;inset:0;background:#1F8A99;z-index:50}
+#s10 .flash{position:absolute;inset:0;background:#FAF6EF;z-index:60;opacity:0}
+
+#s10 .cell{position:absolute;height:100px;border-radius:14px;font-weight:800;font-size:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap}
+#s10 .ck{position:absolute;font-weight:700;font-size:34px;white-space:nowrap}
+#s10 .ck b{display:inline-block;width:52px;height:52px;border-radius:50%;background:#4E8A1E;color:#fff;text-align:center;line-height:52px;margin-right:18px;font-size:30px}
+#s10 .duty{position:absolute;background:#16324F;color:#FAF6EF;font-weight:800;font-size:32px;padding:14px 30px;border-radius:99px;white-space:nowrap}
+#s10 .stp{position:absolute;width:520px;border-radius:26px 26px 0 0;color:#fff;padding:36px}
+#s10 .stp .sn{font-weight:900;font-size:48px}
+#s10 .stp .sd{font-weight:500;font-size:28px;margin-top:10px;line-height:1.5}
+
+      </style>
+      <div id="s10" data-composition-id="s10" data-width="1920" data-height="1080" data-duration="54.21">
+        <div class="bg"></div>
+        <div class="grain"></div>
+        <div class="glow" style="left:1100px;top:150px;width:800px;height:800px"></div>
+        <div class="stage">
+
+          <div class="sticker" id="s10-st" style="left:120px;top:96px">SELLING POINT 06</div>
+          <div class="abs hd" id="s10-t" style="left:120px;top:160px;font-size:66px">현지 한국인 선생님의 관리</div>
+          <div class="card" id="s10-o1" style="left:120px;top:320px;width:430px;height:150px;padding:30px"><div class="l" style="font-size:22px;color:#146A77">SCHOOL DISTRICT 22</div><div class="hd" style="font-size:44px;margin-top:6px">버논 교육청</div></div>
+          <div class="abs h" id="s10-plus" style="left:580px;top:345px;font-size:80px;color:#1F8A99">+</div>
+          <div class="card" id="s10-o2" style="left:660px;top:320px;width:430px;height:150px;padding:30px"><div class="l" style="font-size:22px;color:#146A77">LOCAL CARE</div><div class="hd" style="font-size:44px;margin-top:6px">토탈 에듀케어</div></div>
+          <div class="panel" id="s10-tc" style="left:1180px;top:300px;width:620px;height:420px"></div>
+          <div class="abs" id="s10-av" style="left:1240px;top:350px;width:150px;height:150px;border-radius:50%;background:#F3C969"></div>
+          <div class="abs h" id="s10-16" style="left:1420px;top:345px;font-size:120px;color:#7FD3DE;font-variant-numeric:tabular-nums">16년</div>
+          <div class="abs hd" id="s10-tct" style="left:1240px;top:540px;font-size:44px;color:#FAF6EF">버논 거주 한국인 선생님</div>
+          <div class="abs b" id="s10-tcs" style="left:1240px;top:610px;font-size:30px;color:rgba(250,246,239,.85)">학교 · 홈스테이 · 부모님 사이의 연결</div>
+          <div class="duty" id="s10-d0" style="left:120px;top:540px">출결 확인</div>
+          <div class="duty" id="s10-d1" style="left:370px;top:540px">성적 확인</div>
+          <div class="duty" id="s10-d2" style="left:120px;top:630px">학교 담당 선생님 방문</div>
+          <div class="duty" id="s10-d3" style="left:120px;top:720px">홈스테이 생활</div>
+          <div class="chip sand" id="s10-rep" style="left:500px;top:720px">→ 부모님께 보고</div>
+          <div class="abs" id="s10-tt" style="left:0;top:0;width:1920px;height:1080px">
+            <div class="abs l" style="left:230px;top:300px;width:136px;text-align:center;font-size:26px">월</div>
+            <div class="abs l" style="left:380px;top:300px;width:136px;text-align:center;font-size:26px">화</div>
+            <div class="abs l" style="left:530px;top:300px;width:136px;text-align:center;font-size:26px">수</div>
+            <div class="abs l" style="left:680px;top:300px;width:136px;text-align:center;font-size:26px">목</div>
+            <div class="abs l" style="left:830px;top:300px;width:136px;text-align:center;font-size:26px">금</div>
+            <div class="abs l" style="left:980px;top:300px;width:136px;text-align:center;font-size:26px">토</div>
+            <div class="abs l" style="left:1130px;top:300px;width:136px;text-align:center;font-size:26px">일</div>
+            <div class="abs l" style="left:120px;top:370px;font-size:24px;color:#4A5F78">수업</div>
+            <div class="abs l" style="left:120px;top:485px;font-size:24px;color:#4A5F78">방과후</div>
+            <div class="abs l" style="left:120px;top:600px;font-size:24px;color:#4A5F78">저녁</div>
+            <div class="abs l" style="left:120px;top:715px;font-size:24px;color:#4A5F78">공부</div>
+            <div class="cell" id="s10-c0" style="left:220px;top:350px;width:738px;background:#1F8A99;color:#fff">학교 정규 수업</div>
+            <div class="cell" id="s10-c1" style="left:1120px;top:350px;width:138px;background:#4E8A1E;color:#fff">봉사</div>
+            <div class="cell" id="s10-c2" style="left:220px;top:465px;width:138px;background:#4E8A1E;color:#fff">클럽</div>
+            <div class="cell" id="s10-c3" style="left:370px;top:465px;width:138px;background:#4E8A1E;color:#fff">리더십</div>
+            <div class="cell" id="s10-c4" style="left:520px;top:465px;width:138px;background:#4E8A1E;color:#fff">경기</div>
+            <div class="cell" id="s10-c5" style="left:670px;top:465px;width:138px;background:#E8572B;color:#fff">1:1 튜터링</div>
+            <div class="cell" id="s10-c6" style="left:820px;top:465px;width:138px;background:#4E8A1E;color:#fff">봉사</div>
+            <div class="cell" id="s10-c7" style="left:1120px;top:465px;width:138px;background:#E8572B;color:#fff">카운셀링</div>
+            <div class="cell" id="s10-c8" style="left:220px;top:580px;width:1038px;background:#F3C969;color:#16324F">호스트 가족과 저녁</div>
+            <div class="cell" id="s10-c9" style="left:220px;top:695px;width:738px;background:#16324F;color:#fff">시험 대비 공부</div>
+            <div class="cell" id="s10-c10" style="left:970px;top:695px;width:138px;background:#E8572B;color:#fff">에세이</div>
+            <div class="cell" id="s10-c11" style="left:1120px;top:695px;width:138px;background:#16324F;color:#fff">공부</div>
+          </div>
+          <div class="pol" id="s10-din" style="left:1480px;top:60px;width:320px;height:250px"><div class="ph"><img src="assets/photos/22-homestay-kitchen.jpg" alt="" /></div></div>
+          <div class="ck" id="s10-k0" style="left:1330px;top:340px"><b>✓</b>주 1회 2시간 1:1 튜터링</div>
+          <div class="ck" id="s10-k1" style="left:1330px;top:430px"><b>✓</b>주 1회 에세이 첨삭</div>
+          <div class="ck" id="s10-k2" style="left:1330px;top:520px"><b>✓</b>정기 카운셀링</div>
+          <div class="ck" id="s10-k3" style="left:1330px;top:610px"><b>✓</b>휴대폰 사용 지도</div>
+          <div class="ck" id="s10-k4" style="left:1330px;top:700px"><b>✓</b>월 1회 이상 한식</div>
+          <div class="abs hd" id="s10-lv" style="left:120px;top:300px;font-size:50px">관리 강도는 가정에 맞게</div>
+          <div class="stp" id="s10-s0" style="left:120px;top:620px;height:280px;background:#7FB236"><div class="sn">정착 프로그램</div><div class="sd">현지 정착 지원</div></div>
+          <div class="stp" id="s10-s1" style="left:690px;top:500px;height:400px;background:#1F8A99"><div class="sn">가디언 케어</div><div class="sd">월 1회 면담 · 출결·성적 관리 · 생활 전반</div></div>
+          <div class="stp" id="s10-s2" style="left:1260px;top:380px;height:520px;background:#16324F"><div class="sn">에듀 가이드</div><div class="sd">1:1 튜터링 · 에세이 첨삭 · 대학 진학 프로젝트까지</div></div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const root = document.getElementById("s10");
+          const D = 54.21;
+          const R = [0.94, 4.48, 10.14, 14.54, 22.2, 24.06, 29.48, 35.34, 40.96, 43.58, 46.26, 49.92];
+
+const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
+const tl=gsap.timeline({paused:true});
+function inn(el,at,o){o=o||{};if(typeof el==='string')el=q(el);
+  tl.fromTo(el,{opacity:0,x:o.x||0,y:(o.y===undefined?30:o.y),scale:(o.s===undefined?1:o.s),rotation:(o.r0===undefined?(o.r||0):o.r0)},
+  {opacity:1,x:0,y:0,scale:1,rotation:o.r||0,duration:o.d||0.6,ease:o.e||'power3.out'},at);}
+function outt(el,at,o){o=o||{};if(typeof el==='string')el=q(el);
+  tl.to(el,{opacity:0,y:o.y||0,x:o.x||0,scale:(o.s===undefined?1:o.s),duration:o.d||0.45,ease:'power2.in'},at);}
+function pol(el,at,rot){if(typeof el==='string')el=q(el);
+  tl.fromTo(el,{opacity:0,y:-180,rotation:rot*2.4,scale:1.06},{opacity:1,y:0,rotation:rot,scale:1,duration:0.85,ease:'power3.out'},at);}
+function kb(el,at,dur,a,b){if(typeof el==='string')el=q(el);a=a||{};b=b||{};
+  tl.fromTo(el,{scale:a.s||1,xPercent:a.x||0,yPercent:a.y||0},{scale:b.s||1.07,xPercent:b.x||0,yPercent:b.y||0,duration:dur,ease:'none'},at);}
+function count(el,from,to,at,dur,fmt){if(typeof el==='string')el=q(el);const st={v:from};
+  tl.fromTo(st,{v:from},{v:to,duration:dur,ease:'power2.out',immediateRender:false,onUpdate:()=>{el.textContent=fmt(st.v);}},at);}
+function grow(el,at,d,origin){if(typeof el==='string')el=q(el);
+  tl.fromTo(el,{scaleX:0,opacity:0,transformOrigin:origin||'0% 50%'},{scaleX:1,opacity:1,duration:d||0.8,ease:'power3.inOut'},at);}
+function draw(path,at,d){if(typeof path==='string')path=q(path);const L=path.getTotalLength();
+  path.style.strokeDasharray=L;tl.fromTo(path,{strokeDashoffset:L},{strokeDashoffset:0,duration:d||1,ease:'power2.inOut'},at);}
+function ambient(){
+  qa('.ghost').forEach((g,i)=>tl.fromTo(g,{x:0},{x:(i%2?160:-160),duration:D,ease:'none'},0));
+  qa('.glow').forEach((g,i)=>{const c=4+i;const n=Math.max(0,Math.floor(D/c)-1);
+    tl.fromTo(g,{scale:0.92},{scale:1.08,duration:c/2,ease:'sine.inOut',yoyo:true,repeat:n},0);});
+  tl.fromTo(q('.stage'),{opacity:0},{opacity:1,duration:0.45,ease:'power1.out'},0);
+  tl.fromTo(q('.stage'),{scale:1,transformOrigin:'50% 45%'},{scale:1.03,duration:D,ease:'none'},0);
+  if(q('.wipe'))tl.fromTo(q('.wipe'),{xPercent:0},{xPercent:-101,duration:0.75,ease:'power3.inOut'},0.05);
+  tl.to(q('.stage'),{opacity:0,duration:0.5,ease:'power1.in'},D-0.55);
+}
+
+
+inn('#s10-st',R[0],{r0:-14,r:-4,s:0.6,y:0});inn('#s10-t',R[0]+0.3,{y:24});
+inn('#s10-o1',R[1]+0.3,{y:40});inn('#s10-plus',R[1]+2.4,{s:0,y:0});inn('#s10-o2',R[1]+2.6,{y:40});
+inn('#s10-tc',R[2],{x:60,y:0,d:0.7});inn('#s10-av',R[2]+0.3,{s:0,y:0});
+count('#s10-16',0,16,R[2]+0.6,1.4,v=>Math.round(v)+'년');inn('#s10-16',R[2]+0.6,{y:0});
+inn('#s10-tct',R[2]+1.2,{y:14});inn('#s10-tcs',R[2]+2.0,{y:10});
+inn('#s10-d0',R[3],{s:0.6,y:0});inn('#s10-d1',R[3]+0.9,{s:0.6,y:0});inn('#s10-d2',R[3]+2.4,{s:0.6,y:0});inn('#s10-d3',R[3]+4.2,{s:0.6,y:0});
+inn('#s10-rep',R[3]+5.8,{x:-30,y:0});
+outt(['#s10-o1','#s10-o2','#s10-plus','#s10-tc','#s10-av','#s10-16','#s10-tct','#s10-tcs','#s10-d0','#s10-d1','#s10-d2','#s10-d3','#s10-rep'],R[4]-0.4,{y:-20});
+tl.fromTo('#s10-tt .l',{opacity:0},{opacity:1,duration:0.4,stagger:0.04},R[4]);
+const rowAt={c0:R[5],c1:R[5]+0.3,c2:R[5]+1.6,c3:R[5]+1.75,c4:R[5]+1.9,c5:R[5]+2.05,c6:R[5]+2.2,c7:R[5]+2.35,c8:R[5]+3.2,c9:R[7],c10:R[7]+0.3,c11:R[7]+0.45};
+Object.keys(rowAt).forEach(k=>grow('#s10-'+k,rowAt[k],0.5));
+pol('#s10-din',R[5]+3.6,4);
+tl.to(['#s10-c5','#s10-c10','#s10-c7'],{scale:1.08,duration:0.3,yoyo:true,repeat:1,ease:'power2.inOut'},R[6]);
+inn('#s10-k0',R[6],{x:30,y:0});inn('#s10-k1',R[6]+1.8,{x:30,y:0});inn('#s10-k2',R[6]+3.6,{x:30,y:0});
+inn('#s10-k3',R[7]+0.6,{x:30,y:0});inn('#s10-k4',R[8],{x:30,y:0});
+outt(['#s10-tt','#s10-din','#s10-k0','#s10-k1','#s10-k2','#s10-k3','#s10-k4'].concat(Object.keys(rowAt).map(k=>'#s10-'+k)),R[9]-0.4,{y:-20});
+inn('#s10-lv',R[9],{y:20});
+tl.fromTo('#s10-s0',{y:300,opacity:0},{y:0,opacity:1,duration:0.8,ease:'power3.out'},R[10]);
+tl.fromTo('#s10-s1',{y:420,opacity:0},{y:0,opacity:1,duration:0.8,ease:'power3.out'},R[10]+1.9);
+tl.fromTo('#s10-s2',{y:540,opacity:0},{y:0,opacity:1,duration:0.8,ease:'power3.out'},R[11]);
+
+          ambient();
+          window.__timelines["s10"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

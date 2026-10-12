@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+
+@font-face{font-family:Pretendard;font-weight:500;src:url(assets/fonts/Pretendard-Medium.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:700;src:url(assets/fonts/Pretendard-Bold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:800;src:url(assets/fonts/Pretendard-ExtraBold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:900;src:url(assets/fonts/Pretendard-Black.woff2) format("woff2")}
+@font-face{font-family:Yellowtail;font-weight:400;src:url(assets/fonts/Yellowtail-Regular.ttf) format("truetype")}
+
+
+#s04{position:absolute;inset:0;overflow:hidden;background:#FAF6EF;color:#16324F;font-family:Pretendard,sans-serif}
+#s04 *{box-sizing:border-box}
+#s04 .bg{position:absolute;inset:0;background:#FAF6EF}
+#s04 .grain{position:absolute;inset:0;opacity:.5;background-image:radial-gradient(rgba(22,50,79,.07) 1.2px,transparent 1.3px);background-size:9px 9px}
+#s04 .glow{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(31,138,153,.20) 0%,rgba(31,138,153,0) 70%)}
+#s04 .glow.warm{background:radial-gradient(circle,rgba(232,87,43,.14) 0%,rgba(232,87,43,0) 70%)}
+#s04 .ghost{position:absolute;font-weight:900;color:rgba(22,50,79,.07);font-size:300px;letter-spacing:-.04em;white-space:nowrap;line-height:1}
+#s04 .stage{position:absolute;inset:0}
+#s04 .abs{position:absolute}
+#s04 .h{font-weight:900;letter-spacing:-.03em;line-height:1.1}
+#s04 .hd{font-weight:800;letter-spacing:-.02em;line-height:1.2}
+#s04 .b{font-weight:500;line-height:1.45}
+#s04 .l{font-weight:700;letter-spacing:.08em}
+#s04 .script{font-family:Yellowtail,cursive;line-height:1.05;white-space:nowrap}
+#s04 .sticker{position:absolute;background:#E8572B;color:#fff;font-weight:800;font-size:24px;letter-spacing:.12em;padding:10px 24px;border-radius:99px;white-space:nowrap}
+#s04 .chip{position:absolute;background:#FAF6EF;border:3px solid #16324F;border-radius:99px;padding:10px 24px;font-weight:700;font-size:28px;white-space:nowrap;color:#16324F}
+#s04 .chip.lake{border-color:#1F8A99;color:#146A77}
+#s04 .chip.solid{background:#16324F;color:#FAF6EF}
+#s04 .chip.sand{background:#F3C969;border-color:#F3C969}
+#s04 .pol{position:absolute;background:#fff;padding:16px 16px 60px;box-shadow:0 20px 44px rgba(22,50,79,.26)}
+#s04 .pol .ph{position:relative;width:100%;height:100%;overflow:hidden}
+#s04 .pol img,#s04 .ph img{display:block;width:100%;height:100%;object-fit:cover}
+#s04 .pol .cap{position:absolute;left:0;right:0;bottom:12px;text-align:center;font-family:Yellowtail,cursive;font-size:32px;color:#16324F}
+#s04 .card{position:absolute;background:#fff;border:3px solid rgba(22,50,79,.14);border-radius:24px;box-shadow:0 12px 30px rgba(22,50,79,.13)}
+#s04 .panel{position:absolute;background:rgba(22,50,79,.93);border-radius:28px;color:#FAF6EF}
+#s04 .full{position:absolute;inset:0;overflow:hidden}
+#s04 .full img{width:100%;height:100%;object-fit:cover;display:block}
+#s04 .hlbar{position:absolute;background:#F3C969;height:22px;transform-origin:0 50%}
+#s04 .wipe{position:absolute;inset:0;background:#1F8A99;z-index:50}
+#s04 .flash{position:absolute;inset:0;background:#FAF6EF;z-index:60;opacity:0}
+
+#s04 .city{position:absolute;width:26px;height:26px;border-radius:50%;background:#16324F}
+#s04 .vpin{position:absolute;width:56px;height:56px;border-radius:50% 50% 50% 0;background:#E8572B}
+#s04 .ring{position:absolute;width:140px;height:140px;border-radius:50%;border:6px solid #1F8A99}
+#s04 .tile{position:absolute;width:380px;height:300px;border-radius:22px;overflow:hidden;box-shadow:0 14px 30px rgba(22,50,79,.22)}
+#s04 .tile img{width:100%;height:100%;object-fit:cover}
+#s04 .tile .tl{position:absolute;left:16px;bottom:14px;background:rgba(22,50,79,.85);color:#FAF6EF;font-weight:800;font-size:26px;padding:6px 16px;border-radius:99px}
+
+      </style>
+      <div id="s04" data-composition-id="s04" data-width="1920" data-height="1080" data-duration="36.65">
+        <div class="bg"></div>
+        <div class="grain"></div>
+        <svg class="ghost" aria-hidden="true" style="left:900px;top:700px;width:2400px;height:330px;overflow:visible"><text x="0" y="270" font-family="Pretendard" font-weight="900" font-size="300" fill="rgba(22,50,79,.07)" letter-spacing="-8">OKANAGAN</text></svg>
+        <div class="stage">
+
+          <div class="abs" id="s04-map" style="left:0;top:0;width:1920px;height:1080px">
+            <div class="abs hd" id="s04-mt" style="left:120px;top:92px;font-size:60px">지도를 펼쳐 보면</div>
+            <svg class="abs" style="left:0;top:0;width:1920px;height:1080px" viewBox="0 0 1920 1080">
+              <path id="s04-coast" d="M180 980 C 240 820, 300 760, 360 700 C 420 640, 380 560, 450 480 C 520 400, 500 300, 560 220" fill="none" stroke="rgba(22,50,79,.22)" stroke-width="6" stroke-dasharray="2 14" stroke-linecap="round"/>
+              <ellipse id="s04-ok" cx="1250" cy="560" rx="46" ry="230" transform="rotate(12 1250 560)" fill="#1F8A99" opacity=".0"/>
+              <ellipse id="s04-ka" cx="1440" cy="420" rx="28" ry="120" transform="rotate(-8 1440 420)" fill="#1F8A99" opacity=".0"/>
+              <path id="s04-fly" d="M420 720 C 700 520, 1000 520, 1270 690" fill="none" stroke="#E8572B" stroke-width="7" stroke-dasharray="18 14" stroke-linecap="round"/>
+              <path id="s04-road" d="M1270 700 C 1330 600, 1360 470, 1370 330" fill="none" stroke="#16324F" stroke-width="7" stroke-linecap="round"/>
+            </svg>
+            <div class="city" id="s04-van" style="left:407px;top:707px"></div>
+            <div class="abs hd" id="s04-vant" style="left:330px;top:750px;font-size:40px">밴쿠버</div>
+            <div class="chip" id="s04-flyt" style="left:700px;top:470px">✈ 비행기 45분</div>
+            <div class="city" id="s04-kel" style="left:1257px;top:687px"></div>
+            <div class="abs hd" id="s04-kelt" style="left:1030px;top:730px;font-size:36px">켈로나 공항</div>
+            <div class="chip" id="s04-roadt" style="left:1420px;top:560px">차로 30분</div>
+            <div class="abs b" id="s04-okt" style="left:1000px;top:420px;font-size:28px;color:#146A77">오카나간 호수</div>
+            <div class="abs b" id="s04-kat" style="left:1500px;top:440px;font-size:28px;color:#146A77">칼라말카 호수</div>
+            <div class="ring" id="s04-ring" style="left:1300px;top:258px"></div>
+            <div class="vpin" id="s04-pin" style="left:1342px;top:270px"></div>
+            <div class="abs h" id="s04-vt" style="left:1420px;top:250px;font-size:64px">버논</div>
+          </div>
+          <div class="abs" id="s04-pano" style="left:0;top:0;width:1920px;height:600px;overflow:hidden"><img src="assets/photos/02-okanagan-panorama.jpg" alt="" style="height:600px;width:auto;display:block" id="s04-panoimg" /></div>
+          <div class="chip solid" id="s04-i1" style="left:120px;top:640px">인구 5.8만</div>
+          <div class="chip solid" id="s04-i2" style="left:400px;top:640px">오카나간 밸리 45만</div>
+          <div class="chip solid" id="s04-i3" style="left:810px;top:640px">켈로나까지 40~50분</div>
+          <div class="abs script" id="s04-cal" style="left:120px;top:250px;font-size:96px;color:#1F8A99">California of Canada</div>
+          <div class="abs h" id="s04-calk" style="left:120px;top:390px;font-size:84px">캐나다의 캘리포니아</div>
+          <div class="tile" id="s04-s1" style="left:1040px;top:120px"><img src="assets/photos/11-kayak-lake.jpg" alt="" /><div class="tl">여름</div></div>
+          <div class="tile" id="s04-s2" style="left:1440px;top:120px"><img src="assets/photos/04-students-canada-flag.jpg" alt="" /><div class="tl">호수</div></div>
+          <div class="tile" id="s04-s3" style="left:1040px;top:450px"><img src="assets/photos/07-park-autumn.jpg" alt="" /><div class="tl">가을</div></div>
+          <div class="tile" id="s04-s4" style="left:1440px;top:450px"><img src="assets/photos/05-silverstar-ski-powder.jpg" alt="" /><div class="tl">겨울 스키</div></div>
+          <div class="chip lake" id="s04-temp1" style="left:120px;top:560px">여름 30~35°C · 수영·카약</div>
+          <div class="chip lake" id="s04-temp2" style="left:120px;top:650px">겨울 0~5°C · 세계적 스키장</div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const root = document.getElementById("s04");
+          const D = 36.65;
+          const R = [0.94, 2.32, 7.08, 11.44, 20.92, 25.98, 30.24];
+
+const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
+const tl=gsap.timeline({paused:true});
+function inn(el,at,o){o=o||{};if(typeof el==='string')el=q(el);
+  tl.fromTo(el,{opacity:0,x:o.x||0,y:(o.y===undefined?30:o.y),scale:(o.s===undefined?1:o.s),rotation:(o.r0===undefined?(o.r||0):o.r0)},
+  {opacity:1,x:0,y:0,scale:1,rotation:o.r||0,duration:o.d||0.6,ease:o.e||'power3.out'},at);}
+function outt(el,at,o){o=o||{};if(typeof el==='string')el=q(el);
+  tl.to(el,{opacity:0,y:o.y||0,x:o.x||0,scale:(o.s===undefined?1:o.s),duration:o.d||0.45,ease:'power2.in'},at);}
+function pol(el,at,rot){if(typeof el==='string')el=q(el);
+  tl.fromTo(el,{opacity:0,y:-180,rotation:rot*2.4,scale:1.06},{opacity:1,y:0,rotation:rot,scale:1,duration:0.85,ease:'power3.out'},at);}
+function kb(el,at,dur,a,b){if(typeof el==='string')el=q(el);a=a||{};b=b||{};
+  tl.fromTo(el,{scale:a.s||1,xPercent:a.x||0,yPercent:a.y||0},{scale:b.s||1.07,xPercent:b.x||0,yPercent:b.y||0,duration:dur,ease:'none'},at);}
+function count(el,from,to,at,dur,fmt){if(typeof el==='string')el=q(el);const st={v:from};
+  tl.fromTo(st,{v:from},{v:to,duration:dur,ease:'power2.out',immediateRender:false,onUpdate:()=>{el.textContent=fmt(st.v);}},at);}
+function grow(el,at,d,origin){if(typeof el==='string')el=q(el);
+  tl.fromTo(el,{scaleX:0,opacity:0,transformOrigin:origin||'0% 50%'},{scaleX:1,opacity:1,duration:d||0.8,ease:'power3.inOut'},at);}
+function draw(path,at,d){if(typeof path==='string')path=q(path);const L=path.getTotalLength();
+  path.style.strokeDasharray=L;tl.fromTo(path,{strokeDashoffset:L},{strokeDashoffset:0,duration:d||1,ease:'power2.inOut'},at);}
+function ambient(){
+  qa('.ghost').forEach((g,i)=>tl.fromTo(g,{x:0},{x:(i%2?160:-160),duration:D,ease:'none'},0));
+  qa('.glow').forEach((g,i)=>{const c=4+i;const n=Math.max(0,Math.floor(D/c)-1);
+    tl.fromTo(g,{scale:0.92},{scale:1.08,duration:c/2,ease:'sine.inOut',yoyo:true,repeat:n},0);});
+  tl.fromTo(q('.stage'),{opacity:0},{opacity:1,duration:0.45,ease:'power1.out'},0);
+  tl.fromTo(q('.stage'),{scale:1,transformOrigin:'50% 45%'},{scale:1.03,duration:D,ease:'none'},0);
+  if(q('.wipe'))tl.fromTo(q('.wipe'),{xPercent:0},{xPercent:-101,duration:0.75,ease:'power3.inOut'},0.05);
+  tl.to(q('.stage'),{opacity:0,duration:0.5,ease:'power1.in'},D-0.55);
+}
+
+
+inn('#s04-mt',R[0],{y:20});
+inn('#s04-van',R[1],{s:0,y:0});inn('#s04-vant',R[1]+0.2,{y:10});
+(function(){const p=q('#s04-fly');const L=p.getTotalLength();tl.fromTo(p,{strokeDashoffset:L,strokeDasharray:'18 14'},{strokeDashoffset:0,duration:1.4,ease:'power2.inOut'},R[1]+0.4);})();
+tl.fromTo('#s04-fly',{opacity:0},{opacity:1,duration:0.2},R[1]+0.4);
+inn('#s04-flyt',R[1]+1.0,{s:0.6,y:0});
+inn('#s04-kel',R[1]+1.8,{s:0,y:0});inn('#s04-kelt',R[1]+2.0,{y:10});
+draw('#s04-road',R[1]+3.2,0.8);inn('#s04-roadt',R[1]+3.6,{s:0.6,y:0});
+tl.fromTo('#s04-ok',{opacity:0},{opacity:0.75,duration:0.8},R[2]);inn('#s04-okt',R[2]+0.3,{y:10});
+tl.fromTo('#s04-ka',{opacity:0},{opacity:0.75,duration:0.8},R[2]+1.0);inn('#s04-kat',R[2]+1.3,{y:10});
+inn('#s04-pin',R[2]+2.2,{y:-160,d:0.7});inn('#s04-vt',R[2]+2.6,{x:-20,y:0});
+tl.fromTo('#s04-ring',{scale:0.4,opacity:0.9},{scale:1.4,opacity:0,duration:1.4,ease:'power2.out',repeat:1},R[2]+2.8);
+outt('#s04-map',R[3]-0.4);
+tl.fromTo('#s04-pano',{clipPath:'inset(0 0 0 100%)'},{clipPath:'inset(0 0 0 0%)',duration:0.9,ease:'power3.inOut'},R[3]-0.3);
+tl.fromTo('#s04-panoimg',{x:0},{x:-(2055-1920),duration:R[5]-R[3],ease:'none'},R[3]-0.3);
+inn('#s04-i1',R[3]+0.6,{s:0.7,y:0});inn('#s04-i2',R[3]+3.2,{s:0.7,y:0});inn('#s04-i3',R[3]+6.8,{s:0.7,y:0});
+outt(['#s04-i1','#s04-i2','#s04-i3'],R[4]-0.3);
+tl.to('#s04-pano',{opacity:0,duration:0.6},R[4]-0.3);
+inn('#s04-cal',R[4],{y:30,r0:-6,d:0.9});inn('#s04-calk',R[4]+0.7,{y:30});
+tl.to(['#s04-cal','#s04-calk'],{y:-110,duration:0.8,ease:'power3.inOut'},R[5]-0.2);
+pol('#s04-s1',R[5],-2);pol('#s04-s2',R[5]+0.8,2);inn('#s04-temp1',R[5]+0.6,{x:-30,y:0});
+pol('#s04-s3',R[6]-0.2,1);pol('#s04-s4',R[6]+0.6,-2);inn('#s04-temp2',R[6]+0.8,{x:-30,y:0});
+qa('.tile img').forEach((im,i)=>kb(im,R[5]+i*0.6,D-R[5],{s:1},{s:1.08}));
+
+          ambient();
+          window.__timelines["s04"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

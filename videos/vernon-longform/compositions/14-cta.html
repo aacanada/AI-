@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+
+@font-face{font-family:Pretendard;font-weight:500;src:url(assets/fonts/Pretendard-Medium.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:700;src:url(assets/fonts/Pretendard-Bold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:800;src:url(assets/fonts/Pretendard-ExtraBold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:900;src:url(assets/fonts/Pretendard-Black.woff2) format("woff2")}
+@font-face{font-family:Yellowtail;font-weight:400;src:url(assets/fonts/Yellowtail-Regular.ttf) format("truetype")}
+
+
+#s14{position:absolute;inset:0;overflow:hidden;background:#FAF6EF;color:#16324F;font-family:Pretendard,sans-serif}
+#s14 *{box-sizing:border-box}
+#s14 .bg{position:absolute;inset:0;background:#FAF6EF}
+#s14 .grain{position:absolute;inset:0;opacity:.5;background-image:radial-gradient(rgba(22,50,79,.07) 1.2px,transparent 1.3px);background-size:9px 9px}
+#s14 .glow{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(31,138,153,.20) 0%,rgba(31,138,153,0) 70%)}
+#s14 .glow.warm{background:radial-gradient(circle,rgba(232,87,43,.14) 0%,rgba(232,87,43,0) 70%)}
+#s14 .ghost{position:absolute;font-weight:900;color:rgba(22,50,79,.07);font-size:300px;letter-spacing:-.04em;white-space:nowrap;line-height:1}
+#s14 .stage{position:absolute;inset:0}
+#s14 .abs{position:absolute}
+#s14 .h{font-weight:900;letter-spacing:-.03em;line-height:1.1}
+#s14 .hd{font-weight:800;letter-spacing:-.02em;line-height:1.2}
+#s14 .b{font-weight:500;line-height:1.45}
+#s14 .l{font-weight:700;letter-spacing:.08em}
+#s14 .script{font-family:Yellowtail,cursive;line-height:1.05;white-space:nowrap}
+#s14 .sticker{position:absolute;background:#E8572B;color:#fff;font-weight:800;font-size:24px;letter-spacing:.12em;padding:10px 24px;border-radius:99px;white-space:nowrap}
+#s14 .chip{position:absolute;background:#FAF6EF;border:3px solid #16324F;border-radius:99px;padding:10px 24px;font-weight:700;font-size:28px;white-space:nowrap;color:#16324F}
+#s14 .chip.lake{border-color:#1F8A99;color:#146A77}
+#s14 .chip.solid{background:#16324F;color:#FAF6EF}
+#s14 .chip.sand{background:#F3C969;border-color:#F3C969}
+#s14 .pol{position:absolute;background:#fff;padding:16px 16px 60px;box-shadow:0 20px 44px rgba(22,50,79,.26)}
+#s14 .pol .ph{position:relative;width:100%;height:100%;overflow:hidden}
+#s14 .pol img,#s14 .ph img{display:block;width:100%;height:100%;object-fit:cover}
+#s14 .pol .cap{position:absolute;left:0;right:0;bottom:12px;text-align:center;font-family:Yellowtail,cursive;font-size:32px;color:#16324F}
+#s14 .card{position:absolute;background:#fff;border:3px solid rgba(22,50,79,.14);border-radius:24px;box-shadow:0 12px 30px rgba(22,50,79,.13)}
+#s14 .panel{position:absolute;background:rgba(22,50,79,.93);border-radius:28px;color:#FAF6EF}
+#s14 .full{position:absolute;inset:0;overflow:hidden}
+#s14 .full img{width:100%;height:100%;object-fit:cover;display:block}
+#s14 .hlbar{position:absolute;background:#F3C969;height:22px;transform-origin:0 50%}
+#s14 .wipe{position:absolute;inset:0;background:#1F8A99;z-index:50}
+#s14 .flash{position:absolute;inset:0;background:#FAF6EF;z-index:60;opacity:0}
+
+#s14 .bg{background:#16324F}
+#s14 .spc{width:540px;height:200px}
+
+      </style>
+      <div id="s14" data-composition-id="s14" data-width="1920" data-height="1080" data-duration="37.53">
+        <div class="bg"></div>
+        <div class="grain"></div>
+
+        <div class="stage">
+
+          <div class="abs" id="s14-paper" style="inset:0;background:#FAF6EF"></div>
+          <div class="abs hd" id="s14-t" style="left:120px;top:92px;font-size:66px">정리하면</div>
+          <div class="card spc" id="s14-p0" style="left:120px;top:260px"><div class="sticker" style="left:30px;top:30px;font-size:20px">SELLING POINT 01</div><div class="hd" style="position:absolute;left:30px;top:100px;font-size:40px">영어만 쓰는 교실</div></div>
+          <div class="card spc" id="s14-p1" style="left:700px;top:260px"><div class="sticker" style="left:30px;top:30px;font-size:20px">SELLING POINT 02</div><div class="hd" style="position:absolute;left:30px;top:100px;font-size:40px">유럽 부모들이 고르는 곳</div></div>
+          <div class="card spc" id="s14-p2" style="left:1280px;top:260px"><div class="sticker" style="left:30px;top:30px;font-size:20px">SELLING POINT 03</div><div class="hd" style="position:absolute;left:30px;top:100px;font-size:40px">생활 수준이 높은 동네</div></div>
+          <div class="card spc" id="s14-p3" style="left:120px;top:500px"><div class="sticker" style="left:30px;top:30px;font-size:20px">SELLING POINT 04</div><div class="hd" style="position:absolute;left:30px;top:100px;font-size:40px">캐나다 공교육 + 비교과</div></div>
+          <div class="card spc" id="s14-p4" style="left:700px;top:500px"><div class="sticker" style="left:30px;top:30px;font-size:20px">SELLING POINT 05</div><div class="hd" style="position:absolute;left:30px;top:100px;font-size:40px">빠른 졸업</div></div>
+          <div class="card spc" id="s14-p5" style="left:1280px;top:500px"><div class="sticker" style="left:30px;top:30px;font-size:20px">SELLING POINT 06</div><div class="hd" style="position:absolute;left:30px;top:100px;font-size:40px">현지 한국인 선생님의 관리</div></div>
+          <div class="full" id="s14-photo"><img src="assets/photos/01-hero-lake-jump.jpg" alt="" style="object-position:50% 25%" /></div>
+          <div class="abs" id="s14-bar" style="left:0;top:680px;width:1920px;height:220px;background:rgba(22,50,79,.95)"></div>
+          <div class="abs hd" id="s14-m1" style="left:120px;top:720px;font-size:52px;color:#FAF6EF">캐나다 아이처럼 자라는 것, 그리고 좋은 대학</div>
+          <div class="abs b" id="s14-m1s" style="left:122px;top:800px;font-size:34px;color:#F3C969">두 마음을 버논에서 함께</div>
+          <div class="abs hd" id="s14-m2" style="left:120px;top:720px;font-size:52px;color:#FAF6EF">학교별 한국 학생 자리는 한정되어 있습니다</div>
+          <div class="abs b" data-layout-allow-overlap id="s14-m2s" style="left:122px;top:800px;font-size:34px;color:#F3C969">9월 학기 등록 핵심 시기 · 지금부터 3월까지</div>
+          <div class="abs b" data-layout-allow-overlap id="s14-m3s" style="left:122px;top:800px;font-size:34px;color:#F3C969">학교별 잔여석 · 맞는 학교·관리 옵션 · 대학 로드맵</div>
+          <div class="card" id="s14-aa" style="left:1360px;top:705px;width:440px;height:170px;padding:28px;background:#FAF6EF"><div class="h" style="font-size:56px">AA캐나다</div><div class="b" style="font-size:26px;color:#4A5F78;margin-top:6px">자세한 상담은 설명란 링크로</div></div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const root = document.getElementById("s14");
+          const D = 37.53;
+          const R = [1.0, 2.24, 8.8, 13.86, 19.22, 26.76, 31.52];
+
+const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
+const tl=gsap.timeline({paused:true});
+function inn(el,at,o){o=o||{};if(typeof el==='string')el=q(el);
+  tl.fromTo(el,{opacity:0,x:o.x||0,y:(o.y===undefined?30:o.y),scale:(o.s===undefined?1:o.s),rotation:(o.r0===undefined?(o.r||0):o.r0)},
+  {opacity:1,x:0,y:0,scale:1,rotation:o.r||0,duration:o.d||0.6,ease:o.e||'power3.out'},at);}
+function outt(el,at,o){o=o||{};if(typeof el==='string')el=q(el);
+  tl.to(el,{opacity:0,y:o.y||0,x:o.x||0,scale:(o.s===undefined?1:o.s),duration:o.d||0.45,ease:'power2.in'},at);}
+function pol(el,at,rot){if(typeof el==='string')el=q(el);
+  tl.fromTo(el,{opacity:0,y:-180,rotation:rot*2.4,scale:1.06},{opacity:1,y:0,rotation:rot,scale:1,duration:0.85,ease:'power3.out'},at);}
+function kb(el,at,dur,a,b){if(typeof el==='string')el=q(el);a=a||{};b=b||{};
+  tl.fromTo(el,{scale:a.s||1,xPercent:a.x||0,yPercent:a.y||0},{scale:b.s||1.07,xPercent:b.x||0,yPercent:b.y||0,duration:dur,ease:'none'},at);}
+function count(el,from,to,at,dur,fmt){if(typeof el==='string')el=q(el);const st={v:from};
+  tl.fromTo(st,{v:from},{v:to,duration:dur,ease:'power2.out',immediateRender:false,onUpdate:()=>{el.textContent=fmt(st.v);}},at);}
+function grow(el,at,d,origin){if(typeof el==='string')el=q(el);
+  tl.fromTo(el,{scaleX:0,opacity:0,transformOrigin:origin||'0% 50%'},{scaleX:1,opacity:1,duration:d||0.8,ease:'power3.inOut'},at);}
+function draw(path,at,d){if(typeof path==='string')path=q(path);const L=path.getTotalLength();
+  path.style.strokeDasharray=L;tl.fromTo(path,{strokeDashoffset:L},{strokeDashoffset:0,duration:d||1,ease:'power2.inOut'},at);}
+function ambient(){
+  qa('.ghost').forEach((g,i)=>tl.fromTo(g,{x:0},{x:(i%2?160:-160),duration:D,ease:'none'},0));
+  qa('.glow').forEach((g,i)=>{const c=4+i;const n=Math.max(0,Math.floor(D/c)-1);
+    tl.fromTo(g,{scale:0.92},{scale:1.08,duration:c/2,ease:'sine.inOut',yoyo:true,repeat:n},0);});
+  tl.fromTo(q('.stage'),{opacity:0},{opacity:1,duration:0.45,ease:'power1.out'},0);
+  tl.fromTo(q('.stage'),{scale:1,transformOrigin:'50% 45%'},{scale:1.03,duration:D,ease:'none'},0);
+  if(q('.wipe'))tl.fromTo(q('.wipe'),{xPercent:0},{xPercent:-101,duration:0.75,ease:'power3.inOut'},0.05);
+  tl.to(q('.stage'),{opacity:0,duration:0.5,ease:'power1.in'},D-0.55);
+}
+
+
+inn('#s14-t',R[0],{y:24});
+const PT=[R[1],R[1]+1.6,R[1]+3.6,R[2],R[2]+1.8,R[2]+3.0];
+for(let i=0;i<6;i++){tl.fromTo('#s14-p'+i,{opacity:0,x:500,rotation:8},{opacity:1,x:0,rotation:(i%2?1.5:-1.5),duration:0.75,ease:'power3.out'},PT[i]);}
+tl.to(['#s14-p0','#s14-p1','#s14-p2','#s14-p3','#s14-p4','#s14-p5','#s14-t'],{opacity:0,scale:0.9,duration:0.5,ease:'power2.in'},R[3]-0.2);
+tl.to('#s14-paper',{opacity:0,duration:0.6},R[3]+0.2);
+tl.fromTo('#s14-photo',{clipPath:'circle(0% at 50% 50%)'},{clipPath:'circle(75% at 50% 50%)',duration:1.1,ease:'power3.inOut'},R[3]-0.1);
+kb('#s14-photo img',R[3]-0.1,D-R[3],{s:1.0},{s:1.08});
+tl.fromTo('#s14-bar',{yPercent:100,opacity:0},{yPercent:0,opacity:1,duration:0.7,ease:'power3.out'},R[3]+0.8);
+inn('#s14-m1',R[3]+1.1,{y:16});inn('#s14-m1s',R[3]+2.6,{y:12});
+outt(['#s14-m1','#s14-m1s'],R[4]-0.3);
+inn('#s14-m2',R[4],{y:16});inn('#s14-m2s',R[4]+3.4,{y:12});
+outt('#s14-m2s',R[5]-0.3);inn('#s14-m3s',R[5],{y:12});
+inn('#s14-aa',R[6],{x:60,y:0,d:0.7});
+
+          ambient();
+          window.__timelines["s14"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

@@ -2,3 +2,5 @@ node_modules/
 .hyperframes/
 renders/
 *.mp4
+snapshots/
+__pycache__/

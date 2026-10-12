@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+
+@font-face{font-family:Pretendard;font-weight:500;src:url(assets/fonts/Pretendard-Medium.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:700;src:url(assets/fonts/Pretendard-Bold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:800;src:url(assets/fonts/Pretendard-ExtraBold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:900;src:url(assets/fonts/Pretendard-Black.woff2) format("woff2")}
+@font-face{font-family:Yellowtail;font-weight:400;src:url(assets/fonts/Yellowtail-Regular.ttf) format("truetype")}
+
+
+#s08{position:absolute;inset:0;overflow:hidden;background:#FAF6EF;color:#16324F;font-family:Pretendard,sans-serif}
+#s08 *{box-sizing:border-box}
+#s08 .bg{position:absolute;inset:0;background:#FAF6EF}
+#s08 .grain{position:absolute;inset:0;opacity:.5;background-image:radial-gradient(rgba(22,50,79,.07) 1.2px,transparent 1.3px);background-size:9px 9px}
+#s08 .glow{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(31,138,153,.20) 0%,rgba(31,138,153,0) 70%)}
+#s08 .glow.warm{background:radial-gradient(circle,rgba(232,87,43,.14) 0%,rgba(232,87,43,0) 70%)}
+#s08 .ghost{position:absolute;font-weight:900;color:rgba(22,50,79,.07);font-size:300px;letter-spacing:-.04em;white-space:nowrap;line-height:1}
+#s08 .stage{position:absolute;inset:0}
+#s08 .abs{position:absolute}
+#s08 .h{font-weight:900;letter-spacing:-.03em;line-height:1.1}
+#s08 .hd{font-weight:800;letter-spacing:-.02em;line-height:1.2}
+#s08 .b{font-weight:500;line-height:1.45}
+#s08 .l{font-weight:700;letter-spacing:.08em}
+#s08 .script{font-family:Yellowtail,cursive;line-height:1.05;white-space:nowrap}
+#s08 .sticker{position:absolute;background:#E8572B;color:#fff;font-weight:800;font-size:24px;letter-spacing:.12em;padding:10px 24px;border-radius:99px;white-space:nowrap}
+#s08 .chip{position:absolute;background:#FAF6EF;border:3px solid #16324F;border-radius:99px;padding:10px 24px;font-weight:700;font-size:28px;white-space:nowrap;color:#16324F}
+#s08 .chip.lake{border-color:#1F8A99;color:#146A77}
+#s08 .chip.solid{background:#16324F;color:#FAF6EF}
+#s08 .chip.sand{background:#F3C969;border-color:#F3C969}
+#s08 .pol{position:absolute;background:#fff;padding:16px 16px 60px;box-shadow:0 20px 44px rgba(22,50,79,.26)}
+#s08 .pol .ph{position:relative;width:100%;height:100%;overflow:hidden}
+#s08 .pol img,#s08 .ph img{display:block;width:100%;height:100%;object-fit:cover}
+#s08 .pol .cap{position:absolute;left:0;right:0;bottom:12px;text-align:center;font-family:Yellowtail,cursive;font-size:32px;color:#16324F}
+#s08 .card{position:absolute;background:#fff;border:3px solid rgba(22,50,79,.14);border-radius:24px;box-shadow:0 12px 30px rgba(22,50,79,.13)}
+#s08 .panel{position:absolute;background:rgba(22,50,79,.93);border-radius:28px;color:#FAF6EF}
+#s08 .full{position:absolute;inset:0;overflow:hidden}
+#s08 .full img{width:100%;height:100%;object-fit:cover;display:block}
+#s08 .hlbar{position:absolute;background:#F3C969;height:22px;transform-origin:0 50%}
+#s08 .wipe{position:absolute;inset:0;background:#1F8A99;z-index:50}
+#s08 .flash{position:absolute;inset:0;background:#FAF6EF;z-index:60;opacity:0}
+
+#s08 .sc{width:460px;height:400px;padding:14px}
+#s08 .sc .ph{width:100%;height:230px;border-radius:14px;overflow:hidden}
+#s08 .sc .sn{font-size:38px;margin-top:16px}
+#s08 .sc .sd{font-size:26px;color:#4A5F78;margin-top:4px}
+#s08 .ac{position:absolute;width:300px;height:160px;background:#fff;border-radius:22px;border:3px solid rgba(22,50,79,.12);box-shadow:0 10px 24px rgba(22,50,79,.10)}
+#s08 .ac b{position:absolute;left:28px;top:28px;width:52px;height:52px;border-radius:50%}
+#s08 .ac span{position:absolute;left:28px;top:96px;font-weight:800;font-size:34px;white-space:nowrap}
+
+      </style>
+      <div id="s08" data-composition-id="s08" data-width="1920" data-height="1080" data-duration="56.71">
+        <div class="bg"></div>
+        <div class="grain"></div>
+        <div class="wipe"></div>
+        <div class="glow" style="left:600px;top:500px;width:700px;height:700px"></div>
+        <div class="stage">
+
+          <div class="sticker" id="s08-st" style="left:120px;top:96px">SELLING POINT 04</div>
+          <div class="abs hd" id="s08-t" style="left:120px;top:160px;width:900px;font-size:66px">캐나다 학생과 같은 교실</div>
+          <div class="abs b" id="s08-t2" style="left:122px;top:250px;font-size:36px;color:#4A5F78">국제학교가 아닌 정규 공립학교</div>
+          <div class="pol" id="s08-p1" style="left:1130px;top:150px;width:640px;height:500px"><div class="ph"><img src="assets/photos/16-classroom-overhead.jpg" alt="" /></div><div class="cap">same classroom</div></div>
+          <div class="pol" id="s08-p2" style="left:1000px;top:520px;width:420px;height:330px"><div class="ph"><img src="assets/photos/15-classroom-teacher.jpg" alt="" /></div></div>
+          <div class="abs l" id="s08-el" style="left:122px;top:410px;font-size:24px;color:#146A77">선택 과목</div>
+          <div class="chip" id="s08-e0" style="left:120px;top:470px">드라마</div>
+          <div class="chip" id="s08-e1" style="left:300px;top:470px">밴드</div>
+          <div class="chip" id="s08-e2" style="left:450px;top:470px">오케스트라</div>
+          <div class="chip" id="s08-e3" style="left:680px;top:470px">로보틱스</div>
+          <div class="chip" id="s08-e4" style="left:120px;top:560px">컴퓨터</div>
+          <div class="chip" id="s08-e5" style="left:300px;top:560px">비즈니스</div>
+          <div class="chip" id="s08-e6" style="left:520px;top:560px">법</div>
+          <div class="chip" id="s08-e7" style="left:630px;top:560px">사진</div>
+          <div class="chip" id="s08-e8" style="left:120px;top:650px">프랑스어</div>
+          <div class="abs" id="s08-map" style="left:806px;top:0;width:1114px;height:1080px;overflow:hidden"><img src="assets/photos/40-map-playground.jpg" alt="" id="s08-mapimg" style="position:absolute;left:-600px;top:-80px;height:1240px;width:auto" /></div>
+          <div class="abs h" id="s08-five" style="left:120px;top:330px;font-size:260px;color:#1F8A99;line-height:1">5</div>
+          <div class="abs hd" id="s08-fivet" style="left:300px;top:460px;font-size:56px">곳의 고등학교</div>
+          <div class="card sc" id="s08-k0" style="left:1300px;top:420px"><div class="ph"><img src="assets/photos/32-school-vernon-secondary.jpg" alt="" /></div><div class="hd sn" data-layout-allow-overlap>Vernon Secondary</div><div class="b sd" data-layout-allow-overlap>1,075명 · 가장 큰 종합 학교</div></div>
+          <div class="card sc" id="s08-k1" style="left:1300px;top:420px"><div class="ph"><img src="assets/photos/30-school-seaton.jpg" alt="" /></div><div class="hd sn" data-layout-allow-overlap>W.L. Seaton</div><div class="b sd" data-layout-allow-overlap>1,000명 · 예술 · 프랑스어 몰입</div></div>
+          <div class="card sc" id="s08-k2" style="left:1300px;top:420px"><div class="ph"><img src="assets/photos/33-school-kalamalka.jpg" alt="" /></div><div class="hd sn" data-layout-allow-overlap>Kalamalka</div><div class="b sd" data-layout-allow-overlap>650명 · 높은 학업 기준</div></div>
+          <div class="card sc" id="s08-k3" style="left:1300px;top:420px"><div class="ph"><img src="assets/photos/34-school-fulton.jpg" alt="" /></div><div class="hd sn" data-layout-allow-overlap>Clarence Fulton</div><div class="b sd" data-layout-allow-overlap>775명 · 운동 · 예술</div></div>
+          <div class="card sc" id="s08-k4" style="left:1300px;top:420px"><div class="ph"><img src="assets/photos/31-school-charles-bloom.jpg" alt="" /></div><div class="hd sn" data-layout-allow-overlap>Charles Bloom</div><div class="b sd" data-layout-allow-overlap>375명 · 작은 마을 분위기</div></div>
+          <div class="abs" id="s08-cover" style="left:1300px;top:110px;width:500px;height:647px;box-shadow:0 20px 44px rgba(22,50,79,.3)"><img src="assets/photos/41-academies-cover.jpg" alt="" style="width:100%;height:100%;object-fit:cover" /></div>
+          <div class="abs hd" id="s08-at" style="left:120px;top:300px;font-size:52px">스포츠 · 특기 아카데미</div>
+          <div class="ac" id="s08-a0" style="left:120px;top:400px"><b style="background:#1F8A99"></b><span>축구</span></div>
+          <div class="ac" id="s08-a1" style="left:450px;top:400px"><b style="background:#16324F"></b><span>아이스하키</span></div>
+          <div class="ac" id="s08-a2" style="left:780px;top:400px"><b style="background:#7FB236"></b><span>알파인 스키</span></div>
+          <div class="ac" id="s08-a3" style="left:1110px;top:400px"><b style="background:#1F8A99"></b><span>프리스타일 스키</span></div>
+          <div class="ac" id="s08-a4" style="left:1440px;top:400px"><b style="background:#16324F"></b><span>노르딕 스키</span></div>
+          <div class="ac" id="s08-a5" style="left:120px;top:590px"><b style="background:#7FB236"></b><span>골프</span></div>
+          <div class="ac" id="s08-a6" style="left:450px;top:590px"><b style="background:#1F8A99"></b><span>야구</span></div>
+          <div class="ac" id="s08-a7" style="left:780px;top:590px"><b style="background:#16324F"></b><span>배구</span></div>
+          <div class="ac" id="s08-a8" style="left:1110px;top:590px"><b style="background:#7FB236"></b><span>댄스</span></div>
+          <div class="ac" id="s08-a9" style="left:1440px;top:590px"><b style="background:#E8572B"></b><span>어스퀘스트</span></div>
+          <div class="abs" id="s08-doc" style="left:260px;top:330px;width:380px;height:500px;background:#fff;border-radius:22px;border:4px solid #16324F;box-shadow:0 18px 40px rgba(22,50,79,.18)">
+            <div class="abs hd" style="left:36px;top:36px;font-size:40px">대학 지원서</div>
+            <div class="abs" style="left:36px;top:120px;width:300px;height:14px;border-radius:7px;background:rgba(22,50,79,.15)"></div>
+            <div class="abs" style="left:36px;top:160px;width:250px;height:14px;border-radius:7px;background:rgba(22,50,79,.15)"></div>
+            <div class="abs" style="left:36px;top:200px;width:280px;height:14px;border-radius:7px;background:rgba(22,50,79,.15)"></div>
+            <div class="chip lake" style="left:36px;top:270px;font-size:26px">아카데미</div>
+            <div class="chip lake" style="left:36px;top:340px;font-size:26px">방과후 클럽</div>
+            <div class="chip lake" style="left:36px;top:410px;font-size:26px">지역 봉사</div>
+          </div>
+          <div class="abs b" id="s08-f1" style="left:760px;top:440px;font-size:44px">비교과는 따로 만드는 게 아니라</div>
+          <div class="abs h" id="s08-f2" style="left:756px;top:510px;font-size:112px;color:#146A77">생활 그 자체</div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const root = document.getElementById("s08");
+          const D = 56.71;
+          const R = [0.94, 5.1, 13.18, 21.22, 22.84, 28.72, 35.76, 39.96, 48.68];
+
+const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
+const tl=gsap.timeline({paused:true});
+function inn(el,at,o){o=o||{};if(typeof el==='string')el=q(el);
+  tl.fromTo(el,{opacity:0,x:o.x||0,y:(o.y===undefined?30:o.y),scale:(o.s===undefined?1:o.s),rotation:(o.r0===undefined?(o.r||0):o.r0)},
+  {opacity:1,x:0,y:0,scale:1,rotation:o.r||0,duration:o.d||0.6,ease:o.e||'power3.out'},at);}
+function outt(el,at,o){o=o||{};if(typeof el==='string')el=q(el);
+  tl.to(el,{opacity:0,y:o.y||0,x:o.x||0,scale:(o.s===undefined?1:o.s),duration:o.d||0.45,ease:'power2.in'},at);}
+function pol(el,at,rot){if(typeof el==='string')el=q(el);
+  tl.fromTo(el,{opacity:0,y:-180,rotation:rot*2.4,scale:1.06},{opacity:1,y:0,rotation:rot,scale:1,duration:0.85,ease:'power3.out'},at);}
+function kb(el,at,dur,a,b){if(typeof el==='string')el=q(el);a=a||{};b=b||{};
+  tl.fromTo(el,{scale:a.s||1,xPercent:a.x||0,yPercent:a.y||0},{scale:b.s||1.07,xPercent:b.x||0,yPercent:b.y||0,duration:dur,ease:'none'},at);}
+function count(el,from,to,at,dur,fmt){if(typeof el==='string')el=q(el);const st={v:from};
+  tl.fromTo(st,{v:from},{v:to,duration:dur,ease:'power2.out',immediateRender:false,onUpdate:()=>{el.textContent=fmt(st.v);}},at);}
+function grow(el,at,d,origin){if(typeof el==='string')el=q(el);
+  tl.fromTo(el,{scaleX:0,opacity:0,transformOrigin:origin||'0% 50%'},{scaleX:1,opacity:1,duration:d||0.8,ease:'power3.inOut'},at);}
+function draw(path,at,d){if(typeof path==='string')path=q(path);const L=path.getTotalLength();
+  path.style.strokeDasharray=L;tl.fromTo(path,{strokeDashoffset:L},{strokeDashoffset:0,duration:d||1,ease:'power2.inOut'},at);}
+function ambient(){
+  qa('.ghost').forEach((g,i)=>tl.fromTo(g,{x:0},{x:(i%2?160:-160),duration:D,ease:'none'},0));
+  qa('.glow').forEach((g,i)=>{const c=4+i;const n=Math.max(0,Math.floor(D/c)-1);
+    tl.fromTo(g,{scale:0.92},{scale:1.08,duration:c/2,ease:'sine.inOut',yoyo:true,repeat:n},0);});
+  tl.fromTo(q('.stage'),{opacity:0},{opacity:1,duration:0.45,ease:'power1.out'},0);
+  tl.fromTo(q('.stage'),{scale:1,transformOrigin:'50% 45%'},{scale:1.03,duration:D,ease:'none'},0);
+  if(q('.wipe'))tl.fromTo(q('.wipe'),{xPercent:0},{xPercent:-101,duration:0.75,ease:'power3.inOut'},0.05);
+  tl.to(q('.stage'),{opacity:0,duration:0.5,ease:'power1.in'},D-0.55);
+}
+
+
+inn('#s08-st',R[0],{r0:-14,r:-4,s:0.6,y:0});inn('#s08-t',R[0]+0.3,{y:24});
+inn('#s08-t2',R[1]+0.4,{y:14});pol('#s08-p1',R[1]+0.2,3);pol('#s08-p2',R[1]+3.0,-4);
+inn('#s08-el',R[2],{y:10});
+for(let i=0;i<9;i++){inn('#s08-e'+i,R[2]+0.9+i*0.72,{y:-70,s:0.8,d:0.55});}
+outt(['#s08-p1','#s08-p2','#s08-el','#s08-t2'].concat([0,1,2,3,4,5,6,7,8].map(i=>'#s08-e'+i)),R[3]-0.4,{y:20});
+tl.fromTo('#s08-map',{clipPath:'inset(0 0 0 100%)'},{clipPath:'inset(0 0 0 0%)',duration:0.9,ease:'power3.inOut'},R[3]-0.3);
+tl.fromTo('#s08-mapimg',{x:0,y:0,scale:1},{x:-260,y:-60,scale:1.12,duration:R[6]-R[3],ease:'sine.inOut'},R[3]-0.3);
+inn('#s08-five',R[3],{s:0.4,y:0,d:0.7});inn('#s08-fivet',R[3]+0.3,{x:-20,y:0});
+const T=[R[4],R[4]+3.0,R[5],R[5]+2.7,R[5]+4.9];
+for(let i=0;i<5;i++){
+  tl.fromTo('#s08-k'+i,{x:620,opacity:0,rotation:6},{x:0,opacity:1,rotation:0,duration:0.75,ease:'power3.out'},T[i]);
+  for(let j=0;j<i;j++){ tl.to('#s08-k'+j,{x:-(i-j)*170,scale:1-(i-j)*0.08,opacity:(i-j)===1?0.3:0,duration:0.75,ease:'power3.out'},T[i]); }
+}
+outt(['#s08-map','#s08-five','#s08-fivet','#s08-k0','#s08-k1','#s08-k2','#s08-k3','#s08-k4'],R[6]-0.4);
+tl.fromTo('#s08-cover',{opacity:0,x:300,rotation:12},{opacity:1,x:0,rotation:-4,duration:0.9,ease:'power3.out'},R[6]);
+inn('#s08-at',R[6]+0.5,{y:20});
+tl.to('#s08-cover',{x:700,rotation:14,opacity:0,duration:0.7,ease:'power3.in'},R[7]-0.2);
+for(let i=0;i<10;i++){inn('#s08-a'+i,R[7]+i*0.72,{s:0.6,y:30,d:0.5});}
+outt(['#s08-at','#s08-st','#s08-t'].concat([0,1,2,3,4,5,6,7,8,9].map(i=>'#s08-a'+i)),R[8]-0.3,{s:0.85});
+inn('#s08-doc',R[8]+0.1,{y:60,r0:-8,r:-2,d:0.8});
+inn('#s08-f1',R[8]+2.2,{y:16});inn('#s08-f2',R[8]+3.6,{y:30,d:0.7});
+
+          ambient();
+          window.__timelines["s08"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

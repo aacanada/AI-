@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+
+@font-face{font-family:Pretendard;font-weight:500;src:url(assets/fonts/Pretendard-Medium.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:700;src:url(assets/fonts/Pretendard-Bold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:800;src:url(assets/fonts/Pretendard-ExtraBold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:900;src:url(assets/fonts/Pretendard-Black.woff2) format("woff2")}
+@font-face{font-family:Yellowtail;font-weight:400;src:url(assets/fonts/Yellowtail-Regular.ttf) format("truetype")}
+
+
+#s03{position:absolute;inset:0;overflow:hidden;background:#FAF6EF;color:#16324F;font-family:Pretendard,sans-serif}
+#s03 *{box-sizing:border-box}
+#s03 .bg{position:absolute;inset:0;background:#FAF6EF}
+#s03 .grain{position:absolute;inset:0;opacity:.5;background-image:radial-gradient(rgba(22,50,79,.07) 1.2px,transparent 1.3px);background-size:9px 9px}
+#s03 .glow{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(31,138,153,.20) 0%,rgba(31,138,153,0) 70%)}
+#s03 .glow.warm{background:radial-gradient(circle,rgba(232,87,43,.14) 0%,rgba(232,87,43,0) 70%)}
+#s03 .ghost{position:absolute;font-weight:900;color:rgba(22,50,79,.07);font-size:300px;letter-spacing:-.04em;white-space:nowrap;line-height:1}
+#s03 .stage{position:absolute;inset:0}
+#s03 .abs{position:absolute}
+#s03 .h{font-weight:900;letter-spacing:-.03em;line-height:1.1}
+#s03 .hd{font-weight:800;letter-spacing:-.02em;line-height:1.2}
+#s03 .b{font-weight:500;line-height:1.45}
+#s03 .l{font-weight:700;letter-spacing:.08em}
+#s03 .script{font-family:Yellowtail,cursive;line-height:1.05;white-space:nowrap}
+#s03 .sticker{position:absolute;background:#E8572B;color:#fff;font-weight:800;font-size:24px;letter-spacing:.12em;padding:10px 24px;border-radius:99px;white-space:nowrap}
+#s03 .chip{position:absolute;background:#FAF6EF;border:3px solid #16324F;border-radius:99px;padding:10px 24px;font-weight:700;font-size:28px;white-space:nowrap;color:#16324F}
+#s03 .chip.lake{border-color:#1F8A99;color:#146A77}
+#s03 .chip.solid{background:#16324F;color:#FAF6EF}
+#s03 .chip.sand{background:#F3C969;border-color:#F3C969}
+#s03 .pol{position:absolute;background:#fff;padding:16px 16px 60px;box-shadow:0 20px 44px rgba(22,50,79,.26)}
+#s03 .pol .ph{position:relative;width:100%;height:100%;overflow:hidden}
+#s03 .pol img,#s03 .ph img{display:block;width:100%;height:100%;object-fit:cover}
+#s03 .pol .cap{position:absolute;left:0;right:0;bottom:12px;text-align:center;font-family:Yellowtail,cursive;font-size:32px;color:#16324F}
+#s03 .card{position:absolute;background:#fff;border:3px solid rgba(22,50,79,.14);border-radius:24px;box-shadow:0 12px 30px rgba(22,50,79,.13)}
+#s03 .panel{position:absolute;background:rgba(22,50,79,.93);border-radius:28px;color:#FAF6EF}
+#s03 .full{position:absolute;inset:0;overflow:hidden}
+#s03 .full img{width:100%;height:100%;object-fit:cover;display:block}
+#s03 .hlbar{position:absolute;background:#F3C969;height:22px;transform-origin:0 50%}
+#s03 .wipe{position:absolute;inset:0;background:#1F8A99;z-index:50}
+#s03 .flash{position:absolute;inset:0;background:#FAF6EF;z-index:60;opacity:0}
+
+#s03 .uc{width:520px;height:400px;padding:36px}
+#s03 .uc .k{font-size:24px;color:#146A77}
+#s03 .uc .n{font-size:44px;margin:8px 0 26px}
+#s03 .uc .i{font-size:34px;font-weight:500;line-height:1.7;opacity:0}
+
+      </style>
+      <div id="s03" data-composition-id="s03" data-width="1920" data-height="1080" data-duration="38.38">
+        <div class="bg"></div>
+        <div class="grain"></div>
+        <div class="abs" style="inset:0;opacity:.10"><img src="assets/photos/17-classroom-writing.jpg" alt="" style="width:100%;height:100%;object-fit:cover;filter:blur(18px)" /></div>
+        <div class="glow warm" style="left:1300px;top:-100px;width:700px;height:700px"></div>
+        <div class="stage">
+
+          <div class="abs hd" id="s03-t" style="left:120px;top:92px;font-size:68px">대학이 보는 것</div>
+          <div class="abs" id="s03-cards" style="left:0;top:0;width:1920px;height:1080px">
+            <div class="card uc" id="s03-c1" style="left:120px;top:220px"><div class="l k">CANADA</div><div class="hd n">캐나다 대학</div><div class="i" id="s03-c1a">내신 성적</div><div class="i" id="s03-c1b">학과별 필수 과목</div></div>
+            <div class="card uc" id="s03-c2" style="left:700px;top:220px"><div class="l k">USA</div><div class="hd n">미국 대학</div><div class="i" id="s03-c2a">내신 + 비교과</div><div class="i" id="s03-c2b">에세이</div></div>
+            <div class="card uc" id="s03-c3" style="left:1280px;top:220px"><div class="l k">KOREA</div><div class="hd n">한국 해외고 전형</div><div class="i" id="s03-c3a">성적 · 비교과</div><div class="i" id="s03-c3b">에세이 · 인터뷰</div></div>
+          </div>
+          <div class="abs" id="s03-stamp" style="left:560px;top:330px;width:800px;height:220px;border:8px solid #16324F;border-radius:28px;background:#FAF6EF"></div>
+          <div class="abs h" id="s03-stampt" style="left:560px;top:380px;width:800px;text-align:center;font-size:84px">입학보다 버티는 힘</div>
+          <div class="abs b" id="s03-sub" style="left:460px;top:600px;width:1000px;text-align:center;font-size:40px">대학 1학년, 결국 <b>영어의 기초 체력</b></div>
+          <div class="hlbar" id="s03-h1" style="left:120px;top:742px;width:390px"></div>
+          <div class="hlbar" id="s03-h2" style="left:600px;top:742px;width:560px"></div>
+          <div class="hlbar" id="s03-h3" style="left:1250px;top:742px;width:400px"></div>
+          <div class="abs h" id="s03-k1" style="left:120px;top:672px;font-size:72px">탄탄한 영어</div>
+          <div class="abs h" id="s03-k2" style="left:600px;top:672px;font-size:72px">믿을 수 있는 내신</div>
+          <div class="abs h" id="s03-k3" style="left:1250px;top:672px;font-size:72px">진짜 비교과</div>
+          <div class="abs hd" id="s03-qq" style="left:120px;top:800px;font-size:44px;color:#146A77">이 세 가지가 자연스럽게 만들어지는 곳은?</div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const root = document.getElementById("s03");
+          const D = 38.38;
+          const R = [0.98, 2.7, 8.98, 12.92, 19.04, 23.66, 27.82, 33.82];
+
+const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
+const tl=gsap.timeline({paused:true});
+function inn(el,at,o){o=o||{};if(typeof el==='string')el=q(el);
+  tl.fromTo(el,{opacity:0,x:o.x||0,y:(o.y===undefined?30:o.y),scale:(o.s===undefined?1:o.s),rotation:(o.r0===undefined?(o.r||0):o.r0)},
+  {opacity:1,x:0,y:0,scale:1,rotation:o.r||0,duration:o.d||0.6,ease:o.e||'power3.out'},at);}
+function outt(el,at,o){o=o||{};if(typeof el==='string')el=q(el);
+  tl.to(el,{opacity:0,y:o.y||0,x:o.x||0,scale:(o.s===undefined?1:o.s),duration:o.d||0.45,ease:'power2.in'},at);}
+function pol(el,at,rot){if(typeof el==='string')el=q(el);
+  tl.fromTo(el,{opacity:0,y:-180,rotation:rot*2.4,scale:1.06},{opacity:1,y:0,rotation:rot,scale:1,duration:0.85,ease:'power3.out'},at);}
+function kb(el,at,dur,a,b){if(typeof el==='string')el=q(el);a=a||{};b=b||{};
+  tl.fromTo(el,{scale:a.s||1,xPercent:a.x||0,yPercent:a.y||0},{scale:b.s||1.07,xPercent:b.x||0,yPercent:b.y||0,duration:dur,ease:'none'},at);}
+function count(el,from,to,at,dur,fmt){if(typeof el==='string')el=q(el);const st={v:from};
+  tl.fromTo(st,{v:from},{v:to,duration:dur,ease:'power2.out',immediateRender:false,onUpdate:()=>{el.textContent=fmt(st.v);}},at);}
+function grow(el,at,d,origin){if(typeof el==='string')el=q(el);
+  tl.fromTo(el,{scaleX:0,opacity:0,transformOrigin:origin||'0% 50%'},{scaleX:1,opacity:1,duration:d||0.8,ease:'power3.inOut'},at);}
+function draw(path,at,d){if(typeof path==='string')path=q(path);const L=path.getTotalLength();
+  path.style.strokeDasharray=L;tl.fromTo(path,{strokeDashoffset:L},{strokeDashoffset:0,duration:d||1,ease:'power2.inOut'},at);}
+function ambient(){
+  qa('.ghost').forEach((g,i)=>tl.fromTo(g,{x:0},{x:(i%2?160:-160),duration:D,ease:'none'},0));
+  qa('.glow').forEach((g,i)=>{const c=4+i;const n=Math.max(0,Math.floor(D/c)-1);
+    tl.fromTo(g,{scale:0.92},{scale:1.08,duration:c/2,ease:'sine.inOut',yoyo:true,repeat:n},0);});
+  tl.fromTo(q('.stage'),{opacity:0},{opacity:1,duration:0.45,ease:'power1.out'},0);
+  tl.fromTo(q('.stage'),{scale:1,transformOrigin:'50% 45%'},{scale:1.03,duration:D,ease:'none'},0);
+  if(q('.wipe'))tl.fromTo(q('.wipe'),{xPercent:0},{xPercent:-101,duration:0.75,ease:'power3.inOut'},0.05);
+  tl.to(q('.stage'),{opacity:0,duration:0.5,ease:'power1.in'},D-0.55);
+}
+
+
+inn('#s03-t',R[0],{y:30});
+inn('#s03-c1',R[1],{y:60});inn('#s03-c1a',R[1]+2.6,{y:14});inn('#s03-c1b',R[1]+4.2,{y:14});
+inn('#s03-c2',R[2],{y:60});inn('#s03-c2a',R[2]+0.9,{y:14});inn('#s03-c2b',R[2]+2.2,{y:14});
+inn('#s03-c3',R[3],{y:60});inn('#s03-c3a',R[3]+3.3,{y:14});inn('#s03-c3b',R[3]+4.6,{y:14});
+tl.to('#s03-cards',{opacity:0.18,duration:0.6},R[4]+1.2);
+inn('#s03-stamp',R[4]+1.4,{s:1.5,y:0,d:0.45,e:'power4.out'});inn('#s03-stampt',R[4]+1.45,{s:1.5,y:0,d:0.45,e:'power4.out'});
+inn('#s03-sub',R[5],{y:20});
+outt(['#s03-stamp','#s03-stampt','#s03-sub'],R[6]-0.2,{s:0.9});
+tl.to('#s03-cards',{opacity:0,duration:0.5},R[6]-0.2);
+inn('#s03-k1',R[6]+1.2,{y:30});grow('#s03-h1',R[6]+1.5,0.6);
+inn('#s03-k2',R[6]+2.4,{y:30});grow('#s03-h2',R[6]+2.7,0.6);
+inn('#s03-k3',R[6]+4.0,{y:30});grow('#s03-h3',R[6]+4.3,0.6);
+inn('#s03-qq',R[7],{y:20});
+tl.to(['#s03-k1','#s03-k2','#s03-k3','#s03-h1','#s03-h2','#s03-h3'],{y:-300,duration:0.8,ease:'power3.inOut'},R[7]-0.3);
+tl.to('#s03-qq',{y:-300,duration:0.8,ease:'power3.inOut'},R[7]+0.6);
+
+          ambient();
+          window.__timelines["s03"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

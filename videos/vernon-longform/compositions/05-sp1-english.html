@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+
+@font-face{font-family:Pretendard;font-weight:500;src:url(assets/fonts/Pretendard-Medium.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:700;src:url(assets/fonts/Pretendard-Bold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:800;src:url(assets/fonts/Pretendard-ExtraBold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:900;src:url(assets/fonts/Pretendard-Black.woff2) format("woff2")}
+@font-face{font-family:Yellowtail;font-weight:400;src:url(assets/fonts/Yellowtail-Regular.ttf) format("truetype")}
+
+
+#s05{position:absolute;inset:0;overflow:hidden;background:#FAF6EF;color:#16324F;font-family:Pretendard,sans-serif}
+#s05 *{box-sizing:border-box}
+#s05 .bg{position:absolute;inset:0;background:#FAF6EF}
+#s05 .grain{position:absolute;inset:0;opacity:.5;background-image:radial-gradient(rgba(22,50,79,.07) 1.2px,transparent 1.3px);background-size:9px 9px}
+#s05 .glow{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(31,138,153,.20) 0%,rgba(31,138,153,0) 70%)}
+#s05 .glow.warm{background:radial-gradient(circle,rgba(232,87,43,.14) 0%,rgba(232,87,43,0) 70%)}
+#s05 .ghost{position:absolute;font-weight:900;color:rgba(22,50,79,.07);font-size:300px;letter-spacing:-.04em;white-space:nowrap;line-height:1}
+#s05 .stage{position:absolute;inset:0}
+#s05 .abs{position:absolute}
+#s05 .h{font-weight:900;letter-spacing:-.03em;line-height:1.1}
+#s05 .hd{font-weight:800;letter-spacing:-.02em;line-height:1.2}
+#s05 .b{font-weight:500;line-height:1.45}
+#s05 .l{font-weight:700;letter-spacing:.08em}
+#s05 .script{font-family:Yellowtail,cursive;line-height:1.05;white-space:nowrap}
+#s05 .sticker{position:absolute;background:#E8572B;color:#fff;font-weight:800;font-size:24px;letter-spacing:.12em;padding:10px 24px;border-radius:99px;white-space:nowrap}
+#s05 .chip{position:absolute;background:#FAF6EF;border:3px solid #16324F;border-radius:99px;padding:10px 24px;font-weight:700;font-size:28px;white-space:nowrap;color:#16324F}
+#s05 .chip.lake{border-color:#1F8A99;color:#146A77}
+#s05 .chip.solid{background:#16324F;color:#FAF6EF}
+#s05 .chip.sand{background:#F3C969;border-color:#F3C969}
+#s05 .pol{position:absolute;background:#fff;padding:16px 16px 60px;box-shadow:0 20px 44px rgba(22,50,79,.26)}
+#s05 .pol .ph{position:relative;width:100%;height:100%;overflow:hidden}
+#s05 .pol img,#s05 .ph img{display:block;width:100%;height:100%;object-fit:cover}
+#s05 .pol .cap{position:absolute;left:0;right:0;bottom:12px;text-align:center;font-family:Yellowtail,cursive;font-size:32px;color:#16324F}
+#s05 .card{position:absolute;background:#fff;border:3px solid rgba(22,50,79,.14);border-radius:24px;box-shadow:0 12px 30px rgba(22,50,79,.13)}
+#s05 .panel{position:absolute;background:rgba(22,50,79,.93);border-radius:28px;color:#FAF6EF}
+#s05 .full{position:absolute;inset:0;overflow:hidden}
+#s05 .full img{width:100%;height:100%;object-fit:cover;display:block}
+#s05 .hlbar{position:absolute;background:#F3C969;height:22px;transform-origin:0 50%}
+#s05 .wipe{position:absolute;inset:0;background:#1F8A99;z-index:50}
+#s05 .flash{position:absolute;inset:0;background:#FAF6EF;z-index:60;opacity:0}
+
+#s05 .dot{position:absolute;width:26px;height:26px;border-radius:50%;background:#2BA7B8}
+#s05 .dot.k{background:#E8572B}
+#s05 .seat{position:absolute;width:64px;height:64px;border-radius:14px;background:#2BA7B8}
+#s05 .stat .n{font-weight:900;font-size:58px;color:#7FD3DE;font-variant-numeric:tabular-nums}
+#s05 .stat .t{font-weight:500;font-size:24px;color:#FAF6EF}
+
+      </style>
+      <div id="s05" data-composition-id="s05" data-width="1920" data-height="1080" data-duration="34.43">
+        <div class="bg"></div>
+        <div class="grain"></div>
+        <div class="full" id="s05-photo"><img src="assets/photos/15-classroom-teacher.jpg" alt="" /></div>
+        <div class="stage">
+
+          <div class="panel" id="s05-panel" style="left:56px;top:56px;width:800px;height:830px"></div>
+          <div class="sticker" id="s05-st" style="left:100px;top:96px">SELLING POINT 01</div>
+          <div class="abs hd" id="s05-t" style="left:100px;top:160px;font-size:66px;color:#FAF6EF">영어만 쓰는 교실</div>
+          <div class="abs" id="s05-grid" style="left:100px;top:270px;width:330px;height:330px"></div>
+          <div class="abs h" id="s05-pct" style="left:470px;top:300px;font-size:150px;color:#7FD3DE;font-variant-numeric:tabular-nums">0%</div>
+          <div class="abs b" id="s05-pctl" style="left:478px;top:470px;font-size:32px;color:#FAF6EF">현지 캐나다 학생</div>
+          <div class="abs stat" id="s05-a" style="left:100px;top:630px"><div class="n" id="s05-an">0</div><div class="t">SD22 전체 학생</div></div>
+          <div class="abs stat" id="s05-b" style="left:380px;top:630px"><div class="n" id="s05-bn">0</div><div class="t">국제학생</div></div>
+          <div class="abs stat" id="s05-c" style="left:610px;top:630px"><div class="n" id="s05-cn">0</div><div class="t">출신 국가</div></div>
+          <div class="chip sand" id="s05-lock" style="left:100px;top:770px">학교별 한국 학생 정원 상한</div>
+          <div class="abs" id="s05-seats" style="left:960px;top:610px;width:880px;height:240px">
+            <div class="abs" style="left:0;top:0;width:880px;height:240px;border-radius:28px;background:rgba(250,246,239,.94)"></div>
+            <div class="abs l" style="left:40px;top:28px;font-size:24px;color:#16324F">한국 학생 자리</div>
+            <div class="seat" id="s05-q1" style="left:40px;top:90px"></div><div class="seat" id="s05-q2" style="left:124px;top:90px"></div><div class="seat" id="s05-q3" style="left:208px;top:90px"></div><div class="seat" id="s05-q4" style="left:292px;top:90px"></div><div class="seat" id="s05-q5" style="left:376px;top:90px"></div>
+            <div class="abs b" id="s05-qa" style="left:490px;top:86px;width:360px;font-size:32px;line-height:1.4;color:#16324F">졸업생이 나가야<br />자리가 생깁니다</div>
+          </div>
+          <div class="abs" id="s05-circ" style="left:1300px;top:150px;width:460px;height:460px;border-radius:50%;overflow:hidden;border:10px solid #FAF6EF;box-shadow:0 18px 40px rgba(22,50,79,.35)"><img src="assets/photos/16-classroom-overhead.jpg" alt="" style="width:100%;height:100%;object-fit:cover" /></div>
+          <div class="chip" id="s05-ce" style="left:1250px;top:640px">교실 · 복도 · 클럽 모두 영어</div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const root = document.getElementById("s05");
+          const D = 34.43;
+          const R = [0.92, 4.12, 9.44, 15.24, 20.34, 25.3, 30.1];
+
+const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
+const tl=gsap.timeline({paused:true});
+function inn(el,at,o){o=o||{};if(typeof el==='string')el=q(el);
+  tl.fromTo(el,{opacity:0,x:o.x||0,y:(o.y===undefined?30:o.y),scale:(o.s===undefined?1:o.s),rotation:(o.r0===undefined?(o.r||0):o.r0)},
+  {opacity:1,x:0,y:0,scale:1,rotation:o.r||0,duration:o.d||0.6,ease:o.e||'power3.out'},at);}
+function outt(el,at,o){o=o||{};if(typeof el==='string')el=q(el);
+  tl.to(el,{opacity:0,y:o.y||0,x:o.x||0,scale:(o.s===undefined?1:o.s),duration:o.d||0.45,ease:'power2.in'},at);}
+function pol(el,at,rot){if(typeof el==='string')el=q(el);
+  tl.fromTo(el,{opacity:0,y:-180,rotation:rot*2.4,scale:1.06},{opacity:1,y:0,rotation:rot,scale:1,duration:0.85,ease:'power3.out'},at);}
+function kb(el,at,dur,a,b){if(typeof el==='string')el=q(el);a=a||{};b=b||{};
+  tl.fromTo(el,{scale:a.s||1,xPercent:a.x||0,yPercent:a.y||0},{scale:b.s||1.07,xPercent:b.x||0,yPercent:b.y||0,duration:dur,ease:'none'},at);}
+function count(el,from,to,at,dur,fmt){if(typeof el==='string')el=q(el);const st={v:from};
+  tl.fromTo(st,{v:from},{v:to,duration:dur,ease:'power2.out',immediateRender:false,onUpdate:()=>{el.textContent=fmt(st.v);}},at);}
+function grow(el,at,d,origin){if(typeof el==='string')el=q(el);
+  tl.fromTo(el,{scaleX:0,opacity:0,transformOrigin:origin||'0% 50%'},{scaleX:1,opacity:1,duration:d||0.8,ease:'power3.inOut'},at);}
+function draw(path,at,d){if(typeof path==='string')path=q(path);const L=path.getTotalLength();
+  path.style.strokeDasharray=L;tl.fromTo(path,{strokeDashoffset:L},{strokeDashoffset:0,duration:d||1,ease:'power2.inOut'},at);}
+function ambient(){
+  qa('.ghost').forEach((g,i)=>tl.fromTo(g,{x:0},{x:(i%2?160:-160),duration:D,ease:'none'},0));
+  qa('.glow').forEach((g,i)=>{const c=4+i;const n=Math.max(0,Math.floor(D/c)-1);
+    tl.fromTo(g,{scale:0.92},{scale:1.08,duration:c/2,ease:'sine.inOut',yoyo:true,repeat:n},0);});
+  tl.fromTo(q('.stage'),{opacity:0},{opacity:1,duration:0.45,ease:'power1.out'},0);
+  tl.fromTo(q('.stage'),{scale:1,transformOrigin:'50% 45%'},{scale:1.03,duration:D,ease:'none'},0);
+  if(q('.wipe'))tl.fromTo(q('.wipe'),{xPercent:0},{xPercent:-101,duration:0.75,ease:'power3.inOut'},0.05);
+  tl.to(q('.stage'),{opacity:0,duration:0.5,ease:'power1.in'},D-0.55);
+}
+
+
+(function(){const g=q('#s05-grid');for(let i=0;i<100;i++){const d=document.createElement('div');d.className='dot'+(i>=95?' k':'');d.style.left=(i%10)*33+'px';d.style.top=Math.floor(i/10)*33+'px';g.appendChild(d);}})();
+kb('#s05-photo img',0,D,{s:1.02},{s:1.1,x:-2});
+tl.fromTo('#s05-panel',{x:-900},{x:0,duration:0.8,ease:'power3.out'},0.2);
+inn('#s05-st',R[0],{r0:-14,r:-4,s:0.6,y:0});inn('#s05-t',R[0]+0.3,{y:24});
+qa('#s05-grid .dot').forEach((d,i)=>tl.fromTo(d,{scale:0,opacity:0},{scale:1,opacity:1,duration:0.35,ease:'power3.out'},R[1]+((i%10)+Math.floor(i/10))*0.045));
+count('#s05-pct',0,95,R[1]+0.3,2.4,v=>Math.round(v)+'%');inn('#s05-pctl',R[1]+1.2,{y:12});
+inn('#s05-a',R[2],{y:20});count('#s05-an',0,8600,R[2],1.6,v=>Math.round(v).toLocaleString('en-US'));
+inn('#s05-b',R[2]+2.2,{y:20});count('#s05-bn',0,300,R[2]+2.2,1.4,v=>Math.round(v)+'+');
+inn('#s05-c',R[2]+3.6,{y:20});count('#s05-cn',0,20,R[2]+3.6,1.2,v=>Math.round(v)+'+');
+inn('#s05-lock',R[3],{s:0.6,y:0,d:0.5});
+inn('#s05-seats',R[3]+1.6,{y:40});
+qa('#s05-seats .seat').forEach((s,i)=>tl.fromTo(s,{scale:0},{scale:1,duration:0.4,ease:'power3.out'},R[3]+1.9+i*0.1));
+tl.to('#s05-q3',{opacity:0.15,scale:0.8,duration:0.5},R[4]+1.0);
+inn('#s05-qa',R[4]+0.4,{y:12});
+tl.fromTo('#s05-q3',{backgroundColor:'#2BA7B8'},{backgroundColor:'#E8572B',duration:0.1},R[4]+2.6);
+tl.to('#s05-q3',{opacity:1,scale:1,duration:0.5,ease:'power3.out'},R[4]+2.6);
+outt('#s05-seats',R[5]-0.3,{y:30});
+inn('#s05-circ',R[5],{s:0.3,y:0,d:0.7});inn('#s05-ce',R[5]+0.8,{y:16});
+
+          ambient();
+          window.__timelines["s05"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>
