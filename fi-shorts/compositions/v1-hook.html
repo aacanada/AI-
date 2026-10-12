@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template id="v1-hook-template">
+      <link rel="stylesheet" href="assets/shared.css" />
+      <style>
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-Medium.woff2") format("woff2"); font-weight: 500; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2"); font-weight: 600; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-Bold.woff2") format("woff2"); font-weight: 700; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2"); font-weight: 800; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-Black.woff2") format("woff2"); font-weight: 900; }
+        @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; }
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          background: var(--bg);
+          color: var(--ink);
+          font-family: "Pretendard", sans-serif;
+        }
+        .v1-scene { position: absolute; inset: 0; }
+        .v1-kick {
+          position: absolute; left: 70px; top: 210px;
+          display: inline-flex; align-items: center; gap: 12px;
+          padding: 10px 22px; border-radius: 999px; background: var(--ink); color: var(--bg);
+          font-size: 32px; font-weight: 800;
+        }
+        .v1-title {
+          position: absolute; left: 70px; right: 70px; top: 290px;
+          font-size: 76px; font-weight: 900; line-height: 1.18; letter-spacing: -0.035em;
+        }
+        .v1-src { font-size: 26px; font-weight: 500; color: var(--ink-soft); }
+        .v1-card {
+          position: relative; padding: 12px; background: #fff; border-radius: 6px;
+          box-shadow: 0 22px 44px rgba(60, 45, 20, 0.22), 0 2px 6px rgba(60, 45, 20, 0.12);
+        }
+        .v1-card img { display: block; }
+
+        #v1-ghost {
+          position: absolute; left: -40px; top: 980px; white-space: nowrap;
+          font-family: "Inter", sans-serif; font-size: 300px; font-weight: 800; letter-spacing: -0.05em;
+          color: var(--fi); opacity: 0.07;
+        }
+        #v1-head { position: absolute; left: 70px; right: 70px; top: 420px; }
+        .v1-line { font-size: 138px; font-weight: 900; line-height: 1.12; letter-spacing: -0.05em; white-space: nowrap; }
+        #v1-hl { position: relative; display: inline-block; color: var(--red); isolation: isolate; }
+        #v1-mark { position: absolute; left: -8px; right: -8px; bottom: 16px; height: 50px; background: var(--marker); transform-origin: left center; }
+        #v1-sub { margin-top: 50px; font-size: 44px; font-weight: 700; color: var(--ink-soft); }
+        #v1-zero {
+          position: absolute; left: 70px; top: 1110px; display: flex; align-items: baseline; gap: 18px;
+          padding: 18px 30px; border-radius: 22px; background: var(--fi); color: #fff;
+        }
+        #v1-zero b { font-family: "Inter", sans-serif; font-size: 80px; font-weight: 800; line-height: 1; }
+        #v1-zero span { font-size: 38px; font-weight: 800; }
+
+      </style>
+
+      <div id="root" data-composition-id="v1-hook" data-width="1080" data-height="1920">
+        <div class="v1-scene" id="v1-scene">
+
+          <div class="v1-kick" id="v1-kick">캐나다 온타리오 공립학교</div>
+          <div id="v1-head">
+            <div class="v1-line" id="v1-l1">무상교육으로</div>
+            <div class="v1-line" id="v1-l2">가는 <span id="v1-hl"><span id="v1-mark"></span><span style="position: relative">사립학교급</span></span></div>
+            <div class="v1-line" id="v1-l3">공립학교?</div>
+          </div>
+          <div id="v1-zero"><b>학비 0원</b><span>자녀 무상교육</span></div>
+
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          const N = window.__NARR["v1-hook"], L = N.L, END = N.dur;
+          const tl = gsap.timeline({ paused: true });
+
+          tl.fromTo("#v1-kick", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.4 }, 0.05);
+          tl.fromTo(["#v1-l1", "#v1-l2", "#v1-l3"], { opacity: 0, y: 60, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(1.6)", stagger: 0.22 }, 0.15);
+          tl.fromTo("#v1-mark", { scaleX: 0 }, { scaleX: 1, duration: 0.45, ease: "power2.inOut" }, 1.0);
+          tl.fromTo("#v1-zero", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, L[0] + 0.6);
+
+          tl.to("#v1-scene", { opacity: 0, duration: 0.3, ease: "power2.in" }, END - 0.3);
+          window.__timelines["v1-hook"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

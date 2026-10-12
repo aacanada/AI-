@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template id="v2-programs-template">
+      <link rel="stylesheet" href="assets/shared.css" />
+      <style>
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-Medium.woff2") format("woff2"); font-weight: 500; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2"); font-weight: 600; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-Bold.woff2") format("woff2"); font-weight: 700; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2"); font-weight: 800; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-Black.woff2") format("woff2"); font-weight: 900; }
+        @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; }
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          background: var(--bg);
+          color: var(--ink);
+          font-family: "Pretendard", sans-serif;
+        }
+        .v2-scene { position: absolute; inset: 0; }
+        .v2-kick {
+          position: absolute; left: 70px; top: 210px;
+          display: inline-flex; align-items: center; gap: 12px;
+          padding: 10px 22px; border-radius: 999px; background: var(--ink); color: var(--bg);
+          font-size: 32px; font-weight: 800;
+        }
+        .v2-title {
+          position: absolute; left: 70px; right: 70px; top: 290px;
+          font-size: 76px; font-weight: 900; line-height: 1.18; letter-spacing: -0.035em;
+        }
+        .v2-src { font-size: 26px; font-weight: 500; color: var(--ink-soft); }
+        .v2-card {
+          position: relative; padding: 12px; background: #fff; border-radius: 6px;
+          box-shadow: 0 22px 44px rgba(60, 45, 20, 0.22), 0 2px 6px rgba(60, 45, 20, 0.12);
+        }
+        .v2-card img { display: block; }
+
+        #v2-cards { position: absolute; left: 70px; right: 70px; top: 450px; display: flex; flex-direction: column; gap: 34px; }
+        .v2-card { padding: 30px 40px; border-radius: 28px; background: var(--paper); border: 3px solid; box-shadow: 0 18px 40px rgba(60,45,20,0.1); }
+        .v2-row { display: flex; align-items: center; justify-content: space-between; }
+        .v2-name { font-family: "Inter", sans-serif; font-size: 56px; font-weight: 800; letter-spacing: -0.02em; }
+        .v2-ko { margin-top: 4px; font-size: 32px; font-weight: 600; color: var(--ink-soft); }
+        .v2-share { font-size: 50px; font-weight: 900; white-space: nowrap; }
+        .v2-track { margin-top: 26px; height: 34px; border-radius: 17px; background: #ece6da; overflow: hidden; }
+        .v2-fill { display: block; height: 100%; width: 100%; border-radius: 17px; transform-origin: left center; }
+        .v2-hours { margin-top: 14px; font-size: 32px; font-weight: 700; color: var(--ink-soft); }
+        .v2-hours b { font-family: "Inter", sans-serif; font-size: 46px; font-weight: 800; color: var(--ink); }
+        #v2-core { margin-top: 6px; font-size: 32px; font-weight: 600; color: var(--ink-soft); }
+
+      </style>
+
+      <div id="root" data-composition-id="v2-programs" data-width="1080" data-height="1920">
+        <div class="v2-scene" id="v2-scene">
+
+          <div class="v2-kick" id="v2-kick">불어 비중이 높은 두 과정</div>
+          <div class="v2-title" id="v2-title">온타리오의 <span style="color: var(--fi)">이머전</span>과 <span style="color: var(--ef)">익스텐디드</span></div>
+          <div id="v2-cards">
+            <div class="v2-card" id="v2-fi" style="border-color: var(--fi)">
+              <div class="v2-row"><div><div class="v2-name" style="color: var(--fi)">French Immersion</div><div class="v2-ko">프렌치 이머전 · FI</div></div></div>
+              <div class="v2-share" style="margin-top: 22px">불어 <span style="color: var(--fi)">50% 이상</span></div>
+              <div class="v2-track"><span class="v2-fill" id="v2-fi-fill" style="background: var(--fi)"></span></div>
+              <div class="v2-hours">누적 <b>3,800</b>시간</div>
+            </div>
+            <div class="v2-card" id="v2-ef" style="border-color: var(--ef)">
+              <div class="v2-row"><div><div class="v2-name" style="color: var(--ef)">Extended French</div><div class="v2-ko">익스텐디드 프렌치 · EF</div></div></div>
+              <div class="v2-share" style="margin-top: 22px">불어 <span style="color: var(--ef)">25%</span></div>
+              <div class="v2-track"><span class="v2-fill" id="v2-ef-fill" style="background: var(--ef)"></span></div>
+              <div class="v2-hours">누적 <b>1,260</b>시간</div>
+            </div>
+            <div id="v2-core">참고: 일반학교 Core French는 주 40분, 누적 600시간</div>
+          </div>
+
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          const N = window.__NARR["v2-programs"], L = N.L, END = N.dur;
+          const tl = gsap.timeline({ paused: true });
+
+          tl.fromTo(["#v2-kick", "#v2-title"], { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out", stagger: 0.12 }, 0.05);
+          tl.fromTo("#v2-fi", { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, L[0] + 0.5);
+          tl.fromTo("#v2-ef", { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, L[0] + 1.6);
+          tl.fromTo("#v2-ef-fill", { scaleX: 0 }, { scaleX: 1260 / 3800, duration: 1.0, ease: "power2.out" }, L[1] + 0.2);
+          tl.fromTo("#v2-fi-fill", { scaleX: 0 }, { scaleX: 1, duration: 1.2, ease: "power2.out" }, L[1] + 1.2);
+          tl.fromTo("#v2-core", { opacity: 0 }, { opacity: 1, duration: 0.4 }, L[1] + 2.0);
+
+          tl.to("#v2-scene", { opacity: 0, duration: 0.3, ease: "power2.in" }, END - 0.3);
+          window.__timelines["v2-programs"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

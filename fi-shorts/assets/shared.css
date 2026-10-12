@@ -1,0 +1,15 @@
+/* Shared colour tokens for every scene (VIDEO_BRIEF.md §0). Fonts are declared in-file per lint rule. */
+
+:root {
+  --fi: #0055a4;
+  --ef: #e4572e;
+  --tdsb: #9aa0a6;
+  --tdsb-ink: #5f6368;
+  --bg: #f7f4ee;
+  --bg-deep: #ede6d9;
+  --ink: #1f2328;
+  --ink-soft: #4a4f57;
+  --red: #d52b1e;
+  --marker: #ffe45c;
+  --paper: #fffdf8;
+}

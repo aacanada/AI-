@@ -148,8 +148,9 @@ t = 0.0
 for s in scenes:
     lines = s["lines"]
     sc = {"id": s["id"], "start": round(t, 3), "lines": []}
-    local = cfg["lead"]
-    chunks.append(silence(cfg["lead"]))
+    lead = s.get("lead", cfg["lead"])
+    local = lead
+    chunks.append(silence(lead))
     for i, ln in enumerate(lines):
         prev_t = lines[i - 1].get("tts", lines[i - 1]["text"]) if i else None
         next_t = lines[i + 1].get("tts", lines[i + 1]["text"]) if i + 1 < len(lines) else None

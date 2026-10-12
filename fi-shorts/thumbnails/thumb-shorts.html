@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Shorts cover</title>
+    <style>
+      @font-face { font-family: "Pretendard"; src: url("../assets/fonts/Pretendard-Bold.woff2") format("woff2"); font-weight: 700; }
+      @font-face { font-family: "Pretendard"; src: url("../assets/fonts/Pretendard-ExtraBold.woff2") format("woff2"); font-weight: 800; }
+      @font-face { font-family: "Pretendard"; src: url("../assets/fonts/Pretendard-Black.woff2") format("woff2"); font-weight: 900; }
+      @font-face { font-family: "Inter"; src: url("../assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; }
+      :root { --fi: #0055a4; --bg: #f7f4ee; --ink: #1f2328; --red: #d52b1e; --marker: #ffe45c; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; position: relative; background: var(--bg); }
+      body { font-family: "Pretendard", sans-serif; color: var(--ink); }
+      .kicker {
+        position: absolute; left: 80px; top: 330px;
+        display: inline-flex; align-items: center; gap: 12px;
+        padding: 14px 28px; border-radius: 999px; background: var(--ink); color: #fff;
+        font-size: 40px; font-weight: 800;
+      }
+      .kicker i { display: block; width: 18px; height: 18px; border-radius: 50%; background: var(--red); }
+      .head {
+        position: absolute; left: 80px; right: 60px; top: 450px;
+        font-size: 150px; font-weight: 900; line-height: 1.1; letter-spacing: -0.05em;
+      }
+      .head div { white-space: nowrap; }
+      .hl { position: relative; color: var(--red); z-index: 0; }
+      .hl::after { content: ""; position: absolute; left: -8px; right: -8px; bottom: 16px; height: 54px; background: var(--marker); z-index: -1; }
+      .panel {
+        position: absolute; left: 0; right: 0; top: 1020px; height: 1000px;
+        background: var(--fi); color: #fff;
+        clip-path: polygon(0 80px, 100% 0, 100% 100%, 0 100%);
+        padding: 150px 80px 0;
+      }
+      .p-label { font-size: 40px; font-weight: 800; opacity: 0.9; }
+      .stats { margin-top: 26px; display: flex; gap: 40px; }
+      .stat b { display: block; font-family: "Inter", sans-serif; font-size: 170px; font-weight: 800; line-height: 1; letter-spacing: -0.04em; }
+      .stat span { display: block; margin-top: 8px; font-size: 38px; font-weight: 800; }
+      .stat em { display: block; margin-top: 4px; font-style: normal; font-size: 32px; font-weight: 700; opacity: 0.8; }
+      .zero {
+        position: absolute; left: 80px; top: 1600px;
+        padding: 14px 28px; border-radius: 18px; background: #fff; color: var(--fi);
+        font-size: 46px; font-weight: 900;
+      }
+      .brand { position: absolute; right: 70px; top: 1620px; font-family: "Inter", sans-serif; font-size: 44px; font-weight: 800; color: #fff; }
+      .brand span { color: var(--marker); }
+    </style>
+  </head>
+  <body>
+    <div class="kicker"><i></i>캐나다 자녀 무상교육</div>
+    <div class="head">
+      <div>무상교육으로</div>
+      <div>가는 <span class="hl">사립학교급</span></div>
+      <div>공립학교?</div>
+    </div>
+    <div class="panel">
+      <div class="p-label">프렌치 이머전 학생 가정</div>
+      <div class="stats">
+        <div class="stat"><b>78%</b><span>부모 대졸 이상</span><em>평균 56%</em></div>
+        <div class="stat"><b>53%</b><span>고소득 전문직</span><em>평균 26%</em></div>
+      </div>
+    </div>
+    <div class="zero">학비 0원</div>
+    <div class="brand">AA <span>Canada</span></div>
+  </body>
+</html>

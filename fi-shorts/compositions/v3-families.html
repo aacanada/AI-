@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template id="v3-families-template">
+      <link rel="stylesheet" href="assets/shared.css" />
+      <style>
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-Medium.woff2") format("woff2"); font-weight: 500; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2"); font-weight: 600; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-Bold.woff2") format("woff2"); font-weight: 700; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2"); font-weight: 800; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-Black.woff2") format("woff2"); font-weight: 900; }
+        @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; }
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          background: var(--bg);
+          color: var(--ink);
+          font-family: "Pretendard", sans-serif;
+        }
+        .v3-scene { position: absolute; inset: 0; }
+        .v3-kick {
+          position: absolute; left: 70px; top: 210px;
+          display: inline-flex; align-items: center; gap: 12px;
+          padding: 10px 22px; border-radius: 999px; background: var(--ink); color: var(--bg);
+          font-size: 32px; font-weight: 800;
+        }
+        .v3-title {
+          position: absolute; left: 70px; right: 70px; top: 290px;
+          font-size: 76px; font-weight: 900; line-height: 1.18; letter-spacing: -0.035em;
+        }
+        .v3-src { font-size: 26px; font-weight: 500; color: var(--ink-soft); }
+        .v3-card {
+          position: relative; padding: 12px; background: #fff; border-radius: 6px;
+          box-shadow: 0 22px 44px rgba(60, 45, 20, 0.22), 0 2px 6px rgba(60, 45, 20, 0.12);
+        }
+        .v3-card img { display: block; }
+
+        #v3-cardwrap { position: absolute; left: 90px; right: 90px; top: 430px; display: flex; justify-content: center; }
+        #v3-card { width: 900px; transform: rotate(-1.5deg); }
+        #v3-imgbox { position: relative; width: 876px; height: 632px; }
+        #v3-imgbox img { width: 876px; height: 632px; }
+        .v3-hl { position: absolute; left: 1.08%; width: 33.6%; height: 3%; background: var(--marker); mix-blend-mode: multiply; opacity: 0.9; transform-origin: left center; }
+        #v3-src { position: absolute; left: 90px; top: 1100px; }
+        #v3-stats { position: absolute; left: 70px; right: 70px; top: 430px; display: flex; flex-direction: column; gap: 30px; }
+        .v3-stat { padding: 34px 40px; border-radius: 28px; background: var(--paper); border: 3px solid var(--fi); box-shadow: 0 18px 40px rgba(0,40,90,0.12); }
+        .v3-stat b { display: block; font-family: "Inter", sans-serif; font-size: 150px; font-weight: 800; line-height: 1; letter-spacing: -0.04em; color: var(--fi); }
+        .v3-stat .lbl { display: block; margin-top: 10px; font-size: 44px; font-weight: 800; }
+        .v3-stat em { display: block; margin-top: 6px; font-style: normal; font-size: 34px; font-weight: 600; color: var(--ink-soft); }
+
+      </style>
+
+      <div id="root" data-composition-id="v3-families" data-width="1080" data-height="1920">
+        <div class="v3-scene" id="v3-scene">
+
+          <div class="v3-kick" id="v3-kick">이머전 학생 가정 · TDSB 2011-12 K-6</div>
+          <div id="v3-cardwrap"><div class="v3-card" id="v3-card"><div id="v3-imgbox">
+            <img src="assets/capture_3.jpg" alt="TDSB Table 3" />
+            <div class="v3-hl" id="v3-hl-inc" style="top: 22.2%; height: 3.7%"></div>
+            <div class="v3-hl" id="v3-hl-uni" style="top: 79.1%"></div>
+          </div></div></div>
+          <div class="v3-src" id="v3-src">출처: TDSB Research Brief (2011-12) · Table 3</div>
+          <div id="v3-stats">
+            <div class="v3-stat" id="v3-s1"><b><span id="v3-n1">0</span>%</b><span class="lbl">부모 대졸 이상</span><em>TDSB 전체 평균 56%</em></div>
+            <div class="v3-stat" id="v3-s2"><b><span id="v3-n2">0</span>%</b><span class="lbl">연소득 10만 달러+ 전문직</span><em>TDSB 전체 평균 26%</em></div>
+          </div>
+
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          const N = window.__NARR["v3-families"], L = N.L, END = N.dur;
+          const tl = gsap.timeline({ paused: true });
+
+          tl.fromTo("#v3-kick", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.4 }, 0.05);
+          tl.fromTo("#v3-card", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.1);
+          tl.fromTo("#v3-src", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 0.4);
+          tl.fromTo("#v3-hl-uni", { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: "power2.inOut" }, 0.6);
+          tl.fromTo("#v3-hl-inc", { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: "power2.inOut" }, 0.9);
+          tl.to(["#v3-card", "#v3-src"], { opacity: 0, y: -40, duration: 0.35, ease: "power2.in" }, L[0] + 1.0);
+          tl.fromTo("#v3-s1", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, L[0] + 1.2);
+          tl.fromTo("#v3-s2", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, L[1]);
+          function count(id, to, at) {
+            const el = document.getElementById(id), st = { v: 0 };
+            tl.fromTo(st, { v: 0 }, { v: to, duration: 0.9, ease: "power2.out", onUpdate: function () { el.textContent = Math.round(st.v); } }, at);
+          }
+          count("v3-n1", 78, L[0] + 1.3);
+          count("v3-n2", 53, L[1] + 0.1);
+
+          tl.to("#v3-scene", { opacity: 0, duration: 0.3, ease: "power2.in" }, END - 0.3);
+          window.__timelines["v3-families"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

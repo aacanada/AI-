@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template id="v6-route-template">
+      <link rel="stylesheet" href="assets/shared.css" />
+      <style>
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-Medium.woff2") format("woff2"); font-weight: 500; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2"); font-weight: 600; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-Bold.woff2") format("woff2"); font-weight: 700; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2"); font-weight: 800; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-Black.woff2") format("woff2"); font-weight: 900; }
+        @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; }
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          background: var(--bg);
+          color: var(--ink);
+          font-family: "Pretendard", sans-serif;
+        }
+        .v6-scene { position: absolute; inset: 0; }
+        .v6-kick {
+          position: absolute; left: 70px; top: 210px;
+          display: inline-flex; align-items: center; gap: 12px;
+          padding: 10px 22px; border-radius: 999px; background: var(--ink); color: var(--bg);
+          font-size: 32px; font-weight: 800;
+        }
+        .v6-title {
+          position: absolute; left: 70px; right: 70px; top: 290px;
+          font-size: 76px; font-weight: 900; line-height: 1.18; letter-spacing: -0.035em;
+        }
+        .v6-src { font-size: 26px; font-weight: 500; color: var(--ink-soft); }
+        .v6-card {
+          position: relative; padding: 12px; background: #fff; border-radius: 6px;
+          box-shadow: 0 22px 44px rgba(60, 45, 20, 0.22), 0 2px 6px rgba(60, 45, 20, 0.12);
+        }
+        .v6-card img { display: block; }
+
+        #v6-map { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+        .v6-city { position: absolute; display: flex; align-items: center; gap: 14px; font-size: 42px; font-weight: 900; white-space: nowrap; }
+        .v6-pin { display: block; width: 38px; height: 38px; border-radius: 50%; border: 7px solid #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+        .v6-region { position: absolute; font-size: 34px; font-weight: 800; }
+        .v6-region small { display: block; font-size: 26px; font-weight: 600; }
+        #v6-warn { position: absolute; left: 70px; right: 70px; top: 300px; padding: 26px 32px; border-radius: 24px; background: var(--paper); border: 4px solid var(--red); }
+        #v6-warn b { display: block; font-size: 44px; font-weight: 900; color: var(--red); }
+        #v6-warn span { display: block; margin-top: 8px; font-size: 34px; font-weight: 700; }
+        #v6-wc { position: absolute; left: 430px; top: 780px; width: 580px; padding: 26px 30px; border-radius: 24px; background: var(--paper); border: 3px solid var(--fi); box-shadow: 0 18px 36px rgba(0,40,90,0.12); }
+        #v6-wc .fr { font-family: "Inter", sans-serif; font-size: 28px; font-weight: 700; color: var(--fi); }
+        #v6-wc .ko { margin-top: 4px; font-size: 52px; font-weight: 900; }
+        #v6-wc .meta { margin-top: 6px; font-size: 30px; font-weight: 700; color: var(--ink-soft); }
+        #v6-ok { position: absolute; left: 70px; top: 1210px; display: flex; align-items: center; gap: 16px; padding: 18px 28px; border-radius: 22px; background: var(--paper); border: 3px solid #2e8b57; font-size: 40px; font-weight: 900; }
+        #v6-ok svg { display: block; width: 50px; height: 50px; }
+
+      </style>
+
+      <div id="root" data-composition-id="v6-route" data-width="1080" data-height="1920">
+        <div class="v6-scene" id="v6-scene">
+
+          <svg id="v6-map" viewBox="0 0 1080 1920" aria-hidden="true">
+            <path d="M 560 520 L 1080 520 L 1080 1920 L 860 1920 L 820 840 L 700 700 Z" fill="#e6eef7" />
+            <path d="M 0 520 L 560 520 L 700 700 L 820 840 L 860 1920 L 0 1920 Z" fill="#efe8db" />
+            <path d="M 560 520 L 700 700 L 820 840 L 860 1920" fill="none" stroke="#c4b9a6" stroke-width="5" stroke-dasharray="16 14" />
+            <path id="v6-route" d="M 900 660 C 780 560, 420 760, 260 1120" fill="none" style="stroke: var(--red)" stroke-width="10" stroke-linecap="round" />
+            <path id="v6-arrow" d="M 238 1088 L 258 1124 L 292 1104" fill="none" style="stroke: var(--red)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <div class="v6-region" id="v6-r-on" style="left: 70px; top: 560px; color: #8a7a5c">온타리오주<small>영어권 · FI / EF</small></div>
+          <div class="v6-region" id="v6-r-qc" style="left: 840px; top: 1040px; color: #4d6f98">퀘벡주<small>불어권</small></div>
+          <div class="v6-city" id="v6-mtl" style="left: 881px; top: 641px"><span class="v6-pin" style="background: var(--fi)"></span></div>
+          <div class="v6-city" id="v6-mtl-l" style="left: 760px; top: 580px">몬트리올</div>
+          <div class="v6-city" id="v6-tor" style="left: 241px; top: 1101px"><span class="v6-pin" style="background: var(--red)"></span>토론토</div>
+          <div id="v6-warn"><b>이머전 입학은 보통 K~2학년</b><span>그 이후엔 불어 경험 없이 들어가기 어려움</span></div>
+          <div id="v6-wc"><div class="fr">Classe d'accueil</div><div class="ko">웰컴클래스</div><div class="meta">몬트리올 불어교육청 · 약 1년 불어 집중</div></div>
+          <div id="v6-ok"><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="20" fill="#2e8b57" /><path d="M12 23 L19 30 L32 15" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" /></svg><span>온타리오 FI / EF 전학</span></div>
+
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          const N = window.__NARR["v6-route"], L = N.L, END = N.dur;
+          const tl = gsap.timeline({ paused: true });
+
+          const route = document.getElementById("v6-route"), LEN = 1100;
+          route.setAttribute("stroke-dasharray", LEN + " " + LEN);
+          tl.fromTo("#v6-warn", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.5, ease: "back.out(1.6)" }, L[0] + 0.3);
+          tl.fromTo("#v6-map", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 0.1);
+          tl.fromTo(["#v6-r-on", "#v6-r-qc", "#v6-tor"], { opacity: 0 }, { opacity: 1, duration: 0.4, stagger: 0.12 }, 0.3);
+          tl.set(["#v6-route", "#v6-arrow"], { opacity: 0 }, 0);
+          tl.fromTo(["#v6-mtl", "#v6-mtl-l"], { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2.4)" }, L[1] + 0.3);
+          tl.fromTo("#v6-wc", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, L[1] + 0.9);
+          tl.set("#v6-route", { opacity: 1 }, L[1] + 3.0);
+          tl.fromTo("#v6-route", { strokeDashoffset: LEN }, { strokeDashoffset: 0, duration: 1.5, ease: "power2.inOut" }, L[1] + 3.0);
+          tl.fromTo("#v6-arrow", { opacity: 0 }, { opacity: 1, duration: 0.2 }, L[1] + 4.4);
+          tl.fromTo("#v6-ok", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, L[1] + 4.5);
+
+          tl.to("#v6-scene", { opacity: 0, duration: 0.3, ease: "power2.in" }, END - 0.3);
+          window.__timelines["v6-route"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

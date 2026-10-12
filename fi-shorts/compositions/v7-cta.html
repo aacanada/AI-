@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template id="v7-cta-template">
+      <link rel="stylesheet" href="assets/shared.css" />
+      <style>
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-Medium.woff2") format("woff2"); font-weight: 500; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2"); font-weight: 600; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-Bold.woff2") format("woff2"); font-weight: 700; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2"); font-weight: 800; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-Black.woff2") format("woff2"); font-weight: 900; }
+        @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; }
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          background: var(--bg);
+          color: var(--ink);
+          font-family: "Pretendard", sans-serif;
+        }
+        .v7-scene { position: absolute; inset: 0; }
+        .v7-kick {
+          position: absolute; left: 70px; top: 210px;
+          display: inline-flex; align-items: center; gap: 12px;
+          padding: 10px 22px; border-radius: 999px; background: var(--ink); color: var(--bg);
+          font-size: 32px; font-weight: 800;
+        }
+        .v7-title {
+          position: absolute; left: 70px; right: 70px; top: 290px;
+          font-size: 76px; font-weight: 900; line-height: 1.18; letter-spacing: -0.035em;
+        }
+        .v7-src { font-size: 26px; font-weight: 500; color: var(--ink-soft); }
+        .v7-card {
+          position: relative; padding: 12px; background: #fff; border-radius: 6px;
+          box-shadow: 0 22px 44px rgba(60, 45, 20, 0.22), 0 2px 6px rgba(60, 45, 20, 0.12);
+        }
+        .v7-card img { display: block; }
+
+        #v7-wrap { position: absolute; left: 70px; right: 70px; top: 360px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+        #v7-brand { font-family: "Inter", sans-serif; font-size: 150px; font-weight: 800; letter-spacing: -0.03em; }
+        #v7-brand span { color: var(--red); }
+        #v7-sub { margin-top: 10px; font-size: 42px; font-weight: 700; color: var(--ink-soft); }
+        .v7-c { margin-top: 36px; width: 100%; padding: 30px 40px; border-radius: 26px; background: var(--paper); border: 3px solid #e2d9c8; text-align: left; }
+        .v7-c small { display: block; font-size: 30px; font-weight: 700; color: var(--ink-soft); }
+        .v7-c b { display: block; margin-top: 6px; font-family: "Inter", "Pretendard", sans-serif; font-size: 66px; font-weight: 800; }
+        .v7-c em { display: block; margin-top: 4px; font-style: normal; font-size: 28px; font-weight: 600; color: var(--ink-soft); }
+
+      </style>
+
+      <div id="root" data-composition-id="v7-cta" data-width="1080" data-height="1920">
+        <div class="v7-scene" id="v7-scene">
+
+          <div id="v7-wrap">
+            <div id="v7-brand">AA <span>Canada</span></div>
+            <div id="v7-sub">자녀 무상교육 · 유학 후 이민 · 영주권</div>
+            <div class="v7-c" id="v7-tel"><small>전화 상담</small><b>02-567-4345</b><b>010-4857-4345</b><em>평일 야간 · 주말 상담 가능</em></div>
+            <div class="v7-c" id="v7-kakao"><small>카카오톡</small><b>canlog</b></div>
+          </div>
+
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          const N = window.__NARR["v7-cta"], L = N.L, END = N.dur;
+          const tl = gsap.timeline({ paused: true });
+
+          tl.fromTo("#v7-brand", { opacity: 0, y: 30, scale: 0.96 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "power3.out" }, 0.05);
+          tl.fromTo("#v7-sub", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 0.3);
+          tl.fromTo(["#v7-tel", "#v7-kakao"], { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "back.out(1.5)", stagger: 0.18 }, 0.6);
+
+          
+          window.__timelines["v7-cta"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

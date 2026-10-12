@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template id="v4-scores-template">
+      <link rel="stylesheet" href="assets/shared.css" />
+      <style>
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-Medium.woff2") format("woff2"); font-weight: 500; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2"); font-weight: 600; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-Bold.woff2") format("woff2"); font-weight: 700; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2"); font-weight: 800; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-Black.woff2") format("woff2"); font-weight: 900; }
+        @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; }
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          background: var(--bg);
+          color: var(--ink);
+          font-family: "Pretendard", sans-serif;
+        }
+        .v4-scene { position: absolute; inset: 0; }
+        .v4-kick {
+          position: absolute; left: 70px; top: 210px;
+          display: inline-flex; align-items: center; gap: 12px;
+          padding: 10px 22px; border-radius: 999px; background: var(--ink); color: var(--bg);
+          font-size: 32px; font-weight: 800;
+        }
+        .v4-title {
+          position: absolute; left: 70px; right: 70px; top: 290px;
+          font-size: 76px; font-weight: 900; line-height: 1.18; letter-spacing: -0.035em;
+        }
+        .v4-src { font-size: 26px; font-weight: 500; color: var(--ink-soft); }
+        .v4-card {
+          position: relative; padding: 12px; background: #fff; border-radius: 6px;
+          box-shadow: 0 22px 44px rgba(60, 45, 20, 0.22), 0 2px 6px rgba(60, 45, 20, 0.12);
+        }
+        .v4-card img { display: block; }
+
+        #v4-cardwrap { position: absolute; left: 60px; right: 60px; top: 300px; display: flex; justify-content: center; }
+        #v4-card { width: 960px; transform: rotate(-1.5deg); }
+        #v4-imgbox { position: relative; width: 936px; height: 456px; }
+        #v4-imgbox img { width: 936px; height: 456px; }
+        #v4-ring { position: absolute; left: 0.4%; top: 92.6%; width: 61.4%; height: 6.4%; border: 5px solid var(--red); border-radius: 10px; }
+        #v4-src { position: absolute; left: 70px; top: 800px; }
+        #v4-chart { position: absolute; left: 70px; right: 70px; top: 850px; }
+        #v4-ct { font-size: 40px; font-weight: 800; }
+        #v4-groups { margin-top: 18px; height: 310px; display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 3px solid #cfc6b5; }
+        .v4-g { width: 290px; height: 100%; display: flex; justify-content: space-between; align-items: flex-end; }
+        .v4-c { width: 90px; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; }
+        .v4-v { font-family: "Inter", sans-serif; font-size: 34px; font-weight: 800; margin-bottom: 6px; }
+        .v4-b { display: block; width: 84px; border-radius: 10px 10px 0 0; transform-origin: 50% 100%; }
+        #v4-names { display: flex; justify-content: space-between; padding-top: 10px; }
+        #v4-names span { width: 290px; text-align: center; font-size: 36px; font-weight: 800; }
+        #v4-gap { position: absolute; right: 0; top: -6px; padding: 8px 20px; border-radius: 14px; background: var(--red); color: #fff; font-size: 32px; font-weight: 800; }
+
+      </style>
+
+      <div id="root" data-composition-id="v4-scores" data-width="1080" data-height="1920">
+        <div class="v4-scene" id="v4-scene">
+
+          <div class="v4-kick" id="v4-kick">6학년 표준화 시험 EQAO · 2011-12</div>
+          <div id="v4-cardwrap"><div class="v4-card" id="v4-card"><div id="v4-imgbox">
+            <img src="assets/capture_4.jpg" alt="TDSB Table 4" />
+            <div id="v4-ring"></div>
+          </div></div></div>
+          <div class="v4-src" id="v4-src">출처: TDSB Research Brief (2011-12) · Table 4 · Grade 6</div>
+          <div id="v4-chart">
+            <div id="v4-ct">기준 이상 학생 비율</div>
+            <div id="v4-gap">일반 평균 대비 약 +20%p</div>
+            <div id="v4-groups">
+              <div class="v4-g"><div class="v4-c"><span class="v4-v" style="color: var(--fi)">92</span><span class="v4-b v4-fi" style="height: 258px; background: var(--fi)"></span></div><div class="v4-c"><span class="v4-v" style="color: var(--ef)">94</span><span class="v4-b v4-ef" style="height: 263px; background: var(--ef)"></span></div><div class="v4-c"><span class="v4-v" style="color: var(--tdsb-ink)">74</span><span class="v4-b v4-td" style="height: 207px; background: var(--tdsb)"></span></div></div>
+              <div class="v4-g"><div class="v4-c"><span class="v4-v" style="color: var(--fi)">89</span><span class="v4-b v4-fi" style="height: 249px; background: var(--fi)"></span></div><div class="v4-c"><span class="v4-v" style="color: var(--ef)">95</span><span class="v4-b v4-ef" style="height: 266px; background: var(--ef)"></span></div><div class="v4-c"><span class="v4-v" style="color: var(--tdsb-ink)">75</span><span class="v4-b v4-td" style="height: 210px; background: var(--tdsb)"></span></div></div>
+              <div class="v4-g"><div class="v4-c"><span class="v4-v" style="color: var(--fi)">81</span><span class="v4-b v4-fi" style="height: 227px; background: var(--fi)"></span></div><div class="v4-c"><span class="v4-v" style="color: var(--ef)">82</span><span class="v4-b v4-ef" style="height: 230px; background: var(--ef)"></span></div><div class="v4-c"><span class="v4-v" style="color: var(--tdsb-ink)">62</span><span class="v4-b v4-td" style="height: 174px; background: var(--tdsb)"></span></div></div>
+            </div>
+            <div id="v4-names"><span>읽기</span><span>쓰기</span><span>수학</span></div>
+          </div>
+
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          const N = window.__NARR["v4-scores"], L = N.L, END = N.dur;
+          const tl = gsap.timeline({ paused: true });
+
+          tl.fromTo("#v4-kick", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.4 }, 0.05);
+          tl.fromTo("#v4-card", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.1);
+          tl.fromTo("#v4-src", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 0.4);
+          tl.fromTo("#v4-ring", { opacity: 0, scale: 1.1 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, 0.8);
+          tl.fromTo("#v4-ct", { opacity: 0 }, { opacity: 1, duration: 0.3 }, L[1] - 0.2);
+          tl.fromTo(["#v4-groups .v4-fi", "#v4-groups .v4-td"], { scaleY: 0 }, { scaleY: 1, duration: 0.7, ease: "power2.out", stagger: 0.06 }, L[1]);
+          tl.fromTo("#v4-groups .v4-ef", { scaleY: 0 }, { scaleY: 1, duration: 0.8, ease: "back.out(1.4)", stagger: 0.12 }, L[1] + 0.8);
+          tl.fromTo("#v4-groups .v4-v", { opacity: 0 }, { opacity: 1, duration: 0.3, stagger: 0.04 }, L[1] + 1.1);
+          tl.fromTo("#v4-gap", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, L[1] + 2.2);
+
+          tl.to("#v4-scene", { opacity: 0, duration: 0.3, ease: "power2.in" }, END - 0.3);
+          window.__timelines["v4-scores"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>
