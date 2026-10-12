@@ -1,5 +1,5 @@
 <template id="f04-template">
-  <div id="root" data-composition-id="04-tuition" data-start="0" data-duration="3.912" data-width="1080" data-height="1920">
+  <div id="root" data-composition-id="04-tuition" data-start="0" data-duration="4.412" data-width="1080" data-height="1920">
     <style>
       @font-face{font-family:"Pretendard";font-weight:800;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");}
       @font-face{font-family:"Pretendard";font-weight:700;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");}
@@ -28,7 +28,7 @@
       #f04-eyebrow-wrap {
         position: absolute;
         left: 80px;
-        top: 388px;
+        top: 588px;
         display: flex;
         align-items: center;
         gap: 24px;
@@ -58,8 +58,8 @@
         left: 80px;
         width: 920px;
       }
-      #f04-row-a { top: 590px; }   /* bar centre ≈ 700 */
-      #f04-row-b { top: 790px; }   /* bar centre ≈ 900 */
+      #f04-row-a { top: 820px; }   /* bar centre ≈ 700 */
+      #f04-row-b { top: 1060px; }   /* bar centre ≈ 900 */
       .f04-name {
         font-size: 46px;
         font-weight: 700;
@@ -148,9 +148,9 @@
       }
     </style>
 
-    <div id="f04-bg" class="clip" data-start="0" data-duration="3.912" data-track-index="0"><div id="f04-progress"></div></div>
+    <div id="f04-bg" class="clip" data-start="0" data-duration="4.412" data-track-index="0"><div id="f04-progress"></div></div>
 
-    <div id="f04-stage" class="clip" data-start="0" data-duration="3.912" data-track-index="1">
+    <div id="f04-stage" class="clip" data-start="0" data-duration="4.412" data-track-index="1">
       <div id="f04-eyebrow-wrap">
         <div id="f04-accent-line"></div>
         <div id="f04-eyebrow">부모님 학비 · 1년</div>
@@ -208,7 +208,7 @@
         tl.fromTo("#f04-badge",
           { opacity: 0, scale: 1.7, rotation: -8 },
           { opacity: 1, scale: 1, rotation: -4, duration: 0.38, ease: "back.out(2.2)" }, 1.98);
-        tl.fromTo("#f04-badge", { y: 0 }, { y: -6, duration: 0.18, ease: "power2.out" }, 2.28);
+        tl.fromTo("#f04-badge", { y: 0 }, { y: -6, duration: 0.18, ease: "power2.out", immediateRender: false }, 2.28);
         tl.to("#f04-badge", { y: 0, duration: 0.3, ease: "power2.inOut" }, 2.46);
         // hold to 3.912s
 

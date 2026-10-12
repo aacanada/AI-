@@ -1,5 +1,5 @@
 <template id="f02-template">
-  <div id="root" data-composition-id="02-english-school" data-width="1080" data-height="1920" data-start="0" data-duration="11.564">
+  <div id="root" data-composition-id="02-english-school" data-width="1080" data-height="1920" data-start="0" data-duration="12.064">
     <style>
       @font-face{font-family:"Pretendard";font-weight:800;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");}
       @font-face{font-family:"Pretendard";font-weight:700;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");}
@@ -188,7 +188,7 @@
       }
     </style>
 
-    <div id="f02-bg" class="clip" data-start="0" data-duration="11.564" data-track-index="0"></div>
+    <div id="f02-bg" class="clip" data-start="0" data-duration="12.064" data-track-index="0"></div>
 
     <div id="f02-eyebrow-row" class="f02-row">
       <div id="f02-accent"></div>
@@ -281,7 +281,7 @@
           value: 100, duration: COUNT_DUR, ease: "power3.out",
           onUpdate: function () { countEl.textContent = String(Math.round(state.value)); }
         }, COUNT_AT);
-        tl.fromTo("#f02-count", { scale: START_SCALE }, { scale: 1, duration: COUNT_DUR, ease: "power3.out" }, COUNT_AT);
+        tl.fromTo("#f02-count", { scale: START_SCALE }, { scale: 1, duration: COUNT_DUR, ease: "power3.out", immediateRender: false }, COUNT_AT);
         tl.fromTo("#f02-count-suffix", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, ease: "back.out(1.6)" }, COUNT_AT + COUNT_DUR);
 
         // Scene 4 — equation chip slides up; "=" turns cobalt; hold
