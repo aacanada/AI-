@@ -8,85 +8,352 @@
           "id": "s01-1",
           "text": "불어로 수업 듣는 아이들이, 오히려 영어 시험을 더 잘 본다면 믿어지시나요?",
           "start": 0.5,
-          "duration": 4.18
+          "duration": 4.96
         },
         {
           "id": "s01-2",
           "text": "오늘은 토론토 교육청과 캐나다 통계청 자료로 확인해 보겠습니다.",
-          "start": 5.03,
-          "duration": 3.901
+          "start": 5.81,
+          "duration": 4.087
         }
       ],
-      "duration": 9.631
+      "duration": 10.597
     },
     {
       "id": "s02-programs",
-      "start": 9.631,
+      "start": 10.597,
       "lines": [
         {
           "id": "s02-1",
           "text": "온타리오주 학교는 불어 비중에 따라 세 가지로 나뉩니다.",
           "start": 0.5,
-          "duration": 3.762
+          "duration": 2.766
         },
         {
           "id": "s02-2",
           "text": "일반 학교의 Core French는 주 40분 정도, 누적 600시간.",
-          "start": 4.612,
-          "duration": 4.133
+          "start": 3.616,
+          "duration": 3.715
         },
         {
           "id": "s02-3",
           "text": "Extended French는 불어 비중 25%, 1,260시간.",
-          "start": 9.095,
-          "duration": 3.622
+          "start": 7.681,
+          "duration": 4.68
         },
         {
           "id": "s02-4",
           "text": "그리고 French Immersion은 절반 이상을 불어로 배우고, 누적 3,800시간에 달합니다.",
-          "start": 13.067,
-          "duration": 5.248
+          "start": 12.711,
+          "duration": 5.553
         }
       ],
-      "duration": 19.015
+      "duration": 18.964
     },
     {
       "id": "s03-tdsb-language",
-      "start": 28.645,
+      "start": 29.56,
       "lines": [
         {
           "id": "s03-1",
           "text": "먼저 학생 배경입니다.",
           "start": 0.5,
-          "duration": 1.95
+          "duration": 1.419
         },
         {
           "id": "s03-2",
           "text": "집에서 영어를 쓰는 비율은 이머전이 67%로 가장 높았고요.",
-          "start": 2.8,
-          "duration": 3.947
+          "start": 2.269,
+          "duration": 4.18
         },
         {
           "id": "s03-3",
           "text": "캐나다 밖에서 태어난 학생은 이머전이 7%로 가장 적었습니다.",
-          "start": 7.098,
-          "duration": 4.087
+          "start": 6.799,
+          "duration": 4.22
         },
         {
           "id": "s03-4",
           "text": "최근 이민 온 학생 비율도 이머전이 가장 낮습니다.",
-          "start": 11.535,
-          "duration": 3.019
+          "start": 11.369,
+          "duration": 3.54
         },
         {
           "id": "s03-5",
           "text": "즉, French Immersion은 캐나다 토박이, 영어 가정 아이들이 주로 가는 곳이라는 거죠.",
-          "start": 14.903,
-          "duration": 5.526
+          "start": 15.259,
+          "duration": 4.9
         }
       ],
-      "duration": 21.13
+      "duration": 20.859
+    },
+    {
+      "id": "s04-race",
+      "start": 50.419,
+      "lines": [
+        {
+          "id": "s04-1",
+          "text": "흥미로운 건 동아시아계 학생입니다.",
+          "start": 0.5,
+          "duration": 2.096
+        },
+        {
+          "id": "s04-2",
+          "text": "이머전보다 Extended French 비율이 18%로 가장 높아요.",
+          "start": 2.946,
+          "duration": 3.901
+        },
+        {
+          "id": "s04-3",
+          "text": "반면 백인 학생은 정반대로, 이머전이 52%로 압도적입니다.",
+          "start": 7.197,
+          "duration": 4.007
+        }
+      ],
+      "duration": 11.903
+    },
+    {
+      "id": "s05-household",
+      "start": 62.323,
+      "lines": [
+        {
+          "id": "s05-1",
+          "text": "가정 환경을 보면 더 뚜렷합니다.",
+          "start": 0.5,
+          "duration": 2.129
+        },
+        {
+          "id": "s05-2",
+          "text": "고소득 전문직 가정은 이머전에 절반 넘게 몰려 있고요.",
+          "start": 2.979,
+          "duration": 3.58
+        },
+        {
+          "id": "s05-3",
+          "text": "부모님이 대졸 이상인 비율은 이머전 78, Extended 73%로 둘 다 평균보다 훨씬 높습니다.",
+          "start": 6.909,
+          "duration": 6.92
+        },
+        {
+          "id": "s05-4",
+          "text": "그런데 Extended French는 부모 모두 해외 출생인 비율이 66%.",
+          "start": 14.179,
+          "duration": 5.12
+        },
+        {
+          "id": "s05-5",
+          "text": "이민 가정이면서 교육열이 높은 집, 바로 이 프로필이 Extended French에 딱 맞습니다.",
+          "start": 19.649,
+          "duration": 5.188
+        }
+      ],
+      "duration": 25.537
+    },
+    {
+      "id": "s06-scores",
+      "start": 87.859,
+      "lines": [
+        {
+          "id": "s06-1",
+          "text": "그럼 성적은 어떨까요?",
+          "start": 0.5,
+          "duration": 1.38
+        },
+        {
+          "id": "s06-2",
+          "text": "온타리오 표준화 시험 EQAO, 6학년 결과입니다.",
+          "start": 2.23,
+          "duration": 3.191
+        },
+        {
+          "id": "s06-3",
+          "text": "읽기, 쓰기, 수학 모두 Extended French가 가장 높거나 이머전과 비슷했고,",
+          "start": 5.77,
+          "duration": 5.28
+        },
+        {
+          "id": "s06-4",
+          "text": "일반 평균보다 20%p 가까이 높았습니다.",
+          "start": 11.4,
+          "duration": 3.257
+        }
+      ],
+      "duration": 15.358
+    },
+    {
+      "id": "s07-summary",
+      "start": 103.217,
+      "lines": [
+        {
+          "id": "s07-1",
+          "text": "정리하면, 이머전은 캐나다 태생 고소득 가정,",
+          "start": 0.5,
+          "duration": 3.117
+        },
+        {
+          "id": "s07-2",
+          "text": "Extended French는 교육열 높은 이민 가정의 선택이고,",
+          "start": 3.967,
+          "duration": 3.52
+        },
+        {
+          "id": "s07-3",
+          "text": "두 그룹 모두 성취도가 뛰어납니다.",
+          "start": 7.837,
+          "duration": 2.308
+        }
+      ],
+      "duration": 10.846
+    },
+    {
+      "id": "s08-statcan",
+      "start": 114.063,
+      "lines": [
+        {
+          "id": "s08-1",
+          "text": "이건 온타리오만의 이야기가 아닙니다.",
+          "start": 0.5,
+          "duration": 2.056
+        },
+        {
+          "id": "s08-2",
+          "text": "캐나다 통계청 자료를 보면, 이머전 학생의 98%가 영어로 읽기 시험을 봤는데요.",
+          "start": 2.906,
+          "duration": 5.2
+        },
+        {
+          "id": "s08-3",
+          "text": "매니토바를 제외한 모든 주에서 이머전 학생들이 큰 차이로 더 높은 점수를 받았습니다.",
+          "start": 8.456,
+          "duration": 5.46
+        },
+        {
+          "id": "s08-4",
+          "text": "물론 원래 학업 역량이 높은 아이들이 모였다는 점도 함께 봐야 합니다.",
+          "start": 14.266,
+          "duration": 4.093
+        }
+      ],
+      "duration": 19.059
+    },
+    {
+      "id": "s09-timing",
+      "start": 133.122,
+      "lines": [
+        {
+          "id": "s09-1",
+          "text": "문제는 입학 타이밍이에요.",
+          "start": 0.5,
+          "duration": 1.399
+        },
+        {
+          "id": "s09-2",
+          "text": "이머전은 보통 킨더나 1, 2학년에만 들어갈 수 있고,",
+          "start": 2.249,
+          "duration": 3.32
+        },
+        {
+          "id": "s09-3",
+          "text": "Extended French는 7학년에 입학하기도 하지만,",
+          "start": 5.919,
+          "duration": 3.1
+        },
+        {
+          "id": "s09-4",
+          "text": "한국에서 불어를 안 배운 아이가 바로 들어가면 따라가기가 정말 힘듭니다.",
+          "start": 9.369,
+          "duration": 4.186
+        }
+      ],
+      "duration": 14.255
+    },
+    {
+      "id": "s10-montreal",
+      "start": 147.377,
+      "lines": [
+        {
+          "id": "s10-1",
+          "text": "그래서 추천드리는 루트가 몬트리올을 거치는 겁니다.",
+          "start": 0.5,
+          "duration": 3.12
+        },
+        {
+          "id": "s10-2",
+          "text": "불어교육청에 보내면 웰컴클래스에 배정돼서, 1년 정도 불어를 집중적으로 끌어올립니다.",
+          "start": 3.97,
+          "duration": 6.06
+        },
+        {
+          "id": "s10-3",
+          "text": "이렇게 준비한 아이들은 영어권의 이머전이나 Extended French로 옮겨도 문제없고,",
+          "start": 10.38,
+          "duration": 5.06
+        },
+        {
+          "id": "s10-4",
+          "text": "오히려 불어 성적이 우수한 경우가 많아요.",
+          "start": 15.79,
+          "duration": 2.674
+        }
+      ],
+      "duration": 19.163
+    },
+    {
+      "id": "s11-parents",
+      "start": 166.541,
+      "lines": [
+        {
+          "id": "s11-1",
+          "text": "부모님도 몬트리올에 있는 동안 불어를 공부하시면 좋습니다.",
+          "start": 0.5,
+          "duration": 3.389
+        },
+        {
+          "id": "s11-2",
+          "text": "말하기·듣기 NCLC 5레벨이면, 영어권으로 이동할 때 LMIA 면제로 취업비자 전환이 가능하고,",
+          "start": 4.239,
+          "duration": 6.54
+        },
+        {
+          "id": "s11-3",
+          "text": "영주권에서도 유리합니다.",
+          "start": 11.129,
+          "duration": 1.585
+        },
+        {
+          "id": "s11-4",
+          "text": "실제로 온타리오 주정부이민은 불어 가능자만 따로 146명을 뽑았는데,",
+          "start": 13.065,
+          "duration": 4.24
+        },
+        {
+          "id": "s11-5",
+          "text": "컷오프가 35점으로 다른 선발의 57점보다 훨씬 낮았어요.",
+          "start": 17.655,
+          "duration": 4.34
+        },
+        {
+          "id": "s11-6",
+          "text": "7레벨이면 연방 Express Entry 불어 카테고리도 노려볼 수 있습니다.",
+          "start": 22.345,
+          "duration": 4.265
+        }
+      ],
+      "duration": 27.31
+    },
+    {
+      "id": "s12-cta",
+      "start": 193.851,
+      "lines": [
+        {
+          "id": "s12-1",
+          "text": "자세한 플랜이 궁금하시면 AA 캐나다로 편하게 문의주세요.",
+          "start": 0.5,
+          "duration": 3.655
+        }
+      ],
+      "duration": 7.355
     }
   ],
-  "total": 49.775
+  "total": 201.205
 }

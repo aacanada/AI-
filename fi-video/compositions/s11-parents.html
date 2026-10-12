@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template id="s11-parents-template">
+      <link rel="stylesheet" href="assets/shared.css" />
+      <style>
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-Medium.woff2") format("woff2"); font-weight: 500; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2"); font-weight: 600; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-Bold.woff2") format("woff2"); font-weight: 700; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2"); font-weight: 800; }
+        @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; }
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          background: var(--bg);
+          color: var(--ink);
+          font-family: "Pretendard", sans-serif;
+        }
+        #s11-scene {
+          position: absolute;
+          inset: 0;
+        }
+        #s11-title {
+          position: absolute;
+          left: 100px;
+          top: 66px;
+          font-size: 60px;
+          font-weight: 800;
+          letter-spacing: -0.03em;
+        }
+        #s11-disc {
+          position: absolute;
+          left: 100px;
+          top: 150px;
+          font-size: 24px;
+          font-weight: 500;
+          color: var(--ink-soft);
+        }
+        #s11-steps {
+          position: absolute;
+          left: 100px;
+          right: 100px;
+          top: 210px;
+          height: 640px;
+          display: grid;
+          grid-template-columns: 430px 60px 430px 60px 1fr;
+          align-items: stretch;
+        }
+        .s11-step {
+          position: relative;
+          padding: 34px 34px;
+          border-radius: 26px;
+          background: var(--paper);
+          border: 3px solid #e2d9c8;
+          display: flex;
+          flex-direction: column;
+        }
+        .s11-no {
+          width: 56px;
+          height: 56px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: var(--ink);
+          color: var(--bg);
+          font-family: "Inter", sans-serif;
+          font-size: 30px;
+          font-weight: 800;
+        }
+        .s11-h {
+          margin-top: 20px;
+          font-size: 44px;
+          font-weight: 800;
+          letter-spacing: -0.02em;
+        }
+        .s11-p {
+          margin-top: 16px;
+          font-size: 30px;
+          font-weight: 600;
+          line-height: 1.45;
+          color: var(--ink-soft);
+        }
+        .s11-tag {
+          margin-top: auto;
+          align-self: flex-start;
+          padding: 8px 18px;
+          border-radius: 12px;
+          background: var(--bg-deep);
+          font-family: "Inter", "Pretendard", sans-serif;
+          font-size: 24px;
+          font-weight: 700;
+        }
+        .s11-chev {
+          align-self: center;
+          justify-self: center;
+          width: 34px;
+          height: 34px;
+          border-top: 8px solid #c9bfae;
+          border-right: 8px solid #c9bfae;
+          transform: rotate(45deg);
+        }
+        .s11-hl {
+          color: var(--fi);
+        }
+        #s11-st3 {
+          border-color: var(--fi);
+        }
+        #s11-oinp {
+          margin-top: 20px;
+          display: flex;
+          align-items: baseline;
+          gap: 14px;
+        }
+        #s11-oinp-k {
+          font-size: 28px;
+          font-weight: 700;
+        }
+        #s11-146 {
+          font-family: "Inter", sans-serif;
+          font-variant-numeric: tabular-nums;
+          font-size: 76px;
+          font-weight: 800;
+          color: var(--fi);
+          line-height: 1;
+        }
+        #s11-146-u {
+          font-size: 32px;
+          font-weight: 800;
+          color: var(--fi);
+        }
+        .s11-cut {
+          margin-top: 14px;
+          display: flex;
+          align-items: center;
+          gap: 14px;
+        }
+        .s11-cut-k {
+          width: 170px;
+          font-size: 26px;
+          font-weight: 700;
+        }
+        .s11-cut-bar {
+          display: block;
+          height: 40px;
+          border-radius: 0 10px 10px 0;
+          transform-origin: left center;
+        }
+        .s11-cut-v {
+          font-family: "Inter", "Pretendard", sans-serif;
+          font-size: 32px;
+          font-weight: 800;
+          white-space: nowrap;
+        }
+        #s11-ee {
+          margin-top: 22px;
+          padding: 14px 20px;
+          border-radius: 16px;
+          background: var(--fi);
+          color: #fff;
+          font-size: 28px;
+          font-weight: 800;
+        }
+      </style>
+
+      <div id="root" data-composition-id="s11-parents" data-width="1920" data-height="1080">
+        <div id="s11-scene">
+          <div id="s11-title">부모님 전략 · 불어로 취업비자, 영주권까지</div>
+          <div id="s11-disc">이민 정책은 수시로 변경됩니다. 최신 기준은 상담 시 확인하세요.</div>
+
+          <div id="s11-steps">
+            <div class="s11-step" id="s11-st1">
+              <div class="s11-no">1</div>
+              <div class="s11-h">몬트리올</div>
+              <div class="s11-p">부모 학생비자 + 자녀 무상교육, 머무는 동안 부모님도 불어 공부</div>
+              <div class="s11-tag">Montréal · Québec</div>
+            </div>
+            <div class="s11-chev" id="s11-c1"></div>
+            <div class="s11-step" id="s11-st2">
+              <div class="s11-no">2</div>
+              <div class="s11-h">불어 <span class="s11-hl">NCLC 5</span></div>
+              <div class="s11-p">말하기·듣기 5레벨이면 영어권 이동 시 <b style="color: var(--ink)">LMIA 면제 취업비자</b> 전환 가능</div>
+              <div class="s11-tag">Francophone Mobility</div>
+            </div>
+            <div class="s11-chev" id="s11-c2"></div>
+            <div class="s11-step" id="s11-st3">
+              <div class="s11-no" style="background: var(--fi)">3</div>
+              <div class="s11-h">영주권에서도 유리</div>
+              <div id="s11-oinp">
+                <span id="s11-oinp-k">OINP 불어 가능자 별도 선발</span>
+                <span id="s11-146">0</span><span id="s11-146-u">명</span>
+              </div>
+              <div class="s11-cut" id="s11-cut-fr">
+                <span class="s11-cut-k" style="color: var(--fi)">불어 선발</span>
+                <span class="s11-cut-bar" style="width: 210px; background: var(--fi)"></span>
+                <span class="s11-cut-v" style="color: var(--fi)">35점</span>
+              </div>
+              <div class="s11-cut" id="s11-cut-ot">
+                <span class="s11-cut-k" style="color: var(--tdsb-ink)">다른 선발</span>
+                <span class="s11-cut-bar" style="width: 342px; background: var(--tdsb)"></span>
+                <span class="s11-cut-v" style="color: var(--tdsb-ink)">57점</span>
+              </div>
+              <div id="s11-ee">NCLC 7 → 연방 Express Entry 불어 카테고리</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          const N = window.__NARR["s11-parents"], L = N.L, END = N.dur;
+          const tl = gsap.timeline({ paused: true });
+          const up = { opacity: 0, y: 40 };
+          const set = { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" };
+
+          tl.fromTo("#s11-title", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 0.1);
+          tl.fromTo("#s11-disc", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 0.5);
+          tl.fromTo("#s11-st1", up, set, L[0] + 0.2);
+          tl.fromTo("#s11-c1", { opacity: 0 }, { opacity: 1, duration: 0.3 }, L[1] - 0.2);
+          tl.fromTo("#s11-st2", up, set, L[1]);
+          tl.fromTo("#s11-c2", { opacity: 0 }, { opacity: 1, duration: 0.3 }, L[2] - 0.2);
+          tl.fromTo("#s11-st3", up, set, L[2]);
+          tl.set(["#s11-oinp", "#s11-cut-fr", "#s11-cut-ot", "#s11-ee"], { opacity: 0 }, 0);
+
+          // "불어 가능자만 따로 146명"
+          tl.to("#s11-oinp", { opacity: 1, duration: 0.4 }, L[3] + 0.2);
+          const n = document.getElementById("s11-146");
+          const st = { v: 0 };
+          tl.fromTo(st, { v: 0 }, { v: 146, duration: 1.4, ease: "power2.out", onUpdate: function () { n.textContent = Math.round(st.v); } }, L[3] + 0.3);
+
+          // "컷오프 35점 … 다른 선발 57점"
+          tl.to(["#s11-cut-fr", "#s11-cut-ot"], { opacity: 1, duration: 0.3, stagger: 0.5 }, L[4]);
+          tl.fromTo("#s11-cut-fr .s11-cut-bar", { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "power2.out" }, L[4]);
+          tl.fromTo("#s11-cut-ot .s11-cut-bar", { scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "power2.out" }, L[4] + 1.6);
+
+          // "7레벨이면 Express Entry 불어 카테고리"
+          tl.fromTo("#s11-ee", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, L[5] + 0.2);
+
+          tl.to("#s11-scene", { opacity: 0, duration: 0.4, ease: "power2.in" }, END - 0.4);
+          window.__timelines["s11-parents"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template id="s12-cta-template">
+      <link rel="stylesheet" href="assets/shared.css" />
+      <style>
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-Medium.woff2") format("woff2"); font-weight: 500; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2"); font-weight: 600; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-Bold.woff2") format("woff2"); font-weight: 700; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2"); font-weight: 800; }
+        @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; }
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          background: var(--bg);
+          color: var(--ink);
+          font-family: "Pretendard", sans-serif;
+        }
+        #s12-route {
+          position: absolute;
+          inset: 0;
+          width: 1920px;
+          height: 1080px;
+          opacity: 0.16;
+        }
+        #s12-wrap {
+          position: absolute;
+          inset: 0;
+          padding: 0 0 170px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+        }
+        #s12-brand {
+          font-family: "Inter", sans-serif;
+          font-size: 128px;
+          font-weight: 800;
+          letter-spacing: -0.03em;
+        }
+        #s12-brand span {
+          color: var(--red);
+        }
+        #s12-sub {
+          margin-top: 6px;
+          font-size: 38px;
+          font-weight: 600;
+          color: var(--ink-soft);
+        }
+        #s12-contacts {
+          margin-top: 56px;
+          display: flex;
+          gap: 30px;
+        }
+        .s12-c {
+          padding: 26px 40px;
+          border-radius: 24px;
+          background: var(--paper);
+          border: 3px solid #e2d9c8;
+          text-align: left;
+        }
+        .s12-c small {
+          display: block;
+          font-size: 26px;
+          font-weight: 700;
+          color: var(--ink-soft);
+        }
+        .s12-c b {
+          display: block;
+          margin-top: 6px;
+          font-family: "Inter", "Pretendard", sans-serif;
+          font-variant-numeric: tabular-nums;
+          font-size: 50px;
+          font-weight: 800;
+          letter-spacing: -0.01em;
+        }
+        .s12-c em {
+          display: block;
+          margin-top: 6px;
+          font-style: normal;
+          font-size: 24px;
+          font-weight: 600;
+          color: var(--ink-soft);
+        }
+      </style>
+
+      <div id="root" data-composition-id="s12-cta" data-width="1920" data-height="1080">
+        <svg id="s12-route" viewBox="0 0 1920 1080" aria-hidden="true">
+          <path d="M 1349 320 C 1180 140, 840 300, 690 600" fill="none" style="stroke: var(--red)" stroke-width="10" stroke-linecap="round" stroke-dasharray="4 22" />
+          <circle cx="1349" cy="320" r="18" style="fill: var(--fi)" />
+          <circle cx="690" cy="600" r="18" style="fill: var(--red)" />
+        </svg>
+        <div id="s12-wrap">
+          <div id="s12-brand">AA <span>Canada</span></div>
+          <div id="s12-sub">자녀 무상교육 · 유학 후 이민 · 영주권 상담</div>
+          <div id="s12-contacts">
+            <div class="s12-c" id="s12-tel">
+              <small>전화 상담</small>
+              <b>02-567-4345</b>
+              <b>010-4857-4345</b>
+              <em>평일 야간 · 주말 상담 가능</em>
+            </div>
+            <div class="s12-c" id="s12-kakao">
+              <small>카카오톡</small>
+              <b>canlog</b>
+              <em>편하게 문의주세요</em>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          const N = window.__NARR["s12-cta"], END = N.dur;
+          const tl = gsap.timeline({ paused: true });
+          tl.fromTo("#s12-route", { opacity: 0 }, { opacity: 0.16, duration: 0.8 }, 0);
+          tl.fromTo("#s12-brand", { opacity: 0, y: 30, scale: 0.96 }, { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: "power3.out" }, 0.1);
+          tl.fromTo("#s12-sub", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 0.4);
+          tl.fromTo(["#s12-tel", "#s12-kakao"], { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.55, ease: "back.out(1.5)", stagger: 0.18 }, 0.8);
+          window.__timelines["s12-cta"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

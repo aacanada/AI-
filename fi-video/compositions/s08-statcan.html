@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template id="s08-statcan-template">
+      <link rel="stylesheet" href="assets/shared.css" />
+      <style>
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-Medium.woff2") format("woff2"); font-weight: 500; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2"); font-weight: 600; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-Bold.woff2") format("woff2"); font-weight: 700; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2"); font-weight: 800; }
+        @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; }
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          background: var(--bg);
+          color: var(--ink);
+          font-family: "Pretendard", sans-serif;
+        }
+        #s08-scene {
+          position: absolute;
+          inset: 0;
+        }
+        #s08-head {
+          position: absolute;
+          left: 80px;
+          top: 64px;
+          display: flex;
+          align-items: center;
+          gap: 22px;
+        }
+        #s08-head-title {
+          font-size: 50px;
+          font-weight: 800;
+          letter-spacing: -0.02em;
+        }
+        .s08-pill {
+          padding: 8px 20px;
+          border-radius: 999px;
+          background: var(--ink);
+          color: var(--bg);
+          font-family: "Inter", "Pretendard", sans-serif;
+          font-size: 26px;
+          font-weight: 700;
+        }
+        #s08-viewport {
+          position: absolute;
+          left: 1260px;
+          top: 150px;
+          width: 580px;
+          height: 690px;
+          border-radius: 26px;
+          background: var(--bg-deep);
+          overflow: hidden;
+        }
+        #s08-zoom-outer {
+          position: absolute;
+          inset: 0;
+          transform-origin: 50% 50%;
+        }
+        #s08-zoom-inner {
+          position: absolute;
+          inset: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        #s08-card {
+          position: relative;
+          width: 459px;
+          padding: 14px;
+          background: #fff;
+          border-radius: 6px;
+          box-shadow: 0 22px 44px rgba(60, 45, 20, 0.22), 0 2px 6px rgba(60, 45, 20, 0.12);
+        }
+        #s08-imgbox {
+          position: relative;
+          width: 431px;
+          height: 600px;
+        }
+        #s08-imgbox img {
+          display: block;
+          width: 431px;
+          height: 600px;
+        }
+        .s08-ring {
+          position: absolute;
+          border: 4px solid var(--red);
+          border-radius: 10px;
+        }
+        #s08-source {
+          position: absolute;
+          left: 1260px;
+          top: 852px;
+          width: 580px;
+          font-size: 22px;
+          font-weight: 500;
+          color: var(--ink-soft);
+        }
+
+        /* Phase A: 98% */
+        #s08-pa {
+          position: absolute;
+          left: 80px;
+          top: 170px;
+          width: 1100px;
+          height: 620px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+        #s08-big {
+          font-family: "Inter", sans-serif;
+          font-variant-numeric: tabular-nums;
+          font-size: 280px;
+          font-weight: 800;
+          line-height: 1;
+          letter-spacing: -0.04em;
+          color: var(--fi);
+        }
+        #s08-big small {
+          font-size: 150px;
+        }
+        #s08-pa-sub {
+          margin-top: 20px;
+          font-size: 56px;
+          font-weight: 800;
+          letter-spacing: -0.02em;
+        }
+        #s08-pa-note {
+          margin-top: 16px;
+          font-size: 30px;
+          font-weight: 500;
+          color: var(--ink-soft);
+        }
+
+        /* Phase B: dumbbell chart */
+        #s08-pb {
+          position: absolute;
+          left: 80px;
+          top: 150px;
+          width: 1120px;
+          height: 690px;
+        }
+        #s08-pb-top {
+          display: flex;
+          align-items: baseline;
+          justify-content: space-between;
+        }
+        #s08-pb-title {
+          font-size: 36px;
+          font-weight: 800;
+        }
+        #s08-legend {
+          display: flex;
+          gap: 26px;
+          font-size: 26px;
+          font-weight: 700;
+        }
+        #s08-legend i {
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          margin-right: 8px;
+          vertical-align: -2px;
+        }
+        #s08-rows {
+          position: relative;
+          margin-top: 18px;
+          height: 540px;
+        }
+        .s08-row {
+          position: absolute;
+          left: 0;
+          width: 1120px;
+          height: 54px;
+        }
+        .s08-name {
+          position: absolute;
+          left: 0;
+          top: 9px;
+          width: 330px;
+          font-size: 28px;
+          font-weight: 700;
+          white-space: nowrap;
+        }
+        .s08-line {
+          position: absolute;
+          top: 25px;
+          height: 5px;
+          border-radius: 3px;
+          background: linear-gradient(90deg, var(--tdsb), var(--fi));
+          transform-origin: left center;
+        }
+        .s08-dot {
+          position: absolute;
+          top: 13px;
+          width: 28px;
+          height: 28px;
+          margin-left: -14px;
+          border-radius: 50%;
+          border: 4px solid var(--bg);
+        }
+        .s08-num {
+          position: absolute;
+          top: 10px;
+          font-family: "Inter", sans-serif;
+          font-variant-numeric: tabular-nums;
+          font-size: 26px;
+          font-weight: 800;
+          white-space: nowrap;
+        }
+        #s08-mb-tag {
+          position: absolute;
+          top: 6px;
+          padding: 6px 16px;
+          border-radius: 999px;
+          background: var(--red);
+          color: #fff;
+          font-size: 24px;
+          font-weight: 800;
+          white-space: nowrap;
+        }
+        #s08-axis {
+          position: absolute;
+          left: 360px;
+          right: 0;
+          top: 612px;
+          height: 30px;
+          border-top: 2px solid #cfc6b5;
+        }
+        .s08-tick {
+          position: absolute;
+          top: 6px;
+          width: 60px;
+          margin-left: -30px;
+          text-align: center;
+          font-family: "Inter", sans-serif;
+          font-size: 22px;
+          font-weight: 600;
+          color: var(--ink-soft);
+        }
+        #s08-caveat {
+          position: absolute;
+          left: 80px;
+          top: 812px;
+          width: 1120px;
+          padding: 14px 24px;
+          border-radius: 16px;
+          background: var(--paper);
+          border: 2px dashed #cfc6b5;
+          font-size: 28px;
+          font-weight: 600;
+          color: var(--ink-soft);
+        }
+      </style>
+
+      <div id="root" data-composition-id="s08-statcan" data-width="1920" data-height="1080">
+        <div id="s08-scene">
+          <div id="s08-head">
+            <div id="s08-head-title">캐나다 전체 · 통계청 읽기 평가</div>
+            <div class="s08-pill">2000</div>
+          </div>
+
+          <div id="s08-viewport">
+            <div id="s08-zoom-outer" data-layout-allow-overflow>
+              <div id="s08-zoom-inner">
+                <div id="s08-card" data-layout-allow-overflow>
+                  <div id="s08-imgbox">
+                    <img src="assets/capture_5.jpg" alt="Statistics Canada reading achievement 2000" />
+                    <div class="s08-ring" id="s08-ring-98" style="left: 1.5%; top: 8.4%; width: 95%; height: 5.8%"></div>
+                    <div class="s08-ring" id="s08-ring-mb" style="left: 2.5%; top: 74.3%; width: 61%; height: 3.9%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="s08-source">출처: Statistics Canada, Education Quarterly Review (2004)</div>
+
+          <div id="s08-pa">
+            <div id="s08-big"><span id="s08-98">0</span><small>%</small></div>
+            <div id="s08-pa-sub">이머전 학생이 <span style="color: var(--fi)">영어로</span> 읽기 시험</div>
+            <div id="s08-pa-note">불어로 배우는 학생들의 영어 실력을 영어 시험으로 비교한 결과</div>
+          </div>
+
+          <div id="s08-pb">
+            <div id="s08-pb-top">
+              <div id="s08-pb-title">주별 읽기 평균 점수</div>
+              <div id="s08-legend">
+                <span><i style="background: var(--fi)"></i>이머전</span>
+                <span><i style="background: var(--tdsb)"></i>비이머전</span>
+              </div>
+            </div>
+            <div id="s08-rows"></div>
+            <div id="s08-axis"></div>
+          </div>
+          <div id="s08-caveat">※ 원래 학업 역량이 높은 아이들이 이머전에 많이 모였다는 점(선발 효과)도 함께 봐야 합니다.</div>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          const N = window.__NARR["s08-statcan"], L = N.L, END = N.dur;
+          // VIDEO_BRIEF.md §2 statcan_reading_2000
+          const DATA = [
+            ["BC", "브리티시컬럼비아", 610, 537],
+            ["NL", "뉴펀들랜드·래브라도", 608, 510],
+            ["AB", "앨버타", 601, 548],
+            ["ON", "온타리오", 570, 533],
+            ["SK", "서스캐처원", 570, 529],
+            ["NS", "노바스코샤", 567, 517],
+            ["QC", "퀘벡", 566, 537],
+            ["PE", "프린스에드워드아일랜드", 558, 509],
+            ["NB", "뉴브런즈윅", 550, 495],
+            ["MB", "매니토바", 533, 533],
+          ];
+          const X0 = 360, W = 760, LO = 480, HI = 620;
+          const px = (v) => X0 + ((v - LO) / (HI - LO)) * W;
+
+          const rows = document.getElementById("s08-rows");
+          DATA.forEach(function (d, i) {
+            const r = document.createElement("div");
+            r.className = "s08-row";
+            r.id = "s08-row-" + d[0];
+            r.style.top = i * 54 + "px";
+            const a = px(d[3]), b = px(d[2]);
+            let h = '<div class="s08-name">' + d[1] + "</div>";
+            if (d[2] !== d[3]) {
+              h += '<span class="s08-line" style="left:' + a + "px;width:" + (b - a) + 'px"></span>';
+              h += '<span class="s08-dot s08-non" style="left:' + a + 'px;background:var(--tdsb)"></span>';
+              h += '<span class="s08-dot s08-imm" style="left:' + b + 'px;background:var(--fi)"></span>';
+              h += '<span class="s08-num" style="left:' + (a - 70) + 'px;color:var(--tdsb-ink)">' + d[3] + "</span>";
+              h += '<span class="s08-num" style="left:' + (b + 20) + 'px;color:var(--fi)">' + d[2] + "</span>";
+            } else {
+              h += '<span class="s08-dot s08-imm" style="left:' + b + 'px;background:var(--fi);box-shadow:0 0 0 4px var(--tdsb)"></span>';
+              h += '<span class="s08-num" style="left:' + (b + 22) + 'px;color:var(--ink)">' + d[2] + "</span>";
+              h += '<span id="s08-mb-tag" style="left:' + (b + 92) + 'px">유일한 예외 · 동점</span>';
+            }
+            r.innerHTML = h;
+            rows.appendChild(r);
+          });
+          const axis = document.getElementById("s08-axis");
+          [500, 520, 540, 560, 580, 600, 620].forEach(function (v) {
+            const t = document.createElement("span");
+            t.className = "s08-tick";
+            t.style.left = px(v) - X0 + "px";
+            t.textContent = v;
+            axis.appendChild(t);
+          });
+
+          // capture_5: 593x826 shown at 431px wide, tilted -2deg.
+          const SRC_W = 593, SRC_H = 826, DISP_W = 431, TILT = (-2 * Math.PI) / 180;
+          function target(srcX, srcY) {
+            const K = DISP_W / SRC_W;
+            const ox = srcX * K - DISP_W / 2,
+              oy = srcY * K - (SRC_H * K) / 2;
+            return { x: -(ox * Math.cos(TILT) - oy * Math.sin(TILT)), y: -(ox * Math.sin(TILT) + oy * Math.cos(TILT)) };
+          }
+          const P98 = target(296, 120), PMB = target(260, 590), Z = 1.25;
+
+          const tl = gsap.timeline({ paused: true });
+          tl.fromTo("#s08-head", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 0.1);
+          tl.fromTo("#s08-viewport", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 0.1);
+          tl.fromTo("#s08-card", { y: 60, opacity: 0, rotation: -4 }, { y: 0, opacity: 1, rotation: -2, duration: 0.7, ease: "power3.out" }, 0.2);
+          tl.fromTo("#s08-source", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 0.7);
+          tl.set(["#s08-ring-98", "#s08-ring-mb"], { opacity: 0, scale: 1.08 }, 0);
+          tl.set(["#s08-pa", "#s08-pb", "#s08-caveat"], { opacity: 0 }, 0);
+          tl.set(".s08-line", { scaleX: 0 }, 0);
+          tl.set([".s08-dot", ".s08-num", ".s08-name", "#s08-mb-tag", "#s08-axis"], { opacity: 0 }, 0);
+
+          // ① "이머전 학생의 98%가 영어로 읽기 시험"
+          let t = L[1];
+          tl.fromTo("#s08-zoom-outer", { scale: 1 }, { scale: Z, duration: 1.1, ease: "power2.inOut" }, t - 0.2);
+          tl.fromTo("#s08-zoom-inner", { x: 0, y: 0 }, { x: P98.x, y: P98.y, duration: 1.1, ease: "power2.inOut" }, t - 0.2);
+          tl.to("#s08-ring-98", { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, t + 0.9);
+          tl.fromTo("#s08-pa", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, t + 0.3);
+          const big = document.getElementById("s08-98");
+          const st = { v: 0 };
+          tl.fromTo(st, { v: 0 }, { v: 98, duration: 1.4, ease: "power2.out", onUpdate: function () { big.textContent = Math.round(st.v); } }, t + 0.4);
+
+          // ② province dumbbells, Manitoba last as the only tie
+          t = L[2];
+          tl.to("#s08-pa", { opacity: 0, x: -30, duration: 0.35, ease: "power2.in" }, t - 0.3);
+          tl.to("#s08-ring-98", { opacity: 0, duration: 0.3 }, t - 0.3);
+          tl.to("#s08-zoom-outer", { scale: 1.2, duration: 1.0, ease: "power2.inOut" }, t - 0.2);
+          tl.to("#s08-zoom-inner", { x: PMB.x, y: PMB.y, duration: 1.0, ease: "power2.inOut" }, t - 0.2);
+          tl.fromTo("#s08-pb", { opacity: 0 }, { opacity: 1, duration: 0.4 }, t);
+          tl.to("#s08-axis", { opacity: 1, duration: 0.4 }, t + 0.1);
+          DATA.forEach(function (d, i) {
+            const at = t + 0.2 + i * 0.22;
+            const row = "#s08-row-" + d[0];
+            tl.to(row + " .s08-name", { opacity: 1, duration: 0.3 }, at);
+            if (d[2] !== d[3]) {
+              tl.to(row + " .s08-non", { opacity: 1, duration: 0.2 }, at);
+              tl.to(row + " .s08-line", { scaleX: 1, duration: 0.5, ease: "power2.out" }, at + 0.05);
+            }
+            tl.to(row + " .s08-imm", { opacity: 1, duration: 0.25 }, at + 0.4);
+            tl.to(row + " .s08-num", { opacity: 1, duration: 0.3 }, at + 0.45);
+          });
+          const mbAt = t + 0.2 + 9 * 0.22 + 0.6;
+          tl.fromTo("#s08-mb-tag", { opacity: 0, x: -14 }, { opacity: 1, x: 0, duration: 0.4, ease: "back.out(2)" }, mbAt);
+          tl.to("#s08-ring-mb", { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, mbAt);
+
+          // ③ caveat
+          tl.fromTo("#s08-caveat", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, L[3] + 0.3);
+
+          tl.to("#s08-scene", { opacity: 0, duration: 0.4, ease: "power2.in" }, END - 0.4);
+          window.__timelines["s08-statcan"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

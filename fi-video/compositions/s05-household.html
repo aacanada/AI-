@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template id="s05-household-template">
+      <link rel="stylesheet" href="assets/shared.css" />
+      <style>
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-Medium.woff2") format("woff2"); font-weight: 500; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2"); font-weight: 600; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-Bold.woff2") format("woff2"); font-weight: 700; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2"); font-weight: 800; }
+        @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; }
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          background: var(--bg);
+          color: var(--ink);
+          font-family: "Pretendard", sans-serif;
+        }
+        #s05-scene {
+          position: absolute;
+          inset: 0;
+        }
+        #s05-head {
+          position: absolute;
+          left: 80px;
+          top: 64px;
+          display: flex;
+          align-items: center;
+          gap: 22px;
+        }
+        #s05-head-title {
+          font-size: 50px;
+          font-weight: 800;
+          letter-spacing: -0.02em;
+        }
+        .s05-pill {
+          padding: 8px 20px;
+          border-radius: 999px;
+          background: var(--ink);
+          color: var(--bg);
+          font-family: "Inter", "Pretendard", sans-serif;
+          font-size: 26px;
+          font-weight: 700;
+        }
+        #s05-viewport {
+          position: absolute;
+          left: 80px;
+          top: 170px;
+          width: 1000px;
+          height: 610px;
+          border-radius: 26px;
+          background: var(--bg-deep);
+          overflow: hidden;
+        }
+        #s05-zoom-outer {
+          position: absolute;
+          inset: 0;
+          transform-origin: 50% 50%;
+        }
+        #s05-zoom-inner {
+          position: absolute;
+          inset: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        #s05-card {
+          position: relative;
+          width: 788px;
+          padding: 14px;
+          background: #fff;
+          border-radius: 6px;
+          box-shadow: 0 22px 44px rgba(60, 45, 20, 0.22), 0 2px 6px rgba(60, 45, 20, 0.12);
+        }
+        #s05-imgbox {
+          position: relative;
+          width: 760px;
+          height: 548px;
+        }
+        #s05-imgbox img {
+          display: block;
+          width: 760px;
+          height: 548px;
+        }
+        .s05-hl {
+          position: absolute;
+          left: 1.08%;
+          width: 33.6%;
+          height: 3%;
+          background: var(--marker);
+          mix-blend-mode: multiply;
+          opacity: 0.9;
+          border-radius: 3px;
+          transform-origin: left center;
+        }
+        #s05-callout {
+          position: absolute;
+          left: 50%;
+          bottom: 30px;
+          width: 760px;
+          margin-left: -380px;
+          padding: 20px 30px;
+          border-radius: 20px;
+          background: var(--ef);
+          color: #fff;
+          text-align: center;
+          font-size: 36px;
+          font-weight: 800;
+          box-shadow: 0 16px 36px rgba(160, 50, 20, 0.3);
+        }
+        #s05-source {
+          position: absolute;
+          left: 80px;
+          top: 796px;
+          font-size: 24px;
+          font-weight: 500;
+          color: var(--ink-soft);
+        }
+        #s05-panel {
+          position: absolute;
+          left: 1150px;
+          top: 160px;
+          width: 690px;
+          height: 630px;
+          display: flex;
+          flex-direction: column;
+          gap: 22px;
+        }
+        .s05-chart {
+          padding: 16px 22px 18px;
+          border-radius: 20px;
+          background: var(--paper);
+          border: 2px solid #e6dfd1;
+        }
+        .s05-title {
+          font-size: 32px;
+          font-weight: 800;
+          letter-spacing: -0.02em;
+        }
+        .s05-title small {
+          margin-left: 10px;
+          font-size: 22px;
+          font-weight: 600;
+          color: var(--ink-soft);
+        }
+        .s05-row {
+          margin-top: 10px;
+          display: flex;
+          align-items: center;
+          height: 36px;
+        }
+        .s05-k {
+          width: 110px;
+          font-family: "Inter", "Pretendard", sans-serif;
+          font-size: 24px;
+          font-weight: 800;
+        }
+        .s05-k small {
+          font-family: "Pretendard", sans-serif;
+          font-size: 18px;
+          font-weight: 600;
+        }
+        .s05-bar {
+          display: block;
+          height: 30px;
+          border-radius: 0 8px 8px 0;
+          transform-origin: left center;
+        }
+        .s05-v {
+          margin-left: 12px;
+          font-family: "Inter", sans-serif;
+          font-variant-numeric: tabular-nums;
+          font-size: 30px;
+          font-weight: 800;
+        }
+      </style>
+
+      <div id="root" data-composition-id="s05-household" data-width="1920" data-height="1080">
+        <div id="s05-scene">
+          <div id="s05-head">
+            <div id="s05-head-title">가정 환경 · 소득 · 부모 학력 · 부모 출생지</div>
+            <div class="s05-pill">2011-12 · K-6</div>
+          </div>
+
+          <div id="s05-viewport">
+            <div id="s05-zoom-outer" data-layout-allow-overflow>
+              <div id="s05-zoom-inner">
+                <div id="s05-card" data-layout-allow-overflow>
+                  <div id="s05-imgbox">
+                    <img src="assets/capture_3.jpg" alt="TDSB Table 3" />
+                    <div class="s05-hl" id="s05-hl-inc" style="top: 22.2%; height: 3.7%"></div>
+                    <div class="s05-hl" id="s05-hl-uni" style="top: 79.1%"></div>
+                    <div class="s05-hl" id="s05-hl-both" style="top: 96.6%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="s05-callout">Extended French = 이민 가정 × 높은 교육열</div>
+          </div>
+          <div id="s05-source">출처: TDSB Research Brief (2011-12) · Table 3</div>
+
+          <div id="s05-panel">
+            <div class="s05-chart" id="s05-c-inc">
+              <div class="s05-title">연소득 10만 달러+ 전문직<small>Professional/Senior</small></div>
+              <div class="s05-row"><span class="s05-k" style="color: var(--fi)">FI</span><span class="s05-bar s05-b-fi" style="width: 244px; background: var(--fi)"></span><span class="s05-v" style="color: var(--fi)">53%</span></div>
+              <div class="s05-row"><span class="s05-k" style="color: var(--ef)">EF</span><span class="s05-bar s05-b-ef" style="width: 133px; background: var(--ef)"></span><span class="s05-v" style="color: var(--ef)">29%</span></div>
+              <div class="s05-row"><span class="s05-k" style="color: var(--tdsb-ink)">TDSB<small> 전체</small></span><span class="s05-bar s05-b-td" style="width: 120px; background: var(--tdsb)"></span><span class="s05-v" style="color: var(--tdsb-ink)">26%</span></div>
+            </div>
+            <div class="s05-chart" id="s05-c-uni">
+              <div class="s05-title">부모 대졸 이상<small>University</small></div>
+              <div class="s05-row"><span class="s05-k" style="color: var(--fi)">FI</span><span class="s05-bar s05-b-fi" style="width: 359px; background: var(--fi)"></span><span class="s05-v" style="color: var(--fi)">78%</span></div>
+              <div class="s05-row"><span class="s05-k" style="color: var(--ef)">EF</span><span class="s05-bar s05-b-ef" style="width: 336px; background: var(--ef)"></span><span class="s05-v" style="color: var(--ef)">73%</span></div>
+              <div class="s05-row"><span class="s05-k" style="color: var(--tdsb-ink)">TDSB<small> 전체</small></span><span class="s05-bar s05-b-td" style="width: 258px; background: var(--tdsb)"></span><span class="s05-v" style="color: var(--tdsb-ink)">56%</span></div>
+            </div>
+            <div class="s05-chart" id="s05-c-both">
+              <div class="s05-title">부모 모두 캐나다 밖 출생<small>Both outside Canada</small></div>
+              <div class="s05-row"><span class="s05-k" style="color: var(--fi)">FI</span><span class="s05-bar s05-b-fi" style="width: 170px; background: var(--fi)"></span><span class="s05-v" style="color: var(--fi)">37%</span></div>
+              <div class="s05-row"><span class="s05-k" style="color: var(--ef)">EF</span><span class="s05-bar s05-b-ef" style="width: 304px; background: var(--ef)"></span><span class="s05-v" style="color: var(--ef)">66%</span></div>
+              <div class="s05-row"><span class="s05-k" style="color: var(--tdsb-ink)">TDSB<small> 전체</small></span><span class="s05-bar s05-b-td" style="width: 290px; background: var(--tdsb)"></span><span class="s05-v" style="color: var(--tdsb-ink)">63%</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          const N = window.__NARR["s05-household"], L = N.L, END = N.dur;
+          // capture_3: 743x536 shown at 760px wide, tilted -2deg. Rows: $100k+ y129, University y432, Both outside y526.
+          const SRC_W = 743, SRC_H = 536, DISP_W = 760, TILT = (-2 * Math.PI) / 180, ROW_X = 300;
+          function target(srcY) {
+            const K = DISP_W / SRC_W;
+            const ox = ROW_X * K - DISP_W / 2,
+              oy = srcY * K - (SRC_H * K) / 2;
+            return { x: -(ox * Math.cos(TILT) - oy * Math.sin(TILT)), y: -(ox * Math.sin(TILT) + oy * Math.cos(TILT)) };
+          }
+          const INC = target(129), UNI = target(432), BOTH = target(500), Z = 1.55;
+
+          const tl = gsap.timeline({ paused: true });
+          function chart(id, at) {
+            tl.fromTo("#" + id, { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, at);
+            tl.fromTo("#" + id + " .s05-bar", { scaleX: 0 }, { scaleX: 1, duration: 0.8, ease: "power2.out", stagger: 0.15 }, at + 0.2);
+            tl.fromTo("#" + id + " .s05-v", { opacity: 0 }, { opacity: 1, duration: 0.3, stagger: 0.15 }, at + 0.6);
+          }
+
+          tl.fromTo("#s05-head", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 0.1);
+          tl.fromTo("#s05-viewport", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 0.1);
+          tl.fromTo("#s05-card", { y: 60, opacity: 0, rotation: -4 }, { y: 0, opacity: 1, rotation: -2, duration: 0.7, ease: "power3.out" }, 0.2);
+          tl.fromTo("#s05-source", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 0.7);
+          tl.set(["#s05-hl-inc", "#s05-hl-uni", "#s05-hl-both"], { scaleX: 0 }, 0);
+          tl.set(["#s05-c-inc", "#s05-c-uni", "#s05-c-both", "#s05-callout"], { opacity: 0 }, 0);
+
+          // ① High income professional
+          tl.fromTo("#s05-zoom-outer", { scale: 1 }, { scale: Z, duration: 1.2, ease: "power2.inOut" }, L[1] - 0.3);
+          tl.fromTo("#s05-zoom-inner", { x: 0, y: 0 }, { x: INC.x, y: INC.y, duration: 1.2, ease: "power2.inOut" }, L[1] - 0.3);
+          tl.to("#s05-hl-inc", { scaleX: 1, duration: 0.5, ease: "power2.inOut" }, L[1] + 0.8);
+          chart("s05-c-inc", L[1] + 0.5);
+
+          // ② Parents with university
+          tl.to("#s05-zoom-inner", { x: UNI.x, y: UNI.y, duration: 1.1, ease: "power2.inOut" }, L[2] - 0.2);
+          tl.to("#s05-hl-uni", { scaleX: 1, duration: 0.5, ease: "power2.inOut" }, L[2] + 0.8);
+          chart("s05-c-uni", L[2] + 0.5);
+
+          // ③ Both parents born outside Canada
+          tl.to("#s05-zoom-inner", { x: BOTH.x, y: BOTH.y, duration: 0.9, ease: "power2.inOut" }, L[3] - 0.2);
+          tl.to("#s05-hl-both", { scaleX: 1, duration: 0.5, ease: "power2.inOut" }, L[3] + 0.6);
+          chart("s05-c-both", L[3] + 0.4);
+
+          // ④ "이민 가정이면서 교육열이 높은 집" → the EF profile
+          tl.to("#s05-zoom-outer", { scale: 1, duration: 1.0, ease: "power2.inOut" }, L[4] - 0.2);
+          tl.to("#s05-zoom-inner", { x: 0, y: 0, duration: 1.0, ease: "power2.inOut" }, L[4] - 0.2);
+          tl.to(["#s05-panel .s05-b-fi", "#s05-panel .s05-b-td"], { opacity: 0.3, duration: 0.5 }, L[4] + 0.4);
+          tl.to("#s05-c-inc", { opacity: 0.45, duration: 0.5 }, L[4] + 0.4);
+          tl.fromTo("#s05-callout", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "back.out(1.6)" }, L[4] + 1.0);
+
+          tl.to("#s05-scene", { opacity: 0, duration: 0.4, ease: "power2.in" }, END - 0.4);
+          window.__timelines["s05-household"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

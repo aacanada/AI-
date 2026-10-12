@@ -420,6 +420,8 @@
             tl.fromTo("#s03-" + p + "-badge", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, at + 1.0);
           }
 
+          const N = window.__NARR["s03-tdsb-language"], L = N.L, END = N.dur;
+
           // Open
           tl.fromTo("#s03-head", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 0.1);
           tl.fromTo("#s03-viewport", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 0.1);
@@ -428,47 +430,51 @@
           tl.fromTo("#s03-p0", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, 0.4);
           tl.set(["#s03-hl-eng", "#s03-hl-out", "#s03-hl-arr"], { scaleX: 0 }, 0);
 
-          // ① English at home (narration 2.84s)
-          tl.to("#s03-p0", { opacity: 0, x: -30, duration: 0.35, ease: "power2.in" }, 2.6);
-          tl.fromTo("#s03-zoom-outer", { scale: 1 }, { scale: Z, duration: 1.2, ease: "power2.inOut" }, 2.7);
-          tl.fromTo("#s03-zoom-inner", { x: 0, y: 0 }, { x: ENG.x, y: ENG.y, duration: 1.2, ease: "power2.inOut" }, 2.7);
-          tl.to("#s03-hl-eng", { scaleX: 1, duration: 0.5, ease: "power2.inOut" }, 3.7);
-          tl.fromTo("#s03-p1", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 3.3);
-          bars("p1", 3.7);
+          // ① English at home
+          let t = L[1];
+          tl.to("#s03-p0", { opacity: 0, x: -30, duration: 0.35, ease: "power2.in" }, t - 0.25);
+          tl.fromTo("#s03-zoom-outer", { scale: 1 }, { scale: Z, duration: 1.2, ease: "power2.inOut" }, t - 0.15);
+          tl.fromTo("#s03-zoom-inner", { x: 0, y: 0 }, { x: ENG.x, y: ENG.y, duration: 1.2, ease: "power2.inOut" }, t - 0.15);
+          tl.to("#s03-hl-eng", { scaleX: 1, duration: 0.5, ease: "power2.inOut" }, t + 0.85);
+          tl.fromTo("#s03-p1", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, t + 0.45);
+          bars("p1", t + 0.85);
 
-          // ② Born outside Canada (narration 7.10s)
-          tl.to("#s03-p1", { opacity: 0, x: -30, duration: 0.35, ease: "power2.in" }, 6.9);
-          tl.to("#s03-zoom-inner", { x: OUT.x, y: OUT.y, duration: 0.9, ease: "power2.inOut" }, 6.9);
-          tl.to("#s03-hl-out", { scaleX: 1, duration: 0.5, ease: "power2.inOut" }, 7.7);
-          tl.fromTo("#s03-p2", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 7.35);
-          bars("p2", 7.7);
+          // ② Born outside Canada
+          t = L[2];
+          tl.to("#s03-p1", { opacity: 0, x: -30, duration: 0.35, ease: "power2.in" }, t - 0.2);
+          tl.to("#s03-zoom-inner", { x: OUT.x, y: OUT.y, duration: 0.9, ease: "power2.inOut" }, t - 0.2);
+          tl.to("#s03-hl-out", { scaleX: 1, duration: 0.5, ease: "power2.inOut" }, t + 0.6);
+          tl.fromTo("#s03-p2", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, t + 0.25);
+          bars("p2", t + 0.6);
 
-          // ③ Recent arrivals (narration 11.54s)
-          tl.to("#s03-p2", { opacity: 0, x: -30, duration: 0.35, ease: "power2.in" }, 11.35);
-          tl.to("#s03-zoom-inner", { x: ARR.x, y: ARR.y, duration: 0.8, ease: "power2.inOut" }, 11.35);
-          tl.to("#s03-hl-arr", { scaleX: 1, duration: 0.5, ease: "power2.inOut" }, 12.05);
-          tl.fromTo("#s03-p3", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 11.75);
+          // ③ Recent arrivals
+          t = L[3];
+          tl.to("#s03-p2", { opacity: 0, x: -30, duration: 0.35, ease: "power2.in" }, t - 0.2);
+          tl.to("#s03-zoom-inner", { x: ARR.x, y: ARR.y, duration: 0.8, ease: "power2.inOut" }, t - 0.2);
+          tl.to("#s03-hl-arr", { scaleX: 1, duration: 0.5, ease: "power2.inOut" }, t + 0.5);
+          tl.fromTo("#s03-p3", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, t + 0.2);
           tl.fromTo(
             ["#s03-chip-fi", "#s03-chip-ef", "#s03-chip-td"],
             { opacity: 0, scale: 0.7 },
             { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.8)", stagger: 0.18 },
-            12.0,
+            t + 0.45,
           );
 
-          // ④ Takeaway (narration 14.90s): pull back to the whole table, all three rows marked.
-          tl.to("#s03-p3", { opacity: 0, x: -30, duration: 0.35, ease: "power2.in" }, 14.75);
-          tl.to("#s03-zoom-outer", { scale: 1, duration: 1.1, ease: "power2.inOut" }, 14.75);
-          tl.to("#s03-zoom-inner", { x: 0, y: 0, duration: 1.1, ease: "power2.inOut" }, 14.75);
-          tl.fromTo("#s03-p4", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, 15.1);
+          // ④ Takeaway: pull back to the whole table, all three rows marked.
+          t = L[4];
+          tl.to("#s03-p3", { opacity: 0, x: -30, duration: 0.35, ease: "power2.in" }, t - 0.15);
+          tl.to("#s03-zoom-outer", { scale: 1, duration: 1.1, ease: "power2.inOut" }, t - 0.15);
+          tl.to("#s03-zoom-inner", { x: 0, y: 0, duration: 1.1, ease: "power2.inOut" }, t - 0.15);
+          tl.fromTo("#s03-p4", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, t + 0.2);
           tl.fromTo(
             "#s03-p4 .s03-recap div",
             { opacity: 0, y: 20 },
             { opacity: 1, y: 0, duration: 0.45, ease: "power2.out", stagger: 0.2 },
-            15.8,
+            t + 0.9,
           );
 
           // Exit
-          tl.to("#s03-scene", { opacity: 0, duration: 0.4, ease: "power2.in" }, 20.7);
+          tl.to("#s03-scene", { opacity: 0, duration: 0.4, ease: "power2.in" }, END - 0.4);
 
           window.__timelines["s03-tdsb-language"] = tl;
         })();

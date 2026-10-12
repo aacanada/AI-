@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template id="s04-race-template">
+      <link rel="stylesheet" href="assets/shared.css" />
+      <style>
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-Medium.woff2") format("woff2"); font-weight: 500; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2"); font-weight: 600; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-Bold.woff2") format("woff2"); font-weight: 700; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2"); font-weight: 800; }
+        @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; }
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          background: var(--bg);
+          color: var(--ink);
+          font-family: "Pretendard", sans-serif;
+        }
+        #s04-scene {
+          position: absolute;
+          inset: 0;
+        }
+        #s04-head {
+          position: absolute;
+          left: 80px;
+          top: 64px;
+          display: flex;
+          align-items: center;
+          gap: 22px;
+        }
+        #s04-head-title {
+          font-size: 50px;
+          font-weight: 800;
+          letter-spacing: -0.02em;
+        }
+        .s04-pill {
+          padding: 8px 20px;
+          border-radius: 999px;
+          background: var(--ink);
+          color: var(--bg);
+          font-family: "Inter", "Pretendard", sans-serif;
+          font-size: 26px;
+          font-weight: 700;
+        }
+        #s04-viewport {
+          position: absolute;
+          left: 80px;
+          top: 170px;
+          width: 1000px;
+          height: 610px;
+          border-radius: 26px;
+          background: var(--bg-deep);
+          overflow: hidden;
+        }
+        #s04-zoom-outer {
+          position: absolute;
+          inset: 0;
+          transform-origin: 50% 50%;
+        }
+        #s04-zoom-inner {
+          position: absolute;
+          inset: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        #s04-card {
+          position: relative;
+          width: 928px;
+          padding: 14px;
+          background: #fff;
+          border-radius: 6px;
+          box-shadow: 0 22px 44px rgba(60, 45, 20, 0.22), 0 2px 6px rgba(60, 45, 20, 0.12);
+        }
+        #s04-imgbox {
+          position: relative;
+          width: 900px;
+          height: 388px;
+        }
+        #s04-imgbox img {
+          display: block;
+          width: 900px;
+          height: 388px;
+        }
+        .s04-hl {
+          position: absolute;
+          left: 1.08%;
+          width: 28%;
+          height: 4.6%;
+          background: var(--marker);
+          mix-blend-mode: multiply;
+          opacity: 0.9;
+          border-radius: 3px;
+          transform-origin: left center;
+        }
+        #s04-source {
+          position: absolute;
+          left: 80px;
+          top: 796px;
+          font-size: 24px;
+          font-weight: 500;
+          color: var(--ink-soft);
+        }
+        #s04-panel {
+          position: absolute;
+          left: 1150px;
+          top: 170px;
+          width: 690px;
+          height: 610px;
+        }
+        .s04-cols {
+          display: grid;
+          grid-template-columns: 1fr 130px 1fr;
+          align-items: end;
+        }
+        .s04-colhead {
+          font-size: 40px;
+          font-weight: 800;
+          letter-spacing: -0.02em;
+          padding-bottom: 6px;
+        }
+        #s04-h-ea {
+          text-align: right;
+        }
+        .s04-sub {
+          font-size: 24px;
+          font-weight: 500;
+          color: var(--ink-soft);
+        }
+        #s04-rows {
+          margin-top: 40px;
+          display: flex;
+          flex-direction: column;
+          gap: 34px;
+        }
+        .s04-row {
+          display: grid;
+          grid-template-columns: 1fr 130px 1fr;
+          align-items: center;
+          height: 96px;
+        }
+        .s04-side {
+          position: relative;
+          height: 64px;
+          display: flex;
+          align-items: center;
+        }
+        .s04-side.left {
+          justify-content: flex-end;
+        }
+        .s04-bar {
+          display: block;
+          height: 64px;
+          border-radius: 10px;
+        }
+        .left .s04-bar {
+          transform-origin: right center;
+          border-radius: 10px 0 0 10px;
+        }
+        .right .s04-bar {
+          transform-origin: left center;
+          border-radius: 0 10px 10px 0;
+        }
+        .s04-val {
+          position: absolute;
+          top: 50%;
+          margin-top: -26px;
+          font-family: "Inter", sans-serif;
+          font-variant-numeric: tabular-nums;
+          font-size: 42px;
+          font-weight: 800;
+          line-height: 52px;
+          white-space: nowrap;
+        }
+        .s04-val small {
+          font-size: 26px;
+        }
+        .s04-lbl {
+          text-align: center;
+          font-family: "Inter", "Pretendard", sans-serif;
+          font-size: 28px;
+          font-weight: 800;
+        }
+        .s04-lbl small {
+          display: block;
+          font-family: "Pretendard", sans-serif;
+          font-size: 20px;
+          font-weight: 600;
+          color: var(--ink-soft);
+        }
+        .s04-badge {
+          position: absolute;
+          top: -40px;
+          padding: 4px 14px;
+          border-radius: 999px;
+          background: var(--red);
+          color: #fff;
+          font-size: 22px;
+          font-weight: 700;
+          white-space: nowrap;
+        }
+      </style>
+
+      <div id="root" data-composition-id="s04-race" data-width="1920" data-height="1080">
+        <div id="s04-scene">
+          <div id="s04-head">
+            <div id="s04-head-title">학생 배경 ② 인종 배경</div>
+            <div class="s04-pill">2011-12 · K-6</div>
+          </div>
+
+          <div id="s04-viewport">
+            <div id="s04-zoom-outer" data-layout-allow-overflow>
+              <div id="s04-zoom-inner">
+                <div id="s04-card" data-layout-allow-overflow>
+                  <div id="s04-imgbox">
+                    <img src="assets/capture_2.jpg" alt="TDSB Table 2" />
+                    <div class="s04-hl" id="s04-hl-ea" style="top: 47.5%"></div>
+                    <div class="s04-hl" id="s04-hl-wh" style="top: 70.6%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="s04-source">출처: TDSB Research Brief (2011-12) · Table 2</div>
+
+          <div id="s04-panel">
+            <div class="s04-cols" id="s04-heads">
+              <div id="s04-h-ea"><div class="s04-colhead">동아시아계</div><div class="s04-sub">East Asian</div></div>
+              <div></div>
+              <div id="s04-h-wh"><div class="s04-colhead">백인</div><div class="s04-sub">White</div></div>
+            </div>
+            <div id="s04-rows">
+              <div class="s04-row">
+                <div class="s04-side left">
+                  <span class="s04-val" id="s04-v-ea-fi" style="right: 46px; color: var(--fi)">10<small>%</small></span>
+                  <span class="s04-bar" id="s04-b-ea-fi" style="width: 34px; background: var(--fi)"></span>
+                </div>
+                <div class="s04-lbl" style="color: var(--fi)">FI</div>
+                <div class="s04-side right">
+                  <span class="s04-bar" id="s04-b-wh-fi" style="width: 177px; background: var(--fi)"></span>
+                  <span class="s04-val" id="s04-v-wh-fi" style="left: 189px; color: var(--fi)">52<small>%</small></span>
+                  <span class="s04-badge" id="s04-badge-wh" style="left: 0">압도적</span>
+                </div>
+              </div>
+              <div class="s04-row">
+                <div class="s04-side left">
+                  <span class="s04-val" id="s04-v-ea-ef" style="right: 73px; color: var(--ef)">18<small>%</small></span>
+                  <span class="s04-bar" id="s04-b-ea-ef" style="width: 61px; background: var(--ef)"></span>
+                  <span class="s04-badge" id="s04-badge-ea" style="right: 0">가장 높음</span>
+                </div>
+                <div class="s04-lbl" style="color: var(--ef)">EF</div>
+                <div class="s04-side right">
+                  <span class="s04-bar" id="s04-b-wh-ef" style="width: 122px; background: var(--ef)"></span>
+                  <span class="s04-val" id="s04-v-wh-ef" style="left: 134px; color: var(--ef)">36<small>%</small></span>
+                </div>
+              </div>
+              <div class="s04-row">
+                <div class="s04-side left">
+                  <span class="s04-val" id="s04-v-ea-td" style="right: 60px; color: var(--tdsb-ink)">14<small>%</small></span>
+                  <span class="s04-bar" id="s04-b-ea-td" style="width: 48px; background: var(--tdsb)"></span>
+                </div>
+                <div class="s04-lbl" style="color: var(--tdsb-ink)">TDSB<small>전체</small></div>
+                <div class="s04-side right">
+                  <span class="s04-bar" id="s04-b-wh-td" style="width: 99px; background: var(--tdsb)"></span>
+                  <span class="s04-val" id="s04-v-wh-td" style="left: 111px; color: var(--tdsb-ink)">29<small>%</small></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          const N = window.__NARR["s04-race"], L = N.L, END = N.dur;
+          // capture_2: 743x320 shown at 900px wide, card tilted -2deg. Rows: East Asian y159, White y233.
+          const SRC_W = 743, SRC_H = 320, DISP_W = 900, TILT = (-2 * Math.PI) / 180, ROW_X = 265;
+          function target(srcY) {
+            const K = DISP_W / SRC_W;
+            const ox = ROW_X * K - DISP_W / 2,
+              oy = srcY * K - (SRC_H * K) / 2;
+            return { x: -(ox * Math.cos(TILT) - oy * Math.sin(TILT)), y: -(ox * Math.sin(TILT) + oy * Math.cos(TILT)) };
+          }
+          const EA = target(159), WH = target(233), Z = 1.5;
+
+          const tl = gsap.timeline({ paused: true });
+          const side = (s) => ["fi", "ef", "td"].map((k) => "#s04-b-" + s + "-" + k);
+          const vals = (s) => ["fi", "ef", "td"].map((k) => "#s04-v-" + s + "-" + k);
+
+          tl.fromTo("#s04-head", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 0.1);
+          tl.fromTo("#s04-viewport", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 0.1);
+          tl.fromTo("#s04-card", { y: 60, opacity: 0, rotation: -4 }, { y: 0, opacity: 1, rotation: -2, duration: 0.7, ease: "power3.out" }, 0.2);
+          tl.fromTo("#s04-source", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 0.7);
+          tl.set(["#s04-hl-ea", "#s04-hl-wh"], { scaleX: 0 }, 0);
+          tl.fromTo(["#s04-heads", ".s04-lbl"], { opacity: 0 }, { opacity: 1, duration: 0.4 }, 0.6);
+          tl.set([...side("ea"), ...side("wh")], { scaleX: 0 }, 0);
+          tl.set([...vals("ea"), ...vals("wh"), "#s04-badge-ea", "#s04-badge-wh"], { opacity: 0 }, 0);
+
+          // East Asian ("흥미로운 건 동아시아계" → "EF 18%로 가장 높아요")
+          tl.fromTo("#s04-zoom-outer", { scale: 1 }, { scale: Z, duration: 1.2, ease: "power2.inOut" }, L[0] + 0.3);
+          tl.fromTo("#s04-zoom-inner", { x: 0, y: 0 }, { x: EA.x, y: EA.y, duration: 1.2, ease: "power2.inOut" }, L[0] + 0.3);
+          tl.to("#s04-hl-ea", { scaleX: 1, duration: 0.5, ease: "power2.inOut" }, L[0] + 1.4);
+          tl.to(side("ea"), { scaleX: 1, duration: 0.8, ease: "power2.out", stagger: 0.15 }, L[0] + 1.5);
+          tl.to(vals("ea"), { opacity: 1, duration: 0.3, stagger: 0.15 }, L[0] + 2.0);
+          tl.fromTo("#s04-b-ea-ef", { filter: "brightness(1)" }, { filter: "brightness(1.15)", duration: 0.3, yoyo: true, repeat: 1 }, L[1] + 0.6);
+          tl.fromTo("#s04-badge-ea", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, L[1] + 0.6);
+
+          // White ("반면 백인 학생은 … 이머전이 52%")
+          tl.to("#s04-zoom-inner", { x: WH.x, y: WH.y, duration: 0.9, ease: "power2.inOut" }, L[2] - 0.2);
+          tl.to("#s04-hl-wh", { scaleX: 1, duration: 0.5, ease: "power2.inOut" }, L[2] + 0.6);
+          tl.to(side("wh"), { scaleX: 1, duration: 0.8, ease: "power2.out", stagger: 0.15 }, L[2] + 0.4);
+          tl.to(vals("wh"), { opacity: 1, duration: 0.3, stagger: 0.15 }, L[2] + 0.9);
+          tl.fromTo("#s04-badge-wh", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, L[2] + 2.2);
+
+          tl.to("#s04-scene", { opacity: 0, duration: 0.4, ease: "power2.in" }, END - 0.4);
+          window.__timelines["s04-race"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

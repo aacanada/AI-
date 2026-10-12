@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template id="s09-timing-template">
+      <link rel="stylesheet" href="assets/shared.css" />
+      <style>
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-Medium.woff2") format("woff2"); font-weight: 500; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2"); font-weight: 600; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-Bold.woff2") format("woff2"); font-weight: 700; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2"); font-weight: 800; }
+        @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; }
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          background: var(--bg);
+          color: var(--ink);
+          font-family: "Pretendard", sans-serif;
+        }
+        #s09-scene {
+          position: absolute;
+          inset: 0;
+        }
+        #s09-title {
+          position: absolute;
+          left: 120px;
+          top: 90px;
+          font-size: 80px;
+          font-weight: 800;
+          letter-spacing: -0.03em;
+        }
+        #s09-title b {
+          color: var(--red);
+        }
+        /* Grade axis: K, 1..12 → 13 slots, x 300..1800 */
+        #s09-axis {
+          position: absolute;
+          left: 300px;
+          width: 1500px;
+          top: 600px;
+          height: 4px;
+          background: #cfc6b5;
+          border-radius: 2px;
+        }
+        .s09-g {
+          position: absolute;
+          top: 624px;
+          width: 80px;
+          margin-left: -40px;
+          text-align: center;
+          font-family: "Inter", "Pretendard", sans-serif;
+          font-size: 28px;
+          font-weight: 700;
+          color: var(--ink-soft);
+        }
+        .s09-lane-name {
+          position: absolute;
+          left: 120px;
+          white-space: nowrap;
+          font-family: "Inter", "Pretendard", sans-serif;
+          font-size: 32px;
+          font-weight: 800;
+        }
+        #s09-fi-open {
+          position: absolute;
+          top: 300px;
+          height: 72px;
+          border-radius: 18px;
+          background: var(--fi);
+          color: #fff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 28px;
+          font-weight: 800;
+          transform-origin: left center;
+          white-space: nowrap;
+        }
+        #s09-fi-closed {
+          position: absolute;
+          top: 300px;
+          height: 72px;
+          border-radius: 18px;
+          border: 3px dashed #c9c0ae;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 14px;
+          font-size: 28px;
+          font-weight: 700;
+          color: var(--ink-soft);
+        }
+        .s09-lock {
+          display: block;
+          width: 30px;
+          height: 36px;
+        }
+        #s09-ef-pin {
+          position: absolute;
+          top: 430px;
+          width: 120px;
+          margin-left: -60px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        #s09-ef-pin .head {
+          padding: 10px 18px;
+          border-radius: 16px;
+          background: var(--ef);
+          color: #fff;
+          font-size: 26px;
+          font-weight: 800;
+          white-space: nowrap;
+        }
+        #s09-ef-pin .stem {
+          display: block;
+          width: 4px;
+          height: 104px;
+          background: var(--ef);
+        }
+        #s09-warn {
+          position: absolute;
+          left: 1120px;
+          top: 700px;
+          width: 680px;
+          padding: 22px 30px;
+          border-radius: 22px;
+          background: var(--paper);
+          border: 4px solid var(--red);
+          box-shadow: 0 16px 34px rgba(160, 40, 30, 0.14);
+        }
+        #s09-warn b {
+          display: block;
+          font-size: 32px;
+          font-weight: 800;
+          color: var(--red);
+        }
+        #s09-warn span {
+          display: block;
+          margin-top: 8px;
+          font-size: 28px;
+          font-weight: 600;
+          line-height: 1.4;
+        }
+      </style>
+
+      <div id="root" data-composition-id="s09-timing" data-width="1920" data-height="1080">
+        <div id="s09-scene">
+          <div id="s09-title">문제는 <b>입학 타이밍</b></div>
+
+          <div class="s09-lane-name" id="s09-lane-fi" style="top: 318px; color: var(--fi)">FI 이머전</div>
+          <div class="s09-lane-name" id="s09-lane-ef" style="top: 448px; color: var(--ef)">EF 익스텐디드</div>
+
+          <div id="s09-fi-open">입학 가능</div>
+          <div id="s09-fi-closed">
+            <svg class="s09-lock" viewBox="0 0 30 36" aria-hidden="true"><rect x="2" y="15" width="26" height="19" rx="4" fill="#8a8f96" /><path d="M8 15V10a7 7 0 0 1 14 0v5" fill="none" stroke="#8a8f96" stroke-width="4" /></svg>
+            <span>3학년부터는 보통 신규 입학이 어려움</span>
+          </div>
+
+          <div id="s09-ef-pin"><span class="head">7학년 입학</span><span class="stem"></span></div>
+
+          <div id="s09-axis"></div>
+          <div id="s09-grades"></div>
+
+          <div id="s09-warn">
+            <b>불어 경험 없이 7학년 EF 입학</b>
+            <span>하루 3교시가 불어 수업 — 한국에서 바로 오면 따라가기 매우 힘듦</span>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          const N = window.__NARR["s09-timing"], L = N.L, END = N.dur;
+          const X0 = 300, STEP = 1500 / 12;
+          const gx = (g) => X0 + g * STEP; // g: 0 = K
+          const box = document.getElementById("s09-grades");
+          ["K", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"].forEach(function (g, i) {
+            const el = document.createElement("div");
+            el.className = "s09-g";
+            el.style.left = gx(i) + "px";
+            el.textContent = g;
+            box.appendChild(el);
+          });
+          const open = document.getElementById("s09-fi-open");
+          open.style.left = gx(0) - 40 + "px";
+          open.style.width = gx(2) - gx(0) + 80 + "px";
+          const closed = document.getElementById("s09-fi-closed");
+          closed.style.left = gx(3) - 40 + "px";
+          closed.style.width = gx(12) - gx(3) + 80 + "px";
+          document.getElementById("s09-ef-pin").style.left = gx(7) + "px";
+
+          const tl = gsap.timeline({ paused: true });
+          tl.fromTo("#s09-title", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 0.2);
+          tl.fromTo(["#s09-axis", ".s09-g"], { opacity: 0 }, { opacity: 1, duration: 0.4, stagger: 0.03 }, 0.5);
+          tl.fromTo("#s09-lane-fi", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.4 }, L[1] - 0.2);
+          tl.fromTo("#s09-fi-open", { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "power2.out" }, L[1] + 0.3);
+          tl.fromTo("#s09-fi-closed", { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, L[1] + 1.5);
+          tl.fromTo("#s09-lane-ef", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.4 }, L[2] - 0.2);
+          tl.fromTo("#s09-ef-pin", { opacity: 0, y: -40 }, { opacity: 1, y: 0, duration: 0.5, ease: "bounce.out" }, L[2] + 0.3);
+          tl.fromTo("#s09-warn", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.8)" }, L[3] + 0.2);
+          tl.to("#s09-scene", { opacity: 0, duration: 0.4, ease: "power2.in" }, END - 0.4);
+          window.__timelines["s09-timing"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

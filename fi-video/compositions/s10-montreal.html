@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template id="s10-montreal-template">
+      <link rel="stylesheet" href="assets/shared.css" />
+      <style>
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-Medium.woff2") format("woff2"); font-weight: 500; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2"); font-weight: 600; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-Bold.woff2") format("woff2"); font-weight: 700; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2"); font-weight: 800; }
+        @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; }
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          background: var(--bg);
+          color: var(--ink);
+          font-family: "Pretendard", sans-serif;
+        }
+        #s10-scene {
+          position: absolute;
+          inset: 0;
+        }
+        #s10-title {
+          position: absolute;
+          left: 100px;
+          top: 70px;
+          font-size: 64px;
+          font-weight: 800;
+          letter-spacing: -0.03em;
+        }
+        #s10-title b {
+          color: var(--red);
+        }
+        #s10-map {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 1920px;
+          height: 1080px;
+        }
+        .s10-region {
+          position: absolute;
+          font-size: 30px;
+          font-weight: 800;
+          letter-spacing: 0.02em;
+        }
+        .s10-region small {
+          display: block;
+          font-size: 24px;
+          font-weight: 600;
+        }
+        .s10-city {
+          position: absolute;
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          font-size: 34px;
+          font-weight: 800;
+          white-space: nowrap;
+        }
+        .s10-pin {
+          display: block;
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          border: 6px solid #fff;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        #s10-accueil {
+          position: absolute;
+          left: 1250px;
+          top: 400px;
+          width: 580px;
+          padding: 26px 30px;
+          border-radius: 22px;
+          background: var(--paper);
+          border: 3px solid var(--fi);
+          box-shadow: 0 18px 36px rgba(0, 40, 90, 0.12);
+        }
+        #s10-accueil .fr {
+          font-family: "Inter", sans-serif;
+          font-size: 26px;
+          font-weight: 700;
+          color: var(--fi);
+        }
+        #s10-accueil .ko {
+          margin-top: 4px;
+          font-size: 44px;
+          font-weight: 800;
+        }
+        #s10-accueil .meta {
+          margin-top: 8px;
+          font-size: 28px;
+          font-weight: 600;
+          color: var(--ink-soft);
+        }
+        #s10-ok {
+          position: absolute;
+          left: 760px;
+          top: 680px;
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          padding: 18px 28px;
+          border-radius: 20px;
+          background: var(--paper);
+          border: 3px solid #2e8b57;
+          font-size: 36px;
+          font-weight: 800;
+        }
+        #s10-ok svg {
+          display: block;
+          width: 44px;
+          height: 44px;
+        }
+        #s10-plus {
+          position: absolute;
+          left: 760px;
+          top: 790px;
+          padding: 10px 22px;
+          border-radius: 14px;
+          background: var(--fi);
+          color: #fff;
+          font-size: 30px;
+          font-weight: 800;
+        }
+      </style>
+
+      <div id="root" data-composition-id="s10-montreal" data-width="1920" data-height="1080">
+        <div id="s10-scene">
+          <!-- Schematic: city positions from real lat/long (lon -82..-72 → x 380..1530, lat 46.3..42.3 → y 190..840). -->
+          <svg id="s10-map" viewBox="0 0 1920 1080" aria-hidden="true">
+            <path id="s10-qc" d="M 980 190 L 1920 190 L 1920 1080 L 1440 1080 L 1395 395 L 1300 355 L 1190 330 Z" fill="#e6eef7" />
+            <path id="s10-on" d="M 0 190 L 980 190 L 1190 330 L 1300 355 L 1395 395 L 1440 1080 L 0 1080 Z" fill="#efe8db" />
+            <path id="s10-border" d="M 980 190 L 1190 330 L 1300 355 L 1395 395 L 1440 1080" fill="none" stroke="#c4b9a6" stroke-width="4" stroke-dasharray="14 12" />
+            <path id="s10-route" d="M 1349 320 C 1180 140, 840 300, 690 600" fill="none" style="stroke: var(--red)" stroke-width="8" stroke-linecap="round" />
+            <path id="s10-arrow" d="M 676 575 L 690 604 L 716 586" fill="none" style="stroke: var(--red)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+
+          <div class="s10-region" id="s10-r-on" style="left: 140px; top: 260px; color: #8a7a5c">온타리오주<small>영어권 · FI / EF 운영</small></div>
+          <div class="s10-region" id="s10-r-qc" style="left: 1560px; top: 230px; color: #4d6f98">퀘벡주<small>불어권</small></div>
+
+          <div class="s10-city" id="s10-mtl" style="left: 1334px; top: 305px"><span class="s10-pin" style="background: var(--fi)"></span>몬트리올</div>
+          <div class="s10-city" id="s10-tor" style="left: 666px; top: 607px"><span class="s10-pin" style="background: var(--red)"></span>토론토</div>
+          <div class="s10-city" id="s10-lon" style="left: 451px; top: 716px; font-size: 26px"><span class="s10-pin" style="background: var(--tdsb-ink); width: 22px; height: 22px; border-width: 4px"></span>런던</div>
+
+          <div id="s10-title">해법: <b>몬트리올</b>을 거쳐서</div>
+
+          <div id="s10-accueil">
+            <div class="fr">Classe d'accueil</div>
+            <div class="ko">웰컴클래스</div>
+            <div class="meta">불어교육청 배정 · 평균 10개월~1년+ 불어 집중</div>
+          </div>
+
+          <div id="s10-ok">
+            <svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="20" fill="#2e8b57" /><path d="M12 23 L19 30 L32 15" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            <span>FI / EF 전학 OK</span>
+          </div>
+          <div id="s10-plus">오히려 불어 성적 우수한 경우 많음</div>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          const N = window.__NARR["s10-montreal"], L = N.L, END = N.dur;
+          const route = document.getElementById("s10-route");
+          const LEN = 900; // generous upper bound of the curve length; dash = gap = LEN
+          route.setAttribute("stroke-dasharray", LEN + " " + LEN);
+
+          const tl = gsap.timeline({ paused: true });
+          tl.fromTo("#s10-map", { opacity: 0 }, { opacity: 1, duration: 0.6 }, 0);
+          tl.fromTo("#s10-title", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 0.2);
+          tl.fromTo(["#s10-r-on", "#s10-r-qc"], { opacity: 0 }, { opacity: 1, duration: 0.5, stagger: 0.2 }, 0.4);
+          tl.fromTo(["#s10-tor", "#s10-lon"], { opacity: 0, y: -10 }, { opacity: 1, y: 0, duration: 0.4, stagger: 0.15 }, 0.6);
+          tl.fromTo("#s10-mtl", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2.4)" }, L[0] + 1.6);
+          tl.set(["#s10-route", "#s10-arrow"], { opacity: 0 }, 0);
+
+          // "불어교육청에 보내면 웰컴클래스에…"
+          tl.fromTo("#s10-accueil", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, L[1] + 0.3);
+
+          // "영어권 이머전이나 EF로 옮겨도 문제없고" → draw the route to Toronto
+          tl.set("#s10-route", { opacity: 1 }, L[2]);
+          tl.fromTo("#s10-route", { strokeDashoffset: LEN }, { strokeDashoffset: 0, duration: 1.6, ease: "power2.inOut" }, L[2]);
+          tl.fromTo("#s10-arrow", { opacity: 0 }, { opacity: 1, duration: 0.2 }, L[2] + 1.5);
+          tl.fromTo("#s10-ok", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, L[2] + 1.7);
+
+          // "오히려 불어 성적이 우수한 경우가 많아요"
+          tl.fromTo("#s10-plus", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" }, L[3] + 0.2);
+
+          tl.to("#s10-scene", { opacity: 0, duration: 0.4, ease: "power2.in" }, END - 0.4);
+          window.__timelines["s10-montreal"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

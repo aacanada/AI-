@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template id="s06-scores-template">
+      <link rel="stylesheet" href="assets/shared.css" />
+      <style>
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-Medium.woff2") format("woff2"); font-weight: 500; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2"); font-weight: 600; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-Bold.woff2") format("woff2"); font-weight: 700; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2"); font-weight: 800; }
+        @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; }
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          background: var(--bg);
+          color: var(--ink);
+          font-family: "Pretendard", sans-serif;
+        }
+        #s06-scene {
+          position: absolute;
+          inset: 0;
+        }
+        #s06-head {
+          position: absolute;
+          left: 80px;
+          top: 64px;
+          display: flex;
+          align-items: center;
+          gap: 22px;
+        }
+        #s06-head-title {
+          font-size: 50px;
+          font-weight: 800;
+          letter-spacing: -0.02em;
+        }
+        .s06-pill {
+          padding: 8px 20px;
+          border-radius: 999px;
+          background: var(--ink);
+          color: var(--bg);
+          font-family: "Inter", "Pretendard", sans-serif;
+          font-size: 26px;
+          font-weight: 700;
+        }
+        #s06-eqao {
+          position: absolute;
+          left: 80px;
+          top: 132px;
+          font-size: 26px;
+          font-weight: 600;
+          color: var(--ink-soft);
+        }
+        #s06-viewport {
+          position: absolute;
+          left: 80px;
+          top: 190px;
+          width: 1000px;
+          height: 590px;
+          border-radius: 26px;
+          background: var(--bg-deep);
+          overflow: hidden;
+        }
+        #s06-zoom-outer {
+          position: absolute;
+          inset: 0;
+          transform-origin: 50% 50%;
+        }
+        #s06-zoom-inner {
+          position: absolute;
+          inset: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        #s06-card {
+          position: relative;
+          width: 928px;
+          padding: 14px;
+          background: #fff;
+          border-radius: 6px;
+          box-shadow: 0 22px 44px rgba(60, 45, 20, 0.22), 0 2px 6px rgba(60, 45, 20, 0.12);
+        }
+        #s06-imgbox {
+          position: relative;
+          width: 900px;
+          height: 438px;
+        }
+        #s06-imgbox img {
+          display: block;
+          width: 900px;
+          height: 438px;
+        }
+        #s06-ring {
+          position: absolute;
+          left: 0.4%;
+          top: 92.6%;
+          width: 61.4%;
+          height: 6%;
+          border: 4px solid var(--red);
+          border-radius: 10px;
+        }
+        #s06-source {
+          position: absolute;
+          left: 80px;
+          top: 796px;
+          font-size: 24px;
+          font-weight: 500;
+          color: var(--ink-soft);
+        }
+        #s06-panel {
+          position: absolute;
+          left: 1150px;
+          top: 170px;
+          width: 690px;
+          height: 620px;
+        }
+        #s06-ptitle {
+          font-size: 40px;
+          font-weight: 800;
+          letter-spacing: -0.02em;
+        }
+        #s06-psub {
+          margin-top: 6px;
+          font-size: 24px;
+          font-weight: 500;
+          color: var(--ink-soft);
+        }
+        #s06-groups {
+          margin-top: 20px;
+          height: 420px;
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+          border-bottom: 3px solid #cfc6b5;
+          padding: 0 6px;
+        }
+        .s06-group {
+          width: 212px;
+          height: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+        }
+        .s06-col {
+          width: 66px;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          align-items: center;
+        }
+        .s06-v {
+          font-family: "Inter", sans-serif;
+          font-variant-numeric: tabular-nums;
+          font-size: 30px;
+          font-weight: 800;
+          margin-bottom: 6px;
+        }
+        .s06-bar {
+          display: block;
+          width: 62px;
+          border-radius: 10px 10px 0 0;
+          transform-origin: 50% 100%;
+        }
+        #s06-names {
+          display: flex;
+          justify-content: space-between;
+          padding: 12px 6px 0;
+        }
+        #s06-names span {
+          width: 212px;
+          text-align: center;
+          font-size: 32px;
+          font-weight: 800;
+        }
+        #s06-legend {
+          margin-top: 14px;
+          display: flex;
+          gap: 26px;
+          justify-content: center;
+          font-family: "Inter", "Pretendard", sans-serif;
+          font-size: 22px;
+          font-weight: 700;
+        }
+        #s06-legend i {
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+          border-radius: 50%;
+          margin-right: 8px;
+        }
+        #s06-gap {
+          position: absolute;
+          right: 0;
+          top: 50px;
+          padding: 6px 16px;
+          border-radius: 16px;
+          background: var(--red);
+          color: #fff;
+          font-size: 24px;
+          font-weight: 800;
+        }
+      </style>
+
+      <div id="root" data-composition-id="s06-scores" data-width="1920" data-height="1080">
+        <div id="s06-scene">
+          <div id="s06-head">
+            <div id="s06-head-title">성적 비교 · 6학년 표준화 시험 EQAO</div>
+            <div class="s06-pill">2011-12</div>
+          </div>
+          <div id="s06-eqao">EQAO = 온타리오 주 표준화 시험 · 수치는 Level 3–4(기준 이상) 학생 비율</div>
+
+          <div id="s06-viewport">
+            <div id="s06-zoom-outer" data-layout-allow-overflow>
+              <div id="s06-zoom-inner">
+                <div id="s06-card" data-layout-allow-overflow>
+                  <div id="s06-imgbox">
+                    <img src="assets/capture_4.jpg" alt="TDSB Table 4" />
+                    <div id="s06-ring"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="s06-source">출처: TDSB Research Brief (2011-12) · Table 4 · Junior Division (Grade 6)</div>
+
+          <div id="s06-panel">
+            <div id="s06-ptitle">6학년 EQAO 기준 이상 비율</div>
+            <div id="s06-psub">Grade 6 · Levels 3 &amp; 4</div>
+            <div id="s06-groups">
+              <div class="s06-group">
+                <div class="s06-col"><span class="s06-v" style="color: var(--fi)">92</span><span class="s06-bar s06-fi" style="height: 322px; background: var(--fi)"></span></div>
+                <div class="s06-col"><span class="s06-v" style="color: var(--ef)">94</span><span class="s06-bar s06-ef" style="height: 329px; background: var(--ef)"></span></div>
+                <div class="s06-col"><span class="s06-v" style="color: var(--tdsb-ink)">74</span><span class="s06-bar s06-td" style="height: 259px; background: var(--tdsb)"></span></div>
+              </div>
+              <div class="s06-group">
+                <div class="s06-col"><span class="s06-v" style="color: var(--fi)">89</span><span class="s06-bar s06-fi" style="height: 312px; background: var(--fi)"></span></div>
+                <div class="s06-col"><span class="s06-v" style="color: var(--ef)">95</span><span class="s06-bar s06-ef" style="height: 333px; background: var(--ef)"></span></div>
+                <div class="s06-col"><span class="s06-v" style="color: var(--tdsb-ink)">75</span><span class="s06-bar s06-td" style="height: 263px; background: var(--tdsb)"></span></div>
+              </div>
+              <div class="s06-group">
+                <div class="s06-col"><span class="s06-v" style="color: var(--fi)">81</span><span class="s06-bar s06-fi" style="height: 284px; background: var(--fi)"></span></div>
+                <div class="s06-col"><span class="s06-v" style="color: var(--ef)">82</span><span class="s06-bar s06-ef" style="height: 287px; background: var(--ef)"></span></div>
+                <div class="s06-col"><span class="s06-v" style="color: var(--tdsb-ink)">62</span><span class="s06-bar s06-td" style="height: 217px; background: var(--tdsb)"></span></div>
+              </div>
+            </div>
+            <div id="s06-names"><span>읽기</span><span>쓰기</span><span>수학</span></div>
+            <div id="s06-legend">
+              <span><i style="background: var(--fi)"></i>FI</span>
+              <span><i style="background: var(--ef)"></i>EF</span>
+              <span><i style="background: var(--tdsb)"></i>TDSB 전체</span>
+            </div>
+            <div id="s06-gap">일반 평균 대비 약 +20%p</div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          const N = window.__NARR["s06-scores"], L = N.L, END = N.dur;
+          // capture_4: 743x362 shown at 900px, tilted -2deg. Junior Division (Grade 6) row y348, 2011-12 cols to x455.
+          const SRC_W = 743, SRC_H = 362, DISP_W = 900, TILT = (-2 * Math.PI) / 180;
+          function target(srcX, srcY) {
+            const K = DISP_W / SRC_W;
+            const ox = srcX * K - DISP_W / 2,
+              oy = srcY * K - (SRC_H * K) / 2;
+            return { x: -(ox * Math.cos(TILT) - oy * Math.sin(TILT)), y: -(ox * Math.sin(TILT) + oy * Math.cos(TILT)) };
+          }
+          const G6 = target(240, 325), Z = 1.4;
+
+          const tl = gsap.timeline({ paused: true });
+          tl.fromTo("#s06-head", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 0.1);
+          tl.fromTo("#s06-viewport", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 0.1);
+          tl.fromTo("#s06-card", { y: 60, opacity: 0, rotation: -4 }, { y: 0, opacity: 1, rotation: -2, duration: 0.7, ease: "power3.out" }, 0.2);
+          tl.fromTo("#s06-source", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 0.7);
+          tl.set(["#s06-panel", "#s06-gap", "#s06-eqao"], { opacity: 0 }, 0);
+          tl.set("#s06-groups .s06-bar", { scaleY: 0 }, 0);
+          tl.set("#s06-groups .s06-v", { opacity: 0 }, 0);
+          tl.set("#s06-ring", { opacity: 0, scale: 1.08 }, 0);
+
+          // "EQAO, 6학년 결과입니다" → push to the (already yellow) Grade 6 row and ring it.
+          tl.fromTo("#s06-eqao", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.4 }, L[1]);
+          tl.fromTo("#s06-zoom-outer", { scale: 1 }, { scale: Z, duration: 1.2, ease: "power2.inOut" }, L[1] - 0.1);
+          tl.fromTo("#s06-zoom-inner", { x: 0, y: 0 }, { x: G6.x, y: G6.y, duration: 1.2, ease: "power2.inOut" }, L[1] - 0.1);
+          tl.to("#s06-ring", { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, L[1] + 1.1);
+          tl.fromTo("#s06-panel", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, L[1] + 0.8);
+
+          // "읽기, 쓰기, 수학 모두 EF가 가장 높거나…" → FI and TDSB first, EF bars rise last.
+          const t = L[2];
+          tl.to(["#s06-groups .s06-fi", "#s06-groups .s06-td"], { scaleY: 1, duration: 0.8, ease: "power2.out", stagger: 0.08 }, t);
+          tl.to("#s06-groups .s06-ef", { scaleY: 1, duration: 0.9, ease: "back.out(1.4)", stagger: 0.15 }, t + 1.0);
+          tl.to("#s06-groups .s06-v", { opacity: 1, duration: 0.3, stagger: 0.05 }, t + 1.4);
+
+          // "일반 평균보다 20%p 가까이" → dim FI/EF slightly, flag the gap.
+          tl.fromTo("#s06-gap", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, L[3] + 0.3);
+          tl.fromTo("#s06-groups .s06-td", { opacity: 1 }, { opacity: 0.55, duration: 0.3, yoyo: true, repeat: 3 }, L[3] + 0.3);
+
+          tl.to("#s06-scene", { opacity: 0, duration: 0.4, ease: "power2.in" }, END - 0.4);
+          window.__timelines["s06-scores"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template id="s07-summary-template">
+      <link rel="stylesheet" href="assets/shared.css" />
+      <style>
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-Medium.woff2") format("woff2"); font-weight: 500; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2"); font-weight: 600; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-Bold.woff2") format("woff2"); font-weight: 700; }
+        @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2"); font-weight: 800; }
+        @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; }
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          background: var(--bg);
+          color: var(--ink);
+          font-family: "Pretendard", sans-serif;
+        }
+        #s07-wrap {
+          position: absolute;
+          inset: 0;
+          padding: 0 120px 160px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+        #s07-title {
+          font-size: 72px;
+          font-weight: 800;
+          letter-spacing: -0.03em;
+        }
+        #s07-cards {
+          margin-top: 56px;
+          display: grid;
+          grid-template-columns: 1.1fr 1.1fr 0.8fr;
+          gap: 36px;
+          perspective: 1600px;
+        }
+        .s07-card {
+          position: relative;
+          min-height: 470px;
+          padding: 44px 44px 40px;
+          border-radius: 28px;
+          background: var(--paper);
+          border: 3px solid;
+          box-shadow: 0 18px 40px rgba(60, 45, 20, 0.1);
+          display: flex;
+          flex-direction: column;
+        }
+        .s07-tag {
+          align-self: flex-start;
+          padding: 8px 20px;
+          border-radius: 999px;
+          color: #fff;
+          font-family: "Inter", "Pretendard", sans-serif;
+          font-size: 28px;
+          font-weight: 800;
+        }
+        .s07-who {
+          margin-top: 26px;
+          font-size: 50px;
+          font-weight: 800;
+          line-height: 1.22;
+          letter-spacing: -0.03em;
+        }
+        .s07-traits {
+          margin-top: 26px;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 12px;
+        }
+        .s07-traits span {
+          padding: 8px 18px;
+          border-radius: 12px;
+          background: var(--bg-deep);
+          font-size: 28px;
+          font-weight: 600;
+        }
+        .s07-star {
+          margin-top: auto;
+          align-self: flex-start;
+          padding: 10px 22px;
+          border-radius: 14px;
+          background: var(--red);
+          color: #fff;
+          font-size: 30px;
+          font-weight: 800;
+        }
+      </style>
+
+      <div id="root" data-composition-id="s07-summary" data-width="1920" data-height="1080">
+        <div id="s07-wrap">
+          <div id="s07-title">정리하면</div>
+          <div id="s07-cards">
+            <div class="s07-card" id="s07-fi" style="border-color: var(--fi)">
+              <span class="s07-tag" style="background: var(--fi)">FI 이머전</span>
+              <div class="s07-who" style="color: var(--fi)">캐나다 태생 고소득 가정</div>
+              <div class="s07-traits"><span>캐나다 태생</span><span>영어 가정</span><span>고소득</span></div>
+              <div class="s07-star" id="s07-star-fi">성취도 우수</div>
+            </div>
+            <div class="s07-card" id="s07-ef" style="border-color: var(--ef)">
+              <span class="s07-tag" style="background: var(--ef)">EF 익스텐디드</span>
+              <div class="s07-who" style="color: var(--ef)">교육열 높은 이민 가정</div>
+              <div class="s07-traits"><span>이민 가정</span><span>부모 학력 높음</span></div>
+              <div class="s07-star" id="s07-star-ef">성취도 우수</div>
+            </div>
+            <div class="s07-card" id="s07-core" style="border-color: #d8d0c0">
+              <span class="s07-tag" style="background: var(--tdsb-ink)">Core French</span>
+              <div class="s07-who" style="color: var(--tdsb-ink)">일반 캐나다 공립</div>
+              <div class="s07-traits"><span>불어 주 40분</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          const N = window.__NARR["s07-summary"], L = N.L, END = N.dur;
+          const tl = gsap.timeline({ paused: true });
+          tl.fromTo("#s07-title", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 0.1);
+          const flip = { rotationY: -90, opacity: 0 };
+          const flat = { rotationY: 0, opacity: 1, duration: 0.7, ease: "power3.out" };
+          tl.fromTo("#s07-fi", flip, flat, L[0] + 0.3);
+          tl.fromTo("#s07-ef", flip, flat, L[1]);
+          tl.fromTo("#s07-core", flip, flat, L[1] + 1.4);
+          tl.fromTo(["#s07-star-fi", "#s07-star-ef"], { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2.2)", stagger: 0.2 }, L[2] + 0.2);
+          tl.to("#s07-wrap", { opacity: 0, duration: 0.4, ease: "power2.in" }, END - 0.4);
+          window.__timelines["s07-summary"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>
