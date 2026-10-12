@@ -5,4 +5,4 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 python3 scripts/build_index.py
 CARVE="${HF_SKILLS:-$HOME/.claude/skills}/hyperframes-audio/scripts/carve.mjs"
-node "$CARVE" --comp index.html --bed bgm --voice narration ${HF_CORE:+--core "$HF_CORE"}
+node "$CARVE" --comp index.html --bed bgm --voice narration --strength 0.5 ${HF_CORE:+--core "$HF_CORE"}

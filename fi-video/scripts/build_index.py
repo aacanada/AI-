@@ -96,7 +96,7 @@ doc = f"""<!doctype html>
         data-start="0" data-duration="{total}" data-track-index="3" data-track-kind="captions" data-width="1920" data-height="1080"></div>
 
       <audio id="narration" src="assets/narration.wav" data-start="0" data-duration="{total}" data-track-index="10" data-volume="1"></audio>
-      <audio id="bgm" src="assets/bgm/bed.mp3" data-start="0" data-duration="{total}" data-track-index="11" data-volume="0.18"></audio>
+      <audio id="bgm" src="assets/bgm/bed.mp3" data-start="0" data-duration="{total}" data-track-index="11" data-volume="0.55"></audio>
     </div>
     <script>
       window.__timelines["main"] = gsap.timeline({{ paused: true }});
