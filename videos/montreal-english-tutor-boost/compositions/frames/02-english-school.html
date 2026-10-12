@@ -1,0 +1,297 @@
+<template id="f02-template">
+  <div id="root" data-composition-id="02-english-school" data-width="1080" data-height="1920" data-start="0" data-duration="11.564">
+    <style>
+      @font-face{font-family:"Pretendard";font-weight:800;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");}
+      @font-face{font-family:"Pretendard";font-weight:700;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");}
+      @font-face{font-family:"Pretendard";font-weight:500;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Medium.woff2") format("woff2");}
+
+      #root {
+        position: relative;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        font-family: "Pretendard", sans-serif;
+        color: #111111;
+      }
+      #f02-bg {
+        position: absolute;
+        inset: 0;
+        background: #fdfae7;
+      }
+      .f02-row {
+        position: absolute;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* eyebrow */
+      #f02-eyebrow-row { top: 250px; flex-direction: column; gap: 18px; }
+      #f02-accent { width: 60px; height: 4px; border-radius: 2px; background: #1e2bfa; }
+      #f02-eyebrow {
+        font-size: 36px; font-weight: 700; letter-spacing: 0.08em; color: #1e2bfa;
+      }
+
+      /* myth bubble */
+      #f02-myth-row { top: 420px; }
+      #f02-myth {
+        position: relative;
+        padding: 38px 56px;
+        border-radius: 14px;
+        background: rgba(30,43,250,0.04);
+        border: 1.5px solid rgba(30,43,250,0.2);
+      }
+      #f02-myth-tail {
+        position: absolute;
+        left: 90px;
+        bottom: -17px;
+        width: 30px;
+        height: 30px;
+        background: #f9f6e6;
+        border-right: 1.5px solid rgba(30,43,250,0.2);
+        border-bottom: 1.5px solid rgba(30,43,250,0.2);
+        transform: rotate(45deg);
+      }
+      #f02-myth-text {
+        position: relative;
+        display: block;
+        font-size: 64px;
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        white-space: nowrap;
+      }
+      #f02-strike {
+        position: absolute;
+        left: -14px;
+        right: -14px;
+        top: 50%;
+        height: 12px;
+        margin-top: -6px;
+        border-radius: 6px;
+        background: #dc2626;
+        transform-origin: left center;
+      }
+
+      /* stamp card */
+      #f02-stamp-row { top: 690px; }
+      #f02-stamp {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        padding: 30px 56px 30px 40px;
+        border-radius: 14px;
+        background: rgba(30,43,250,0.08);
+        border: 1.5px solid rgba(30,43,250,0.2);
+      }
+      #f02-school { width: 108px; height: 108px; flex: none; }
+      #f02-stamp-copy { display: flex; flex-direction: column; gap: 4px; }
+      #f02-stamp-eyebrow {
+        font-size: 38px; font-weight: 700; color: #1e2bfa; letter-spacing: 0.02em;
+      }
+      #f02-stamp-title {
+        font-size: 80px; font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; color: #111111;
+      }
+      #f02-check {
+        position: absolute;
+        top: -30px;
+        right: -30px;
+        width: 76px;
+        height: 76px;
+        border-radius: 50%;
+        background: #fdfae7;
+        border: 4px solid #059669;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #f02-check svg { width: 42px; height: 42px; }
+
+      /* kids' bubbles */
+      .f02-kid {
+        position: absolute;
+        padding: 18px 32px;
+        border-radius: 100px;
+        background: #fdfae7;
+        border: 2px solid rgba(30,43,250,0.35);
+        font-size: 46px;
+        font-weight: 700;
+        line-height: 1.1;
+        color: #1e2bfa;
+        white-space: nowrap;
+      }
+      #f02-kid-a { left: 36px; top: 602px; }
+      #f02-kid-b { left: 600px; top: 904px; }
+      #f02-kid-c { left: 120px; top: 912px; }
+
+      /* hero claim */
+      #f02-hero { position: absolute; left: 0; right: 0; top: 1010px; display: flex; flex-direction: column; align-items: center; }
+      #f02-hero-l1 { display: flex; align-items: baseline; justify-content: center; gap: 28px; }
+      #f02-hero-friends {
+        font-size: 84px; font-weight: 800; letter-spacing: -0.02em; color: #111111; line-height: 1;
+      }
+      #f02-count-wrap { display: flex; align-items: baseline; }
+      #f02-count {
+        display: inline-block;
+        width: 380px;
+        text-align: right;
+        font-size: 216px;
+        font-weight: 800;
+        line-height: 1;
+        letter-spacing: -0.03em;
+        color: #1e2bfa;
+        font-variant-numeric: tabular-nums;
+        transform-origin: center bottom;
+      }
+      #f02-count-suffix {
+        display: inline-block;
+        font-size: 140px;
+        font-weight: 800;
+        line-height: 1;
+        color: #1e2bfa;
+      }
+      #f02-hero-l2 {
+        margin-top: 18px;
+        font-size: 104px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.05; color: #111111;
+      }
+
+      /* equation chip */
+      #f02-chip-row { top: 1410px; }
+      #f02-chip {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+        padding: 24px 52px;
+        border-radius: 100px;
+        background: rgba(30,43,250,0.04);
+        border: 1.5px solid rgba(30,43,250,0.2);
+      }
+      #f02-eq {
+        display: inline-block;
+        font-size: 72px; font-weight: 800; line-height: 1; color: #9a9a9a;
+      }
+      #f02-chip-text {
+        font-size: 58px; font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; color: #111111; white-space: nowrap;
+      }
+
+      /* progress strip (frame 2 of 9) */
+      #f02-progress {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 240px;
+        height: 3px;
+        background: #1e2bfa;
+      }
+    </style>
+
+    <div id="f02-bg" class="clip" data-start="0" data-duration="11.564" data-track-index="0"></div>
+
+    <div id="f02-eyebrow-row" class="f02-row">
+      <div id="f02-accent"></div>
+      <div id="f02-eyebrow">오해 vs 사실</div>
+    </div>
+
+    <div id="f02-myth-row" class="f02-row">
+      <div id="f02-myth">
+        <span id="f02-myth-tail"></span>
+        <span id="f02-myth-text">몬트리올은 불어권이라…<span id="f02-strike"></span></span>
+      </div>
+    </div>
+
+    <div id="f02-stamp-row" class="f02-row">
+      <div id="f02-stamp">
+        <svg id="f02-school" viewBox="0 0 108 108" fill="none" stroke="#1e2bfa" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+          <path d="M54 10 V26" />
+          <path d="M54 10 H72 V20 H54" fill="rgba(30,43,250,0.15)" />
+          <path d="M14 50 L54 26 L94 50" />
+          <rect x="22" y="50" width="64" height="44" rx="4" fill="rgba(30,43,250,0.06)" />
+          <rect x="45" y="68" width="18" height="26" rx="2" />
+          <rect x="29" y="60" width="10" height="10" rx="2" />
+          <rect x="69" y="60" width="10" height="10" rx="2" />
+          <path d="M8 94 H100" />
+        </svg>
+        <div id="f02-stamp-copy">
+          <div id="f02-stamp-eyebrow">영어교육청 소속</div>
+          <div id="f02-stamp-title">영어학교</div>
+        </div>
+        <div id="f02-check">
+          <svg viewBox="0 0 42 42" fill="none" stroke="#059669" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 22 L17 31 L34 11" />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div id="f02-kid-a" class="f02-kid">Hi!</div>
+    <div id="f02-kid-b" class="f02-kid">Wanna play?</div>
+    <div id="f02-kid-c" class="f02-kid">Me too!</div>
+
+    <div id="f02-hero">
+      <div id="f02-hero-l1">
+        <span id="f02-hero-friends">친구들과</span>
+        <span id="f02-count-wrap"><span id="f02-count">0</span><span id="f02-count-suffix">%</span></span>
+      </div>
+      <div id="f02-hero-l2">영어로 소통</div>
+    </div>
+
+    <div id="f02-chip-row" class="f02-row">
+      <div id="f02-chip">
+        <span id="f02-eq">=</span>
+        <span id="f02-chip-text">영어권 도시와 똑같아요</span>
+      </div>
+    </div>
+
+    <div id="f02-progress"></div>
+
+    <script src="assets/vendor/gsap.min.js"></script>
+    <script>
+      (function () {
+        window.__timelines = window.__timelines || {};
+        var tl = gsap.timeline({ paused: true });
+        var DUR = 11.564;
+
+        // Scene 1 — myth bubble pops, red strike sweeps, bubble dims
+        tl.fromTo("#f02-accent", { scaleX: 0, transformOrigin: "50% 50%" }, { scaleX: 1, duration: 0.4, ease: "power2.out" }, 0.05);
+        tl.fromTo("#f02-eyebrow", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" }, 0.1);
+        tl.fromTo("#f02-myth", { opacity: 0, scale: 0.6, y: 30 }, { opacity: 1, scale: 1, y: 0, duration: 0.55, ease: "back.out(1.8)" }, 0.22);
+        tl.fromTo("#f02-strike", { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power2.inOut" }, 1.4);
+        tl.fromTo("#f02-myth", { opacity: 1 }, { opacity: 0.35, duration: 0.5, ease: "power1.out", immediateRender: false }, 1.95);
+
+        // Scene 2 — stamp card slams down, check badge appears
+        tl.fromTo("#f02-stamp", { opacity: 0, scale: 1.15, rotation: -2 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.42, ease: "power3.out" }, 2.9);
+        tl.fromTo("#f02-check", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, 4.02);
+
+        // Scene 3 — kids' bubbles pop (index-staggered), hero claim lands with 0→100 count
+        tl.fromTo("#f02-kid-a", { opacity: 0, scale: 0, rotation: -14 }, { opacity: 1, scale: 1, rotation: -7, duration: 0.45, ease: "back.out(1.8)" }, 5.36);
+        tl.fromTo("#f02-kid-b", { opacity: 0, scale: 0, rotation: 12 }, { opacity: 1, scale: 1, rotation: 5, duration: 0.45, ease: "back.out(1.8)" }, 5.48);
+        tl.fromTo("#f02-kid-c", { opacity: 0, scale: 0, rotation: -10 }, { opacity: 1, scale: 1, rotation: -4, duration: 0.45, ease: "back.out(1.8)" }, 5.6);
+
+        tl.fromTo("#f02-hero-friends", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 5.7);
+        tl.fromTo("#f02-hero-l2", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" }, 6.1);
+
+        var countEl = document.getElementById("f02-count");
+        var state = { value: 0 };
+        var COUNT_AT = 6.02, COUNT_DUR = 0.7, START_SCALE = 0.5;
+        tl.fromTo("#f02-count", { opacity: 0 }, { opacity: 1, duration: 0.12, ease: "none" }, COUNT_AT);
+        tl.fromTo(state, { value: 0 }, {
+          value: 100, duration: COUNT_DUR, ease: "power3.out",
+          onUpdate: function () { countEl.textContent = String(Math.round(state.value)); }
+        }, COUNT_AT);
+        tl.fromTo("#f02-count", { scale: START_SCALE }, { scale: 1, duration: COUNT_DUR, ease: "power3.out" }, COUNT_AT);
+        tl.fromTo("#f02-count-suffix", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, ease: "back.out(1.6)" }, COUNT_AT + COUNT_DUR);
+
+        // Scene 4 — equation chip slides up; "=" turns cobalt; hold
+        tl.fromTo("#f02-chip", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 8.52);
+        tl.fromTo("#f02-eq", { color: "#9a9a9a", scale: 1 }, { color: "#1e2bfa", scale: 1, duration: 0.01, ease: "none", immediateRender: false }, 10.08);
+        tl.fromTo("#f02-eq", { scale: 1.5 }, { scale: 1, duration: 0.45, ease: "back.out(2)", immediateRender: false }, 10.08);
+
+        tl.set({}, {}, DUR);
+        window.__timelines["02-english-school"] = tl;
+      })();
+    </script>
+  </div>
+</template>
