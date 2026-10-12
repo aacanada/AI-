@@ -28,194 +28,194 @@
    "id": "s2-route",
    "start": 5.858,
    "audio_start": 6.033,
-   "audio_dur": 10.057,
+   "audio_dur": 9.744,
    "captions": [
     {
      "text": "몬트리올에서 불어 5레벨",
      "start": 6.033,
-     "end": 9.783
+     "end": 9.504
     },
     {
      "text": "C16으로 LMIA 면제 취업비자",
-     "start": 9.783,
-     "end": 13.754
+     "start": 9.504,
+     "end": 13.579
     },
     {
      "text": "뉴브런즈윅에서 취업!",
-     "start": 13.754,
-     "end": 16.266
+     "start": 13.579,
+     "end": 15.952
     }
    ],
-   "duration": 10.408
+   "duration": 10.094
   },
   {
    "id": "s3-stream",
-   "start": 16.266,
-   "audio_start": 16.441,
-   "audio_dur": 6.818,
+   "start": 15.952,
+   "audio_start": 16.127,
+   "audio_dur": 6.922,
    "captions": [
     {
      "text": "이때 노릴 주정부이민은",
-     "start": 16.441,
-     "end": 18.531
+     "start": 16.127,
+     "end": 17.764
     },
     {
      "text": "Strategic Initiative 스트림",
-     "start": 18.531,
-     "end": 21.213
+     "start": 17.764,
+     "end": 20.62
     },
     {
      "text": "그중 불어권 근로자 경로",
-     "start": 21.213,
-     "end": 23.434
+     "start": 20.62,
+     "end": 23.225
     }
    ],
-   "duration": 7.168
+   "duration": 7.273
   },
   {
    "id": "s4-req",
-   "start": 23.434,
-   "audio_start": 23.609,
+   "start": 23.225,
+   "audio_start": 23.4,
    "audio_dur": 9.796,
    "captions": [
     {
      "text": "뉴브런즈윅 정규직 풀타임",
-     "start": 23.609,
-     "end": 26.883
+     "start": 23.4,
+     "end": 26.674
     },
     {
      "text": "뉴브런즈윅 거주 6개월",
-     "start": 26.883,
-     "end": 28.543
+     "start": 26.674,
+     "end": 28.334
     },
     {
      "text": "불어 NCLC 5",
-     "start": 28.543,
-     "end": 30.563
+     "start": 28.334,
+     "end": 30.354
     },
     {
      "text": "고졸 이상 + 경력 1년",
-     "start": 30.563,
-     "end": 33.579
+     "start": 30.354,
+     "end": 33.371
     }
    ],
-   "duration": 10.145
+   "duration": 10.146
   },
   {
    "id": "s5-nclc",
-   "start": 33.579,
-   "audio_start": 33.754,
-   "audio_dur": 8.307,
-   "captions": [
-    {
-     "text": "장점 첫째, 불어 기준이 낮다",
-     "start": 33.754,
-     "end": 36.273
-    },
-    {
-     "text": "익스프레스 엔트리 불어 선발은 NCLC 7",
-     "start": 36.273,
-     "end": 39.594
-    },
-    {
-     "text": "이 경로는 NCLC 5로 가능!",
-     "start": 39.594,
-     "end": 42.236
-    }
-   ],
-   "duration": 8.657
-  },
-  {
-   "id": "s6-flow",
-   "start": 42.236,
-   "audio_start": 42.411,
-   "audio_dur": 8.49,
-   "captions": [
-    {
-     "text": "둘째, 물 흐르듯 이어진다",
-     "start": 42.411,
-     "end": 45.697
-    },
-    {
-     "text": "C16으로 일하는 동안",
-     "start": 45.697,
-     "end": 48.007
-    },
-    {
-     "text": "거주·경력 요건이 저절로 충족",
-     "start": 48.007,
-     "end": 51.076
-    }
-   ],
-   "duration": 8.84
-  },
-  {
-   "id": "s7-priority",
-   "start": 51.076,
-   "audio_start": 51.251,
+   "start": 33.371,
+   "audio_start": 33.546,
    "audio_dur": 8.856,
    "captions": [
     {
+     "text": "장점 첫째, 불어 기준이 낮다",
+     "start": 33.546,
+     "end": 36.019
+    },
+    {
+     "text": "익스프레스 엔트리 불어 선발은 NCLC 7",
+     "start": 36.019,
+     "end": 39.792
+    },
+    {
+     "text": "이 경로는 NCLC 5로 가능!",
+     "start": 39.792,
+     "end": 42.576
+    }
+   ],
+   "duration": 9.205
+  },
+  {
+   "id": "s6-flow",
+   "start": 42.576,
+   "audio_start": 42.751,
+   "audio_dur": 8.176,
+   "captions": [
+    {
+     "text": "둘째, 물 흐르듯 이어진다",
+     "start": 42.751,
+     "end": 44.992
+    },
+    {
+     "text": "C16으로 일하는 동안",
+     "start": 44.992,
+     "end": 47.499
+    },
+    {
+     "text": "거주·경력 요건이 저절로 충족",
+     "start": 47.499,
+     "end": 51.102
+    }
+   ],
+   "duration": 8.526
+  },
+  {
+   "id": "s7-priority",
+   "start": 51.102,
+   "audio_start": 51.277,
+   "audio_dur": 8.02,
+   "captions": [
+    {
      "text": "셋째, 뉴브런즈윅은 불어권 우대",
-     "start": 51.251,
-     "end": 54.444
+     "start": 51.277,
+     "end": 54.075
     },
     {
      "text": "2026년 7월 최대 규모 초청",
-     "start": 54.444,
-     "end": 57.242
+     "start": 54.075,
+     "end": 56.792
     },
     {
      "text": "불어권 대상 254명",
-     "start": 57.242,
-     "end": 60.282
+     "start": 56.792,
+     "end": 59.472
     }
    ],
-   "duration": 9.206
+   "duration": 8.37
   },
   {
    "id": "s8-tip",
-   "start": 60.282,
-   "audio_start": 60.457,
-   "audio_dur": 9.273,
+   "start": 59.472,
+   "audio_start": 59.647,
+   "audio_dur": 7.941,
    "captions": [
     {
      "text": "단, C16은 말하기·듣기만",
-     "start": 60.457,
-     "end": 63.638
+     "start": 59.647,
+     "end": 61.934
     },
     {
      "text": "주정부는 읽기·쓰기까지 NCLC 5",
-     "start": 63.638,
-     "end": 67.435
+     "start": 61.934,
+     "end": 65.057
     },
     {
      "text": "몬트리올에서 4영역 모두 준비!",
-     "start": 67.435,
-     "end": 69.905
+     "start": 65.057,
+     "end": 67.763
     }
    ],
-   "duration": 9.623
+   "duration": 8.291
   },
   {
    "id": "s9-cta",
-   "start": 69.905,
-   "audio_start": 70.08,
-   "audio_dur": 3.709,
+   "start": 67.763,
+   "audio_start": 67.938,
+   "audio_dur": 3.579,
    "captions": [
     {
      "text": "불어로 여는 영주권 루트,",
-     "start": 70.08,
-     "end": 71.926
+     "start": 67.938,
+     "end": 69.575
     },
     {
      "text": "AA Canada와 상담하세요",
-     "start": 71.926,
-     "end": 74.049
+     "start": 69.575,
+     "end": 71.767
     }
    ],
-   "duration": 4.835
+   "duration": 4.707
   }
  ],
- "total": 74.74
+ "total": 72.47
 }

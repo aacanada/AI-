@@ -1,4 +1,5 @@
-# Usage: python3 tts.py <project-dir> [--force]
+# Usage: python3 tts.py <project-dir> [--force] [--only=s2-route,s5-nclc]
+# script.json may set "voice_settings" to override the defaults below (e.g. style 0 to cut fillers like "어", "네").
 """Generate per-scene ElevenLabs narration with character timestamps, then build
 narration.wav + timing.json (scene windows and caption chunk windows)."""
 import json, os, subprocess, sys, base64, pathlib
@@ -13,7 +14,7 @@ LEAD = 0.25  # silence before first word
 
 def tts(text, path):
     body = json.dumps({"text": text, "model_id": spec["model_id"],
-                       "voice_settings": {"stability": 0.45, "similarity_boost": 0.8, "style": 0.25, "use_speaker_boost": True}})
+                       "voice_settings": spec.get("voice_settings", {"stability": 0.45, "similarity_boost": 0.8, "style": 0.25, "use_speaker_boost": True})})
     r = subprocess.run(["curl", "-sS", "-f", "-X", "POST",
         f"https://api.elevenlabs.io/v1/text-to-speech/{spec['voice_id']}/with-timestamps?output_format=mp3_44100_128",
         "-H", f"xi-api-key: {key}", "-H", "Content-Type: application/json", "-d", body],
@@ -29,11 +30,12 @@ def dur(p):
 
 timing, t, parts = {"scenes": []}, LEAD, []
 force = "--force" in sys.argv
+only = next((a.split("=", 1)[1].split(",") for a in sys.argv if a.startswith("--only=")), [])  # re-generate just these scene ids
 for sc in spec["scenes"]:
     text = " ".join(c[1] for c in sc["chunks"])
     mp3 = out / f"{sc['id']}.mp3"
     aj = out / f"{sc['id']}.align.json"
-    if force or not mp3.exists():
+    if force or sc["id"] in only or not mp3.exists():
         aj.write_text(json.dumps(tts(text, mp3), ensure_ascii=False))
     al = json.loads(aj.read_text())
     d = dur(mp3)
