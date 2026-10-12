@@ -197,13 +197,14 @@ SHORTS.append(dict(
           <div class="abs" id="sc-b1" style="left:700px;top:636px;width:300px;height:184px;background:#4E8A1E;border-bottom:6px solid #FAF6EF"></div>
           <div class="abs" id="sc-b2" style="left:700px;top:452px;width:300px;height:184px;background:#3A7016;border-bottom:6px solid #FAF6EF"></div>
           <div class="abs" id="sc-b3" style="left:700px;top:360px;width:300px;height:92px;background:#9BC95E;border-bottom:6px solid #FAF6EF;border-radius:28px 28px 0 0"></div>
-          <div class="abs hd" id="sc-b0l" style="left:720px;top:1000px;width:260px;text-align:center;font-size:36px;color:#fff;line-height:1.3">한국 고1<br />+ 한국어<br />≈ 40</div>
+          <div class="abs hd" id="sc-b0l" style="left:720px;top:1000px;width:260px;text-align:center;font-size:36px;color:#fff;line-height:1.3">한국 고1<br />성적으로<br />≈ 40</div>
           <div class="abs hd" id="sc-b1l" style="left:720px;top:700px;width:260px;text-align:center;font-size:36px;color:#fff">1학기 +16</div>
           <div class="abs hd" id="sc-b2l" style="left:720px;top:516px;width:260px;text-align:center;font-size:36px;color:#fff">2학기 +16</div>
           <div class="abs hd" id="sc-b3l" style="left:720px;top:380px;width:260px;text-align:center;font-size:32px;color:#16324F">3학기 +8</div>
           <div class="abs h" id="sc-num" style="left:60px;top:520px;font-size:240px;color:#146A77;font-variant-numeric:tabular-nums;line-height:1">0</div>
           <div class="abs hd" id="sc-numl" style="left:70px;top:770px;font-size:60px">학점</div>
           <div class="chip solid" id="sc-three" style="left:60px;top:880px;font-size:46px;padding:14px 34px">계산상 3학기</div>
+          <div class="chip lake" id="sc-kor" style="left:60px;top:1200px;font-size:38px;padding:12px 28px">현지 한국어 10·11·12 수강 가능</div>
           <svg class="abs" id="sc-cap" style="left:70px;top:990px;width:220px;height:190px" viewBox="0 0 200 170"><path d="M100 20 L190 60 L100 100 L10 60 Z" fill="#16324F"/><path d="M50 80 L50 125 C 70 145, 130 145, 150 125 L150 80 L100 102 Z" fill="#16324F"/><path d="M180 64 L180 120" stroke="#E8572B" stroke-width="8" stroke-linecap="round"/></svg>
           <div class="abs b" id="sc-fn" style="left:60px;top:1300px;width:960px;font-size:34px;color:#4A5F78">* 영어 수준에 따라 기간은 달라질 수 있습니다</div>
 {end_html("sc", "우리 아이 졸업 계산 문의")}""",
@@ -217,9 +218,9 @@ count('#sc-num',0,40,R[2]+0.4,1.2,v=>Math.round(v));
 up('#sc-b1',R[3]+0.3,0.6);inn('#sc-b1l',R[3]+0.6,{y:10});count('#sc-num',40,56,R[3]+0.3,0.6,v=>Math.round(v));
 up('#sc-b2',R[3]+1.6,0.6);inn('#sc-b2l',R[3]+1.9,{y:10});count('#sc-num',56,72,R[3]+1.6,0.6,v=>Math.round(v));
 up('#sc-b3',R[3]+2.9,0.5);inn('#sc-b3l',R[3]+3.1,{y:10});count('#sc-num',72,80,R[3]+2.9,0.5,v=>Math.round(v));
-inn('#sc-three',R[3]+3.2,{s:0.6,y:0});inn('#sc-cap',R[3]+3.8,{s:0,y:0,d:0.6});
+inn('#sc-kor',R[3]+0.8,{s:0.6,y:0});inn('#sc-three',R[3]+3.2,{s:0.6,y:0});inn('#sc-cap',R[3]+3.8,{s:0,y:0,d:0.6});
 inn('#sc-fn',R[4],{y:12});
-outt(['#sc-top','#sc-track','#sc-b0','#sc-b1','#sc-b2','#sc-b3','#sc-b0l','#sc-b1l','#sc-b2l','#sc-b3l','#sc-num','#sc-numl','#sc-three','#sc-cap','#sc-fn'],R[5]-0.3);
+outt(['#sc-kor','#sc-top','#sc-track','#sc-b0','#sc-b1','#sc-b2','#sc-b3','#sc-b0l','#sc-b1l','#sc-b2l','#sc-b3l','#sc-num','#sc-numl','#sc-three','#sc-cap','#sc-fn'],R[5]-0.3);
 """ + end_js("sc", "R[5]-0.2"),
 ))
 

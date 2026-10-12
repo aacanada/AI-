@@ -103,13 +103,14 @@ R .blk span{position:absolute;left:24px;top:52px;font-weight:800;font-size:34px;
           <div class="abs hd" id="s09-t" style="left:120px;top:160px;font-size:66px">졸업이 빠릅니다</div>
           <div class="abs l" id="s09-endl" style="left:1440px;top:350px;width:360px;text-align:right;font-size:28px">80학점 = BC주 졸업</div>
           <div class="abs" id="s09-track" style="left:120px;top:420px;width:1680px;height:150px;border-radius:24px;background:#F1EADF;border:3px solid rgba(22,50,79,.22)"></div>
-          <div class="blk" id="s09-b0" style="left:120px;width:840px;background:#1F8A99;border-radius:24px 0 0 24px"><span>한국 고1 성적 + 한국어 학점 ≈ 40</span></div>
+          <div class="blk" id="s09-b0" style="left:120px;width:840px;background:#1F8A99;border-radius:24px 0 0 24px"><span>한국 고1 성적으로 인정 ≈ 40</span></div>
           <div class="blk" id="s09-b1" style="left:960px;width:336px;background:#5E9E22;border-left:5px solid #FAF6EF"><span>1학기 +16</span></div>
           <div class="blk" id="s09-b2" style="left:1296px;width:336px;background:#7FB236;border-left:5px solid #FAF6EF"><span>2학기 +16</span></div>
           <div class="blk" id="s09-b3" style="left:1632px;width:168px;background:#9BC95E;border-left:5px solid #FAF6EF;border-radius:0 24px 24px 0"><span>+8</span></div>
           <div class="abs h" id="s09-num" style="left:120px;top:610px;font-size:180px;color:#146A77;font-variant-numeric:tabular-nums;line-height:1">0</div>
           <div class="abs hd" id="s09-numl" style="left:420px;top:700px;font-size:48px">학점</div>
           <div class="chip solid" id="s09-three" style="left:640px;top:690px">계산상 3학기</div>
+          <div class="chip lake" id="s09-kor" style="left:960px;top:690px">현지 한국어 10·11·12 수강 가능</div>
           <svg class="abs" id="s09-cap" style="left:1600px;top:600px;width:200px;height:170px" viewBox="0 0 200 170"><path d="M100 20 L190 60 L100 100 L10 60 Z" fill="#16324F"/><path d="M50 80 L50 125 C 70 145, 130 145, 150 125 L150 80 L100 102 Z" fill="#16324F"/><path d="M180 64 L180 120" stroke="#E8572B" stroke-width="8" stroke-linecap="round"/></svg>
           <div class="abs b" id="s09-fn" style="left:120px;top:830px;font-size:30px;color:#4A5F78">* 영어 수준 · ESL 이수 여부에 따라 기간이 달라집니다</div>""",
     js="""
@@ -120,7 +121,7 @@ count('#s09-num',0,40,R[2]+0.5,1.2,v=>Math.round(v));
 grow('#s09-b1',R[3]+0.4,0.7);count('#s09-num',40,56,R[3]+0.4,0.7,v=>Math.round(v));
 grow('#s09-b2',R[3]+2.0,0.7);count('#s09-num',56,72,R[3]+2.0,0.7,v=>Math.round(v));
 grow('#s09-b3',R[3]+3.6,0.5);count('#s09-num',72,80,R[3]+3.6,0.5,v=>Math.round(v));
-inn('#s09-three',R[3]+3.0,{s:0.6,y:0});
+inn('#s09-kor',R[3]+1.0,{s:0.6,y:0});inn('#s09-three',R[3]+3.0,{s:0.6,y:0});
 inn('#s09-cap',R[3]+4.3,{s:0,y:0,d:0.6});
 inn('#s09-fn',R[4],{y:12});
 """,
