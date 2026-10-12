@@ -286,7 +286,7 @@
 
         // Scene 4 — equation chip slides up; "=" turns cobalt; hold
         tl.fromTo("#f02-chip", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 8.52);
-        tl.fromTo("#f02-eq", { color: "#9a9a9a", scale: 1 }, { color: "#1e2bfa", scale: 1, duration: 0.01, ease: "none", immediateRender: false }, 10.08);
+        tl.fromTo("#f02-eq", { color: "#9a9a9a" }, { color: "#1e2bfa", duration: 0.01, ease: "none", immediateRender: false }, 10.08);
         tl.fromTo("#f02-eq", { scale: 1.5 }, { scale: 1, duration: 0.45, ease: "back.out(2)", immediateRender: false }, 10.08);
 
         tl.set({}, {}, DUR);

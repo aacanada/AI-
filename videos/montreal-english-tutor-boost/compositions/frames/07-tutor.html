@@ -1,0 +1,388 @@
+<template id="f07-template">
+<script src="assets/vendor/gsap.min.js"></script>
+<style>
+@font-face{font-family:"Pretendard";font-weight:800;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");}
+@font-face{font-family:"Pretendard";font-weight:700;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");}
+@font-face{font-family:"Pretendard";font-weight:500;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Medium.woff2") format("woff2");}
+
+#root {
+  position: relative;
+  width: 1080px;
+  height: 1920px;
+  overflow: hidden;
+  font-family: "Pretendard", sans-serif;
+  color: #111111;
+}
+#f07-bg {
+  position: absolute;
+  inset: 0;
+  background: #fdfae7;
+}
+#f07-progress {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 840px; /* 7/9 of 1080 */
+  height: 3px;
+  background: #1e2bfa;
+}
+#f07-cam {
+  position: absolute;
+  inset: 0;
+  transform-origin: 540px 820px;
+}
+
+/* ---- header row: piggy -> arrow -> tutor card ---- */
+#f07-piggy {
+  position: absolute;
+  left: 60px;
+  top: 288px;
+  width: 156px;
+  height: 116px;
+  overflow: visible;
+}
+#f07-piggy .f07-pig-line {
+  fill: none;
+  stroke: #1e2bfa;
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+#f07-piggy .f07-pig-body {
+  fill: rgba(30,43,250,0.08);
+  stroke: #1e2bfa;
+  stroke-width: 5;
+  stroke-linejoin: round;
+}
+#f07-arrow {
+  position: absolute;
+  left: 224px;
+  top: 326px;
+  width: 92px;
+  height: 40px;
+  overflow: visible;
+}
+#f07-arrow path {
+  fill: none;
+  stroke: #1e2bfa;
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+#f07-head {
+  position: absolute;
+  left: 324px;
+  top: 270px;
+  width: 696px;
+  height: 152px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 0 40px;
+  background: rgba(30,43,250,0.04);
+  border: 1.5px solid rgba(30,43,250,0.2);
+  border-radius: 14px;
+}
+#f07-head-icon {
+  flex: 0 0 auto;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: rgba(30,43,250,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#f07-head-icon svg { width: 64px; height: 64px; overflow: visible; }
+#f07-head-icon .f07-ln {
+  fill: none;
+  stroke: #1e2bfa;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+#f07-head-icon .f07-book {
+  fill: #fdfae7;
+  stroke: #1e2bfa;
+  stroke-width: 4;
+  stroke-linejoin: round;
+}
+#f07-head-title {
+  font-size: 76px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #111111;
+  white-space: nowrap;
+}
+#f07-note {
+  position: absolute;
+  left: 326px;
+  top: 448px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: #6b6b6b;
+  white-space: nowrap;
+}
+#f07-note-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #1e2bfa;
+  opacity: 0.6;
+}
+
+/* ---- 2x2 benefit cards ---- */
+.f07-card {
+  position: absolute;
+  width: 460px;
+  height: 384px;
+  box-sizing: border-box;
+  padding: 40px 38px 34px;
+  background: rgba(30,43,250,0.04);
+  border: 1.5px solid rgba(30,43,250,0.2);
+  border-radius: 14px;
+  overflow: hidden;
+}
+#f07-c1 { left: 64px;  top: 612px; }
+#f07-c2 { left: 556px; top: 612px; }
+#f07-c3 { left: 64px;  top: 1020px; }
+#f07-c4 { left: 556px; top: 1020px; }
+.f07-accent {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 6px;
+  background: #1e2bfa;
+  transform-origin: left center;
+}
+.f07-icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgba(30,43,250,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.f07-icon svg { width: 60px; height: 60px; overflow: visible; }
+.f07-icon .f07-ln {
+  fill: none;
+  stroke: #1e2bfa;
+  stroke-width: 4.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.f07-icon .f07-dot { fill: #1e2bfa; }
+.f07-title {
+  margin-top: 28px;
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+  color: #111111;
+  word-break: keep-all;
+}
+.f07-sub {
+  margin-top: 14px;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.35;
+  color: #6b6b6b;
+  word-break: keep-all;
+}
+.f07-title-num { color: #1e2bfa; }
+</style>
+
+<div id="root" data-composition-id="07-tutor" data-start="0" data-duration="8.091" data-width="1080" data-height="1920">
+
+  <div id="f07-bg" class="clip" data-start="0" data-duration="8.091" data-track-index="0"></div>
+
+  <div id="f07-cam">
+    <!-- piggy bank -->
+    <svg id="f07-piggy" viewBox="0 0 156 116" xmlns="http://www.w3.org/2000/svg">
+      <path class="f07-pig-line" d="M 50 30 L 58 10 L 74 26" />
+      <ellipse class="f07-pig-body" cx="76" cy="62" rx="54" ry="40" />
+      <rect class="f07-pig-body" x="124" y="50" width="22" height="26" rx="8" />
+      <path class="f07-pig-line" d="M 62 34 L 88 34" />
+      <path class="f07-pig-line" d="M 48 98 L 48 110 M 102 98 L 102 110" />
+      <path class="f07-pig-line" d="M 22 58 Q 6 54 12 40" />
+      <circle cx="108" cy="52" r="4" fill="#1e2bfa" />
+    </svg>
+
+    <!-- arrow piggy -> tutor card -->
+    <svg id="f07-arrow" viewBox="0 0 92 40" xmlns="http://www.w3.org/2000/svg">
+      <path id="f07-arrow-shaft" d="M 4 20 L 84 20" />
+      <path id="f07-arrow-tip" d="M 70 7 L 85 20 L 70 33" />
+    </svg>
+
+    <!-- header card -->
+    <div id="f07-head">
+      <div id="f07-head-icon">
+        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+          <circle class="f07-ln" cx="22" cy="16" r="9" />
+          <path class="f07-ln" d="M 4 50 C 4 33 40 33 40 50" />
+          <path class="f07-book" d="M 32 40 L 46 35 L 60 40 L 60 58 L 46 53 L 32 58 Z" />
+          <path class="f07-ln" d="M 46 35 L 46 53" />
+        </svg>
+      </div>
+      <div id="f07-head-title">원어민 튜터</div>
+    </div>
+    <div id="f07-note"><span id="f07-note-dot"></span><span>아낀 학비로 주 4회 가능</span></div>
+
+    <!-- benefit cards -->
+    <div class="f07-card" id="f07-c1">
+      <div class="f07-accent"></div>
+      <div class="f07-icon">
+        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+          <circle class="f07-ln" cx="18" cy="20" r="8" />
+          <circle class="f07-ln" cx="46" cy="20" r="8" />
+          <path class="f07-ln" d="M 4 52 C 4 36 32 36 32 52" />
+          <path class="f07-ln" d="M 32 52 C 32 36 60 36 60 52" />
+        </svg>
+      </div>
+      <div class="f07-title"><span class="f07-title-num">1:1</span> 맞춤</div>
+      <div class="f07-sub">아이 수준에 딱 맞게</div>
+    </div>
+
+    <div class="f07-card" id="f07-c2">
+      <div class="f07-accent"></div>
+      <div class="f07-icon">
+        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+          <path class="f07-ln" d="M 32 18 C 24 12 12 12 6 14 L 6 50 C 12 48 24 48 32 54 C 40 48 52 48 58 50 L 58 14 C 52 12 40 12 32 18 Z" />
+          <path class="f07-ln" d="M 32 18 L 32 54" />
+        </svg>
+      </div>
+      <div class="f07-title">학교 수업 따라잡기</div>
+      <div class="f07-sub">숙제·읽기·쓰기</div>
+    </div>
+
+    <div class="f07-card" id="f07-c3">
+      <div class="f07-accent"></div>
+      <div class="f07-icon">
+        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+          <path class="f07-ln" d="M 14 10 L 50 10 Q 58 10 58 18 L 58 38 Q 58 46 50 46 L 30 46 L 16 57 L 16 46 L 14 46 Q 6 46 6 38 L 6 18 Q 6 10 14 10 Z" />
+          <circle class="f07-dot" cx="20" cy="28" r="3.5" />
+          <circle class="f07-dot" cx="32" cy="28" r="3.5" />
+          <circle class="f07-dot" cx="44" cy="28" r="3.5" />
+        </svg>
+      </div>
+      <div class="f07-title">말문 트기</div>
+      <div class="f07-sub">틀려도 괜찮은 대화 연습</div>
+    </div>
+
+    <div class="f07-card" id="f07-c4">
+      <div class="f07-accent"></div>
+      <div class="f07-icon">
+        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+          <path class="f07-ln" d="M 32 6 L 39.5 23 L 58 24.5 L 44 36.5 L 48.5 55 L 32 45 L 15.5 55 L 20 36.5 L 6 24.5 L 24.5 23 Z" />
+        </svg>
+      </div>
+      <div class="f07-title">자신감</div>
+      <div class="f07-sub">먼저 말하는 아이</div>
+    </div>
+  </div>
+
+  <div id="f07-progress" class="clip" data-start="0" data-duration="8.091" data-track-index="2"></div>
+</div>
+
+<script>
+(function () {
+  var DUR = 8.091;
+  var tl = gsap.timeline({ paused: true });
+
+  // --- svg-path-draw setup: measure every drawable stroke ---
+  function prep(el) {
+    var len = el.getTotalLength() * 1.05;
+    el.style.strokeDasharray = len + "";
+    el.style.strokeDashoffset = len + "";
+    return el;
+  }
+  var shaft = prep(document.getElementById("f07-arrow-shaft"));
+  var tip = prep(document.getElementById("f07-arrow-tip"));
+
+  // ===== Scene 1 (0.0–2.6s): piggy -> arrow -> tutor header -> note =====
+  // "아낀" 0.08s — piggy bank pops in
+  tl.fromTo("#f07-piggy",
+    { opacity: 0, scale: 0.7, transformOrigin: "50% 60%" },
+    { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.8)" }, 0.08);
+  // arrow draws right toward the header slot
+  tl.to(shaft, { strokeDashoffset: 0, duration: 0.5, ease: "power2.out" }, 0.45);
+  tl.to(tip, { strokeDashoffset: 0, duration: 0.3, ease: "power2.out" }, 0.82);
+
+  // "원어민" 1.00s — header card lands
+  tl.fromTo("#f07-head",
+    { opacity: 0, x: -28, scale: 0.97, transformOrigin: "0% 50%" },
+    { opacity: 1, x: 0, scale: 1, duration: 0.55, ease: "power3.out" }, 1.0);
+  tl.fromTo("#f07-head-title",
+    { opacity: 0, y: 18 },
+    { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 1.08);
+  // "튜터를" 1.38s — person+book glyph pops
+  tl.fromTo("#f07-head-icon",
+    { opacity: 0, scale: 0.5 },
+    { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, 1.38);
+
+  // "붙이면" 1.90s — small muted note settles
+  tl.fromTo("#f07-note",
+    { opacity: 0, y: 14 },
+    { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 1.9);
+
+  // empty skeleton slots for the 2x2 grid establish the region (dim)
+  var cards = ["#f07-c1", "#f07-c2", "#f07-c3", "#f07-c4"];
+  cards.forEach(function (sel, i) {
+    tl.fromTo(sel,
+      { opacity: 0, scale: 0.96, y: 16 },
+      { opacity: 0.35, scale: 0.96, y: 0, duration: 0.5, ease: "power2.out" }, 2.2 + i * 0.06);
+  });
+
+  // ===== Scene 2 (2.6–8.09s): cards light up one by one =====
+  var cues = [3.6, 4.66, 5.42, 6.34]; // "1:1" · "학교" · "영어도" · "빨라집니다"
+  cards.forEach(function (sel, i) {
+    var t = cues[i];
+    var card = document.querySelector(sel);
+    var icon = card.querySelector(".f07-icon");
+    var title = card.querySelector(".f07-title");
+    var sub = card.querySelector(".f07-sub");
+    var lines = card.querySelectorAll(".f07-icon .f07-ln");
+    var dots = card.querySelectorAll(".f07-icon .f07-dot");
+
+    // initial hidden content states (fromTo -> set at build time)
+    tl.fromTo(icon, { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, t);
+    tl.fromTo(title, { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, t + 0.08);
+    tl.fromTo(sub, { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, t + 0.16);
+
+    // card shell lights up: scale 0.96 -> 1 + opacity
+    tl.to(card, { opacity: 1, scale: 1, duration: 0.45, ease: "power3.out" }, t);
+
+    // icon strokes draw in
+    lines.forEach(function (ln, k) {
+      prep(ln);
+      tl.to(ln, { strokeDashoffset: 0, duration: 0.5, ease: "power2.out" }, t + 0.05 + k * 0.08);
+    });
+    if (dots.length) {
+      tl.fromTo(dots, { opacity: 0, scale: 0, transformOrigin: "50% 50%" },
+        { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(2.5)", stagger: 0.06 }, t + 0.35);
+    }
+
+    // accent line hidden until the 6.6s sweep
+    tl.fromTo(card.querySelector(".f07-accent"), { scaleX: 0 },
+      { scaleX: 1, duration: 0.45, ease: "power2.out" }, 6.6 + i * 0.07);
+  });
+
+  // gentle push-in through the hold
+  tl.fromTo("#f07-cam", { scale: 1 }, { scale: 1.025, duration: DUR - 2.6, ease: "none" }, 2.6);
+
+  // pad timeline to the full frame length
+  tl.set({}, {}, DUR);
+
+  window.__timelines = window.__timelines || {};
+  window.__timelines["07-tutor"] = tl;
+})();
+</script>
+</template>

@@ -1,0 +1,228 @@
+<template id="f08-template">
+<div id="root" data-composition-id="08-growth" data-start="0" data-duration="8.425" data-width="1080" data-height="1920">
+<script src="assets/vendor/gsap.min.js"></script>
+<style>
+@font-face{font-family:"Pretendard";font-weight:800;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");}
+@font-face{font-family:"Pretendard";font-weight:700;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");}
+@font-face{font-family:"Pretendard";font-weight:500;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Medium.woff2") format("woff2");}
+
+#root {
+  position: absolute;
+  left: 0; top: 0;
+  width: 1080px; height: 1920px;
+  overflow: hidden;
+  font-family: "Pretendard", sans-serif;
+  container-type: size;
+}
+.f08-bg {
+  position: absolute; left: 0; top: 0;
+  width: 1080px; height: 1920px;
+  background: #fdfae7;
+}
+.f08-cam {
+  position: absolute; left: 0; top: 0;
+  width: 1080px; height: 1920px;
+  transform-origin: 540px 800px;
+}
+/* lane cards — tinted card, no shadow */
+.f08-card {
+  position: absolute;
+  top: 200px;
+  width: 450px; height: 280px;
+  box-sizing: border-box;
+  padding: 34px 36px;
+  background: rgba(30,43,250,0.04);
+  border: 1.5px solid rgba(30,43,250,0.2);
+  border-radius: 14px;
+}
+#f08-card-school { left: 60px; }
+#f08-card-tutor { left: 570px; }
+.f08-glyph { width: 76px; height: 76px; display: block; }
+.f08-glyph * { fill: none; stroke: #1e2bfa; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+.f08-card-title {
+  margin-top: 18px;
+  font-size: 56px; font-weight: 700; line-height: 1.05;
+  letter-spacing: -0.02em; color: #111111;
+}
+.f08-card-sub {
+  margin-top: 14px;
+  font-size: 32px; font-weight: 500; line-height: 1.3;
+  color: #6b6b6b;
+}
+.f08-plus {
+  position: absolute;
+  left: 512px; top: 312px;
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: #1e2bfa;
+  color: #fdfae7;
+  font-size: 40px; font-weight: 700;
+  line-height: 54px; text-align: center;
+}
+/* chart */
+.f08-chart {
+  position: absolute; left: 0; top: 0;
+  width: 1080px; height: 1600px;
+  overflow: visible;
+}
+.f08-axis { fill: none; stroke: #9a9a9a; stroke-width: 3; stroke-linecap: round; }
+.f08-grid { fill: none; stroke: rgba(30,43,250,0.08); stroke-width: 2; }
+.f08-grey { fill: none; stroke: #9a9a9a; stroke-width: 6; stroke-linecap: round; stroke-dasharray: 14 14; }
+.f08-maskline { fill: none; stroke: #ffffff; stroke-width: 20; stroke-linecap: round; }
+.f08-blue { fill: none; stroke: #1e2bfa; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+.f08-area { fill: rgba(30,43,250,0.08); stroke: none; }
+.f08-arrow { fill: none; stroke: #1e2bfa; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+.f08-bracket { fill: none; stroke: #9a9a9a; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+.f08-adapt {
+  position: absolute;
+  left: 335px; top: 1372px;
+  width: 200px; text-align: center;
+  font-size: 32px; font-weight: 500; color: #6b6b6b;
+}
+.f08-skill {
+  position: absolute;
+  left: 640px; top: 618px;
+  width: 380px; text-align: right;
+  font-size: 46px; font-weight: 700; line-height: 1;
+  letter-spacing: -0.02em; color: #1e2bfa;
+  transform-origin: 100% 100%;
+}
+.f08-pill {
+  position: absolute;
+  left: 290px; top: 1452px;
+  width: 500px; height: 110px;
+  border-radius: 100px;
+  background: #1e2bfa;
+  color: #fdfae7;
+  font-size: 58px; font-weight: 700;
+  line-height: 110px; text-align: center;
+  letter-spacing: -0.02em;
+}
+.f08-progress {
+  position: absolute;
+  left: 0; top: 1917px;
+  width: 960px; height: 3px;
+  background: #1e2bfa;
+}
+</style>
+
+<div id="f08-bg" class="f08-bg clip" data-start="0" data-duration="8.425" data-track-index="0"></div>
+
+<div id="f08-cam" class="f08-cam">
+  <!-- lane card: school -->
+  <div id="f08-card-school" class="f08-card">
+    <svg class="f08-glyph" viewBox="0 0 76 76">
+      <path d="M8 34 L38 14 L68 34" />
+      <path d="M14 34 L14 66 L62 66 L62 34" />
+      <path d="M31 66 L31 50 L45 50 L45 66" />
+      <path d="M38 14 L38 4 L50 7 L38 10" />
+      <circle cx="38" cy="34" r="5" />
+    </svg>
+    <div class="f08-card-title">학교</div>
+    <div id="f08-sub-school" class="f08-card-sub">친구들과 매일 영어</div>
+  </div>
+
+  <div id="f08-plus" class="f08-plus">+</div>
+
+  <!-- lane card: tutor -->
+  <div id="f08-card-tutor" class="f08-card">
+    <svg class="f08-glyph" viewBox="0 0 76 76">
+      <circle cx="24" cy="18" r="9" />
+      <path d="M8 62 L8 46 C8 37 14 32 24 32 C34 32 40 37 40 46 L40 62" />
+      <path d="M46 30 L58 34 L70 30 L70 60 L58 64 L46 60 Z" />
+      <path d="M58 34 L58 64" />
+    </svg>
+    <div class="f08-card-title">튜터</div>
+    <div id="f08-sub-tutor" class="f08-card-sub">체계적으로</div>
+  </div>
+
+  <!-- chart (canvas-space coordinates) -->
+  <svg class="f08-chart" viewBox="0 0 1080 1600">
+    <defs>
+      <mask id="f08-grey-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="1080" height="1600">
+        <path id="f08-grey-reveal" class="f08-maskline" d="M110 1290 Q245 1288 360 1270 C560 1240 700 1200 800 1080 S950 860 990 830" />
+      </mask>
+    </defs>
+    <g id="f08-axes">
+      <path class="f08-grid" d="M110 1010 L1000 1010" />
+      <path class="f08-grid" d="M110 760 L1000 760" />
+      <path class="f08-axis" d="M110 700 L110 1320 L1010 1320" />
+    </g>
+    <path id="f08-area" class="f08-area" d="M110 1290 Q245 1288 360 1270 C440 1250 470 1080 560 960 S800 740 990 720 L990 1320 L110 1320 Z" />
+    <path id="f08-grey" class="f08-grey" mask="url(#f08-grey-mask)" d="M110 1290 Q245 1288 360 1270 C560 1240 700 1200 800 1080 S950 860 990 830" />
+    <!-- arrows from the two lanes meeting at the curve -->
+    <path id="f08-arrow-l" class="f08-arrow" d="M285 492 C285 800 340 1000 352 1238" />
+    <path id="f08-arrow-r" class="f08-arrow" d="M795 492 C795 820 420 1000 368 1238" />
+    <g transform="translate(352 1238) rotate(-2.9)"><path id="f08-head-l" class="f08-arrow" d="M-14 -16 L0 0 L14 -16" /></g>
+    <g transform="translate(368 1238) rotate(12.4)"><path id="f08-head-r" class="f08-arrow" d="M-14 -16 L0 0 L14 -16" /></g>
+    <path id="f08-blue" class="f08-blue" d="M110 1290 Q245 1288 360 1270 C440 1250 470 1080 560 960 S800 740 990 720" />
+    <circle id="f08-merge" cx="360" cy="1270" r="14" fill="#1e2bfa" style="transform-box: fill-box; transform-origin: 50% 50%;" />
+    <circle id="f08-end" cx="990" cy="720" r="16" fill="#1e2bfa" style="transform-box: fill-box; transform-origin: 50% 50%;" />
+    <!-- adaptation-period bracket under the start -->
+    <path id="f08-bracket" class="f08-bracket" d="M110 1340 L110 1358 L760 1358 L760 1340" />
+  </svg>
+
+  <div id="f08-adapt" class="f08-adapt">적응기</div>
+  <div id="f08-skill" class="f08-skill">영어 실력 ↑</div>
+  <div id="f08-pill" class="f08-pill">확실하게</div>
+</div>
+
+<div id="f08-progress" class="f08-progress"></div>
+
+<script>
+(function () {
+  window.__timelines = window.__timelines || {};
+  var tl = gsap.timeline({ paused: true });
+
+  // measured stroke lengths (svg-path-draw)
+  function prep(id) {
+    var p = document.getElementById(id);
+    var len = p.getTotalLength() * 1.02;
+    p.style.strokeDasharray = len + "";
+    p.style.strokeDashoffset = len + "";
+    return p;
+  }
+  var greyReveal = prep("f08-grey-reveal");
+  var blue = prep("f08-blue");
+  var arrowL = prep("f08-arrow-l");
+  var arrowR = prep("f08-arrow-r");
+
+  // slow continuous camera drift underneath
+  tl.fromTo("#f08-cam", { scale: 1 }, { scale: 1.03, duration: 8.425, ease: "none" }, 0);
+
+  // chart frame establishes early (hero area visible)
+  tl.fromTo("#f08-axes", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power1.out" }, 0.05);
+
+  // Scene 1 — school lane
+  tl.fromTo("#f08-card-school", { x: -70, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 0.28);
+  tl.fromTo("#f08-sub-school", { y: 18, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: "power2.out" }, 1.0);
+  tl.to(greyReveal, { strokeDashoffset: 0, duration: 1.6, ease: "sine.inOut" }, 2.46);
+  tl.fromTo("#f08-bracket", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power1.out" }, 3.0);
+  tl.fromTo("#f08-adapt", { y: 10, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: "power1.out" }, 3.05);
+
+  // Scene 2 — tutor lane, arrows meet at the curve
+  tl.fromTo("#f08-card-tutor", { x: 70, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 3.52);
+  tl.fromTo("#f08-plus", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: "back.out(2)" }, 3.75);
+  tl.fromTo("#f08-sub-tutor", { y: 18, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: "power2.out" }, 4.46);
+  tl.to(arrowL, { strokeDashoffset: 0, duration: 0.6, ease: "power2.out" }, 5.06);
+  tl.to(arrowR, { strokeDashoffset: 0, duration: 0.6, ease: "power2.out" }, 5.14);
+  tl.fromTo(["#f08-head-l", "#f08-head-r"], { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power1.out" }, 5.6);
+  tl.fromTo("#f08-merge", { scale: 0 }, { scale: 1, duration: 0.45, ease: "back.out(2.2)" }, 5.62);
+
+  // Scene 3 — the solid cobalt curve bends up sooner; adaptation shrinks
+  tl.to(blue, { strokeDashoffset: 0, duration: 0.75, ease: "power2.out" }, 6.06);
+  tl.to("#f08-grey", { opacity: 0.45, duration: 0.5, ease: "power1.out" }, 6.06);
+  tl.to(["#f08-arrow-l", "#f08-arrow-r", "#f08-head-l", "#f08-head-r"], { opacity: 0.25, duration: 0.5, ease: "power1.out" }, 6.1);
+  tl.to("#f08-bracket", { attr: { d: "M110 1340 L110 1358 L360 1358 L360 1340" }, stroke: "#1e2bfa", duration: 0.7, ease: "power3.inOut" }, 6.12);
+  tl.to("#f08-adapt", { x: -200, color: "#1e2bfa", duration: 0.7, ease: "power3.inOut" }, 6.12);
+  tl.fromTo("#f08-area", { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power1.out" }, 6.6);
+  tl.fromTo("#f08-end", { scale: 0 }, { scale: 1, duration: 0.45, ease: "back.out(2.2)" }, 6.55);
+  tl.fromTo("#f08-skill", { scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: "back.out(1.8)" }, 6.5);
+  tl.fromTo("#f08-pill", { y: 40, scale: 0.9, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.6, ease: "back.out(1.4)" }, 6.92);
+  // hold to end
+
+  window.__timelines["08-growth"] = tl;
+})();
+</script>
+</div>
+</template>
