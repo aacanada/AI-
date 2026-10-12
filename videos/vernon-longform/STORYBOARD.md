@@ -2,7 +2,7 @@
 format: 1920x1080
 duration: 8m11s
 message: "유럽 부모들이 고르는 캐나다의 휴양 도시. 한국 아이는 적게, 관리는 촘촘하게."
-arc: 훅 → 공감(두 마음) → 기준(대학) → 지역 공개 → 셀링포인트 6 → 증거(사례) → 비용 → CTA
+arc: 훅 → 공감(두 마음) → 기준(대학) → 지역 공개 → 추천 포인트 6 → 증거(사례) → 비용 → CTA
 audience: 중3~고1 자녀를 둔 한국 학부모
 mode: collaborative
 photo_rule: "A등급(01·01c·02·03·04·15·40)만 풀스크린. 나머지는 화면 40% 이하 카드. 자세한 내용은 ASSETS.md"
@@ -13,9 +13,9 @@ photo_rule: "A등급(01·01c·02·03·04·15·40)만 풀스크린. 나머지는 
 ## Decisions
 
 - **Message:** 유럽 부모들이 고르는 캐나다의 휴양 도시에서, 한국 아이는 적게, 관리는 촘촘하게.
-- **Audience · arc:** 중3~고1 학부모 · 불안(고교학점제) → 공감(두 마음) → 기준(대학) → 공개(버논) → 셀링포인트 6 → 증거(사례) → 비용 → 상담
+- **Audience · arc:** 중3~고1 학부모 · 불안(고교학점제) → 공감(두 마음) → 기준(대학) → 공개(버논) → 추천 포인트 6 → 증거(사례) → 비용 → 상담
 - **Format:** 1920×1080, 약 15분 40초, 한국어 내레이션 있음, 잔잔한 어쿠스틱 BGM, 하단 180px 자막 영역 비움
-- **Spine:** ① 버논 핀(지도 장면마다 같은 핀) ② 폴라로이드 스택(사진은 늘 기울어진 카드로 떨어져 쌓임) ③ SELLING POINT 스티커 6장(Frame 14에서 한데 모이는 콜백)
+- **Spine:** ① 버논 핀(지도 장면마다 같은 핀) ② 폴라로이드 스택(사진은 늘 기울어진 카드로 떨어져 쌓임) ③ 추천 포인트 스티커 6장(Frame 14에서 한데 모이는 콜백)
 - **Brand:** frame.md (Okanagan Postcard) — paper #FAF6EF · ink #16324F · lake #1F8A99 · sunset #E8572B · vine #7FB236 · Pretendard 900/800/500 · Yellowtail 스크립트
 - **Bans:** 그라데이션 텍스트, 네온, 빨간 경고 자막, 가짜 UI, 인종 표현, 기술 과목, 졸업률 수치, 커미션. 모션 실패 2가지 금지: 슬라이드쇼(매 장면 새 카드만 넘기기), 스크린세이버(의미 없는 움직임)
 - **Held frame:** Frame 11 마지막 "평범한 일상이 만든 결과" — 3초간 아무것도 움직이지 않고 문장만 남김
@@ -71,7 +71,7 @@ photo_rule: "A등급(01·01c·02·03·04·15·40)만 풀스크린. 나머지는 
 - motion: SVG 벡터 지도 줌(밴쿠버 → 켈로나 → 버논, 점선 비행 경로 드로잉) → 버논 핀 바운스 → 02 파노라마로 크로스 디졸브, 8초간 좌→우 패닝 + 인포 칩(인구 5.8만 / 오카나간 밸리 45만 / 켈로나 40~50분) 순차 팝 → 40 일러스트 지도로 전환, 칼라말카·오카나간 호수에 틸 글로우 → 2×2 사계절 그리드가 한 칸씩 플립 + 기온 라벨(여름 30~35°C / 겨울 0~5°C)
 - status: animated
 
-## Frame 5 — SELLING POINT 01: 영어만 쓰는 교실
+## Frame 5 — 추천 포인트 01: 영어만 쓰는 교실
 
 - src: compositions/05-sp1-english.html
 - motion_ref: blueprint dataviz-countup · rules counting-dynamic-scale, stat-bars-and-fills, multi-phase-camera
@@ -85,7 +85,7 @@ photo_rule: "A등급(01·01c·02·03·04·15·40)만 풀스크린. 나머지는 
 
 학교별 상한 수치는 확인 전까지 표기하지 않는다.
 
-## Frame 6 — SELLING POINT 02: 유럽 부모들이 고르는 곳
+## Frame 6 — 추천 포인트 02: 유럽 부모들이 고르는 곳
 
 - src: compositions/06-sp2-europe.html
 - motion_ref: rules svg-path-draw, spring-pop-entrance, center-outward-expansion
@@ -99,7 +99,7 @@ photo_rule: "A등급(01·01c·02·03·04·15·40)만 풀스크린. 나머지는 
 
 국가별 비율 수치를 교육청에서 받으면 원형 차트 1개 추가.
 
-## Frame 7 — SELLING POINT 03: 생활 수준이 높은 동네
+## Frame 7 — 추천 포인트 03: 생활 수준이 높은 동네
 
 - src: compositions/07-sp3-living.html
 - motion_ref: blueprint grid-card-assemble · rules multi-phase-camera, spring-pop-entrance, waterfall-entry
@@ -113,7 +113,7 @@ photo_rule: "A등급(01·01c·02·03·04·15·40)만 풀스크린. 나머지는 
 
 와이너리·골프장 사진이 없음 → 스톡 영상 2~3컷으로 보완(ASSETS.md 참고). 생활 수준 통계를 확보하면 그래픽 1장 추가.
 
-## Frame 8 — SELLING POINT 04: 캐나다 공교육 + 학교 안의 비교과
+## Frame 8 — 추천 포인트 04: 캐나다 공교육 + 학교 안의 비교과
 
 - src: compositions/08-sp4-school.html
 - motion_ref: blueprint spatial-pan-stations → grid-card-assemble · rules viewport-change, spring-pop-entrance
@@ -127,7 +127,7 @@ photo_rule: "A등급(01·01c·02·03·04·15·40)만 풀스크린. 나머지는 
 
 학교 카드: Vernon Secondary(1,075명, 최대 종합) / W.L. Seaton(1,000명, 예술·프랑스어 몰입) / Kalamalka(650명, 높은 학업 기준) / Clarence Fulton(775명, 운동·예술) / Charles Bloom(375명, 작은 마을 분위기). 목공·재봉·자동차 정비 등 기술 과목은 넣지 않는다.
 
-## Frame 9 — SELLING POINT 05: 빠른 졸업
+## Frame 9 — 추천 포인트 05: 빠른 졸업
 
 - src: compositions/09-sp5-graduation.html
 - motion_ref: blueprint dataviz-countup · rules stat-bars-and-fills, counting-dynamic-scale, physics-press-reaction
@@ -140,7 +140,7 @@ photo_rule: "A등급(01·01c·02·03·04·15·40)만 풀스크린. 나머지는 
 
 각주: "영어 수준·ESL 이수에 따라 기간이 달라집니다"
 
-## Frame 10 — SELLING POINT 06: 현지 한국인 선생님의 관리
+## Frame 10 — 추천 포인트 06: 현지 한국인 선생님의 관리
 
 - src: compositions/10-sp6-care.html
 - motion_ref: blueprint grid-card-assemble · rules stat-bars-and-fills, svg-path-draw, waterfall-entry
@@ -195,7 +195,7 @@ PLAN.md 6장 확인 전에는 빼고 렌더한다(총 15m10s).
 
 - src: compositions/14-cta.html
 - motion_ref: blueprint logo-assemble-lockup · rules center-outward-expansion, multi-phase-camera
-- scene: 셀링포인트 스티커 6개가 한 화면에 모임 → 호수 점프 사진 + AA캐나다 상담 안내
+- scene: 추천 포인트 스티커 6개가 한 화면에 모임 → 호수 점프 사진 + AA캐나다 상담 안내
 - duration: 50s
 - transition_in: crossfade
 - voiceover: "학교별 한국 학생 자리는 한정돼 있습니다. 지금 현황부터 확인해 보세요."

@@ -34,14 +34,14 @@ typography:
     family: Yellowtail
     weight: 400
     size: 72-140px
-    use: 영문 포인트 문구 1줄 (Take Flight!, Vernon, Selling Point)
+    use: 영문 포인트 문구 1줄 (Take Flight!, Vernon)
 spacing:
   safe-x: 120px
   safe-top: 96px
   caption-keepout-bottom: 180px
 components:
   polaroid: "흰 테두리 18px(하단 64px), 그림자 0 18px 40px rgba(22,50,79,.22), 회전 -8°~+8°, 손글씨 캡션"
-  sticker: "SELLING POINT 0N — sunset 배경 pill, 흰 글자 label, 회전 -4°, 테이프 질감 없음"
+  sticker: "추천 포인트 0N — sunset 배경 pill, 흰 글자 label, 회전 -4°, 테이프 질감 없음"
   chip: "paper 배경 + ink 2px 테두리 pill, label 타입"
   panel: "ink 92% 반투명 패널, 반경 28px, paper 텍스트"
   pin: "sunset 물방울 핀 + lake 펄스 링"
@@ -63,7 +63,7 @@ components:
 - 좌측 정렬 기본. 제목은 좌상단 safe 영역에 고정, 시각물은 우측/하단.
 - 하단 180px은 자막 영역. 핵심 정보 금지.
 - 한 장면에 sunset은 한 곳(스티커 또는 포컬 1개). 데이터 강조는 lake.
-- 반복 장치(spine): ① 버논 핀 — 지도 장면마다 같은 핀이 기준점 ② 폴라로이드 스택 — 사진은 늘 기울어진 카드로 떨어져 쌓임 ③ SELLING POINT 스티커 6장 — 마지막 장면에서 한데 모임.
+- 반복 장치(spine): ① 버논 핀 — 지도 장면마다 같은 핀이 기준점 ② 폴라로이드 스택 — 사진은 늘 기울어진 카드로 떨어져 쌓임 ③ 추천 포인트 스티커 6장 — 마지막 장면에서 한데 모임.
 
 ## Motion
 

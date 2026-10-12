@@ -218,7 +218,7 @@ R .stat .t{font-weight:500;font-size:24px;color:#FAF6EF}
 """,
     body="""
           <div class="panel" id="s05-panel" style="left:56px;top:56px;width:800px;height:830px"></div>
-          <div class="sticker" id="s05-st" style="left:100px;top:96px">SELLING POINT 01</div>
+          <div class="sticker" id="s05-st" style="left:100px;top:96px">추천 포인트 01</div>
           <div class="abs hd" id="s05-t" style="left:100px;top:160px;font-size:66px;color:#FAF6EF">영어만 쓰는 교실</div>
           <div class="abs" id="s05-grid" style="left:100px;top:270px;width:330px;height:330px"></div>
           <div class="abs h" id="s05-pct" style="left:470px;top:300px;font-size:150px;color:#7FD3DE;font-variant-numeric:tabular-nums">0%</div>
@@ -259,7 +259,7 @@ inn('#s05-circ',R[5],{s:0.3,y:0,d:0.7});inn('#s05-ce',R[5]+0.8,{y:16});
 
 # ---------------------------------------------------------------- 06 SP2
 S["06-sp2-europe"] = dict(
-    bg="""        <div class="wipe"></div>""",
+    bg="""        <div class="wipe" data-layout-allow-overflow></div>""",
     css="""
 R .arc{fill:none;stroke:#E8572B;stroke-width:8;stroke-linecap:round}
 """,
@@ -278,7 +278,7 @@ R .arc{fill:none;stroke:#E8572B;stroke-width:8;stroke-linecap:round}
             <div class="abs hd" id="s06-vl" style="left:250px;top:300px;font-size:36px">VERNON</div>
             <div class="abs hd" id="s06-el" style="left:1400px;top:470px;font-size:40px">EUROPE</div>
           </div>
-          <div class="sticker" id="s06-st" style="left:120px;top:96px">SELLING POINT 02</div>
+          <div class="sticker" id="s06-st" style="left:120px;top:96px">추천 포인트 02</div>
           <div class="abs hd" id="s06-t" style="left:120px;top:160px;font-size:68px">유럽 부모들이 고르는 곳</div>
           <div class="pol" id="s06-p1" style="left:160px;top:520px;width:560px;height:330px"><div class="ph"><img src="{P}13-group-photo-lake.jpg" alt="" /></div><div class="cap">Vernon international students</div></div>
           <div class="pol" id="s06-p2" style="left:760px;top:540px;width:230px;height:320px"><div class="ph"><img src="{P}12-dock-group.jpg" alt="" /></div></div>
@@ -319,7 +319,7 @@ R .res b{display:inline-block;width:46px;height:46px;border-radius:50%;backgroun
 """,
     body=f"""
           <div class="abs" id="s07-col" style="left:0;top:0;width:730px;height:1080px;overflow:hidden"><img src="{P}03-magical-hillside.jpg" alt="" id="s07-colimg" style="position:absolute;left:-160px;top:0;height:1260px;width:auto" /></div>
-          <div class="sticker" id="s07-st" style="left:800px;top:96px">SELLING POINT 03</div>
+          <div class="sticker" id="s07-st" style="left:800px;top:96px">추천 포인트 03</div>
           <div class="abs hd" id="s07-t" style="left:800px;top:160px;font-size:66px">생활 수준이 높은 동네</div>
           <div class="bub" id="s07-b1" style="left:900px;top:380px">작은 도시면 시골 아니에요?</div>
           <div class="abs" id="s07-no" style="left:1500px;top:330px;width:250px;height:250px;border-radius:50%;border:10px solid #E8572B;color:#E8572B;font-weight:900;font-size:76px;display:flex;align-items:center;justify-content:center">아니요</div>

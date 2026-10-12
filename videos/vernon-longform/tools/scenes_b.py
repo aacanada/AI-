@@ -29,7 +29,7 @@ _acad_html = "\n".join(
 )
 
 S["08-sp4-school"] = dict(
-    bg="""        <div class="wipe"></div>
+    bg="""        <div class="wipe" data-layout-allow-overflow></div>
         <div class="glow" style="left:600px;top:500px;width:700px;height:700px"></div>""",
     css="""
 R .sc{width:460px;height:400px;padding:14px}
@@ -41,7 +41,7 @@ R .ac b{position:absolute;left:28px;top:28px;width:52px;height:52px;border-radiu
 R .ac span{position:absolute;left:28px;top:96px;font-weight:800;font-size:34px;white-space:nowrap}
 """,
     body=f"""
-          <div class="sticker" id="s08-st" style="left:120px;top:96px">SELLING POINT 04</div>
+          <div class="sticker" id="s08-st" style="left:120px;top:96px">추천 포인트 04</div>
           <div class="abs hd" id="s08-t" style="left:120px;top:160px;width:900px;font-size:66px">캐나다 학생과 같은 교실</div>
           <div class="abs b" id="s08-t2" style="left:122px;top:250px;font-size:36px;color:#4A5F78">국제학교가 아닌 정규 공립학교</div>
           <div class="pol" id="s08-p1" style="left:1130px;top:150px;width:640px;height:500px"><div class="ph"><img src="{P}16-classroom-overhead.jpg" alt="" /></div><div class="cap">same classroom</div></div>
@@ -99,7 +99,7 @@ R .blk{position:absolute;top:420px;height:150px}
 R .blk span{position:absolute;left:24px;top:52px;font-weight:800;font-size:34px;color:#fff;white-space:nowrap}
 """,
     body="""
-          <div class="sticker" id="s09-st" style="left:120px;top:96px">SELLING POINT 05</div>
+          <div class="sticker" id="s09-st" style="left:120px;top:96px">추천 포인트 05</div>
           <div class="abs hd" id="s09-t" style="left:120px;top:160px;font-size:66px">졸업이 빠릅니다</div>
           <div class="abs l" id="s09-endl" style="left:1440px;top:350px;width:360px;text-align:right;font-size:28px">80학점 = BC주 졸업</div>
           <div class="abs" id="s09-track" style="left:120px;top:420px;width:1680px;height:150px;border-radius:24px;background:#F1EADF;border:3px solid rgba(22,50,79,.22)"></div>
@@ -163,7 +163,7 @@ R .stp .sn{font-weight:900;font-size:48px}
 R .stp .sd{font-weight:500;font-size:28px;margin-top:10px;line-height:1.5}
 """,
     body=f"""
-          <div class="sticker" id="s10-st" style="left:120px;top:96px">SELLING POINT 06</div>
+          <div class="sticker" id="s10-st" style="left:120px;top:96px">추천 포인트 06</div>
           <div class="abs hd" id="s10-t" style="left:120px;top:160px;font-size:66px">현지 한국인 선생님의 관리</div>
           <div class="card" id="s10-o1" style="left:120px;top:320px;width:430px;height:150px;padding:30px"><div class="l" style="font-size:22px;color:#146A77">SCHOOL DISTRICT 22</div><div class="hd" style="font-size:44px;margin-top:6px">버논 교육청</div></div>
           <div class="abs h" id="s10-plus" style="left:580px;top:345px;font-size:80px;color:#1F8A99">+</div>
@@ -324,7 +324,7 @@ _sp = []
 for i, t in enumerate(SPS):
     x = 120 + (i % 3) * 580
     y = 260 + (i // 3) * 240
-    _sp.append(f'<div class="card spc" id="s14-p{i}" style="left:{x}px;top:{y}px"><div class="sticker" style="left:30px;top:30px;font-size:20px">SELLING POINT 0{i + 1}</div><div class="hd" style="position:absolute;left:30px;top:100px;font-size:40px">{t}</div></div>')
+    _sp.append(f'<div class="card spc" id="s14-p{i}" style="left:{x}px;top:{y}px"><div class="sticker" style="left:30px;top:30px;font-size:20px">추천 포인트 0{i + 1}</div><div class="hd" style="position:absolute;left:30px;top:100px;font-size:40px">{t}</div></div>')
 _sp_html = "\n".join("          " + x for x in _sp)
 
 S["14-cta"] = dict(
