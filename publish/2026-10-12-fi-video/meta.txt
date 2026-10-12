@@ -1,0 +1,9 @@
+type: longform
+title: 무상교육으로 가는 사립학교급 공립학교? (본편)
+channels: youtube
+visibility: public
+publish_order: 1
+linked_to: (none)
+files: video.mp4 (1920x1080, 3:21, 37MB), thumbnail.jpg (1280x720), upload-text.txt
+source: aacanada/AI- branch claude/optimistic-rubin-8izy9g, fi-video/
+notes: 숏폼 2026-10-12-fi-shorts 가 이 본편을 '관련 동영상'으로 연결합니다. 이 본편을 먼저 게시하고 published.md 에 유튜브 주소를 적어 주세요.
