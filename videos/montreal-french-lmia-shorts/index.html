@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>몬트리올 불어 루트 · 자녀무상교육 장기플랜</title>
+    <script src="assets/vendor/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Pretendard"; font-weight: 500; src: url("assets/fonts/Pretendard-Medium.woff2") format("woff2"); }
+      @font-face { font-family: "Pretendard"; font-weight: 700; src: url("assets/fonts/Pretendard-Bold.woff2") format("woff2"); }
+      @font-face { font-family: "Pretendard"; font-weight: 800; src: url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2"); }
+      @font-face { font-family: "Pretendard"; font-weight: 900; src: url("assets/fonts/Pretendard-Black.woff2") format("woff2"); }
+      :root {
+        --navy: #0b1730; --navy2: #132a52; --ink: #ffffff; --muted: #b9c6dd;
+        --red: #e63946; --blue: #2f6bff; --gold: #ffd23f; --green: #2ec27e; --card: #172c55;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--navy); }
+      body { font-family: "Pretendard", sans-serif; color: var(--ink); word-break: keep-all; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: var(--navy); }
+      .clip { position: absolute; inset: 0; }
+      .y { color: var(--gold); }
+
+      /* background */
+      #bg { background: radial-gradient(1200px 900px at 85% 10%, #1d3f7a 0%, rgba(29,63,122,0) 60%),
+                        radial-gradient(900px 700px at 0% 100%, #3a1530 0%, rgba(58,21,48,0) 65%),
+                        linear-gradient(180deg, var(--navy) 0%, var(--navy2) 100%); }
+      #grid { position: absolute; inset: 0; opacity: 0.07;
+              background-image: linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px);
+              background-size: 90px 90px; }
+      #brand { position: absolute; left: 0; right: 0; top: 150px; text-align: center; font-weight: 800; font-size: 30px;
+               letter-spacing: 0.18em; color: var(--muted); }
+      #brand b { color: var(--red); }
+
+      /* captions: TOP band (Shorts UI covers the bottom) */
+      .cap { display: flex; justify-content: center; align-items: flex-start; padding-top: 215px; }
+      .cap-box { width: 980px; min-height: 250px; display: flex; align-items: center; justify-content: center; text-align: center;
+                 padding: 28px 40px; border-radius: 34px; background: rgba(5, 12, 28, 0.82);
+                 border: 3px solid rgba(255,255,255,0.12); }
+      .cap-text { font-size: 76px; font-weight: 900; line-height: 1.22; letter-spacing: -0.02em; }
+      .cap-text .hl { color: var(--gold); }
+
+      /* scene stage: between caption band and Shorts bottom UI */
+      .scene { }
+      .stage { position: absolute; left: 60px; right: 60px; top: 560px; height: 880px; }
+
+      /* s1 */
+      .pill { position: absolute; left: 0; right: 0; top: 0; margin: 0 auto; width: 640px; text-align: center; padding: 18px 0;
+              border-radius: 999px; background: var(--red); font-size: 40px; font-weight: 800; }
+      .s1-q { position: absolute; left: 0; right: 0; top: 180px; text-align: center; }
+      .s1-qline { font-size: 150px; font-weight: 900; line-height: 1.15; letter-spacing: -0.03em; }
+      .s1-answer { position: absolute; left: 0; right: 0; top: 130px; text-align: center; opacity: 0; }
+      .s1-pin { display: flex; justify-content: center; }
+      .s1-city { font-size: 200px; font-weight: 900; letter-spacing: -0.04em; line-height: 1.1; color: var(--gold); }
+      .s1-bar { width: 520px; height: 18px; margin: 18px auto 0; background: var(--red); border-radius: 9px; }
+      .s1-sub { margin-top: 30px; font-size: 44px; font-weight: 800; letter-spacing: 0.3em; color: var(--muted); }
+
+      /* s2 */
+      .s2-chart { position: absolute; left: 0; right: 0; top: 30px; padding: 50px 50px 60px; border-radius: 40px; background: var(--card); }
+      .chart-title { font-size: 44px; font-weight: 800; color: var(--muted); margin-bottom: 40px; }
+      .bar-row { display: flex; align-items: center; gap: 30px; margin: 34px 0; }
+      .bar-label { width: 230px; font-size: 54px; font-weight: 800; }
+      .bar-label.hlc { color: var(--gold); }
+      .bar-track { position: relative; flex: 1; height: 90px; }
+      .bar { position: absolute; left: 0; top: 0; height: 90px; border-radius: 16px; background: #5b6d8f; transform-origin: 0 50%; }
+      #s2-b1 { width: 100%; } #s2-b2 { width: 92%; } #s2-b3 { width: 52%; background: var(--gold); }
+      .bar-tag { position: absolute; left: 56%; top: 8px; padding: 10px 26px; border-radius: 14px; background: var(--red);
+                 font-size: 46px; font-weight: 900; }
+      .s2-weapon { position: absolute; left: 0; right: 0; top: 60px; text-align: center; opacity: 0; }
+      .fr-badge { width: 300px; height: 300px; margin: 0 auto; border-radius: 50%; background: var(--blue); display: flex;
+                  align-items: center; justify-content: center; font-size: 150px; font-weight: 900; border: 12px solid #fff; }
+      .weapon-text { margin-top: 60px; font-size: 130px; font-weight: 900; letter-spacing: -0.03em; }
+      .weapon-sub { margin-top: 30px; font-size: 44px; font-weight: 700; color: var(--muted); }
+
+      /* s3 */
+      .route { position: absolute; left: 0; right: 0; top: 0; }
+      .node { display: flex; align-items: center; gap: 34px; padding: 30px 40px; border-radius: 30px; background: var(--card);
+              border: 3px solid rgba(255,255,255,0.1); }
+      .node .num { flex: 0 0 96px; height: 96px; border-radius: 50%; background: var(--blue); display: flex; align-items: center;
+                   justify-content: center; font-size: 54px; font-weight: 900; }
+      .nt { font-size: 56px; font-weight: 900; line-height: 1.2; }
+      .ns { font-size: 38px; font-weight: 700; color: var(--muted); margin-top: 6px; }
+      .node-win { background: var(--gold); color: #10203f; border-color: var(--gold); }
+      .node-win .num { background: var(--red); color: #fff; }
+      .node-win .ns { color: #3a4a6b; }
+      .link { width: 10px; height: 44px; margin: 0 0 0 82px; background: var(--blue); border-radius: 5px; transform-origin: 50% 0; }
+
+      /* s4 */
+      .lmia-card { position: absolute; left: 0; right: 0; top: 0; padding: 50px 56px; border-radius: 40px; background: var(--card); }
+      .lmia-title { font-size: 150px; font-weight: 900; letter-spacing: -0.02em; line-height: 1; }
+      .lmia-sub { font-size: 46px; font-weight: 700; color: var(--muted); margin: 22px 0 30px; }
+      .lmia-sub b { color: #fff; }
+      .burden { position: relative; font-size: 56px; font-weight: 800; padding: 22px 0; border-top: 2px solid rgba(255,255,255,0.12); }
+      .burden span { position: relative; }
+      .strike { position: absolute; left: -10px; top: 50%; width: 640px; height: 12px; margin-top: -6px; background: var(--red);
+                border-radius: 6px; transform-origin: 0 50%; }
+      .stamp { position: absolute; right: -10px; top: 420px; width: 280px; height: 280px; border-radius: 50%; border: 16px solid var(--red);
+               display: flex; align-items: center; justify-content: center; font-size: 100px; font-weight: 900; color: var(--red);
+               background: rgba(11,23,48,0.85); opacity: 0; }
+      .s4-up { position: absolute; left: 0; right: 0; top: 760px; text-align: center; font-size: 56px; font-weight: 900; color: var(--green); opacity: 0; }
+
+      /* s5 */
+      .s5-head { position: absolute; left: 0; right: 0; top: 0; text-align: center; font-size: 56px; font-weight: 800; color: var(--muted); }
+      .check { position: absolute; left: 0; right: 0; display: flex; align-items: center; gap: 36px; padding: 40px 44px; border-radius: 34px;
+               background: var(--card); border: 3px solid rgba(255,255,255,0.1); opacity: 0; }
+      #s5-c1 { top: 120px; } #s5-c2 { top: 370px; } #s5-c3 { top: 620px; }
+      .cb { flex: 0 0 110px; height: 110px; border-radius: 26px; background: var(--green); display: flex; align-items: center;
+            justify-content: center; font-size: 74px; font-weight: 900; }
+      .ct { font-size: 62px; font-weight: 900; line-height: 1.2; }
+      .cs { font-size: 40px; font-weight: 700; color: var(--muted); margin-top: 8px; }
+
+      /* s6 */
+      .vs-wrap { position: absolute; left: 0; right: 0; top: 0; height: 640px; }
+      .col { position: absolute; top: 0; width: 430px; height: 640px; border-radius: 40px; padding: 50px 30px; text-align: center; opacity: 0; }
+      .col-bad { left: 0; background: #3b1a2c; border: 4px solid var(--red); }
+      .col-good { right: 0; background: #14382c; border: 4px solid var(--green); }
+      .col-h { font-size: 50px; font-weight: 900; }
+      .arrow { font-size: 200px; font-weight: 900; line-height: 1.2; }
+      .arrow.down { color: var(--red); } .arrow.up { color: var(--green); }
+      .col-big { font-size: 60px; font-weight: 900; line-height: 1.25; }
+      .vs { position: absolute; left: 0; right: 0; top: 260px; margin: 0 auto; width: 130px; height: 130px; border-radius: 50%;
+            background: #fff; color: var(--navy); display: flex; align-items: center; justify-content: center; font-size: 56px;
+            font-weight: 900; opacity: 0; }
+      .s6-sum { position: absolute; left: 0; right: 0; top: 720px; text-align: center; font-size: 84px; font-weight: 900; opacity: 0; }
+
+      /* s7 */
+      .tl-axis { position: absolute; right: 0; top: 0; font-size: 36px; font-weight: 700; color: var(--muted); }
+      .track { position: absolute; left: 0; right: 0; opacity: 0; }
+      #s7-tb { top: 70px; } #s7-ta { top: 400px; }
+      .track-h { font-size: 52px; font-weight: 900; margin-bottom: 24px; }
+      .seg-row { position: relative; display: flex; height: 150px; }
+      .seg { height: 150px; display: flex; align-items: center; justify-content: center; font-size: 40px; font-weight: 900;
+             text-align: center; padding: 0 16px; transform-origin: 0 50%; }
+      .seg-blue { width: 300px; background: var(--blue); border-radius: 24px 0 0 24px; }
+      .seg-gold { width: 660px; overflow: hidden; white-space: nowrap; justify-content: flex-start; padding-left: 34px; background: var(--gold); color: #10203f; border-radius: 0 24px 24px 0; }
+      .seg-gray { width: 400px; background: #4a5a78; border-radius: 24px 0 0 24px; }
+      .seg-gray2 { width: 400px; background: #6d7c99; border-radius: 0 24px 24px 0; }
+      .endcap { position: absolute; left: 790px; top: 0; height: 150px; width: 170px; display: flex; align-items: center; justify-content: center;
+                font-size: 48px; font-weight: 900; color: var(--red); border-left: 10px solid var(--red); opacity: 0; }
+      .s7-note { position: absolute; left: 0; right: 0; top: 740px; text-align: center; font-size: 58px; font-weight: 900; color: var(--gold); opacity: 0; }
+
+      /* s8 */
+      .cta-logo { position: absolute; left: 0; right: 0; top: 60px; text-align: center; font-size: 150px; font-weight: 900; letter-spacing: -0.02em; }
+      .cta-sub { position: absolute; left: 0; right: 0; top: 290px; text-align: center; font-size: 42px; font-weight: 800; color: var(--muted); }
+      .cta-cities { position: absolute; left: 0; right: 0; top: 370px; text-align: center; font-size: 42px; font-weight: 800; color: var(--gold); }
+      .cta-btn { position: absolute; left: 0; right: 0; top: 520px; margin: 0 auto; width: 900px; text-align: center; padding: 44px 0;
+                 border-radius: 999px; background: var(--red); font-size: 56px; font-weight: 900; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="69.92" data-width="1080" data-height="1920">
+      <div id="bg" class="clip" data-start="0" data-duration="69.92" data-track-index="0"><div id="grid"></div><div id="brand"><b>AA</b> CANADA · 몬트리올 불어 루트</div></div>
+      <section id="s1-hook" class="clip scene" data-start="0" data-duration="5.519" data-track-index="1"><div class="stage" id="s1-hook-in">
+  <div class="pill" id="s1-pill">캐나다 자녀무상교육 · 장기플랜</div>
+  <div class="s1-q" id="s1-q">
+    <div class="s1-qline">가장 싸게,</div>
+    <div class="s1-qline">가장 오래?</div>
+  </div>
+  <div class="s1-answer" id="s1-answer">
+    <div class="s1-pin"><svg viewBox="0 0 24 24" width="120" height="120"><path fill="#E63946" d="M12 2C7.6 2 4 5.6 4 10c0 5.6 8 12 8 12s8-6.4 8-12c0-4.4-3.6-8-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg></div>
+    <div class="s1-city">몬트리올</div>
+    <div class="s1-bar" id="s1-bar"></div>
+    <div class="s1-sub">MONTRÉAL · QUÉBEC</div>
+  </div>
+</div></section>
+      <section id="s2-montreal" class="clip scene" data-start="5.519" data-duration="7.769" data-track-index="1"><div class="stage" id="s2-montreal-in">
+  <div class="s2-chart" id="s2-chart">
+    <div class="chart-title">자녀 동반 체류비 · 상대 비교</div>
+    <div class="bar-row"><div class="bar-label">밴쿠버</div><div class="bar-track"><div class="bar" id="s2-b1"></div></div></div>
+    <div class="bar-row"><div class="bar-label">토론토</div><div class="bar-track"><div class="bar" id="s2-b2"></div></div></div>
+    <div class="bar-row"><div class="bar-label hlc">몬트리올</div><div class="bar-track"><div class="bar bar-win" id="s2-b3"></div><div class="bar-tag" id="s2-tag">최저</div></div></div>
+  </div>
+  <div class="s2-weapon" id="s2-weapon">
+    <div class="fr-badge">FR</div>
+    <div class="weapon-text">불어 = <span class="y">무기</span></div>
+    <div class="weapon-sub">불어권이라 피할 곳이 아니라, 활용할 곳</div>
+  </div>
+</div></section>
+      <section id="s3-route" class="clip scene" data-start="13.288" data-duration="10.981" data-track-index="1"><div class="stage" id="s3-route-in">
+  <div class="route">
+    <div class="node" id="s3-n1"><div class="num">1</div><div><div class="nt">몬트리올에서 불어 공부</div><div class="ns">퀘벡 정부 불어수업 활용</div></div></div>
+    <div class="link" id="s3-l1"></div>
+    <div class="node" id="s3-n2"><div class="num">2</div><div><div class="nt">중하 레벨 불어회화</div><div class="ns">NCLC 5 수준</div></div></div>
+    <div class="link" id="s3-l2"></div>
+    <div class="node" id="s3-n3"><div class="num">3</div><div><div class="nt">영어권 지역으로 이동</div><div class="ns">밴쿠버 · 토론토 · 런던</div></div></div>
+    <div class="link" id="s3-l3"></div>
+    <div class="node node-win" id="s3-n4"><div class="num">✓</div><div><div class="nt">LMIA 면제 취업비자</div><div class="ns">Francophone Mobility</div></div></div>
+  </div>
+</div></section>
+      <section id="s4-lmia" class="clip scene" data-start="24.269" data-duration="8.788" data-track-index="1"><div class="stage" id="s4-lmia-in">
+  <div class="lmia-card" id="s4-card">
+    <div class="lmia-title">LMIA</div>
+    <div class="lmia-sub">노동시장영향평가 · <b>고용주</b>가 신청</div>
+    <div class="burden" id="s4-i1"><span>서류 · 구인광고 증빙</span><i class="strike" id="s4-x1"></i></div>
+    <div class="burden" id="s4-i2"><span>신청비 CAD $1,000</span><i class="strike" id="s4-x2"></i></div>
+    <div class="burden" id="s4-i3"><span>수개월 심사 대기</span><i class="strike" id="s4-x3"></i></div>
+  </div>
+  <div class="stamp" id="s4-stamp">면제</div>
+  <div class="s4-up" id="s4-up">고용주 부담 0 → 취업 경쟁력 ↑</div>
+</div></section>
+      <section id="s5-benefits" class="clip scene" data-start="33.057" data-duration="14.169" data-track-index="1"><div class="stage" id="s5-benefits-in">
+  <div class="s5-head" id="s5-head">취업비자 보유 기간 동안</div>
+  <div class="check" id="s5-c1"><div class="cb">✓</div><div><div class="ct">자녀 무상교육 계속</div><div class="cs">공립 초·중·고</div></div></div>
+  <div class="check" id="s5-c2"><div class="cb">✓</div><div><div class="ct">대학은 영주권자 학비</div><div class="cs">영주권 없이도 적용 가능</div></div></div>
+  <div class="check" id="s5-c3"><div class="cb">✓</div><div><div class="ct">영주권 진행에도 유리</div><div class="cs">캐나다 경력 + 불어</div></div></div>
+</div></section>
+      <section id="s6-money" class="clip scene" data-start="47.226" data-duration="7.481" data-track-index="1"><div class="stage" id="s6-money-in">
+  <div class="vs-wrap">
+    <div class="col col-bad" id="s6-left">
+      <div class="col-h">학생으로 체류</div>
+      <div class="arrow down">↓</div>
+      <div class="col-big"><div>매년</div><div>학비 지출</div></div>
+    </div>
+    <div class="vs" id="s6-vs">VS</div>
+    <div class="col col-good" id="s6-right">
+      <div class="col-h">취업으로 체류</div>
+      <div class="arrow up">↑</div>
+      <div class="col-big"><div>매달</div><div>급여 수입</div></div>
+    </div>
+  </div>
+  <div class="s6-sum" id="s6-sum">금액 차이 = <span class="y">엄청남</span></div>
+</div></section>
+      <section id="s7-pgwp" class="clip scene" data-start="54.707" data-duration="11.034" data-track-index="1"><div class="stage" id="s7-pgwp-in">
+  <div class="tl-axis">시간 →</div>
+  <div class="track" id="s7-tb">
+    <div class="track-h y">불어 루트 · LMIA 면제</div>
+    <div class="seg-row">
+      <div class="seg seg-blue" id="s7-b1">어학 1~2년</div>
+      <div class="seg seg-gold" id="s7-b2"><span>취업비자</span><span id="s7-b2t">&nbsp;· 일하는 한 계속 ∞</span></div>
+    </div>
+  </div>
+  <div class="track" id="s7-ta">
+    <div class="track-h">일반 유학 → PGWP</div>
+    <div class="seg-row">
+      <div class="seg seg-gray" id="s7-a1">유학 1~3년</div>
+      <div class="seg seg-gray2" id="s7-a2">PGWP 최대 3년</div>
+      <div class="endcap" id="s7-end">끝</div>
+    </div>
+  </div>
+  <div class="s7-note" id="s7-note">취업은 더 빠르게 · 기간 제한 없이</div>
+</div></section>
+      <section id="s8-cta" class="clip scene" data-start="65.741" data-duration="4.179" data-track-index="1"><div class="stage" id="s8-cta-in">
+  <div class="cta-logo" id="s8-logo">AA CANADA</div>
+  <div class="cta-sub" id="s8-sub">캐나다 자녀무상교육 · 유학 후 이민 · 영주권</div>
+  <div class="cta-cities" id="s8-cities">몬트리올 · 밴쿠버 · 토론토 · 런던</div>
+  <div class="cta-btn" id="s8-btn">몬트리올 불어 루트 상담 신청</div>
+</div></section>
+      <div id="cap-0-0" class="clip cap" data-start="0.25" data-duration="1.753" data-track-index="2"><div class="cap-box" id="cap-0-0-box"><span class="cap-text">캐나다 자녀무상교육,</span></div></div>
+      <div id="cap-0-1" class="clip cap" data-start="2.003" data-duration="1.718" data-track-index="2"><div class="cap-box" id="cap-0-1-box"><span class="cap-text"><span class="hl">가장 싸게</span> 오래 있는 방법?</span></div></div>
+      <div id="cap-0-2" class="clip cap" data-start="3.721" data-duration="1.798" data-track-index="2"><div class="cap-box" id="cap-0-2-box"><span class="cap-text">정답은 <span class="hl">몬트리올</span>입니다</span></div></div>
+      <div id="cap-1-0" class="clip cap" data-start="5.694" data-duration="2.171" data-track-index="2"><div class="cap-box" id="cap-1-0-box"><span class="cap-text"><span class="hl">몬트리올</span>은 자녀 동반으로</span></div></div>
+      <div id="cap-1-1" class="clip cap" data-start="7.865" data-duration="2.09" data-track-index="2"><div class="cap-box" id="cap-1-1-box"><span class="cap-text"><span class="hl">가장 저렴하게</span> 갈 수 있는 도시</span></div></div>
+      <div id="cap-1-2" class="clip cap" data-start="9.955" data-duration="1.486" data-track-index="2"><div class="cap-box" id="cap-1-2-box"><span class="cap-text"><span class="hl">불어</span>권이라 망설여지시나요?</span></div></div>
+      <div id="cap-1-3" class="clip cap" data-start="11.441" data-duration="1.847" data-track-index="2"><div class="cap-box" id="cap-1-3-box"><span class="cap-text">그 <span class="hl">불어</span>가 바로 <span class="hl">무기</span>입니다</span></div></div>
+      <div id="cap-2-0" class="clip cap" data-start="13.463" data-duration="3.518" data-track-index="2"><div class="cap-box" id="cap-2-0-box"><span class="cap-text">부모는 <span class="hl">불어</span>를 공부해서</span></div></div>
+      <div id="cap-2-1" class="clip cap" data-start="16.981" data-duration="1.416" data-track-index="2"><div class="cap-box" id="cap-2-1-box"><span class="cap-text"><span class="hl">중하 레벨</span> 회화만 되면</span></div></div>
+      <div id="cap-2-2" class="clip cap" data-start="18.397" data-duration="1.835" data-track-index="2"><div class="cap-box" id="cap-2-2-box"><span class="cap-text">영어권으로 이동하면서</span></div></div>
+      <div id="cap-2-3" class="clip cap" data-start="20.232" data-duration="4.037" data-track-index="2"><div class="cap-box" id="cap-2-3-box"><span class="cap-text"><span class="hl">LMIA 면제</span> 취업비자로 전환!</span></div></div>
+      <div id="cap-3-0" class="clip cap" data-start="24.444" data-duration="2.74" data-track-index="2"><div class="cap-box" id="cap-3-0-box"><span class="cap-text">LMIA는 취업비자를 위해</span></div></div>
+      <div id="cap-3-1" class="clip cap" data-start="27.184" data-duration="1.997" data-track-index="2"><div class="cap-box" id="cap-3-1-box"><span class="cap-text">고용주가 거쳐야 하는 절차</span></div></div>
+      <div id="cap-3-2" class="clip cap" data-start="29.181" data-duration="2.206" data-track-index="2"><div class="cap-box" id="cap-3-2-box"><span class="cap-text">면제되면 <span class="hl">고용주 부담 제로</span></span></div></div>
+      <div id="cap-3-3" class="clip cap" data-start="31.387" data-duration="1.67" data-track-index="2"><div class="cap-box" id="cap-3-3-box"><span class="cap-text">취업이 <span class="hl">훨씬 유리</span>해집니다</span></div></div>
+      <div id="cap-4-0" class="clip cap" data-start="33.232" data-duration="2.252" data-track-index="2"><div class="cap-box" id="cap-4-0-box"><span class="cap-text">취업비자가 있는 동안</span></div></div>
+      <div id="cap-4-1" class="clip cap" data-start="35.484" data-duration="1.777" data-track-index="2"><div class="cap-box" id="cap-4-1-box"><span class="cap-text">자녀무상교육은 <span class="hl">계속!</span></span></div></div>
+      <div id="cap-4-2" class="clip cap" data-start="37.261" data-duration="1.358" data-track-index="2"><div class="cap-box" id="cap-4-2-box"><span class="cap-text">자녀가 대학에 가면</span></div></div>
+      <div id="cap-4-3" class="clip cap" data-start="38.619" data-duration="3.901" data-track-index="2"><div class="cap-box" id="cap-4-3-box"><span class="cap-text">영주권 없이도 <span class="hl">영주권자 학비</span></span></div></div>
+      <div id="cap-4-4" class="clip cap" data-start="42.52" data-duration="4.706" data-track-index="2"><div class="cap-box" id="cap-4-4-box"><span class="cap-text">영주권 진행에도 <span class="hl">유리한</span> 경우가 많아요</span></div></div>
+      <div id="cap-5-0" class="clip cap" data-start="47.401" data-duration="3.32" data-track-index="2"><div class="cap-box" id="cap-5-0-box"><span class="cap-text">매년 학비를 내면서 사는 것과</span></div></div>
+      <div id="cap-5-1" class="clip cap" data-start="50.721" data-duration="2.137" data-track-index="2"><div class="cap-box" id="cap-5-1-box"><span class="cap-text">풀타임으로 벌면서 사는 것</span></div></div>
+      <div id="cap-5-2" class="clip cap" data-start="52.858" data-duration="1.849" data-track-index="2"><div class="cap-box" id="cap-5-2-box"><span class="cap-text">금액 차이는 <span class="hl">엄청납니다</span></span></div></div>
+      <div id="cap-6-0" class="clip cap" data-start="54.882" data-duration="3.355" data-track-index="2"><div class="cap-box" id="cap-6-0-box"><span class="cap-text">어학연수 <span class="hl">1~2년</span> 후 <span class="hl">바로 전환</span></span></div></div>
+      <div id="cap-6-1" class="clip cap" data-start="58.237" data-duration="2.311" data-track-index="2"><div class="cap-box" id="cap-6-1-box"><span class="cap-text">PGWP보다 취업이 빠르고</span></div></div>
+      <div id="cap-6-2" class="clip cap" data-start="60.548" data-duration="2.531" data-track-index="2"><div class="cap-box" id="cap-6-2-box"><span class="cap-text">최대 3년 제한인 PGWP와 달리</span></div></div>
+      <div id="cap-6-3" class="clip cap" data-start="63.079" data-duration="2.662" data-track-index="2"><div class="cap-box" id="cap-6-3-box"><span class="cap-text">일하는 한, <span class="hl">기간 제한 없음</span></span></div></div>
+      <div id="cap-7-0" class="clip cap" data-start="65.916" data-duration="1.289" data-track-index="2"><div class="cap-box" id="cap-7-0-box"><span class="cap-text"><span class="hl">몬트리올</span> <span class="hl">불어</span> 루트,</span></div></div>
+      <div id="cap-7-1" class="clip cap" data-start="67.205" data-duration="2.03" data-track-index="2"><div class="cap-box" id="cap-7-1-box"><span class="cap-text"><span class="hl">AA Canada</span>와 상담하세요</span></div></div>
+      <audio id="narration" src="assets/audio/narration.wav" data-start="0" data-duration="69.92" data-track-index="9"></audio>
+    </div>
+    <script>
+      const TIMING = {"scenes": [{"id": "s1-hook", "start": 0.0, "audio_start": 0.25, "audio_dur": 5.094, "captions": [{"text": "캐나다 자녀무상교육,", "start": 0.25, "end": 2.003}, {"text": "가장 싸게 오래 있는 방법?", "start": 2.003, "end": 3.721}, {"text": "정답은 몬트리올입니다", "start": 3.721, "end": 5.519}], "duration": 5.519}, {"id": "s2-montreal", "start": 5.519, "audio_start": 5.694, "audio_dur": 7.419, "captions": [{"text": "몬트리올은 자녀 동반으로", "start": 5.694, "end": 7.865}, {"text": "가장 저렴하게 갈 수 있는 도시", "start": 7.865, "end": 9.955}, {"text": "불어권이라 망설여지시나요?", "start": 9.955, "end": 11.441}, {"text": "그 불어가 바로 무기입니다", "start": 11.441, "end": 13.288}], "duration": 7.769}, {"id": "s3-route", "start": 13.288, "audio_start": 13.463, "audio_dur": 10.632, "captions": [{"text": "부모는 불어를 공부해서", "start": 13.463, "end": 16.981}, {"text": "중하 레벨 회화만 되면", "start": 16.981, "end": 18.397}, {"text": "영어권으로 이동하면서", "start": 18.397, "end": 20.232}, {"text": "LMIA 면제 취업비자로 전환!", "start": 20.232, "end": 24.269}], "duration": 10.981}, {"id": "s4-lmia", "start": 24.269, "audio_start": 24.444, "audio_dur": 8.438, "captions": [{"text": "LMIA는 취업비자를 위해", "start": 24.444, "end": 27.184}, {"text": "고용주가 거쳐야 하는 절차", "start": 27.184, "end": 29.181}, {"text": "면제되면 고용주 부담 제로", "start": 29.181, "end": 31.387}, {"text": "취업이 훨씬 유리해집니다", "start": 31.387, "end": 33.057}], "duration": 8.788}, {"id": "s5-benefits", "start": 33.057, "audio_start": 33.232, "audio_dur": 13.819, "captions": [{"text": "취업비자가 있는 동안", "start": 33.232, "end": 35.484}, {"text": "자녀무상교육은 계속!", "start": 35.484, "end": 37.261}, {"text": "자녀가 대학에 가면", "start": 37.261, "end": 38.619}, {"text": "영주권 없이도 영주권자 학비", "start": 38.619, "end": 42.52}, {"text": "영주권 진행에도 유리한 경우가 많아요", "start": 42.52, "end": 47.226}], "duration": 14.169}, {"id": "s6-money", "start": 47.226, "audio_start": 47.401, "audio_dur": 7.131, "captions": [{"text": "매년 학비를 내면서 사는 것과", "start": 47.401, "end": 50.721}, {"text": "풀타임으로 벌면서 사는 것", "start": 50.721, "end": 52.858}, {"text": "금액 차이는 엄청납니다", "start": 52.858, "end": 54.707}], "duration": 7.481}, {"id": "s7-pgwp", "start": 54.707, "audio_start": 54.882, "audio_dur": 10.684, "captions": [{"text": "어학연수 1~2년 후 바로 전환", "start": 54.882, "end": 58.237}, {"text": "PGWP보다 취업이 빠르고", "start": 58.237, "end": 60.548}, {"text": "최대 3년 제한인 PGWP와 달리", "start": 60.548, "end": 63.079}, {"text": "일하는 한, 기간 제한 없음", "start": 63.079, "end": 65.741}], "duration": 11.034}, {"id": "s8-cta", "start": 65.741, "audio_start": 65.916, "audio_dur": 3.056, "captions": [{"text": "몬트리올 불어 루트,", "start": 65.916, "end": 67.205}, {"text": "AA Canada와 상담하세요", "start": 67.205, "end": 69.235}], "duration": 4.179}], "total": 69.92};
+      const S = TIMING.scenes;
+      // C(scene, chunk): absolute time the narration chunk begins
+      const C = (i, j) => S[i].captions[j].start;
+      const END = (i) => S[i].start + S[i].duration;
+      const tl = gsap.timeline({ paused: true });
+      const pop = (sel, t, extra) => tl.fromTo(sel, { opacity: 0, y: 40, scale: 0.94 }, Object.assign({ opacity: 1, y: 0, scale: 1, duration: 0.45, ease: "back.out(1.6)" }, extra || {}), t);
+
+      // scene enter / exit on the inner stage
+      S.forEach((s, i) => {
+        tl.fromTo(`#${s.id}-in`, { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, s.start + 0.02);
+        if (i < S.length - 1) tl.to(`#${s.id}-in`, { opacity: 0, y: -40, duration: 0.25, ease: "power2.in" }, END(i) - 0.28);
+      });
+      // captions pop in at their own start
+      S.forEach((s, i) => s.captions.forEach((c, j) => {
+        tl.fromTo(`#cap-${i}-${j}-box`, { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.22, ease: "back.out(2)" }, c.start);
+      }));
+
+      // s1 hook
+      pop("#s1-pill", C(0, 0));
+      tl.fromTo(".s1-qline", { opacity: 0, x: -80 }, { opacity: 1, x: 0, duration: 0.4, stagger: 0.25, ease: "power3.out" }, 0.35);
+      tl.to("#s1-q", { opacity: 0, scale: 0.8, duration: 0.25 }, C(0, 2) - 0.05);
+      tl.fromTo("#s1-answer", { opacity: 0, scale: 1.4 }, { opacity: 1, scale: 1, duration: 0.5, ease: "expo.out" }, C(0, 2) + 0.1);
+      tl.fromTo("#s1-bar", { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power3.out" }, C(0, 2) + 0.4);
+
+      // s2 city cost
+      tl.fromTo(["#s2-b1", "#s2-b2", "#s2-b3"], { scaleX: 0 }, { scaleX: 1, duration: 0.7, stagger: 0.18, ease: "power3.out" }, C(1, 0) + 0.2);
+      pop("#s2-tag", C(1, 1));
+      tl.to("#s2-chart", { opacity: 0, y: -40, duration: 0.3 }, C(1, 2) - 0.1);
+      tl.fromTo("#s2-weapon", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(1.6)" }, C(1, 2) + 0.15);
+      tl.fromTo(".fr-badge", { rotation: -25 }, { rotation: 0, duration: 0.6, ease: "back.out(2)" }, C(1, 2) + 0.15);
+      tl.fromTo(".weapon-text", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4 }, C(1, 3));
+
+      // s3 route
+      pop("#s3-n1", C(2, 0) + 0.1);
+      tl.fromTo("#s3-l1", { scaleY: 0 }, { scaleY: 1, duration: 0.3 }, C(2, 1) - 0.2);
+      pop("#s3-n2", C(2, 1));
+      tl.fromTo("#s3-l2", { scaleY: 0 }, { scaleY: 1, duration: 0.3 }, C(2, 2) - 0.2);
+      pop("#s3-n3", C(2, 2));
+      tl.fromTo("#s3-l3", { scaleY: 0 }, { scaleY: 1, duration: 0.3 }, C(2, 3) - 0.2);
+      pop("#s3-n4", C(2, 3) + 0.2, { duration: 0.6 });
+
+      // s4 LMIA
+      pop("#s4-i1", C(3, 1)); pop("#s4-i2", C(3, 1) + 0.3); pop("#s4-i3", C(3, 1) + 0.6);
+      tl.fromTo(["#s4-x1", "#s4-x2", "#s4-x3"], { scaleX: 0 }, { scaleX: 1, duration: 0.3, stagger: 0.15, ease: "power2.out" }, C(3, 2));
+      tl.fromTo("#s4-stamp", { opacity: 0, scale: 2.2, rotation: -30 }, { opacity: 1, scale: 1, rotation: -12, duration: 0.4, ease: "back.out(1.4)" }, C(3, 2) + 0.55);
+      tl.fromTo("#s4-up", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4 }, C(3, 3));
+
+      // s5 benefits
+      pop("#s5-c1", C(4, 1)); pop("#s5-c2", C(4, 3)); pop("#s5-c3", C(4, 4));
+
+      // s6 money
+      pop("#s6-left", C(5, 0) + 0.1);
+      pop("#s6-right", C(5, 1));
+      pop("#s6-vs", C(5, 1) + 0.35);
+      tl.fromTo(".arrow.down", { y: -30 }, { y: 30, duration: 0.6, repeat: 3, yoyo: true, ease: "sine.inOut" }, C(5, 0) + 0.5);
+      tl.fromTo(".arrow.up", { y: 30 }, { y: -30, duration: 0.6, repeat: 3, yoyo: true, ease: "sine.inOut" }, C(5, 1) + 0.4);
+      pop("#s6-sum", C(5, 2), { duration: 0.55 });
+
+      // s7 PGWP vs french route
+      tl.fromTo("#s7-tb", { opacity: 0 }, { opacity: 1, duration: 0.3 }, C(6, 0));
+      tl.fromTo("#s7-b1", { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power3.out" }, C(6, 0) + 0.1);
+      tl.fromTo("#s7-b2", { opacity: 0, width: 0 }, { opacity: 1, width: 230, duration: 0.5, ease: "power3.out" }, C(6, 0) + 1.2);
+      tl.fromTo("#s7-ta", { opacity: 0 }, { opacity: 1, duration: 0.3 }, C(6, 1));
+      tl.fromTo("#s7-a1", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "power3.out" }, C(6, 1) + 0.1);
+      tl.fromTo("#s7-a2", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "power3.out" }, C(6, 2));
+      pop("#s7-end", C(6, 2) + 0.6);
+      tl.to("#s7-b2", { width: 660, duration: 0.9, ease: "power2.out" }, C(6, 3));
+      tl.fromTo("#s7-b2t", { opacity: 0 }, { opacity: 1, duration: 0.3 }, C(6, 3) + 0.5);
+      pop("#s7-note", C(6, 3) + 0.6);
+
+      // s8 CTA
+      pop("#s8-logo", C(7, 0)); pop("#s8-sub", C(7, 0) + 0.3); pop("#s8-cities", C(7, 0) + 0.5);
+      pop("#s8-btn", C(7, 1));
+      tl.to("#s8-btn", { scale: 1.06, duration: 0.4, repeat: 3, yoyo: true, ease: "sine.inOut" }, C(7, 1) + 0.6);
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

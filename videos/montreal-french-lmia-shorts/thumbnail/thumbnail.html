@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="UTF-8" />
+<style>
+@font-face { font-family: "P"; font-weight: 800; src: url("../assets/fonts/Pretendard-ExtraBold.woff2"); }
+@font-face { font-family: "P"; font-weight: 900; src: url("../assets/fonts/Pretendard-Black.woff2"); }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 1080px; height: 2100px; overflow: hidden; } .wrap { height: 1920px; }
+body { font-family: "P", sans-serif; color: #fff; word-break: keep-all; letter-spacing: -0.03em;
+  background: radial-gradient(900px 700px at 90% 15%, #2453a8 0%, rgba(36,83,168,0) 60%),
+              radial-gradient(900px 800px at 0% 95%, #5a1a35 0%, rgba(90,26,53,0) 65%),
+              linear-gradient(180deg, #0b1730, #132a52); }
+.wrap { position: absolute; left: 0; right: 0; top: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 60px; gap: 0; }
+.tag { background: #e63946; font-size: 52px; font-weight: 900; padding: 18px 44px; border-radius: 999px; margin-bottom: 60px; }
+.l1 { font-size: 132px; font-weight: 900; line-height: 1.12; }
+.strike { position: relative; display: inline-block; color: #c9d3e6; }
+.strike::after { content: ""; position: absolute; left: -10px; right: -10px; top: 52%; height: 18px; background: #e63946; border-radius: 9px; transform: rotate(-4deg); }
+.l2 { font-size: 196px; font-weight: 900; line-height: 1.08; color: #ffd23f; margin-top: 20px; text-shadow: 0 10px 0 rgba(0,0,0,0.35); }
+.l3 { font-size: 132px; font-weight: 900; line-height: 1.12; }
+.route { margin-top: 70px; display: flex; align-items: center; gap: 20px; font-size: 54px; font-weight: 900; }
+.chip { background: #2f6bff; padding: 18px 30px; border-radius: 22px; }
+.chip.y { background: #ffd23f; color: #10203f; }
+.arrow { color: #ffd23f; }
+.brand { position: absolute; left: 0; right: 0; top: 1500px; text-align: center; font-size: 44px; font-weight: 800; letter-spacing: 0.2em; color: #b9c6dd; }
+.brand b { color: #e63946; }
+</style></head><body>
+<div class="wrap">
+  <div class="tag">캐나다 자녀무상교육 · 장기플랜</div>
+  <div class="l1">부모 학비</div><div class="l1">내지 말고</div>
+  <div class="l2">월급 받으며</div>
+  <div class="l3">버티는 법</div>
+  <div class="route"><span class="chip">몬트리올 불어</span><span class="arrow">→</span><span class="chip y">LMIA 면제</span></div>
+</div>
+<div class="brand"><b>AA</b> CANADA</div>
+</body></html>
