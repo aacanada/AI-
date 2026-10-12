@@ -1,7 +1,7 @@
 # SCRIPT — 버논 관리형 조기유학 롱폼 v2
 
-**Voice:** 한국어 내레이터(차분한 30~40대 톤). TTS를 쓰거나 대표님이 직접 녹음
-**Voice settings:** 기본 속도의 0.95배, 문장 사이 0.4초 쉼
+**Voice:** ElevenLabs 복제 음성 "네 번째" (voice_id 9qtE9eIaqHMUAfRp4QTW), eleven_multilingual_v2
+**Voice settings:** stability 0.5 · similarity 0.85 · style 0.1 · speed 0.97 · language ko
 **Voice direction:** 학부모에게 상담하듯 따뜻하고 신뢰감 있게. 숫자는 또박또박, 과장하지 않음.
 
 ---
