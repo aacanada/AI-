@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>불어 NCLC 5 · 뉴브런즈윅 주정부이민</title>
+    <script src="assets/vendor/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Pretendard"; font-weight: 500; src: url("assets/fonts/Pretendard-Medium.woff2") format("woff2"); }
+      @font-face { font-family: "Pretendard"; font-weight: 700; src: url("assets/fonts/Pretendard-Bold.woff2") format("woff2"); }
+      @font-face { font-family: "Pretendard"; font-weight: 800; src: url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2"); }
+      @font-face { font-family: "Pretendard"; font-weight: 900; src: url("assets/fonts/Pretendard-Black.woff2") format("woff2"); }
+      :root {
+        --navy: #0b1730; --navy2: #132a52; --ink: #ffffff; --muted: #b9c6dd;
+        --red: #e63946; --blue: #2f6bff; --gold: #ffd23f; --green: #2ec27e; --card: #172c55;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--navy); }
+      body { font-family: "Pretendard", sans-serif; color: var(--ink); word-break: keep-all; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: var(--navy); }
+      .clip { position: absolute; inset: 0; }
+      .y { color: var(--gold); }
+
+      /* background */
+      #bg { background: radial-gradient(1200px 900px at 85% 10%, #1d3f7a 0%, rgba(29,63,122,0) 60%),
+                        radial-gradient(900px 700px at 0% 100%, #3a1530 0%, rgba(58,21,48,0) 65%),
+                        linear-gradient(180deg, var(--navy) 0%, var(--navy2) 100%); }
+      #grid { position: absolute; inset: 0; opacity: 0.07;
+              background-image: linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px);
+              background-size: 90px 90px; }
+      #brand { position: absolute; left: 0; right: 0; top: 150px; text-align: center; font-weight: 800; font-size: 30px;
+               letter-spacing: 0.18em; color: var(--muted); }
+      #brand b { color: var(--red); }
+
+      /* captions: TOP band (Shorts UI covers the bottom) */
+      .cap { display: flex; justify-content: center; align-items: flex-start; padding-top: 215px; }
+      .cap-box { width: 980px; min-height: 250px; display: flex; align-items: center; justify-content: center; text-align: center;
+                 padding: 28px 40px; border-radius: 34px; background: rgba(5, 12, 28, 0.82);
+                 border: 3px solid rgba(255,255,255,0.12); }
+      .cap-text { font-size: 76px; font-weight: 900; line-height: 1.22; letter-spacing: -0.02em; }
+      .cap-text .hl { color: var(--gold); }
+
+      /* scene stage: between caption band and Shorts bottom UI */
+      .scene { }
+      .stage { position: absolute; left: 60px; right: 60px; top: 560px; height: 880px; }
+
+
+      .pill { position: absolute; left: 0; right: 0; top: 0; margin: 0 auto; width: 640px; text-align: center; padding: 18px 0;
+              border-radius: 999px; background: var(--red); font-size: 40px; font-weight: 800; }
+      .adv { position: absolute; left: 0; right: 0; top: 0; margin: 0 auto; width: 300px; text-align: center; padding: 14px 0;
+             border-radius: 999px; background: var(--blue); font-size: 44px; font-weight: 900; }
+
+      /* s1 */
+      .s1-q { position: absolute; left: 0; right: 0; top: 150px; text-align: center; }
+      .s1-level { display: inline-flex; align-items: center; gap: 30px; padding: 30px 50px; border-radius: 30px; background: var(--card);
+                  font-size: 90px; font-weight: 900; letter-spacing: -0.03em; }
+      .s1-fr { width: 130px; height: 130px; border-radius: 50%; background: var(--blue); border: 8px solid #fff; display: flex;
+               align-items: center; justify-content: center; font-size: 60px; }
+      .s1-arrow { font-size: 140px; font-weight: 900; color: var(--gold); line-height: 1.2; }
+      .s1-pr { font-size: 170px; font-weight: 900; letter-spacing: -0.04em; line-height: 1; }
+      .s1-answer { position: absolute; left: 0; right: 0; top: 130px; text-align: center; opacity: 0; }
+      .s1-pin { display: flex; justify-content: center; }
+      .s1-city { font-size: 170px; font-weight: 900; letter-spacing: -0.04em; line-height: 1.1; color: var(--gold); }
+      .s1-bar { width: 560px; height: 18px; margin: 18px auto 0; background: var(--red); border-radius: 9px; }
+      .s1-sub { margin-top: 30px; font-size: 44px; font-weight: 800; letter-spacing: 0.2em; color: var(--muted); }
+
+      /* s2 */
+      .map { position: absolute; left: 0; right: 0; top: 0; height: 540px; border-radius: 40px; background: var(--card); overflow: hidden; }
+      .map-svg { position: absolute; left: 0; top: 10px; }
+      .city-lbl { position: absolute; font-size: 54px; font-weight: 900; opacity: 0; line-height: 1.1; }
+      .city-lbl small { display: block; font-size: 28px; font-weight: 800; letter-spacing: 0.2em; color: var(--muted); }
+      .plane { position: absolute; left: 0; top: 0; padding: 10px 24px; border-radius: 16px; background: var(--gold); color: #10203f;
+               font-size: 40px; font-weight: 900; opacity: 0; }
+      .steps { position: absolute; left: 0; right: 0; top: 590px; display: flex; gap: 22px; }
+      .step { flex: 1; padding: 26px 18px; border-radius: 28px; background: var(--card); border: 3px solid rgba(255,255,255,0.12);
+              text-align: center; font-size: 44px; font-weight: 900; line-height: 1.25; opacity: 0; }
+      .step b { display: block; width: 70px; height: 70px; margin: 0 auto 12px; border-radius: 50%; background: var(--blue);
+                font-size: 40px; line-height: 70px; }
+      .step small { display: block; font-size: 28px; font-weight: 700; color: var(--muted); margin-top: 8px; }
+      .step-win { background: var(--gold); color: #10203f; border-color: var(--gold); }
+      .step-win b { background: var(--red); color: #fff; } .step-win small { color: #3a4a6b; }
+
+      /* s3 */
+      .tree { position: absolute; left: 0; right: 0; top: 0; text-align: center; }
+      .t-root { margin: 0 auto; width: 620px; padding: 30px 0; border-radius: 30px; background: var(--blue); font-size: 80px; font-weight: 900; line-height: 1.1; }
+      .t-root small { display: block; font-size: 36px; font-weight: 700; margin-top: 8px; }
+      .t-line { width: 12px; height: 70px; margin: 0 auto; background: var(--muted); border-radius: 6px; transform-origin: 50% 0; }
+      .t-mid { margin: 0 auto; width: 860px; padding: 34px 0; border-radius: 30px; background: var(--card); border: 4px solid rgba(255,255,255,0.2);
+               font-size: 66px; font-weight: 900; line-height: 1.15; }
+      .t-leaf { position: relative; margin: 0 auto; width: 960px; padding: 50px 0 40px; border-radius: 34px; background: var(--gold); color: #10203f;
+                font-size: 76px; font-weight: 900; line-height: 1.15; }
+      .t-leaf small { display: block; font-size: 34px; font-weight: 800; color: #3a4a6b; margin-top: 12px; }
+      .tag { position: absolute; left: 50%; top: -30px; transform: translateX(-50%); padding: 8px 26px; border-radius: 999px; background: var(--red);
+             color: #fff; font-size: 34px; font-weight: 900; }
+
+      /* s4 */
+      .req-h { position: absolute; left: 0; right: 0; top: 0; text-align: center; font-size: 52px; font-weight: 800; color: var(--muted); }
+      .req { position: absolute; left: 0; right: 0; display: flex; align-items: center; gap: 34px; padding: 30px 40px; border-radius: 30px;
+             background: var(--card); border: 3px solid rgba(255,255,255,0.1); opacity: 0; }
+      #s4-r1 { top: 100px; } #s4-r2 { top: 300px; } #s4-r3 { top: 500px; } #s4-r4 { top: 700px; }
+      .cb { flex: 0 0 100px; height: 100px; border-radius: 24px; background: var(--green); display: flex; align-items: center;
+            justify-content: center; font-size: 66px; font-weight: 900; }
+      .ct { font-size: 58px; font-weight: 900; line-height: 1.2; }
+      .cs { font-size: 36px; font-weight: 700; color: var(--muted); margin-top: 6px; }
+
+      /* s5 */
+      .gauge { position: absolute; left: 0; right: 0; top: 130px; height: 640px; padding: 40px 50px; border-radius: 40px; background: var(--card); }
+      .g-title { font-size: 44px; font-weight: 800; color: var(--muted); }
+      .g-track { position: absolute; left: 70px; right: 70px; top: 290px; height: 40px; border-radius: 20px; background: #2a3f68; }
+      .g-fill { position: absolute; left: 0; top: 0; height: 40px; width: 44.4%; border-radius: 20px; background: var(--gold); transform-origin: 0 50%; }
+      .g-tick { position: absolute; top: 56px; width: 60px; margin-left: -30px; text-align: center; font-size: 34px; font-weight: 800; color: var(--muted); }
+      .g-mark { position: absolute; width: 300px; margin-left: -80px; text-align: center; opacity: 0; }
+      .g-num { width: 110px; height: 110px; margin: 0 auto; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+               font-size: 64px; font-weight: 900; }
+      .g-flag { font-size: 34px; font-weight: 900; line-height: 1.2; margin: 10px 0; }
+      .g-ee { top: 40px; } .g-ee .g-num { background: #5b6d8f; } .g-ee .g-flag { color: var(--muted); }
+      .g-nb { top: 405px; margin-left: -80px; } .g-nb .g-num { background: var(--gold); color: #10203f; } .g-nb .g-flag { color: var(--gold); }
+      .s5-ok { position: absolute; left: 0; right: 0; top: 810px; text-align: center; font-size: 96px; font-weight: 900; opacity: 0; }
+
+      /* s6 */
+      .flow-card { position: absolute; left: 0; right: 0; top: 130px; height: 520px; padding: 46px 50px; border-radius: 40px; background: var(--card); }
+      .fc-h { font-size: 50px; font-weight: 900; }
+      .fc-track { position: absolute; left: 70px; right: 140px; top: 250px; height: 36px; border-radius: 18px; background: #2a3f68; }
+      .fc-fill { position: absolute; left: 0; top: 0; width: 100%; height: 36px; border-radius: 18px; background: var(--green); transform-origin: 0 50%; }
+      .fc-pt { position: absolute; top: -42px; width: 240px; margin-left: -120px; text-align: center; opacity: 0; }
+      .fc-dot { width: 120px; height: 120px; margin: 0 auto; border-radius: 50%; background: var(--gold); color: #10203f; border: 8px solid #fff;
+                display: flex; align-items: center; justify-content: center; font-size: 64px; font-weight: 900; }
+      .fc-lbl { margin-top: 16px; font-size: 40px; font-weight: 800; color: var(--muted); line-height: 1.25; }
+      .fc-lbl b { display: block; color: #fff; font-size: 46px; }
+      .fc-axis { position: absolute; left: 50px; top: 310px; font-size: 34px; font-weight: 800; color: var(--muted); }
+      .s6-sum { position: absolute; left: 0; right: 0; top: 740px; text-align: center; font-size: 86px; font-weight: 900; opacity: 0; }
+
+      /* s7 */
+      .prio-label { position: absolute; left: 0; right: 0; top: 130px; text-align: center; font-size: 50px; font-weight: 800; color: var(--muted); opacity: 0; }
+      .prio-num { position: absolute; left: 0; right: 0; top: 210px; text-align: center; font-size: 340px; font-weight: 900; letter-spacing: -0.05em;
+                  line-height: 1; color: var(--gold); }
+      .prio-num small { font-size: 110px; color: #fff; margin-left: 10px; }
+      .prio-sub { position: absolute; left: 0; right: 0; top: 590px; text-align: center; font-size: 54px; font-weight: 900; opacity: 0; }
+      .prio-badge { position: absolute; left: 0; right: 0; top: 720px; margin: 0 auto; width: 520px; text-align: center; padding: 26px 0;
+                    border-radius: 999px; background: var(--red); font-size: 58px; font-weight: 900; opacity: 0; }
+
+      /* s8 */
+      .tip-h { position: absolute; left: 0; right: 0; top: 0; text-align: center; font-size: 60px; font-weight: 900; color: var(--gold); }
+      .skills { position: absolute; left: 0; right: 0; top: 140px; padding: 40px 36px; border-radius: 40px; background: var(--card); }
+      .sk-row { display: flex; align-items: center; gap: 16px; margin: 26px 0; }
+      .sk-name { flex: 0 0 230px; font-size: 44px; font-weight: 900; line-height: 1.15; }
+      .sk { flex: 1; height: 150px; border-radius: 24px; display: flex; align-items: center; justify-content: center; font-size: 44px; font-weight: 900; opacity: 0; }
+      .sk.on { background: var(--blue); } .sk.off { background: #2a3f68; color: #6d7c99; border: 3px dashed #4a5a78; }
+      .sk.hot { background: var(--gold); color: #10203f; }
+      .tip-sum { position: absolute; left: 0; right: 0; top: 700px; text-align: center; font-size: 90px; font-weight: 900; opacity: 0; }
+
+      /* s9 */
+      .cta-logo { position: absolute; left: 0; right: 0; top: 60px; text-align: center; font-size: 150px; font-weight: 900; letter-spacing: -0.02em; }
+      .cta-sub { position: absolute; left: 0; right: 0; top: 290px; text-align: center; font-size: 42px; font-weight: 800; color: var(--muted); }
+      .cta-cities { position: absolute; left: 0; right: 0; top: 370px; text-align: center; font-size: 42px; font-weight: 800; color: var(--gold); }
+      .cta-btn { position: absolute; left: 0; right: 0; top: 520px; margin: 0 auto; width: 900px; text-align: center; padding: 44px 0;
+                 border-radius: 999px; background: var(--red); font-size: 56px; font-weight: 900; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="__TOTAL__" data-width="1080" data-height="1920">
+      <div id="bg" class="clip" data-start="0" data-duration="__TOTAL__" data-track-index="0"><div id="grid"></div><div id="brand"><b>AA</b> CANADA · 불어 NCLC 5 · 뉴브런즈윅 PNP</div></div>
+      __SCENES__
+      __CAPTIONS__
+      <audio id="narration" src="assets/audio/narration.wav" data-start="0" data-duration="__TOTAL__" data-track-index="9"></audio>
+    </div>
+    <script>
+      const TIMING = __TIMING__;
+      const S = TIMING.scenes;
+      // C(scene, chunk): absolute time the narration chunk begins
+      const C = (i, j) => S[i].captions[j].start;
+      const END = (i) => S[i].start + S[i].duration;
+      const tl = gsap.timeline({ paused: true });
+      const pop = (sel, t, extra) => tl.fromTo(sel, { opacity: 0, y: 40, scale: 0.94 }, Object.assign({ opacity: 1, y: 0, scale: 1, duration: 0.45, ease: "back.out(1.6)" }, extra || {}), t);
+
+      // scene enter / exit on the inner stage
+      S.forEach((s, i) => {
+        tl.fromTo(`#${s.id}-in`, { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, s.start + 0.02);
+        if (i < S.length - 1) tl.to(`#${s.id}-in`, { opacity: 0, y: -40, duration: 0.25, ease: "power2.in" }, END(i) - 0.28);
+      });
+      // captions pop in at their own start
+      S.forEach((s, i) => s.captions.forEach((c, j) => {
+        tl.fromTo(`#cap-${i}-${j}-box`, { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.22, ease: "back.out(2)" }, c.start);
+      }));
+
+      // s1 hook
+      pop("#s1-pill", C(0, 0));
+      tl.fromTo(".s1-level", { opacity: 0, x: -80 }, { opacity: 1, x: 0, duration: 0.4, ease: "power3.out" }, 0.3);
+      tl.fromTo("#s1-arrow", { opacity: 0, y: -40 }, { opacity: 1, y: 0, duration: 0.35 }, C(0, 1) - 0.1);
+      tl.fromTo(".s1-pr", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, C(0, 1) + 0.15);
+      tl.to("#s1-q", { opacity: 0, scale: 0.8, duration: 0.25 }, C(0, 2) - 0.05);
+      tl.fromTo("#s1-answer", { opacity: 0, scale: 1.4 }, { opacity: 1, scale: 1, duration: 0.5, ease: "expo.out" }, C(0, 2) + 0.1);
+      tl.fromTo("#s1-bar", { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power3.out" }, C(0, 2) + 0.4);
+
+      // s2 route Montreal -> NB
+      pop("#s2-dot1", C(1, 0) + 0.1, { transformOrigin: "50% 50%" });
+      pop("#s2-l1", C(1, 0) + 0.2);
+      pop("#s2-st1", C(1, 0) + 0.6);
+      tl.to("#s2-path", { strokeDashoffset: 0, duration: 2.6, ease: "power1.inOut" }, C(1, 1));
+      tl.fromTo("#s2-plane", { opacity: 0, x: 150, y: 330 }, { opacity: 1, x: 420, y: 140, duration: 1.3, ease: "power1.out" }, C(1, 1));
+      tl.to("#s2-plane", { x: 730, y: 185, duration: 1.3, ease: "power1.in" }, C(1, 1) + 1.3);
+      pop("#s2-st2", C(1, 1) + 0.3);
+      pop("#s2-dot2", C(1, 2) - 0.6, { transformOrigin: "50% 50%" });
+      pop("#s2-l2", C(1, 2) - 0.4);
+      pop("#s2-st3", C(1, 2), { duration: 0.6 });
+
+      // s3 stream tree
+      pop("#s3-root", C(2, 0));
+      tl.fromTo("#s3-line1", { scaleY: 0 }, { scaleY: 1, duration: 0.3 }, C(2, 1) - 0.25);
+      pop("#s3-mid", C(2, 1));
+      tl.fromTo("#s3-line2", { scaleY: 0 }, { scaleY: 1, duration: 0.3 }, C(2, 2) - 0.25);
+      pop("#s3-leaf", C(2, 2), { duration: 0.6 });
+
+      // s4 requirements
+      tl.fromTo("#s4-h", { opacity: 0 }, { opacity: 1, duration: 0.3 }, S[3].start + 0.1);
+      pop("#s4-r1", C(3, 0)); pop("#s4-r2", C(3, 1)); pop("#s4-r3", C(3, 2)); pop("#s4-r4", C(3, 3));
+      tl.fromTo("#s4-r1 .cb, #s4-r2 .cb, #s4-r3 .cb, #s4-r4 .cb", { scale: 0 }, { scale: 1, duration: 0.3, stagger: 0.12, ease: "back.out(3)" }, C(3, 3) + 1.0);
+
+      // s5 NCLC gauge
+      pop("#s5-adv", C(4, 0));
+      tl.fromTo("#s5-gauge", { opacity: 0 }, { opacity: 1, duration: 0.3 }, C(4, 0) + 0.3);
+      tl.fromTo("#s5-fill", { scaleX: 0 }, { scaleX: 1.5, duration: 0.8, ease: "power2.out" }, C(4, 1));
+      pop("#s5-ee", C(4, 1) + 0.4);
+      tl.to("#s5-fill", { scaleX: 1, duration: 0.6, ease: "power3.inOut" }, C(4, 2));
+      pop("#s5-nb", C(4, 2) + 0.3);
+      pop("#s5-ok", C(4, 2) + 0.9, { duration: 0.55 });
+
+      // s6 flow: work months fill
+      pop("#s6-adv", C(5, 0));
+      tl.fromTo("#s6-card", { opacity: 0 }, { opacity: 1, duration: 0.3 }, C(5, 0) + 0.4);
+      tl.fromTo("#s6-fill", { scaleX: 0 }, { scaleX: 1, duration: 3.2, ease: "none" }, C(5, 1));
+      pop("#s6-p1", C(5, 1) + 1.6);
+      pop("#s6-p2", C(5, 1) + 3.2);
+      pop("#s6-sum", C(5, 2) + 0.4, { duration: 0.55 });
+
+      // s7 priority count-up
+      pop("#s7-adv", C(6, 0));
+      tl.fromTo("#s7-label", { opacity: 0 }, { opacity: 1, duration: 0.3 }, C(6, 1));
+      const cnt = { v: 0 };
+      tl.to(cnt, { v: 254, duration: 1.6, ease: "power2.out", onUpdate: () => { document.getElementById("s7-num").textContent = Math.round(cnt.v); } }, C(6, 1) + 0.3);
+      tl.fromTo("#s7-sub", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.35 }, C(6, 2));
+      pop("#s7-badge", C(6, 2) + 0.6, { duration: 0.5 });
+
+      // s8 skills tip
+      tl.fromTo("#s8-h", { opacity: 0 }, { opacity: 1, duration: 0.3 }, C(7, 0));
+      pop(["#s8-a1", "#s8-a2"], C(7, 0) + 0.4, { stagger: 0.15 });
+      pop(["#s8-a3", "#s8-a4"], C(7, 0) + 1.2, { stagger: 0.15 });
+      pop(["#s8-b1", "#s8-b2"], C(7, 1), { stagger: 0.15 });
+      pop(["#s8-b3", "#s8-b4"], C(7, 1) + 0.9, { stagger: 0.2, duration: 0.55 });
+      pop("#s8-sum", C(7, 2), { duration: 0.55 });
+
+      // s9 CTA
+      pop("#s9-logo", C(8, 0)); pop("#s9-sub", C(8, 0) + 0.3); pop("#s9-cities", C(8, 0) + 0.5);
+      pop("#s9-btn", C(8, 1));
+      tl.to("#s9-btn", { scale: 1.06, duration: 0.4, repeat: 3, yoyo: true, ease: "sine.inOut" }, C(8, 1) + 0.6);
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
