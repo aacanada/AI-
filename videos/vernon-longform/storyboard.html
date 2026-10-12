@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>버논 롱폼 스토리보드 v1</title>
+<style>
+@font-face{font-family:Pretendard;font-weight:500;src:url(assets/fonts/Pretendard-Medium.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:700;src:url(assets/fonts/Pretendard-Bold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:800;src:url(assets/fonts/Pretendard-ExtraBold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:900;src:url(assets/fonts/Pretendard-Black.woff2) format("woff2")}
+@font-face{font-family:Yellowtail;font-weight:400;src:url(assets/fonts/Yellowtail-Regular.ttf) format("truetype")}
+:root{--paper:#FAF6EF;--paper-deep:#F1EADF;--ink:#16324F;--ink-soft:#4A5F78;--lake:#1F8A99;--lake-deep:#146A77;--sunset:#E8572B;--vine:#7FB236;--sand:#F3C969}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#E9E2D6;color:var(--ink);font-family:Pretendard,system-ui,sans-serif;padding:40px 32px 80px}
+header{max-width:1500px;margin:0 auto 28px;display:flex;align-items:flex-end;gap:24px;flex-wrap:wrap}
+header h1{font-weight:900;font-size:40px;letter-spacing:-.02em}
+header h1 small{font-size:18px;background:var(--ink);color:var(--paper);padding:4px 10px;border-radius:99px;vertical-align:middle;margin-left:8px}
+header p{font-size:17px;color:var(--ink-soft);flex:1;min-width:280px}
+.tag{font-weight:700;font-size:14px;letter-spacing:.06em;border:2px solid var(--ink);border-radius:99px;padding:6px 14px}
+.act{max-width:1500px;margin:34px auto 14px;font-weight:800;font-size:15px;letter-spacing:.12em;color:var(--ink-soft);border-top:2px solid var(--ink);padding-top:10px}
+.grid{max-width:1500px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+@media (max-width:1100px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:700px){.grid{grid-template-columns:1fr}}
+.cell{display:flex;flex-direction:column;gap:8px}
+.f{aspect-ratio:16/9;container-type:inline-size;position:relative;overflow:hidden;background:var(--paper);border-radius:6px;box-shadow:0 8px 24px rgba(22,50,79,.18)}
+.f *{position:absolute}
+.f span,.f b,.f br{position:relative}
+.lbl{display:flex;justify-content:space-between;font-weight:800;font-size:14px;letter-spacing:.04em}
+.lbl span:last-child{color:var(--ink-soft);font-weight:700}
+.note{font-size:14px;line-height:1.5;color:#2c4057}
+.note b{color:var(--ink)}
+.chipseam{align-self:flex-start;font-size:12px;font-weight:700;border:1.5px solid var(--ink-soft);color:var(--ink-soft);border-radius:99px;padding:2px 10px}
+/* frame primitives in cqw (1cqw = 19.2px at 1920) */
+.safe-cap{left:0;right:0;bottom:0;height:9.4cqw;border-top:1px dashed rgba(22,50,79,.35);background:repeating-linear-gradient(135deg,rgba(22,50,79,.05) 0 .6cqw,transparent .6cqw 1.2cqw)}
+.safe-cap::after{content:"자막 영역";position:absolute;right:1cqw;bottom:.6cqw;font-size:.9cqw;color:rgba(22,50,79,.5);font-weight:700}
+.dark .safe-cap{border-color:rgba(250,246,239,.4);background:none}
+.dark .safe-cap::after{color:rgba(250,246,239,.6)}
+.h{font-weight:900;letter-spacing:-.03em;line-height:1.08;color:var(--ink)}
+.hd{font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.b{font-weight:500;line-height:1.4}
+.l{font-weight:700;letter-spacing:.08em}
+.script{font-family:Yellowtail,cursive;line-height:1}
+.sticker{background:var(--sunset);color:#fff;font-weight:800;font-size:1.25cqw;letter-spacing:.1em;padding:.5cqw 1.2cqw;border-radius:99px;transform:rotate(-4deg)}
+.chip{position:relative;display:inline-block;background:var(--paper);border:.12cqw solid var(--ink);border-radius:99px;padding:.45cqw 1.1cqw;font-weight:700;font-size:1.3cqw;margin:0 .5cqw .6cqw 0}
+.pol{background:#fff;padding:.8cqw .8cqw 3cqw;box-shadow:0 1cqw 2.2cqw rgba(22,50,79,.25)}
+.pol img{position:relative;display:block;width:100%;height:100%;object-fit:cover}
+.pol i{position:absolute;left:0;right:0;bottom:.6cqw;text-align:center;font-style:normal;font-family:Yellowtail,cursive;font-size:1.6cqw;color:var(--ink)}
+.full{inset:0;width:100%;height:100%;object-fit:cover}
+.hl{background:linear-gradient(transparent 58%,var(--sand) 58%)}
+.ghost{font-weight:900;color:rgba(22,50,79,.07);font-size:16cqw;letter-spacing:-.04em;white-space:nowrap}
+.panel{background:rgba(22,50,79,.92);border-radius:1.4cqw;color:var(--paper)}
+.card{background:#fff;border:.12cqw solid rgba(22,50,79,.18);border-radius:1.2cqw;box-shadow:0 .6cqw 1.4cqw rgba(22,50,79,.12)}
+.flow{position:relative}
+.flow>*{position:relative}
+.seam{display:flex;gap:6px;flex-wrap:wrap;font-size:13px}
+.seam span{position:relative;background:#fff;border-radius:6px;padding:4px 8px;font-weight:700}
+.seam em{position:relative;font-style:normal;color:var(--sunset);font-weight:800;align-self:center}
+</style>
+</head>
+<body>
+<header>
+  <h1>버논 관리형 조기유학 — 롱폼 스토리보드 <small>v1</small></h1>
+  <p>유럽 부모들이 고르는 캐나다의 휴양 도시. 한국 아이는 적게, 관리는 촘촘하게. 챕터마다 대표 순간 1컷입니다. 실제 사진·문구·폰트·색 그대로이고, 움직임은 아래 설명에 적었습니다.</p>
+  <span class="tag">1920×1080 · 15:40 · 14챕터</span>
+</header>
+
+<div class="act">ACT 1 — 불안에서 기준으로 (0:00–3:00)</div>
+<div class="grid">
+
+<!-- 01 -->
+<div class="cell">
+<div class="f dark" id="frame-01">
+  <img class="full" src="assets/photos/01c-hero-lake-jump-notext.jpg" alt="">
+  <div style="inset:0;background:linear-gradient(180deg,rgba(22,50,79,0) 30%,rgba(22,50,79,.85) 90%)"></div>
+  <div class="script" style="left:6.25cqw;top:27cqw;font-size:6cqw;color:#fff;transform:rotate(-5deg)">Vernon,</div>
+  <div class="h" style="left:6.25cqw;top:34cqw;font-size:5.6cqw;color:#fff">아는 사람만 아는 캐나다</div>
+  <div class="b" style="left:6.4cqw;top:41.6cqw;font-size:1.9cqw;color:rgba(250,246,239,.9)">브리티시컬럼비아주 · 오카나간 밸리</div>
+  <div class="safe-cap"></div>
+</div>
+<div class="lbl"><span>01 · 훅</span><span>01-hook · 0:00–0:40</span></div>
+<p class="note"><b>어두운 화면에 "5등급 내신" 타이포가 금 가며 시작.</b> 밴쿠버·토론토 핀 사이로 물음표 핀이 떨어지고, 흰 플래시와 함께 이 사진이 열립니다. 사진은 천천히 줌인, 타이틀은 손글씨로 그려짐.</p>
+<span class="chipseam">→ crossfade</span>
+</div>
+
+<!-- 02 -->
+<div class="cell">
+<div class="f" id="frame-02">
+  <div class="ghost" style="left:-2cqw;top:30cqw">두 마음</div>
+  <div class="hd" style="left:6.25cqw;top:5cqw;font-size:3.6cqw">부모님의 두 마음</div>
+  <div class="pol" style="left:8cqw;top:12cqw;width:26cqw;height:31cqw;transform:rotate(-6deg)"><img src="assets/photos/18-students-lockers.jpg" alt=""><i>like a Canadian kid</i></div>
+  <div class="pol" style="right:8cqw;top:12cqw;width:26cqw;height:31cqw;transform:rotate(5deg)"><img src="assets/photos/17-classroom-writing.jpg" alt=""><i>a great university</i></div>
+  <div class="hd" style="left:9cqw;top:44.5cqw;font-size:2.2cqw">캐나다 아이처럼</div>
+  <div class="hd" style="right:11cqw;top:44.5cqw;font-size:2.2cqw">좋은 대학</div>
+  <svg style="left:38cqw;top:22cqw;width:24cqw;height:12cqw" viewBox="0 0 240 120"><path d="M10 20 C 90 20, 100 60, 230 60" stroke="#1F8A99" stroke-width="6" fill="none"/><path d="M10 100 C 90 100, 100 60, 230 60" stroke="#1F8A99" stroke-width="6" fill="none"/><path d="M215 46 L235 60 L215 74" stroke="#1F8A99" stroke-width="6" fill="none"/></svg>
+  <div class="l" style="left:40cqw;top:36cqw;width:20cqw;text-align:center;font-size:1.4cqw;color:var(--lake-deep)">같은 방향</div>
+  <div class="safe-cap"></div>
+</div>
+<div class="lbl"><span>02 · 두 마음</span><span>02-two-minds · 0:40–1:30</span></div>
+<p class="note"><b>두 폴라로이드가 양옆에서 기울어진 채 떨어짐.</b> 라벨이 타이핑되고, 가운데 두 선이 하나의 화살표로 합쳐지며 "같은 방향".</p>
+<span class="chipseam">→ wipe 왼쪽</span>
+</div>
+
+<!-- 03 -->
+<div class="cell">
+<div class="f" id="frame-03">
+  <img class="full" src="assets/photos/17-classroom-writing.jpg" alt="" style="opacity:.14;filter:blur(1cqw)">
+  <div class="hd" style="left:6.25cqw;top:5cqw;font-size:3.6cqw">대학이 보는 것</div>
+  <div class="card" style="left:6.25cqw;top:12cqw;width:26cqw;height:22cqw;padding:1.6cqw">
+    <div class="flow"><div class="l" style="font-size:1.2cqw;color:var(--lake-deep)">CANADA</div><div class="hd" style="font-size:2.2cqw;margin:.4cqw 0 1cqw">캐나다 대학</div><div class="b" style="font-size:1.5cqw">내신 성적<br>학과별 필수 과목</div></div></div>
+  <div class="card" style="left:34cqw;top:12cqw;width:26cqw;height:22cqw;padding:1.6cqw">
+    <div class="flow"><div class="l" style="font-size:1.2cqw;color:var(--lake-deep)">USA</div><div class="hd" style="font-size:2.2cqw;margin:.4cqw 0 1cqw">미국 대학</div><div class="b" style="font-size:1.5cqw">내신 + 비교과<br>에세이</div></div></div>
+  <div class="card" style="left:61.75cqw;top:12cqw;width:32cqw;height:22cqw;padding:1.6cqw">
+    <div class="flow"><div class="l" style="font-size:1.2cqw;color:var(--lake-deep)">KOREA</div><div class="hd" style="font-size:2.2cqw;margin:.4cqw 0 1cqw">한국 해외고 전형</div><div class="b" style="font-size:1.5cqw">성적 · 비교과<br>에세이 · 인터뷰</div></div></div>
+  <div class="hd" style="left:6.25cqw;top:37cqw;font-size:3cqw"><span class="hl">탄탄한 영어</span> · <span class="hl">믿을 수 있는 내신</span> · <span class="hl">진짜 비교과</span></div>
+  <div class="sticker" style="right:6cqw;top:37.5cqw;background:var(--ink)">입학보다 버티는 힘</div>
+  <div class="safe-cap"></div>
+</div>
+<div class="lbl"><span>03 · 대학 큰 그림</span><span>03-university · 1:30–3:00</span></div>
+<p class="note"><b>세 카드가 0.15초 간격으로 올라옴.</b> 카드마다 공통 키워드가 빠져나와 아래 한 줄로 정렬되고 형광펜이 칠해짐. 마지막에 "입학보다 버티는 힘"이 도장처럼 찍힘.</p>
+<span class="chipseam">→ cut (지도 줌)</span>
+</div>
+</div>
+
+<div class="act">ACT 2 — 버논 공개와 셀링포인트 (3:00–12:30)</div>
+<div class="grid">
+
+<!-- 04 -->
+<div class="cell">
+<div class="f" id="frame-04">
+  <img src="assets/photos/02-okanagan-panorama.jpg" alt="" style="left:0;top:0;width:100%;height:28cqw;object-fit:cover;object-position:40% 50%">
+  <div style="left:30cqw;top:12.5cqw;width:2.2cqw;height:2.2cqw;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--sunset);box-shadow:0 0 0 1cqw rgba(31,138,153,.35)"></div>
+  <div class="l" style="left:33cqw;top:12.6cqw;font-size:1.4cqw;color:#fff;background:rgba(22,50,79,.75);padding:.3cqw .8cqw;border-radius:.4cqw">VERNON</div>
+  <div class="script" style="left:6.25cqw;top:29.5cqw;font-size:4.2cqw;color:var(--lake)">California of Canada</div>
+  <div class="hd" style="left:6.25cqw;top:35.5cqw;font-size:3.2cqw">캐나다의 캘리포니아, 버논</div>
+  <div style="left:56cqw;top:30cqw;width:38cqw">
+    <div class="flow"><span class="chip">밴쿠버 ✈ 45분</span><span class="chip">켈로나 공항 30분</span><span class="chip">인구 5.8만</span><span class="chip">오카나간 밸리 45만</span><span class="chip" style="border-color:var(--lake);color:var(--lake-deep)">여름 30~35°C · 겨울 0~5°C</span></div>
+  </div>
+  <div class="safe-cap"></div>
+</div>
+<div class="lbl"><span>04 · 버논은 어디</span><span>04-where · 3:00–4:10</span></div>
+<p class="note"><b>캐나다 전도 → BC → 오카나간으로 카메라 줌, 버논 핀이 튕기며 꽂힘.</b> 파노라마가 좌→우로 흐르는 동안 정보 칩이 하나씩 튀어나옴. 이후 일러스트 지도(40)와 사계절 2×2 그리드로 이어짐.</p>
+<span class="chipseam">→ wipe 왼쪽</span>
+</div>
+
+<!-- 05 -->
+<div class="cell">
+<div class="f dark" id="frame-05">
+  <img class="full" src="assets/photos/15-classroom-teacher.jpg" alt="">
+  <div class="panel" style="left:3cqw;top:3cqw;width:40cqw;height:43cqw"></div>
+  <div class="sticker" style="left:5cqw;top:5cqw">SELLING POINT 01</div>
+  <div class="hd" style="left:5.5cqw;top:9.5cqw;font-size:3.4cqw;color:var(--paper)">영어만 쓰는 교실</div>
+  <svg style="left:5.5cqw;top:16cqw;width:17cqw;height:17cqw" viewBox="0 0 100 100">
+    <g fill="#1F8A99"><rect x="0" y="0" width="100" height="95" fill="url(#dots)"/></g>
+    <defs><pattern id="dots" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="3.6" fill="#1F8A99"/></pattern><pattern id="dots2" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="3.6" fill="#E8572B"/></pattern></defs>
+    <rect x="0" y="90" width="50" height="10" fill="url(#dots2)"/><rect x="50" y="90" width="50" height="10" fill="url(#dots)"/>
+  </svg>
+  <div class="h" style="left:24.5cqw;top:16cqw;font-size:8cqw;color:#7FD3DE">95%</div>
+  <div class="b" style="left:24.8cqw;top:25.5cqw;font-size:1.6cqw;color:var(--paper)">현지 캐나다 학생</div>
+  <div class="b" style="left:5.5cqw;top:35cqw;font-size:1.5cqw;color:var(--paper)">SD22 약 8,600명 · 국제학생 300여 명 · 20여 개국</div>
+  <div class="chip" style="position:absolute;left:5.5cqw;top:39.2cqw;background:var(--sand);border-color:var(--sand)">🔒 학교별 한국 학생 정원 상한</div>
+  <div class="safe-cap"></div>
+</div>
+<div class="lbl"><span>05 · SP1 영어만 쓰는 교실</span><span>05-sp1-english · 4:10–5:30</span></div>
+<p class="note"><b>교실 사진이 천천히 줌, 왼쪽 네이비 패널이 미끄러져 들어옴.</b> 점 100개가 물결처럼 채워지며 95% 카운트업 → 8,600 / 300 / 20 순차 카운트 → 자리 아이콘이 비었다 채워지는 루프와 자물쇠.</p>
+<span class="chipseam">→ crossfade</span>
+</div>
+
+<!-- 06 -->
+<div class="cell">
+<div class="f" id="frame-06">
+  <svg style="left:0;top:0;width:100%;height:100%" viewBox="0 0 1600 900">
+    <defs><pattern id="wd" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="9" cy="9" r="3.4" fill="#16324F" opacity=".16"/></pattern></defs>
+    <path d="M120 170 C 260 110, 520 120, 600 200 C 640 300, 560 380, 470 420 C 380 440, 260 430, 190 360 C 130 300, 90 230, 120 170Z" fill="url(#wd)"/>
+    <path d="M1020 160 C 1120 120, 1300 130, 1360 190 C 1400 250, 1350 320, 1260 340 C 1160 360, 1060 330, 1020 270 C 1000 230, 990 190, 1020 160Z" fill="url(#wd)"/>
+    <g stroke="#E8572B" stroke-width="7" fill="none" stroke-linecap="round">
+      <path d="M1180 230 C 900 60, 500 80, 300 300"/><path d="M1240 270 C 950 150, 560 170, 305 310" opacity=".8"/><path d="M1130 300 C 900 240, 560 250, 310 320" opacity=".6"/>
+    </g>
+    <circle cx="300" cy="315" r="26" fill="#1F8A99" opacity=".35"/><circle cx="300" cy="315" r="12" fill="#E8572B"/>
+    <text x="1190" y="400" font-family="Pretendard" font-weight="800" font-size="34" fill="#16324F">EUROPE</text>
+    <text x="230" y="270" font-family="Pretendard" font-weight="800" font-size="30" fill="#16324F">VERNON</text>
+  </svg>
+  <div class="sticker" style="left:6.25cqw;top:4.5cqw">SELLING POINT 02</div>
+  <div class="hd" style="left:6.25cqw;top:9cqw;font-size:3.6cqw">유럽 부모들이 고르는 곳</div>
+  <div class="pol" style="left:8cqw;top:25cqw;width:28cqw;height:18cqw;transform:rotate(-3deg)"><img src="assets/photos/13-group-photo-lake.jpg" alt=""><i>Vernon international students</i></div>
+  <div class="pol" style="left:37cqw;top:27cqw;width:11cqw;height:16cqw;transform:rotate(5deg)"><img src="assets/photos/12-dock-group.jpg" alt=""></div>
+  <div style="left:60cqw;top:31cqw;width:34cqw"><div class="flow"><span class="chip">독일 등 유럽 출신 최다</span><span class="chip">"스위스 같은 분위기"</span><span class="chip">대도시 대신 버논</span></div></div>
+  <div class="safe-cap"></div>
+</div>
+<div class="lbl"><span>06 · SP2 유럽 부모들이 고르는 곳</span><span>06-sp2-europe · 5:30–6:40</span></div>
+<p class="note"><b>점으로 된 세계 지도 위로 유럽에서 출발한 곡선 화살표들이 차례로 그려짐.</b> 버논 핀에 닿는 순간 핀이 맥박치고 단체 사진 카드가 펼쳐짐. 끝은 국기 든 학생 사진(04) 좌우 분할 + "같은 교실, 다른 나라 친구들".</p>
+<span class="chipseam">→ wipe 왼쪽</span>
+</div>
+
+<!-- 07 -->
+<div class="cell">
+<div class="f" id="frame-07">
+  <img src="assets/photos/03-magical-hillside.jpg" alt="" style="left:0;top:0;width:38cqw;height:100%;object-fit:cover;object-position:50% 30%">
+  <div class="sticker" style="left:41cqw;top:4.5cqw">SELLING POINT 03</div>
+  <div class="hd" style="left:41cqw;top:9cqw;font-size:3.4cqw">생활 수준이 높은 동네</div>
+  <div class="b" style="left:41cqw;top:14.6cqw;font-size:1.6cqw;color:var(--ink-soft)">캐나다 사람들이 은퇴 후 살고 싶어 하는 휴양 도시</div>
+  <div class="l" style="left:41cqw;top:18.6cqw;font-size:1.3cqw;line-height:2.1">⛳ PREDATOR RIDGE 골프<br>⛷ SILVER STAR 스키<br>♨ SPARKLING HILL 스파</div>
+  <div class="pol" style="left:62cqw;top:17cqw;width:15cqw;height:13cqw;transform:rotate(-5deg)"><img src="assets/photos/11-kayak-lake.jpg" alt=""></div>
+  <div class="pol" style="left:78cqw;top:15cqw;width:15cqw;height:13cqw;transform:rotate(6deg)"><img src="assets/photos/09-zipline-forest.jpg" alt=""></div>
+  <div class="pol" style="left:41cqw;top:31cqw;width:15cqw;height:14cqw;transform:rotate(-2deg)"><img src="assets/photos/21-homestay-house.jpg" alt=""><i>homestay</i></div>
+  <div class="pol" style="left:58cqw;top:31cqw;width:17cqw;height:14cqw;transform:rotate(2deg)"><img src="assets/photos/20-host-family.jpg" alt=""><i>host family</i></div>
+  <div class="pol" style="left:77cqw;top:31.5cqw;width:15cqw;height:14cqw;transform:rotate(-3deg)"><img src="assets/photos/22-homestay-kitchen.jpg" alt=""><i>dinner</i></div>
+  <div class="safe-cap"></div>
+</div>
+<div class="lbl"><span>07 · SP3 생활 수준</span><span>07-sp3-living · 6:40–8:10</span></div>
+<p class="note"><b>세로 사진(03)이 아래에서 위로 틸트하며 시작.</b> 리조트 이름이 아이콘과 함께 타이핑되고, 액티비티 폴라로이드가 테이블에 던져지듯 쌓인 뒤 홈스테이 3장이 가로로 정렬되며 "1인 1실 · 엄선된 가정 · 24시간 담당자" 라벨. 와이너리·골프 장면은 스톡 영상으로 보완 예정.</p>
+<span class="chipseam">→ crossfade</span>
+</div>
+
+<!-- 08 -->
+<div class="cell">
+<div class="f" id="frame-08">
+  <img src="assets/photos/40-map-playground.jpg" alt="" style="right:0;top:0;width:58cqw;height:100%;object-fit:cover;object-position:45% 50%">
+  <div style="right:0;top:0;width:58cqw;height:100%;background:linear-gradient(90deg,var(--paper) 0%,rgba(250,246,239,0) 18%)"></div>
+  <div class="sticker" style="left:6.25cqw;top:4.5cqw">SELLING POINT 04</div>
+  <div class="hd" style="left:6.25cqw;top:9cqw;font-size:3.2cqw">캐나다 학생과<br>같은 교실</div>
+  <div style="left:6.25cqw;top:18.5cqw;width:36cqw"><div class="flow"><span class="chip">드라마</span><span class="chip">밴드</span><span class="chip">오케스트라</span><span class="chip">로보틱스</span><span class="chip">컴퓨터</span><span class="chip">비즈니스</span><span class="chip">법</span><span class="chip">사진</span><span class="chip">프랑스어</span></div></div>
+  <div class="l" style="left:6.25cqw;top:30.5cqw;font-size:1.25cqw;color:var(--lake-deep)">ACADEMIES</div>
+  <div class="b" style="left:6.25cqw;top:32.6cqw;width:36cqw;font-size:1.45cqw">축구 · 하키 · 알파인 · 프리스타일 · 노르딕 · 골프 · 야구 · 배구 · 댄스 · 어스퀘스트</div>
+  <div class="card" style="left:50cqw;top:23cqw;width:22cqw;height:20cqw;padding:.8cqw"><img src="assets/photos/33-school-kalamalka.jpg" alt="" style="position:relative;width:100%;height:11cqw;object-fit:cover;border-radius:.6cqw"><div class="flow"><div class="hd" style="font-size:1.7cqw;margin-top:.6cqw">Kalamalka</div><div class="b" style="font-size:1.25cqw;color:var(--ink-soft)">650명 · 높은 학업 기준</div></div></div>
+  <div class="card" style="left:74cqw;top:27cqw;width:17cqw;height:16cqw;padding:.7cqw;opacity:.85"><img src="assets/photos/32-school-vernon-secondary.jpg" alt="" style="position:relative;width:100%;height:8.5cqw;object-fit:cover;border-radius:.5cqw"><div class="flow"><div class="hd" style="font-size:1.35cqw;margin-top:.5cqw">Vernon Secondary</div></div></div>
+  <div class="safe-cap"></div>
+</div>
+<div class="lbl"><span>08 · SP4 공교육 + 비교과</span><span>08-sp4-school · 8:10–9:50</span></div>
+<p class="note"><b>선택과목 칩이 위에서 떨어져 쌓임</b> → 지도 위 학교 핀 5개가 차례로 켜지고 학교 카드가 옆으로 넘어가는 캐러셀 → 아카데미 표지(41)가 문서처럼 넘어가며 아이콘 10개 그리드 → 클럽·봉사 아이콘이 '지원서'로 빨려 들어감. 기술 과목 없음.</p>
+<span class="chipseam">→ cut</span>
+</div>
+
+<!-- 09 -->
+<div class="cell">
+<div class="f" id="frame-09">
+  <div class="ghost" style="right:-3cqw;top:20cqw">80</div>
+  <div class="sticker" style="left:6.25cqw;top:4.5cqw">SELLING POINT 05</div>
+  <div class="hd" style="left:6.25cqw;top:9cqw;font-size:3.6cqw">고1 마치고 오면, 계산상 3학기</div>
+  <div style="left:6.25cqw;top:20cqw;width:87.5cqw;height:7cqw;border-radius:1cqw;background:var(--paper-deep);border:.15cqw solid rgba(22,50,79,.25)"></div>
+  <div style="left:6.25cqw;top:20cqw;width:43.75cqw;height:7cqw;border-radius:1cqw 0 0 1cqw;background:var(--lake)"></div>
+  <div style="left:50cqw;top:20cqw;width:17.5cqw;height:7cqw;background:var(--vine);border-left:.3cqw solid var(--paper)"></div>
+  <div style="left:67.5cqw;top:20cqw;width:17.5cqw;height:7cqw;background:#9BC95E;border-left:.3cqw solid var(--paper)"></div>
+  <div style="left:85cqw;top:20cqw;width:8.75cqw;height:7cqw;background:#B9DB8A;border-left:.3cqw solid var(--paper);border-radius:0 1cqw 1cqw 0"></div>
+  <div class="hd" style="left:8cqw;top:21.8cqw;font-size:2.2cqw;color:#fff">한국 고1 성적 + 한국어 12학점 ≈ 40</div>
+  <div class="l" style="left:51cqw;top:22.3cqw;font-size:1.3cqw;color:#fff">1학기 +16</div>
+  <div class="l" style="left:68.5cqw;top:22.3cqw;font-size:1.3cqw;color:var(--ink)">2학기 +16</div>
+  <div class="l" style="left:85.6cqw;top:22.3cqw;font-size:1.2cqw;color:var(--ink)">3학기 +8</div>
+  <div class="h" style="left:6.25cqw;top:30cqw;font-size:6cqw;color:var(--lake-deep)">80<span style="font-size:2.4cqw;color:var(--ink)"> 학점 · BC주 졸업</span></div>
+  <div class="b" style="left:6.25cqw;top:39.5cqw;font-size:1.35cqw;color:var(--ink-soft)">* 영어 수준·ESL 이수에 따라 기간이 달라집니다</div>
+  <div class="safe-cap"></div>
+</div>
+<div class="lbl"><span>09 · SP5 빠른 졸업</span><span>09-sp5-graduation · 9:50–10:50</span></div>
+<p class="note"><b>빈 80칸 게이지에 "한국 고1 + 한국어 12학점" 블록이 한 번에 꽂히며 튕김.</b> 학기 블록이 차례로 채워지며 40→56→72→80 카운트, 80에서 졸업모 아이콘이 튀어나옴.</p>
+<span class="chipseam">→ crossfade</span>
+</div>
+
+<!-- 10 -->
+<div class="cell">
+<div class="f" id="frame-10">
+  <div class="sticker" style="left:6.25cqw;top:4.5cqw">SELLING POINT 06</div>
+  <div class="hd" style="left:6.25cqw;top:9cqw;font-size:3.2cqw">버논 16년, 한국인 선생님이 관리합니다</div>
+  <svg style="left:6.25cqw;top:16cqw;width:50cqw;height:28cqw" viewBox="0 0 700 392">
+    <g font-family="Pretendard" font-weight="700" font-size="20" fill="#16324F">
+      <text x="110" y="24">월</text><text x="195" y="24">화</text><text x="280" y="24">수</text><text x="365" y="24">목</text><text x="450" y="24">금</text><text x="535" y="24">토</text><text x="620" y="24">일</text>
+      <text x="0" y="82" font-size="16">수업</text><text x="0" y="170" font-size="16">방과후</text><text x="0" y="258" font-size="16">저녁</text><text x="0" y="346" font-size="16">공부</text>
+    </g>
+    <g>
+      <rect x="85" y="40" width="425" height="78" rx="10" fill="#1F8A99"/><rect x="515" y="40" width="80" height="78" rx="10" fill="#F1EADF"/><rect x="600" y="40" width="80" height="78" rx="10" fill="#7FB236"/>
+      <rect x="85" y="128" width="80" height="78" rx="10" fill="#7FB236"/><rect x="170" y="128" width="80" height="78" rx="10" fill="#7FB236"/><rect x="255" y="128" width="80" height="78" rx="10" fill="#7FB236"/><rect x="340" y="128" width="80" height="78" rx="10" fill="#E8572B"/><rect x="425" y="128" width="80" height="78" rx="10" fill="#7FB236"/><rect x="515" y="128" width="80" height="78" rx="10" fill="#F1EADF"/><rect x="600" y="128" width="80" height="78" rx="10" fill="#E8572B" opacity=".55"/>
+      <rect x="85" y="216" width="595" height="78" rx="10" fill="#F3C969"/>
+      <rect x="85" y="304" width="510" height="78" rx="10" fill="#16324F" opacity=".85"/><rect x="515" y="304" width="80" height="78" rx="10" fill="#E8572B"/><rect x="600" y="304" width="80" height="78" rx="10" fill="#16324F" opacity=".85"/>
+    </g>
+    <g font-family="Pretendard" font-weight="800" font-size="20" fill="#fff"><text x="240" y="86">학교 정규 수업</text><text x="352" y="174" font-size="17">1:1 튜터링</text><text x="527" y="350" font-size="17">에세이</text><text x="230" y="350">시험 대비 공부</text></g>
+    <text x="270" y="262" font-family="Pretendard" font-weight="800" font-size="20" fill="#16324F">호스트 가족과 저녁</text>
+  </svg>
+  <div class="pol" style="left:49cqw;top:27.5cqw;width:11cqw;height:10cqw;transform:rotate(5deg)"><img src="assets/photos/22-homestay-kitchen.jpg" alt=""></div>
+  <div style="left:62cqw;top:16.5cqw;width:32cqw">
+    <div class="flow b" style="font-size:1.55cqw;line-height:2.15">
+      <div><b style="color:var(--vine)">✓</b> 주 1회 2시간 1:1 튜터링</div>
+      <div><b style="color:var(--vine)">✓</b> 주 1회 에세이 첨삭</div>
+      <div><b style="color:var(--vine)">✓</b> 정기 카운셀링</div>
+      <div><b style="color:var(--vine)">✓</b> 학교 방문 · 부모님 보고</div>
+      <div><b style="color:var(--vine)">✓</b> 월 1회 이상 한식</div>
+      <div><b style="color:var(--vine)">✓</b> 휴대폰 사용 지도</div>
+    </div>
+  </div>
+  <div class="safe-cap"></div>
+</div>
+<div class="lbl"><span>10 · SP6 관리형</span><span>10-sp6-care · 10:50–12:30</span></div>
+<p class="note"><b>시간표 선이 그려진 뒤 칸이 요일 순서로 채워짐.</b> '저녁' 줄이 채워질 때 홈스테이 저녁 사진이 옆에 튀어나옴 → 체크 표시가 하나씩 그려짐 → 정착 · 가디언 케어 · 에듀 가이드 3단 계단 카드가 아래에서 쌓임(다음 비트).</p>
+<span class="chipseam">→ wipe 왼쪽</span>
+</div>
+
+<!-- 11 -->
+<div class="cell">
+<div class="f" id="frame-11">
+  <div class="hd" style="left:6.25cqw;top:5cqw;font-size:3.4cqw">실제 사례</div>
+  <div style="left:6.25cqw;top:23cqw;width:87.5cqw;height:.35cqw;background:var(--ink)"></div>
+  <div class="card" style="left:6.25cqw;top:12cqw;width:15cqw;height:9.5cqw;padding:.6cqw"><img src="assets/photos/32-school-vernon-secondary.jpg" alt="" style="position:relative;width:100%;height:100%;object-fit:cover;border-radius:.6cqw"></div>
+  <div style="left:12.5cqw;top:22.2cqw;width:2cqw;height:2cqw;border-radius:50%;background:var(--lake)"></div>
+  <div style="left:30cqw;top:22.2cqw;width:2cqw;height:2cqw;border-radius:50%;background:var(--lake)"></div>
+  <div style="left:47cqw;top:22.2cqw;width:2cqw;height:2cqw;border-radius:50%;background:var(--lake)"></div>
+  <div style="left:64cqw;top:22.2cqw;width:2cqw;height:2cqw;border-radius:50%;background:var(--lake)"></div>
+  <div style="left:84cqw;top:21.6cqw;width:3.2cqw;height:3.2cqw;border-radius:50%;background:var(--sunset)"></div>
+  <div class="b" style="left:8cqw;top:26cqw;width:15cqw;font-size:1.35cqw"><b>2020</b><br>VSS 입학<br>수학 클럽 · 축구팀</div>
+  <div class="b" style="left:25.5cqw;top:26cqw;width:15cqw;font-size:1.35cqw"><b>저널 시작</b><br>사진·영상 기록</div>
+  <div class="b" style="left:42.5cqw;top:26cqw;width:15cqw;font-size:1.35cqw"><b>2021</b><br>도서관·과학관 봉사<br>수학경시 입선</div>
+  <div class="b" style="left:59.5cqw;top:26cqw;width:15cqw;font-size:1.35cqw"><b>2022</b><br>U of T 조건부 입학</div>
+  <div class="hd" style="left:76cqw;top:26cqw;width:19cqw;font-size:1.7cqw;color:var(--sunset)">U of T<br>Computer Science<br>최종 합격</div>
+  <div class="hd" style="left:6.25cqw;top:38cqw;font-size:2.6cqw">버논의 <span class="hl">평범한 일상</span>이 만든 결과</div>
+  <div class="safe-cap"></div>
+</div>
+<div class="lbl"><span>11 · 진학 사례</span><span>11-case · 12:30–13:30</span></div>
+<p class="note"><b>타임라인 선이 왼쪽에서 오른쪽으로 그려지고 마디마다 카드가 튀어나옴.</b> 마지막 마디는 은은한 빛. 결론 문장에서 3초간 정지(held frame).</p>
+<span class="chipseam">→ crossfade</span>
+</div>
+</div>
+
+<div class="act">ACT 3 — 비용과 행동 (12:30–15:40)</div>
+<div class="grid">
+
+<!-- 12 -->
+<div class="cell">
+<div class="f" id="frame-12">
+  <div class="hd" style="left:6.25cqw;top:5cqw;font-size:3.2cqw">비용은 투명하게 <span class="b" style="position:relative;font-size:1.5cqw;color:var(--ink-soft)">2026.9–2027.6 · 두 학기 · CAD</span></div>
+  <div class="card" style="left:6.25cqw;top:13cqw;width:20.5cqw;height:23cqw;padding:1.4cqw"><div class="flow"><div class="l" style="font-size:1.2cqw;color:var(--ink-soft)">기본형</div><div class="h" style="font-size:3.6cqw;margin:.6cqw 0">$29,900</div><div class="b" style="font-size:1.25cqw;line-height:1.7">✓ 학비 · 홈스테이<br>✓ 가디언 지정 · 보험<br>✓ 교육청 활동비</div></div></div>
+  <div class="card" style="left:28.25cqw;top:13cqw;width:20.5cqw;height:23cqw;padding:1.4cqw"><div class="flow"><div class="l" style="font-size:1.2cqw;color:var(--ink-soft)">+ 정착 프로그램</div><div class="h" style="font-size:3.6cqw;margin:.6cqw 0">$33,900</div><div class="b" style="font-size:1.25cqw;line-height:1.7">기본형 포함<br>+ 현지 정착 지원</div></div></div>
+  <div class="card" style="left:50.25cqw;top:13cqw;width:20.5cqw;height:23cqw;padding:1.4cqw"><div class="flow"><div class="l" style="font-size:1.2cqw;color:var(--ink-soft)">가디언 케어</div><div class="h" style="font-size:3.6cqw;margin:.6cqw 0">$37,500</div><div class="b" style="font-size:1.25cqw;line-height:1.7">+ 월 1회 면담<br>+ 출결·성적 관리</div></div></div>
+  <div class="card" style="left:72.25cqw;top:12cqw;width:21.5cqw;height:25cqw;padding:1.4cqw;border:.25cqw solid var(--lake)"><div class="flow"><div class="l" style="font-size:1.2cqw;color:var(--lake-deep)">에듀 가이드</div><div class="h" style="font-size:3.6cqw;margin:.6cqw 0;color:var(--lake-deep)">$44,150</div><div class="b" style="font-size:1.25cqw;line-height:1.7">+ 1:1 튜터링·첨삭<br>+ 대학 진학 프로젝트</div></div></div>
+  <div class="b" style="left:6.25cqw;top:39cqw;font-size:1.35cqw;color:var(--ink-soft)">항공료·용돈 별도 · 2026년 10월 기준, 변동 가능</div>
+  <div class="safe-cap"></div>
+</div>
+<div class="lbl"><span>12 · 비용</span><span>12-cost · 13:30–14:20</span></div>
+<p class="note"><b>카드 4장이 차례로 올라오며 금액이 카운트업.</b> 포함 항목 체크가 그려지고 하단 고지가 떠오름. 가격표 이미지는 쓰지 않음.</p>
+<span class="chipseam">→ cut</span>
+</div>
+
+<!-- 13 -->
+<div class="cell">
+<div class="f" id="frame-13">
+  <div class="chip" style="position:absolute;left:6.25cqw;top:4.6cqw;border-style:dashed">선택 챕터 · 확인 후 포함</div>
+  <div class="hd" style="left:6.25cqw;top:9.5cqw;font-size:3.2cqw">입학 전 여름 두 달, 켈로나에서 준비</div>
+  <div class="l" style="left:6.25cqw;top:17cqw;font-size:1.3cqw">6월</div><div class="l" style="left:29cqw;top:17cqw;font-size:1.3cqw">7월</div><div class="l" style="left:52cqw;top:17cqw;font-size:1.3cqw">8월</div><div class="l" style="left:77cqw;top:17cqw;font-size:1.3cqw;color:var(--sunset)">9월</div>
+  <div style="left:6.25cqw;top:20cqw;width:66cqw;height:6.5cqw;border-radius:1cqw 1cqw 0 0;background:var(--lake)"></div>
+  <div style="left:6.25cqw;top:26.5cqw;width:66cqw;height:6.5cqw;border-radius:0 0 1cqw 1cqw;background:var(--vine)"></div>
+  <div class="hd" style="left:8cqw;top:21.8cqw;font-size:2cqw;color:#fff">오전 · 영어</div>
+  <div class="hd" style="left:8cqw;top:28.3cqw;font-size:2cqw;color:#fff">오후 · 수학·역사 과목 용어</div>
+  <svg style="left:73cqw;top:22.5cqw;width:5cqw;height:8cqw" viewBox="0 0 50 80"><path d="M5 40 H40 M28 26 L42 40 L28 54" stroke="#E8572B" stroke-width="6" fill="none"/></svg>
+  <div class="card" style="left:79cqw;top:20cqw;width:14.75cqw;height:13cqw;padding:1cqw"><div class="flow hd" style="font-size:1.8cqw;color:var(--sunset)">버논<br>입학</div></div>
+  <div class="hd" style="left:6.25cqw;top:37cqw;font-size:2.4cqw">첫 한 달의 적응기를, 미리 지나고 오기</div>
+  <div class="safe-cap"></div>
+</div>
+<div class="lbl"><span>13 · (선택) 여름 준비과정</span><span>13-summer-prep · 14:20–14:50</span></div>
+<p class="note"><b>달력 막대가 6월부터 오른쪽으로 채워짐</b>(오전/오후 두 줄), 끝에서 화살표가 "버논 입학" 카드로 이어짐. 학교명·일정 확인 전에는 빼고 렌더.</p>
+<span class="chipseam">→ crossfade</span>
+</div>
+
+<!-- 14 -->
+<div class="cell">
+<div class="f dark" id="frame-14">
+  <img class="full" src="assets/photos/01-hero-lake-jump.jpg" alt="" style="object-position:50% 30%">
+  <div style="left:0;right:0;bottom:9.4cqw;height:15cqw;background:rgba(22,50,79,.94)"></div>
+  <div class="hd" style="left:6.25cqw;top:33.8cqw;font-size:2.6cqw;color:#fff">학교별 한국 학생 자리는 한정되어 있습니다</div>
+  <div class="b" style="left:6.25cqw;top:38.4cqw;font-size:1.5cqw;color:rgba(250,246,239,.9)">학교별 잔여석 · 맞는 학교·관리 옵션 · 대학 로드맵</div>
+  <div class="card" style="right:6.25cqw;top:33.2cqw;width:22cqw;height:9cqw;padding:1cqw;background:var(--paper)"><div class="flow"><div class="h" style="font-size:2.4cqw">AA캐나다</div><div class="l" style="font-size:1.15cqw;color:var(--ink-soft);margin-top:.3cqw">상담 문의 · 연락처</div></div></div>
+  <div class="safe-cap"></div>
+</div>
+<div class="lbl"><span>14 · 정리 + 상담</span><span>14-cta · 14:50–15:40</span></div>
+<p class="note"><b>앞 장면들의 SELLING POINT 스티커 6장이 날아와 3×2로 붙으며 요약</b>(콜백). 이어 스티커들이 위로 줄어들고 "Take Flight!" 사진이 풀스크린으로 열리며 하단 네이비 바에 상담 안내. 마지막은 사진 위 정지.</p>
+<span class="chipseam">끝</span>
+</div>
+
+<!-- seam map -->
+<div class="cell">
+<div class="f" style="padding:2cqw">
+  <div class="flow" style="position:absolute;inset:2.5cqw">
+    <div class="hd" style="position:relative;font-size:2.4cqw;margin-bottom:1.4cqw">Seam map · 방향은 왼쪽으로 통일</div>
+    <div class="seam" style="position:relative;font-size:1.3cqw">
+      <span>01</span><em>⇢fade</em><span>02</span><em>⇠wipe</em><span>03</span><em>cut·zoom</em><span>04</span><em>⇠wipe</em><span>05</span><em>⇢fade</em><span>06</span><em>⇠wipe</em><span>07</span><em>⇢fade</em><span>08</span><em>cut</em><span>09</span><em>⇢fade</em><span>10</span><em>⇠wipe</em><span>11</span><em>⇢fade</em><span>12</span><em>cut</em><span>13</span><em>⇢fade</em><span>14</span>
+    </div>
+    <div class="b" style="position:relative;font-size:1.3cqw;margin-top:1.6cqw;color:var(--ink-soft)">지도 장면(04·06·08)은 같은 버논 핀으로 이어짐 · 셀링포인트 장면은 sunset 스티커로 시작</div>
+  </div>
+</div>
+<div class="lbl"><span>SEAM MAP</span><span>전환 전체</span></div>
+</div>
+
+<!-- tokens -->
+<div class="cell">
+<div class="f">
+  <div class="flow" style="position:absolute;inset:2.5cqw">
+    <div class="hd" style="position:relative;font-size:2.4cqw;margin-bottom:1cqw">Tokens · Okanagan Postcard</div>
+    <div style="position:relative;display:flex;gap:.8cqw;margin-bottom:1.2cqw">
+      <div style="position:relative;width:7cqw;height:5cqw;background:#FAF6EF;border:1px solid #ccc;border-radius:.6cqw"></div>
+      <div style="position:relative;width:7cqw;height:5cqw;background:#16324F;border-radius:.6cqw"></div>
+      <div style="position:relative;width:7cqw;height:5cqw;background:#1F8A99;border-radius:.6cqw"></div>
+      <div style="position:relative;width:7cqw;height:5cqw;background:#E8572B;border-radius:.6cqw"></div>
+      <div style="position:relative;width:7cqw;height:5cqw;background:#7FB236;border-radius:.6cqw"></div>
+      <div style="position:relative;width:7cqw;height:5cqw;background:#F3C969;border-radius:.6cqw"></div>
+    </div>
+    <div class="b" style="position:relative;font-size:1.25cqw;line-height:1.6">paper · ink · lake(데이터 강조) · sunset(장면당 1곳) · vine(체크·성장) · sand(형광펜)</div>
+    <div style="position:relative;margin-top:1cqw"><span class="h" style="position:relative;font-size:3cqw">Pretendard 900</span> <span class="b" style="position:relative;font-size:1.6cqw">본문 500</span> <span class="script" style="position:relative;font-size:3.2cqw;color:var(--lake)">Yellowtail</span></div>
+    <div class="b" style="position:relative;font-size:1.2cqw;line-height:1.6;margin-top:1cqw;color:var(--ink-soft)">금지: 그라데이션 텍스트 · 네온 · 빨간 경고 자막 · 가짜 UI · 인종 표현 · 기술 과목 · 졸업률 수치 · 커미션 · 저해상도 사진 풀스크린</div>
+  </div>
+</div>
+<div class="lbl"><span>TOKENS</span><span>frame.md</span></div>
+</div>
+
+</div>
+</body>
+</html>
