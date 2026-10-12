@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>FI video thumbnails</title>
+    <style>
+      @font-face { font-family: "Pretendard"; src: url("../assets/fonts/Pretendard-Bold.woff2") format("woff2"); font-weight: 700; }
+      @font-face { font-family: "Pretendard"; src: url("../assets/fonts/Pretendard-ExtraBold.woff2") format("woff2"); font-weight: 800; }
+      @font-face { font-family: "Pretendard"; src: url("../assets/fonts/Pretendard-Black.woff2") format("woff2"); font-weight: 900; }
+      @font-face { font-family: "Inter"; src: url("../assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; }
+      :root {
+        --fi: #0055a4;
+        --ef: #e4572e;
+        --gray: #9aa0a6;
+        --bg: #f7f4ee;
+        --ink: #1f2328;
+        --red: #d52b1e;
+        --marker: #ffe45c;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1280px; height: 720px; overflow: hidden; background: var(--bg); }
+      body { font-family: "Pretendard", sans-serif; color: var(--ink); }
+      .v { display: none; position: absolute; inset: 0; }
+      .v.on { display: block; }
+      .left {
+        position: absolute; left: 0; top: 0; bottom: 0; width: 760px;
+        padding: 56px 0 0 64px;
+      }
+      .kicker {
+        display: inline-flex; align-items: center; gap: 10px;
+        padding: 10px 20px; border-radius: 999px; background: var(--ink); color: #fff;
+        font-size: 28px; font-weight: 800;
+      }
+      .kicker i { display: block; width: 14px; height: 14px; border-radius: 50%; }
+      .head {
+        margin-top: 30px;
+        font-size: 90px; font-weight: 900; line-height: 1.16; letter-spacing: -0.045em;
+      }
+      .head div { white-space: nowrap; }
+      .hl { position: relative; color: var(--red); z-index: 0; }
+      .hl::after {
+        content: ""; position: absolute; left: -6px; right: -6px; bottom: 10px; height: 36px;
+        background: var(--marker); z-index: -1;
+      }
+      .foot {
+        position: absolute; left: 64px; bottom: 44px;
+        font-size: 26px; font-weight: 700; color: #5d636b;
+      }
+      .brand {
+        position: absolute; right: 36px; bottom: 30px; z-index: 3;
+        font-family: "Inter", sans-serif; font-size: 30px; font-weight: 800; color: #fff;
+      }
+      .brand span { color: var(--marker); }
+      .right {
+        position: absolute; right: 0; top: 0; bottom: 0; width: 520px;
+        background: var(--fi); color: #fff;
+        clip-path: polygon(70px 0, 100% 0, 100% 100%, 0 100%);
+        padding: 64px 48px 0 120px;
+      }
+      .r-label { font-size: 32px; font-weight: 800; opacity: 0.9; }
+      .bars { margin-top: 34px; display: flex; gap: 34px; align-items: flex-end; height: 380px; }
+      .bar { width: 130px; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; }
+      .bar b { font-family: "Inter", sans-serif; font-size: 70px; font-weight: 800; letter-spacing: -0.03em; line-height: 1; }
+      .bar b small { font-size: 36px; }
+      .bar span.col { display: block; width: 130px; border-radius: 14px 14px 0 0; margin-top: 10px; }
+      .bar em { margin-top: 12px; font-style: normal; font-size: 26px; font-weight: 800; white-space: nowrap; }
+      .stat { margin-top: 26px; }
+      .stat b { display: block; font-family: "Inter", sans-serif; font-size: 108px; font-weight: 800; line-height: 1; letter-spacing: -0.03em; }
+      .stat span { display: block; margin-top: 4px; font-size: 30px; font-weight: 800; opacity: 0.92; }
+    </style>
+  </head>
+  <body>
+    <!-- 1 (recommended): concrete number + reversal -->
+    <div class="v" id="v1">
+      <div class="left">
+        <div class="kicker"><i style="background: var(--fi)"></i><i style="background: var(--ef)"></i>캐나다 교육청 데이터</div>
+        <div class="head">
+          <div>불어학교 보냈더니</div>
+          <div><span class="hl">영어</span> 점수가</div>
+          <div>더 높다?</div>
+        </div>
+        <div class="foot">토론토 교육청 6학년 영어 읽기 시험 (EQAO)</div>
+      </div>
+      <div class="right">
+        <div class="r-label">영어 읽기 기준 통과율</div>
+        <div class="bars">
+          <div class="bar"><b>94<small>%</small></b><span class="col" style="height: 282px; background: var(--ef)"></span><em>불어교육 EF</em></div>
+          <div class="bar"><b style="opacity: 0.8">74<small>%</small></b><span class="col" style="height: 222px; background: rgba(255, 255, 255, 0.45)"></span><em style="opacity: 0.85">일반 평균</em></div>
+        </div>
+      </div>
+      <div class="brand">AA <span>Canada</span></div>
+    </div>
+
+    <!-- 2: the user's first line, tightened -->
+    <div class="v" id="v2">
+      <div class="left">
+        <div class="kicker"><i style="background: var(--fi)"></i>캐나다 통계청 · 토론토 교육청</div>
+        <div class="head">
+          <div>프렌치 이머전</div>
+          <div>학생이 <span class="hl">영어</span>를</div>
+          <div>더 잘한다고?</div>
+        </div>
+        <div class="foot">일반 영어학교 학생과 영어 시험으로 비교했더니</div>
+      </div>
+      <div class="right">
+        <div class="r-label">영어 읽기 점수 · 온타리오</div>
+        <div class="stat" style="margin-top: 40px"><b>570</b><span>프렌치 이머전</span></div>
+        <div class="stat" style="margin-top: 22px; font-size: 40px; font-weight: 900; opacity: 0.7">vs</div>
+        <div class="stat" style="margin-top: 14px; opacity: 0.75"><b>533</b><span>일반학교</span></div>
+      </div>
+      <div class="brand">AA <span>Canada</span></div>
+    </div>
+
+    <!-- 3: the user's second line -->
+    <div class="v" id="v3">
+      <div class="left">
+        <div class="kicker"><i style="background: var(--red)"></i>캐나다 자녀 무상교육</div>
+        <div class="head">
+          <div style="font-size: 82px">무상교육으로 가는</div>
+          <div><span class="hl">사립학교급</span></div>
+          <div>공립학교?</div>
+        </div>
+        <div class="foot">온타리오 French Immersion · Extended French</div>
+      </div>
+      <div class="right">
+        <div class="r-label">프렌치 이머전 학생 가정</div>
+        <div class="stat"><b>78%</b><span>부모 대졸 이상 (평균 56%)</span></div>
+        <div class="stat"><b>53%</b><span>고소득 전문직 (평균 26%)</span></div>
+      </div>
+      <div class="brand">AA <span>Canada</span></div>
+    </div>
+
+    <script>
+      const v = new URLSearchParams(location.search).get("v") || "1";
+      document.getElementById("v" + v).classList.add("on");
+    </script>
+  </body>
+</html>
