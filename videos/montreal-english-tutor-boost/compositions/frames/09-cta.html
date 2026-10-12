@@ -1,0 +1,107 @@
+<template id="f09-template">
+<div id="root" data-composition-id="09-cta" data-width="1080" data-height="1920" data-start="0" data-duration="4.906">
+<style>
+@font-face{font-family:"Pretendard";font-weight:800;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");}
+@font-face{font-family:"Pretendard";font-weight:700;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");}
+@font-face{font-family:"Pretendard";font-weight:500;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Medium.woff2") format("woff2");}
+#root{position:absolute;inset:0;width:1080px;height:1920px;overflow:hidden;font-family:"Pretendard",sans-serif;container-type:size;}
+.f09-bg{position:absolute;inset:0;background:#fdfae7;overflow:hidden;}
+.f09-ring{position:absolute;left:50%;top:820px;border-radius:50%;border:1.5px solid rgba(30,43,250,0.2);}
+.f09-ring-1{width:560px;height:560px;margin:-280px 0 0 -280px;}
+.f09-ring-2{width:860px;height:860px;margin:-430px 0 0 -430px;border-color:rgba(30,43,250,0.15);}
+.f09-ring-3{width:1180px;height:1180px;margin:-590px 0 0 -590px;border-color:rgba(30,43,250,0.10);}
+.f09-ring-4{width:1520px;height:1520px;margin:-760px 0 0 -760px;border-color:rgba(30,43,250,0.07);}
+.f09-dots{position:absolute;display:grid;grid-template-columns:repeat(3,14px);gap:22px;}
+.f09-dots span{width:14px;height:14px;border-radius:50%;background:#1e2bfa;opacity:0.35;}
+.f09-dots-a{left:84px;top:200px;}
+.f09-dots-b{right:84px;top:1380px;}
+.f09-place{position:absolute;left:0;right:0;top:330px;display:flex;justify-content:center;align-items:center;gap:16px;}
+.f09-leaf{width:46px;height:46px;}
+.f09-label{font-size:34px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#1e2bfa;}
+.f09-accent{position:absolute;left:510px;top:410px;width:60px;height:4px;border-radius:2px;background:#1e2bfa;}
+.f09-line1{position:absolute;left:0;right:0;top:450px;text-align:center;font-size:120px;font-weight:800;line-height:1.08;letter-spacing:-0.02em;color:#111111;}
+.f09-line2{position:absolute;left:0;right:0;top:584px;text-align:center;font-size:84px;font-weight:700;line-height:1.08;letter-spacing:-0.02em;color:#111111;}
+.f09-swap{position:absolute;left:90px;top:740px;width:900px;height:170px;}
+.f09-mono,.f09-word{position:absolute;inset:0;display:flex;justify-content:center;align-items:center;transform-origin:50% 50%;}
+.f09-mono{z-index:1;}
+.f09-word{z-index:2;}
+.f09-mono-chip{width:150px;height:150px;border-radius:50%;background:#1e2bfa;color:#fdfae7;display:flex;justify-content:center;align-items:center;font-size:66px;font-weight:800;letter-spacing:-0.02em;}
+.f09-word-text{font-size:168px;font-weight:800;line-height:1;letter-spacing:-0.03em;color:#111111;white-space:nowrap;}
+.f09-word-text b{color:#1e2bfa;font-weight:800;}
+.f09-sub{position:absolute;left:0;right:0;top:925px;text-align:center;font-size:40px;font-weight:500;color:#6b6b6b;letter-spacing:0.01em;}
+.f09-cta{position:absolute;left:300px;top:990px;width:480px;height:110px;border-radius:100px;background:#1e2bfa;color:#fdfae7;display:flex;justify-content:center;align-items:center;gap:18px;font-size:52px;font-weight:700;letter-spacing:-0.01em;transform-origin:50% 50%;}
+.f09-arrow{width:40px;height:40px;}
+.f09-contact{position:absolute;left:0;right:0;top:1120px;text-align:center;font-size:40px;font-weight:500;color:#6b6b6b;}
+.f09-progress{position:absolute;left:0;bottom:0;width:1080px;height:3px;background:#1e2bfa;transform-origin:0% 50%;}
+</style>
+
+<div id="f09-bg" class="clip f09-bg" data-start="0" data-duration="4.906" data-track-index="0">
+  <div class="f09-ring f09-ring-4"></div>
+  <div class="f09-ring f09-ring-3"></div>
+  <div class="f09-ring f09-ring-2"></div>
+  <div class="f09-ring f09-ring-1"></div>
+  <div class="f09-dots f09-dots-a"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="f09-dots f09-dots-b"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+</div>
+
+<div id="f09-content" class="clip" data-start="0" data-duration="4.906" data-track-index="1" style="position:absolute;inset:0;">
+  <div id="f09-place" class="f09-place">
+    <svg class="f09-leaf" viewBox="0 0 100 100" aria-hidden="true"><path fill="#1e2bfa" d="M50 2 L57 16 L66 12 L63 34 L76 22 L80 30 L94 27 L89 42 L97 46 L74 64 L78 72 L54 69 L54 96 L46 96 L46 69 L22 72 L26 64 L3 46 L11 42 L6 27 L20 30 L24 22 L37 34 L34 12 L43 16 Z"/></svg>
+    <span class="f09-label">Montréal</span>
+  </div>
+  <div id="f09-accent" class="f09-accent"></div>
+  <div id="f09-line1" class="f09-line1">몬트리올</div>
+  <div id="f09-line2" class="f09-line2">자녀무상교육</div>
+
+  <div class="f09-swap">
+    <div id="f09-mono" class="f09-mono"><div class="f09-mono-chip">AA</div></div>
+    <div id="f09-word" class="f09-word"><div class="f09-word-text"><b>AA</b> Canada</div></div>
+  </div>
+  <div id="f09-sub" class="f09-sub">캐나다 유학·이민 전문</div>
+
+  <div id="f09-cta" class="f09-cta">상담 문의<svg class="f09-arrow" viewBox="0 0 40 40" aria-hidden="true"><path d="M8 20 H30 M21 11 L30 20 L21 29" fill="none" stroke="#fdfae7" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+  <div id="f09-contact" class="f09-contact">카카오톡 canlog · 02-567-4345</div>
+
+  <div id="f09-progress" class="f09-progress"></div>
+</div>
+
+<script src="assets/vendor/gsap.min.js"></script>
+<script>
+(function(){
+  window.__timelines = window.__timelines || {};
+  var tl = gsap.timeline({ paused: true });
+
+  // Background atmosphere: rings bloom outward, dot grids settle
+  tl.fromTo("#f09-bg .f09-ring", { scale: 0.85, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.2, ease: "power2.out", stagger: 0.12 }, 0);
+  tl.fromTo("#f09-bg .f09-dots span", { scale: 0, opacity: 0 }, { scale: 1, opacity: 0.35, duration: 0.4, ease: "back.out(1.8)", stagger: 0.03 }, 0.1);
+
+  // Scene 1 — "몬트리올" (0.32s) with Montréal label + leaf, then "자녀무상교육" (0.74s)
+  tl.fromTo("#f09-place", { y: 24, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: "power3.out" }, 0.18);
+  tl.fromTo("#f09-place .f09-leaf", { rotation: -40, scale: 0.4 }, { rotation: 0, scale: 1, duration: 0.6, ease: "back.out(1.8)" }, 0.18);
+  tl.fromTo("#f09-accent", { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: "power3.out" }, 0.26);
+  tl.fromTo("#f09-line1", { y: 60, opacity: 0, scale: 0.94 }, { y: 0, opacity: 1, scale: 1, duration: 0.55, ease: "power3.out" }, 0.3);
+  tl.fromTo("#f09-line2", { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 0.72);
+
+  // Scene 2 — scale-swap: AA monogram seed shrinks out, "AA Canada" wordmark pops in (cue 1.66s)
+  tl.fromTo("#f09-mono", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(1.8)" }, 1.08);
+  tl.fromTo("#f09-mono", { scale: 1, opacity: 1 }, { scale: 0.7, opacity: 0, duration: 0.32, immediateRender: false, ease: "power2.in" }, 1.5);
+  tl.fromTo("#f09-word", { scale: 0.7, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.6, ease: "back.out(1.8)" }, 1.66);
+  tl.fromTo("#f09-sub", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: "power3.out" }, 2.2);
+
+  // "상담하세요" (2.66s) — CTA pill settles, contact line fades in
+  tl.fromTo("#f09-cta", { y: 40, scale: 0.8, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.6, ease: "back.out(1.6)" }, 2.62);
+  tl.fromTo("#f09-cta .f09-arrow", { x: -12 }, { x: 0, duration: 0.5, ease: "power3.out" }, 2.9);
+  tl.fromTo("#f09-contact", { y: 14, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 3.05);
+
+  // Progress strip (frame 9 of 9 — full width)
+  tl.fromTo("#f09-progress", { scaleX: 0.889 }, { scaleX: 1, duration: 0.8, ease: "power2.out", transformOrigin: "0% 50%" }, 0);
+
+  // Quiet life in the hold — near-imperceptible scale on the lockup; final state holds still
+  tl.fromTo("#f09-word .f09-word-text", { scale: 1 }, { scale: 1.025, duration: 2.6, ease: "none" }, 2.27);
+  tl.set({}, {}, 4.906);
+
+  window.__timelines["09-cta"] = tl;
+})();
+</script>
+</div>
+</template>

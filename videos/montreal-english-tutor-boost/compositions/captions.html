@@ -1,0 +1,226 @@
+<template id="captions-template" data-composition-id="captions" data-width="1080" data-height="1920">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+
+
+<style data-brand-tokens>
+      @font-face { font-family: 'Pretendard'; src: url('assets/fonts/Pretendard-Black.woff2') format('woff2'); font-weight: 800; font-style: normal; font-display: block; }
+      @font-face { font-family: 'Pretendard'; src: url('assets/fonts/Pretendard-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: block; }
+      @font-face { font-family: 'Pretendard'; src: url('assets/fonts/Pretendard-Medium.woff2') format('woff2'); font-weight: 500; font-style: normal; font-display: block; }
+      :root {
+      --bg: #fdfae7;
+      --primary: #1e2bfa;
+      --text: #111111;
+      --text-muted: #6b6b6b;
+      --text-light: #9a9a9a;
+      --accent-light: rgba(30,43,250,0.08);
+      --accent-medium: rgba(30,43,250,0.15);
+      --border: rgba(30,43,250,0.2);
+      --card-bg: rgba(30,43,250,0.04);
+      --positive: #059669;
+      --negative: #dc2626;
+      --cap-ink: #111111;
+      --cap-canvas: #fdfae7;
+      --cap-accent: #1e2bfa;
+      --cap-accent-2: #6b6b6b;
+      --font-display: "Pretendard", system-ui, serif;
+      --font-body: "Pretendard", system-ui, sans-serif;
+      --cap-band-top: 1600px;
+      --cap-band-height: 320px;
+      }
+    </style>
+
+<style>
+  #captions-root {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .caption-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 20;
+    pointer-events: none;
+  }
+  /* the keep-out band, from captionBand(H) — frame content stays above it */
+  .caption-stage {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: var(--cap-band-top, 900px);
+    height: var(--cap-band-height, 180px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .caption-group {
+    /* every group is absolutely stacked over the SAME band — exactly one shown at a
+       time via opacity. Must be absolute: in-flow groups would lay out side-by-side. */
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+  }
+
+  /* THE tinted card — 4% cobalt fill, 1.5px 20%-cobalt border, soft 14px corners,
+     NO shadow (the tinted card does the lift; cast depth is forbidden) */
+  .caption-pill {
+    max-width: 78%;
+    padding: 20px 44px 24px;
+    background: color-mix(in srgb, var(--cap-accent, #1e2bfa) 4%, var(--cap-canvas, #fdfae7));
+    border: 1.5px solid color-mix(in srgb, var(--cap-accent, #1e2bfa) 20%, transparent);
+    border-radius: 14px;
+  }
+  .caption-line {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.1em 0.34em;
+    font-family: "Pretendard", system-ui, sans-serif;
+    font-weight: 600;
+    font-size: clamp(40px, 4.4vw, 58px);
+    line-height: 1.16;
+    letter-spacing: -0.02em;
+  }
+
+  /* upcoming — muted gray, no chip */
+  .caption-word {
+    display: inline-block;
+    padding: 0 0.18em;
+    border-radius: 0.32em;
+    color: color-mix(in srgb, var(--cap-ink, #111111) 52%, var(--cap-canvas, #fdfae7));
+  }
+  /* current word — THE solid cobalt chip (the single-accent gesture; pill-rounded
+     fill, NO shadow), cream reading on top */
+  .caption-word.is-active {
+    color: var(--cap-canvas, #fdfae7);
+    background: var(--cap-accent, #1e2bfa);
+    box-shadow: none;
+  }
+  /* already spoken — solid near-black ink, chip cleared */
+  .caption-word.is-spoken {
+    color: var(--cap-ink, #111111);
+    background: transparent;
+    box-shadow: none;
+  }
+
+  /* optional per-word accents (dormant until a word-classer tags them) */
+  /* brand / key term — cobalt, the system's one accent on a key word */
+  .caption-word.cap-brand {
+    color: var(--cap-accent, #1e2bfa);
+  }
+  /* numerals / data — cobalt 700, the figure voice */
+  .caption-word.cap-num {
+    font-family: "Pretendard", system-ui, sans-serif;
+    font-weight: 700;
+    color: var(--cap-accent, #1e2bfa);
+  }
+  /* emphasis — a directional-red hairline underline (inline only, never a fill) */
+  .caption-word.cap-cta {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-decoration-color: var(--cap-accent-2, #dc2626);
+    text-underline-offset: 0.1em;
+  }
+
+  @media (max-aspect-ratio: 9/16) {
+    .caption-pill {
+      max-width: 92%;
+    }
+    .caption-line {
+      font-size: clamp(34px, 5.4vw, 48px);
+    }
+  }
+</style>
+
+<div
+  id="captions-root"
+  data-composition-id="captions"
+  data-timeline-locked
+  data-start="0"
+  data-duration="58.259"
+  data-fps="30"
+  data-width="1080"
+  data-height="1920"
+>
+  <div class="caption-layer" aria-hidden="true">
+    <div id="caption-stage" class="caption-stage"></div>
+  </div>
+</div>
+
+<script>
+  // captions.mjs injects the engine's scene-aware groups + real duration here.
+  var GROUPS = [{"id":"caption-group-0","frame":1,"start":0.24,"end":1.64,"text":"캐나다 자녀무상교육,","words":[{"id":"caption-word-0-0","text":"캐나다","start":0.24,"end":0.61},{"id":"caption-word-0-1","text":"자녀무상교육,","start":0.62,"end":1.63}]},{"id":"caption-group-1","frame":1,"start":1.64,"end":3.9,"text":"영어가 가장 빨리 느는 도시는 어디일까요?","words":[{"id":"caption-word-1-0","text":"영어가","start":1.64,"end":1.99},{"id":"caption-word-1-1","text":"가장","start":2,"end":2.31},{"id":"caption-word-1-2","text":"빨리","start":2.32,"end":2.51},{"id":"caption-word-1-3","text":"느는","start":2.52,"end":2.77},{"id":"caption-word-1-4","text":"도시는","start":2.78,"end":3.15},{"id":"caption-word-1-5","text":"어디일까요?","start":3.16,"end":3.78}]},{"id":"caption-group-2","frame":2,"start":4.988,"end":6.828,"text":"몬트리올은 불어권이라 안 된다고요?","words":[{"id":"caption-word-2-0","text":"몬트리올은","start":4.988,"end":5.638},{"id":"caption-word-2-1","text":"불어권이라","start":5.648,"end":6.158},{"id":"caption-word-2-2","text":"안","start":6.168,"end":6.338},{"id":"caption-word-2-3","text":"된다고요?","start":6.348,"end":6.708}]},{"id":"caption-group-3","frame":2,"start":7.668,"end":10.128,"text":"영어교육청 소속 영어학교에 가면,","words":[{"id":"caption-word-3-0","text":"영어교육청","start":7.668,"end":8.398},{"id":"caption-word-3-1","text":"소속","start":8.408,"end":8.777},{"id":"caption-word-3-2","text":"영어학교에","start":8.787,"end":9.458},{"id":"caption-word-3-3","text":"가면,","start":9.468,"end":10.118}]},{"id":"caption-group-4","frame":2,"start":10.128,"end":12.468,"text":"친구들과 100% 영어로 소통합니다.","words":[{"id":"caption-word-4-0","text":"친구들과","start":10.128,"end":10.778},{"id":"caption-word-4-1","text":"100%","start":10.788,"end":11.498},{"id":"caption-word-4-2","text":"영어로","start":11.508,"end":11.778},{"id":"caption-word-4-3","text":"소통합니다.","start":11.788,"end":12.348}]},{"id":"caption-group-5","frame":2,"start":13.288,"end":15.428,"text":"영어권 도시에 가는 것과 똑같아요.","words":[{"id":"caption-word-5-0","text":"영어권","start":13.288,"end":13.738},{"id":"caption-word-5-1","text":"도시에","start":13.748,"end":14.258},{"id":"caption-word-5-2","text":"가는","start":14.268,"end":14.518},{"id":"caption-word-5-3","text":"것과","start":14.528,"end":14.838},{"id":"caption-word-5-4","text":"똑같아요.","start":14.848,"end":15.308}]},{"id":"caption-group-6","frame":3,"start":16.652,"end":18.152,"text":"캐나다 두 번째 대도시인데,","words":[{"id":"caption-word-6-0","text":"캐나다","start":16.652,"end":16.962},{"id":"caption-word-6-1","text":"두","start":16.972,"end":17.142},{"id":"caption-word-6-2","text":"번째","start":17.152,"end":17.422},{"id":"caption-word-6-3","text":"대도시인데,","start":17.432,"end":18.142}]},{"id":"caption-group-7","frame":3,"start":18.152,"end":20.192,"text":"렌트비는 중소도시 수준입니다.","words":[{"id":"caption-word-7-0","text":"렌트비는","start":18.152,"end":18.922},{"id":"caption-word-7-1","text":"중소도시","start":18.932,"end":19.462},{"id":"caption-word-7-2","text":"수준입니다.","start":19.472,"end":20.072}]},{"id":"caption-group-8","frame":4,"start":21.467,"end":23.067,"text":"부모님이 다니는 컬리지 학비도,","words":[{"id":"caption-word-8-0","text":"부모님이","start":21.467,"end":21.857},{"id":"caption-word-8-1","text":"다니는","start":21.867,"end":22.277},{"id":"caption-word-8-2","text":"컬리지","start":22.287,"end":22.577},{"id":"caption-word-8-3","text":"학비도,","start":22.587,"end":23.057}]},{"id":"caption-group-9","frame":4,"start":23.067,"end":24.087,"text":"가장 저렴합니다.","words":[{"id":"caption-word-9-0","text":"가장","start":23.067,"end":23.417},{"id":"caption-word-9-1","text":"저렴합니다.","start":23.427,"end":23.967}]},{"id":"caption-group-10","frame":5,"start":25.559,"end":26.639,"text":"자녀와 함께 가도,","words":[{"id":"caption-word-10-0","text":"자녀와","start":25.559,"end":25.929},{"id":"caption-word-10-1","text":"함께","start":25.939,"end":26.209},{"id":"caption-word-10-2","text":"가도,","start":26.219,"end":26.629}]},{"id":"caption-group-11","frame":5,"start":26.639,"end":29.079,"text":"차 없이 생활할 수 있는 거의 유일한 도시.","words":[{"id":"caption-word-11-0","text":"차","start":26.639,"end":26.829},{"id":"caption-word-11-1","text":"없이","start":26.839,"end":27.129},{"id":"caption-word-11-2","text":"생활할","start":27.139,"end":27.509},{"id":"caption-word-11-3","text":"수","start":27.519,"end":27.649},{"id":"caption-word-11-4","text":"있는","start":27.659,"end":27.989},{"id":"caption-word-11-5","text":"거의","start":27.999,"end":28.269},{"id":"caption-word-11-6","text":"유일한","start":28.279,"end":28.689},{"id":"caption-word-11-7","text":"도시.","start":28.699,"end":28.959}]},{"id":"caption-group-12","frame":5,"start":29.759,"end":30.319,"text":"보험료도,","words":[{"id":"caption-word-12-0","text":"보험료도,","start":29.759,"end":30.309}]},{"id":"caption-group-13","frame":5,"start":30.319,"end":31.319,"text":"주차비도 아낍니다.","words":[{"id":"caption-word-13-0","text":"주차비도","start":30.319,"end":30.729},{"id":"caption-word-13-1","text":"아낍니다.","start":30.739,"end":31.199}]},{"id":"caption-group-14","frame":6,"start":32.492,"end":33.772,"text":"모두 합치면,","words":[{"id":"caption-word-14-0","text":"모두","start":32.492,"end":32.762},{"id":"caption-word-14-1","text":"합치면,","start":32.772,"end":33.762}]},{"id":"caption-group-15","frame":6,"start":33.772,"end":35.912,"text":"캐나다 어느 도시보다 압도적으로 저렴합니다.","words":[{"id":"caption-word-15-0","text":"캐나다","start":33.772,"end":34.122},{"id":"caption-word-15-1","text":"어느","start":34.132,"end":34.382},{"id":"caption-word-15-2","text":"도시보다","start":34.392,"end":34.742},{"id":"caption-word-15-3","text":"압도적으로","start":34.752,"end":35.262},{"id":"caption-word-15-4","text":"저렴합니다.","start":35.272,"end":35.792}]},{"id":"caption-group-16","frame":7,"start":36.917,"end":39.517,"text":"아낀 돈의 일부로 원어민 튜터를 붙이면,","words":[{"id":"caption-word-16-0","text":"아낀","start":36.917,"end":37.307},{"id":"caption-word-16-1","text":"돈의","start":37.317,"end":37.487},{"id":"caption-word-16-2","text":"일부로","start":37.497,"end":37.827},{"id":"caption-word-16-3","text":"원어민","start":37.837,"end":38.207},{"id":"caption-word-16-4","text":"튜터를","start":38.217,"end":38.727},{"id":"caption-word-16-5","text":"붙이면,","start":38.737,"end":39.507}]},{"id":"caption-group-17","frame":7,"start":39.517,"end":41.497,"text":"아이 수준에 맞춘 1:1 수업으로","words":[{"id":"caption-word-17-0","text":"아이","start":39.517,"end":39.727},{"id":"caption-word-17-1","text":"수준에","start":39.737,"end":40.107},{"id":"caption-word-17-2","text":"맞춘","start":40.117,"end":40.427},{"id":"caption-word-17-3","text":"1:1","start":40.437,"end":40.907},{"id":"caption-word-17-4","text":"수업으로","start":40.917,"end":41.487}]},{"id":"caption-group-18","frame":7,"start":41.497,"end":42.257,"text":"학교 적응도,","words":[{"id":"caption-word-18-0","text":"학교","start":41.497,"end":41.747},{"id":"caption-word-18-1","text":"적응도,","start":41.757,"end":42.247}]},{"id":"caption-group-19","frame":7,"start":42.257,"end":43.857,"text":"영어도 훨씬 빨라집니다.","words":[{"id":"caption-word-19-0","text":"영어도","start":42.257,"end":42.647},{"id":"caption-word-19-1","text":"훨씬","start":42.657,"end":43.167},{"id":"caption-word-19-2","text":"빨라집니다.","start":43.177,"end":43.737}]},{"id":"caption-group-20","frame":8,"start":45.208,"end":46.908,"text":"학교에서는 친구들과 영어로","words":[{"id":"caption-word-20-0","text":"학교에서는","start":45.208,"end":45.918},{"id":"caption-word-20-1","text":"친구들과","start":45.928,"end":46.418},{"id":"caption-word-20-2","text":"영어로","start":46.428,"end":46.898}]},{"id":"caption-group-21","frame":8,"start":46.908,"end":48.448,"text":"어울리며 자연스럽게,","words":[{"id":"caption-word-21-0","text":"어울리며","start":46.908,"end":47.378},{"id":"caption-word-21-1","text":"자연스럽게,","start":47.388,"end":48.438}]},{"id":"caption-group-22","frame":8,"start":48.448,"end":50.408,"text":"튜터와는 체계적으로 빠르게.","words":[{"id":"caption-word-22-0","text":"튜터와는","start":48.448,"end":49.378},{"id":"caption-word-22-1","text":"체계적으로","start":49.388,"end":49.978},{"id":"caption-word-22-2","text":"빠르게.","start":49.988,"end":50.288}]},{"id":"caption-group-23","frame":8,"start":50.988,"end":52.428,"text":"그래서 확실하게 늘어납니다.","words":[{"id":"caption-word-23-0","text":"그래서","start":50.988,"end":51.418},{"id":"caption-word-23-1","text":"확실하게","start":51.428,"end":51.838},{"id":"caption-word-23-2","text":"늘어납니다.","start":51.848,"end":52.308}]},{"id":"caption-group-24","frame":9,"start":53.673,"end":55.013,"text":"몬트리올 자녀무상교육,","words":[{"id":"caption-word-24-0","text":"몬트리올","start":53.673,"end":54.083},{"id":"caption-word-24-1","text":"자녀무상교육,","start":54.093,"end":55.003}]},{"id":"caption-group-25","frame":9,"start":55.013,"end":56.613,"text":"AA캐나다와 상담하세요.","words":[{"id":"caption-word-25-0","text":"AA캐나다와","start":55.013,"end":56.003},{"id":"caption-word-25-1","text":"상담하세요.","start":56.013,"end":56.493}]}];
+  var DURATION = 58.259;
+
+  (function () {
+    var stage = document.getElementById("caption-stage");
+
+    // build DOM: one .caption-group per group, .caption-word per word
+    GROUPS.forEach(function (group, g) {
+      var groupEl = document.createElement("div");
+      groupEl.className = "caption-group";
+      groupEl.id = "caption-group-" + g;
+      var pill = document.createElement("div");
+      pill.className = "caption-pill";
+      var line = document.createElement("div");
+      line.className = "caption-line";
+      (group.words || []).forEach(function (w, i) {
+        var span = document.createElement("span");
+        span.className = "caption-word";
+        span.id = "caption-word-" + g + "-" + i;
+        span.textContent = String(w.text);
+        line.appendChild(span);
+      });
+      pill.appendChild(line);
+      groupEl.appendChild(pill);
+      stage.appendChild(groupEl);
+    });
+
+    window.__timelines = window.__timelines || {};
+    var tl = gsap.timeline({ paused: true });
+
+    GROUPS.forEach(function (group, g) {
+      var groupEl = document.getElementById("caption-group-" + g);
+      var words = group.words || [];
+      var next = GROUPS[g + 1];
+      var isLast = g === GROUPS.length - 1;
+      var start = Math.max(0, Number(group.start));
+      var end = isLast ? DURATION : Math.min(Number(next.start), Number(group.end) + 0.3);
+      if (end <= start) end = start + 0.01;
+
+      // group on/off — exactly one group visible at a time
+      tl.set(groupEl, { opacity: 1 }, start);
+      tl.set(groupEl, { opacity: 0 }, end);
+
+      // 3-state karaoke via className SETS — seek-safe (gsap.set applies on the
+      // engine's frame-by-frame seek; .call callbacks would NOT fire).
+      words.forEach(function (w, i) {
+        var el = document.getElementById("caption-word-" + g + "-" + i);
+        var at = Math.max(start, Number(w.start));
+        tl.set(el, { className: "caption-word" }, start); // upcoming (also resets on reverse-seek)
+        tl.set(el, { className: "caption-word is-active" }, at); // current
+        tl.fromTo(el, { scale: 0.985 }, { scale: 1, duration: 0.18, ease: "power1.out" }, at);
+        if (i + 1 < words.length) {
+          var nextAt = Math.max(start, Number(words[i + 1].start));
+          tl.set(el, { className: "caption-word is-spoken" }, nextAt); // demote when next activates
+        }
+      });
+      if (words.length) {
+        var lastEl = document.getElementById("caption-word-" + g + "-" + (words.length - 1));
+        var lastSpoken = Math.min(end, Number(words[words.length - 1].end) + 0.1);
+        tl.set(lastEl, { className: "caption-word is-spoken" }, lastSpoken);
+      }
+    });
+
+    // full-span anchor so the sub-comp timeline spans the whole video
+    tl.to({}, { duration: DURATION }, 0);
+    window.__timelines["captions"] = tl;
+  })();
+</script>
+
+<style>
+  .caption-line { line-height: 1.1 !important; }
+</style>
+</template>

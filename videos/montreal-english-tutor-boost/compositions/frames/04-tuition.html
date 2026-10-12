@@ -1,0 +1,219 @@
+<template id="f04-template">
+  <div id="root" data-composition-id="04-tuition" data-start="0" data-duration="3.912" data-width="1080" data-height="1920">
+    <style>
+      @font-face{font-family:"Pretendard";font-weight:800;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");}
+      @font-face{font-family:"Pretendard";font-weight:700;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");}
+      @font-face{font-family:"Pretendard";font-weight:500;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Medium.woff2") format("woff2");}
+
+      #root {
+        position: relative;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        font-family: "Pretendard", sans-serif;
+      }
+      #f04-bg {
+        position: absolute;
+        inset: 0;
+        background: #fdfae7;
+      }
+      #f04-stage {
+        position: absolute;
+        inset: 0;
+        container-type: size;
+        transform-origin: 50% 40%;
+      }
+
+      /* eyebrow pill (y ≈ 420) */
+      #f04-eyebrow-wrap {
+        position: absolute;
+        left: 80px;
+        top: 388px;
+        display: flex;
+        align-items: center;
+        gap: 24px;
+      }
+      #f04-accent-line {
+        width: 60px;
+        height: 4px;
+        border-radius: 2px;
+        background: #1e2bfa;
+        transform-origin: left center;
+      }
+      #f04-eyebrow {
+        padding: 14px 32px;
+        border-radius: 100px;
+        background: rgba(30,43,250,0.08);
+        color: #1e2bfa;
+        font-size: 38px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        line-height: 1;
+        white-space: nowrap;
+      }
+
+      /* bar rows */
+      .f04-row {
+        position: absolute;
+        left: 80px;
+        width: 920px;
+      }
+      #f04-row-a { top: 590px; }   /* bar centre ≈ 700 */
+      #f04-row-b { top: 790px; }   /* bar centre ≈ 900 */
+      .f04-name {
+        font-size: 46px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        line-height: 1;
+        color: #111111;
+        margin-bottom: 26px;
+        white-space: nowrap;
+      }
+      .f04-track {
+        position: relative;
+        width: 920px;
+        height: 104px;
+        border-radius: 6px;
+        background: rgba(30,43,250,0.08);
+      }
+      .f04-fill {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        border-radius: 6px;
+        transform-origin: left center;
+      }
+      #f04-fill-a {
+        width: 100%;
+        background: #9a9a9a;
+      }
+      #f04-fill-b {
+        width: 60%;
+        background: #1e2bfa;
+      }
+      .f04-amount {
+        position: absolute;
+        top: 0;
+        height: 104px;
+        display: flex;
+        align-items: center;
+        font-size: 36px;
+        font-weight: 500;
+        line-height: 1;
+        white-space: nowrap;
+      }
+      #f04-amount-a {
+        right: 32px;
+        color: #111111;
+      }
+      #f04-amount-b {
+        left: 0;
+        width: 552px;
+        justify-content: flex-end;
+        padding-right: 28px;
+        box-sizing: border-box;
+        color: #fdfae7;
+      }
+
+      /* "가장 저렴" badge — stamps at the cobalt bar's end */
+      #f04-badge {
+        position: absolute;
+        left: 584px;
+        top: 14px;
+        height: 76px;
+        padding: 0 34px;
+        display: flex;
+        align-items: center;
+        border-radius: 100px;
+        background: #1e2bfa;
+        border: 4px solid #fdfae7;
+        color: #fdfae7;
+        font-size: 40px;
+        font-weight: 800;
+        letter-spacing: -0.01em;
+        line-height: 1;
+        white-space: nowrap;
+        transform-origin: 30% 50%;
+      }
+
+      /* progress strip: frame 4 of 9 */
+      #f04-progress {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 480px;
+        height: 3px;
+        background: #1e2bfa;
+      }
+    </style>
+
+    <div id="f04-bg" class="clip" data-start="0" data-duration="3.912" data-track-index="0"><div id="f04-progress"></div></div>
+
+    <div id="f04-stage" class="clip" data-start="0" data-duration="3.912" data-track-index="1">
+      <div id="f04-eyebrow-wrap">
+        <div id="f04-accent-line"></div>
+        <div id="f04-eyebrow">부모님 학비 · 1년</div>
+      </div>
+
+      <div id="f04-row-a" class="f04-row">
+        <div id="f04-name-a" class="f04-name">온타리오 대학부설</div>
+        <div id="f04-track-a" class="f04-track">
+          <div id="f04-fill-a" class="f04-fill"></div>
+          <div id="f04-amount-a" class="f04-amount">약 $20,000</div>
+        </div>
+      </div>
+
+      <div id="f04-row-b" class="f04-row">
+        <div id="f04-name-b" class="f04-name">몬트리올 사립컬리지</div>
+        <div id="f04-track-b" class="f04-track">
+          <div id="f04-fill-b" class="f04-fill"></div>
+          <div id="f04-amount-b" class="f04-amount">$12,000</div>
+          <div id="f04-badge">가장 저렴</div>
+        </div>
+      </div>
+
+    </div>
+
+    <script src="assets/vendor/gsap.min.js"></script>
+    <script>
+      (function () {
+        window.__timelines = window.__timelines || {};
+        var tl = gsap.timeline({ paused: true });
+
+        // slow continuous push-in underneath the whole shot (camera)
+        tl.fromTo("#f04-stage", { scale: 1 }, { scale: 1.035, duration: 3.912, ease: "none" }, 0);
+
+        // empty tracks present from the open so the instrument reads early
+        tl.fromTo(["#f04-track-a", "#f04-track-b"], { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power2.out", stagger: 0.08 }, 0.05);
+
+        // Scene 1 — "부모님이" (0.32s): eyebrow pill
+        tl.fromTo("#f04-accent-line", { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: "power3.out" }, 0.28);
+        tl.fromTo("#f04-eyebrow", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 0.32);
+
+        // "컬리지" (1.14s): grey Ontario bar grows to full width
+        tl.fromTo("#f04-name-a", { opacity: 0, x: -24 }, { opacity: 1, x: 0, duration: 0.4, ease: "power3.out" }, 1.0);
+        tl.fromTo("#f04-fill-a", { scaleX: 0 }, { scaleX: 1, duration: 0.75, ease: "power3.out" }, 1.14);
+        tl.fromTo("#f04-amount-a", { opacity: 0, x: -16 }, { opacity: 1, x: 0, duration: 0.3, ease: "power2.out" }, 1.6);
+
+        // Scene 2 — "학비도" (1.44s): cobalt Montreal bar grows to 60%
+        tl.fromTo("#f04-name-b", { opacity: 0, x: -24 }, { opacity: 1, x: 0, duration: 0.4, ease: "power3.out" }, 1.34);
+        tl.fromTo("#f04-fill-b", { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "power3.out" }, 1.44);
+        tl.fromTo("#f04-amount-b", { opacity: 0, x: -16 }, { opacity: 1, x: 0, duration: 0.3, ease: "power2.out" }, 1.82);
+
+        // Ontario row recedes slightly so the cobalt bar owns focus
+        tl.fromTo("#f04-row-a", { opacity: 1 }, { opacity: 0.55, duration: 0.6, ease: "power2.out" }, 1.95);
+
+        // "가장" (1.92s) / "저렴합니다" (2.28s): badge stamps at the bar's end
+        tl.fromTo("#f04-badge",
+          { opacity: 0, scale: 1.7, rotation: -8 },
+          { opacity: 1, scale: 1, rotation: -4, duration: 0.38, ease: "back.out(2.2)" }, 1.98);
+        tl.fromTo("#f04-badge", { y: 0 }, { y: -6, duration: 0.18, ease: "power2.out" }, 2.28);
+        tl.to("#f04-badge", { y: 0, duration: 0.3, ease: "power2.inOut" }, 2.46);
+        // hold to 3.912s
+
+        window.__timelines["04-tuition"] = tl;
+      })();
+    </script>
+  </div>
+</template>

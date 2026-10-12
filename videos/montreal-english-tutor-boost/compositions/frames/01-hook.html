@@ -1,0 +1,230 @@
+<template id="f01-hook-template">
+<div id="root" data-composition-id="01-hook" data-start="0" data-duration="4.768" data-width="1080" data-height="1920">
+<script src="assets/vendor/gsap.min.js"></script>
+<style>
+@font-face{font-family:"Pretendard";font-weight:800;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");}
+@font-face{font-family:"Pretendard";font-weight:700;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");}
+@font-face{font-family:"Pretendard";font-weight:500;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Medium.woff2") format("woff2");}
+</style>
+<style>
+  #root {
+    position: absolute;
+    inset: 0;
+    width: 1080px;
+    height: 1920px;
+    overflow: hidden;
+    font-family: "Pretendard", sans-serif;
+    color: #111111;
+  }
+  #f01-bg {
+    position: absolute;
+    inset: 0;
+    background: #fdfae7;
+    overflow: hidden;
+  }
+  #f01-band {
+    position: absolute;
+    left: -60px;
+    right: -60px;
+    top: 0;
+    bottom: 0;
+    background: rgba(30,43,250,0.08);
+    clip-path: polygon(0 63%, 100% 49%, 100% 65%, 0 79%);
+  }
+  #f01-dots {
+    position: absolute;
+    top: 120px;
+    right: 80px;
+    display: grid;
+    grid-template-columns: repeat(3, 14px);
+    gap: 26px;
+  }
+  #f01-dots i {
+    display: block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #1e2bfa;
+    opacity: 0.35;
+  }
+  #f01-stage {
+    position: absolute;
+    inset: 0;
+    transform-origin: 40% 45%;
+  }
+  #f01-eyebrow-wrap {
+    position: absolute;
+    left: 72px;
+    top: 270px;
+  }
+  #f01-accent-line {
+    width: 60px;
+    height: 4px;
+    border-radius: 2px;
+    background: #1e2bfa;
+    margin-bottom: 22px;
+  }
+  #f01-eyebrow {
+    display: inline-block;
+    padding: 16px 34px;
+    border-radius: 100px;
+    background: rgba(30,43,250,0.08);
+    color: #1e2bfa;
+    font-weight: 700;
+    font-size: 40px;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+  }
+  #f01-chips {
+    position: absolute;
+    left: 72px;
+    top: 440px;
+    width: 760px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 22px;
+  }
+  .f01-chip {
+    position: relative;
+    height: 84px;
+    border-radius: 100px;
+    background: rgba(30,43,250,0.04);
+    border: 1.5px solid rgba(30,43,250,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 42px;
+    letter-spacing: -0.02em;
+    color: #111111;
+  }
+  .f01-chip-label {
+    position: relative;
+  }
+  #f01-ring {
+    position: absolute;
+    inset: -6px;
+    border-radius: 100px;
+    border: 4px solid #1e2bfa;
+    opacity: 0;
+  }
+  .f01-line {
+    position: absolute;
+    left: 72px;
+    font-weight: 800;
+    font-size: 132px;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: #111111;
+    white-space: nowrap;
+  }
+  #f01-l1 { top: 730px; }
+  #f01-l2 { top: 885px; }
+  #f01-l3 { top: 1040px; }
+  .f01-accent { color: #1e2bfa; }
+  #f01-qdisc {
+    position: absolute;
+    left: 700px;
+    top: 1060px;
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    background: rgba(30,43,250,0.08);
+  }
+  #f01-qmark {
+    position: absolute;
+    left: 700px;
+    top: 1010px;
+    width: 340px;
+    text-align: center;
+    font-weight: 800;
+    font-size: 420px;
+    line-height: 1;
+    color: #1e2bfa;
+  }
+  #f01-progress {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 120px;
+    height: 3px;
+    background: #1e2bfa;
+  }
+</style>
+
+  <div id="f01-bg" class="clip" data-start="0" data-duration="4.768" data-track-index="0">
+    <div id="f01-band"></div>
+    <div id="f01-dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  </div>
+
+  <div id="f01-stage" class="clip" data-start="0" data-duration="4.768" data-track-index="1">
+    <div id="f01-eyebrow-wrap">
+      <div id="f01-accent-line"></div>
+      <div id="f01-eyebrow">캐나다 자녀무상교육</div>
+    </div>
+
+    <div id="f01-chips">
+      <div class="f01-chip f01-chip-dim"><span class="f01-chip-label">밴쿠버</span></div>
+      <div class="f01-chip f01-chip-dim"><span class="f01-chip-label">토론토</span></div>
+      <div class="f01-chip f01-chip-dim"><span class="f01-chip-label">런던</span></div>
+      <div class="f01-chip" id="f01-chip-mtl"><div id="f01-ring"></div><span class="f01-chip-label" id="f01-mtl-label">몬트리올</span></div>
+    </div>
+
+    <div class="f01-line" id="f01-l1">영어가</div>
+    <div class="f01-line" id="f01-l2">가장 <span class="f01-accent">빨리</span> 느는</div>
+    <div class="f01-line" id="f01-l3">도시는?</div>
+
+    <div id="f01-qdisc"></div>
+    <div id="f01-qmark">?</div>
+  </div>
+
+  <div id="f01-progress"></div>
+
+<script>
+(function () {
+  window.__timelines = window.__timelines || {};
+  var D = 4.768;
+  // One cue array drives every reveal — VO word onsets.
+  var CUE = {
+    canada: 0.24,
+    edu: 0.62,
+    english: 1.64,
+    fast: 2.32,
+    city: 2.78,
+    where: 3.16
+  };
+  var tl = gsap.timeline({ paused: true });
+
+  // Macro camera: slow push-in under the whole shot (no exit).
+  tl.fromTo("#f01-stage", { scale: 1 }, { scale: 1.035, duration: D, ease: "none" }, 0);
+  tl.fromTo("#f01-band", { x: -30 }, { x: 30, duration: D, ease: "none" }, 0);
+
+  // Scene 1 — eyebrow pill settles, then 4 city chips rise index-staggered.
+  tl.fromTo("#f01-accent-line", { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 0.4, ease: "power3.out" }, CUE.canada);
+  tl.fromTo("#f01-eyebrow", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, CUE.canada);
+  tl.fromTo(".f01-chip", { y: 60, opacity: 0, scale: 0.92 },
+    { y: 0, opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.6)", stagger: 0.09 }, CUE.edu);
+
+  // Scene 2 — kinetic-beat-slam: distinct entrance per line on the cue grid.
+  tl.fromTo("#f01-l1", { scale: 1.5, filter: "blur(16px)", opacity: 0, transformOrigin: "0% 50%" },
+    { scale: 1, filter: "blur(0px)", opacity: 1, duration: 0.5, ease: "power4.out" }, CUE.english);
+  tl.fromTo("#f01-l2", { x: -320, opacity: 0 },
+    { x: 0, opacity: 1, duration: 0.45, ease: "expo.out" }, CUE.fast);
+
+  // Scene 3 — third line rises, then the "?" payoff pops + chips foreshadow Montreal.
+  tl.fromTo("#f01-l3", { y: 90, rotation: 6, opacity: 0, transformOrigin: "0% 100%" },
+    { y: 0, rotation: 0, opacity: 1, duration: 0.5, ease: "circ.out" }, CUE.city);
+  tl.fromTo("#f01-qdisc", { scale: 0, opacity: 0 },
+    { scale: 1, opacity: 1, duration: 0.5, ease: "power3.out" }, CUE.where);
+  tl.fromTo("#f01-qmark", { scale: 0.2, rotation: -18, opacity: 0 },
+    { scale: 1, rotation: 0, opacity: 1, duration: 0.55, ease: "back.out(2)" }, CUE.where);
+  tl.fromTo(".f01-chip-dim", { opacity: 1 }, { opacity: 0.4, duration: 0.4, ease: "power2.out" }, CUE.where + 0.1);
+  tl.fromTo("#f01-ring", { opacity: 0, scale: 1.12 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, CUE.where + 0.1);
+  tl.fromTo("#f01-mtl-label", { color: "#111111" }, { color: "#1e2bfa", duration: 0.3, ease: "power2.out" }, CUE.where + 0.1);
+  tl.fromTo("#f01-chip-mtl", { scale: 1 }, { scale: 1.06, duration: 0.45, ease: "power3.out" }, CUE.where + 0.1);
+
+  window.__timelines["01-hook"] = tl;
+})();
+</script>
+</div>
+</template>
