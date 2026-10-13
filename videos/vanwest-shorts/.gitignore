@@ -1,0 +1,8 @@
+node_modules/
+.hyperframes/
+renders/
+*.mp4
+snapshots/
+__pycache__/
+node_modules
+node_modules
