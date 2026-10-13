@@ -1,0 +1,9 @@
+type: longform
+title: 버논 조기유학, 가기 전에 영어부터! 켈로나 밴웨스트 공립학교 준비 과정 (본편)
+channels: youtube
+visibility: public
+publish_order: 1
+linked_to: (none)
+files: video.mp4 = 2 parts (video.mp4.part-00, video.mp4.part-01; 합친 뒤 1920x1080, 4:14, 107MB, video.mp4.sha256 로 확인), thumbnail.jpg (1280x720), upload-text.txt
+source: aacanada/AI- branch claude/festive-ramanujan-rswtcw, videos/vanwest-prep/
+notes: 버논 조기유학 본편(videos/vernon-longform)의 후속편입니다. 학비는 2026년 10월 기준이라 설명란에 변동 가능 문구를 넣었습니다.
