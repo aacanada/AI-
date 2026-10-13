@@ -65,7 +65,7 @@ inn('#m-pop',R[3]-0.2,{x:-40,y:0}); count('#m-popn',0,80000,R[3]+0.2,1.4,v=>Math
 // 캠퍼스 4곳 → 두 도시
 ['1','2','3','4'].forEach((n,i)=>{pop('#m-k'+n,R[4]+0.6+i*0.3); inn('#m-k'+n+'t',R[4]+0.7+i*0.3,{y:8});});
 tl.fromTo(['#m-k3','#m-k3t','#m-k4','#m-k4t'],{opacity:1},{opacity:0.3,duration:0.4,immediateRender:false},R[4]+4.4);
-tl.fromTo('#m-ring1',{scale:0.4,opacity:0.9},{scale:1.4,opacity:0,duration:1.2,ease:'power2.out',repeat:2},R[4]+4.6);
-tl.fromTo('#m-ring2',{scale:0.4,opacity:0.9},{scale:1.4,opacity:0,duration:1.2,ease:'power2.out',repeat:2},R[4]+4.8);
+tl.fromTo('#m-ring1',{scale:0.4,opacity:0.9},{scale:1.4,opacity:0,duration:1.2,ease:'power2.out',repeat:2,immediateRender:false},R[4]+4.6);
+tl.fromTo('#m-ring2',{scale:0.4,opacity:0.9},{scale:1.4,opacity:0,duration:1.2,ease:'power2.out',repeat:2,immediateRender:false},R[4]+4.8);
 inn('#m-two',R[5]-0.2,{x:-60,y:0,d:0.7,e:'back.out(1.4)'});
 </script>
