@@ -1,0 +1,62 @@
+<style>
+#ROOT .big{position:absolute;font-weight:900;letter-spacing:-.04em;line-height:1}
+#ROOT .node{position:absolute;left:300px;width:480px;height:200px;border-radius:30px;background:#fff;border:5px solid #16324F;display:flex;align-items:center;justify-content:center;gap:24px;font-weight:900;font-size:56px}
+#ROOT .gauge{position:absolute;width:560px;height:560px}
+#ROOT .gauge .trk{fill:none;stroke:rgba(22,50,79,.10);stroke-width:26}
+#ROOT .gauge .val{fill:none;stroke:#2E7D5B;stroke-width:26;stroke-linecap:round}
+</style>
+<div class="grain"></div>
+<div data-layout-ignore class="glow" style="left:300px;top:-300px;width:1100px;height:1100px"></div>
+<div data-layout-ignore class="glow warm" style="left:-400px;top:1100px;width:1000px;height:1000px"></div>
+<svg class="ghost" aria-hidden="true" data-layout-ignore style="left:-40px;top:1580px;width:2600px;height:330px;overflow:visible"><text x="0" y="270" font-family="Pretendard" font-weight="900" font-size="300" fill="rgba(22,50,79,.07)">RCIP</text></svg>
+
+<section id="b0" class="beat" data-beat="0-1">
+  <div class="abs hd" id="b0-k" style="left:90px;top:330px;font-size:60px;color:#4A5F78">캐나다 영주권, 필요한 경력</div>
+  <div class="big" id="b0-n" style="left:70px;top:430px;font-size:440px;color:#2E7D5B">0년</div>
+  <div class="sticker" id="b0-st" style="left:90px;top:960px;font-size:36px">그래도 지원 가능</div>
+</section>
+
+<section id="b1" class="beat" data-beat="1-2">
+  <div class="abs h" id="b1-t" style="left:90px;top:240px;font-size:150px">RCIP</div>
+  <div class="abs hd" id="b1-s" style="left:96px;top:420px;font-size:40px;color:#4A5F78">농촌 커뮤니티 이민 시범사업</div>
+  <div class="node" id="b1-n1" style="top:540px">연방정부</div>
+  <svg class="abs" viewBox="0 0 120 220" style="left:480px;top:750px;width:120px;height:220px"><path id="b1-ar" d="M60 10 V190 M22 150 L60 196 L98 150" fill="none" stroke="#E8572B" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <div class="chip" id="b1-key" style="left:600px;top:810px;font-size:36px">영주권 추천 권한</div>
+  <div class="node" id="b1-n2" style="top:990px;border-color:#2E7D5B;color:#1F5E44">지역 커뮤니티</div>
+</section>
+
+<section id="b2" class="beat" data-beat="2-3">
+  <div class="abs l" id="b2-k" style="left:90px;top:300px;font-size:32px;color:#2E7D5B">웨스트 쿠트니 지역 유일의 공립 교육기관</div>
+  <div class="abs h" id="b2-t" style="left:90px;top:360px;font-size:120px">셀커크<br/>컬리지</div>
+  <div class="card" id="b2-c" style="left:90px;top:700px;width:900px;height:300px;padding:50px;background:#16324F;border-color:#16324F;color:#FAF6EF">
+    <div class="l" style="font-size:28px;color:#F3C969">졸업생 혜택</div>
+    <div class="h" style="margin-top:16px;font-size:76px">경력 요건 면제</div></div>
+</section>
+
+<section id="b3" class="beat" data-beat="3-4">
+  <div class="big" id="b3-n" style="left:80px;top:260px;font-size:300px;color:#2E7D5B">62%</div>
+  <div class="abs hd" id="b3-t" style="left:90px;top:580px;font-size:52px;width:900px">RNIP 주신청자 302명 중 <span class="green">188명</span>이 셀커크 졸업생</div>
+  <div class="abs" id="b3-dots" style="left:120px;top:800px;width:840px;height:210px"></div>
+</section>
+
+<section id="b4" class="beat" data-beat="4-end">
+  <svg class="gauge" id="b4-g" viewBox="0 0 200 200" style="left:260px;top:280px"><circle class="trk" cx="100" cy="100" r="84"/><circle class="val" cx="100" cy="100" r="84" transform="rotate(-90 100 100)"/></svg>
+  <div class="big" id="b4-n" style="left:260px;top:490px;width:560px;text-align:center;font-size:160px">90%</div>
+  <div class="abs h" id="b4-t" style="left:90px;top:900px;font-size:76px;width:900px;text-align:center">영주권 받고도<br/><span class="green">떠나지 않는 비율</span></div>
+</section>
+<!--CTA-->
+
+<script>
+ambient(D);
+inn('#b0-k',S[0],{y:16});
+inn('#b0-n',S[0]+0.2,{s:0.5,y:0,d:0.6,e:'back.out(1.8)'});
+inn('#b0-st',S[0]+1.2,{s:1.5,y:0,r0:-14,r:-4,d:0.4,e:'back.out(2.4)'});
+whip('#b1-t',S[1],100); inn('#b1-s',S[1]+0.4,{y:16});
+pop('#b1-n1',S[1]+2.4,{d:0.6}); draw('#b1-ar',S[1]+4.4,0.7); pop('#b1-key',S[1]+5.0); pop('#b1-n2',S[1]+5.6,{d:0.6});
+inn('#b2-k',S[2],{y:16}); whip('#b2-t',S[2]+0.2,100); inn('#b2-c',S[2]+4.2,{y:60,d:0.7,e:'back.out(1.4)'});
+tl.fromTo('#b3-n',{opacity:0},{opacity:1,duration:0.3},S[3]); count('#b3-n',0,62,S[3],1.2,v=>Math.round(v)+'%');
+whip('#b3-t',S[3]+1.4,60);
+const dl=dots('#b3-dots',100,62,20,30,12,'#2E7D5B','rgba(22,50,79,.16)'); dotsIn(dl,S[3]+2.0,1.4);
+gauge('#b4-g',90,S[4],1.4); count('#b4-n',0,90,S[4],1.4,v=>Math.round(v)+'%'); tl.fromTo('#b4-n',{opacity:0},{opacity:1,duration:0.3},S[4]);
+whip('#b4-t',S[4]+1.6,80);
+</script>

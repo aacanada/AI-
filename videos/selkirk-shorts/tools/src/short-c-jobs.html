@@ -1,0 +1,67 @@
+<style>
+#ROOT .job{position:absolute;left:90px;width:900px;height:330px;border-radius:30px;padding:44px;background:#16324F;color:#FAF6EF}
+#ROOT .job .noc{font-weight:700;font-size:30px;letter-spacing:.08em;color:#F3C969}
+#ROOT .job .v{margin-top:10px;font-weight:900;font-size:96px;letter-spacing:-.03em}
+#ROOT .rank{position:absolute;left:90px;top:250px;width:170px;height:170px;border-radius:50%;background:#E8572B;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center}
+#ROOT .rank b{font-weight:900;font-size:86px;line-height:1}
+#ROOT .rank span{font-weight:800;font-size:24px;letter-spacing:.1em}
+</style>
+<div class="grain"></div>
+<div data-layout-ignore class="glow" style="left:300px;top:-300px;width:1100px;height:1100px"></div>
+<div data-layout-ignore class="glow warm" style="left:-400px;top:1100px;width:1000px;height:1000px"></div>
+<svg class="ghost" aria-hidden="true" data-layout-ignore style="left:-40px;top:1580px;width:2600px;height:330px;overflow:visible"><text x="0" y="270" font-family="Pretendard" font-weight="900" font-size="300" fill="rgba(22,50,79,.07)">MAJORS</text></svg>
+
+<section id="c0" class="beat" data-beat="0-1">
+  <div class="sticker" id="c0-st" style="left:90px;top:330px;font-size:32px">2026 웨스트 쿠트니 RCIP</div>
+  <div class="abs h" id="c0-t" style="left:80px;top:420px;font-size:150px">어떤 전공을<br/><span class="green">골라야 할까?</span></div>
+</section>
+
+<section id="c1" class="beat" data-beat="1-2">
+  <div class="abs h" id="c1-t" style="left:90px;top:300px;font-size:96px">특히 이 두 직군은</div>
+  <div class="chip sand" id="c1-a" style="left:90px;top:520px;font-size:64px;padding:18px 44px">+5 가산점</div>
+  <div class="chip" id="c1-b" style="left:90px;top:680px;font-size:56px;padding:18px 44px">고용주 인원 제한 없음</div>
+  <div class="abs" id="c1-q" style="left:90px;top:860px;width:900px;height:300px;border:5px dashed rgba(22,50,79,.3);border-radius:30px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:140px;color:rgba(22,50,79,.3)">? + ?</div>
+</section>
+
+<section id="c2" class="beat" data-beat="2-3">
+  <div class="job" id="c2-1" style="top:300px"><div class="noc">NOC 33102</div><div class="v">요양보호사</div></div>
+  <div class="job" id="c2-2" style="top:690px"><div class="noc">NOC 42202</div><div class="v">보육교사</div></div>
+</section>
+
+<section id="c3" class="beat" data-beat="3-4">
+  <div class="rank" id="c3-r"><span>RANK</span><b>1</b></div>
+  <div class="abs h" id="c3-t" style="left:300px;top:270px;font-size:66px;width:700px;line-height:1.15">Health Care Assistant Diploma</div>
+  <div class="chip gr" id="c3-c" style="left:90px;top:500px;font-size:40px">캐슬가 · 2년 · 요양보호사 직결</div>
+  <div class="pol" id="c3-p" style="left:240px;top:640px;width:600px;height:620px"><div class="ph"><img src="assets/img/nursing-student.jpg" alt=""/></div><div class="cap">Health Care</div></div>
+</section>
+
+<section id="c4" class="beat" data-beat="4-5">
+  <div class="rank" id="c4-r"><span>RANK</span><b>2</b></div>
+  <div class="abs h" id="c4-t" style="left:300px;top:270px;font-size:66px;width:700px;line-height:1.15">Early Learning and Childcare</div>
+  <div class="chip gr" id="c4-c" style="left:90px;top:500px;font-size:40px">캐슬가 · 2년 · 보육교사 직결</div>
+  <div class="pol" id="c4-p" style="left:240px;top:640px;width:600px;height:620px"><div class="ph"><img src="assets/img/ece-outdoor-class.jpg" alt=""/></div><div class="cap">Early Learning</div></div>
+</section>
+
+<section id="c5" class="beat" data-beat="5-end">
+  <div class="abs l" id="c5-k" style="left:90px;top:300px;font-size:32px;color:#2E7D5B">SELKIRK COLLEGE</div>
+  <div class="abs h" id="c5-t" style="left:90px;top:360px;font-size:104px;width:900px">두 직군으로<br/>바로 이어지는<br/><span class="green">2년제 공립<br/>디플로마</span></div>
+  <div class="sticker" id="c5-st" style="left:90px;top:1100px;font-size:38px">AA Canada가 이 학교를 추천하는 이유</div>
+</section>
+<!--CTA-->
+
+<script>
+ambient(D);
+inn('#c0-st',S[0],{s:1.5,y:0,r0:-14,r:-4,d:0.4,e:'back.out(2.4)'});
+whip('#c0-t',S[0]+0.2,120);
+whip('#c1-t',S[1],80);
+pop('#c1-a',S[1]+1.6,{d:0.5}); pop('#c1-b',S[1]+4.0,{d:0.5});
+inn('#c1-q',S[1]+5.6,{y:30});
+inn('#c2-1',S[2]+0.3,{x:-120,y:0,d:0.6,e:'back.out(1.4)'});
+inn('#c2-2',S[2]+1.6,{x:120,y:0,d:0.6,e:'back.out(1.4)'});
+inn('#c3-r',S[3],{s:0.3,y:0,r0:-30,r:0,d:0.6,e:'back.out(2)'}); whip('#c3-t',S[3]+0.3,60);
+pop('#c3-c',S[3]+2.6); pol('#c3-p',S[3]+1.0,4); kb('#c3-p img',S[3]+1.0,5);
+inn('#c4-r',S[4],{s:0.3,y:0,r0:-30,r:0,d:0.6,e:'back.out(2)'}); whip('#c4-t',S[4]+0.3,60);
+pop('#c4-c',S[4]+2.4); pol('#c4-p',S[4]+0.8,-4); kb('#c4-p img',S[4]+0.8,4.5);
+inn('#c5-k',S[5],{y:16}); whip('#c5-t',S[5]+0.3,100);
+inn('#c5-st',S[5]+6.8,{s:1.5,y:0,r0:-14,r:-4,d:0.4,e:'back.out(2.4)'});
+</script>

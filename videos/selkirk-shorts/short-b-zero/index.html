@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>short-b-zero</title>
+    <script src="assets/vendor/gsap.min.js"></script>
+    <style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #FAF6EF; }
+@font-face{font-family:Pretendard;font-weight:500;src:url(assets/fonts/Pretendard-Medium.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:700;src:url(assets/fonts/Pretendard-Bold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:800;src:url(assets/fonts/Pretendard-ExtraBold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:900;src:url(assets/fonts/Pretendard-Black.woff2) format("woff2")}
+@font-face{font-family:Yellowtail;font-weight:400;src:url(assets/fonts/Yellowtail-Regular.ttf) format("truetype")}
+#sroot{position:absolute;inset:0;overflow:hidden;background:#FAF6EF;color:#16324F;font-family:Pretendard,sans-serif;word-break:keep-all}
+#sroot *{box-sizing:border-box}
+#sroot .grain{position:absolute;inset:0;opacity:.5;background-image:radial-gradient(rgba(22,50,79,.07) 1.2px,transparent 1.3px);background-size:9px 9px}
+#sroot .glow{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(46,125,91,.20) 0%,rgba(46,125,91,0) 70%)}
+#sroot .glow.warm{background:radial-gradient(circle,rgba(232,87,43,.14) 0%,rgba(232,87,43,0) 70%)}
+#sroot .ghost{position:absolute;font-weight:900;color:rgba(22,50,79,.07);font-size:300px;letter-spacing:-.04em;white-space:nowrap;line-height:1}
+#sroot .stage{position:absolute;inset:0}
+#sroot .beat{position:absolute;inset:0}
+#sroot .abs{position:absolute}
+#sroot .h{font-weight:900;letter-spacing:-.03em;line-height:1.12}
+#sroot .hd{font-weight:800;letter-spacing:-.02em;line-height:1.22}
+#sroot .b{font-weight:500;line-height:1.5}
+#sroot .l{font-weight:700;letter-spacing:.08em}
+#sroot .script{font-family:Yellowtail,cursive;line-height:1.05;white-space:nowrap}
+#sroot .green{color:#2E7D5B}
+#sroot .orange{color:#E8572B}
+#sroot .sticker{position:absolute;background:#E8572B;color:#fff;font-weight:800;font-size:24px;letter-spacing:.12em;padding:10px 24px;border-radius:99px;white-space:nowrap}
+#sroot .chip{position:absolute;background:#FAF6EF;border:3px solid #16324F;border-radius:99px;padding:10px 26px;font-weight:700;font-size:30px;white-space:nowrap;color:#16324F}
+#sroot .chip.gr{border-color:#2E7D5B;color:#1F5E44}
+#sroot .chip.solid{background:#16324F;color:#FAF6EF}
+#sroot .chip.sand{background:#F3C969;border-color:#F3C969}
+#sroot .pol{position:absolute;background:#fff;padding:16px 16px 60px;box-shadow:0 20px 44px rgba(22,50,79,.26)}
+#sroot .pol .ph{position:relative;width:100%;height:100%;overflow:hidden}
+#sroot .pol img{display:block;width:100%;height:100%;object-fit:cover}
+#sroot .pol .cap{position:absolute;left:0;right:0;bottom:10px;text-align:center;font-family:Yellowtail,cursive;font-size:34px;color:#16324F}
+#sroot .card{position:absolute;background:#fff;border:3px solid rgba(22,50,79,.14);border-radius:24px;box-shadow:0 12px 30px rgba(22,50,79,.13)}
+#sroot .panel{position:absolute;background:#16324F;border-radius:28px;color:#FAF6EF}
+#sroot .hl{position:relative;display:inline-block;isolation:isolate}
+#sroot .hl .bar{position:absolute;left:-6px;right:-6px;bottom:6px;height:26px;background:#F3C969;transform-origin:0 50%}
+#sroot .hl .tx{position:relative}
+#sroot .ico{position:absolute;border-radius:50%;background:#fff;border:4px solid #16324F;display:flex;align-items:center;justify-content:center}
+#sroot .ico svg{width:58%;height:58%}
+#sroot .tile{position:absolute;border-radius:22px;overflow:hidden;box-shadow:0 14px 30px rgba(22,50,79,.22)}
+#sroot .tile img{width:100%;height:100%;object-fit:cover;display:block}
+#sroot .tile .tl{position:absolute;left:16px;bottom:14px;background:rgba(22,50,79,.88);color:#FAF6EF;font-weight:800;font-size:26px;padding:6px 16px;border-radius:99px}
+
+#sroot .in{position:absolute;inset:0}
+#sroot .cue{position:absolute;left:0;right:0;top:1390px;height:auto;display:flex;justify-content:center;z-index:40}
+#sroot .cue span{background:#16324F;color:#FAF6EF;font-weight:800;font-size:54px;line-height:1.3;padding:14px 34px;border-radius:18px;max-width:960px;text-align:center}
+
+#sroot .big{position:absolute;font-weight:900;letter-spacing:-.04em;line-height:1}
+#sroot .node{position:absolute;left:300px;width:480px;height:200px;border-radius:30px;background:#fff;border:5px solid #16324F;display:flex;align-items:center;justify-content:center;gap:24px;font-weight:900;font-size:56px}
+#sroot .gauge{position:absolute;width:560px;height:560px}
+#sroot .gauge .trk{fill:none;stroke:rgba(22,50,79,.10);stroke-width:26}
+#sroot .gauge .val{fill:none;stroke:#2E7D5B;stroke-width:26;stroke-linecap:round}
+
+    </style>
+  </head>
+  <body>
+    <!-- tools/build.py 로 생성 -->
+    <div id="sroot" data-composition-id="main" data-start="0" data-width="1080" data-height="1920" data-duration="38.94">
+<div class="grain"></div>
+<div data-layout-ignore class="glow" style="left:300px;top:-300px;width:1100px;height:1100px"></div>
+<div data-layout-ignore class="glow warm" style="left:-400px;top:1100px;width:1000px;height:1000px"></div>
+<svg class="ghost" aria-hidden="true" data-layout-ignore style="left:-40px;top:1580px;width:2600px;height:330px;overflow:visible"><text x="0" y="270" font-family="Pretendard" font-weight="900" font-size="300" fill="rgba(22,50,79,.07)">RCIP</text></svg>
+
+<section id="b0" class="beat clip" data-start="0.0" data-duration="2.54"><div class="in">
+  <div class="abs hd" id="b0-k" style="left:90px;top:330px;font-size:60px;color:#4A5F78">캐나다 영주권, 필요한 경력</div>
+  <div class="big" id="b0-n" style="left:70px;top:430px;font-size:440px;color:#2E7D5B">0년</div>
+  <div class="sticker" id="b0-st" style="left:90px;top:960px;font-size:36px">그래도 지원 가능</div>
+</div></section>
+
+<section id="b1" class="beat clip" data-start="2.54" data-duration="9.28"><div class="in">
+  <div class="abs h" id="b1-t" style="left:90px;top:240px;font-size:150px">RCIP</div>
+  <div class="abs hd" id="b1-s" style="left:96px;top:420px;font-size:40px;color:#4A5F78">농촌 커뮤니티 이민 시범사업</div>
+  <div class="node" id="b1-n1" style="top:540px">연방정부</div>
+  <svg class="abs" viewBox="0 0 120 220" style="left:480px;top:750px;width:120px;height:220px"><path id="b1-ar" d="M60 10 V190 M22 150 L60 196 L98 150" fill="none" stroke="#E8572B" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <div class="chip" id="b1-key" style="left:600px;top:810px;font-size:36px">영주권 추천 권한</div>
+  <div class="node" id="b1-n2" style="top:990px;border-color:#2E7D5B;color:#1F5E44">지역 커뮤니티</div>
+</div></section>
+
+<section id="b2" class="beat clip" data-start="11.82" data-duration="7.98"><div class="in">
+  <div class="abs l" id="b2-k" style="left:90px;top:300px;font-size:32px;color:#2E7D5B">웨스트 쿠트니 지역 유일의 공립 교육기관</div>
+  <div class="abs h" id="b2-t" style="left:90px;top:360px;font-size:120px">셀커크<br/>컬리지</div>
+  <div class="card" id="b2-c" style="left:90px;top:700px;width:900px;height:300px;padding:50px;background:#16324F;border-color:#16324F;color:#FAF6EF">
+    <div class="l" style="font-size:28px;color:#F3C969">졸업생 혜택</div>
+    <div class="h" style="margin-top:16px;font-size:76px">경력 요건 면제</div></div>
+</div></section>
+
+<section id="b3" class="beat clip" data-start="19.8" data-duration="9.4"><div class="in">
+  <div class="big" id="b3-n" style="left:80px;top:260px;font-size:300px;color:#2E7D5B">62%</div>
+  <div class="abs hd" id="b3-t" style="left:90px;top:580px;font-size:52px;width:900px">RNIP 주신청자 302명 중 <span class="green">188명</span>이 셀커크 졸업생</div>
+  <div class="abs" id="b3-dots" style="left:120px;top:800px;width:840px;height:210px"></div>
+</div></section>
+
+<section id="b4" class="beat clip" data-start="29.2" data-duration="6.24"><div class="in">
+  <svg class="gauge" id="b4-g" viewBox="0 0 200 200" style="left:260px;top:280px"><circle class="trk" cx="100" cy="100" r="84"/><circle class="val" cx="100" cy="100" r="84" transform="rotate(-90 100 100)"/></svg>
+  <div class="big" id="b4-n" style="left:260px;top:490px;width:560px;text-align:center;font-size:160px">90%</div>
+  <div class="abs h" id="b4-t" style="left:90px;top:900px;font-size:76px;width:900px;text-align:center">영주권 받고도<br/><span class="green">떠나지 않는 비율</span></div>
+</div></section>
+<section id="cta" class="beat clip" data-start="35.29" data-duration="3.65"><div class="in">
+  <div class="abs" style="left:0;top:0;width:1080px;height:1920px;background:#16324F"></div>
+  <div class="abs l" id="cta-k" style="left:90px;top:520px;font-size:32px;color:#F3C969">AA CANADA · 캐나다 유학 · 이민</div>
+  <div class="abs h" id="cta-t" style="left:90px;top:590px;font-size:100px;color:#FAF6EF;width:900px">셀커크 × RCIP<br/>상담하세요</div>
+  <div class="abs" id="cta-r" style="left:94px;top:850px;width:420px;height:10px;background:#F3C969;border-radius:5px"></div>
+  <div class="abs hd" id="cta-p" style="left:90px;top:910px;font-size:52px;color:#FAF6EF">전화 02-567-4345</div>
+  <div class="abs hd" id="cta-kk" style="left:90px;top:1000px;font-size:52px;color:#FAF6EF">카카오톡 canlog</div>
+  <div class="chip sand" id="cta-c" style="left:90px;top:1120px;font-size:38px">본편에서 자세히 보기 →</div>
+</div></section>
+
+<div class="cue clip" id="cap-0" data-start="0.6" data-duration="1.83"><span>경력이 없어도 지원할 수 있습니다.</span></div>
+<div class="cue clip" id="cap-1" data-start="2.84" data-duration="2.36"><span>RCIP는 한 문장으로 말하면,</span></div>
+<div class="cue clip" id="cap-2" data-start="5.23" data-duration="2.21"><span>캐나다 연방정부가 인구가 적은</span></div>
+<div class="cue clip" id="cap-3" data-start="7.47" data-duration="2.36"><span>지역에 영주권 추천 권한을 직접</span></div>
+<div class="cue clip" id="cap-4" data-start="9.86" data-duration="1.85"><span>나눠 주는 제도입니다.</span></div>
+<div class="cue clip" id="cap-5" data-start="12.12" data-duration="2.75"><span>셀커크 컬리지는 이 지역의 유일한</span></div>
+<div class="cue clip" id="cap-6" data-start="14.9" data-duration="1.66"><span>공립 교육기관이라서,</span></div>
+<div class="cue clip" id="cap-7" data-start="16.59" data-duration="3.1"><span>졸업생은 경력 요건을 면제받습니다.</span></div>
+<div class="cue clip" id="cap-8" data-start="20.1" data-duration="1.03"><span>62퍼센트.</span></div>
+<div class="cue clip" id="cap-9" data-start="21.16" data-duration="2.97"><span>RNIP 시절 이 지역 주신청자</span></div>
+<div class="cue clip" id="cap-10" data-start="24.16" data-duration="3.14"><span>302명 가운데 188명이 셀커크</span></div>
+<div class="cue clip" id="cap-11" data-start="27.33" data-duration="1.76"><span>졸업생이었습니다.</span></div>
+<div class="cue clip" id="cap-12" data-start="29.5" data-duration="0.84"><span>90퍼센트.</span></div>
+<div class="cue clip" id="cap-13" data-start="30.37" data-duration="2.86"><span>영주권을 받은 뒤에도 이 지역에 계속</span></div>
+<div class="cue clip" id="cap-14" data-start="33.26" data-duration="2.05"><span>사는 사람의 비율입니다.</span></div>
+      <audio id="voice" src="assets/voice/voice.mp3" data-start="0" data-duration="35.34" data-track-index="8" data-volume="1"></audio>
+    </div>
+    <script>
+      (function () {
+const root=document.getElementById("sroot");
+const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
+const tl=gsap.timeline({paused:true});
+function E(el){return typeof el==='string'?q(el):el;}
+function inn(el,at,o){o=o||{};el=E(el);
+  tl.fromTo(el,{opacity:0,x:o.x||0,y:(o.y===undefined?30:o.y),scale:(o.s===undefined?1:o.s),rotation:(o.r0===undefined?(o.r||0):o.r0)},
+  {opacity:1,x:0,y:0,scale:1,rotation:o.r||0,duration:o.d||0.6,ease:o.e||'power3.out'},at);}
+function whip(el,at,dy){el=E(el);tl.set(el,{opacity:0},0);tl.set(el,{opacity:1,y:dy||70},at);tl.to(el,{y:0,duration:0.45,ease:'power4.out'},at);}
+function pop(el,at,o){o=o||{};el=E(el);tl.fromTo(el,{opacity:0,scale:0},{opacity:1,scale:1,duration:o.d||0.5,ease:o.e||'back.out(2)'},at);}
+function pol(el,at,rot){el=E(el);
+  tl.fromTo(el,{opacity:0,y:-180,rotation:rot*2.4,scale:1.06},{opacity:1,y:0,rotation:rot,scale:1,duration:0.85,ease:'power3.out'},at);}
+function kb(el,at,dur,a,b){el=E(el);a=a||{};b=b||{};
+  tl.fromTo(el,{scale:a.s||1,xPercent:a.x||0,yPercent:a.y||0},{scale:b.s||1.07,xPercent:b.x||0,yPercent:b.y||0,duration:dur,ease:'none'},at);}
+function count(el,from,to,at,dur,fmt){el=E(el);const st={v:from};el.textContent=fmt(from);
+  tl.fromTo(st,{v:from},{v:to,duration:dur,ease:'power2.out',immediateRender:false,onUpdate:()=>{el.textContent=fmt(st.v);}},at);}
+function grow(el,at,d,origin){el=E(el);
+  tl.fromTo(el,{scaleX:0,transformOrigin:origin||'0% 50%'},{scaleX:1,duration:d||0.8,ease:'power3.inOut'},at);}
+function growY(el,at,d){el=E(el);
+  tl.fromTo(el,{scaleY:0,transformOrigin:'50% 100%'},{scaleY:1,duration:d||0.8,ease:'power3.out'},at);}
+function draw(path,at,d){path=E(path);const L=path.getTotalLength();path.style.strokeDasharray=L+' '+L;
+  tl.fromTo(path,{opacity:0},{opacity:1,duration:0.05},at);
+  tl.fromTo(path,{strokeDashoffset:L},{strokeDashoffset:0,duration:d||1,ease:'power2.inOut'},at);}
+function outt(el,at,o){o=o||{};el=E(el);tl.to(el,{opacity:0,y:o.y||0,x:o.x||0,duration:o.d||0.4,ease:'power2.in'},at);}
+function ambient(D){
+  qa('.ghost').forEach((g,i)=>tl.fromTo(g,{x:0},{x:(i%2?160:-160),duration:D,ease:'none'},0));
+  qa('.glow').forEach((g,i)=>{const c=4+i;const n=Math.max(0,Math.floor(D/c)-1);
+    tl.fromTo(g,{scale:0.92},{scale:1.08,duration:c/2,ease:'sine.inOut',yoyo:true,repeat:n},0);});
+}
+// 원형 게이지: <svg class="gauge"><circle class="trk"/><circle class="val"/></svg>
+function gauge(svgSel,pct,at,d){const c=E(svgSel).querySelector('.val');const L=2*Math.PI*parseFloat(c.getAttribute('r'));
+  c.style.strokeDasharray=L+' '+L;tl.fromTo(c,{strokeDashoffset:L},{strokeDashoffset:L*(1-pct/100),duration:d||1.2,ease:'power2.out'},at);}
+// 점 격자: 컨테이너 안에 n개의 점을 만들고 앞의 k개를 강조색으로 채운다
+function dots(sel,n,k,cols,size,gap,on,off){const el=E(sel);let h='';for(let i=0;i<n;i++){const x=(i%cols)*(size+gap),y=Math.floor(i/cols)*(size+gap);
+  h+=`<i style="position:absolute;left:${x}px;top:${y}px;width:${size}px;height:${size}px;border-radius:50%;background:${i<k?on:off}"></i>`;}el.innerHTML=h;return Array.from(el.children);}
+function dotsIn(list,at,span){tl.fromTo(list,{scale:0},{scale:1,duration:0.25,ease:'back.out(2)',stagger:{each:(span||1)/list.length}},at);}
+
+const D = 38.94, V = 35.34;
+const S = [0.5, 2.74, 12.02, 20.0, 29.4], P = [0.6, 2.84, 12.12, 20.1, 29.5];
+
+ambient(D);
+inn('#b0-k',S[0],{y:16});
+inn('#b0-n',S[0]+0.2,{s:0.5,y:0,d:0.6,e:'back.out(1.8)'});
+inn('#b0-st',S[0]+1.2,{s:1.5,y:0,r0:-14,r:-4,d:0.4,e:'back.out(2.4)'});
+whip('#b1-t',S[1],100); inn('#b1-s',S[1]+0.4,{y:16});
+pop('#b1-n1',S[1]+2.4,{d:0.6}); draw('#b1-ar',S[1]+4.4,0.7); pop('#b1-key',S[1]+5.0); pop('#b1-n2',S[1]+5.6,{d:0.6});
+inn('#b2-k',S[2],{y:16}); whip('#b2-t',S[2]+0.2,100); inn('#b2-c',S[2]+4.2,{y:60,d:0.7,e:'back.out(1.4)'});
+tl.fromTo('#b3-n',{opacity:0},{opacity:1,duration:0.3},S[3]); count('#b3-n',0,62,S[3],1.2,v=>Math.round(v)+'%');
+whip('#b3-t',S[3]+1.4,60);
+const dl=dots('#b3-dots',100,62,20,30,12,'#2E7D5B','rgba(22,50,79,.16)'); dotsIn(dl,S[3]+2.0,1.4);
+gauge('#b4-g',90,S[4],1.4); count('#b4-n',0,90,S[4],1.4,v=>Math.round(v)+'%'); tl.fromTo('#b4-n',{opacity:0},{opacity:1,duration:0.3},S[4]);
+whip('#b4-t',S[4]+1.6,80);
+
+inn('#cta-k',V+0.15,{y:16}); whip('#cta-t',V+0.3,90); grow('#cta-r',V+0.8,0.5);
+inn('#cta-p',V+1.0,{x:-30,y:0}); inn('#cta-kk',V+1.3,{x:-30,y:0}); pop('#cta-c',V+1.8);
+
+tl.fromTo(q('#b0 .in'),{opacity:1},{opacity:0,duration:0.22,ease:'power1.in',immediateRender:false},2.3);
+tl.fromTo(q('#b1 .in'),{opacity:1},{opacity:0,duration:0.22,ease:'power1.in',immediateRender:false},11.58);
+tl.fromTo(q('#b2 .in'),{opacity:1},{opacity:0,duration:0.22,ease:'power1.in',immediateRender:false},19.56);
+tl.fromTo(q('#b3 .in'),{opacity:1},{opacity:0,duration:0.22,ease:'power1.in',immediateRender:false},28.96);
+tl.fromTo(q('#b4 .in'),{opacity:1},{opacity:0,duration:0.22,ease:'power1.in',immediateRender:false},35.2);
+window.__timelines["main"] = tl;
+      })();
+    </script>
+  </body>
+</html>

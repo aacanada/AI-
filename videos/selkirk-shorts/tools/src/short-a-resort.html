@@ -1,0 +1,69 @@
+<style>
+#ROOT .strike{position:absolute;height:20px;background:#E8572B;border-radius:10px;transform-origin:0 50%}
+#ROOT .season{position:absolute;left:90px;width:900px;height:430px;border-radius:30px;background:#fff;border:3px solid rgba(22,50,79,.14);box-shadow:0 12px 30px rgba(22,50,79,.13);overflow:hidden}
+#ROOT .season .top{position:absolute;left:0;right:0;top:0;height:150px}
+#ROOT .season .ttl{position:absolute;left:40px;top:34px;font-weight:900;font-size:60px;color:#FAF6EF}
+#ROOT .season .tmp{position:absolute;right:40px;top:52px;font-weight:800;font-size:36px;color:#FAF6EF}
+#ROOT .season .row{position:absolute;left:40px;font-weight:800;font-size:44px}
+#ROOT .season .tile{left:520px;top:180px;width:340px;height:220px}
+#ROOT .pin{position:absolute;width:70px;height:70px;border-radius:50% 50% 50% 0;background:#E8572B}
+</style>
+<div class="grain"></div>
+<div data-layout-ignore class="glow" style="left:300px;top:-300px;width:1100px;height:1100px"></div>
+<div data-layout-ignore class="glow warm" style="left:-400px;top:1100px;width:1000px;height:1000px"></div>
+<svg class="ghost" aria-hidden="true" data-layout-ignore style="left:-40px;top:1580px;width:2600px;height:330px;overflow:visible"><text x="0" y="270" font-family="Pretendard" font-weight="900" font-size="300" fill="rgba(22,50,79,.07)">NELSON</text></svg>
+
+<section id="a0" class="beat" data-beat="0-2">
+  <div class="abs l" id="a0-k" style="left:90px;top:300px;font-size:32px;color:#2E7D5B">캐나다 영주권 · 이런 말 들어 보셨죠?</div>
+  <div class="abs h" id="a0-w" style="left:80px;top:370px;font-size:220px;line-height:1.05">시골<br/>영주권 루트</div>
+  <div class="strike" id="a0-s" style="left:70px;top:480px;width:470px"></div>
+  <div class="abs script green" id="a0-sc" style="left:300px;top:860px;font-size:150px">Resort Town</div>
+  <div class="chip solid" id="a0-c" style="left:90px;top:1060px;font-size:48px">캐나다인의 휴양도시</div>
+</section>
+
+<section id="a2" class="beat" data-beat="2-3">
+  <div class="abs l" id="a2-k" style="left:90px;top:260px;font-size:32px;color:#2E7D5B">BC주 · 웨스트 쿠트니</div>
+  <div class="abs h" id="a2-t" style="left:90px;top:320px;font-size:96px;width:900px">캐나다 사람들이<br/><span class="hl"><span class="bar" id="a2-hl"></span><span class="tx">휴가 때 일부러</span></span><br/>찾아가는 도시</div>
+  <div class="pol" id="a2-p1" style="left:110px;top:760px;width:470px;height:450px"><div class="ph"><img src="assets/img/nelson-baker-street.jpg" alt=""/></div><div class="cap">Nelson</div></div>
+  <div class="pol" id="a2-p2" style="left:540px;top:820px;width:440px;height:420px"><div class="ph"><img src="assets/img/sunrise-hiker.jpg" alt=""/></div><div class="cap">Kootenays</div></div>
+</section>
+
+<section id="a3" class="beat" data-beat="3-4">
+  <div class="abs h" id="a3-t" style="left:90px;top:230px;font-size:84px">사계절이 다 <span class="green">놀거리</span></div>
+  <div class="season" id="a3-w" style="top:400px"><div class="top" style="background:#16324F"></div><div class="ttl">겨울</div><div class="tmp">-7 ~ 1°C</div>
+    <div class="row" style="top:200px">화이트워터</div><div class="row" style="top:262px">파우더 스키</div>
+    <div class="tile" id="a3-wt"><img src="assets/img/ski-whitewater.jpg" alt="" style="object-position:50% 70%"/></div></div>
+  <div class="season" id="a3-s" style="top:870px"><div class="top" style="background:#2E7D5B"></div><div class="ttl">여름</div><div class="tmp">23 ~ 32°C</div>
+    <div class="row" style="top:200px">카약 · 패들보드</div><div class="row" style="top:262px">래프팅</div>
+    <div class="tile" id="a3-st"><img src="assets/img/rafting.jpg" alt=""/></div></div>
+</section>
+
+<section id="a4" class="beat" data-beat="4-end">
+  <div class="abs hd" id="a4-l1" style="left:90px;top:300px;font-size:64px">어쩔 수 없이 가는</div>
+  <div class="abs h" id="a4-w" style="left:84px;top:390px;font-size:170px;color:#4A5F78">시골 ✕</div>
+  <div class="strike" id="a4-s" style="left:80px;top:470px;width:360px"></div>
+  <div class="abs h" id="a4-t" style="left:90px;top:640px;font-size:100px;width:900px">캐나다 사람들이<br/><span class="green">휴가 오고,<br/>은퇴하고 싶은 곳</span></div>
+  <div class="abs script orange" id="a4-sc" style="left:480px;top:1090px;font-size:110px">Stay a while.</div>
+</section>
+<!--CTA-->
+
+<script>
+ambient(D);
+inn('#a0-k',S[0],{y:16});
+whip('#a0-w',S[0]+0.2,120);
+grow('#a0-s',S[1]+2.1,0.5);
+tl.fromTo('#a0-w',{opacity:1},{opacity:0.35,duration:0.4,immediateRender:false},S[1]+2.5);
+inn('#a0-sc',S[1]+3.0,{y:40,r0:-8,r:-4,d:0.7,e:'back.out(1.6)'});
+pop('#a0-c',S[1]+3.6);
+inn('#a2-k',S[2],{y:16}); whip('#a2-t',S[2]+0.2,80); grow('#a2-hl',S[2]+1.6,0.5);
+pol('#a2-p1',S[2]+2.0,-5); kb('#a2-p1 img',S[2]+2.0,4);
+pol('#a2-p2',S[2]+2.8,5); kb('#a2-p2 img',S[2]+2.8,3.2);
+whip('#a3-t',S[3],70);
+inn('#a3-w',S[3]+0.3,{x:-120,y:0,d:0.7}); kb('#a3-wt img',S[3]+0.3,9);
+inn('#a3-s',S[3]+4.6,{x:120,y:0,d:0.7}); kb('#a3-st img',S[3]+4.6,5.5);
+inn('#a4-l1',S[4],{y:20});
+inn('#a4-w',S[4]+0.3,{y:30});
+grow('#a4-s',S[4]+2.0,0.45);
+whip('#a4-t',S[5],100);
+inn('#a4-sc',S[5]+2.2,{y:30,r0:-8,r:-4,d:0.7,e:'back.out(1.6)'});
+</script>

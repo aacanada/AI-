@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>short-a-resort</title>
+    <script src="assets/vendor/gsap.min.js"></script>
+    <style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #FAF6EF; }
+@font-face{font-family:Pretendard;font-weight:500;src:url(assets/fonts/Pretendard-Medium.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:700;src:url(assets/fonts/Pretendard-Bold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:800;src:url(assets/fonts/Pretendard-ExtraBold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:900;src:url(assets/fonts/Pretendard-Black.woff2) format("woff2")}
+@font-face{font-family:Yellowtail;font-weight:400;src:url(assets/fonts/Yellowtail-Regular.ttf) format("truetype")}
+#sroot{position:absolute;inset:0;overflow:hidden;background:#FAF6EF;color:#16324F;font-family:Pretendard,sans-serif;word-break:keep-all}
+#sroot *{box-sizing:border-box}
+#sroot .grain{position:absolute;inset:0;opacity:.5;background-image:radial-gradient(rgba(22,50,79,.07) 1.2px,transparent 1.3px);background-size:9px 9px}
+#sroot .glow{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(46,125,91,.20) 0%,rgba(46,125,91,0) 70%)}
+#sroot .glow.warm{background:radial-gradient(circle,rgba(232,87,43,.14) 0%,rgba(232,87,43,0) 70%)}
+#sroot .ghost{position:absolute;font-weight:900;color:rgba(22,50,79,.07);font-size:300px;letter-spacing:-.04em;white-space:nowrap;line-height:1}
+#sroot .stage{position:absolute;inset:0}
+#sroot .beat{position:absolute;inset:0}
+#sroot .abs{position:absolute}
+#sroot .h{font-weight:900;letter-spacing:-.03em;line-height:1.12}
+#sroot .hd{font-weight:800;letter-spacing:-.02em;line-height:1.22}
+#sroot .b{font-weight:500;line-height:1.5}
+#sroot .l{font-weight:700;letter-spacing:.08em}
+#sroot .script{font-family:Yellowtail,cursive;line-height:1.05;white-space:nowrap}
+#sroot .green{color:#2E7D5B}
+#sroot .orange{color:#E8572B}
+#sroot .sticker{position:absolute;background:#E8572B;color:#fff;font-weight:800;font-size:24px;letter-spacing:.12em;padding:10px 24px;border-radius:99px;white-space:nowrap}
+#sroot .chip{position:absolute;background:#FAF6EF;border:3px solid #16324F;border-radius:99px;padding:10px 26px;font-weight:700;font-size:30px;white-space:nowrap;color:#16324F}
+#sroot .chip.gr{border-color:#2E7D5B;color:#1F5E44}
+#sroot .chip.solid{background:#16324F;color:#FAF6EF}
+#sroot .chip.sand{background:#F3C969;border-color:#F3C969}
+#sroot .pol{position:absolute;background:#fff;padding:16px 16px 60px;box-shadow:0 20px 44px rgba(22,50,79,.26)}
+#sroot .pol .ph{position:relative;width:100%;height:100%;overflow:hidden}
+#sroot .pol img{display:block;width:100%;height:100%;object-fit:cover}
+#sroot .pol .cap{position:absolute;left:0;right:0;bottom:10px;text-align:center;font-family:Yellowtail,cursive;font-size:34px;color:#16324F}
+#sroot .card{position:absolute;background:#fff;border:3px solid rgba(22,50,79,.14);border-radius:24px;box-shadow:0 12px 30px rgba(22,50,79,.13)}
+#sroot .panel{position:absolute;background:#16324F;border-radius:28px;color:#FAF6EF}
+#sroot .hl{position:relative;display:inline-block;isolation:isolate}
+#sroot .hl .bar{position:absolute;left:-6px;right:-6px;bottom:6px;height:26px;background:#F3C969;transform-origin:0 50%}
+#sroot .hl .tx{position:relative}
+#sroot .ico{position:absolute;border-radius:50%;background:#fff;border:4px solid #16324F;display:flex;align-items:center;justify-content:center}
+#sroot .ico svg{width:58%;height:58%}
+#sroot .tile{position:absolute;border-radius:22px;overflow:hidden;box-shadow:0 14px 30px rgba(22,50,79,.22)}
+#sroot .tile img{width:100%;height:100%;object-fit:cover;display:block}
+#sroot .tile .tl{position:absolute;left:16px;bottom:14px;background:rgba(22,50,79,.88);color:#FAF6EF;font-weight:800;font-size:26px;padding:6px 16px;border-radius:99px}
+
+#sroot .in{position:absolute;inset:0}
+#sroot .cue{position:absolute;left:0;right:0;top:1390px;height:auto;display:flex;justify-content:center;z-index:40}
+#sroot .cue span{background:#16324F;color:#FAF6EF;font-weight:800;font-size:54px;line-height:1.3;padding:14px 34px;border-radius:18px;max-width:960px;text-align:center}
+
+#sroot .strike{position:absolute;height:20px;background:#E8572B;border-radius:10px;transform-origin:0 50%}
+#sroot .season{position:absolute;left:90px;width:900px;height:430px;border-radius:30px;background:#fff;border:3px solid rgba(22,50,79,.14);box-shadow:0 12px 30px rgba(22,50,79,.13);overflow:hidden}
+#sroot .season .top{position:absolute;left:0;right:0;top:0;height:150px}
+#sroot .season .ttl{position:absolute;left:40px;top:34px;font-weight:900;font-size:60px;color:#FAF6EF}
+#sroot .season .tmp{position:absolute;right:40px;top:52px;font-weight:800;font-size:36px;color:#FAF6EF}
+#sroot .season .row{position:absolute;left:40px;font-weight:800;font-size:44px}
+#sroot .season .tile{left:520px;top:180px;width:340px;height:220px}
+#sroot .pin{position:absolute;width:70px;height:70px;border-radius:50% 50% 50% 0;background:#E8572B}
+
+    </style>
+  </head>
+  <body>
+    <!-- tools/build.py 로 생성 -->
+    <div id="sroot" data-composition-id="main" data-start="0" data-width="1080" data-height="1920" data-duration="38.84">
+<div class="grain"></div>
+<div data-layout-ignore class="glow" style="left:300px;top:-300px;width:1100px;height:1100px"></div>
+<div data-layout-ignore class="glow warm" style="left:-400px;top:1100px;width:1000px;height:1000px"></div>
+<svg class="ghost" aria-hidden="true" data-layout-ignore style="left:-40px;top:1580px;width:2600px;height:330px;overflow:visible"><text x="0" y="270" font-family="Pretendard" font-weight="900" font-size="300" fill="rgba(22,50,79,.07)">NELSON</text></svg>
+
+<section id="a0" class="beat clip" data-start="0.0" data-duration="10.98"><div class="in">
+  <div class="abs l" id="a0-k" style="left:90px;top:300px;font-size:32px;color:#2E7D5B">캐나다 영주권 · 이런 말 들어 보셨죠?</div>
+  <div class="abs h" id="a0-w" style="left:80px;top:370px;font-size:220px;line-height:1.05">시골<br/>영주권 루트</div>
+  <div class="strike" id="a0-s" style="left:70px;top:480px;width:470px"></div>
+  <div class="abs script green" id="a0-sc" style="left:300px;top:860px;font-size:150px">Resort Town</div>
+  <div class="chip solid" id="a0-c" style="left:90px;top:1060px;font-size:48px">캐나다인의 휴양도시</div>
+</div></section>
+
+<section id="a2" class="beat clip" data-start="10.98" data-duration="5.64"><div class="in">
+  <div class="abs l" id="a2-k" style="left:90px;top:260px;font-size:32px;color:#2E7D5B">BC주 · 웨스트 쿠트니</div>
+  <div class="abs h" id="a2-t" style="left:90px;top:320px;font-size:96px;width:900px">캐나다 사람들이<br/><span class="hl"><span class="bar" id="a2-hl"></span><span class="tx">휴가 때 일부러</span></span><br/>찾아가는 도시</div>
+  <div class="pol" id="a2-p1" style="left:110px;top:760px;width:470px;height:450px"><div class="ph"><img src="assets/img/nelson-baker-street.jpg" alt=""/></div><div class="cap">Nelson</div></div>
+  <div class="pol" id="a2-p2" style="left:540px;top:820px;width:440px;height:420px"><div class="ph"><img src="assets/img/sunrise-hiker.jpg" alt=""/></div><div class="cap">Kootenays</div></div>
+</div></section>
+
+<section id="a3" class="beat clip" data-start="16.62" data-duration="10.1"><div class="in">
+  <div class="abs h" id="a3-t" style="left:90px;top:230px;font-size:84px">사계절이 다 <span class="green">놀거리</span></div>
+  <div class="season" id="a3-w" style="top:400px"><div class="top" style="background:#16324F"></div><div class="ttl">겨울</div><div class="tmp">-7 ~ 1°C</div>
+    <div class="row" style="top:200px">화이트워터</div><div class="row" style="top:262px">파우더 스키</div>
+    <div class="tile" id="a3-wt"><img src="assets/img/ski-whitewater.jpg" alt="" style="object-position:50% 70%"/></div></div>
+  <div class="season" id="a3-s" style="top:870px"><div class="top" style="background:#2E7D5B"></div><div class="ttl">여름</div><div class="tmp">23 ~ 32°C</div>
+    <div class="row" style="top:200px">카약 · 패들보드</div><div class="row" style="top:262px">래프팅</div>
+    <div class="tile" id="a3-st"><img src="assets/img/rafting.jpg" alt=""/></div></div>
+</div></section>
+
+<section id="a4" class="beat clip" data-start="26.72" data-duration="8.62"><div class="in">
+  <div class="abs hd" id="a4-l1" style="left:90px;top:300px;font-size:64px">어쩔 수 없이 가는</div>
+  <div class="abs h" id="a4-w" style="left:84px;top:390px;font-size:170px;color:#4A5F78">시골 ✕</div>
+  <div class="strike" id="a4-s" style="left:80px;top:470px;width:360px"></div>
+  <div class="abs h" id="a4-t" style="left:90px;top:640px;font-size:100px;width:900px">캐나다 사람들이<br/><span class="green">휴가 오고,<br/>은퇴하고 싶은 곳</span></div>
+  <div class="abs script orange" id="a4-sc" style="left:480px;top:1090px;font-size:110px">Stay a while.</div>
+</div></section>
+<section id="cta" class="beat clip" data-start="35.19" data-duration="3.65"><div class="in">
+  <div class="abs" style="left:0;top:0;width:1080px;height:1920px;background:#16324F"></div>
+  <div class="abs l" id="cta-k" style="left:90px;top:520px;font-size:32px;color:#F3C969">AA CANADA · 캐나다 유학 · 이민</div>
+  <div class="abs h" id="cta-t" style="left:90px;top:590px;font-size:100px;color:#FAF6EF;width:900px">셀커크 × RCIP<br/>상담하세요</div>
+  <div class="abs" id="cta-r" style="left:94px;top:850px;width:420px;height:10px;background:#F3C969;border-radius:5px"></div>
+  <div class="abs hd" id="cta-p" style="left:90px;top:910px;font-size:52px;color:#FAF6EF">전화 02-567-4345</div>
+  <div class="abs hd" id="cta-kk" style="left:90px;top:1000px;font-size:52px;color:#FAF6EF">카카오톡 canlog</div>
+  <div class="chip sand" id="cta-c" style="left:90px;top:1120px;font-size:38px">본편에서 자세히 보기 →</div>
+</div></section>
+
+<div class="cue clip" id="cap-0" data-start="0.6" data-duration="1.86"><span>캐나다 시골 영주권 루트,</span></div>
+<div class="cue clip" id="cap-1" data-start="2.49" data-duration="2.34"><span>한 번쯤 들어 보셨을 겁니다.</span></div>
+<div class="cue clip" id="cap-2" data-start="5.24" data-duration="1.66"><span>그런데 '시골'이라는 말</span></div>
+<div class="cue clip" id="cap-3" data-start="6.93" data-duration="1.53"><span>때문에 망설여지셨다면,</span></div>
+<div class="cue clip" id="cap-4" data-start="8.49" data-duration="2.38"><span>오늘 영상은 끝까지 봐 주세요.</span></div>
+<div class="cue clip" id="cap-5" data-start="11.28" data-duration="1.27"><span>오늘 소개할 곳은,</span></div>
+<div class="cue clip" id="cap-6" data-start="12.58" data-duration="2.17"><span>캐나다 사람들이 휴가 때 일부러</span></div>
+<div class="cue clip" id="cap-7" data-start="14.78" data-duration="1.73"><span>찾아가는 도시들입니다.</span></div>
+<div class="cue clip" id="cap-8" data-start="16.92" data-duration="1.97"><span>겨울에는 근처 화이트워터</span></div>
+<div class="cue clip" id="cap-9" data-start="18.92" data-duration="2.58"><span>스키장에서 파우더 스키를 타고,</span></div>
+<div class="cue clip" id="cap-10" data-start="21.53" data-duration="1.96"><span>여름에는 쿠트니 호수에서</span></div>
+<div class="cue clip" id="cap-11" data-start="23.52" data-duration="1.35"><span>카약과 패들보드,</span></div>
+<div class="cue clip" id="cap-12" data-start="24.9" data-duration="1.71"><span>래프팅을 즐깁니다.</span></div>
+<div class="cue clip" id="cap-13" data-start="27.02" data-duration="1.23"><span>그러니까 이 지역은,</span></div>
+<div class="cue clip" id="cap-14" data-start="28.28" data-duration="2.47"><span>어쩔 수 없이 가는 시골이 아닙니다.</span></div>
+<div class="cue clip" id="cap-15" data-start="31.16" data-duration="1.91"><span>캐나다 사람들이 휴가를 오고,</span></div>
+<div class="cue clip" id="cap-16" data-start="33.1" data-duration="2.11"><span>은퇴하고 싶어 하는 곳입니다.</span></div>
+      <audio id="voice" src="assets/voice/voice.mp3" data-start="0" data-duration="35.24" data-track-index="8" data-volume="1"></audio>
+    </div>
+    <script>
+      (function () {
+const root=document.getElementById("sroot");
+const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
+const tl=gsap.timeline({paused:true});
+function E(el){return typeof el==='string'?q(el):el;}
+function inn(el,at,o){o=o||{};el=E(el);
+  tl.fromTo(el,{opacity:0,x:o.x||0,y:(o.y===undefined?30:o.y),scale:(o.s===undefined?1:o.s),rotation:(o.r0===undefined?(o.r||0):o.r0)},
+  {opacity:1,x:0,y:0,scale:1,rotation:o.r||0,duration:o.d||0.6,ease:o.e||'power3.out'},at);}
+function whip(el,at,dy){el=E(el);tl.set(el,{opacity:0},0);tl.set(el,{opacity:1,y:dy||70},at);tl.to(el,{y:0,duration:0.45,ease:'power4.out'},at);}
+function pop(el,at,o){o=o||{};el=E(el);tl.fromTo(el,{opacity:0,scale:0},{opacity:1,scale:1,duration:o.d||0.5,ease:o.e||'back.out(2)'},at);}
+function pol(el,at,rot){el=E(el);
+  tl.fromTo(el,{opacity:0,y:-180,rotation:rot*2.4,scale:1.06},{opacity:1,y:0,rotation:rot,scale:1,duration:0.85,ease:'power3.out'},at);}
+function kb(el,at,dur,a,b){el=E(el);a=a||{};b=b||{};
+  tl.fromTo(el,{scale:a.s||1,xPercent:a.x||0,yPercent:a.y||0},{scale:b.s||1.07,xPercent:b.x||0,yPercent:b.y||0,duration:dur,ease:'none'},at);}
+function count(el,from,to,at,dur,fmt){el=E(el);const st={v:from};el.textContent=fmt(from);
+  tl.fromTo(st,{v:from},{v:to,duration:dur,ease:'power2.out',immediateRender:false,onUpdate:()=>{el.textContent=fmt(st.v);}},at);}
+function grow(el,at,d,origin){el=E(el);
+  tl.fromTo(el,{scaleX:0,transformOrigin:origin||'0% 50%'},{scaleX:1,duration:d||0.8,ease:'power3.inOut'},at);}
+function growY(el,at,d){el=E(el);
+  tl.fromTo(el,{scaleY:0,transformOrigin:'50% 100%'},{scaleY:1,duration:d||0.8,ease:'power3.out'},at);}
+function draw(path,at,d){path=E(path);const L=path.getTotalLength();path.style.strokeDasharray=L+' '+L;
+  tl.fromTo(path,{opacity:0},{opacity:1,duration:0.05},at);
+  tl.fromTo(path,{strokeDashoffset:L},{strokeDashoffset:0,duration:d||1,ease:'power2.inOut'},at);}
+function outt(el,at,o){o=o||{};el=E(el);tl.to(el,{opacity:0,y:o.y||0,x:o.x||0,duration:o.d||0.4,ease:'power2.in'},at);}
+function ambient(D){
+  qa('.ghost').forEach((g,i)=>tl.fromTo(g,{x:0},{x:(i%2?160:-160),duration:D,ease:'none'},0));
+  qa('.glow').forEach((g,i)=>{const c=4+i;const n=Math.max(0,Math.floor(D/c)-1);
+    tl.fromTo(g,{scale:0.92},{scale:1.08,duration:c/2,ease:'sine.inOut',yoyo:true,repeat:n},0);});
+}
+// 원형 게이지: <svg class="gauge"><circle class="trk"/><circle class="val"/></svg>
+function gauge(svgSel,pct,at,d){const c=E(svgSel).querySelector('.val');const L=2*Math.PI*parseFloat(c.getAttribute('r'));
+  c.style.strokeDasharray=L+' '+L;tl.fromTo(c,{strokeDashoffset:L},{strokeDashoffset:L*(1-pct/100),duration:d||1.2,ease:'power2.out'},at);}
+// 점 격자: 컨테이너 안에 n개의 점을 만들고 앞의 k개를 강조색으로 채운다
+function dots(sel,n,k,cols,size,gap,on,off){const el=E(sel);let h='';for(let i=0;i<n;i++){const x=(i%cols)*(size+gap),y=Math.floor(i/cols)*(size+gap);
+  h+=`<i style="position:absolute;left:${x}px;top:${y}px;width:${size}px;height:${size}px;border-radius:50%;background:${i<k?on:off}"></i>`;}el.innerHTML=h;return Array.from(el.children);}
+function dotsIn(list,at,span){tl.fromTo(list,{scale:0},{scale:1,duration:0.25,ease:'back.out(2)',stagger:{each:(span||1)/list.length}},at);}
+
+const D = 38.84, V = 35.24;
+const S = [0.5, 5.14, 11.18, 16.82, 26.92, 31.06], P = [0.6, 5.24, 11.28, 16.92, 27.02, 31.16];
+
+ambient(D);
+inn('#a0-k',S[0],{y:16});
+whip('#a0-w',S[0]+0.2,120);
+grow('#a0-s',S[1]+2.1,0.5);
+tl.fromTo('#a0-w',{opacity:1},{opacity:0.35,duration:0.4,immediateRender:false},S[1]+2.5);
+inn('#a0-sc',S[1]+3.0,{y:40,r0:-8,r:-4,d:0.7,e:'back.out(1.6)'});
+pop('#a0-c',S[1]+3.6);
+inn('#a2-k',S[2],{y:16}); whip('#a2-t',S[2]+0.2,80); grow('#a2-hl',S[2]+1.6,0.5);
+pol('#a2-p1',S[2]+2.0,-5); kb('#a2-p1 img',S[2]+2.0,4);
+pol('#a2-p2',S[2]+2.8,5); kb('#a2-p2 img',S[2]+2.8,3.2);
+whip('#a3-t',S[3],70);
+inn('#a3-w',S[3]+0.3,{x:-120,y:0,d:0.7}); kb('#a3-wt img',S[3]+0.3,9);
+inn('#a3-s',S[3]+4.6,{x:120,y:0,d:0.7}); kb('#a3-st img',S[3]+4.6,5.5);
+inn('#a4-l1',S[4],{y:20});
+inn('#a4-w',S[4]+0.3,{y:30});
+grow('#a4-s',S[4]+2.0,0.45);
+whip('#a4-t',S[5],100);
+inn('#a4-sc',S[5]+2.2,{y:30,r0:-8,r:-4,d:0.7,e:'back.out(1.6)'});
+
+inn('#cta-k',V+0.15,{y:16}); whip('#cta-t',V+0.3,90); grow('#cta-r',V+0.8,0.5);
+inn('#cta-p',V+1.0,{x:-30,y:0}); inn('#cta-kk',V+1.3,{x:-30,y:0}); pop('#cta-c',V+1.8);
+
+tl.fromTo(q('#a0 .in'),{opacity:1},{opacity:0,duration:0.22,ease:'power1.in',immediateRender:false},10.74);
+tl.fromTo(q('#a2 .in'),{opacity:1},{opacity:0,duration:0.22,ease:'power1.in',immediateRender:false},16.38);
+tl.fromTo(q('#a3 .in'),{opacity:1},{opacity:0,duration:0.22,ease:'power1.in',immediateRender:false},26.48);
+tl.fromTo(q('#a4 .in'),{opacity:1},{opacity:0,duration:0.22,ease:'power1.in',immediateRender:false},35.1);
+window.__timelines["main"] = tl;
+      })();
+    </script>
+  </body>
+</html>

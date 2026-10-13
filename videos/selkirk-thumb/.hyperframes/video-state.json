@@ -1,0 +1,87 @@
+{
+  "version": 1,
+  "historyId": "255dd134-77e7-4113-a700-72091d3d5482",
+  "currentRevision": null,
+  "pendingChanges": false,
+  "files": {
+    "assets/fonts/Pretendard-Black.woff2": {
+      "hash": "c5fd0c3568fc1368a3edc0d0fbb36df029935954276e3573451b3bae09e27296",
+      "content": "/root/.cache/hyperframes/history/255dd134-77e7-4113-a700-72091d3d5482/blobs/c5/c5fd0c3568fc1368a3edc0d0fbb36df029935954276e3573451b3bae09e27296"
+    },
+    "assets/fonts/Pretendard-Bold.woff2": {
+      "hash": "4609c3356e536fafe38f4add0daeceb3d8595d3057bce13c428c33ddbd43d362",
+      "content": "/root/.cache/hyperframes/history/255dd134-77e7-4113-a700-72091d3d5482/blobs/46/4609c3356e536fafe38f4add0daeceb3d8595d3057bce13c428c33ddbd43d362"
+    },
+    "assets/fonts/Pretendard-ExtraBold.woff2": {
+      "hash": "dd7c1e156f508eb962acc7a33a7a1896d1e0b71e11156fad96e731689ceb6dc3",
+      "content": "/root/.cache/hyperframes/history/255dd134-77e7-4113-a700-72091d3d5482/blobs/dd/dd7c1e156f508eb962acc7a33a7a1896d1e0b71e11156fad96e731689ceb6dc3"
+    },
+    "assets/fonts/Pretendard-Medium.woff2": {
+      "hash": "d03481330eeba0659ab5b87f25ceb504a35de377dd90a0d0aba2982eb2d05e2c",
+      "content": "/root/.cache/hyperframes/history/255dd134-77e7-4113-a700-72091d3d5482/blobs/d0/d03481330eeba0659ab5b87f25ceb504a35de377dd90a0d0aba2982eb2d05e2c"
+    },
+    "assets/fonts/Pretendard-Regular.woff2": {
+      "hash": "fad853f7f47c6c8b103171e7193fa095708cdcd70850a71d93aa5379e8a61d63",
+      "content": "/root/.cache/hyperframes/history/255dd134-77e7-4113-a700-72091d3d5482/blobs/fa/fad853f7f47c6c8b103171e7193fa095708cdcd70850a71d93aa5379e8a61d63"
+    },
+    "assets/fonts/Yellowtail-Regular.ttf": {
+      "hash": "3e06841b13000975f3cc38aa84e326e601a4378a4c52d50b5e9fee3598c5d236",
+      "content": "/root/.cache/hyperframes/history/255dd134-77e7-4113-a700-72091d3d5482/blobs/3e/3e06841b13000975f3cc38aa84e326e601a4378a4c52d50b5e9fee3598c5d236"
+    },
+    "assets/img/aerial-lake-campus.jpg": {
+      "hash": "6dbcc5ced32da2ddc5d3e1a9b6d264291235031dd70e62d21dbe357a16832ec5",
+      "content": "/root/.cache/hyperframes/history/255dd134-77e7-4113-a700-72091d3d5482/blobs/6d/6dbcc5ced32da2ddc5d3e1a9b6d264291235031dd70e62d21dbe357a16832ec5"
+    },
+    "assets/img/nelson-baker-street.jpg": {
+      "hash": "e418dee10100d0c7595bdc197f5c6f30e29c39461615fa2a5f3480cefd6614d4",
+      "content": "/root/.cache/hyperframes/history/255dd134-77e7-4113-a700-72091d3d5482/blobs/e4/e418dee10100d0c7595bdc197f5c6f30e29c39461615fa2a5f3480cefd6614d4"
+    },
+    "assets/vendor/gsap.min.js": {
+      "hash": "c3a03a345e45bc954cd48c43f11572891f5dca7a5d99348d5bc14753a728618c",
+      "content": "/root/.cache/hyperframes/history/255dd134-77e7-4113-a700-72091d3d5482/blobs/c3/c3a03a345e45bc954cd48c43f11572891f5dca7a5d99348d5bc14753a728618c"
+    },
+    "hyperframes.json": {
+      "hash": "ad5dadeef78a520800a9e5cdd27a92ff5ac37f11b6a07f611b6b52b9f8c79a17",
+      "content": "/root/.cache/hyperframes/history/255dd134-77e7-4113-a700-72091d3d5482/blobs/ad/ad5dadeef78a520800a9e5cdd27a92ff5ac37f11b6a07f611b6b52b9f8c79a17"
+    },
+    "index.html": {
+      "hash": "ca5af2598e95ad66b54d7681a69cecb7860726a253c8385bed90fe415007d349",
+      "content": "/root/.cache/hyperframes/history/255dd134-77e7-4113-a700-72091d3d5482/blobs/ca/ca5af2598e95ad66b54d7681a69cecb7860726a253c8385bed90fe415007d349"
+    }
+  },
+  "revisions": {},
+  "checks": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "snapshots": {
+    "latest": {
+      "revision": null,
+      "id": "58f7a4bf-99d2-4835-a43b-7ea02cb541c3-0"
+    },
+    "revisions": {},
+    "unversioned": [
+      {
+        "scope": "full",
+        "id": "58f7a4bf-99d2-4835-a43b-7ea02cb541c3-0",
+        "image": "/tmp/claude-0/-home-user-AI-/183cda42-163b-515b-aabb-4fed347b3399/scratchpad/thumb/frame-00-at-0.5s.png",
+        "time": 0.5,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1791905927437,
+        "contentHash": "fb17972f3fc2be4b4fbeb9dcfe431dec03086a942ce5df3106257239470d261d",
+        "revision": null,
+        "inputFingerprint": "301dce533553b629a215a2ad347e87d3db2cf3d3ecfa16e671beedbeedd2d9fe",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      }
+    ]
+  }
+}
