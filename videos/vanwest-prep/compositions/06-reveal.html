@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+
+@font-face{font-family:Pretendard;font-weight:500;src:url(assets/fonts/Pretendard-Medium.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:700;src:url(assets/fonts/Pretendard-Bold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:800;src:url(assets/fonts/Pretendard-ExtraBold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:900;src:url(assets/fonts/Pretendard-Black.woff2) format("woff2")}
+@font-face{font-family:Yellowtail;font-weight:400;src:url(assets/fonts/Yellowtail-Regular.ttf) format("truetype")}
+
+
+#s06{position:absolute;inset:0;overflow:hidden;background:#FAF6EF;color:#16324F;font-family:Pretendard,sans-serif}
+#s06 *{box-sizing:border-box}
+#s06 .bg{position:absolute;inset:0;background:#FAF6EF}
+#s06 .grain{position:absolute;inset:0;opacity:.5;background-image:radial-gradient(rgba(22,50,79,.07) 1.2px,transparent 1.3px);background-size:9px 9px}
+#s06 .glow{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(31,138,153,.20) 0%,rgba(31,138,153,0) 70%)}
+#s06 .glow.warm{background:radial-gradient(circle,rgba(232,87,43,.14) 0%,rgba(232,87,43,0) 70%)}
+#s06 .ghost{position:absolute;font-weight:900;color:rgba(22,50,79,.07);font-size:300px;letter-spacing:-.04em;white-space:nowrap;line-height:1}
+#s06 .stage{position:absolute;inset:0}
+#s06 .abs{position:absolute}
+#s06 .h{font-weight:900;letter-spacing:-.03em;line-height:1.1}
+#s06 .hd{font-weight:800;letter-spacing:-.02em;line-height:1.2}
+#s06 .b{font-weight:500;line-height:1.45}
+#s06 .l{font-weight:700;letter-spacing:.08em}
+#s06 .script{font-family:Yellowtail,cursive;line-height:1.05;white-space:nowrap}
+#s06 .sticker{position:absolute;background:#E8572B;color:#fff;font-weight:800;font-size:24px;letter-spacing:.12em;padding:10px 24px;border-radius:99px;white-space:nowrap}
+#s06 .chip{position:absolute;background:#FAF6EF;border:3px solid #16324F;border-radius:99px;padding:10px 24px;font-weight:700;font-size:28px;white-space:nowrap;color:#16324F}
+#s06 .chip.lake{border-color:#1F8A99;color:#146A77}
+#s06 .chip.solid{background:#16324F;color:#FAF6EF}
+#s06 .chip.sand{background:#F3C969;border-color:#F3C969}
+#s06 .pol{position:absolute;background:#fff;padding:16px 16px 60px;box-shadow:0 20px 44px rgba(22,50,79,.26)}
+#s06 .pol .ph{position:relative;width:100%;height:100%;overflow:hidden}
+#s06 .pol img,#s06 .ph img{display:block;width:100%;height:100%;object-fit:cover}
+#s06 .pol .cap{position:absolute;left:0;right:0;bottom:12px;text-align:center;font-family:Yellowtail,cursive;font-size:32px;color:#16324F}
+#s06 .card{position:absolute;background:#fff;border:3px solid rgba(22,50,79,.14);border-radius:24px;box-shadow:0 12px 30px rgba(22,50,79,.13)}
+#s06 .panel{position:absolute;background:rgba(22,50,79,.93);border-radius:28px;color:#FAF6EF}
+#s06 .full{position:absolute;inset:0;overflow:hidden}
+#s06 .full img{width:100%;height:100%;object-fit:cover;display:block}
+#s06 .hlbar{position:absolute;background:#F3C969;height:22px;transform-origin:0 50%}
+#s06 .wipe{position:absolute;inset:0;background:#1F8A99;z-index:50}
+#s06 .flash{position:absolute;inset:0;background:#FAF6EF;z-index:60;opacity:0}
+
+#s06 .vp{position:absolute;width:52px;height:52px;border-radius:50% 50% 50% 0}
+#s06 .ct{position:absolute;font-weight:800;font-size:40px;white-space:nowrap}
+
+      </style>
+      <div id="s06" data-composition-id="s06" data-width="1920" data-height="1080" data-duration="25.85">
+        <div class="bg"></div>
+        <div class="grain"></div>
+
+        <div class="stage">
+
+          <div class="full" id="s06-hero"><img src="assets/photos/50-vanwest-students.jpg" alt="" style="object-position:30% 30%" /></div>
+          <div class="abs" id="s06-heros" style="inset:0;background:linear-gradient(90deg,rgba(22,50,79,.0) 30%,rgba(22,50,79,.88) 75%)"></div>
+          <div class="abs l" id="s06-h0" style="left:1140px;top:330px;font-size:28px;color:#F3C969">그 차이를 줄이는 방법</div>
+          <div class="abs h" id="s06-h1" style="left:1140px;top:380px;font-size:84px;color:#FAF6EF;line-height:1.15">버논에 가기 전,<br />영어를 미리</div>
+          <div class="abs" id="s06-map" style="left:0;top:0;width:1920px;height:1080px">
+            <svg class="abs" style="left:0;top:0;width:1920px;height:1080px" viewBox="0 0 1920 1080">
+              <path id="s06-lake" d="M520 240 C 560 330, 470 420, 520 520 C 560 600, 600 680, 560 820" fill="none" stroke="#1F8A99" stroke-width="54" stroke-linecap="round" opacity=".55"/>
+              <path id="s06-road" d="M640 760 C 720 620, 700 420, 640 300" fill="none" stroke="#16324F" stroke-width="8" stroke-dasharray="4 16" stroke-linecap="round"/>
+            </svg>
+            <div class="abs b" id="s06-lk" style="left:300px;top:540px;font-size:28px;color:#146A77">오카나간 호수</div>
+            <div class="vp" id="s06-pv" style="left:614px;top:236px;background:#16324F"></div>
+            <div class="ct" id="s06-tv" style="left:690px;top:240px">버논</div>
+            <div class="vp" id="s06-pk" style="left:614px;top:720px;background:#E8572B"></div>
+            <div class="ct" id="s06-tk" style="left:690px;top:724px">켈로나</div>
+            <div class="chip" id="s06-dr" style="left:720px;top:480px">차로 약 40분</div>
+          </div>
+          <div class="pol" id="s06-ext" style="left:960px;top:170px;width:640px;height:540px"><div class="ph"><img src="assets/photos/60-campus-exterior.jpg" alt="" /></div><div class="cap">VanWest College · Kelowna</div></div>
+          <div class="pol" id="s06-lob" style="left:1420px;top:580px;width:380px;height:320px"><div class="ph"><img src="assets/photos/61-campus-lobby.jpg" alt="" /></div><div class="cap">campus lobby</div></div>
+          <div class="chip solid" id="s06-cn" style="left:960px;top:90px">밴웨스트 컬리지 켈로나 캠퍼스</div>
+          <div class="abs" id="s06-prog" style="left:0;top:0;width:1920px;height:1080px">
+            <div class="abs" id="s06-pp" style="left:120px;top:210px;width:1680px;height:420px;border-radius:32px;background:#16324F"></div>
+            <div class="abs l" id="s06-p0" style="left:200px;top:270px;font-size:28px;color:#7FD3DE">VANWEST COLLEGE · KELOWNA</div>
+            <div class="abs h" id="s06-p1" style="left:200px;top:320px;font-size:110px;color:#FAF6EF">공립학교 준비 과정</div>
+            <div class="abs" id="s06-f0" style="left:200px;top:500px;width:520px;height:84px;border-radius:20px;background:#1F8A99;color:#fff;font-weight:800;font-size:36px;text-align:center;line-height:84px">켈로나에서 영어 준비</div>
+            <svg class="abs" id="s06-ar" style="left:740px;top:512px;width:180px;height:60px" viewBox="0 0 180 60"><path d="M6 30 H160 M136 8 L166 30 L136 52" fill="none" stroke="#F3C969" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div class="abs" id="s06-f1" style="left:940px;top:500px;width:420px;height:84px;border-radius:20px;background:#FAF6EF;color:#16324F;font-weight:800;font-size:36px;text-align:center;line-height:84px">버논 공립학교 입학</div>
+            <div class="chip sand" id="s06-esl" style="left:200px;top:700px">현지 학교에서 ESL을 따로 듣지 않는 경우가 많습니다</div>
+          </div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const root = document.getElementById("s06");
+          const D = 25.85;
+          const R = [0.9, 5.78, 12.44, 17.96];
+
+const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
+const tl=gsap.timeline({paused:true});
+function inn(el,at,o){o=o||{};if(typeof el==='string')el=q(el);
+  tl.fromTo(el,{opacity:0,x:o.x||0,y:(o.y===undefined?30:o.y),scale:(o.s===undefined?1:o.s),rotation:(o.r0===undefined?(o.r||0):o.r0)},
+  {opacity:1,x:0,y:0,scale:1,rotation:o.r||0,duration:o.d||0.6,ease:o.e||'power3.out'},at);}
+function outt(el,at,o){o=o||{};if(typeof el==='string')el=q(el);
+  tl.to(el,{opacity:0,y:o.y||0,x:o.x||0,scale:(o.s===undefined?1:o.s),duration:o.d||0.45,ease:'power2.in'},at);}
+function pol(el,at,rot){if(typeof el==='string')el=q(el);
+  tl.fromTo(el,{opacity:0,y:-180,rotation:rot*2.4,scale:1.06},{opacity:1,y:0,rotation:rot,scale:1,duration:0.85,ease:'power3.out'},at);}
+function kb(el,at,dur,a,b){if(typeof el==='string')el=q(el);a=a||{};b=b||{};
+  tl.fromTo(el,{scale:a.s||1,xPercent:a.x||0,yPercent:a.y||0},{scale:b.s||1.07,xPercent:b.x||0,yPercent:b.y||0,duration:dur,ease:'none'},at);}
+function count(el,from,to,at,dur,fmt){if(typeof el==='string')el=q(el);const st={v:from};
+  tl.fromTo(st,{v:from},{v:to,duration:dur,ease:'power2.out',immediateRender:false,onUpdate:()=>{el.textContent=fmt(st.v);}},at);}
+function grow(el,at,d,origin){if(typeof el==='string')el=q(el);
+  tl.fromTo(el,{scaleX:0,opacity:0,transformOrigin:origin||'0% 50%'},{scaleX:1,opacity:1,duration:d||0.8,ease:'power3.inOut'},at);}
+function draw(path,at,d){if(typeof path==='string')path=q(path);const L=path.getTotalLength();
+  path.style.strokeDasharray=L;tl.fromTo(path,{opacity:0},{opacity:1,duration:0.05},at);tl.fromTo(path,{strokeDashoffset:L},{strokeDashoffset:0,duration:d||1,ease:'power2.inOut'},at);}
+function ambient(){
+  qa('.ghost').forEach((g,i)=>tl.fromTo(g,{x:0},{x:(i%2?160:-160),duration:D,ease:'none'},0));
+  qa('.glow').forEach((g,i)=>{const c=4+i;const n=Math.max(0,Math.floor(D/c)-1);
+    tl.fromTo(g,{scale:0.92},{scale:1.08,duration:c/2,ease:'sine.inOut',yoyo:true,repeat:n},0);});
+  tl.fromTo(q('.stage'),{opacity:0},{opacity:1,duration:0.45,ease:'power1.out'},0);
+  tl.fromTo(q('.stage'),{scale:1,transformOrigin:'50% 45%'},{scale:1.03,duration:D,ease:'none'},0);
+  if(q('.wipe'))tl.fromTo(q('.wipe'),{xPercent:0},{xPercent:-101,duration:0.75,ease:'power3.inOut'},0.05);
+  tl.to(q('.stage'),{opacity:0,duration:0.5,ease:'power1.in'},D-0.55);
+}
+
+const M={"kel": 9.08, "camp": 11.0};
+
+kb('#s06-hero img',0,R[1],{s:1.0},{s:1.08,x:-1});
+inn('#s06-h0',R[0]+0.2,{y:16});inn('#s06-h1',R[0]+0.5,{y:30});
+tl.to(['#s06-hero','#s06-heros','#s06-h0','#s06-h1'],{opacity:0,duration:0.6},R[1]-0.4);
+tl.fromTo('#s06-map',{opacity:0},{opacity:1,duration:0.4},R[1]-0.2);
+draw('#s06-lake',R[1]-0.2,1.0);inn('#s06-lk',R[1]+0.6,{y:10});
+inn('#s06-pv',R[1]+0.1,{y:-80});inn('#s06-tv',R[1]+0.3,{x:-20,y:0});
+draw('#s06-road',R[1]+0.8,1.0);inn('#s06-dr',R[1]+1.4,{s:0.7,y:0});
+inn('#s06-pk',M.kel-0.3,{y:-80});inn('#s06-tk',M.kel-0.1,{x:-20,y:0});
+tl.fromTo('#s06-pk',{scale:1},{scale:1.25,duration:0.4,yoyo:true,repeat:3,ease:'sine.inOut'},M.kel+0.4);
+pol('#s06-ext',M.camp-1.2,-3);kb('#s06-ext img',M.camp-1.2,R[2]-M.camp+1.2,{s:1},{s:1.1});
+inn('#s06-cn',M.camp-0.6,{y:-20});
+pol('#s06-lob',M.camp+1.0,4);
+tl.to(['#s06-map','#s06-ext','#s06-lob','#s06-cn'],{opacity:0,duration:0.5},R[2]-0.4);
+tl.fromTo('#s06-prog',{opacity:0},{opacity:1,duration:0.1},R[2]-0.2);
+tl.fromTo('#s06-pp',{scaleY:0,transformOrigin:'50% 50%'},{scaleY:1,duration:0.6,ease:'power3.out'},R[2]-0.2);
+inn('#s06-p0',R[2]+0.3,{y:16});inn('#s06-p1',R[2]+0.5,{y:30});
+inn('#s06-f0',R[2]+2.2,{x:-30,y:0});draw('#s06-ar path',R[2]+2.8,0.5);inn('#s06-f1',R[2]+3.2,{x:-30,y:0});
+inn('#s06-esl',R[3]+0.6,{s:0.7,y:0});
+
+          ambient();
+          window.__timelines["s06"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

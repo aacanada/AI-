@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+
+@font-face{font-family:Pretendard;font-weight:500;src:url(assets/fonts/Pretendard-Medium.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:700;src:url(assets/fonts/Pretendard-Bold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:800;src:url(assets/fonts/Pretendard-ExtraBold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:900;src:url(assets/fonts/Pretendard-Black.woff2) format("woff2")}
+@font-face{font-family:Yellowtail;font-weight:400;src:url(assets/fonts/Yellowtail-Regular.ttf) format("truetype")}
+
+
+#s07{position:absolute;inset:0;overflow:hidden;background:#FAF6EF;color:#16324F;font-family:Pretendard,sans-serif}
+#s07 *{box-sizing:border-box}
+#s07 .bg{position:absolute;inset:0;background:#FAF6EF}
+#s07 .grain{position:absolute;inset:0;opacity:.5;background-image:radial-gradient(rgba(22,50,79,.07) 1.2px,transparent 1.3px);background-size:9px 9px}
+#s07 .glow{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(31,138,153,.20) 0%,rgba(31,138,153,0) 70%)}
+#s07 .glow.warm{background:radial-gradient(circle,rgba(232,87,43,.14) 0%,rgba(232,87,43,0) 70%)}
+#s07 .ghost{position:absolute;font-weight:900;color:rgba(22,50,79,.07);font-size:300px;letter-spacing:-.04em;white-space:nowrap;line-height:1}
+#s07 .stage{position:absolute;inset:0}
+#s07 .abs{position:absolute}
+#s07 .h{font-weight:900;letter-spacing:-.03em;line-height:1.1}
+#s07 .hd{font-weight:800;letter-spacing:-.02em;line-height:1.2}
+#s07 .b{font-weight:500;line-height:1.45}
+#s07 .l{font-weight:700;letter-spacing:.08em}
+#s07 .script{font-family:Yellowtail,cursive;line-height:1.05;white-space:nowrap}
+#s07 .sticker{position:absolute;background:#E8572B;color:#fff;font-weight:800;font-size:24px;letter-spacing:.12em;padding:10px 24px;border-radius:99px;white-space:nowrap}
+#s07 .chip{position:absolute;background:#FAF6EF;border:3px solid #16324F;border-radius:99px;padding:10px 24px;font-weight:700;font-size:28px;white-space:nowrap;color:#16324F}
+#s07 .chip.lake{border-color:#1F8A99;color:#146A77}
+#s07 .chip.solid{background:#16324F;color:#FAF6EF}
+#s07 .chip.sand{background:#F3C969;border-color:#F3C969}
+#s07 .pol{position:absolute;background:#fff;padding:16px 16px 60px;box-shadow:0 20px 44px rgba(22,50,79,.26)}
+#s07 .pol .ph{position:relative;width:100%;height:100%;overflow:hidden}
+#s07 .pol img,#s07 .ph img{display:block;width:100%;height:100%;object-fit:cover}
+#s07 .pol .cap{position:absolute;left:0;right:0;bottom:12px;text-align:center;font-family:Yellowtail,cursive;font-size:32px;color:#16324F}
+#s07 .card{position:absolute;background:#fff;border:3px solid rgba(22,50,79,.14);border-radius:24px;box-shadow:0 12px 30px rgba(22,50,79,.13)}
+#s07 .panel{position:absolute;background:rgba(22,50,79,.93);border-radius:28px;color:#FAF6EF}
+#s07 .full{position:absolute;inset:0;overflow:hidden}
+#s07 .full img{width:100%;height:100%;object-fit:cover;display:block}
+#s07 .hlbar{position:absolute;background:#F3C969;height:22px;transform-origin:0 50%}
+#s07 .wipe{position:absolute;inset:0;background:#1F8A99;z-index:50}
+#s07 .flash{position:absolute;inset:0;background:#FAF6EF;z-index:60;opacity:0}
+
+#s07 .wc{position:absolute;background:#fff;border-radius:20px;padding:18px 30px;box-shadow:0 12px 28px rgba(22,50,79,.16);white-space:nowrap}
+#s07 .wc b{font-weight:800;font-size:44px;color:#16324F;margin-right:18px}
+#s07 .wc span{font-weight:700;font-size:32px;color:#146A77}
+#s07 .subj{position:absolute;top:470px;width:300px;height:200px;border-radius:28px;background:#16324F;color:#FAF6EF;text-align:center}
+#s07 .subj .v{font-weight:900;font-size:76px;margin-top:46px}
+#s07 .wk{position:absolute;width:395px;height:170px;border-radius:24px;background:#fff;border:3px solid rgba(22,50,79,.14);padding:24px 28px}
+#s07 .wk .n{font-weight:800;font-size:26px;color:#146A77;letter-spacing:.04em}
+#s07 .wk .v{font-weight:800;font-size:38px;margin-top:10px;line-height:1.2}
+#s07 .wk.on{background:#1F8A99;border-color:#1F8A99}
+
+      </style>
+      <div id="s07" data-composition-id="s07" data-width="1920" data-height="1080" data-duration="24.37">
+        <div class="bg"></div>
+        <div class="grain"></div>
+
+        <div class="stage">
+
+          <div class="sticker" id="s07-st" style="left:120px;top:96px">추천 포인트 03</div>
+          <div class="abs hd" id="s07-t" style="left:120px;top:150px;font-size:66px">과목 용어</div>
+          <div class="abs h" id="s07-a" style="left:120px;top:330px;font-size:76px;color:#4A5F78">수학을 못 하는 게 아니라</div>
+          <div class="abs" id="s07-strike" style="left:110px;top:372px;width:930px;height:10px;background:#E8572B;border-radius:5px"></div>
+          <div class="abs h" id="s07-b" style="left:120px;top:460px;font-size:96px"><span style="background:linear-gradient(transparent 62%,#F3C969 62%)">용어</span>를 모르는 것</div>
+          <div class="wc" id="s07-w0" style="left:1200px;top:240px"><b>equation</b><span>방정식</span></div>
+          <div class="wc" id="s07-w1" style="left:1480px;top:380px"><b>perimeter</b><span>둘레</span></div>
+          <div class="wc" id="s07-w2" style="left:1150px;top:520px"><b>denominator</b><span>분모</span></div>
+          <div class="wc" id="s07-w3" style="left:1450px;top:660px"><b>coefficient</b><span>계수</span></div>
+          <div class="abs hd" id="s07-hl" style="left:120px;top:330px;font-size:44px">캐나다에서 학교를 다닌 학생들이 꼽은 어려운 과목</div>
+          <div class="subj" id="s07-s0" style="left:120px"><div class="v">역사</div></div>
+          <div class="subj" id="s07-s1" style="left:460px"><div class="v">지리</div></div>
+          <div class="subj" id="s07-s2" style="left:800px"><div class="v">문학</div></div>
+          <div class="pol" id="s07-ph" style="left:1240px;top:300px;width:520px;height:440px"><div class="ph"><img src="assets/photos/63-campus-classroom.jpg" alt="" /></div><div class="cap">VanWest classroom</div></div>
+          <div class="abs hd" id="s07-wt" style="left:120px;top:330px;font-size:48px">8주 과정 · 매주 다른 과목의 핵심 용어</div>
+          <div class="wk" id="s07-k0" style="left:120px;top:430px"><div class="n">1주</div><div class="v">쓰기·공부 요령</div></div>
+          <div class="wk" id="s07-k1" style="left:545px;top:430px"><div class="n">2주</div><div class="v">수학</div></div>
+          <div class="wk" id="s07-k2" style="left:970px;top:430px"><div class="n">3주</div><div class="v">진로·생활·실용 역량</div></div>
+          <div class="wk" id="s07-k3" style="left:1395px;top:430px"><div class="n">4주</div><div class="v">캐나다 역사와 문화</div></div>
+          <div class="wk" id="s07-k4" style="left:120px;top:630px"><div class="n">5주</div><div class="v">영어 읽기·쓰기</div></div>
+          <div class="wk" id="s07-k5" style="left:545px;top:630px"><div class="n">6주</div><div class="v">응용 디자인·예술</div></div>
+          <div class="wk" id="s07-k6" style="left:970px;top:630px"><div class="n">7주</div><div class="v">과학</div></div>
+          <div class="wk" id="s07-k7" style="left:1395px;top:630px"><div class="n">8주</div><div class="v">건강과 체력</div></div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const root = document.getElementById("s07");
+          const D = 24.37;
+          const R = [0.94, 6.62, 11.92];
+
+const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
+const tl=gsap.timeline({paused:true});
+function inn(el,at,o){o=o||{};if(typeof el==='string')el=q(el);
+  tl.fromTo(el,{opacity:0,x:o.x||0,y:(o.y===undefined?30:o.y),scale:(o.s===undefined?1:o.s),rotation:(o.r0===undefined?(o.r||0):o.r0)},
+  {opacity:1,x:0,y:0,scale:1,rotation:o.r||0,duration:o.d||0.6,ease:o.e||'power3.out'},at);}
+function outt(el,at,o){o=o||{};if(typeof el==='string')el=q(el);
+  tl.to(el,{opacity:0,y:o.y||0,x:o.x||0,scale:(o.s===undefined?1:o.s),duration:o.d||0.45,ease:'power2.in'},at);}
+function pol(el,at,rot){if(typeof el==='string')el=q(el);
+  tl.fromTo(el,{opacity:0,y:-180,rotation:rot*2.4,scale:1.06},{opacity:1,y:0,rotation:rot,scale:1,duration:0.85,ease:'power3.out'},at);}
+function kb(el,at,dur,a,b){if(typeof el==='string')el=q(el);a=a||{};b=b||{};
+  tl.fromTo(el,{scale:a.s||1,xPercent:a.x||0,yPercent:a.y||0},{scale:b.s||1.07,xPercent:b.x||0,yPercent:b.y||0,duration:dur,ease:'none'},at);}
+function count(el,from,to,at,dur,fmt){if(typeof el==='string')el=q(el);const st={v:from};
+  tl.fromTo(st,{v:from},{v:to,duration:dur,ease:'power2.out',immediateRender:false,onUpdate:()=>{el.textContent=fmt(st.v);}},at);}
+function grow(el,at,d,origin){if(typeof el==='string')el=q(el);
+  tl.fromTo(el,{scaleX:0,opacity:0,transformOrigin:origin||'0% 50%'},{scaleX:1,opacity:1,duration:d||0.8,ease:'power3.inOut'},at);}
+function draw(path,at,d){if(typeof path==='string')path=q(path);const L=path.getTotalLength();
+  path.style.strokeDasharray=L;tl.fromTo(path,{opacity:0},{opacity:1,duration:0.05},at);tl.fromTo(path,{strokeDashoffset:L},{strokeDashoffset:0,duration:d||1,ease:'power2.inOut'},at);}
+function ambient(){
+  qa('.ghost').forEach((g,i)=>tl.fromTo(g,{x:0},{x:(i%2?160:-160),duration:D,ease:'none'},0));
+  qa('.glow').forEach((g,i)=>{const c=4+i;const n=Math.max(0,Math.floor(D/c)-1);
+    tl.fromTo(g,{scale:0.92},{scale:1.08,duration:c/2,ease:'sine.inOut',yoyo:true,repeat:n},0);});
+  tl.fromTo(q('.stage'),{opacity:0},{opacity:1,duration:0.45,ease:'power1.out'},0);
+  tl.fromTo(q('.stage'),{scale:1,transformOrigin:'50% 45%'},{scale:1.03,duration:D,ease:'none'},0);
+  if(q('.wipe'))tl.fromTo(q('.wipe'),{xPercent:0},{xPercent:-101,duration:0.75,ease:'power3.inOut'},0.05);
+  tl.to(q('.stage'),{opacity:0,duration:0.5,ease:'power1.in'},D-0.55);
+}
+
+const M={"term": 4.8, "hist": 9.04, "geo": 9.62, "lit": 9.96, "w0": 16.1, "w1": 17.46, "w3": 18.04, "w4": 19.6, "w6": 20.9, "w7": 21.82};
+
+inn('#s07-st',R[0]-0.3,{r0:-14,r:-4,s:0.6,y:0});inn('#s07-t',R[0],{y:24});
+inn('#s07-a',R[0]+0.3,{y:24});
+tl.fromTo('#s07-strike',{scaleX:0,transformOrigin:'0% 50%'},{scaleX:1,duration:0.5,ease:'power2.inOut'},M.term-0.6);
+inn('#s07-b',M.term-0.2,{y:30});
+qa('.wc').forEach((w,i)=>tl.fromTo(w,{opacity:0,scale:0.5,rotation:0},{opacity:1,scale:1,rotation:[-4,3,2,-3][i],duration:0.4,ease:'back.out(2)'},M.term+0.2+i*0.22));
+tl.to(['#s07-a','#s07-strike','#s07-b'].concat(qa('.wc')),{opacity:0,y:-30,duration:0.35,ease:'power2.in'},R[1]-0.2);
+inn('#s07-hl',R[1],{y:20});
+inn('#s07-s0',M.hist,{y:40,s:0.8});inn('#s07-s1',M.geo,{y:40,s:0.8});inn('#s07-s2',M.lit,{y:40,s:0.8});
+pol('#s07-ph',R[1]+0.4,3);kb('#s07-ph img',R[1]+0.4,R[2]-R[1],{s:1},{s:1.1});
+tl.to(['#s07-hl','#s07-s0','#s07-s1','#s07-s2','#s07-ph'],{opacity:0,y:-30,duration:0.4,ease:'power2.in'},R[2]-0.4);
+inn('#s07-wt',R[2],{y:20});
+qa('.wk').forEach((w,i)=>inn(w,R[2]+0.4+i*0.12,{y:30,d:0.5}));
+const WT=[M.w0,M.w1,(M.w1+M.w3)/2,M.w3,M.w4,(M.w4+M.w6)/2,M.w6,M.w7];
+WT.forEach((t,i)=>{tl.to('#s07-k'+i,{backgroundColor:'#1F8A99',borderColor:'#1F8A99',color:'#fff',duration:0.3},t);
+  tl.to('#s07-k'+i+' .n',{color:'#FAF6EF',duration:0.3},t);});
+
+          ambient();
+          window.__timelines["s07"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

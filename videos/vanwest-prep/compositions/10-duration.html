@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+
+@font-face{font-family:Pretendard;font-weight:500;src:url(assets/fonts/Pretendard-Medium.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:700;src:url(assets/fonts/Pretendard-Bold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:800;src:url(assets/fonts/Pretendard-ExtraBold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:900;src:url(assets/fonts/Pretendard-Black.woff2) format("woff2")}
+@font-face{font-family:Yellowtail;font-weight:400;src:url(assets/fonts/Yellowtail-Regular.ttf) format("truetype")}
+
+
+#s10{position:absolute;inset:0;overflow:hidden;background:#FAF6EF;color:#16324F;font-family:Pretendard,sans-serif}
+#s10 *{box-sizing:border-box}
+#s10 .bg{position:absolute;inset:0;background:#FAF6EF}
+#s10 .grain{position:absolute;inset:0;opacity:.5;background-image:radial-gradient(rgba(22,50,79,.07) 1.2px,transparent 1.3px);background-size:9px 9px}
+#s10 .glow{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(31,138,153,.20) 0%,rgba(31,138,153,0) 70%)}
+#s10 .glow.warm{background:radial-gradient(circle,rgba(232,87,43,.14) 0%,rgba(232,87,43,0) 70%)}
+#s10 .ghost{position:absolute;font-weight:900;color:rgba(22,50,79,.07);font-size:300px;letter-spacing:-.04em;white-space:nowrap;line-height:1}
+#s10 .stage{position:absolute;inset:0}
+#s10 .abs{position:absolute}
+#s10 .h{font-weight:900;letter-spacing:-.03em;line-height:1.1}
+#s10 .hd{font-weight:800;letter-spacing:-.02em;line-height:1.2}
+#s10 .b{font-weight:500;line-height:1.45}
+#s10 .l{font-weight:700;letter-spacing:.08em}
+#s10 .script{font-family:Yellowtail,cursive;line-height:1.05;white-space:nowrap}
+#s10 .sticker{position:absolute;background:#E8572B;color:#fff;font-weight:800;font-size:24px;letter-spacing:.12em;padding:10px 24px;border-radius:99px;white-space:nowrap}
+#s10 .chip{position:absolute;background:#FAF6EF;border:3px solid #16324F;border-radius:99px;padding:10px 24px;font-weight:700;font-size:28px;white-space:nowrap;color:#16324F}
+#s10 .chip.lake{border-color:#1F8A99;color:#146A77}
+#s10 .chip.solid{background:#16324F;color:#FAF6EF}
+#s10 .chip.sand{background:#F3C969;border-color:#F3C969}
+#s10 .pol{position:absolute;background:#fff;padding:16px 16px 60px;box-shadow:0 20px 44px rgba(22,50,79,.26)}
+#s10 .pol .ph{position:relative;width:100%;height:100%;overflow:hidden}
+#s10 .pol img,#s10 .ph img{display:block;width:100%;height:100%;object-fit:cover}
+#s10 .pol .cap{position:absolute;left:0;right:0;bottom:12px;text-align:center;font-family:Yellowtail,cursive;font-size:32px;color:#16324F}
+#s10 .card{position:absolute;background:#fff;border:3px solid rgba(22,50,79,.14);border-radius:24px;box-shadow:0 12px 30px rgba(22,50,79,.13)}
+#s10 .panel{position:absolute;background:rgba(22,50,79,.93);border-radius:28px;color:#FAF6EF}
+#s10 .full{position:absolute;inset:0;overflow:hidden}
+#s10 .full img{width:100%;height:100%;object-fit:cover;display:block}
+#s10 .hlbar{position:absolute;background:#F3C969;height:22px;transform-origin:0 50%}
+#s10 .wipe{position:absolute;inset:0;background:#1F8A99;z-index:50}
+#s10 .flash{position:absolute;inset:0;background:#FAF6EF;z-index:60;opacity:0}
+
+#s10 .mo{position:absolute;top:470px;width:200px;text-align:center;font-weight:800;font-size:30px;color:#4A5F78;border-left:2px solid rgba(22,50,79,.18)}
+#s10 .tk{position:absolute;height:76px;border-radius:18px;color:#fff;font-weight:800;font-size:30px;line-height:76px;padding-left:24px;white-space:nowrap;transform-origin:0 50%}
+#s10 .tlab{position:absolute;left:120px;width:280px;font-weight:800;font-size:30px;line-height:1.25}
+
+      </style>
+      <div id="s10" data-composition-id="s10" data-width="1920" data-height="1080" data-duration="20.27">
+        <div class="bg"></div>
+        <div class="grain"></div>
+
+        <div class="stage">
+
+          <div class="abs hd" id="s10-t" style="left:120px;top:92px;font-size:66px">준비 기간은 선택할 수 있습니다</div>
+          <div class="abs" id="s10-sl" style="left:120px;top:250px;width:1680px;height:140px">
+            <div class="abs" style="left:0;top:58px;width:1680px;height:16px;border-radius:8px;background:rgba(22,50,79,.12)"></div>
+            <div class="abs" id="s10-fill" style="left:0;top:58px;width:1680px;height:16px;border-radius:8px;background:#1F8A99;transform-origin:0 50%"></div>
+            <div class="abs" id="s10-knob" style="left:0;top:36px;width:60px;height:60px;border-radius:50%;background:#E8572B;box-shadow:0 6px 16px rgba(232,87,43,.4)"></div>
+            <div class="abs h" style="left:0;top:96px;font-size:40px">8주</div>
+            <div class="abs h" style="left:1580px;top:96px;font-size:40px">24주</div>
+            <div class="abs h" id="s10-wk" style="left:720px;top:-30px;width:240px;text-align:center;font-size:56px;color:#E8572B;font-variant-numeric:tabular-nums">8주</div>
+          </div>
+          <div class="abs" id="s10-cal" style="left:0;top:0;width:1920px;height:1080px">
+          <div class="mo" id="s10-m0" style="left:420px">3월</div>
+          <div class="mo" id="s10-m1" style="left:620px">4월</div>
+          <div class="mo" id="s10-m2" style="left:820px">5월</div>
+          <div class="mo" id="s10-m3" style="left:1020px">6월</div>
+          <div class="mo" id="s10-m4" style="left:1220px">7월</div>
+          <div class="mo" id="s10-m5" style="left:1420px">8월</div>
+          <div class="mo" id="s10-m6" style="left:1620px">9월</div>
+            <div class="tlab" id="s10-la" style="top:540px">여름방학<br /><span style="color:#146A77;font-size:24px">8주 집중</span></div>
+            <div class="tk" id="s10-a" style="left:1210px;top:540px;width:350px;background:#1F8A99">6.29 – 8.21</div>
+            <div class="tlab" id="s10-lb" style="top:650px">3월 시작<br /><span style="color:#146A77;font-size:24px">최대 24주</span></div>
+            <div class="tk" id="s10-b" style="left:430px;top:650px;width:1180px;background:#16324F">3월 – 8월 · 최대 24주</div>
+            <div class="abs" id="s10-flag" style="left:1640px;top:530px;width:170px;height:200px;border-radius:20px;background:#E8572B;color:#fff;text-align:center;padding-top:40px"><div class="hd" style="font-size:30px">9월</div><div class="h" style="font-size:36px;margin-top:6px">버논<br />입학</div></div>
+          </div>
+          <div class="chip solid" id="s10-c0" style="left:120px;top:780px">만 13세 이상</div>
+          <div class="chip solid" id="s10-c1" style="left:380px;top:780px">주 30레슨</div>
+          <div class="chip" id="s10-c2" style="left:620px;top:780px">월요일 – 금요일</div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const root = document.getElementById("s10");
+          const D = 20.27;
+          const R = [0.96, 4.56, 13.64];
+
+const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
+const tl=gsap.timeline({paused:true});
+function inn(el,at,o){o=o||{};if(typeof el==='string')el=q(el);
+  tl.fromTo(el,{opacity:0,x:o.x||0,y:(o.y===undefined?30:o.y),scale:(o.s===undefined?1:o.s),rotation:(o.r0===undefined?(o.r||0):o.r0)},
+  {opacity:1,x:0,y:0,scale:1,rotation:o.r||0,duration:o.d||0.6,ease:o.e||'power3.out'},at);}
+function outt(el,at,o){o=o||{};if(typeof el==='string')el=q(el);
+  tl.to(el,{opacity:0,y:o.y||0,x:o.x||0,scale:(o.s===undefined?1:o.s),duration:o.d||0.45,ease:'power2.in'},at);}
+function pol(el,at,rot){if(typeof el==='string')el=q(el);
+  tl.fromTo(el,{opacity:0,y:-180,rotation:rot*2.4,scale:1.06},{opacity:1,y:0,rotation:rot,scale:1,duration:0.85,ease:'power3.out'},at);}
+function kb(el,at,dur,a,b){if(typeof el==='string')el=q(el);a=a||{};b=b||{};
+  tl.fromTo(el,{scale:a.s||1,xPercent:a.x||0,yPercent:a.y||0},{scale:b.s||1.07,xPercent:b.x||0,yPercent:b.y||0,duration:dur,ease:'none'},at);}
+function count(el,from,to,at,dur,fmt){if(typeof el==='string')el=q(el);const st={v:from};
+  tl.fromTo(st,{v:from},{v:to,duration:dur,ease:'power2.out',immediateRender:false,onUpdate:()=>{el.textContent=fmt(st.v);}},at);}
+function grow(el,at,d,origin){if(typeof el==='string')el=q(el);
+  tl.fromTo(el,{scaleX:0,opacity:0,transformOrigin:origin||'0% 50%'},{scaleX:1,opacity:1,duration:d||0.8,ease:'power3.inOut'},at);}
+function draw(path,at,d){if(typeof path==='string')path=q(path);const L=path.getTotalLength();
+  path.style.strokeDasharray=L;tl.fromTo(path,{opacity:0},{opacity:1,duration:0.05},at);tl.fromTo(path,{strokeDashoffset:L},{strokeDashoffset:0,duration:d||1,ease:'power2.inOut'},at);}
+function ambient(){
+  qa('.ghost').forEach((g,i)=>tl.fromTo(g,{x:0},{x:(i%2?160:-160),duration:D,ease:'none'},0));
+  qa('.glow').forEach((g,i)=>{const c=4+i;const n=Math.max(0,Math.floor(D/c)-1);
+    tl.fromTo(g,{scale:0.92},{scale:1.08,duration:c/2,ease:'sine.inOut',yoyo:true,repeat:n},0);});
+  tl.fromTo(q('.stage'),{opacity:0},{opacity:1,duration:0.45,ease:'power1.out'},0);
+  tl.fromTo(q('.stage'),{scale:1,transformOrigin:'50% 45%'},{scale:1.03,duration:D,ease:'none'},0);
+  if(q('.wipe'))tl.fromTo(q('.wipe'),{xPercent:0},{xPercent:-101,duration:0.75,ease:'power3.inOut'},0.05);
+  tl.to(q('.stage'),{opacity:0,duration:0.5,ease:'power1.in'},D-0.55);
+}
+
+const M={"sum": 4.56, "mar": 8.7, "sep": 9.7};
+
+inn('#s10-t',R[0]-0.2,{y:24});
+inn('#s10-sl',R[0]+0.3,{y:30});
+tl.fromTo('#s10-fill',{scaleX:0},{scaleX:1,duration:2.2,ease:'power2.inOut'},R[0]+1.2);
+tl.fromTo('#s10-knob',{x:0},{x:1620,duration:2.2,ease:'power2.inOut'},R[0]+1.2);
+count('#s10-wk',8,24,R[0]+1.2,2.2,v=>Math.round(v)+'주');
+qa('.mo').forEach((m,i)=>inn(m,M.sum-0.6+i*0.06,{y:16,d:0.4}));
+inn('#s10-la',M.sum,{x:-20,y:0});grow('#s10-a',M.sum+0.3,0.8);
+inn('#s10-lb',M.mar-0.2,{x:-20,y:0});grow('#s10-b',M.mar+0.2,1.6);
+inn('#s10-flag',M.sep,{y:-60,e:'back.out(2)'});
+inn('#s10-c0',R[2],{s:0.7,y:0});inn('#s10-c1',R[2]+2.2,{s:0.7,y:0});inn('#s10-c2',R[2]+2.6,{s:0.7,y:0});
+
+          ambient();
+          window.__timelines["s10"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

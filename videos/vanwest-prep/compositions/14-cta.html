@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+
+@font-face{font-family:Pretendard;font-weight:500;src:url(assets/fonts/Pretendard-Medium.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:700;src:url(assets/fonts/Pretendard-Bold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:800;src:url(assets/fonts/Pretendard-ExtraBold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:900;src:url(assets/fonts/Pretendard-Black.woff2) format("woff2")}
+@font-face{font-family:Yellowtail;font-weight:400;src:url(assets/fonts/Yellowtail-Regular.ttf) format("truetype")}
+
+
+#s14{position:absolute;inset:0;overflow:hidden;background:#FAF6EF;color:#16324F;font-family:Pretendard,sans-serif}
+#s14 *{box-sizing:border-box}
+#s14 .bg{position:absolute;inset:0;background:#FAF6EF}
+#s14 .grain{position:absolute;inset:0;opacity:.5;background-image:radial-gradient(rgba(22,50,79,.07) 1.2px,transparent 1.3px);background-size:9px 9px}
+#s14 .glow{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(31,138,153,.20) 0%,rgba(31,138,153,0) 70%)}
+#s14 .glow.warm{background:radial-gradient(circle,rgba(232,87,43,.14) 0%,rgba(232,87,43,0) 70%)}
+#s14 .ghost{position:absolute;font-weight:900;color:rgba(22,50,79,.07);font-size:300px;letter-spacing:-.04em;white-space:nowrap;line-height:1}
+#s14 .stage{position:absolute;inset:0}
+#s14 .abs{position:absolute}
+#s14 .h{font-weight:900;letter-spacing:-.03em;line-height:1.1}
+#s14 .hd{font-weight:800;letter-spacing:-.02em;line-height:1.2}
+#s14 .b{font-weight:500;line-height:1.45}
+#s14 .l{font-weight:700;letter-spacing:.08em}
+#s14 .script{font-family:Yellowtail,cursive;line-height:1.05;white-space:nowrap}
+#s14 .sticker{position:absolute;background:#E8572B;color:#fff;font-weight:800;font-size:24px;letter-spacing:.12em;padding:10px 24px;border-radius:99px;white-space:nowrap}
+#s14 .chip{position:absolute;background:#FAF6EF;border:3px solid #16324F;border-radius:99px;padding:10px 24px;font-weight:700;font-size:28px;white-space:nowrap;color:#16324F}
+#s14 .chip.lake{border-color:#1F8A99;color:#146A77}
+#s14 .chip.solid{background:#16324F;color:#FAF6EF}
+#s14 .chip.sand{background:#F3C969;border-color:#F3C969}
+#s14 .pol{position:absolute;background:#fff;padding:16px 16px 60px;box-shadow:0 20px 44px rgba(22,50,79,.26)}
+#s14 .pol .ph{position:relative;width:100%;height:100%;overflow:hidden}
+#s14 .pol img,#s14 .ph img{display:block;width:100%;height:100%;object-fit:cover}
+#s14 .pol .cap{position:absolute;left:0;right:0;bottom:12px;text-align:center;font-family:Yellowtail,cursive;font-size:32px;color:#16324F}
+#s14 .card{position:absolute;background:#fff;border:3px solid rgba(22,50,79,.14);border-radius:24px;box-shadow:0 12px 30px rgba(22,50,79,.13)}
+#s14 .panel{position:absolute;background:rgba(22,50,79,.93);border-radius:28px;color:#FAF6EF}
+#s14 .full{position:absolute;inset:0;overflow:hidden}
+#s14 .full img{width:100%;height:100%;object-fit:cover;display:block}
+#s14 .hlbar{position:absolute;background:#F3C969;height:22px;transform-origin:0 50%}
+#s14 .wipe{position:absolute;inset:0;background:#1F8A99;z-index:50}
+#s14 .flash{position:absolute;inset:0;background:#FAF6EF;z-index:60;opacity:0}
+
+#s14 .bg{background:#16324F}
+
+      </style>
+      <div id="s14" data-composition-id="s14" data-width="1920" data-height="1080" data-duration="13.5">
+        <div class="bg"></div>
+        <div class="grain"></div>
+
+        <div class="stage">
+
+          <div class="full" id="s14-photo"><img src="assets/photos/04-students-canada-flag.jpg" alt="" style="object-position:50% 30%" /></div>
+          <div class="abs" id="s14-bar" style="left:0;top:600px;width:1920px;height:300px;background:rgba(22,50,79,.95)"></div>
+          <div class="abs l" id="s14-k" style="left:120px;top:650px;font-size:28px;color:#7FD3DE">버논 조기유학 · 켈로나 공립학교 준비 과정</div>
+          <div class="abs hd" id="s14-m" style="left:120px;top:700px;font-size:54px;color:#FAF6EF;line-height:1.3">우리 아이에게 필요한 준비 기간,<br /><span style="color:#F3C969">AA캐나다가 함께 계산해 드립니다</span></div>
+          <div class="card" id="s14-aa" style="left:1300px;top:630px;width:520px;height:240px;padding:28px 34px;background:#FAF6EF"><div class="h" style="font-size:54px">AA캐나다</div><div class="hd" style="font-size:36px;margin-top:14px">전화 02-567-4345</div><div class="hd" style="font-size:36px;margin-top:6px">카카오톡 <span style="color:#146A77">canlog</span></div></div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const root = document.getElementById("s14");
+          const D = 13.5;
+          const R = [0.92, 4.9];
+
+const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
+const tl=gsap.timeline({paused:true});
+function inn(el,at,o){o=o||{};if(typeof el==='string')el=q(el);
+  tl.fromTo(el,{opacity:0,x:o.x||0,y:(o.y===undefined?30:o.y),scale:(o.s===undefined?1:o.s),rotation:(o.r0===undefined?(o.r||0):o.r0)},
+  {opacity:1,x:0,y:0,scale:1,rotation:o.r||0,duration:o.d||0.6,ease:o.e||'power3.out'},at);}
+function outt(el,at,o){o=o||{};if(typeof el==='string')el=q(el);
+  tl.to(el,{opacity:0,y:o.y||0,x:o.x||0,scale:(o.s===undefined?1:o.s),duration:o.d||0.45,ease:'power2.in'},at);}
+function pol(el,at,rot){if(typeof el==='string')el=q(el);
+  tl.fromTo(el,{opacity:0,y:-180,rotation:rot*2.4,scale:1.06},{opacity:1,y:0,rotation:rot,scale:1,duration:0.85,ease:'power3.out'},at);}
+function kb(el,at,dur,a,b){if(typeof el==='string')el=q(el);a=a||{};b=b||{};
+  tl.fromTo(el,{scale:a.s||1,xPercent:a.x||0,yPercent:a.y||0},{scale:b.s||1.07,xPercent:b.x||0,yPercent:b.y||0,duration:dur,ease:'none'},at);}
+function count(el,from,to,at,dur,fmt){if(typeof el==='string')el=q(el);const st={v:from};
+  tl.fromTo(st,{v:from},{v:to,duration:dur,ease:'power2.out',immediateRender:false,onUpdate:()=>{el.textContent=fmt(st.v);}},at);}
+function grow(el,at,d,origin){if(typeof el==='string')el=q(el);
+  tl.fromTo(el,{scaleX:0,opacity:0,transformOrigin:origin||'0% 50%'},{scaleX:1,opacity:1,duration:d||0.8,ease:'power3.inOut'},at);}
+function draw(path,at,d){if(typeof path==='string')path=q(path);const L=path.getTotalLength();
+  path.style.strokeDasharray=L;tl.fromTo(path,{opacity:0},{opacity:1,duration:0.05},at);tl.fromTo(path,{strokeDashoffset:L},{strokeDashoffset:0,duration:d||1,ease:'power2.inOut'},at);}
+function ambient(){
+  qa('.ghost').forEach((g,i)=>tl.fromTo(g,{x:0},{x:(i%2?160:-160),duration:D,ease:'none'},0));
+  qa('.glow').forEach((g,i)=>{const c=4+i;const n=Math.max(0,Math.floor(D/c)-1);
+    tl.fromTo(g,{scale:0.92},{scale:1.08,duration:c/2,ease:'sine.inOut',yoyo:true,repeat:n},0);});
+  tl.fromTo(q('.stage'),{opacity:0},{opacity:1,duration:0.45,ease:'power1.out'},0);
+  tl.fromTo(q('.stage'),{scale:1,transformOrigin:'50% 45%'},{scale:1.03,duration:D,ease:'none'},0);
+  if(q('.wipe'))tl.fromTo(q('.wipe'),{xPercent:0},{xPercent:-101,duration:0.75,ease:'power3.inOut'},0.05);
+  tl.to(q('.stage'),{opacity:0,duration:0.5,ease:'power1.in'},D-0.55);
+}
+
+const M={};
+
+tl.fromTo('#s14-photo',{clipPath:'circle(0% at 50% 50%)'},{clipPath:'circle(75% at 50% 50%)',duration:1.1,ease:'power3.inOut'},0.1);
+kb('#s14-photo img',0.1,D,{s:1.0},{s:1.08});
+tl.fromTo('#s14-bar',{yPercent:100,opacity:0},{yPercent:0,opacity:1,duration:0.7,ease:'power3.out'},R[0]-0.3);
+inn('#s14-k',R[0],{y:12});inn('#s14-m',R[0]+0.3,{y:20});
+inn('#s14-aa',R[1]-0.4,{x:60,y:0,d:0.7});
+tl.fromTo('#s14-aa',{scale:1},{scale:1.04,duration:0.4,yoyo:true,repeat:1,ease:'sine.inOut'},R[1]+2.0);
+
+          ambient();
+          window.__timelines["s14"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>
