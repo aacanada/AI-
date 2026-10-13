@@ -1,230 +1,238 @@
 <!doctype html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-  </head>
+  <head><meta charset="UTF-8" /></head>
   <body>
     <template>
       <style>
-        @font-face { font-family: "Noto Serif KR"; font-weight: 700; src: url("assets/fonts/NotoSerifKR-700.woff2") format("woff2"); }
-        @font-face { font-family: "Noto Serif KR"; font-weight: 900; src: url("assets/fonts/NotoSerifKR-900.woff2") format("woff2"); }
-        @font-face { font-family: "IBM Plex Sans KR"; font-weight: 400; src: url("assets/fonts/IBMPlexSansKR-400.woff2") format("woff2"); }
-        @font-face { font-family: "IBM Plex Sans KR"; font-weight: 600; src: url("assets/fonts/IBMPlexSansKR-600.woff2") format("woff2"); }
-        @font-face { font-family: "IBM Plex Sans KR"; font-weight: 700; src: url("assets/fonts/IBMPlexSansKR-700.woff2") format("woff2"); }
+@font-face{font-family:Pretendard;font-weight:500;src:url(assets/fonts/Pretendard-Medium.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:700;src:url(assets/fonts/Pretendard-Bold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:800;src:url(assets/fonts/Pretendard-ExtraBold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:900;src:url(assets/fonts/Pretendard-Black.woff2) format("woff2")}
+@font-face{font-family:Yellowtail;font-weight:400;src:url(assets/fonts/Yellowtail-Regular.ttf) format("truetype")}
+#ch03-nelson{position:absolute;inset:0;overflow:hidden;background:#FAF6EF;color:#16324F;font-family:Pretendard,sans-serif;word-break:keep-all}
+#ch03-nelson *{box-sizing:border-box}
+#ch03-nelson .grain{position:absolute;inset:0;opacity:.5;background-image:radial-gradient(rgba(22,50,79,.07) 1.2px,transparent 1.3px);background-size:9px 9px}
+#ch03-nelson .glow{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(46,125,91,.20) 0%,rgba(46,125,91,0) 70%)}
+#ch03-nelson .glow.warm{background:radial-gradient(circle,rgba(232,87,43,.14) 0%,rgba(232,87,43,0) 70%)}
+#ch03-nelson .ghost{position:absolute;font-weight:900;color:rgba(22,50,79,.07);font-size:300px;letter-spacing:-.04em;white-space:nowrap;line-height:1}
+#ch03-nelson .stage{position:absolute;inset:0}
+#ch03-nelson .beat{position:absolute;inset:0}
+#ch03-nelson .abs{position:absolute}
+#ch03-nelson .h{font-weight:900;letter-spacing:-.03em;line-height:1.12}
+#ch03-nelson .hd{font-weight:800;letter-spacing:-.02em;line-height:1.22}
+#ch03-nelson .b{font-weight:500;line-height:1.5}
+#ch03-nelson .l{font-weight:700;letter-spacing:.08em}
+#ch03-nelson .script{font-family:Yellowtail,cursive;line-height:1.05;white-space:nowrap}
+#ch03-nelson .green{color:#2E7D5B}
+#ch03-nelson .orange{color:#E8572B}
+#ch03-nelson .sticker{position:absolute;background:#E8572B;color:#fff;font-weight:800;font-size:24px;letter-spacing:.12em;padding:10px 24px;border-radius:99px;white-space:nowrap}
+#ch03-nelson .chip{position:absolute;background:#FAF6EF;border:3px solid #16324F;border-radius:99px;padding:10px 26px;font-weight:700;font-size:30px;white-space:nowrap;color:#16324F}
+#ch03-nelson .chip.gr{border-color:#2E7D5B;color:#1F5E44}
+#ch03-nelson .chip.solid{background:#16324F;color:#FAF6EF}
+#ch03-nelson .chip.sand{background:#F3C969;border-color:#F3C969}
+#ch03-nelson .pol{position:absolute;background:#fff;padding:16px 16px 60px;box-shadow:0 20px 44px rgba(22,50,79,.26)}
+#ch03-nelson .pol .ph{position:relative;width:100%;height:100%;overflow:hidden}
+#ch03-nelson .pol img{display:block;width:100%;height:100%;object-fit:cover}
+#ch03-nelson .pol .cap{position:absolute;left:0;right:0;bottom:10px;text-align:center;font-family:Yellowtail,cursive;font-size:34px;color:#16324F}
+#ch03-nelson .card{position:absolute;background:#fff;border:3px solid rgba(22,50,79,.14);border-radius:24px;box-shadow:0 12px 30px rgba(22,50,79,.13)}
+#ch03-nelson .panel{position:absolute;background:#16324F;border-radius:28px;color:#FAF6EF}
+#ch03-nelson .hl{position:relative;display:inline-block;isolation:isolate}
+#ch03-nelson .hl .bar{position:absolute;left:-6px;right:-6px;bottom:6px;height:26px;background:#F3C969;transform-origin:0 50%}
+#ch03-nelson .hl .tx{position:relative}
+#ch03-nelson .ico{position:absolute;border-radius:50%;background:#fff;border:4px solid #16324F;display:flex;align-items:center;justify-content:center}
+#ch03-nelson .ico svg{width:58%;height:58%}
+#ch03-nelson .tile{position:absolute;border-radius:22px;overflow:hidden;box-shadow:0 14px 30px rgba(22,50,79,.22)}
+#ch03-nelson .tile img{width:100%;height:100%;object-fit:cover;display:block}
+#ch03-nelson .tile .tl{position:absolute;left:16px;bottom:14px;background:rgba(22,50,79,.88);color:#FAF6EF;font-weight:800;font-size:26px;padding:6px 16px;border-radius:99px}
 
-        #root {
-          --forest: #12291f; --forest-2: #1a3a2d; --cream: #f4efe3; --cream-dim: #cfc8b6; --gold: #e2b04a; --lake: #7fb3ae;
-          position: absolute; inset: 0; overflow: hidden;
-          background: var(--forest); color: var(--cream);
-          font-family: "IBM Plex Sans KR", sans-serif;
-          word-break: keep-all;
-        }
-        #root .beat { position: absolute; inset: 0; overflow: hidden; }
-        #root .serif { font-family: "Noto Serif KR", serif; }
-        #root .label { font-weight: 700; font-size: 24px; letter-spacing: 0.14em; color: var(--gold); display: block; }
-        #root .glow { position: absolute; width: 1300px; height: 1300px; border-radius: 50%; background: radial-gradient(circle, rgba(226,176,74,0.26) 0%, rgba(226,176,74,0) 62%); }
-        #root .ghost { position: absolute; font-family: "Noto Serif KR", serif; font-weight: 900; color: rgba(244,239,227,0.12); white-space: nowrap; line-height: 1; }
-        #root .card { position: absolute; background: var(--cream); padding: 14px 14px 56px; box-shadow: 0 30px 60px rgba(0,0,0,0.45); }
-        #root .card .ph { width: 100%; height: 100%; overflow: hidden; }
-        #root .card img { width: 100%; height: 100%; object-fit: cover; display: block; }
-        #root .card .cap { position: absolute; left: 22px; right: 22px; bottom: 12px; height: 34px; font-weight: 700; font-size: 22px; letter-spacing: 0.12em; color: var(--forest); display: flex; align-items: center; justify-content: space-between; }
-        #root .card .cap span:last-child { color: #7a5c18; font-weight: 600; letter-spacing: 0.04em; }
-        #root .stamp { position: absolute; border: 3px solid var(--gold); color: var(--gold); padding: 14px 22px; font-weight: 700; font-size: 26px; letter-spacing: 0.12em; text-align: center; line-height: 1.35; }
-        #root .body { font-size: 40px; line-height: 1.55; color: var(--cream); }
-        #root .body b { color: var(--gold); font-weight: 700; }
 
-        /* A: chapter open */
-        #n-a-card { left: 900px; top: 120px; width: 880px; height: 640px; }
-        #n-a-text { position: absolute; left: 120px; top: 230px; width: 760px; }
-        #n-a-ch { }
-        #n-a-name { margin-top: 18px; font-size: 200px; font-weight: 900; line-height: 1; display: block; }
-        #n-a-sub { margin-top: 26px; font-size: 44px; font-weight: 700; font-style: italic; color: var(--gold); display: block; }
-        #n-a-sub2 { margin-top: 14px; font-size: 32px; color: var(--cream-dim); display: block; }
+#ch03-nelson .bld{position:absolute;bottom:0;background:#fff;border:4px solid #16324F;border-bottom:none}
+#ch03-nelson .bld .w{position:absolute;width:26px;height:34px;border:3px solid #16324F;background:#F3C969}
+#ch03-nelson .yr{position:absolute;font-weight:900;letter-spacing:-.03em}
+#ch03-nelson .badge{position:absolute;width:320px;height:320px;border-radius:50%;background:#2E7D5B;color:#FAF6EF;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+#ch03-nelson .season{position:absolute;width:780px;height:560px;border-radius:30px;background:#fff;border:3px solid rgba(22,50,79,.14);box-shadow:0 12px 30px rgba(22,50,79,.13);overflow:hidden}
+#ch03-nelson .season .top{position:absolute;left:0;right:0;top:0;height:200px}
+#ch03-nelson .season .ttl{position:absolute;left:40px;top:40px;font-weight:900;font-size:56px;color:#FAF6EF;letter-spacing:-.02em}
+#ch03-nelson .season .tmp{position:absolute;left:40px;top:118px;font-weight:700;font-size:32px;color:#FAF6EF;opacity:.9}
+#ch03-nelson .season .big{position:absolute;right:34px;top:30px;width:140px;height:140px}
+#ch03-nelson .season .row{position:absolute;left:40px;right:40px;font-weight:800;font-size:40px;display:flex;align-items:center;gap:18px}
+#ch03-nelson .season .dot{width:18px;height:18px;border-radius:50%;flex:none}
+#ch03-nelson .bar{position:absolute;height:90px;border-radius:16px;transform-origin:0 50%}
+#ch03-nelson .barl{position:absolute;font-weight:800;font-size:38px}
 
-        /* B: history */
-        #n-b-card { left: 120px; top: 110px; width: 900px; height: 700px; }
-        #n-b-text { position: absolute; left: 1100px; top: 200px; width: 700px; }
-        #n-b-year { font-size: 150px; font-weight: 900; color: var(--gold); line-height: 1; display: block; }
-        #n-b-yearlab { margin-top: 10px; font-size: 34px; font-weight: 700; display: block; }
-        #n-b-copy { margin-top: 40px; }
-        #n-b-stamp { left: 1100px; top: 700px; }
-
-        /* C: quote */
-        #n-c-bg { position: absolute; inset: -40px; background: url("assets/img/nelson-lakeside.jpg") center / cover no-repeat; filter: blur(10px) brightness(0.45); }
-        #n-c-card { left: 1060px; top: 170px; width: 740px; height: 520px; }
-        #n-c-quote { position: absolute; z-index: 2; left: 120px; top: 220px; width: 860px; }
-        #n-c-mark { font-size: 200px; font-weight: 900; color: var(--gold); line-height: 0.6; display: block; height: 110px; }
-        #n-c-q { font-size: 78px; font-weight: 900; line-height: 1.3; display: block; }
-        #n-c-src { margin-top: 36px; font-size: 30px; color: var(--cream-dim); display: block; }
-
-        /* D: seasons */
-        #n-d-head { position: absolute; left: 120px; top: 90px; width: 1680px; }
-        #n-d-title { margin-top: 12px; font-size: 64px; font-weight: 900; display: block; }
-        #n-d-w { position: absolute; left: 120px; top: 270px; width: 820px; height: 560px; overflow: hidden; border: 4px solid var(--cream); }
-        #n-d-s { position: absolute; left: 980px; top: 270px; width: 820px; height: 560px; overflow: hidden; border: 4px solid var(--cream); }
-        #root .season img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-        #n-d-w img { object-position: 50% 70%; }
-        #root .season .tint { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(18,41,31,0.92) 0%, rgba(18,41,31,0) 55%); }
-        #root .season .tag { position: absolute; left: 34px; bottom: 96px; font-weight: 700; font-size: 26px; letter-spacing: 0.14em; color: var(--gold); }
-        #root .season .what { position: absolute; left: 34px; right: 34px; bottom: 30px; font-family: "Noto Serif KR", serif; font-weight: 900; font-size: 50px; }
-
-        /* E: food & people */
-        #n-e-text { position: absolute; left: 120px; top: 170px; width: 700px; height: 700px; }
-        #n-e-title { margin-top: 14px; font-size: 80px; font-weight: 900; line-height: 1.25; display: block; }
-        #n-e-who { margin-top: 40px; }
-        #n-e-c1 { left: 860px; top: 100px; width: 520px; height: 400px; }
-        #n-e-c2 { left: 1400px; top: 170px; width: 420px; height: 380px; }
-        #n-e-c3 { left: 1060px; top: 560px; width: 500px; height: 330px; }
-
-        /* F: punchline */
-        #n-f-bg { position: absolute; inset: 0; }
-        #n-f-bg img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 60%; }
-        #n-f-shade { position: absolute; inset: 0; background: rgba(18,41,31,0.62); }
-        #n-f-text { position: absolute; left: 120px; right: 120px; top: 290px; text-align: center; }
-        #n-f-l1 { font-size: 68px; font-weight: 700; color: var(--cream); display: block; }
-        #n-f-l1 s { text-decoration-color: var(--gold); text-decoration-thickness: 6px; }
-        #n-f-l2 { margin-top: 50px; font-size: 96px; font-weight: 900; line-height: 1.3; color: var(--gold); display: block; }
       </style>
+      <div id="ch03-nelson" data-composition-id="ch03-nelson" data-width="1920" data-height="1080" data-duration="63">
+<div class="grain"></div>
+<div data-layout-ignore class="glow" style="left:1150px;top:-350px;width:1100px;height:1100px"></div>
+<div data-layout-ignore class="glow warm" style="left:-350px;top:560px;width:900px;height:900px"></div>
+<svg class="ghost" aria-hidden="true" data-layout-ignore style="left:820px;top:640px;width:2600px;height:330px;overflow:visible"><text x="0" y="270" font-family="Pretendard" font-weight="900" font-size="300" fill="rgba(22,50,79,.07)">NELSON</text></svg>
 
-      <div id="root" data-composition-id="ch03-nelson" data-width="1920" data-height="1080" data-duration="63">
+<!-- A 0–8 : 챕터 오프닝 -->
+<section id="n-a" class="beat clip" data-start="0" data-duration="8">
+  <div class="sticker" id="n-a-st" style="left:120px;top:170px">도시 01</div>
+  <div class="abs h" id="n-a-name" style="left:110px;top:250px;font-size:240px;line-height:1">넬슨</div>
+  <div class="abs script green" id="n-a-script" style="left:120px;top:520px;font-size:104px">Queen City of the Kootenays</div>
+  <div class="abs hd" id="n-a-sub" style="left:124px;top:670px;font-size:44px;color:#4A5F78">쿠트니의 여왕 도시</div>
+  <div class="pol" id="n-a-p" style="left:1360px;top:170px;width:460px;height:440px"><div class="ph"><img id="n-a-pi" src="assets/img/nelson-autumn-aerial.jpg" alt=""/></div><div class="cap">Nelson, BC</div></div>
+</section>
 
-        <!-- A 0–8 -->
-        <section id="n-a" class="beat clip" data-start="0" data-duration="8">
-          <div class="glow" id="n-a-glow" style="left: -300px; top: -200px"></div>
-          <div class="ghost" data-layout-ignore aria-hidden="true" id="n-a-ghost" style="left: 60px; top: 800px; font-size: 280px">NELSON · BC</div>
-          <div class="card" id="n-a-card"><div class="ph" data-layout-allow-overflow><img id="n-a-img" src="assets/img/nelson-autumn-aerial.jpg" alt="" /></div><div class="cap"><span>NELSON, BC</span><span>가을의 넬슨</span></div></div>
-          <div id="n-a-text">
-            <span class="label" id="n-a-ch">CHAPTER 03 · 도시 ①</span>
-            <span id="n-a-name" class="serif">넬슨</span>
-            <span id="n-a-sub" class="serif">Queen City of the Kootenays</span>
-            <span id="n-a-sub2">쿠트니의 여왕 도시</span>
-          </div>
-        </section>
+<!-- B 8–20 : 1880s 헤리티지 스트리트 (일러스트) -->
+<section id="n-b" class="beat clip" data-start="8" data-duration="12">
+  <div class="abs l" id="n-b-k" style="left:120px;top:120px;font-size:26px;color:#2E7D5B">HERITAGE DOWNTOWN · BAKER STREET</div>
+  <div class="abs h" id="n-b-t" style="left:120px;top:170px;font-size:76px">은광 마을이 만든 <span class="hl"><span class="bar" id="n-b-hl" style="height:26px;bottom:6px;left:-6px;right:-6px;background:#F3C969;border-radius:0"></span><span class="tx">붉은 벽돌 거리</span></span></div>
+  <div class="yr" id="n-b-y1" style="left:120px;top:330px;font-size:120px;color:#E8572B">1880s</div>
+  <div class="abs hd" id="n-b-y1t" style="left:124px;top:470px;font-size:38px">은광 마을로 시작</div>
+  <div class="abs" id="n-b-arrow" style="left:124px;top:545px;width:420px;height:8px;background:#16324F;border-radius:4px"></div>
+  <div class="yr" id="n-b-y2" style="left:120px;top:580px;font-size:120px;color:#2E7D5B">지금</div>
+  <div class="abs hd" id="n-b-y2t" style="left:124px;top:720px;font-size:38px">19세기 건물이 그대로 남은 다운타운</div>
+  <div class="abs" id="n-b-street" style="left:760px;top:330px;width:1060px;height:500px">
+    <div class="bld" id="n-b-b1" style="left:0;width:200px;height:300px"><div class="w" style="left:30px;top:40px"></div><div class="w" style="left:84px;top:40px"></div><div class="w" style="left:138px;top:40px"></div><div class="w" style="left:30px;top:120px"></div><div class="w" style="left:138px;top:120px"></div></div>
+    <div class="bld" id="n-b-b2" style="left:210px;width:230px;height:400px;background:#E8572B"><div class="w" style="left:36px;top:50px"></div><div class="w" style="left:100px;top:50px"></div><div class="w" style="left:164px;top:50px"></div><div class="w" style="left:36px;top:140px"></div><div class="w" style="left:100px;top:140px"></div><div class="w" style="left:164px;top:140px"></div><div class="w" style="left:36px;top:230px"></div><div class="w" style="left:164px;top:230px"></div></div>
+    <div class="bld" id="n-b-b3" style="left:450px;width:180px;height:260px"><div class="w" style="left:28px;top:40px"></div><div class="w" style="left:124px;top:40px"></div><div class="w" style="left:76px;top:120px"></div></div>
+    <div class="bld" id="n-b-b4" style="left:640px;width:240px;height:350px;background:#2E7D5B"><div class="w" style="left:36px;top:50px"></div><div class="w" style="left:106px;top:50px"></div><div class="w" style="left:176px;top:50px"></div><div class="w" style="left:36px;top:140px"></div><div class="w" style="left:176px;top:140px"></div></div>
+    <div class="bld" id="n-b-b5" style="left:890px;width:170px;height:280px"><div class="w" style="left:26px;top:40px"></div><div class="w" style="left:116px;top:40px"></div><div class="w" style="left:70px;top:130px"></div></div>
+    <div class="abs" id="n-b-road" style="left:-20px;bottom:-14px;width:1100px;height:14px;background:#16324F;border-radius:7px"></div>
+  </div>
+  <div class="pol" id="n-b-p" style="left:1500px;top:110px;width:320px;height:290px"><div class="ph"><img id="n-b-pi" src="assets/img/nelson-baker-street.jpg" alt=""/></div><div class="cap">Baker St.</div></div>
+</section>
 
-        <!-- B 8–20 -->
-        <section id="n-b" class="beat clip" data-start="8" data-duration="12">
-          <div class="card" id="n-b-card"><div class="ph" data-layout-allow-overflow><img id="n-b-img" src="assets/img/nelson-baker-street.jpg" alt="" /></div><div class="cap"><span>BAKER STREET</span><span>다운타운 헤리티지 거리</span></div></div>
-          <div id="n-b-text">
-            <span id="n-b-year" class="serif">1880s</span>
-            <span id="n-b-yearlab">은광 마을에서 시작된 도시</span>
-            <div class="body" id="n-b-copy">베이커 스트리트에는 <b>19세기 붉은 벽돌 건물</b>이 지금도 그대로 남아 있습니다.</div>
-          </div>
-          <div class="stamp" id="n-b-stamp">HERITAGE<br />DOWNTOWN</div>
-        </section>
+<!-- C 20–28 : 가장 매력적인 작은 도시 -->
+<section id="n-c" class="beat clip" data-start="20" data-duration="8">
+  <div class="badge" id="n-c-badge" style="left:180px;top:250px"><span class="l" style="font-size:24px">CANADA'S</span><span class="h" style="font-size:52px;line-height:1.1">MOST</span><span class="h" style="font-size:40px;line-height:1.15">CHARMING</span><span class="l" style="font-size:24px">SMALL TOWN</span></div>
+  <div class="abs hd" id="n-c-q0" style="left:600px;top:250px;font-size:44px;color:#4A5F78">캐나다 여행 매체들이 꼽는 넬슨</div>
+  <div class="abs h" id="n-c-q" style="left:600px;top:320px;font-size:96px;width:1200px">캐나다에서 가장<br/><span class="green">매력적인 작은 도시</span></div>
+  <div class="chip gr" id="n-c-c1" style="left:600px;top:600px">헤리티지 다운타운</div>
+  <div class="chip gr" id="n-c-c2" style="left:930px;top:600px">호숫가 산책로</div>
+  <div class="chip gr" id="n-c-c3" style="left:1210px;top:600px">예술 · 음악 축제</div>
+</section>
 
-        <!-- C 20–28 -->
-        <section id="n-c" class="beat clip" data-start="20" data-duration="8">
-          <div id="n-c-bg" data-layout-ignore></div>
-          <div class="card" id="n-c-card"><div class="ph" data-layout-allow-overflow><img id="n-c-img" src="assets/img/nelson-lakeside.jpg" alt="" /></div><div class="cap"><span>KOOTENAY LAKE</span><span>호숫가의 넬슨</span></div></div>
-          <div id="n-c-quote">
-            <span id="n-c-mark" class="serif">“</span>
-            <span id="n-c-q" class="serif">캐나다에서 가장 매력적인 작은 도시</span>
-            <span id="n-c-src">캐나다 여행 매체들이 꾸준히 꼽는 넬슨의 수식어</span>
-          </div>
-        </section>
+<!-- D 28–42 : 겨울 / 여름 -->
+<section id="n-d" class="beat clip" data-start="28" data-duration="14">
+  <div class="abs h" id="n-d-t" style="left:120px;top:110px;font-size:72px">사계절이 다 <span class="green">놀거리</span>인 도시</div>
+  <div class="season" id="n-d-w" style="left:120px;top:250px">
+    <div class="top" style="background:#16324F"></div><div class="ttl">겨울</div><div class="tmp">평균 -7 ~ 1°C · 내륙에선 온화한 편</div>
+    <svg class="big" viewBox="0 0 64 64"><g stroke="#FAF6EF" stroke-width="4" stroke-linecap="round"><path d="M32 6 V58 M9 19 L55 45 M9 45 L55 19"/><path d="M26 10 L32 16 L38 10 M26 54 L32 48 L38 54"/></g></svg>
+    <div class="row" id="n-d-w1" style="top:250px"><span class="dot" style="background:#16324F"></span>화이트워터 스키장 파우더</div>
+    <div class="row" id="n-d-w2" style="top:330px"><span class="dot" style="background:#16324F"></span>근교 레드 마운틴 리조트</div>
+    <div class="tile" id="n-d-wt" style="left:470px;top:380px;width:270px;height:150px"><img src="assets/img/ski-whitewater.jpg" alt="" style="object-position:50% 70%"/></div>
+  </div>
+  <div class="season" id="n-d-s" style="left:1020px;top:250px">
+    <div class="top" style="background:#2E7D5B"></div><div class="ttl">여름</div><div class="tmp">23 ~ 32°C · 쿠트니 호수</div>
+    <svg class="big" viewBox="0 0 64 64"><circle cx="32" cy="32" r="12" fill="#F3C969"/><g stroke="#F3C969" stroke-width="4" stroke-linecap="round"><path d="M32 6 V14 M32 50 V58 M6 32 H14 M50 32 H58 M13 13 L19 19 M45 45 L51 51 M13 51 L19 45 M45 19 L51 13"/></g></svg>
+    <div class="row" id="n-d-s1" style="top:250px"><span class="dot" style="background:#2E7D5B"></span>카약 · 패들보드</div>
+    <div class="row" id="n-d-s2" style="top:330px"><span class="dot" style="background:#2E7D5B"></span>래프팅 · 하이킹</div>
+    <div class="tile" id="n-d-st" style="left:470px;top:380px;width:270px;height:150px"><img src="assets/img/rafting.jpg" alt=""/></div>
+  </div>
+</section>
 
-        <!-- D 28–42 -->
-        <section id="n-d" class="beat clip" data-start="28" data-duration="14">
-          <div id="n-d-head">
-            <span class="label" id="n-d-label">FOUR SEASONS RESORT TOWN</span>
-            <span id="n-d-title" class="serif">겨울엔 파우더 스키, 여름엔 호수</span>
-          </div>
-          <div data-layout-allow-overflow class="season" id="n-d-w"><img id="n-d-wimg" src="assets/img/ski-whitewater.jpg" alt="" /><div class="tint"></div><div class="tag">WINTER · WHITEWATER</div><div class="what">화이트워터 스키장 파우더</div></div>
-          <div data-layout-allow-overflow class="season" id="n-d-s"><img id="n-d-simg" src="assets/img/rafting.jpg" alt="" /><div class="tint"></div><div class="tag">SUMMER · KOOTENAY LAKE</div><div class="what">카약 · 패들보드 · 래프팅</div></div>
-        </section>
+<!-- E 42–54 : 카페·식당·사람들 -->
+<section id="n-e" class="beat clip" data-start="42" data-duration="12">
+  <div class="abs l" id="n-e-k" style="left:120px;top:120px;font-size:26px;color:#2E7D5B">CAFÉ · FOOD · CRAFT BEER</div>
+  <div class="abs h" id="n-e-t" style="left:120px;top:170px;font-size:72px">인구는 작아도, 카페와 식당은 넘친다</div>
+  <div class="barl" id="n-e-l1" style="left:120px;top:350px">넬슨</div>
+  <div class="bar" id="n-e-b1" style="left:300px;top:330px;width:1180px;background:#2E7D5B"></div>
+  <div class="barl" id="n-e-l2" style="left:120px;top:480px">뉴욕</div>
+  <div class="bar" id="n-e-b2" style="left:300px;top:460px;width:820px;background:#16324F;opacity:.35"></div>
+  <div class="abs hd" id="n-e-cap" style="left:1520px;top:345px;font-size:34px;color:#1F5E44;width:300px">인구 대비 식당 수</div>
+  <div class="abs b" id="n-e-src" style="left:300px;top:570px;font-size:24px;color:#4A5F78">셀커크 컬리지 소개 자료 인용 · 개념 비교</div>
+  <div class="abs hd" id="n-e-who" style="left:120px;top:660px;font-size:40px">일부러 이사 오는 사람들</div>
+  <div class="chip" id="n-e-c1" style="left:600px;top:650px">예술가</div>
+  <div class="chip" id="n-e-c2" style="left:790px;top:650px">환경운동가</div>
+  <div class="chip" id="n-e-c3" style="left:1040px;top:650px">전문직</div>
+  <div class="chip" id="n-e-c4" style="left:1220px;top:650px">은퇴자</div>
+  <div class="pol" id="n-e-p" style="left:1520px;top:470px;width:300px;height:280px"><div class="ph"><img id="n-e-pi" src="assets/img/nelson-cafe.jpg" alt=""/></div><div class="cap">Local café</div></div>
+</section>
 
-        <!-- E 42–54 -->
-        <section id="n-e" class="beat clip" data-start="42" data-duration="12">
-          <div class="glow" style="left: 300px; top: 100px"></div>
-          <div id="n-e-text">
-            <span class="label" id="n-e-label">CAFÉ · FOOD · CRAFT BEER</span>
-            <span id="n-e-title" class="serif">작은 도시,<br />넘치는 카페와 식당</span>
-            <div class="body" id="n-e-who" style="width: 680px">예술가, 환경운동가, 전문직 종사자들이 <b>일부러 이사 오는</b> 도시</div>
-          </div>
-          <div class="card" id="n-e-c1"><div class="ph" data-layout-allow-overflow><img src="assets/img/nelson-cafe.jpg" alt="" /></div><div class="cap"><span>CAFÉ</span><span>로컬 카페</span></div></div>
-          <div class="card" id="n-e-c2"><div class="ph" data-layout-allow-overflow><img src="assets/img/nelson-brewpub.jpg" alt="" /></div><div class="cap"><span>BREWPUB</span><span>수제 맥주집</span></div></div>
-          <div class="card" id="n-e-c3"><div class="ph" data-layout-allow-overflow><img src="assets/img/nelson-craft-beer.jpg" alt="" /></div><div class="cap"><span>LOCAL</span><span>지역 크래프트 맥주</span></div></div>
-        </section>
-
-        <!-- F 54–63 -->
-        <section id="n-f" class="beat clip" data-start="54" data-duration="9">
-          <div id="n-f-bg"><img id="n-f-img" src="assets/img/students-lake-view.jpg" alt="" /></div>
-          <div id="n-f-shade"></div>
-          <div id="n-f-text">
-            <span id="n-f-l1">어쩔 수 없이 가는 <s>시골</s>이 아닙니다</span>
-            <span id="n-f-l2" class="serif">캐나다 사람들이 휴가 오고,<br />은퇴하고 싶어 하는 곳</span>
-          </div>
-        </section>
+<!-- F 54–63 : 펀치라인 -->
+<section id="n-f" class="beat clip" data-start="54" data-duration="9">
+  <div class="abs hd" id="n-f-l1" style="left:120px;top:220px;font-size:60px">어쩔 수 없이 가는 <span class="hl" style="color:#4A5F78">시골<span class="abs" id="n-f-strike" style="left:-8px;right:-8px;top:34px;height:12px;background:#E8572B;border-radius:6px;transform-origin:0 50%"></span></span>이 아니라</div>
+  <div class="abs h" id="n-f-l2" style="left:110px;top:330px;font-size:124px;line-height:1.15">캐나다 사람들이<br/><span class="green">휴가 오고, 은퇴하고 싶은 곳</span></div>
+  <div class="abs script orange" id="n-f-s" style="left:1240px;top:640px;font-size:110px">Stay a while.</div>
+</section>
       </div>
-
       <script>
         (function () {
-          const tl = gsap.timeline({ paused: true });
+const root=document.getElementById("ch03-nelson");
+const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
+const tl=gsap.timeline({paused:true});
+function E(el){return typeof el==='string'?q(el):el;}
+function inn(el,at,o){o=o||{};el=E(el);
+  tl.fromTo(el,{opacity:0,x:o.x||0,y:(o.y===undefined?30:o.y),scale:(o.s===undefined?1:o.s),rotation:(o.r0===undefined?(o.r||0):o.r0)},
+  {opacity:1,x:0,y:0,scale:1,rotation:o.r||0,duration:o.d||0.6,ease:o.e||'power3.out'},at);}
+function whip(el,at,dy){el=E(el);tl.set(el,{opacity:0},0);tl.set(el,{opacity:1,y:dy||70},at);tl.to(el,{y:0,duration:0.45,ease:'power4.out'},at);}
+function pop(el,at,o){o=o||{};el=E(el);tl.fromTo(el,{opacity:0,scale:0},{opacity:1,scale:1,duration:o.d||0.5,ease:o.e||'back.out(2)'},at);}
+function pol(el,at,rot){el=E(el);
+  tl.fromTo(el,{opacity:0,y:-180,rotation:rot*2.4,scale:1.06},{opacity:1,y:0,rotation:rot,scale:1,duration:0.85,ease:'power3.out'},at);}
+function kb(el,at,dur,a,b){el=E(el);a=a||{};b=b||{};
+  tl.fromTo(el,{scale:a.s||1,xPercent:a.x||0,yPercent:a.y||0},{scale:b.s||1.07,xPercent:b.x||0,yPercent:b.y||0,duration:dur,ease:'none'},at);}
+function count(el,from,to,at,dur,fmt){el=E(el);const st={v:from};el.textContent=fmt(from);
+  tl.fromTo(st,{v:from},{v:to,duration:dur,ease:'power2.out',immediateRender:false,onUpdate:()=>{el.textContent=fmt(st.v);}},at);}
+function grow(el,at,d,origin){el=E(el);
+  tl.fromTo(el,{scaleX:0,transformOrigin:origin||'0% 50%'},{scaleX:1,duration:d||0.8,ease:'power3.inOut'},at);}
+function growY(el,at,d){el=E(el);
+  tl.fromTo(el,{scaleY:0,transformOrigin:'50% 100%'},{scaleY:1,duration:d||0.8,ease:'power3.out'},at);}
+function draw(path,at,d){path=E(path);const L=path.getTotalLength();path.style.strokeDasharray=L+' '+L;
+  tl.fromTo(path,{strokeDashoffset:L},{strokeDashoffset:0,duration:d||1,ease:'power2.inOut'},at);}
+function outt(el,at,o){o=o||{};el=E(el);tl.to(el,{opacity:0,y:o.y||0,x:o.x||0,duration:o.d||0.4,ease:'power2.in'},at);}
+function ambient(D){
+  qa('.ghost').forEach((g,i)=>tl.fromTo(g,{x:0},{x:(i%2?160:-160),duration:D,ease:'none'},0));
+  qa('.glow').forEach((g,i)=>{const c=4+i;const n=Math.max(0,Math.floor(D/c)-1);
+    tl.fromTo(g,{scale:0.92},{scale:1.08,duration:c/2,ease:'sine.inOut',yoyo:true,repeat:n},0);});
+}
 
-          function whip(sel, at, dy) {
-            tl.set(sel, { opacity: 0 }, 0);
-            tl.set(sel, { opacity: 1, y: dy || 70 }, at);
-            tl.to(sel, { y: 0, duration: 0.45, ease: "power4.out" }, at);
-          }
-          function rise(sel, at) {
-            tl.fromTo(sel, { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, at);
-          }
-          function drop(sel, at, rot) {
-            tl.fromTo(sel, { opacity: 0, y: 130, rotation: rot * 2.4, scale: 0.92 }, { opacity: 1, y: 0, rotation: rot, scale: 1, duration: 0.9, ease: "back.out(1.4)" }, at);
-          }
+const D = 63;
 
-          // A 0–8
-          tl.fromTo("#n-a-glow", { scale: 0.8 }, { scale: 1.1, duration: 8, ease: "sine.inOut" }, 0);
-          tl.fromTo("#n-a-ghost", { x: 0 }, { x: -200, duration: 8, ease: "none" }, 0);
-          drop("#n-a-card", 0.2, 2.5);
-          tl.fromTo("#n-a-img", { scale: 1.15 }, { scale: 1.0, duration: 7.8, ease: "sine.out" }, 0.2);
-          rise("#n-a-ch", 0.5);
-          whip("#n-a-name", 0.8, 110);
-          rise("#n-a-sub", 1.6);
-          rise("#n-a-sub2", 2.2);
+ambient(D);
+// A
+inn('#n-a-st',0.3,{s:1.5,y:0,r0:-14,r:-4,d:0.4,e:'back.out(2.4)'});
+whip('#n-a-name',0.6,120);
+inn('#n-a-script',1.5,{y:30,r0:-5,r:0,d:0.7});
+inn('#n-a-sub',2.2,{y:16});
+pol('#n-a-p',1.0,5); kb('#n-a-pi',1.0,7);
+// B
+const B=8;
+inn('#n-b-k',B+0.2,{y:16});
+whip('#n-b-t',B+0.4,70);
+grow('#n-b-hl',B+1.2,0.6);
+inn('#n-b-y1',B+1.6,{y:40}); inn('#n-b-y1t',B+2.0,{y:16});
+grow('#n-b-arrow',B+3.0,0.8);
+inn('#n-b-y2',B+3.6,{y:40}); inn('#n-b-y2t',B+4.0,{y:16});
+grow('#n-b-road',B+1.4,1.0);
+['1','2','3','4','5'].forEach((n,i)=>growY('#n-b-b'+n,B+1.8+i*0.35,0.7));
+pol('#n-b-p',B+5.0,6); kb('#n-b-pi',B+5.0,7);
+// C
+const C=20;
+inn('#n-c-badge',C+0.3,{s:0.3,y:0,r0:-30,r:-8,d:0.7,e:'back.out(1.7)'});
+inn('#n-c-q0',C+0.8,{y:16});
+whip('#n-c-q',C+1.2,90);
+['1','2','3'].forEach((n,i)=>pop('#n-c-c'+n,C+3.0+i*0.35));
+// D
+const Dd=28;
+whip('#n-d-t',Dd+0.3,70);
+inn('#n-d-w',Dd+1.0,{x:-120,y:0,d:0.8});
+inn('#n-d-w1',Dd+1.9,{x:-20,y:0}); inn('#n-d-w2',Dd+2.4,{x:-20,y:0});
+inn('#n-d-wt',Dd+3.0,{s:0.7,y:0,e:'back.out(1.6)'}); kb('#n-d-wt img',Dd+3.0,11);
+inn('#n-d-s',Dd+5.5,{x:120,y:0,d:0.8});
+inn('#n-d-s1',Dd+6.4,{x:-20,y:0}); inn('#n-d-s2',Dd+6.9,{x:-20,y:0});
+inn('#n-d-st',Dd+7.5,{s:0.7,y:0,e:'back.out(1.6)'}); kb('#n-d-st img',Dd+7.5,6.5);
+// E
+const Ee=42;
+inn('#n-e-k',Ee+0.2,{y:16});
+whip('#n-e-t',Ee+0.4,70);
+inn('#n-e-l1',Ee+1.2,{x:-20,y:0}); grow('#n-e-b1',Ee+1.3,1.2);
+inn('#n-e-l2',Ee+1.6,{x:-20,y:0}); grow('#n-e-b2',Ee+1.7,1.0);
+inn('#n-e-cap',Ee+2.6,{y:10}); inn('#n-e-src',Ee+2.9,{y:10});
+inn('#n-e-who',Ee+5.0,{y:16});
+['1','2','3','4'].forEach((n,i)=>pop('#n-e-c'+n,Ee+5.6+i*0.4));
+pol('#n-e-p',Ee+3.6,-5); kb('#n-e-pi',Ee+3.6,8);
+// F
+const Fz=54;
+inn('#n-f-l1',Fz+0.3,{y:20});
+grow('#n-f-strike',Fz+1.6,0.45);
+whip('#n-f-l2',Fz+2.6,100);
+inn('#n-f-s',Fz+5.2,{y:30,r0:-8,r:-4,d:0.7,e:'back.out(1.6)'});
 
-          // B 8–20
-          const B = 8;
-          drop("#n-b-card", B + 0.2, -2);
-          tl.fromTo("#n-b-img", { scale: 1.0, xPercent: 0 }, { scale: 1.12, xPercent: -3, duration: 11.8, ease: "sine.inOut" }, B + 0.2);
-          whip("#n-b-year", B + 0.9, 90);
-          rise("#n-b-yearlab", B + 1.5);
-          rise("#n-b-copy", B + 3.2);
-          tl.fromTo("#n-b-stamp", { opacity: 0, scale: 1.8, rotation: -14 }, { opacity: 1, scale: 1, rotation: -6, duration: 0.45, ease: "back.out(2.4)" }, B + 5.4);
-
-          // C 20–28
-          const C = 20;
-          drop("#n-c-card", C + 0.2, 3);
-          tl.fromTo("#n-c-img", { scale: 1.12 }, { scale: 1.0, duration: 7.8, ease: "sine.out" }, C + 0.2);
-          tl.fromTo("#n-c-mark", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2)" }, C + 0.6);
-          whip("#n-c-q", C + 1.0, 80);
-          rise("#n-c-src", C + 2.4);
-
-          // D 28–42
-          const D = 28;
-          rise("#n-d-label", D + 0.2);
-          whip("#n-d-title", D + 0.5, 70);
-          tl.fromTo("#n-d-w", { opacity: 0, x: -120 }, { opacity: 1, x: 0, duration: 0.8, ease: "power3.out" }, D + 1.2);
-          tl.fromTo("#n-d-wimg", { scale: 1.2 }, { scale: 1.0, duration: 12.8, ease: "sine.out" }, D + 1.2);
-          tl.fromTo("#n-d-s", { opacity: 0, x: 120 }, { opacity: 1, x: 0, duration: 0.8, ease: "power3.out" }, D + 5.5);
-          tl.fromTo("#n-d-simg", { scale: 1.2 }, { scale: 1.0, duration: 8.5, ease: "sine.out" }, D + 5.5);
-
-          // E 42–54
-          const E = 42;
-          rise("#n-e-label", E + 0.2);
-          whip("#n-e-title", E + 0.5, 80);
-          drop("#n-e-c1", E + 1.4, -4);
-          drop("#n-e-c2", E + 2.4, 5);
-          drop("#n-e-c3", E + 3.4, -2);
-          rise("#n-e-who", E + 5.2);
-
-          // F 54–63
-          const Fz = 54;
-          tl.fromTo("#n-f-img", { scale: 1.0 }, { scale: 1.12, duration: 9, ease: "sine.inOut" }, Fz);
-          rise("#n-f-l1", Fz + 0.4);
-          whip("#n-f-l2", Fz + 3.0, 90);
-
-          window.__timelines["ch03-nelson"] = tl;
+window.__timelines["ch03-nelson"] = tl;
         })();
       </script>
     </template>

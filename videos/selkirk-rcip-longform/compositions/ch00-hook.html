@@ -1,237 +1,232 @@
 <!doctype html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-  </head>
+  <head><meta charset="UTF-8" /></head>
   <body>
     <template>
       <style>
-        @font-face { font-family: "Noto Serif KR"; font-weight: 700; src: url("assets/fonts/NotoSerifKR-700.woff2") format("woff2"); }
-        @font-face { font-family: "Noto Serif KR"; font-weight: 900; src: url("assets/fonts/NotoSerifKR-900.woff2") format("woff2"); }
-        @font-face { font-family: "IBM Plex Sans KR"; font-weight: 400; src: url("assets/fonts/IBMPlexSansKR-400.woff2") format("woff2"); }
-        @font-face { font-family: "IBM Plex Sans KR"; font-weight: 600; src: url("assets/fonts/IBMPlexSansKR-600.woff2") format("woff2"); }
-        @font-face { font-family: "IBM Plex Sans KR"; font-weight: 700; src: url("assets/fonts/IBMPlexSansKR-700.woff2") format("woff2"); }
+@font-face{font-family:Pretendard;font-weight:500;src:url(assets/fonts/Pretendard-Medium.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:700;src:url(assets/fonts/Pretendard-Bold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:800;src:url(assets/fonts/Pretendard-ExtraBold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:900;src:url(assets/fonts/Pretendard-Black.woff2) format("woff2")}
+@font-face{font-family:Yellowtail;font-weight:400;src:url(assets/fonts/Yellowtail-Regular.ttf) format("truetype")}
+#ch00-hook{position:absolute;inset:0;overflow:hidden;background:#FAF6EF;color:#16324F;font-family:Pretendard,sans-serif;word-break:keep-all}
+#ch00-hook *{box-sizing:border-box}
+#ch00-hook .grain{position:absolute;inset:0;opacity:.5;background-image:radial-gradient(rgba(22,50,79,.07) 1.2px,transparent 1.3px);background-size:9px 9px}
+#ch00-hook .glow{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(46,125,91,.20) 0%,rgba(46,125,91,0) 70%)}
+#ch00-hook .glow.warm{background:radial-gradient(circle,rgba(232,87,43,.14) 0%,rgba(232,87,43,0) 70%)}
+#ch00-hook .ghost{position:absolute;font-weight:900;color:rgba(22,50,79,.07);font-size:300px;letter-spacing:-.04em;white-space:nowrap;line-height:1}
+#ch00-hook .stage{position:absolute;inset:0}
+#ch00-hook .beat{position:absolute;inset:0}
+#ch00-hook .abs{position:absolute}
+#ch00-hook .h{font-weight:900;letter-spacing:-.03em;line-height:1.12}
+#ch00-hook .hd{font-weight:800;letter-spacing:-.02em;line-height:1.22}
+#ch00-hook .b{font-weight:500;line-height:1.5}
+#ch00-hook .l{font-weight:700;letter-spacing:.08em}
+#ch00-hook .script{font-family:Yellowtail,cursive;line-height:1.05;white-space:nowrap}
+#ch00-hook .green{color:#2E7D5B}
+#ch00-hook .orange{color:#E8572B}
+#ch00-hook .sticker{position:absolute;background:#E8572B;color:#fff;font-weight:800;font-size:24px;letter-spacing:.12em;padding:10px 24px;border-radius:99px;white-space:nowrap}
+#ch00-hook .chip{position:absolute;background:#FAF6EF;border:3px solid #16324F;border-radius:99px;padding:10px 26px;font-weight:700;font-size:30px;white-space:nowrap;color:#16324F}
+#ch00-hook .chip.gr{border-color:#2E7D5B;color:#1F5E44}
+#ch00-hook .chip.solid{background:#16324F;color:#FAF6EF}
+#ch00-hook .chip.sand{background:#F3C969;border-color:#F3C969}
+#ch00-hook .pol{position:absolute;background:#fff;padding:16px 16px 60px;box-shadow:0 20px 44px rgba(22,50,79,.26)}
+#ch00-hook .pol .ph{position:relative;width:100%;height:100%;overflow:hidden}
+#ch00-hook .pol img{display:block;width:100%;height:100%;object-fit:cover}
+#ch00-hook .pol .cap{position:absolute;left:0;right:0;bottom:10px;text-align:center;font-family:Yellowtail,cursive;font-size:34px;color:#16324F}
+#ch00-hook .card{position:absolute;background:#fff;border:3px solid rgba(22,50,79,.14);border-radius:24px;box-shadow:0 12px 30px rgba(22,50,79,.13)}
+#ch00-hook .panel{position:absolute;background:#16324F;border-radius:28px;color:#FAF6EF}
+#ch00-hook .hl{position:relative;display:inline-block;isolation:isolate}
+#ch00-hook .hl .bar{position:absolute;left:-6px;right:-6px;bottom:6px;height:26px;background:#F3C969;transform-origin:0 50%}
+#ch00-hook .hl .tx{position:relative}
+#ch00-hook .ico{position:absolute;border-radius:50%;background:#fff;border:4px solid #16324F;display:flex;align-items:center;justify-content:center}
+#ch00-hook .ico svg{width:58%;height:58%}
+#ch00-hook .tile{position:absolute;border-radius:22px;overflow:hidden;box-shadow:0 14px 30px rgba(22,50,79,.22)}
+#ch00-hook .tile img{width:100%;height:100%;object-fit:cover;display:block}
+#ch00-hook .tile .tl{position:absolute;left:16px;bottom:14px;background:rgba(22,50,79,.88);color:#FAF6EF;font-weight:800;font-size:26px;padding:6px 16px;border-radius:99px}
 
-        #root {
-          --forest: #12291f; --forest-2: #1a3a2d; --cream: #f4efe3; --cream-dim: #cfc8b6; --gold: #e2b04a; --lake: #7fb3ae;
-          position: absolute; inset: 0; overflow: hidden;
-          background: var(--forest); color: var(--cream);
-          font-family: "IBM Plex Sans KR", sans-serif;
-          word-break: keep-all;
-        }
-        #root .beat { position: absolute; inset: 0; overflow: hidden; }
-        #root .serif { font-family: "Noto Serif KR", serif; }
-        #root .label {
-          font-family: "IBM Plex Sans KR", sans-serif; font-weight: 700; font-size: 24px;
-          letter-spacing: 0.14em; color: var(--gold);
-        }
-        #root .glow {
-          position: absolute; width: 1400px; height: 1400px; border-radius: 50%;
-          background: radial-gradient(circle, rgba(226,176,74,0.28) 0%, rgba(226,176,74,0) 62%);
-        }
-        #root .ghost {
-          position: absolute; font-family: "Noto Serif KR", serif; font-weight: 900;
-          color: rgba(244,239,227,0.12); white-space: nowrap; line-height: 1;
-        }
-        #root .card {
-          position: absolute; background: var(--cream); padding: 14px 14px 56px;
-          box-shadow: 0 30px 60px rgba(0,0,0,0.45);
-        }
-        #root .card .ph { width: 100%; height: 100%; overflow: hidden; }
-        #root .card img { width: 100%; height: 100%; object-fit: cover; display: block; }
-        #root .card .cap {
-          position: absolute; left: 22px; right: 22px; bottom: 12px; height: 34px;
-          font-weight: 700; font-size: 22px; letter-spacing: 0.12em; color: var(--forest);
-          display: flex; align-items: center; justify-content: space-between;
-        }
-        #root .card .cap span:last-child { color: #7a5c18; font-weight: 600; letter-spacing: 0.04em; }
 
-        /* ---------- Beat A : 질문 ---------- */
-        #h-a-photo { position: absolute; inset: 0; }
-        #h-a-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; display: block; }
-        #h-a-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(18,41,31,0.92) 0%, rgba(18,41,31,0.70) 46%, rgba(18,41,31,0.10) 100%); }
-        #h-a-text { position: absolute; left: 120px; top: 250px; width: 980px; }
-        #h-a-q1 { font-size: 104px; font-weight: 900; line-height: 1.18; display: block; }
-        #h-a-q1 em { font-style: normal; color: var(--gold); }
-        #h-a-q2 { margin-top: 44px; font-size: 44px; font-weight: 400; color: var(--cream); line-height: 1.5; display: block; }
-        #h-a-q2 b { font-weight: 700; color: var(--gold); }
+#ch00-hook .strike{position:absolute;height:16px;background:#E8572B;border-radius:8px;transform-origin:0 50%}
+#ch00-hook .ill path, #ch00-hook .ill line, #ch00-hook .ill circle{vector-effect:non-scaling-stroke}
+#ch00-hook .step{position:absolute;width:460px;height:250px;background:#fff;border:3px solid rgba(22,50,79,.14);border-radius:26px;box-shadow:0 12px 30px rgba(22,50,79,.13);padding:34px 34px 0}
+#ch00-hook .step .n{font-weight:900;font-size:26px;letter-spacing:.1em;color:#2E7D5B}
+#ch00-hook .step .t{margin-top:14px;padding-right:90px;font-weight:900;font-size:44px;letter-spacing:-.02em;line-height:1.2}
+#ch00-hook .step .s{margin-top:12px;font-weight:500;font-size:28px;color:#4A5F78}
+#ch00-hook .step .si{position:absolute;right:28px;top:26px;width:84px;height:84px}
+#ch00-hook .city{position:absolute;width:24px;height:24px;border-radius:50%;background:#16324F}
+#ch00-hook .pin{position:absolute;width:50px;height:50px;border-radius:50% 50% 50% 0;background:#E8572B}
+#ch00-hook .ring{position:absolute;width:130px;height:130px;border-radius:50%;border:6px solid #2E7D5B}
+#ch00-hook .icl{position:absolute;width:250px;text-align:center;font-weight:900;font-size:46px;letter-spacing:-.02em}
 
-        /* ---------- Beat B : 엽서 ---------- */
-        #h-b-head { position: absolute; left: 120px; top: 120px; width: 1680px; }
-        #h-b-title { font-size: 76px; font-weight: 900; line-height: 1.2; display: block; }
-        #h-b-title em { font-style: normal; color: var(--gold); }
-        #h-b-c1 { left: 150px; top: 380px; width: 520px; height: 420px; }
-        #h-b-c2 { left: 700px; top: 340px; width: 520px; height: 440px; }
-        #h-b-c3 { left: 1250px; top: 360px; width: 520px; height: 420px; }
-
-        /* ---------- Beat C : 키워드 ---------- */
-        #h-c-row { position: absolute; left: 120px; right: 120px; top: 240px; height: 380px; display: flex; gap: 36px; }
-        #root .chip { position: relative; flex: 1; height: 380px; overflow: hidden; border: 4px solid var(--cream); }
-        #root .chip img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-        #root .chip .tint { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(18,41,31,0.88) 0%, rgba(18,41,31,0) 60%); }
-        #root .chip .word { position: absolute; left: 28px; bottom: 22px; font-family: "Noto Serif KR", serif; font-weight: 900; font-size: 64px; }
-        #h-c-final { position: absolute; left: 120px; right: 120px; top: 680px; height: 200px; display: flex; align-items: center; justify-content: center; gap: 32px; }
-        #h-c-plus { font-size: 54px; font-weight: 400; color: var(--cream-dim); }
-        #h-c-pr { font-family: "Noto Serif KR", serif; font-weight: 900; font-size: 150px; color: var(--gold); line-height: 1; display: block; }
-
-        /* ---------- Beat D : 경로 ---------- */
-        #h-d-label { position: absolute; left: 120px; top: 150px; }
-        #h-d-title { position: absolute; left: 120px; top: 205px; width: 1680px; font-size: 76px; font-weight: 900; line-height: 1.3; }
-        #h-d-track { position: absolute; left: 120px; right: 120px; top: 440px; height: 300px; }
-        #h-d-line { position: absolute; left: 150px; right: 150px; top: 58px; height: 6px; background: var(--forest-2); }
-        #h-d-fill { position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: var(--gold); transform-origin: 0 50%; }
-        #root .step { position: absolute; top: 0; width: 420px; text-align: center; }
-        #root .step .dot { width: 120px; height: 120px; margin: 0 auto; border-radius: 50%; background: var(--forest); border: 6px solid var(--gold); display: flex; align-items: center; justify-content: center; font-family: "Noto Serif KR", serif; font-weight: 900; font-size: 52px; color: var(--gold); }
-        #root .step .t { margin-top: 30px; font-size: 46px; font-weight: 700; line-height: 1.35; }
-        #root .step .s { margin-top: 10px; font-size: 32px; color: var(--cream-dim); }
-        #h-d-s1 { left: -60px; }
-        #h-d-s2 { left: 570px; }
-        #h-d-s3 { left: 1200px; }
-        #h-d-note { position: absolute; left: 120px; right: 120px; top: 830px; font-size: 26px; color: var(--cream-dim); text-align: center; }
-
-        /* ---------- Beat E : 타이틀 ---------- */
-        #h-e-bg { position: absolute; inset: -40px; }
-        #h-e-bg { background: url("assets/img/aerial-lake-campus.jpg") 50% 40% / cover no-repeat; filter: blur(14px) brightness(0.55) saturate(1.1); }
-        #h-e-card { left: 1180px; top: 150px; width: 600px; height: 760px; transform: rotate(3deg); }
-        #h-e-text { position: absolute; left: 120px; top: 250px; width: 1000px; }
-        #h-e-kicker { display: block; }
-        #h-e-t1 { margin-top: 30px; font-size: 128px; font-weight: 900; line-height: 1.1; display: block; }
-        #h-e-t1 em { font-style: normal; color: var(--gold); }
-        #h-e-rule { margin-top: 40px; width: 560px; height: 5px; background: var(--gold); transform-origin: 0 50%; }
-        #h-e-t2 { margin-top: 40px; font-size: 46px; font-weight: 600; line-height: 1.45; display: block; }
       </style>
+      <div id="ch00-hook" data-composition-id="ch00-hook" data-width="1920" data-height="1080" data-duration="43">
+<div class="grain"></div>
+<div data-layout-ignore class="glow" style="left:1100px;top:-300px;width:1100px;height:1100px"></div>
+<div data-layout-ignore class="glow warm" style="left:-300px;top:500px;width:900px;height:900px"></div>
+<svg class="ghost" aria-hidden="true" data-layout-ignore style="left:760px;top:640px;width:2600px;height:330px;overflow:visible"><text x="0" y="270" font-family="Pretendard" font-weight="900" font-size="300" fill="rgba(22,50,79,.07)">KOOTENAY</text></svg>
 
-      <div id="root" data-composition-id="ch00-hook" data-width="1920" data-height="1080" data-duration="43">
+<!-- A 0–7.5 : '시골'을 지우고 휴양도시로 -->
+<section id="h-a" class="beat clip" data-start="0" data-duration="7.5">
+  <div class="abs l" id="h-a-k" style="left:120px;top:150px;font-size:26px;color:#2E7D5B">AA CANADA · 캐나다 유학 후 이민</div>
+  <div class="abs hd" id="h-a-t1" style="left:120px;top:205px;font-size:66px">캐나다 영주권, 이런 말 들어 보셨죠?</div>
+  <div class="abs h" id="h-a-word" style="left:110px;top:330px;font-size:300px;line-height:1">시골 루트</div>
+  <div class="strike" id="h-a-strike" style="left:100px;top:478px;width:1180px"></div>
+  <div class="abs script green" id="h-a-script" style="left:560px;top:600px;font-size:150px">Resort Town</div>
+  <div class="chip solid" id="h-a-chip" style="left:120px;top:690px;font-size:38px">휴양도시</div>
+  <svg class="abs ill" id="h-a-ill" viewBox="0 0 520 400" style="left:1330px;top:180px;width:520px;height:400px">
+    <circle id="h-a-sun" cx="380" cy="110" r="52" fill="#F3C969"/>
+    <path id="h-a-m1" d="M10 330 L150 140 L230 240 L320 110 L510 330" fill="none" stroke="#16324F" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>
+    <path id="h-a-snow" d="M285 160 L320 110 L352 150" fill="none" stroke="#16324F" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>
+    <path id="h-a-lake1" d="M40 360 C 140 340, 220 380, 320 360 S 460 350, 500 362" fill="none" stroke="#2E7D5B" stroke-width="10" stroke-linecap="round"/>
+    <path id="h-a-lake2" d="M90 392 C 170 378, 260 404, 350 390" fill="none" stroke="#2E7D5B" stroke-width="10" stroke-linecap="round"/>
+  </svg>
+</section>
 
-        <!-- Beat A 0–7.5 -->
-        <section id="h-a" class="beat clip" data-start="0" data-duration="7.5">
-          <div id="h-a-photo"><img id="h-a-img" src="assets/img/valley-wide.jpg" alt="" /></div>
-          <div id="h-a-shade"></div>
-          <div id="h-a-text">
-            <span id="h-a-q1" class="serif">캐나다 <em>시골</em> 영주권 루트?</span>
-            <span id="h-a-q2"><span style="display:block">'시골'이라는 말에 망설여졌다면,</span><b style="display:block">끝까지 봐 주세요.</b></span>
-          </div>
-        </section>
+<!-- B 7.5–17 : 지도 + 휴가 엽서 -->
+<section id="h-b" class="beat clip" data-start="7.5" data-duration="9.5">
+  <div class="abs l" id="h-b-k" style="left:120px;top:110px;font-size:26px;color:#2E7D5B">BRITISH COLUMBIA · WEST KOOTENAY</div>
+  <div class="abs h" id="h-b-t" style="left:120px;top:160px;font-size:80px;width:1100px">캐나다 사람들이 <span class="hl"><span class="bar" id="h-b-bar"></span><span class="tx">휴가 때 일부러</span></span> 찾아가는 곳</div>
+  <svg class="abs" viewBox="0 0 1920 1080" style="left:0;top:0;width:1920px;height:1080px">
+    <path id="h-b-route1" d="M260 760 C 520 600, 760 600, 980 690" fill="none" stroke="#16324F" stroke-width="6" stroke-dasharray="4 16" stroke-linecap="round"/>
+    <path id="h-b-route2" d="M1560 520 C 1380 520, 1200 590, 1010 690" fill="none" stroke="#16324F" stroke-width="6" stroke-dasharray="4 16" stroke-linecap="round"/>
+    <ellipse id="h-b-region" cx="1000" cy="690" rx="190" ry="120" fill="#2E7D5B" opacity="0.18"/>
+  </svg>
+  <div class="city" id="h-b-van" style="left:248px;top:748px"></div>
+  <div class="abs hd" id="h-b-vant" style="left:170px;top:790px;font-size:36px">밴쿠버</div>
+  <div class="chip" id="h-b-vanc" style="left:470px;top:560px;font-size:28px">밴쿠버에서 차로 약 8시간</div>
+  <div class="city" id="h-b-cal" style="left:1548px;top:508px"></div>
+  <div class="abs hd" id="h-b-calt" style="left:1590px;top:492px;font-size:36px">캘거리</div>
+  <div class="ring" id="h-b-ring" style="left:935px;top:625px"></div>
+  <div class="pin" id="h-b-pin" style="left:975px;top:640px"></div>
+  <div class="abs h" id="h-b-wk" style="left:870px;top:770px;font-size:52px">넬슨 · 캐슬가</div>
+  <div class="pol" id="h-b-p1" style="left:1270px;top:600px;width:290px;height:280px"><div class="ph"><img src="assets/img/nelson-baker-street.jpg" alt=""/></div><div class="cap">Nelson</div></div>
+  <div class="pol" id="h-b-p2" style="left:1560px;top:640px;width:270px;height:260px"><div class="ph"><img src="assets/img/rafting.jpg" alt=""/></div><div class="cap">Summer</div></div>
+</section>
 
-        <!-- Beat B 7.5–17 -->
-        <section id="h-b" class="beat clip" data-start="7.5" data-duration="9.5">
-          <div class="glow" id="h-b-glow" style="left: 260px; top: -520px"></div>
-          <div class="ghost" data-layout-ignore aria-hidden="true" id="h-b-ghost" style="left: -40px; top: 760px; font-size: 300px">KOOTENAY</div>
-          <div id="h-b-head">
-            <span class="label" id="h-b-label">POSTCARDS FROM THE KOOTENAYS</span>
-            <span id="h-b-title" class="serif" style="margin-top: 22px">캐나다 사람들이 <em>휴가 때 일부러</em> 찾아가는 도시</span>
-          </div>
-          <div class="card" id="h-b-c1"><div class="ph" data-layout-allow-overflow><img src="assets/img/nelson-baker-street.jpg" alt="" /></div><div class="cap"><span>NELSON</span><span>베이커 스트리트</span></div></div>
-          <div class="card" id="h-b-c2"><div class="ph" data-layout-allow-overflow><img src="assets/img/sunrise-hiker.jpg" alt="" /></div><div class="cap"><span>KOOTENAYS</span><span>셀커크 산맥의 아침</span></div></div>
-          <div class="card" id="h-b-c3"><div class="ph" data-layout-allow-overflow><img src="assets/img/rafting.jpg" alt="" /></div><div class="cap"><span>SUMMER</span><span>래프팅 · 카약</span></div></div>
-        </section>
+<!-- C 17–27 : 아이콘 4개 + 영주권 -->
+<section id="h-c" class="beat clip" data-start="17" data-duration="10">
+  <div class="abs hd" id="h-c-t" style="left:120px;top:140px;font-size:72px">이 도시에서 누리는 것</div>
+  <div class="ico" id="h-c-i1" style="left:130px;top:300px;width:240px;height:240px"><svg viewBox="0 0 64 64"><path d="M6 26 C 14 20, 22 32, 32 26 S 50 20, 58 26 M6 38 C 14 32, 22 44, 32 38 S 50 32, 58 38 M6 50 C 14 44, 22 56, 32 50 S 50 44, 58 50" fill="none" stroke="#2E7D5B" stroke-width="4.5" stroke-linecap="round"/></svg></div>
+  <div class="ico" id="h-c-i2" style="left:450px;top:300px;width:240px;height:240px"><svg viewBox="0 0 64 64"><path d="M4 54 L24 18 L34 34 L42 22 L60 54 Z" fill="none" stroke="#16324F" stroke-width="4.5" stroke-linejoin="round"/><path d="M18 29 L24 18 L30 28" fill="none" stroke="#16324F" stroke-width="4.5" stroke-linejoin="round"/></svg></div>
+  <div class="ico" id="h-c-i3" style="left:770px;top:300px;width:240px;height:240px"><svg viewBox="0 0 64 64"><circle cx="40" cy="12" r="6" fill="#E8572B"/><path d="M10 52 L54 34 M14 60 L58 42" stroke="#16324F" stroke-width="4.5" stroke-linecap="round"/><path d="M38 20 L28 34 L38 42" fill="none" stroke="#16324F" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+  <div class="ico" id="h-c-i4" style="left:1090px;top:300px;width:240px;height:240px"><svg viewBox="0 0 64 64"><path d="M12 26 H46 V44 C46 52 40 56 34 56 H24 C18 56 12 52 12 44 Z" fill="none" stroke="#16324F" stroke-width="4.5" stroke-linejoin="round"/><path d="M46 30 H52 C56 30 56 42 52 42 H46" fill="none" stroke="#16324F" stroke-width="4.5"/><path d="M22 8 C 18 14, 26 16, 22 22 M32 8 C 28 14, 36 16, 32 22" fill="none" stroke="#E8572B" stroke-width="4" stroke-linecap="round"/></svg></div>
+  <div class="icl" id="h-c-l1" style="left:125px;top:565px">호수</div>
+  <div class="icl" id="h-c-l2" style="left:445px;top:565px">설산</div>
+  <div class="icl" id="h-c-l3" style="left:765px;top:565px">스키장</div>
+  <div class="icl" id="h-c-l4" style="left:1085px;top:565px">카페</div>
+  <div class="abs hd" id="h-c-and" style="left:1440px;top:290px;font-size:48px;color:#4A5F78">그리고</div>
+  <div class="panel" id="h-c-pr" style="left:1440px;top:360px;width:380px;height:190px;display:flex;align-items:center;justify-content:center"><span class="h" style="font-size:92px;color:#F3C969">영주권</span></div>
+  <div class="sticker" id="h-c-st" style="left:1700px;top:330px;font-size:30px">PR</div>
+  <div class="abs" id="h-c-line" style="left:130px;top:680px;width:1690px;height:8px;background:#2E7D5B;border-radius:4px"></div>
+</section>
 
-        <!-- Beat C 17–27 -->
-        <section id="h-c" class="beat clip" data-start="17" data-duration="10">
-          <div class="glow" id="h-c-glow" style="left: 260px; top: 300px"></div>
-          <div id="h-c-row">
-            <div data-layout-allow-overflow class="chip" id="h-c-1"><img src="assets/img/students-lake-view.jpg" alt="" /><div class="tint"></div><div class="word">호수</div></div>
-            <div data-layout-allow-overflow class="chip" id="h-c-2"><img src="assets/img/hike-alpine-lake.jpg" alt="" /><div class="tint"></div><div class="word">설산</div></div>
-            <div data-layout-allow-overflow class="chip" id="h-c-3"><img src="assets/img/ski-whitewater.jpg" alt="" /><div class="tint"></div><div class="word">스키장</div></div>
-            <div data-layout-allow-overflow class="chip" id="h-c-4"><img src="assets/img/nelson-cafe.jpg" alt="" /><div class="tint"></div><div class="word">카페</div></div>
-          </div>
-          <div id="h-c-final">
-            <span id="h-c-plus">그리고</span>
-            <span id="h-c-pr">영주권</span>
-          </div>
-        </section>
+<!-- D 27–36 : 3단계 -->
+<section id="h-d" class="beat clip" data-start="27" data-duration="9">
+  <div class="abs l" id="h-d-k" style="left:120px;top:120px;font-size:26px;color:#2E7D5B">AA CANADA 학생들이 걸어온 길</div>
+  <div class="abs h" id="h-d-t" style="left:120px;top:170px;font-size:76px">졸업하고, 취업하고, 영주권까지</div>
+  <div class="abs" id="h-d-rail" style="left:240px;top:451px;width:1440px;height:8px;background:#2E7D5B;border-radius:4px"></div>
+  <div class="step" id="h-d-s1" style="left:120px;top:330px"><div class="n">STEP 1</div><div class="t">셀커크 컬리지 졸업</div><div class="s">BC주 공립 컬리지</div>
+    <svg class="si" viewBox="0 0 64 64"><path d="M4 24 L32 12 L60 24 L32 36 Z" fill="#16324F"/><path d="M16 30 V44 C 24 52, 40 52, 48 44 V30" fill="none" stroke="#16324F" stroke-width="4"/></svg></div>
+  <div class="step" id="h-d-s2" style="left:730px;top:330px"><div class="n">STEP 2</div><div class="t">지역 고용주 취업</div><div class="s">졸업 후 취업비자 PGWP</div>
+    <svg class="si" viewBox="0 0 64 64"><rect x="8" y="20" width="48" height="34" rx="6" fill="none" stroke="#16324F" stroke-width="4"/><path d="M24 20 V12 H40 V20" fill="none" stroke="#16324F" stroke-width="4"/></svg></div>
+  <div class="step" id="h-d-s3" style="left:1340px;top:330px;border-color:#2E7D5B"><div class="n">STEP 3</div><div class="t">RNIP · RCIP 영주권</div><div class="s">지역이 추천하는 영주권</div>
+    <svg class="si" viewBox="0 0 64 64"><path d="M32 4 L36 16 L46 12 L42 24 L54 24 L44 34 L50 40 L36 40 L34 52 H30 L28 40 L14 40 L20 34 L10 24 L22 24 L18 12 L28 16 Z" fill="#E8572B"/><path d="M32 52 V60" stroke="#E8572B" stroke-width="4"/></svg></div>
+  <div class="abs b" id="h-d-note" style="left:120px;top:660px;width:1680px;text-align:center;font-size:28px;color:#4A5F78">AA Canada 학생 사례 기준 · 개인별 결과는 다를 수 있으며 RCIP 기준은 매년 바뀝니다</div>
+</section>
 
-        <!-- Beat D 27–36 -->
-        <section id="h-d" class="beat clip" data-start="27" data-duration="9">
-          <div class="ghost" data-layout-ignore aria-hidden="true" style="left: 1180px; top: 30px; font-size: 220px">RCIP</div>
-          <span class="label" id="h-d-label">AA CANADA 학생들이 걸어온 길</span>
-          <div id="h-d-title" class="serif">공립 컬리지 졸업, 현지 취업, 그리고 영주권</div>
-          <div id="h-d-track">
-            <div id="h-d-line"><div id="h-d-fill"></div></div>
-            <div class="step" id="h-d-s1"><div class="dot">1</div><div class="t">셀커크 컬리지 졸업</div><div class="s">BC주 공립 컬리지</div></div>
-            <div class="step" id="h-d-s2"><div class="dot">2</div><div class="t">지역 고용주 취업</div><div class="s">졸업 후 취업비자(PGWP)</div></div>
-            <div class="step" id="h-d-s3"><div class="dot">3</div><div class="t">RNIP · RCIP 영주권</div><div class="s">지역 추천 영주권</div></div>
-          </div>
-          <div id="h-d-note">AA Canada 학생 사례 기준 · 개인별 결과는 다를 수 있으며 RCIP 기준은 매년 바뀝니다</div>
-        </section>
-
-        <!-- Beat E 36–43 -->
-        <section id="h-e" class="beat clip" data-start="36" data-duration="7">
-          <div id="h-e-bg" data-layout-ignore></div>
-          <div class="card" id="h-e-card"><div class="ph" data-layout-allow-overflow><img id="h-e-cardimg" src="assets/img/aerial-lake-campus.jpg" alt="" /></div><div class="cap"><span>SELKIRK COLLEGE</span><span>West Kootenay, BC</span></div></div>
-          <div id="h-e-text">
-            <span class="label" id="h-e-kicker">AA CANADA 캐나다 유학·이민 리포트</span>
-            <span id="h-e-t1" class="serif">셀커크 컬리지<br /><em>× RCIP</em></span>
-            <div id="h-e-rule"></div>
-            <span id="h-e-t2"><span style="display:block">캐나다 사람들이 휴가 가는 도시에서,</span><span style="display:block">영주권까지</span></span>
-          </div>
-        </section>
+<!-- E 36–43 : 타이틀 -->
+<section id="h-e" class="beat clip" data-start="36" data-duration="7">
+  <div class="abs script green" id="h-e-s" style="left:120px;top:190px;font-size:120px">West Kootenay, BC</div>
+  <div class="abs h" id="h-e-t" style="left:120px;top:360px;font-size:136px">셀커크 컬리지<span class="orange"> × </span>RCIP</div>
+  <div class="abs" id="h-e-rule" style="left:124px;top:560px;width:520px;height:10px;background:#F3C969;border-radius:5px"></div>
+  <div class="abs hd" id="h-e-sub" style="left:120px;top:610px;font-size:52px">캐나다 사람들이 휴가 가는 도시에서, 영주권까지</div>
+  <div class="pol" id="h-e-p" style="left:1420px;top:170px;width:400px;height:400px"><div class="ph"><img id="h-e-pi" src="assets/img/aerial-lake-campus.jpg" alt=""/></div><div class="cap">Selkirk College</div></div>
+</section>
       </div>
-
       <script>
         (function () {
-          const tl = gsap.timeline({ paused: true });
-          const F = 1 / 30;
+const root=document.getElementById("ch00-hook");
+const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
+const tl=gsap.timeline({paused:true});
+function E(el){return typeof el==='string'?q(el):el;}
+function inn(el,at,o){o=o||{};el=E(el);
+  tl.fromTo(el,{opacity:0,x:o.x||0,y:(o.y===undefined?30:o.y),scale:(o.s===undefined?1:o.s),rotation:(o.r0===undefined?(o.r||0):o.r0)},
+  {opacity:1,x:0,y:0,scale:1,rotation:o.r||0,duration:o.d||0.6,ease:o.e||'power3.out'},at);}
+function whip(el,at,dy){el=E(el);tl.set(el,{opacity:0},0);tl.set(el,{opacity:1,y:dy||70},at);tl.to(el,{y:0,duration:0.45,ease:'power4.out'},at);}
+function pop(el,at,o){o=o||{};el=E(el);tl.fromTo(el,{opacity:0,scale:0},{opacity:1,scale:1,duration:o.d||0.5,ease:o.e||'back.out(2)'},at);}
+function pol(el,at,rot){el=E(el);
+  tl.fromTo(el,{opacity:0,y:-180,rotation:rot*2.4,scale:1.06},{opacity:1,y:0,rotation:rot,scale:1,duration:0.85,ease:'power3.out'},at);}
+function kb(el,at,dur,a,b){el=E(el);a=a||{};b=b||{};
+  tl.fromTo(el,{scale:a.s||1,xPercent:a.x||0,yPercent:a.y||0},{scale:b.s||1.07,xPercent:b.x||0,yPercent:b.y||0,duration:dur,ease:'none'},at);}
+function count(el,from,to,at,dur,fmt){el=E(el);const st={v:from};el.textContent=fmt(from);
+  tl.fromTo(st,{v:from},{v:to,duration:dur,ease:'power2.out',immediateRender:false,onUpdate:()=>{el.textContent=fmt(st.v);}},at);}
+function grow(el,at,d,origin){el=E(el);
+  tl.fromTo(el,{scaleX:0,transformOrigin:origin||'0% 50%'},{scaleX:1,duration:d||0.8,ease:'power3.inOut'},at);}
+function growY(el,at,d){el=E(el);
+  tl.fromTo(el,{scaleY:0,transformOrigin:'50% 100%'},{scaleY:1,duration:d||0.8,ease:'power3.out'},at);}
+function draw(path,at,d){path=E(path);const L=path.getTotalLength();path.style.strokeDasharray=L+' '+L;
+  tl.fromTo(path,{strokeDashoffset:L},{strokeDashoffset:0,duration:d||1,ease:'power2.inOut'},at);}
+function outt(el,at,o){o=o||{};el=E(el);tl.to(el,{opacity:0,y:o.y||0,x:o.x||0,duration:o.d||0.4,ease:'power2.in'},at);}
+function ambient(D){
+  qa('.ghost').forEach((g,i)=>tl.fromTo(g,{x:0},{x:(i%2?160:-160),duration:D,ease:'none'},0));
+  qa('.glow').forEach((g,i)=>{const c=4+i;const n=Math.max(0,Math.floor(D/c)-1);
+    tl.fromTo(g,{scale:0.92},{scale:1.08,duration:c/2,ease:'sine.inOut',yoyo:true,repeat:n},0);});
+}
 
-          // ---- Beat A (0–7.5): Ken Burns push on valley + question
-          tl.fromTo("#h-a-img", { scale: 1.12, xPercent: 2 }, { scale: 1.0, xPercent: 0, duration: 7.5, ease: "sine.out" }, 0);
-          tl.set("#h-a-q1", { opacity: 0 }, 0);
-          tl.set("#h-a-q1", { opacity: 1, y: 80 }, 0.5);
-          tl.to("#h-a-q1", { y: 0, duration: 0.5, ease: "power4.out" }, 0.5);
-          tl.fromTo("#h-a-q2", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 2.4);
+const D = 43;
 
-          // ---- Beat B (7.5–17): postcards drop in with a settle
-          const B = 7.5;
-          tl.fromTo("#h-b-glow", { scale: 0.85, opacity: 0.6 }, { scale: 1.1, opacity: 1, duration: 9.5, ease: "sine.inOut" }, B);
-          tl.fromTo("#h-b-ghost", { x: 0 }, { x: -220, duration: 9.5, ease: "none" }, B);
-          tl.fromTo("#h-b-label", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, B + 0.2);
-          tl.set("#h-b-title", { opacity: 0 }, B);
-          tl.set("#h-b-title", { opacity: 1, y: 70 }, B + 0.45);
-          tl.to("#h-b-title", { y: 0, duration: 0.45, ease: "power4.out" }, B + 0.45);
-          [["#h-b-c1", -7, 1.6], ["#h-b-c2", 4, 2.6], ["#h-b-c3", -3, 3.6]].forEach(function (c) {
-            tl.fromTo(c[0], { opacity: 0, y: 140, rotation: c[1] * 2.2, scale: 0.92 },
-              { opacity: 1, y: 0, rotation: c[1], scale: 1, duration: 0.9, ease: "back.out(1.4)" }, B + c[2]);
-            tl.fromTo(c[0] + " img", { scale: 1.12 }, { scale: 1.0, duration: 9.5 - c[2], ease: "sine.out" }, B + c[2]);
-          });
+ambient(D);
+// A
+inn('#h-a-k',0.3,{y:16});
+inn('#h-a-t1',0.6,{y:24});
+whip('#h-a-word',1.3,110);
+draw('#h-a-m1',0.8,1.6); draw('#h-a-snow',2.0,0.5); draw('#h-a-lake1',2.2,1.0); draw('#h-a-lake2',2.6,0.9);
+pop('#h-a-sun',1.6,{d:0.6});
+grow('#h-a-strike',3.4,0.5);
+tl.to('#h-a-word',{opacity:0.35,duration:0.4,ease:'power1.out'},3.8);
+inn('#h-a-script',4.2,{y:40,r0:-8,r:-4,d:0.7,e:'back.out(1.6)'});
+pop('#h-a-chip',4.9);
+// B
+const B=7.5;
+inn('#h-b-k',B+0.2,{y:16});
+whip('#h-b-t',B+0.4,70);
+grow('#h-b-bar',B+1.3,0.6);
+pop('#h-b-van',B+1.8); inn('#h-b-vant',B+1.9,{y:10});
+pop('#h-b-cal',B+2.1); inn('#h-b-calt',B+2.2,{y:10});
+draw('#h-b-route1',B+2.3,1.3); draw('#h-b-route2',B+2.6,1.2);
+inn('#h-b-vanc',B+3.2,{s:0.6,y:0});
+tl.fromTo('#h-b-region',{opacity:0,scale:0.6,transformOrigin:'50% 50%'},{opacity:0.18,scale:1,duration:0.8,ease:'power3.out'},B+3.6);
+inn('#h-b-pin',B+4.0,{y:-160,d:0.7,r:-45,r0:-45});
+tl.fromTo('#h-b-ring',{scale:0.4,opacity:0.9},{scale:1.5,opacity:0,duration:1.4,ease:'power2.out',repeat:2},B+4.4);
+inn('#h-b-wk',B+4.5,{y:20});
+pol('#h-b-p1',B+5.4,-6); kb('#h-b-p1 img',B+5.4,4.1);
+pol('#h-b-p2',B+6.2,5); kb('#h-b-p2 img',B+6.2,3.3);
+// C
+const C=17;
+inn('#h-c-t',C+0.2,{y:20});
+['1','2','3','4'].forEach((n,i)=>{pop('#h-c-i'+n,C+0.6+i*1.0,{d:0.55}); inn('#h-c-l'+n,C+0.8+i*1.0,{y:16});});
+grow('#h-c-line',C+0.6,4.2);
+inn('#h-c-and',C+5.0,{x:-20,y:0});
+pop('#h-c-pr',C+5.5,{d:0.6,e:'back.out(1.8)'});
+inn('#h-c-st',C+6.1,{s:1.6,y:0,r0:-20,r:-6,d:0.4,e:'back.out(2.4)'});
+// D
+const Dd=27;
+inn('#h-d-k',Dd+0.2,{y:16});
+whip('#h-d-t',Dd+0.4,70);
+grow('#h-d-rail',Dd+1.2,5.0);
+inn('#h-d-s1',Dd+1.2,{y:60,d:0.7,e:'back.out(1.4)'});
+inn('#h-d-s2',Dd+3.4,{y:60,d:0.7,e:'back.out(1.4)'});
+inn('#h-d-s3',Dd+5.6,{y:60,d:0.7,e:'back.out(1.4)'});
+inn('#h-d-note',Dd+6.6,{y:10});
+// E
+const Ee=36;
+inn('#h-e-s',Ee+0.3,{y:30,r0:-6,r:0,d:0.7});
+whip('#h-e-t',Ee+0.8,100);
+grow('#h-e-rule',Ee+1.4,0.7);
+inn('#h-e-sub',Ee+1.8,{y:24});
+pol('#h-e-p',Ee+0.6,4); kb('#h-e-pi',Ee+0.6,6.3);
 
-          // ---- Beat C (17–27): keyword chips, then the gold word
-          const C = 17;
-          tl.fromTo("#h-c-glow", { scale: 0.7, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 6, ease: "sine.out" }, C + 3);
-          ["#h-c-1", "#h-c-2", "#h-c-3", "#h-c-4"].forEach(function (id, i) {
-            const t = C + 0.4 + i * 1.1;
-            tl.fromTo(id, { opacity: 0, y: 90 }, { opacity: 1, y: 0, duration: 0.6, ease: "power4.out" }, t);
-            tl.fromTo(id + " img", { scale: 1.18 }, { scale: 1.02, duration: 10 - (t - C), ease: "sine.out" }, t);
-          });
-          tl.fromTo("#h-c-plus", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, C + 5.3);
-          tl.fromTo("#h-c-pr", { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.55, ease: "back.out(2)" }, C + 5.8);
-
-          // ---- Beat D (27–36): three-step path draws itself
-          const D = 27;
-          tl.fromTo("#h-d-label", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, D + 0.2);
-          tl.set("#h-d-title", { opacity: 0 }, D);
-          tl.set("#h-d-title", { opacity: 1, y: 60 }, D + 0.5);
-          tl.to("#h-d-title", { y: 0, duration: 0.45, ease: "power4.out" }, D + 0.5);
-          tl.fromTo("#h-d-fill", { scaleX: 0 }, { scaleX: 1, duration: 5.2, ease: "power1.inOut" }, D + 1.4);
-          ["#h-d-s1", "#h-d-s2", "#h-d-s3"].forEach(function (id, i) {
-            const t = D + 1.3 + i * 2.4;
-            tl.fromTo(id + " .dot", { scale: 0 }, { scale: 1, duration: 0.5, ease: "back.out(2.2)" }, t);
-            tl.fromTo([id + " .t", id + " .s"], { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5, stagger: 0.12, ease: "power3.out" }, t + 0.25);
-          });
-          tl.fromTo("#h-d-note", { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "sine.out" }, D + 7.6);
-
-          // ---- Beat E (36–43): title lockup
-          const E = 36;
-          tl.fromTo("#h-e-bg", { scale: 1.1 }, { scale: 1.0, duration: 7, ease: "sine.out" }, E);
-          tl.fromTo("#h-e-card", { opacity: 0, y: 120, rotation: 9 }, { opacity: 1, y: 0, rotation: 3, duration: 1.0, ease: "back.out(1.3)" }, E + 0.3);
-          tl.fromTo("#h-e-cardimg", { scale: 1.15 }, { scale: 1.0, duration: 6.6, ease: "sine.out" }, E + 0.3);
-          tl.fromTo("#h-e-kicker", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, E + 0.6);
-          tl.set("#h-e-t1", { opacity: 0 }, E);
-          tl.set("#h-e-t1", { opacity: 1, y: 90 }, E + 0.9);
-          tl.to("#h-e-t1", { y: 0, duration: 0.5, ease: "power4.out" }, E + 0.9);
-          tl.fromTo("#h-e-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "power3.out" }, E + 1.5);
-          tl.fromTo("#h-e-t2", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, E + 1.9);
-
-          window.__timelines["ch00-hook"] = tl;
+window.__timelines["ch00-hook"] = tl;
         })();
       </script>
     </template>

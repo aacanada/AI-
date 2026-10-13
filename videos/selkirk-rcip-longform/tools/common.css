@@ -1,0 +1,40 @@
+@font-face{font-family:Pretendard;font-weight:500;src:url(assets/fonts/Pretendard-Medium.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:700;src:url(assets/fonts/Pretendard-Bold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:800;src:url(assets/fonts/Pretendard-ExtraBold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:900;src:url(assets/fonts/Pretendard-Black.woff2) format("woff2")}
+@font-face{font-family:Yellowtail;font-weight:400;src:url(assets/fonts/Yellowtail-Regular.ttf) format("truetype")}
+#ROOT{position:absolute;inset:0;overflow:hidden;background:#FAF6EF;color:#16324F;font-family:Pretendard,sans-serif;word-break:keep-all}
+#ROOT *{box-sizing:border-box}
+#ROOT .grain{position:absolute;inset:0;opacity:.5;background-image:radial-gradient(rgba(22,50,79,.07) 1.2px,transparent 1.3px);background-size:9px 9px}
+#ROOT .glow{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(46,125,91,.20) 0%,rgba(46,125,91,0) 70%)}
+#ROOT .glow.warm{background:radial-gradient(circle,rgba(232,87,43,.14) 0%,rgba(232,87,43,0) 70%)}
+#ROOT .ghost{position:absolute;font-weight:900;color:rgba(22,50,79,.07);font-size:300px;letter-spacing:-.04em;white-space:nowrap;line-height:1}
+#ROOT .stage{position:absolute;inset:0}
+#ROOT .beat{position:absolute;inset:0}
+#ROOT .abs{position:absolute}
+#ROOT .h{font-weight:900;letter-spacing:-.03em;line-height:1.12}
+#ROOT .hd{font-weight:800;letter-spacing:-.02em;line-height:1.22}
+#ROOT .b{font-weight:500;line-height:1.5}
+#ROOT .l{font-weight:700;letter-spacing:.08em}
+#ROOT .script{font-family:Yellowtail,cursive;line-height:1.05;white-space:nowrap}
+#ROOT .green{color:#2E7D5B}
+#ROOT .orange{color:#E8572B}
+#ROOT .sticker{position:absolute;background:#E8572B;color:#fff;font-weight:800;font-size:24px;letter-spacing:.12em;padding:10px 24px;border-radius:99px;white-space:nowrap}
+#ROOT .chip{position:absolute;background:#FAF6EF;border:3px solid #16324F;border-radius:99px;padding:10px 26px;font-weight:700;font-size:30px;white-space:nowrap;color:#16324F}
+#ROOT .chip.gr{border-color:#2E7D5B;color:#1F5E44}
+#ROOT .chip.solid{background:#16324F;color:#FAF6EF}
+#ROOT .chip.sand{background:#F3C969;border-color:#F3C969}
+#ROOT .pol{position:absolute;background:#fff;padding:16px 16px 60px;box-shadow:0 20px 44px rgba(22,50,79,.26)}
+#ROOT .pol .ph{position:relative;width:100%;height:100%;overflow:hidden}
+#ROOT .pol img{display:block;width:100%;height:100%;object-fit:cover}
+#ROOT .pol .cap{position:absolute;left:0;right:0;bottom:10px;text-align:center;font-family:Yellowtail,cursive;font-size:34px;color:#16324F}
+#ROOT .card{position:absolute;background:#fff;border:3px solid rgba(22,50,79,.14);border-radius:24px;box-shadow:0 12px 30px rgba(22,50,79,.13)}
+#ROOT .panel{position:absolute;background:#16324F;border-radius:28px;color:#FAF6EF}
+#ROOT .hl{position:relative;display:inline-block;isolation:isolate}
+#ROOT .hl .bar{position:absolute;left:-6px;right:-6px;bottom:6px;height:26px;background:#F3C969;transform-origin:0 50%}
+#ROOT .hl .tx{position:relative}
+#ROOT .ico{position:absolute;border-radius:50%;background:#fff;border:4px solid #16324F;display:flex;align-items:center;justify-content:center}
+#ROOT .ico svg{width:58%;height:58%}
+#ROOT .tile{position:absolute;border-radius:22px;overflow:hidden;box-shadow:0 14px 30px rgba(22,50,79,.22)}
+#ROOT .tile img{width:100%;height:100%;object-fit:cover;display:block}
+#ROOT .tile .tl{position:absolute;left:16px;bottom:14px;background:rgba(22,50,79,.88);color:#FAF6EF;font-weight:800;font-size:26px;padding:6px 16px;border-radius:99px}
