@@ -1,0 +1,9 @@
+type: shorts
+title: 경력 0년인데 영주권 지원? RCIP 경력 면제 (숏폼 B)
+channels: youtube, instagram, threads, blog, clip, homepage
+visibility: public
+publish_order: 3
+linked_to: 2026-10-13-selkirk-rcip
+files: video.mp4 (1080x1920, 0:38, 5MB), thumbnail.jpg (1080x1920 cover), upload-text.txt
+source: aacanada/AI- branch claude/blissful-fermi-svt239, videos/selkirk-shorts/short-b-zero/
+notes: 2026-10-13-selkirk-rcip 의 published.md 에 본편 유튜브 주소가 생긴 뒤에 게시하고, 유튜브 쇼츠의 '관련 동영상'에 그 본편을 연결해 주세요. 본편이 아직 게시되지 않았으면 이번 확인은 건너뛰고 다음 확인 때 게시합니다. 음성은 본편 원장님 녹음에서 잘라 쓴 것입니다.

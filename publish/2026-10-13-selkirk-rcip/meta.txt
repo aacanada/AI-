@@ -1,0 +1,9 @@
+type: longform
+title: 시골 아닙니다, 휴양도시에서 영주권까지 | 셀커크 컬리지 × RCIP 완전정리 (본편)
+channels: youtube
+visibility: public
+publish_order: 1
+linked_to: (none)
+files: video.mp4 = 2 parts (video.mp4.part-00, video.mp4.part-01; 합친 뒤 1920x1080, 13:45, 104MB, video.mp4.sha256 로 확인), thumbnail.jpg (1280x720), upload-text.txt
+source: aacanada/AI- branch claude/blissful-fermi-svt239, videos/selkirk-rcip-longform/
+notes: 원장님 직접 녹음 내레이션. RCIP 수치(62%, 979명, 90%, 200명, 93점, 25개 직군)는 2026년 기준이며 설명란에 변동 가능 문구를 넣었습니다.
