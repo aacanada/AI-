@@ -18,6 +18,7 @@ function grow(el,at,d,origin){el=E(el);
 function growY(el,at,d){el=E(el);
   tl.fromTo(el,{scaleY:0,transformOrigin:'50% 100%'},{scaleY:1,duration:d||0.8,ease:'power3.out'},at);}
 function draw(path,at,d){path=E(path);const L=path.getTotalLength();path.style.strokeDasharray=L+' '+L;
+  tl.fromTo(path,{opacity:0},{opacity:1,duration:0.05},at);
   tl.fromTo(path,{strokeDashoffset:L},{strokeDashoffset:0,duration:d||1,ease:'power2.inOut'},at);}
 function outt(el,at,o){o=o||{};el=E(el);tl.to(el,{opacity:0,y:o.y||0,x:o.x||0,duration:o.d||0.4,ease:'power2.in'},at);}
 function ambient(D){
@@ -25,3 +26,10 @@ function ambient(D){
   qa('.glow').forEach((g,i)=>{const c=4+i;const n=Math.max(0,Math.floor(D/c)-1);
     tl.fromTo(g,{scale:0.92},{scale:1.08,duration:c/2,ease:'sine.inOut',yoyo:true,repeat:n},0);});
 }
+// 원형 게이지: <svg class="gauge"><circle class="trk"/><circle class="val"/></svg>
+function gauge(svgSel,pct,at,d){const c=E(svgSel).querySelector('.val');const L=2*Math.PI*parseFloat(c.getAttribute('r'));
+  c.style.strokeDasharray=L+' '+L;tl.fromTo(c,{strokeDashoffset:L},{strokeDashoffset:L*(1-pct/100),duration:d||1.2,ease:'power2.out'},at);}
+// 점 격자: 컨테이너 안에 n개의 점을 만들고 앞의 k개를 강조색으로 채운다
+function dots(sel,n,k,cols,size,gap,on,off){const el=E(sel);let h='';for(let i=0;i<n;i++){const x=(i%cols)*(size+gap),y=Math.floor(i/cols)*(size+gap);
+  h+=`<i style="position:absolute;left:${x}px;top:${y}px;width:${size}px;height:${size}px;border-radius:50%;background:${i<k?on:off}"></i>`;}el.innerHTML=h;return Array.from(el.children);}
+function dotsIn(list,at,span){tl.fromTo(list,{scale:0},{scale:1,duration:0.25,ease:'back.out(2)',stagger:{each:(span||1)/list.length}},at);}

@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+@font-face{font-family:Pretendard;font-weight:500;src:url(assets/fonts/Pretendard-Medium.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:700;src:url(assets/fonts/Pretendard-Bold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:800;src:url(assets/fonts/Pretendard-ExtraBold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:900;src:url(assets/fonts/Pretendard-Black.woff2) format("woff2")}
+@font-face{font-family:Yellowtail;font-weight:400;src:url(assets/fonts/Yellowtail-Regular.ttf) format("truetype")}
+#ch10-reality{position:absolute;inset:0;overflow:hidden;background:#FAF6EF;color:#16324F;font-family:Pretendard,sans-serif;word-break:keep-all}
+#ch10-reality *{box-sizing:border-box}
+#ch10-reality .grain{position:absolute;inset:0;opacity:.5;background-image:radial-gradient(rgba(22,50,79,.07) 1.2px,transparent 1.3px);background-size:9px 9px}
+#ch10-reality .glow{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(46,125,91,.20) 0%,rgba(46,125,91,0) 70%)}
+#ch10-reality .glow.warm{background:radial-gradient(circle,rgba(232,87,43,.14) 0%,rgba(232,87,43,0) 70%)}
+#ch10-reality .ghost{position:absolute;font-weight:900;color:rgba(22,50,79,.07);font-size:300px;letter-spacing:-.04em;white-space:nowrap;line-height:1}
+#ch10-reality .stage{position:absolute;inset:0}
+#ch10-reality .beat{position:absolute;inset:0}
+#ch10-reality .abs{position:absolute}
+#ch10-reality .h{font-weight:900;letter-spacing:-.03em;line-height:1.12}
+#ch10-reality .hd{font-weight:800;letter-spacing:-.02em;line-height:1.22}
+#ch10-reality .b{font-weight:500;line-height:1.5}
+#ch10-reality .l{font-weight:700;letter-spacing:.08em}
+#ch10-reality .script{font-family:Yellowtail,cursive;line-height:1.05;white-space:nowrap}
+#ch10-reality .green{color:#2E7D5B}
+#ch10-reality .orange{color:#E8572B}
+#ch10-reality .sticker{position:absolute;background:#E8572B;color:#fff;font-weight:800;font-size:24px;letter-spacing:.12em;padding:10px 24px;border-radius:99px;white-space:nowrap}
+#ch10-reality .chip{position:absolute;background:#FAF6EF;border:3px solid #16324F;border-radius:99px;padding:10px 26px;font-weight:700;font-size:30px;white-space:nowrap;color:#16324F}
+#ch10-reality .chip.gr{border-color:#2E7D5B;color:#1F5E44}
+#ch10-reality .chip.solid{background:#16324F;color:#FAF6EF}
+#ch10-reality .chip.sand{background:#F3C969;border-color:#F3C969}
+#ch10-reality .pol{position:absolute;background:#fff;padding:16px 16px 60px;box-shadow:0 20px 44px rgba(22,50,79,.26)}
+#ch10-reality .pol .ph{position:relative;width:100%;height:100%;overflow:hidden}
+#ch10-reality .pol img{display:block;width:100%;height:100%;object-fit:cover}
+#ch10-reality .pol .cap{position:absolute;left:0;right:0;bottom:10px;text-align:center;font-family:Yellowtail,cursive;font-size:34px;color:#16324F}
+#ch10-reality .card{position:absolute;background:#fff;border:3px solid rgba(22,50,79,.14);border-radius:24px;box-shadow:0 12px 30px rgba(22,50,79,.13)}
+#ch10-reality .panel{position:absolute;background:#16324F;border-radius:28px;color:#FAF6EF}
+#ch10-reality .hl{position:relative;display:inline-block;isolation:isolate}
+#ch10-reality .hl .bar{position:absolute;left:-6px;right:-6px;bottom:6px;height:26px;background:#F3C969;transform-origin:0 50%}
+#ch10-reality .hl .tx{position:relative}
+#ch10-reality .ico{position:absolute;border-radius:50%;background:#fff;border:4px solid #16324F;display:flex;align-items:center;justify-content:center}
+#ch10-reality .ico svg{width:58%;height:58%}
+#ch10-reality .tile{position:absolute;border-radius:22px;overflow:hidden;box-shadow:0 14px 30px rgba(22,50,79,.22)}
+#ch10-reality .tile img{width:100%;height:100%;object-fit:cover;display:block}
+#ch10-reality .tile .tl{position:absolute;left:16px;bottom:14px;background:rgba(22,50,79,.88);color:#FAF6EF;font-weight:800;font-size:26px;padding:6px 16px;border-radius:99px}
+
+#ch10-reality .in{position:absolute;inset:0}
+
+#ch10-reality .cb{position:absolute;left:120px;display:flex;align-items:center;gap:26px;font-weight:900;font-size:50px;letter-spacing:-.02em}
+#ch10-reality .cb .bx{width:66px;height:66px;border-radius:16px;border:5px solid #16324F;flex:none;position:relative}
+#ch10-reality .scale{position:absolute;left:160px;top:470px;width:1600px;height:40px;border-radius:20px;background:rgba(22,50,79,.10)}
+#ch10-reality .fill{position:absolute;left:0;top:0;height:40px;border-radius:20px;background:#2E7D5B;transform-origin:0 50%}
+#ch10-reality .mk{position:absolute;top:-30px;width:6px;height:100px;border-radius:3px}
+#ch10-reality .mkl{position:absolute;width:300px;margin-left:-150px;text-align:center;font-weight:900}
+#ch10-reality .cal{position:absolute;top:340px;width:520px;height:380px;border-radius:30px;padding:40px;background:#fff;border:3px solid rgba(22,50,79,.14);box-shadow:0 12px 30px rgba(22,50,79,.13)}
+#ch10-reality .cal .y{font-weight:900;font-size:96px;letter-spacing:-.03em;line-height:1}
+#ch10-reality .cal .s{margin-top:18px;font-weight:800;font-size:36px;line-height:1.3}
+
+      </style>
+      <div id="ch10-reality" data-composition-id="ch10-reality" data-width="1920" data-height="1080" data-duration="75.05">
+<div class="grain"></div>
+<div data-layout-ignore class="glow" style="left:1150px;top:-350px;width:1100px;height:1100px"></div>
+<div data-layout-ignore class="glow warm" style="left:-350px;top:560px;width:900px;height:900px"></div>
+<svg class="ghost" aria-hidden="true" data-layout-ignore style="left:820px;top:640px;width:2600px;height:330px;overflow:visible"><text x="0" y="270" font-family="Pretendard" font-weight="900" font-size="300" fill="rgba(22,50,79,.07)">REALITY</text></svg>
+
+<section id="x-a" class="beat clip" data-start="0.0" data-duration="5.62"><div class="in">
+  <div class="sticker" id="x-a-st" style="left:120px;top:150px">솔직하게</div>
+  <div class="abs h" id="x-a-t" style="left:110px;top:220px;font-size:120px">꼭 알아야 할 <span class="orange">현실 체크</span></div>
+  <div class="cb" id="x-a-1" style="top:420px"><span class="bx"></span>경쟁이 세졌다</div>
+  <div class="cb" id="x-a-2" style="top:510px"><span class="bx"></span>2027년 기준 변경</div>
+  <div class="cb" id="x-a-3" style="top:600px"><span class="bx"></span>중단 없는 졸업</div>
+  <div class="cb" id="x-a-4" style="top:690px"><span class="bx"></span>지정 고용주</div>
+</div></section>
+
+<section id="x-b" class="beat clip" data-start="5.62" data-duration="21.38"><div class="in">
+  <div class="sticker" id="x-b-st" style="left:120px;top:140px">체크 1</div>
+  <div class="abs h" id="x-b-t" style="left:120px;top:210px;font-size:76px">2026년 9월 선발 최소 점수</div>
+  <div class="scale" id="x-b-sc"><div class="fill" id="x-b-fill" style="width:1188px"></div>
+    <div class="mk" id="x-b-m50" style="left:637px;background:#4A5F78"></div>
+    <div class="mk" id="x-b-m93" style="left:1187px;background:#E8572B"></div>
+  </div>
+  <div class="mkl" id="x-b-l0" style="left:160px;top:560px;font-size:30px;color:#4A5F78">0</div>
+  <div class="mkl" id="x-b-l50" style="left:800px;top:560px;font-size:30px;color:#4A5F78">지원 가능 50점</div>
+  <div class="mkl" id="x-b-l93" style="left:1350px;top:340px;font-size:72px;color:#E8572B">93점</div>
+  <div class="mkl" id="x-b-l125" style="left:1760px;top:560px;font-size:30px;color:#4A5F78">125</div>
+  <div class="chip sand" id="x-b-c1" style="left:120px;top:650px;font-size:34px">RNIP 때보다 확실히 치열</div>
+  <div class="chip gr" id="x-b-c2" style="left:620px;top:650px;font-size:34px">→ 가산점 붙는 전공 선택이 더 중요</div>
+</div></section>
+
+<section id="x-c" class="beat clip" data-start="27.0" data-duration="25.86"><div class="in">
+  <div class="sticker" id="x-c-st" style="left:120px;top:140px">체크 2</div>
+  <div class="abs h" id="x-c-t" style="left:120px;top:200px;font-size:72px">2027년에는 기준이 바뀝니다</div>
+  <div class="cal" id="x-c-1" style="left:120px"><div class="l" style="font-size:24px;color:#4A5F78">2026년 9월</div><div class="y">마지막</div><div class="s">기존 신청자 풀 정리</div></div>
+  <svg class="abs" viewBox="0 0 160 80" style="left:660px;top:490px;width:160px;height:80px"><path id="x-c-ar" d="M8 40 H140 M110 12 L146 40 L110 68" fill="none" stroke="#E8572B" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <div class="cal" id="x-c-2" style="left:840px;background:#16324F;border-color:#16324F;color:#FAF6EF"><div class="l" style="font-size:24px;color:#F3C969">2027년</div><div class="y">발표 전</div><div class="s">일정 · 직군 미정</div></div>
+  <div class="card" id="x-c-3" style="left:1400px;top:340px;width:400px;height:380px;padding:40px;border-color:#2E7D5B">
+    <div class="l" style="font-size:24px;color:#2E7D5B">그래서 안전한 선택</div>
+    <div class="h" style="margin-top:14px;font-size:62px;line-height:1.15">보건 ·<br/>보육 전공</div>
+    <div class="b" style="margin-top:12px;font-size:30px;color:#4A5F78">리스트가 바뀌어도 수요는 꾸준</div></div>
+</div></section>
+
+<section id="x-d" class="beat clip" data-start="52.86" data-duration="9.57"><div class="in">
+  <div class="sticker" id="x-d-st" style="left:120px;top:140px">체크 3</div>
+  <div class="abs h" id="x-d-t" style="left:120px;top:210px;font-size:96px"><span class="green">중단 없이</span> 졸업하는 것이 전제</div>
+  <div class="abs" id="x-d-track" style="left:120px;top:460px;width:1680px;height:30px;border-radius:15px;background:rgba(22,50,79,.10)"><div id="x-d-fill" style="width:100%;height:100%;border-radius:15px;background:#2E7D5B;transform-origin:0 50%"></div></div>
+  <div class="abs hd" id="x-d-a" style="left:120px;top:520px;font-size:36px">입학</div>
+  <div class="abs hd" id="x-d-b" style="left:1560px;top:520px;font-size:36px">졸업 · 지역 취업</div>
+  <div class="abs b" id="x-d-n" style="left:120px;top:640px;font-size:36px;color:#4A5F78">AA Canada 성공 사례는 모두 학업을 끝까지 마치고 지역에서 취업한 분들입니다</div>
+</div></section>
+
+<section id="x-e" class="beat clip" data-start="62.43" data-duration="12.62"><div class="in">
+  <div class="sticker" id="x-e-st" style="left:120px;top:140px">체크 4</div>
+  <div class="abs h" id="x-e-t" style="left:120px;top:210px;font-size:96px">고용주는 <span class="hl"><span class="bar" id="x-e-hl"></span><span class="tx">지정 고용주</span></span>여야 합니다</div>
+  <div class="chip solid" id="x-e-1" style="left:120px;top:450px;font-size:44px">실습</div>
+  <div class="chip solid" id="x-e-2" style="left:310px;top:450px;font-size:44px">코업</div>
+  <div class="abs hd" id="x-e-3" style="left:520px;top:450px;font-size:54px">기간에 지정 고용주와 <span class="green">관계를 쌓는 것</span>이 중요</div>
+</div></section>
+      </div>
+      <script>
+        (function () {
+const root=document.getElementById("ch10-reality");
+const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
+const tl=gsap.timeline({paused:true});
+function E(el){return typeof el==='string'?q(el):el;}
+function inn(el,at,o){o=o||{};el=E(el);
+  tl.fromTo(el,{opacity:0,x:o.x||0,y:(o.y===undefined?30:o.y),scale:(o.s===undefined?1:o.s),rotation:(o.r0===undefined?(o.r||0):o.r0)},
+  {opacity:1,x:0,y:0,scale:1,rotation:o.r||0,duration:o.d||0.6,ease:o.e||'power3.out'},at);}
+function whip(el,at,dy){el=E(el);tl.set(el,{opacity:0},0);tl.set(el,{opacity:1,y:dy||70},at);tl.to(el,{y:0,duration:0.45,ease:'power4.out'},at);}
+function pop(el,at,o){o=o||{};el=E(el);tl.fromTo(el,{opacity:0,scale:0},{opacity:1,scale:1,duration:o.d||0.5,ease:o.e||'back.out(2)'},at);}
+function pol(el,at,rot){el=E(el);
+  tl.fromTo(el,{opacity:0,y:-180,rotation:rot*2.4,scale:1.06},{opacity:1,y:0,rotation:rot,scale:1,duration:0.85,ease:'power3.out'},at);}
+function kb(el,at,dur,a,b){el=E(el);a=a||{};b=b||{};
+  tl.fromTo(el,{scale:a.s||1,xPercent:a.x||0,yPercent:a.y||0},{scale:b.s||1.07,xPercent:b.x||0,yPercent:b.y||0,duration:dur,ease:'none'},at);}
+function count(el,from,to,at,dur,fmt){el=E(el);const st={v:from};el.textContent=fmt(from);
+  tl.fromTo(st,{v:from},{v:to,duration:dur,ease:'power2.out',immediateRender:false,onUpdate:()=>{el.textContent=fmt(st.v);}},at);}
+function grow(el,at,d,origin){el=E(el);
+  tl.fromTo(el,{scaleX:0,transformOrigin:origin||'0% 50%'},{scaleX:1,duration:d||0.8,ease:'power3.inOut'},at);}
+function growY(el,at,d){el=E(el);
+  tl.fromTo(el,{scaleY:0,transformOrigin:'50% 100%'},{scaleY:1,duration:d||0.8,ease:'power3.out'},at);}
+function draw(path,at,d){path=E(path);const L=path.getTotalLength();path.style.strokeDasharray=L+' '+L;
+  tl.fromTo(path,{opacity:0},{opacity:1,duration:0.05},at);
+  tl.fromTo(path,{strokeDashoffset:L},{strokeDashoffset:0,duration:d||1,ease:'power2.inOut'},at);}
+function outt(el,at,o){o=o||{};el=E(el);tl.to(el,{opacity:0,y:o.y||0,x:o.x||0,duration:o.d||0.4,ease:'power2.in'},at);}
+function ambient(D){
+  qa('.ghost').forEach((g,i)=>tl.fromTo(g,{x:0},{x:(i%2?160:-160),duration:D,ease:'none'},0));
+  qa('.glow').forEach((g,i)=>{const c=4+i;const n=Math.max(0,Math.floor(D/c)-1);
+    tl.fromTo(g,{scale:0.92},{scale:1.08,duration:c/2,ease:'sine.inOut',yoyo:true,repeat:n},0);});
+}
+// 원형 게이지: <svg class="gauge"><circle class="trk"/><circle class="val"/></svg>
+function gauge(svgSel,pct,at,d){const c=E(svgSel).querySelector('.val');const L=2*Math.PI*parseFloat(c.getAttribute('r'));
+  c.style.strokeDasharray=L+' '+L;tl.fromTo(c,{strokeDashoffset:L},{strokeDashoffset:L*(1-pct/100),duration:d||1.2,ease:'power2.out'},at);}
+// 점 격자: 컨테이너 안에 n개의 점을 만들고 앞의 k개를 강조색으로 채운다
+function dots(sel,n,k,cols,size,gap,on,off){const el=E(sel);let h='';for(let i=0;i<n;i++){const x=(i%cols)*(size+gap),y=Math.floor(i/cols)*(size+gap);
+  h+=`<i style="position:absolute;left:${x}px;top:${y}px;width:${size}px;height:${size}px;border-radius:50%;background:${i<k?on:off}"></i>`;}el.innerHTML=h;return Array.from(el.children);}
+function dotsIn(list,at,span){tl.fromTo(list,{scale:0},{scale:1,duration:0.25,ease:'back.out(2)',stagger:{each:(span||1)/list.length}},at);}
+
+const D = 75.05;
+const R = [0.9, 5.92, 27.3, 53.16, 62.73];
+
+ambient(D);
+function st(sel,at){inn(sel,at,{s:1.5,y:0,r0:-14,r:-4,d:0.4,e:'back.out(2.4)'});}
+st('#x-a-st',0.2); whip('#x-a-t',0.4,100);
+['1','2','3','4'].forEach((n,i)=>inn('#x-a-'+n,1.6+i*0.35,{x:-30,y:0}));
+const B=R[1]-0.3; st('#x-b-st',B+0.2); whip('#x-b-t',B+2.0,70);
+tl.fromTo('#x-b-sc',{opacity:0},{opacity:1,duration:0.4},B+2.4);
+inn('#x-b-l0',B+2.6,{y:10}); inn('#x-b-l125',B+2.6,{y:10});
+inn('#x-b-m50',B+3.2,{s:0,y:0}); inn('#x-b-l50',B+3.3,{y:10});
+grow('#x-b-fill',B+4.0,2.0);
+inn('#x-b-m93',B+5.8,{s:0,y:0,e:'back.out(2)'}); inn('#x-b-l93',B+6.0,{s:1.6,y:0,d:0.45,e:'back.out(2)'});
+pop('#x-b-c1',R[1]+12.0); pop('#x-b-c2',R[1]+16.0);
+const C=R[2]-0.3; st('#x-c-st',C+0.2); whip('#x-c-t',C+0.4,70);
+inn('#x-c-1',R[2]+5.0,{y:50,d:0.6,e:'back.out(1.4)'});
+draw('#x-c-ar',R[2]+9.0,0.5);
+inn('#x-c-2',R[2]+9.4,{y:50,d:0.6,e:'back.out(1.4)'});
+inn('#x-c-3',R[2]+17.0,{x:60,y:0,d:0.7,e:'back.out(1.4)'});
+const Dd=R[3]-0.3; st('#x-d-st',Dd+0.2); whip('#x-d-t',Dd+0.4,80);
+tl.fromTo('#x-d-track',{opacity:0},{opacity:1,duration:0.3},Dd+1.0); inn('#x-d-a',Dd+1.0,{y:10});
+grow('#x-d-fill',Dd+1.2,2.6); inn('#x-d-b',Dd+3.6,{y:10});
+inn('#x-d-n',R[3]+4.8,{y:16});
+const Ee=R[4]-0.3; st('#x-e-st',Ee+0.2); whip('#x-e-t',Ee+0.4,80); grow('#x-e-hl',Ee+1.6,0.6);
+pop('#x-e-1',R[4]+4.0); pop('#x-e-2',R[4]+4.5); inn('#x-e-3',R[4]+5.2,{x:-20,y:0});
+
+tl.fromTo(q('#x-a .in'),{opacity:1},{opacity:0,duration:0.28,ease:'power1.in',immediateRender:false},5.32);
+tl.fromTo(q('#x-b .in'),{opacity:1},{opacity:0,duration:0.28,ease:'power1.in',immediateRender:false},26.7);
+tl.fromTo(q('#x-c .in'),{opacity:1},{opacity:0,duration:0.28,ease:'power1.in',immediateRender:false},52.56);
+tl.fromTo(q('#x-d .in'),{opacity:1},{opacity:0,duration:0.28,ease:'power1.in',immediateRender:false},62.13);
+window.__timelines["ch10-reality"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

@@ -1,0 +1,134 @@
+<!--ROOT:ch08-majors-->
+<style>
+#ROOT .big{position:absolute;font-weight:900;letter-spacing:-.04em;line-height:1}
+#ROOT .sec{position:absolute;top:300px;width:800px;height:340px;border-radius:30px;padding:44px;background:#fff;border:3px solid rgba(22,50,79,.14);box-shadow:0 12px 30px rgba(22,50,79,.13)}
+#ROOT .sec .k{font-weight:700;font-size:26px;letter-spacing:.08em;color:#4A5F78}
+#ROOT .sec .v{margin-top:14px;font-weight:900;font-size:64px;letter-spacing:-.03em}
+#ROOT .pts{position:absolute;right:40px;top:40px;width:170px;height:170px;border-radius:50%;background:#2E7D5B;color:#FAF6EF;display:flex;flex-direction:column;align-items:center;justify-content:center}
+#ROOT .pts b{font-weight:900;font-size:72px;line-height:1}
+#ROOT .pts span{font-weight:700;font-size:24px}
+#ROOT .job{position:absolute;top:290px;width:800px;height:400px;border-radius:30px;padding:44px;background:#16324F;color:#FAF6EF}
+#ROOT .job .noc{font-weight:700;font-size:26px;letter-spacing:.08em;color:#F3C969}
+#ROOT .job .v{margin-top:14px;font-weight:900;font-size:84px;letter-spacing:-.03em}
+#ROOT .job .chip{position:absolute}
+#ROOT .rank{position:absolute;left:120px;top:150px;width:150px;height:150px;border-radius:50%;background:#E8572B;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center}
+#ROOT .rank b{font-weight:900;font-size:76px;line-height:1}
+#ROOT .rank span{font-weight:800;font-size:22px;letter-spacing:.1em}
+#ROOT .prog{position:absolute;left:310px;top:150px;width:1000px}
+#ROOT .prog .en{font-weight:900;font-size:66px;letter-spacing:-.03em;line-height:1.1}
+#ROOT .prog .ko{margin-top:12px;font-weight:800;font-size:40px;color:#1F5E44}
+#ROOT .facts{position:absolute;left:120px;top:400px;width:1100px}
+#ROOT .fact{display:flex;align-items:center;gap:22px;margin-bottom:26px;font-weight:800;font-size:40px}
+#ROOT .fact i{width:20px;height:20px;border-radius:50%;flex:none;background:#2E7D5B}
+#ROOT .fact.warn i{background:#E8572B}
+#ROOT .pod{position:absolute;bottom:300px;width:300px;border-radius:20px 20px 0 0;display:flex;flex-direction:column;align-items:center;padding-top:22px;color:#FAF6EF;transform-origin:50% 100%}
+#ROOT .pod b{font-weight:900;font-size:64px;line-height:1}
+#ROOT .pod span{margin-top:10px;font-weight:800;font-size:30px;text-align:center;line-height:1.25}
+</style>
+<div class="grain"></div>
+<div data-layout-ignore class="glow" style="left:1150px;top:-350px;width:1100px;height:1100px"></div>
+<div data-layout-ignore class="glow warm" style="left:-350px;top:560px;width:900px;height:900px"></div>
+<svg class="ghost" aria-hidden="true" data-layout-ignore style="left:820px;top:640px;width:2600px;height:330px;overflow:visible"><text x="0" y="270" font-family="Pretendard" font-weight="900" font-size="300" fill="rgba(22,50,79,.07)">MAJORS</text></svg>
+
+<section id="j-a" class="beat" data-beat="0-1">
+  <div class="sticker" id="j-a-st" style="left:120px;top:260px">2026 웨스트 쿠트니 선발 기준</div>
+  <div class="abs h" id="j-a-t" style="left:110px;top:340px;font-size:140px">어떤 전공을<br/><span class="green">골라야 할까?</span></div>
+</section>
+
+<section id="j-b" class="beat" data-beat="1-2">
+  <div class="abs hd" id="j-b-k" style="left:120px;top:200px;font-size:48px;color:#4A5F78">2026년 웨스트 쿠트니가 정한 우선순위</div>
+  <div class="big" id="j-b-n1" style="left:110px;top:300px;font-size:280px">6</div><div class="abs h" id="j-b-l1" style="left:330px;top:440px;font-size:70px">우선 산업</div>
+  <div class="big" id="j-b-n2" style="left:860px;top:300px;font-size:280px;color:#2E7D5B">25</div><div class="abs h" id="j-b-l2" style="left:1240px;top:440px;font-size:70px">우선 직군</div>
+</section>
+
+<section id="j-c" class="beat" data-beat="2-3">
+  <div class="abs h" id="j-c-t" style="left:120px;top:140px;font-size:72px">점수표에서 <span class="green">가장 높은 20점</span></div>
+  <div class="sec" id="j-c-1" style="left:120px"><div class="k">SECTOR</div><div class="v">보건</div><div class="pts"><b>20</b><span>점</span></div></div>
+  <div class="sec" id="j-c-2" style="left:1000px"><div class="k">SECTOR</div><div class="v">교육 · 사회서비스</div><div class="pts"><b>20</b><span>점</span></div></div>
+</section>
+
+<section id="j-d" class="beat" data-beat="3-5">
+  <div class="abs h" id="j-d-t" style="left:120px;top:140px;font-size:72px">특히 이 두 직군은</div>
+  <div class="job" id="j-d-1" style="left:120px"><div class="noc">NOC 33102</div><div class="v">요양보호사</div><div class="b" style="margin-top:6px;font-size:30px;opacity:.8">Health Care Aides</div>
+    <div class="chip sand" id="j-d-1a" style="left:44px;top:270px">+5 가산점</div><div class="chip" id="j-d-1b" style="left:290px;top:270px">고용주 인원 제한 없음</div></div>
+  <div class="job" id="j-d-2" style="left:1000px"><div class="noc">NOC 42202</div><div class="v">보육교사</div><div class="b" style="margin-top:6px;font-size:30px;opacity:.8">Early Childhood Educators</div>
+    <div class="chip sand" id="j-d-2a" style="left:44px;top:270px">+5 가산점</div><div class="chip" id="j-d-2b" style="left:290px;top:270px">고용주 인원 제한 없음</div></div>
+</section>
+
+<section id="j-e" class="beat" data-beat="5-7">
+  <div class="rank" id="j-e-r"><span>RANK</span><b>1</b></div>
+  <div class="prog" id="j-e-p"><div class="en">Health Care Assistant Diploma</div><div class="ko">헬스케어 어시스턴트 디플로마</div></div>
+  <div class="facts" id="j-e-f">
+    <div class="fact" id="j-e-f1"><i></i>캐슬가 캠퍼스 · 2년 과정</div>
+    <div class="fact" id="j-e-f2"><i></i>요양보호사 직군으로 바로 연결</div>
+    <div class="fact warn" id="j-e-f3"><i></i>입학 영어: IELTS 전 영역 6.0 (가장 높음)</div>
+  </div>
+  <div class="pol" id="j-e-pol" style="left:1340px;top:330px;width:460px;height:440px"><div class="ph"><img id="j-e-pi" src="assets/img/nursing-student.jpg" alt=""/></div><div class="cap">Health Care</div></div>
+</section>
+
+<section id="j-f" class="beat" data-beat="7-9">
+  <div class="rank" id="j-f-r"><span>RANK</span><b>2</b></div>
+  <div class="prog" id="j-f-p"><div class="en">Early Learning and Childcare Diploma</div><div class="ko">보육교사 디플로마</div></div>
+  <div class="facts" id="j-f-f">
+    <div class="fact" id="j-f-f1"><i></i>캐슬가 캠퍼스 · 2년 과정</div>
+    <div class="fact" id="j-f-f2"><i></i>+5 가산점 · 인원 제한 없음 동일</div>
+    <div class="fact" id="j-f-f3"><i></i>자녀와 함께 오는 부모님께 추천</div>
+  </div>
+  <div class="pol" id="j-f-pol" style="left:1340px;top:330px;width:460px;height:440px"><div class="ph"><img id="j-f-pi" src="assets/img/ece-outdoor-class.jpg" alt=""/></div><div class="cap">Early Learning</div></div>
+</section>
+
+<section id="j-g" class="beat" data-beat="9-12">
+  <div class="rank" id="j-g-r" style="background:#16324F"><span>RANK</span><b>3</b></div>
+  <div class="prog" id="j-g-p"><div class="en">Culinary Arts Certificate</div><div class="ko">요리 과정 · 넬슨 캠퍼스</div></div>
+  <div class="facts" id="j-g-f">
+    <div class="fact" id="j-g-f1"><i></i>휴양도시라 레스토랑 · 리조트 수요 꾸준</div>
+    <div class="fact" id="j-g-f2"><i></i>요리사(NOC 63200)도 우선 직군</div>
+    <div class="fact warn" id="j-g-f3"><i></i>가산점 없음 · 14개월이라 경력 면제 안 될 수 있음</div>
+    <div class="fact warn" id="j-g-f4"><i></i>→ 졸업 후 1년 경력 쌓고 지원</div>
+  </div>
+  <div class="pol" id="j-g-pol" style="left:1340px;top:330px;width:460px;height:440px"><div class="ph"><img id="j-g-pi" src="assets/img/culinary-cook.jpg" alt=""/></div><div class="cap">Culinary Arts</div></div>
+</section>
+
+<section id="j-h" class="beat" data-beat="12-13">
+  <div class="abs hd" id="j-h-k" style="left:120px;top:220px;font-size:48px;color:#4A5F78">이 밖에도 있지만</div>
+  <div class="chip" id="j-h-1" style="left:120px;top:320px;font-size:42px">사회복지 계열 디플로마</div>
+  <div class="chip" id="j-h-2" style="left:640px;top:320px;font-size:42px">교육보조 과정</div>
+  <div class="abs h" id="j-h-t" style="left:120px;top:460px;font-size:80px">우선 리스트에 있는지 <span class="orange">상담 때 꼭 확인</span></div>
+</section>
+
+<section id="j-i" class="beat" data-beat="13-end">
+  <div class="abs h" id="j-i-t" style="left:120px;top:110px;font-size:72px">2026년 웨스트 쿠트니가 <span class="green">가장 원하는 사람</span></div>
+  <div class="pod" id="j-i-1" style="left:340px;height:420px;background:#2E7D5B"><b>1</b><span>요양보호사<br/>HCA 디플로마</span></div>
+  <div class="pod" id="j-i-2" style="left:810px;height:360px;background:#2E7D5B"><b>2</b><span>보육교사<br/>ECE 디플로마</span></div>
+  <div class="pod" id="j-i-3" style="left:1280px;height:260px;background:#16324F"><b>3</b><span>요리사<br/>Culinary</span></div>
+  <div class="abs" id="j-i-base" style="left:300px;top:780px;width:1320px;height:6px;background:#16324F;border-radius:3px"></div>
+  <div class="sticker" id="j-i-st" style="left:1300px;top:250px">2년제 공립 디플로마로 직결</div>
+</section>
+
+<script>
+ambient(D);
+function st(sel,at){inn(sel,at,{s:1.5,y:0,r0:-14,r:-4,d:0.4,e:'back.out(2.4)'});}
+st('#j-a-st',0.2); whip('#j-a-t',0.5,110);
+const B=R[1]-0.3; inn('#j-b-k',B+0.2,{y:16});
+inn('#j-b-n1',B+1.2,{s:0.5,y:0,e:'back.out(1.8)'}); inn('#j-b-l1',B+1.5,{x:-20,y:0});
+inn('#j-b-n2',B+2.6,{s:0.5,y:0,e:'back.out(1.8)'}); inn('#j-b-l2',B+2.9,{x:-20,y:0});
+const C=R[2]-0.3; whip('#j-c-t',C+0.2,70);
+inn('#j-c-1',C+0.8,{y:60,d:0.7,e:'back.out(1.4)'}); inn('#j-c-2',C+2.0,{y:60,d:0.7,e:'back.out(1.4)'});
+pop('#j-c-1 .pts',C+4.6); pop('#j-c-2 .pts',C+5.0);
+const Dd=R[3]-0.3; whip('#j-d-t',Dd+0.2,70);
+inn('#j-d-1',R[4]-0.2,{x:-80,y:0,d:0.7}); inn('#j-d-2',R[4]+1.2,{x:80,y:0,d:0.7});
+pop('#j-d-1a',R[4]+2.0); pop('#j-d-2a',R[4]+2.2); pop('#j-d-1b',R[4]+2.4); pop('#j-d-2b',R[4]+2.6);
+const Ee=R[5]-0.3; inn('#j-e-r',Ee+0.2,{s:0.3,y:0,r0:-30,r:0,d:0.6,e:'back.out(2)'}); whip('#j-e-p',Ee+0.6,70);
+inn('#j-e-f1',R[6]+0.1,{x:-30,y:0}); inn('#j-e-f2',R[6]+2.4,{x:-30,y:0}); inn('#j-e-f3',R[6]+5.4,{x:-30,y:0});
+pol('#j-e-pol',Ee+1.2,4); kb('#j-e-pi',Ee+1.2,R[7]-R[5]);
+const F=R[7]-0.3; inn('#j-f-r',F+0.2,{s:0.3,y:0,r0:-30,r:0,d:0.6,e:'back.out(2)'}); whip('#j-f-p',F+0.6,70);
+inn('#j-f-f1',R[8]+0.1,{x:-30,y:0}); inn('#j-f-f2',R[8]+2.6,{x:-30,y:0}); inn('#j-f-f3',R[8]+7.0,{x:-30,y:0});
+pol('#j-f-pol',F+1.2,-4); kb('#j-f-pi',F+1.2,R[9]-R[7]);
+const G=R[9]-0.3; inn('#j-g-r',G+0.2,{s:0.3,y:0,r0:-30,r:0,d:0.6,e:'back.out(2)'}); whip('#j-g-p',G+0.6,70);
+inn('#j-g-f1',R[10]+0.1,{x:-30,y:0}); inn('#j-g-f2',R[10]+3.2,{x:-30,y:0}); inn('#j-g-f3',R[11]+0.1,{x:-30,y:0}); inn('#j-g-f4',R[11]+5.4,{x:-30,y:0});
+pol('#j-g-pol',G+1.2,4); kb('#j-g-pi',G+1.2,R[12]-R[9]);
+const H=R[12]-0.3; inn('#j-h-k',H+0.2,{y:16}); pop('#j-h-1',H+0.8); pop('#j-h-2',H+2.6); whip('#j-h-t',H+4.4,80);
+const I=R[13]-0.3; whip('#j-i-t',I+0.2,70); grow('#j-i-base',I+0.6,0.6);
+growY('#j-i-1',R[13]+4.0,0.7); growY('#j-i-2',R[13]+5.0,0.7); growY('#j-i-3',R[13]+6.4,0.7);
+st('#j-i-st',R[14]+2.4);
+</script>

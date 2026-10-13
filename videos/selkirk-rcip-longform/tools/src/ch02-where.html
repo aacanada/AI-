@@ -1,0 +1,71 @@
+<!--ROOT:ch02-where-->
+<style>
+#ROOT .city{position:absolute;width:26px;height:26px;border-radius:50%;background:#16324F}
+#ROOT .cn{position:absolute;font-weight:800;font-size:36px;letter-spacing:-.02em}
+#ROOT .pin{position:absolute;width:54px;height:54px;border-radius:50% 50% 50% 0;background:#E8572B}
+#ROOT .ring{position:absolute;width:140px;height:140px;border-radius:50%;border:6px solid #2E7D5B;opacity:0}
+#ROOT .camp{position:absolute;width:20px;height:20px;border-radius:50%;background:#4A5F78}
+#ROOT .cl{position:absolute;font-weight:700;font-size:28px;color:#4A5F78}
+</style>
+<div class="grain"></div>
+<div data-layout-ignore class="glow" style="left:900px;top:200px;width:1000px;height:1000px"></div>
+<svg class="ghost" aria-hidden="true" data-layout-ignore style="left:-60px;top:690px;width:2600px;height:330px;overflow:visible"><text x="0" y="270" font-family="Pretendard" font-weight="900" font-size="300" fill="rgba(22,50,79,.07)">WEST KOOTENAY</text></svg>
+
+<section id="m" class="beat" data-beat="0-end">
+  <div class="abs hd" id="m-t" style="left:120px;top:96px;font-size:60px">여기가 어디일까요?</div>
+  <svg class="abs" viewBox="0 0 1920 1080" style="left:0;top:0;width:1920px;height:1080px">
+    <!-- BC / 앨버타 경계와 미국 국경 -->
+    <path id="m-coast" d="M150 230 C 210 330, 180 430, 250 520 C 300 590, 280 660, 330 760" fill="none" stroke="rgba(22,50,79,.28)" stroke-width="6" stroke-dasharray="2 14" stroke-linecap="round"/>
+    <path id="m-ab" d="M1440 200 C 1470 330, 1520 430, 1560 520 C 1590 600, 1600 700, 1620 800" fill="none" stroke="rgba(22,50,79,.28)" stroke-width="6" stroke-dasharray="2 14" stroke-linecap="round"/>
+    <path id="m-us" d="M330 800 H1640" fill="none" stroke="#16324F" stroke-width="5" stroke-dasharray="20 14"/>
+    <ellipse id="m-region" cx="1230" cy="690" rx="230" ry="120" fill="#2E7D5B" opacity="0"/>
+    <path id="m-r1" d="M1790 330 C 1640 420, 1420 520, 1240 660" fill="none" stroke="#16324F" stroke-width="6" stroke-linecap="round"/>
+    <path id="m-r2" d="M360 640 C 640 520, 960 560, 1225 670" fill="none" stroke="#16324F" stroke-width="6" stroke-linecap="round"/>
+    <path id="m-r3" d="M900 600 C 1000 640, 1120 660, 1220 680" fill="none" stroke="#E8572B" stroke-width="6" stroke-linecap="round"/>
+  </svg>
+  <div class="abs l" id="m-bc" style="left:640px;top:440px;font-size:30px;color:#4A5F78">BRITISH COLUMBIA</div>
+  <div class="abs l" id="m-abl" style="left:1460px;top:180px;font-size:30px;color:#4A5F78">ALBERTA</div>
+  <div class="abs l" id="m-usl" style="left:760px;top:820px;font-size:28px;color:#4A5F78">미국 국경 · USA</div>
+  <div class="city" id="m-van" style="left:347px;top:627px"></div><div class="cn" id="m-vant" style="left:280px;top:670px">밴쿠버</div>
+  <div class="city" id="m-kel" style="left:887px;top:587px"></div><div class="cn" id="m-kelt" style="left:820px;top:520px">켈로나</div>
+  <div class="city" id="m-cal" style="left:1777px;top:317px"></div><div class="cn" id="m-calt" style="left:1730px;top:360px">캘거리</div>
+  <div class="chip" id="m-c1" style="left:1440px;top:420px">차로 7시간</div>
+  <div class="chip" id="m-c2" style="left:540px;top:500px">차로 8시간</div>
+  <div class="chip orange" id="m-c3" style="left:930px;top:680px;border-color:#E8572B">4시간</div>
+  <div class="abs h" id="m-wk" style="left:1400px;top:700px;font-size:44px">웨스트 쿠트니</div>
+  <div class="panel" id="m-pop" style="left:120px;top:200px;width:360px;height:160px;padding:26px 34px"><div class="l" style="font-size:22px;color:#F3C969">지역 인구</div><div class="h" style="font-size:66px"><span id="m-popn">80,000</span>명</div></div>
+  <!-- 캠퍼스 -->
+  <div class="camp" id="m-k1" style="left:1150px;top:700px"></div><div class="cl" id="m-k1t" style="left:1040px;top:730px">캐슬가</div>
+  <div class="camp" id="m-k2" style="left:1290px;top:650px"></div><div class="cl" id="m-k2t" style="left:1310px;top:610px">넬슨</div>
+  <div class="camp" id="m-k3" style="left:1180px;top:770px"></div><div class="cl" id="m-k3t" style="left:1210px;top:760px">트레일</div>
+  <div class="camp" id="m-k4" style="left:960px;top:760px"></div><div class="cl" id="m-k4t" style="left:880px;top:770px">그랜드포크스</div>
+  <div class="ring" id="m-ring1" style="left:1090px;top:640px"></div>
+  <div class="ring" id="m-ring2" style="left:1230px;top:590px"></div>
+  <div class="card" id="m-two" style="left:540px;top:190px;width:520px;height:250px;padding:34px 40px">
+    <div class="l" style="font-size:22px;color:#2E7D5B">국제학생 캠퍼스</div>
+    <div class="h" style="margin-top:12px;font-size:76px">넬슨 · 캐슬가</div>
+    <div class="b" style="margin-top:6px;font-size:28px;color:#4A5F78">셀커크 컬리지 · 두 도시</div>
+  </div>
+</section>
+
+<script>
+ambient(D);
+inn('#m-t',0.3,{y:20});
+draw('#m-coast',0.8,1.4); draw('#m-ab',1.0,1.4);
+inn('#m-bc',R[1]+0.4,{y:10}); inn('#m-abl',R[1]+0.7,{y:10});
+draw('#m-us',R[1]+3.0,1.2); inn('#m-usl',R[1]+3.8,{y:10});
+tl.fromTo('#m-region',{opacity:0,scale:0.5,transformOrigin:'50% 50%'},{opacity:0.2,scale:1,duration:0.9,ease:'power3.out'},R[1]+6.0);
+whip('#m-wk',R[1]+6.4,50);
+// 거리
+pop('#m-cal',R[2]-0.2); inn('#m-calt',R[2],{y:10}); draw('#m-r1',R[2]+0.2,1.0); pop('#m-c1',R[2]+1.0);
+pop('#m-van',R[2]+1.8); inn('#m-vant',R[2]+1.9,{y:10}); draw('#m-r2',R[2]+2.0,1.0); pop('#m-c2',R[2]+2.8);
+pop('#m-kel',R[2]+3.4); inn('#m-kelt',R[2]+3.5,{y:10}); draw('#m-r3',R[2]+3.6,0.6); pop('#m-c3',R[2]+4.0);
+// 인구
+inn('#m-pop',R[3]-0.2,{x:-40,y:0}); count('#m-popn',0,80000,R[3]+0.2,1.4,v=>Math.round(v).toLocaleString('en-US'));
+// 캠퍼스 4곳 → 두 도시
+['1','2','3','4'].forEach((n,i)=>{pop('#m-k'+n,R[4]+0.6+i*0.3); inn('#m-k'+n+'t',R[4]+0.7+i*0.3,{y:8});});
+tl.fromTo(['#m-k3','#m-k3t','#m-k4','#m-k4t'],{opacity:1},{opacity:0.3,duration:0.4,immediateRender:false},R[4]+4.4);
+tl.fromTo('#m-ring1',{scale:0.4,opacity:0.9},{scale:1.4,opacity:0,duration:1.2,ease:'power2.out',repeat:2},R[4]+4.6);
+tl.fromTo('#m-ring2',{scale:0.4,opacity:0.9},{scale:1.4,opacity:0,duration:1.2,ease:'power2.out',repeat:2},R[4]+4.8);
+inn('#m-two',R[5]-0.2,{x:-60,y:0,d:0.7,e:'back.out(1.4)'});
+</script>

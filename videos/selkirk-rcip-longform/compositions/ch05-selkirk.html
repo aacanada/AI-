@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+@font-face{font-family:Pretendard;font-weight:500;src:url(assets/fonts/Pretendard-Medium.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:700;src:url(assets/fonts/Pretendard-Bold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:800;src:url(assets/fonts/Pretendard-ExtraBold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:900;src:url(assets/fonts/Pretendard-Black.woff2) format("woff2")}
+@font-face{font-family:Yellowtail;font-weight:400;src:url(assets/fonts/Yellowtail-Regular.ttf) format("truetype")}
+#ch05-selkirk{position:absolute;inset:0;overflow:hidden;background:#FAF6EF;color:#16324F;font-family:Pretendard,sans-serif;word-break:keep-all}
+#ch05-selkirk *{box-sizing:border-box}
+#ch05-selkirk .grain{position:absolute;inset:0;opacity:.5;background-image:radial-gradient(rgba(22,50,79,.07) 1.2px,transparent 1.3px);background-size:9px 9px}
+#ch05-selkirk .glow{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(46,125,91,.20) 0%,rgba(46,125,91,0) 70%)}
+#ch05-selkirk .glow.warm{background:radial-gradient(circle,rgba(232,87,43,.14) 0%,rgba(232,87,43,0) 70%)}
+#ch05-selkirk .ghost{position:absolute;font-weight:900;color:rgba(22,50,79,.07);font-size:300px;letter-spacing:-.04em;white-space:nowrap;line-height:1}
+#ch05-selkirk .stage{position:absolute;inset:0}
+#ch05-selkirk .beat{position:absolute;inset:0}
+#ch05-selkirk .abs{position:absolute}
+#ch05-selkirk .h{font-weight:900;letter-spacing:-.03em;line-height:1.12}
+#ch05-selkirk .hd{font-weight:800;letter-spacing:-.02em;line-height:1.22}
+#ch05-selkirk .b{font-weight:500;line-height:1.5}
+#ch05-selkirk .l{font-weight:700;letter-spacing:.08em}
+#ch05-selkirk .script{font-family:Yellowtail,cursive;line-height:1.05;white-space:nowrap}
+#ch05-selkirk .green{color:#2E7D5B}
+#ch05-selkirk .orange{color:#E8572B}
+#ch05-selkirk .sticker{position:absolute;background:#E8572B;color:#fff;font-weight:800;font-size:24px;letter-spacing:.12em;padding:10px 24px;border-radius:99px;white-space:nowrap}
+#ch05-selkirk .chip{position:absolute;background:#FAF6EF;border:3px solid #16324F;border-radius:99px;padding:10px 26px;font-weight:700;font-size:30px;white-space:nowrap;color:#16324F}
+#ch05-selkirk .chip.gr{border-color:#2E7D5B;color:#1F5E44}
+#ch05-selkirk .chip.solid{background:#16324F;color:#FAF6EF}
+#ch05-selkirk .chip.sand{background:#F3C969;border-color:#F3C969}
+#ch05-selkirk .pol{position:absolute;background:#fff;padding:16px 16px 60px;box-shadow:0 20px 44px rgba(22,50,79,.26)}
+#ch05-selkirk .pol .ph{position:relative;width:100%;height:100%;overflow:hidden}
+#ch05-selkirk .pol img{display:block;width:100%;height:100%;object-fit:cover}
+#ch05-selkirk .pol .cap{position:absolute;left:0;right:0;bottom:10px;text-align:center;font-family:Yellowtail,cursive;font-size:34px;color:#16324F}
+#ch05-selkirk .card{position:absolute;background:#fff;border:3px solid rgba(22,50,79,.14);border-radius:24px;box-shadow:0 12px 30px rgba(22,50,79,.13)}
+#ch05-selkirk .panel{position:absolute;background:#16324F;border-radius:28px;color:#FAF6EF}
+#ch05-selkirk .hl{position:relative;display:inline-block;isolation:isolate}
+#ch05-selkirk .hl .bar{position:absolute;left:-6px;right:-6px;bottom:6px;height:26px;background:#F3C969;transform-origin:0 50%}
+#ch05-selkirk .hl .tx{position:relative}
+#ch05-selkirk .ico{position:absolute;border-radius:50%;background:#fff;border:4px solid #16324F;display:flex;align-items:center;justify-content:center}
+#ch05-selkirk .ico svg{width:58%;height:58%}
+#ch05-selkirk .tile{position:absolute;border-radius:22px;overflow:hidden;box-shadow:0 14px 30px rgba(22,50,79,.22)}
+#ch05-selkirk .tile img{width:100%;height:100%;object-fit:cover;display:block}
+#ch05-selkirk .tile .tl{position:absolute;left:16px;bottom:14px;background:rgba(22,50,79,.88);color:#FAF6EF;font-weight:800;font-size:26px;padding:6px 16px;border-radius:99px}
+
+#ch05-selkirk .in{position:absolute;inset:0}
+
+#ch05-selkirk .vs{position:absolute;top:300px;width:780px;height:360px;border-radius:30px;padding:44px}
+#ch05-selkirk .vs .k{font-weight:700;font-size:26px;letter-spacing:.08em}
+#ch05-selkirk .vs .v{margin-top:16px;font-weight:900;font-size:84px;letter-spacing:-.03em;line-height:1.1}
+#ch05-selkirk .vs .s{margin-top:18px;font-weight:500;font-size:34px}
+#ch05-selkirk .ico .lb{position:absolute;left:-60px;right:-60px;top:calc(100% + 18px);text-align:center;font-weight:900;font-size:36px;letter-spacing:-.02em}
+#ch05-selkirk .gauge{position:absolute;width:380px;height:380px}
+#ch05-selkirk .gauge .trk{fill:none;stroke:rgba(22,50,79,.10);stroke-width:26}
+#ch05-selkirk .gauge .val{fill:none;stroke:#2E7D5B;stroke-width:26;stroke-linecap:round}
+#ch05-selkirk .gnum{position:absolute;width:380px;text-align:center;font-weight:900;font-size:100px;letter-spacing:-.03em}
+#ch05-selkirk .glab{position:absolute;width:380px;text-align:center;font-weight:800;font-size:36px}
+#ch05-selkirk .flow{position:absolute;top:360px;width:440px;height:220px;border-radius:26px;background:#fff;border:3px solid rgba(22,50,79,.14);box-shadow:0 12px 30px rgba(22,50,79,.13);padding:34px}
+#ch05-selkirk .flow .n{font-weight:900;font-size:26px;letter-spacing:.1em;color:#2E7D5B}
+#ch05-selkirk .flow .t{margin-top:12px;font-weight:900;font-size:48px;letter-spacing:-.02em;line-height:1.15}
+#ch05-selkirk .arw{position:absolute;top:440px;width:110px;height:60px}
+
+      </style>
+      <div id="ch05-selkirk" data-composition-id="ch05-selkirk" data-width="1920" data-height="1080" data-duration="71.04">
+<div class="grain"></div>
+<div data-layout-ignore class="glow" style="left:1150px;top:-350px;width:1100px;height:1100px"></div>
+<div data-layout-ignore class="glow warm" style="left:-350px;top:560px;width:900px;height:900px"></div>
+<svg class="ghost" aria-hidden="true" data-layout-ignore style="left:820px;top:640px;width:2600px;height:330px;overflow:visible"><text x="0" y="270" font-family="Pretendard" font-weight="900" font-size="300" fill="rgba(22,50,79,.07)">SELKIRK</text></svg>
+
+<section id="s-a" class="beat clip" data-start="0.0" data-duration="6.1"><div class="in">
+  <div class="abs l" id="s-a-k" style="left:120px;top:200px;font-size:28px;color:#2E7D5B">SELKIRK COLLEGE · SINCE</div>
+  <div class="abs h" id="s-a-y" style="left:110px;top:250px;font-size:260px;line-height:1">1966</div>
+  <div class="abs h" id="s-a-t" style="left:120px;top:540px;font-size:80px">BC주 <span class="green">공립</span> 컬리지</div>
+  <div class="pol" id="s-a-p" style="left:1300px;top:150px;width:520px;height:480px"><div class="ph"><img id="s-a-pi" src="assets/img/campus-spring-blossom.jpg" alt=""/></div><div class="cap">Castlegar Campus</div></div>
+</div></section>
+
+<section id="s-b" class="beat clip" data-start="6.1" data-duration="9.08"><div class="in">
+  <div class="abs h" id="s-b-t" style="left:120px;top:130px;font-size:72px">가장 큰 장점 두 가지</div>
+  <div class="vs" id="s-b-1" style="left:120px;background:#16324F;color:#FAF6EF"><div class="k" style="color:#F3C969">01 · 학교 종류</div><div class="v">사립 ✕ <span style="color:#F3C969">공립 ✓</span></div><div class="s">BC주 정부가 운영하는 공립 컬리지</div></div>
+  <div class="vs" id="s-b-2" style="left:1020px;background:#fff;border:3px solid rgba(22,50,79,.14);box-shadow:0 12px 30px rgba(22,50,79,.13)"><div class="k" style="color:#2E7D5B">02 · 졸업 후</div><div class="v">PGWP 대상 과정</div><div class="s" style="color:#4A5F78">졸업 후 취업비자를 받을 수 있는 과정이 많습니다</div></div>
+</div></section>
+
+<section id="s-c" class="beat clip" data-start="15.18" data-duration="8.16"><div class="in">
+  <div class="abs h" id="s-c-t" style="left:120px;top:120px;font-size:72px">학생 지원이 촘촘한 학교</div>
+  <div class="ico" id="s-c-1" style="left:190px;top:320px;width:240px;height:240px"><svg viewBox="0 0 64 64"><circle cx="20" cy="22" r="6" fill="#16324F"/><circle cx="44" cy="22" r="6" fill="#16324F"/><circle cx="32" cy="18" r="7" fill="#2E7D5B"/><path d="M8 50 C 8 38, 32 38, 32 50 M32 50 C 32 38, 56 38, 56 50" fill="none" stroke="#16324F" stroke-width="4.5" stroke-linecap="round"/></svg><div class="lb">소규모 수업</div></div>
+  <div class="ico" id="s-c-2" style="left:610px;top:320px;width:240px;height:240px"><svg viewBox="0 0 64 64"><path d="M10 14 H34 C 40 14, 40 20, 40 20 V54 C 40 50, 36 48, 32 48 H10 Z M54 14 H46 C 42 14, 40 20, 40 20" fill="none" stroke="#16324F" stroke-width="4.5" stroke-linejoin="round"/><path d="M16 26 H32 M16 34 H30" stroke="#2E7D5B" stroke-width="4" stroke-linecap="round"/></svg><div class="lb">무료 튜터링</div></div>
+  <div class="ico" id="s-c-3" style="left:1030px;top:320px;width:240px;height:240px"><svg viewBox="0 0 64 64"><path d="M8 14 H48 V40 H26 L14 50 V40 H8 Z" fill="none" stroke="#16324F" stroke-width="4.5" stroke-linejoin="round"/><path d="M18 24 H38 M18 31 H32" stroke="#2E7D5B" stroke-width="4" stroke-linecap="round"/></svg><div class="lb">커리어 상담</div></div>
+  <div class="ico" id="s-c-4" style="left:1450px;top:320px;width:240px;height:240px"><svg viewBox="0 0 64 64"><rect x="12" y="8" width="40" height="50" rx="5" fill="none" stroke="#16324F" stroke-width="4.5"/><circle cx="32" cy="28" r="8" fill="none" stroke="#2E7D5B" stroke-width="4"/><path d="M22 46 H42" stroke="#16324F" stroke-width="4" stroke-linecap="round"/></svg><div class="lb">비자 · 의료 지원</div></div>
+</div></section>
+
+<section id="s-d" class="beat clip" data-start="23.34" data-duration="7.4"><div class="in">
+  <div class="abs h" id="s-d-t" style="left:120px;top:110px;font-size:72px">학생들의 평가</div>
+  <svg class="gauge" id="s-d-g1" viewBox="0 0 200 200" style="left:330px;top:240px"><circle class="trk" cx="100" cy="100" r="84"/><circle class="val" cx="100" cy="100" r="84" transform="rotate(-90 100 100)"/></svg>
+  <div class="gnum" id="s-d-n1" style="left:330px;top:365px">93%</div>
+  <div class="glab" id="s-d-l1" style="left:330px;top:650px">교육 만족도</div>
+  <svg class="gauge" id="s-d-g2" viewBox="0 0 200 200" style="left:1110px;top:240px"><circle class="trk" cx="100" cy="100" r="84"/><circle class="val" cx="100" cy="100" r="84" transform="rotate(-90 100 100)" style="stroke:#16324F"/></svg>
+  <div class="gnum" id="s-d-n2" style="left:1110px;top:365px">96%</div>
+  <div class="glab" id="s-d-l2" style="left:1110px;top:650px">강의 품질 만족</div>
+  <div class="abs b" id="s-d-src" style="left:120px;top:740px;width:1680px;text-align:center;font-size:24px;color:#4A5F78">출처: Selkirk College 2025/26 Accountability Framework</div>
+</div></section>
+
+<section id="s-e" class="beat clip" data-start="30.74" data-duration="6.78"><div class="in">
+  <div class="abs h" id="s-e-t" style="left:120px;top:150px;font-size:72px">국제학생 비율도 <span class="green">적당하게</span></div>
+  <div class="abs" id="s-e-dots" style="left:120px;top:300px;width:760px;height:430px"></div>
+  <div class="abs l" id="s-e-k" style="left:1000px;top:330px;font-size:26px;color:#2E7D5B">INTERNATIONAL STUDENTS</div>
+  <div class="abs h" id="s-e-n" style="left:990px;top:380px;font-size:180px;line-height:1">477</div>
+  <div class="abs hd" id="s-e-s" style="left:1000px;top:580px;font-size:40px">전체 2,287명(FTE) 중 약 5명에 1명</div>
+</div></section>
+
+<section id="s-f" class="beat clip" data-start="37.52" data-duration="8.32"><div class="in">
+  <div class="abs h" id="s-f-t" style="left:120px;top:150px;font-size:72px">학비도, 생활비도 부담이 덜해요</div>
+  <div class="card" id="s-f-1" style="left:120px;top:320px;width:800px;height:340px;padding:44px">
+    <svg viewBox="0 0 64 64" style="width:80px;height:80px"><path d="M32 8 V50 M16 36 L32 52 L48 36" fill="none" stroke="#2E7D5B" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div class="h" style="margin-top:14px;font-size:64px">학비</div><div class="b" style="margin-top:8px;font-size:34px;color:#4A5F78">다른 공립 컬리지보다 낮은 편</div></div>
+  <div class="card" id="s-f-2" style="left:1000px;top:320px;width:800px;height:340px;padding:44px">
+    <svg viewBox="0 0 64 64" style="width:80px;height:80px"><path d="M32 8 V50 M16 36 L32 52 L48 36" fill="none" stroke="#2E7D5B" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div class="h" style="margin-top:14px;font-size:64px">생활비</div><div class="b" style="margin-top:8px;font-size:34px;color:#4A5F78">렌트 · 교통 · 보험, 대도시보다 확실히 저렴</div></div>
+</div></section>
+
+<section id="s-g" class="beat clip" data-start="45.84" data-duration="6.98"><div class="in">
+  <div class="abs h" id="s-g-t" style="left:120px;top:150px;font-size:72px">기숙사 두 곳 + 홈스테이</div>
+  <div class="pol" id="s-g-p1" style="left:120px;top:290px;width:560px;height:430px"><div class="ph"><img id="s-g-pi1" src="assets/img/castlegar-housing.jpg" alt=""/></div><div class="cap">Castlegar</div></div>
+  <div class="pol" id="s-g-p2" style="left:740px;top:300px;width:560px;height:430px"><div class="ph"><img id="s-g-pi2" src="assets/img/silverking-housing-nelson.jpg" alt=""/></div><div class="cap">Nelson</div></div>
+  <div class="card" id="s-g-h" style="left:1380px;top:330px;width:420px;height:330px;padding:40px">
+    <svg viewBox="0 0 64 64" style="width:90px;height:90px"><path d="M8 30 L32 10 L56 30 V56 H8 Z" fill="none" stroke="#16324F" stroke-width="4.5" stroke-linejoin="round"/><circle cx="26" cy="40" r="5" fill="#2E7D5B"/><circle cx="40" cy="40" r="5" fill="#E8572B"/></svg>
+    <div class="h" style="margin-top:14px;font-size:58px">홈스테이</div><div class="b" style="margin-top:6px;font-size:30px;color:#4A5F78">캐나다 가정에서 함께</div></div>
+</div></section>
+
+<section id="s-h" class="beat clip" data-start="52.82" data-duration="18.22"><div class="in">
+  <div class="sticker" id="s-h-st" style="left:120px;top:150px">기억해 두세요</div>
+  <div class="abs h" id="s-h-t" style="left:120px;top:220px;font-size:76px">코업 · 실습 = <span class="green">고용주를 만나는 통로</span></div>
+  <div class="flow" id="s-h-1" style="left:120px"><div class="n">STEP 1</div><div class="t">코업 · 현장 실습</div></div>
+  <svg class="arw" id="s-h-a1" viewBox="0 0 110 60" style="left:585px"><path d="M6 30 H96 M72 8 L100 30 L72 52" fill="none" stroke="#E8572B" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <div class="flow" id="s-h-2" style="left:720px"><div class="n">STEP 2</div><div class="t">지역 업체 · 고용주와 연결</div></div>
+  <svg class="arw" id="s-h-a2" viewBox="0 0 110 60" style="left:1185px"><path d="M6 30 H96 M72 8 L100 30 L72 52" fill="none" stroke="#E8572B" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <div class="flow" id="s-h-3" style="left:1320px;border-color:#2E7D5B"><div class="n">나중에</div><div class="t">영주권 추천해 줄 고용주</div></div>
+  <div class="abs b" id="s-h-n" style="left:120px;top:660px;font-size:30px;color:#4A5F78">셀커크 코업 프로그램 참여 학생 1,470명 이상</div>
+</div></section>
+      </div>
+      <script>
+        (function () {
+const root=document.getElementById("ch05-selkirk");
+const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
+const tl=gsap.timeline({paused:true});
+function E(el){return typeof el==='string'?q(el):el;}
+function inn(el,at,o){o=o||{};el=E(el);
+  tl.fromTo(el,{opacity:0,x:o.x||0,y:(o.y===undefined?30:o.y),scale:(o.s===undefined?1:o.s),rotation:(o.r0===undefined?(o.r||0):o.r0)},
+  {opacity:1,x:0,y:0,scale:1,rotation:o.r||0,duration:o.d||0.6,ease:o.e||'power3.out'},at);}
+function whip(el,at,dy){el=E(el);tl.set(el,{opacity:0},0);tl.set(el,{opacity:1,y:dy||70},at);tl.to(el,{y:0,duration:0.45,ease:'power4.out'},at);}
+function pop(el,at,o){o=o||{};el=E(el);tl.fromTo(el,{opacity:0,scale:0},{opacity:1,scale:1,duration:o.d||0.5,ease:o.e||'back.out(2)'},at);}
+function pol(el,at,rot){el=E(el);
+  tl.fromTo(el,{opacity:0,y:-180,rotation:rot*2.4,scale:1.06},{opacity:1,y:0,rotation:rot,scale:1,duration:0.85,ease:'power3.out'},at);}
+function kb(el,at,dur,a,b){el=E(el);a=a||{};b=b||{};
+  tl.fromTo(el,{scale:a.s||1,xPercent:a.x||0,yPercent:a.y||0},{scale:b.s||1.07,xPercent:b.x||0,yPercent:b.y||0,duration:dur,ease:'none'},at);}
+function count(el,from,to,at,dur,fmt){el=E(el);const st={v:from};el.textContent=fmt(from);
+  tl.fromTo(st,{v:from},{v:to,duration:dur,ease:'power2.out',immediateRender:false,onUpdate:()=>{el.textContent=fmt(st.v);}},at);}
+function grow(el,at,d,origin){el=E(el);
+  tl.fromTo(el,{scaleX:0,transformOrigin:origin||'0% 50%'},{scaleX:1,duration:d||0.8,ease:'power3.inOut'},at);}
+function growY(el,at,d){el=E(el);
+  tl.fromTo(el,{scaleY:0,transformOrigin:'50% 100%'},{scaleY:1,duration:d||0.8,ease:'power3.out'},at);}
+function draw(path,at,d){path=E(path);const L=path.getTotalLength();path.style.strokeDasharray=L+' '+L;
+  tl.fromTo(path,{opacity:0},{opacity:1,duration:0.05},at);
+  tl.fromTo(path,{strokeDashoffset:L},{strokeDashoffset:0,duration:d||1,ease:'power2.inOut'},at);}
+function outt(el,at,o){o=o||{};el=E(el);tl.to(el,{opacity:0,y:o.y||0,x:o.x||0,duration:o.d||0.4,ease:'power2.in'},at);}
+function ambient(D){
+  qa('.ghost').forEach((g,i)=>tl.fromTo(g,{x:0},{x:(i%2?160:-160),duration:D,ease:'none'},0));
+  qa('.glow').forEach((g,i)=>{const c=4+i;const n=Math.max(0,Math.floor(D/c)-1);
+    tl.fromTo(g,{scale:0.92},{scale:1.08,duration:c/2,ease:'sine.inOut',yoyo:true,repeat:n},0);});
+}
+// 원형 게이지: <svg class="gauge"><circle class="trk"/><circle class="val"/></svg>
+function gauge(svgSel,pct,at,d){const c=E(svgSel).querySelector('.val');const L=2*Math.PI*parseFloat(c.getAttribute('r'));
+  c.style.strokeDasharray=L+' '+L;tl.fromTo(c,{strokeDashoffset:L},{strokeDashoffset:L*(1-pct/100),duration:d||1.2,ease:'power2.out'},at);}
+// 점 격자: 컨테이너 안에 n개의 점을 만들고 앞의 k개를 강조색으로 채운다
+function dots(sel,n,k,cols,size,gap,on,off){const el=E(sel);let h='';for(let i=0;i<n;i++){const x=(i%cols)*(size+gap),y=Math.floor(i/cols)*(size+gap);
+  h+=`<i style="position:absolute;left:${x}px;top:${y}px;width:${size}px;height:${size}px;border-radius:50%;background:${i<k?on:off}"></i>`;}el.innerHTML=h;return Array.from(el.children);}
+function dotsIn(list,at,span){tl.fromTo(list,{scale:0},{scale:1,duration:0.25,ease:'back.out(2)',stagger:{each:(span||1)/list.length}},at);}
+
+const D = 71.04;
+const R = [0.9, 6.4, 15.48, 23.64, 31.04, 37.82, 46.14, 53.12, 63.44];
+
+ambient(D);
+inn('#s-a-k',0.3,{y:16}); count('#s-a-y',1900,1966,0.5,1.2,v=>Math.round(v)); tl.fromTo('#s-a-y',{opacity:0},{opacity:1,duration:0.3},0.5);
+whip('#s-a-t',R[0]+3.0,80);
+pol('#s-a-p',1.2,5); kb('#s-a-pi',1.2,R[1]-1.2);
+const B=R[1]-0.3;
+whip('#s-b-t',B+0.3,70);
+inn('#s-b-1',B+0.8,{y:60,d:0.7,e:'back.out(1.4)'});
+inn('#s-b-2',B+3.4,{y:60,d:0.7,e:'back.out(1.4)'});
+const C=R[2]-0.3;
+whip('#s-c-t',C+0.3,70);
+['1','2','3','4'].forEach((n,i)=>pop('#s-c-'+n,C+0.8+i*1.5,{d:0.55}));
+const Dd=R[3]-0.3;
+whip('#s-d-t',Dd+0.3,70);
+gauge('#s-d-g1',93,Dd+0.8,1.4); count('#s-d-n1',0,93,Dd+0.8,1.4,v=>Math.round(v)+'%'); inn('#s-d-l1',Dd+1.2,{y:10});
+gauge('#s-d-g2',96,Dd+3.4,1.4); count('#s-d-n2',0,96,Dd+3.4,1.4,v=>Math.round(v)+'%'); inn('#s-d-l2',Dd+3.8,{y:10});
+inn('#s-d-src',Dd+4.6,{y:10});
+const Ee=R[4]-0.3;
+whip('#s-e-t',Ee+0.3,70);
+const dl=dots('#s-e-dots',100,21,20,30,8,'#2E7D5B','rgba(22,50,79,.16)');
+dotsIn(dl,Ee+0.6,1.0);
+inn('#s-e-k',Ee+1.4,{y:16}); count('#s-e-n',0,477,Ee+1.6,1.4,v=>Math.round(v)); tl.fromTo('#s-e-n',{opacity:0},{opacity:1,duration:0.3},Ee+1.6);
+inn('#s-e-s',Ee+2.6,{y:16});
+const Fz=R[5]-0.3;
+whip('#s-f-t',Fz+0.3,70);
+inn('#s-f-1',Fz+0.8,{y:60,d:0.7,e:'back.out(1.4)'});
+inn('#s-f-2',Fz+3.6,{y:60,d:0.7,e:'back.out(1.4)'});
+const G=R[6]-0.3;
+whip('#s-g-t',G+0.3,70);
+pol('#s-g-p1',G+0.8,-4); kb('#s-g-pi1',G+0.8,R[7]-R[6]);
+pol('#s-g-p2',G+1.6,3); kb('#s-g-pi2',G+1.6,R[7]-R[6]-0.8);
+inn('#s-g-h',G+3.8,{x:60,y:0,d:0.7,e:'back.out(1.4)'});
+const H=R[7]-0.3;
+inn('#s-h-st',H+0.2,{s:1.5,y:0,r0:-14,r:-4,d:0.4,e:'back.out(2.4)'});
+whip('#s-h-t',H+2.0,70);
+inn('#s-h-1',H+4.0,{y:40,d:0.6,e:'back.out(1.4)'});
+draw('#s-h-a1 path',H+5.0,0.4);
+inn('#s-h-2',H+5.4,{y:40,d:0.6,e:'back.out(1.4)'});
+draw('#s-h-a2 path',R[8]+1.0,0.4);
+inn('#s-h-3',R[8]+1.4,{y:40,d:0.6,e:'back.out(1.4)'});
+inn('#s-h-n',R[8]+3.0,{y:10});
+
+tl.fromTo(q('#s-a .in'),{opacity:1},{opacity:0,duration:0.28,ease:'power1.in',immediateRender:false},5.8);
+tl.fromTo(q('#s-b .in'),{opacity:1},{opacity:0,duration:0.28,ease:'power1.in',immediateRender:false},14.88);
+tl.fromTo(q('#s-c .in'),{opacity:1},{opacity:0,duration:0.28,ease:'power1.in',immediateRender:false},23.04);
+tl.fromTo(q('#s-d .in'),{opacity:1},{opacity:0,duration:0.28,ease:'power1.in',immediateRender:false},30.44);
+tl.fromTo(q('#s-e .in'),{opacity:1},{opacity:0,duration:0.28,ease:'power1.in',immediateRender:false},37.22);
+tl.fromTo(q('#s-f .in'),{opacity:1},{opacity:0,duration:0.28,ease:'power1.in',immediateRender:false},45.54);
+tl.fromTo(q('#s-g .in'),{opacity:1},{opacity:0,duration:0.28,ease:'power1.in',immediateRender:false},52.52);
+window.__timelines["ch05-selkirk"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

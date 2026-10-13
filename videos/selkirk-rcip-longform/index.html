@@ -12,49 +12,61 @@
     </style>
   </head>
   <body>
-    <!-- 검토용 1차 빌드: Ch0(훅) + Ch3(넬슨). 나머지 챕터는 확인 후 같은 방식으로 추가. -->
-    <div id="root" data-composition-id="main" data-start="0" data-duration="105.3" data-width="1920" data-height="1080">
-      <div
-        id="ch00-hook"
-        class="clip"
-        data-composition-id="ch00-hook"
-        data-composition-src="compositions/ch00-hook.html"
-        data-start="0"
-        data-duration="43"
-        data-track-index="1"
-        data-width="1920"
-        data-height="1080"
-      ></div>
-      <div
-        id="ch03-nelson"
-        class="clip"
-        data-composition-id="ch03-nelson"
-        data-composition-src="compositions/ch03-nelson.html"
-        data-start="42.3"
-        data-duration="63"
-        data-track-index="2"
-        data-width="1920"
-        data-height="1080"
-      ></div>
-      <div
-        id="captions-host"
-        data-track-kind="captions"
-        class="clip"
-        data-composition-id="captions"
-        data-composition-src="compositions/captions.html"
-        data-start="0"
-        data-duration="105.3"
-        data-track-index="9"
-        data-width="1920"
-        data-height="1080"
-      ></div>
+    <!-- tools/assemble.py 로 생성 (timing.json 기준). 직접 고치지 말고 스크립트를 다시 실행하세요. -->
+    <div id="root" data-composition-id="main" data-start="0" data-duration="825.07" data-width="1920" data-height="1080">
+      <div id="ch00-hook" class="clip" data-composition-id="ch00-hook" data-composition-src="compositions/ch00-hook.html"
+        data-start="0.0" data-duration="41.88" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="ch01-why" class="clip" data-composition-id="ch01-why" data-composition-src="compositions/ch01-why.html"
+        data-start="41.18" data-duration="73.7" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <div id="ch02-where" class="clip" data-composition-id="ch02-where" data-composition-src="compositions/ch02-where.html"
+        data-start="114.18" data-duration="36.46" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="ch03-nelson" class="clip" data-composition-id="ch03-nelson" data-composition-src="compositions/ch03-nelson.html"
+        data-start="149.94" data-duration="60.84" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <div id="ch04-castlegar" class="clip" data-composition-id="ch04-castlegar" data-composition-src="compositions/ch04-castlegar.html"
+        data-start="210.08" data-duration="51.66" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="ch05-selkirk" class="clip" data-composition-id="ch05-selkirk" data-composition-src="compositions/ch05-selkirk.html"
+        data-start="261.04" data-duration="71.04" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <div id="ch06-rcip" class="clip" data-composition-id="ch06-rcip" data-composition-src="compositions/ch06-rcip.html"
+        data-start="331.38" data-duration="102.87" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="ch07-data" class="clip" data-composition-id="ch07-data" data-composition-src="compositions/ch07-data.html"
+        data-start="433.55" data-duration="84.34" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <div id="ch08-majors" class="clip" data-composition-id="ch08-majors" data-composition-src="compositions/ch08-majors.html"
+        data-start="517.19" data-duration="126.19" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="ch09-family" class="clip" data-composition-id="ch09-family" data-composition-src="compositions/ch09-family.html"
+        data-start="642.68" data-duration="45.8" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <div id="ch10-reality" class="clip" data-composition-id="ch10-reality" data-composition-src="compositions/ch10-reality.html"
+        data-start="687.78" data-duration="75.05" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="ch11-roadmap" class="clip" data-composition-id="ch11-roadmap" data-composition-src="compositions/ch11-roadmap.html"
+        data-start="762.13" data-duration="62.94" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <audio id="narration" src="assets/voice/narration_edit.mp3" data-start="0" data-duration="822.07" data-track-index="8" data-volume="1"></audio>
+      <div id="captions-host" data-track-kind="captions" class="clip" data-composition-id="captions" data-composition-src="compositions/captions.html"
+        data-start="0" data-duration="825.07" data-track-index="9" data-width="1920" data-height="1080"></div>
     </div>
     <script>
       const tl = gsap.timeline({ paused: true });
-      // 챕터 전환: push slide (오른쪽에서 들어와 왼쪽으로) — 나가는 장면과 들어오는 장면이 같은 시점에 움직인다
-      const T1 = 42.3;
-      tl.fromTo("#ch00-hook", { xPercent: 0 }, { xPercent: -100, duration: 0.7, ease: "power3.inOut" }, T1);
-      tl.fromTo("#ch03-nelson", { xPercent: 100 }, { xPercent: 0, duration: 0.7, ease: "power3.inOut", immediateRender: false }, T1);
+      // 챕터 전환: push slide (오른쪽에서 들어와 왼쪽으로)
+      tl.fromTo("#ch00-hook", { xPercent: 0 }, { xPercent: -100, duration: 0.7, ease: "power3.inOut", immediateRender: false }, 41.18);
+      tl.fromTo("#ch01-why", { xPercent: 100 }, { xPercent: 0, duration: 0.7, ease: "power3.inOut", immediateRender: false }, 41.18);
+      tl.fromTo("#ch01-why", { xPercent: 0 }, { xPercent: -100, duration: 0.7, ease: "power3.inOut", immediateRender: false }, 114.18);
+      tl.fromTo("#ch02-where", { xPercent: 100 }, { xPercent: 0, duration: 0.7, ease: "power3.inOut", immediateRender: false }, 114.18);
+      tl.fromTo("#ch02-where", { xPercent: 0 }, { xPercent: -100, duration: 0.7, ease: "power3.inOut", immediateRender: false }, 149.94);
+      tl.fromTo("#ch03-nelson", { xPercent: 100 }, { xPercent: 0, duration: 0.7, ease: "power3.inOut", immediateRender: false }, 149.94);
+      tl.fromTo("#ch03-nelson", { xPercent: 0 }, { xPercent: -100, duration: 0.7, ease: "power3.inOut", immediateRender: false }, 210.08);
+      tl.fromTo("#ch04-castlegar", { xPercent: 100 }, { xPercent: 0, duration: 0.7, ease: "power3.inOut", immediateRender: false }, 210.08);
+      tl.fromTo("#ch04-castlegar", { xPercent: 0 }, { xPercent: -100, duration: 0.7, ease: "power3.inOut", immediateRender: false }, 261.04);
+      tl.fromTo("#ch05-selkirk", { xPercent: 100 }, { xPercent: 0, duration: 0.7, ease: "power3.inOut", immediateRender: false }, 261.04);
+      tl.fromTo("#ch05-selkirk", { xPercent: 0 }, { xPercent: -100, duration: 0.7, ease: "power3.inOut", immediateRender: false }, 331.38);
+      tl.fromTo("#ch06-rcip", { xPercent: 100 }, { xPercent: 0, duration: 0.7, ease: "power3.inOut", immediateRender: false }, 331.38);
+      tl.fromTo("#ch06-rcip", { xPercent: 0 }, { xPercent: -100, duration: 0.7, ease: "power3.inOut", immediateRender: false }, 433.55);
+      tl.fromTo("#ch07-data", { xPercent: 100 }, { xPercent: 0, duration: 0.7, ease: "power3.inOut", immediateRender: false }, 433.55);
+      tl.fromTo("#ch07-data", { xPercent: 0 }, { xPercent: -100, duration: 0.7, ease: "power3.inOut", immediateRender: false }, 517.19);
+      tl.fromTo("#ch08-majors", { xPercent: 100 }, { xPercent: 0, duration: 0.7, ease: "power3.inOut", immediateRender: false }, 517.19);
+      tl.fromTo("#ch08-majors", { xPercent: 0 }, { xPercent: -100, duration: 0.7, ease: "power3.inOut", immediateRender: false }, 642.68);
+      tl.fromTo("#ch09-family", { xPercent: 100 }, { xPercent: 0, duration: 0.7, ease: "power3.inOut", immediateRender: false }, 642.68);
+      tl.fromTo("#ch09-family", { xPercent: 0 }, { xPercent: -100, duration: 0.7, ease: "power3.inOut", immediateRender: false }, 687.78);
+      tl.fromTo("#ch10-reality", { xPercent: 100 }, { xPercent: 0, duration: 0.7, ease: "power3.inOut", immediateRender: false }, 687.78);
+      tl.fromTo("#ch10-reality", { xPercent: 0 }, { xPercent: -100, duration: 0.7, ease: "power3.inOut", immediateRender: false }, 762.13);
+      tl.fromTo("#ch11-roadmap", { xPercent: 100 }, { xPercent: 0, duration: 0.7, ease: "power3.inOut", immediateRender: false }, 762.13);
       window.__timelines["main"] = tl;
     </script>
   </body>

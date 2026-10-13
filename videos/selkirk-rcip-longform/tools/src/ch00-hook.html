@@ -1,4 +1,4 @@
-<!--ROOT:ch00-hook DUR:43-->
+<!--ROOT:ch00-hook-->
 <style>
 #ROOT .strike{position:absolute;height:16px;background:#E8572B;border-radius:8px;transform-origin:0 50%}
 #ROOT .ill path, #ROOT .ill line, #ROOT .ill circle{vector-effect:non-scaling-stroke}
@@ -9,7 +9,7 @@
 #ROOT .step .si{position:absolute;right:28px;top:26px;width:84px;height:84px}
 #ROOT .city{position:absolute;width:24px;height:24px;border-radius:50%;background:#16324F}
 #ROOT .pin{position:absolute;width:50px;height:50px;border-radius:50% 50% 50% 0;background:#E8572B}
-#ROOT .ring{position:absolute;width:130px;height:130px;border-radius:50%;border:6px solid #2E7D5B}
+#ROOT .ring{position:absolute;width:130px;height:130px;border-radius:50%;border:6px solid #2E7D5B;opacity:0}
 #ROOT .icl{position:absolute;width:250px;text-align:center;font-weight:900;font-size:46px;letter-spacing:-.02em}
 </style>
 <div class="grain"></div>
@@ -18,7 +18,7 @@
 <svg class="ghost" aria-hidden="true" data-layout-ignore style="left:760px;top:640px;width:2600px;height:330px;overflow:visible"><text x="0" y="270" font-family="Pretendard" font-weight="900" font-size="300" fill="rgba(22,50,79,.07)">KOOTENAY</text></svg>
 
 <!-- A 0–7.5 : '시골'을 지우고 휴양도시로 -->
-<section id="h-a" class="beat clip" data-start="0" data-duration="7.5">
+<section id="h-a" class="beat" data-beat="0-2">
   <div class="abs l" id="h-a-k" style="left:120px;top:150px;font-size:26px;color:#2E7D5B">AA CANADA · 캐나다 유학 후 이민</div>
   <div class="abs hd" id="h-a-t1" style="left:120px;top:205px;font-size:66px">캐나다 영주권, 이런 말 들어 보셨죠?</div>
   <div class="abs h" id="h-a-word" style="left:110px;top:330px;font-size:300px;line-height:1">시골 루트</div>
@@ -35,7 +35,7 @@
 </section>
 
 <!-- B 7.5–17 : 지도 + 휴가 엽서 -->
-<section id="h-b" class="beat clip" data-start="7.5" data-duration="9.5">
+<section id="h-b" class="beat" data-beat="2-3">
   <div class="abs l" id="h-b-k" style="left:120px;top:110px;font-size:26px;color:#2E7D5B">BRITISH COLUMBIA · WEST KOOTENAY</div>
   <div class="abs h" id="h-b-t" style="left:120px;top:160px;font-size:80px;width:1100px">캐나다 사람들이 <span class="hl"><span class="bar" id="h-b-bar"></span><span class="tx">휴가 때 일부러</span></span> 찾아가는 곳</div>
   <svg class="abs" viewBox="0 0 1920 1080" style="left:0;top:0;width:1920px;height:1080px">
@@ -56,7 +56,7 @@
 </section>
 
 <!-- C 17–27 : 아이콘 4개 + 영주권 -->
-<section id="h-c" class="beat clip" data-start="17" data-duration="10">
+<section id="h-c" class="beat" data-beat="3-4">
   <div class="abs hd" id="h-c-t" style="left:120px;top:140px;font-size:72px">이 도시에서 누리는 것</div>
   <div class="ico" id="h-c-i1" style="left:130px;top:300px;width:240px;height:240px"><svg viewBox="0 0 64 64"><path d="M6 26 C 14 20, 22 32, 32 26 S 50 20, 58 26 M6 38 C 14 32, 22 44, 32 38 S 50 32, 58 38 M6 50 C 14 44, 22 56, 32 50 S 50 44, 58 50" fill="none" stroke="#2E7D5B" stroke-width="4.5" stroke-linecap="round"/></svg></div>
   <div class="ico" id="h-c-i2" style="left:450px;top:300px;width:240px;height:240px"><svg viewBox="0 0 64 64"><path d="M4 54 L24 18 L34 34 L42 22 L60 54 Z" fill="none" stroke="#16324F" stroke-width="4.5" stroke-linejoin="round"/><path d="M18 29 L24 18 L30 28" fill="none" stroke="#16324F" stroke-width="4.5" stroke-linejoin="round"/></svg></div>
@@ -73,7 +73,7 @@
 </section>
 
 <!-- D 27–36 : 3단계 -->
-<section id="h-d" class="beat clip" data-start="27" data-duration="9">
+<section id="h-d" class="beat" data-beat="4-5">
   <div class="abs l" id="h-d-k" style="left:120px;top:120px;font-size:26px;color:#2E7D5B">AA CANADA 학생들이 걸어온 길</div>
   <div class="abs h" id="h-d-t" style="left:120px;top:170px;font-size:76px">졸업하고, 취업하고, 영주권까지</div>
   <div class="abs" id="h-d-rail" style="left:240px;top:451px;width:1440px;height:8px;background:#2E7D5B;border-radius:4px"></div>
@@ -87,7 +87,7 @@
 </section>
 
 <!-- E 36–43 : 타이틀 -->
-<section id="h-e" class="beat clip" data-start="36" data-duration="7">
+<section id="h-e" class="beat" data-beat="5-end">
   <div class="abs script green" id="h-e-s" style="left:120px;top:190px;font-size:120px">West Kootenay, BC</div>
   <div class="abs h" id="h-e-t" style="left:120px;top:360px;font-size:136px">셀커크 컬리지<span class="orange"> × </span>RCIP</div>
   <div class="abs" id="h-e-rule" style="left:124px;top:560px;width:520px;height:10px;background:#F3C969;border-radius:5px"></div>
@@ -103,47 +103,47 @@ inn('#h-a-t1',0.6,{y:24});
 whip('#h-a-word',1.3,110);
 draw('#h-a-m1',0.8,1.6); draw('#h-a-snow',2.0,0.5); draw('#h-a-lake1',2.2,1.0); draw('#h-a-lake2',2.6,0.9);
 pop('#h-a-sun',1.6,{d:0.6});
-grow('#h-a-strike',3.4,0.5);
-tl.to('#h-a-word',{opacity:0.35,duration:0.4,ease:'power1.out'},3.8);
-inn('#h-a-script',4.2,{y:40,r0:-8,r:-4,d:0.7,e:'back.out(1.6)'});
-pop('#h-a-chip',4.9);
+grow('#h-a-strike',R[1]+0.5,0.5);
+tl.fromTo('#h-a-word',{opacity:1},{opacity:0.35,duration:0.4,ease:'power1.out',immediateRender:false},R[1]+0.9);
+inn('#h-a-script',R[1]+1.3,{y:40,r0:-8,r:-4,d:0.7,e:'back.out(1.6)'});
+pop('#h-a-chip',R[1]+2.0);
 // B
-const B=7.5;
+const B=R[2]-0.3;
 inn('#h-b-k',B+0.2,{y:16});
 whip('#h-b-t',B+0.4,70);
-grow('#h-b-bar',B+1.3,0.6);
-pop('#h-b-van',B+1.8); inn('#h-b-vant',B+1.9,{y:10});
-pop('#h-b-cal',B+2.1); inn('#h-b-calt',B+2.2,{y:10});
-draw('#h-b-route1',B+2.3,1.3); draw('#h-b-route2',B+2.6,1.2);
-inn('#h-b-vanc',B+3.2,{s:0.6,y:0});
-tl.fromTo('#h-b-region',{opacity:0,scale:0.6,transformOrigin:'50% 50%'},{opacity:0.18,scale:1,duration:0.8,ease:'power3.out'},B+3.6);
-inn('#h-b-pin',B+4.0,{y:-160,d:0.7,r:-45,r0:-45});
-tl.fromTo('#h-b-ring',{scale:0.4,opacity:0.9},{scale:1.5,opacity:0,duration:1.4,ease:'power2.out',repeat:2},B+4.4);
-inn('#h-b-wk',B+4.5,{y:20});
-pol('#h-b-p1',B+5.4,-6); kb('#h-b-p1 img',B+5.4,4.1);
-pol('#h-b-p2',B+6.2,5); kb('#h-b-p2 img',B+6.2,3.3);
+grow('#h-b-bar',B+1.0,0.5);
+pop('#h-b-van',B+1.0); inn('#h-b-vant',B+1.1,{y:10});
+pop('#h-b-cal',B+1.2); inn('#h-b-calt',B+1.3,{y:10});
+draw('#h-b-route1',B+1.3,1.0); draw('#h-b-route2',B+1.5,0.9);
+inn('#h-b-vanc',B+2.0,{s:0.6,y:0});
+tl.fromTo('#h-b-region',{opacity:0,scale:0.6,transformOrigin:'50% 50%'},{opacity:0.18,scale:1,duration:0.8,ease:'power3.out'},B+2.0);
+inn('#h-b-pin',B+2.2,{y:-160,d:0.7,r:-45,r0:-45});
+tl.fromTo('#h-b-ring',{scale:0.4,opacity:0.9},{scale:1.5,opacity:0,duration:1.2,ease:'power2.out',repeat:1},B+2.6);
+inn('#h-b-wk',B+2.6,{y:20});
+pol('#h-b-p1',B+3.0,-6); kb('#h-b-p1 img',B+3.0,3);
+pol('#h-b-p2',B+3.5,5); kb('#h-b-p2 img',B+3.5,2.5);
 // C
-const C=17;
+const C=R[3]-0.3;
 inn('#h-c-t',C+0.2,{y:20});
-['1','2','3','4'].forEach((n,i)=>{pop('#h-c-i'+n,C+0.6+i*1.0,{d:0.55}); inn('#h-c-l'+n,C+0.8+i*1.0,{y:16});});
-grow('#h-c-line',C+0.6,4.2);
-inn('#h-c-and',C+5.0,{x:-20,y:0});
-pop('#h-c-pr',C+5.5,{d:0.6,e:'back.out(1.8)'});
-inn('#h-c-st',C+6.1,{s:1.6,y:0,r0:-20,r:-6,d:0.4,e:'back.out(2.4)'});
+['1','2','3','4'].forEach((n,i)=>{pop('#h-c-i'+n,C+0.4+i*0.75,{d:0.55}); inn('#h-c-l'+n,C+0.6+i*0.75,{y:16});});
+grow('#h-c-line',C+0.4,3.2);
+inn('#h-c-and',C+3.0,{x:-20,y:0});
+pop('#h-c-pr',C+3.4,{d:0.6,e:'back.out(1.8)'});
+inn('#h-c-st',C+4.0,{s:1.6,y:0,r0:-20,r:-6,d:0.4,e:'back.out(2.4)'});
 // D
-const Dd=27;
+const Dd=R[4]-0.3;
 inn('#h-d-k',Dd+0.2,{y:16});
 whip('#h-d-t',Dd+0.4,70);
-grow('#h-d-rail',Dd+1.2,5.0);
+grow('#h-d-rail',Dd+1.2,3.8);
 inn('#h-d-s1',Dd+1.2,{y:60,d:0.7,e:'back.out(1.4)'});
-inn('#h-d-s2',Dd+3.4,{y:60,d:0.7,e:'back.out(1.4)'});
-inn('#h-d-s3',Dd+5.6,{y:60,d:0.7,e:'back.out(1.4)'});
+inn('#h-d-s2',Dd+2.6,{y:60,d:0.7,e:'back.out(1.4)'});
+inn('#h-d-s3',Dd+4.6,{y:60,d:0.7,e:'back.out(1.4)'});
 inn('#h-d-note',Dd+6.6,{y:10});
 // E
-const Ee=36;
+const Ee=R[5]-0.3;
 inn('#h-e-s',Ee+0.3,{y:30,r0:-6,r:0,d:0.7});
 whip('#h-e-t',Ee+0.8,100);
 grow('#h-e-rule',Ee+1.4,0.7);
 inn('#h-e-sub',Ee+1.8,{y:24});
-pol('#h-e-p',Ee+0.6,4); kb('#h-e-pi',Ee+0.6,6.3);
+pol('#h-e-p',Ee+0.6,4); kb('#h-e-pi',Ee+0.6,D-Ee-0.6);
 </script>

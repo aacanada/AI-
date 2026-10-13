@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+@font-face{font-family:Pretendard;font-weight:500;src:url(assets/fonts/Pretendard-Medium.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:700;src:url(assets/fonts/Pretendard-Bold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:800;src:url(assets/fonts/Pretendard-ExtraBold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:900;src:url(assets/fonts/Pretendard-Black.woff2) format("woff2")}
+@font-face{font-family:Yellowtail;font-weight:400;src:url(assets/fonts/Yellowtail-Regular.ttf) format("truetype")}
+#ch06-rcip{position:absolute;inset:0;overflow:hidden;background:#FAF6EF;color:#16324F;font-family:Pretendard,sans-serif;word-break:keep-all}
+#ch06-rcip *{box-sizing:border-box}
+#ch06-rcip .grain{position:absolute;inset:0;opacity:.5;background-image:radial-gradient(rgba(22,50,79,.07) 1.2px,transparent 1.3px);background-size:9px 9px}
+#ch06-rcip .glow{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(46,125,91,.20) 0%,rgba(46,125,91,0) 70%)}
+#ch06-rcip .glow.warm{background:radial-gradient(circle,rgba(232,87,43,.14) 0%,rgba(232,87,43,0) 70%)}
+#ch06-rcip .ghost{position:absolute;font-weight:900;color:rgba(22,50,79,.07);font-size:300px;letter-spacing:-.04em;white-space:nowrap;line-height:1}
+#ch06-rcip .stage{position:absolute;inset:0}
+#ch06-rcip .beat{position:absolute;inset:0}
+#ch06-rcip .abs{position:absolute}
+#ch06-rcip .h{font-weight:900;letter-spacing:-.03em;line-height:1.12}
+#ch06-rcip .hd{font-weight:800;letter-spacing:-.02em;line-height:1.22}
+#ch06-rcip .b{font-weight:500;line-height:1.5}
+#ch06-rcip .l{font-weight:700;letter-spacing:.08em}
+#ch06-rcip .script{font-family:Yellowtail,cursive;line-height:1.05;white-space:nowrap}
+#ch06-rcip .green{color:#2E7D5B}
+#ch06-rcip .orange{color:#E8572B}
+#ch06-rcip .sticker{position:absolute;background:#E8572B;color:#fff;font-weight:800;font-size:24px;letter-spacing:.12em;padding:10px 24px;border-radius:99px;white-space:nowrap}
+#ch06-rcip .chip{position:absolute;background:#FAF6EF;border:3px solid #16324F;border-radius:99px;padding:10px 26px;font-weight:700;font-size:30px;white-space:nowrap;color:#16324F}
+#ch06-rcip .chip.gr{border-color:#2E7D5B;color:#1F5E44}
+#ch06-rcip .chip.solid{background:#16324F;color:#FAF6EF}
+#ch06-rcip .chip.sand{background:#F3C969;border-color:#F3C969}
+#ch06-rcip .pol{position:absolute;background:#fff;padding:16px 16px 60px;box-shadow:0 20px 44px rgba(22,50,79,.26)}
+#ch06-rcip .pol .ph{position:relative;width:100%;height:100%;overflow:hidden}
+#ch06-rcip .pol img{display:block;width:100%;height:100%;object-fit:cover}
+#ch06-rcip .pol .cap{position:absolute;left:0;right:0;bottom:10px;text-align:center;font-family:Yellowtail,cursive;font-size:34px;color:#16324F}
+#ch06-rcip .card{position:absolute;background:#fff;border:3px solid rgba(22,50,79,.14);border-radius:24px;box-shadow:0 12px 30px rgba(22,50,79,.13)}
+#ch06-rcip .panel{position:absolute;background:#16324F;border-radius:28px;color:#FAF6EF}
+#ch06-rcip .hl{position:relative;display:inline-block;isolation:isolate}
+#ch06-rcip .hl .bar{position:absolute;left:-6px;right:-6px;bottom:6px;height:26px;background:#F3C969;transform-origin:0 50%}
+#ch06-rcip .hl .tx{position:relative}
+#ch06-rcip .ico{position:absolute;border-radius:50%;background:#fff;border:4px solid #16324F;display:flex;align-items:center;justify-content:center}
+#ch06-rcip .ico svg{width:58%;height:58%}
+#ch06-rcip .tile{position:absolute;border-radius:22px;overflow:hidden;box-shadow:0 14px 30px rgba(22,50,79,.22)}
+#ch06-rcip .tile img{width:100%;height:100%;object-fit:cover;display:block}
+#ch06-rcip .tile .tl{position:absolute;left:16px;bottom:14px;background:rgba(22,50,79,.88);color:#FAF6EF;font-weight:800;font-size:26px;padding:6px 16px;border-radius:99px}
+
+#ch06-rcip .in{position:absolute;inset:0}
+
+#ch06-rcip .node{position:absolute;width:300px;height:300px;border-radius:50%;background:#fff;border:5px solid #16324F;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+#ch06-rcip .node .t{font-weight:900;font-size:46px;letter-spacing:-.02em;margin-top:10px}
+#ch06-rcip .flow{position:absolute;top:330px;width:380px;height:300px;border-radius:26px;background:#fff;border:3px solid rgba(22,50,79,.14);box-shadow:0 12px 30px rgba(22,50,79,.13);padding:32px}
+#ch06-rcip .flow .n{font-weight:900;font-size:24px;letter-spacing:.1em;color:#2E7D5B}
+#ch06-rcip .flow .t{margin-top:12px;font-weight:900;font-size:42px;letter-spacing:-.02em;line-height:1.2}
+#ch06-rcip .flow .s{margin-top:12px;font-weight:500;font-size:28px;color:#4A5F78;line-height:1.35}
+#ch06-rcip .arw{position:absolute;top:450px;width:70px;height:50px}
+#ch06-rcip .req{position:absolute;left:120px;width:1680px;height:118px;border-radius:22px;background:#fff;border:3px solid rgba(22,50,79,.12);display:flex;align-items:center;padding:0 36px;gap:30px}
+#ch06-rcip .req .no{width:64px;height:64px;border-radius:50%;background:#16324F;color:#FAF6EF;font-weight:900;font-size:34px;display:flex;align-items:center;justify-content:center;flex:none}
+#ch06-rcip .req .tx{font-weight:900;font-size:42px;letter-spacing:-.02em;white-space:nowrap}
+#ch06-rcip .req .mini{font-weight:700;font-size:26px;border:3px solid #2E7D5B;color:#1F5E44;border-radius:99px;padding:6px 18px;white-space:nowrap}
+#ch06-rcip .col{position:absolute;bottom:300px;width:200px;background:#2E7D5B;border-radius:18px 18px 0 0;transform-origin:50% 100%}
+#ch06-rcip .cl{position:absolute;top:800px;width:200px;text-align:center;font-weight:900;font-size:36px}
+#ch06-rcip .cv{position:absolute;width:200px;text-align:center;font-weight:900;font-size:40px;color:#FAF6EF}
+
+      </style>
+      <div id="ch06-rcip" data-composition-id="ch06-rcip" data-width="1920" data-height="1080" data-duration="102.87">
+<div class="grain"></div>
+<div data-layout-ignore class="glow" style="left:1150px;top:-350px;width:1100px;height:1100px"></div>
+<div data-layout-ignore class="glow warm" style="left:-350px;top:560px;width:900px;height:900px"></div>
+<svg class="ghost" aria-hidden="true" data-layout-ignore style="left:820px;top:640px;width:2600px;height:330px;overflow:visible"><text x="0" y="270" font-family="Pretendard" font-weight="900" font-size="300" fill="rgba(22,50,79,.07)">RCIP</text></svg>
+
+<section id="r-a" class="beat clip" data-start="0.0" data-duration="5.12"><div class="in">
+  <div class="sticker" id="r-a-st" style="left:120px;top:260px">오늘의 핵심</div>
+  <div class="abs h" id="r-a-t" style="left:110px;top:330px;font-size:300px;line-height:1">RCIP</div>
+  <div class="abs hd" id="r-a-en" style="left:124px;top:650px;font-size:40px;color:#4A5F78">Rural Community Immigration Pilot</div>
+</div></section>
+
+<section id="r-b" class="beat clip" data-start="5.12" data-duration="14.4"><div class="in">
+  <div class="abs hd" id="r-b-t" style="left:120px;top:120px;font-size:60px">연방정부가 지역에 <span class="hl"><span class="bar" id="r-b-hl"></span><span class="tx">영주권 추천 권한</span></span>을 직접 나눠 주는 제도</div>
+  <div class="node" id="r-b-n1" style="left:220px;top:300px"><svg viewBox="0 0 64 64" style="width:110px;height:110px"><path d="M8 26 L32 10 L56 26 Z" fill="#16324F"/><path d="M14 30 V50 M26 30 V50 M38 30 V50 M50 30 V50 M8 54 H56" stroke="#16324F" stroke-width="5" stroke-linecap="round"/></svg><div class="t">연방정부</div></div>
+  <svg class="abs" viewBox="0 0 700 120" style="left:560px;top:390px;width:700px;height:120px"><path id="r-b-ar" d="M10 60 H660 M610 18 L668 60 L610 102" fill="none" stroke="#E8572B" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <div class="chip" id="r-b-key" style="left:760px;top:300px;font-size:34px">영주권 추천 권한</div>
+  <div class="node" id="r-b-n2" style="left:1320px;top:300px;border-color:#2E7D5B"><svg viewBox="0 0 64 64" style="width:110px;height:110px"><path d="M4 54 L24 18 L34 34 L42 22 L60 54 Z" fill="none" stroke="#2E7D5B" stroke-width="5" stroke-linejoin="round"/></svg><div class="t">지역 커뮤니티</div></div>
+  <div class="abs h" id="r-b-m" style="left:120px;top:690px;font-size:64px;width:1680px;text-align:center">지역이 필요한 사람을, <span class="green">지역이 직접 고릅니다</span></div>
+</div></section>
+
+<section id="r-c" class="beat clip" data-start="19.52" data-duration="11.19"><div class="in">
+  <div class="abs l" id="r-c-k" style="left:120px;top:180px;font-size:28px;color:#2E7D5B">RNIP 때부터 참여해 온 지역</div>
+  <div class="abs h" id="r-c-t" style="left:110px;top:230px;font-size:120px">웨스트 쿠트니 RCIP</div>
+  <div class="chip solid" id="r-c-1" style="left:120px;top:430px;font-size:44px">넬슨</div>
+  <div class="chip solid" id="r-c-2" style="left:330px;top:430px;font-size:44px">캐슬가</div>
+  <div class="chip solid" id="r-c-3" style="left:580px;top:430px;font-size:44px">트레일</div>
+  <div class="chip solid" id="r-c-4" style="left:800px;top:430px;font-size:44px">로슬랜드</div>
+  <div class="chip" id="r-c-5" style="left:1060px;top:430px;font-size:44px">그리고 주변 지역</div>
+</div></section>
+
+<section id="r-d" class="beat clip" data-start="30.71" data-duration="19.86"><div class="in">
+  <div class="abs h" id="r-d-t" style="left:120px;top:150px;font-size:72px">영주권까지의 흐름</div>
+  <div class="flow" id="r-d-1" style="left:120px"><div class="n">STEP 1</div><div class="t">셀커크 컬리지 졸업</div><div class="s">2년제 공립 과정</div></div>
+  <svg class="arw" id="r-d-a1" viewBox="0 0 70 50" style="left:510px"><path d="M4 25 H60 M44 8 L64 25 L44 42" fill="none" stroke="#E8572B" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <div class="flow" id="r-d-2" style="left:590px"><div class="n">STEP 2</div><div class="t">지정 고용주 정규직 취업</div><div class="s">졸업 후 취업비자 PGWP</div></div>
+  <svg class="arw" id="r-d-a2" viewBox="0 0 70 50" style="left:980px"><path d="M4 25 H60 M44 8 L64 25 L44 42" fill="none" stroke="#E8572B" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <div class="flow" id="r-d-3" style="left:1060px"><div class="n">STEP 3</div><div class="t">지역 위원회 점수 · 추천서</div><div class="s">RCIP 커뮤니티 추천</div></div>
+  <svg class="arw" id="r-d-a3" viewBox="0 0 70 50" style="left:1450px"><path d="M4 25 H60 M44 8 L64 25 L44 42" fill="none" stroke="#E8572B" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <div class="flow" id="r-d-4" style="left:1530px;width:270px;background:#16324F;color:#FAF6EF;border-color:#16324F"><div class="n" style="color:#F3C969">STEP 4</div><div class="t">연방 영주권 신청</div></div>
+</div></section>
+
+<section id="r-e" class="beat clip" data-start="50.57" data-duration="36.08"><div class="in">
+  <div class="abs h" id="r-e-t" style="left:120px;top:110px;font-size:72px">기본 요건 4가지</div>
+  <div class="req" id="r-e-1" style="top:250px"><span class="no">1</span><span class="tx">지정 고용주의 풀타임 정규직 잡오퍼</span></div>
+  <div class="req" id="r-e-2" style="top:390px"><span class="no">2</span><span class="tx">직업 등급별 영어 점수</span><span class="mini" id="r-e-2a">TEER 0·1 → CLB 6</span><span class="mini" id="r-e-2b">TEER 2·3 → CLB 5</span><span class="mini" id="r-e-2c">TEER 4·5 → CLB 4</span></div>
+  <div class="req" id="r-e-3" style="top:530px"><span class="no">3</span><span class="tx">학력 · 정착 자금 · 지역 거주 의사</span></div>
+  <div class="req" id="r-e-4" style="top:670px"><span class="no">4</span><span class="tx">1년 경력</span><span class="sticker" id="r-e-4s" style="position:relative;font-size:26px">지역 공립 교육기관 졸업생은 면제</span></div>
+</div></section>
+
+<section id="r-f" class="beat clip" data-start="86.65" data-duration="16.22"><div class="in">
+  <div class="abs h" id="r-f-t" style="left:120px;top:110px;font-size:72px">지역 점수표 · <span class="green">125점 만점</span></div>
+  <div class="col" id="r-f-c1" style="left:200px;height:330px"></div><div class="cv" style="left:200px;top:470px">25</div><div class="cl" id="r-f-l1" style="left:200px">잡오퍼</div>
+  <div class="col" id="r-f-c2" style="left:520px;height:330px;background:#16324F"></div><div class="cv" style="left:520px;top:470px">25</div><div class="cl" id="r-f-l2" style="left:520px">경력</div>
+  <div class="col" id="r-f-c3" style="left:840px;height:330px"></div><div class="cv" style="left:840px;top:470px">25</div><div class="cl" id="r-f-l3" style="left:840px">언어</div>
+  <div class="col" id="r-f-c4" style="left:1160px;height:330px;background:#16324F"></div><div class="cv" style="left:1160px;top:470px">25</div><div class="cl" id="r-f-l4" style="left:1160px">학력</div>
+  <div class="col" id="r-f-c5" style="left:1480px;height:330px"></div><div class="cv" style="left:1480px;top:470px">25</div><div class="cl" id="r-f-l5" style="left:1480px">거주 의사</div>
+  <div class="abs" id="r-f-base" style="left:160px;top:780px;width:1560px;height:6px;background:#16324F;border-radius:3px"></div>
+</div></section>
+      </div>
+      <script>
+        (function () {
+const root=document.getElementById("ch06-rcip");
+const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
+const tl=gsap.timeline({paused:true});
+function E(el){return typeof el==='string'?q(el):el;}
+function inn(el,at,o){o=o||{};el=E(el);
+  tl.fromTo(el,{opacity:0,x:o.x||0,y:(o.y===undefined?30:o.y),scale:(o.s===undefined?1:o.s),rotation:(o.r0===undefined?(o.r||0):o.r0)},
+  {opacity:1,x:0,y:0,scale:1,rotation:o.r||0,duration:o.d||0.6,ease:o.e||'power3.out'},at);}
+function whip(el,at,dy){el=E(el);tl.set(el,{opacity:0},0);tl.set(el,{opacity:1,y:dy||70},at);tl.to(el,{y:0,duration:0.45,ease:'power4.out'},at);}
+function pop(el,at,o){o=o||{};el=E(el);tl.fromTo(el,{opacity:0,scale:0},{opacity:1,scale:1,duration:o.d||0.5,ease:o.e||'back.out(2)'},at);}
+function pol(el,at,rot){el=E(el);
+  tl.fromTo(el,{opacity:0,y:-180,rotation:rot*2.4,scale:1.06},{opacity:1,y:0,rotation:rot,scale:1,duration:0.85,ease:'power3.out'},at);}
+function kb(el,at,dur,a,b){el=E(el);a=a||{};b=b||{};
+  tl.fromTo(el,{scale:a.s||1,xPercent:a.x||0,yPercent:a.y||0},{scale:b.s||1.07,xPercent:b.x||0,yPercent:b.y||0,duration:dur,ease:'none'},at);}
+function count(el,from,to,at,dur,fmt){el=E(el);const st={v:from};el.textContent=fmt(from);
+  tl.fromTo(st,{v:from},{v:to,duration:dur,ease:'power2.out',immediateRender:false,onUpdate:()=>{el.textContent=fmt(st.v);}},at);}
+function grow(el,at,d,origin){el=E(el);
+  tl.fromTo(el,{scaleX:0,transformOrigin:origin||'0% 50%'},{scaleX:1,duration:d||0.8,ease:'power3.inOut'},at);}
+function growY(el,at,d){el=E(el);
+  tl.fromTo(el,{scaleY:0,transformOrigin:'50% 100%'},{scaleY:1,duration:d||0.8,ease:'power3.out'},at);}
+function draw(path,at,d){path=E(path);const L=path.getTotalLength();path.style.strokeDasharray=L+' '+L;
+  tl.fromTo(path,{opacity:0},{opacity:1,duration:0.05},at);
+  tl.fromTo(path,{strokeDashoffset:L},{strokeDashoffset:0,duration:d||1,ease:'power2.inOut'},at);}
+function outt(el,at,o){o=o||{};el=E(el);tl.to(el,{opacity:0,y:o.y||0,x:o.x||0,duration:o.d||0.4,ease:'power2.in'},at);}
+function ambient(D){
+  qa('.ghost').forEach((g,i)=>tl.fromTo(g,{x:0},{x:(i%2?160:-160),duration:D,ease:'none'},0));
+  qa('.glow').forEach((g,i)=>{const c=4+i;const n=Math.max(0,Math.floor(D/c)-1);
+    tl.fromTo(g,{scale:0.92},{scale:1.08,duration:c/2,ease:'sine.inOut',yoyo:true,repeat:n},0);});
+}
+// 원형 게이지: <svg class="gauge"><circle class="trk"/><circle class="val"/></svg>
+function gauge(svgSel,pct,at,d){const c=E(svgSel).querySelector('.val');const L=2*Math.PI*parseFloat(c.getAttribute('r'));
+  c.style.strokeDasharray=L+' '+L;tl.fromTo(c,{strokeDashoffset:L},{strokeDashoffset:L*(1-pct/100),duration:d||1.2,ease:'power2.out'},at);}
+// 점 격자: 컨테이너 안에 n개의 점을 만들고 앞의 k개를 강조색으로 채운다
+function dots(sel,n,k,cols,size,gap,on,off){const el=E(sel);let h='';for(let i=0;i<n;i++){const x=(i%cols)*(size+gap),y=Math.floor(i/cols)*(size+gap);
+  h+=`<i style="position:absolute;left:${x}px;top:${y}px;width:${size}px;height:${size}px;border-radius:50%;background:${i<k?on:off}"></i>`;}el.innerHTML=h;return Array.from(el.children);}
+function dotsIn(list,at,span){tl.fromTo(list,{scale:0},{scale:1,duration:0.25,ease:'back.out(2)',stagger:{each:(span||1)/list.length}},at);}
+
+const D = 102.87;
+const R = [0.9, 5.42, 15.36, 19.82, 31.01, 32.51, 40.55, 50.87, 52.91, 58.39, 71.39, 77.81, 86.95];
+
+ambient(D);
+inn('#r-a-st',0.2,{s:1.5,y:0,r0:-14,r:-4,d:0.4,e:'back.out(2.4)'});
+whip('#r-a-t',0.4,130);
+inn('#r-a-en',1.4,{y:16});
+const B=R[1]-0.3;
+whip('#r-b-t',B+0.3,60); grow('#r-b-hl',B+4.0,0.6);
+pop('#r-b-n1',B+1.6,{d:0.6});
+draw('#r-b-ar',B+3.0,1.0);
+pop('#r-b-key',B+3.6);
+pop('#r-b-n2',B+4.2,{d:0.6});
+whip('#r-b-m',R[2]-0.1,70);
+const C=R[3]-0.3;
+inn('#r-c-k',C+0.2,{y:16});
+whip('#r-c-t',C+0.5,90);
+['1','2','3','4','5'].forEach((n,i)=>pop('#r-c-'+n,C+4.6+i*0.6));
+const Dd=R[4]-0.3;
+whip('#r-d-t',Dd+0.2,70);
+inn('#r-d-1',R[5]+0.2,{y:50,d:0.6,e:'back.out(1.4)'});
+draw('#r-d-a1 path',R[5]+2.4,0.35);
+inn('#r-d-2',R[5]+2.8,{y:50,d:0.6,e:'back.out(1.4)'});
+draw('#r-d-a2 path',R[6]+0.6,0.35);
+inn('#r-d-3',R[6]+1.0,{y:50,d:0.6,e:'back.out(1.4)'});
+draw('#r-d-a3 path',R[6]+5.6,0.35);
+inn('#r-d-4',R[6]+6.0,{y:50,d:0.6,e:'back.out(1.4)'});
+const Ee=R[7]-0.3;
+whip('#r-e-t',Ee+0.2,70);
+inn('#r-e-1',R[8]+0.1,{x:-60,y:0});
+inn('#r-e-2',R[9]+0.1,{x:-60,y:0});
+pop('#r-e-2a',R[10]-6.2); pop('#r-e-2b',R[10]-4.6); pop('#r-e-2c',R[10]-3.0);
+inn('#r-e-3',R[10]+0.1,{x:-60,y:0});
+inn('#r-e-4',R[11]+0.1,{x:-60,y:0});
+inn('#r-e-4s',R[11]+3.4,{s:1.4,y:0,r0:-10,r:-2,d:0.4,e:'back.out(2.4)'});
+const Fz=R[12]-0.3;
+whip('#r-f-t',Fz+0.2,70);
+grow('#r-f-base',Fz+0.4,0.6);
+['1','2','3','4','5'].forEach((n,i)=>{growY('#r-f-c'+n,Fz+0.8+i*0.7,0.7); inn('#r-f-l'+n,Fz+0.9+i*0.7,{y:10});});
+tl.fromTo(qa('#r-f .cv'),{opacity:0},{opacity:1,duration:0.3,stagger:0.7},Fz+1.4);
+
+tl.fromTo(q('#r-a .in'),{opacity:1},{opacity:0,duration:0.28,ease:'power1.in',immediateRender:false},4.82);
+tl.fromTo(q('#r-b .in'),{opacity:1},{opacity:0,duration:0.28,ease:'power1.in',immediateRender:false},19.22);
+tl.fromTo(q('#r-c .in'),{opacity:1},{opacity:0,duration:0.28,ease:'power1.in',immediateRender:false},30.41);
+tl.fromTo(q('#r-d .in'),{opacity:1},{opacity:0,duration:0.28,ease:'power1.in',immediateRender:false},50.27);
+tl.fromTo(q('#r-e .in'),{opacity:1},{opacity:0,duration:0.28,ease:'power1.in',immediateRender:false},86.35);
+window.__timelines["ch06-rcip"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

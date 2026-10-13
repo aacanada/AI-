@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+@font-face{font-family:Pretendard;font-weight:500;src:url(assets/fonts/Pretendard-Medium.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:700;src:url(assets/fonts/Pretendard-Bold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:800;src:url(assets/fonts/Pretendard-ExtraBold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:900;src:url(assets/fonts/Pretendard-Black.woff2) format("woff2")}
+@font-face{font-family:Yellowtail;font-weight:400;src:url(assets/fonts/Yellowtail-Regular.ttf) format("truetype")}
+#ch02-where{position:absolute;inset:0;overflow:hidden;background:#FAF6EF;color:#16324F;font-family:Pretendard,sans-serif;word-break:keep-all}
+#ch02-where *{box-sizing:border-box}
+#ch02-where .grain{position:absolute;inset:0;opacity:.5;background-image:radial-gradient(rgba(22,50,79,.07) 1.2px,transparent 1.3px);background-size:9px 9px}
+#ch02-where .glow{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(46,125,91,.20) 0%,rgba(46,125,91,0) 70%)}
+#ch02-where .glow.warm{background:radial-gradient(circle,rgba(232,87,43,.14) 0%,rgba(232,87,43,0) 70%)}
+#ch02-where .ghost{position:absolute;font-weight:900;color:rgba(22,50,79,.07);font-size:300px;letter-spacing:-.04em;white-space:nowrap;line-height:1}
+#ch02-where .stage{position:absolute;inset:0}
+#ch02-where .beat{position:absolute;inset:0}
+#ch02-where .abs{position:absolute}
+#ch02-where .h{font-weight:900;letter-spacing:-.03em;line-height:1.12}
+#ch02-where .hd{font-weight:800;letter-spacing:-.02em;line-height:1.22}
+#ch02-where .b{font-weight:500;line-height:1.5}
+#ch02-where .l{font-weight:700;letter-spacing:.08em}
+#ch02-where .script{font-family:Yellowtail,cursive;line-height:1.05;white-space:nowrap}
+#ch02-where .green{color:#2E7D5B}
+#ch02-where .orange{color:#E8572B}
+#ch02-where .sticker{position:absolute;background:#E8572B;color:#fff;font-weight:800;font-size:24px;letter-spacing:.12em;padding:10px 24px;border-radius:99px;white-space:nowrap}
+#ch02-where .chip{position:absolute;background:#FAF6EF;border:3px solid #16324F;border-radius:99px;padding:10px 26px;font-weight:700;font-size:30px;white-space:nowrap;color:#16324F}
+#ch02-where .chip.gr{border-color:#2E7D5B;color:#1F5E44}
+#ch02-where .chip.solid{background:#16324F;color:#FAF6EF}
+#ch02-where .chip.sand{background:#F3C969;border-color:#F3C969}
+#ch02-where .pol{position:absolute;background:#fff;padding:16px 16px 60px;box-shadow:0 20px 44px rgba(22,50,79,.26)}
+#ch02-where .pol .ph{position:relative;width:100%;height:100%;overflow:hidden}
+#ch02-where .pol img{display:block;width:100%;height:100%;object-fit:cover}
+#ch02-where .pol .cap{position:absolute;left:0;right:0;bottom:10px;text-align:center;font-family:Yellowtail,cursive;font-size:34px;color:#16324F}
+#ch02-where .card{position:absolute;background:#fff;border:3px solid rgba(22,50,79,.14);border-radius:24px;box-shadow:0 12px 30px rgba(22,50,79,.13)}
+#ch02-where .panel{position:absolute;background:#16324F;border-radius:28px;color:#FAF6EF}
+#ch02-where .hl{position:relative;display:inline-block;isolation:isolate}
+#ch02-where .hl .bar{position:absolute;left:-6px;right:-6px;bottom:6px;height:26px;background:#F3C969;transform-origin:0 50%}
+#ch02-where .hl .tx{position:relative}
+#ch02-where .ico{position:absolute;border-radius:50%;background:#fff;border:4px solid #16324F;display:flex;align-items:center;justify-content:center}
+#ch02-where .ico svg{width:58%;height:58%}
+#ch02-where .tile{position:absolute;border-radius:22px;overflow:hidden;box-shadow:0 14px 30px rgba(22,50,79,.22)}
+#ch02-where .tile img{width:100%;height:100%;object-fit:cover;display:block}
+#ch02-where .tile .tl{position:absolute;left:16px;bottom:14px;background:rgba(22,50,79,.88);color:#FAF6EF;font-weight:800;font-size:26px;padding:6px 16px;border-radius:99px}
+
+#ch02-where .in{position:absolute;inset:0}
+
+#ch02-where .city{position:absolute;width:26px;height:26px;border-radius:50%;background:#16324F}
+#ch02-where .cn{position:absolute;font-weight:800;font-size:36px;letter-spacing:-.02em}
+#ch02-where .pin{position:absolute;width:54px;height:54px;border-radius:50% 50% 50% 0;background:#E8572B}
+#ch02-where .ring{position:absolute;width:140px;height:140px;border-radius:50%;border:6px solid #2E7D5B;opacity:0}
+#ch02-where .camp{position:absolute;width:20px;height:20px;border-radius:50%;background:#4A5F78}
+#ch02-where .cl{position:absolute;font-weight:700;font-size:28px;color:#4A5F78}
+
+      </style>
+      <div id="ch02-where" data-composition-id="ch02-where" data-width="1920" data-height="1080" data-duration="36.46">
+<div class="grain"></div>
+<div data-layout-ignore class="glow" style="left:900px;top:200px;width:1000px;height:1000px"></div>
+<svg class="ghost" aria-hidden="true" data-layout-ignore style="left:-60px;top:690px;width:2600px;height:330px;overflow:visible"><text x="0" y="270" font-family="Pretendard" font-weight="900" font-size="300" fill="rgba(22,50,79,.07)">WEST KOOTENAY</text></svg>
+
+<section id="m" class="beat clip" data-start="0.0" data-duration="36.46"><div class="in">
+  <div class="abs hd" id="m-t" style="left:120px;top:96px;font-size:60px">여기가 어디일까요?</div>
+  <svg class="abs" viewBox="0 0 1920 1080" style="left:0;top:0;width:1920px;height:1080px">
+    <!-- BC / 앨버타 경계와 미국 국경 -->
+    <path id="m-coast" d="M150 230 C 210 330, 180 430, 250 520 C 300 590, 280 660, 330 760" fill="none" stroke="rgba(22,50,79,.28)" stroke-width="6" stroke-dasharray="2 14" stroke-linecap="round"/>
+    <path id="m-ab" d="M1440 200 C 1470 330, 1520 430, 1560 520 C 1590 600, 1600 700, 1620 800" fill="none" stroke="rgba(22,50,79,.28)" stroke-width="6" stroke-dasharray="2 14" stroke-linecap="round"/>
+    <path id="m-us" d="M330 800 H1640" fill="none" stroke="#16324F" stroke-width="5" stroke-dasharray="20 14"/>
+    <ellipse id="m-region" cx="1230" cy="690" rx="230" ry="120" fill="#2E7D5B" opacity="0"/>
+    <path id="m-r1" d="M1790 330 C 1640 420, 1420 520, 1240 660" fill="none" stroke="#16324F" stroke-width="6" stroke-linecap="round"/>
+    <path id="m-r2" d="M360 640 C 640 520, 960 560, 1225 670" fill="none" stroke="#16324F" stroke-width="6" stroke-linecap="round"/>
+    <path id="m-r3" d="M900 600 C 1000 640, 1120 660, 1220 680" fill="none" stroke="#E8572B" stroke-width="6" stroke-linecap="round"/>
+  </svg>
+  <div class="abs l" id="m-bc" style="left:640px;top:440px;font-size:30px;color:#4A5F78">BRITISH COLUMBIA</div>
+  <div class="abs l" id="m-abl" style="left:1460px;top:180px;font-size:30px;color:#4A5F78">ALBERTA</div>
+  <div class="abs l" id="m-usl" style="left:760px;top:820px;font-size:28px;color:#4A5F78">미국 국경 · USA</div>
+  <div class="city" id="m-van" style="left:347px;top:627px"></div><div class="cn" id="m-vant" style="left:280px;top:670px">밴쿠버</div>
+  <div class="city" id="m-kel" style="left:887px;top:587px"></div><div class="cn" id="m-kelt" style="left:820px;top:520px">켈로나</div>
+  <div class="city" id="m-cal" style="left:1777px;top:317px"></div><div class="cn" id="m-calt" style="left:1730px;top:360px">캘거리</div>
+  <div class="chip" id="m-c1" style="left:1440px;top:420px">차로 7시간</div>
+  <div class="chip" id="m-c2" style="left:540px;top:500px">차로 8시간</div>
+  <div class="chip orange" id="m-c3" style="left:930px;top:680px;border-color:#E8572B">4시간</div>
+  <div class="abs h" id="m-wk" style="left:1400px;top:700px;font-size:44px">웨스트 쿠트니</div>
+  <div class="panel" id="m-pop" style="left:120px;top:200px;width:360px;height:160px;padding:26px 34px"><div class="l" style="font-size:22px;color:#F3C969">지역 인구</div><div class="h" style="font-size:66px"><span id="m-popn">80,000</span>명</div></div>
+  <!-- 캠퍼스 -->
+  <div class="camp" id="m-k1" style="left:1150px;top:700px"></div><div class="cl" id="m-k1t" style="left:1040px;top:730px">캐슬가</div>
+  <div class="camp" id="m-k2" style="left:1290px;top:650px"></div><div class="cl" id="m-k2t" style="left:1310px;top:610px">넬슨</div>
+  <div class="camp" id="m-k3" style="left:1180px;top:770px"></div><div class="cl" id="m-k3t" style="left:1210px;top:760px">트레일</div>
+  <div class="camp" id="m-k4" style="left:960px;top:760px"></div><div class="cl" id="m-k4t" style="left:880px;top:770px">그랜드포크스</div>
+  <div class="ring" id="m-ring1" style="left:1090px;top:640px"></div>
+  <div class="ring" id="m-ring2" style="left:1230px;top:590px"></div>
+  <div class="card" id="m-two" style="left:540px;top:190px;width:520px;height:250px;padding:34px 40px">
+    <div class="l" style="font-size:22px;color:#2E7D5B">국제학생 캠퍼스</div>
+    <div class="h" style="margin-top:12px;font-size:76px">넬슨 · 캐슬가</div>
+    <div class="b" style="margin-top:6px;font-size:28px;color:#4A5F78">셀커크 컬리지 · 두 도시</div>
+  </div>
+</div></section>
+      </div>
+      <script>
+        (function () {
+const root=document.getElementById("ch02-where");
+const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
+const tl=gsap.timeline({paused:true});
+function E(el){return typeof el==='string'?q(el):el;}
+function inn(el,at,o){o=o||{};el=E(el);
+  tl.fromTo(el,{opacity:0,x:o.x||0,y:(o.y===undefined?30:o.y),scale:(o.s===undefined?1:o.s),rotation:(o.r0===undefined?(o.r||0):o.r0)},
+  {opacity:1,x:0,y:0,scale:1,rotation:o.r||0,duration:o.d||0.6,ease:o.e||'power3.out'},at);}
+function whip(el,at,dy){el=E(el);tl.set(el,{opacity:0},0);tl.set(el,{opacity:1,y:dy||70},at);tl.to(el,{y:0,duration:0.45,ease:'power4.out'},at);}
+function pop(el,at,o){o=o||{};el=E(el);tl.fromTo(el,{opacity:0,scale:0},{opacity:1,scale:1,duration:o.d||0.5,ease:o.e||'back.out(2)'},at);}
+function pol(el,at,rot){el=E(el);
+  tl.fromTo(el,{opacity:0,y:-180,rotation:rot*2.4,scale:1.06},{opacity:1,y:0,rotation:rot,scale:1,duration:0.85,ease:'power3.out'},at);}
+function kb(el,at,dur,a,b){el=E(el);a=a||{};b=b||{};
+  tl.fromTo(el,{scale:a.s||1,xPercent:a.x||0,yPercent:a.y||0},{scale:b.s||1.07,xPercent:b.x||0,yPercent:b.y||0,duration:dur,ease:'none'},at);}
+function count(el,from,to,at,dur,fmt){el=E(el);const st={v:from};el.textContent=fmt(from);
+  tl.fromTo(st,{v:from},{v:to,duration:dur,ease:'power2.out',immediateRender:false,onUpdate:()=>{el.textContent=fmt(st.v);}},at);}
+function grow(el,at,d,origin){el=E(el);
+  tl.fromTo(el,{scaleX:0,transformOrigin:origin||'0% 50%'},{scaleX:1,duration:d||0.8,ease:'power3.inOut'},at);}
+function growY(el,at,d){el=E(el);
+  tl.fromTo(el,{scaleY:0,transformOrigin:'50% 100%'},{scaleY:1,duration:d||0.8,ease:'power3.out'},at);}
+function draw(path,at,d){path=E(path);const L=path.getTotalLength();path.style.strokeDasharray=L+' '+L;
+  tl.fromTo(path,{opacity:0},{opacity:1,duration:0.05},at);
+  tl.fromTo(path,{strokeDashoffset:L},{strokeDashoffset:0,duration:d||1,ease:'power2.inOut'},at);}
+function outt(el,at,o){o=o||{};el=E(el);tl.to(el,{opacity:0,y:o.y||0,x:o.x||0,duration:o.d||0.4,ease:'power2.in'},at);}
+function ambient(D){
+  qa('.ghost').forEach((g,i)=>tl.fromTo(g,{x:0},{x:(i%2?160:-160),duration:D,ease:'none'},0));
+  qa('.glow').forEach((g,i)=>{const c=4+i;const n=Math.max(0,Math.floor(D/c)-1);
+    tl.fromTo(g,{scale:0.92},{scale:1.08,duration:c/2,ease:'sine.inOut',yoyo:true,repeat:n},0);});
+}
+// 원형 게이지: <svg class="gauge"><circle class="trk"/><circle class="val"/></svg>
+function gauge(svgSel,pct,at,d){const c=E(svgSel).querySelector('.val');const L=2*Math.PI*parseFloat(c.getAttribute('r'));
+  c.style.strokeDasharray=L+' '+L;tl.fromTo(c,{strokeDashoffset:L},{strokeDashoffset:L*(1-pct/100),duration:d||1.2,ease:'power2.out'},at);}
+// 점 격자: 컨테이너 안에 n개의 점을 만들고 앞의 k개를 강조색으로 채운다
+function dots(sel,n,k,cols,size,gap,on,off){const el=E(sel);let h='';for(let i=0;i<n;i++){const x=(i%cols)*(size+gap),y=Math.floor(i/cols)*(size+gap);
+  h+=`<i style="position:absolute;left:${x}px;top:${y}px;width:${size}px;height:${size}px;border-radius:50%;background:${i<k?on:off}"></i>`;}el.innerHTML=h;return Array.from(el.children);}
+function dotsIn(list,at,span){tl.fromTo(list,{scale:0},{scale:1,duration:0.25,ease:'back.out(2)',stagger:{each:(span||1)/list.length}},at);}
+
+const D = 36.46;
+const R = [0.9, 4.14, 14.44, 21.0, 24.34, 31.44];
+
+ambient(D);
+inn('#m-t',0.3,{y:20});
+draw('#m-coast',0.8,1.4); draw('#m-ab',1.0,1.4);
+inn('#m-bc',R[1]+0.4,{y:10}); inn('#m-abl',R[1]+0.7,{y:10});
+draw('#m-us',R[1]+3.0,1.2); inn('#m-usl',R[1]+3.8,{y:10});
+tl.fromTo('#m-region',{opacity:0,scale:0.5,transformOrigin:'50% 50%'},{opacity:0.2,scale:1,duration:0.9,ease:'power3.out'},R[1]+6.0);
+whip('#m-wk',R[1]+6.4,50);
+// 거리
+pop('#m-cal',R[2]-0.2); inn('#m-calt',R[2],{y:10}); draw('#m-r1',R[2]+0.2,1.0); pop('#m-c1',R[2]+1.0);
+pop('#m-van',R[2]+1.8); inn('#m-vant',R[2]+1.9,{y:10}); draw('#m-r2',R[2]+2.0,1.0); pop('#m-c2',R[2]+2.8);
+pop('#m-kel',R[2]+3.4); inn('#m-kelt',R[2]+3.5,{y:10}); draw('#m-r3',R[2]+3.6,0.6); pop('#m-c3',R[2]+4.0);
+// 인구
+inn('#m-pop',R[3]-0.2,{x:-40,y:0}); count('#m-popn',0,80000,R[3]+0.2,1.4,v=>Math.round(v).toLocaleString('en-US'));
+// 캠퍼스 4곳 → 두 도시
+['1','2','3','4'].forEach((n,i)=>{pop('#m-k'+n,R[4]+0.6+i*0.3); inn('#m-k'+n+'t',R[4]+0.7+i*0.3,{y:8});});
+tl.fromTo(['#m-k3','#m-k3t','#m-k4','#m-k4t'],{opacity:1},{opacity:0.3,duration:0.4,immediateRender:false},R[4]+4.4);
+tl.fromTo('#m-ring1',{scale:0.4,opacity:0.9},{scale:1.4,opacity:0,duration:1.2,ease:'power2.out',repeat:2},R[4]+4.6);
+tl.fromTo('#m-ring2',{scale:0.4,opacity:0.9},{scale:1.4,opacity:0,duration:1.2,ease:'power2.out',repeat:2},R[4]+4.8);
+inn('#m-two',R[5]-0.2,{x:-60,y:0,d:0.7,e:'back.out(1.4)'});
+
+
+window.__timelines["ch02-where"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

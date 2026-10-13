@@ -1,0 +1,115 @@
+<!--ROOT:ch06-rcip-->
+<style>
+#ROOT .node{position:absolute;width:300px;height:300px;border-radius:50%;background:#fff;border:5px solid #16324F;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+#ROOT .node .t{font-weight:900;font-size:46px;letter-spacing:-.02em;margin-top:10px}
+#ROOT .flow{position:absolute;top:330px;width:380px;height:300px;border-radius:26px;background:#fff;border:3px solid rgba(22,50,79,.14);box-shadow:0 12px 30px rgba(22,50,79,.13);padding:32px}
+#ROOT .flow .n{font-weight:900;font-size:24px;letter-spacing:.1em;color:#2E7D5B}
+#ROOT .flow .t{margin-top:12px;font-weight:900;font-size:42px;letter-spacing:-.02em;line-height:1.2}
+#ROOT .flow .s{margin-top:12px;font-weight:500;font-size:28px;color:#4A5F78;line-height:1.35}
+#ROOT .arw{position:absolute;top:450px;width:70px;height:50px}
+#ROOT .req{position:absolute;left:120px;width:1680px;height:118px;border-radius:22px;background:#fff;border:3px solid rgba(22,50,79,.12);display:flex;align-items:center;padding:0 36px;gap:30px}
+#ROOT .req .no{width:64px;height:64px;border-radius:50%;background:#16324F;color:#FAF6EF;font-weight:900;font-size:34px;display:flex;align-items:center;justify-content:center;flex:none}
+#ROOT .req .tx{font-weight:900;font-size:42px;letter-spacing:-.02em;white-space:nowrap}
+#ROOT .req .mini{font-weight:700;font-size:26px;border:3px solid #2E7D5B;color:#1F5E44;border-radius:99px;padding:6px 18px;white-space:nowrap}
+#ROOT .col{position:absolute;bottom:300px;width:200px;background:#2E7D5B;border-radius:18px 18px 0 0;transform-origin:50% 100%}
+#ROOT .cl{position:absolute;top:800px;width:200px;text-align:center;font-weight:900;font-size:36px}
+#ROOT .cv{position:absolute;width:200px;text-align:center;font-weight:900;font-size:40px;color:#FAF6EF}
+</style>
+<div class="grain"></div>
+<div data-layout-ignore class="glow" style="left:1150px;top:-350px;width:1100px;height:1100px"></div>
+<div data-layout-ignore class="glow warm" style="left:-350px;top:560px;width:900px;height:900px"></div>
+<svg class="ghost" aria-hidden="true" data-layout-ignore style="left:820px;top:640px;width:2600px;height:330px;overflow:visible"><text x="0" y="270" font-family="Pretendard" font-weight="900" font-size="300" fill="rgba(22,50,79,.07)">RCIP</text></svg>
+
+<section id="r-a" class="beat" data-beat="0-1">
+  <div class="sticker" id="r-a-st" style="left:120px;top:260px">오늘의 핵심</div>
+  <div class="abs h" id="r-a-t" style="left:110px;top:330px;font-size:300px;line-height:1">RCIP</div>
+  <div class="abs hd" id="r-a-en" style="left:124px;top:650px;font-size:40px;color:#4A5F78">Rural Community Immigration Pilot</div>
+</section>
+
+<section id="r-b" class="beat" data-beat="1-3">
+  <div class="abs hd" id="r-b-t" style="left:120px;top:120px;font-size:60px">연방정부가 지역에 <span class="hl"><span class="bar" id="r-b-hl"></span><span class="tx">영주권 추천 권한</span></span>을 직접 나눠 주는 제도</div>
+  <div class="node" id="r-b-n1" style="left:220px;top:300px"><svg viewBox="0 0 64 64" style="width:110px;height:110px"><path d="M8 26 L32 10 L56 26 Z" fill="#16324F"/><path d="M14 30 V50 M26 30 V50 M38 30 V50 M50 30 V50 M8 54 H56" stroke="#16324F" stroke-width="5" stroke-linecap="round"/></svg><div class="t">연방정부</div></div>
+  <svg class="abs" viewBox="0 0 700 120" style="left:560px;top:390px;width:700px;height:120px"><path id="r-b-ar" d="M10 60 H660 M610 18 L668 60 L610 102" fill="none" stroke="#E8572B" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <div class="chip" id="r-b-key" style="left:760px;top:300px;font-size:34px">영주권 추천 권한</div>
+  <div class="node" id="r-b-n2" style="left:1320px;top:300px;border-color:#2E7D5B"><svg viewBox="0 0 64 64" style="width:110px;height:110px"><path d="M4 54 L24 18 L34 34 L42 22 L60 54 Z" fill="none" stroke="#2E7D5B" stroke-width="5" stroke-linejoin="round"/></svg><div class="t">지역 커뮤니티</div></div>
+  <div class="abs h" id="r-b-m" style="left:120px;top:690px;font-size:64px;width:1680px;text-align:center">지역이 필요한 사람을, <span class="green">지역이 직접 고릅니다</span></div>
+</section>
+
+<section id="r-c" class="beat" data-beat="3-4">
+  <div class="abs l" id="r-c-k" style="left:120px;top:180px;font-size:28px;color:#2E7D5B">RNIP 때부터 참여해 온 지역</div>
+  <div class="abs h" id="r-c-t" style="left:110px;top:230px;font-size:120px">웨스트 쿠트니 RCIP</div>
+  <div class="chip solid" id="r-c-1" style="left:120px;top:430px;font-size:44px">넬슨</div>
+  <div class="chip solid" id="r-c-2" style="left:330px;top:430px;font-size:44px">캐슬가</div>
+  <div class="chip solid" id="r-c-3" style="left:580px;top:430px;font-size:44px">트레일</div>
+  <div class="chip solid" id="r-c-4" style="left:800px;top:430px;font-size:44px">로슬랜드</div>
+  <div class="chip" id="r-c-5" style="left:1060px;top:430px;font-size:44px">그리고 주변 지역</div>
+</section>
+
+<section id="r-d" class="beat" data-beat="4-7">
+  <div class="abs h" id="r-d-t" style="left:120px;top:150px;font-size:72px">영주권까지의 흐름</div>
+  <div class="flow" id="r-d-1" style="left:120px"><div class="n">STEP 1</div><div class="t">셀커크 컬리지 졸업</div><div class="s">2년제 공립 과정</div></div>
+  <svg class="arw" id="r-d-a1" viewBox="0 0 70 50" style="left:510px"><path d="M4 25 H60 M44 8 L64 25 L44 42" fill="none" stroke="#E8572B" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <div class="flow" id="r-d-2" style="left:590px"><div class="n">STEP 2</div><div class="t">지정 고용주 정규직 취업</div><div class="s">졸업 후 취업비자 PGWP</div></div>
+  <svg class="arw" id="r-d-a2" viewBox="0 0 70 50" style="left:980px"><path d="M4 25 H60 M44 8 L64 25 L44 42" fill="none" stroke="#E8572B" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <div class="flow" id="r-d-3" style="left:1060px"><div class="n">STEP 3</div><div class="t">지역 위원회 점수 · 추천서</div><div class="s">RCIP 커뮤니티 추천</div></div>
+  <svg class="arw" id="r-d-a3" viewBox="0 0 70 50" style="left:1450px"><path d="M4 25 H60 M44 8 L64 25 L44 42" fill="none" stroke="#E8572B" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <div class="flow" id="r-d-4" style="left:1530px;width:270px;background:#16324F;color:#FAF6EF;border-color:#16324F"><div class="n" style="color:#F3C969">STEP 4</div><div class="t">연방 영주권 신청</div></div>
+</section>
+
+<section id="r-e" class="beat" data-beat="7-12">
+  <div class="abs h" id="r-e-t" style="left:120px;top:110px;font-size:72px">기본 요건 4가지</div>
+  <div class="req" id="r-e-1" style="top:250px"><span class="no">1</span><span class="tx">지정 고용주의 풀타임 정규직 잡오퍼</span></div>
+  <div class="req" id="r-e-2" style="top:390px"><span class="no">2</span><span class="tx">직업 등급별 영어 점수</span><span class="mini" id="r-e-2a">TEER 0·1 → CLB 6</span><span class="mini" id="r-e-2b">TEER 2·3 → CLB 5</span><span class="mini" id="r-e-2c">TEER 4·5 → CLB 4</span></div>
+  <div class="req" id="r-e-3" style="top:530px"><span class="no">3</span><span class="tx">학력 · 정착 자금 · 지역 거주 의사</span></div>
+  <div class="req" id="r-e-4" style="top:670px"><span class="no">4</span><span class="tx">1년 경력</span><span class="sticker" id="r-e-4s" style="position:relative;font-size:26px">지역 공립 교육기관 졸업생은 면제</span></div>
+</section>
+
+<section id="r-f" class="beat" data-beat="12-end">
+  <div class="abs h" id="r-f-t" style="left:120px;top:110px;font-size:72px">지역 점수표 · <span class="green">125점 만점</span></div>
+  <div class="col" id="r-f-c1" style="left:200px;height:330px"></div><div class="cv" style="left:200px;top:470px">25</div><div class="cl" id="r-f-l1" style="left:200px">잡오퍼</div>
+  <div class="col" id="r-f-c2" style="left:520px;height:330px;background:#16324F"></div><div class="cv" style="left:520px;top:470px">25</div><div class="cl" id="r-f-l2" style="left:520px">경력</div>
+  <div class="col" id="r-f-c3" style="left:840px;height:330px"></div><div class="cv" style="left:840px;top:470px">25</div><div class="cl" id="r-f-l3" style="left:840px">언어</div>
+  <div class="col" id="r-f-c4" style="left:1160px;height:330px;background:#16324F"></div><div class="cv" style="left:1160px;top:470px">25</div><div class="cl" id="r-f-l4" style="left:1160px">학력</div>
+  <div class="col" id="r-f-c5" style="left:1480px;height:330px"></div><div class="cv" style="left:1480px;top:470px">25</div><div class="cl" id="r-f-l5" style="left:1480px">거주 의사</div>
+  <div class="abs" id="r-f-base" style="left:160px;top:780px;width:1560px;height:6px;background:#16324F;border-radius:3px"></div>
+</section>
+
+<script>
+ambient(D);
+inn('#r-a-st',0.2,{s:1.5,y:0,r0:-14,r:-4,d:0.4,e:'back.out(2.4)'});
+whip('#r-a-t',0.4,130);
+inn('#r-a-en',1.4,{y:16});
+const B=R[1]-0.3;
+whip('#r-b-t',B+0.3,60); grow('#r-b-hl',B+4.0,0.6);
+pop('#r-b-n1',B+1.6,{d:0.6});
+draw('#r-b-ar',B+3.0,1.0);
+pop('#r-b-key',B+3.6);
+pop('#r-b-n2',B+4.2,{d:0.6});
+whip('#r-b-m',R[2]-0.1,70);
+const C=R[3]-0.3;
+inn('#r-c-k',C+0.2,{y:16});
+whip('#r-c-t',C+0.5,90);
+['1','2','3','4','5'].forEach((n,i)=>pop('#r-c-'+n,C+4.6+i*0.6));
+const Dd=R[4]-0.3;
+whip('#r-d-t',Dd+0.2,70);
+inn('#r-d-1',R[5]+0.2,{y:50,d:0.6,e:'back.out(1.4)'});
+draw('#r-d-a1 path',R[5]+2.4,0.35);
+inn('#r-d-2',R[5]+2.8,{y:50,d:0.6,e:'back.out(1.4)'});
+draw('#r-d-a2 path',R[6]+0.6,0.35);
+inn('#r-d-3',R[6]+1.0,{y:50,d:0.6,e:'back.out(1.4)'});
+draw('#r-d-a3 path',R[6]+5.6,0.35);
+inn('#r-d-4',R[6]+6.0,{y:50,d:0.6,e:'back.out(1.4)'});
+const Ee=R[7]-0.3;
+whip('#r-e-t',Ee+0.2,70);
+inn('#r-e-1',R[8]+0.1,{x:-60,y:0});
+inn('#r-e-2',R[9]+0.1,{x:-60,y:0});
+pop('#r-e-2a',R[10]-6.2); pop('#r-e-2b',R[10]-4.6); pop('#r-e-2c',R[10]-3.0);
+inn('#r-e-3',R[10]+0.1,{x:-60,y:0});
+inn('#r-e-4',R[11]+0.1,{x:-60,y:0});
+inn('#r-e-4s',R[11]+3.4,{s:1.4,y:0,r0:-10,r:-2,d:0.4,e:'back.out(2.4)'});
+const Fz=R[12]-0.3;
+whip('#r-f-t',Fz+0.2,70);
+grow('#r-f-base',Fz+0.4,0.6);
+['1','2','3','4','5'].forEach((n,i)=>{growY('#r-f-c'+n,Fz+0.8+i*0.7,0.7); inn('#r-f-l'+n,Fz+0.9+i*0.7,{y:10});});
+tl.fromTo(qa('#r-f .cv'),{opacity:0},{opacity:1,duration:0.3,stagger:0.7},Fz+1.4);
+</script>

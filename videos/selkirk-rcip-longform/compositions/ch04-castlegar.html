@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+@font-face{font-family:Pretendard;font-weight:500;src:url(assets/fonts/Pretendard-Medium.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:700;src:url(assets/fonts/Pretendard-Bold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:800;src:url(assets/fonts/Pretendard-ExtraBold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:900;src:url(assets/fonts/Pretendard-Black.woff2) format("woff2")}
+@font-face{font-family:Yellowtail;font-weight:400;src:url(assets/fonts/Yellowtail-Regular.ttf) format("truetype")}
+#ch04-castlegar{position:absolute;inset:0;overflow:hidden;background:#FAF6EF;color:#16324F;font-family:Pretendard,sans-serif;word-break:keep-all}
+#ch04-castlegar *{box-sizing:border-box}
+#ch04-castlegar .grain{position:absolute;inset:0;opacity:.5;background-image:radial-gradient(rgba(22,50,79,.07) 1.2px,transparent 1.3px);background-size:9px 9px}
+#ch04-castlegar .glow{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(46,125,91,.20) 0%,rgba(46,125,91,0) 70%)}
+#ch04-castlegar .glow.warm{background:radial-gradient(circle,rgba(232,87,43,.14) 0%,rgba(232,87,43,0) 70%)}
+#ch04-castlegar .ghost{position:absolute;font-weight:900;color:rgba(22,50,79,.07);font-size:300px;letter-spacing:-.04em;white-space:nowrap;line-height:1}
+#ch04-castlegar .stage{position:absolute;inset:0}
+#ch04-castlegar .beat{position:absolute;inset:0}
+#ch04-castlegar .abs{position:absolute}
+#ch04-castlegar .h{font-weight:900;letter-spacing:-.03em;line-height:1.12}
+#ch04-castlegar .hd{font-weight:800;letter-spacing:-.02em;line-height:1.22}
+#ch04-castlegar .b{font-weight:500;line-height:1.5}
+#ch04-castlegar .l{font-weight:700;letter-spacing:.08em}
+#ch04-castlegar .script{font-family:Yellowtail,cursive;line-height:1.05;white-space:nowrap}
+#ch04-castlegar .green{color:#2E7D5B}
+#ch04-castlegar .orange{color:#E8572B}
+#ch04-castlegar .sticker{position:absolute;background:#E8572B;color:#fff;font-weight:800;font-size:24px;letter-spacing:.12em;padding:10px 24px;border-radius:99px;white-space:nowrap}
+#ch04-castlegar .chip{position:absolute;background:#FAF6EF;border:3px solid #16324F;border-radius:99px;padding:10px 26px;font-weight:700;font-size:30px;white-space:nowrap;color:#16324F}
+#ch04-castlegar .chip.gr{border-color:#2E7D5B;color:#1F5E44}
+#ch04-castlegar .chip.solid{background:#16324F;color:#FAF6EF}
+#ch04-castlegar .chip.sand{background:#F3C969;border-color:#F3C969}
+#ch04-castlegar .pol{position:absolute;background:#fff;padding:16px 16px 60px;box-shadow:0 20px 44px rgba(22,50,79,.26)}
+#ch04-castlegar .pol .ph{position:relative;width:100%;height:100%;overflow:hidden}
+#ch04-castlegar .pol img{display:block;width:100%;height:100%;object-fit:cover}
+#ch04-castlegar .pol .cap{position:absolute;left:0;right:0;bottom:10px;text-align:center;font-family:Yellowtail,cursive;font-size:34px;color:#16324F}
+#ch04-castlegar .card{position:absolute;background:#fff;border:3px solid rgba(22,50,79,.14);border-radius:24px;box-shadow:0 12px 30px rgba(22,50,79,.13)}
+#ch04-castlegar .panel{position:absolute;background:#16324F;border-radius:28px;color:#FAF6EF}
+#ch04-castlegar .hl{position:relative;display:inline-block;isolation:isolate}
+#ch04-castlegar .hl .bar{position:absolute;left:-6px;right:-6px;bottom:6px;height:26px;background:#F3C969;transform-origin:0 50%}
+#ch04-castlegar .hl .tx{position:relative}
+#ch04-castlegar .ico{position:absolute;border-radius:50%;background:#fff;border:4px solid #16324F;display:flex;align-items:center;justify-content:center}
+#ch04-castlegar .ico svg{width:58%;height:58%}
+#ch04-castlegar .tile{position:absolute;border-radius:22px;overflow:hidden;box-shadow:0 14px 30px rgba(22,50,79,.22)}
+#ch04-castlegar .tile img{width:100%;height:100%;object-fit:cover;display:block}
+#ch04-castlegar .tile .tl{position:absolute;left:16px;bottom:14px;background:rgba(22,50,79,.88);color:#FAF6EF;font-weight:800;font-size:26px;padding:6px 16px;border-radius:99px}
+
+#ch04-castlegar .in{position:absolute;inset:0}
+
+#ch04-castlegar .ring{position:absolute;width:160px;height:160px;border-radius:50%;border:6px solid #2E7D5B;opacity:0}
+#ch04-castlegar .ico .lb{position:absolute;left:-40px;right:-40px;top:calc(100% + 18px);text-align:center;font-weight:900;font-size:40px;letter-spacing:-.02em}
+
+      </style>
+      <div id="ch04-castlegar" data-composition-id="ch04-castlegar" data-width="1920" data-height="1080" data-duration="51.66">
+<div class="grain"></div>
+<div data-layout-ignore class="glow" style="left:1150px;top:-350px;width:1100px;height:1100px"></div>
+<div data-layout-ignore class="glow warm" style="left:-350px;top:560px;width:900px;height:900px"></div>
+<svg class="ghost" aria-hidden="true" data-layout-ignore style="left:820px;top:640px;width:2600px;height:330px;overflow:visible"><text x="0" y="270" font-family="Pretendard" font-weight="900" font-size="300" fill="rgba(22,50,79,.07)">CASTLEGAR</text></svg>
+
+<section id="c-a" class="beat clip" data-start="0.0" data-duration="3.22"><div class="in">
+  <div class="sticker" id="c-a-st" style="left:120px;top:300px">도시 02</div>
+  <div class="abs h" id="c-a-name" style="left:110px;top:380px;font-size:280px;line-height:1">캐슬가</div>
+  <div class="abs l" id="c-a-en" style="left:124px;top:690px;font-size:30px;color:#2E7D5B">CASTLEGAR, BRITISH COLUMBIA</div>
+</div></section>
+
+<section id="c-b" class="beat clip" data-start="3.22" data-duration="7.64"><div class="in">
+  <div class="abs script green" id="c-b-s" style="left:120px;top:170px;font-size:110px">Heart of the Kootenays</div>
+  <div class="abs h" id="c-b-t" style="left:120px;top:340px;font-size:84px">웨스트 쿠트니의 한가운데</div>
+  <div class="chip solid" id="c-b-c" style="left:120px;top:490px;font-size:38px">셀커크 컬리지 메인 캠퍼스</div>
+  <div class="ring" id="c-b-ring" style="left:420px;top:620px"></div>
+  <div class="pol" id="c-b-p" style="left:1300px;top:150px;width:500px;height:560px"><div class="ph"><img id="c-b-pi" src="assets/img/castlegar-campus-building.jpg" alt=""/></div><div class="cap">Castlegar Campus</div></div>
+</div></section>
+
+<section id="c-c" class="beat clip" data-start="10.86" data-duration="8.12"><div class="in">
+  <div class="abs hd" id="c-c-t" style="left:120px;top:110px;font-size:64px">두 강이 만나는 곳, 공항이 있는 도시</div>
+  <svg class="abs" viewBox="0 0 1000 600" style="left:120px;top:230px;width:1000px;height:600px">
+    <path id="c-c-r1" d="M60 40 C 200 160, 300 280, 520 330 C 700 370, 820 460, 960 580" fill="none" stroke="#2E7D5B" stroke-width="26" stroke-linecap="round"/>
+    <path id="c-c-r2" d="M980 60 C 860 160, 700 260, 520 330" fill="none" stroke="#2E7D5B" stroke-width="18" stroke-linecap="round" opacity=".7"/>
+    <circle id="c-c-dot" cx="520" cy="330" r="22" fill="#E8572B"/>
+  </svg>
+  <div class="abs hd" id="c-c-l1" style="left:250px;top:215px;font-size:36px;color:#1F5E44">컬럼비아강</div>
+  <div class="abs hd" id="c-c-l2" style="left:880px;top:250px;font-size:36px;color:#1F5E44">쿠트니강</div>
+  <div class="abs h" id="c-c-cg" style="left:420px;top:600px;font-size:44px">캐슬가</div>
+  <div class="card" id="c-c-air" style="left:1240px;top:300px;width:560px;height:330px;padding:40px">
+    <svg viewBox="0 0 64 64" style="width:90px;height:90px"><path d="M30 6 C 34 6, 34 12, 34 16 V26 L58 40 V46 L34 38 V52 L42 58 V62 L32 59 L22 62 V58 L30 52 V38 L6 46 V40 L30 26 V16 C 30 12, 26 6, 30 6 Z" fill="#16324F"/></svg>
+    <div class="h" style="margin-top:14px;font-size:54px">지역 공항</div>
+    <div class="b" style="margin-top:6px;font-size:34px;color:#4A5F78">밴쿠버 · 캘거리로 바로</div>
+  </div>
+</div></section>
+
+<section id="c-d" class="beat clip" data-start="18.98" data-duration="7.58"><div class="in">
+  <div class="abs h" id="c-d-t" style="left:120px;top:120px;font-size:76px">말 그대로 <span class="hl"><span class="bar" id="c-d-hl"></span><span class="tx">일하기 좋은 도시</span></span></div>
+  <div class="ico" id="c-d-1" style="left:190px;top:330px;width:240px;height:240px"><svg viewBox="0 0 64 64"><rect x="10" y="14" width="44" height="44" rx="6" fill="none" stroke="#16324F" stroke-width="4.5"/><path d="M32 22 V42 M22 32 H42" stroke="#E8572B" stroke-width="6" stroke-linecap="round"/></svg><div class="lb">병원</div></div>
+  <div class="ico" id="c-d-2" style="left:610px;top:330px;width:240px;height:240px"><svg viewBox="0 0 64 64"><path d="M8 30 L32 10 L56 30 V56 H8 Z" fill="none" stroke="#16324F" stroke-width="4.5" stroke-linejoin="round"/><path d="M32 46 C 22 38, 22 30, 28 28 C 31 27, 32 30, 32 31 C 32 30, 33 27, 36 28 C 42 30, 42 38, 32 46 Z" fill="#E8572B"/></svg><div class="lb">요양시설</div></div>
+  <div class="ico" id="c-d-3" style="left:1030px;top:330px;width:240px;height:240px"><svg viewBox="0 0 64 64"><circle cx="22" cy="20" r="7" fill="#16324F"/><circle cx="44" cy="26" r="5" fill="#2E7D5B"/><path d="M10 56 C 10 40, 34 40, 34 56 M34 56 C 34 46, 54 46, 54 56" fill="none" stroke="#16324F" stroke-width="4.5" stroke-linecap="round"/></svg><div class="lb">보육시설</div></div>
+  <div class="ico" id="c-d-4" style="left:1450px;top:330px;width:240px;height:240px"><svg viewBox="0 0 64 64"><path d="M6 56 V30 L20 38 V30 L34 38 V18 H44 V56 Z M44 56 H58 V26 H50" fill="none" stroke="#16324F" stroke-width="4.5" stroke-linejoin="round"/></svg><div class="lb">산업체</div></div>
+</div></section>
+
+<section id="c-e" class="beat clip" data-start="26.56" data-duration="14.02"><div class="in">
+  <div class="pol" id="c-e-p" style="left:120px;top:140px;width:560px;height:440px"><div class="ph"><img id="c-e-pi" src="assets/img/korean-grocery-front.jpg" alt=""/></div><div class="cap">Korean Grocery</div></div>
+  <div class="abs l" id="c-e-k" style="left:800px;top:170px;font-size:26px;color:#2E7D5B">한국인 비율 약 0.05%</div>
+  <div class="abs h" id="c-e-t" style="left:800px;top:220px;font-size:80px">한국인은 거의 없지만<br/><span class="green">한인마트</span>는 있어요</div>
+  <div class="card" id="c-e-card" style="left:800px;top:520px;width:1000px;height:200px;padding:36px 44px;background:#16324F;border-color:#16324F;color:#FAF6EF">
+    <div class="l" style="font-size:24px;color:#F3C969">오히려 장점</div>
+    <div class="h" style="margin-top:10px;font-size:58px">영어 환경에 제대로 들어갑니다</div>
+  </div>
+</div></section>
+
+<section id="c-f" class="beat clip" data-start="40.58" data-duration="11.08"><div class="in">
+  <div class="abs hd" id="c-f-k" style="left:120px;top:330px;font-size:50px;color:#4A5F78">두 도시의 중심에 있는 학교</div>
+  <div class="abs h" id="c-f-t" style="left:110px;top:410px;font-size:170px">셀커크 컬리지<span class="orange"> →</span></div>
+</div></section>
+      </div>
+      <script>
+        (function () {
+const root=document.getElementById("ch04-castlegar");
+const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
+const tl=gsap.timeline({paused:true});
+function E(el){return typeof el==='string'?q(el):el;}
+function inn(el,at,o){o=o||{};el=E(el);
+  tl.fromTo(el,{opacity:0,x:o.x||0,y:(o.y===undefined?30:o.y),scale:(o.s===undefined?1:o.s),rotation:(o.r0===undefined?(o.r||0):o.r0)},
+  {opacity:1,x:0,y:0,scale:1,rotation:o.r||0,duration:o.d||0.6,ease:o.e||'power3.out'},at);}
+function whip(el,at,dy){el=E(el);tl.set(el,{opacity:0},0);tl.set(el,{opacity:1,y:dy||70},at);tl.to(el,{y:0,duration:0.45,ease:'power4.out'},at);}
+function pop(el,at,o){o=o||{};el=E(el);tl.fromTo(el,{opacity:0,scale:0},{opacity:1,scale:1,duration:o.d||0.5,ease:o.e||'back.out(2)'},at);}
+function pol(el,at,rot){el=E(el);
+  tl.fromTo(el,{opacity:0,y:-180,rotation:rot*2.4,scale:1.06},{opacity:1,y:0,rotation:rot,scale:1,duration:0.85,ease:'power3.out'},at);}
+function kb(el,at,dur,a,b){el=E(el);a=a||{};b=b||{};
+  tl.fromTo(el,{scale:a.s||1,xPercent:a.x||0,yPercent:a.y||0},{scale:b.s||1.07,xPercent:b.x||0,yPercent:b.y||0,duration:dur,ease:'none'},at);}
+function count(el,from,to,at,dur,fmt){el=E(el);const st={v:from};el.textContent=fmt(from);
+  tl.fromTo(st,{v:from},{v:to,duration:dur,ease:'power2.out',immediateRender:false,onUpdate:()=>{el.textContent=fmt(st.v);}},at);}
+function grow(el,at,d,origin){el=E(el);
+  tl.fromTo(el,{scaleX:0,transformOrigin:origin||'0% 50%'},{scaleX:1,duration:d||0.8,ease:'power3.inOut'},at);}
+function growY(el,at,d){el=E(el);
+  tl.fromTo(el,{scaleY:0,transformOrigin:'50% 100%'},{scaleY:1,duration:d||0.8,ease:'power3.out'},at);}
+function draw(path,at,d){path=E(path);const L=path.getTotalLength();path.style.strokeDasharray=L+' '+L;
+  tl.fromTo(path,{opacity:0},{opacity:1,duration:0.05},at);
+  tl.fromTo(path,{strokeDashoffset:L},{strokeDashoffset:0,duration:d||1,ease:'power2.inOut'},at);}
+function outt(el,at,o){o=o||{};el=E(el);tl.to(el,{opacity:0,y:o.y||0,x:o.x||0,duration:o.d||0.4,ease:'power2.in'},at);}
+function ambient(D){
+  qa('.ghost').forEach((g,i)=>tl.fromTo(g,{x:0},{x:(i%2?160:-160),duration:D,ease:'none'},0));
+  qa('.glow').forEach((g,i)=>{const c=4+i;const n=Math.max(0,Math.floor(D/c)-1);
+    tl.fromTo(g,{scale:0.92},{scale:1.08,duration:c/2,ease:'sine.inOut',yoyo:true,repeat:n},0);});
+}
+// 원형 게이지: <svg class="gauge"><circle class="trk"/><circle class="val"/></svg>
+function gauge(svgSel,pct,at,d){const c=E(svgSel).querySelector('.val');const L=2*Math.PI*parseFloat(c.getAttribute('r'));
+  c.style.strokeDasharray=L+' '+L;tl.fromTo(c,{strokeDashoffset:L},{strokeDashoffset:L*(1-pct/100),duration:d||1.2,ease:'power2.out'},at);}
+// 점 격자: 컨테이너 안에 n개의 점을 만들고 앞의 k개를 강조색으로 채운다
+function dots(sel,n,k,cols,size,gap,on,off){const el=E(sel);let h='';for(let i=0;i<n;i++){const x=(i%cols)*(size+gap),y=Math.floor(i/cols)*(size+gap);
+  h+=`<i style="position:absolute;left:${x}px;top:${y}px;width:${size}px;height:${size}px;border-radius:50%;background:${i<k?on:off}"></i>`;}el.innerHTML=h;return Array.from(el.children);}
+function dotsIn(list,at,span){tl.fromTo(list,{scale:0},{scale:1,duration:0.25,ease:'back.out(2)',stagger:{each:(span||1)/list.length}},at);}
+
+const D = 51.66;
+const R = [0.9, 3.52, 11.16, 19.28, 26.86, 34.56, 40.88];
+
+ambient(D);
+inn('#c-a-st',0.2,{s:1.5,y:0,r0:-14,r:-4,d:0.4,e:'back.out(2.4)'});
+whip('#c-a-name',0.4,120);
+inn('#c-a-en',1.0,{y:16});
+const B=R[1]-0.3;
+inn('#c-b-s',B+0.3,{y:30,r0:-6,r:-2,d:0.7,e:'back.out(1.6)'});
+whip('#c-b-t',B+0.9,80);
+pop('#c-b-c',B+3.6);
+tl.fromTo('#c-b-ring',{scale:0.4,opacity:0.9},{scale:1.5,opacity:0,duration:1.3,ease:'power2.out',repeat:1},B+4.0);
+pol('#c-b-p',B+2.6,4); kb('#c-b-pi',B+2.6,R[2]-R[1]-2.6);
+const C=R[2]-0.3;
+inn('#c-c-t',C+0.2,{y:20});
+draw('#c-c-r1',C+0.6,1.4); draw('#c-c-r2',C+1.0,1.2);
+inn('#c-c-l1',C+1.6,{y:10}); inn('#c-c-l2',C+1.8,{y:10});
+pop('#c-c-dot',C+2.4); inn('#c-c-cg',C+2.6,{y:10});
+inn('#c-c-air',C+3.8,{x:80,y:0,d:0.7,e:'back.out(1.4)'});
+const Dd=R[3]-0.3;
+['1','2','3','4'].forEach((n,i)=>pop('#c-d-'+n,Dd+0.4+i*0.9,{d:0.55}));
+whip('#c-d-t',Dd+4.4,70); grow('#c-d-hl',Dd+5.0,0.6);
+const Ee=R[4]-0.3;
+pol('#c-e-p',Ee+0.3,-4); kb('#c-e-pi',Ee+0.3,R[6]-R[4]);
+inn('#c-e-k',Ee+0.6,{y:16});
+whip('#c-e-t',Ee+1.0,80);
+inn('#c-e-card',R[5]+0.2,{y:60,d:0.7,e:'back.out(1.4)'});
+const Fz=R[6]-0.3;
+inn('#c-f-k',Fz+0.3,{y:16});
+whip('#c-f-t',Fz+1.2,110);
+
+tl.fromTo(q('#c-a .in'),{opacity:1},{opacity:0,duration:0.28,ease:'power1.in',immediateRender:false},2.92);
+tl.fromTo(q('#c-b .in'),{opacity:1},{opacity:0,duration:0.28,ease:'power1.in',immediateRender:false},10.56);
+tl.fromTo(q('#c-c .in'),{opacity:1},{opacity:0,duration:0.28,ease:'power1.in',immediateRender:false},18.68);
+tl.fromTo(q('#c-d .in'),{opacity:1},{opacity:0,duration:0.28,ease:'power1.in',immediateRender:false},26.26);
+tl.fromTo(q('#c-e .in'),{opacity:1},{opacity:0,duration:0.28,ease:'power1.in',immediateRender:false},40.28);
+window.__timelines["ch04-castlegar"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+@font-face{font-family:Pretendard;font-weight:500;src:url(assets/fonts/Pretendard-Medium.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:700;src:url(assets/fonts/Pretendard-Bold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:800;src:url(assets/fonts/Pretendard-ExtraBold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:900;src:url(assets/fonts/Pretendard-Black.woff2) format("woff2")}
+@font-face{font-family:Yellowtail;font-weight:400;src:url(assets/fonts/Yellowtail-Regular.ttf) format("truetype")}
+#ch07-data{position:absolute;inset:0;overflow:hidden;background:#FAF6EF;color:#16324F;font-family:Pretendard,sans-serif;word-break:keep-all}
+#ch07-data *{box-sizing:border-box}
+#ch07-data .grain{position:absolute;inset:0;opacity:.5;background-image:radial-gradient(rgba(22,50,79,.07) 1.2px,transparent 1.3px);background-size:9px 9px}
+#ch07-data .glow{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(46,125,91,.20) 0%,rgba(46,125,91,0) 70%)}
+#ch07-data .glow.warm{background:radial-gradient(circle,rgba(232,87,43,.14) 0%,rgba(232,87,43,0) 70%)}
+#ch07-data .ghost{position:absolute;font-weight:900;color:rgba(22,50,79,.07);font-size:300px;letter-spacing:-.04em;white-space:nowrap;line-height:1}
+#ch07-data .stage{position:absolute;inset:0}
+#ch07-data .beat{position:absolute;inset:0}
+#ch07-data .abs{position:absolute}
+#ch07-data .h{font-weight:900;letter-spacing:-.03em;line-height:1.12}
+#ch07-data .hd{font-weight:800;letter-spacing:-.02em;line-height:1.22}
+#ch07-data .b{font-weight:500;line-height:1.5}
+#ch07-data .l{font-weight:700;letter-spacing:.08em}
+#ch07-data .script{font-family:Yellowtail,cursive;line-height:1.05;white-space:nowrap}
+#ch07-data .green{color:#2E7D5B}
+#ch07-data .orange{color:#E8572B}
+#ch07-data .sticker{position:absolute;background:#E8572B;color:#fff;font-weight:800;font-size:24px;letter-spacing:.12em;padding:10px 24px;border-radius:99px;white-space:nowrap}
+#ch07-data .chip{position:absolute;background:#FAF6EF;border:3px solid #16324F;border-radius:99px;padding:10px 26px;font-weight:700;font-size:30px;white-space:nowrap;color:#16324F}
+#ch07-data .chip.gr{border-color:#2E7D5B;color:#1F5E44}
+#ch07-data .chip.solid{background:#16324F;color:#FAF6EF}
+#ch07-data .chip.sand{background:#F3C969;border-color:#F3C969}
+#ch07-data .pol{position:absolute;background:#fff;padding:16px 16px 60px;box-shadow:0 20px 44px rgba(22,50,79,.26)}
+#ch07-data .pol .ph{position:relative;width:100%;height:100%;overflow:hidden}
+#ch07-data .pol img{display:block;width:100%;height:100%;object-fit:cover}
+#ch07-data .pol .cap{position:absolute;left:0;right:0;bottom:10px;text-align:center;font-family:Yellowtail,cursive;font-size:34px;color:#16324F}
+#ch07-data .card{position:absolute;background:#fff;border:3px solid rgba(22,50,79,.14);border-radius:24px;box-shadow:0 12px 30px rgba(22,50,79,.13)}
+#ch07-data .panel{position:absolute;background:#16324F;border-radius:28px;color:#FAF6EF}
+#ch07-data .hl{position:relative;display:inline-block;isolation:isolate}
+#ch07-data .hl .bar{position:absolute;left:-6px;right:-6px;bottom:6px;height:26px;background:#F3C969;transform-origin:0 50%}
+#ch07-data .hl .tx{position:relative}
+#ch07-data .ico{position:absolute;border-radius:50%;background:#fff;border:4px solid #16324F;display:flex;align-items:center;justify-content:center}
+#ch07-data .ico svg{width:58%;height:58%}
+#ch07-data .tile{position:absolute;border-radius:22px;overflow:hidden;box-shadow:0 14px 30px rgba(22,50,79,.22)}
+#ch07-data .tile img{width:100%;height:100%;object-fit:cover;display:block}
+#ch07-data .tile .tl{position:absolute;left:16px;bottom:14px;background:rgba(22,50,79,.88);color:#FAF6EF;font-weight:800;font-size:26px;padding:6px 16px;border-radius:99px}
+
+#ch07-data .in{position:absolute;inset:0}
+
+#ch07-data .slot{position:absolute;top:420px;width:300px;height:200px;border-radius:24px;border:4px dashed rgba(22,50,79,.25);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:90px;color:rgba(22,50,79,.25)}
+#ch07-data .big{position:absolute;font-weight:900;letter-spacing:-.04em;line-height:1}
+#ch07-data .gauge{position:absolute;width:380px;height:380px}
+#ch07-data .gauge .trk{fill:none;stroke:rgba(22,50,79,.10);stroke-width:26}
+#ch07-data .gauge .val{fill:none;stroke:#2E7D5B;stroke-width:26;stroke-linecap:round}
+#ch07-data .gnum{position:absolute;width:380px;text-align:center;font-weight:900;font-size:100px;letter-spacing:-.03em}
+#ch07-data .glab{position:absolute;width:520px;text-align:center;font-weight:800;font-size:34px}
+#ch07-data .vs{position:absolute;top:270px;width:800px;height:470px;border-radius:30px;padding:46px}
+#ch07-data .vs .k{font-weight:700;font-size:26px;letter-spacing:.08em}
+#ch07-data .vs .v{margin-top:14px;font-weight:900;font-size:72px;letter-spacing:-.03em}
+#ch07-data .vs .r{margin-top:26px;display:flex;align-items:center;gap:18px;font-weight:700;font-size:36px}
+#ch07-data .vs .r i{width:16px;height:16px;border-radius:50%;flex:none}
+#ch07-data .fam{position:absolute;top:330px;width:120px;height:120px}
+
+      </style>
+      <div id="ch07-data" data-composition-id="ch07-data" data-width="1920" data-height="1080" data-duration="84.34">
+<div class="grain"></div>
+<div data-layout-ignore class="glow" style="left:1150px;top:-350px;width:1100px;height:1100px"></div>
+<div data-layout-ignore class="glow warm" style="left:-350px;top:560px;width:900px;height:900px"></div>
+<svg class="ghost" aria-hidden="true" data-layout-ignore style="left:820px;top:640px;width:2600px;height:330px;overflow:visible"><text x="0" y="270" font-family="Pretendard" font-weight="900" font-size="300" fill="rgba(22,50,79,.07)">NUMBERS</text></svg>
+
+<section id="d-a" class="beat clip" data-start="0.0" data-duration="4.24"><div class="in">
+  <div class="abs h" id="d-a-t" style="left:120px;top:180px;font-size:110px">숫자로 보는 <span class="green">RCIP</span></div>
+  <div class="slot" id="d-a-1" style="left:120px">1</div><div class="slot" id="d-a-2" style="left:460px">2</div><div class="slot" id="d-a-3" style="left:800px">3</div><div class="slot" id="d-a-4" style="left:1140px">4</div><div class="slot" id="d-a-5" style="left:1480px">5</div>
+</div></section>
+
+<section id="d-b" class="beat clip" data-start="4.24" data-duration="11.44"><div class="in">
+  <div class="sticker" id="d-b-st" style="left:120px;top:160px">숫자 1</div>
+  <div class="abs hd" id="d-b-k" style="left:120px;top:240px;font-size:48px;color:#4A5F78">필요한 경력</div>
+  <div class="big" id="d-b-n" style="left:110px;top:310px;font-size:320px;color:#2E7D5B">0년</div>
+  <div class="card" id="d-b-c" style="left:1000px;top:290px;width:800px;height:340px;padding:46px">
+    <div class="l" style="font-size:24px;color:#2E7D5B">왜?</div>
+    <div class="h" style="margin-top:12px;font-size:54px">셀커크 = 지역 유일의 공립 교육기관</div>
+    <div class="b" style="margin-top:18px;font-size:34px;color:#4A5F78">졸업생은 1년 경력 요건 면제</div></div>
+</div></section>
+
+<section id="d-c" class="beat clip" data-start="15.68" data-duration="10.88"><div class="in">
+  <div class="sticker" id="d-c-st" style="left:120px;top:160px">숫자 2</div>
+  <div class="abs" id="d-c-dots" style="left:120px;top:260px;width:800px;height:440px"></div>
+  <div class="big" id="d-c-n" style="left:1000px;top:250px;font-size:240px;color:#2E7D5B">62%</div>
+  <div class="abs h" id="d-c-t" style="left:1010px;top:510px;font-size:52px">RNIP 주신청자 302명 중<br/><span class="green">188명</span>이 셀커크 졸업생</div>
+  <div class="abs b" id="d-c-src" style="left:1010px;top:680px;font-size:24px;color:#4A5F78">출처: West Kootenay RNIP 최종 보고서(2023)</div>
+</div></section>
+
+<section id="d-d" class="beat clip" data-start="26.56" data-duration="8.16"><div class="in">
+  <div class="sticker" id="d-d-st" style="left:120px;top:160px">숫자 3</div>
+  <div class="big" id="d-d-n" style="left:110px;top:260px;font-size:300px">979<span style="font-size:120px">명</span></div>
+  <div class="abs h" id="d-d-t" style="left:120px;top:600px;font-size:56px">가족까지 포함, 이 지역에서 <span class="green">영주권 추천</span>을 받은 인원</div>
+  <svg class="fam" id="d-d-f1" viewBox="0 0 64 64" style="left:1300px"><circle cx="32" cy="18" r="11" fill="#16324F"/><path d="M10 62 C 10 40, 54 40, 54 62 Z" fill="#16324F"/></svg>
+  <svg class="fam" id="d-d-f2" viewBox="0 0 64 64" style="left:1440px"><circle cx="32" cy="18" r="11" fill="#2E7D5B"/><path d="M10 62 C 10 40, 54 40, 54 62 Z" fill="#2E7D5B"/></svg>
+  <svg class="fam" id="d-d-f3" viewBox="0 0 64 64" style="left:1580px;top:380px;width:90px;height:90px"><circle cx="32" cy="22" r="11" fill="#E8572B"/><path d="M12 62 C 12 44, 52 44, 52 62 Z" fill="#E8572B"/></svg>
+  <div class="abs b" id="d-d-src" style="left:120px;top:690px;font-size:24px;color:#4A5F78">출처: 센트럴 쿠트니 지역청(RDCK) 회의록, 2024년 1월</div>
+</div></section>
+
+<section id="d-e" class="beat clip" data-start="34.72" data-duration="11.86"><div class="in">
+  <div class="sticker" id="d-e-st" style="left:120px;top:160px">숫자 4</div>
+  <svg class="gauge" id="d-e-g1" viewBox="0 0 200 200" style="left:330px;top:230px"><circle class="trk" cx="100" cy="100" r="84"/><circle class="val" cx="100" cy="100" r="84" transform="rotate(-90 100 100)"/></svg>
+  <div class="gnum" id="d-e-n1" style="left:330px;top:355px">90%</div>
+  <div class="glab" id="d-e-l1" style="left:260px;top:640px">영주권 후에도 지역에 거주</div>
+  <svg class="gauge" id="d-e-g2" viewBox="0 0 200 200" style="left:1110px;top:230px"><circle class="trk" cx="100" cy="100" r="84"/><circle class="val" cx="100" cy="100" r="84" transform="rotate(-90 100 100)" style="stroke:#16324F"/></svg>
+  <div class="gnum" id="d-e-n2" style="left:1110px;top:355px">81%</div>
+  <div class="glab" id="d-e-l2" style="left:1040px;top:640px">같은 고용주와 계속 근무</div>
+</div></section>
+
+<section id="d-f" class="beat clip" data-start="46.58" data-duration="6.82"><div class="in">
+  <div class="sticker" id="d-f-st" style="left:120px;top:160px">숫자 5</div>
+  <div class="abs hd" id="d-f-k" style="left:120px;top:250px;font-size:48px;color:#4A5F78">2026년 웨스트 쿠트니 추천 쿼터</div>
+  <div class="big" id="d-f-n" style="left:110px;top:320px;font-size:320px;color:#2E7D5B">200<span style="font-size:130px">명</span></div>
+</div></section>
+
+<section id="d-g" class="beat clip" data-start="53.4" data-duration="16.86"><div class="in">
+  <div class="abs h" id="d-g-t" style="left:120px;top:120px;font-size:72px">익스프레스 엔트리와 무엇이 다를까?</div>
+  <div class="vs" id="d-g-1" style="left:120px;background:#fff;border:3px solid rgba(22,50,79,.14)"><div class="k" style="color:#4A5F78">EXPRESS ENTRY</div><div class="v">전국 단위 경쟁</div>
+    <div class="r"><i style="background:#4A5F78"></i>나이가 어릴수록</div><div class="r"><i style="background:#4A5F78"></i>학력이 높을수록</div><div class="r"><i style="background:#4A5F78"></i>영어 점수가 높을수록</div></div>
+  <div class="vs" id="d-g-2" style="left:1000px;background:#16324F;color:#FAF6EF"><div class="k" style="color:#F3C969">RCIP</div><div class="v">지역 안에서만 경쟁</div>
+    <div class="r"><i style="background:#F3C969"></i>이 지역 학교 졸업생</div><div class="r"><i style="background:#F3C969"></i>이 지역 고용주의 직원</div><div class="r"><i style="background:#F3C969"></i>지역이 직접 선호</div></div>
+</div></section>
+
+<section id="d-h" class="beat clip" data-start="70.26" data-duration="14.08"><div class="in">
+  <svg class="abs" id="d-h-house" viewBox="0 0 64 64" style="left:180px;top:250px;width:380px;height:380px"><path id="d-h-hp" d="M8 30 L32 10 L56 30 V56 H8 Z" fill="none" stroke="#2E7D5B" stroke-width="4" stroke-linejoin="round"/><path d="M32 46 C 22 38, 22 30, 28 28 C 31 27, 32 30, 32 31 C 32 30, 33 27, 36 28 C 42 30, 42 38, 32 46 Z" fill="#E8572B" id="d-h-heart" style="transform-box:fill-box;transform-origin:center"/></svg>
+  <div class="abs hd" id="d-h-k" style="left:700px;top:260px;font-size:48px;color:#4A5F78">90%가 떠나지 않는다는 건</div>
+  <div class="abs h" id="d-h-t" style="left:700px;top:340px;font-size:90px">영주권을 받고 나서도<br/><span class="green">살고 싶은 곳</span>이라는 뜻</div>
+</div></section>
+      </div>
+      <script>
+        (function () {
+const root=document.getElementById("ch07-data");
+const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
+const tl=gsap.timeline({paused:true});
+function E(el){return typeof el==='string'?q(el):el;}
+function inn(el,at,o){o=o||{};el=E(el);
+  tl.fromTo(el,{opacity:0,x:o.x||0,y:(o.y===undefined?30:o.y),scale:(o.s===undefined?1:o.s),rotation:(o.r0===undefined?(o.r||0):o.r0)},
+  {opacity:1,x:0,y:0,scale:1,rotation:o.r||0,duration:o.d||0.6,ease:o.e||'power3.out'},at);}
+function whip(el,at,dy){el=E(el);tl.set(el,{opacity:0},0);tl.set(el,{opacity:1,y:dy||70},at);tl.to(el,{y:0,duration:0.45,ease:'power4.out'},at);}
+function pop(el,at,o){o=o||{};el=E(el);tl.fromTo(el,{opacity:0,scale:0},{opacity:1,scale:1,duration:o.d||0.5,ease:o.e||'back.out(2)'},at);}
+function pol(el,at,rot){el=E(el);
+  tl.fromTo(el,{opacity:0,y:-180,rotation:rot*2.4,scale:1.06},{opacity:1,y:0,rotation:rot,scale:1,duration:0.85,ease:'power3.out'},at);}
+function kb(el,at,dur,a,b){el=E(el);a=a||{};b=b||{};
+  tl.fromTo(el,{scale:a.s||1,xPercent:a.x||0,yPercent:a.y||0},{scale:b.s||1.07,xPercent:b.x||0,yPercent:b.y||0,duration:dur,ease:'none'},at);}
+function count(el,from,to,at,dur,fmt){el=E(el);const st={v:from};el.textContent=fmt(from);
+  tl.fromTo(st,{v:from},{v:to,duration:dur,ease:'power2.out',immediateRender:false,onUpdate:()=>{el.textContent=fmt(st.v);}},at);}
+function grow(el,at,d,origin){el=E(el);
+  tl.fromTo(el,{scaleX:0,transformOrigin:origin||'0% 50%'},{scaleX:1,duration:d||0.8,ease:'power3.inOut'},at);}
+function growY(el,at,d){el=E(el);
+  tl.fromTo(el,{scaleY:0,transformOrigin:'50% 100%'},{scaleY:1,duration:d||0.8,ease:'power3.out'},at);}
+function draw(path,at,d){path=E(path);const L=path.getTotalLength();path.style.strokeDasharray=L+' '+L;
+  tl.fromTo(path,{opacity:0},{opacity:1,duration:0.05},at);
+  tl.fromTo(path,{strokeDashoffset:L},{strokeDashoffset:0,duration:d||1,ease:'power2.inOut'},at);}
+function outt(el,at,o){o=o||{};el=E(el);tl.to(el,{opacity:0,y:o.y||0,x:o.x||0,duration:o.d||0.4,ease:'power2.in'},at);}
+function ambient(D){
+  qa('.ghost').forEach((g,i)=>tl.fromTo(g,{x:0},{x:(i%2?160:-160),duration:D,ease:'none'},0));
+  qa('.glow').forEach((g,i)=>{const c=4+i;const n=Math.max(0,Math.floor(D/c)-1);
+    tl.fromTo(g,{scale:0.92},{scale:1.08,duration:c/2,ease:'sine.inOut',yoyo:true,repeat:n},0);});
+}
+// 원형 게이지: <svg class="gauge"><circle class="trk"/><circle class="val"/></svg>
+function gauge(svgSel,pct,at,d){const c=E(svgSel).querySelector('.val');const L=2*Math.PI*parseFloat(c.getAttribute('r'));
+  c.style.strokeDasharray=L+' '+L;tl.fromTo(c,{strokeDashoffset:L},{strokeDashoffset:L*(1-pct/100),duration:d||1.2,ease:'power2.out'},at);}
+// 점 격자: 컨테이너 안에 n개의 점을 만들고 앞의 k개를 강조색으로 채운다
+function dots(sel,n,k,cols,size,gap,on,off){const el=E(sel);let h='';for(let i=0;i<n;i++){const x=(i%cols)*(size+gap),y=Math.floor(i/cols)*(size+gap);
+  h+=`<i style="position:absolute;left:${x}px;top:${y}px;width:${size}px;height:${size}px;border-radius:50%;background:${i<k?on:off}"></i>`;}el.innerHTML=h;return Array.from(el.children);}
+function dotsIn(list,at,span){tl.fromTo(list,{scale:0},{scale:1,duration:0.25,ease:'back.out(2)',stagger:{each:(span||1)/list.length}},at);}
+
+const D = 84.34;
+const R = [0.9, 4.54, 15.98, 26.86, 35.02, 46.88, 53.7, 60.8, 70.56];
+
+ambient(D);
+whip('#d-a-t',0.3,90);
+['1','2','3','4','5'].forEach((n,i)=>pop('#d-a-'+n,1.0+i*0.25));
+function st(sel,at){inn(sel,at,{s:1.5,y:0,r0:-14,r:-4,d:0.4,e:'back.out(2.4)'});}
+const B=R[1]-0.3; st('#d-b-st',B+0.2); inn('#d-b-k',B+0.4,{y:16}); inn('#d-b-n',B+0.7,{s:0.5,y:0,d:0.6,e:'back.out(1.8)'}); inn('#d-b-c',R[1]+2.6,{x:80,y:0,d:0.7});
+const C=R[2]-0.3; st('#d-c-st',C+0.2);
+const dl=dots('#d-c-dots',100,62,10,34,10,'#2E7D5B','rgba(22,50,79,.16)'); dotsIn(dl,C+0.5,1.2);
+count('#d-c-n',0,62,C+0.6,1.4,v=>Math.round(v)+'%'); tl.fromTo('#d-c-n',{opacity:0},{opacity:1,duration:0.3},C+0.6);
+whip('#d-c-t',R[2]+2.6,60); inn('#d-c-src',R[2]+5,{y:10});
+const Dd=R[3]-0.3; st('#d-d-st',Dd+0.2);
+tl.fromTo('#d-d-n',{opacity:0},{opacity:1,duration:0.3},Dd+0.4); count(q('#d-d-n').firstChild,0,979,Dd+0.4,1.6,v=>Math.round(v));
+whip('#d-d-t',R[3]+2.4,60); ['1','2','3'].forEach((n,i)=>pop('#d-d-f'+n,R[3]+2.8+i*0.3)); inn('#d-d-src',R[3]+4.0,{y:10});
+const Ee=R[4]-0.3; st('#d-e-st',Ee+0.2);
+gauge('#d-e-g1',90,Ee+0.6,1.4); count('#d-e-n1',0,90,Ee+0.6,1.4,v=>Math.round(v)+'%'); inn('#d-e-l1',Ee+1.6,{y:10});
+gauge('#d-e-g2',81,R[4]+7.0,1.4); count('#d-e-n2',0,81,R[4]+7.0,1.4,v=>Math.round(v)+'%'); inn('#d-e-l2',R[4]+7.6,{y:10});
+const Fz=R[5]-0.3; st('#d-f-st',Fz+0.2); inn('#d-f-k',Fz+0.4,{y:16});
+tl.fromTo('#d-f-n',{opacity:0},{opacity:1,duration:0.3},Fz+2.0); count(q('#d-f-n').firstChild,0,200,Fz+2.0,1.4,v=>Math.round(v));
+const G=R[6]-0.3; whip('#d-g-t',G+0.2,70);
+inn('#d-g-1',G+0.8,{x:-80,y:0,d:0.7}); tl.fromTo(qa('#d-g-1 .r'),{opacity:0,x:-20},{opacity:1,x:0,duration:0.4,stagger:0.8},R[6]+3.6);
+inn('#d-g-2',R[7]+0.1,{x:80,y:0,d:0.7}); tl.fromTo(qa('#d-g-2 .r'),{opacity:0,x:-20},{opacity:1,x:0,duration:0.4,stagger:1.2},R[7]+2.6);
+const H=R[8]-0.3;
+draw('#d-h-hp',H+0.3,1.0); pop('#d-h-heart',H+1.2);
+inn('#d-h-k',H+0.4,{y:16}); whip('#d-h-t',R[8]+3.6,80);
+
+tl.fromTo(q('#d-a .in'),{opacity:1},{opacity:0,duration:0.28,ease:'power1.in',immediateRender:false},3.94);
+tl.fromTo(q('#d-b .in'),{opacity:1},{opacity:0,duration:0.28,ease:'power1.in',immediateRender:false},15.38);
+tl.fromTo(q('#d-c .in'),{opacity:1},{opacity:0,duration:0.28,ease:'power1.in',immediateRender:false},26.26);
+tl.fromTo(q('#d-d .in'),{opacity:1},{opacity:0,duration:0.28,ease:'power1.in',immediateRender:false},34.42);
+tl.fromTo(q('#d-e .in'),{opacity:1},{opacity:0,duration:0.28,ease:'power1.in',immediateRender:false},46.28);
+tl.fromTo(q('#d-f .in'),{opacity:1},{opacity:0,duration:0.28,ease:'power1.in',immediateRender:false},53.1);
+tl.fromTo(q('#d-g .in'),{opacity:1},{opacity:0,duration:0.28,ease:'power1.in',immediateRender:false},69.96);
+window.__timelines["ch07-data"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>
