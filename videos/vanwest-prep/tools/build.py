@@ -132,7 +132,7 @@ def dur(p):
 
 if "__bgm-a__" in index:
     a_len = dur(os.path.join(ROOT, "assets/music/bgm-a.mp3"))
-    LV = 0.14
+    LV = 0.4
     ad = round(min(a_len, total), 2)
     index = index.replace('data-start="__bgm-a__"', f'data-start="0" data-duration="{ad}"')
     auto_a = {"version": 1, "lanes": [{"target": "volume", "points": [{"t": 0, "v": 0}, {"t": 2, "v": LV}, {"t": round(ad - 4, 2), "v": LV}, {"t": ad, "v": 0}]}]}
@@ -151,5 +151,5 @@ print("scenes", len(timing), "captions", len(caps), "total", total, "bgm", bool(
 CARVE = os.path.expanduser("~/.claude/skills/hyperframes-audio/scripts/carve.mjs")
 if bgm and os.path.exists(CARVE) and os.path.isdir(os.path.join(ROOT, "node_modules", "@hyperframes", "core")):
     for bed in ("bgm-a",):
-        subprocess.run(["node", CARVE, "--comp", "index.html", "--bed", bed], cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
+        subprocess.run(["node", CARVE, "--comp", "index.html", "--bed", bed, "--strength", "0.5"], cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
     print("carve applied")
