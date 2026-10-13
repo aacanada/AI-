@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        @font-face { font-family: "Noto Serif KR"; font-weight: 700; src: url("assets/fonts/NotoSerifKR-700.woff2") format("woff2"); }
+        @font-face { font-family: "Noto Serif KR"; font-weight: 900; src: url("assets/fonts/NotoSerifKR-900.woff2") format("woff2"); }
+        @font-face { font-family: "IBM Plex Sans KR"; font-weight: 400; src: url("assets/fonts/IBMPlexSansKR-400.woff2") format("woff2"); }
+        @font-face { font-family: "IBM Plex Sans KR"; font-weight: 600; src: url("assets/fonts/IBMPlexSansKR-600.woff2") format("woff2"); }
+        @font-face { font-family: "IBM Plex Sans KR"; font-weight: 700; src: url("assets/fonts/IBMPlexSansKR-700.woff2") format("woff2"); }
+
+        #root {
+          --forest: #12291f; --forest-2: #1a3a2d; --cream: #f4efe3; --cream-dim: #cfc8b6; --gold: #e2b04a; --lake: #7fb3ae;
+          position: absolute; inset: 0; overflow: hidden;
+          background: var(--forest); color: var(--cream);
+          font-family: "IBM Plex Sans KR", sans-serif;
+          word-break: keep-all;
+        }
+        #root .beat { position: absolute; inset: 0; overflow: hidden; }
+        #root .serif { font-family: "Noto Serif KR", serif; }
+        #root .label {
+          font-family: "IBM Plex Sans KR", sans-serif; font-weight: 700; font-size: 24px;
+          letter-spacing: 0.14em; color: var(--gold);
+        }
+        #root .glow {
+          position: absolute; width: 1400px; height: 1400px; border-radius: 50%;
+          background: radial-gradient(circle, rgba(226,176,74,0.28) 0%, rgba(226,176,74,0) 62%);
+        }
+        #root .ghost {
+          position: absolute; font-family: "Noto Serif KR", serif; font-weight: 900;
+          color: rgba(244,239,227,0.12); white-space: nowrap; line-height: 1;
+        }
+        #root .card {
+          position: absolute; background: var(--cream); padding: 14px 14px 56px;
+          box-shadow: 0 30px 60px rgba(0,0,0,0.45);
+        }
+        #root .card .ph { width: 100%; height: 100%; overflow: hidden; }
+        #root .card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        #root .card .cap {
+          position: absolute; left: 22px; right: 22px; bottom: 12px; height: 34px;
+          font-weight: 700; font-size: 22px; letter-spacing: 0.12em; color: var(--forest);
+          display: flex; align-items: center; justify-content: space-between;
+        }
+        #root .card .cap span:last-child { color: #7a5c18; font-weight: 600; letter-spacing: 0.04em; }
+
+        /* ---------- Beat A : 질문 ---------- */
+        #h-a-photo { position: absolute; inset: 0; }
+        #h-a-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; display: block; }
+        #h-a-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(18,41,31,0.92) 0%, rgba(18,41,31,0.70) 46%, rgba(18,41,31,0.10) 100%); }
+        #h-a-text { position: absolute; left: 120px; top: 250px; width: 980px; }
+        #h-a-q1 { font-size: 104px; font-weight: 900; line-height: 1.18; display: block; }
+        #h-a-q1 em { font-style: normal; color: var(--gold); }
+        #h-a-q2 { margin-top: 44px; font-size: 44px; font-weight: 400; color: var(--cream); line-height: 1.5; display: block; }
+        #h-a-q2 b { font-weight: 700; color: var(--gold); }
+
+        /* ---------- Beat B : 엽서 ---------- */
+        #h-b-head { position: absolute; left: 120px; top: 120px; width: 1680px; }
+        #h-b-title { font-size: 76px; font-weight: 900; line-height: 1.2; display: block; }
+        #h-b-title em { font-style: normal; color: var(--gold); }
+        #h-b-c1 { left: 150px; top: 380px; width: 520px; height: 420px; }
+        #h-b-c2 { left: 700px; top: 340px; width: 520px; height: 440px; }
+        #h-b-c3 { left: 1250px; top: 360px; width: 520px; height: 420px; }
+
+        /* ---------- Beat C : 키워드 ---------- */
+        #h-c-row { position: absolute; left: 120px; right: 120px; top: 240px; height: 380px; display: flex; gap: 36px; }
+        #root .chip { position: relative; flex: 1; height: 380px; overflow: hidden; border: 4px solid var(--cream); }
+        #root .chip img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+        #root .chip .tint { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(18,41,31,0.88) 0%, rgba(18,41,31,0) 60%); }
+        #root .chip .word { position: absolute; left: 28px; bottom: 22px; font-family: "Noto Serif KR", serif; font-weight: 900; font-size: 64px; }
+        #h-c-final { position: absolute; left: 120px; right: 120px; top: 680px; height: 200px; display: flex; align-items: center; justify-content: center; gap: 32px; }
+        #h-c-plus { font-size: 54px; font-weight: 400; color: var(--cream-dim); }
+        #h-c-pr { font-family: "Noto Serif KR", serif; font-weight: 900; font-size: 150px; color: var(--gold); line-height: 1; display: block; }
+
+        /* ---------- Beat D : 경로 ---------- */
+        #h-d-label { position: absolute; left: 120px; top: 150px; }
+        #h-d-title { position: absolute; left: 120px; top: 205px; width: 1680px; font-size: 76px; font-weight: 900; line-height: 1.3; }
+        #h-d-track { position: absolute; left: 120px; right: 120px; top: 440px; height: 300px; }
+        #h-d-line { position: absolute; left: 150px; right: 150px; top: 58px; height: 6px; background: var(--forest-2); }
+        #h-d-fill { position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: var(--gold); transform-origin: 0 50%; }
+        #root .step { position: absolute; top: 0; width: 420px; text-align: center; }
+        #root .step .dot { width: 120px; height: 120px; margin: 0 auto; border-radius: 50%; background: var(--forest); border: 6px solid var(--gold); display: flex; align-items: center; justify-content: center; font-family: "Noto Serif KR", serif; font-weight: 900; font-size: 52px; color: var(--gold); }
+        #root .step .t { margin-top: 30px; font-size: 46px; font-weight: 700; line-height: 1.35; }
+        #root .step .s { margin-top: 10px; font-size: 32px; color: var(--cream-dim); }
+        #h-d-s1 { left: -60px; }
+        #h-d-s2 { left: 570px; }
+        #h-d-s3 { left: 1200px; }
+        #h-d-note { position: absolute; left: 120px; right: 120px; top: 830px; font-size: 26px; color: var(--cream-dim); text-align: center; }
+
+        /* ---------- Beat E : 타이틀 ---------- */
+        #h-e-bg { position: absolute; inset: -40px; }
+        #h-e-bg { background: url("assets/img/aerial-lake-campus.jpg") 50% 40% / cover no-repeat; filter: blur(14px) brightness(0.55) saturate(1.1); }
+        #h-e-card { left: 1180px; top: 150px; width: 600px; height: 760px; transform: rotate(3deg); }
+        #h-e-text { position: absolute; left: 120px; top: 250px; width: 1000px; }
+        #h-e-kicker { display: block; }
+        #h-e-t1 { margin-top: 30px; font-size: 128px; font-weight: 900; line-height: 1.1; display: block; }
+        #h-e-t1 em { font-style: normal; color: var(--gold); }
+        #h-e-rule { margin-top: 40px; width: 560px; height: 5px; background: var(--gold); transform-origin: 0 50%; }
+        #h-e-t2 { margin-top: 40px; font-size: 46px; font-weight: 600; line-height: 1.45; display: block; }
+      </style>
+
+      <div id="root" data-composition-id="ch00-hook" data-width="1920" data-height="1080" data-duration="43">
+
+        <!-- Beat A 0–7.5 -->
+        <section id="h-a" class="beat clip" data-start="0" data-duration="7.5">
+          <div id="h-a-photo"><img id="h-a-img" src="assets/img/valley-wide.jpg" alt="" /></div>
+          <div id="h-a-shade"></div>
+          <div id="h-a-text">
+            <span id="h-a-q1" class="serif">캐나다 <em>시골</em> 영주권 루트?</span>
+            <span id="h-a-q2"><span style="display:block">'시골'이라는 말에 망설여졌다면,</span><b style="display:block">끝까지 봐 주세요.</b></span>
+          </div>
+        </section>
+
+        <!-- Beat B 7.5–17 -->
+        <section id="h-b" class="beat clip" data-start="7.5" data-duration="9.5">
+          <div class="glow" id="h-b-glow" style="left: 260px; top: -520px"></div>
+          <div class="ghost" data-layout-ignore aria-hidden="true" id="h-b-ghost" style="left: -40px; top: 760px; font-size: 300px">KOOTENAY</div>
+          <div id="h-b-head">
+            <span class="label" id="h-b-label">POSTCARDS FROM THE KOOTENAYS</span>
+            <span id="h-b-title" class="serif" style="margin-top: 22px">캐나다 사람들이 <em>휴가 때 일부러</em> 찾아가는 도시</span>
+          </div>
+          <div class="card" id="h-b-c1"><div class="ph" data-layout-allow-overflow><img src="assets/img/nelson-baker-street.jpg" alt="" /></div><div class="cap"><span>NELSON</span><span>베이커 스트리트</span></div></div>
+          <div class="card" id="h-b-c2"><div class="ph" data-layout-allow-overflow><img src="assets/img/sunrise-hiker.jpg" alt="" /></div><div class="cap"><span>KOOTENAYS</span><span>셀커크 산맥의 아침</span></div></div>
+          <div class="card" id="h-b-c3"><div class="ph" data-layout-allow-overflow><img src="assets/img/rafting.jpg" alt="" /></div><div class="cap"><span>SUMMER</span><span>래프팅 · 카약</span></div></div>
+        </section>
+
+        <!-- Beat C 17–27 -->
+        <section id="h-c" class="beat clip" data-start="17" data-duration="10">
+          <div class="glow" id="h-c-glow" style="left: 260px; top: 300px"></div>
+          <div id="h-c-row">
+            <div data-layout-allow-overflow class="chip" id="h-c-1"><img src="assets/img/students-lake-view.jpg" alt="" /><div class="tint"></div><div class="word">호수</div></div>
+            <div data-layout-allow-overflow class="chip" id="h-c-2"><img src="assets/img/hike-alpine-lake.jpg" alt="" /><div class="tint"></div><div class="word">설산</div></div>
+            <div data-layout-allow-overflow class="chip" id="h-c-3"><img src="assets/img/ski-whitewater.jpg" alt="" /><div class="tint"></div><div class="word">스키장</div></div>
+            <div data-layout-allow-overflow class="chip" id="h-c-4"><img src="assets/img/nelson-cafe.jpg" alt="" /><div class="tint"></div><div class="word">카페</div></div>
+          </div>
+          <div id="h-c-final">
+            <span id="h-c-plus">그리고</span>
+            <span id="h-c-pr">영주권</span>
+          </div>
+        </section>
+
+        <!-- Beat D 27–36 -->
+        <section id="h-d" class="beat clip" data-start="27" data-duration="9">
+          <div class="ghost" data-layout-ignore aria-hidden="true" style="left: 1180px; top: 30px; font-size: 220px">RCIP</div>
+          <span class="label" id="h-d-label">AA CANADA 학생들이 걸어온 길</span>
+          <div id="h-d-title" class="serif">공립 컬리지 졸업, 현지 취업, 그리고 영주권</div>
+          <div id="h-d-track">
+            <div id="h-d-line"><div id="h-d-fill"></div></div>
+            <div class="step" id="h-d-s1"><div class="dot">1</div><div class="t">셀커크 컬리지 졸업</div><div class="s">BC주 공립 컬리지</div></div>
+            <div class="step" id="h-d-s2"><div class="dot">2</div><div class="t">지역 고용주 취업</div><div class="s">졸업 후 취업비자(PGWP)</div></div>
+            <div class="step" id="h-d-s3"><div class="dot">3</div><div class="t">RNIP · RCIP 영주권</div><div class="s">지역 추천 영주권</div></div>
+          </div>
+          <div id="h-d-note">AA Canada 학생 사례 기준 · 개인별 결과는 다를 수 있으며 RCIP 기준은 매년 바뀝니다</div>
+        </section>
+
+        <!-- Beat E 36–43 -->
+        <section id="h-e" class="beat clip" data-start="36" data-duration="7">
+          <div id="h-e-bg" data-layout-ignore></div>
+          <div class="card" id="h-e-card"><div class="ph" data-layout-allow-overflow><img id="h-e-cardimg" src="assets/img/aerial-lake-campus.jpg" alt="" /></div><div class="cap"><span>SELKIRK COLLEGE</span><span>West Kootenay, BC</span></div></div>
+          <div id="h-e-text">
+            <span class="label" id="h-e-kicker">AA CANADA 캐나다 유학·이민 리포트</span>
+            <span id="h-e-t1" class="serif">셀커크 컬리지<br /><em>× RCIP</em></span>
+            <div id="h-e-rule"></div>
+            <span id="h-e-t2"><span style="display:block">캐나다 사람들이 휴가 가는 도시에서,</span><span style="display:block">영주권까지</span></span>
+          </div>
+        </section>
+      </div>
+
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+          const F = 1 / 30;
+
+          // ---- Beat A (0–7.5): Ken Burns push on valley + question
+          tl.fromTo("#h-a-img", { scale: 1.12, xPercent: 2 }, { scale: 1.0, xPercent: 0, duration: 7.5, ease: "sine.out" }, 0);
+          tl.set("#h-a-q1", { opacity: 0 }, 0);
+          tl.set("#h-a-q1", { opacity: 1, y: 80 }, 0.5);
+          tl.to("#h-a-q1", { y: 0, duration: 0.5, ease: "power4.out" }, 0.5);
+          tl.fromTo("#h-a-q2", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 2.4);
+
+          // ---- Beat B (7.5–17): postcards drop in with a settle
+          const B = 7.5;
+          tl.fromTo("#h-b-glow", { scale: 0.85, opacity: 0.6 }, { scale: 1.1, opacity: 1, duration: 9.5, ease: "sine.inOut" }, B);
+          tl.fromTo("#h-b-ghost", { x: 0 }, { x: -220, duration: 9.5, ease: "none" }, B);
+          tl.fromTo("#h-b-label", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, B + 0.2);
+          tl.set("#h-b-title", { opacity: 0 }, B);
+          tl.set("#h-b-title", { opacity: 1, y: 70 }, B + 0.45);
+          tl.to("#h-b-title", { y: 0, duration: 0.45, ease: "power4.out" }, B + 0.45);
+          [["#h-b-c1", -7, 1.6], ["#h-b-c2", 4, 2.6], ["#h-b-c3", -3, 3.6]].forEach(function (c) {
+            tl.fromTo(c[0], { opacity: 0, y: 140, rotation: c[1] * 2.2, scale: 0.92 },
+              { opacity: 1, y: 0, rotation: c[1], scale: 1, duration: 0.9, ease: "back.out(1.4)" }, B + c[2]);
+            tl.fromTo(c[0] + " img", { scale: 1.12 }, { scale: 1.0, duration: 9.5 - c[2], ease: "sine.out" }, B + c[2]);
+          });
+
+          // ---- Beat C (17–27): keyword chips, then the gold word
+          const C = 17;
+          tl.fromTo("#h-c-glow", { scale: 0.7, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 6, ease: "sine.out" }, C + 3);
+          ["#h-c-1", "#h-c-2", "#h-c-3", "#h-c-4"].forEach(function (id, i) {
+            const t = C + 0.4 + i * 1.1;
+            tl.fromTo(id, { opacity: 0, y: 90 }, { opacity: 1, y: 0, duration: 0.6, ease: "power4.out" }, t);
+            tl.fromTo(id + " img", { scale: 1.18 }, { scale: 1.02, duration: 10 - (t - C), ease: "sine.out" }, t);
+          });
+          tl.fromTo("#h-c-plus", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, C + 5.3);
+          tl.fromTo("#h-c-pr", { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.55, ease: "back.out(2)" }, C + 5.8);
+
+          // ---- Beat D (27–36): three-step path draws itself
+          const D = 27;
+          tl.fromTo("#h-d-label", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, D + 0.2);
+          tl.set("#h-d-title", { opacity: 0 }, D);
+          tl.set("#h-d-title", { opacity: 1, y: 60 }, D + 0.5);
+          tl.to("#h-d-title", { y: 0, duration: 0.45, ease: "power4.out" }, D + 0.5);
+          tl.fromTo("#h-d-fill", { scaleX: 0 }, { scaleX: 1, duration: 5.2, ease: "power1.inOut" }, D + 1.4);
+          ["#h-d-s1", "#h-d-s2", "#h-d-s3"].forEach(function (id, i) {
+            const t = D + 1.3 + i * 2.4;
+            tl.fromTo(id + " .dot", { scale: 0 }, { scale: 1, duration: 0.5, ease: "back.out(2.2)" }, t);
+            tl.fromTo([id + " .t", id + " .s"], { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5, stagger: 0.12, ease: "power3.out" }, t + 0.25);
+          });
+          tl.fromTo("#h-d-note", { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "sine.out" }, D + 7.6);
+
+          // ---- Beat E (36–43): title lockup
+          const E = 36;
+          tl.fromTo("#h-e-bg", { scale: 1.1 }, { scale: 1.0, duration: 7, ease: "sine.out" }, E);
+          tl.fromTo("#h-e-card", { opacity: 0, y: 120, rotation: 9 }, { opacity: 1, y: 0, rotation: 3, duration: 1.0, ease: "back.out(1.3)" }, E + 0.3);
+          tl.fromTo("#h-e-cardimg", { scale: 1.15 }, { scale: 1.0, duration: 6.6, ease: "sine.out" }, E + 0.3);
+          tl.fromTo("#h-e-kicker", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, E + 0.6);
+          tl.set("#h-e-t1", { opacity: 0 }, E);
+          tl.set("#h-e-t1", { opacity: 1, y: 90 }, E + 0.9);
+          tl.to("#h-e-t1", { y: 0, duration: 0.5, ease: "power4.out" }, E + 0.9);
+          tl.fromTo("#h-e-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "power3.out" }, E + 1.5);
+          tl.fromTo("#h-e-t2", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, E + 1.9);
+
+          window.__timelines["ch00-hook"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

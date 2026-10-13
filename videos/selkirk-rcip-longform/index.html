@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>셀커크 컬리지 × RCIP</title>
+    <script src="assets/vendor/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: #12291f; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: #12291f; }
+    </style>
+  </head>
+  <body>
+    <!-- 검토용 1차 빌드: Ch0(훅) + Ch3(넬슨). 나머지 챕터는 확인 후 같은 방식으로 추가. -->
+    <div id="root" data-composition-id="main" data-start="0" data-duration="105.3" data-width="1920" data-height="1080">
+      <div
+        id="ch00-hook"
+        class="clip"
+        data-composition-id="ch00-hook"
+        data-composition-src="compositions/ch00-hook.html"
+        data-start="0"
+        data-duration="43"
+        data-track-index="1"
+        data-width="1920"
+        data-height="1080"
+      ></div>
+      <div
+        id="ch03-nelson"
+        class="clip"
+        data-composition-id="ch03-nelson"
+        data-composition-src="compositions/ch03-nelson.html"
+        data-start="42.3"
+        data-duration="63"
+        data-track-index="2"
+        data-width="1920"
+        data-height="1080"
+      ></div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      // 챕터 전환: blur crossfade (calm, 0.7s) — 나가는 장면과 들어오는 장면이 같은 시점에 움직인다
+      const T1 = 42.3;
+      tl.fromTo("#ch00-hook", { opacity: 1, filter: "blur(0px)" }, { opacity: 0, filter: "blur(16px)", duration: 0.7, ease: "sine.inOut" }, T1);
+      tl.fromTo("#ch03-nelson", { opacity: 0, filter: "blur(16px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.7, ease: "sine.inOut", immediateRender: false }, T1);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

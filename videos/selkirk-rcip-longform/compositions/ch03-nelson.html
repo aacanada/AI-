@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        @font-face { font-family: "Noto Serif KR"; font-weight: 700; src: url("assets/fonts/NotoSerifKR-700.woff2") format("woff2"); }
+        @font-face { font-family: "Noto Serif KR"; font-weight: 900; src: url("assets/fonts/NotoSerifKR-900.woff2") format("woff2"); }
+        @font-face { font-family: "IBM Plex Sans KR"; font-weight: 400; src: url("assets/fonts/IBMPlexSansKR-400.woff2") format("woff2"); }
+        @font-face { font-family: "IBM Plex Sans KR"; font-weight: 600; src: url("assets/fonts/IBMPlexSansKR-600.woff2") format("woff2"); }
+        @font-face { font-family: "IBM Plex Sans KR"; font-weight: 700; src: url("assets/fonts/IBMPlexSansKR-700.woff2") format("woff2"); }
+
+        #root {
+          --forest: #12291f; --forest-2: #1a3a2d; --cream: #f4efe3; --cream-dim: #cfc8b6; --gold: #e2b04a; --lake: #7fb3ae;
+          position: absolute; inset: 0; overflow: hidden;
+          background: var(--forest); color: var(--cream);
+          font-family: "IBM Plex Sans KR", sans-serif;
+          word-break: keep-all;
+        }
+        #root .beat { position: absolute; inset: 0; overflow: hidden; }
+        #root .serif { font-family: "Noto Serif KR", serif; }
+        #root .label { font-weight: 700; font-size: 24px; letter-spacing: 0.14em; color: var(--gold); display: block; }
+        #root .glow { position: absolute; width: 1300px; height: 1300px; border-radius: 50%; background: radial-gradient(circle, rgba(226,176,74,0.26) 0%, rgba(226,176,74,0) 62%); }
+        #root .ghost { position: absolute; font-family: "Noto Serif KR", serif; font-weight: 900; color: rgba(244,239,227,0.12); white-space: nowrap; line-height: 1; }
+        #root .card { position: absolute; background: var(--cream); padding: 14px 14px 56px; box-shadow: 0 30px 60px rgba(0,0,0,0.45); }
+        #root .card .ph { width: 100%; height: 100%; overflow: hidden; }
+        #root .card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        #root .card .cap { position: absolute; left: 22px; right: 22px; bottom: 12px; height: 34px; font-weight: 700; font-size: 22px; letter-spacing: 0.12em; color: var(--forest); display: flex; align-items: center; justify-content: space-between; }
+        #root .card .cap span:last-child { color: #7a5c18; font-weight: 600; letter-spacing: 0.04em; }
+        #root .stamp { position: absolute; border: 3px solid var(--gold); color: var(--gold); padding: 14px 22px; font-weight: 700; font-size: 26px; letter-spacing: 0.12em; text-align: center; line-height: 1.35; }
+        #root .body { font-size: 40px; line-height: 1.55; color: var(--cream); }
+        #root .body b { color: var(--gold); font-weight: 700; }
+
+        /* A: chapter open */
+        #n-a-card { left: 900px; top: 120px; width: 880px; height: 640px; }
+        #n-a-text { position: absolute; left: 120px; top: 230px; width: 760px; }
+        #n-a-ch { }
+        #n-a-name { margin-top: 18px; font-size: 200px; font-weight: 900; line-height: 1; display: block; }
+        #n-a-sub { margin-top: 26px; font-size: 44px; font-weight: 700; font-style: italic; color: var(--gold); display: block; }
+        #n-a-sub2 { margin-top: 14px; font-size: 32px; color: var(--cream-dim); display: block; }
+
+        /* B: history */
+        #n-b-card { left: 120px; top: 110px; width: 900px; height: 700px; }
+        #n-b-text { position: absolute; left: 1100px; top: 200px; width: 700px; }
+        #n-b-year { font-size: 150px; font-weight: 900; color: var(--gold); line-height: 1; display: block; }
+        #n-b-yearlab { margin-top: 10px; font-size: 34px; font-weight: 700; display: block; }
+        #n-b-copy { margin-top: 40px; }
+        #n-b-stamp { left: 1100px; top: 700px; }
+
+        /* C: quote */
+        #n-c-bg { position: absolute; inset: -40px; background: url("assets/img/nelson-lakeside.jpg") center / cover no-repeat; filter: blur(10px) brightness(0.45); }
+        #n-c-card { left: 1060px; top: 170px; width: 740px; height: 520px; }
+        #n-c-quote { position: absolute; z-index: 2; left: 120px; top: 220px; width: 860px; }
+        #n-c-mark { font-size: 200px; font-weight: 900; color: var(--gold); line-height: 0.6; display: block; height: 110px; }
+        #n-c-q { font-size: 78px; font-weight: 900; line-height: 1.3; display: block; }
+        #n-c-src { margin-top: 36px; font-size: 30px; color: var(--cream-dim); display: block; }
+
+        /* D: seasons */
+        #n-d-head { position: absolute; left: 120px; top: 90px; width: 1680px; }
+        #n-d-title { margin-top: 12px; font-size: 64px; font-weight: 900; display: block; }
+        #n-d-w { position: absolute; left: 120px; top: 270px; width: 820px; height: 560px; overflow: hidden; border: 4px solid var(--cream); }
+        #n-d-s { position: absolute; left: 980px; top: 270px; width: 820px; height: 560px; overflow: hidden; border: 4px solid var(--cream); }
+        #root .season img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+        #n-d-w img { object-position: 50% 70%; }
+        #root .season .tint { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(18,41,31,0.92) 0%, rgba(18,41,31,0) 55%); }
+        #root .season .tag { position: absolute; left: 34px; bottom: 96px; font-weight: 700; font-size: 26px; letter-spacing: 0.14em; color: var(--gold); }
+        #root .season .what { position: absolute; left: 34px; right: 34px; bottom: 30px; font-family: "Noto Serif KR", serif; font-weight: 900; font-size: 50px; }
+
+        /* E: food & people */
+        #n-e-text { position: absolute; left: 120px; top: 170px; width: 700px; height: 700px; }
+        #n-e-title { margin-top: 14px; font-size: 80px; font-weight: 900; line-height: 1.25; display: block; }
+        #n-e-who { margin-top: 40px; }
+        #n-e-c1 { left: 860px; top: 100px; width: 520px; height: 400px; }
+        #n-e-c2 { left: 1400px; top: 170px; width: 420px; height: 380px; }
+        #n-e-c3 { left: 1060px; top: 560px; width: 500px; height: 330px; }
+
+        /* F: punchline */
+        #n-f-bg { position: absolute; inset: 0; }
+        #n-f-bg img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 60%; }
+        #n-f-shade { position: absolute; inset: 0; background: rgba(18,41,31,0.62); }
+        #n-f-text { position: absolute; left: 120px; right: 120px; top: 290px; text-align: center; }
+        #n-f-l1 { font-size: 68px; font-weight: 700; color: var(--cream); display: block; }
+        #n-f-l1 s { text-decoration-color: var(--gold); text-decoration-thickness: 6px; }
+        #n-f-l2 { margin-top: 50px; font-size: 96px; font-weight: 900; line-height: 1.3; color: var(--gold); display: block; }
+      </style>
+
+      <div id="root" data-composition-id="ch03-nelson" data-width="1920" data-height="1080" data-duration="63">
+
+        <!-- A 0–8 -->
+        <section id="n-a" class="beat clip" data-start="0" data-duration="8">
+          <div class="glow" id="n-a-glow" style="left: -300px; top: -200px"></div>
+          <div class="ghost" data-layout-ignore aria-hidden="true" id="n-a-ghost" style="left: 60px; top: 800px; font-size: 280px">NELSON · BC</div>
+          <div class="card" id="n-a-card"><div class="ph" data-layout-allow-overflow><img id="n-a-img" src="assets/img/nelson-autumn-aerial.jpg" alt="" /></div><div class="cap"><span>NELSON, BC</span><span>가을의 넬슨</span></div></div>
+          <div id="n-a-text">
+            <span class="label" id="n-a-ch">CHAPTER 03 · 도시 ①</span>
+            <span id="n-a-name" class="serif">넬슨</span>
+            <span id="n-a-sub" class="serif">Queen City of the Kootenays</span>
+            <span id="n-a-sub2">쿠트니의 여왕 도시</span>
+          </div>
+        </section>
+
+        <!-- B 8–20 -->
+        <section id="n-b" class="beat clip" data-start="8" data-duration="12">
+          <div class="card" id="n-b-card"><div class="ph" data-layout-allow-overflow><img id="n-b-img" src="assets/img/nelson-baker-street.jpg" alt="" /></div><div class="cap"><span>BAKER STREET</span><span>다운타운 헤리티지 거리</span></div></div>
+          <div id="n-b-text">
+            <span id="n-b-year" class="serif">1880s</span>
+            <span id="n-b-yearlab">은광 마을에서 시작된 도시</span>
+            <div class="body" id="n-b-copy">베이커 스트리트에는 <b>19세기 붉은 벽돌 건물</b>이 지금도 그대로 남아 있습니다.</div>
+          </div>
+          <div class="stamp" id="n-b-stamp">HERITAGE<br />DOWNTOWN</div>
+        </section>
+
+        <!-- C 20–28 -->
+        <section id="n-c" class="beat clip" data-start="20" data-duration="8">
+          <div id="n-c-bg" data-layout-ignore></div>
+          <div class="card" id="n-c-card"><div class="ph" data-layout-allow-overflow><img id="n-c-img" src="assets/img/nelson-lakeside.jpg" alt="" /></div><div class="cap"><span>KOOTENAY LAKE</span><span>호숫가의 넬슨</span></div></div>
+          <div id="n-c-quote">
+            <span id="n-c-mark" class="serif">“</span>
+            <span id="n-c-q" class="serif">캐나다에서 가장 매력적인 작은 도시</span>
+            <span id="n-c-src">캐나다 여행 매체들이 꾸준히 꼽는 넬슨의 수식어</span>
+          </div>
+        </section>
+
+        <!-- D 28–42 -->
+        <section id="n-d" class="beat clip" data-start="28" data-duration="14">
+          <div id="n-d-head">
+            <span class="label" id="n-d-label">FOUR SEASONS RESORT TOWN</span>
+            <span id="n-d-title" class="serif">겨울엔 파우더 스키, 여름엔 호수</span>
+          </div>
+          <div data-layout-allow-overflow class="season" id="n-d-w"><img id="n-d-wimg" src="assets/img/ski-whitewater.jpg" alt="" /><div class="tint"></div><div class="tag">WINTER · WHITEWATER</div><div class="what">화이트워터 스키장 파우더</div></div>
+          <div data-layout-allow-overflow class="season" id="n-d-s"><img id="n-d-simg" src="assets/img/rafting.jpg" alt="" /><div class="tint"></div><div class="tag">SUMMER · KOOTENAY LAKE</div><div class="what">카약 · 패들보드 · 래프팅</div></div>
+        </section>
+
+        <!-- E 42–54 -->
+        <section id="n-e" class="beat clip" data-start="42" data-duration="12">
+          <div class="glow" style="left: 300px; top: 100px"></div>
+          <div id="n-e-text">
+            <span class="label" id="n-e-label">CAFÉ · FOOD · CRAFT BEER</span>
+            <span id="n-e-title" class="serif">작은 도시,<br />넘치는 카페와 식당</span>
+            <div class="body" id="n-e-who" style="width: 680px">예술가, 환경운동가, 전문직 종사자들이 <b>일부러 이사 오는</b> 도시</div>
+          </div>
+          <div class="card" id="n-e-c1"><div class="ph" data-layout-allow-overflow><img src="assets/img/nelson-cafe.jpg" alt="" /></div><div class="cap"><span>CAFÉ</span><span>로컬 카페</span></div></div>
+          <div class="card" id="n-e-c2"><div class="ph" data-layout-allow-overflow><img src="assets/img/nelson-brewpub.jpg" alt="" /></div><div class="cap"><span>BREWPUB</span><span>수제 맥주집</span></div></div>
+          <div class="card" id="n-e-c3"><div class="ph" data-layout-allow-overflow><img src="assets/img/nelson-craft-beer.jpg" alt="" /></div><div class="cap"><span>LOCAL</span><span>지역 크래프트 맥주</span></div></div>
+        </section>
+
+        <!-- F 54–63 -->
+        <section id="n-f" class="beat clip" data-start="54" data-duration="9">
+          <div id="n-f-bg"><img id="n-f-img" src="assets/img/students-lake-view.jpg" alt="" /></div>
+          <div id="n-f-shade"></div>
+          <div id="n-f-text">
+            <span id="n-f-l1">어쩔 수 없이 가는 <s>시골</s>이 아닙니다</span>
+            <span id="n-f-l2" class="serif">캐나다 사람들이 휴가 오고,<br />은퇴하고 싶어 하는 곳</span>
+          </div>
+        </section>
+      </div>
+
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+
+          function whip(sel, at, dy) {
+            tl.set(sel, { opacity: 0 }, 0);
+            tl.set(sel, { opacity: 1, y: dy || 70 }, at);
+            tl.to(sel, { y: 0, duration: 0.45, ease: "power4.out" }, at);
+          }
+          function rise(sel, at) {
+            tl.fromTo(sel, { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, at);
+          }
+          function drop(sel, at, rot) {
+            tl.fromTo(sel, { opacity: 0, y: 130, rotation: rot * 2.4, scale: 0.92 }, { opacity: 1, y: 0, rotation: rot, scale: 1, duration: 0.9, ease: "back.out(1.4)" }, at);
+          }
+
+          // A 0–8
+          tl.fromTo("#n-a-glow", { scale: 0.8 }, { scale: 1.1, duration: 8, ease: "sine.inOut" }, 0);
+          tl.fromTo("#n-a-ghost", { x: 0 }, { x: -200, duration: 8, ease: "none" }, 0);
+          drop("#n-a-card", 0.2, 2.5);
+          tl.fromTo("#n-a-img", { scale: 1.15 }, { scale: 1.0, duration: 7.8, ease: "sine.out" }, 0.2);
+          rise("#n-a-ch", 0.5);
+          whip("#n-a-name", 0.8, 110);
+          rise("#n-a-sub", 1.6);
+          rise("#n-a-sub2", 2.2);
+
+          // B 8–20
+          const B = 8;
+          drop("#n-b-card", B + 0.2, -2);
+          tl.fromTo("#n-b-img", { scale: 1.0, xPercent: 0 }, { scale: 1.12, xPercent: -3, duration: 11.8, ease: "sine.inOut" }, B + 0.2);
+          whip("#n-b-year", B + 0.9, 90);
+          rise("#n-b-yearlab", B + 1.5);
+          rise("#n-b-copy", B + 3.2);
+          tl.fromTo("#n-b-stamp", { opacity: 0, scale: 1.8, rotation: -14 }, { opacity: 1, scale: 1, rotation: -6, duration: 0.45, ease: "back.out(2.4)" }, B + 5.4);
+
+          // C 20–28
+          const C = 20;
+          drop("#n-c-card", C + 0.2, 3);
+          tl.fromTo("#n-c-img", { scale: 1.12 }, { scale: 1.0, duration: 7.8, ease: "sine.out" }, C + 0.2);
+          tl.fromTo("#n-c-mark", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2)" }, C + 0.6);
+          whip("#n-c-q", C + 1.0, 80);
+          rise("#n-c-src", C + 2.4);
+
+          // D 28–42
+          const D = 28;
+          rise("#n-d-label", D + 0.2);
+          whip("#n-d-title", D + 0.5, 70);
+          tl.fromTo("#n-d-w", { opacity: 0, x: -120 }, { opacity: 1, x: 0, duration: 0.8, ease: "power3.out" }, D + 1.2);
+          tl.fromTo("#n-d-wimg", { scale: 1.2 }, { scale: 1.0, duration: 12.8, ease: "sine.out" }, D + 1.2);
+          tl.fromTo("#n-d-s", { opacity: 0, x: 120 }, { opacity: 1, x: 0, duration: 0.8, ease: "power3.out" }, D + 5.5);
+          tl.fromTo("#n-d-simg", { scale: 1.2 }, { scale: 1.0, duration: 8.5, ease: "sine.out" }, D + 5.5);
+
+          // E 42–54
+          const E = 42;
+          rise("#n-e-label", E + 0.2);
+          whip("#n-e-title", E + 0.5, 80);
+          drop("#n-e-c1", E + 1.4, -4);
+          drop("#n-e-c2", E + 2.4, 5);
+          drop("#n-e-c3", E + 3.4, -2);
+          rise("#n-e-who", E + 5.2);
+
+          // F 54–63
+          const Fz = 54;
+          tl.fromTo("#n-f-img", { scale: 1.0 }, { scale: 1.12, duration: 9, ease: "sine.inOut" }, Fz);
+          rise("#n-f-l1", Fz + 0.4);
+          whip("#n-f-l2", Fz + 3.0, 90);
+
+          window.__timelines["ch03-nelson"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>
