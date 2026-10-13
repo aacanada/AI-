@@ -1,0 +1,9 @@
+type: shorts
+title: 고1 마치고 가면 3학기 졸업? ESL이 변수 (숏폼 C)
+channels: youtube, instagram, threads, blog, clip, homepage
+visibility: public
+publish_order: 4
+linked_to: 2026-10-13-vanwest-prep
+files: video.mp4 (1080x1920, 0:33, 18MB), thumbnail.jpg (1080x1920 cover), upload-text.txt
+source: aacanada/AI- branch claude/festive-ramanujan-rswtcw, videos/vanwest-shorts/short-c-esl/
+notes: 2026-10-13-vanwest-prep 의 published.md 에 본편 유튜브 주소가 생긴 뒤에 게시하고, 유튜브 쇼츠의 '관련 동영상'에 그 본편을 연결해 주세요. 본편이 아직 게시되지 않았으면 이번 확인은 건너뛰고 다음 확인 때 게시합니다.
