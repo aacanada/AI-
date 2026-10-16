@@ -1,6 +1,6 @@
 # published
 
-status: partial
+status: published
 published_at: 2026-10-14 01:30 (KST)
 published_by: 어사이드 (세션 XbF4dyL7PxGqQ4zo, 게시 대기함 예약 확인 01:00 회차)
 
@@ -20,10 +20,12 @@ published_by: 어사이드 (세션 XbF4dyL7PxGqQ4zo, 게시 대기함 예약 확
   - 공개 상태: 공개 (숏폼 A·B·C 공통 2부 쓰레드, 2/2: https://www.threads.com/@aa.montreal/post/DecPV_sE-zQ, 본편·블로그 링크 포함)
 - blog: https://blog.naver.com/allthatcan/224440882872
   - 공개 상태: 전체공개 (숏폼 A·B·C 공통 글, 카테고리 Selkirk College, 소제목 굵게 19, 본편·숏폼 3편 유튜브 카드)
+- homepage: http://aacanada.co.kr/ab-1280-85
+  - 공개 상태: 공개 (직종별 가이드 > 비자 관련 소식 게시판, 숏폼 A·B·C 공통 글 1개, 본편·숏폼 3편·릴스 3편·블로그 링크 포함, 2026-10-17 게시)
 
 ## 실패한 채널
 
-- homepage: 게시 안 함. aacanada.co.kr 로그인이 만료되어(로그아웃 상태) 규칙대로 멈춤. 다시 로그인한 뒤 숏폼 A·B·C 공통 글 1개를 올리면 됨.
+- 없음 (homepage는 처음 01:30 회차에 로그인 만료로 보류됐다가 2026-10-17 원장님 요청으로 추가 게시)
 
 ## 참고
 
