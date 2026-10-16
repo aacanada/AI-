@@ -1,6 +1,5 @@
-"""Re-time the cached ElevenLabs takes (assets/audio/<scene>.mp3 + .align.json from tts.py):
-split each scene at chunk boundaries, insert breathing pauses so the motion graphics can land,
-and hold each scene before the next. Writes assets/audio/narration.wav + timing.json."""
+"""Lay out the voice-QC'd caption chunks (assets/audio/chunks, from voice_qc.py) with breathing pauses
+so the motion graphics can land, and hold each scene before the next. Writes assets/audio/narration.wav + timing.json."""
 import json, subprocess, pathlib
 import numpy as np
 
@@ -33,26 +32,19 @@ def fade(x, ms=12):
     return x
 
 pieces, timing, t = [], {"scenes": []}, LEAD
+CH = AUD / "chunks"  # QC'd chunks from .claude/skills/shorts-video/scripts/voice_qc.py
 for sc in spec["scenes"]:
     sid = sc["id"]
-    al = json.loads((AUD / f"{sid}.align.json").read_text())
-    st, en = al["character_start_times_seconds"], al["character_end_times_seconds"]
-    pcm = decode(AUD / f"{sid}.mp3")
-    dur = len(pcm) / SR
-    ranges, pos = [], 0
-    for _, tt in sc["chunks"]:
-        ranges.append((pos, pos + len(tt) - 1)); pos += len(tt) + 1
-    cuts = [0.0] + [(en[ranges[i][1]] + st[ranges[i + 1][0]]) / 2 for i in range(len(ranges) - 1)] + [dur]
     scene_start = 0.0 if not timing["scenes"] else t
     if timing["scenes"]:
         t += 0.25  # short breath after the scene cut
     caps = []
     for i, (disp, _) in enumerate(sc["chunks"]):
-        seg = fade(pcm[int(cuts[i] * SR): int(cuts[i + 1] * SR)])
+        meta = json.loads((CH / f"{sid}-{i}.json").read_text())
+        seg = fade(decode(CH / f"{sid}-{i}.wav"))
         pieces.append((t, seg))
-        caps.append({"text": disp, "start": round(t + st[ranges[i][0]] - cuts[i], 3),
-                     "speech_end": round(t + en[ranges[i][1]] - cuts[i], 3),
-                     "shift": round(t - cuts[i], 4)})
+        caps.append({"text": disp, "start": round(t + meta["speech_start"], 3), "speech_end": round(t + meta["speech_end"], 3),
+                     "place": round(t, 4), "take": meta["take"], "src_start": meta["src_start"], "removed": meta["removed"]})
         t += len(seg) / SR
         if i < len(sc["chunks"]) - 1:
             t += PAUSES.get((sid, i), PAUSE)

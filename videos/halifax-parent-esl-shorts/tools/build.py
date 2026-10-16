@@ -37,15 +37,18 @@ def marks():
         "s7-cta": {"aa": "에이에이"},
     }
     for sc, tsc in zip(SPEC["scenes"], T["scenes"]):
-        al = json.loads((ROOT / "assets" / "audio" / f"{sc['id']}.align.json").read_text())
-        text = "".join(al["characters"])
         bounds, pos = [], 0
         for _, tt in sc["chunks"]:
             bounds.append((pos, pos + len(tt))); pos += len(tt) + 1
+        text = " ".join(c[1] for c in sc["chunks"])
         for key, sub in want.get(sc["id"], {}).items():
             k = text.index(sub)
             ci = next(i for i, (a, b) in enumerate(bounds) if a <= k < b)
-            out[key] = round(al["character_start_times_seconds"][k] + tsc["captions"][ci]["shift"], 3)
+            cap = tsc["captions"][ci]
+            al = json.loads((ROOT / "assets" / "audio" / "takes" / f"{sc['id']}.t{cap['take']}.align.json").read_text())
+            tau = al["character_start_times_seconds"][k]  # take time → chunk time (minus cut fillers) → film time
+            cut = sum(min(t1, tau) - t0 for t0, t1 in cap["removed"] if t0 < tau)
+            out[key] = round(cap["place"] + tau - cap["src_start"] - cut, 3)
     return out
 
 M = marks()
