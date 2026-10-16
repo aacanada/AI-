@@ -1,0 +1,14 @@
+type: shorts
+title: 부모가 어학원만 다녀도 아이 공립학교 무상? 핼리팩스 자녀무상교육 (숏폼, 원장님 육성 교체본)
+channels: youtube, instagram, threads, blog, clip, homepage
+visibility: public
+publish_order: 1
+linked_to: (none)
+replaces: 2026-10-16-halifax-parent-esl-short
+files: video.mp4 (1080x1920, 0:58, 24MB), thumbnail.jpg (1080x1920 cover), upload-text.txt
+source: aacanada/AI- branch claude/halifax-parent-esl-shorts, videos/halifax-parent-esl-shorts/ (commit 8faf1e8)
+notes: 교체 게시입니다. 2026-10-16-halifax-parent-esl-short 로 이미 게시된 영상은 AI 음성이 끊겨서 쓸 수 없는 버전이고, 이 폴더의 video.mp4 는 원장님이 직접 녹음한 목소리로 다시 만든 영상입니다.
+  1) 2026-10-16-halifax-parent-esl-short/published.md 에 적힌 기존 게시물(유튜브 쇼츠, 인스타 릴스, 쓰레드 3부, 블로그, 클립, 홈페이지)을 각 채널에서 '비공개'로 전환해 주세요 (삭제하지 말고 비공개).
+  2) 그다음 이 폴더 내용으로 6개 채널에 새로 게시해 주세요. 제목·설명·캡션·썸네일은 기존과 같습니다. 중복 확인 규칙(같은 제목 글 존재)은 1)에서 비공개 처리한 기존 글은 제외하고 판단해 주세요.
+  3) 블로그·홈페이지는 새 글을 올리는 대신 기존 글의 영상(유튜브 카드·숏폼 링크)만 새 주소로 바꿔도 됩니다. 그렇게 했다면 published.md 에 '기존 글 수정'이라고 적어 주세요.
+  4) published.md 에 새 링크와 비공개 처리한 기존 링크를 함께 적어 주세요.
