@@ -1,0 +1,9 @@
+type: shorts
+title: 부모가 어학원만 다녀도 아이 공립학교 무상? 핼리팩스 자녀무상교육 (숏폼)
+channels: youtube, instagram, threads, blog, clip, homepage
+visibility: public
+publish_order: 1
+linked_to: (none)
+files: video.mp4 (1080x1920, 1:05, 26MB), thumbnail.jpg (1080x1920 cover), upload-text.txt
+source: aacanada/AI- branch claude/halifax-parent-esl-shorts, videos/halifax-parent-esl-shorts/
+notes: 단독 숏폼입니다 (연결할 본편 없음). 홈페이지 글 링크 http://aacanada.co.kr/ab-1862-29 를 유튜브 설명·블로그·홈페이지 게시물에 함께 걸어 주세요.
