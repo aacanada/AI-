@@ -26,6 +26,8 @@ def r(x):
 
 # ---------- word marks: absolute time a TTS substring starts being spoken ----------
 def marks():
+    if "marks" in T:  # owner recording: marks come straight from tools/from_recording.py
+        return T["marks"]
     out = {}
     want = {
         "s1-hook": {"zero": "영 원"},

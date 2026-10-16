@@ -1,296 +1,213 @@
 {
+ "voice": "owner recording",
  "scenes": [
   {
    "id": "s1-hook",
    "start": 0.0,
-   "duration": 4.604,
-   "audio_end": 4.054,
+   "duration": 4.31,
+   "audio_end": 3.96,
    "captions": [
     {
      "text": "부모가 어학원만 다녀도",
-     "start": 0.47,
-     "speech_end": 2.06,
-     "place": 0.3,
-     "take": 0,
-     "src_start": 0.0,
-     "removed": [],
-     "end": 2.624
+     "start": 0.6,
+     "end": 2.69,
+     "speech_end": 2.64
     },
     {
      "text": "아이 학비가 0원?",
-     "start": 2.624,
-     "speech_end": 3.744,
-     "place": 2.6145,
-     "take": 0,
-     "src_start": 1.7645,
-     "removed": [],
-     "end": 4.604
+     "start": 2.69,
+     "end": 4.31,
+     "speech_end": 3.96
     }
    ]
   },
   {
    "id": "s2-rule",
-   "start": 4.604,
-   "duration": 9.007,
-   "audio_end": 12.111,
+   "start": 4.31,
+   "duration": 7.56,
+   "audio_end": 11.52,
    "captions": [
     {
      "text": "캐나다 노바스코샤주 핼리팩스",
-     "start": 5.024,
-     "speech_end": 6.914,
-     "place": 4.8544,
-     "take": 0,
-     "src_start": 0.0,
-     "removed": [
-      [
-       0.2,
-       0.57
-      ]
-     ],
-     "end": 7.718
+     "start": 4.61,
+     "end": 6.99,
+     "speech_end": 6.94
     },
     {
      "text": "부모님 학생비자만 있으면",
-     "start": 7.718,
-     "speech_end": 9.338,
-     "place": 7.6284,
-     "take": 0,
-     "src_start": 2.444,
-     "removed": [],
-     "end": 10.152
+     "start": 6.99,
+     "end": 9.29,
+     "speech_end": 9.24
     },
     {
-     "text": "자녀 공립학교가 무상이에요",
-     "start": 10.152,
-     "speech_end": 11.872,
-     "place": 10.1024,
-     "take": 0,
-     "src_start": 4.168,
-     "removed": [],
-     "end": 13.611
+     "text": "자녀 공립학교가 무상교육이에요",
+     "start": 9.29,
+     "end": 11.87,
+     "speech_end": 11.52
     }
    ]
   },
   {
    "id": "s3-school",
-   "start": 13.611,
-   "duration": 8.989,
-   "audio_end": 21.099,
+   "start": 11.87,
+   "duration": 8.83,
+   "audio_end": 20.35,
    "captions": [
     {
      "text": "대학이나 컬리지에",
-     "start": 14.031,
-     "speech_end": 15.041,
-     "place": 13.8609,
-     "take": 0,
-     "src_start": 0.0,
-     "removed": [
-      [
-       0.22000000000000003,
-       0.49000000000000005
-      ]
-     ],
-     "end": 15.508
+     "start": 12.17,
+     "end": 13.2,
+     "speech_end": 13.15
     },
     {
      "text": "다닐 필요가 없어요",
-     "start": 15.508,
-     "speech_end": 16.428,
-     "place": 15.4979,
-     "take": 0,
-     "src_start": 1.4569999999999999,
-     "removed": [],
-     "end": 17.045
+     "start": 13.2,
+     "end": 15.0,
+     "speech_end": 14.95
     },
     {
      "text": "사설 어학원도 OK!",
-     "start": 17.045,
-     "speech_end": 18.485,
-     "place": 17.0054,
-     "take": 0,
-     "src_start": 2.4145000000000003,
-     "removed": [],
-     "end": 19.286
+     "start": 15.0,
+     "end": 17.88,
+     "speech_end": 17.83
     },
     {
      "text": "학교 종류 조건이 없거든요",
-     "start": 19.286,
-     "speech_end": 21.066,
-     "place": 19.2764,
-     "take": 0,
-     "src_start": 3.9355,
-     "removed": [],
-     "end": 22.599
+     "start": 17.88,
+     "end": 20.7,
+     "speech_end": 20.35
     }
    ]
   },
   {
    "id": "s4-weeks",
-   "start": 22.599,
-   "duration": 12.587,
-   "audio_end": 31.787,
+   "start": 20.7,
+   "duration": 10.85,
+   "audio_end": 31.2,
    "captions": [
     {
      "text": "핵심은 40주 학비로",
-     "start": 22.939,
-     "speech_end": 24.379,
-     "place": 22.8494,
-     "take": 0,
-     "src_start": 0.0,
-     "removed": [],
-     "end": 25.328
+     "start": 21.0,
+     "end": 23.08,
+     "speech_end": 23.03
     },
     {
-     "text": "50주 입학허가서!",
-     "start": 25.328,
-     "speech_end": 26.438,
-     "place": 25.1979,
-     "take": 0,
-     "src_start": 1.6484999999999999,
-     "removed": [],
-     "end": 27.565
+     "text": "50주 입학허가서를 받고",
+     "start": 23.08,
+     "end": 25.82,
+     "speech_end": 25.77
     },
     {
      "text": "방학 10주는 학비 0원",
-     "start": 27.565,
-     "speech_end": 29.255,
-     "place": 27.4949,
-     "take": 0,
-     "src_start": 2.9955,
-     "removed": [],
-     "end": 29.948
+     "start": 25.82,
+     "end": 28.36,
+     "speech_end": 28.31
     },
     {
-     "text": "이걸로 약 1년 학생비자 진행",
-     "start": 29.948,
-     "speech_end": 31.758,
-     "place": 29.8884,
-     "take": 0,
-     "src_start": 4.789,
-     "removed": [],
-     "end": 35.187
+     "text": "이걸로 약 1년 학생비자 진행합니다",
+     "start": 28.36,
+     "end": 31.55,
+     "speech_end": 31.2
     }
    ]
   },
   {
    "id": "s5-price",
-   "start": 35.187,
-   "duration": 8.653,
-   "audio_end": 41.84,
+   "start": 31.55,
+   "duration": 8.51,
+   "audio_end": 39.71,
    "captions": [
     {
      "text": "학비는 40주에",
-     "start": 35.597,
-     "speech_end": 36.817,
-     "place": 35.4368,
-     "take": 0,
-     "src_start": 0.0,
-     "removed": [
-      [
-       0.16,
-       0.39
-      ]
-     ],
-     "end": 37.17
+     "start": 31.85,
+     "end": 33.75,
+     "speech_end": 33.7
     },
     {
      "text": "11,400 캐나다 달러",
-     "start": 37.17,
-     "speech_end": 38.62,
-     "place": 37.1703,
-     "take": 0,
-     "src_start": 1.6135,
-     "removed": [],
-     "end": 39.477
+     "start": 33.75,
+     "end": 36.6,
+     "speech_end": 36.55
     },
     {
-     "text": "정가에서 25% 할인된 금액",
-     "start": 39.477,
-     "speech_end": 41.607,
-     "place": 39.4773,
-     "take": 0,
-     "src_start": 3.0705,
-     "removed": [],
-     "end": 43.84
+     "text": "정가에서 25% 할인된 금액입니다",
+     "start": 36.6,
+     "end": 40.06,
+     "speech_end": 39.71
     }
    ]
   },
   {
    "id": "s6-parents",
-   "start": 43.84,
-   "duration": 12.17,
-   "audio_end": 53.21,
+   "start": 40.06,
+   "duration": 10.92,
+   "audio_end": 50.63,
    "captions": [
     {
      "text": "아이 등교 후 9시 반 시작",
-     "start": 44.25,
-     "speech_end": 46.45,
-     "place": 44.0902,
-     "take": 0,
-     "src_start": 0.0,
-     "removed": [],
-     "end": 47.19
+     "start": 40.36,
+     "end": 42.8,
+     "speech_end": 42.75
     },
     {
-     "text": "하교 전에 수업 끝",
-     "start": 47.19,
-     "speech_end": 48.04,
-     "place": 47.1702,
-     "take": 0,
-     "src_start": 2.38,
-     "removed": [],
-     "end": 48.85
+     "text": "하교 전 수업 끝",
+     "start": 42.8,
+     "end": 45.0,
+     "speech_end": 44.95
     },
     {
      "text": "반 친구들도 모두 학부모",
-     "start": 48.85,
-     "speech_end": 50.19,
-     "place": 48.8197,
-     "take": 0,
-     "src_start": 3.2795,
-     "removed": [],
-     "end": 50.956
+     "start": 45.0,
+     "end": 47.71,
+     "speech_end": 47.66
     },
     {
      "text": "대학 부설 과정보다 저렴하고 편해요",
-     "start": 50.956,
-     "speech_end": 52.986,
-     "place": 50.9457,
-     "take": 0,
-     "src_start": 4.6555,
-     "removed": [],
-     "end": 56.01
+     "start": 47.71,
+     "end": 50.98,
+     "speech_end": 50.63
     }
    ]
   },
   {
    "id": "s7-cta",
-   "start": 56.01,
-   "duration": 8.187,
-   "audio_end": 60.396,
+   "start": 50.98,
+   "duration": 6.8,
+   "audio_end": 54.98,
    "captions": [
     {
      "text": "핼리팩스 자녀무상교육",
-     "start": 56.34,
-     "speech_end": 57.78,
-     "place": 56.2598,
-     "take": 0,
-     "src_start": 0.0,
-     "removed": [],
-     "end": 58.486
+     "start": 51.28,
+     "end": 52.91,
+     "speech_end": 52.86
     },
     {
      "text": "AA Canada와 상담하세요",
-     "start": 58.486,
-     "speech_end": 60.116,
-     "place": 58.4863,
-     "take": 0,
-     "src_start": 1.5265,
-     "removed": [],
-     "end": 64.196
+     "start": 52.91,
+     "end": 57.78,
+     "speech_end": 54.98
     }
    ]
   }
  ],
- "total": 64.196
+ "marks": {
+  "zero": 3.55,
+  "halifax": 5.87,
+  "visa": 7.49,
+  "free": 10.68,
+  "ok": 16.5,
+  "nocond": 19.04,
+  "fifty": 23.12,
+  "vac": 25.87,
+  "zero4": 27.88,
+  "year": 29.32,
+  "roll": 33.85,
+  "pct": 37.36,
+  "930": 41.44,
+  "end": 44.18,
+  "parents": 46.52,
+  "cheap": 49.72,
+  "aa": 52.93
+ },
+ "total": 57.78
 }
