@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="UTF-8"><style>
+@font-face { font-family: "Pretendard"; font-weight: 800; src: url("../assets/fonts/Pretendard-ExtraBold.woff2") format("woff2"); }
+@font-face { font-family: "Pretendard"; font-weight: 900; src: url("../assets/fonts/Pretendard-Black.woff2") format("woff2"); }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 1080px; height: 1920px; overflow: hidden; }
+body { font-family: "Pretendard", sans-serif; color: #fff; word-break: keep-all; position: relative;
+  background: radial-gradient(900px 900px at 80% 15%, rgba(36,78,150,0.9) 0%, rgba(36,78,150,0) 70%),
+              radial-gradient(800px 800px at 10% 85%, rgba(31,181,201,0.28) 0%, rgba(31,181,201,0) 70%),
+              linear-gradient(180deg, #0b1730 0%, #132a52 100%); }
+.grid { position: absolute; inset: 0; opacity: 0.07; background-image: linear-gradient(#fff 2px, transparent 2px), linear-gradient(90deg, #fff 2px, transparent 2px); background-size: 90px 90px; }
+.pill { position: absolute; top: 250px; left: 0; right: 0; margin: 0 auto; width: 660px; text-align: center; padding: 22px 0; border-radius: 999px; background: #e63946; font-size: 50px; font-weight: 900; }
+.lines { position: absolute; top: 470px; left: 0; right: 0; text-align: center; }
+.l { font-size: 132px; font-weight: 900; line-height: 1.18; letter-spacing: -0.04em; }
+.l .s { color: #9fc3ff; }
+.zero { margin-top: 30px; font-size: 150px; font-weight: 900; letter-spacing: -0.04em; line-height: 1.1; }
+.zero b { display: inline-block; color: #ffd23f; font-size: 330px; line-height: 1; text-shadow: 0 0 60px rgba(255,210,63,0.6); vertical-align: -30px; }
+.chips { position: absolute; top: 1290px; left: 0; right: 0; display: flex; flex-direction: column; align-items: center; gap: 22px; }
+.chip { padding: 18px 40px; border-radius: 24px; background: rgba(5,12,28,0.8); border: 4px solid #1fb5c9; font-size: 52px; font-weight: 900; }
+.chip.g { border-color: #2ec27e; }
+.chip span { color: #ffd23f; }
+.brand { position: absolute; top: 1555px; left: 0; right: 0; text-align: center; font-size: 60px; font-weight: 900; letter-spacing: 0.12em; }
+.brand b { color: #e63946; }
+</style></head><body><div class="grid"></div>
+<div class="pill">핼리팩스 자녀무상교육</div>
+<div class="lines">
+  <div class="l"><span class="s">부모는</span> 어학원</div>
+  <div class="l"><span class="s">아이는</span> 공립학교</div>
+  <div class="zero">학비 <b>0원</b></div>
+</div>
+<div class="chips"><div class="chip">40주 학비 → <span>50주 학생비자</span></div><div class="chip g">대학 안 다녀도 <span>OK</span></div></div>
+<div class="brand"><b>AA</b> CANADA</div>
+</body></html>

@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>핼리팩스 자녀무상교육 · 부모는 어학원, 아이는 공립학교</title>
+    <script src="assets/vendor/gsap.min.js"></script>
+    <script src="assets/vendor/hyper-shader.global.js"></script>
+    <style>
+      @font-face { font-family: "Pretendard"; font-weight: 500; src: url("assets/fonts/Pretendard-Medium.woff2") format("woff2"); }
+      @font-face { font-family: "Pretendard"; font-weight: 700; src: url("assets/fonts/Pretendard-Bold.woff2") format("woff2"); }
+      @font-face { font-family: "Pretendard"; font-weight: 800; src: url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2"); }
+      @font-face { font-family: "Pretendard"; font-weight: 900; src: url("assets/fonts/Pretendard-Black.woff2") format("woff2"); }
+      /* literal colors only (shader capture can't resolve var()):
+         navy #0b1730 → #132a52 · red #e63946 · blue #2f6bff · gold #ffd23f · green #2ec27e · sea #1fb5c9 */
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #0b1730; }
+      body { font-family: "Pretendard", sans-serif; color: #ffffff; word-break: keep-all; }
+      #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: #0b1730; }
+      .clip { position: absolute; inset: 0; }
+
+      /* ---------- scenes + layered background ---------- */
+      .scene { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; overflow: hidden; background-color: #0b1730; z-index: 1; }
+      .bgl { position: absolute; inset: 0; overflow: hidden; }
+      .mesh { position: absolute; left: -300px; top: -300px; width: 1680px; height: 2520px;
+              background: radial-gradient(760px 760px at 72% 22%, rgba(36,78,150,0.85) 0%, rgba(36,78,150,0) 70%),
+                          radial-gradient(640px 640px at 18% 62%, rgba(31,181,201,0.22) 0%, rgba(31,181,201,0) 70%),
+                          radial-gradient(760px 760px at 82% 86%, rgba(70,24,60,0.75) 0%, rgba(70,24,60,0) 70%),
+                          linear-gradient(180deg, #0b1730 0%, #132a52 100%); }
+      .gridl { position: absolute; left: 0; top: 0; }
+      .bk { position: absolute; border-radius: 50%; }
+      .cam { position: absolute; inset: 0; }
+      .persp { position: absolute; perspective: 1600px; }
+      .sweep { position: absolute; top: -60%; left: 0; width: 200px; height: 220%; pointer-events: none;
+               background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 100%);
+               transform: translateX(-600px) rotate(25deg); }
+      .ring { position: absolute; width: 300px; height: 300px; margin-left: -150px; margin-top: -150px; border-radius: 50%;
+              border: 14px solid #ffd23f; opacity: 0; }
+      .fn { position: absolute; left: 60px; right: 60px; top: 1392px; text-align: center; font-size: 25px; font-weight: 700;
+            line-height: 1.35; color: #9fb0cf; opacity: 0; }
+      .stamp { position: absolute; display: flex; align-items: center; justify-content: center; border: 14px solid #e63946;
+               border-radius: 28px; padding: 6px 38px; font-weight: 900; color: #e63946; background: rgba(11,23,48,0.72);
+               opacity: 0; white-space: nowrap; }
+      .kt { display: inline-block; perspective: 900px; }
+      .ch { display: inline-block; transform-origin: 50% 100%; }
+      .ck path { stroke-dasharray: 1; stroke-dashoffset: 1; }
+      .marker { position: absolute; background: rgba(255,210,63,0.55); mix-blend-mode: multiply; transform-origin: 0 50%; transform: scaleX(0); border-radius: 6px; }
+
+      /* ---------- brand + captions (top band; Shorts UI covers the bottom) ---------- */
+      #brand { position: absolute; left: 0; right: 0; top: 150px; height: 40px; text-align: center; font-weight: 800; font-size: 30px;
+               letter-spacing: 0.16em; color: #b9c6dd; z-index: 300; }
+      #brand b { color: #e63946; }
+      #fx { z-index: 60; pointer-events: none; }
+      .cap { z-index: 300; display: flex; justify-content: center; align-items: flex-start; padding-top: 215px; }
+      .cap-box { width: 980px; min-height: 250px; display: flex; align-items: center; justify-content: center; text-align: center;
+                 padding: 28px 40px; border-radius: 34px; background: rgba(5,12,28,0.82); border: 3px solid rgba(255,255,255,0.12); }
+      .cap-text { font-size: 76px; font-weight: 900; line-height: 1.22; letter-spacing: -0.02em; }
+      .cap-text .hl { color: #ffd23f; }
+
+      /* ---------- S1 hook ---------- */
+      .tagwrap { position: absolute; left: 110px; top: 640px; width: 860px; perspective: 1400px; }
+      .tag { position: relative; height: 520px; border-radius: 48px; padding: 70px 60px; overflow: hidden; color: #0b1730;
+             background: linear-gradient(160deg, #ffffff 0%, #e4ebf8 100%); transform: rotate(-4deg);
+             box-shadow: 0 40px 80px rgba(0,0,0,0.45); }
+      .hole { position: absolute; right: 60px; top: 50px; width: 56px; height: 56px; border-radius: 50%; background: #0b1730; }
+      .tag-l { font-size: 44px; font-weight: 800; color: #3a4a6b; }
+      .tag-p { margin-top: 64px; }
+      .tag-big { display: block; font-size: 190px; font-weight: 900; letter-spacing: -0.04em; line-height: 1; }
+      .tag-u { display: block; margin-top: 18px; font-size: 64px; font-weight: 900; color: #e63946; }
+      .slash { position: absolute; left: -30px; top: 300px; width: 980px; height: 28px; border-radius: 14px; background: #e63946;
+               transform-origin: 0 50%; transform: rotate(-24deg) scaleX(0); }
+      .zero { position: absolute; left: 0; right: 0; top: 600px; text-align: center; opacity: 0; }
+      .zero-n { display: block; font-size: 400px; font-weight: 900; line-height: 1; letter-spacing: -0.04em; color: #ffd23f;
+                text-shadow: 0 0 60px rgba(255,210,63,0.55); }
+      .zero-u { display: inline-block; margin-top: 16px; padding: 10px 34px; border-radius: 999px; background: #2ec27e; color: #0b1730;
+                font-size: 50px; font-weight: 900; }
+
+      /* ---------- S2 rule ---------- */
+      .geo { position: absolute; inset: 0; clip-path: inset(520px 0 470px 0); }
+      .mapwrap { position: absolute; left: 40px; top: 600px; width: 1000px; height: 620px; }
+      .map { position: absolute; left: 0; top: 0; width: 1000px; height: 620px; overflow: visible; }
+      #s2-path { stroke-dasharray: 1; stroke-dashoffset: 1; }
+      .mapcap { position: absolute; left: 30px; top: -10px; font-size: 40px; font-weight: 900; letter-spacing: 0.4em; color: #5fa8ff; opacity: 0; }
+      .pin { position: absolute; left: 475px; top: 766px; width: 130px; height: 130px; opacity: 0; }
+      .hfx { position: absolute; left: 0; right: 0; top: 930px; text-align: center; }
+      .hfx-t { font-size: 130px; font-weight: 900; letter-spacing: 0.06em; line-height: 1.1;
+               text-shadow: 0 0 30px rgba(31,181,201,0.95), 0 0 80px rgba(31,181,201,0.6); }
+      .hfx-s { font-size: 40px; font-weight: 800; letter-spacing: 0.18em; color: #1fb5c9; margin-top: 8px; opacity: 0; }
+      .p2 { left: 120px; top: 600px; width: 840px; height: 400px; }
+      .permit { position: relative; width: 840px; height: 400px; border-radius: 34px; padding: 32px 40px; overflow: hidden; color: #0b1730;
+                background: linear-gradient(135deg, #f7f9ff 0%, #dbe4f6 100%); box-shadow: 0 40px 70px rgba(0,0,0,0.5); opacity: 0; }
+      .pm-top { display: flex; align-items: center; gap: 14px; font-size: 30px; font-weight: 900; letter-spacing: 0.1em; color: #e63946; }
+      .leaf { width: 46px; height: 46px; }
+      .pm-title { font-size: 88px; font-weight: 900; letter-spacing: 0.02em; line-height: 1.05; margin: 12px 0 20px; }
+      .pm-row { display: flex; gap: 34px; align-items: center; }
+      .pm-photo { width: 130px; height: 160px; border-radius: 16px; background: #e3e9f5; overflow: hidden; }
+      .pm-photo svg { width: 130px; height: 160px; display: block; }
+      .pm-f { font-size: 34px; font-weight: 800; line-height: 1.5; }
+      .pm-f b { display: inline-block; width: 190px; font-size: 24px; font-weight: 900; letter-spacing: 0.1em; color: #2f6bff; }
+      .pm-f .ok { color: #2ec27e; font-weight: 900; }
+      .schoolwrap { position: absolute; left: 130px; top: 1030px; width: 380px; text-align: center; opacity: 0; }
+      .school { display: block; width: 330px; height: 286px; margin: 0 auto; }
+      .sch-l { text-align: center; font-size: 44px; font-weight: 900; margin-top: 6px; }
+      #s2-stamp { left: 560px; top: 1110px; font-size: 140px; color: #2ec27e; border-color: #2ec27e; }
+
+      /* ---------- S3 school types ---------- */
+      .duo { position: absolute; left: 50px; right: 50px; top: 620px; height: 560px; display: flex; gap: 40px; }
+      .sc { flex: 1; position: relative; overflow: hidden; border-radius: 40px; padding: 54px 26px; text-align: center;
+            background: #172c55; border: 4px solid rgba(255,255,255,0.16); }
+      .sc-ic { display: block; width: 200px; height: 166px; margin: 0 auto; }
+      .sc-t { font-size: 62px; font-weight: 900; margin-top: 30px; line-height: 1.15; }
+      .sc-s { font-size: 28px; font-weight: 700; color: #9fb0cf; margin-top: 10px; }
+      .sc-x { position: absolute; left: 70px; right: 70px; bottom: 54px; padding: 10px 0; border: 6px solid #e63946; border-radius: 20px;
+              color: #e63946; font-size: 44px; font-weight: 900; opacity: 0; }
+      .sc-gray { position: absolute; inset: 0; z-index: 3; display: flex; align-items: center; justify-content: center; background: rgba(52,62,84,0.9); }
+      .qm { font-size: 260px; font-weight: 900; color: rgba(255,255,255,0.5); }
+      .sc-ok { position: absolute; left: 0; right: 0; bottom: 40px; margin: 0 auto; width: 130px; height: 130px; border-radius: 50%;
+               background: #2ec27e; opacity: 0; box-shadow: 0 0 40px rgba(46,194,126,0.7); }
+      .sc-ok svg { width: 130px; height: 130px; }
+      #s3-stamp { left: 60px; right: 60px; top: 1146px; font-size: 92px; color: #ffd23f; border-color: #ffd23f; background: rgba(11,23,48,0.9); }
+
+      /* ---------- S4 40 → 50 weeks ---------- */
+      .wk-head { position: absolute; left: 0; right: 0; top: 548px; display: flex; justify-content: center; align-items: flex-end; }
+      .odo { display: inline-flex; font-variant-numeric: tabular-nums; }
+      .odc { display: inline-block; overflow: hidden; }
+      .strip, .strip b { display: block; }
+      .odo-w { font-size: 180px; font-weight: 900; color: #ffd23f; text-shadow: 0 0 40px rgba(255,210,63,0.45); }
+      .odo-w .odc, .odo-w .strip b, .odo-w .ods { height: 180px; line-height: 180px; }
+      .wk-u { font-size: 84px; font-weight: 900; margin: 0 0 26px 14px; }
+      .weeks { position: absolute; left: 75px; top: 770px; width: 930px; height: 430px; }
+      .wb { position: absolute; width: 84px; height: 76px; border-radius: 14px; }
+      .nv { background: #2f5bd0; border: 3px solid rgba(255,255,255,0.28); }
+      .gd { background: #ffd23f; box-shadow: 0 0 24px rgba(255,210,63,0.6); }
+      .vac { position: absolute; left: 0; width: 930px; top: 344px; height: 76px; display: flex; align-items: center; justify-content: center;
+             border-radius: 14px; background: #ffd23f; color: #0b1730; font-size: 46px; font-weight: 900; opacity: 0; transform-origin: 50% 50%; }
+      .p4 { left: 140px; top: 760px; width: 800px; height: 450px; }
+      .loa { position: relative; width: 800px; height: 450px; border-radius: 22px; padding: 44px 50px; overflow: hidden; color: #0b1730;
+             background: #fbfaf5; box-shadow: 0 40px 80px rgba(0,0,0,0.55); opacity: 0; }
+      .loa-h { font-size: 48px; font-weight: 900; letter-spacing: 0.06em; }
+      .loa-k { font-size: 30px; font-weight: 800; color: #2f6bff; margin: 8px 0 22px; }
+      .loa-line { display: flex; justify-content: space-between; align-items: center; font-size: 42px; font-weight: 800; padding: 14px 0;
+                  border-top: 3px dashed #c9d2e3; }
+      .loa-line b { color: #6b7a99; font-weight: 800; }
+      .loa-line.big span { color: #e63946; font-size: 58px; font-weight: 900; }
+      #s4-stamp { left: 160px; top: 1086px; font-size: 60px; }
+      .yr { position: absolute; left: 120px; right: 120px; top: 1236px; opacity: 0; }
+      .yr-l { text-align: center; font-size: 44px; font-weight: 900; }
+      .yr-bar { margin-top: 16px; height: 46px; border-radius: 23px; background: #22386a; overflow: hidden; }
+      .yr-bar i { display: block; width: 100%; height: 100%; background: linear-gradient(90deg, #2ec27e 0%, #1fb5c9 100%); transform-origin: 0 50%; transform: scaleX(0); }
+      .yr-ck { position: absolute; right: -30px; top: 56px; width: 92px; height: 92px; border-radius: 50%; background: #2ec27e; opacity: 0; }
+      .yr-ck svg { width: 92px; height: 92px; }
+      .p4e { left: 60px; top: 800px; width: 960px; }
+      .evid, .flyer { border-radius: 24px; padding: 22px; background: #ffffff; box-shadow: 0 50px 90px rgba(0,0,0,0.6); opacity: 0; }
+      .ev-t, .fly-t { font-size: 32px; font-weight: 900; color: #0b1730; margin-bottom: 12px; }
+      .ev-img { position: relative; width: 916px; height: 236px; overflow: hidden; border-radius: 10px; }
+      .ev-img img { position: absolute; left: 0; top: 0; width: 916px; }
+      #s4-mk { left: 128px; top: 164px; width: 400px; height: 36px; }
+
+      /* ---------- S5 price ---------- */
+      .pimg { position: absolute; left: 120px; top: 1290px; width: 840px; opacity: 0; filter: blur(5px); }
+      .pimg img { display: block; width: 840px; border-radius: 12px; }
+      .printer { position: absolute; left: 110px; top: 588px; width: 860px; height: 70px; border-radius: 22px; background: #24345c;
+                 border-top: 4px solid #3d5288; box-shadow: 0 20px 40px rgba(0,0,0,0.4); z-index: 2; }
+      .slot { position: absolute; left: 60px; right: 60px; top: 30px; height: 12px; border-radius: 6px; background: #050c1c; }
+      .rcpt-clip { position: absolute; left: 170px; top: 626px; width: 740px; height: 600px; overflow: hidden; }
+      .rcpt { width: 740px; padding: 38px 46px 34px; background: #fffdf6; color: #0b1730; border-radius: 0 0 18px 18px; }
+      .rc-h { font-size: 38px; font-weight: 900; }
+      .rc-s { font-size: 28px; font-weight: 700; color: #6b7a99; margin-top: 6px; }
+      .rc-dash { border-top: 4px dashed #c9d2e3; margin: 20px 0; }
+      .rc-row { display: flex; justify-content: space-between; font-size: 34px; font-weight: 800; margin: 8px 0; }
+      .old { position: relative; color: #6b7a99; }
+      .old i { position: absolute; left: -6px; right: -6px; top: 50%; height: 6px; margin-top: -3px; background: #e63946; transform-origin: 0 50%; transform: scaleX(0); }
+      .rc-big { display: flex; align-items: flex-end; justify-content: center; margin-top: 12px; }
+      .odo-p { font-size: 116px; font-weight: 900; color: #0b1730; letter-spacing: -0.02em; }
+      .odo-p .odc, .odo-p .strip b, .odo-p .ods { height: 124px; line-height: 124px; }
+      .rc-cad { font-size: 34px; font-weight: 900; color: #2f6bff; margin: 0 0 18px 12px; }
+      .vac2 { color: #2ec27e; font-weight: 900; }
+      .badge { position: absolute; left: 836px; top: 612px; width: 200px; height: 200px; border-radius: 50%; background: #e63946;
+               display: flex; align-items: center; justify-content: center; font-size: 68px; font-weight: 900; opacity: 0;
+               box-shadow: 0 20px 50px rgba(230,57,70,0.55); border: 8px solid #ffffff; }
+      #s5-fn { top: 1232px; }
+
+      /* ---------- S6 parents ---------- */
+      .ph-a { position: absolute; left: 0; right: 0; top: 570px; height: 680px; }
+      .clock { position: absolute; left: 320px; top: 0; width: 440px; height: 440px; }
+      .ct { position: absolute; padding: 8px 24px; border-radius: 999px; font-size: 38px; font-weight: 900; color: #0b1730; opacity: 0; white-space: nowrap; }
+      .ct1 { left: -260px; top: 110px; background: #ffd23f; }
+      .ct2 { right: -260px; top: 280px; background: #1fb5c9; }
+      .flow { position: absolute; left: 30px; right: 30px; top: 490px; display: flex; align-items: center; justify-content: center; gap: 14px; }
+      .fl { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 16px 26px; border-radius: 26px; background: #172c55;
+            border: 3px solid rgba(255,255,255,0.16); opacity: 0; }
+      .fl svg { width: 70px; height: 70px; }
+      .fl span { font-size: 36px; font-weight: 900; }
+      .fl-hl { background: #ffd23f; color: #0b1730; border-color: #ffd23f; }
+      .fa { font-style: normal; font-size: 56px; font-weight: 900; color: #1fb5c9; opacity: 0; }
+      .ph-b { position: absolute; left: 0; right: 0; top: 584px; }
+      .ppl { display: grid; grid-template-columns: repeat(7, 100px); gap: 12px 10px; justify-content: center; }
+      .pp { opacity: 0; display: flex; justify-content: center; }
+      .person { width: 88px; height: 110px; }
+      .ppl-l { text-align: center; font-size: 46px; font-weight: 900; margin-top: 22px; opacity: 0; }
+      .ppl-l b { color: #ffd23f; }
+      .pill-g { display: inline-block; padding: 4px 22px; border-radius: 999px; background: #2ec27e; color: #0b1730; }
+      .cmp { position: absolute; left: 44px; right: 44px; top: 954px; opacity: 0; }
+      .cmp-h, .cmp-r { display: grid; grid-template-columns: 170px 1fr 1fr; gap: 12px; align-items: center; }
+      .cmp-h { font-size: 30px; font-weight: 900; color: #9fb0cf; padding: 0 18px; }
+      .cmp-me { color: #ffd23f; }
+      .cmp-r { margin-top: 12px; padding: 22px 18px; border-radius: 22px; background: #172c55; font-size: 35px; font-weight: 800; opacity: 0; }
+      .cmp-r span:nth-child(2) { color: #b9c6dd; }
+      .me { position: relative; opacity: 0.35; }
+      .mc { position: absolute; right: -4px; top: 50%; width: 54px; height: 54px; margin-top: -27px; border-radius: 50%; background: #2ec27e; opacity: 0; }
+      .mc svg { width: 54px; height: 54px; }
+      .p6 { left: 60px; top: 650px; width: 960px; }
+      .fly-img { position: relative; width: 916px; height: 208px; overflow: hidden; border-radius: 10px; }
+      .fly-img img { position: absolute; left: 0; top: -920px; width: 916px; }
+      #s6-mk { left: 90px; top: 154px; width: 520px; height: 38px; }
+
+      /* ---------- S7 CTA ---------- */
+      .leak { position: absolute; left: -800px; top: -200px; width: 1700px; height: 1700px; border-radius: 50%; opacity: 0; mix-blend-mode: screen;
+              background: radial-gradient(circle, rgba(255,176,64,0.6) 0%, rgba(255,176,64,0) 62%); }
+      .beam { position: absolute; left: 865px; top: 1030px; width: 1500px; height: 260px; transform-origin: 0 50%; opacity: 0; mix-blend-mode: screen;
+              background: linear-gradient(90deg, rgba(255,210,63,0.55) 0%, rgba(255,210,63,0) 100%);
+              clip-path: polygon(0 46%, 100% 0, 100% 100%, 0 54%); }
+      .cta-logo { position: absolute; left: 0; right: 0; top: 590px; text-align: center; font-size: 164px; font-weight: 900; letter-spacing: -0.02em;
+                  line-height: 1.1; text-shadow: 0 0 50px rgba(255,210,63,0.35); }
+      .logo-kt .ch:nth-child(-n+2) { color: #e63946; }
+      .cta-sub { position: absolute; left: 0; right: 0; top: 800px; text-align: center; font-size: 41px; font-weight: 800; color: #d4dcec; opacity: 0; }
+      .cta-cities { position: absolute; left: 0; right: 0; top: 862px; text-align: center; font-size: 41px; font-weight: 800; color: #ffd23f; opacity: 0; }
+      .cta-btn { position: absolute; left: 130px; right: 130px; top: 950px; height: 124px; border-radius: 999px; background: #e63946;
+                 display: flex; align-items: center; justify-content: center; font-size: 54px; font-weight: 900; opacity: 0;
+                 box-shadow: 0 20px 50px rgba(230,57,70,0.5); }
+      .cta-btn b { color: #fff3b0; margin-left: 12px; }
+      .btn-ring { position: absolute; inset: 0; border-radius: 999px; border: 6px solid #ffd23f; opacity: 0; }
+      .harbor { position: absolute; left: 0; top: 1060px; }
+      .harbor .ln { stroke-dasharray: 1; stroke-dashoffset: 1; }
+      #s7-fn { top: 1096px; left: 60px; right: 300px; font-size: 23px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="__TOTAL__" data-width="1080" data-height="1920">
+      __SCENES__
+      <canvas id="fx" class="clip" data-layout-allow-overlap width="1080" height="1920" data-start="0" data-duration="__TOTAL__" data-track-index="5"></canvas>
+      <div id="brand" class="clip" data-start="0" data-duration="__TOTAL__" data-track-index="6"><b>AA</b> CANADA · 핼리팩스 자녀무상교육</div>
+      __CAPTIONS__
+      <audio id="narration" class="clip" src="assets/audio/narration.wav" data-start="0" data-duration="__TOTAL__" data-track-index="9" data-volume="1"></audio>
+      <audio id="music-bed" class="clip" src="assets/bgm/bed.wav" data-start="0" data-duration="__TOTAL__" data-track-index="10" data-volume="0.3"></audio>
+      __SFX__
+    </div>
+    <script>
+      const TIMING = __TIMING__;
+      const M = __MARKS__;
+      const S = TIMING.scenes, TOTAL = TIMING.total;
+      const C = (i, j) => S[i].captions[j].start;          // chunk i,j starts speaking
+      const E = (i, j) => S[i].captions[j].speech_end;     // chunk i,j finishes speaking
+      const ST = (i) => S[i].start;
+      const TR = (i) => S[i].start - 0.25;                  // shader transition into scene i
+      const AEND = (i) => S[i].audio_end;
+
+      const tl = HyperShader.init({
+        bgColor: "#0b1730",
+        accentColor: "#ffd23f",
+        scenes: S.map((s) => s.id),
+        transitions: [
+          { time: TR(1), shader: "flash-through-white", duration: 0.5 },
+          { time: TR(2), shader: "whip-pan", duration: 0.5 },
+          { time: TR(3), shader: "glitch", duration: 0.45 },
+          { time: TR(4), shader: "cinematic-zoom", duration: 0.5 },
+          { time: TR(5), shader: "chromatic-split", duration: 0.5 },
+          { time: TR(6), shader: "light-leak", duration: 0.6 },
+        ],
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+
+      // ---------- helpers ----------
+      const pop = (sel, t, extra) => tl.fromTo(sel, { opacity: 0, y: 40, scale: 0.9 },
+        Object.assign({ opacity: 1, y: 0, scale: 1, duration: 0.45, ease: "back.out(1.7)" }, extra || {}), t);
+      const kin = (sel, t, stg) => tl.fromTo(sel, { opacity: 0, rotationX: 90, y: 60, filter: "blur(12px)" },
+        { opacity: 1, rotationX: 0, y: 0, filter: "blur(0px)", duration: 0.55, ease: "power3.out", stagger: stg || 0.03 }, t);
+      const sweep = (sel, t, d) => tl.fromTo(sel, { x: -600, rotation: 25 }, { x: 1500, rotation: 25, duration: d || 1.0, ease: "power2.inOut" }, t);
+      const ring = (sel, t) => tl.fromTo(sel, { opacity: 1, scale: 0 }, { opacity: 0, scale: 3, duration: 0.75, ease: "power2.out" }, t);
+      const draw = (sel, t, d, extra) => tl.fromTo(sel, { strokeDashoffset: 1 }, Object.assign({ strokeDashoffset: 0, duration: d || 0.5, ease: "power2.inOut" }, extra || {}), t);
+      const fnIn = (sel, t) => tl.fromTo(sel, { opacity: 0 }, { opacity: 1, duration: 0.4 }, t);
+      function shake(sel, t, a) {
+        a = a || 8;
+        [[a, -a * 0.7], [-a * 0.85, a * 0.6], [a * 0.6, a * 0.8], [-a * 0.4, -a * 0.4], [0, 0]]
+          .forEach((p, k) => tl.to(sel, { x: p[0], y: p[1], duration: 1 / 30, ease: "none" }, t + k / 30));
+      }
+      function slam(sel, t, from) {  // big scale-in that lands at t + 0.3
+        tl.fromTo(sel, { opacity: 0, scale: from || 2.4, rotationX: -40 }, { opacity: 1, scale: 1, rotationX: 0, duration: 0.3, ease: "power4.in" }, t);
+      }
+      function stamp(sel, t, rot) {  // lands at t + 0.28
+        tl.fromTo(sel, { opacity: 0, scale: 3, rotation: (rot || -12) - 18 }, { opacity: 1, scale: 1, rotation: rot || -12, duration: 0.28, ease: "power4.in" }, t);
+      }
+
+      // ---------- deterministic particles (seeded PRNG, drawn from timeline time) ----------
+      const FX = document.getElementById("fx"), g = FX.getContext("2d");
+      function rng(a) { return function () { a |= 0; a = (a + 0x6d2b79f5) | 0; let t = Math.imul(a ^ (a >>> 15), 1 | a);
+        t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+      const GOLD = ["#ffd23f", "#ffe58a", "#ffb800", "#ffffff"];
+      const SYS = [];
+      function burst(t0, x, y, o) {
+        o = o || {}; const r = rng(o.seed || 7), cols = o.colors || GOLD, ps = [];
+        for (let k = 0; k < (o.n || 90); k++) {
+          const a = o.cone ? -Math.PI / 2 + (r() - 0.5) * o.cone : r() * Math.PI * 2, sp = (o.sp || 1100) * (0.3 + r() * 0.8);
+          ps.push({ vx: Math.cos(a) * sp, vy: Math.sin(a) * sp, s: (o.size || 9) * (0.5 + r()), c: cols[k % cols.length], l: (o.life || 1.2) * (0.55 + r() * 0.45), sq: r() < 0.5 });
+        }
+        SYS.push({ t0, x, y, ps, grav: o.grav == null ? 1500 : o.grav, drag: o.drag || 2.4, kind: "burst" });
+      }
+      function rain(t0, t1, n, seed) {
+        const r = rng(seed), ps = [];
+        for (let k = 0; k < n; k++) ps.push({ x: r() * 1080, y0: 480 + r() * 300, d: r() * (t1 - t0 - 0.8), v: 140 + r() * 160, s: 4 + r() * 7, w: r() * 6, c: GOLD[k % 4] });
+        SYS.push({ t0, t1, ps, kind: "rain" });
+      }
+      function drawFx(t) {
+        g.clearRect(0, 0, 1080, 1920);
+        for (const s of SYS) {
+          if (s.kind === "burst") {
+            const dt = t - s.t0; if (dt < 0 || dt > 2) continue;
+            const k = (1 - Math.exp(-s.drag * dt)) / s.drag;
+            for (const p of s.ps) {
+              if (dt > p.l) continue;
+              const x = s.x + p.vx * k, y = s.y + p.vy * k + 0.5 * s.grav * dt * dt * 0.6, a = 1 - dt / p.l, sz = p.s * (0.4 + 0.6 * a);
+              g.globalAlpha = a; g.fillStyle = p.c;
+              if (p.sq) { g.fillRect(x - sz / 2, y - sz / 2, sz, sz); } else { g.beginPath(); g.arc(x, y, sz / 2, 0, 6.2832); g.fill(); }
+            }
+          } else {
+            const dt = t - s.t0; if (dt < 0 || t > s.t1) continue;
+            for (const p of s.ps) {
+              const lt = dt - p.d; if (lt < 0) continue;
+              const a = Math.min(1, lt * 2.5) * Math.max(0, Math.min(1, (s.t1 - t) * 3));
+              g.globalAlpha = a * 0.85; g.fillStyle = p.c; g.beginPath();
+              g.arc(p.x + Math.sin(lt * 2 + p.w) * 18, p.y0 + p.v * lt, p.s / 2, 0, 6.2832); g.fill();
+            }
+          }
+        }
+        g.globalAlpha = 1;
+      }
+
+      // ---------- global: drifting mesh, parallax grid, bokeh ----------
+      tl.fromTo(".mesh", { x: -60, y: 0 }, { x: 60, y: -180, duration: TOTAL, ease: "none" }, 0);
+      tl.fromTo(".gridl", { y: 0 }, { y: -360, duration: TOTAL, ease: "none" }, 0);
+      document.querySelectorAll(".bk").forEach((el) => tl.fromTo(el, { y: 0 }, { y: -520 * parseFloat(el.dataset.sp), duration: TOTAL, ease: "none" }, 0));
+      // captions
+      S.forEach((s, i) => s.captions.forEach((c, j) =>
+        tl.fromTo(`#cap-${i}-${j}-box`, { opacity: 0, scale: 0.9, y: -12 }, { opacity: 1, scale: 1, y: 0, duration: 0.22, ease: "back.out(2)" }, c.start)));
+      // every scene drifts in with a slow camera push (the shader transition is the handoff)
+      S.forEach((s, i) => { if (i) tl.fromTo(`#${s.id}-cam`, { scale: 1.08 }, { scale: 1, duration: 1.2, ease: "power3.out" }, TR(i)); });
+
+      // ===== S1 hook: $10,000 → $0 =====
+      tl.fromTo("#s1-hook-cam", { scale: 1.04 }, { scale: 1, duration: 2.4, ease: "power2.out" }, 0);
+      tl.fromTo("#s1-tag", { rotationY: -8, y: 10 }, { rotationY: 6, y: -16, duration: 2.2, ease: "sine.inOut" }, 0);
+      sweep("#s1-sweep", 0.35, 1.1);
+      const tSlash = E(0, 0) - 0.12;
+      tl.fromTo("#s1-slash", { scaleX: 0, rotation: -24 }, { scaleX: 1, rotation: -24, duration: 0.26, ease: "power4.out" }, tSlash);
+      shake("#s1-tag", tSlash + 0.2, 6);
+      const tz = M.zero - 0.05, hit1 = tz + 0.3;
+      tl.to("#s1-tag", { scale: 0.62, y: 280, opacity: 0.22, duration: 0.4, ease: "power3.in" }, tz - 0.12);
+      slam("#s1-zero", tz);
+      ring("#s1-ring", hit1);
+      burst(hit1, 540, 820, { n: 120, seed: 11, sp: 1500 });
+      shake("#s1-hook-cam", hit1, 10);
+      tl.fromTo("#s1-zero .zero-n", { scale: 1.14 }, { scale: 1, duration: 0.5, ease: "elastic.out(1,0.4)" }, hit1);
+      tl.fromTo("#s1-zero .zero-u", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.3, ease: "back.out(2)" }, hit1 + 0.12);
+      fnIn("#s1-fn", hit1 + 0.25);
+
+      // ===== S2 Halifax rule =====
+      draw("#s2-path", TR(1) + 0.1, 1.5);
+      tl.fromTo("#s2-path", { attr: { "fill-opacity": 0 } }, { attr: { "fill-opacity": 0.9 }, duration: 0.6 }, TR(1) + 1.2);
+      tl.fromTo("#s2-mapcap", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.5 }, ST(1) + 0.2);
+      const tZoom = M.halifax - 0.75;
+      tl.to("#s2-mapsvg", { scale: 3, x: -405, y: -168, transformOrigin: "905px 468px", duration: 1.0, ease: "power3.inOut" }, tZoom);
+      tl.to("#s2-mapcap", { opacity: 0, duration: 0.3 }, tZoom);
+      tl.fromTo("#s2-ns", { attr: { opacity: 0, r: 4 } }, { attr: { opacity: 1, r: 12 }, duration: 0.4 }, tZoom + 0.8);
+      tl.fromTo("#s2-pin", { y: -520, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, ease: "bounce.out" }, M.halifax - 0.05);
+      ring("#s2-ring", M.halifax + 0.45);
+      kin("#s2-hfx .ch", M.halifax + 0.2, 0.05);
+      tl.fromTo("#s2-hfx .hfx-s", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4 }, M.halifax + 0.6);
+      tl.to("#s2-geo", { opacity: 0.14, scale: 0.9, y: -40, duration: 0.5, ease: "power2.inOut" }, M.visa - 0.35);
+      tl.fromTo("#s2-card", { rotationY: -90, x: -140, opacity: 0, boxShadow: "-80px 40px 60px rgba(0,0,0,0)" },
+        { rotationY: 0, x: 0, opacity: 1, boxShadow: "0px 40px 70px rgba(0,0,0,0.5)", duration: 0.75, ease: "back.out(1.3)" }, M.visa - 0.2);
+      sweep("#s2-sweep", M.visa + 0.6, 0.9);
+      pop("#s2-school", C(1, 2) - 0.05);
+      tl.to("#s2-school .win", { attr: { fill: "#ffd23f" }, duration: 0.12, stagger: 0.07 }, C(1, 2) + 0.35);
+      const hit2 = M.free + 0.3;
+      stamp("#s2-stamp", hit2 - 0.28, -12);
+      burst(hit2, 790, 1210, { n: 70, seed: 21, sp: 700, size: 7, colors: ["#2ec27e", "#c8f5df", "#ffffff"], grav: 600, life: 0.8 });
+      shake("#s2-rule-cam", hit2, 9);
+      fnIn("#s2-fn", C(1, 2) + 0.6);
+
+      // ===== S3 no university needed =====
+      tl.fromTo("#s3-l", { x: -620, rotationY: 40, opacity: 0 }, { x: 0, rotationY: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, TR(2) + 0.1);
+      tl.fromTo("#s3-r", { x: 620, rotationY: -40, opacity: 0 }, { x: 0, rotationY: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, TR(2) + 0.25);
+      pop("#s3-x", C(2, 1) + 0.1);
+      tl.to("#s3-l", { opacity: 0.72, duration: 0.3 }, C(2, 1) + 0.1);
+      const tOk = M.ok;
+      tl.to("#s3-gray", { opacity: 0, duration: 0.35 }, tOk - 0.15);
+      tl.to("#s3-r", { backgroundColor: "#14523c", borderColor: "#2ec27e", scale: 1.04, duration: 0.35, ease: "back.out(2)" }, tOk - 0.1);
+      pop("#s3-ok", tOk);
+      draw("#s3-ok path", tOk + 0.15, 0.35);
+      sweep("#s3-sweep", tOk + 0.2, 0.8);
+      burst(tOk + 0.25, 795, 1075, { n: 60, seed: 31, sp: 800, size: 7, colors: ["#2ec27e", "#ffd23f", "#ffffff"], life: 0.9 });
+      const hit3 = M.nocond + 0.3;
+      stamp("#s3-stamp", hit3 - 0.28, -7);
+      burst(hit3, 540, 1230, { n: 110, seed: 33, sp: 1200 });
+      shake("#s3-school-cam", hit3, 10);
+      fnIn("#s3-fn", hit3 + 0.3);
+
+      // ===== S4 40 → 50 weeks =====
+      tl.fromTo("#s4-head", { opacity: 0, y: 50, scale: 0.8 }, { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: "back.out(1.7)" }, TR(3) + 0.2);
+      tl.fromTo(".w-d0", { y: -4 * 180 }, { y: -4 * 180, duration: 0.01 }, 0);
+      tl.fromTo("#s4-grid .nv", { opacity: 0, scale: 0, y: 40 }, { opacity: 1, scale: 1, y: 0, duration: 0.35, ease: "back.out(2)",
+        stagger: { grid: [4, 10], from: "start", amount: 0.75 } }, C(3, 0) + 0.15);
+      const t50 = M.fifty;
+      tl.fromTo("#s4-grid .gd", { y: -760, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "bounce.out", stagger: 0.035 }, t50 - 0.15);
+      tl.fromTo(".w-d1", { y: 0 }, { y: -10 * 180, duration: 0.6, ease: "power2.inOut" }, t50 + 0.05);
+      tl.to(".w-d0", { y: -5 * 180, duration: 0.35, ease: "back.out(2)" }, t50 + 0.3);
+      tl.fromTo("#s4-head", { scale: 1.5 }, { scale: 1, duration: 0.3, ease: "power4.in" }, t50 + 0.2);
+      ring("#s4-ring", t50 + 0.5);
+      burst(t50 + 0.5, 540, 640, { n: 100, seed: 41, sp: 1300 });
+      shake("#s4-weeks-cam", t50 + 0.5, 9);
+      tl.fromTo("#s4-vac", { opacity: 0, scaleX: 0.2 }, { opacity: 1, scaleX: 1, duration: 0.45, ease: "back.out(1.6)" }, M.vac - 0.05);
+      tl.to("#s4-grid", { scaleY: 0, opacity: 0, duration: 0.35, ease: "power3.in" }, C(3, 3) - 0.2);
+      tl.fromTo("#s4-loa", { rotationX: 90, opacity: 0, transformOrigin: "50% 0%" }, { rotationX: 0, opacity: 1, duration: 0.6, ease: "back.out(1.4)" }, C(3, 3) + 0.1);
+      sweep("#s4-sweep", C(3, 3) + 0.65, 0.9);
+      const hit4 = M.year + 0.15;
+      stamp("#s4-stamp", hit4 - 0.28, -10);
+      burst(hit4, 370, 1150, { n: 60, seed: 43, sp: 700, size: 6, colors: ["#e63946", "#ffffff", "#ffd23f"], grav: 600, life: 0.8 });
+      shake("#s4-weeks-cam", hit4, 7);
+      tl.fromTo("#s4-yr", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.35 }, hit4 + 0.1);
+      tl.to("#s4-fill", { scaleX: 1, duration: 0.9, ease: "power2.inOut" }, hit4 + 0.3);
+      pop("#s4-ck", hit4 + 1.15);
+      draw("#s4-ck path", hit4 + 1.3, 0.3);
+      const tEv = AEND(3) + 0.35;
+      tl.fromTo("#s4-evid", { rotationY: 70, rotationX: 10, opacity: 0, y: 60 }, { rotationY: 0, rotationX: 0, opacity: 1, y: 0, duration: 0.55, ease: "back.out(1.3)" }, tEv);
+      tl.to("#s4-mk", { scaleX: 1, duration: 0.6, ease: "power2.out" }, tEv + 0.55);
+      tl.to("#s4-evid", { rotationY: -70, opacity: 0, duration: 0.35, ease: "power2.in" }, tEv + 2.0);
+
+      // ===== S5 price receipt =====
+      tl.fromTo(".printer", { opacity: 0, y: -40 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, TR(4) + 0.2);
+      tl.fromTo("#s5-pimg", { opacity: 0 }, { opacity: 0.4, duration: 0.6 }, ST(4) + 0.3);
+      tl.fromTo("#s5-rcpt", { yPercent: -100 }, { yPercent: 0, duration: 1.5, ease: "steps(15)" }, C(4, 0) + 0.05);
+      tl.fromTo("#s5-strike", { scaleX: 0 }, { scaleX: 1, duration: 0.25, ease: "power3.out" }, M.roll - 0.35);
+      const PH = 124;
+      [[".p-d1", 1, 11, 0.9], [".p-d2", 5, 11, 1.0], [".p-d4", 2, 14, 1.1], [".p-d5", 0, 10, 1.2], [".p-d6", 0, 10, 1.3]]
+        .forEach(([sel, a, b, d]) => tl.fromTo(sel, { y: -a * PH }, { y: -b * PH, duration: d, ease: "power3.out" }, M.roll - 0.1));
+      tl.fromTo(".rc-big", { scale: 1 }, { scale: 1.08, duration: 0.15, yoyo: true, repeat: 1, ease: "power2.out" }, M.roll + 1.2);
+      burst(M.roll + 1.25, 540, 960, { n: 70, seed: 51, sp: 900, size: 7, life: 0.9 });
+      tl.fromTo("#s5-badge", { opacity: 0, scale: 0, rotation: -220 }, { opacity: 1, scale: 1, rotation: -12, duration: 0.55, ease: "back.out(1.8)" }, M.pct - 0.15);
+      burst(M.pct + 0.35, 936, 712, { n: 60, seed: 53, sp: 800, size: 7, colors: ["#e63946", "#ffd23f", "#ffffff"], life: 0.9 });
+      tl.fromTo("#s5-vac", { opacity: 0.3 }, { opacity: 1, duration: 0.3 }, M.pct + 0.6);
+      tl.fromTo("#s5-vac", { scale: 1 }, { scale: 1.06, duration: 0.2, yoyo: true, repeat: 1 }, M.pct + 0.6);
+      fnIn("#s5-fn", C(4, 2) + 0.4);
+      const tSharp = E(4, 2) + 0.15;
+      tl.to("#s5-pimg", { filter: "blur(0px)", opacity: 1, scale: 1.06, duration: 0.25 }, tSharp);
+      tl.to("#s5-pimg", { filter: "blur(5px)", opacity: 0.4, scale: 1, duration: 0.3 }, tSharp + 1.05);
+
+      // ===== S6 why parents like it =====
+      tl.fromTo("#s6-clock", { opacity: 0, scale: 0.5, rotation: -25 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.6, ease: "back.out(1.6)" }, TR(5) + 0.15);
+      const t930 = M["930"];
+      tl.fromTo("#s6-hh", { rotation: 210, svgOrigin: "220 220" }, { rotation: 285, svgOrigin: "220 220", duration: 0.9, ease: "power3.inOut" }, t930 - 0.3);
+      tl.fromTo("#s6-mh", { rotation: 0, svgOrigin: "220 220" }, { rotation: 900, svgOrigin: "220 220", duration: 0.9, ease: "power3.inOut" }, t930 - 0.3);
+      pop("#s6-t1", t930 + 0.55);
+      pop("#s6-f1", C(5, 0) + 0.3); pop("#s6-a1", t930 + 0.2); pop("#s6-f2", t930 + 0.5);
+      const tEnd = C(5, 1) - 0.05;
+      tl.to("#s6-hh", { rotation: 427.5, duration: 1.2, ease: "power2.inOut" }, tEnd);
+      tl.to("#s6-mh", { rotation: 2610, duration: 1.2, ease: "power2.inOut" }, tEnd);
+      tl.to("#s6-arc", { strokeDashoffset: 0, duration: 1.2, ease: "power2.inOut" }, tEnd);
+      pop("#s6-t2", M.end + 0.1); pop("#s6-a2", M.end - 0.1); pop("#s6-f3", M.end + 0.15);
+      tl.to("#s6-a", { x: -160, opacity: 0, scale: 0.92, duration: 0.35, ease: "power2.in" }, C(5, 2) - 0.2);
+      tl.fromTo("#s6-b .pp", { opacity: 0, scale: 0, y: 30 }, { opacity: 1, scale: 1, y: 0, duration: 0.35, ease: "back.out(2.2)", stagger: { each: 0.035, from: "center" } }, C(5, 2) + 0.05);
+      pop("#s6-b .ppl-l", M.parents);
+      tl.to("#s6-b", { scale: 0.86, y: -20, transformOrigin: "50% 0%", duration: 0.4, ease: "power2.inOut" }, C(5, 3) - 0.2);
+      tl.fromTo("#s6-c", { opacity: 0 }, { opacity: 1, duration: 0.2 }, C(5, 3) - 0.1);
+      tl.fromTo("#s6-c .cmp-r", { opacity: 0, x: 80 }, { opacity: 1, x: 0, duration: 0.35, ease: "power3.out", stagger: 0.12 }, C(5, 3));
+      [0, 1, 2].forEach((k) => {
+        const t = M.cheap + 0.2 + k * 0.4, row = `#s6-r${k + 1}`;
+        tl.to(`${row} .me`, { opacity: 1, color: "#2ec27e", duration: 0.2 }, t - 0.05);
+        pop(`${row} .mc`, t - 0.05, { duration: 0.3 });
+        draw(`${row} .mc path`, t + 0.05, 0.25);
+      });
+      const tFly = AEND(5) + 0.3;
+      tl.fromTo("#s6-fly", { rotationY: -75, rotationX: 12, opacity: 0, y: 80 }, { rotationY: 0, rotationX: 0, opacity: 1, y: 0, duration: 0.55, ease: "back.out(1.3)" }, tFly);
+      tl.to("#s6-mk", { scaleX: 1, duration: 0.6, ease: "power2.out" }, tFly + 0.55);
+      tl.to("#s6-fly", { rotationY: 75, opacity: 0, duration: 0.35, ease: "power2.in" }, tFly + 1.95);
+
+      // ===== S7 CTA =====
+      draw("#s7-cta .harbor .ln", TR(6) + 0.2, 1.3, { stagger: 0.12 });
+      tl.fromTo("#s7-lamp", { attr: { opacity: 0 } }, { attr: { opacity: 1 }, duration: 0.2 }, ST(6) + 0.9);
+      tl.fromTo("#s7-beam", { rotation: 158, opacity: 0 }, { rotation: 236, opacity: 1, duration: 1.6, ease: "sine.inOut" }, ST(6) + 0.95);
+      tl.to("#s7-beam", { rotation: 168, duration: 2.6, ease: "sine.inOut", yoyo: true, repeat: 2 }, ST(6) + 2.55);
+      kin("#s7-logo .ch", C(6, 0) + 0.15, 0.05);
+      tl.fromTo("#s7-leak", { x: -300, y: 200, opacity: 0 }, { x: 1300, y: -200, opacity: 0.9, duration: 1.6, ease: "power1.inOut" }, C(6, 0) + 0.1);
+      tl.to("#s7-leak", { opacity: 0, duration: 0.6 }, C(6, 0) + 1.3);
+      pop("#s7-sub", C(6, 0) + 0.75); pop("#s7-cities", C(6, 0) + 0.95);
+      pop("#s7-btn", M.aa - 0.1, { ease: "back.out(2.2)" });
+      const nPulse = Math.max(1, Math.floor((TOTAL - (M.aa + 0.5)) / 1.0));
+      tl.to("#s7-btn", { scale: 1.06, duration: 0.5, yoyo: true, repeat: nPulse * 2 - 1, ease: "sine.inOut" }, M.aa + 0.45);
+      tl.fromTo("#s7-bring", { opacity: 0.9, scale: 1 }, { opacity: 0, scale: 1.35, duration: 1.0, repeat: nPulse - 1, ease: "power2.out" }, M.aa + 0.45);
+      burst(M.aa + 0.3, 540, 1010, { n: 50, seed: 71, sp: 700, size: 6, life: 0.8 });
+      fnIn("#s7-fn", C(6, 1) + 0.8);
+      rain(TOTAL - 2.4, TOTAL, 70, 77);
+
+      const FXP = { t: 0 };
+      tl.fromTo(FXP, { t: 0 }, { t: TOTAL, duration: TOTAL, ease: "none", onUpdate: () => drawFx(FXP.t) }, 0);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,215 @@
+{
+ "scenes": [
+  {
+   "id": "s1-hook",
+   "start": 0.0,
+   "duration": 4.604,
+   "audio_end": 4.054,
+   "captions": [
+    {
+     "text": "부모가 어학원만 다녀도",
+     "start": 0.3,
+     "speech_end": 2.041,
+     "shift": 0.3,
+     "end": 2.638
+    },
+    {
+     "text": "아이 학비가 0원?",
+     "start": 2.638,
+     "speech_end": 4.054,
+     "shift": 0.85,
+     "end": 4.604
+    }
+   ]
+  },
+  {
+   "id": "s2-rule",
+   "start": 4.604,
+   "duration": 9.377,
+   "audio_end": 12.481,
+   "captions": [
+    {
+     "text": "캐나다 노바스코샤주 핼리팩스",
+     "start": 4.854,
+     "speech_end": 7.257,
+     "shift": 4.8544,
+     "end": 8.039
+    },
+    {
+     "text": "부모님 학생비자만 있으면",
+     "start": 8.039,
+     "speech_end": 9.687,
+     "shift": 5.5543,
+     "end": 10.507
+    },
+    {
+     "text": "자녀 공립학교가 무상이에요",
+     "start": 10.507,
+     "speech_end": 12.481,
+     "shift": 6.3043,
+     "end": 13.981
+    }
+   ]
+  },
+  {
+   "id": "s3-school",
+   "start": 13.981,
+   "duration": 9.259,
+   "audio_end": 21.739,
+   "captions": [
+    {
+     "text": "대학이나 컬리지에",
+     "start": 14.231,
+     "speech_end": 15.671,
+     "shift": 14.2309,
+     "end": 16.155
+    },
+    {
+     "text": "다닐 필요가 없어요",
+     "start": 16.155,
+     "speech_end": 17.084,
+     "shift": 14.6808,
+     "end": 17.657
+    },
+    {
+     "text": "사설 어학원도 OK!",
+     "start": 17.657,
+     "speech_end": 19.155,
+     "shift": 15.2309,
+     "end": 19.928
+    },
+    {
+     "text": "학교 종류 조건이 없거든요",
+     "start": 19.928,
+     "speech_end": 21.74,
+     "shift": 15.9808,
+     "end": 23.239
+    }
+   ]
+  },
+  {
+   "id": "s4-weeks",
+   "start": 23.239,
+   "duration": 12.587,
+   "audio_end": 32.427,
+   "captions": [
+    {
+     "text": "핵심은 40주 학비로",
+     "start": 23.489,
+     "speech_end": 25.033,
+     "shift": 23.4894,
+     "end": 25.942
+    },
+    {
+     "text": "50주 입학허가서!",
+     "start": 25.942,
+     "speech_end": 27.161,
+     "shift": 24.1894,
+     "end": 28.158
+    },
+    {
+     "text": "방학 10주는 학비 0원",
+     "start": 28.158,
+     "speech_end": 29.887,
+     "shift": 25.1394,
+     "end": 30.569
+    },
+    {
+     "text": "이걸로 약 1년 학생비자 진행",
+     "start": 30.569,
+     "speech_end": 32.426,
+     "shift": 25.7394,
+     "end": 35.827
+    }
+   ]
+  },
+  {
+   "id": "s5-price",
+   "start": 35.827,
+   "duration": 8.883,
+   "audio_end": 42.71,
+   "captions": [
+    {
+     "text": "학비는 40주에",
+     "start": 36.077,
+     "speech_end": 37.644,
+     "shift": 36.0768,
+     "end": 38.087
+    },
+    {
+     "text": "11,400 캐나다 달러",
+     "start": 38.087,
+     "speech_end": 39.48,
+     "shift": 36.4267,
+     "end": 40.365
+    },
+    {
+     "text": "정가에서 25% 할인된 금액",
+     "start": 40.365,
+     "speech_end": 42.71,
+     "shift": 37.2768,
+     "end": 44.71
+    }
+   ]
+  },
+  {
+   "id": "s6-parents",
+   "start": 44.71,
+   "duration": 12.17,
+   "audio_end": 54.08,
+   "captions": [
+    {
+     "text": "아이 등교 후 9시 반 시작",
+     "start": 44.96,
+     "speech_end": 47.328,
+     "shift": 44.9602,
+     "end": 48.052
+    },
+    {
+     "text": "하교 전에 수업 끝",
+     "start": 48.052,
+     "speech_end": 48.922,
+     "shift": 45.6602,
+     "end": 49.707
+    },
+    {
+     "text": "반 친구들도 모두 학부모",
+     "start": 49.707,
+     "speech_end": 51.042,
+     "shift": 46.4102,
+     "end": 51.839
+    },
+    {
+     "text": "대학 부설 과정보다 저렴하고 편해요",
+     "start": 51.839,
+     "speech_end": 54.08,
+     "shift": 47.1602,
+     "end": 56.88
+    }
+   ]
+  },
+  {
+   "id": "s7-cta",
+   "start": 56.88,
+   "duration": 8.187,
+   "audio_end": 61.266,
+   "captions": [
+    {
+     "text": "핼리팩스 자녀무상교육",
+     "start": 57.13,
+     "speech_end": 58.616,
+     "shift": 57.1298,
+     "end": 59.397
+    },
+    {
+     "text": "AA Canada와 상담하세요",
+     "start": 59.397,
+     "speech_end": 61.267,
+     "shift": 57.8298,
+     "end": 65.066
+    }
+   ]
+  }
+ ],
+ "total": 65.066
+}
