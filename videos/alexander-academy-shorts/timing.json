@@ -1,0 +1,239 @@
+{
+ "voice": "owner recording",
+ "align_ratio": 0.921,
+ "scenes": [
+  {
+   "id": "s1-hook",
+   "start": 0.0,
+   "duration": 5.88,
+   "audio_end": 5.16,
+   "captions": [
+    {
+     "text": "고등학생인데",
+     "start": 0.3,
+     "end": 1.46,
+     "speech_end": 1.36
+    },
+    {
+     "text": "대학 과목을 7개나?",
+     "start": 1.46,
+     "end": 3.42,
+     "speech_end": 2.88
+    },
+    {
+     "text": "그것도, 추가 학비 없이요",
+     "start": 3.42,
+     "end": 5.88,
+     "speech_end": 5.16
+    }
+   ]
+  },
+  {
+   "id": "s2-school",
+   "start": 5.88,
+   "duration": 9.6,
+   "audio_end": 15.0,
+   "captions": [
+    {
+     "text": "밴쿠버 사립고등학교",
+     "start": 6.18,
+     "end": 7.86,
+     "speech_end": 7.8
+    },
+    {
+     "text": "알렉산더 아카데미",
+     "start": 7.86,
+     "end": 9.42,
+     "speech_end": 9.04
+    },
+    {
+     "text": "같은 건물에 있는",
+     "start": 9.42,
+     "end": 10.715,
+     "speech_end": 10.7
+    },
+    {
+     "text": "알렉산더 컬리지 대학 수업을",
+     "start": 10.715,
+     "end": 13.18,
+     "speech_end": 12.8
+    },
+    {
+     "text": "고등학교 때 미리 들을 수 있어요",
+     "start": 13.18,
+     "end": 15.48,
+     "speech_end": 15.0
+    }
+   ]
+  },
+  {
+   "id": "s3-credits",
+   "start": 15.48,
+   "duration": 10.85,
+   "audio_end": 25.96,
+   "captions": [
+    {
+     "text": "최대 7과목, 21학점",
+     "start": 15.78,
+     "end": 18.42,
+     "speech_end": 17.88
+    },
+    {
+     "text": "캐나다 대학 1학년이",
+     "start": 18.42,
+     "end": 19.86,
+     "speech_end": 19.8
+    },
+    {
+     "text": "보통 8~10과목을 들으니까",
+     "start": 19.86,
+     "end": 22.82,
+     "speech_end": 22.68
+    },
+    {
+     "text": "1학년 대부분을",
+     "start": 22.82,
+     "end": 24.06,
+     "speech_end": 24.0
+    },
+    {
+     "text": "고등학교 때 미리 끝내는 셈이죠",
+     "start": 24.06,
+     "end": 26.33,
+     "speech_end": 25.96
+    }
+   ]
+  },
+  {
+   "id": "s4-race",
+   "start": 26.33,
+   "duration": 8.56,
+   "audio_end": 34.623,
+   "captions": [
+    {
+     "text": "졸업하고 컬리지에서",
+     "start": 26.63,
+     "end": 27.91,
+     "speech_end": 27.89
+    },
+    {
+     "text": "1년 정도 더 공부하고",
+     "start": 27.91,
+     "end": 29.832,
+     "speech_end": 29.832
+    },
+    {
+     "text": "UBC 같은 대학으로 편입하면",
+     "start": 29.832,
+     "end": 31.95,
+     "speech_end": 31.85
+    },
+    {
+     "text": "대학 졸업이",
+     "start": 31.95,
+     "end": 33.03,
+     "speech_end": 32.77
+    },
+    {
+     "text": "약 1년 빨라질 수 있어요",
+     "start": 33.03,
+     "end": 34.89,
+     "speech_end": 34.623
+    }
+   ]
+  },
+  {
+   "id": "s5-transfer",
+   "start": 34.89,
+   "duration": 8.79,
+   "audio_end": 43.37,
+   "captions": [
+    {
+     "text": "UBC 직행은 내신 싸움이지만",
+     "start": 35.19,
+     "end": 37.75,
+     "speech_end": 37.57
+    },
+    {
+     "text": "편입은 대학 성적으로 평가받아요",
+     "start": 37.75,
+     "end": 40.39,
+     "speech_end": 40.01
+    },
+    {
+     "text": "그리고 졸업장은",
+     "start": 40.39,
+     "end": 41.47,
+     "speech_end": 41.41
+    },
+    {
+     "text": "똑같은 UBC 학위입니다",
+     "start": 41.47,
+     "end": 43.68,
+     "speech_end": 43.37
+    }
+   ]
+  },
+  {
+   "id": "s6-cta",
+   "start": 43.68,
+   "duration": 12.31,
+   "audio_end": 53.04,
+   "captions": [
+    {
+     "text": "수능 앞두고 고민 중이시라면",
+     "start": 43.98,
+     "end": 46.06,
+     "speech_end": 45.88
+    },
+    {
+     "text": "1년 늦어지는 게 아니라",
+     "start": 46.06,
+     "end": 47.7,
+     "speech_end": 47.667
+    },
+    {
+     "text": "1년 앞당기는 방법도 있어요",
+     "start": 47.7,
+     "end": 49.907,
+     "speech_end": 49.653
+    },
+    {
+     "text": "밴쿠버 조기유학,",
+     "start": 49.907,
+     "end": 51.42,
+     "speech_end": 51.387
+    },
+    {
+     "text": "AA캐나다와 상담하세요",
+     "start": 51.42,
+     "end": 55.99,
+     "speech_end": 53.04
+    }
+   ]
+  }
+ ],
+ "marks": {
+  "k7": 2.3,
+  "free": 3.94,
+  "aca": 7.86,
+  "bldg": 9.42,
+  "col": 10.715,
+  "early": 13.98,
+  "m7": 16.22,
+  "m21": 17.1,
+  "first": 18.42,
+  "most": 23.34,
+  "grad": 26.63,
+  "yr1": 27.91,
+  "ubc": 29.832,
+  "fast": 33.67,
+  "naesin": 36.31,
+  "gpa": 38.39,
+  "same": 41.47,
+  "late": 46.46,
+  "ahead": 48.1,
+  "aa": 51.42
+ },
+ "total": 55.99
+}

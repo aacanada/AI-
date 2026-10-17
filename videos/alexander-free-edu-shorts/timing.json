@@ -1,0 +1,204 @@
+{
+ "voice": "owner recording",
+ "align_ratio": 0.794,
+ "scenes": [
+  {
+   "id": "s1-hook",
+   "start": 0.0,
+   "duration": 4.59,
+   "audio_end": 4.59,
+   "captions": [
+    {
+     "text": "엄마는 한 학기 세 과목",
+     "start": 0.3,
+     "end": 2.14,
+     "speech_end": 2.04
+    },
+    {
+     "text": "아이 학비는 0원?",
+     "start": 2.14,
+     "end": 3.98,
+     "speech_end": 3.2
+    },
+    {
+     "text": "사립 컬리지는",
+     "start": 3.98,
+     "end": 4.59,
+     "speech_end": 4.59
+    }
+   ]
+  },
+  {
+   "id": "s2-rule",
+   "start": 4.59,
+   "duration": 8.618,
+   "audio_end": 13.208,
+   "captions": [
+    {
+     "text": "자녀무상교육이 안 된다고요?",
+     "start": 4.89,
+     "end": 6.767,
+     "speech_end": 6.52
+    },
+    {
+     "text": "BC주 기준은 학위 과정이에요",
+     "start": 6.767,
+     "end": 9.54,
+     "speech_end": 9.347
+    },
+    {
+     "text": "사립이라도 학위 과정이면",
+     "start": 9.54,
+     "end": 11.46,
+     "speech_end": 11.36
+    },
+    {
+     "text": "자녀무상교육 대상입니다",
+     "start": 11.46,
+     "end": 13.208,
+     "speech_end": 13.208
+    }
+   ]
+  },
+  {
+   "id": "s3-ac",
+   "start": 13.208,
+   "duration": 8.302,
+   "audio_end": 21.243,
+   "captions": [
+    {
+     "text": "알렉산더 컬리지 준학사",
+     "start": 13.508,
+     "end": 16.33,
+     "speech_end": 15.84
+    },
+    {
+     "text": "한 학기 3과목이면 풀타임",
+     "start": 16.33,
+     "end": 19.25,
+     "speech_end": 18.39
+    },
+    {
+     "text": "라이브 온라인 수업도",
+     "start": 19.25,
+     "end": 20.49,
+     "speech_end": 20.49
+    },
+    {
+     "text": "들을 수 있어요",
+     "start": 20.49,
+     "end": 21.51,
+     "speech_end": 21.243
+    }
+   ]
+  },
+  {
+   "id": "s4-eng",
+   "start": 21.51,
+   "duration": 9.28,
+   "audio_end": 30.43,
+   "captions": [
+    {
+     "text": "영어는 듀오링고 90점이면",
+     "start": 21.81,
+     "end": 24.53,
+     "speech_end": 23.91
+    },
+    {
+     "text": "조건부 입학으로 바로 시작",
+     "start": 24.53,
+     "end": 26.43,
+     "speech_end": 26.38
+    },
+    {
+     "text": "학비는 한 학기",
+     "start": 26.43,
+     "end": 27.67,
+     "speech_end": 27.55
+    },
+    {
+     "text": "약 5,940 캐나다 달러예요",
+     "start": 27.67,
+     "end": 30.79,
+     "speech_end": 30.43
+    }
+   ]
+  },
+  {
+   "id": "s5-pgwp",
+   "start": 30.79,
+   "duration": 7.86,
+   "audio_end": 38.65,
+   "captions": [
+    {
+     "text": "졸업하면 졸업 후 취업비자",
+     "start": 31.09,
+     "end": 33.154,
+     "speech_end": 33.07
+    },
+    {
+     "text": "PGWP 최대 3년",
+     "start": 33.154,
+     "end": 35.45,
+     "speech_end": 34.87
+    },
+    {
+     "text": "단, 거주하실 교육청 서류는",
+     "start": 35.45,
+     "end": 37.49,
+     "speech_end": 37.35
+    },
+    {
+     "text": "꼭 미리 확인하세요",
+     "start": 37.49,
+     "end": 38.65,
+     "speech_end": 38.65
+    }
+   ]
+  },
+  {
+   "id": "s6-cta",
+   "start": 38.65,
+   "duration": 6.51,
+   "audio_end": 42.21,
+   "captions": [
+    {
+     "text": "밴쿠버 자녀무상교육",
+     "start": 38.95,
+     "end": 40.44,
+     "speech_end": 40.44
+    },
+    {
+     "text": "AA캐나다와 상담하세요",
+     "start": 40.44,
+     "end": 45.16,
+     "speech_end": 42.21
+    }
+   ]
+  }
+ ],
+ "marks": {
+  "three0": 1.42,
+  "zero": 2.86,
+  "priv": 3.98,
+  "no": 5.78,
+  "deg": 8.38,
+  "privdeg": 9.54,
+  "free": 12.72,
+  "ac": 13.508,
+  "assoc": 15.14,
+  "three": 16.85,
+  "ft": 17.85,
+  "live": 19.25,
+  "duo": 22.61,
+  "cond": 24.53,
+  "fee": 26.43,
+  "price": 28.33,
+  "grad": 31.09,
+  "pgwp": 33.154,
+  "check": 36.41,
+  "sure": 37.49,
+  "aa": 40.44
+ },
+ "total": 45.16
+}

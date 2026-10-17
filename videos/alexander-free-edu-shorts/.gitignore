@@ -1,0 +1,9 @@
+node_modules/
+snapshots/
+.hyperframes/
+thumbnail/full.png
+assets/audio/recording/rec16k.wav
+assets/audio/recording/edited.wav
+assets/bgm/bed.wav
+renders/render.log
+assets/kit/

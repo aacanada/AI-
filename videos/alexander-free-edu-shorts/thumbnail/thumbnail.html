@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="UTF-8"><style>
+@font-face { font-family: "Pretendard"; font-weight: 800; src: url("../assets/fonts/Pretendard-ExtraBold.woff2") format("woff2"); }
+@font-face { font-family: "Pretendard"; font-weight: 900; src: url("../assets/fonts/Pretendard-Black.woff2") format("woff2"); }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 1080px; height: 1920px; overflow: hidden; }
+body { font-family: "Pretendard", sans-serif; color: #fff; word-break: keep-all; position: relative;
+  background: radial-gradient(900px 900px at 80% 15%, rgba(40,90,170,0.95) 0%, rgba(40,90,170,0) 70%),
+              radial-gradient(800px 800px at 10% 85%, rgba(46,196,166,0.3) 0%, rgba(46,196,166,0) 70%),
+              linear-gradient(180deg, #0a1a33 0%, #12305c 100%); }
+.grid { position: absolute; inset: 0; opacity: 0.07; background-image: linear-gradient(#fff 2px, rgba(255,255,255,0) 2px), linear-gradient(90deg, #fff 2px, rgba(255,255,255,0) 2px); background-size: 90px 90px; }
+.pill { position: absolute; top: 250px; left: 0; right: 0; margin: 0 auto; width: 660px; text-align: center; padding: 22px 0; border-radius: 999px; background: #d7263d; font-size: 50px; font-weight: 900; }
+.lines { position: absolute; top: 450px; left: 0; right: 0; text-align: center; }
+.l { font-size: 128px; font-weight: 900; line-height: 1.2; letter-spacing: -0.04em; }
+.l .s { color: #9fd6ff; }
+.zero { margin-top: 10px; font-size: 140px; font-weight: 900; letter-spacing: -0.04em; line-height: 1.1; }
+.zero b { display: inline-block; color: #ffc83d; font-size: 300px; line-height: 1; text-shadow: 0 0 60px rgba(255,200,61,0.6); vertical-align: -24px; }
+.chips { position: absolute; top: 1270px; left: 0; right: 0; display: flex; flex-direction: column; align-items: center; gap: 22px; }
+.chip { padding: 18px 40px; border-radius: 24px; background: rgba(5,12,28,0.8); border: 4px solid #4cc9f0; font-size: 52px; font-weight: 900; }
+.chip.g { border-color: #2ec4a6; }
+.chip span { color: #ffc83d; }
+.brand { position: absolute; top: 1540px; left: 0; right: 0; text-align: center; font-size: 60px; font-weight: 900; letter-spacing: 0.12em; }
+.brand b { color: #d7263d; }
+</style></head><body><div class="grid"></div>
+<div class="pill">밴쿠버 자녀무상교육</div>
+<div class="lines">
+  <div class="l"><span class="s">엄마는</span> 3과목</div>
+  <div class="l"><span class="s">아이는</span> 공립</div>
+  <div class="zero">학비 <b>0원</b></div>
+</div>
+<div class="chips"><div class="chip">듀오링고 <span>90점</span> 입학</div><div class="chip g">PGWP <span>최대 3년</span></div></div>
+<div class="brand"><b>AA</b> CANADA</div>
+</body></html>

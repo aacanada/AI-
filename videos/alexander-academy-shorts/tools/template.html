@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>알렉산더 아카데미 · 고등학교에서 대학 7과목</title>
+    <script src="assets/vendor/gsap.min.js"></script>
+    <script src="assets/vendor/hyper-shader.global.js"></script>
+    <script src="assets/kit/kit.js"></script>
+    <link rel="stylesheet" href="assets/kit/base.css" />
+    <style>
+      /* Fast Track: ink #0b0f1f → indigo #1b1f4a · red #d7263d · gold #ffc83d · blue #3a86ff · mint #2ec4a6 */
+      html, body { width: 1080px; height: 1920px; background: #0b0f1f; }
+      #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: #0b0f1f; }
+      #brand { top: 150px; height: 40px; font-size: 30px; }
+      .cap { align-items: flex-start; padding-top: 215px; }
+      .cap-box { width: 980px; min-height: 250px; padding: 28px 40px; }
+      .cap-text { font-size: 76px; line-height: 1.22; }
+
+      /* S1 */
+      .hs { position: absolute; left: 150px; top: 580px; width: 780px; height: 280px; border-radius: 40px; overflow: hidden;
+            background: linear-gradient(135deg, #f7f8ff 0%, #dfe4f7 100%); color: #0b0f1f; box-shadow: 0 40px 80px rgba(0,0,0,0.5); }
+      .stu { position: absolute; left: 40px; top: 44px; width: 170px; height: 198px; }
+      .hs-t { position: absolute; left: 236px; top: 56px; white-space: nowrap; font-size: 74px; font-weight: 900; letter-spacing: -0.01em; }
+      .hs-s { position: absolute; left: 240px; top: 168px; white-space: nowrap; font-size: 40px; font-weight: 800; color: #3a86ff; }
+      .blocks { position: absolute; left: 0; top: 900px; width: 1080px; height: 260px; }
+      .cb { position: absolute; width: 220px; height: 110px; border-radius: 20px; background: #3a86ff; border: 4px solid #8fb8ff;
+            display: flex; flex-direction: column; align-items: center; justify-content: center; opacity: 0;
+            box-shadow: 0 16px 30px rgba(0,0,0,0.4); }
+      .cb b { font-size: 22px; font-weight: 900; letter-spacing: 0.2em; color: #ffc83d; }
+      .cb span { font-size: 42px; font-weight: 900; }
+      .cnt { position: absolute; left: 840px; top: 520px; width: 190px; height: 190px; border-radius: 50%; background: #d7263d; border: 8px solid #ffffff;
+             display: flex; align-items: center; justify-content: center; gap: 2px; opacity: 0; box-shadow: 0 20px 40px rgba(215,38,61,0.5); }
+      .cnt-n { font-size: 96px; font-weight: 900; line-height: 1; }
+      .cnt-u { font-size: 34px; font-weight: 900; margin-top: 30px; }
+      .zero { position: absolute; left: 0; right: 0; top: 1160px; text-align: center; opacity: 0; }
+      .zero-p { display: block; font-size: 170px; font-weight: 900; line-height: 1; color: #ffc83d; text-shadow: 0 0 60px rgba(255,200,61,0.6); }
+      .zero-u { display: inline-block; margin-top: 12px; padding: 8px 34px; border-radius: 999px; background: #2ec4a6; color: #0b0f1f; font-size: 46px; font-weight: 900; }
+      #s1-fn { top: 1410px; }
+
+      /* S2 */
+      .sky { position: absolute; left: 0; top: 1100px; }
+      .tower { position: absolute; left: 200px; top: 560px; width: 640px; height: 780px; border-radius: 26px 26px 0 0; background: #151a40;
+               border: 5px solid #3a86ff; opacity: 0; }
+      .tw-roof { position: absolute; left: 0; right: 0; top: 18px; text-align: center; white-space: nowrap; font-size: 22px; font-weight: 900; letter-spacing: 0.12em; color: #8fa2d8; }
+      .fl { position: absolute; left: 24px; right: 70px; height: 320px; border-radius: 20px; padding: 26px 26px; opacity: 0; }
+      .fl-a { top: 64px; background: #2a2f6b; border: 4px solid #ffc83d; }
+      .fl-c { top: 410px; background: #142c5c; border: 4px solid #3a86ff; }
+      .fl-k { font-size: 40px; font-weight: 900; letter-spacing: 0.02em; white-space: nowrap; }
+      .fl-a .fl-k { color: #ffc83d; } .fl-c .fl-k { color: #8fc0ff; }
+      .fl-s { font-size: 32px; font-weight: 800; margin-top: 6px; color: #d9def3; white-space: nowrap; }
+      .wins { position: absolute; left: 26px; right: 26px; bottom: 26px; display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+      .win { display: block; height: 110px; border-radius: 8px; background: #3b4272; }
+      .lift { position: absolute; right: 16px; top: 64px; width: 40px; height: 666px; border-radius: 12px; background: #0e1230; border: 3px solid #4b5490; }
+      .dotm { position: absolute; right: -2px; top: 120px; width: 76px; height: 88px; opacity: 0; }
+      .dotm .stu { position: absolute; left: 0; top: 0; width: 76px; height: 88px; }
+      .brk { position: absolute; left: 858px; top: 624px; width: 170px; height: 700px; border: 6px solid #2ec4a6; border-left: 0; border-radius: 0 30px 30px 0;
+             opacity: 0; transform-origin: 0 50%; }
+      .brk span { position: absolute; left: 22px; top: 50%; margin-top: -70px; width: 130px; font-size: 52px; font-weight: 900; line-height: 1.15; color: #2ec4a6; text-align: center; }
+
+      /* S3 */
+      .stacks { position: absolute; left: 64px; top: 600px; width: 952px; height: 200px; }
+      .stk { position: absolute; bottom: 0; width: 136px; height: 200px; }
+      .coin { position: absolute; left: 12px; width: 112px; height: 48px; border-radius: 50%; background: #ffc83d; border: 5px solid #ffe7a1;
+              box-shadow: 0 8px 0 #c48a00; color: #7a5200; font-style: normal; font-size: 30px; font-weight: 900; text-align: center; line-height: 38px; opacity: 0; }
+      .tot { position: absolute; left: 0; right: 0; top: 830px; display: flex; justify-content: center; align-items: flex-end; gap: 30px; opacity: 0; }
+      .tot-a { display: flex; align-items: flex-end; }
+      .odo-a, .odo-b { font-size: 170px; font-weight: 900; color: #ffc83d; text-shadow: 0 0 40px rgba(255,200,61,0.45); }
+      .odo-a .odc, .odo-a .strip b, .odo-b .odc, .odo-b .strip b { height: 172px; line-height: 172px; }
+      .tot-u { font-size: 70px; font-weight: 900; margin: 0 0 24px 10px; }
+      .tot-x { font-size: 110px; font-weight: 900; color: #3a86ff; margin-bottom: 26px; }
+      .yr1 { position: absolute; left: 60px; right: 60px; top: 1080px; opacity: 0; }
+      .yr1-l { text-align: center; font-size: 40px; font-weight: 800; color: #d9def3; }
+      .yr1-l b { color: #ffffff; font-weight: 900; }
+      .cells { display: flex; gap: 12px; justify-content: center; margin-top: 22px; }
+      .cell { display: block; width: 82px; height: 96px; border-radius: 14px; background: #262b5c; border: 3px solid #4b5490; }
+      .yr1-tag { text-align: center; margin-top: 22px; font-size: 48px; font-weight: 900; opacity: 0; }
+      .yr1-tag b { color: #ffc83d; }
+
+      /* S4 */
+      .race { position: absolute; left: 0; top: 600px; width: 1080px; height: 560px; }
+      .axis { position: absolute; left: 0; top: 0; width: 1080px; height: 40px; opacity: 0; }
+      .axis span { position: absolute; top: 0; transform: translateX(-50%); font-size: 28px; font-weight: 800; color: #8fa2d8; white-space: nowrap; }
+      .lane { position: absolute; left: 0; width: 1080px; height: 230px; opacity: 0; }
+      .ln-a { top: 60px; } .ln-b { top: 310px; }
+      .lab { position: absolute; left: 60px; top: 0; font-size: 36px; font-weight: 900; }
+      .ln-a .lab { color: #a3aed0; } .ln-b .lab { color: #ffc83d; }
+      .seg { position: absolute; top: 96px; height: 120px; border-radius: 18px; display: flex; align-items: center; justify-content: center;
+             font-size: 36px; font-weight: 900; transform-origin: 0 50%; }
+      .sg-u { background: #3b4272; color: #d9def3; }
+      .sg-boost { background: #d7263d; } .sg-c { background: #3a86ff; } .sg-t { background: #2ec4a6; color: #0b0f1f; }
+      .run { position: absolute; left: 198px; top: 46px; width: 44px; height: 44px; }
+      .run i { position: absolute; inset: 0; border-radius: 50%; background: #ffffff; box-shadow: -40px 0 0 -10px rgba(255,255,255,0.35), -80px 0 0 -16px rgba(255,255,255,0.18); }
+      .run-b i { background: #ffc83d; box-shadow: -40px 0 0 -10px rgba(255,200,61,0.45), -80px 0 0 -16px rgba(255,200,61,0.2); }
+      .flag { position: absolute; top: 0px; width: 120px; height: 80px; margin-left: -60px; opacity: 0; }
+      .gcap { width: 120px; height: 80px; }
+      .gap { position: absolute; left: 760px; top: 396px; width: 180px; height: 140px; border: 6px dashed #ffc83d; border-radius: 18px; opacity: 0; }
+      .cal { position: absolute; left: 400px; top: 1180px; width: 280px; height: 200px; }
+      .pg { position: absolute; inset: 0; border-radius: 18px; background: #f7f8ff; color: #0b0f1f; display: flex; align-items: flex-end; justify-content: center;
+            padding-bottom: 24px; border-top: 40px solid #d7263d; opacity: 0; }
+      .pg b { font-size: 72px; font-weight: 900; }
+      #s4-stamp { left: 290px; top: 1176px; width: 500px; font-size: 104px; color: #ffc83d; border-color: #ffc83d; }
+
+      /* S5 */
+      .duo { position: absolute; left: 50px; right: 50px; top: 590px; height: 520px; display: flex; gap: 36px; }
+      .sc { flex: 1; position: relative; border-radius: 36px; padding: 40px 30px; text-align: center; background: #171c44; border: 4px solid rgba(255,255,255,0.16); opacity: 0; }
+      .sc-h { font-size: 64px; font-weight: 900; }
+      .sc-s { font-size: 28px; font-weight: 800; color: #8fa2d8; letter-spacing: 0.1em; }
+      .gauge { position: relative; margin: 26px auto 0; width: 120px; height: 230px; border-radius: 22px; background: #262b5c; overflow: hidden; }
+      .gauge i { position: absolute; left: 0; right: 0; bottom: 0; height: 100%; background: linear-gradient(0deg, #ffc83d 0%, #d7263d 100%); transform-origin: 50% 100%; transform: scaleY(0); }
+      .g95 { position: absolute; left: 0; right: 0; top: 10px; font-size: 30px; font-weight: 900; color: #ffffff; }
+      .gpa { margin-top: 40px; height: 216px; display: flex; flex-direction: column; justify-content: center; }
+      .gpa-n { font-size: 150px; font-weight: 900; line-height: 1; color: #2ec4a6; opacity: 0; }
+      .gpa-d { font-size: 40px; font-weight: 900; color: #8fa2d8; }
+      .sc-k { margin-top: 22px; font-size: 38px; font-weight: 900; }
+      .sc-l .sc-k b { color: #ff6b7a; } .sc-r .sc-k b { color: #2ec4a6; }
+      .warn { position: absolute; right: 26px; top: 26px; width: 84px; height: 84px; border-radius: 50%; background: #d7263d; font-size: 60px; font-weight: 900;
+              line-height: 84px; opacity: 0; }
+      .ok { position: absolute; right: 26px; top: 26px; width: 84px; height: 84px; border-radius: 50%; background: #2ec4a6; opacity: 0; }
+      .ok svg { width: 84px; height: 84px; }
+      .p5 { left: 110px; top: 1130px; width: 860px; height: 270px; }
+      .dip { position: relative; width: 860px; height: 270px; border-radius: 26px; padding: 30px 40px; overflow: hidden; color: #0b0f1f;
+             background: linear-gradient(135deg, #fffaf0 0%, #f2e6c8 100%); border: 8px double #c48a00; opacity: 0; box-shadow: 0 40px 70px rgba(0,0,0,0.5); }
+      .dip-t { font-size: 34px; font-weight: 900; letter-spacing: 0.14em; color: #7a5200; }
+      .dip-k { font-size: 84px; font-weight: 900; margin-top: 6px; letter-spacing: -0.02em; }
+      .dip-s { font-size: 30px; font-weight: 800; color: #5b4a2a; }
+      .seal { position: absolute; right: 34px; top: 70px; width: 140px; height: 140px; border-radius: 50%; background: #d7263d; display: flex; align-items: center; justify-content: center; }
+      .seal .gcap { width: 100px; height: 66px; }
+
+      /* S6 */
+      .clk { position: absolute; left: 390px; top: 590px; width: 300px; height: 300px; opacity: 0; }
+      .word { position: absolute; left: 0; right: 0; top: 930px; text-align: center; font-size: 120px; font-weight: 900; opacity: 0; }
+      .w-late { color: #8fa2d8; } .w-ahead { color: #ffc83d; text-shadow: 0 0 50px rgba(255,200,61,0.55); }
+      .gate { position: absolute; left: 140px; top: 580px; width: 800px; height: 520px; opacity: 0; }
+      .gl, .gr { position: absolute; top: 0; width: 400px; height: 520px; background: #232a66; border: 6px solid #3a86ff; }
+      .gl { left: 0; border-radius: 30px 0 0 30px; transform-origin: 0 50%; } .gr { right: 0; border-radius: 0 30px 30px 0; transform-origin: 100% 50%; }
+      .gate-t { position: absolute; left: 0; right: 0; top: 220px; text-align: center; font-size: 76px; font-weight: 900; letter-spacing: 0.12em; color: #8fc0ff; }
+      .leak { position: absolute; left: -500px; top: 0; width: 1600px; height: 1600px; border-radius: 50%; opacity: 0; mix-blend-mode: screen;
+              background: radial-gradient(circle, rgba(255,190,80,0.6) 0%, rgba(255,190,80,0) 62%); }
+      .cta-logo { position: absolute; left: 0; right: 0; top: 640px; text-align: center; font-size: 164px; font-weight: 900; letter-spacing: -0.02em;
+                  line-height: 1.1; text-shadow: 0 0 50px rgba(255,200,61,0.35); }
+      .cta-logo .ch { opacity: 0; }
+      .logo-kt .ch:nth-child(-n+2) { color: #d7263d; }
+      .cta-sub { position: absolute; left: 0; right: 0; top: 856px; text-align: center; font-size: 44px; font-weight: 800; color: #ffc83d; opacity: 0; }
+      .cta-btn { position: absolute; left: 130px; right: 130px; top: 960px; height: 124px; border-radius: 999px; background: #d7263d;
+                 display: flex; align-items: center; justify-content: center; font-size: 54px; font-weight: 900; opacity: 0; box-shadow: 0 20px 50px rgba(215,38,61,0.5); }
+      .cta-btn b { color: #fff3b0; margin-left: 12px; }
+      .btn-ring { position: absolute; inset: 0; border-radius: 999px; border: 6px solid #ffc83d; opacity: 0; }
+      .fn { font-size: 25px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="__TOTAL__" data-width="1080" data-height="1920">
+      __SCENES__
+      <canvas id="fx" class="clip" data-layout-allow-overlap width="1080" height="1920" data-start="0" data-duration="__TOTAL__" data-track-index="5"></canvas>
+      <div id="brand" class="clip" data-start="0" data-duration="__TOTAL__" data-track-index="6"><b>AA</b> CANADA · 밴쿠버 조기유학</div>
+      __CAPTIONS__
+      <audio id="narration" class="clip" src="assets/audio/narration.wav" data-start="0" data-duration="__TOTAL__" data-track-index="9" data-volume="1"></audio>
+      <audio id="music-bed" class="clip" src="assets/bgm/bed.wav" data-start="0" data-duration="__TOTAL__" data-track-index="10" data-volume="0.3"></audio>
+      __SFX__
+    </div>
+    <script>
+      const TIMING = __TIMING__;
+      const M = TIMING.marks, S = TIMING.scenes, TOTAL = TIMING.total;
+      const C = (i, j) => S[i].captions[j].start, E = (i, j) => S[i].captions[j].speech_end;
+      const ST = (i) => S[i].start, TR = (i) => S[i].start - 0.25;
+
+      const tl = HyperShader.init({
+        bgColor: "#0b0f1f", accentColor: "#ffc83d", scenes: S.map((s) => s.id),
+        transitions: [
+          { time: TR(1), shader: "cinematic-zoom", duration: 0.45 },
+          { time: TR(2), shader: "whip-pan", duration: 0.45 },
+          { time: TR(3), shader: "glitch", duration: 0.4 },
+          { time: TR(4), shader: "chromatic-split", duration: 0.45 },
+          { time: TR(5), shader: "light-leak", duration: 0.55 },
+        ],
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      const K = Kit(tl, { W: 1080, H: 1920, total: TOTAL });
+      const { pop, kin, sweep, ring, draw, fnIn, shake, slam, stamp } = K;
+      K.drift();
+      S.forEach((s, i) => s.captions.forEach((c, j) =>
+        tl.fromTo(`#cap-${i}-${j}-box`, { opacity: 0, scale: 0.9, y: -12 }, { opacity: 1, scale: 1, y: 0, duration: 0.22, ease: "back.out(2)" }, c.start)));
+      S.forEach((s, i) => { if (i) tl.fromTo(`#${s.id}-cam`, { scale: 1.08 }, { scale: 1, duration: 1.2, ease: "power3.out" }, TR(i)); });
+
+      // ===== S1 hook: a high-schooler + 7 university courses + $0 =====
+      tl.fromTo("#s1-hook-cam", { scale: 1.05 }, { scale: 1, duration: 2.6, ease: "power2.out" }, 0);
+      tl.fromTo("#s1-hs", { rotationZ: -3 }, { rotationZ: 2, duration: 2.4, ease: "sine.inOut" }, 0);
+      sweep("#s1-sw", 0.3, 1.0);
+      const t7 = M.k7 - 0.25;
+      tl.fromTo("#s1-blocks .cb", { y: -900, opacity: 0, rotation: (k) => (k % 2 ? 14 : -14) },
+        { y: 0, opacity: 1, rotation: 0, duration: 0.42, ease: "bounce.out", stagger: 0.09 }, t7);
+      tl.fromTo("#s1-cnt", { opacity: 0, scale: 0, rotation: -200 }, { opacity: 1, scale: 1, rotation: 8, duration: 0.5, ease: "back.out(1.8)" }, t7 + 0.7);
+      shake("#s1-hook-cam", t7 + 0.75, 5);
+      const hit1 = M.free + 0.3;
+      slam("#s1-zero", M.free);
+      ring("#s1-ring", hit1);
+      K.burst(hit1, 540, 1250, { n: 120, seed: 11, sp: 1500 });
+      shake("#s1-hook-cam", hit1, 11);
+      tl.fromTo("#s1-zero .zero-p", { scale: 1.16 }, { scale: 1, duration: 0.5, ease: "elastic.out(1,0.4)" }, hit1);
+      fnIn("#s1-fn", hit1 + 0.3);
+
+      // ===== S2 one building: academy upstairs, college downstairs =====
+      draw("#s2-school .sky .ln", TR(1) + 0.1, 1.3, { stagger: 0.2 });
+      tl.fromTo("#s2-tower", { opacity: 0, y: 260, scaleY: 0.4, transformOrigin: "50% 100%" }, { opacity: 1, y: 0, scaleY: 1, duration: 0.7, ease: "back.out(1.4)" }, ST(1) + 0.05);
+      tl.fromTo("#s2-fa", { opacity: 0, x: -120 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, M.aca - 0.15);
+      tl.to("#s2-fa .win", { backgroundColor: "#ffc83d", duration: 0.1, stagger: 0.06 }, M.aca + 0.25);
+      tl.fromTo("#s2-fc", { opacity: 0, x: 120 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, M.col - 0.15);
+      tl.to("#s2-fc .win", { backgroundColor: "#8fc0ff", duration: 0.1, stagger: 0.06 }, M.col + 0.25);
+      tl.fromTo("#s2-brk", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.4, ease: "back.out(2)" }, M.bldg - 0.05);
+      tl.fromTo("#s2-brk span", { scale: 2.2, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.28, ease: "power4.in" }, M.bldg + 0.0);
+      shake("#s2-school-cam", M.bldg + 0.28, 6);
+      tl.fromTo("#s2-dot", { opacity: 0, y: 0 }, { opacity: 1, duration: 0.2 }, M.col + 0.4);
+      tl.to("#s2-dot", { y: 380, duration: 0.6, ease: "power2.inOut", yoyo: true, repeat: 3 }, M.early - 0.4);
+      fnIn("#s2-fn", M.col + 0.8);
+
+      // ===== S3 7 courses = 21 credits =====
+      tl.fromTo("#s3-stacks .coin", { y: -900, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: "bounce.out", stagger: { each: 0.05, from: "random" } }, M.m7 - 0.45);
+      tl.fromTo("#s3-tot", { opacity: 0, y: 40, scale: 0.8 }, { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "back.out(1.8)" }, M.m7 - 0.05);
+      K.roll(".a-d0", 0, 7, M.m7 - 0.05, 0.6, 172);
+      K.roll(".b-d0", 0, 2, M.m21 - 0.1, 0.6, 172);
+      K.roll(".b-d1", 0, 11, M.m21 - 0.1, 0.8, 172);
+      tl.fromTo("#s3-tot", { scale: 1.4 }, { scale: 1, duration: 0.3, ease: "power4.in" }, M.m21 + 0.3);
+      ring("#s3-ring", M.m21 + 0.6);
+      K.burst(M.m21 + 0.6, 540, 920, { n: 100, seed: 31, sp: 1300 });
+      shake("#s3-credits-cam", M.m21 + 0.6, 9);
+      tl.to("#s3-stacks", { y: -30, scale: 0.9, opacity: 0.55, duration: 0.4 }, M.first - 0.3);
+      pop("#s3-yr1", M.first - 0.15);
+      tl.fromTo("#s3-yr1 .cell", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)", stagger: 0.05 }, M.first + 0.1);
+      tl.to("#s3-yr1 .c7", { backgroundColor: "#ffc83d", borderColor: "#ffe7a1", boxShadow: "0 0 24px rgba(255,200,61,0.7)", duration: 0.18, stagger: 0.08 }, M.most - 0.2);
+      pop("#s3-tag", M.most + 0.4);
+      K.burst(M.most + 0.6, 500, 1200, { n: 70, seed: 33, sp: 900, size: 7, life: 0.9 });
+
+      // ===== S4 the race: one year earlier =====
+      tl.fromTo("#s4-race .axis", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.4 }, TR(3) + 0.2);
+      tl.fromTo("#s4-la", { opacity: 0 }, { opacity: 1, duration: 0.3 }, TR(3) + 0.3);
+      tl.fromTo("#s4-lb", { opacity: 0 }, { opacity: 1, duration: 0.3 }, TR(3) + 0.4);
+      tl.fromTo("#s4-boost", { scaleX: 0 }, { scaleX: 1, duration: 0.35, ease: "back.out(2)" }, TR(3) + 0.45);
+      tl.fromTo("#s4-ua", { scaleX: 0 }, { scaleX: 1, duration: 1.6, ease: "power1.inOut" }, M.grad);
+      tl.fromTo("#s4-cb", { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power2.out" }, M.yr1 - 0.1);
+      tl.fromTo("#s4-tb", { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "power2.out" }, M.ubc);
+      const tF = M.fast - 0.35;
+      tl.fromTo("#s4-ra", { x: 0 }, { x: 720, duration: tF - M.grad + 1.0, ease: "none" }, M.grad);
+      tl.fromTo("#s4-rb", { x: 0 }, { x: 540, duration: tF - M.grad, ease: "power1.in" }, M.grad);
+      tl.fromTo("#s4-fb", { opacity: 0, y: -60, scale: 0.4 }, { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "back.out(2.5)" }, tF);
+      tl.fromTo("#s4-fa", { opacity: 0, y: -60, scale: 0.4 }, { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "back.out(2.5)" }, tF + 1.2);
+      K.burst(tF + 0.1, 760, 990, { n: 90, seed: 41, sp: 1100, size: 8 });
+      tl.fromTo("#s4-gap", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, tF + 0.15);
+      tl.fromTo("#s4-cal .pg", { opacity: 1, y: 0, rotation: 0 },
+        { opacity: 0, y: -520, x: (k) => (k % 2 ? 260 : -260), rotation: (k) => (k % 2 ? 40 : -40), duration: 0.45, ease: "power2.in", stagger: 0.035 }, tF - 0.55);
+      tl.set("#s4-cal .pg", { opacity: 0 }, 0);
+      tl.set("#s4-cal .pg", { opacity: 1 }, tF - 0.6);
+      const hit4 = tF + 0.35 + 0.28;
+      stamp("#s4-stamp", tF + 0.35, -8);
+      shake("#s4-race-cam", hit4, 10);
+      K.burst(hit4, 540, 1270, { n: 110, seed: 43, sp: 1300 });
+      fnIn("#s4-fn", hit4 + 0.3);
+
+      // ===== S5 direct vs transfer → same degree =====
+      tl.fromTo("#s5-l", { opacity: 0, x: -520, rotationY: 40 }, { opacity: 1, x: 0, rotationY: 0, duration: 0.55, ease: "power3.out" }, TR(4) + 0.1);
+      tl.fromTo("#s5-r", { opacity: 0, x: 520, rotationY: -40 }, { opacity: 1, x: 0, rotationY: 0, duration: 0.55, ease: "power3.out" }, TR(4) + 0.25);
+      tl.to("#s5-gf", { scaleY: 0.95, duration: 1.0, ease: "power2.inOut" }, M.naesin - 0.3);
+      tl.fromTo("#s5-warn", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(3)" }, M.naesin + 0.3);
+      tl.to("#s5-warn", { opacity: 0.3, duration: 0.18, yoyo: true, repeat: 5 }, M.naesin + 0.65);
+      tl.to("#s5-l", { borderColor: "#d7263d", duration: 0.2 }, M.naesin + 0.3);
+      tl.to("#s5-r", { borderColor: "#2ec4a6", backgroundColor: "#123a3a", scale: 1.03, duration: 0.3, ease: "back.out(2)" }, M.gpa + 0.2);
+      pop("#s5-ok", M.gpa + 0.3); draw("#s5-ok path", M.gpa + 0.45, 0.3);
+      tl.fromTo("#s5-r .gpa-n", { scale: 1.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "power4.in" }, M.gpa + 0.1);
+      tl.to("#s5-duo", { y: -20, scale: 0.94, duration: 0.4 }, M.same - 0.6);
+      K.flip("#s5-dip", M.same - 0.45);
+      sweep("#s5-sw", M.same + 0.4, 0.9);
+      K.burst(M.same + 0.4, 540, 1260, { n: 90, seed: 51, sp: 1000, size: 8 });
+      fnIn("#s5-fn", M.gpa + 0.8);
+
+      // ===== S6 earlier, not later → CTA =====
+      pop("#s6-clk", TR(5) + 0.2);
+      tl.fromTo("#s6-hh", { rotation: 0, svgOrigin: "150 150" }, { rotation: 360, svgOrigin: "150 150", duration: 1.6, ease: "power2.inOut" }, M.late - 0.6);
+      tl.fromTo("#s6-mh", { rotation: 0, svgOrigin: "150 150" }, { rotation: 2880, svgOrigin: "150 150", duration: 1.6, ease: "power2.inOut" }, M.late - 0.6);
+      pop("#s6-late", M.late - 0.05);
+      tl.to("#s6-hh", { rotation: -360, duration: 1.0, ease: "power3.inOut" }, M.ahead - 0.2);
+      tl.to("#s6-mh", { rotation: -1440, duration: 1.0, ease: "power3.inOut" }, M.ahead - 0.2);
+      tl.to("#s6-late", { x: 30, skewX: 20, opacity: 0, filter: "blur(6px)", duration: 0.18, ease: "steps(3)" }, M.ahead - 0.05);
+      tl.fromTo("#s6-ahead", { opacity: 0, x: -30, skewX: -20, filter: "blur(6px)" }, { opacity: 1, x: 0, skewX: 0, filter: "blur(0px)", duration: 0.25, ease: "steps(4)" }, M.ahead + 0.1);
+      K.burst(M.ahead + 0.35, 540, 990, { n: 80, seed: 61, sp: 1000, size: 8 });
+      const tG = C(5, 3) - 0.35;
+      tl.to(["#s6-clk", "#s6-ahead"], { opacity: 0, scale: 0.8, duration: 0.3, ease: "power2.in" }, tG - 0.3);
+      tl.fromTo("#s6-gate", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.3 }, tG);
+      tl.to("#s6-gl", { scaleX: 0, duration: 0.6, ease: "power3.inOut" }, tG + 0.35);
+      tl.to("#s6-gr", { scaleX: 0, duration: 0.6, ease: "power3.inOut" }, tG + 0.35);
+      tl.to("#s6-gate .gate-t", { opacity: 0, scale: 1.4, duration: 0.35 }, tG + 0.35);
+      tl.fromTo("#s6-leak", { x: -300, y: 300, opacity: 0 }, { x: 600, y: -100, opacity: 0.95, duration: 1.4, ease: "power1.inOut" }, tG + 0.4);
+      tl.to("#s6-leak", { opacity: 0, duration: 0.6 }, tG + 1.6);
+      kin("#s6-logo .ch", tG + 0.55, 0.05);
+      pop("#s6-sub", tG + 1.05);
+      pop("#s6-btn", M.aa - 0.1, { ease: "back.out(2.2)" });
+      K.pulse("#s6-btn", M.aa + 0.45, TOTAL - 0.1);
+      const nP = Math.max(1, Math.floor((TOTAL - M.aa - 0.5) / 1.0));
+      tl.fromTo("#s6-bring", { opacity: 0.9, scale: 1 }, { opacity: 0, scale: 1.35, duration: 1.0, repeat: nP - 1, ease: "power2.out" }, M.aa + 0.45);
+      K.burst(M.aa + 0.3, 540, 1020, { n: 60, seed: 71, sp: 800, size: 6, life: 0.8 });
+      fnIn("#s6-fn", M.aa + 0.6);
+      K.rain(TOTAL - 2.6, TOTAL, 80, 77);
+      K.finish();
+    </script>
+  </body>
+</html>
