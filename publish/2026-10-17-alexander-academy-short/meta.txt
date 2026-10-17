@@ -1,0 +1,9 @@
+type: shorts
+title: 고등학생이 대학 7과목을 미리? 1년 먼저 UBC 가는 밴쿠버 사립고 (숏폼)
+channels: youtube, instagram, threads, blog, clip, homepage
+visibility: public
+publish_order: 1
+linked_to: (none)
+files: video.mp4 (1080x1920, 0:56, 21MB), thumbnail.jpg (1080x1920 cover), upload-text.txt
+source: aacanada/AI- branch claude/wonderful-mccarthy-c4b6hn, videos/alexander-academy-shorts/
+notes: 원장님이 직접 녹음한 목소리입니다. 연결할 본편은 없습니다. 블로그·홈페이지 본문이 필요하면 같은 브랜치의 plans/alexander-academy-dual-credit/ARTICLE.md (홈페이지 > 조기유학 > 사립학교)를 쓰세요. '추가 학비 없이 최대 7과목'은 학교 측 안내(2026.10) 기준이라 설명란에 그렇게 적었습니다.

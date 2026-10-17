@@ -1,0 +1,9 @@
+type: longform
+title: 사립 컬리지는 자녀무상교육 안 된다? 밴쿠버 알렉산더 컬리지 준학사 (본편)
+channels: youtube
+visibility: public
+publish_order: 1
+linked_to: (none)
+files: video.mp4 (1920x1080, 4:26, 55MB), thumbnail.jpg (1280x720), upload-text.txt
+source: aacanada/AI- branch claude/wonderful-mccarthy-c4b6hn, videos/alexander-free-edu-longform/
+notes: 원장님이 직접 녹음한 목소리입니다. 숏폼 2026-10-17-alexander-free-edu-short 가 이 본편을 '관련 동영상'으로 연결합니다. 이 본편을 먼저 게시하고 published.md 에 유튜브 주소를 적어 주세요. 학비·정책은 2026년 10월 기준이라 설명란에 변동 가능 문구를 넣었습니다.
