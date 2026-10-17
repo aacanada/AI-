@@ -374,7 +374,7 @@
       tl.set("#s7-beam", { rotation: 0 }, 0);
       tl.fromTo("#s7-v1", { scale: 1.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "power4.in" }, M.t_1700);
       tl.to("#s7-beam", { rotation: -6, duration: 0.6, ease: "back.out(2)" }, M.t_1700 + 0.3);
-                  tl.fromTo("#s7-pr .pan-v", { scale: 1.7 }, { scale: 1, duration: 0.3, ease: "power4.in" }, M.t_zero - 0.1);
+                  tl.fromTo("#s7-pr .pan-v", { scale: 1.7, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "power4.in" }, M.t_zero - 0.1);
       K.burst(M.t_zero + 0.2, 1660, 330, { n: 90, seed: 73, sp: 1100 });
       tl.fromTo("#s7-k2", { opacity: 0, y: -200 }, { opacity: 1, y: 0, duration: 0.4, ease: "bounce.out" }, M.t_two);
       tl.to("#s7-beam", { rotation: -10, duration: 0.5, ease: "back.out(2)" }, M.t_two + 0.3);
