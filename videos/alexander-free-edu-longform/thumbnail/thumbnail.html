@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="UTF-8"><style>
+@font-face { font-family: "Pretendard"; font-weight: 800; src: url("../assets/fonts/Pretendard-ExtraBold.woff2") format("woff2"); }
+@font-face { font-family: "Pretendard"; font-weight: 900; src: url("../assets/fonts/Pretendard-Black.woff2") format("woff2"); }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 1280px; height: 720px; overflow: hidden; }
+body { font-family: "Pretendard", sans-serif; color: #fff; word-break: keep-all; position: relative;
+  background: radial-gradient(700px 600px at 85% 20%, rgba(40,90,170,0.95) 0%, rgba(40,90,170,0) 70%), linear-gradient(180deg, #0a1a33 0%, #12305c 100%); }
+.grid { position: absolute; inset: 0; opacity: 0.07; background-image: linear-gradient(#fff 2px, rgba(255,255,255,0) 2px), linear-gradient(90deg, #fff 2px, rgba(255,255,255,0) 2px); background-size: 80px 80px; }
+.pill { position: absolute; left: 64px; top: 60px; padding: 12px 30px; border-radius: 999px; background: #d7263d; font-size: 36px; font-weight: 900; }
+.big { position: absolute; left: 60px; top: 150px; font-size: 150px; font-weight: 900; line-height: 1.08; letter-spacing: -0.04em; }
+.big b { color: #ffc83d; text-shadow: 0 0 40px rgba(255,200,61,0.55); }
+.chip { position: absolute; left: 64px; top: 500px; padding: 14px 30px; border-radius: 20px; background: rgba(5,12,28,0.8); border: 4px solid #2ec4a6; font-size: 42px; font-weight: 900; }
+.chip span { color: #ffc83d; }
+.deg { position: absolute; right: 60px; top: 300px; width: 420px; padding: 26px 30px; border-radius: 22px; color: #0a1a33; background: linear-gradient(135deg, #fffaf0 0%, #f0e3c2 100%);
+  border: 6px double #c48a00; transform: rotate(4deg); box-shadow: 0 30px 60px rgba(0,0,0,0.5); }
+.deg small { display: block; font-size: 20px; font-weight: 900; letter-spacing: 0.16em; color: #7a5200; } .deg b { display: block; font-size: 44px; font-weight: 900; margin-top: 4px; }
+.ok { position: absolute; right: 50px; top: 220px; padding: 8px 22px; border: 8px solid #2ec4a6; border-radius: 18px; color: #2ec4a6; font-size: 44px; font-weight: 900; transform: rotate(-10deg); background: rgba(10,26,51,0.9); }
+.brand { position: absolute; right: 64px; top: 70px; font-size: 34px; font-weight: 900; letter-spacing: 0.12em; } .brand b { color: #d7263d; }
+.sky { position: absolute; left: 0; bottom: 0; }
+</style></head><body><div class="grid"></div>
+<svg class="sky" width="1280" height="160" viewBox="0 0 1920 240"><path d="M0 240 V170 H90 V130 H150 V180 H220 V100 H270 V60 H320 V100 H360 V160 H420 V120 H470 V40 H520 V10 H570 V40 H620 V120 H680 V90 H760 V150 H820 V110 H900 V60 H950 V110 H1010 V170 H1080 V130 H1150 V180 H1230 V140 H1300 V170 H1380 V120 H1440 V150 H1520 V100 H1570 V150 H1650 V170 H1740 V140 H1820 V180 H1920 V240" fill="none" stroke="#4cc9f0" stroke-width="6"/></svg>
+<div class="pill">밴쿠버 자녀무상교육</div>
+<div class="brand"><b>AA</b> CANADA</div>
+<div class="big">사립인데<br><b>무상?</b></div>
+<div class="chip">엄마 3과목 · 아이 학비 <span>0원</span></div>
+<div class="ok">DEGREE ✓</div>
+<div class="deg"><small>ASSOCIATE DEGREE</small><b>알렉산더 컬리지 준학사</b></div>
+</body></html>
