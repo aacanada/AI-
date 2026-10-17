@@ -1,0 +1,43 @@
+@font-face { font-family: "Pretendard"; font-weight: 500; src: url("../fonts/Pretendard-Medium.woff2") format("woff2"); }
+@font-face { font-family: "Pretendard"; font-weight: 700; src: url("../fonts/Pretendard-Bold.woff2") format("woff2"); }
+@font-face { font-family: "Pretendard"; font-weight: 800; src: url("../fonts/Pretendard-ExtraBold.woff2") format("woff2"); }
+@font-face { font-family: "Pretendard"; font-weight: 900; src: url("../fonts/Pretendard-Black.woff2") format("woff2"); }
+/* literal colors only (shader capture can't resolve var()) */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "Pretendard", sans-serif; color: #ffffff; word-break: keep-all; overflow: hidden; }
+.clip { position: absolute; inset: 0; }
+.scene { position: absolute; left: 0; top: 0; overflow: hidden; z-index: 1; }
+.bgl { position: absolute; inset: 0; overflow: hidden; }
+.mesh { position: absolute; left: -300px; top: -300px; }
+.gridl { position: absolute; left: 0; top: 0; }
+.bk { position: absolute; border-radius: 50%; }
+.spd { position: absolute; height: 4px; border-radius: 2px; background-color: #ffffff; }
+.cam { position: absolute; inset: 0; }
+.persp { position: absolute; perspective: 1600px; }
+.sweep { position: absolute; top: -60%; left: 0; width: 200px; height: 220%; pointer-events: none;
+         background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 100%);
+         transform: translateX(-600px) rotate(25deg); }
+.ring { position: absolute; width: 300px; height: 300px; margin-left: -150px; margin-top: -150px; border-radius: 50%;
+        border: 14px solid #ffc83d; opacity: 0; }
+.fn { position: absolute; text-align: center; font-size: 25px; font-weight: 700; line-height: 1.35; color: #a3aed0; opacity: 0; }
+.stamp { position: absolute; display: flex; align-items: center; justify-content: center; border: 14px solid #d7263d;
+         border-radius: 28px; padding: 6px 38px; font-weight: 900; color: #d7263d; background: rgba(10,14,34,0.78);
+         opacity: 0; white-space: nowrap; }
+.kt { display: inline-block; perspective: 900px; }
+.ch { display: inline-block; transform-origin: 50% 100%; }
+.ck path { stroke-dasharray: 1; stroke-dashoffset: 1; }
+.ln { stroke-dasharray: 1; stroke-dashoffset: 1; }
+.marker { position: absolute; background: rgba(255,200,61,0.55); mix-blend-mode: multiply; transform-origin: 0 50%; transform: scaleX(0); border-radius: 6px; }
+.odo { display: inline-flex; font-variant-numeric: tabular-nums; }
+.odc { display: inline-block; overflow: hidden; }
+.strip, .strip b { display: block; }
+.card { position: absolute; border-radius: 34px; overflow: hidden; }
+.pill { display: inline-block; padding: 6px 26px; border-radius: 999px; font-weight: 900; }
+#fx { z-index: 60; pointer-events: none; }
+#brand { position: absolute; left: 0; right: 0; text-align: center; font-weight: 800; letter-spacing: 0.16em; color: #b9c2dd; z-index: 300; }
+#brand b { color: #d7263d; }
+.cap { z-index: 300; display: flex; justify-content: center; }
+.cap-box { display: flex; align-items: center; justify-content: center; text-align: center; border-radius: 34px;
+           background: rgba(5,8,22,0.84); border: 3px solid rgba(255,255,255,0.12); }
+.cap-text { font-weight: 900; letter-spacing: -0.02em; }
+.cap-text .hl { color: #ffc83d; }
