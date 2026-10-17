@@ -35,6 +35,7 @@ def chip(i):
 
 SCENES = {
 "s01-hook": """
+  <div class="open" id="s1-open"><div class="op-k">VANCOUVER</div><div class="op-t">""" + kt("밴쿠버 ") + "<b>" + kt("자녀무상교육") + "</b>" + """</div><div class="op-s">알렉산더 컬리지 준학사로 시작하는 방법</div></div>
   <div class="bub b1" id="s1-b1">사립은 안 된대요</div>
   <div class="bub b2" id="s1-b2">교육청마다 달라요</div>
   <div class="bub b3" id="s1-b3">공립만 가세요</div>
@@ -162,7 +163,7 @@ def E(i, j): return S[i]["captions"][j]["speech_end"]
 TR = [S[i]["start"] - 0.3 for i in range(1, len(S))]
 WH = ["whoosh", "swell", "whoosh-short", "glitch-1", "whoosh", "swell", "whoosh-short", "whoosh", "glitch-2", "swell"]
 sfx = [(n, TR[k] - (0.9 if n == "swell" else 0.05), 0.24 if n == "swell" else 0.28) for k, n in enumerate(WH)]
-sfx += [("pop", M["h_priv"] + 0.1, 0.24), ("pop", M["h_may"] + 0.2, 0.24), ("pop", M["h_pub"], 0.24), ("glitch-2", M["h_but"] + 0.3, 0.2), ("impact-bass-1", M["h_diff"] + 0.3, 0.3),
+sfx += [("swell", 0.0, 0.2), ("impact-bass-2", 0.9, 0.22), ("pop", M["h_priv"] + 0.1, 0.24), ("pop", M["h_may"] + 0.2, 0.24), ("pop", M["h_pub"], 0.24), ("glitch-2", M["h_but"] + 0.3, 0.2), ("impact-bass-1", M["h_diff"] + 0.3, 0.3),
         ("swell", M["r_doc"] - 0.9, 0.2), ("click-soft", M["r_1yr"], 0.2), ("click-soft", M["r_pub"] + 0.2, 0.2), ("click-soft", M["r_priv"] + 0.2, 0.2),
         ("ping", M["r_pub"] + 0.9, 0.2), ("ping", M["r_pub"] + 1.3, 0.2), ("error", M["r_dipx"] + 0.4, 0.14), ("sparkle", M["r_privdeg"] + 0.5, 0.22), ("impact-bass-2", M["r_privdeg"] + 0.5, 0.24),
         ("stamp", M["r_crit"] + 0.25, 0.3),

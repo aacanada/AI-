@@ -25,6 +25,10 @@
       .mom { width: 110px; height: 128px; } .kid { width: 100px; height: 117px; }
 
       /* S1 */
+      .open { position: absolute; left: 0; right: 0; top: 250px; text-align: center; }
+      .op-k { font-size: 40px; font-weight: 900; letter-spacing: 0.5em; color: #4cc9f0; opacity: 0; }
+      .op-t { font-size: 140px; font-weight: 900; letter-spacing: -0.03em; margin-top: 10px; } .op-t b { color: #ffc83d; } .op-t .ch { opacity: 0; }
+      .op-s { font-size: 46px; font-weight: 800; color: #d4dcec; margin-top: 16px; opacity: 0; }
       .bub { position: absolute; padding: 28px 46px; border-radius: 44px; background: #ffffff; color: #0a1a33; font-size: 66px; font-weight: 900; opacity: 0; white-space: nowrap;
              box-shadow: 0 24px 50px rgba(0,0,0,0.4); }
       .b1 { left: 200px; top: 190px; } .b2 { right: 200px; top: 380px; } .b3 { left: 480px; top: 580px; }
@@ -251,6 +255,11 @@
       const ck = (sel, t) => { pop(`${sel} .mk`, t, { duration: 0.3 }); draw(`${sel} .mk path`, t + 0.1, 0.25); };
 
       // ===== S01 hook: "private won't work?" → the criterion is not private vs public =====
+      tl.fromTo("#s1-open .op-k", { opacity: 0, letterSpacing: "1.2em" }, { opacity: 1, letterSpacing: "0.5em", duration: 0.8, ease: "power3.out" }, 0.05);
+      kin("#s1-open .op-t .ch", 0.15, 0.04);
+      pop("#s1-open .op-s", 1.4);
+      K.burst(0.9, 960, 420, { n: 80, seed: 9, sp: 1200 });
+      tl.to("#s1-open", { opacity: 0, scale: 0.9, y: -60, filter: "blur(8px)", duration: 0.4, ease: "power2.in" }, M.h_priv - 0.4);
       pop("#s1-b1", M.h_priv + 0.1); pop("#s1-b2", M.h_may + 0.2); pop("#s1-b3", M.h_pub);
       const tSh = M.h_but + 0.3;
       ["#s1-b1", "#s1-b2", "#s1-b3"].forEach((b, k) => tl.to(b, { opacity: 0, scale: 1.3, rotation: k % 2 ? 18 : -18, x: k % 2 ? 300 : -300, filter: "blur(10px)", duration: 0.35, ease: "power2.in" }, tSh + k * 0.04));
