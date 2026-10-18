@@ -1,0 +1,9 @@
+type: shorts
+title: 사립 컬리지도 자녀무상교육 된다? 밴쿠버 기준은 '학위 과정' (원장님 숏폼 A)
+channels: youtube, instagram, threads, blog, clip, homepage
+visibility: public
+publish_order: 2
+linked_to: 2026-10-17-alexander-free-edu-video
+files: video.mp4 (1080x1920, 0:54, 51MB), thumbnail.jpg (1080x1920 cover, 원장님 얼굴), upload-text.txt
+source: aacanada/AI- branch claude/dreamy-edison-nc9kay, videos/alexander-facecam-shorts/ (short-a.html)
+notes: 원장님 얼굴 출연 숏폼입니다(원장님이 먼저 보고 OK하신 뒤 READY를 만듭니다). 기존 목소리 숏폼 2026-10-17-alexander-free-edu-short 를 대체합니다. 2026-10-17-alexander-free-edu-video 의 published.md 에 본편 유튜브 주소가 생긴 뒤에 게시하고, 유튜브 쇼츠의 '관련 동영상'에 그 본편을 연결해 주세요. 블로그·홈페이지 본문이 필요하면 plans/alexander-college-free-education/ARTICLE.md 를 쓰세요.

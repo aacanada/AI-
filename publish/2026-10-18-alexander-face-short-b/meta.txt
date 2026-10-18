@@ -1,0 +1,9 @@
+type: shorts
+title: 엄마는 한 학기 3과목, 수업은 집에서 라이브로 (원장님 숏폼 B)
+channels: youtube, instagram, threads, blog, clip, homepage
+visibility: public
+publish_order: 3
+linked_to: 2026-10-17-alexander-free-edu-video
+files: video.mp4 (1080x1920, 0:49, 44MB), thumbnail.jpg (1080x1920 cover, 원장님 얼굴), upload-text.txt
+source: aacanada/AI- branch claude/dreamy-edison-nc9kay, videos/alexander-facecam-shorts/ (short-b.html)
+notes: 원장님 얼굴 출연 숏폼입니다(원장님이 먼저 보고 OK하신 뒤 READY를 만듭니다). 기존 목소리 숏폼 2026-10-17-alexander-free-edu-short 를 대체합니다. 2026-10-17-alexander-free-edu-video 의 published.md 에 본편 유튜브 주소가 생긴 뒤에 게시하고, 유튜브 쇼츠의 '관련 동영상'에 그 본편을 연결해 주세요. 블로그·홈페이지 본문이 필요하면 plans/alexander-college-free-education/ARTICLE.md 를 쓰세요.
