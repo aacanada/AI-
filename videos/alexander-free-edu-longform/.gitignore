@@ -6,3 +6,12 @@ assets/audio/recording/rec16k.wav
 assets/audio/recording/edited.wav
 assets/bgm/bed.wav
 renders/render.log
+assets/bgm/bed-facecam.wav
+assets/facecam/face_l.mp4
+assets/facecam/face_s.mp4
+renders/graphics.mp4
+renders/render-facecam.log
+renders/render-graphics.log
+renders/video-facecam.mp4
+renders/work-*
+renders/.*hf-transaction*
