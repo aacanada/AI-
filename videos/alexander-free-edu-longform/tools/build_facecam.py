@@ -257,8 +257,7 @@ OVER = """
 def page(out, layer):
     s = (ROOT / "tools" / "template-facecam.html").read_text()
     graphics = layer == "graphics"
-    # graphics layer: the shorts only use S01–S07
-    parts = dict(TOTAL=r(S[7]["start"]) if graphics else r(TOTAL), SCENES="\n      ".join(scene_divs), FACE="" if graphics else FACE, OVERLAYS="" if graphics else OVER,
+    parts = dict(TOTAL=r(TOTAL), SCENES="\n      ".join(scene_divs), FACE="" if graphics else FACE, OVERLAYS="" if graphics else OVER,
                  CAPTIONS="" if graphics else "\n      ".join(cap_divs), SFX="" if graphics else "\n      ".join(sfx_tags(ROOT, sfx, TOTAL)),
                  TIMING=json.dumps(T, ensure_ascii=False), LAYOUT=json.dumps(lay), LAYER=json.dumps(layer), END=r(END),
                  AUDIO="" if graphics else ('<audio id="narration" class="clip" src="assets/audio/narration-facecam.wav" data-start="0" data-duration="__TOTAL__" data-track-index="9" data-volume="1"></audio>\n'

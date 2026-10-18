@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>밴쿠버 자녀무상교육 · 원장님 숏폼 d</title>
+    <script src="assets/vendor/gsap.min.js"></script>
+    <link rel="stylesheet" href="assets/kit/base.css" />
+    <style>
+      /* Pacific Campus: navy #0a1a33 → #12305c · red #d7263d · gold #ffc83d · mint #2ec4a6 · sky #4cc9f0 */
+      html, body { width: 1080px; height: 1920px; background: #0a1a33; }
+      #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: #0a1a33; }
+      #bgd { background: radial-gradient(700px 500px at 80% 10%, rgba(40,90,170,0.85) 0%, rgba(40,90,170,0) 70%), linear-gradient(180deg, #0a1a33 0%, #12305c 100%); }
+      #hdr { position: absolute; left: 0; right: 0; top: 0; height: 480px; text-align: center; z-index: 20; }
+      .h-brand { position: absolute; left: 0; right: 0; top: 110px; font-size: 30px; font-weight: 800; letter-spacing: 0.16em; color: #b9c2dd; }
+      .h-brand b { color: #d7263d; }
+      .h-title { position: absolute; left: 30px; right: 30px; top: 170px; font-size: 64px; font-weight: 900; letter-spacing: -0.03em; line-height: 1.15; }
+      .h-title b { color: #ffc83d; }
+      .h-sub { position: absolute; left: 0; right: 0; top: 270px; font-size: 42px; font-weight: 800; color: #4cc9f0; }
+      #gfx-v { left: 0; top: 480px; width: 1080px; height: 608px; z-index: 10; object-fit: cover; }
+      /* the owner shows up only now and then, in a small 16:9 window (no extra zoom) */
+      #face { position: absolute; left: 220px; top: 1400px; width: 640px; height: 360px; overflow: hidden; z-index: 30; background: #0a1a33;
+              border: 5px solid #ffffff; border-radius: 28px; box-shadow: 0 24px 60px rgba(0,0,0,0.55); opacity: 0; }
+      #face-in { position: absolute; inset: 0; transform-origin: 50% 40%; }
+      #face-v { width: 100%; height: 100%; object-fit: cover; }
+      #sky { position: absolute; left: 0; top: 1500px; z-index: 5; opacity: 0.35; }
+      .cap { z-index: 300; display: flex; justify-content: center; align-items: flex-start; padding-top: 1140px; }
+      .cap-box { width: 1000px; min-height: 120px; padding: 14px 34px; border-radius: 30px; background: rgba(5,8,22,0.9); border: 4px solid rgba(255,200,61,0.55); }
+      .cap-text { font-size: 60px; line-height: 1.22; }
+      .card-o { z-index: 20; }
+      .co-in { position: absolute; left: 0; top: 480px; width: 1080px; height: 608px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+               background: radial-gradient(600px 400px at 50% 50%, rgba(40,90,170,0.9) 0%, rgba(10,26,51,0.96) 80%); }
+      .co-t { font-size: 96px; font-weight: 900; letter-spacing: -0.03em; text-align: center; } .co-t b { color: #ffc83d; }
+      .co-s { margin-top: 22px; font-size: 44px; font-weight: 800; color: #a3b5d8; text-align: center; }
+      /* always-on pointer to the longform (every short cut from a longform carries one) */
+      #cta { z-index: 45; }
+      .cta-in { position: absolute; left: 90px; right: 90px; top: 1290px; height: 84px; display: flex; align-items: center; justify-content: center; gap: 16px;
+                border-radius: 999px; background: #d7263d; box-shadow: 0 14px 40px rgba(215,38,61,0.45); font-size: 38px; font-weight: 900; }
+      .cta-in .pl { display: flex; align-items: center; justify-content: center; width: 54px; height: 54px; border-radius: 50%; background: #ffffff; color: #d7263d; font-size: 28px; }
+      .cta-in b { color: #fff3b0; }
+      #fnote { position: absolute; left: 40px; right: 40px; top: 1790px; z-index: 40; text-align: center; }
+      #fnote span { display: inline-block; padding: 8px 20px; border-radius: 14px; background: rgba(5,8,22,0.72); font-size: 24px; font-weight: 700; color: #c9d2e3; }
+      #end { z-index: 400; }
+      .end-bg { position: absolute; inset: 0; background: radial-gradient(800px 700px at 50% 35%, rgba(40,90,170,0.95) 0%, rgba(40,90,170,0) 70%), linear-gradient(180deg, #0a1a33 0%, #12305c 100%); opacity: 0; }
+      .end-logo { position: absolute; left: 0; right: 0; top: 640px; text-align: center; font-size: 120px; font-weight: 900; letter-spacing: -0.02em; opacity: 0; }
+      .end-logo b { color: #d7263d; }
+      .end-t { position: absolute; left: 60px; right: 60px; top: 860px; text-align: center; font-size: 66px; font-weight: 900; line-height: 1.25; opacity: 0; }
+      .end-t b { color: #ffc83d; }
+      .end-btn { position: absolute; left: 190px; right: 190px; top: 1080px; height: 120px; border-radius: 999px; background: #d7263d; display: flex; align-items: center; justify-content: center;
+                 font-size: 50px; font-weight: 900; opacity: 0; box-shadow: 0 20px 50px rgba(215,38,61,0.5); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="52.5" data-width="1080" data-height="1920">
+      <div id="bgd" class="clip" data-start="0" data-duration="52.5" data-track-index="0"></div>
+      <div id="hdr" class="clip" data-start="0" data-duration="52.5" data-track-index="1">
+        <div class="h-brand"><b>AA</b> CANADA · 밴쿠버 자녀무상교육</div>
+        <div class="h-title" id="h-title">졸업 후 PGWP 3년? <b>전공 따라</b> 달라요</div>
+        <div class="h-sub" id="h-sub">배우자 오픈워크퍼밋도 꼭 확인</div>
+      </div>
+      <video id="gfx-v" class="clip" src="assets/media/short-d-gfx.mp4" muted data-start="0" data-duration="50.3" data-track-index="2"></video>
+      <svg id="sky" class="clip" data-start="0" data-duration="52.5" data-track-index="3" width="1080" height="300" viewBox="0 0 1920 340"><path d="M0 340 V250 H90 V200 H150 V260 H220 V160 H270 V110 H320 V160 H360 V240 H420 V180 H470 V70 H520 V20 H570 V70 H620 V180 H680 V130 H760 V220 H820 V160 H900 V90 H950 V160 H1010 V250 H1080 V190 H1150 V270 H1230 V200 H1300 V250 H1380 V180 H1440 V230 H1520 V150 H1570 V230 H1650 V260 H1740 V210 H1820 V270 H1920 V340" fill="none" stroke="#4cc9f0" stroke-width="6" stroke-linejoin="round"/></svg>
+      <div id="face"><div id="face-in"><video id="face-v" class="clip" src="assets/media/short-d-face.mp4" muted data-start="0" data-duration="50.3" data-track-index="4"></video></div></div>
+      
+      <div id="cap-0" class="clip cap" data-start="0.054" data-duration="2.14" data-track-index="3"><div class="cap-box" id="cap-0-box"><span class="cap-text">이 준학사 과정을 졸업을 하면은</span></div></div>
+      <div id="cap-1" class="clip cap" data-start="2.194" data-duration="2.52" data-track-index="3"><div class="cap-box" id="cap-1-box"><span class="cap-text">졸업 후에 최대 3년의 PGWP</span></div></div>
+      <div id="cap-2" class="clip cap" data-start="4.714" data-duration="3.56" data-track-index="3"><div class="cap-box" id="cap-2-box"><span class="cap-text">취업비자를 받을 수 있는데요</span></div></div>
+      <div id="cap-3" class="clip cap" data-start="8.274" data-duration="2.2" data-track-index="3"><div class="cap-box" id="cap-3-box"><span class="cap-text">전공이 여러 가지 종류가 있는데</span></div></div>
+      <div id="cap-4" class="clip cap" data-start="10.474" data-duration="2.6" data-track-index="3"><div class="cap-box" id="cap-4-box"><span class="cap-text">어떤 준학사 <span class="hl">학위</span>를 했느냐에 따라서</span></div></div>
+      <div id="cap-5" class="clip cap" data-start="13.074" data-duration="3.22" data-track-index="3"><div class="cap-box" id="cap-5-box"><span class="cap-text">취업비자가 가능하기도 합니다</span></div></div>
+      <div id="cap-6" class="clip cap" data-start="16.294" data-duration="3.94" data-track-index="3"><div class="cap-box" id="cap-6-box"><span class="cap-text">그래서 보통 심리학, 사이언스</span></div></div>
+      <div id="cap-7" class="clip cap" data-start="20.234" data-duration="3.72" data-track-index="3"><div class="cap-box" id="cap-7-box"><span class="cap-text">컴퓨터공학, 수학 이런 것들의</span></div></div>
+      <div id="cap-8" class="clip cap" data-start="23.954" data-duration="2.74" data-track-index="3"><div class="cap-box" id="cap-8-box"><span class="cap-text">Associate Degree를 하면</span></div></div>
+      <div id="cap-9" class="clip cap" data-start="26.694" data-duration="3.373" data-track-index="3"><div class="cap-box" id="cap-9-box"><span class="cap-text">졸업 후에 3년의 취업비자를 받을 수 있어요</span></div></div>
+      <div id="cap-10" class="clip cap" data-start="30.154" data-duration="2.02" data-track-index="3"><div class="cap-box" id="cap-10-box"><span class="cap-text">그리고 PGWP를 신청하기 위해서</span></div></div>
+      <div id="cap-11" class="clip cap" data-start="32.174" data-duration="1.72" data-track-index="3"><div class="cap-box" id="cap-11-box"><span class="cap-text">영어 점수 요건이 있으니까</span></div></div>
+      <div id="cap-12" class="clip cap" data-start="33.894" data-duration="1.739" data-track-index="3"><div class="cap-box" id="cap-12-box"><span class="cap-text">이것도 준비를 해야 되겠죠</span></div></div>
+      <div id="cap-13" class="clip cap" data-start="35.726" data-duration="2.9" data-track-index="3"><div class="cap-box" id="cap-13-box"><span class="cap-text">두 번째는 배우자 오픈워크퍼밋인데요</span></div></div>
+      <div id="cap-14" class="clip cap" data-start="38.626" data-duration="2.34" data-track-index="3"><div class="cap-box" id="cap-14-box"><span class="cap-text">예전엔 가능했었어요 그런데</span></div></div>
+      <div id="cap-15" class="clip cap" data-start="40.966" data-duration="1.64" data-track-index="3"><div class="cap-box" id="cap-15-box"><span class="cap-text">2025년 1월부터는</span></div></div>
+      <div id="cap-16" class="clip cap" data-start="42.606" data-duration="4.08" data-track-index="3"><div class="cap-box" id="cap-16-box"><span class="cap-text">보통 석사과정이거나 박사과정 공부하는 경우에만</span></div></div>
+      <div id="cap-17" class="clip cap" data-start="46.686" data-duration="3.614" data-track-index="3"><div class="cap-box" id="cap-17-box"><span class="cap-text">배우자 오픈워크퍼밋이 나오고 있습니다</span></div></div>
+      <div id="cta" class="clip" data-start="0" data-duration="50.3" data-track-index="11"><div class="cta-in" id="cta-in"><span class="pl">▶</span>전체 영상 <b>7분 정리</b> · 관련 동영상에서</div></div>
+      <div id="fnote" class="clip" data-start="0" data-duration="50.3" data-track-index="5"><span>* 부모 학생비자 1년 이상 · 학위 과정 기준 · 거주 교육청 확인 · 2026.10 기준</span></div>
+      <div id="end" class="clip" data-start="50.3" data-duration="2.2" data-track-index="6">
+        <div class="end-bg" id="end-bg"></div>
+        <div class="end-logo" id="end-logo"><b>AA</b> CANADA</div>
+        <div class="end-t" id="end-t"><div>전체 영상은</div><div>관련 동영상에서 <b>▶</b></div></div>
+        <div class="end-btn" id="end-btn">카카오톡 canlog</div>
+      </div>
+      <audio id="voice" class="clip" src="assets/media/short-d-voice.wav" data-start="0" data-duration="50.3" data-track-index="8" data-volume="1"></audio>
+      <audio id="music-bed" class="clip" src="assets/media/short-d-bed.wav" data-start="0" data-duration="52.5" data-track-index="9" data-volume="0.13"></audio>
+      <audio id="sfx-end" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="50.1" data-duration="0.6" data-track-index="10" data-volume="0.2"></audio>
+    </div>
+    <script>
+      const TOTAL = 52.5, SPEECH = 50.3, JOINS = [30.067, 35.633], EMPH = [[0.0, 4.714], [10.274, 13.274]], CAPS = [[0.054, 2.194], [2.194, 4.714], [4.714, 8.274], [8.274, 10.474], [10.474, 13.074], [13.074, 16.294], [16.294, 20.234], [20.234, 23.954], [23.954, 26.694], [26.694, 30.067], [30.154, 32.174], [32.174, 33.894], [33.894, 35.633], [35.726, 38.626], [38.626, 40.966], [40.966, 42.606], [42.606, 46.686], [46.686, 50.3]];
+      const tl = gsap.timeline({ paused: true });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      tl.fromTo("#h-title", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 0);
+      tl.fromTo("#h-sub", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 0.3);
+      CAPS.forEach(([s], k) => tl.fromTo(`#cap-${k}-box`, { opacity: 0, scale: 0.92, y: 12 }, { opacity: 1, scale: 1, y: 0, duration: 0.18, ease: "back.out(2)" }, s));
+      document.querySelectorAll(".card-o").forEach((el) => {
+        const t = parseFloat(el.dataset.start);
+        tl.fromTo(`#${el.id}-in .co-t`, { opacity: 0, scale: 1.4 }, { opacity: 1, scale: 1, duration: 0.3, ease: "power4.in" }, t + 0.05);
+        tl.fromTo(`#${el.id}-in .co-s`, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.3 }, t + 0.4);
+      });
+      // a window join is a jump cut: alternate a small punch-in on the face
+      JOINS.forEach((t, k) => tl.set("#face-in", { scale: k % 2 ? 1 : 1.05 }, t));
+      // the face window slides in only for the opening line and the key line
+      EMPH.forEach(([a, b]) => {
+        tl.fromTo("#face", { opacity: 0, y: 60, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: "back.out(1.6)" }, a);
+        tl.to("#face", { opacity: 0, y: 60, scale: 0.92, duration: 0.3, ease: "power2.in" }, b - 0.3);
+      });
+      tl.fromTo("#cta-in", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4, ease: "back.out(2)" }, 0.6);
+      for (let t = 3; t < SPEECH - 1; t += 6) tl.to("#cta-in", { scale: 1.05, duration: 0.3, yoyo: true, repeat: 1, ease: "sine.inOut" }, t);
+      // closing card
+      tl.to("#end-bg", { opacity: 1, duration: 0.3 }, SPEECH);
+      tl.fromTo("#end-logo", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2)" }, SPEECH + 0.15);
+      tl.fromTo("#end-t", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, SPEECH + 0.35);
+      tl.fromTo("#end-btn", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, SPEECH + 0.6);
+      tl.to("#end-btn", { scale: 1.05, duration: 0.4, yoyo: true, repeat: 2, ease: "sine.inOut" }, SPEECH + 1.0);
+    </script>
+  </body>
+</html>

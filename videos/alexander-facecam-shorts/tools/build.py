@@ -27,6 +27,12 @@ SHORTS = {
     "c": dict(title=("듀오링고 90점 · ", "아이 학비 0원", ""), sub="학비 한 학기 $5,940",
               ranges=[(5, 0, 3), (5, 4, 4), (5, 6, 9), (6, 0, 2), (6, 5, 10)],
               emph=[(6, 9)], thumb=("아이 학비", "0원?", "영어 90점 · 한 학기 $5,940")),
+    "d": dict(title=("졸업 후 PGWP 3년? ", "전공 따라", " 달라요"), sub="배우자 오픈워크퍼밋도 꼭 확인",
+              ranges=[(7, 0, 9), (8, 6, 8), (8, 9, 13)],
+              emph=[(7, 4)], thumb=("PGWP 3년?", "전공 따라", "배우자 워크퍼밋도 확인")),
+    "e": dict(title=("공립 컬리지가 ", "더 낫지 않나요?", ""), sub="자녀 동반 부모님께 맞는 환경",
+              ranges=[(9, 0, 15), (10, 2, 4), (10, 7, 8)],
+              emph=[(10, 2)], thumb=("공립이 더", "낫지 않나요?", "자녀 동반 부모님 기준")),
 }
 HL = ["자녀무상교육", "무상교육", "사립", "공립", "1년 이상", "학위", "어떤 과정", "BC 주정부", "승인한", "몇 안 되는", "9학점", "9시간", "3과목씩만", "풀타임",
       "라이브", "실시간", "집에서", "픽업", "110점", "90점", "조건부 입학", "English 099", "첫 학기부터", "660달러", "5,940달러", "18,000달러", "20,000달러", "2명, 3명", "메리트"]
@@ -84,7 +90,9 @@ def build(key, cfg):
         at += b - a
         joins.append(round(at, 3))
     joins = joins[:-1]
-    emph.insert(0, (0.0, joins[0]))  # face window: the opening line(s) + the key line only
+    # face window: the opening line (the first caption that ends after 4.5 s, never past the first cut) + the key line only
+    open_end = min([e for _, _, e in caps if e >= 4.5] + [joins[0]])
+    emph.insert(0, (0.0, round(min(open_end, joins[0]), 3)))
     t0, t1, t2 = cfg["title"]
     cap_divs = "\n      ".join(
         f'<div id="cap-{k}" class="clip cap" data-start="{r(s)}" data-duration="{r(e - s)}" data-track-index="3"><div class="cap-box" id="cap-{k}-box">'
@@ -95,7 +103,7 @@ def build(key, cfg):
         for n, (w, d, t, sub) in enumerate(cfg.get("cards", [])))
     cap_divs = card_divs + "\n      " + cap_divs
     page = (ROOT / "tools" / "template.html").read_text()
-    rep = dict(KEY=key, TOTAL_MINUS=r(total - speech), SPEECH_M=r(max(0, speech - 0.2)), TOTAL=r(total), SPEECH=r(speech), TITLE=f'{html.escape(t0)}<b>{html.escape(t1)}</b>{html.escape(t2)}', SUB=html.escape(cfg["sub"]),
+    rep = dict(LONGLEN="7분", KEY=key, TOTAL_MINUS=r(total - speech), SPEECH_M=r(max(0, speech - 0.2)), TOTAL=r(total), SPEECH=r(speech), TITLE=f'{html.escape(t0)}<b>{html.escape(t1)}</b>{html.escape(t2)}', SUB=html.escape(cfg["sub"]),
                CAPTIONS=cap_divs, JOINS=json.dumps(joins), EMPH=json.dumps(emph), CAPS=json.dumps([[s, e] for _, s, e in caps]))
     for k, v in rep.items():
         page = page.replace(f"__{k}__", v)

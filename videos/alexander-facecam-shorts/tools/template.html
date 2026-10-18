@@ -19,7 +19,7 @@
       .h-sub { position: absolute; left: 0; right: 0; top: 270px; font-size: 42px; font-weight: 800; color: #4cc9f0; }
       #gfx-v { left: 0; top: 480px; width: 1080px; height: 608px; z-index: 10; object-fit: cover; }
       /* the owner shows up only now and then, in a small 16:9 window (no extra zoom) */
-      #face { position: absolute; left: 220px; top: 1360px; width: 640px; height: 360px; overflow: hidden; z-index: 30; background: #0a1a33;
+      #face { position: absolute; left: 220px; top: 1400px; width: 640px; height: 360px; overflow: hidden; z-index: 30; background: #0a1a33;
               border: 5px solid #ffffff; border-radius: 28px; box-shadow: 0 24px 60px rgba(0,0,0,0.55); opacity: 0; }
       #face-in { position: absolute; inset: 0; transform-origin: 50% 40%; }
       #face-v { width: 100%; height: 100%; object-fit: cover; }
@@ -32,7 +32,13 @@
                background: radial-gradient(600px 400px at 50% 50%, rgba(40,90,170,0.9) 0%, rgba(10,26,51,0.96) 80%); }
       .co-t { font-size: 96px; font-weight: 900; letter-spacing: -0.03em; text-align: center; } .co-t b { color: #ffc83d; }
       .co-s { margin-top: 22px; font-size: 44px; font-weight: 800; color: #a3b5d8; text-align: center; }
-      #fnote { position: absolute; left: 40px; right: 40px; top: 1838px; z-index: 40; text-align: center; }
+      /* always-on pointer to the longform (every short cut from a longform carries one) */
+      #cta { z-index: 45; }
+      .cta-in { position: absolute; left: 90px; right: 90px; top: 1290px; height: 84px; display: flex; align-items: center; justify-content: center; gap: 16px;
+                border-radius: 999px; background: #d7263d; box-shadow: 0 14px 40px rgba(215,38,61,0.45); font-size: 38px; font-weight: 900; }
+      .cta-in .pl { display: flex; align-items: center; justify-content: center; width: 54px; height: 54px; border-radius: 50%; background: #ffffff; color: #d7263d; font-size: 28px; }
+      .cta-in b { color: #fff3b0; }
+      #fnote { position: absolute; left: 40px; right: 40px; top: 1790px; z-index: 40; text-align: center; }
       #fnote span { display: inline-block; padding: 8px 20px; border-radius: 14px; background: rgba(5,8,22,0.72); font-size: 24px; font-weight: 700; color: #c9d2e3; }
       #end { z-index: 400; }
       .end-bg { position: absolute; inset: 0; background: radial-gradient(800px 700px at 50% 35%, rgba(40,90,170,0.95) 0%, rgba(40,90,170,0) 70%), linear-gradient(180deg, #0a1a33 0%, #12305c 100%); opacity: 0; }
@@ -56,6 +62,7 @@
       <svg id="sky" class="clip" data-start="0" data-duration="__TOTAL__" data-track-index="3" width="1080" height="300" viewBox="0 0 1920 340"><path d="M0 340 V250 H90 V200 H150 V260 H220 V160 H270 V110 H320 V160 H360 V240 H420 V180 H470 V70 H520 V20 H570 V70 H620 V180 H680 V130 H760 V220 H820 V160 H900 V90 H950 V160 H1010 V250 H1080 V190 H1150 V270 H1230 V200 H1300 V250 H1380 V180 H1440 V230 H1520 V150 H1570 V230 H1650 V260 H1740 V210 H1820 V270 H1920 V340" fill="none" stroke="#4cc9f0" stroke-width="6" stroke-linejoin="round"/></svg>
       <div id="face"><div id="face-in"><video id="face-v" class="clip" src="assets/media/short-__KEY__-face.mp4" muted data-start="0" data-duration="__SPEECH__" data-track-index="4"></video></div></div>
       __CAPTIONS__
+      <div id="cta" class="clip" data-start="0" data-duration="__SPEECH__" data-track-index="11"><div class="cta-in" id="cta-in"><span class="pl">▶</span>전체 영상 <b>__LONGLEN__ 정리</b> · 관련 동영상에서</div></div>
       <div id="fnote" class="clip" data-start="0" data-duration="__SPEECH__" data-track-index="5"><span>* 부모 학생비자 1년 이상 · 학위 과정 기준 · 거주 교육청 확인 · 2026.10 기준</span></div>
       <div id="end" class="clip" data-start="__SPEECH__" data-duration="__TOTAL_MINUS__" data-track-index="6">
         <div class="end-bg" id="end-bg"></div>
@@ -87,6 +94,8 @@
         tl.fromTo("#face", { opacity: 0, y: 60, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: "back.out(1.6)" }, a);
         tl.to("#face", { opacity: 0, y: 60, scale: 0.92, duration: 0.3, ease: "power2.in" }, b - 0.3);
       });
+      tl.fromTo("#cta-in", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4, ease: "back.out(2)" }, 0.6);
+      for (let t = 3; t < SPEECH - 1; t += 6) tl.to("#cta-in", { scale: 1.05, duration: 0.3, yoyo: true, repeat: 1, ease: "sine.inOut" }, t);
       // closing card
       tl.to("#end-bg", { opacity: 1, duration: 0.3 }, SPEECH);
       tl.fromTo("#end-logo", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2)" }, SPEECH + 0.15);

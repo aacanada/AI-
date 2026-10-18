@@ -19,7 +19,7 @@
       .h-sub { position: absolute; left: 0; right: 0; top: 270px; font-size: 42px; font-weight: 800; color: #4cc9f0; }
       #gfx-v { left: 0; top: 480px; width: 1080px; height: 608px; z-index: 10; object-fit: cover; }
       /* the owner shows up only now and then, in a small 16:9 window (no extra zoom) */
-      #face { position: absolute; left: 220px; top: 1360px; width: 640px; height: 360px; overflow: hidden; z-index: 30; background: #0a1a33;
+      #face { position: absolute; left: 220px; top: 1400px; width: 640px; height: 360px; overflow: hidden; z-index: 30; background: #0a1a33;
               border: 5px solid #ffffff; border-radius: 28px; box-shadow: 0 24px 60px rgba(0,0,0,0.55); opacity: 0; }
       #face-in { position: absolute; inset: 0; transform-origin: 50% 40%; }
       #face-v { width: 100%; height: 100%; object-fit: cover; }
@@ -32,7 +32,13 @@
                background: radial-gradient(600px 400px at 50% 50%, rgba(40,90,170,0.9) 0%, rgba(10,26,51,0.96) 80%); }
       .co-t { font-size: 96px; font-weight: 900; letter-spacing: -0.03em; text-align: center; } .co-t b { color: #ffc83d; }
       .co-s { margin-top: 22px; font-size: 44px; font-weight: 800; color: #a3b5d8; text-align: center; }
-      #fnote { position: absolute; left: 40px; right: 40px; top: 1838px; z-index: 40; text-align: center; }
+      /* always-on pointer to the longform (every short cut from a longform carries one) */
+      #cta { z-index: 45; }
+      .cta-in { position: absolute; left: 90px; right: 90px; top: 1290px; height: 84px; display: flex; align-items: center; justify-content: center; gap: 16px;
+                border-radius: 999px; background: #d7263d; box-shadow: 0 14px 40px rgba(215,38,61,0.45); font-size: 38px; font-weight: 900; }
+      .cta-in .pl { display: flex; align-items: center; justify-content: center; width: 54px; height: 54px; border-radius: 50%; background: #ffffff; color: #d7263d; font-size: 28px; }
+      .cta-in b { color: #fff3b0; }
+      #fnote { position: absolute; left: 40px; right: 40px; top: 1790px; z-index: 40; text-align: center; }
       #fnote span { display: inline-block; padding: 8px 20px; border-radius: 14px; background: rgba(5,8,22,0.72); font-size: 24px; font-weight: 700; color: #c9d2e3; }
       #end { z-index: 400; }
       .end-bg { position: absolute; inset: 0; background: radial-gradient(800px 700px at 50% 35%, rgba(40,90,170,0.95) 0%, rgba(40,90,170,0) 70%), linear-gradient(180deg, #0a1a33 0%, #12305c 100%); opacity: 0; }
@@ -75,6 +81,7 @@
       <div id="cap-16" class="clip cap" data-start="44.794" data-duration="1.74" data-track-index="3"><div class="cap-box" id="cap-16-box"><span class="cap-text">그 다음에 <span class="hl">사립</span> 중에서도</span></div></div>
       <div id="cap-17" class="clip cap" data-start="46.534" data-duration="3.06" data-track-index="3"><div class="cap-box" id="cap-17-box"><span class="cap-text"><span class="hl">무상교육</span>을 위한 조건이 정확히 맞는</span></div></div>
       <div id="cap-18" class="clip cap" data-start="49.594" data-duration="2.306" data-track-index="3"><div class="cap-box" id="cap-18-box"><span class="cap-text"><span class="hl">몇 안 되는</span> 선택지 중의 하나라고</span></div></div>
+      <div id="cta" class="clip" data-start="0" data-duration="51.9" data-track-index="11"><div class="cta-in" id="cta-in"><span class="pl">▶</span>전체 영상 <b>7분 정리</b> · 관련 동영상에서</div></div>
       <div id="fnote" class="clip" data-start="0" data-duration="51.9" data-track-index="5"><span>* 부모 학생비자 1년 이상 · 학위 과정 기준 · 거주 교육청 확인 · 2026.10 기준</span></div>
       <div id="end" class="clip" data-start="51.9" data-duration="2.2" data-track-index="6">
         <div class="end-bg" id="end-bg"></div>
@@ -87,7 +94,7 @@
       <audio id="sfx-end" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="51.7" data-duration="0.6" data-track-index="10" data-volume="0.2"></audio>
     </div>
     <script>
-      const TOTAL = 54.1, SPEECH = 51.9, JOINS = [10.9, 18.133, 25.0, 30.7, 37.5, 40.467, 44.7], EMPH = [[0.0, 10.9], [30.613, 33.613]], CAPS = [[0.027, 2.367], [2.367, 5.44], [5.44, 7.74], [7.74, 10.9], [11.0, 13.5], [13.5, 18.133], [18.227, 19.767], [19.767, 22.327], [22.327, 25.0], [25.094, 27.434], [27.434, 30.7], [30.813, 33.413], [33.413, 37.5], [37.6, 40.467], [40.566, 42.266], [42.266, 44.7], [44.794, 46.534], [46.534, 49.594], [49.594, 51.9]];
+      const TOTAL = 54.1, SPEECH = 51.9, JOINS = [10.9, 18.133, 25.0, 30.7, 37.5, 40.467, 44.7], EMPH = [[0.0, 5.44], [30.613, 33.613]], CAPS = [[0.027, 2.367], [2.367, 5.44], [5.44, 7.74], [7.74, 10.9], [11.0, 13.5], [13.5, 18.133], [18.227, 19.767], [19.767, 22.327], [22.327, 25.0], [25.094, 27.434], [27.434, 30.7], [30.813, 33.413], [33.413, 37.5], [37.6, 40.467], [40.566, 42.266], [42.266, 44.7], [44.794, 46.534], [46.534, 49.594], [49.594, 51.9]];
       const tl = gsap.timeline({ paused: true });
       window.__timelines = window.__timelines || {};
       window.__timelines["main"] = tl;
@@ -106,6 +113,8 @@
         tl.fromTo("#face", { opacity: 0, y: 60, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: "back.out(1.6)" }, a);
         tl.to("#face", { opacity: 0, y: 60, scale: 0.92, duration: 0.3, ease: "power2.in" }, b - 0.3);
       });
+      tl.fromTo("#cta-in", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4, ease: "back.out(2)" }, 0.6);
+      for (let t = 3; t < SPEECH - 1; t += 6) tl.to("#cta-in", { scale: 1.05, duration: 0.3, yoyo: true, repeat: 1, ease: "sine.inOut" }, t);
       // closing card
       tl.to("#end-bg", { opacity: 1, duration: 0.3 }, SPEECH);
       tl.fromTo("#end-logo", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2)" }, SPEECH + 0.15);

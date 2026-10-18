@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>밴쿠버 자녀무상교육 · 원장님 숏폼 e</title>
+    <script src="assets/vendor/gsap.min.js"></script>
+    <link rel="stylesheet" href="assets/kit/base.css" />
+    <style>
+      /* Pacific Campus: navy #0a1a33 → #12305c · red #d7263d · gold #ffc83d · mint #2ec4a6 · sky #4cc9f0 */
+      html, body { width: 1080px; height: 1920px; background: #0a1a33; }
+      #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: #0a1a33; }
+      #bgd { background: radial-gradient(700px 500px at 80% 10%, rgba(40,90,170,0.85) 0%, rgba(40,90,170,0) 70%), linear-gradient(180deg, #0a1a33 0%, #12305c 100%); }
+      #hdr { position: absolute; left: 0; right: 0; top: 0; height: 480px; text-align: center; z-index: 20; }
+      .h-brand { position: absolute; left: 0; right: 0; top: 110px; font-size: 30px; font-weight: 800; letter-spacing: 0.16em; color: #b9c2dd; }
+      .h-brand b { color: #d7263d; }
+      .h-title { position: absolute; left: 30px; right: 30px; top: 170px; font-size: 64px; font-weight: 900; letter-spacing: -0.03em; line-height: 1.15; }
+      .h-title b { color: #ffc83d; }
+      .h-sub { position: absolute; left: 0; right: 0; top: 270px; font-size: 42px; font-weight: 800; color: #4cc9f0; }
+      #gfx-v { left: 0; top: 480px; width: 1080px; height: 608px; z-index: 10; object-fit: cover; }
+      /* the owner shows up only now and then, in a small 16:9 window (no extra zoom) */
+      #face { position: absolute; left: 220px; top: 1400px; width: 640px; height: 360px; overflow: hidden; z-index: 30; background: #0a1a33;
+              border: 5px solid #ffffff; border-radius: 28px; box-shadow: 0 24px 60px rgba(0,0,0,0.55); opacity: 0; }
+      #face-in { position: absolute; inset: 0; transform-origin: 50% 40%; }
+      #face-v { width: 100%; height: 100%; object-fit: cover; }
+      #sky { position: absolute; left: 0; top: 1500px; z-index: 5; opacity: 0.35; }
+      .cap { z-index: 300; display: flex; justify-content: center; align-items: flex-start; padding-top: 1140px; }
+      .cap-box { width: 1000px; min-height: 120px; padding: 14px 34px; border-radius: 30px; background: rgba(5,8,22,0.9); border: 4px solid rgba(255,200,61,0.55); }
+      .cap-text { font-size: 60px; line-height: 1.22; }
+      .card-o { z-index: 20; }
+      .co-in { position: absolute; left: 0; top: 480px; width: 1080px; height: 608px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+               background: radial-gradient(600px 400px at 50% 50%, rgba(40,90,170,0.9) 0%, rgba(10,26,51,0.96) 80%); }
+      .co-t { font-size: 96px; font-weight: 900; letter-spacing: -0.03em; text-align: center; } .co-t b { color: #ffc83d; }
+      .co-s { margin-top: 22px; font-size: 44px; font-weight: 800; color: #a3b5d8; text-align: center; }
+      /* always-on pointer to the longform (every short cut from a longform carries one) */
+      #cta { z-index: 45; }
+      .cta-in { position: absolute; left: 90px; right: 90px; top: 1290px; height: 84px; display: flex; align-items: center; justify-content: center; gap: 16px;
+                border-radius: 999px; background: #d7263d; box-shadow: 0 14px 40px rgba(215,38,61,0.45); font-size: 38px; font-weight: 900; }
+      .cta-in .pl { display: flex; align-items: center; justify-content: center; width: 54px; height: 54px; border-radius: 50%; background: #ffffff; color: #d7263d; font-size: 28px; }
+      .cta-in b { color: #fff3b0; }
+      #fnote { position: absolute; left: 40px; right: 40px; top: 1790px; z-index: 40; text-align: center; }
+      #fnote span { display: inline-block; padding: 8px 20px; border-radius: 14px; background: rgba(5,8,22,0.72); font-size: 24px; font-weight: 700; color: #c9d2e3; }
+      #end { z-index: 400; }
+      .end-bg { position: absolute; inset: 0; background: radial-gradient(800px 700px at 50% 35%, rgba(40,90,170,0.95) 0%, rgba(40,90,170,0) 70%), linear-gradient(180deg, #0a1a33 0%, #12305c 100%); opacity: 0; }
+      .end-logo { position: absolute; left: 0; right: 0; top: 640px; text-align: center; font-size: 120px; font-weight: 900; letter-spacing: -0.02em; opacity: 0; }
+      .end-logo b { color: #d7263d; }
+      .end-t { position: absolute; left: 60px; right: 60px; top: 860px; text-align: center; font-size: 66px; font-weight: 900; line-height: 1.25; opacity: 0; }
+      .end-t b { color: #ffc83d; }
+      .end-btn { position: absolute; left: 190px; right: 190px; top: 1080px; height: 120px; border-radius: 999px; background: #d7263d; display: flex; align-items: center; justify-content: center;
+                 font-size: 50px; font-weight: 900; opacity: 0; box-shadow: 0 20px 50px rgba(215,38,61,0.5); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="48" data-width="1080" data-height="1920">
+      <div id="bgd" class="clip" data-start="0" data-duration="48" data-track-index="0"></div>
+      <div id="hdr" class="clip" data-start="0" data-duration="48" data-track-index="1">
+        <div class="h-brand"><b>AA</b> CANADA · 밴쿠버 자녀무상교육</div>
+        <div class="h-title" id="h-title">공립 컬리지가 <b>더 낫지 않나요?</b></div>
+        <div class="h-sub" id="h-sub">자녀 동반 부모님께 맞는 환경</div>
+      </div>
+      <video id="gfx-v" class="clip" src="assets/media/short-e-gfx.mp4" muted data-start="0" data-duration="45.8" data-track-index="2"></video>
+      <svg id="sky" class="clip" data-start="0" data-duration="48" data-track-index="3" width="1080" height="300" viewBox="0 0 1920 340"><path d="M0 340 V250 H90 V200 H150 V260 H220 V160 H270 V110 H320 V160 H360 V240 H420 V180 H470 V70 H520 V20 H570 V70 H620 V180 H680 V130 H760 V220 H820 V160 H900 V90 H950 V160 H1010 V250 H1080 V190 H1150 V270 H1230 V200 H1300 V250 H1380 V180 H1440 V230 H1520 V150 H1570 V230 H1650 V260 H1740 V210 H1820 V270 H1920 V340" fill="none" stroke="#4cc9f0" stroke-width="6" stroke-linejoin="round"/></svg>
+      <div id="face"><div id="face-in"><video id="face-v" class="clip" src="assets/media/short-e-face.mp4" muted data-start="0" data-duration="45.8" data-track-index="4"></video></div></div>
+      
+      <div id="cap-0" class="clip cap" data-start="0.074" data-duration="2.34" data-track-index="3"><div class="cap-box" id="cap-0-box"><span class="cap-text">캐나다 학생이 많은 <span class="hl">공립</span> 컬리지가</span></div></div>
+      <div id="cap-1" class="clip cap" data-start="2.414" data-duration="1.02" data-track-index="3"><div class="cap-box" id="cap-1-box"><span class="cap-text">낫지 않나요? 라고</span></div></div>
+      <div id="cap-2" class="clip cap" data-start="3.434" data-duration="2.9" data-track-index="3"><div class="cap-box" id="cap-2-box"><span class="cap-text">질문 주시는 분들도 계신데요</span></div></div>
+      <div id="cap-3" class="clip cap" data-start="6.334" data-duration="2.04" data-track-index="3"><div class="cap-box" id="cap-3-box"><span class="cap-text">상황에 따라서는 <span class="hl">공립</span> 컬리지가</span></div></div>
+      <div id="cap-4" class="clip cap" data-start="8.374" data-duration="2.38" data-track-index="3"><div class="cap-box" id="cap-4-box"><span class="cap-text">맞는 분들이 있을 수도 있습니다</span></div></div>
+      <div id="cap-5" class="clip cap" data-start="10.754" data-duration="2.18" data-track-index="3"><div class="cap-box" id="cap-5-box"><span class="cap-text">그래도 자녀 동반하시는 분들은</span></div></div>
+      <div id="cap-6" class="clip cap" data-start="12.934" data-duration="2.76" data-track-index="3"><div class="cap-box" id="cap-6-box"><span class="cap-text">아무래도 아이 케어를 해야 되기 때문에</span></div></div>
+      <div id="cap-7" class="clip cap" data-start="15.694" data-duration="1" data-track-index="3"><div class="cap-box" id="cap-7-box"><span class="cap-text">부모님의 학업 부담이</span></div></div>
+      <div id="cap-8" class="clip cap" data-start="16.694" data-duration="2.32" data-track-index="3"><div class="cap-box" id="cap-8-box"><span class="cap-text">너무 크지 않아야 되거든요</span></div></div>
+      <div id="cap-9" class="clip cap" data-start="19.014" data-duration="1.92" data-track-index="3"><div class="cap-box" id="cap-9-box"><span class="cap-text">그리고 이제 이런 알렉산더 컬리지는</span></div></div>
+      <div id="cap-10" class="clip cap" data-start="20.934" data-duration="2.66" data-track-index="3"><div class="cap-box" id="cap-10-box"><span class="cap-text">일단 클래스 사이즈가 작고</span></div></div>
+      <div id="cap-11" class="clip cap" data-start="23.594" data-duration="2.52" data-track-index="3"><div class="cap-box" id="cap-11-box"><span class="cap-text">1:1 학업 플래닝이 가능하고요</span></div></div>
+      <div id="cap-12" class="clip cap" data-start="26.114" data-duration="2.473" data-track-index="3"><div class="cap-box" id="cap-12-box"><span class="cap-text">한국인 담당자가 상주하고 있어서</span></div></div>
+      <div id="cap-13" class="clip cap" data-start="28.587" data-duration="1.52" data-track-index="3"><div class="cap-box" id="cap-13-box"><span class="cap-text">자녀 동반한 부모님한테는</span></div></div>
+      <div id="cap-14" class="clip cap" data-start="30.107" data-duration="2.2" data-track-index="3"><div class="cap-box" id="cap-14-box"><span class="cap-text">아무래도 유리한 측면이</span></div></div>
+      <div id="cap-15" class="clip cap" data-start="32.307" data-duration="2.793" data-track-index="3"><div class="cap-box" id="cap-15-box"><span class="cap-text">훨씬 많이 있다고 볼 수 있어요</span></div></div>
+      <div id="cap-16" class="clip cap" data-start="35.193" data-duration="1.18" data-track-index="3"><div class="cap-box" id="cap-16-box"><span class="cap-text"><span class="hl">공립</span>, <span class="hl">사립</span>의 문제가 아니라</span></div></div>
+      <div id="cap-17" class="clip cap" data-start="36.373" data-duration="2.98" data-track-index="3"><div class="cap-box" id="cap-17-box"><span class="cap-text">부모님이 어떤 프로그램을 공부하느냐에 따라서</span></div></div>
+      <div id="cap-18" class="clip cap" data-start="39.353" data-duration="1.58" data-track-index="3"><div class="cap-box" id="cap-18-box"><span class="cap-text">달라지는 거예요</span></div></div>
+      <div id="cap-19" class="clip cap" data-start="41.02" data-duration="3.36" data-track-index="3"><div class="cap-box" id="cap-19-box"><span class="cap-text">이 프로그램에 대해서 궁금하신 점은</span></div></div>
+      <div id="cap-20" class="clip cap" data-start="44.38" data-duration="1.42" data-track-index="3"><div class="cap-box" id="cap-20-box"><span class="cap-text">AA캐나다로 문의 주세요</span></div></div>
+      <div id="cta" class="clip" data-start="0" data-duration="45.8" data-track-index="11"><div class="cta-in" id="cta-in"><span class="pl">▶</span>전체 영상 <b>7분 정리</b> · 관련 동영상에서</div></div>
+      <div id="fnote" class="clip" data-start="0" data-duration="45.8" data-track-index="5"><span>* 부모 학생비자 1년 이상 · 학위 과정 기준 · 거주 교육청 확인 · 2026.10 기준</span></div>
+      <div id="end" class="clip" data-start="45.8" data-duration="2.2" data-track-index="6">
+        <div class="end-bg" id="end-bg"></div>
+        <div class="end-logo" id="end-logo"><b>AA</b> CANADA</div>
+        <div class="end-t" id="end-t"><div>전체 영상은</div><div>관련 동영상에서 <b>▶</b></div></div>
+        <div class="end-btn" id="end-btn">카카오톡 canlog</div>
+      </div>
+      <audio id="voice" class="clip" src="assets/media/short-e-voice.wav" data-start="0" data-duration="45.8" data-track-index="8" data-volume="1"></audio>
+      <audio id="music-bed" class="clip" src="assets/media/short-e-bed.wav" data-start="0" data-duration="48" data-track-index="9" data-volume="0.13"></audio>
+      <audio id="sfx-end" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="45.6" data-duration="0.6" data-track-index="10" data-volume="0.2"></audio>
+    </div>
+    <script>
+      const TOTAL = 48, SPEECH = 45.8, JOINS = [35.1, 40.933], EMPH = [[0.0, 6.334], [34.993, 36.573]], CAPS = [[0.074, 2.414], [2.414, 3.434], [3.434, 6.334], [6.334, 8.374], [8.374, 10.754], [10.754, 12.934], [12.934, 15.694], [15.694, 16.694], [16.694, 19.014], [19.014, 20.934], [20.934, 23.594], [23.594, 26.114], [26.114, 28.587], [28.587, 30.107], [30.107, 32.307], [32.307, 35.1], [35.193, 36.373], [36.373, 39.353], [39.353, 40.933], [41.02, 44.38], [44.38, 45.8]];
+      const tl = gsap.timeline({ paused: true });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      tl.fromTo("#h-title", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 0);
+      tl.fromTo("#h-sub", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 0.3);
+      CAPS.forEach(([s], k) => tl.fromTo(`#cap-${k}-box`, { opacity: 0, scale: 0.92, y: 12 }, { opacity: 1, scale: 1, y: 0, duration: 0.18, ease: "back.out(2)" }, s));
+      document.querySelectorAll(".card-o").forEach((el) => {
+        const t = parseFloat(el.dataset.start);
+        tl.fromTo(`#${el.id}-in .co-t`, { opacity: 0, scale: 1.4 }, { opacity: 1, scale: 1, duration: 0.3, ease: "power4.in" }, t + 0.05);
+        tl.fromTo(`#${el.id}-in .co-s`, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.3 }, t + 0.4);
+      });
+      // a window join is a jump cut: alternate a small punch-in on the face
+      JOINS.forEach((t, k) => tl.set("#face-in", { scale: k % 2 ? 1 : 1.05 }, t));
+      // the face window slides in only for the opening line and the key line
+      EMPH.forEach(([a, b]) => {
+        tl.fromTo("#face", { opacity: 0, y: 60, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: "back.out(1.6)" }, a);
+        tl.to("#face", { opacity: 0, y: 60, scale: 0.92, duration: 0.3, ease: "power2.in" }, b - 0.3);
+      });
+      tl.fromTo("#cta-in", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4, ease: "back.out(2)" }, 0.6);
+      for (let t = 3; t < SPEECH - 1; t += 6) tl.to("#cta-in", { scale: 1.05, duration: 0.3, yoyo: true, repeat: 1, ease: "sine.inOut" }, t);
+      // closing card
+      tl.to("#end-bg", { opacity: 1, duration: 0.3 }, SPEECH);
+      tl.fromTo("#end-logo", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2)" }, SPEECH + 0.15);
+      tl.fromTo("#end-t", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, SPEECH + 0.35);
+      tl.fromTo("#end-btn", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, SPEECH + 0.6);
+      tl.to("#end-btn", { scale: 1.05, duration: 0.4, yoyo: true, repeat: 2, ease: "sine.inOut" }, SPEECH + 1.0);
+    </script>
+  </body>
+</html>
