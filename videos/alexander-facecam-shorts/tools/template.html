@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>밴쿠버 자녀무상교육 · 원장님 숏폼 __KEY__</title>
+    <script src="assets/vendor/gsap.min.js"></script>
+    <link rel="stylesheet" href="assets/kit/base.css" />
+    <style>
+      /* Pacific Campus: navy #0a1a33 → #12305c · red #d7263d · gold #ffc83d · mint #2ec4a6 · sky #4cc9f0 */
+      html, body { width: 1080px; height: 1920px; background: #0a1a33; }
+      #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: #0a1a33; }
+      #bgd { background: radial-gradient(700px 500px at 80% 10%, rgba(40,90,170,0.85) 0%, rgba(40,90,170,0) 70%), linear-gradient(180deg, #0a1a33 0%, #12305c 100%); }
+      #hdr { position: absolute; left: 0; right: 0; top: 0; height: 226px; text-align: center; z-index: 20; }
+      .h-brand { position: absolute; left: 0; right: 0; top: 40px; font-size: 28px; font-weight: 800; letter-spacing: 0.16em; color: #b9c2dd; }
+      .h-brand b { color: #d7263d; }
+      .h-title { position: absolute; left: 30px; right: 30px; top: 86px; font-size: 56px; font-weight: 900; letter-spacing: -0.03em; line-height: 1.15; }
+      .h-title b { color: #ffc83d; }
+      .h-sub { position: absolute; left: 0; right: 0; top: 160px; font-size: 36px; font-weight: 800; color: #4cc9f0; }
+      #gfx-v { left: 0; top: 226px; width: 1080px; height: 608px; z-index: 10; object-fit: cover; }
+      #face { position: absolute; left: 0px; top: 864px; width: 1080px; height: 1056px; overflow: hidden; z-index: 30; background: #0a1a33;
+              border-top: 6px solid #ffc83d; transform-origin: 50% 100%; }
+      #face-in { position: absolute; inset: 0; transform-origin: 50% 30%; }
+      #face-v { width: 100%; height: 100%; object-fit: cover; object-position: 50% 26%; }
+      .cap { z-index: 300; display: flex; justify-content: center; align-items: flex-start; padding-top: 772px; }
+      .cap-box { width: 1000px; min-height: 120px; padding: 14px 34px; border-radius: 30px; background: rgba(5,8,22,0.9); border: 4px solid rgba(255,200,61,0.55); }
+      .cap-text { font-size: 60px; line-height: 1.22; }
+      .card-o { z-index: 20; }
+      .co-in { position: absolute; left: 0; top: 226px; width: 1080px; height: 608px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+               background: radial-gradient(600px 400px at 50% 50%, rgba(40,90,170,0.9) 0%, rgba(10,26,51,0.96) 80%); }
+      .co-t { font-size: 96px; font-weight: 900; letter-spacing: -0.03em; text-align: center; } .co-t b { color: #ffc83d; }
+      .co-s { margin-top: 22px; font-size: 44px; font-weight: 800; color: #a3b5d8; text-align: center; }
+      #fnote { position: absolute; left: 40px; right: 40px; top: 1838px; z-index: 40; text-align: center; }
+      #fnote span { display: inline-block; padding: 8px 20px; border-radius: 14px; background: rgba(5,8,22,0.72); font-size: 24px; font-weight: 700; color: #c9d2e3; }
+      #end { z-index: 400; }
+      .end-bg { position: absolute; inset: 0; background: radial-gradient(800px 700px at 50% 35%, rgba(40,90,170,0.95) 0%, rgba(40,90,170,0) 70%), linear-gradient(180deg, #0a1a33 0%, #12305c 100%); opacity: 0; }
+      .end-logo { position: absolute; left: 0; right: 0; top: 640px; text-align: center; font-size: 120px; font-weight: 900; letter-spacing: -0.02em; opacity: 0; }
+      .end-logo b { color: #d7263d; }
+      .end-t { position: absolute; left: 60px; right: 60px; top: 860px; text-align: center; font-size: 66px; font-weight: 900; line-height: 1.25; opacity: 0; }
+      .end-t b { color: #ffc83d; }
+      .end-btn { position: absolute; left: 190px; right: 190px; top: 1080px; height: 120px; border-radius: 999px; background: #d7263d; display: flex; align-items: center; justify-content: center;
+                 font-size: 50px; font-weight: 900; opacity: 0; box-shadow: 0 20px 50px rgba(215,38,61,0.5); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="__TOTAL__" data-width="1080" data-height="1920">
+      <div id="bgd" class="clip" data-start="0" data-duration="__TOTAL__" data-track-index="0"></div>
+      <div id="hdr" class="clip" data-start="0" data-duration="__TOTAL__" data-track-index="1">
+        <div class="h-brand"><b>AA</b> CANADA · 밴쿠버 자녀무상교육</div>
+        <div class="h-title" id="h-title">__TITLE__</div>
+        <div class="h-sub" id="h-sub">__SUB__</div>
+      </div>
+      <video id="gfx-v" class="clip" src="assets/media/short-__KEY__-gfx.mp4" muted data-start="0" data-duration="__SPEECH__" data-track-index="2"></video>
+      <div id="face"><div id="face-in"><video id="face-v" class="clip" src="assets/media/short-__KEY__-face.mp4" muted data-start="0" data-duration="__SPEECH__" data-track-index="4"></video></div></div>
+      __CAPTIONS__
+      <div id="fnote" class="clip" data-start="0" data-duration="__SPEECH__" data-track-index="5"><span>* 부모 학생비자 1년 이상 · 학위 과정 기준 · 거주 교육청 확인 · 2026.10 기준</span></div>
+      <div id="end" class="clip" data-start="__SPEECH__" data-duration="__TOTAL_MINUS__" data-track-index="6">
+        <div class="end-bg" id="end-bg"></div>
+        <div class="end-logo" id="end-logo"><b>AA</b> CANADA</div>
+        <div class="end-t" id="end-t"><div>전체 영상은</div><div>관련 동영상에서 <b>▶</b></div></div>
+        <div class="end-btn" id="end-btn">카카오톡 canlog</div>
+      </div>
+      <audio id="voice" class="clip" src="assets/media/short-__KEY__-voice.wav" data-start="0" data-duration="__SPEECH__" data-track-index="8" data-volume="1"></audio>
+      <audio id="music-bed" class="clip" src="assets/media/short-__KEY__-bed.wav" data-start="0" data-duration="__TOTAL__" data-track-index="9" data-volume="0.13"></audio>
+      <audio id="sfx-end" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="__SPEECH_M__" data-duration="0.6" data-track-index="10" data-volume="0.2"></audio>
+    </div>
+    <script>
+      const TOTAL = __TOTAL__, SPEECH = __SPEECH__, JOINS = __JOINS__, EMPH = __EMPH__, CAPS = __CAPS__;
+      const tl = gsap.timeline({ paused: true });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      tl.fromTo("#h-title", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 0);
+      tl.fromTo("#h-sub", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 0.3);
+      CAPS.forEach(([s], k) => tl.fromTo(`#cap-${k}-box`, { opacity: 0, scale: 0.92, y: 12 }, { opacity: 1, scale: 1, y: 0, duration: 0.18, ease: "back.out(2)" }, s));
+      document.querySelectorAll(".card-o").forEach((el) => {
+        const t = parseFloat(el.dataset.start);
+        tl.fromTo(`#${el.id}-in .co-t`, { opacity: 0, scale: 1.4 }, { opacity: 1, scale: 1, duration: 0.3, ease: "power4.in" }, t + 0.05);
+        tl.fromTo(`#${el.id}-in .co-s`, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.3 }, t + 0.4);
+      });
+      // a window join is a jump cut: alternate a small punch-in on the face
+      JOINS.forEach((t, k) => tl.set("#face-in", { scale: k % 2 ? 1 : 1.07 }, t));
+      // key line: face goes full screen for ~1.5 s
+      EMPH.forEach(([a, b]) => {
+        tl.to("#face", { scale: 1.82, duration: 0.3, ease: "power3.inOut" }, a - 0.15);
+        tl.to("#face", { scale: 1, duration: 0.3, ease: "power3.inOut" }, b);
+      });
+      // closing card
+      tl.to("#end-bg", { opacity: 1, duration: 0.3 }, SPEECH);
+      tl.fromTo("#end-logo", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2)" }, SPEECH + 0.15);
+      tl.fromTo("#end-t", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, SPEECH + 0.35);
+      tl.fromTo("#end-btn", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, SPEECH + 0.6);
+      tl.to("#end-btn", { scale: 1.05, duration: 0.4, yoyo: true, repeat: 2, ease: "sine.inOut" }, SPEECH + 1.0);
+    </script>
+  </body>
+</html>

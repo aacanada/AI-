@@ -1,0 +1,6 @@
+node_modules/
+snapshots/
+.hyperframes/
+assets/media/
+renders/render.log
+renders/render-*.log

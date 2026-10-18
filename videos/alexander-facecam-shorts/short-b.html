@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>밴쿠버 자녀무상교육 · 원장님 숏폼 b</title>
+    <script src="assets/vendor/gsap.min.js"></script>
+    <link rel="stylesheet" href="assets/kit/base.css" />
+    <style>
+      /* Pacific Campus: navy #0a1a33 → #12305c · red #d7263d · gold #ffc83d · mint #2ec4a6 · sky #4cc9f0 */
+      html, body { width: 1080px; height: 1920px; background: #0a1a33; }
+      #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: #0a1a33; }
+      #bgd { background: radial-gradient(700px 500px at 80% 10%, rgba(40,90,170,0.85) 0%, rgba(40,90,170,0) 70%), linear-gradient(180deg, #0a1a33 0%, #12305c 100%); }
+      #hdr { position: absolute; left: 0; right: 0; top: 0; height: 226px; text-align: center; z-index: 20; }
+      .h-brand { position: absolute; left: 0; right: 0; top: 40px; font-size: 28px; font-weight: 800; letter-spacing: 0.16em; color: #b9c2dd; }
+      .h-brand b { color: #d7263d; }
+      .h-title { position: absolute; left: 30px; right: 30px; top: 86px; font-size: 56px; font-weight: 900; letter-spacing: -0.03em; line-height: 1.15; }
+      .h-title b { color: #ffc83d; }
+      .h-sub { position: absolute; left: 0; right: 0; top: 160px; font-size: 36px; font-weight: 800; color: #4cc9f0; }
+      #gfx-v { left: 0; top: 226px; width: 1080px; height: 608px; z-index: 10; object-fit: cover; }
+      #face { position: absolute; left: 0px; top: 864px; width: 1080px; height: 1056px; overflow: hidden; z-index: 30; background: #0a1a33;
+              border-top: 6px solid #ffc83d; transform-origin: 50% 100%; }
+      #face-in { position: absolute; inset: 0; transform-origin: 50% 30%; }
+      #face-v { width: 100%; height: 100%; object-fit: cover; object-position: 50% 26%; }
+      .cap { z-index: 300; display: flex; justify-content: center; align-items: flex-start; padding-top: 772px; }
+      .cap-box { width: 1000px; min-height: 120px; padding: 14px 34px; border-radius: 30px; background: rgba(5,8,22,0.9); border: 4px solid rgba(255,200,61,0.55); }
+      .cap-text { font-size: 60px; line-height: 1.22; }
+      .card-o { z-index: 20; }
+      .co-in { position: absolute; left: 0; top: 226px; width: 1080px; height: 608px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+               background: radial-gradient(600px 400px at 50% 50%, rgba(40,90,170,0.9) 0%, rgba(10,26,51,0.96) 80%); }
+      .co-t { font-size: 96px; font-weight: 900; letter-spacing: -0.03em; text-align: center; } .co-t b { color: #ffc83d; }
+      .co-s { margin-top: 22px; font-size: 44px; font-weight: 800; color: #a3b5d8; text-align: center; }
+      #fnote { position: absolute; left: 40px; right: 40px; top: 1838px; z-index: 40; text-align: center; }
+      #fnote span { display: inline-block; padding: 8px 20px; border-radius: 14px; background: rgba(5,8,22,0.72); font-size: 24px; font-weight: 700; color: #c9d2e3; }
+      #end { z-index: 400; }
+      .end-bg { position: absolute; inset: 0; background: radial-gradient(800px 700px at 50% 35%, rgba(40,90,170,0.95) 0%, rgba(40,90,170,0) 70%), linear-gradient(180deg, #0a1a33 0%, #12305c 100%); opacity: 0; }
+      .end-logo { position: absolute; left: 0; right: 0; top: 640px; text-align: center; font-size: 120px; font-weight: 900; letter-spacing: -0.02em; opacity: 0; }
+      .end-logo b { color: #d7263d; }
+      .end-t { position: absolute; left: 60px; right: 60px; top: 860px; text-align: center; font-size: 66px; font-weight: 900; line-height: 1.25; opacity: 0; }
+      .end-t b { color: #ffc83d; }
+      .end-btn { position: absolute; left: 190px; right: 190px; top: 1080px; height: 120px; border-radius: 999px; background: #d7263d; display: flex; align-items: center; justify-content: center;
+                 font-size: 50px; font-weight: 900; opacity: 0; box-shadow: 0 20px 50px rgba(215,38,61,0.5); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="49.267" data-width="1080" data-height="1920">
+      <div id="bgd" class="clip" data-start="0" data-duration="49.267" data-track-index="0"></div>
+      <div id="hdr" class="clip" data-start="0" data-duration="49.267" data-track-index="1">
+        <div class="h-brand"><b>AA</b> CANADA · 밴쿠버 자녀무상교육</div>
+        <div class="h-title" id="h-title">엄마는 한 학기 <b>3과목</b></div>
+        <div class="h-sub" id="h-sub">수업은 집에서 라이브로</div>
+      </div>
+      <video id="gfx-v" class="clip" src="assets/media/short-b-gfx.mp4" muted data-start="0" data-duration="47.067" data-track-index="2"></video>
+      <div id="face"><div id="face-in"><video id="face-v" class="clip" src="assets/media/short-b-face.mp4" muted data-start="0" data-duration="47.067" data-track-index="4"></video></div></div>
+      <div id="card-0" class="clip card-o" data-start="0" data-duration="8.833" data-track-index="7"><div class="co-in" id="card-0-in"><div class="co-t">부모님 걱정 1순위 <b>공부량</b></div><div class="co-s">아이 케어하면서 공부할 수 있을까?</div></div></div>
+      <div id="card-1" class="clip card-o" data-start="25.967" data-duration="4.767" data-track-index="7"><div class="co-in" id="card-1-in"><div class="co-t"><b>라이브</b> 온라인 수업</div><div class="co-s">녹화 강의가 아닌 실시간 수업</div></div></div>
+      <div id="cap-0" class="clip cap" data-start="0.093" data-duration="3.353" data-track-index="3"><div class="cap-box" id="cap-0-box"><span class="cap-text">부모님 입장에서 가장 큰 부담이 되는 것은</span></div></div>
+      <div id="cap-1" class="clip cap" data-start="3.446" data-duration="1.08" data-track-index="3"><div class="cap-box" id="cap-1-box"><span class="cap-text">학업이에요</span></div></div>
+      <div id="cap-2" class="clip cap" data-start="4.526" data-duration="1.26" data-track-index="3"><div class="cap-box" id="cap-2-box"><span class="cap-text">공부량이 너무 많으면</span></div></div>
+      <div id="cap-3" class="clip cap" data-start="5.786" data-duration="3.047" data-track-index="3"><div class="cap-box" id="cap-3-box"><span class="cap-text">아이 케어하는 데 부담이 되니까요</span></div></div>
+      <div id="cap-4" class="clip cap" data-start="8.92" data-duration="1.8" data-track-index="3"><div class="cap-box" id="cap-4-box"><span class="cap-text">가장 큰 장점은</span></div></div>
+      <div id="cap-5" class="clip cap" data-start="10.72" data-duration="2.7" data-track-index="3"><div class="cap-box" id="cap-5-box"><span class="cap-text">한 학기에 세, <span class="hl">9학점</span>만</span></div></div>
+      <div id="cap-6" class="clip cap" data-start="13.42" data-duration="2.1" data-track-index="3"><div class="cap-box" id="cap-6-box"><span class="cap-text">들어도 된다는 거예요</span></div></div>
+      <div id="cap-7" class="clip cap" data-start="15.52" data-duration="2.547" data-track-index="3"><div class="cap-box" id="cap-7-box"><span class="cap-text">그러니까 일주일에 <span class="hl">9시간</span> 들어도 됩니다</span></div></div>
+      <div id="cap-8" class="clip cap" data-start="18.153" data-duration="2.48" data-track-index="3"><div class="cap-box" id="cap-8-box"><span class="cap-text">부모님 학생들은 <span class="hl">3과목씩만</span> 들어도</span></div></div>
+      <div id="cap-9" class="clip cap" data-start="20.633" data-duration="2.36" data-track-index="3"><div class="cap-box" id="cap-9-box"><span class="cap-text"><span class="hl">풀타임</span> 학생이 유지가 되기 때문에</span></div></div>
+      <div id="cap-10" class="clip cap" data-start="22.993" data-duration="2.974" data-track-index="3"><div class="cap-box" id="cap-10-box"><span class="cap-text">학업 부담을 많이 줄일 수가 있어요</span></div></div>
+      <div id="cap-11" class="clip cap" data-start="26.06" data-duration="1.9" data-track-index="3"><div class="cap-box" id="cap-11-box"><span class="cap-text"><span class="hl">라이브</span> 온라인 수업으로</span></div></div>
+      <div id="cap-12" class="clip cap" data-start="27.96" data-duration="2.773" data-track-index="3"><div class="cap-box" id="cap-12-box"><span class="cap-text">수강을 할 수 있다는 점이에요</span></div></div>
+      <div id="cap-13" class="clip cap" data-start="30.847" data-duration="1.8" data-track-index="3"><div class="cap-box" id="cap-13-box"><span class="cap-text">온라인 개설 과목인 경우에는</span></div></div>
+      <div id="cap-14" class="clip cap" data-start="32.647" data-duration="3.453" data-track-index="3"><div class="cap-box" id="cap-14-box"><span class="cap-text"><span class="hl">라이브</span>로 <span class="hl">실시간</span> 수업을 하게 되고요</span></div></div>
+      <div id="cap-15" class="clip cap" data-start="36.187" data-duration="1.88" data-track-index="3"><div class="cap-box" id="cap-15-box"><span class="cap-text">아침에 아이 학교 등교시키고</span></div></div>
+      <div id="cap-16" class="clip cap" data-start="38.067" data-duration="1.82" data-track-index="3"><div class="cap-box" id="cap-16-box"><span class="cap-text">왔다 갔다 하는 부담 없이</span></div></div>
+      <div id="cap-17" class="clip cap" data-start="39.887" data-duration="1.24" data-track-index="3"><div class="cap-box" id="cap-17-box"><span class="cap-text"><span class="hl">집에서</span> 수업을 하고요</span></div></div>
+      <div id="cap-18" class="clip cap" data-start="41.127" data-duration="2.12" data-track-index="3"><div class="cap-box" id="cap-18-box"><span class="cap-text">그 다음에 아이 <span class="hl">픽업</span> 나가고</span></div></div>
+      <div id="cap-19" class="clip cap" data-start="43.247" data-duration="3.82" data-track-index="3"><div class="cap-box" id="cap-19-box"><span class="cap-text">이런 하루가 가능하다는 게 장점이에요</span></div></div>
+      <div id="fnote" class="clip" data-start="0" data-duration="47.067" data-track-index="5"><span>* 부모 학생비자 1년 이상 · 학위 과정 기준 · 거주 교육청 확인 · 2026.10 기준</span></div>
+      <div id="end" class="clip" data-start="47.067" data-duration="2.2" data-track-index="6">
+        <div class="end-bg" id="end-bg"></div>
+        <div class="end-logo" id="end-logo"><b>AA</b> CANADA</div>
+        <div class="end-t" id="end-t"><div>전체 영상은</div><div>관련 동영상에서 <b>▶</b></div></div>
+        <div class="end-btn" id="end-btn">카카오톡 canlog</div>
+      </div>
+      <audio id="voice" class="clip" src="assets/media/short-b-voice.wav" data-start="0" data-duration="47.067" data-track-index="8" data-volume="1"></audio>
+      <audio id="music-bed" class="clip" src="assets/media/short-b-bed.wav" data-start="0" data-duration="49.267" data-track-index="9" data-volume="0.13"></audio>
+      <audio id="sfx-end" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="46.867" data-duration="0.6" data-track-index="10" data-volume="0.2"></audio>
+    </div>
+    <script>
+      const TOTAL = 49.267, SPEECH = 47.067, JOINS = [8.833, 18.067, 25.967, 30.733, 36.1], EMPH = [[18.153, 19.953]], CAPS = [[0.093, 3.446], [3.446, 4.526], [4.526, 5.786], [5.786, 8.833], [8.92, 10.72], [10.72, 13.42], [13.42, 15.52], [15.52, 18.067], [18.153, 20.633], [20.633, 22.993], [22.993, 25.967], [26.06, 27.96], [27.96, 30.733], [30.847, 32.647], [32.647, 36.1], [36.187, 38.067], [38.067, 39.887], [39.887, 41.127], [41.127, 43.247], [43.247, 47.067]];
+      const tl = gsap.timeline({ paused: true });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      tl.fromTo("#h-title", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 0);
+      tl.fromTo("#h-sub", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 0.3);
+      CAPS.forEach(([s], k) => tl.fromTo(`#cap-${k}-box`, { opacity: 0, scale: 0.92, y: 12 }, { opacity: 1, scale: 1, y: 0, duration: 0.18, ease: "back.out(2)" }, s));
+      document.querySelectorAll(".card-o").forEach((el) => {
+        const t = parseFloat(el.dataset.start);
+        tl.fromTo(`#${el.id}-in .co-t`, { opacity: 0, scale: 1.4 }, { opacity: 1, scale: 1, duration: 0.3, ease: "power4.in" }, t + 0.05);
+        tl.fromTo(`#${el.id}-in .co-s`, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.3 }, t + 0.4);
+      });
+      // a window join is a jump cut: alternate a small punch-in on the face
+      JOINS.forEach((t, k) => tl.set("#face-in", { scale: k % 2 ? 1 : 1.07 }, t));
+      // key line: face goes full screen for ~1.5 s
+      EMPH.forEach(([a, b]) => {
+        tl.to("#face", { scale: 1.82, duration: 0.3, ease: "power3.inOut" }, a - 0.15);
+        tl.to("#face", { scale: 1, duration: 0.3, ease: "power3.inOut" }, b);
+      });
+      // closing card
+      tl.to("#end-bg", { opacity: 1, duration: 0.3 }, SPEECH);
+      tl.fromTo("#end-logo", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2)" }, SPEECH + 0.15);
+      tl.fromTo("#end-t", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, SPEECH + 0.35);
+      tl.fromTo("#end-btn", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, SPEECH + 0.6);
+      tl.to("#end-btn", { scale: 1.05, duration: 0.4, yoyo: true, repeat: 2, ease: "sine.inOut" }, SPEECH + 1.0);
+    </script>
+  </body>
+</html>
