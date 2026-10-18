@@ -1,0 +1,9 @@
+type: shorts
+title: 캐나다 학생 많은 공립 컬리지가 더 낫지 않나요? (원장님 숏폼 E)
+channels: youtube, instagram, threads, blog, clip, homepage
+visibility: public
+publish_order: 6
+linked_to: 2026-10-17-alexander-free-edu-video
+files: video.mp4 (1080x1920, 0:48, 9MB), thumbnail.jpg (1080x1920 cover, 원장님 얼굴), upload-text.txt
+source: aacanada/AI- branch claude/dreamy-edison-nc9kay, videos/alexander-facecam-shorts/ (short-e.html)
+notes: 원장님 얼굴 출연 숏폼(원장님 확인 완료). 영상 내내 "전체 영상 7분 정리 · 관련 동영상에서" 버튼이 떠 있으니, 유튜브 쇼츠 '관련 동영상'에 본편을 꼭 연결해 주세요. 2026-10-17-alexander-free-edu-video 의 published.md 에 본편 유튜브 주소가 생긴 뒤에 게시합니다. 인스타·스레드 등 관련 동영상 기능이 없는 채널은 캡션의 "프로필 링크" 안내로 대신합니다. 기존 목소리 숏폼 2026-10-17-alexander-free-edu-short 를 대체합니다.

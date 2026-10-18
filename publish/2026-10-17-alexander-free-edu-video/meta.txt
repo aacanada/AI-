@@ -6,4 +6,4 @@ publish_order: 1
 linked_to: (none)
 files: video.mp4 = 4 parts (video.mp4.part-00 ~ video.mp4.part-03; 합친 뒤 1920x1080, 7:02, 321MB, video.mp4.sha256 로 확인), thumbnail.jpg (1280x720), upload-text.txt
 source: aacanada/AI- branch claude/dreamy-edison-nc9kay, videos/alexander-free-edu-longform/ (facecam.html, renders/video-facecam.mp4)
-notes: 원장님 얼굴 출연 버전, 기존 목소리 버전(4:26) 대체. 원장님이 먼저 보고 OK하신 뒤에 READY를 만듭니다. 얼굴 숏폼 2026-10-18-alexander-face-short-a/-b/-c 가 이 본편을 '관련 동영상'으로 연결합니다. 이 본편을 먼저 게시하고 published.md 에 유튜브 주소를 적어 주세요. 학비·정책은 2026년 10월 기준이라 설명란에 변동 가능 문구를 넣었습니다.
+notes: 원장님 얼굴 출연 버전, 기존 목소리 버전(4:26) 대체 (원장님 확인 완료). 얼굴 숏폼 2026-10-18-alexander-face-short-a~e (5개) 가 이 본편을 '관련 동영상'으로 연결합니다. 이 본편을 먼저 게시하고 published.md 에 유튜브 주소를 적어 주세요. 학비·정책은 2026년 10월 기준이라 설명란에 변동 가능 문구를 넣었습니다.
