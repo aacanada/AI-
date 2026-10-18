@@ -11,22 +11,24 @@
       html, body { width: 1080px; height: 1920px; background: #0a1a33; }
       #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: #0a1a33; }
       #bgd { background: radial-gradient(700px 500px at 80% 10%, rgba(40,90,170,0.85) 0%, rgba(40,90,170,0) 70%), linear-gradient(180deg, #0a1a33 0%, #12305c 100%); }
-      #hdr { position: absolute; left: 0; right: 0; top: 0; height: 226px; text-align: center; z-index: 20; }
-      .h-brand { position: absolute; left: 0; right: 0; top: 40px; font-size: 28px; font-weight: 800; letter-spacing: 0.16em; color: #b9c2dd; }
+      #hdr { position: absolute; left: 0; right: 0; top: 0; height: 480px; text-align: center; z-index: 20; }
+      .h-brand { position: absolute; left: 0; right: 0; top: 110px; font-size: 30px; font-weight: 800; letter-spacing: 0.16em; color: #b9c2dd; }
       .h-brand b { color: #d7263d; }
-      .h-title { position: absolute; left: 30px; right: 30px; top: 86px; font-size: 56px; font-weight: 900; letter-spacing: -0.03em; line-height: 1.15; }
+      .h-title { position: absolute; left: 30px; right: 30px; top: 170px; font-size: 64px; font-weight: 900; letter-spacing: -0.03em; line-height: 1.15; }
       .h-title b { color: #ffc83d; }
-      .h-sub { position: absolute; left: 0; right: 0; top: 160px; font-size: 36px; font-weight: 800; color: #4cc9f0; }
-      #gfx-v { left: 0; top: 226px; width: 1080px; height: 608px; z-index: 10; object-fit: cover; }
-      #face { position: absolute; left: 0px; top: 864px; width: 1080px; height: 1056px; overflow: hidden; z-index: 30; background: #0a1a33;
-              border-top: 6px solid #ffc83d; transform-origin: 50% 100%; }
-      #face-in { position: absolute; inset: 0; transform-origin: 50% 30%; }
-      #face-v { width: 100%; height: 100%; object-fit: cover; object-position: 50% 26%; }
-      .cap { z-index: 300; display: flex; justify-content: center; align-items: flex-start; padding-top: 772px; }
+      .h-sub { position: absolute; left: 0; right: 0; top: 270px; font-size: 42px; font-weight: 800; color: #4cc9f0; }
+      #gfx-v { left: 0; top: 480px; width: 1080px; height: 608px; z-index: 10; object-fit: cover; }
+      /* the owner shows up only now and then, in a small 16:9 window (no extra zoom) */
+      #face { position: absolute; left: 220px; top: 1360px; width: 640px; height: 360px; overflow: hidden; z-index: 30; background: #0a1a33;
+              border: 5px solid #ffffff; border-radius: 28px; box-shadow: 0 24px 60px rgba(0,0,0,0.55); opacity: 0; }
+      #face-in { position: absolute; inset: 0; transform-origin: 50% 40%; }
+      #face-v { width: 100%; height: 100%; object-fit: cover; }
+      #sky { position: absolute; left: 0; top: 1500px; z-index: 5; opacity: 0.35; }
+      .cap { z-index: 300; display: flex; justify-content: center; align-items: flex-start; padding-top: 1140px; }
       .cap-box { width: 1000px; min-height: 120px; padding: 14px 34px; border-radius: 30px; background: rgba(5,8,22,0.9); border: 4px solid rgba(255,200,61,0.55); }
       .cap-text { font-size: 60px; line-height: 1.22; }
       .card-o { z-index: 20; }
-      .co-in { position: absolute; left: 0; top: 226px; width: 1080px; height: 608px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+      .co-in { position: absolute; left: 0; top: 480px; width: 1080px; height: 608px; display: flex; flex-direction: column; align-items: center; justify-content: center;
                background: radial-gradient(600px 400px at 50% 50%, rgba(40,90,170,0.9) 0%, rgba(10,26,51,0.96) 80%); }
       .co-t { font-size: 96px; font-weight: 900; letter-spacing: -0.03em; text-align: center; } .co-t b { color: #ffc83d; }
       .co-s { margin-top: 22px; font-size: 44px; font-weight: 800; color: #a3b5d8; text-align: center; }
@@ -51,6 +53,7 @@
         <div class="h-sub" id="h-sub">학비 한 학기 $5,940</div>
       </div>
       <video id="gfx-v" class="clip" src="assets/media/short-c-gfx.mp4" muted data-start="0" data-duration="49.533" data-track-index="2"></video>
+      <svg id="sky" class="clip" data-start="0" data-duration="51.733" data-track-index="3" width="1080" height="300" viewBox="0 0 1920 340"><path d="M0 340 V250 H90 V200 H150 V260 H220 V160 H270 V110 H320 V160 H360 V240 H420 V180 H470 V70 H520 V20 H570 V70 H620 V180 H680 V130 H760 V220 H820 V160 H900 V90 H950 V160 H1010 V250 H1080 V190 H1150 V270 H1230 V200 H1300 V250 H1380 V180 H1440 V230 H1520 V150 H1570 V230 H1650 V260 H1740 V210 H1820 V270 H1920 V340" fill="none" stroke="#4cc9f0" stroke-width="6" stroke-linejoin="round"/></svg>
       <div id="face"><div id="face-in"><video id="face-v" class="clip" src="assets/media/short-c-face.mp4" muted data-start="0" data-duration="49.533" data-track-index="4"></video></div></div>
       
       <div id="cap-0" class="clip cap" data-start="0.107" data-duration="2.84" data-track-index="3"><div class="cap-box" id="cap-0-box"><span class="cap-text">이런 Associate 과정에 입학을 하려면</span></div></div>
@@ -83,7 +86,7 @@
       <audio id="sfx-end" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="49.333" data-duration="0.6" data-track-index="10" data-volume="0.2"></audio>
     </div>
     <script>
-      const TOTAL = 51.733, SPEECH = 49.533, JOINS = [9.5, 13.2, 23.833, 33.267], EMPH = [[43.667, 45.467]], CAPS = [[0.107, 2.947], [2.947, 5.474], [5.474, 6.774], [6.774, 9.5], [9.614, 13.2], [13.307, 15.727], [15.727, 18.147], [18.147, 20.547], [20.547, 23.833], [23.94, 27.88], [27.88, 30.62], [30.62, 33.267], [33.347, 35.087], [35.087, 39.287], [39.287, 40.667], [40.667, 43.667], [43.667, 46.567], [46.567, 49.533]];
+      const TOTAL = 51.733, SPEECH = 49.533, JOINS = [9.5, 13.2, 23.833, 33.267], EMPH = [[0.0, 9.5], [43.467, 46.767]], CAPS = [[0.107, 2.947], [2.947, 5.474], [5.474, 6.774], [6.774, 9.5], [9.614, 13.2], [13.307, 15.727], [15.727, 18.147], [18.147, 20.547], [20.547, 23.833], [23.94, 27.88], [27.88, 30.62], [30.62, 33.267], [33.347, 35.087], [35.087, 39.287], [39.287, 40.667], [40.667, 43.667], [43.667, 46.567], [46.567, 49.533]];
       const tl = gsap.timeline({ paused: true });
       window.__timelines = window.__timelines || {};
       window.__timelines["main"] = tl;
@@ -96,11 +99,11 @@
         tl.fromTo(`#${el.id}-in .co-s`, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.3 }, t + 0.4);
       });
       // a window join is a jump cut: alternate a small punch-in on the face
-      JOINS.forEach((t, k) => tl.set("#face-in", { scale: k % 2 ? 1 : 1.07 }, t));
-      // key line: face goes full screen for ~1.5 s
+      JOINS.forEach((t, k) => tl.set("#face-in", { scale: k % 2 ? 1 : 1.05 }, t));
+      // the face window slides in only for the opening line and the key line
       EMPH.forEach(([a, b]) => {
-        tl.to("#face", { scale: 1.82, duration: 0.3, ease: "power3.inOut" }, a - 0.15);
-        tl.to("#face", { scale: 1, duration: 0.3, ease: "power3.inOut" }, b);
+        tl.fromTo("#face", { opacity: 0, y: 60, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: "back.out(1.6)" }, a);
+        tl.to("#face", { opacity: 0, y: 60, scale: 0.92, duration: 0.3, ease: "power2.in" }, b - 0.3);
       });
       // closing card
       tl.to("#end-bg", { opacity: 1, duration: 0.3 }, SPEECH);

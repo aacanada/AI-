@@ -1,7 +1,8 @@
 """Facecam shorts A–C (1080x1920) cut from the facecam longform (videos/alexander-free-edu-longform).
-Inputs (made there): timing-facecam.json, assets/audio/narration-facecam.wav, assets/facecam/face_s.mp4 (shorts framing of the
-same edit), renders/graphics.mp4 (the motion-graphics scenes alone, on the same timeline).
-Layout (FACECAM_EDIT_BRIEF 6): top 45% graphics / bottom 55% face, big caption on the seam, face full screen 1–2 s on the key line,
+Inputs (made there): timing-facecam.json, assets/audio/narration-facecam.wav, assets/facecam/face_l.mp4 (the same
+edit, 1920x1080), renders/graphics.mp4 (the motion-graphics scenes alone, on the same timeline).
+Layout (revised after the owner's review): graphics are the main picture, caption under them; the face shows only in a small
+16:9 window (no extra zoom) for the opening window and the key line,
 last 2 s "전체 영상은 관련 동영상에서 ▶" card. Only the owner's own spoken lines, ≤ 59 s.
 Usage: python3 tools/build.py → short-a.html, short-b.html, short-c.html (+ assets/media/*) → render -c short-a.html …"""
 import json, pathlib, subprocess, sys, html
@@ -54,7 +55,7 @@ def media(key, wins):
     fl.append("".join(f"[a{k}]" for k in range(len(wins))) + f"concat=n={len(wins)}:v=0:a=1[out]")
     run(["ffmpeg", "-y", "-v", "error", "-i", str(LF / "assets/audio/narration-facecam.wav"), "-filter_complex", ";".join(fl), "-map", "[out]",
          "-ar", "48000", "-ac", "1", str(m / f"short-{key}-voice.wav")])
-    for name, src, vf in [("face", LF / "assets/facecam/face_s.mp4", "null"), ("gfx", LF / "renders/graphics.mp4", f"scale=1080:{GFX_H}:flags=lanczos")]:
+    for name, src, vf in [("face", LF / "assets/facecam/face_l.mp4", "scale=640:360:flags=lanczos"), ("gfx", LF / "renders/graphics.mp4", f"scale=1080:{GFX_H}:flags=lanczos")]:
         fl = [f"[0:v]trim=start_frame={round(a * FPS)}:end_frame={round(b * FPS)},setpts=PTS-STARTPTS[v{k}]" for k, (a, b) in enumerate(wins)]
         fl.append("".join(f"[v{k}]" for k in range(len(wins))) + f"concat=n={len(wins)}:v=1:a=0,{vf},fps={FPS},format=yuv420p[out]")
         run(["ffmpeg", "-y", "-v", "error", "-i", str(src), "-filter_complex", ";".join(fl), "-map", "[out]", "-an", "-c:v", "libx264", "-crf", "16",
@@ -78,11 +79,12 @@ def build(key, cfg):
             s1 = at + min(b - a, (SC[i]["captions"][j + 1]["start"] if j < j1 else b) - a)
             caps.append((c["text"], round(s0, 3), round(s1, 3)))
             if (i, j) in cfg["emph"]:
-                emph.append((round(s0, 3), round(min(s1, s0 + 1.8), 3)))
+                emph.append((round(max(0.0, s0 - 0.2), 3), round(s1 + 0.2, 3)))
         starts.append((round(at, 3), round(b - a, 3)))
         at += b - a
         joins.append(round(at, 3))
     joins = joins[:-1]
+    emph.insert(0, (0.0, joins[0]))  # face window: the opening line(s) + the key line only
     t0, t1, t2 = cfg["title"]
     cap_divs = "\n      ".join(
         f'<div id="cap-{k}" class="clip cap" data-start="{r(s)}" data-duration="{r(e - s)}" data-track-index="3"><div class="cap-box" id="cap-{k}-box">'
