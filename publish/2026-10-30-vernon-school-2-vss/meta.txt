@@ -1,0 +1,10 @@
+type: shorts
+title: 건물값만 3,800만 달러, 버논에서 제일 큰 학교 (버논 고등학교 탐방 2/5)
+channels: youtube, instagram, threads, clip
+visibility: public
+publish_order: 2
+publish_after: 2026-10-30
+linked_to: (none)
+files: video.mp4 (1080x1920, 0:44, 49MB), thumbnail.jpg (1080x1920 cover), upload-text.txt
+source: aacanada/AI- branch claude/clever-rubin-cws060, videos/vernon-schools-shorts/short-2-vss/
+notes: 유튜브 쇼츠 '관련 동영상'에 기존 버논 롱폼 https://youtu.be/UBTh_AdpNGI 를 연결해 주세요. 블로그·홈페이지는 Aside가 학교별 상세 글로 따로 작성하므로 이 묶음의 channels에서 뺐습니다.
