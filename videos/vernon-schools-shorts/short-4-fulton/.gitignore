@@ -3,3 +3,4 @@ snapshots/
 .hyperframes/
 .media/
 assets/audio/s*.wav
+renders/work-*/
