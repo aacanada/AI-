@@ -22,6 +22,7 @@ publish/YYYY-MM-DD-<이름>/
 3. 게시 전에 각 채널에 같은 글이 이미 있는지 확인합니다 (중복 게시 방지).
 4. `meta.txt` 의 `linked_to` 가 있으면, 그 폴더의 `published.md` 에 본편 주소가 생긴 뒤에 게시하고 관련 동영상으로 연결합니다.
 5. `visibility: public` 은 바로 공개 게시입니다.
+6. `publish_after: YYYY-MM-DD` — 이 날짜(KST) 전에는 게시하지 않음 (예약 게시). `meta.txt` 에 이 줄이 있으면 그 날짜가 될 때까지 건너뜁니다.
 
 ## 큰 영상 (90MB 초과)
 
