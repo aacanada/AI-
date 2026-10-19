@@ -44,21 +44,31 @@ def paths(s):
 
 
 def chunk(text):
-    """Split into caption lines of <= MAXC chars at spaces (keeps clauses together where possible)."""
-    words, out, cur = text.split(), [], ""
-    for w in words:
-        nxt = (cur + " " + w).strip()
-        if len(nxt) > MAXC and cur:
-            out.append(cur)
-            cur = w
-        else:
-            cur = nxt
-    if cur:
-        if out and len(cur) <= 5 and len(out[-1]) + 1 + len(cur) <= MAXC + 3:
-            out[-1] += " " + cur
-        else:
-            out.append(cur)
-    return out
+    """Split into caption lines of <= MAXC chars at spaces, balanced (no orphan last word); prefer comma breaks."""
+    if len(text) <= MAXC:
+        return [text]
+    n = -(-len(text) // MAXC)
+    words = text.split()
+    best = None
+
+    def rec(ws, k):
+        if k == 1:
+            yield [" ".join(ws)]
+            return
+        for c in range(1, len(ws) - k + 2):
+            head = " ".join(ws[:c])
+            for rest in rec(ws[c:], k - 1):
+                yield [head] + rest
+
+    for k in (n, n + 1):
+        for lines in rec(words, k):
+            worst = max(len(x) for x in lines)
+            score = (worst > MAXC, worst - 2 * sum(x.endswith(",") for x in lines[:-1]))
+            if best is None or score < best[0]:
+                best = (score, lines)
+        if best and not best[0][0]:
+            break
+    return best[1]
 
 
 # ------------------------------------------------------------------ compositions

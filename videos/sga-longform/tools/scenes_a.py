@@ -209,7 +209,7 @@ R .ico{width:40px;height:40px;color:#e8b931}
         icon_chip("s06-i4", "art", "아트센터", 1380, 520),
         icon_chip("s06-i5", "train", "지하철", 1380, 640)]) + """
           <div class="pill" id="s06-p" style="left:1380px;top:752px">걸어서 해결</div>
-          <div class="card" id="s06-cd" style="left:170px;top:330px;width:1140px;height:200px;display:flex;align-items:center;justify-content:center"><div class="h" style="font-size:66px">안전하고, <span class="red">할 게 있는</span> 동네</div></div>""",
+          <div class="card" id="s06-cd" data-layout-allow-overlap style="left:170px;top:330px;width:1140px;height:200px;display:flex;align-items:center;justify-content:center"><div class="h" style="font-size:66px">안전하고, <span class="red">할 게 있는</span> 동네</div></div>""",
     js="""
 flip('#s06-g1',T('공립 도서관'));pop('#s06-i1',T('공립 도서관'));
 flip('#s06-g2',T('쇼핑몰'));pop('#s06-i2',T('쇼핑몰'));

@@ -61,6 +61,6 @@ def clip(cid, slot, info, duration, trk=31):
 inn('#{cid}-nc',0.0,{{y:20,d:0.35}});
 outt('#{cid}-nc',{at - 0.25},{{d:0.25,s:0.9}});
 tl.fromTo('#{cid}-fr',{{opacity:0,scale:0.92}},{{opacity:1,scale:1,duration:0.45,ease:'power3.out'}},{at - 0.2});
-inn('#{cid}-tag',{at + 0.3},{{x:-30,y:0}});
+inn('#{cid}-tag',{at + info.get('tag_at', 0.3)},{{x:-30,y:0}});
 """
     return scene_html(cid, duration, CLIP_CSS.format(cid=cid), body, js, bg)

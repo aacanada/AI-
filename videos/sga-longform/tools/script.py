@@ -177,32 +177,38 @@ SCENES = [
 ]
 
 # Testimonial clips (SGA official YouTube "Students' Voice", reuse permitted).
-# ranges are approximate (auto-caption based); clip_prep.py pads +-1s then trims to speech.
+# Sources: plans/sga-longform/assets/clips/<src>_video720.mp4 + <src>_audio.m4a (muxed by clip_prep.py).
+# cuts = exact source seconds, set from the burned-in subtitles + speech pauses (brief ranges were approximate).
+# crop = (w, h, x, y) 16:9 window above the burned-in subtitles. subs = clip-local seconds, worded to the audio.
+# T4 keeps the original "Did the quality of education meet your expectation?" lower-third (name tag waits, tag_at).
+# T1 starts after the student names her previous town; T4 drops "from like ... schools" (possible school name).
 CLIPS = {
-    "T1": dict(url="https://www.youtube.com/watch?v=lQzVFwWYER0", ranges=[("02:04", "02:27")], est=23.0,
-               tag="Huijung · SGA 11학년 · 한국", lines=[
-                   "여기는 나가면 바로 한식이 있어요.",
-                   "앞에 있는 카페에서도 비빔밥 팔고요, 맛있어요.",
-                   "편의시설도 많아서 너무 좋고요.",
-                   "교통도 너무 잘 돼 있어요.",
-                   "학교에서 바로 내려가면 지하철역이라 너무 편해요."]),
-    "T2": dict(url="https://www.youtube.com/watch?v=lQzVFwWYER0", ranges=[("00:55", "01:17")], est=22.0,
-               tag="Huijung · SGA 11학년 · 한국", lines=[
-                   "여기는 아무래도 사립이다 보니까",
-                   "미팅 같은 것도 하고, 학점 관리하는 게 쉽더라고요.",
-                   "스태프들도 대부분 친절한 것 같아요.",
-                   "한국인 선생님이 계셔서 개인적으로 정말 편해요."]),
-    "T3": dict(url="https://www.youtube.com/watch?v=Oa806VGPql8", ranges=[("00:46", "01:03")], est=17.0,
-               tag="Giwon · SGA 12학년 · 한국", lines=[
-                   "선생님들이 수업이나 공부에 도움을 많이 주세요.",
-                   "역사 수업 선생님은 과제를 낼 때나 수업할 때",
-                   "뭐가 부족한지 피드백을 정말 열심히 해 주세요."]),
-    "T4": dict(url="https://www.youtube.com/watch?v=H4d-UQC39JY", ranges=[("00:36", "00:58"), ("01:33", "01:44")], est=33.0,
-               tag="Daniel · SGA 12학년 · 한국", lines=[
-                   "솔직히 사립학교라 기대가 낮았어요.",
-                   "공립학교 출신이라 좋은 교육을 기대하지 않았거든요.",
-                   "그런데 기대보다 훨씬 좋았어요. 정말 많이 배웠어요.",
-                   "카운슬러 선생님들도 늘 도와주셨고요.",
-                   "영국과 캐나다 대학에서 합격을 받았고,",
-                   "장학금도 받았어요."]),
+    "T1": dict(src="huijung", cuts=[(125.92, 145.70)], crop=(996, 560, 42, 0), est=19.78,
+               tag="Huijung · SGA 11학년 · 한국", subs=[
+                   (0.15, 3.15, "여기는 일단 나가면 바로 한식이 있죠."),
+                   (3.18, 7.58, "학교 앞 카페에서도 비빔밥 파는데 맛있어요."),
+                   (7.58, 10.78, "그리고 편의시설도 되게 많아서 좋고,"),
+                   (10.78, 14.68, "마지막으로 교통시설이 너무 잘 되어 있어요."),
+                   (15.08, 19.38, "바로 내려가면 지하철역이니까 너무 편해요.")]),
+    "T2": dict(src="huijung", cuts=[(56.50, 77.00)], crop=(996, 560, 42, 0), est=20.5,
+               tag="Huijung · SGA 11학년 · 한국", subs=[
+                   (0.10, 2.40, "여기는 아무래도 사립학교이다 보니"),
+                   (2.50, 6.10, "미팅이나 컨설팅 같은 것도 편하고, 학점 관리하는 게 쉽더라고요."),
+                   (6.20, 8.20, "그래서 여기 있는 게 더 나은 선택인 것 같아요."),
+                   (9.70, 15.20, "스태프들은 대부분 기본적으로 친절한 것 같아요."),
+                   (15.50, 20.30, "그리고 한국인 선생님이 계셔서 개인적으로 편하더라고요.")]),
+    "T3": dict(src="giwon", cuts=[(46.05, 59.95)], crop=(1022, 575, 209, 0), est=13.9,
+               tag="Giwon · SGA 12학년 · 한국", subs=[
+                   (0.10, 2.95, "선생님들이 수업이나 공부할 때 도움을 많이 주세요."),
+                   (3.05, 8.80, "예를 들어 지금 듣고 있는 역사 수업 선생님은"),
+                   (8.80, 13.85, "과제를 낼 때나 수업할 때 뭐가 부족한지 피드백을 열정적으로 해 주세요.")]),
+    "T4": dict(src="daniel", cuts=[(38.42, 47.95), (51.45, 63.55), (94.50, 100.70)], crop=(1120, 630, 80, 0), est=27.83, tag_at=5.4,
+               tag="Daniel · SGA 12학년 · 한국", subs=[
+                   (0.08, 4.78, "솔직히 사립학교라 기대가 낮았어요."),
+                   (4.78, 9.48, "공립학교 출신이라 좋은 교육은 기대하지 않았거든요."),
+                   (9.68, 12.88, "그런데 기대보다 훨씬 좋았어요."),
+                   (12.88, 16.88, "수업 수준이 정말 좋았고, 정말 많이 배웠어요."),
+                   (16.88, 21.58, "카운슬러 선생님들도 늘 도와주셨고요."),
+                   (21.73, 25.93, "영국과 캐나다 대학에서 합격을 받았고,"),
+                   (25.93, 27.73, "장학금도 받았어요.")]),
 }

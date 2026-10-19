@@ -95,10 +95,12 @@ def build():
             subs_p = os.path.join("assets", "clips", sc["clip"] + ".subs.json")
             if os.path.exists(subs_p):
                 subs = json.load(open(subs_p, encoding="utf-8"))
+            elif c.get("subs"):
+                subs = [dict(t=a, end=b, text=x) for a, b, x in c["subs"]]
             else:
-                tot = sum(len(x) for x in c["lines"])
+                tot = sum(len(x) for x in [x[2] for x in c["subs"]])
                 subs, acc = [], 0.0
-                for x in c["lines"]:
+                for x in [x[2] for x in c["subs"]]:
                     a = cd * acc / tot
                     acc += len(x)
                     subs.append(dict(t=round(a + 0.2, 3), end=round(cd * acc / tot, 3), text=x))
