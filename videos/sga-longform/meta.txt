@@ -1,0 +1,10 @@
+type: longform
+title: 토론토 조기유학, 공립 보냈다가 후회하는 이유 (SGA 롱폼)
+channels: youtube
+visibility: public
+publish_order: 1
+publish_after: 2026-11-10
+linked_to: (none)
+files: video.mp4 (렌더 후 기입: 길이·용량·분할 수), thumbnail.jpg (1280x720), upload-text.txt
+source: aacanada/AI- branch claude/busy-fermat-uhhvcr, videos/sga-longform/
+notes: 블로그·Threads·홈페이지 글은 Aside가 따로 작성. 이후 SGA 쇼츠 5편이 이 롱폼을 관련 동영상으로 연결 예정.
