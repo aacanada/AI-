@@ -1,0 +1,158 @@
+{
+ "scenes": [
+  {
+   "id": "s1",
+   "start": 0.0,
+   "audio_start": 0.25,
+   "audio_dur": 4.21,
+   "captions": [
+    {
+     "text": "캐나다 버논 고등학교 5곳",
+     "start": 0.25,
+     "end": 2.51
+    },
+    {
+     "text": "우리 아이는 어디가 맞을까?",
+     "start": 2.51,
+     "end": 4.635
+    }
+   ],
+   "duration": 4.635
+  },
+  {
+   "id": "s2",
+   "start": 4.635,
+   "audio_start": 4.81,
+   "audio_dur": 3.43,
+   "captions": [
+    {
+     "text": "대학 진학이 목표라면",
+     "start": 4.81,
+     "end": 6.42
+    },
+    {
+     "text": "AP 4과목, 칼라말카",
+     "start": 6.42,
+     "end": 8.415
+    }
+   ],
+   "duration": 3.78
+  },
+  {
+   "id": "s3",
+   "start": 8.415,
+   "audio_start": 8.59,
+   "audio_dur": 4.34,
+   "captions": [
+    {
+     "text": "운동·예술 다 해보고 싶다면",
+     "start": 8.59,
+     "end": 10.85
+    },
+    {
+     "text": "버논 최대 학교, VSS",
+     "start": 10.85,
+     "end": 13.105
+    }
+   ],
+   "duration": 4.69
+  },
+  {
+   "id": "s4",
+   "start": 13.105,
+   "audio_start": 13.28,
+   "audio_dur": 3.04,
+   "captions": [
+    {
+     "text": "음악과 도심 생활이 좋다면",
+     "start": 13.28,
+     "end": 15.28
+    },
+    {
+     "text": "재즈밴드의 시튼",
+     "start": 15.28,
+     "end": 16.495
+    }
+   ],
+   "duration": 3.39
+  },
+  {
+   "id": "s5",
+   "start": 16.495,
+   "audio_start": 16.67,
+   "audio_dur": 3.69,
+   "captions": [
+    {
+     "text": "첫 유학이라 적응이 걱정되면",
+     "start": 16.67,
+     "end": 18.8
+    },
+    {
+     "text": "유학생 경험 많은 풀턴",
+     "start": 18.8,
+     "end": 20.535
+    }
+   ],
+   "duration": 4.04
+  },
+  {
+   "id": "s6",
+   "start": 20.535,
+   "audio_start": 20.71,
+   "audio_dur": 3.95,
+   "captions": [
+    {
+     "text": "영어 몰입, 7학년부터라면",
+     "start": 20.71,
+     "end": 22.84
+    },
+    {
+     "text": "유학생 10명, 찰스 블룸",
+     "start": 22.84,
+     "end": 24.835
+    }
+   ],
+   "duration": 4.3
+  },
+  {
+   "id": "s7",
+   "start": 24.835,
+   "audio_start": 25.01,
+   "audio_dur": 4.73,
+   "captions": [
+    {
+     "text": "5곳 모두 유학생 전담 교사",
+     "start": 25.01,
+     "end": 27.4
+    },
+    {
+     "text": "BC주 졸업장은 보통 2년 이상",
+     "start": 27.4,
+     "end": 29.915
+    }
+   ],
+   "duration": 5.08
+  },
+  {
+   "id": "s8",
+   "start": 29.915,
+   "audio_start": 30.09,
+   "audio_dur": 3.56,
+   "captions": [
+    {
+     "text": "어느 학교가 맞을지",
+     "start": 30.09,
+     "end": 31.57
+    },
+    {
+     "text": "AA Canada와 같이 골라요",
+     "start": 31.57,
+     "end": 33.95
+    }
+   ],
+   "duration": 5.335
+  }
+ ],
+ "estimated": true,
+ "total": 35.25
+}

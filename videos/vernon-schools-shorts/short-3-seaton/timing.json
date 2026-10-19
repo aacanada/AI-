@@ -1,0 +1,144 @@
+{
+ "scenes": [
+  {
+   "id": "s1",
+   "start": 0.0,
+   "audio_start": 0.25,
+   "audio_dur": 3.56,
+   "captions": [
+    {
+     "text": "재즈밴드 수상 경력에",
+     "start": 0.25,
+     "end": 1.86
+    },
+    {
+     "text": "버논 유일 불어 이머전 고교",
+     "start": 1.86,
+     "end": 3.985
+    }
+   ],
+   "duration": 3.985
+  },
+  {
+   "id": "s2",
+   "start": 3.985,
+   "audio_start": 4.16,
+   "audio_dur": 4.47,
+   "captions": [
+    {
+     "text": "W.L. 시튼 세컨더리",
+     "start": 4.16,
+     "end": 6.03
+    },
+    {
+     "text": "전교생 1,075명, 유학생 30명",
+     "start": 6.03,
+     "end": 8.805
+    }
+   ],
+   "duration": 4.82
+  },
+  {
+   "id": "s3",
+   "start": 8.805,
+   "audio_start": 8.98,
+   "audio_dur": 3.95,
+   "captions": [
+    {
+     "text": "버논 다운타운 한가운데",
+     "start": 8.98,
+     "end": 10.72
+    },
+    {
+     "text": "버스 환승장, 쇼핑몰이 가까워요",
+     "start": 10.72,
+     "end": 13.105
+    }
+   ],
+   "duration": 4.3
+  },
+  {
+   "id": "s4",
+   "start": 13.105,
+   "audio_start": 13.28,
+   "audio_dur": 3.3,
+   "captions": [
+    {
+     "text": "콘서트밴드·재즈밴드·합창",
+     "start": 13.28,
+     "end": 15.41
+    },
+    {
+     "text": "연극과 뮤지컬까지",
+     "start": 15.41,
+     "end": 16.755
+    }
+   ],
+   "duration": 3.65
+  },
+  {
+   "id": "s5",
+   "start": 16.755,
+   "audio_start": 16.93,
+   "audio_dur": 6.73,
+   "captions": [
+    {
+     "text": "영어 과정과 불어 이머전 과정이",
+     "start": 16.93,
+     "end": 19.32
+    },
+    {
+     "text": "함께 있는 이중 트랙 학교",
+     "start": 19.32,
+     "end": 21.32
+    },
+    {
+     "text": "12학년 AP 심리학도 있어요",
+     "start": 21.32,
+     "end": 23.835
+    }
+   ],
+   "duration": 7.08
+  },
+  {
+   "id": "s6",
+   "start": 23.835,
+   "audio_start": 24.01,
+   "audio_dur": 4.34,
+   "captions": [
+    {
+     "text": "로봇·코딩·암벽 등반 동아리",
+     "start": 24.01,
+     "end": 26.4
+    },
+    {
+     "text": "교내에 클라이밍 월도 있어요",
+     "start": 26.4,
+     "end": 28.525
+    }
+   ],
+   "duration": 4.69
+  },
+  {
+   "id": "s7",
+   "start": 28.525,
+   "audio_start": 28.7,
+   "audio_dur": 4.08,
+   "captions": [
+    {
+     "text": "음악·예술형 아이라면 시튼",
+     "start": 28.7,
+     "end": 30.83
+    },
+    {
+     "text": "AA Canada와 상담하세요",
+     "start": 30.83,
+     "end": 33.08
+    }
+   ],
+   "duration": 5.855
+  }
+ ],
+ "estimated": true,
+ "total": 34.38
+}

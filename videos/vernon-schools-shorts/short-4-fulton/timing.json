@@ -1,0 +1,149 @@
+{
+ "scenes": [
+  {
+   "id": "s1",
+   "start": 0.0,
+   "audio_start": 0.25,
+   "audio_dur": 4.21,
+   "captions": [
+    {
+     "text": "버논에서 유학생이 제일 많은 학교",
+     "start": 0.25,
+     "end": 2.77
+    },
+    {
+     "text": "장점일까요, 단점일까요?",
+     "start": 2.77,
+     "end": 4.635
+    }
+   ],
+   "duration": 4.635
+  },
+  {
+   "id": "s2",
+   "start": 4.635,
+   "audio_start": 4.81,
+   "audio_dur": 4.08,
+   "captions": [
+    {
+     "text": "클래런스 풀턴 세컨더리",
+     "start": 4.81,
+     "end": 6.55
+    },
+    {
+     "text": "전교생 800명, 유학생 70명",
+     "start": 6.55,
+     "end": 9.065
+    }
+   ],
+   "duration": 4.43
+  },
+  {
+   "id": "s3",
+   "start": 9.065,
+   "audio_start": 9.24,
+   "audio_dur": 7.95,
+   "captions": [
+    {
+     "text": "답은 첫 유학이라면 장점",
+     "start": 9.24,
+     "end": 11.11
+    },
+    {
+     "text": "국적이 가장 다양하고",
+     "start": 11.11,
+     "end": 12.72
+    },
+    {
+     "text": "유학생 지원 경험이 많아요",
+     "start": 12.72,
+     "end": 14.72
+    },
+    {
+     "text": "그래도 열 명 중 아홉은 현지 학생",
+     "start": 14.72,
+     "end": 17.365
+    }
+   ],
+   "duration": 8.3
+  },
+  {
+   "id": "s4",
+   "start": 17.365,
+   "audio_start": 17.54,
+   "audio_dur": 4.47,
+   "captions": [
+    {
+     "text": "오카나간 호수와 킨 비치 근처",
+     "start": 17.54,
+     "end": 19.8
+    },
+    {
+     "text": "학교 안에 생물 수업용 습지까지",
+     "start": 19.8,
+     "end": 22.185
+    }
+   ],
+   "duration": 4.82
+  },
+  {
+   "id": "s5",
+   "start": 22.185,
+   "audio_start": 22.36,
+   "audio_dur": 4.47,
+   "captions": [
+    {
+     "text": "요리, 마케팅, 관광, 영상 제작",
+     "start": 22.36,
+     "end": 24.88
+    },
+    {
+     "text": "손으로 배우는 과목이 많아요",
+     "start": 24.88,
+     "end": 27.005
+    }
+   ],
+   "duration": 4.82
+  },
+  {
+   "id": "s6",
+   "start": 27.005,
+   "audio_start": 27.18,
+   "audio_dur": 3.82,
+   "captions": [
+    {
+     "text": "체육관 2개, 넓은 운동장",
+     "start": 27.18,
+     "end": 29.31
+    },
+    {
+     "text": "유학생 전담 교사도 상주",
+     "start": 29.31,
+     "end": 31.175
+    }
+   ],
+   "duration": 4.17
+  },
+  {
+   "id": "s7",
+   "start": 31.175,
+   "audio_start": 31.35,
+   "audio_dur": 4.21,
+   "captions": [
+    {
+     "text": "적응이 걱정되는 아이라면 풀턴",
+     "start": 31.35,
+     "end": 33.61
+    },
+    {
+     "text": "AA Canada와 상담하세요",
+     "start": 33.61,
+     "end": 35.86
+    }
+   ],
+   "duration": 5.985
+  }
+ ],
+ "estimated": true,
+ "total": 37.16
+}

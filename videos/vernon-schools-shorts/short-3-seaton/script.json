@@ -1,0 +1,64 @@
+{
+ "n": 3,
+ "title": "음악 좋아하는 아이라면, 다운타운 이 학교 · W.L. 시튼 세컨더리",
+ "brand": "AA CANADA · 버논 고등학교 탐방 3/5",
+ "badge": "탐방 3/5",
+ "accent": "#1aa6a6",
+ "bgm": "bgm-a.mp3",
+ "narration": "owner recording short-3_full.m4a (pending)",
+ "highlights": ["재즈밴드", "불어 이머전", "1,075명", "30명", "다운타운", "뮤지컬", "이중 트랙", "AP 심리학", "클라이밍 월", "시튼"],
+ "scenes": [
+  {"id": "s1", "chunks": [["재즈밴드 수상 경력에", "재즈밴드 수상 경력에"], ["버논 유일 불어 이머전 고교", "버논 유일 불어 이머전 고교"]],
+   "items": [
+    {"t": "bg", "src": "seaton-08-band-room", "dim": 0.5, "at": -1},
+    {"t": "notes", "y": 1120, "at": 0},
+    {"t": "particles", "at": 0, "dt": 0.32, "y": 860, "n": 110},
+    {"t": "slam", "text": "JAZZ", "size": 330, "y": 650, "at": 0},
+    {"t": "stamp", "text": "FRENCH IMMERSION", "x": 140, "y": 1010, "w": 800, "size": 60, "color": "lake", "at": 1, "dt": 0.2}
+   ]},
+  {"id": "s2", "shader": "light-leak", "foot": "* SD22 2026-27 자료 기준 · 개설 과목·인원은 해마다 달라질 수 있음",
+   "chunks": [["W.L. 시튼 세컨더리", "더블유 엘 시튼 세컨더리"], ["전교생 1,075명, 유학생 30명", "전교생 천칠십오 명, 유학생 삼십 명"]],
+   "items": [
+    {"t": "bg", "src": "seaton-01-entrance", "dim": 0.55, "at": -1},
+    {"t": "title", "en": "W.L. SEATON SECONDARY", "ko": "시튼 세컨더리 · 8~12학년", "size": 50, "y": 580, "at": 0},
+    {"t": "stats", "items": [{"l": "전교생", "v": "1,075", "u": "명"}, {"l": "유학생", "v": "30", "u": "명"}], "y": 830, "w": 510, "at": 1, "ats": [1, 1], "dts": [0.1, 1.2]},
+    {"t": "map", "pin": "seaton", "label": "다운타운 중심", "x": 600, "y": 830, "w": 420, "h": 540, "at": 0, "dt": 0.5}
+   ]},
+  {"id": "s3", "shader": "swirl-vortex",
+   "chunks": [["버논 다운타운 한가운데", "버논 다운타운 한가운데"], ["버스 환승장, 쇼핑몰이 가까워요", "버스 환승장, 쇼핑몰이 가까워요"]],
+   "items": [
+    {"t": "bg", "src": "seaton-02-aerial-downtown", "dim": 0.4, "at": -1},
+    {"t": "slam", "text": "DOWNTOWN", "size": 160, "y": 680, "color": "white", "at": 0, "dt": 0.1, "shake": 10},
+    {"t": "icons", "items": [{"i": "bus", "l": "버스 환승장", "c": "red"}, {"i": "bag", "l": "쇼핑몰"}, {"i": "food", "l": "식당", "c": "gold"}], "y": 1060, "at": 1, "ats": [1, 1, 1]}
+   ]},
+  {"id": "s4", "shader": "cinematic-zoom",
+   "chunks": [["콘서트밴드·재즈밴드·합창", "콘서트밴드, 재즈밴드, 합창"], ["연극과 뮤지컬까지", "연극과 뮤지컬까지"]],
+   "items": [
+    {"t": "card", "src": "seaton-08-band-room", "y": 590, "h": 580, "at": 0, "label": "Band Room", "lc": "acc"},
+    {"t": "card", "src": "seaton-04-theatre-stage", "y": 590, "h": 580, "at": 1, "enter": "up", "rot": -2, "label": "Theatre", "lc": "gold"},
+    {"t": "chips", "items": [{"t": "Jazz Band", "i": "note"}, {"t": "Concert Choir", "i": "note"}, {"t": "Musical Theatre", "i": "mask", "c": "gold"}, {"t": "Drama", "i": "mask", "c": "gold"}], "y": 1210, "size": 38, "at": 0, "ats": [0, 0, 1, 1]}
+   ]},
+  {"id": "s5", "shader": "cross-warp-morph", "foot": "* 유학생은 주로 영어 과정 수강 · 일반 불어 수업은 8~12학년 개설",
+   "chunks": [["영어 과정과 불어 이머전 과정이", "영어 과정과 불어 이머전 과정이"], ["함께 있는 이중 트랙 학교", "함께 있는 이중 트랙 학교"], ["12학년 AP 심리학도 있어요", "십이 학년 에이피 심리학도 있어요"]],
+   "items": [
+    {"t": "fork", "left": "English Track", "ls": "영어 과정", "right": "French Immersion", "rs": "불어 이머전", "root": "W.L. SEATON", "y": 590, "at": 0},
+    {"t": "card", "src": "seaton-06-science-lab", "x": 60, "y": 1140, "w": 440, "h": 230, "at": 2, "pos": "50% 40%"},
+    {"t": "chips", "items": [{"t": "AP Psychology", "i": "book", "c": "gold"}], "x": 520, "y": 1200, "w": 500, "size": 44, "at": 2, "dt": 0.4}
+   ]},
+  {"id": "s6", "shader": "ripple-waves",
+   "chunks": [["로봇·코딩·암벽 등반 동아리", "로봇, 코딩, 암벽 등반 동아리"], ["교내에 클라이밍 월도 있어요", "교내에 클라이밍 월도 있어요"]],
+   "items": [
+    {"t": "bg", "src": "seaton-05-gym", "dim": 0.5, "at": -1},
+    {"t": "chips", "items": [{"t": "Robotics", "i": "robot"}, {"t": "Coding", "i": "code", "c": "#2f6bff"}, {"t": "Rock Climbing", "i": "climb", "c": "gold"}], "y": 620, "size": 50, "at": 0},
+    {"t": "stamp", "text": "교내 클라이밍 월", "x": 190, "y": 980, "w": 700, "size": 70, "color": "gold", "at": 1, "dt": 0.2}
+   ]},
+  {"id": "s7", "shader": "flash-through-white",
+   "chunks": [["음악·예술형 아이라면 시튼", "음악, 예술형 아이라면 시튼"], ["AA Canada와 상담하세요", "에이에이 캐나다와 상담하세요"]],
+   "items": [
+    {"t": "particles", "at": 0, "dt": 0.6, "y": 820, "n": 110, "spread": 620},
+    {"t": "cta", "at": 0}
+   ]}
+ ],
+ "thumbnail": {"bg": "seaton-04-theatre-stage", "lines": ["재즈밴드", "뮤지컬", "다운타운 학교"], "gold": [0], "chips": ["W.L. 시튼 세컨더리", "탐방 3/5"]},
+ "publish": {"hook": "음악 좋아하는 아이라면, 다운타운 이 학교", "after": "2026-11-03", "folder": "2026-11-03-vernon-school-3-seaton"}
+}

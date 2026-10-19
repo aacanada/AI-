@@ -1,0 +1,63 @@
+{
+ "n": 4,
+ "title": "유학생 제일 많은 학교, 장점일까? · 클래런스 풀턴 세컨더리",
+ "brand": "AA CANADA · 버논 고등학교 탐방 4/5",
+ "badge": "탐방 4/5",
+ "accent": "#8c1d40",
+ "bgm": "bgm-b.mp3",
+ "narration": "owner recording short-4_full.m4a (pending)",
+ "highlights": ["유학생이 제일 많은", "장점", "800명", "70명", "가장 다양", "경험이 많아요", "아홉은 현지 학생", "킨 비치", "습지", "손으로 배우는", "전담 교사", "풀턴"],
+ "scenes": [
+  {"id": "s1", "chunks": [["버논에서 유학생이 제일 많은 학교", "버논에서 유학생이 제일 많은 학교"], ["장점일까요, 단점일까요?", "장점일까요, 단점일까요?"]],
+   "items": [
+    {"t": "bg", "src": "fulton-05-flags-cafeteria", "dim": 0.5, "at": -1},
+    {"t": "particles", "at": 0, "dt": 0.32, "y": 800, "n": 110},
+    {"t": "slam", "text": "?", "size": 420, "y": 590, "at": 0},
+    {"t": "balance", "y": 1040, "at": 1}
+   ]},
+  {"id": "s2", "shader": "sdf-iris", "foot": "* SD22 2026-27 자료 기준 · 개설 과목·인원은 해마다 달라질 수 있음",
+   "chunks": [["클래런스 풀턴 세컨더리", "클래런스 풀턴 세컨더리"], ["전교생 800명, 유학생 70명", "전교생 팔백 명, 유학생 칠십 명"]],
+   "items": [
+    {"t": "bg", "src": "fulton-01-welcome", "dim": 0.55, "at": -1},
+    {"t": "title", "en": "CLARENCE FULTON SECONDARY", "ko": "풀턴 세컨더리 · 8~12학년", "size": 42, "y": 580, "at": 0},
+    {"t": "stats", "items": [{"l": "전교생", "v": "800", "u": "명"}, {"l": "유학생", "v": "70", "u": "명"}], "y": 830, "w": 510, "at": 1, "ats": [1, 1], "dts": [0.1, 1.2]},
+    {"t": "map", "pin": "fulton", "label": "서쪽 · 오카나간 호수 쪽", "x": 600, "y": 830, "w": 420, "h": 540, "at": 0, "dt": 0.5}
+   ]},
+  {"id": "s3", "shader": "cinematic-zoom",
+   "chunks": [["답은 첫 유학이라면 장점", "답은 첫 유학이라면 장점"], ["국적이 가장 다양하고", "국적이 가장 다양하고"], ["유학생 지원 경험이 많아요", "유학생 지원 경험이 많아요"], ["그래도 열 명 중 아홉은 현지 학생", "그래도 열 명 중 아홉은 현지 학생"]],
+   "items": [
+    {"t": "card", "src": "fulton-04-intl-flags-classroom", "y": 590, "h": 440, "at": 0},
+    {"t": "stamp", "text": "첫 유학 = 장점", "x": 560, "y": 610, "w": 440, "size": 54, "color": "green", "at": 0, "dt": 0.7},
+    {"t": "chips", "items": [{"t": "국적이 가장 다양", "i": "globe", "c": "lake"}, {"t": "유학생 지원 경험", "i": "users"}], "y": 1060, "size": 40, "at": 1, "ats": [1, 2]},
+    {"t": "people", "n": 10, "filled": 9, "label": "800명 중 70명", "y": 1160, "h": 230, "at": 3, "fillAt": 3, "fillDt": 0.1}
+   ]},
+  {"id": "s4", "shader": "light-leak",
+   "chunks": [["오카나간 호수와 킨 비치 근처", "오카나간 호수와 킨 비치 근처"], ["학교 안에 생물 수업용 습지까지", "학교 안에 생물 수업용 습지까지"]],
+   "items": [
+    {"t": "bg", "src": "fulton-02-aerial-fields", "dim": 0.4, "at": -1},
+    {"t": "icons", "items": [{"i": "beach", "l": "Kin Beach", "c": "lake"}, {"i": "leaf", "l": "연구용 습지", "c": "green"}, {"i": "ball", "l": "비치발리볼 코트", "c": "gold"}], "y": 1040, "at": 0, "ats": [0, 1, 1]}
+   ]},
+  {"id": "s5", "shader": "whip-pan",
+   "chunks": [["요리, 마케팅, 관광, 영상 제작", "요리, 마케팅, 관광, 영상 제작"], ["손으로 배우는 과목이 많아요", "손으로 배우는 과목이 많아요"]],
+   "items": [
+    {"t": "chips", "items": ["Culinary Arts", "Marketing", "Tourism", "Video Production"], "y": 590, "size": 38, "at": 0},
+    {"t": "card", "src": "fulton-06-culinary-kitchen", "y": 780, "h": 580, "at": 0, "dt": 0.4, "enter": "up", "rot": -3},
+    {"t": "card", "src": "fulton-09-shop", "y": 780, "h": 580, "at": 0, "dt": 1.4, "enter": "up", "rot": 2},
+    {"t": "card", "src": "fulton-10-theatre", "y": 780, "h": 580, "at": 1, "enter": "up", "rot": -1, "label": "손으로 배우는 과목", "lc": "gold"}
+   ]},
+  {"id": "s6", "shader": "cross-warp-morph",
+   "chunks": [["체육관 2개, 넓은 운동장", "체육관 두 개, 넓은 운동장"], ["유학생 전담 교사도 상주", "유학생 전담 교사도 상주"]],
+   "items": [
+    {"t": "card", "src": "fulton-07-gym", "y": 590, "h": 560, "at": 0},
+    {"t": "checks", "items": ["체육관 2개 · 넓은 운동장", "유학생 전담 교사 상주"], "y": 1180, "at": 0, "ats": [0, 1]}
+   ]},
+  {"id": "s7", "shader": "flash-through-white",
+   "chunks": [["적응이 걱정되는 아이라면 풀턴", "적응이 걱정되는 아이라면 풀턴"], ["AA Canada와 상담하세요", "에이에이 캐나다와 상담하세요"]],
+   "items": [
+    {"t": "particles", "at": 0, "dt": 0.6, "y": 820, "n": 110, "spread": 620},
+    {"t": "cta", "at": 0}
+   ]}
+ ],
+ "thumbnail": {"bg": "fulton-05-flags-cafeteria", "lines": ["유학생 제일 많은", "버논 학교", "장점일까?"], "gold": [2], "size": 150, "chips": ["클래런스 풀턴 세컨더리", "탐방 4/5"]},
+ "publish": {"hook": "유학생 제일 많은 학교, 장점일까?", "after": "2026-11-06", "folder": "2026-11-06-vernon-school-4-fulton"}
+}

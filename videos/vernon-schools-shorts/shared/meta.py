@@ -10,7 +10,7 @@ mp4 = ROOT / "renders" / "video.mp4"
 if mp4.exists():
     d = float(subprocess.check_output(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(mp4)]))
     mb = mp4.stat().st_size / 1e6
-    vid = f"video.mp4 (1080x1920, {d:.1f}s, {mb:.1f}MB)"
+    vid = f"video.mp4 (1080x1920, {int(d // 60)}:{round(d % 60):02d}, {mb:.0f}MB)"
 else:
     vid = "video.mp4 (not rendered yet)"
 series = "버논 고등학교 한눈에" if spec["n"] == 6 else f"버논 고등학교 탐방 {spec['n']}/5"

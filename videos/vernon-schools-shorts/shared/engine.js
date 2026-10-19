@@ -237,9 +237,11 @@ SPEC.scenes.forEach((sc, i) => {
   if (foot) tl.fromTo(foot, { opacity: 0 }, { opacity: 1, duration: 0.5 }, S[i].start + 0.4);
 });
 
-// captions pop at their own start
+// captions (inside their scene): pop at start, hard cut at end
 S.forEach((s, i) => s.captions.forEach((c, j) => {
-  tl.fromTo(document.getElementById("cap-" + i + "-" + j + "-box"), { opacity: 0, scale: 0.9, y: 16 }, { opacity: 1, scale: 1, y: 0, duration: 0.22, ease: "back.out(2)" }, c.start);
+  const box = document.getElementById("cap-" + i + "-" + j + "-box");
+  tl.fromTo(box, { opacity: 0, scale: 0.9, y: 16 }, { opacity: 1, scale: 1, y: 0, duration: 0.22, ease: "back.out(2)" }, c.start);
+  if (j < s.captions.length - 1) tl.set(box, { opacity: 0 }, c.end);
 }));
 
 // final scene: gentle fade to navy in the last 0.5s (the only exit allowed)

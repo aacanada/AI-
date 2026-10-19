@@ -323,11 +323,12 @@ def main():
             f'<div class="sbg"><div class="blob b1" style="background:radial-gradient(closest-side, rgba(47,107,255,0.5), rgba(47,107,255,0))"></div>'
             f'<div class="blob b2" style="background:radial-gradient(closest-side, {hexa(ACC, 0.35)}, {hexa(ACC, 0)})"></div>'
             f'<div class="grid"></div></div>'
-            f'<div class="cam" id="{sc["id"]}-cam">{"".join(items)}{foot_html}</div></div>')
-        for j, c in enumerate(tm["captions"]):
-            caps.append(
-                f'<div id="cap-{i}-{j}" class="clip cap" data-start="{r(c["start"])}" data-duration="{r(max(0.1, c["end"] - c["start"]))}" data-track-index="2">'
-                f'<div class="cap-box" id="cap-{i}-{j}-box"><span class="cap-text">{cap_html(c["text"])}</span></div></div>')
+            f'<div class="cam" id="{sc["id"]}-cam">{"".join(items)}{foot_html}</div>'
+            # brand, badge and captions live INSIDE each scene: the shader compositor only carries scene layers
+            f'<div class="brand">{brand_html(SPEC["brand"])}</div><div class="badge">{E(SPEC.get("badge", ""))}</div>'
+            + "".join(f'<div class="cap" id="cap-{i}-{j}"><div class="cap-box" id="cap-{i}-{j}-box"><span class="cap-text">{cap_html(c["text"])}</span></div></div>'
+                      for j, c in enumerate(tm["captions"]))
+            + '</div>')
     # ---- audio: narration (if recorded) + BGM bed with narration ducking + SFX
     audio = []
     if (ROOT / "assets" / "audio" / "narration.wav").exists():

@@ -1,0 +1,65 @@
+{
+ "n": 5,
+ "title": "유학생이 딱 10명, 영어만 쓰게 되는 학교 · 찰스 블룸 세컨더리",
+ "brand": "AA CANADA · 버논 고등학교 탐방 5/5",
+ "badge": "탐방 5/5",
+ "accent": "#2e7d32",
+ "bgm": "bgm-a.mp3",
+ "narration": "owner recording short-5_full.m4a (pending)",
+ "highlights": ["375명", "10명", "영어만", "럼비", "7학년부터", "가족 같은", "적응 프로그램", "마을 한가운데", "600헥타르", "임업·기술", "최대로", "블룸"],
+ "scenes": [
+  {"id": "s1", "chunks": [["전교생 375명에 유학생은 딱 10명", "전교생 삼백칠십오 명에 유학생은 딱 열 명"], ["영어만 쓰게 되는 학교", "영어만 쓰게 되는 학교"]],
+   "items": [
+    {"t": "bg", "src": "bloom-01-aerial-mountain", "dim": 0.5, "at": -1},
+    {"t": "particles", "at": 0, "dt": 0.32, "y": 820, "n": 110},
+    {"t": "slam", "text": "10", "size": 440, "y": 600, "at": 0, "dt": 0.5, "sub": "유학생 / 전교생 375명", "subDt": 1.0},
+    {"t": "stamp", "text": "영어 몰입 환경", "x": 240, "y": 1180, "w": 600, "size": 66, "color": "green", "at": 1, "dt": 0.2}
+   ]},
+  {"id": "s2", "shader": "cross-warp-morph", "foot": "* SD22 2026-27 자료 기준 · 개설 과목·인원은 해마다 달라질 수 있음",
+   "chunks": [["찰스 블룸 세컨더리", "찰스 블룸 세컨더리"], ["버논 옆 작은 마을 럼비", "버논 옆 작은 마을 럼비"], ["7학년부터 다닐 수 있어요", "칠 학년부터 다닐 수 있어요"]],
+   "items": [
+    {"t": "bg", "src": "bloom-02-aerial-village", "dim": 0.55, "at": -1},
+    {"t": "title", "en": "CHARLES BLOOM SECONDARY", "ko": "찰스 블룸 세컨더리 · 7~12학년", "size": 46, "y": 580, "at": 0},
+    {"t": "note", "text": "버논 옆 작은 마을 럼비(Lumby)", "x": 60, "y": 880, "w": 510, "size": 46, "align": "left", "at": 1},
+    {"t": "stamp", "text": "7학년부터", "x": 60, "y": 1060, "w": 510, "size": 76, "color": "gold", "rot": -8, "at": 2, "dt": 0.2},
+    {"t": "map", "pin": "bloom", "label": "동쪽 · 럼비", "note": "모나시 산맥 입구", "x": 600, "y": 830, "w": 420, "h": 540, "at": 1}
+   ]},
+  {"id": "s3", "shader": "light-leak",
+   "chunks": [["작은 학교라 가족 같은 분위기", "작은 학교라 가족 같은 분위기"], ["한 명 한 명 챙기는 학교", "한 명 한 명 챙기는 학교"], ["유학생 적응 프로그램도 있어요", "유학생 적응 프로그램도 있어요"]],
+   "items": [
+    {"t": "card", "src": "bloom-04-welcome-languages", "y": 590, "h": 560, "pos": "50% 35%", "at": 0},
+    {"t": "card", "src": "bloom-10-library", "y": 590, "h": 560, "at": 1, "enter": "up", "rot": -2},
+    {"t": "chips", "items": [{"t": "가족 같은 분위기", "i": "home"}, {"t": "한 명 한 명 케어", "i": "users", "c": "lake"}, {"t": "유학생 적응 프로그램", "i": "globe", "c": "gold"}], "y": 1190, "size": 38, "at": 0, "ats": [0, 1, 2]}
+   ]},
+  {"id": "s4", "shader": "sdf-iris",
+   "chunks": [["학교가 마을 한가운데", "학교가 마을 한가운데"], ["수영장·스케이트장·공원이 바로 옆", "수영장, 스케이트장, 공원이 바로 옆"]],
+   "items": [
+    {"t": "bg", "src": "bloom-03-aerial-school", "dim": 0.45, "at": -1},
+    {"t": "stamp", "text": "마을 한가운데", "x": 60, "y": 660, "w": 470, "size": 56, "color": "gold", "at": 0, "dt": 0.2},
+    {"t": "card", "src": "bloom-09-skatepark", "x": 560, "y": 600, "w": 460, "h": 360, "at": 1, "rot": 3},
+    {"t": "icons", "items": [{"i": "pool", "l": "수영장", "c": "lake"}, {"i": "ice", "l": "스케이트장", "c": "#2f6bff"}, {"i": "tree", "l": "공원", "c": "green"}], "y": 1060, "at": 1}
+   ]},
+  {"id": "s5", "shader": "thermal-distortion", "foot": "* SD22 Forestry/Trades 프로그램 · 유학생 참여 가능 여부는 개별 확인",
+   "chunks": [["학교 숲만 600헥타르", "학교 숲만 육백 헥타르"], ["11·12학년 임업·기술 프로그램", "십일, 십이 학년 임업 기술 프로그램"], ["목공·자동차 실습실도 있어요", "목공, 자동차 실습실도 있어요"]],
+   "items": [
+    {"t": "odo", "value": "600ha", "label": "학교 숲", "size": 200, "y": 590, "color": "green", "at": 0, "dt": 0.1},
+    {"t": "chips", "items": [{"t": "11·12학년 임업·기술 프로그램", "i": "tree", "c": "green"}], "y": 860, "size": 40, "at": 1},
+    {"t": "card", "src": "bloom-08-wood-shop", "y": 960, "h": 410, "at": 2, "label": "목공", "lc": "gold"},
+    {"t": "card", "src": "bloom-07-auto-shop", "y": 960, "h": 410, "at": 2, "dt": 1.0, "enter": "up", "rot": -2, "label": "자동차", "lc": "acc"}
+   ]},
+  {"id": "s6", "shader": "whip-pan",
+   "chunks": [["영어 노출은 최대로", "영어 노출은 최대로"], ["생활은 AA Canada가 챙겨요", "생활은 에이에이 캐나다가 챙겨요"]],
+   "items": [
+    {"t": "card", "src": "bloom-05-gym-wolf-mural", "y": 590, "h": 560, "pos": "50% 40%", "at": 0},
+    {"t": "checks", "items": ["영어 노출은 최대로", "생활은 AA Canada 관리"], "y": 1180, "at": 0, "ats": [0, 1]}
+   ]},
+  {"id": "s7", "shader": "flash-through-white",
+   "chunks": [["영어 몰입이 목표라면 블룸", "영어 몰입이 목표라면 블룸"], ["AA Canada와 상담하세요", "에이에이 캐나다와 상담하세요"]],
+   "items": [
+    {"t": "particles", "at": 0, "dt": 0.6, "y": 820, "n": 110, "spread": 620},
+    {"t": "cta", "at": 0}
+   ]}
+ ],
+ "thumbnail": {"bg": "bloom-01-aerial-mountain", "lines": ["유학생", "딱 10명", "영어만 쓰는 학교"], "gold": [1], "size": 150, "chips": ["찰스 블룸 세컨더리", "탐방 5/5"]},
+ "publish": {"hook": "유학생이 딱 10명, 영어만 쓰게 되는 학교", "after": "2026-11-10", "folder": "2026-11-10-vernon-school-5-bloom"}
+}
