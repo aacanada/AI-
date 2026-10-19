@@ -7,7 +7,7 @@
 ## 시작 전 준비 (main 브랜치에서 작업)
 
 - 이 브리프와 소재는 `plans/sga-longform/`에 있다.
-  - `assets/photos/` : SGA 홈페이지 사진 59장 (사용 허가 확인됨). 파일명 접두어: `campus-` 교내, `town-` 노스욕 주변, `life-` 행사·생활, `grad-` 졸업식, `res-` 레지던스, `logo-` 로고.
+  - `assets/photos/` : SGA 홈페이지 사진 65장 (사용 허가 확인됨). 파일명 접두어: `campus-` 교내, `town-` 노스욕 주변, `life-` 행사·생활, `grad-` 졸업식, `res-` 레지던스, `logo-` 로고.
   - `assets/brochure/` : 2026 SGA 공식 브로셔 페이지 렌더 9장 (2400×1350). 필요한 부분만 크롭해서 쓴다. `br-01-cover` 표지, `br-04/05-life-collage` 학교생활 사진 콜라주, `br-06-oly-mascot` `br-07-oly-question` 마스코트 올리(부엉이), `br-15-residences` 레지던스 5곳, `br-18-meals` 식사, `br-19-morning-snack` 아침 간식, `br-29-ymca` YMCA.
 - 참고 템플릿(톤·CTA·자막 스타일): 버논 롱폼 브랜치 `claude/festive-ramanujan-rswtcw` 의 `videos/vernon-longform/`. 필요하면 `git show origin/claude/festive-ramanujan-rswtcw:videos/vernon-longform/index.html` 로 참고만 한다. 쇼츠 스킬은 `git checkout origin/claude/confident-ride-5ensgh -- .claude/skills/shorts-video` 로 가져와 CTA·브랜드 규칙만 참고.
 - 프로젝트 폴더: `videos/sga-longform/`
