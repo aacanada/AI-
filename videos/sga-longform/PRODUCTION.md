@@ -24,14 +24,12 @@ npm run check
 - Whisper (`hyperframes transcribe`, ko) is tried for word timing; in the cloud sandbox huggingface.co is
   blocked, so rows are snapped to detected pauses instead.
 
-## When the testimonial clips arrive (`plans/sga-longform/assets/clips/T1~T4.mp4`)
+## Testimonial clips (done)
 
-```bash
-python3 -I tools/clip_prep.py          # cut brief ranges +-1 s, trim to speech, 1080p30, loudnorm
-python3 -I tools/build.py
-```
-Check the subtitles against the audio; for exact timing write `assets/clips/Tn.subs.json`. Skip any part
-where a previous school's name is audible.
+`assets/clips/T1~T4.mp4` are built from the main-branch sources `plans/sga-longform/assets/clips/<name>_video720.mp4`
++ `<name>_audio.m4a` by `tools/clip_prep.py` (mux, exact cuts, crop above the burned-in subtitles, 1080p30, loudnorm).
+Cut points and subtitle timing live in `CLIPS` in `tools/script.py` (set from the burned-in subtitles + speech pauses).
+To redo: `SGA_CLIPS_DIR=<folder with the sources> python3 -I tools/clip_prep.py && python3 -I tools/build.py`.
 
 ## Render and publish
 

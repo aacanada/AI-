@@ -22,7 +22,7 @@ motion graphics + SGA photos + student testimonial clips, narrated by the direct
 - assets/photos, assets/brochure: resized/cropped from plans/sga-longform/assets by tools/prep_assets.py
 - assets/music/bgm-a.mp3, bgm-b.mp3: same calm royalty-free beds as the Vernon long-form (chained, ducked)
 - assets/sfx: whoosh / pop / impact / stamp from the HyperFrames bundled Pixabay library (CREDITS.md)
-- assets/clips/T1~T4.mp4: pending (YouTube blocked in the cloud sandbox) - placeholder cards render until then
+- assets/clips/T1~T4.mp4: cut from the SGA Students' Voice sources on main (tools/clip_prep.py); T4 omits a phrase that may name a previous school
 - assets/voice/sNN.wav: pending recording
 
 ## Customizations
