@@ -1,0 +1,183 @@
+{
+ "scenes": [
+  {
+   "id": "s1",
+   "start": 0.0,
+   "audio_start": 0.25,
+   "audio_dur": 3.377,
+   "captions": [
+    {
+     "text": "캐나다 버논에서",
+     "start": 0.31,
+     "end": 1.671
+    },
+    {
+     "text": "AP 듣고 대학 가려면?",
+     "start": 1.671,
+     "end": 3.802
+    }
+   ],
+   "take": [
+    1.954,
+    5.134
+   ],
+   "duration": 3.802
+  },
+  {
+   "id": "s2",
+   "start": 3.802,
+   "audio_start": 3.977,
+   "audio_dur": 4.929,
+   "captions": [
+    {
+     "text": "칼라말카 세컨더리",
+     "start": 4.037,
+     "end": 5.863
+    },
+    {
+     "text": "전교생 700명, 유학생 65명",
+     "start": 5.863,
+     "end": 9.082
+    }
+   ],
+   "take": [
+    6.542,
+    11.312
+   ],
+   "duration": 5.28
+  },
+  {
+   "id": "s3",
+   "start": 9.082,
+   "audio_start": 9.257,
+   "audio_dur": 7.661,
+   "captions": [
+    {
+     "text": "12학년 AP 과목이",
+     "start": 9.317,
+     "end": 11.364
+    },
+    {
+     "text": "무려 4개 개설돼 있어요",
+     "start": 11.364,
+     "end": 13.954
+    },
+    {
+     "text": "미적분·영문학·작문·심리학",
+     "start": 13.954,
+     "end": 17.093
+    }
+   ],
+   "take": [
+    12.795,
+    20.422
+   ],
+   "duration": 8.011
+  },
+  {
+   "id": "s4",
+   "start": 17.093,
+   "audio_start": 17.268,
+   "audio_dur": 3.934,
+   "captions": [
+    {
+     "text": "주 학력평가에서",
+     "start": 17.328,
+     "end": 18.718
+    },
+    {
+     "text": "상위권이라고 소개하는 학교",
+     "start": 18.718,
+     "end": 21.377
+    }
+   ],
+   "take": [
+    21.518,
+    25.292
+   ],
+   "duration": 4.284
+  },
+  {
+   "id": "s5",
+   "start": 21.377,
+   "audio_start": 21.552,
+   "audio_dur": 6.812,
+   "captions": [
+    {
+     "text": "칼라말카 호수가 걸어서 가까운",
+     "start": 21.612,
+     "end": 23.519
+    },
+    {
+     "text": "조용한 콜드스트림 동네",
+     "start": 23.519,
+     "end": 26.266
+    },
+    {
+     "text": "시내까지는 버스 12분",
+     "start": 26.266,
+     "end": 28.539
+    }
+   ],
+   "take": [
+    26.597,
+    33.642
+   ],
+   "duration": 7.162
+  },
+  {
+   "id": "s6",
+   "start": 28.539,
+   "audio_start": 28.714,
+   "audio_dur": 4.763,
+   "captions": [
+    {
+     "text": "학교엔 유학생 전담 교사",
+     "start": 28.774,
+     "end": 31.241
+    },
+    {
+     "text": "생활은 AA Canada 관리형으로",
+     "start": 31.241,
+     "end": 33.652
+    }
+   ],
+   "take": [
+    34.927,
+    39.749
+   ],
+   "duration": 5.113
+  },
+  {
+   "id": "s7",
+   "start": 33.652,
+   "audio_start": 33.827,
+   "audio_dur": 4.8,
+   "captions": [
+    {
+     "text": "학업형 아이라면 칼라말카",
+     "start": 33.887,
+     "end": 36.411
+    },
+    {
+     "text": "AA Canada와 상담하세요",
+     "start": 36.411,
+     "end": 38.927
+    }
+   ],
+   "take": [
+    40.851,
+    45.491
+   ],
+   "duration": 7.378
+  }
+ ],
+ "total": 41.03,
+ "source": {
+  "file": "short-1_full.m4a",
+  "tempo": 1.0,
+  "max_pause": 0.5,
+  "rate_chars_per_s": 5.06,
+  "method": "silencedetect + script-ratio DP alignment"
+ }
+}

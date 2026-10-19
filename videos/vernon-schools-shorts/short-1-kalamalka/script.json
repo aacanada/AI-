@@ -1,0 +1,415 @@
+{
+ "n": 1,
+ "title": "버논에서 AP 듣고 대학 가려면 · 칼라말카 세컨더리",
+ "brand": "AA CANADA · 버논 고등학교 탐방 1/5",
+ "badge": "탐방 1/5",
+ "accent": "#f2b705",
+ "bgm": "bgm-a.mp3",
+ "narration": "owner recording (short-1_s1.m4a ~ short-1_s7.m4a)",
+ "highlights": [
+  "AP",
+  "700명",
+  "65명",
+  "4개",
+  "상위권",
+  "12분",
+  "전담 교사",
+  "관리형",
+  "칼라말카"
+ ],
+ "scenes": [
+  {
+   "id": "s1",
+   "chunks": [
+    [
+     "캐나다 버논에서",
+     "캐나다 버논에서"
+    ],
+    [
+     "AP 듣고 대학 가려면?",
+     "에이피 듣고 대학 가려면?"
+    ]
+   ],
+   "items": [
+    {
+     "t": "bg",
+     "src": "kal-01-aerial-lake",
+     "dim": 0.5,
+     "at": -1
+    },
+    {
+     "t": "particles",
+     "at": 0,
+     "dt": 0.32,
+     "y": 960,
+     "n": 110
+    },
+    {
+     "t": "slam",
+     "text": "AP",
+     "size": 440,
+     "y": 700,
+     "at": 0,
+     "sub": "ADVANCED PLACEMENT",
+     "subAt": 1,
+     "subDt": 0.2
+    },
+    {
+     "t": "chips",
+     "items": [
+      {
+       "t": "캐나다 버논 · BC주",
+       "i": "pin"
+      }
+     ],
+     "y": 1250,
+     "at": 0,
+     "dt": 0.9,
+     "size": 40,
+     "color": "#132a52"
+    }
+   ]
+  },
+  {
+   "id": "s2",
+   "shader": "cinematic-zoom",
+   "foot": "* SD22 2026-27 자료 기준 · 개설 과목·인원은 해마다 달라질 수 있음",
+   "chunks": [
+    [
+     "칼라말카 세컨더리",
+     "칼라말카 세컨더리"
+    ],
+    [
+     "전교생 700명, 유학생 65명",
+     "전교생 칠백 명, 유학생 육십오 명"
+    ]
+   ],
+   "items": [
+    {
+     "t": "bg",
+     "src": "kal-03-entrance",
+     "dim": 0.55,
+     "at": -1
+    },
+    {
+     "t": "title",
+     "en": "KALAMALKA SECONDARY",
+     "ko": "칼라말카 세컨더리 · 8~12학년",
+     "size": 54,
+     "y": 580,
+     "at": 0
+    },
+    {
+     "t": "stats",
+     "items": [
+      {
+       "l": "전교생",
+       "v": "700",
+       "u": "명"
+      },
+      {
+       "l": "유학생",
+       "v": "65",
+       "u": "명"
+      }
+     ],
+     "y": 830,
+     "w": 510,
+     "at": 1,
+     "ats": [
+      1,
+      1
+     ],
+     "dts": [
+      0.1,
+      1.2
+     ]
+    },
+    {
+     "t": "map",
+     "pin": "kal",
+     "label": "남동쪽 · 칼라말카 호수",
+     "x": 600,
+     "y": 830,
+     "w": 420,
+     "h": 540,
+     "at": 0,
+     "dt": 0.5
+    }
+   ]
+  },
+  {
+   "id": "s3",
+   "shader": "light-leak",
+   "foot": "* 2025-26 학교 프로필 기준",
+   "chunks": [
+    [
+     "12학년 AP 과목이",
+     "십이 학년 에이피 과목이"
+    ],
+    [
+     "무려 4개 개설돼 있어요",
+     "무려 네 개 개설돼 있어요"
+    ],
+    [
+     "미적분·영문학·작문·심리학",
+     "미적분, 영문학, 작문, 심리학"
+    ]
+   ],
+   "items": [
+    {
+     "t": "bg",
+     "src": "kal-08-library",
+     "dim": 0.6,
+     "at": -1,
+     "kb": "out"
+    },
+    {
+     "t": "stamp",
+     "text": "GRADE 12",
+     "x": 330,
+     "y": 590,
+     "w": 420,
+     "size": 60,
+     "color": "gold",
+     "at": 0,
+     "dt": 0.3
+    },
+    {
+     "t": "slam",
+     "text": "AP × 4",
+     "size": 250,
+     "y": 720,
+     "at": 1,
+     "dt": 0.1,
+     "sub": "과목 개설"
+    },
+    {
+     "t": "chips",
+     "items": [
+      "AP Calculus",
+      "AP English Literature",
+      "AP Language & Composition",
+      "AP Psychology"
+     ],
+     "y": 1060,
+     "size": 36,
+     "at": 2
+    },
+    {
+     "t": "note",
+     "text": "AP = 대학 1학년 수준 과목",
+     "y": 1310,
+     "size": 40,
+     "color": "gold",
+     "at": 2,
+     "dt": 1.0
+    }
+   ]
+  },
+  {
+   "id": "s4",
+   "shader": "whip-pan",
+   "foot": "* SD22 학교 소개 문구 기준",
+   "chunks": [
+    [
+     "주 학력평가에서",
+     "주 학력평가에서"
+    ],
+    [
+     "상위권이라고 소개하는 학교",
+     "상위권이라고 소개하는 학교"
+    ]
+   ],
+   "items": [
+    {
+     "t": "card",
+     "src": "kal-09-intl-classroom",
+     "x": 60,
+     "y": 590,
+     "w": 600,
+     "h": 450,
+     "at": 0
+    },
+    {
+     "t": "thumbs",
+     "srcs": [
+      "kal-06-band-room",
+      "kal-07-theatre"
+     ],
+     "labels": [
+      "밴드",
+      "뮤지컬"
+     ],
+     "dir": "column",
+     "ih": 150,
+     "x": 690,
+     "y": 590,
+     "w": 330,
+     "at": 0,
+     "dt": 0.6
+    },
+    {
+     "t": "quote",
+     "text": "BC주 학력평가 상위권",
+     "by": "— 학교 소개",
+     "y": 1070,
+     "at": 1
+    }
+   ]
+  },
+  {
+   "id": "s5",
+   "shader": "cross-warp-morph",
+   "chunks": [
+    [
+     "칼라말카 호수가 걸어서 가까운",
+     "칼라말카 호수가 걸어서 가까운"
+    ],
+    [
+     "조용한 콜드스트림 동네",
+     "조용한 콜드스트림 동네"
+    ],
+    [
+     "시내까지는 버스 12분",
+     "시내까지는 버스 십이 분"
+    ]
+   ],
+   "items": [
+    {
+     "t": "bg",
+     "src": "kal-02-aerial-tennis",
+     "dim": 0.4,
+     "at": -1
+    },
+    {
+     "t": "odo",
+     "value": "12분",
+     "label": "시내까지 버스",
+     "size": 230,
+     "y": 640,
+     "color": "gold",
+     "at": 2,
+     "dt": 0.1,
+     "shake": false
+    },
+    {
+     "t": "icons",
+     "items": [
+      {
+       "i": "lake",
+       "l": "호수·비치",
+       "c": "lake"
+      },
+      {
+       "i": "skate",
+       "l": "공원·스케이트파크"
+      },
+      {
+       "i": "bus",
+       "l": "시내 12분",
+       "c": "red"
+      }
+     ],
+     "y": 1060,
+     "at": 0,
+     "ats": [
+      0,
+      1,
+      2
+     ]
+    }
+   ]
+  },
+  {
+   "id": "s6",
+   "shader": "sdf-iris",
+   "chunks": [
+    [
+     "학교엔 유학생 전담 교사",
+     "학교엔 유학생 전담 교사"
+    ],
+    [
+     "생활은 AA Canada 관리형으로",
+     "생활은 에이에이 캐나다 관리형으로"
+    ]
+   ],
+   "items": [
+    {
+     "t": "split",
+     "left": {
+      "tag": "학교",
+      "src": "kal-05-gym",
+      "i": "school",
+      "title": "ELL 전담 교사",
+      "sub": "유학생 전담 교사 상주",
+      "c": "lake"
+     },
+     "right": {
+      "tag": "생활",
+      "src": "kal-04-mascot",
+      "i": "home",
+      "title": "홈스테이 + AA Canada 관리",
+      "sub": "관리형 조기유학",
+      "c": "acc"
+     },
+     "y": 590,
+     "h": 790,
+     "at": 0,
+     "ats": [
+      0,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "id": "s7",
+   "shader": "flash-through-white",
+   "chunks": [
+    [
+     "학업형 아이라면 칼라말카",
+     "학업형 아이라면 칼라말카"
+    ],
+    [
+     "AA Canada와 상담하세요",
+     "에이에이 캐나다와 상담하세요"
+    ]
+   ],
+   "items": [
+    {
+     "t": "particles",
+     "at": 0,
+     "dt": 0.6,
+     "y": 820,
+     "n": 110,
+     "spread": 620
+    },
+    {
+     "t": "cta",
+     "at": 0
+    }
+   ]
+  }
+ ],
+ "thumbnail": {
+  "bg": "kal-01-aerial-lake",
+  "lines": [
+   "버논에서",
+   "AP 4과목",
+   "되는 학교"
+  ],
+  "gold": [
+   1
+  ],
+  "chips": [
+   "칼라말카 세컨더리",
+   "탐방 1/5"
+  ]
+ },
+ "publish": {
+  "hook": "버논에서 AP 4과목 되는 학교",
+  "after": "2026-10-27",
+  "folder": "2026-10-27-vernon-school-1-kalamalka"
+ }
+}

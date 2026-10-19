@@ -1,0 +1,439 @@
+{
+ "n": 2,
+ "title": "버논에서 제일 큰 학교 · 버논 세컨더리",
+ "brand": "AA CANADA · 버논 고등학교 탐방 2/5",
+ "badge": "탐방 2/5",
+ "accent": "#d62839",
+ "bgm": "bgm-b.mp3",
+ "narration": "owner recording short-2_full.m4a (one take, split by narration_full.py)",
+ "recording_notes": "Captions follow the recording: s2 chunk 1 was read as '버논 세컨더리입니다' (script: '버논 세컨더리, VSS'), s7 chunk 1 as '...아이라면 버논 세컨더리' (script: '...아이라면 VSS'). Numbers unchanged.",
+ "highlights": [
+  "3,800만 달러",
+  "제일 큰",
+  "1,100명",
+  "50명",
+  "2013년",
+  "최신 장비",
+  "친환경",
+  "뮤지컬",
+  "주 대회",
+  "15만 달러",
+  "전담 교사",
+  "버논 세컨더리"
+ ],
+ "scenes": [
+  {
+   "id": "s1",
+   "chunks": [
+    [
+     "건물값만 3,800만 달러",
+     "건물값만 삼천팔백만 달러"
+    ],
+    [
+     "버논에서 제일 큰 학교",
+     "버논에서 제일 큰 학교"
+    ]
+   ],
+   "items": [
+    {
+     "t": "bg",
+     "src": "vss-01-building",
+     "dim": 0.5,
+     "at": -1
+    },
+    {
+     "t": "particles",
+     "at": 0,
+     "dt": 0.3,
+     "y": 800,
+     "n": 110
+    },
+    {
+     "t": "odo",
+     "value": "$38,000,000",
+     "label": "건물값",
+     "size": 140,
+     "y": 680,
+     "color": "gold",
+     "underline": "red",
+     "at": 0,
+     "dur": 1.6
+    },
+    {
+     "t": "stamp",
+     "text": "버논 최대 고교",
+     "x": 240,
+     "y": 1000,
+     "w": 600,
+     "size": 72,
+     "color": "red",
+     "at": 1,
+     "dt": 0.2
+    }
+   ]
+  },
+  {
+   "id": "s2",
+   "shader": "whip-pan",
+   "foot": "* SD22 2026-27 자료 기준 · 개설 과목·인원은 해마다 달라질 수 있음",
+   "chunks": [
+    [
+     "버논 세컨더리입니다",
+     "버논 세컨더리입니다"
+    ],
+    [
+     "전교생 1,100명, 유학생 50명",
+     "전교생 천백 명, 유학생 오십 명"
+    ]
+   ],
+   "items": [
+    {
+     "t": "bg",
+     "src": "vss-02-aerial",
+     "dim": 0.55,
+     "at": -1
+    },
+    {
+     "t": "title",
+     "en": "VERNON SECONDARY",
+     "ko": "버논 세컨더리 (VSS) · 8~12학년",
+     "size": 60,
+     "y": 580,
+     "at": 0
+    },
+    {
+     "t": "stats",
+     "items": [
+      {
+       "l": "전교생",
+       "v": "1,100",
+       "u": "명"
+      },
+      {
+       "l": "유학생",
+       "v": "50",
+       "u": "명"
+      }
+     ],
+     "y": 830,
+     "w": 510,
+     "at": 1,
+     "ats": [
+      1,
+      1
+     ],
+     "dts": [
+      0.1,
+      1.2
+     ]
+    },
+    {
+     "t": "map",
+     "pin": "vss",
+     "label": "동쪽 언덕 · East Hill",
+     "note": "시내까지 버스 8분",
+     "x": 600,
+     "y": 830,
+     "w": 420,
+     "h": 540,
+     "at": 0,
+     "dt": 0.5
+    }
+   ]
+  },
+  {
+   "id": "s3",
+   "shader": "domain-warp",
+   "chunks": [
+    [
+     "2013년에 새로 지은 3층 건물",
+     "이천십삼 년에 새로 지은 삼 층 건물"
+    ],
+    [
+     "모든 교실에 최신 장비",
+     "모든 교실에 최신 장비"
+    ],
+    [
+     "지열 냉난방 친환경 학교",
+     "지열 냉난방 친환경 학교"
+    ]
+   ],
+   "items": [
+    {
+     "t": "card",
+     "src": "vss-04-commons",
+     "y": 590,
+     "h": 560,
+     "at": 0,
+     "label": "2013 신축 · 3층",
+     "lc": "acc"
+    },
+    {
+     "t": "card",
+     "src": "vss-06-classroom",
+     "y": 590,
+     "h": 560,
+     "at": 1,
+     "enter": "up",
+     "rot": -2,
+     "label": "최신 장비 교실",
+     "lc": "lake"
+    },
+    {
+     "t": "chips",
+     "items": [
+      {
+       "t": "2013 신축",
+       "i": "school"
+      },
+      {
+       "t": "LEED GOLD",
+       "i": "star",
+       "c": "gold"
+      },
+      {
+       "t": "지열 에너지",
+       "i": "leaf",
+       "c": "green"
+      }
+     ],
+     "y": 1200,
+     "size": 42,
+     "at": 0,
+     "ats": [
+      0,
+      2,
+      2
+     ]
+    }
+   ]
+  },
+  {
+   "id": "s4",
+   "shader": "chromatic-split",
+   "chunks": [
+    [
+     "불어·독일어·스페인어에",
+     "불어, 독일어, 스페인어에"
+    ],
+    [
+     "요리, 자동차, 뮤지컬까지",
+     "요리, 자동차, 뮤지컬까지"
+    ]
+   ],
+   "items": [
+    {
+     "t": "chips",
+     "items": [
+      {
+       "t": "불어",
+       "i": "globe"
+      },
+      {
+       "t": "독일어",
+       "i": "globe"
+      },
+      {
+       "t": "스페인어",
+       "i": "globe"
+      }
+     ],
+     "y": 590,
+     "size": 46,
+     "color": "#2f6bff",
+     "at": 0,
+     "stagger": 0.18
+    },
+    {
+     "t": "card",
+     "src": "vss-08-culinary",
+     "y": 730,
+     "h": 620,
+     "at": 1,
+     "enter": "up",
+     "rot": -3,
+     "label": "Culinary Arts",
+     "lc": "gold"
+    },
+    {
+     "t": "card",
+     "src": "vss-09-automotive",
+     "y": 730,
+     "h": 620,
+     "at": 1,
+     "dt": 0.7,
+     "enter": "up",
+     "rot": 2,
+     "label": "Automotive",
+     "lc": "acc"
+    },
+    {
+     "t": "card",
+     "src": "vss-10-musical-theatre",
+     "y": 730,
+     "h": 620,
+     "at": 1,
+     "dt": 1.4,
+     "enter": "up",
+     "rot": -1,
+     "label": "Musical Theatre",
+     "lc": "lake"
+    }
+   ]
+  },
+  {
+   "id": "s5",
+   "shader": "ridged-burn",
+   "foot": "* 학교 전체 졸업생 기준 · SD22 학교 소개",
+   "chunks": [
+    [
+     "미식축구·배구·농구는",
+     "미식축구, 배구, 농구는"
+    ],
+    [
+     "주 대회 단골 학교",
+     "주 대회 단골 학교"
+    ],
+    [
+     "졸업식 장학금은 매년 15만 달러 이상",
+     "졸업식 장학금은 매년 십오만 달러 이상"
+    ]
+   ],
+   "items": [
+    {
+     "t": "bg",
+     "src": "vss-03-gym",
+     "dim": 0.55,
+     "at": -1,
+     "kb": "out"
+    },
+    {
+     "t": "chips",
+     "items": [
+      {
+       "t": "미식축구",
+       "i": "ball"
+      },
+      {
+       "t": "배구",
+       "i": "ball"
+      },
+      {
+       "t": "농구",
+       "i": "ball"
+      }
+     ],
+     "y": 600,
+     "size": 48,
+     "at": 0
+    },
+    {
+     "t": "stamp",
+     "text": "주 대회 단골",
+     "x": 290,
+     "y": 760,
+     "w": 500,
+     "size": 70,
+     "color": "gold",
+     "at": 1,
+     "dt": 0.2
+    },
+    {
+     "t": "odo",
+     "value": "$150,000+",
+     "label": "졸업식 장학금 · 매년",
+     "size": 170,
+     "y": 1010,
+     "color": "gold",
+     "at": 2,
+     "dt": 0.6,
+     "dur": 1.5
+    }
+   ]
+  },
+  {
+   "id": "s6",
+   "shader": "light-leak",
+   "chunks": [
+    [
+     "큰 학교라 선택지가 많고",
+     "큰 학교라 선택지가 많고"
+    ],
+    [
+     "유학생 전담 교사도 상주",
+     "유학생 전담 교사도 상주"
+    ]
+   ],
+   "items": [
+    {
+     "t": "card",
+     "src": "vss-05-students-hoodies",
+     "y": 590,
+     "h": 560,
+     "at": 0
+    },
+    {
+     "t": "checks",
+     "items": [
+      "선택지가 많은 큰 학교",
+      "유학생 전담 교사 상주"
+     ],
+     "y": 1180,
+     "at": 0,
+     "ats": [
+      0,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "id": "s7",
+   "shader": "flash-through-white",
+   "chunks": [
+    [
+     "다 해보고 싶은 아이라면 버논 세컨더리",
+     "다 해보고 싶은 아이라면 버논 세컨더리"
+    ],
+    [
+     "AA Canada와 상담하세요",
+     "에이에이 캐나다와 상담하세요"
+    ]
+   ],
+   "items": [
+    {
+     "t": "particles",
+     "at": 0,
+     "dt": 0.6,
+     "y": 820,
+     "n": 110,
+     "spread": 620
+    },
+    {
+     "t": "cta",
+     "at": 0
+    }
+   ]
+  }
+ ],
+ "thumbnail": {
+  "bg": "vss-01-building",
+  "lines": [
+   "건물값만",
+   "3,800만 달러",
+   "버논 최대 고교"
+  ],
+  "gold": [
+   1
+  ],
+  "chips": [
+   "버논 세컨더리",
+   "탐방 2/5"
+  ]
+ },
+ "publish": {
+  "hook": "건물값만 3,800만 달러, 버논에서 제일 큰 학교",
+  "after": "2026-10-30",
+  "folder": "2026-10-30-vernon-school-2-vss"
+ }
+}

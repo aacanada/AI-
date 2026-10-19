@@ -1,0 +1,183 @@
+{
+ "scenes": [
+  {
+   "id": "s1",
+   "start": 0.0,
+   "audio_start": 0.25,
+   "audio_dur": 5.102,
+   "captions": [
+    {
+     "text": "건물값만 3,800만 달러",
+     "start": 0.31,
+     "end": 3.615
+    },
+    {
+     "text": "버논에서 제일 큰 학교",
+     "start": 3.615,
+     "end": 5.527
+    }
+   ],
+   "take": [
+    0.359,
+    5.309
+   ],
+   "duration": 5.527
+  },
+  {
+   "id": "s2",
+   "start": 5.527,
+   "audio_start": 5.702,
+   "audio_dur": 4.632,
+   "captions": [
+    {
+     "text": "버논 세컨더리입니다",
+     "start": 5.762,
+     "end": 7.446
+    },
+    {
+     "text": "전교생 1,100명, 유학생 50명",
+     "start": 7.446,
+     "end": 10.509
+    }
+   ],
+   "take": [
+    5.804,
+    11.551
+   ],
+   "duration": 4.982
+  },
+  {
+   "id": "s3",
+   "start": 10.509,
+   "audio_start": 10.684,
+   "audio_dur": 7.702,
+   "captions": [
+    {
+     "text": "2013년에 새로 지은 3층 건물",
+     "start": 10.744,
+     "end": 13.695
+    },
+    {
+     "text": "모든 교실에 최신 장비",
+     "start": 13.695,
+     "end": 16.025
+    },
+    {
+     "text": "지열 냉난방 친환경 학교",
+     "start": 16.025,
+     "end": 18.561
+    }
+   ],
+   "take": [
+    12.838,
+    20.38
+   ],
+   "duration": 8.052
+  },
+  {
+   "id": "s4",
+   "start": 18.561,
+   "audio_start": 18.736,
+   "audio_dur": 4.56,
+   "captions": [
+    {
+     "text": "불어·독일어·스페인어에",
+     "start": 18.796,
+     "end": 21.059
+    },
+    {
+     "text": "요리, 자동차, 뮤지컬까지",
+     "start": 21.059,
+     "end": 23.471
+    }
+   ],
+   "take": [
+    21.506,
+    25.905
+   ],
+   "duration": 4.91
+  },
+  {
+   "id": "s5",
+   "start": 23.471,
+   "audio_start": 23.646,
+   "audio_dur": 7.71,
+   "captions": [
+    {
+     "text": "미식축구·배구·농구는",
+     "start": 23.706,
+     "end": 25.833
+    },
+    {
+     "text": "주 대회 단골 학교",
+     "start": 25.833,
+     "end": 27.988
+    },
+    {
+     "text": "졸업식 장학금은 매년 15만 달러 이상",
+     "start": 27.988,
+     "end": 31.531
+    }
+   ],
+   "take": [
+    26.782,
+    34.787
+   ],
+   "duration": 8.06
+  },
+  {
+   "id": "s6",
+   "start": 31.531,
+   "audio_start": 31.706,
+   "audio_dur": 4.311,
+   "captions": [
+    {
+     "text": "큰 학교라 선택지가 많고",
+     "start": 31.766,
+     "end": 34.074
+    },
+    {
+     "text": "유학생 전담 교사도 상주",
+     "start": 34.074,
+     "end": 36.192
+    }
+   ],
+   "take": [
+    35.547,
+    39.698
+   ],
+   "duration": 4.661
+  },
+  {
+   "id": "s7",
+   "start": 36.192,
+   "audio_start": 36.367,
+   "audio_dur": 5.313,
+   "captions": [
+    {
+     "text": "다 해보고 싶은 아이라면 버논 세컨더리",
+     "start": 36.427,
+     "end": 39.946
+    },
+    {
+     "text": "AA Canada와 상담하세요",
+     "start": 39.946,
+     "end": 41.98
+    }
+   ],
+   "take": [
+    40.39,
+    45.543
+   ],
+   "duration": 7.888
+  }
+ ],
+ "total": 44.08,
+ "source": {
+  "file": "short-2_full.m4a",
+  "tempo": 1.0,
+  "max_pause": 0.5,
+  "rate_chars_per_s": 4.83,
+  "method": "silencedetect + script-ratio DP alignment"
+ }
+}
