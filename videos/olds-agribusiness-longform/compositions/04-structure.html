@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+
+@font-face{font-family:Pretendard;font-weight:500;src:url(assets/fonts/Pretendard-Medium.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:700;src:url(assets/fonts/Pretendard-Bold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:800;src:url(assets/fonts/Pretendard-ExtraBold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:900;src:url(assets/fonts/Pretendard-Black.woff2) format("woff2")}
+
+
+#s04{position:absolute;inset:0;overflow:hidden;color:#fff;font-family:Pretendard,sans-serif}
+#s04 *{box-sizing:border-box}
+#s04 .bg{position:absolute;inset:0;background:linear-gradient(135deg,#0f3d2e 0%,#124a37 55%,#14563f 100%)}
+#s04 .blob{position:absolute;border-radius:50%;width:1100px;height:1100px}
+#s04 .blob.a{left:-300px;top:-420px;background:radial-gradient(circle,rgba(0,179,115,.32) 0%,rgba(0,179,115,0) 68%)}
+#s04 .blob.b{left:1050px;top:380px;background:radial-gradient(circle,rgba(0,179,115,.16) 0%,rgba(0,179,115,0) 66%)}
+#s04 .blob.c{left:500px;top:520px;width:900px;height:900px;background:radial-gradient(circle,rgba(232,185,49,.12) 0%,rgba(232,185,49,0) 66%)}
+#s04 .stage{position:absolute;inset:0}
+#s04 .abs{position:absolute}
+#s04 .h{font-weight:900;letter-spacing:-.03em;line-height:1.08}
+#s04 .hd{font-weight:800;letter-spacing:-.02em;line-height:1.2}
+#s04 .b{font-weight:500;line-height:1.45}
+#s04 .l{font-weight:700;letter-spacing:.14em}
+#s04 .num{font-weight:900;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+#s04 .gold{color:#e8b931}
+#s04 .red{color:#c8102e}
+#s04 .full{position:absolute;inset:0;overflow:hidden}
+#s04 .full img,#s04 .ph img{display:block;width:100%;height:100%;object-fit:cover}
+#s04 .dim{position:absolute;inset:0;background:#082a1f}
+#s04 .ph{position:absolute;overflow:hidden;border-radius:22px;box-shadow:0 24px 50px rgba(0,0,0,.38);background:#082a1f}
+#s04 .ph.frame{border:6px solid #f5efe3}
+#s04 .ph .lab{position:absolute;left:0;right:0;bottom:0;padding:14px 20px;background:linear-gradient(0deg,rgba(6,30,22,.88),rgba(6,30,22,0));font-weight:800;font-size:28px}
+#s04 .card{position:absolute;background:#f5efe3;color:#0f3d2e;border-radius:28px;box-shadow:0 22px 46px rgba(0,0,0,.30)}
+#s04 .card .t{font-weight:800;color:#0f3d2e}
+#s04 .chip{position:absolute;white-space:nowrap;border-radius:99px;padding:12px 28px;font-weight:700;font-size:30px;background:rgba(255,255,255,.08);border:2px solid rgba(232,185,49,.75);color:#fff}
+#s04 .chip.cream{background:#f5efe3;border-color:#f5efe3;color:#0f3d2e}
+#s04 .chip.gold{background:#e8b931;border-color:#e8b931;color:#0f3d2e}
+#s04 .chip.red{background:#c8102e;border-color:#c8102e;color:#fff}
+#s04 .chip.green{background:#00b373;border-color:#00b373;color:#0f3d2e}
+#s04 .chip.gray{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.35);color:rgba(255,255,255,.85)}
+#s04 .chip.rel{position:relative}
+#s04 .chip.navy{background:#0f3d2e;border-color:#0f3d2e;color:#f5efe3}
+#s04 .pill{position:absolute;white-space:nowrap;border-radius:99px;padding:10px 26px;font-weight:800;font-size:28px;background:#e8b931;color:#0f3d2e}
+#s04 .sweep{position:absolute;top:-20%;bottom:-20%;left:0;width:34%;background:linear-gradient(90deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.38) 50%,rgba(255,255,255,0) 100%);mix-blend-mode:screen}
+#s04 .reel{display:inline-block;height:1em;overflow:hidden;vertical-align:top}
+#s04 .strip{display:block}
+#s04 .strip i{display:block;height:1em;font-style:normal}
+#s04 .ch{display:inline-block;white-space:pre}
+#s04 .tag{position:absolute;font-weight:700;font-size:22px;letter-spacing:.12em;padding:6px 16px;border-radius:8px;background:#c8102e;color:#fff}
+#s04 svg{overflow:visible}
+#s04 .grp{position:absolute;inset:0}
+#s04 .flow{position:absolute;display:flex;flex-wrap:wrap;gap:22px}
+#s04 .row{position:absolute;display:flex;align-items:center;gap:26px;font-weight:800;color:#0f3d2e;white-space:nowrap}
+#s04 .row svg{flex:none}
+#s04 .ar path{fill:none;stroke:#e8b931;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
+
+#s04 .stp{position:absolute;width:360px;border-radius:24px 24px 0 0;display:flex;flex-direction:column;align-items:center;padding-top:30px;font-weight:900;font-size:56px}
+#s04 .stp.g0{background:rgba(255,255,255,.14);color:rgba(255,255,255,.6)}
+#s04 .stp.g1{background:#e8b931;color:#0f3d2e}
+#s04 .stp small{font-size:28px;font-weight:800;margin-top:12px}
+#s04 #s04-g2 .full img,#s04 #s04-g3 .full img{filter:saturate(.7)}
+#s04 #s04-big{left:150px;top:230px;font-size:300px;color:#e8b931}
+#s04 .tn{position:absolute;top:452px;width:36px;height:36px;margin-left:-18px;border-radius:50%;background:#f5efe3;border:7px solid #00b373}
+#s04 .td{position:absolute;top:380px;width:340px;margin-left:-170px;text-align:center;font-weight:900;font-size:40px;color:#e8b931}
+#s04 .tx{position:absolute;top:520px;width:360px;margin-left:-180px;text-align:center;font-weight:700;font-size:32px;line-height:1.35}
+#s04 #s04-dfs{left:1010px;top:446px;width:460px;height:48px;border-radius:24px;background:#e8b931}
+
+      </style>
+      <div id="s04" data-composition-id="s04" data-width="1920" data-height="1080" data-duration="31.5">
+        <div class="bg"></div>
+        <div class="blob a"></div><div class="blob b"></div><div class="blob c"></div>
+
+        <div class="stage">
+
+          <div class="grp" id="s04-g1">
+            <div class="chip gold" id="s04-k0" style="left:195px;top:140px;font-size:36px">2년 과정 · 최소 16개월</div>
+            <div class="chip" id="s04-k1" style="left:640px;top:140px;font-size:36px">가을 입학만</div>
+            <div class="chip gray" id="s04-k2" style="left:900px;top:140px;font-size:36px">CIP 01.0102</div>
+            <div class="stp g0" id="s04-st0" style="left:195px;top:560px;height:220px">1학년<small></small></div>
+            <div class="stp g0" id="s04-st1" style="left:585px;top:480px;height:300px">2학년<small></small></div>
+            <div class="stp g1" id="s04-st2" style="left:975px;top:400px;height:380px">3학년<small>Olds에서</small></div>
+            <div class="stp g1" id="s04-st3" style="left:1365px;top:320px;height:460px">4학년<small>Olds에서</small></div>
+
+            <div class="abs hd" id="s04-rep" style="left:195px;top:400px;width:750px;text-align:center;font-size:34px;white-space:nowrap">디플로마·학위로 대체</div></div>
+          <div class="grp" id="s04-g2">
+            <div class="full" id="s04-p2" style="opacity:.3"><img src="assets/photos/prog-04-wsat-classroom.jpg" alt="" /></div>
+            <div class="abs hd" id="s04-h2" style="left:160px;top:150px;font-size:60px">3학년 · <span class="gold">캠퍼스 수업</span></div>
+            <div class="flow" id="s04-sub" style="left:160px;top:280px;width:1600px">
+              <div class="chip cream rel" id="s04-c0" style="font-size:40px">재무</div>
+              <div class="chip cream rel" id="s04-c1" style="font-size:40px">마케팅</div>
+              <div class="chip cream rel" id="s04-c2" style="font-size:40px">전략경영</div>
+              <div class="chip cream rel" id="s04-c3" style="font-size:40px">인사관리(HR)</div>
+              <div class="chip cream rel" id="s04-c4" style="font-size:40px">응용연구</div>
+              <div class="chip cream rel" id="s04-c5" style="font-size:40px">혁신·리더십</div>
+              <div class="chip cream rel" id="s04-c6" style="font-size:40px">국제 마케팅</div>
+            </div>
+            <div class="chip gold" id="s04-pj0" style="left:160px;top:560px;font-size:40px">업계 클라이언트 프로젝트</div>
+            <div class="chip gold" id="s04-pj1" style="left:690px;top:560px;font-size:40px">팀 프로젝트</div></div>
+          <div class="grp" id="s04-g3">
+            <div class="full" id="s04-p3" style="opacity:.4"><img src="assets/photos/sf-18-agexpert-farm-mgmt.jpg" alt="" /></div>
+            <div class="abs num" id="s04-big">8개월</div>
+            <div class="abs hd" id="s04-b1" style="left:170px;top:560px;font-size:60px;white-space:nowrap">Directed Field Study <span class="gold">(DFS)</span></div>
+            <div class="abs hd" id="s04-b2" style="left:170px;top:650px;font-size:40px;color:rgba(255,255,255,.8)">4학년 · 현장 실습</div></div>
+          <div class="grp" id="s04-g4">
+            <div class="abs hd" id="s04-h4" style="left:160px;top:150px;font-size:56px">입학부터 졸업까지 <span class="gold">예시</span></div>
+            <svg class="abs" style="left:150px;top:440px;width:1620px;height:60px" viewBox="0 0 1620 60"><path id="s04-line" d="M0 30 L1620 30" stroke="rgba(245,239,227,.55)" stroke-width="8" stroke-linecap="round"/></svg>
+            <div class="abs" id="s04-dfs"></div>
+            <div class="td" id="s04-dd" style="left:1240px">2028.05~12</div>
+            <div class="tx" id="s04-dx" style="left:1240px;color:#e8b931">8개월 DFS<br/>(현장 실습)</div>
+            <div class="tn" id="s04-n0" style="left:230px"></div><div class="td" id="s04-d0" style="left:230px">2027.09</div><div class="tx" id="s04-x0" style="left:230px">입학 · 3학년<br/>Fall 학기</div>
+            <div class="tn" id="s04-n1" style="left:560px"></div><div class="td" id="s04-d1" style="left:560px">2028.01</div><div class="tx" id="s04-x1" style="left:560px">Winter 학기</div>
+            <div class="tn" id="s04-n2" style="left:890px"></div><div class="td" id="s04-d2" style="left:890px">2028.04</div><div class="tx" id="s04-x2" style="left:890px">캠퍼스<br/>수업 종료</div>
+            <div class="tn" id="s04-n3" style="left:1650px"></div><div class="td" id="s04-d3" style="left:1650px">2028.12</div><div class="tx" id="s04-x3" style="left:1650px">졸업 → PGWP 신청<br/>→ AOS / RRS</div>
+          </div>
+        </div>
+        <audio id="s04-fx0" src="assets/sfx/pop.mp3" data-start="0.35" data-duration="0.5" data-track-index="46" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s04-fx1" src="assets/sfx/pop.mp3" data-start="6.98" data-duration="0.5" data-track-index="46" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s04-fx2" src="assets/sfx/whoosh.mp3" data-start="10.75" data-duration="0.574" data-track-index="46" data-volume="0.25" data-hf-media-start-basis="local"></audio>
+        <audio id="s04-fx3" src="assets/sfx/impact.mp3" data-start="21.18" data-duration="1.2" data-track-index="46" data-volume="0.24" data-hf-media-start-basis="local"></audio>
+        <audio id="s04-fx4" src="assets/sfx/whoosh.mp3" data-start="23.49" data-duration="0.574" data-track-index="46" data-volume="0.25" data-hf-media-start-basis="local"></audio>
+        <audio id="s04-fx5" src="assets/sfx/pop.mp3" data-start="27.0" data-duration="0.5" data-track-index="46" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s04-fx6" src="assets/sfx/pop.mp3" data-start="29.08" data-duration="0.5" data-track-index="46" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+      </div>
+      <script>
+        (function () {
+          const root = document.getElementById("s04");
+          const D = 31.5;
+
+const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
+const tl=gsap.timeline({paused:true});
+const E=el=>typeof el==='string'?qa(el):el, E1=el=>typeof el==='string'?q(el):el;
+function inn(el,at,o){o=o||{};tl.fromTo(E(el),{opacity:0,x:o.x||0,y:(o.y===undefined?30:o.y),scale:(o.s===undefined?1:o.s),rotation:(o.r0===undefined?(o.r||0):o.r0)},
+  {opacity:1,x:0,y:0,scale:1,rotation:o.r||0,duration:o.d||0.6,ease:o.e||'power3.out',stagger:o.st||0},at);}
+function outt(el,at,o){o=o||{};tl.to(E(el),{opacity:o.o||0,y:o.y||0,x:o.x||0,scale:(o.s===undefined?1:o.s),duration:o.d||0.4,ease:'power2.in'},at);}
+function kb(el,at,dur,a,b){a=a||{};b=b||{};
+  tl.fromTo(E(el),{scale:a.s||1,xPercent:a.x||0,yPercent:a.y||0},{scale:b.s||1.10,xPercent:b.x||0,yPercent:b.y||0,duration:Math.max(0.1,dur),ease:'none'},at);}
+function shake(at){const s=q('.stage');tl.to(s,{x:12,y:-7,duration:1/30,ease:'none'},at);tl.to(s,{x:-9,y:6,duration:1/30,ease:'none'},at+1/30);tl.to(s,{x:0,y:0,duration:1/30,ease:'none'},at+2/30);}
+function slam(el,at,o){o=o||{};tl.fromTo(E(el),{opacity:0,scale:o.s||2.2},{opacity:1,scale:1,duration:o.d||0.42,ease:'power4.in'},at);if(o.shake!==false)shake(at+(o.d||0.42));}
+function stamp(el,at,rot){rot=(rot===undefined?-12:rot);tl.fromTo(E(el),{opacity:0,scale:3,rotation:rot},{opacity:1,scale:1,rotation:rot,duration:0.32,ease:'power4.in'},at);shake(at+0.32);}
+function pop(el,at,st){tl.fromTo(E(el),{opacity:0,scale:0.4},{opacity:1,scale:1,duration:0.42,ease:'back.out(2.2)',stagger:(st===undefined?0.08:st)},at);}
+function flip(el,at,o){o=o||{};tl.fromTo(E(el),{opacity:0,rotationY:o.r0||-90,transformPerspective:1400},{opacity:1,rotationY:0,transformPerspective:1400,duration:o.d||0.7,ease:'power3.out',stagger:o.st||0},at);}
+function draw(path,at,d,e){const ps=typeof path==='string'?qa(path):[path];ps.forEach(p=>{const L=p.getTotalLength();p.style.strokeDasharray=L+' '+L;
+  tl.fromTo(p,{strokeDashoffset:L},{strokeDashoffset:0,duration:d||0.9,ease:e||'power2.inOut'},at);});}
+function grow(el,at,d,origin,axis){tl.fromTo(E(el),axis==='y'?{scaleY:0,transformOrigin:origin||'50% 100%'}:{scaleX:0,transformOrigin:origin||'0% 50%'},axis==='y'?{scaleY:1,duration:d||0.7,ease:'power3.out'}:{scaleX:1,duration:d||0.7,ease:'power3.inOut'},at);}
+function mask(el,at,d,dir){const from={l:'inset(0% 100% 0% 0%)',r:'inset(0% 0% 0% 100%)',u:'inset(100% 0% 0% 0%)',d:'inset(0% 0% 100% 0%)'}[dir||'l'];
+  tl.fromTo(E(el),{clipPath:from,opacity:1},{clipPath:'inset(0% 0% 0% 0%)',opacity:1,duration:d||0.8,ease:'power3.inOut'},at);}
+function sweep(el,at){tl.fromTo(E(el),{xPercent:-140,opacity:1},{xPercent:330,opacity:1,duration:1.1,ease:'power2.inOut'},at);}
+function kin(el,at,st){el=E1(el);const t=el.textContent;el.textContent='';
+  for(const c of t){const s=document.createElement('span');s.className='ch';s.textContent=c;el.appendChild(s);}
+  tl.fromTo(el.querySelectorAll('.ch'),{opacity:0,rotationX:90,transformPerspective:700,filter:'blur(12px)'},
+    {opacity:1,rotationX:0,transformPerspective:700,filter:'blur(0px)',duration:0.55,ease:'power3.out',stagger:st||0.03},at);}
+function odo(el,at,dur){el=E1(el);const t=el.textContent;el.textContent='';const reels=[];let k=0;
+  for(const c of t){if(c>='0'&&c<='9'){const d=+c,r=document.createElement('span');r.className='reel';const s=document.createElement('span');s.className='strip';
+      const n=10+d+1;for(let i=0;i<n;i++){const x=document.createElement('i');x.textContent=String(i%10);s.appendChild(x);}r.appendChild(s);el.appendChild(r);reels.push([s,n,k++]);}
+    else{const s=document.createElement('span');s.textContent=c;el.appendChild(s);}}
+  const m=reels.length;reels.forEach(([s,n,i])=>tl.fromTo(s,{yPercent:0},{yPercent:-100*(n-1)/n,duration:(dur||1.4)*(0.65+0.35*(i+1)/m),ease:'power3.out'},at));}
+function ambient(){
+  qa('.blob').forEach((g,i)=>tl.fromTo(g,{x:0,y:0},{x:(i%2?-140:160),y:(i%2?90:-70),duration:D,ease:'sine.inOut'},0));
+  tl.fromTo(q('.stage'),{scale:1,transformOrigin:'50% 48%'},{scale:1.025,duration:D,ease:'none'},0);
+}
+
+function burst(host,at,n,cx,cy,spread,seed){const H=E1(host);seed=seed||7;const rnd=()=>{seed=(seed*16807)%2147483647;return seed/2147483647;};
+  for(let i=0;i<n;i++){const d=document.createElement('div');d.style.cssText='position:absolute;width:12px;height:12px;border-radius:50%;background:#e8b931;opacity:0;left:'+cx+'px;top:'+cy+'px';H.appendChild(d);
+    const a=rnd()*Math.PI*2,r=spread*(0.4+rnd()*0.8);
+    tl.fromTo(d,{x:0,y:0,opacity:1,scale:0.6+rnd()},{x:Math.cos(a)*r,y:Math.sin(a)*r*0.6+60,opacity:0,duration:1.2+rnd()*0.7,ease:'power3.out',immediateRender:false},at);}}
+
+
+grow('#s04-st0',0.350+0.00,0.6,'50% 100%','y');grow('#s04-st1',0.350+0.15,0.6,'50% 100%','y');grow('#s04-st2',0.350+0.30,0.6,'50% 100%','y');grow('#s04-st3',0.350+0.45,0.6,'50% 100%','y');
+inn('#s04-rep',2.040,{y:14});
+tl.to(['#s04-st0','#s04-st1'].map(s=>q(s)),{opacity:0.55,duration:0.4},2.040);
+tl.fromTo(['#s04-st2','#s04-st3'].map(s=>q(s)),{scale:1},{scale:1.04,duration:0.3,yoyo:true,repeat:1,transformOrigin:'50% 100%'},4.120);
+pop('#s04-k0',6.980);pop('#s04-k1',9.710);pop('#s04-k2',9.710+0.5);
+outt('#s04-g1',10.750-0.4,{d:0.4});
+tl.set('#s04-g2',{opacity:0},0);tl.set('#s04-g2',{opacity:1},10.750-0.05);
+kb('#s04-p2 img',10.750,20.240-10.750);inn('#s04-h2',10.750,{x:-30,y:0});
+pop('#s04-c0',11.920);pop('#s04-c1',12.310);pop('#s04-c2',12.830);pop('#s04-c3',13.480);pop('#s04-c4',14.130);pop('#s04-c5',14.780);pop('#s04-c6',15.690);
+pop('#s04-pj0',17.120);pop('#s04-pj1',18.420);
+outt('#s04-g2',20.240-0.4,{d:0.4});
+tl.set('#s04-g3',{opacity:0},0);tl.set('#s04-g3',{opacity:1},20.240-0.05);
+kb('#s04-p3 img',20.240,23.490-20.240);
+slam('#s04-big',20.760,{s:2.2});mask('#s04-b1',21.800,0.7,'l');inn('#s04-b2',20.240+0.2,{y:12});
+outt('#s04-g3',23.490-0.4,{d:0.4});
+tl.set('#s04-g4',{opacity:0},0);tl.set('#s04-g4',{opacity:1},23.490-0.05);
+inn('#s04-h4',23.490-0.05,{y:14});draw('#s04-line',23.490,29.080-23.490,'none');
+pop(['#s04-n0','#s04-d0','#s04-x0'].map(s=>q(s)),23.490,0.06);pop(['#s04-n1','#s04-d1','#s04-x1'].map(s=>q(s)),25.050+0.9,0.06);pop(['#s04-n2','#s04-d2','#s04-x2'].map(s=>q(s)),26.090,0.06);pop(['#s04-n3','#s04-d3','#s04-x3'].map(s=>q(s)),29.080,0.06);
+grow('#s04-dfs',27.000,0.9);pop(['#s04-dd','#s04-dx'].map(s=>q(s)),27.000+0.3,0.06);
+
+          ambient();
+          window.__timelines["s04"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+
+@font-face{font-family:Pretendard;font-weight:500;src:url(assets/fonts/Pretendard-Medium.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:700;src:url(assets/fonts/Pretendard-Bold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:800;src:url(assets/fonts/Pretendard-ExtraBold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:900;src:url(assets/fonts/Pretendard-Black.woff2) format("woff2")}
+
+
+#s10{position:absolute;inset:0;overflow:hidden;color:#fff;font-family:Pretendard,sans-serif}
+#s10 *{box-sizing:border-box}
+#s10 .bg{position:absolute;inset:0;background:linear-gradient(135deg,#0f3d2e 0%,#124a37 55%,#14563f 100%)}
+#s10 .blob{position:absolute;border-radius:50%;width:1100px;height:1100px}
+#s10 .blob.a{left:-300px;top:-420px;background:radial-gradient(circle,rgba(0,179,115,.32) 0%,rgba(0,179,115,0) 68%)}
+#s10 .blob.b{left:1050px;top:380px;background:radial-gradient(circle,rgba(0,179,115,.16) 0%,rgba(0,179,115,0) 66%)}
+#s10 .blob.c{left:500px;top:520px;width:900px;height:900px;background:radial-gradient(circle,rgba(232,185,49,.12) 0%,rgba(232,185,49,0) 66%)}
+#s10 .stage{position:absolute;inset:0}
+#s10 .abs{position:absolute}
+#s10 .h{font-weight:900;letter-spacing:-.03em;line-height:1.08}
+#s10 .hd{font-weight:800;letter-spacing:-.02em;line-height:1.2}
+#s10 .b{font-weight:500;line-height:1.45}
+#s10 .l{font-weight:700;letter-spacing:.14em}
+#s10 .num{font-weight:900;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+#s10 .gold{color:#e8b931}
+#s10 .red{color:#c8102e}
+#s10 .full{position:absolute;inset:0;overflow:hidden}
+#s10 .full img,#s10 .ph img{display:block;width:100%;height:100%;object-fit:cover}
+#s10 .dim{position:absolute;inset:0;background:#082a1f}
+#s10 .ph{position:absolute;overflow:hidden;border-radius:22px;box-shadow:0 24px 50px rgba(0,0,0,.38);background:#082a1f}
+#s10 .ph.frame{border:6px solid #f5efe3}
+#s10 .ph .lab{position:absolute;left:0;right:0;bottom:0;padding:14px 20px;background:linear-gradient(0deg,rgba(6,30,22,.88),rgba(6,30,22,0));font-weight:800;font-size:28px}
+#s10 .card{position:absolute;background:#f5efe3;color:#0f3d2e;border-radius:28px;box-shadow:0 22px 46px rgba(0,0,0,.30)}
+#s10 .card .t{font-weight:800;color:#0f3d2e}
+#s10 .chip{position:absolute;white-space:nowrap;border-radius:99px;padding:12px 28px;font-weight:700;font-size:30px;background:rgba(255,255,255,.08);border:2px solid rgba(232,185,49,.75);color:#fff}
+#s10 .chip.cream{background:#f5efe3;border-color:#f5efe3;color:#0f3d2e}
+#s10 .chip.gold{background:#e8b931;border-color:#e8b931;color:#0f3d2e}
+#s10 .chip.red{background:#c8102e;border-color:#c8102e;color:#fff}
+#s10 .chip.green{background:#00b373;border-color:#00b373;color:#0f3d2e}
+#s10 .chip.gray{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.35);color:rgba(255,255,255,.85)}
+#s10 .chip.rel{position:relative}
+#s10 .chip.navy{background:#0f3d2e;border-color:#0f3d2e;color:#f5efe3}
+#s10 .pill{position:absolute;white-space:nowrap;border-radius:99px;padding:10px 26px;font-weight:800;font-size:28px;background:#e8b931;color:#0f3d2e}
+#s10 .sweep{position:absolute;top:-20%;bottom:-20%;left:0;width:34%;background:linear-gradient(90deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.38) 50%,rgba(255,255,255,0) 100%);mix-blend-mode:screen}
+#s10 .reel{display:inline-block;height:1em;overflow:hidden;vertical-align:top}
+#s10 .strip{display:block}
+#s10 .strip i{display:block;height:1em;font-style:normal}
+#s10 .ch{display:inline-block;white-space:pre}
+#s10 .tag{position:absolute;font-weight:700;font-size:22px;letter-spacing:.12em;padding:6px 16px;border-radius:8px;background:#c8102e;color:#fff}
+#s10 svg{overflow:visible}
+#s10 .grp{position:absolute;inset:0}
+#s10 .flow{position:absolute;display:flex;flex-wrap:wrap;gap:22px}
+#s10 .row{position:absolute;display:flex;align-items:center;gap:26px;font-weight:800;color:#0f3d2e;white-space:nowrap}
+#s10 .row svg{flex:none}
+#s10 .ar path{fill:none;stroke:#e8b931;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
+
+#s10 #s10-t{left:0;right:0;top:330px;text-align:center;font-size:76px;white-space:nowrap}
+#s10 #s10-ts{left:0;right:0;top:450px;text-align:center;font-size:44px;color:#e8b931}
+#s10 #s10-cd{left:160px;top:120px;width:1600px;height:660px}
+#s10 #s10-cd .row{left:70px;font-size:44px}
+#s10 .lk{position:absolute;top:200px;width:200px;height:300px}
+#s10 .lb{position:absolute;left:10px;top:84px;width:180px;height:140px;border-radius:24px;background:#c8102e}
+#s10 .lt{position:absolute;left:-60px;top:236px;width:320px;text-align:center;font-weight:900;font-size:36px;line-height:1.2}
+#s10 #s10-h3{left:0;right:0;top:120px;text-align:center;font-size:54px;white-space:nowrap}
+#s10 #s10-blk{left:220px;top:600px;width:480px;height:110px}
+#s10 #s10-blk i,#s10 #s10-slot i{position:absolute;top:0;width:56px;height:110px;border-radius:12px;background:#e8b931}
+#s10 #s10-blk span{position:absolute;left:0;top:-50px;font-weight:900;font-size:34px;color:#e8b931;white-space:nowrap}
+#s10 #s10-slot{left:1120px;top:588px;width:384px;height:134px;border-radius:20px;border:5px dashed #f5efe3}
+#s10 #s10-slot b{position:absolute;left:0;top:-52px;font-weight:900;font-size:34px;white-space:nowrap}
+#s10 #s10-ov{left:1512px;top:740px;font-weight:800;font-size:28px;color:rgba(255,255,255,.75);white-space:nowrap}
+#s10 #s10-eoi{left:0;right:0;top:340px;display:flex;flex-direction:column;align-items:center}
+
+      </style>
+      <div id="s10" data-composition-id="s10" data-width="1920" data-height="1080" data-duration="35.27">
+        <div class="bg"></div>
+        <div class="blob a"></div><div class="blob b"></div><div class="blob c"></div>
+
+        <div class="stage">
+
+          <div class="grp" id="s10-g1">
+            <div class="abs h" id="s10-t">AAIP · Alberta Opportunity Stream <span class="gold">(AOS)</span></div>
+            <div class="abs hd" id="s10-ts">알버타 주정부 이민 · 첫 번째 길</div></div>
+          <div class="grp" id="s10-g2">
+            <div class="card" id="s10-cd">
+              <div class="l" style="position:absolute;left:70px;top:40px;font-size:28px;color:#00b373">AOS 주요 조건 · 알버타 공립 칼리지 학사 출신</div>
+              <div class="row" id="s10-r0" style="top:110px"><svg width="56" height="56" viewBox="0 0 56 56"><rect x="3" y="3" width="50" height="50" rx="12" fill="none" stroke="#00b373" stroke-width="5"/><path id="s10-k0" d="M14 29 L24 39 L43 18" fill="none" stroke="#00b373" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>알버타 공립 칼리지 학사 + PGWP</span></div>
+              <div class="row" id="s10-r1" style="top:214px"><svg width="56" height="56" viewBox="0 0 56 56"><rect x="3" y="3" width="50" height="50" rx="12" fill="none" stroke="#00b373" stroke-width="5"/><path id="s10-k1" d="M14 29 L24 39 L43 18" fill="none" stroke="#00b373" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>최근 18개월 중 알버타 풀타임 경력 6개월</span></div>
+              <div class="row" id="s10-r2" style="top:318px"><svg width="56" height="56" viewBox="0 0 56 56"><rect x="3" y="3" width="50" height="50" rx="12" fill="none" stroke="#00b373" stroke-width="5"/><path id="s10-k2" d="M14 29 L24 39 L43 18" fill="none" stroke="#00b373" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>직종 = 알버타에서 공부한 전공과 관련</span></div>
+              <div class="row" id="s10-r3" style="top:422px"><svg width="56" height="56" viewBox="0 0 56 56"><rect x="3" y="3" width="50" height="50" rx="12" fill="none" stroke="#00b373" stroke-width="5"/><path id="s10-k3" d="M14 29 L24 39 L43 18" fill="none" stroke="#00b373" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>알버타 고용주 풀타임 잡오퍼</span></div>
+              <div class="row" id="s10-r4" style="top:526px"><svg width="56" height="56" viewBox="0 0 56 56"><rect x="3" y="3" width="50" height="50" rx="12" fill="none" stroke="#00b373" stroke-width="5"/><path id="s10-k4" d="M14 29 L24 39 L43 18" fill="none" stroke="#00b373" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>영어 CLB 5 (TEER 0~3) · CLB 4 (TEER 4~5)</span></div>
+            </div></div>
+          <div class="grp" id="s10-g3">
+            <div class="abs hd" id="s10-h3">4가지 조건을 채우면 <span class="gold">코업도 경력이 될 수 있다</span></div>
+            <div class="lk" id="s10-l0" style="left:230px"><svg class="abs" id="s10-sh0" style="left:45px;top:0;width:110px;height:100px" viewBox="0 0 110 100"><path d="M15 100 V50 A40 40 0 0 1 95 50 V100" fill="none" stroke="#f5efe3" stroke-width="16"/></svg><div class="lb" id="s10-lb0"></div><div class="lt">유급</div></div>
+            <div class="lk" id="s10-l1" style="left:620px"><svg class="abs" id="s10-sh1" style="left:45px;top:0;width:110px;height:100px" viewBox="0 0 110 100"><path d="M15 100 V50 A40 40 0 0 1 95 50 V100" fill="none" stroke="#f5efe3" stroke-width="16"/></svg><div class="lb" id="s10-lb1"></div><div class="lt">주 30시간+<br/>풀타임</div></div>
+            <div class="lk" id="s10-l2" style="left:1010px"><svg class="abs" id="s10-sh2" style="left:45px;top:0;width:110px;height:100px" viewBox="0 0 110 100"><path d="M15 100 V50 A40 40 0 0 1 95 50 V100" fill="none" stroke="#f5efe3" stroke-width="16"/></svg><div class="lb" id="s10-lb2"></div><div class="lt">현재 직종<br/>관련</div></div>
+            <div class="lk" id="s10-l3" style="left:1400px"><svg class="abs" id="s10-sh3" style="left:45px;top:0;width:110px;height:100px" viewBox="0 0 110 100"><path d="M15 100 V50 A40 40 0 0 1 95 50 V100" fill="none" stroke="#f5efe3" stroke-width="16"/></svg><div class="lb" id="s10-lb3"></div><div class="lt">알버타 안</div></div>
+
+            <div class="abs" id="s10-pts" style="inset:0"></div>
+            <div class="abs" id="s10-slot"><b>AOS 경력 6개월</b></div>
+            <div class="abs" id="s10-blk"><span>8개월 DFS (유급)</span><i style="left:0px"></i><i style="left:60px"></i><i style="left:120px"></i><i style="left:180px"></i><i style="left:240px"></i><i style="left:300px"></i><i style="left:360px"></i><i style="left:420px"></i></div>
+            <div class="abs" id="s10-ov">+2개월 초과</div></div>
+          <div class="grp" id="s10-g4">
+            <div class="abs" id="s10-eoi"><div class="chip gray" style="position:relative;font-size:52px;padding:22px 50px">EOI 제출 → 선발 방식</div>
+              <div class="hd" style="font-size:38px;margin-top:30px;color:rgba(255,255,255,.75)">관심 표명서 · 조건 충족 = 선발 보장 아님</div></div></div>
+        </div>
+        <audio id="s10-fx0" src="assets/sfx/whoosh.mp3" data-start="0.35" data-duration="0.574" data-track-index="58" data-volume="0.25" data-hf-media-start-basis="local"></audio>
+        <audio id="s10-fx1" src="assets/sfx/pop.mp3" data-start="6.33" data-duration="0.5" data-track-index="58" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s10-fx2" src="assets/sfx/pop.mp3" data-start="17.38" data-duration="0.5" data-track-index="58" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s10-fx3" src="assets/sfx/pop.mp3" data-start="22.19" data-duration="0.5" data-track-index="58" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s10-fx4" src="assets/sfx/pop.mp3" data-start="22.97" data-duration="0.5" data-track-index="58" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s10-fx5" src="assets/sfx/pop.mp3" data-start="24.01" data-duration="0.5" data-track-index="58" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s10-fx6" src="assets/sfx/pop.mp3" data-start="25.05" data-duration="0.5" data-track-index="58" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s10-fx7" src="assets/sfx/whoosh.mp3" data-start="27.91" data-duration="0.574" data-track-index="58" data-volume="0.25" data-hf-media-start-basis="local"></audio>
+        <audio id="s10-fx8" src="assets/sfx/impact.mp3" data-start="28.71" data-duration="1.2" data-track-index="58" data-volume="0.24" data-hf-media-start-basis="local"></audio>
+      </div>
+      <script>
+        (function () {
+          const root = document.getElementById("s10");
+          const D = 35.27;
+
+const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
+const tl=gsap.timeline({paused:true});
+const E=el=>typeof el==='string'?qa(el):el, E1=el=>typeof el==='string'?q(el):el;
+function inn(el,at,o){o=o||{};tl.fromTo(E(el),{opacity:0,x:o.x||0,y:(o.y===undefined?30:o.y),scale:(o.s===undefined?1:o.s),rotation:(o.r0===undefined?(o.r||0):o.r0)},
+  {opacity:1,x:0,y:0,scale:1,rotation:o.r||0,duration:o.d||0.6,ease:o.e||'power3.out',stagger:o.st||0},at);}
+function outt(el,at,o){o=o||{};tl.to(E(el),{opacity:o.o||0,y:o.y||0,x:o.x||0,scale:(o.s===undefined?1:o.s),duration:o.d||0.4,ease:'power2.in'},at);}
+function kb(el,at,dur,a,b){a=a||{};b=b||{};
+  tl.fromTo(E(el),{scale:a.s||1,xPercent:a.x||0,yPercent:a.y||0},{scale:b.s||1.10,xPercent:b.x||0,yPercent:b.y||0,duration:Math.max(0.1,dur),ease:'none'},at);}
+function shake(at){const s=q('.stage');tl.to(s,{x:12,y:-7,duration:1/30,ease:'none'},at);tl.to(s,{x:-9,y:6,duration:1/30,ease:'none'},at+1/30);tl.to(s,{x:0,y:0,duration:1/30,ease:'none'},at+2/30);}
+function slam(el,at,o){o=o||{};tl.fromTo(E(el),{opacity:0,scale:o.s||2.2},{opacity:1,scale:1,duration:o.d||0.42,ease:'power4.in'},at);if(o.shake!==false)shake(at+(o.d||0.42));}
+function stamp(el,at,rot){rot=(rot===undefined?-12:rot);tl.fromTo(E(el),{opacity:0,scale:3,rotation:rot},{opacity:1,scale:1,rotation:rot,duration:0.32,ease:'power4.in'},at);shake(at+0.32);}
+function pop(el,at,st){tl.fromTo(E(el),{opacity:0,scale:0.4},{opacity:1,scale:1,duration:0.42,ease:'back.out(2.2)',stagger:(st===undefined?0.08:st)},at);}
+function flip(el,at,o){o=o||{};tl.fromTo(E(el),{opacity:0,rotationY:o.r0||-90,transformPerspective:1400},{opacity:1,rotationY:0,transformPerspective:1400,duration:o.d||0.7,ease:'power3.out',stagger:o.st||0},at);}
+function draw(path,at,d,e){const ps=typeof path==='string'?qa(path):[path];ps.forEach(p=>{const L=p.getTotalLength();p.style.strokeDasharray=L+' '+L;
+  tl.fromTo(p,{strokeDashoffset:L},{strokeDashoffset:0,duration:d||0.9,ease:e||'power2.inOut'},at);});}
+function grow(el,at,d,origin,axis){tl.fromTo(E(el),axis==='y'?{scaleY:0,transformOrigin:origin||'50% 100%'}:{scaleX:0,transformOrigin:origin||'0% 50%'},axis==='y'?{scaleY:1,duration:d||0.7,ease:'power3.out'}:{scaleX:1,duration:d||0.7,ease:'power3.inOut'},at);}
+function mask(el,at,d,dir){const from={l:'inset(0% 100% 0% 0%)',r:'inset(0% 0% 0% 100%)',u:'inset(100% 0% 0% 0%)',d:'inset(0% 0% 100% 0%)'}[dir||'l'];
+  tl.fromTo(E(el),{clipPath:from,opacity:1},{clipPath:'inset(0% 0% 0% 0%)',opacity:1,duration:d||0.8,ease:'power3.inOut'},at);}
+function sweep(el,at){tl.fromTo(E(el),{xPercent:-140,opacity:1},{xPercent:330,opacity:1,duration:1.1,ease:'power2.inOut'},at);}
+function kin(el,at,st){el=E1(el);const t=el.textContent;el.textContent='';
+  for(const c of t){const s=document.createElement('span');s.className='ch';s.textContent=c;el.appendChild(s);}
+  tl.fromTo(el.querySelectorAll('.ch'),{opacity:0,rotationX:90,transformPerspective:700,filter:'blur(12px)'},
+    {opacity:1,rotationX:0,transformPerspective:700,filter:'blur(0px)',duration:0.55,ease:'power3.out',stagger:st||0.03},at);}
+function odo(el,at,dur){el=E1(el);const t=el.textContent;el.textContent='';const reels=[];let k=0;
+  for(const c of t){if(c>='0'&&c<='9'){const d=+c,r=document.createElement('span');r.className='reel';const s=document.createElement('span');s.className='strip';
+      const n=10+d+1;for(let i=0;i<n;i++){const x=document.createElement('i');x.textContent=String(i%10);s.appendChild(x);}r.appendChild(s);el.appendChild(r);reels.push([s,n,k++]);}
+    else{const s=document.createElement('span');s.textContent=c;el.appendChild(s);}}
+  const m=reels.length;reels.forEach(([s,n,i])=>tl.fromTo(s,{yPercent:0},{yPercent:-100*(n-1)/n,duration:(dur||1.4)*(0.65+0.35*(i+1)/m),ease:'power3.out'},at));}
+function ambient(){
+  qa('.blob').forEach((g,i)=>tl.fromTo(g,{x:0,y:0},{x:(i%2?-140:160),y:(i%2?90:-70),duration:D,ease:'sine.inOut'},0));
+  tl.fromTo(q('.stage'),{scale:1,transformOrigin:'50% 48%'},{scale:1.025,duration:D,ease:'none'},0);
+}
+
+function burst(host,at,n,cx,cy,spread,seed){const H=E1(host);seed=seed||7;const rnd=()=>{seed=(seed*16807)%2147483647;return seed/2147483647;};
+  for(let i=0;i<n;i++){const d=document.createElement('div');d.style.cssText='position:absolute;width:12px;height:12px;border-radius:50%;background:#e8b931;opacity:0;left:'+cx+'px;top:'+cy+'px';H.appendChild(d);
+    const a=rnd()*Math.PI*2,r=spread*(0.4+rnd()*0.8);
+    tl.fromTo(d,{x:0,y:0,opacity:1,scale:0.6+rnd()},{x:Math.cos(a)*r,y:Math.sin(a)*r*0.6+60,opacity:0,duration:1.2+rnd()*0.7,ease:'power3.out',immediateRender:false},at);}}
+
+
+mask('#s10-t',0.350+0.2,0.8,'l');inn('#s10-ts',2.040,{y:14});
+outt('#s10-g1',6.330-0.4,{d:0.4});
+tl.set('#s10-g2',{opacity:0},0);tl.set('#s10-g2',{opacity:1},6.330-0.05);
+inn('#s10-cd',6.330-0.3,{y:40,s:0.97});
+inn('#s10-r0',6.330,{x:-30,y:0});draw('#s10-k0',6.330+0.3,0.45);inn('#s10-r1',9.060,{x:-30,y:0});draw('#s10-k1',9.060+0.3,0.45);inn('#s10-r2',13.090,{x:-30,y:0});draw('#s10-k2',13.090+0.3,0.45);inn('#s10-r3',14.910,{x:-30,y:0});draw('#s10-k3',14.910+0.3,0.45);inn('#s10-r4',17.380,{x:-30,y:0});draw('#s10-k4',17.380+0.3,0.45);
+outt('#s10-g2',19.850-0.4,{d:0.4});
+tl.set('#s10-g3',{opacity:0},0);tl.set('#s10-g3',{opacity:1},19.850-0.05);
+mask('#s10-h3',19.850,0.8,'l');
+pop(qa('.lk'),19.850+0.4,0.1);
+tl.to('#s10-sh0',{y:-34,rotation:-18,transformOrigin:'85% 100%',duration:0.35,ease:'back.out(2)'},22.190);tl.to('#s10-lb0',{backgroundColor:'#00b373',duration:0.3},22.190);tl.to('#s10-sh1',{y:-34,rotation:-18,transformOrigin:'85% 100%',duration:0.35,ease:'back.out(2)'},22.970);tl.to('#s10-lb1',{backgroundColor:'#00b373',duration:0.3},22.970);tl.to('#s10-sh2',{y:-34,rotation:-18,transformOrigin:'85% 100%',duration:0.35,ease:'back.out(2)'},24.010);tl.to('#s10-lb2',{backgroundColor:'#00b373',duration:0.3},24.010);tl.to('#s10-sh3',{y:-34,rotation:-18,transformOrigin:'85% 100%',duration:0.35,ease:'back.out(2)'},25.050);tl.to('#s10-lb3',{backgroundColor:'#00b373',duration:0.3},25.050);
+const UL=25.050+0.6;
+inn('#s10-slot',UL,{y:20});inn('#s10-blk',UL+0.2,{x:-40,y:0});
+const FLY=27.910;
+tl.to('#s10-blk span',{opacity:0,duration:0.2},FLY);tl.to('#s10-blk',{x:1128-220,duration:0.8,ease:'power3.inOut'},FLY);
+tl.to(qa('#s10-blk i').slice(6),{backgroundColor:'rgba(232,185,49,.35)',duration:0.3},FLY+0.8);
+inn('#s10-ov',FLY+1.0,{y:10});burst('#s10-pts',FLY+0.8,26,1310,655,420,9);
+outt('#s10-g3',31.030-0.4,{d:0.4});
+tl.set('#s10-g4',{opacity:0},0);tl.set('#s10-g4',{opacity:1},31.030-0.05);
+inn('#s10-eoi',31.030,{y:20,s:0.95});
+
+          ambient();
+          window.__timelines["s10"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>
