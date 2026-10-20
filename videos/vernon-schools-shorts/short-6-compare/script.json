@@ -6,46 +6,348 @@
  "accent": "#1fb5c9",
  "bgm": "bgm-b.mp3",
  "narration": "owner recording short-6_full.m4a (pending)",
- "highlights": ["5곳", "어디가 맞을까", "AP 4과목", "칼라말카", "VSS", "시튼", "풀턴", "찰스 블룸", "유학생 10명", "전담 교사", "2년 이상", "같이 골라요"],
- "scenes": [
-  {"id": "s1", "chunks": [["캐나다 버논 고등학교 5곳", "캐나다 버논 고등학교 다섯 곳"], ["우리 아이는 어디가 맞을까?", "우리 아이는 어디가 맞을까?"]],
-   "items": [
-    {"t": "fan", "srcs": ["kal-01-aerial-lake", "vss-01-building", "seaton-01-entrance", "fulton-01-welcome", "bloom-01-aerial-mountain"], "y": 600, "at": -1},
-    {"t": "particles", "at": 1, "dt": 0.3, "y": 1100, "n": 100},
-    {"t": "slam", "text": "?", "size": 280, "y": 1010, "color": "gold", "at": 1}
-   ]},
-  {"id": "s2", "shader": "cinematic-zoom", "foot": "* SD22 2026-27 자료 기준 · 개설 과목·인원은 해마다 달라질 수 있음",
-   "chunks": [["대학 진학이 목표라면", "대학 진학이 목표라면"], ["AP 4과목, 칼라말카", "에이피 네 과목, 칼라말카"]],
-   "items": [{"t": "pick", "src": "kal-01-aerial-lake", "color": "#f2b705", "icons": ["cap"], "type": "학업형", "name": "칼라말카", "en": "KALAMALKA SECONDARY", "stat": "AP 4", "at": 0}]},
-  {"id": "s3", "shader": "whip-pan",
-   "chunks": [["운동·예술 다 해보고 싶다면", "운동, 예술 다 해보고 싶다면"], ["버논 최대 학교, VSS", "버논 최대 학교, 브이에스에스"]],
-   "items": [{"t": "pick", "src": "vss-01-building", "color": "#d62839", "icons": ["ball", "mask"], "type": "올라운더", "name": "VSS", "en": "VERNON SECONDARY", "stat": "1,100명", "at": 0}]},
-  {"id": "s4", "shader": "light-leak",
-   "chunks": [["음악과 도심 생활이 좋다면", "음악과 도심 생활이 좋다면"], ["재즈밴드의 시튼", "재즈밴드의 시튼"]],
-   "items": [{"t": "pick", "src": "seaton-01-entrance", "color": "#1aa6a6", "icons": ["note"], "type": "예술형", "name": "시튼", "en": "W.L. SEATON SECONDARY", "stat": "재즈밴드", "at": 0}]},
-  {"id": "s5", "shader": "sdf-iris",
-   "chunks": [["첫 유학이라 적응이 걱정되면", "첫 유학이라 적응이 걱정되면"], ["유학생 경험 많은 풀턴", "유학생 경험 많은 풀턴"]],
-   "items": [{"t": "pick", "src": "fulton-01-welcome", "color": "#8c1d40", "icons": ["users"], "type": "적응형", "name": "풀턴", "en": "CLARENCE FULTON SECONDARY", "stat": "유학생 70", "at": 0}]},
-  {"id": "s6", "shader": "cross-warp-morph",
-   "chunks": [["영어 몰입, 7학년부터라면", "영어 몰입, 칠 학년부터라면"], ["유학생 10명, 찰스 블룸", "유학생 열 명, 찰스 블룸"]],
-   "items": [{"t": "pick", "src": "bloom-01-aerial-mountain", "color": "#2e7d32", "icons": ["tree"], "type": "몰입형", "name": "찰스 블룸", "en": "CHARLES BLOOM SECONDARY", "stat": "유학생 10", "at": 0}]},
-  {"id": "s7", "shader": "domain-warp", "foot": "* 학교 배정은 교육청 정원·홈스테이 상황에 따라 결정",
-   "chunks": [["5곳 모두 유학생 전담 교사", "다섯 곳 모두 유학생 전담 교사"], ["BC주 졸업장은 보통 2년 이상", "비씨주 졸업장은 보통 이 년 이상"]],
-   "items": [
-    {"t": "chips", "items": [{"t": "칼라말카", "c": "#f2b705"}, {"t": "VSS", "c": "#d62839"}, {"t": "시튼", "c": "#1aa6a6"}, {"t": "풀턴", "c": "#8c1d40"}, {"t": "블룸", "c": "#2e7d32"}], "y": 620, "size": 46, "at": 0, "stagger": 0.12},
-    {"t": "checks", "items": ["5곳 모두 유학생 전담(ELL) 교사"], "y": 820, "at": 0, "dt": 0.9},
-    {"t": "odo", "value": "80학점", "label": "BC주 졸업", "size": 200, "y": 1020, "color": "gold", "at": 1, "dt": 0.2, "shake": false},
-    {"t": "note", "text": "BC주 졸업장 · 보통 2년 이상 재학", "y": 1290, "size": 40, "at": 1, "dt": 1.0}
-   ]},
-  {"id": "s8", "shader": "flash-through-white",
-   "chunks": [["어느 학교가 맞을지", "어느 학교가 맞을지"], ["AA Canada와 같이 골라요", "에이에이 캐나다와 같이 골라요"]],
-   "items": [
-    {"t": "particles", "at": 0, "dt": 0.6, "y": 820, "n": 110, "spread": 620},
-    {"t": "cta", "at": 0}
-   ]}
+ "highlights": [
+  "5곳",
+  "어디가 맞을까",
+  "AP 4과목",
+  "칼라말카",
+  "VSS",
+  "시튼",
+  "풀턴",
+  "찰스 블룸",
+  "유학생 10명",
+  "전담 교사",
+  "2년 이상",
+  "같이 골라요"
  ],
- "thumbnail": {"collage": ["kal-01-aerial-lake", "vss-01-building", "seaton-01-entrance", "fulton-01-welcome", "bloom-01-aerial-mountain"],
-  "lines": ["버논 고등학교 5곳", "우리 아이는", "어디?"], "gold": [2], "size": 130,
-  "chips": ["칼라말카", "VSS", "시튼", "풀턴", "블룸"], "chip_colors": ["#f2b705", "#d62839", "#1aa6a6", "#8c1d40", "#2e7d32"]},
- "publish": {"hook": "우리 아이 성향별 버논 고등학교", "after": "2026-11-13", "folder": "2026-11-13-vernon-school-6-compare"}
+ "scenes": [
+  {
+   "id": "s1",
+   "chunks": [
+    [
+     "캐나다 버논 고등학교 5곳",
+     "캐나다 버논 고등학교 다섯 곳"
+    ],
+    [
+     "우리 아이는 어디가 맞을까?",
+     "우리 아이는 어디가 맞을까?"
+    ]
+   ],
+   "items": [
+    {
+     "t": "fan",
+     "srcs": [
+      "kal-01-aerial-lake",
+      "vss-01-building",
+      "seaton-01-entrance",
+      "fulton-01-welcome",
+      "bloom-01-aerial-mountain"
+     ],
+     "y": 600,
+     "at": -1
+    },
+    {
+     "t": "particles",
+     "at": 1,
+     "dt": 0.3,
+     "y": 1100,
+     "n": 100
+    },
+    {
+     "t": "slam",
+     "text": "?",
+     "size": 280,
+     "y": 1010,
+     "color": "gold",
+     "at": 1
+    }
+   ]
+  },
+  {
+   "id": "s2",
+   "shader": "cinematic-zoom",
+   "foot": "* SD22 2026-27 자료 기준 · 개설 과목·인원은 해마다 달라질 수 있음",
+   "chunks": [
+    [
+     "대학 진학이 목표라면",
+     "대학 진학이 목표라면"
+    ],
+    [
+     "AP 4과목, 칼라말카",
+     "에이피 네 과목, 칼라말카"
+    ]
+   ],
+   "items": [
+    {
+     "t": "pick",
+     "src": "kal-01-aerial-lake",
+     "color": "#f2b705",
+     "icons": [
+      "cap"
+     ],
+     "type": "학업형",
+     "name": "칼라말카",
+     "en": "KALAMALKA SECONDARY",
+     "stat": "AP 4",
+     "at": 0
+    }
+   ]
+  },
+  {
+   "id": "s3",
+   "shader": "whip-pan",
+   "chunks": [
+    [
+     "운동·예술 다 해보고 싶다면",
+     "운동, 예술 다 해보고 싶다면"
+    ],
+    [
+     "버논 최대 학교, VSS",
+     "버논 최대 학교, 브이에스에스"
+    ]
+   ],
+   "items": [
+    {
+     "t": "pick",
+     "src": "vss-01-building",
+     "color": "#d62839",
+     "icons": [
+      "ball",
+      "mask"
+     ],
+     "type": "올라운더",
+     "name": "VSS",
+     "en": "VERNON SECONDARY",
+     "stat": "1,100명",
+     "at": 0
+    }
+   ]
+  },
+  {
+   "id": "s4",
+   "shader": "light-leak",
+   "chunks": [
+    [
+     "음악과 도심 생활이 좋다면",
+     "음악과 도심 생활이 좋다면"
+    ],
+    [
+     "재즈밴드의 시튼",
+     "재즈밴드의 시튼"
+    ]
+   ],
+   "items": [
+    {
+     "t": "pick",
+     "src": "seaton-01-entrance",
+     "color": "#1aa6a6",
+     "icons": [
+      "note"
+     ],
+     "type": "예술형",
+     "name": "시튼",
+     "en": "W.L. SEATON SECONDARY",
+     "stat": "재즈밴드",
+     "at": 0
+    }
+   ]
+  },
+  {
+   "id": "s5",
+   "shader": "sdf-iris",
+   "chunks": [
+    [
+     "첫 유학이라 적응이 걱정되면",
+     "첫 유학이라 적응이 걱정되면"
+    ],
+    [
+     "유학생 경험 많은 풀턴",
+     "유학생 경험 많은 풀턴"
+    ]
+   ],
+   "items": [
+    {
+     "t": "pick",
+     "src": "fulton-01-welcome",
+     "color": "#8c1d40",
+     "icons": [
+      "users"
+     ],
+     "type": "적응형",
+     "name": "풀턴",
+     "en": "CLARENCE FULTON SECONDARY",
+     "stat": "유학생 70",
+     "at": 0
+    }
+   ]
+  },
+  {
+   "id": "s6",
+   "shader": "cross-warp-morph",
+   "chunks": [
+    [
+     "영어 몰입, 7학년부터라면",
+     "영어 몰입, 칠 학년부터라면"
+    ],
+    [
+     "유학생 10명, 찰스 블룸",
+     "유학생 열 명, 찰스 블룸"
+    ]
+   ],
+   "items": [
+    {
+     "t": "pick",
+     "src": "bloom-01-aerial-mountain",
+     "color": "#2e7d32",
+     "icons": [
+      "tree"
+     ],
+     "type": "몰입형",
+     "name": "찰스 블룸",
+     "en": "CHARLES BLOOM SECONDARY",
+     "stat": "유학생 10",
+     "at": 0
+    }
+   ]
+  },
+  {
+   "id": "s7",
+   "shader": "domain-warp",
+   "foot": "* 학교 배정은 교육청 정원·홈스테이 상황에 따라 결정",
+   "chunks": [
+    [
+     "5곳 모두 유학생 전담 교사",
+     "다섯 곳 모두 유학생 전담 교사"
+    ],
+    [
+     "BC주 졸업장은 보통 2년 이상",
+     "비씨주 졸업장은 보통 이 년 이상"
+    ]
+   ],
+   "items": [
+    {
+     "t": "chips",
+     "items": [
+      {
+       "t": "칼라말카",
+       "c": "#f2b705"
+      },
+      {
+       "t": "VSS",
+       "c": "#d62839"
+      },
+      {
+       "t": "시튼",
+       "c": "#1aa6a6"
+      },
+      {
+       "t": "풀턴",
+       "c": "#8c1d40"
+      },
+      {
+       "t": "블룸",
+       "c": "#2e7d32"
+      }
+     ],
+     "y": 620,
+     "size": 46,
+     "at": 0,
+     "stagger": 0.12
+    },
+    {
+     "t": "checks",
+     "items": [
+      "5곳 모두 유학생 전담(ELL) 교사"
+     ],
+     "y": 820,
+     "at": 0,
+     "dt": 0.9
+    },
+    {
+     "t": "odo",
+     "value": "80학점",
+     "label": "BC주 졸업",
+     "size": 200,
+     "y": 980,
+     "color": "gold",
+     "at": 1,
+     "dt": 0.2,
+     "shake": false
+    },
+    {
+     "t": "note",
+     "text": "BC주 졸업장 · 보통 2년 이상 재학",
+     "y": 1318,
+     "size": 36,
+     "at": 1,
+     "dt": 1.0
+    }
+   ]
+  },
+  {
+   "id": "s8",
+   "shader": "flash-through-white",
+   "chunks": [
+    [
+     "어느 학교가 맞을지",
+     "어느 학교가 맞을지"
+    ],
+    [
+     "AA Canada와 같이 골라요",
+     "에이에이 캐나다와 같이 골라요"
+    ]
+   ],
+   "items": [
+    {
+     "t": "particles",
+     "at": 0,
+     "dt": 0.6,
+     "y": 820,
+     "n": 110,
+     "spread": 620
+    },
+    {
+     "t": "cta",
+     "at": 0
+    }
+   ]
+  }
+ ],
+ "thumbnail": {
+  "collage": [
+   "kal-01-aerial-lake",
+   "vss-01-building",
+   "seaton-01-entrance",
+   "fulton-01-welcome",
+   "bloom-01-aerial-mountain"
+  ],
+  "lines": [
+   "버논 고등학교 5곳",
+   "우리 아이는",
+   "어디?"
+  ],
+  "gold": [
+   2
+  ],
+  "size": 130,
+  "chips": [
+   "칼라말카",
+   "VSS",
+   "시튼",
+   "풀턴",
+   "블룸"
+  ],
+  "chip_colors": [
+   "#f2b705",
+   "#d62839",
+   "#1aa6a6",
+   "#8c1d40",
+   "#2e7d32"
+  ]
+ },
+ "publish": {
+  "hook": "우리 아이 성향별 버논 고등학교",
+  "after": "2026-11-13",
+  "folder": "2026-11-13-vernon-school-6-compare"
+ }
 }

@@ -4,151 +4,185 @@
    "id": "s1",
    "start": 0.0,
    "audio_start": 0.25,
-   "audio_dur": 4.73,
+   "audio_dur": 5.854,
    "captions": [
     {
      "text": "전교생 375명에 유학생은 딱 10명",
-     "start": 0.25,
-     "end": 3.42
+     "start": 0.31,
+     "end": 4.538
     },
     {
      "text": "영어만 쓰게 되는 학교",
-     "start": 3.42,
-     "end": 5.155
+     "start": 4.538,
+     "end": 6.279
     }
    ],
-   "duration": 5.155
+   "take": [
+    1.131,
+    6.826
+   ],
+   "duration": 6.279
   },
   {
    "id": "s2",
-   "start": 5.155,
-   "audio_start": 5.33,
-   "audio_dur": 5.3,
+   "start": 6.279,
+   "audio_start": 6.454,
+   "audio_dur": 7.043,
    "captions": [
     {
      "text": "찰스 블룸 세컨더리",
-     "start": 5.33,
-     "end": 6.81
+     "start": 6.514,
+     "end": 8.613
     },
     {
      "text": "버논 옆 작은 마을 럼비",
-     "start": 6.81,
-     "end": 8.68
+     "start": 8.613,
+     "end": 11.728
     },
     {
      "text": "7학년부터 다닐 수 있어요",
-     "start": 8.68,
-     "end": 10.805
+     "start": 11.728,
+     "end": 13.672
     }
    ],
-   "duration": 5.65
+   "take": [
+    11.425,
+    18.373
+   ],
+   "duration": 7.393
   },
   {
    "id": "s3",
-   "start": 10.805,
-   "audio_start": 10.98,
-   "audio_dur": 6.34,
+   "start": 13.672,
+   "audio_start": 13.847,
+   "audio_dur": 7.155,
    "captions": [
     {
      "text": "작은 학교라 가족 같은 분위기",
-     "start": 10.98,
-     "end": 13.24
+     "start": 13.907,
+     "end": 16.511
     },
     {
      "text": "한 명 한 명 챙기는 학교",
-     "start": 13.24,
-     "end": 15.24
+     "start": 16.511,
+     "end": 18.763
     },
     {
      "text": "유학생 적응 프로그램도 있어요",
-     "start": 15.24,
-     "end": 17.495
+     "start": 18.763,
+     "end": 21.177
     }
    ],
-   "duration": 6.69
+   "take": [
+    23.683,
+    30.691
+   ],
+   "duration": 7.505
   },
   {
    "id": "s4",
-   "start": 17.495,
-   "audio_start": 17.67,
-   "audio_dur": 4.21,
+   "start": 21.177,
+   "audio_start": 21.352,
+   "audio_dur": 6.696,
    "captions": [
     {
      "text": "학교가 마을 한가운데",
-     "start": 17.67,
-     "end": 19.28
+     "start": 21.412,
+     "end": 23.73
     },
     {
      "text": "수영장·스케이트장·공원이 바로 옆",
-     "start": 19.28,
-     "end": 22.055
+     "start": 23.73,
+     "end": 28.223
     }
    ],
-   "duration": 4.56
+   "take": [
+    35.929,
+    42.495
+   ],
+   "duration": 7.046
   },
   {
    "id": "s5",
-   "start": 22.055,
-   "audio_start": 22.23,
-   "audio_dur": 6.6,
+   "start": 28.223,
+   "audio_start": 28.398,
+   "audio_dur": 8.578,
    "captions": [
     {
      "text": "학교 숲만 600헥타르",
-     "start": 22.23,
-     "end": 23.97
+     "start": 28.458,
+     "end": 31.284
     },
     {
      "text": "11·12학년 임업·기술 프로그램",
-     "start": 23.97,
-     "end": 26.75
+     "start": 31.284,
+     "end": 34.422
     },
     {
      "text": "목공·자동차 실습실도 있어요",
-     "start": 26.75,
-     "end": 29.005
+     "start": 34.422,
+     "end": 37.151
     }
    ],
-   "duration": 6.95
+   "take": [
+    45.781,
+    54.686
+   ],
+   "duration": 8.928
   },
   {
    "id": "s6",
-   "start": 29.005,
-   "audio_start": 29.18,
-   "audio_dur": 3.69,
+   "start": 37.151,
+   "audio_start": 37.326,
+   "audio_dur": 4.213,
    "captions": [
     {
      "text": "영어 노출은 최대로",
-     "start": 29.18,
-     "end": 30.66
+     "start": 37.386,
+     "end": 39.132
     },
     {
      "text": "생활은 AA Canada가 챙겨요",
-     "start": 30.66,
-     "end": 33.045
+     "start": 39.132,
+     "end": 41.714
     }
    ],
-   "duration": 4.04
+   "take": [
+    59.442,
+    63.495
+   ],
+   "duration": 4.563
   },
   {
    "id": "s7",
-   "start": 33.045,
-   "audio_start": 33.22,
-   "audio_dur": 3.95,
+   "start": 41.714,
+   "audio_start": 41.889,
+   "audio_dur": 4.853,
    "captions": [
     {
      "text": "영어 몰입이 목표라면 블룸",
-     "start": 33.22,
-     "end": 35.22
+     "start": 41.949,
+     "end": 45.002
     },
     {
      "text": "AA Canada와 상담하세요",
-     "start": 35.22,
-     "end": 37.47
+     "start": 45.002,
+     "end": 47.042
     }
    ],
-   "duration": 5.725
+   "take": [
+    68.182,
+    72.875
+   ],
+   "duration": 7.426
   }
  ],
- "estimated": true,
- "total": 38.77
+ "total": 49.14,
+ "source": {
+  "file": "short-5_s1.m4a, short-5_s2.m4a, short-5_s3.m4a, short-5_s4.m4a, short-5_s5.m4a, short-5_s6.m4a, short-5_s7.m4a",
+  "tempo": 1.0,
+  "max_pause": 0.5,
+  "rate_chars_per_s": 4.96,
+  "method": "per-scene files (exact scene cuts) + pause/script-ratio chunk alignment"
+ }
 }

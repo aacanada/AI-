@@ -4,155 +4,193 @@
    "id": "s1",
    "start": 0.0,
    "audio_start": 0.25,
-   "audio_dur": 4.21,
+   "audio_dur": 4.42,
    "captions": [
     {
      "text": "캐나다 버논 고등학교 5곳",
-     "start": 0.25,
-     "end": 2.51
+     "start": 0.31,
+     "end": 2.879
     },
     {
      "text": "우리 아이는 어디가 맞을까?",
-     "start": 2.51,
-     "end": 4.635
+     "start": 2.879,
+     "end": 4.845
     }
    ],
-   "duration": 4.635
+   "take": [
+    2.154,
+    6.557
+   ],
+   "duration": 4.845
   },
   {
    "id": "s2",
-   "start": 4.635,
-   "audio_start": 4.81,
-   "audio_dur": 3.43,
+   "start": 4.845,
+   "audio_start": 5.02,
+   "audio_dur": 3.947,
    "captions": [
     {
      "text": "대학 진학이 목표라면",
-     "start": 4.81,
-     "end": 6.42
+     "start": 5.08,
+     "end": 6.9
     },
     {
      "text": "AP 4과목, 칼라말카",
-     "start": 6.42,
-     "end": 8.415
+     "start": 6.9,
+     "end": 9.143
     }
    ],
-   "duration": 3.78
+   "take": [
+    11.072,
+    14.859
+   ],
+   "duration": 4.298
   },
   {
    "id": "s3",
-   "start": 8.415,
-   "audio_start": 8.59,
-   "audio_dur": 4.34,
+   "start": 9.143,
+   "audio_start": 9.318,
+   "audio_dur": 5.537,
    "captions": [
     {
      "text": "운동·예술 다 해보고 싶다면",
-     "start": 8.59,
-     "end": 10.85
+     "start": 9.378,
+     "end": 12.44
     },
     {
      "text": "버논 최대 학교, VSS",
-     "start": 10.85,
-     "end": 13.105
+     "start": 12.44,
+     "end": 15.03
     }
    ],
-   "duration": 4.69
+   "take": [
+    20.831,
+    26.208
+   ],
+   "duration": 5.887
   },
   {
    "id": "s4",
-   "start": 13.105,
-   "audio_start": 13.28,
-   "audio_dur": 3.04,
+   "start": 15.03,
+   "audio_start": 15.205,
+   "audio_dur": 4.329,
    "captions": [
     {
      "text": "음악과 도심 생활이 좋다면",
-     "start": 13.28,
-     "end": 15.28
+     "start": 15.265,
+     "end": 17.573
     },
     {
      "text": "재즈밴드의 시튼",
-     "start": 15.28,
-     "end": 16.495
+     "start": 17.573,
+     "end": 19.708
     }
    ],
-   "duration": 3.39
+   "take": [
+    32.203,
+    36.372
+   ],
+   "duration": 4.678
   },
   {
    "id": "s5",
-   "start": 16.495,
-   "audio_start": 16.67,
-   "audio_dur": 3.69,
+   "start": 19.708,
+   "audio_start": 19.883,
+   "audio_dur": 4.546,
    "captions": [
     {
      "text": "첫 유학이라 적응이 걱정되면",
-     "start": 16.67,
-     "end": 18.8
+     "start": 19.943,
+     "end": 22.449
     },
     {
      "text": "유학생 경험 많은 풀턴",
-     "start": 18.8,
-     "end": 20.535
+     "start": 22.449,
+     "end": 24.604
     }
    ],
-   "duration": 4.04
+   "take": [
+    40.925,
+    45.311
+   ],
+   "duration": 4.896
   },
   {
    "id": "s6",
-   "start": 20.535,
-   "audio_start": 20.71,
-   "audio_dur": 3.95,
+   "start": 24.604,
+   "audio_start": 24.779,
+   "audio_dur": 4.855,
    "captions": [
     {
      "text": "영어 몰입, 7학년부터라면",
-     "start": 20.71,
-     "end": 22.84
+     "start": 24.839,
+     "end": 27.422
     },
     {
      "text": "유학생 10명, 찰스 블룸",
-     "start": 22.84,
-     "end": 24.835
+     "start": 27.422,
+     "end": 29.81
     }
    ],
-   "duration": 4.3
+   "take": [
+    50.116,
+    54.811
+   ],
+   "duration": 5.206
   },
   {
    "id": "s7",
-   "start": 24.835,
-   "audio_start": 25.01,
-   "audio_dur": 4.73,
+   "start": 29.81,
+   "audio_start": 29.985,
+   "audio_dur": 5.822,
    "captions": [
     {
      "text": "5곳 모두 유학생 전담 교사",
-     "start": 25.01,
-     "end": 27.4
+     "start": 30.045,
+     "end": 33.121
     },
     {
      "text": "BC주 졸업장은 보통 2년 이상",
-     "start": 27.4,
-     "end": 29.915
+     "start": 33.121,
+     "end": 35.982
     }
    ],
-   "duration": 5.08
+   "take": [
+    59.598,
+    65.497
+   ],
+   "duration": 6.172
   },
   {
    "id": "s8",
-   "start": 29.915,
-   "audio_start": 30.09,
-   "audio_dur": 3.56,
+   "start": 35.982,
+   "audio_start": 36.157,
+   "audio_dur": 3.686,
    "captions": [
     {
      "text": "어느 학교가 맞을지",
-     "start": 30.09,
-     "end": 31.57
+     "start": 36.217,
+     "end": 37.847
     },
     {
      "text": "AA Canada와 같이 골라요",
-     "start": 31.57,
-     "end": 33.95
+     "start": 37.847,
+     "end": 40.143
     }
    ],
-   "duration": 5.335
+   "take": [
+    70.389,
+    73.888
+   ],
+   "duration": 6.258
   }
  ],
- "estimated": true,
- "total": 35.25
+ "total": 42.24,
+ "source": {
+  "file": "short-6_s1.m4a, short-6_s2.m4a, short-6_s3.m4a, short-6_s4.m4a, short-6_s5.m4a, short-6_s6.m4a, short-6_s7.m4a, short-6_s8.m4a",
+  "tempo": 1.0,
+  "max_pause": 0.5,
+  "rate_chars_per_s": 4.95,
+  "method": "per-scene files (exact scene cuts) + pause/script-ratio chunk alignment"
+ }
 }

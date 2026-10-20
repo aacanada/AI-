@@ -167,9 +167,9 @@ body { font-family: "Pretendard", sans-serif; color: #ffffff; word-break: keep-a
          align-items: center; justify-content: center; border: 6px solid #0b1730; }
 .pk-type { position: absolute; left: 36px; top: 36px; padding: 12px 28px; border-radius: 999px; background: rgba(8,16,36,0.85); font-size: 42px; font-weight: 900; }
 .pk-name { position: absolute; left: 40px; top: 560px; font-size: 92px; font-weight: 900; letter-spacing: -0.03em; }
-.pk-en { position: absolute; left: 44px; top: 668px; font-size: 32px; font-weight: 800; letter-spacing: 0.16em; color: #b9c6dd; }
-.pk-stat { position: absolute; right: 40px; top: 590px; text-align: right; }
-.pk-v { display: inline-block; font-size: 92px; font-weight: 900; letter-spacing: -0.03em; }
+.pk-en { position: absolute; left: 44px; top: 700px; font-size: 32px; font-weight: 800; letter-spacing: 0.16em; color: #b9c6dd; }
+.pk-stat { position: absolute; right: 40px; top: 572px; text-align: right; }
+.pk-v { display: inline-block; font-size: 84px; font-weight: 900; letter-spacing: -0.03em; }
 
 /* music lines */
 .notes { position: absolute; }

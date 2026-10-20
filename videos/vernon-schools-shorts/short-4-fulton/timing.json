@@ -4,146 +4,180 @@
    "id": "s1",
    "start": 0.0,
    "audio_start": 0.25,
-   "audio_dur": 4.21,
+   "audio_dur": 4.424,
    "captions": [
     {
      "text": "버논에서 유학생이 제일 많은 학교",
-     "start": 0.25,
-     "end": 2.77
+     "start": 0.31,
+     "end": 2.911
     },
     {
      "text": "장점일까요, 단점일까요?",
-     "start": 2.77,
-     "end": 4.635
+     "start": 2.911,
+     "end": 4.849
     }
    ],
-   "duration": 4.635
+   "take": [
+    2.138,
+    6.385
+   ],
+   "duration": 4.849
   },
   {
    "id": "s2",
-   "start": 4.635,
-   "audio_start": 4.81,
-   "audio_dur": 4.08,
+   "start": 4.849,
+   "audio_start": 5.024,
+   "audio_dur": 4.874,
    "captions": [
     {
      "text": "클래런스 풀턴 세컨더리",
-     "start": 4.81,
-     "end": 6.55
+     "start": 5.084,
+     "end": 7.127
     },
     {
      "text": "전교생 800명, 유학생 70명",
-     "start": 6.55,
-     "end": 9.065
+     "start": 7.127,
+     "end": 10.073
     }
    ],
-   "duration": 4.43
+   "take": [
+    12.039,
+    16.753
+   ],
+   "duration": 5.224
   },
   {
    "id": "s3",
-   "start": 9.065,
-   "audio_start": 9.24,
-   "audio_dur": 7.95,
+   "start": 10.073,
+   "audio_start": 10.248,
+   "audio_dur": 13.244,
    "captions": [
     {
      "text": "답은 첫 유학이라면 장점",
-     "start": 9.24,
-     "end": 11.11
+     "start": 10.308,
+     "end": 12.675
     },
     {
      "text": "국적이 가장 다양하고",
-     "start": 11.11,
-     "end": 12.72
+     "start": 12.675,
+     "end": 14.855
     },
     {
      "text": "유학생 지원 경험이 많아요",
-     "start": 12.72,
-     "end": 14.72
+     "start": 14.855,
+     "end": 19.147
     },
     {
      "text": "그래도 열 명 중 아홉은 현지 학생",
-     "start": 14.72,
-     "end": 17.365
+     "start": 19.147,
+     "end": 23.667
     }
    ],
-   "duration": 8.3
+   "take": [
+    20.377,
+    33.507
+   ],
+   "duration": 13.594
   },
   {
    "id": "s4",
-   "start": 17.365,
-   "audio_start": 17.54,
-   "audio_dur": 4.47,
+   "start": 23.667,
+   "audio_start": 23.842,
+   "audio_dur": 5.855,
    "captions": [
     {
      "text": "오카나간 호수와 킨 비치 근처",
-     "start": 17.54,
-     "end": 19.8
+     "start": 23.902,
+     "end": 26.823
     },
     {
      "text": "학교 안에 생물 수업용 습지까지",
-     "start": 19.8,
-     "end": 22.185
+     "start": 26.823,
+     "end": 29.871
     }
    ],
-   "duration": 4.82
+   "take": [
+    37.542,
+    43.399
+   ],
+   "duration": 6.204
   },
   {
    "id": "s5",
-   "start": 22.185,
-   "audio_start": 22.36,
-   "audio_dur": 4.47,
+   "start": 29.871,
+   "audio_start": 30.046,
+   "audio_dur": 6.185,
    "captions": [
     {
      "text": "요리, 마케팅, 관광, 영상 제작",
-     "start": 22.36,
-     "end": 24.88
+     "start": 30.106,
+     "end": 33.951
     },
     {
      "text": "손으로 배우는 과목이 많아요",
-     "start": 24.88,
-     "end": 27.005
+     "start": 33.951,
+     "end": 36.406
     }
    ],
-   "duration": 4.82
+   "take": [
+    48.383,
+    54.42
+   ],
+   "duration": 6.535
   },
   {
    "id": "s6",
-   "start": 27.005,
-   "audio_start": 27.18,
-   "audio_dur": 3.82,
+   "start": 36.406,
+   "audio_start": 36.581,
+   "audio_dur": 5.003,
    "captions": [
     {
      "text": "체육관 2개, 넓은 운동장",
-     "start": 27.18,
-     "end": 29.31
+     "start": 36.641,
+     "end": 39.426
     },
     {
      "text": "유학생 전담 교사도 상주",
-     "start": 29.31,
-     "end": 31.175
+     "start": 39.426,
+     "end": 41.76
     }
    ],
-   "duration": 4.17
+   "take": [
+    59.201,
+    64.044
+   ],
+   "duration": 5.354
   },
   {
    "id": "s7",
-   "start": 31.175,
-   "audio_start": 31.35,
-   "audio_dur": 4.21,
+   "start": 41.76,
+   "audio_start": 41.935,
+   "audio_dur": 5.853,
    "captions": [
     {
      "text": "적응이 걱정되는 아이라면 풀턴",
-     "start": 31.35,
-     "end": 33.61
+     "start": 41.995,
+     "end": 44.841
     },
     {
      "text": "AA Canada와 상담하세요",
-     "start": 33.61,
-     "end": 35.86
+     "start": 44.841,
+     "end": 48.088
     }
    ],
-   "duration": 5.985
+   "take": [
+    67.885,
+    73.578
+   ],
+   "duration": 8.43
   }
  ],
- "estimated": true,
- "total": 37.16
+ "total": 50.19,
+ "source": {
+  "file": "short-4_s1.m4a, short-4_s2.m4a, short-4_s3.m4a, short-4_s4.m4a, short-4_s5.m4a, short-4_s6.m4a, short-4_s7.m4a",
+  "tempo": 1.0,
+  "max_pause": 0.5,
+  "rate_chars_per_s": 4.81,
+  "method": "per-scene files (exact scene cuts) + pause/script-ratio chunk alignment"
+ }
 }

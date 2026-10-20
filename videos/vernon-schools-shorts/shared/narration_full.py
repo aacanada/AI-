@@ -19,13 +19,15 @@ SRC = pathlib.Path(sys.argv[2]).resolve()
 args = sys.argv[3:]
 TEMPO = float(args[args.index("--tempo") + 1]) if "--tempo" in args else 1.0
 MAXP = float(args[args.index("--max-pause") + 1]) if "--max-pause" in args else 0.5
+TAKE = pathlib.Path(args[args.index("--take") + 1]) if "--take" in args else None  # set by narration.py (per-scene files)
+CUTS = [float(x) for x in args[args.index("--cuts") + 1].split(",")] if "--cuts" in args else []  # known scene cuts in the take
 assert 1.0 <= TEMPO <= 1.1, "tempo must stay within 1.0-1.1"
 spec = json.loads((ROOT / "script.json").read_text())
 out = ROOT / "assets" / "audio"
 out.mkdir(parents=True, exist_ok=True)
 GAP, LEAD, TAIL, PAD0, PAD1 = 0.35, 0.25, 2.4, 0.06, 0.10
 
-src = SRC / f"short-{spec['n']}_full.m4a"
+src = TAKE or SRC / f"short-{spec['n']}_full.m4a"
 if not src.exists():
     sys.exit(f"missing recording: {src.name}")
 clean = out / "take-clean.wav"
@@ -58,6 +60,9 @@ rate = sum(c for _, c in chunks) / speech  # chars per second of this take
 
 # DP: node = pause index (-1 = speech start, len(P) = speech end); group = consecutive chunks between two nodes.
 INF = float("inf")
+FORCED = {k for k, (a, b) in enumerate(P) if any(a <= c <= b for c in CUTS)}
+if CUTS and len(FORCED) != len(CUTS):
+    sys.exit(f"scene cuts not found as pauses: {len(FORCED)}/{len(CUTS)}")
 end_of = lambda p: s0 if p == -1 else P[p][1]
 start_of = lambda p: e0 if p == len(P) else P[p][0]
 best = {(0, -1): (0.0, None)}
@@ -76,6 +81,9 @@ for c in range(N):
                 a, b = end_of(p), start_of(p2)
                 if b <= a:
                     continue
+                if FORCED and (any(k in FORCED for k in range(p + 1, p2))
+                               or (p2 in FORCED) != (c2 in scene_first and c2 < N)):
+                    continue  # per-scene files: scene boundaries are exactly the file joins
                 d = b - a
                 cost = (d - exp) ** 2 / exp
                 cost += sum(2.0 for x, y in P[p + 1:p2] if y - x >= 0.45)  # a long pause left inside a group
@@ -148,7 +156,7 @@ for i, s in enumerate(timing["scenes"]):
     for j in range(len(s["captions"])):
         s["captions"][j]["end"] = s["captions"][j + 1]["start"] if j + 1 < len(s["captions"]) else round(min(nxt, s["audio_start"] + s["audio_dur"] + 0.3), 3)
 timing["total"] = total
-timing["source"] = {"file": src.name, "tempo": TEMPO, "max_pause": MAXP, "rate_chars_per_s": round(rate, 2),
+timing["source"] = {"file": spec.get("narration_files", src.name), "tempo": TEMPO, "max_pause": MAXP, "rate_chars_per_s": round(rate, 2),
                     "method": "silencedetect + script-ratio DP alignment"}
 graph = ";".join(labels + filt) + ";" + "".join(seq) + f"concat=n={len(seq)}:v=0:a=1,atrim=0:{total}[out]"
 subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", str(clean), "-filter_complex", graph, "-map", "[out]", "-ar", "44100", "-ac", "1",
