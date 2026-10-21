@@ -26,7 +26,7 @@ SHORTS = {
     "c": dict(title=["캐나다 2위 대도시인데", "<em>가장 저렴한</em> 이유"], segs=[("s07", 0, 4), ("s06", 2, 2), CTA]),
     "d": dict(title=["캐나다엔", "<em>유치원 건물</em>이 없습니다"], segs=[("s08", 0, 5), CTA]),
     "e": dict(title=["배우는 영어 vs", "<em>몸에 밴 영어</em>"], segs=[("s09", 0, 6), CTA]),
-    "f": dict(title=["<em>3개 국어</em> 하는", "제 아들 이야기"], segs=[("s10", 0, 7)]),
+    "f": dict(title=["한국어까지 <em>4개 국어</em>", "하는 제 아들 이야기"], segs=[("s10", 0, 7)]),
 }
 PRE, POST, XF = 0.3, 0.35, 0.3
 S = 1080 / 1920  # scene scale

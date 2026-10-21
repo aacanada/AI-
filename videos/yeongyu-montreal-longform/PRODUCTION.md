@@ -11,7 +11,7 @@ python3 -I tools/audio_prep.py           # re-clean only (keeps ASR in assets/vo
 python3 -I tools/asr_check.py > ASR_CHECK.md
 python3 -I tools/build.py                # timing.json, compositions/sNN.html, index.html
 YV_FONTSRC=<dir with npm-packed @fontsource/black-han-sans + noto-sans-kr> python3 -I tools/fonts.py
-python3 -I tools/build.py && python3 -I tools/shorts.py && python3 -I tools/thumbnail.py
+python3 -I tools/build.py && python3 -I tools/shorts.py && python3 -I tools/thumbnail.py && python3 -I tools/short_covers.py
 npm run check && npm run render
 ```
 
