@@ -13,11 +13,11 @@ R .half .h{position:absolute;left:0;right:0;top:40px;text-align:center;font-fami
 R .half .s{position:absolute;left:0;right:0;top:120px;text-align:center;font-weight:700;font-size:32px;opacity:.8}
 R .book{position:absolute;left:250px;top:230px;width:300px;height:220px}
 R .lt{position:absolute;left:0;right:0;top:500px;text-align:center;font-family:'Black Han Sans',sans-serif;font-size:64px}
-R .sit{position:absolute;left:60px;width:680px;height:120px;border-radius:22px;background:#fff;color:#2B2B2B;display:flex;align-items:center;gap:22px;padding:0 28px}
-R .sit .w{font-weight:900;font-size:30px;width:190px;flex:none;color:#7A1B26}
-R .sit .e{font-weight:900;font-size:36px;color:#C8102E;white-space:nowrap}
-R .s1{top:200px}.s2{top:340px}.s3{top:480px}
-R .rt{position:absolute;left:0;right:0;top:612px;text-align:center;font-family:'Black Han Sans',sans-serif;font-size:0}
+R .sit{position:absolute;left:40px;width:720px;height:120px;border-radius:22px;background:#fff;color:#2B2B2B;display:flex;align-items:center;gap:18px;padding:0 24px}
+R .sit .w{font-weight:900;font-size:28px;width:160px;flex:none;color:#7A1B26}
+R .sit .e{font-weight:900;font-size:31px;color:#C8102E;white-space:nowrap}
+R .s1{top:180px}.s2{top:310px}.s3{top:440px}
+R .rt{position:absolute;left:0;right:0;top:572px;text-align:center;font-family:'Black Han Sans',sans-serif;font-size:0}
 R .vs{position:absolute;left:880px;top:420px;width:160px;height:160px;border-radius:50%;background:#2B2B2B;color:#fff;display:flex;align-items:center;justify-content:center;font-size:64px;z-index:5}
 R .young{left:120px;top:150px;font-size:80px}
 R .mt{position:absolute;left:160px;width:1600px;height:130px;display:flex;align-items:center;gap:40px}
@@ -44,7 +44,7 @@ R .nx2{top:500px;font-size:62px;color:#7A1B26}
     <div class="sit s1"><span class="w">친구와 놀 때</span><span class="e">"Can I play too?"</span></div>
     <div class="sit s2"><span class="w">놀이터 순서</span><span class="e">"Is it my turn?"</span></div>
     <div class="sit s3"><span class="w">선생님께</span><span class="e">"May I go to the bathroom?"</span></div>
-    <div class="rt" style="font-size:52px">외운 영어 ✕ · 생활 영어 ○</div></div>
+    <div class="rt" style="font-size:46px">외운 영어 ✕ · 생활 영어 ○</div></div>
   <div class="vs bhs">VS</div>
 </div>
 <div class="ph p2" style="opacity:0">
