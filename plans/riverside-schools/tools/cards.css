@@ -113,3 +113,25 @@ table.fee tr.total td { background: #fff7df; font-weight: 900; font-size: 36px; 
 .card.compact .row { padding: 18px 30px; }
 .card.compact .rows { gap: 12px; }
 .card.compact h2 { margin-bottom: 28px; }
+
+/* 2x2 program grid */
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.grid2 .box { padding: 32px 30px; }
+.grid2 .box h3 { font-size: 36px; margin-bottom: 12px; }
+.grid2 .box p { font-size: 26px; line-height: 1.45; }
+.grid2 .box .price { display: inline-block; margin-top: 14px; font-weight: 700; font-size: 24px; color: var(--red); background: #fdecee; padding: 4px 14px; border-radius: 999px; }
+.tag { display: inline-block; font-size: 22px; font-weight: 700; color: #fff; background: var(--navy); border-radius: 999px; padding: 4px 14px; margin-bottom: 14px; }
+
+/* number tiles */
+.tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.tile { background: #fff; border: 2px solid var(--line); border-radius: 22px; padding: 30px 28px; }
+.tile b { display: block; font-weight: 900; font-size: 70px; color: var(--navy); letter-spacing: -1.5px; line-height: 1.1; }
+.tile span { font-size: 28px; font-weight: 600; color: var(--muted); }
+
+/* schedule table */
+.sched { display: flex; flex-direction: column; gap: 10px; }
+.slot { display: flex; align-items: center; border-radius: 16px; padding: 18px 26px; font-size: 32px; font-weight: 600; background: #fff; border: 2px solid var(--line); }
+.slot b { width: 250px; flex: none; font-weight: 900; color: var(--navy); font-size: 34px; }
+.slot.cls { border-left: 10px solid var(--navy); }
+.slot.lunch { background: #fff7df; border-color: var(--gold); }
+.slot.note { background: transparent; border: none; padding: 6px 4px; font-size: 26px; color: var(--muted); }
