@@ -53,7 +53,7 @@
 #s30 .ft{position:absolute;left:330px;width:1260px;height:140px;display:flex;align-items:center;gap:40px;padding:0 50px}
 
       </style>
-      <div id="s30" data-composition-id="s30" data-width="1920" data-height="1080" data-duration="11.07">
+      <div id="s30" data-composition-id="s30" data-width="1920" data-height="1080" data-duration="14.31">
         <div class="bg"></div>
         <div class="blob a"></div><div class="blob b"></div><div class="blob c"></div>
         <div class="full" id="s30-bgp" style="opacity:.2"><img src="assets/photos/grad-04-2025-group.jpg" alt="" /></div>
@@ -61,14 +61,14 @@
 
           <div class="abs hd" id="s30-h" style="left:330px;top:150px;font-size:56px">SGA가 <span class="gold">잘 맞는 학생</span></div><div class="card ft" id="s30-c0" style="top:260px"><div class="cw"><svg viewBox="0 0 60 60" style="width:90px;height:90px"><circle cx="30" cy="30" r="28" fill="#2ec27e"/><path class="ck" d="M16 31 L26 41 L45 20" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="h" style="font-size:56px">대학 목표 + 영어 부족</div></div><div class="card ft" id="s30-c1" style="top:430px"><div class="cw"><svg viewBox="0 0 60 60" style="width:90px;height:90px"><circle cx="30" cy="30" r="28" fill="#2ec27e"/><path class="ck" d="M16 31 L26 41 L45 20" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="h" style="font-size:56px">관리가 필요한 학생</div></div><div class="card ft" id="s30-c2" style="top:600px"><div class="cw"><svg viewBox="0 0 60 60" style="width:90px;height:90px"><circle cx="30" cy="30" r="28" fill="#2ec27e"/><path class="ck" d="M16 31 L26 41 L45 20" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="h" style="font-size:56px">학년 손해 없이 빠른 시작</div></div>
         </div>
-        <audio id="s30-fx0" src="assets/sfx/pop.mp3" data-start="2.96" data-duration="0.5" data-track-index="78" data-volume="0.3" data-hf-media-start-basis="local"></audio>
-        <audio id="s30-fx1" src="assets/sfx/pop.mp3" data-start="6.08" data-duration="0.5" data-track-index="78" data-volume="0.3" data-hf-media-start-basis="local"></audio>
-        <audio id="s30-fx2" src="assets/sfx/pop.mp3" data-start="8.42" data-duration="0.5" data-track-index="78" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s30-fx0" src="assets/sfx/pop.mp3" data-start="4.15" data-duration="0.5" data-track-index="78" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s30-fx1" src="assets/sfx/pop.mp3" data-start="8.35" data-duration="0.5" data-track-index="78" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s30-fx2" src="assets/sfx/pop.mp3" data-start="11.55" data-duration="0.5" data-track-index="78" data-volume="0.3" data-hf-media-start-basis="local"></audio>
       </div>
       <script>
         (function () {
           const root = document.getElementById("s30");
-          const D = 11.07;
+          const D = 14.31;
 
 const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
 const tl=gsap.timeline({paused:true});
@@ -105,8 +105,8 @@ function ambient(){
 
 
 kb('#s30-bgp img',0,D,{s:1.0},{s:1.08});
-inn('#s30-h',0.350,{y:16});
-const FT=[2.560,5.680,8.020];
+inn('#s30-h',0.430,{y:16});
+const FT=[3.750,7.950,11.150];
 for(let i=0;i<3;i++){inn('#s30-c'+i,FT[i],{x:-60,y:0});draw('#s30-c'+i+' .ck',FT[i]+0.4,0.4);}
 
           ambient();

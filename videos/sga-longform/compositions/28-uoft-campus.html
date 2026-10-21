@@ -54,7 +54,7 @@
 #s28 .pl{position:absolute;font-weight:800;font-size:32px;white-space:nowrap}
 
       </style>
-      <div id="s28" data-composition-id="s28" data-width="1920" data-height="1080" data-duration="10.03">
+      <div id="s28" data-composition-id="s28" data-width="1920" data-height="1080" data-duration="11.3">
         <div class="bg"></div>
         <div class="blob a"></div><div class="blob b"></div><div class="blob c"></div>
 
@@ -73,14 +73,14 @@
           <div class="pl" id="s28-l1" style="left:1440px;top:520px">Scarborough</div>
           <div class="pl" id="s28-l2" style="left:470px;top:660px">Mississauga</div>
         </div>
-        <audio id="s28-fx0" src="assets/sfx/pop.mp3" data-start="5.48" data-duration="0.5" data-track-index="75" data-volume="0.3" data-hf-media-start-basis="local"></audio>
-        <audio id="s28-fx1" src="assets/sfx/pop.mp3" data-start="6.39" data-duration="0.5" data-track-index="75" data-volume="0.3" data-hf-media-start-basis="local"></audio>
-        <audio id="s28-fx2" src="assets/sfx/pop.mp3" data-start="7.04" data-duration="0.5" data-track-index="75" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s28-fx0" src="assets/sfx/pop.mp3" data-start="5.4" data-duration="0.5" data-track-index="75" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s28-fx1" src="assets/sfx/pop.mp3" data-start="6.76" data-duration="0.5" data-track-index="75" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s28-fx2" src="assets/sfx/pop.mp3" data-start="7.52" data-duration="0.5" data-track-index="75" data-volume="0.3" data-hf-media-start-basis="local"></audio>
       </div>
       <script>
         (function () {
           const root = document.getElementById("s28");
-          const D = 10.03;
+          const D = 11.3;
 
 const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
 const tl=gsap.timeline({paused:true});
@@ -116,11 +116,11 @@ function ambient(){
 }
 
 
-pop('#s28-tip',0.350);
-draw('#s28-map .mp-out',0.350,1.2);draw('#s28-map .mp-lake',0.350+0.3,1.0);
-inn('#s28-q',1.390,{y:16});
-inn('#s28-cc',3.210,{y:12});grow('#s28-ul',4.120,0.5);
-const PT=[5.030,5.940,6.590];
+pop('#s28-tip',0.1);
+draw('#s28-map .mp-out',0.2,1.2);draw('#s28-map .mp-lake',0.5,1.0);
+inn('#s28-q',0.390,{y:16});
+inn('#s28-cc',2.790,{y:12});grow('#s28-ul',3.790,0.5);
+const PT=[4.950,6.310,7.070];
 for(let i=0;i<3;i++){tl.fromTo('#s28-p'+i,{y:-240,opacity:0},{y:0,opacity:1,duration:0.6,ease:'bounce.out'},PT[i]);inn('#s28-l'+i,PT[i]+0.4,{y:10});}
 tl.fromTo('#s28-p0-g',{scale:0.5,opacity:0},{scale:1.4,opacity:1,duration:0.9,yoyo:true,repeat:3,ease:'sine.inOut'},PT[0]+0.5);
 

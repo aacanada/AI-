@@ -53,7 +53,7 @@
 #s03 .toc{font-size:28px;padding:10px 24px}
 
       </style>
-      <div id="s03" data-composition-id="s03" data-width="1920" data-height="1080" data-duration="12.65">
+      <div id="s03" data-composition-id="s03" data-width="1920" data-height="1080" data-duration="17.67">
         <div class="bg"></div>
         <div class="blob a"></div><div class="blob b"></div><div class="blob c"></div>
 
@@ -73,12 +73,12 @@
           <div class="chip toc" id="s03-k6" style="left:1440px;top:700px">07 대학</div>
           <div class="chip toc" id="s03-k7" style="left:1635px;top:700px">08 정리</div>
         </div>
-        <audio id="s03-fx0" src="assets/sfx/whoosh.mp3" data-start="5.16" data-duration="0.574" data-track-index="42" data-volume="0.25" data-hf-media-start-basis="local"></audio>
+        <audio id="s03-fx0" src="assets/sfx/whoosh.mp3" data-start="7.19" data-duration="0.574" data-track-index="42" data-volume="0.25" data-hf-media-start-basis="local"></audio>
       </div>
       <script>
         (function () {
           const root = document.getElementById("s03");
-          const D = 12.65;
+          const D = 17.67;
 
 const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
 const tl=gsap.timeline({paused:true});
@@ -115,12 +115,12 @@ function ambient(){
 
 
 flip('#s03-cov',0.05,{d:0.8});kb('#s03-cov img',0,D,{s:1.0},{s:1.08});
-tl.to('#s03-cov',{opacity:0,scale:0.86,y:40,duration:0.5,ease:'power2.in'},5.160-0.5);
-tl.fromTo('#s03-crestw',{clipPath:'circle(0% at 50% 50%)',opacity:1},{clipPath:'circle(75% at 50% 50%)',opacity:1,duration:0.9,ease:'power3.inOut'},5.160);
-mask('#s03-t1',5.940,0.8,'l');
-inn('#s03-t2',7.240,{y:16});
-inn('#s03-t3',8.150,{y:12});
-pop(['#s03-k0','#s03-k1','#s03-k2','#s03-k3','#s03-k4','#s03-k5','#s03-k6','#s03-k7'],10.490,0.08);
+tl.to('#s03-cov',{opacity:0,scale:0.86,y:40,duration:0.5,ease:'power2.in'},7.190-0.5);
+tl.fromTo('#s03-crestw',{clipPath:'circle(0% at 50% 50%)',opacity:1},{clipPath:'circle(75% at 50% 50%)',opacity:1,duration:0.9,ease:'power3.inOut'},7.190);
+mask('#s03-t1',8.790,0.8,'l');
+inn('#s03-t2',10.190,{y:16});
+inn('#s03-t3',12.030,{y:12});
+pop(['#s03-k0','#s03-k1','#s03-k2','#s03-k3','#s03-k4','#s03-k5','#s03-k6','#s03-k7'],15.270,0.08);
 
           ambient();
           window.__timelines["s03"] = tl;

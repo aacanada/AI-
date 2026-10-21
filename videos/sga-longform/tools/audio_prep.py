@@ -3,7 +3,10 @@
     python3 -I tools/audio_prep.py 3 5        # only CH3, CH5
 then:  python3 -I tools/build.py
 
-Input : ../../plans/sga-longform/audio/sga_chNN.m4a  (one file per chapter, ~1 s pause between scenes)
+Input : ../../plans/sga-longform/audio/sga_full.m4a (one take of all chapters; cut list in tools/voice_edits.json)
+        or sga_chNN.m4a (one file per chapter, ~1 s pause between scenes)
+Optional: SGA_ASR_MODEL=<sherpa-onnx-zipformer-korean-2024-06-24 folder> for word timing (pip install sherpa-onnx;
+model from github.com/k2-fsa/sherpa-onnx releases, asr-models).
 Output: assets/voice/sNN.wav (+ sNN.words.json) and assets/voice/_split.json (what was cut where, for review)
 
 Per chapter: afftdn light denoise -> trim head/tail silence -> loudnorm I=-16 -> silencedetect.
@@ -25,7 +28,7 @@ from script import SCENES  # noqa: E402
 SRC = os.environ.get("SGA_AUDIO_DIR", os.path.join("..", "..", "plans", "sga-longform", "audio"))
 OUT = os.path.join("assets", "voice")
 TMP = os.path.join(".hyperframes", "voice-tmp")
-MIN_CPS, MAX_TEMPO = 5.6, 1.10  # chars/sec below MIN_CPS gets atempo up to 1.1
+MIN_CPS, MAX_TEMPO = 4.0, 1.10  # chars/sec below MIN_CPS (a clearly slow read) gets atempo up to 1.1; numbers/acronyms read slower, so keep this low
 
 
 def run(cmd):
@@ -58,6 +61,34 @@ def clean_chapter(ch):
     af = f"highpass=f=70,afftdn=nf=-25,{trim},areverse,{trim},areverse,loudnorm=I=-16:TP=-1.5:LRA=11"
     run(["ffmpeg", "-y", "-v", "error", "-i", src, "-af", af, "-ar", "48000", "-ac", "1", out])
     return out
+
+
+def sherpa_words(wav):
+    """Offline Korean ASR (sherpa-onnx zipformer-korean) when SGA_ASR_MODEL points at the model folder."""
+    mdir = os.environ.get("SGA_ASR_MODEL")
+    if not mdir:
+        return None
+    try:
+        import numpy as np
+        import sherpa_onnx
+    except ImportError:
+        return None
+    rec = sherpa_onnx.OfflineRecognizer.from_transducer(
+        encoder=f"{mdir}/encoder-epoch-99-avg-1.int8.onnx", decoder=f"{mdir}/decoder-epoch-99-avg-1.onnx",
+        joiner=f"{mdir}/joiner-epoch-99-avg-1.int8.onnx", tokens=f"{mdir}/tokens.txt", num_threads=4)
+    raw = subprocess.run(["ffmpeg", "-v", "error", "-i", wav, "-ac", "1", "-ar", "16000", "-f", "f32le", "-"], capture_output=True, check=True).stdout
+    x = np.frombuffer(raw, np.float32)
+    words, step = [], 16000 * 20
+    for off in range(0, len(x), step):  # 20 s windows keep the model in range
+        st = rec.create_stream()
+        st.accept_waveform(16000, x[off:off + step])
+        rec.decode_stream(st)
+        r = st.result
+        ts = [off / 16000 + t for t in r.timestamps]
+        for k, (tok, t0) in enumerate(zip(r.tokens, ts)):
+            if tok.strip():
+                words.append(dict(text=tok.strip(), start=round(t0, 3), end=round(ts[k + 1] if k + 1 < len(ts) else t0 + 0.2, 3)))
+    return words or None
 
 
 def transcribe(wav):
@@ -103,9 +134,59 @@ def row_words(rows, wav):
     return out
 
 
+def finish_scene(s, raw, report, extra):
+    rd = dur(raw)
+    cps = nchar(" ".join(s["rows"])) / max(rd, 0.1)
+    tempo = round(min(MAX_TEMPO, MIN_CPS / cps), 3) if cps < MIN_CPS else 1.0
+    dst = os.path.join(OUT, f"{s['id']}.wav")
+    run(["ffmpeg", "-y", "-v", "error", "-i", raw, "-af", f"atempo={tempo}" if tempo != 1.0 else "anull", "-ar", "48000", dst])
+    words = sherpa_words(dst) or transcribe(dst) or row_words(s["rows"], dst)
+    json.dump(words, open(os.path.join(OUT, f"{s['id']}.words.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    report[s["id"]] = dict(dur=round(dur(dst), 2), cps=round(cps, 2), tempo=tempo, **extra)
+
+
+def full_take(report):
+    """One recording of all chapters + tools/voice_edits.json (scene bounds and re-read removals)."""
+    ed = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "voice_edits.json"), encoding="utf-8"))
+    src = next((os.path.join(SRC, ed["source"] + e) for e in (".m4a", ".mp3", ".wav") if os.path.exists(os.path.join(SRC, ed["source"] + e))), None)
+    if not src:
+        return False
+    os.makedirs(TMP, exist_ok=True)
+    full = os.path.join(TMP, "full.wav")
+    run(["ffmpeg", "-y", "-v", "error", "-i", src, "-af", "highpass=f=70,afftdn=nf=-25,loudnorm=I=-16:TP=-1.5:LRA=11",
+         "-ar", "48000", "-ac", "1", full])
+    for s in SCENES:
+        if s.get("kind", "vo") != "vo":
+            continue
+        a, b = ed["scenes"][s["id"]]
+        keep, t = [], a
+        for x, y in sorted(ed["remove"].get(s["id"], [])):
+            keep.append((t, x))
+            t = y
+        keep.append((t, b))
+        parts = []
+        for k, (x, y) in enumerate(keep):
+            pth = os.path.join(TMP, f"{s['id']}-{k}.wav")
+            d = y - x
+            run(["ffmpeg", "-y", "-v", "error", "-ss", f"{x:.3f}", "-t", f"{d:.3f}", "-i", full,
+                 "-af", f"afade=t=in:d=0.02,afade=t=out:st={d - 0.03:.3f}:d=0.03", pth])
+            parts.append(pth)
+        lst = os.path.join(TMP, f"{s['id']}.txt")
+        open(lst, "w").write("".join(f"file '{os.path.abspath(p)}'\n" for p in parts))
+        raw = os.path.join(TMP, f"{s['id']}-raw.wav")
+        run(["ffmpeg", "-y", "-v", "error", "-f", "concat", "-safe", "0", "-i", lst,
+             "-af", "silenceremove=stop_periods=-1:stop_duration=0.7:stop_threshold=-40dB:stop_silence=0.45", raw])
+        finish_scene(s, raw, report, dict(cut=[a, b], removed=ed["remove"].get(s["id"], [])))
+    print(f"full take: {len(report)} scenes")
+    return True
+
+
 def main(only):
     os.makedirs(OUT, exist_ok=True)
     report = {}
+    if not only and full_take(report):
+        json.dump(report, open(os.path.join(OUT, "_split.json"), "w"), indent=1)
+        return
     for ch in range(1, 10):
         if only and ch not in only:
             continue

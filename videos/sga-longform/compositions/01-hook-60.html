@@ -55,7 +55,7 @@
 #s01 #s01-num{left:0;right:0;top:250px;text-align:center;font-size:330px;color:#fff}
 
       </style>
-      <div id="s01" data-composition-id="s01" data-width="1920" data-height="1080" data-duration="9.57">
+      <div id="s01" data-composition-id="s01" data-width="1920" data-height="1080" data-duration="12.75">
         <div class="bg"></div>
         <div class="blob a"></div><div class="blob b"></div><div class="blob c"></div>
         <div class="full" id="s01-ph"><img src="assets/photos/campus-02-class-desks.jpg" alt="" /><div class="sweep" id="s01-sw"></div></div>
@@ -70,12 +70,12 @@
           <div class="abs hd" id="s01-no" style="left:0;right:0;top:720px;text-align:center;font-size:40px;color:#ff8a8a">지원할 수 있는 대학, 거의 없음</div>
           <div class="abs" id="s01-dusts" style="inset:0"></div>
         </div>
-        <audio id="s01-fx0" src="assets/sfx/impact.mp3" data-start="6.02" data-duration="1.2" data-track-index="40" data-volume="0.24" data-hf-media-start-basis="local"></audio>
+        <audio id="s01-fx0" src="assets/sfx/impact.mp3" data-start="7.91" data-duration="1.2" data-track-index="40" data-volume="0.24" data-hf-media-start-basis="local"></audio>
       </div>
       <script>
         (function () {
           const root = document.getElementById("s01");
-          const D = 9.57;
+          const D = 12.75;
 
 const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
 const tl=gsap.timeline({paused:true});
@@ -116,12 +116,12 @@ sweep('#s01-sw',0.15);
 let seed=7;const rnd=()=>{seed=(seed*16807)%2147483647;return seed/2147483647;};
 for(let i=0;i<26;i++){const d=document.createElement('div');d.className='dust';d.style.left=(80+rnd()*1760)+'px';d.style.top=(200+rnd()*700)+'px';q('#s01-dusts').appendChild(d);
   const st=rnd()*3;tl.fromTo(d,{opacity:0,y:0},{opacity:0.15+rnd()*0.5,y:-60-rnd()*120,duration:3+rnd()*3,ease:'sine.inOut',yoyo:true,repeat:Math.max(0,Math.floor(D/6)-1)},st);}
-inn('#s01-c1',1.190,{x:-30,y:0});pop('#s01-c2',2.620);
-slam('#s01-num',5.870-0.3,{d:0.45});odo('#s01-num',5.870-0.3,1.3);
-inn('#s01-lab',5.870+0.3,{y:20});
-grow('#s01-ul',6.520,0.5,'50% 50%');
-tl.to('#s01-num',{color:'#ff6b6b',duration:0.6},7.040);
-inn('#s01-no',7.040,{y:16});
+inn('#s01-c1',1.427,{x:-30,y:0});pop('#s01-c2',3.400);
+slam('#s01-num',7.760-0.3,{d:0.45});odo('#s01-num',7.760-0.3,1.3);
+inn('#s01-lab',7.760+0.3,{y:20});
+grow('#s01-ul',8.840,0.5,'50% 50%');
+tl.to('#s01-num',{color:'#ff6b6b',duration:0.6},10.080);
+inn('#s01-no',10.080,{y:16});
 
           ambient();
           window.__timelines["s01"] = tl;

@@ -54,7 +54,7 @@
 #s31 #s31-msg{left:0;right:0;top:748px;text-align:center;font-size:76px;color:#e8b931;perspective:900px}
 
       </style>
-      <div id="s31" data-composition-id="s31" data-width="1920" data-height="1080" data-duration="9.38">
+      <div id="s31" data-composition-id="s31" data-width="1920" data-height="1080" data-duration="11.21">
         <div class="bg"></div>
         <div class="blob a"></div><div class="blob b"></div><div class="blob c"></div>
 
@@ -76,7 +76,7 @@
       <script>
         (function () {
           const root = document.getElementById("s31");
-          const D = 9.38;
+          const D = 11.21;
 
 const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
 const tl=gsap.timeline({paused:true});
@@ -112,12 +112,12 @@ function ambient(){
 }
 
 
-inn(['#s31-post','#s31-base','#s31-beam','#s31-lw','#s31-rw'].map(s=>q(s)),0.350,{y:30,st:0.08});
+inn(['#s31-post','#s31-base','#s31-beam','#s31-lw','#s31-rw'].map(s=>q(s)),0.430,{y:30,st:0.08});
 // beam tilt: + = right side down. pans follow the beam ends (half-length 460px).
 function tilt(deg,at,d){const dy=460*Math.sin(deg*Math.PI/180);
   tl.to('#s31-beam',{rotation:deg,duration:d,ease:'sine.inOut'},at);tl.to('#s31-lw',{y:-dy,duration:d,ease:'sine.inOut'},at);tl.to('#s31-rw',{y:dy,duration:d,ease:'sine.inOut'},at);}
-tilt(-7,0.740,1.2);tilt(5,2.950,1.2);tilt(-6,5.810,1.2);tilt(0,7.370,1.0);
-kin('#s31-msg',7.370+0.2,0.04);
+tilt(-7,0.910,1.2);tilt(5,3.550,1.2);tilt(-6,7.030,1.2);tilt(0,8.750,1.0);
+kin('#s31-msg',8.750+0.2,0.04);
 
           ambient();
           window.__timelines["s31"] = tl;

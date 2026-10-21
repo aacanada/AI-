@@ -54,7 +54,7 @@
 #s24 #s24-oly{left:1290px;top:430px;width:300px;height:318px}
 
       </style>
-      <div id="s24" data-composition-id="s24" data-width="1920" data-height="1080" data-duration="10.16">
+      <div id="s24" data-composition-id="s24" data-width="1920" data-height="1080" data-duration="13.42">
         <div class="bg"></div>
         <div class="blob a"></div><div class="blob b"></div><div class="blob c"></div>
 
@@ -69,13 +69,13 @@
           <div class="chip gold" id="s24-k4" style="left:1000px;top:440px">매일 아침 간식</div>
           <div class="abs hd" id="s24-t" style="left:1000px;top:540px;font-size:44px;width:300px">작은 배려</div>
         </div>
-        <audio id="s24-fx0" src="assets/sfx/pop.mp3" data-start="0.74" data-duration="0.5" data-track-index="70" data-volume="0.3" data-hf-media-start-basis="local"></audio>
-        <audio id="s24-fx1" src="assets/sfx/pop.mp3" data-start="5.88" data-duration="0.5" data-track-index="70" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s24-fx0" src="assets/sfx/pop.mp3" data-start="0.99" data-duration="0.5" data-track-index="70" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s24-fx1" src="assets/sfx/pop.mp3" data-start="7.75" data-duration="0.5" data-track-index="70" data-volume="0.3" data-hf-media-start-basis="local"></audio>
       </div>
       <script>
         (function () {
           const root = document.getElementById("s24");
-          const D = 10.16;
+          const D = 13.42;
 
 const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
 const tl=gsap.timeline({paused:true});
@@ -111,13 +111,13 @@ function ambient(){
 }
 
 
-mask('#s24-meal',0.350,0.9,'d');kb('#s24-meal img',0.350,D,{s:1.0},{s:1.07});
-pop('#s24-k1',0.740);pop('#s24-k2',1.390);pop('#s24-k3',2.690);
-tl.to('#s24-meal',{x:-60,scale:0.78,opacity:0.5,transformOrigin:'0% 50%',duration:0.6,ease:'power2.inOut'},4.770);
-outt(['#s24-k1','#s24-k2','#s24-k3'],4.770);
-inn('#s24-snk',5.680-0.2,{x:60,y:0});pop('#s24-k4',5.680+0.2);
-tl.fromTo('#s24-oly',{opacity:0,y:80,scale:0.8},{opacity:1,y:0,scale:1,duration:0.6,ease:'back.out(1.8)'},5.680+0.4);
-inn('#s24-t',8.930,{y:14});
+mask('#s24-meal',0.430,0.9,'d');kb('#s24-meal img',0.430,D,{s:1.0},{s:1.07});
+pop('#s24-k1',0.990);pop('#s24-k2',1.790);pop('#s24-k3',3.750);
+tl.to('#s24-meal',{x:-60,scale:0.78,opacity:0.5,transformOrigin:'0% 50%',duration:0.6,ease:'power2.inOut'},6.590);
+outt(['#s24-k1','#s24-k2','#s24-k3'],6.590);
+inn('#s24-snk',7.550-0.2,{x:60,y:0});pop('#s24-k4',7.550+0.2);
+tl.fromTo('#s24-oly',{opacity:0,y:80,scale:0.8},{opacity:1,y:0,scale:1,duration:0.6,ease:'back.out(1.8)'},7.550+0.4);
+inn('#s24-t',12.110,{y:14});
 
           ambient();
           window.__timelines["s24"] = tl;

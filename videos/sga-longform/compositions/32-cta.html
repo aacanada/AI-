@@ -55,7 +55,7 @@
 #s32 #s32-oly{left:1580px;top:500px;width:280px;height:296px}
 
       </style>
-      <div id="s32" data-composition-id="s32" data-width="1920" data-height="1080" data-duration="16.07">
+      <div id="s32" data-composition-id="s32" data-width="1920" data-height="1080" data-duration="19.664">
         <div class="bg"></div>
         <div class="blob a"></div><div class="blob b"></div><div class="blob c"></div>
 
@@ -73,13 +73,13 @@
             <div class="abs b" id="s32-tel" style="left:0;right:0;top:735px;text-align:center;font-size:34px;color:rgba(255,255,255,.85)">02-567-4345</div>
             <div class="abs" id="s32-oly"><img src="assets/brochure/oly-1.png" alt="" style="width:100%;height:100%;object-fit:contain" /></div></div>
         </div>
-        <audio id="s32-fx0" src="assets/sfx/whoosh.mp3" data-start="6.72" data-duration="0.574" data-track-index="80" data-volume="0.25" data-hf-media-start-basis="local"></audio>
-        <audio id="s32-fx1" src="assets/sfx/impact.mp3" data-start="10.39" data-duration="1.2" data-track-index="80" data-volume="0.24" data-hf-media-start-basis="local"></audio>
+        <audio id="s32-fx0" src="assets/sfx/whoosh.mp3" data-start="7.838" data-duration="0.574" data-track-index="80" data-volume="0.25" data-hf-media-start-basis="local"></audio>
+        <audio id="s32-fx1" src="assets/sfx/impact.mp3" data-start="13.49" data-duration="1.2" data-track-index="80" data-volume="0.24" data-hf-media-start-basis="local"></audio>
       </div>
       <script>
         (function () {
           const root = document.getElementById("s32");
-          const D = 16.07;
+          const D = 19.664;
 
 const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
 const tl=gsap.timeline({paused:true});
@@ -115,18 +115,18 @@ function ambient(){
 }
 
 
-inn('#s32-q1',0.350,{x:-40,y:0});inn('#s32-q2',2.300,{x:40,y:0});
-inn('#s32-doc',5.420,{y:30});
-outt(['#s32-q1','#s32-q2','#s32-doc'].map(s=>q(s)),6.720-0.3,{y:-30});
-const CT=6.720;
+inn('#s32-q1',0.430,{x:-40,y:0});inn('#s32-q2',2.630,{x:40,y:0});
+inn('#s32-doc',6.190,{y:30});
+outt(['#s32-q1','#s32-q2','#s32-doc'].map(s=>q(s)),7.838-0.3,{y:-30});
+const CT=7.838;
 mask('#s32-aa',CT,0.8,'l');inn('#s32-l1',CT+0.5,{y:14});inn('#s32-l2',CT+0.8,{y:14});
-slam('#s32-btn',9.970,{s:1.6});inn('#s32-tel',9.970+0.4,{y:10});
-const pulseAt=9.970+0.6;tl.fromTo('#s32-btn',{scale:1},{scale:1.06,duration:0.6,ease:'sine.inOut',yoyo:true,repeat:Math.max(1,Math.floor((D-pulseAt)/0.6)-1)},pulseAt);
+slam('#s32-btn',13.070,{s:1.6});inn('#s32-tel',13.070+0.4,{y:10});
+const pulseAt=13.070+0.6;tl.fromTo('#s32-btn',{scale:1},{scale:1.06,duration:0.6,ease:'sine.inOut',yoyo:true,repeat:Math.max(1,Math.floor((D-pulseAt)/0.6)-1)},pulseAt);
 let seed=11;const rnd=()=>{seed=(seed*16807)%2147483647;return seed/2147483647;};
 for(let i=0;i<46;i++){const d=document.createElement('div');d.className='pt';d.style.opacity='0';q('#s32-pts').appendChild(d);const a=rnd()*Math.PI*2,r=300+rnd()*600;
-  tl.fromTo(d,{x:0,y:0,opacity:1,scale:0.6+rnd()},{x:Math.cos(a)*r,y:Math.sin(a)*r*0.6+120,opacity:0,duration:1.4+rnd()*0.8,ease:'power3.out',immediateRender:false},9.970+0.1);}
-tl.fromTo('#s32-oly',{opacity:0,y:80},{opacity:1,y:0,duration:0.6,ease:'back.out(1.8)'},9.970+0.3);
-tl.fromTo('#s32-oly',{rotation:0,transformOrigin:'50% 90%'},{rotation:8,duration:0.35,ease:'sine.inOut',yoyo:true,repeat:5},9.970+0.9);
+  tl.fromTo(d,{x:0,y:0,opacity:1,scale:0.6+rnd()},{x:Math.cos(a)*r,y:Math.sin(a)*r*0.6+120,opacity:0,duration:1.4+rnd()*0.8,ease:'power3.out',immediateRender:false},13.070+0.1);}
+tl.fromTo('#s32-oly',{opacity:0,y:80},{opacity:1,y:0,duration:0.6,ease:'back.out(1.8)'},13.070+0.3);
+tl.fromTo('#s32-oly',{rotation:0,transformOrigin:'50% 90%'},{rotation:8,duration:0.35,ease:'sine.inOut',yoyo:true,repeat:5},13.070+0.9);
 
           ambient();
           window.__timelines["s32"] = tl;

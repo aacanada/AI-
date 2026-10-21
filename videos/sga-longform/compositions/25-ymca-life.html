@@ -54,7 +54,7 @@
 #s25 #s25-fit{left:1010px;top:220px;width:760px;height:370px}
 
       </style>
-      <div id="s25" data-composition-id="s25" data-width="1920" data-height="1080" data-duration="13.56">
+      <div id="s25" data-composition-id="s25" data-width="1920" data-height="1080" data-duration="18.25">
         <div class="bg"></div>
         <div class="blob a"></div><div class="blob b"></div><div class="blob c"></div>
 
@@ -69,13 +69,13 @@
           <div class="chip cream" id="s25-k3" style="left:1560px;top:400px">학교 행사</div>
           <div class="pill" id="s25-p" style="left:1520px;top:560px;font-size:32px">→ 대학 에세이 재료</div>
         </div>
-        <audio id="s25-fx0" src="assets/sfx/whoosh.mp3" data-start="5.81" data-duration="0.574" data-track-index="71" data-volume="0.25" data-hf-media-start-basis="local"></audio>
-        <audio id="s25-fx1" src="assets/sfx/pop.mp3" data-start="11.4" data-duration="0.5" data-track-index="71" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s25-fx0" src="assets/sfx/whoosh.mp3" data-start="8.27" data-duration="0.574" data-track-index="71" data-volume="0.25" data-hf-media-start-basis="local"></audio>
+        <audio id="s25-fx1" src="assets/sfx/pop.mp3" data-start="15.95" data-duration="0.5" data-track-index="71" data-volume="0.3" data-hf-media-start-basis="local"></audio>
       </div>
       <script>
         (function () {
           const root = document.getElementById("s25");
-          const D = 13.56;
+          const D = 18.25;
 
 const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
 const tl=gsap.timeline({paused:true});
@@ -111,14 +111,14 @@ function ambient(){
 }
 
 
-flip('#s25-pool',1.390);kb('#s25-pool img',1.390,D,{s:1.0},{s:1.1});
-flip('#s25-fit',3.470);pop('#s25-k0',4.510);
-outt(['#s25-pool','#s25-fit','#s25-k0'],5.810-0.3,{s:0.9});
+flip('#s25-pool',1.710);kb('#s25-pool img',1.710,D,{s:1.0},{s:1.1});
+flip('#s25-fit',4.950);pop('#s25-k0',6.630);
+outt(['#s25-pool','#s25-fit','#s25-k0'],8.270-0.3,{s:0.9});
 const MR=[-5,4,-3,6,-4,3];
-for(let i=0;i<6;i++){const at=5.810+i*((9.320-5.810)/6);
+for(let i=0;i<6;i++){const at=8.270+i*((13.110-8.270)/6);
   tl.fromTo('#s25-m'+i,{opacity:0,y:-160,rotation:MR[i]*2.4,scale:1.06},{opacity:1,y:0,rotation:MR[i],scale:1,duration:0.6,ease:'power3.out'},at);}
-pop('#s25-k1',6.330);pop('#s25-k2',6.980);pop('#s25-k3',8.410);
-pop('#s25-p',11.400);
+pop('#s25-k1',8.990);pop('#s25-k2',9.870);pop('#s25-k3',11.950);
+pop('#s25-p',15.950);
 
           ambient();
           window.__timelines["s25"] = tl;

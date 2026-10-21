@@ -55,7 +55,7 @@
 #s12 #s12-badge{left:1130px;top:470px}
 
       </style>
-      <div id="s12" data-composition-id="s12" data-width="1920" data-height="1080" data-duration="8.49">
+      <div id="s12" data-composition-id="s12" data-width="1920" data-height="1080" data-duration="12.24">
         <div class="bg"></div>
         <div class="blob a"></div><div class="blob b"></div><div class="blob c"></div>
 
@@ -65,13 +65,13 @@
             <div class="tag" style="right:40px;top:44px">예시</div><div class="mh" id="s12-m0" style="left:50px">2월</div><div class="sc" id="s12-s00" style="left:50px;top:230px">ESL D</div><div class="sc" id="s12-s01" style="left:50px;top:340px">수학 11</div><div class="mh" id="s12-m1" style="left:320px">4월</div><div class="sc" id="s12-s10" style="left:320px;top:230px">ESL E</div><div class="sc" id="s12-s11" style="left:320px;top:340px">과학 11</div><div class="mh" id="s12-m2" style="left:590px">여름</div><div class="sc" id="s12-s20" style="left:590px;top:230px">ENG 3U</div><div class="sc" id="s12-s21" style="left:590px;top:340px">선택 과목</div><div class="mh" id="s12-m3" style="left:860px">9월</div><div class="sc" id="s12-s30" style="left:860px;top:230px">ENG 4U</div><div class="sc" id="s12-s31" style="left:860px;top:340px">수학 12</div><div class="mh" id="s12-m4" style="left:1130px">11월</div><div class="sc" id="s12-s40" style="left:1130px;top:230px">과학 12</div><div class="sc" id="s12-s41" style="left:1130px;top:340px">선택 12</div>
             <div class="pill" id="s12-badge" style="font-size:40px;padding:16px 34px">졸업 예정</div></div>
         </div>
-        <audio id="s12-fx0" src="assets/sfx/pop.mp3" data-start="4.12" data-duration="0.5" data-track-index="53" data-volume="0.3" data-hf-media-start-basis="local"></audio>
-        <audio id="s12-fx1" src="assets/sfx/stamp.mp3" data-start="7.02" data-duration="1.2" data-track-index="53" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s12-fx0" src="assets/sfx/pop.mp3" data-start="5.95" data-duration="0.5" data-track-index="53" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s12-fx1" src="assets/sfx/stamp.mp3" data-start="10.69" data-duration="1.2" data-track-index="53" data-volume="0.3" data-hf-media-start-basis="local"></audio>
       </div>
       <script>
         (function () {
           const root = document.getElementById("s12");
-          const D = 8.49;
+          const D = 12.24;
 
 const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
 const tl=gsap.timeline({paused:true});
@@ -107,10 +107,10 @@ function ambient(){
 }
 
 
-inn('#s12-card',0.350,{y:40});
-pop(['#s12-m0','#s12-m1','#s12-m2','#s12-m3','#s12-m4'],1.910,0.1);
-pop(['#s12-s00','#s12-s01','#s12-s10','#s12-s11','#s12-s20','#s12-s21','#s12-s30','#s12-s31','#s12-s40','#s12-s41'],4.120,0.14);
-stamp('#s12-badge',6.720,-8);
+inn('#s12-card',0.430,{y:40});
+pop(['#s12-m0','#s12-m1','#s12-m2','#s12-m3','#s12-m4'],2.670,0.1);
+pop(['#s12-s00','#s12-s01','#s12-s10','#s12-s11','#s12-s20','#s12-s21','#s12-s30','#s12-s31','#s12-s40','#s12-s41'],5.950,0.14);
+stamp('#s12-badge',10.390,-8);
 
           ambient();
           window.__timelines["s12"] = tl;

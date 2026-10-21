@@ -53,7 +53,7 @@
 #s18 .nd i{display:block;margin:0 auto 10px;width:26px;height:26px;border-radius:50%;background:#e8b931}
 
       </style>
-      <div id="s18" data-composition-id="s18" data-width="1920" data-height="1080" data-duration="15.75">
+      <div id="s18" data-composition-id="s18" data-width="1920" data-height="1080" data-duration="21.71">
         <div class="bg"></div>
         <div class="blob a"></div><div class="blob b"></div><div class="blob c"></div>
 
@@ -73,13 +73,13 @@
           <div class="nd" id="s18-n2" style="left:1470px"><i></i>합격 발표</div>
           <div class="chip cream" id="s18-k" style="left:500px;top:150px;opacity:0">11학년 성적 + 12학년 중간 성적</div>
         </div>
-        <audio id="s18-fx0" src="assets/sfx/stamp.mp3" data-start="13.0" data-duration="1.15" data-track-index="61" data-volume="0.3" data-hf-media-start-basis="local"></audio>
-        <audio id="s18-fx1" src="assets/sfx/pop.mp3" data-start="14.17" data-duration="0.5" data-track-index="61" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s18-fx0" src="assets/sfx/stamp.mp3" data-start="18.41" data-duration="1.2" data-track-index="61" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s18-fx1" src="assets/sfx/pop.mp3" data-start="20.01" data-duration="0.5" data-track-index="61" data-volume="0.3" data-hf-media-start-basis="local"></audio>
       </div>
       <script>
         (function () {
           const root = document.getElementById("s18");
-          const D = 15.75;
+          const D = 21.71;
 
 const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
 const tl=gsap.timeline({paused:true});
@@ -115,14 +115,14 @@ function ambient(){
 }
 
 
-inn('#s18-h',0.350,{y:16});
-grow('#s18-ax',3.860,0.9);pop(['#s18-n0','#s18-n1','#s18-n2'],3.860+0.2,0.25);
-tl.to('#s18-h',{opacity:0,duration:0.3},6.200-0.3);pop('#s18-k',6.200);
-outt('#s18-k',9.450-0.3);
-draw('#s18-tg',9.450,0.8);inn('#s18-tl',9.450+0.4,{x:-10,y:0});inn('#s18-bi',9.450,{y:8});
-draw('#s18-l1',9.450+0.4,1.6,'none');pop(['#s18-p0','#s18-p1','#s18-p2','#s18-p3'],9.450+0.4,0.5);
-stamp('#s18-ea',12.700,-6);
-draw('#s18-l2',13.870,1.6,'none');pop(['#s18-p4','#s18-p5','#s18-p6','#s18-p7'],13.870+0.3,0.4);
+inn('#s18-h',0.430,{y:16});
+grow('#s18-ax',5.350,0.9);pop(['#s18-n0','#s18-n1','#s18-n2'],5.350+0.2,0.25);
+tl.to('#s18-h',{opacity:0,duration:0.3},8.550-0.3);pop('#s18-k',8.550);
+outt('#s18-k',13.550-0.3);
+draw('#s18-tg',13.550,0.8);inn('#s18-tl',13.550+0.4,{x:-10,y:0});inn('#s18-bi',13.550,{y:8});
+draw('#s18-l1',13.550+0.4,1.6,'none');pop(['#s18-p0','#s18-p1','#s18-p2','#s18-p3'],13.550+0.4,0.5);
+stamp('#s18-ea',18.110,-6);
+draw('#s18-l2',19.710,1.6,'none');pop(['#s18-p4','#s18-p5','#s18-p6','#s18-p7'],19.710+0.3,0.4);
 
           ambient();
           window.__timelines["s18"] = tl;

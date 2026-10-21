@@ -56,7 +56,7 @@
 #s05 #s05-big{left:0;right:0;top:330px;text-align:center;font-size:170px;color:#e8b931;perspective:900px}
 
       </style>
-      <div id="s05" data-composition-id="s05" data-width="1920" data-height="1080" data-duration="10.55">
+      <div id="s05" data-composition-id="s05" data-width="1920" data-height="1080" data-duration="14.68">
         <div class="bg"></div>
         <div class="blob a"></div><div class="blob b"></div><div class="blob c"></div>
 
@@ -71,13 +71,13 @@
           <div class="abs h" id="s05-big">토론토의 대치동</div>
           <div class="chip" id="s05-c2" style="left:800px;top:560px">학군 동네</div>
         </div>
-        <audio id="s05-fx0" src="assets/sfx/whoosh.mp3" data-start="7.76" data-duration="0.574" data-track-index="45" data-volume="0.25" data-hf-media-start-basis="local"></audio>
-        <audio id="s05-fx1" src="assets/sfx/impact.mp3" data-start="8.54" data-duration="1.2" data-track-index="45" data-volume="0.24" data-hf-media-start-basis="local"></audio>
+        <audio id="s05-fx0" src="assets/sfx/whoosh.mp3" data-start="11.03" data-duration="0.574" data-track-index="45" data-volume="0.25" data-hf-media-start-basis="local"></audio>
+        <audio id="s05-fx1" src="assets/sfx/impact.mp3" data-start="12.15" data-duration="1.2" data-track-index="45" data-volume="0.24" data-hf-media-start-basis="local"></audio>
       </div>
       <script>
         (function () {
           const root = document.getElementById("s05");
-          const D = 10.55;
+          const D = 14.68;
 
 const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
 const tl=gsap.timeline({paused:true});
@@ -113,12 +113,12 @@ function ambient(){
 }
 
 
-pop('#s05-c0',0.870);
-flip('#s05-b1',2.170);flip('#s05-b2',3.340);
-pop(['#s05-p1','#s05-p2'],5.420,0.15);inn('#s05-c1',5.420+0.4,{x:-20,y:0});
-outt(['#s05-b1','#s05-b2','#s05-p1','#s05-p2','#s05-c1','#s05-c0'],7.760-0.2,{s:0.9});
-kin('#s05-big',7.760+0.3,0.05);
-pop('#s05-c2',9.190);
+pop('#s05-c0',1.190);
+flip('#s05-b1',3.070);flip('#s05-b2',4.350);
+pop(['#s05-p1','#s05-p2'],7.670,0.15);inn('#s05-c1',7.670+0.4,{x:-20,y:0});
+outt(['#s05-b1','#s05-b2','#s05-p1','#s05-p2','#s05-c1','#s05-c0'],11.030-0.2,{s:0.9});
+kin('#s05-big',11.030+0.3,0.05);
+pop('#s05-c2',13.110);
 
           ambient();
           window.__timelines["s05"] = tl;

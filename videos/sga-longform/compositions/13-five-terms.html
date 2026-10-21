@@ -56,7 +56,7 @@
 #s13 .bk{position:absolute;left:70px;width:300px;height:50px;border-radius:8px}
 
       </style>
-      <div id="s13" data-composition-id="s13" data-width="1920" data-height="1080" data-duration="11.72">
+      <div id="s13" data-composition-id="s13" data-width="1920" data-height="1080" data-duration="16.15">
         <div class="bg"></div>
         <div class="blob a"></div><div class="blob b"></div><div class="blob c"></div>
 
@@ -67,16 +67,16 @@
           <div class="cmp" id="s13-c1" style="left:880px;background:rgba(255,255,255,.06);border:3px solid rgba(255,255,255,.18)"><div class="hd" style="font-size:44px;color:rgba(255,255,255,.6)">한 번에 4과목</div><div class="bk" style="top:190px;background:#6b7a99"></div><div class="bk" style="top:248px;background:#55637f"></div><div class="bk" style="top:306px;background:#6b7a99"></div><div class="bk" style="top:364px;background:#55637f"></div><div class="b" style="position:absolute;left:30px;bottom:30px;font-size:30px;color:rgba(255,255,255,.55)">한 학기 내내 동시에</div></div>
           <div class="cmp card" id="s13-c2" style="left:1380px;background:#e8b931"><div class="t" style="font-size:44px">한 번에 2과목</div><div class="num" style="font-size:120px;color:#14254a;margin-top:60px">× 10주</div><div class="b" style="font-size:30px;margin-top:40px;color:#14254a">점수 관리 집중</div><div style="position:absolute;right:30px;bottom:30px"><svg viewBox="0 0 60 60" style="width:90px;height:90px"><circle cx="30" cy="30" r="28" fill="#2ec27e"/><path class="ck" d="M16 31 L26 41 L45 20" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
         </div>
-        <audio id="s13-fx0" src="assets/sfx/pop.mp3" data-start="2.56" data-duration="0.37" data-track-index="55" data-volume="0.3" data-hf-media-start-basis="local"></audio>
-        <audio id="s13-fx1" src="assets/sfx/pop.mp3" data-start="2.95" data-duration="0.5" data-track-index="55" data-volume="0.3" data-hf-media-start-basis="local"></audio>
-        <audio id="s13-fx2" src="assets/sfx/pop.mp3" data-start="3.47" data-duration="0.37" data-track-index="55" data-volume="0.3" data-hf-media-start-basis="local"></audio>
-        <audio id="s13-fx3" src="assets/sfx/pop.mp3" data-start="3.86" data-duration="0.5" data-track-index="55" data-volume="0.3" data-hf-media-start-basis="local"></audio>
-        <audio id="s13-fx4" src="assets/sfx/pop.mp3" data-start="4.64" data-duration="0.5" data-track-index="55" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s13-fx0" src="assets/sfx/pop.mp3" data-start="3.63" data-duration="0.5" data-track-index="55" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s13-fx1" src="assets/sfx/pop.mp3" data-start="4.19" data-duration="0.5" data-track-index="55" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s13-fx2" src="assets/sfx/pop.mp3" data-start="4.95" data-duration="0.5" data-track-index="55" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s13-fx3" src="assets/sfx/pop.mp3" data-start="5.55" data-duration="0.5" data-track-index="55" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s13-fx4" src="assets/sfx/pop.mp3" data-start="6.47" data-duration="0.5" data-track-index="55" data-volume="0.3" data-hf-media-start-basis="local"></audio>
       </div>
       <script>
         (function () {
           const root = document.getElementById("s13");
-          const D = 11.72;
+          const D = 16.15;
 
 const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
 const tl=gsap.timeline({paused:true});
@@ -112,13 +112,13 @@ function ambient(){
 }
 
 
-odo('#s13-n',1.260,0.9);inn('#s13-mid',1.260,{s:0.7,y:0});
-const MT=[2.560,2.950,3.470,3.860,4.640];
+odo('#s13-n',1.966,0.9);inn('#s13-mid',1.966,{s:0.7,y:0});
+const MT=[3.630,4.190,4.950,5.550,6.470];
 for(let i=0;i<5;i++){draw('#s13-g'+i,MT[i],0.45,'power2.out');pop('#s13-l'+i,MT[i]);}
-tl.to(['#s13-ring','#s13-mid','#s13-l0','#s13-l1','#s13-l2','#s13-l3','#s13-l4'].map(s=>q(s)),{x:-60,scale:0.9,duration:0.6,ease:'power2.inOut'},5.290);
-flip('#s13-c2',6.590);draw('#s13-c2 .ck',6.590+0.6,0.4);
-inn('#s13-c1',8.020,{y:30});tl.to('#s13-c1',{opacity:0.55,duration:0.6},10.230);
-tl.fromTo('#s13-c2',{scale:1},{scale:1.05,duration:0.4,yoyo:true,repeat:1,ease:'sine.inOut'},10.230);
+tl.to(['#s13-ring','#s13-mid','#s13-l0','#s13-l1','#s13-l2','#s13-l3','#s13-l4'].map(s=>q(s)),{x:-60,scale:0.9,duration:0.6,ease:'power2.inOut'},7.430);
+flip('#s13-c2',8.870);draw('#s13-c2 .ck',8.870+0.6,0.4);
+inn('#s13-c1',11.390,{y:30});tl.to('#s13-c1',{opacity:0.55,duration:0.6},14.510);
+tl.fromTo('#s13-c2',{scale:1},{scale:1.05,duration:0.4,yoyo:true,repeat:1,ease:'sine.inOut'},14.510);
 
           ambient();
           window.__timelines["s13"] = tl;

@@ -53,7 +53,7 @@
 #s21 #s21-t{left:720px;top:480px;font-size:96px;white-space:nowrap}
 
       </style>
-      <div id="s21" data-composition-id="s21" data-width="1920" data-height="1080" data-duration="9.77">
+      <div id="s21" data-composition-id="s21" data-width="1920" data-height="1080" data-duration="11.26">
         <div class="bg"></div>
         <div class="blob a"></div><div class="blob b"></div><div class="blob c"></div>
 
@@ -68,13 +68,13 @@
           <div class="abs h" id="s21-t">FOUNDATION PROGRAM</div>
           <div class="abs hd" id="s21-s" style="left:724px;top:610px;font-size:48px;color:#e8b931">파운데이션 프로그램</div>
         </div>
-        <audio id="s21-fx0" src="assets/sfx/pop.mp3" data-start="0.35" data-duration="0.5" data-track-index="66" data-volume="0.3" data-hf-media-start-basis="local"></audio>
-        <audio id="s21-fx1" src="assets/sfx/whoosh.mp3" data-start="6.53" data-duration="0.574" data-track-index="66" data-volume="0.25" data-hf-media-start-basis="local"></audio>
+        <audio id="s21-fx0" src="assets/sfx/pop.mp3" data-start="0.47" data-duration="0.5" data-track-index="66" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s21-fx1" src="assets/sfx/whoosh.mp3" data-start="8.11" data-duration="0.574" data-track-index="66" data-volume="0.25" data-hf-media-start-basis="local"></audio>
       </div>
       <script>
         (function () {
           const root = document.getElementById("s21");
-          const D = 9.77;
+          const D = 11.26;
 
 const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
 const tl=gsap.timeline({paused:true});
@@ -110,10 +110,10 @@ function ambient(){
 }
 
 
-tl.fromTo('#s21-oly',{opacity:0,scale:0.6,rotation:-8},{opacity:1,scale:1,rotation:-3,duration:0.7,ease:'back.out(1.8)'},0.350);
-inn('#s21-q',0.350+0.3,{x:-20,y:0});
-pop('#s21-c1',3.730);pop('#s21-c2',4.120);pop('#s21-c3',5.420);
-inn('#s21-k',6.330,{y:10});mask('#s21-t',6.330+0.2,0.9,'l');inn('#s21-s',7.370,{y:14});
+tl.fromTo('#s21-oly',{opacity:0,scale:0.6,rotation:-8},{opacity:1,scale:1,rotation:-3,duration:0.7,ease:'back.out(1.8)'},0.470);
+inn('#s21-q',0.470+0.3,{x:-20,y:0});
+pop('#s21-c1',4.310);pop('#s21-c2',4.750);pop('#s21-c3',6.830);
+inn('#s21-k',7.910,{y:10});mask('#s21-t',7.910+0.2,0.9,'l');inn('#s21-s',9.190,{y:14});
 
           ambient();
           window.__timelines["s21"] = tl;

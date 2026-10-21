@@ -56,7 +56,7 @@
 #s08 .ol{top:400px;width:500px;height:360px;border-radius:28px;border:4px dashed rgba(245,239,227,.35)}
 
       </style>
-      <div id="s08" data-composition-id="s08" data-width="1920" data-height="1080" data-duration="10.03">
+      <div id="s08" data-composition-id="s08" data-width="1920" data-height="1080" data-duration="13.96">
         <div class="bg"></div>
         <div class="blob a"></div><div class="blob b"></div><div class="blob c"></div>
 
@@ -69,14 +69,14 @@
           <div class="card oc" id="s08-c2" style="left:710px"><div class="n s">OSSLT</div><div class="u">문해력 시험</div></div>
           <div class="card oc" id="s08-c3" style="left:1270px"><div class="n"><span id="s08-n3">40</span><span style="font-size:70px">시간</span></div><div class="u">봉사활동</div></div>
         </div>
-        <audio id="s08-fx0" src="assets/sfx/impact.mp3" data-start="5.84" data-duration="1.2" data-track-index="49" data-volume="0.24" data-hf-media-start-basis="local"></audio>
-        <audio id="s08-fx1" src="assets/sfx/impact.mp3" data-start="7.27" data-duration="1.15" data-track-index="49" data-volume="0.24" data-hf-media-start-basis="local"></audio>
-        <audio id="s08-fx2" src="assets/sfx/impact.mp3" data-start="8.44" data-duration="1.2" data-track-index="49" data-volume="0.24" data-hf-media-start-basis="local"></audio>
+        <audio id="s08-fx0" src="assets/sfx/impact.mp3" data-start="8.01" data-duration="1.2" data-track-index="49" data-volume="0.24" data-hf-media-start-basis="local"></audio>
+        <audio id="s08-fx1" src="assets/sfx/impact.mp3" data-start="10.45" data-duration="1.2" data-track-index="49" data-volume="0.24" data-hf-media-start-basis="local"></audio>
+        <audio id="s08-fx2" src="assets/sfx/impact.mp3" data-start="12.09" data-duration="1.2" data-track-index="49" data-volume="0.24" data-hf-media-start-basis="local"></audio>
       </div>
       <script>
         (function () {
           const root = document.getElementById("s08");
-          const D = 10.03;
+          const D = 13.96;
 
 const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
 const tl=gsap.timeline({paused:true});
@@ -112,13 +112,13 @@ function ambient(){
 }
 
 
-inn('#s08-k',0.350,{y:14});
-kin('#s08-o',3.340,0.06);
-tl.to('#s08-o',{y:-30,scale:0.8,duration:0.5,ease:'power2.inOut'},4.510);
-pop(['#s08-o1','#s08-o2','#s08-o3'],4.510+0.2,0.12);
-slam('#s08-c1',5.420);odo('#s08-n1',5.420,1.0);
-slam('#s08-c2',6.850);
-slam('#s08-c3',8.020);odo('#s08-n3',8.020,1.0);
+inn('#s08-k',0.470,{y:14});
+kin('#s08-o',4.430,0.06);
+tl.to('#s08-o',{y:-30,scale:0.8,duration:0.5,ease:'power2.inOut'},6.270);
+pop(['#s08-o1','#s08-o2','#s08-o3'],6.270+0.2,0.12);
+slam('#s08-c1',7.590);odo('#s08-n1',7.590,1.0);
+slam('#s08-c2',10.030);
+slam('#s08-c3',11.670);odo('#s08-n3',11.670,1.0);
 
           ambient();
           window.__timelines["s08"] = tl;

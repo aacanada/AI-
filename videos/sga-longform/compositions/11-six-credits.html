@@ -57,7 +57,7 @@
 #s11 .g12{font-size:28px;padding:10px 24px}
 
       </style>
-      <div id="s11" data-composition-id="s11" data-width="1920" data-height="1080" data-duration="17.44">
+      <div id="s11" data-composition-id="s11" data-width="1920" data-height="1080" data-duration="24.07">
         <div class="bg"></div>
         <div class="blob a"></div><div class="blob b"></div><div class="blob c"></div>
 
@@ -73,14 +73,14 @@
           <div class="chip cream g12" id="s11-g0" style="left:1320px;top:170px">12학년 과목 1</div><div class="chip cream g12" id="s11-g1" style="left:1320px;top:254px">12학년 과목 2</div><div class="chip cream g12" id="s11-g2" style="left:1320px;top:338px">12학년 과목 3</div><div class="chip cream g12" id="s11-g3" style="left:1320px;top:422px">12학년 과목 4</div><div class="chip cream g12" id="s11-g4" style="left:1320px;top:506px">12학년 과목 5</div>
           <div class="abs" id="s11-tot" style="left:1600px;top:300px;width:300px;text-align:center"><div class="num gold" style="font-size:120px"><span id="s11-tn">10</span></div><div class="hd" style="font-size:40px">학점~</div><div class="b" style="font-size:26px;color:rgba(255,255,255,.75)">현실적인 최소</div></div>
         </div>
-        <audio id="s11-fx0" src="assets/sfx/stamp.mp3" data-start="4.03" data-duration="1.2" data-track-index="52" data-volume="0.3" data-hf-media-start-basis="local"></audio>
-        <audio id="s11-fx1" src="assets/sfx/pop.mp3" data-start="13.22" data-duration="0.5" data-track-index="52" data-volume="0.3" data-hf-media-start-basis="local"></audio>
-        <audio id="s11-fx2" src="assets/sfx/impact.mp3" data-start="14.94" data-duration="1.2" data-track-index="52" data-volume="0.24" data-hf-media-start-basis="local"></audio>
+        <audio id="s11-fx0" src="assets/sfx/stamp.mp3" data-start="4.93" data-duration="1.2" data-track-index="52" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s11-fx1" src="assets/sfx/pop.mp3" data-start="18.15" data-duration="0.5" data-track-index="52" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s11-fx2" src="assets/sfx/impact.mp3" data-start="20.49" data-duration="1.2" data-track-index="52" data-volume="0.24" data-hf-media-start-basis="local"></audio>
       </div>
       <script>
         (function () {
           const root = document.getElementById("s11");
-          const D = 17.44;
+          const D = 24.07;
 
 const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
 const tl=gsap.timeline({paused:true});
@@ -116,16 +116,16 @@ function ambient(){
 }
 
 
-inn('#s11-q',0.350,{y:16});kin('#s11-six',0.870+0.4,0.05);
-stamp('#s11-x',3.730,-12);
-outt(['#s11-q','#s11-six','#s11-x'],4.900-0.2,{s:0.8});
-grow(['#s11-st0','#s11-st1','#s11-st2','#s11-st3','#s11-st4'].map(s=>q(s)),9.190,0.5,'50% 100%','y');
-tl.fromTo(['#s11-st0','#s11-st1','#s11-st2','#s11-st3','#s11-st4'].map(s=>q(s)),{opacity:0},{opacity:1,duration:0.3,stagger:0.22},9.190);
-pop('#s11-six2',4.900);
-inn('#s11-need',9.840,{y:10});
-inn('#s11-eng',11.530,{y:12});
-pop(['#s11-g0','#s11-g1','#s11-g2','#s11-g3','#s11-g4'],13.220,0.12);
-slam('#s11-tot',14.520);odo('#s11-tn',14.520,0.9);
+inn('#s11-q',0.470,{y:16});kin('#s11-six',1.030+0.4,0.05);
+stamp('#s11-x',4.630,-12);
+outt(['#s11-q','#s11-six','#s11-x'],6.110-0.2,{s:0.8});
+grow(['#s11-st0','#s11-st1','#s11-st2','#s11-st3','#s11-st4'].map(s=>q(s)),12.190,0.5,'50% 100%','y');
+tl.fromTo(['#s11-st0','#s11-st1','#s11-st2','#s11-st3','#s11-st4'].map(s=>q(s)),{opacity:0},{opacity:1,duration:0.3,stagger:0.22},12.190);
+pop('#s11-six2',6.110);
+inn('#s11-need',13.030,{y:10});
+inn('#s11-eng',15.510,{y:12});
+pop(['#s11-g0','#s11-g1','#s11-g2','#s11-g3','#s11-g4'],18.150,0.12);
+slam('#s11-tot',20.070);odo('#s11-tn',20.070,0.9);
 
           ambient();
           window.__timelines["s11"] = tl;

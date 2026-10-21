@@ -58,7 +58,7 @@
 #s16 #s16-cnt{left:1700px;top:470px;width:180px;text-align:center}
 
       </style>
-      <div id="s16" data-composition-id="s16" data-width="1920" data-height="1080" data-duration="8.86">
+      <div id="s16" data-composition-id="s16" data-width="1920" data-height="1080" data-duration="12.02">
         <div class="bg"></div>
         <div class="blob a"></div><div class="blob b"></div><div class="blob c"></div>
 
@@ -72,13 +72,13 @@
           <div class="abs num gold" id="s16-cnt" style="font-size:150px">5</div>
           <div class="abs hd" id="s16-cl" style="left:1660px;top:640px;width:260px;text-align:center;font-size:30px">회 / 한 학기</div>
         </div>
-        <audio id="s16-fx0" src="assets/sfx/pop.mp3" data-start="6.33" data-duration="0.5" data-track-index="59" data-volume="0.3" data-hf-media-start-basis="local"></audio>
-        <audio id="s16-fx1" src="assets/sfx/impact.mp3" data-start="7.92" data-duration="0.94" data-track-index="59" data-volume="0.24" data-hf-media-start-basis="local"></audio>
+        <audio id="s16-fx0" src="assets/sfx/pop.mp3" data-start="9.35" data-duration="0.5" data-track-index="59" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s16-fx1" src="assets/sfx/impact.mp3" data-start="11.138" data-duration="0.882" data-track-index="59" data-volume="0.24" data-hf-media-start-basis="local"></audio>
       </div>
       <script>
         (function () {
           const root = document.getElementById("s16");
-          const D = 8.86;
+          const D = 12.02;
 
 const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
 const tl=gsap.timeline({paused:true});
@@ -114,14 +114,14 @@ function ambient(){
 }
 
 
-inn('#s16-h',0.350,{y:20});
-outt('#s16-h',2.300-0.3);
-inn('#s16-r1',2.300,{x:-20,y:0});grow('#s16-l1',2.300,0.8);
-pop(['#s16-d0','#s16-d1'],3.080,0.3);inn(['#s16-e0','#s16-e1'],3.990,{y:10,st:0.3});inn('#s16-c1',3.080,{s:0.6,y:0});
-kin('#s16-big',5.290,0.05);
-inn('#s16-r2',5.290+0.4,{x:-20,y:0});grow('#s16-l2',5.290+0.4,0.8);
-pop(['#s16-f0','#s16-f1','#s16-f2','#s16-f3','#s16-f4'],6.330,0.18);inn(['#s16-h0','#s16-h1','#s16-h2','#s16-h3','#s16-h4'],6.330+0.1,{y:10,st:0.18});
-slam('#s16-cnt',7.500);inn('#s16-cl',7.500+0.4,{y:10});
+inn('#s16-h',0.470,{y:20});
+outt('#s16-h',3.430-0.3);
+inn('#s16-r1',3.430,{x:-20,y:0});grow('#s16-l1',3.430,0.8);
+pop(['#s16-d0','#s16-d1'],4.630,0.3);inn(['#s16-e0','#s16-e1'],5.950,{y:10,st:0.3});inn('#s16-c1',4.630,{s:0.6,y:0});
+kin('#s16-big',7.790,0.05);
+inn('#s16-r2',7.790+0.4,{x:-20,y:0});grow('#s16-l2',7.790+0.4,0.8);
+pop(['#s16-f0','#s16-f1','#s16-f2','#s16-f3','#s16-f4'],9.350,0.18);inn(['#s16-h0','#s16-h1','#s16-h2','#s16-h3','#s16-h4'],9.350+0.1,{y:10,st:0.18});
+slam('#s16-cnt',10.718);inn('#s16-cl',10.718+0.4,{y:10});
 
           ambient();
           window.__timelines["s16"] = tl;

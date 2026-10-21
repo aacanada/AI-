@@ -56,7 +56,7 @@
 #s15 .cw{position:absolute;right:-20px;top:-20px}
 
       </style>
-      <div id="s15" data-composition-id="s15" data-width="1920" data-height="1080" data-duration="12.13">
+      <div id="s15" data-composition-id="s15" data-width="1920" data-height="1080" data-duration="14.76">
         <div class="bg"></div>
         <div class="blob a"></div><div class="blob b"></div><div class="blob c"></div>
 
@@ -68,14 +68,14 @@
           <div class="chip cream" id="s15-k1" style="left:480px;top:620px">한 학기 최대 3과목</div>
           <div class="chip gold" id="s15-k2" style="left:1000px;top:620px">조기 졸업 가능</div>
         </div>
-        <audio id="s15-fx0" src="assets/sfx/pop.mp3" data-start="2.17" data-duration="0.5" data-track-index="57" data-volume="0.3" data-hf-media-start-basis="local"></audio>
-        <audio id="s15-fx1" src="assets/sfx/pop.mp3" data-start="3.93" data-duration="0.5" data-track-index="57" data-volume="0.3" data-hf-media-start-basis="local"></audio>
-        <audio id="s15-fx2" src="assets/sfx/pop.mp3" data-start="4.97" data-duration="0.5" data-track-index="57" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s15-fx0" src="assets/sfx/pop.mp3" data-start="2.59" data-duration="0.5" data-track-index="57" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s15-fx1" src="assets/sfx/pop.mp3" data-start="5.23" data-duration="0.5" data-track-index="57" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s15-fx2" src="assets/sfx/pop.mp3" data-start="6.51" data-duration="0.5" data-track-index="57" data-volume="0.3" data-hf-media-start-basis="local"></audio>
       </div>
       <script>
         (function () {
           const root = document.getElementById("s15");
-          const D = 12.13;
+          const D = 14.76;
 
 const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
 const tl=gsap.timeline({paused:true});
@@ -111,11 +111,11 @@ function ambient(){
 }
 
 
-inn('#s15-h',0.350,{y:16});
-pop('#s15-n0',2.170);draw('#s15-c0 .ck',2.170+0.5,0.35);
-draw('#s15-a0',3.730,0.4);pop('#s15-n1',3.730+0.2);draw('#s15-c1 .ck',3.730+0.7,0.35);
-draw('#s15-a1',4.770,0.4);pop('#s15-n2',4.770+0.2);draw('#s15-c2 .ck',4.770+0.7,0.35);
-pop('#s15-k1',7.500);pop('#s15-k2',9.320);
+inn('#s15-h',0.430,{y:16});
+pop('#s15-n0',2.590);draw('#s15-c0 .ck',2.590+0.5,0.35);
+draw('#s15-a0',5.030,0.4);pop('#s15-n1',5.030+0.2);draw('#s15-c1 .ck',5.030+0.7,0.35);
+draw('#s15-a1',6.310,0.4);pop('#s15-n2',6.310+0.2);draw('#s15-c2 .ck',6.310+0.7,0.35);
+pop('#s15-k1',9.710);pop('#s15-k2',11.710);
 
           ambient();
           window.__timelines["s15"] = tl;

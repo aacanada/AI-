@@ -53,7 +53,7 @@
 #s23 #s23-cnt{left:130px;top:640px}
 
       </style>
-      <div id="s23" data-composition-id="s23" data-width="1920" data-height="1080" data-duration="11.2">
+      <div id="s23" data-composition-id="s23" data-width="1920" data-height="1080" data-duration="15.21">
         <div class="bg"></div>
         <div class="blob a"></div><div class="blob b"></div><div class="blob c"></div>
 
@@ -67,14 +67,14 @@
           <div class="ph frame" id="s23-kit" style="left:1080px;top:150px;width:480px;height:620px"><img src="assets/photos/res-01-kitchen.jpg" alt="" /></div>
           <div class="chip gold" id="s23-k3" style="left:1100px;top:700px">사감 24시간 상주</div>
         </div>
-        <audio id="s23-fx0" src="assets/sfx/impact.mp3" data-start="4.67" data-duration="0.47" data-track-index="69" data-volume="0.24" data-hf-media-start-basis="local"></audio>
-        <audio id="s23-fx1" src="assets/sfx/pop.mp3" data-start="5.16" data-duration="0.5" data-track-index="69" data-volume="0.3" data-hf-media-start-basis="local"></audio>
-        <audio id="s23-fx2" src="assets/sfx/pop.mp3" data-start="9.19" data-duration="0.5" data-track-index="69" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s23-fx0" src="assets/sfx/impact.mp3" data-start="6.29" data-duration="0.84" data-track-index="69" data-volume="0.24" data-hf-media-start-basis="local"></audio>
+        <audio id="s23-fx1" src="assets/sfx/pop.mp3" data-start="7.15" data-duration="0.5" data-track-index="69" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s23-fx2" src="assets/sfx/pop.mp3" data-start="13.03" data-duration="0.5" data-track-index="69" data-volume="0.3" data-hf-media-start-basis="local"></audio>
       </div>
       <script>
         (function () {
           const root = document.getElementById("s23");
-          const D = 11.2;
+          const D = 15.21;
 
 const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
 const tl=gsap.timeline({paused:true});
@@ -111,13 +111,13 @@ function ambient(){
 
 
 const H=['#s23-h0','#s23-h1','#s23-h2','#s23-h3','#s23-h4'];
-tl.fromTo(H.map(s=>q(s)),{opacity:0,y:-140,rotation:(i)=>[-8,5,-4,7,-6][i]},{opacity:1,y:0,rotation:(i)=>[-3,2,-2,3,-2][i],duration:0.75,ease:'power3.out',stagger:0.18},0.350);
-sweep('#s23-sw',0.350+1.0);
-slam('#s23-cnt',4.250);odo('#s23-n',4.250,0.7);
-pop('#s23-k1',2.820);pop('#s23-k2',5.160);
-outt(H.concat(['#s23-cnt','#s23-k1','#s23-k2']).map(s=>q(s)),6.980-0.3,{s:0.9});
-inn('#s23-big',6.980,{x:-60,y:0});kb('#s23-big img',6.980,D,{s:1.0},{s:1.1});
-inn('#s23-kit',7.890,{x:60,y:0});pop('#s23-k3',9.190);
+tl.fromTo(H.map(s=>q(s)),{opacity:0,y:-140,rotation:(i)=>[-8,5,-4,7,-6][i]},{opacity:1,y:0,rotation:(i)=>[-3,2,-2,3,-2][i],duration:0.75,ease:'power3.out',stagger:0.18},0.390);
+sweep('#s23-sw',0.390+1.0);
+slam('#s23-cnt',5.870);odo('#s23-n',5.870,0.7);
+pop('#s23-k1',4.030);pop('#s23-k2',7.150);
+outt(H.concat(['#s23-cnt','#s23-k1','#s23-k2']).map(s=>q(s)),9.510-0.3,{s:0.9});
+inn('#s23-big',9.510,{x:-60,y:0});kb('#s23-big img',9.510,D,{s:1.0},{s:1.1});
+inn('#s23-kit',11.430,{x:60,y:0});pop('#s23-k3',13.030);
 
           ambient();
           window.__timelines["s23"] = tl;

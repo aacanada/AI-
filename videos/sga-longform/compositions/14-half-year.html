@@ -55,7 +55,7 @@
 #s14 .rowl{position:absolute;left:90px;width:190px;font-weight:900;font-size:40px;text-align:right}
 
       </style>
-      <div id="s14" data-composition-id="s14" data-width="1920" data-height="1080" data-duration="10.55">
+      <div id="s14" data-composition-id="s14" data-width="1920" data-height="1080" data-duration="13.39">
         <div class="bg"></div>
         <div class="blob a"></div><div class="blob b"></div><div class="blob c"></div>
 
@@ -70,13 +70,13 @@
           <div class="pill" id="s14-half" style="left:430px;top:140px">반 년 빠름</div>
           <div class="card" id="s14-red" style="left:420px;top:740px;width:1080px;height:96px;background:#c8102e;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:46px">9월만 입학 = 최대 1년 손해</div>
         </div>
-        <audio id="s14-fx0" src="assets/sfx/pop.mp3" data-start="4.94" data-duration="0.5" data-track-index="56" data-volume="0.3" data-hf-media-start-basis="local"></audio>
-        <audio id="s14-fx1" src="assets/sfx/stamp.mp3" data-start="5.98" data-duration="1.2" data-track-index="56" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s14-fx0" src="assets/sfx/pop.mp3" data-start="6.29" data-duration="0.5" data-track-index="56" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s14-fx1" src="assets/sfx/stamp.mp3" data-start="7.77" data-duration="1.2" data-track-index="56" data-volume="0.3" data-hf-media-start-basis="local"></audio>
       </div>
       <script>
         (function () {
           const root = document.getElementById("s14");
-          const D = 10.55;
+          const D = 13.39;
 
 const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
 const tl=gsap.timeline({paused:true});
@@ -112,11 +112,11 @@ function ambient(){
 }
 
 
-grow('#s14-ax',0.350,1.0);
-inn('#s14-kk',1.520,{x:-20,y:0});grow('#s14-kb',1.520+0.2,0.8);
-inn('#s14-ck',3.340,{x:-20,y:0});grow('#s14-cb',3.340+0.2,0.8);
-draw('#s14-ar',4.640,0.6);pop('#s14-half',4.640+0.3);
-stamp('#s14-red',5.680,-2);
+grow('#s14-ax',0.430,1.0);
+inn('#s14-kk',2.030,{x:-20,y:0});grow('#s14-kb',2.030+0.2,0.8);
+inn('#s14-ck',4.310,{x:-20,y:0});grow('#s14-cb',4.310+0.2,0.8);
+draw('#s14-ar',5.990,0.6);pop('#s14-half',5.990+0.3);
+stamp('#s14-red',7.470,-2);
 
           ambient();
           window.__timelines["s14"] = tl;

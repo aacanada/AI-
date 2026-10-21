@@ -56,7 +56,7 @@
 #s26 .uc{position:relative}
 
       </style>
-      <div id="s26" data-composition-id="s26" data-width="1920" data-height="1080" data-duration="14.32">
+      <div id="s26" data-composition-id="s26" data-width="1920" data-height="1080" data-duration="19.85">
         <div class="bg"></div>
         <div class="blob a"></div><div class="blob b"></div><div class="blob c"></div>
         <div class="full" id="s26-bgp" style="opacity:.18"><img src="assets/photos/grad-01-2025-stage.jpg" alt="" /></div>
@@ -70,12 +70,12 @@
             <div class="uflow" id="s26-u1" style="left:0;top:10px"><div class="chip cream uc">University of Toronto</div><div class="chip cream uc">McMaster</div><div class="chip cream uc">Waterloo</div><div class="chip cream uc">UBC</div><div class="chip cream uc">Queen's</div><div class="chip cream uc">Western</div></div>
             <div class="uflow" id="s26-u2" style="left:0;top:110px"><div class="chip  uc">UC Berkeley</div><div class="chip  uc">UCLA</div><div class="chip  uc">NYU</div><div class="chip  uc">UCL</div><div class="chip  uc">King's College London</div><div class="chip  uc">University of Toronto</div></div></div>
         </div>
-        <audio id="s26-fx0" src="assets/sfx/impact.mp3" data-start="5.07" data-duration="1.2" data-track-index="73" data-volume="0.24" data-hf-media-start-basis="local"></audio>
+        <audio id="s26-fx0" src="assets/sfx/impact.mp3" data-start="6.57" data-duration="1.2" data-track-index="73" data-volume="0.24" data-hf-media-start-basis="local"></audio>
       </div>
       <script>
         (function () {
           const root = document.getElementById("s26");
-          const D = 14.32;
+          const D = 19.85;
 
 const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
 const tl=gsap.timeline({paused:true});
@@ -112,14 +112,14 @@ function ambient(){
 
 
 kb('#s26-bgp img',0,D,{s:1.0},{s:1.08});
-inn('#s26-h',0.350,{y:16});inn('#s26-s',1.780,{y:10});
-const DT=[4.770,5.810,6.590,6.590+0.7];
+inn('#s26-h',0.430,{y:16});inn('#s26-s',2.390,{y:10});
+const DT=[6.270,8.110,9.630,9.630+0.7];
 for(let i=0;i<4;i++){const c=q('#s26-d'+i);const L=parseFloat(c.getAttribute('stroke-dasharray'));const C=parseFloat(c.getAttribute('stroke-dasharray').split(' ')[1]);
   tl.fromTo(c,{attr:{'stroke-dasharray':'0 '+C}},{attr:{'stroke-dasharray':L+' '+C},duration:0.7,ease:'power2.out'},DT[i]);
   inn('#s26-l'+i,DT[i]+0.3,{s:0.7,y:0});if(i<3)odo('#s26-v'+i,DT[i]+0.3,0.8);}
-inn('#s26-uh',8.020,{y:10});
-tl.fromTo('#s26-u1',{opacity:0,x:500},{opacity:1,x:-900,duration:Math.max(4,D-8.020),ease:'none'},8.020);
-tl.fromTo('#s26-u2',{opacity:0,x:800},{opacity:1,x:-700,duration:Math.max(4,D-10.490),ease:'none'},10.490);
+inn('#s26-uh',11.550,{y:10});
+tl.fromTo('#s26-u1',{opacity:0,x:500},{opacity:1,x:-900,duration:Math.max(4,D-11.550),ease:'none'},11.550);
+tl.fromTo('#s26-u2',{opacity:0,x:800},{opacity:1,x:-700,duration:Math.max(4,D-15.150),ease:'none'},15.150);
 
           ambient();
           window.__timelines["s26"] = tl;

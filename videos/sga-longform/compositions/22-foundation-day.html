@@ -57,7 +57,7 @@
 #s22 .ms{position:absolute;width:180px;border-radius:14px 14px 0 0;background:#f5efe3;color:#14254a;font-weight:900;font-size:30px;display:flex;justify-content:center;padding-top:14px}
 
       </style>
-      <div id="s22" data-composition-id="s22" data-width="1920" data-height="1080" data-duration="14.73">
+      <div id="s22" data-composition-id="s22" data-width="1920" data-height="1080" data-duration="19.59">
         <div class="bg"></div>
         <div class="blob a"></div><div class="blob b"></div><div class="blob c"></div>
         <div class="full" id="s22-bgp" style="opacity:.2"><img src="assets/photos/campus-01-class-whiteboard.jpg" alt="" /></div>
@@ -72,13 +72,13 @@
             <svg class="abs" style="left:1260px;top:420px;width:400px;height:200px" viewBox="0 0 400 200"><path id="s22-skip" d="M10 190 C 80 20, 300 0, 380 120 M350 96 L382 124 L392 84" fill="none" stroke="#e8b931" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg>
             <div class="abs hd" id="s22-up" style="left:1220px;top:340px;font-size:34px;color:#e8b931;white-space:nowrap">다음 단계로 더 빨리</div></div>
         </div>
-        <audio id="s22-fx0" src="assets/sfx/pop.mp3" data-start="2.17" data-duration="0.5" data-track-index="67" data-volume="0.3" data-hf-media-start-basis="local"></audio>
-        <audio id="s22-fx1" src="assets/sfx/pop.mp3" data-start="11.53" data-duration="0.5" data-track-index="67" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s22-fx0" src="assets/sfx/pop.mp3" data-start="2.95" data-duration="0.5" data-track-index="67" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s22-fx1" src="assets/sfx/pop.mp3" data-start="15.51" data-duration="0.5" data-track-index="67" data-volume="0.3" data-hf-media-start-basis="local"></audio>
       </div>
       <script>
         (function () {
           const root = document.getElementById("s22");
-          const D = 14.73;
+          const D = 19.59;
 
 const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
 const tl=gsap.timeline({paused:true});
@@ -115,13 +115,13 @@ function ambient(){
 
 
 kb('#s22-bgp img',0,D,{s:1.0},{s:1.08});
-inn('#s22-h',0.350,{y:10});grow('#s22-b0',0.350,0.6);grow('#s22-b1',0.350+0.4,0.6);
-grow('#s22-b2',2.170,0.6);tl.fromTo('#s22-b2',{scale:1},{scale:1.04,duration:0.3,yoyo:true,repeat:1},2.170+0.7);
-pop('#s22-c1',2.690);pop('#s22-c2',3.730);
-pop('#s22-c3',6.460);
-grow(['#s22-m0','#s22-m1','#s22-m2'].map(s=>q(s)),7.760,0.5,'50% 100%','y');
-draw('#s22-skip',8.670,0.8);inn('#s22-up',8.670+0.4,{y:10});
-pop('#s22-c4',11.530);
+inn('#s22-h',0.430,{y:10});grow('#s22-b0',0.430,0.6);grow('#s22-b1',0.430+0.4,0.6);
+grow('#s22-b2',2.950,0.6);tl.fromTo('#s22-b2',{scale:1},{scale:1.04,duration:0.3,yoyo:true,repeat:1},2.950+0.7);
+pop('#s22-c1',3.790);pop('#s22-c2',5.310);
+pop('#s22-c3',8.950);
+grow(['#s22-m0','#s22-m1','#s22-m2'].map(s=>q(s)),10.870,0.5,'50% 100%','y');
+draw('#s22-skip',12.030,0.8);inn('#s22-up',12.030+0.4,{y:10});
+pop('#s22-c4',15.510);
 
           ambient();
           window.__timelines["s22"] = tl;

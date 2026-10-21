@@ -251,8 +251,8 @@ R .pl{position:absolute;font-weight:800;font-size:32px;white-space:nowrap}
           <div class="pl" id="s28-l1" style="left:1440px;top:520px">Scarborough</div>
           <div class="pl" id="s28-l2" style="left:470px;top:660px">Mississauga</div>""",
     js="""
-pop('#s28-tip',T('팁 하나'));
-draw('#s28-map .mp-out',T('팁 하나'),1.2);draw('#s28-map .mp-lake',T('팁 하나')+0.3,1.0);
+pop('#s28-tip',0.1);
+draw('#s28-map .mp-out',0.2,1.2);draw('#s28-map .mp-lake',0.5,1.0);
 inn('#s28-q',T('토론토대 합격'),{y:16});
 inn('#s28-cc',T('어느 캠퍼스인지'),{y:12});grow('#s28-ul',T('꼭 확인하세요'),0.5);
 const PT=[T('다운타운 본교'),T('스카보로'),T('미시사가')];

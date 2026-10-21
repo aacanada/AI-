@@ -54,7 +54,7 @@
 #s06 .ico{width:40px;height:40px;color:#e8b931}
 
       </style>
-      <div id="s06" data-composition-id="s06" data-width="1920" data-height="1080" data-duration="10.55">
+      <div id="s06" data-composition-id="s06" data-width="1920" data-height="1080" data-duration="14.95">
         <div class="bg"></div>
         <div class="blob a"></div><div class="blob b"></div><div class="blob c"></div>
 
@@ -72,15 +72,15 @@
           <div class="pill" id="s06-p" style="left:1380px;top:752px">걸어서 해결</div>
           <div class="card" id="s06-cd" data-layout-allow-overlap style="left:170px;top:330px;width:1140px;height:200px;display:flex;align-items:center;justify-content:center"><div class="h" style="font-size:66px">안전하고, <span class="red">할 게 있는</span> 동네</div></div>
         </div>
-        <audio id="s06-fx0" src="assets/sfx/pop.mp3" data-start="1.13" data-duration="0.5" data-track-index="46" data-volume="0.3" data-hf-media-start-basis="local"></audio>
-        <audio id="s06-fx1" src="assets/sfx/pop.mp3" data-start="2.3" data-duration="0.5" data-track-index="46" data-volume="0.3" data-hf-media-start-basis="local"></audio>
-        <audio id="s06-fx2" src="assets/sfx/pop.mp3" data-start="2.82" data-duration="0.5" data-track-index="46" data-volume="0.3" data-hf-media-start-basis="local"></audio>
-        <audio id="s06-fx3" src="assets/sfx/pop.mp3" data-start="3.47" data-duration="0.5" data-track-index="46" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s06-fx0" src="assets/sfx/pop.mp3" data-start="1.67" data-duration="0.5" data-track-index="46" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s06-fx1" src="assets/sfx/pop.mp3" data-start="3.23" data-duration="0.5" data-track-index="46" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s06-fx2" src="assets/sfx/pop.mp3" data-start="4.19" data-duration="0.5" data-track-index="46" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s06-fx3" src="assets/sfx/pop.mp3" data-start="5.15" data-duration="0.5" data-track-index="46" data-volume="0.3" data-hf-media-start-basis="local"></audio>
       </div>
       <script>
         (function () {
           const root = document.getElementById("s06");
-          const D = 10.55;
+          const D = 14.95;
 
 const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
 const tl=gsap.timeline({paused:true});
@@ -116,14 +116,14 @@ function ambient(){
 }
 
 
-flip('#s06-g1',1.130);pop('#s06-i1',1.130);
-flip('#s06-g2',2.300);pop('#s06-i2',2.300);
-flip('#s06-g3',2.820);pop('#s06-i3',2.820);
-flip('#s06-g4',3.470);pop('#s06-i4',3.470);pop('#s06-i5',3.470+0.5);
-['#s06-g1','#s06-g2','#s06-g3','#s06-g4'].forEach((s,i)=>kb(s+' img',1.130,D,{s:1.0},{s:1.08,x:(i%2?-1.5:1.5)}));
-pop('#s06-p',4.250);
-tl.to(['#s06-g1','#s06-g2','#s06-g3','#s06-g4'],{opacity:0.35,duration:0.5},5.420);
-inn('#s06-cd',7.110,{y:30,s:0.92});
+flip('#s06-g1',1.670);pop('#s06-i1',1.670);
+flip('#s06-g2',3.230);pop('#s06-i2',3.230);
+flip('#s06-g3',4.190);pop('#s06-i3',4.190);
+flip('#s06-g4',5.150);pop('#s06-i4',5.150);pop('#s06-i5',5.150+0.5);
+['#s06-g1','#s06-g2','#s06-g3','#s06-g4'].forEach((s,i)=>kb(s+' img',1.670,D,{s:1.0},{s:1.08,x:(i%2?-1.5:1.5)}));
+pop('#s06-p',6.430);
+tl.to(['#s06-g1','#s06-g2','#s06-g3','#s06-g4'],{opacity:0.35,duration:0.5},8.150);
+inn('#s06-cd',10.470,{y:30,s:0.92});
 
           ambient();
           window.__timelines["s06"] = tl;

@@ -55,7 +55,7 @@
 #s02 .box.r{background:#c8102e;color:#fff}
 
       </style>
-      <div id="s02" data-composition-id="s02" data-width="1920" data-height="1080" data-duration="12.24">
+      <div id="s02" data-composition-id="s02" data-width="1920" data-height="1080" data-duration="15.94">
         <div class="bg"></div>
         <div class="blob a"></div><div class="blob b"></div><div class="blob c"></div>
         <div class="full" id="s02-bgp" style="opacity:.28"><img src="assets/photos/campus-01-class-whiteboard.jpg" alt="" /></div>
@@ -71,14 +71,14 @@
           <div class="chip" id="s02-k1" style="left:205px;top:660px">대학처럼 스스로</div>
           <div class="chip" id="s02-k2" style="left:770px;top:660px">담임·학원 관리 없음</div>
         </div>
-        <audio id="s02-fx0" src="assets/sfx/pop.mp3" data-start="4.64" data-duration="0.5" data-track-index="41" data-volume="0.3" data-hf-media-start-basis="local"></audio>
-        <audio id="s02-fx1" src="assets/sfx/pop.mp3" data-start="7.22" data-duration="0.5" data-track-index="41" data-volume="0.3" data-hf-media-start-basis="local"></audio>
-        <audio id="s02-fx2" src="assets/sfx/stamp.mp3" data-start="10.74" data-duration="1.2" data-track-index="41" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s02-fx0" src="assets/sfx/pop.mp3" data-start="6.67" data-duration="0.5" data-track-index="41" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s02-fx1" src="assets/sfx/pop.mp3" data-start="9.69" data-duration="0.5" data-track-index="41" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s02-fx2" src="assets/sfx/stamp.mp3" data-start="14.447" data-duration="1.2" data-track-index="41" data-volume="0.3" data-hf-media-start-basis="local"></audio>
       </div>
       <script>
         (function () {
           const root = document.getElementById("s02");
-          const D = 12.24;
+          const D = 15.94;
 
 const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
 const tl=gsap.timeline({paused:true});
@@ -115,11 +115,11 @@ function ambient(){
 
 
 kb('#s02-bgp img',0,D,{s:1.05},{s:1.12});
-inn('#s02-h',0.350,{y:24});
-inn('#s02-h2',2.170,{y:16});
-pop('#s02-b1',4.640);inn('#s02-k1',4.640+0.3,{y:12});
-draw('#s02-a1',6.720,0.6);pop('#s02-b2',6.720+0.5);inn('#s02-k2',7.500+0.2,{y:12});
-draw('#s02-a2',9.580,0.6);stamp('#s02-b3',10.490,-3);
+inn('#s02-h',0.430,{y:24});
+inn('#s02-h2',2.710,{y:16});
+pop('#s02-b1',6.670);inn('#s02-k1',6.670+0.3,{y:12});
+draw('#s02-a1',9.190,0.6);pop('#s02-b2',9.190+0.5);inn('#s02-k2',10.230+0.2,{y:12});
+draw('#s02-a2',12.910,0.6);stamp('#s02-b3',14.197,-3);
 
           ambient();
           window.__timelines["s02"] = tl;
