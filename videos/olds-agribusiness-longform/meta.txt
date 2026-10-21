@@ -7,4 +7,4 @@ publish_after: (게시일 미정 - Aside가 알려 준 뒤 기입)
 linked_to: (none)
 files: video.mp4 (렌더 후 기입: 길이·용량·분할 수), thumbnail.jpg (1280x720), upload-text.txt
 source: aacanada/AI- branch claude/fervent-knuth-fbxid4, videos/olds-agribusiness-longform/
-notes: 썸네일 시안 2개(thumbnail/thumbnail-v1.jpg 콤바인 = thumbnail.jpg, thumbnail-v2.jpg 유채밭 드론). 파생 쇼츠 A/B/C(브리프 6장)는 이 롱폼 씬 컴포넌트를 재사용 예정.
+notes: 썸네일 확정 = thumbnail-v3.jpg(콤바인 배경 + 완화 문구 "1년 학업 + 8개월 실습 → 캐나다 농업경영학사 취득 / 취업 강한 농업 분야 → 캐나다가 원하는 인재, 알버타 영주권 루트") → thumbnail.jpg. v1·v2는 미채택 시안. 파생 쇼츠 A/B/C(브리프 6장)는 이 롱폼 씬 컴포넌트를 재사용 예정.
