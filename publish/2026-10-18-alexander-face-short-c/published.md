@@ -1,6 +1,6 @@
 # published
 
-status: partial
+status: published
 published_at: 2026-10-21 18:20 (KST)
 series: 2026-10-17-alexander-free-edu-video (본편 https://youtu.be/MP-tYyX9ue4) / 시리즈 3번째 숏폼 (분산 게시 규칙, 1일 1편)
 
@@ -27,7 +27,7 @@ series: 2026-10-17-alexander-free-edu-video (본편 https://youtu.be/MP-tYyX9ue4
 - visibility: PUBLIC_OPEN (블로그 글 224446217523 연결, 카테고리 교육)
 
 ## homepage
-- not updated (http://aacanada.co.kr/ab-1704-10 에 숏폼 3 링크 추가 예정이었음)
+- updated: http://aacanada.co.kr/ab-1704-10 (2026-10-21 숏폼 3편 쇼츠·릴스 링크 추가. 18:00 회차에 로그인 만료로 보류됐다가 원장님 요청으로 저장된 계정으로 로그인 후 추가)
 
 ## 실패한 채널
-- homepage: aacanada.co.kr 관리자 로그인 만료 (2026-10-21 18:15 KST 확인, 수정 화면 접근 불가). 다시 로그인한 뒤 ab-1704-10 글에 숏폼 3 쇼츠·릴스 링크만 추가하면 됨. 다른 채널은 다시 올리지 말 것.
+- 없음
