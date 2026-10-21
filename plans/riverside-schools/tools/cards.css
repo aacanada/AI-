@@ -135,3 +135,16 @@ table.fee tr.total td { background: #fff7df; font-weight: 900; font-size: 36px; 
 .slot.cls { border-left: 10px solid var(--navy); }
 .slot.lunch { background: #fff7df; border-color: var(--gold); }
 .slot.note { background: transparent; border: none; padding: 6px 4px; font-size: 26px; color: var(--muted); }
+
+/* stacked language bars */
+.lbars { display: flex; flex-direction: column; gap: 20px; }
+.lrow { display: flex; align-items: center; gap: 20px; }
+.lrow .lname { width: 200px; flex: none; font-size: 28px; font-weight: 700; }
+.lrow .lname small { display: block; font-size: 21px; color: var(--muted); font-weight: 600; }
+.lstack { flex: 1; display: flex; height: 64px; border-radius: 14px; overflow: hidden; }
+.lstack .en { background: var(--navy); color: #fff; display: flex; align-items: center; padding-left: 18px; font-weight: 800; font-size: 26px; }
+.lstack .fr { background: var(--gold); color: var(--navy); display: flex; align-items: center; justify-content: flex-end; padding-right: 16px; font-weight: 800; font-size: 26px; }
+.timeline-y { display: flex; flex-direction: column; gap: 18px; }
+.yr { display: flex; gap: 24px; background: #fff; border: 2px solid var(--line); border-radius: 18px; padding: 24px 28px; }
+.yr b { width: 170px; flex: none; font-weight: 900; font-size: 40px; color: var(--red); }
+.yr p { font-size: 29px; line-height: 1.45; font-weight: 600; }
