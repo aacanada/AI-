@@ -1,6 +1,6 @@
 # 생랑베르 인터내셔널 고등학교 (Saint-Lambert International High School, SLI)
 
-> 홈페이지 정본 · 기준일 2026-10-21 · AA Canada 정리
+> 기준일 2026-10-21 · AA Canada 정리
 > 교육청 공통 정보는 [리버사이드 교육청 공통 안내](../00_BOARD_OVERVIEW.md)를 보세요.
 
 **한 줄 요약:** 1875년에 시작한 작은 IB 학교. 퀘벡 최초로 휴대폰을 잠가 두는 "폰 프리" 학교입니다.

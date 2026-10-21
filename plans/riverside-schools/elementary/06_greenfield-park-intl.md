@@ -1,6 +1,6 @@
 # 그린필드파크 프라이머리 인터내셔널 (Greenfield Park Primary International School, GPI)
 
-> 홈페이지 정본 · 기준일 2026-10-21 · AA Canada 정리
+> 기준일 2026-10-21 · AA Canada 정리
 > 교육청 공통 정보는 [리버사이드 교육청 공통 안내](../00_BOARD_OVERVIEW.md)를 보세요.
 
 **한 줄 요약:** 2002년부터 IB 초등(PYP) 인증을 받은 학교. 영어 교육청과 불어 교육청이 **한 건물을 함께 쓰는** 특이한 구조입니다.

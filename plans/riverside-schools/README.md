@@ -85,7 +85,9 @@
 
 | 우선 | 방법 | 비고 |
 |---|---|---|
-| 1 | **몬트리올 지점 직접 촬영** | 가장 확실하고 저작권 문제 없음. 학교 외관·간판·운동장·주변 거리(공공장소에서 촬영). 학생 얼굴은 찍지 않음. 등하교 시간(벨타임 표 참고)을 피해서 |
+| 0 | **인포그래픽 카드 (현재 방식)** | 현장 촬영이 어려워 사진 없이 카드로 시작. `content/batch01/` 참고, `tools/`로 학교마다 같은 형식 생성 |
+| 1 | **AA 몬트리올 카페 옛 사진** | 예전 방문 사진을 `photos/학교명/`에 웹 업로드하면 카드·블로그에 반영. 카페 회원 사진은 사용 동의 받기 |
+| 1-1 | 몬트리올 지점 직접 촬영 (가능할 때) | 학교 외관·간판·운동장·주변 거리(공공장소에서 촬영). 학생 얼굴은 찍지 않음. 등하교 시간(벨타임 표 참고)을 피해서 |
 | 2 | **RISE에 요청** | 브로슈어 사진, 학교 영상 원본, 학교별 사진 사용 허락 (`../riverside-marketing/README.md` 8장 메일에 포함) |
 | 3 | 학교 공식 채널 (허락 후) | 학교 홈페이지(hrhs.rsb.qc.ca, crhs.rsb.qc.ca, saintlambertinternational.org), RSB News & Photos, 학교 페이스북(Harold Napper, SLI `SLIHS.IB`, Mountainview, Royal Charles), RISE 인스타 @rise.rsb, 헤리티지 가상 투어(hrhs.rsb.qc.ca/category/virtual-tours/) |
 | 4 | 위키미디어 커먼즈 | 위키백과 문서가 있는 학교(Heritage, Centennial, SLI, St. Lambert Elem, GPI, Terry Fox, St. Johns). 라이선스(CC BY 등) 표기 조건 지켜서 |

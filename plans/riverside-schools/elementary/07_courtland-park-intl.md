@@ -1,6 +1,6 @@
 # 코틀랜드파크 인터내셔널 (Courtland Park International School, CPI)
 
-> 홈페이지 정본 · 기준일 2026-10-21 · AA Canada 정리
+> 기준일 2026-10-21 · AA Canada 정리
 > 교육청 공통 정보는 [리버사이드 교육청 공통 안내](../00_BOARD_OVERVIEW.md)를 보세요.
 
 **한 줄 요약:** 생브루노의 **영어 기반 이중언어 IB 초등학교**. IB가 "수업 언어 영어"로 등록한 학교입니다.
