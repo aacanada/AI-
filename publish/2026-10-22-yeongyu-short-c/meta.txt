@@ -4,6 +4,6 @@ channels: youtube, instagram, threads, blog, clip, homepage
 visibility: public
 publish_order: 4
 linked_to: 2026-10-22-yeongyu-montreal-video
-files: video.mp4 (1080x1920, 0:44, 3 MB), thumbnail.jpg (1080x1920 cover), upload-text.txt
+files: video.mp4 (1080x1920, 0:44, 3 MB), thumbnail.jpg (1080x1920 cover, 제목·브랜드만), upload-text.txt
 source: aacanada/AI- branch claude/jolly-tesla-u70qgi, videos/yeongyu-montreal-shorts/short-c/
 notes: 원장님 직접 녹음 목소리(롱폼과 같은 녹음에서 컷). READY 없음 — 원장님 검토 후 결정. 2026-10-22-yeongyu-montreal-video 의 published.md 에 본편 유튜브 주소가 생긴 뒤에 게시하고, 유튜브 쇼츠 '관련 동영상'에 본편을 연결해 주세요. 제목·커버에 불어 없음.
