@@ -215,6 +215,7 @@ R .sib{position:absolute;left:200px;top:458px;display:flex;align-items:flex-end;
 R .sibl{position:absolute;font-weight:900;font-size:30px;color:#7A1B26}
 R .bt{left:120px;top:150px;font-size:72px}
 R .conv{left:1150px;top:250px;font-size:44px}
+R .age{left:120px;top:740px;font-size:36px}
 R .ft{top:720px;font-size:66px}
 R .allday{top:300px;font-size:150px}
 R .allday2{top:500px;font-size:70px;color:#7A1B26}
@@ -245,6 +246,7 @@ R .allday2{top:500px;font-size:70px;color:#7A1B26}
   <div class="sib">{kid("#7A1B26", 130)}{kid("#C8102E", 92)}</div>
   <div class="sibl" style="left:210px;top:672px">형·누나</div><div class="sibl" style="left:360px;top:672px">유치원생</div>
   <div class="chip solid conv">둘째·셋째 있는 집엔 정말 편해요</div>
+  <div class="chip pink age">유치원 입학: 그해 9월 30일 기준 만 4세</div>
 </div>
 <div class="ph p4" style="opacity:0">
   <div class="abs center bhs allday">이 <span class="red">'하루 종일'</span>이</div>
@@ -255,11 +257,11 @@ R .allday2{top:500px;font-size:70px;color:#7A1B26}
 inn('.tag',0.2,{x:-30,y:0});kin('.q1',0.4);slam('.q2',T('시설이 따로'));
 phase('.p2',T('퀘벡은 유치원'),'.p1');inn('.school',T('퀘벡은 유치원'),{y:40});pop('.kroom',T('초등학교 안에'));pulse('.kroom',T('초등학교 안에')+0.6,2);inn('.k1',T('초등학교 안에'),{x:60,y:0});
 inn('.k2',T('초등학생과 같은'),{x:60,y:0});tl.fromTo(q('.hand'),{rotation:0,svgOrigin:'55 55'},{rotation:720,svgOrigin:'55 55',duration:2.4,ease:'power2.inOut'},T('하루 종일'));
-slam('.k3',T('9월 30일'));
-phase('.p3',T('4학년이나'),'.p2');kin('.bt',T('4학년이나'));inn('.sib svg',T('형, 누나')-0.3,{y:30,st:0.2});inn('.sibl',T('형, 누나'),{y:10,st:0.2});
+slam('.k3',T('초등학생과 같은')+1.4);
+phase('.p3',T('4학년이나'),'.p2');kin('.bt',T('4학년이나'));inn('.sib svg',T('형, 누나')-0.3,{y:30,st:0.2});inn('.sibl',T('형, 누나'),{y:10,st:0.2});inn('.age',T('형, 누나')+0.8,{y:20});
 tl.fromTo(q('.bus'),{x:1400},{x:0,duration:1.6,ease:'power3.out'},T('같은 스쿨버스')-0.4);pop('.conv',T('둘째, 셋째'));
 phase('.p4',T('그리고 바로'),'.p3');kin('.allday',T('그리고 바로'));kin('.allday2',T('영어 실력에서'));
 """,
-    sfx=[("impact", "T('시설이 따로')+0.38"), ("whoosh", "T('퀘벡은 유치원')-0.3"), ("pop", "T('초등학교 안에')"), ("impact", "T('9월 30일')+0.38"),
+    sfx=[("impact", "T('시설이 따로')+0.38"), ("whoosh", "T('퀘벡은 유치원')-0.3"), ("pop", "T('초등학교 안에')"), ("impact", "T('초등학생과 같은')+1.78"),
          ("whoosh", "T('같은 스쿨버스')-0.4"), ("pop", "T('둘째, 셋째')"), ("whoosh", "T('그리고 바로')-0.3")],
 )

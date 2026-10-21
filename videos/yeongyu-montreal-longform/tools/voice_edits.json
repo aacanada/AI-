@@ -1,7 +1,41 @@
 {
-  "_note": "Raw-recording time ranges [start, end] (s) cut out of yv_sNN.m4a by tools/audio_prep.py. Found with tools/asr_check.py + sherpa token timestamps; each sits inside a pause.",
-  "s02": [[7.86, 9.80, "\"2020...\" false start before \"2025년\""], [13.18, 15.34, "\"교집 교 / 평균\" stumble: keeps \"월평균 | 교습비는\""]],
-  "s03": [[17.95, 27.30, "first take of \"친구와 노는 말도 ... 한국어죠\" (read again at 27.4)"]],
-  "s08": [[35.80, 42.25, "first take of \"그리고 바로 이 하루 종일이 ...\" (read again at 42.3)"]],
-  "s11": [[49.75, 61.95, "unfinished first take of \"다음 영상에서는 ...\" (read again at 62.1)"]]
+ "_note": "Raw-recording time ranges [start, end] (s) cut out of yv_sNN.m4a by tools/audio_prep.py. Found with tools/asr_check.py + sherpa token timestamps; each sits inside a pause.",
+ "s02": [
+  [
+   7.86,
+   9.8,
+   "\"2020...\" false start before \"2025년\""
+  ],
+  [
+   13.18,
+   15.34,
+   "\"교집 교 / 평균\" stumble: keeps \"월평균 | 교습비는\""
+  ]
+ ],
+ "s03": [
+  [
+   17.95,
+   27.3,
+   "first take of \"친구와 노는 말도 ... 한국어죠\" (read again at 27.4)"
+  ]
+ ],
+ "s08": [
+  [
+   17.0,
+   21.6,
+   "\"9월 30일 기준으로 만 5세면 다닐 수 있습니다\" - read as 만 5세; cut on the director's call (age shown on screen as 만 4세)"
+  ],
+  [
+   35.8,
+   42.25,
+   "first take of \"그리고 바로 이 하루 종일이 ...\" (read again at 42.3)"
+  ]
+ ],
+ "s11": [
+  [
+   49.75,
+   61.95,
+   "unfinished first take of \"다음 영상에서는 ...\" (read again at 62.1)"
+  ]
+ ]
 }

@@ -1,5 +1,6 @@
 """Narration rows for the 영유 vs 몬트리올 long-form, from plans/yeongyu-montreal-longform/SCRIPT.txt, adjusted to
-what the director actually read (ASR_CHECK.md): s01 "AA Canada입니다" (no 원장), s11 "첫 번째".
+what the director actually read (ASR_CHECK.md): s01 "AA Canada입니다" (no 원장), s11 "첫 번째", s08 age sentence cut (read as 만 5세;
+the director chose to drop it - the age stays on screen as 만 4세).
 One scene = one recording (yv_sNN.m4a). If the recording differs from a row, edit the row to match what was
 actually said (never numbers/facts) and rebuild.
 
@@ -50,7 +51,7 @@ SRC = r"""
 그럼 아이는 실제로 학교에서 하루를 어떻게 보낼까요?
 [s08|캐나다엔 유치원 건물이 없다|5]
 한국과 가장 다른 점을 하나 꼽으라면, 유치원이라는 시설이 따로 없다는 거예요.
-퀘벡은 유치원 과정이 모두 초등학교 안에 있습니다. 그리고 초등학생과 같은 시간표로 하루 종일 수업을 해요. 그해 9월 30일 기준으로 만 4세면 유치원에 다닐 수 있습니다.
+퀘벡은 유치원 과정이 모두 초등학교 안에 있습니다. 그리고 초등학생과 같은 시간표로 하루 종일 수업을 해요.
 4학년이나 5학년 형, 누나가 있다면 같은 학교에 다니면서, 같은 스쿨버스를 타고 함께 등하교합니다. 둘째, 셋째가 있는 집에는 이게 생활에서 정말 편한 부분이에요.
 그리고 바로 이 하루 종일이, 영어 실력에서 큰 차이를 만듭니다.
 [s09|배우는 영어 vs 몸에 밴 영어|6]
@@ -89,7 +90,7 @@ KEYS = {
     "s05": ["1,790만 원", "1,200만 원", "3,580만 원", "5,360만 원", "0원", "추가로 얼마가 더 드느냐"],
     "s06": ["사설 어학원", "사립 칼리지", "평일 오전", "공인 영어 점수가 없어도"],
     "s07": ["두 번째 대도시", "가장 저렴하게", "1,200만 원", "중소도시 수준", "자동차 없이"],
-    "s08": ["초등학교 안에", "하루 종일", "9월 30일", "만 4세", "스쿨버스"],
+    "s08": ["초등학교 안에", "하루 종일", "스쿨버스"],
     "s09": ["과목", "필요해서 꺼내 쓰는 영어", "발음과 억양"],
     "s10": ["영어 교육청", "불어 교육청", "최대 3년", "한 번만", "1~2년", "3년 이상", "독일어"],
     "s11": ["3,580만 원", "0원", "1,200만 원", "하루 종일", "canlog"],
