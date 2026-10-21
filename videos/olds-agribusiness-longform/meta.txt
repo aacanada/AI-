@@ -5,6 +5,6 @@ visibility: public
 publish_order: 1
 publish_after: (게시일 미정 - Aside가 알려 준 뒤 기입)
 linked_to: (none)
-files: video.mp4 (렌더 후 기입: 길이·용량·분할 수), thumbnail.jpg (1280x720), upload-text.txt
+files: video.mp4 (9:17.9, 1920x1080 30fps, 204 MB → 브랜치에는 renders/video.part0~4.mp4 5개로 분할, 각 90 MB 미만, 합치기: ffmpeg -f concat -safe 0 -i renders/parts.txt -c copy video.mp4), thumbnail.jpg (1280x720, v3), upload-text.txt
 source: aacanada/AI- branch claude/fervent-knuth-fbxid4, videos/olds-agribusiness-longform/
 notes: 썸네일 확정 = thumbnail-v3.jpg(콤바인 배경 + 완화 문구 "1년 학업 + 8개월 실습 → 캐나다 농업경영학사 취득 / 취업 강한 농업 분야 → 캐나다가 원하는 인재, 알버타 영주권 루트") → thumbnail.jpg. v1·v2는 미채택 시안. 파생 쇼츠 A/B/C(브리프 6장)는 이 롱폼 씬 컴포넌트를 재사용 예정.
