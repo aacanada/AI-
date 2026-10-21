@@ -1,16 +1,14 @@
-"""Turn the director's recordings into per-scene narration (S02~S11). Run from project root:
+"""Turn the director's recordings into per-scene narration. Run from project root:
     python3 -I tools/audio_prep.py            # all found
-    python3 -I tools/audio_prep.py 3 5        # only S03, S05 (per-scene files)
+    python3 -I tools/audio_prep.py s09 s11    # only these scenes
 then:  python3 -I tools/build.py
 
-Input : ../../plans/olds-agribusiness-longform/audio/olds_chNN.m4a (NN = 02..11, one file per scene)
-        or olds_voice_full.m4a (all ten scenes in one file, ~1 s pause between scenes)
-Output: assets/voice/sNN.wav (+ sNN.words.json) and assets/voice/_split.json (what was cut where, for review)
+Input : ../../plans/olds-agribusiness-longform/audio/<audio>.m4a, one file per scene (stem in script.py "audio",
+        e.g. olds_ch01 ... olds_ch12, olds_ch08b)
+Output: assets/voice/<sid>.wav (+ <sid>.words.json) and assets/voice/_split.json (what was done, for review)
 
-Per file: highpass + afftdn light denoise -> trim head/tail silence -> loudnorm I=-16 -> silencedetect.
-One full file: scene cut = the 9 longest pauses (>= 0.6 s), checked against the script's character
-proportions (fallback: pause nearest each expected boundary). Inside a scene, pauses > 0.7 s are shortened to
-0.45 s and a slow read is sped up with pitch-preserving atempo (max 1.1x).
+Per file: highpass + afftdn light denoise -> trim head/tail silence -> loudnorm I=-16. Inside a scene, pauses > 0.7 s
+are shortened to 0.45 s and a slow read is sped up with pitch-preserving atempo (max 1.1x).
 Caption timing: `hyperframes transcribe` (whisper, ko) when the model can be downloaded; otherwise each
 sentence row is snapped to the nearest detected pause (good enough for 22-char captions).
 """
@@ -66,6 +64,8 @@ def clean_chapter(stem):
 
 
 def transcribe(wav):
+    if os.environ.get("OLDS_NO_WHISPER"):  # huggingface.co blocked in the cloud sandbox -> skip the ~100 s failed attempt
+        return None
     try:
         r = subprocess.run(["npx", "--yes", "hyperframes@0.8.174", "transcribe", wav, "-d", ".", "--language", "ko", "--model", "small", "--json"],
                            capture_output=True, text=True, timeout=900)
@@ -111,16 +111,13 @@ def row_words(rows, wav):
 def main(only):
     os.makedirs(OUT, exist_ok=True)
     report = {}
-    vo = [s for s in SCENES if s.get("kind", "vo") == "vo"]
-    if find("olds_voice_full") and not any(find(f"olds_ch{s['ch']:02d}") for s in vo):
-        groups = [("olds_voice_full", vo)]
-    else:
-        groups = [(f"olds_ch{s['ch']:02d}", [s]) for s in vo if not only or s["ch"] in only]
-    for stem, scenes in groups:
-        ch = stem
+    for sc in SCENES:
+        if only and sc["id"] not in only:
+            continue
+        stem, scenes = sc["audio"], [sc]
         wav = clean_chapter(stem)
         if not wav:
-            print(f"{stem}: not found in {SRC}")
+            print(f"{stem}: not found in {SRC} - scene {sc['id']} left out")
             continue
         D = dur(wav)
         cand = [(a, b) for a, b in silences(wav, "-38dB", 0.6) if 0.3 < a < D - 0.3]
@@ -147,11 +144,11 @@ def main(only):
             run(["ffmpeg", "-y", "-v", "error", "-i", raw, "-af", f"atempo={tempo}" if tempo != 1.0 else "anull", "-ar", "48000", dst])
             words = transcribe(dst) or row_words(s["rows"], dst)
             json.dump(words, open(os.path.join(OUT, f"{s['id']}.words.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
-            report[s["id"]] = dict(ch=ch, cut=[round(a, 2), round(b, 2)], dur=round(dur(dst), 2), tempo=tempo, fallback_cut=warn)
+            report[s["id"]] = dict(src=stem, cut=[round(a, 2), round(b, 2)], dur=round(dur(dst), 2), tempo=tempo, fallback_cut=warn)
         print(f"{stem}: {n} scene(s) from {D:.1f}s{' (cut check failed - verify _split.json)' if warn else ''}")
     old = json.load(open(os.path.join(OUT, "_split.json"))) if os.path.exists(os.path.join(OUT, "_split.json")) else {}
     json.dump({**old, **report}, open(os.path.join(OUT, "_split.json"), "w"), indent=1)
 
 
 if __name__ == "__main__":
-    main([int(x) for x in sys.argv[1:]])
+    main(sys.argv[1:])

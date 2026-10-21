@@ -16,7 +16,7 @@ R #s05-plus{left:40px;top:540px;width:1360px;height:96px;border-radius:20px;back
     bg='        <div class="full" id="s05-bgp" style="opacity:.22"><img src="@P/campus-04-students-walking.jpg" alt="" /></div>',
     body=f"""
           <div class="card" id="s05-cd">
-            <div class="l" id="s05-h" style="position:absolute;left:70px;top:40px;font-size:30px;color:#00b373">ADMISSION · 입학 조건</div>
+            <div class="l" id="s05-h" style="position:absolute;left:70px;top:40px;font-size:30px;color:#00875a">ADMISSION · 입학 조건</div>
 {''.join(f'            <div class="row" id="s05-r{i}" style="top:{110 + i * 105}px">{check(f"s05-k{i}")}<span>{t}</span></div>' + chr(10) for i, (t, _) in enumerate(req))}
             <div class="chip green" id="s05-j0" style="left:720px;top:118px;font-size:30px">한국 전문대</div>
             <div class="chip green" id="s05-j1" style="left:960px;top:118px;font-size:30px">4년제 대학</div>
@@ -156,7 +156,7 @@ R .tr{position:absolute;left:40px;width:1160px;height:76px;display:flex;align-it
 R .tr .a{width:330px;padding-left:22px}
 R .tr .b{width:430px;font-weight:600;font-size:32px;color:#14563f}
 R .tr .c{width:400px;text-align:right;padding-right:26px;font-weight:900;font-variant-numeric:tabular-nums}
-R .tr.hd{font-size:26px;letter-spacing:.08em;color:#00b373;height:56px}
+R .tr.hd{font-size:26px;letter-spacing:.08em;color:#00875a;height:56px}
 R .tr.tot{background:#0f3d2e;color:#fff;border-radius:16px;font-size:42px}
 R .tr.tot .c{color:#e8b931;font-size:52px}
 R .hr{position:absolute;left:40px;width:1160px;height:2px;background:rgba(15,61,46,.15)}

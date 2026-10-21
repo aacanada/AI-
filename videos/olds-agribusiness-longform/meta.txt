@@ -1,5 +1,5 @@
 type: longform
-title: 농사 몰라도 됩니다. 2년 만에 캐나다 학사 따고 영주권까지 가는 알버타 루트 (Olds College 농업경영 롱폼)
+title: 1년 학업 + 8개월 실습으로 캐나다 학사, 취업률 95% 농업경영 → 알버타 영주권 루트 (Olds College 농업경영 롱폼)
 channels: youtube
 visibility: public
 publish_order: 1

@@ -57,43 +57,50 @@
 #s01 .row svg{flex:none}
 #s01 .ar path{fill:none;stroke:#e8b931;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
 
-#s01 #s01-fv{position:absolute;inset:0;overflow:hidden;background:#082a1f}
-#s01 #s01-fv video{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(1.05) contrast(1.03)}
-#s01 #s01-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
-  background:repeating-linear-gradient(135deg,#124a37 0 40px,#0f3d2e 40px 80px)}
-
-#s01 .bg,#s01 .blob{display:none}
-#s01 .fc{position:absolute;left:1400px;font-size:40px;padding:16px 34px}
-#s01 #s01-name{left:70px;top:700px;padding:14px 30px;border-radius:16px;background:rgba(6,30,22,.86);border-left:8px solid #00b373;font-weight:800;font-size:34px;white-space:nowrap}
-#s01 #s01-dim{position:absolute;inset:0;background:rgba(8,42,31,.72)}
-#s01 #s01-title{left:0;right:0;top:380px;text-align:center;font-size:150px}
+#s01 #s01-g1 .full img,#s01 #s01-g2 .full img{filter:saturate(.9)}
+#s01 #s01-q{left:0;right:0;top:330px;text-align:center;font-size:120px;white-space:nowrap}
+#s01 #s01-x{left:0;right:0;top:520px;display:flex;justify-content:center}
+#s01 .rn{position:absolute;top:400px;width:440px;height:170px;margin-left:-220px;border-radius:30px;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:900;font-size:50px}
+#s01 #s01-ban{left:160px;top:150px;width:1600px;height:400px}
+#s01 #s01-title{left:0;right:0;top:600px;text-align:center;font-size:96px;white-space:nowrap}
+#s01 #s01-sub{left:0;right:0;top:730px;text-align:center;font-size:40px;color:#e8b931;white-space:nowrap}
 
       </style>
-      <div id="s01" data-composition-id="s01" data-width="1920" data-height="1080" data-duration="25.6">
+      <div id="s01" data-composition-id="s01" data-width="1920" data-height="1080" data-duration="23.541">
         <div class="bg"></div>
         <div class="blob a"></div><div class="blob b"></div><div class="blob c"></div>
-        <div id="s01-fv"><div id="s01-ph"><div class="h" style="font-size:96px;color:#e8b931">얼굴 영상 자리</div><div class="hd" style="font-size:40px;margin-top:22px">olds_face_open.mp4 · 원장님 원음 · 25초 가정</div><div class="b" style="font-size:30px;margin-top:16px;color:rgba(255,255,255,.7)">영상 도착 후 tools/face_prep.py → tools/build.py 로 교체</div></div></div>
+
         <div class="stage">
 
-          <div class="chip fc red" id="s01-c0" style="top:230px">농사 경험 X</div>
-          <div class="chip fc gold" id="s01-c1" style="top:350px">2년 학사</div>
-          <div class="chip fc gold" id="s01-c2" style="top:470px">8개월 유급 실습</div>
-          <div class="chip fc green" id="s01-c3" style="top:590px">알버타 영주권</div>
-          <div class="abs" id="s01-name">AA Canada 원장</div>
-          <div class="abs" id="s01-dim"></div>
-          <div class="abs" id="s01-pts" style="inset:0"></div>
-          <div class="abs h" id="s01-title">농사 <span class="gold">몰라도</span> 됩니다</div>
+          <div class="grp" id="s01-g1">
+            <div class="full" id="s01-p1"><img src="assets/photos/sf-02-banner.jpg" alt="" /></div><div class="dim" style="opacity:.55"></div>
+            <div class="abs h" id="s01-q">전문대 · 대학 <span class="gold">졸업하셨나요?</span></div>
+            <div class="abs" id="s01-x"><div class="chip red" id="s01-no" style="position:relative;font-size:56px;padding:18px 44px">농사 경험 X · 괜찮습니다</div></div></div>
+          <div class="grp" id="s01-g2">
+            <div class="full" id="s01-p2"><img src="assets/photos/sf-11-canola.jpg" alt="" /></div><div class="dim" style="opacity:.62"></div>
+            <svg class="abs" style="left:260px;top:440px;width:1400px;height:90px" viewBox="0 0 1400 90"><path id="s01-line" d="M0 45 L1400 45" stroke="#e8b931" stroke-width="10" stroke-linecap="round" stroke-dasharray="2 22"/></svg>
+            <div class="rn" id="s01-r0" style="left:360px;background:#f5efe3;color:#0f3d2e">2년 학사</div>
+            <div class="rn" id="s01-r1" style="left:960px;background:#e8b931;color:#0f3d2e">8개월 유급 실습</div>
+            <div class="rn" id="s01-r2" style="left:1560px;background:#00b373;color:#0f3d2e">알버타 영주권</div>
+
+            <div class="abs hd" id="s01-rh" style="left:0;right:0;top:250px;text-align:center;font-size:52px">캐나다에서 이어지는 <span class="gold">한 줄의 길</span></div></div>
+          <div class="grp" id="s01-g3">
+            <div class="abs" id="s01-pts" style="inset:0"></div>
+            <div class="ph frame" id="s01-ban"><img src="assets/photos/campus-02-aerial-full.jpg" alt="" /></div>
+            <div class="abs h" id="s01-title">올즈 컬리지 <span class="gold">농업경영 학사</span></div>
+            <div class="abs hd" id="s01-sub">Olds College · Bachelor of Applied Science - Agribusiness</div></div>
         </div>
-        <audio id="s01-fx0" src="assets/sfx/pop.mp3" data-start="3.5" data-duration="0.5" data-track-index="40" data-volume="0.3" data-hf-media-start-basis="local"></audio>
-        <audio id="s01-fx1" src="assets/sfx/pop.mp3" data-start="6.417" data-duration="0.5" data-track-index="40" data-volume="0.3" data-hf-media-start-basis="local"></audio>
-        <audio id="s01-fx2" src="assets/sfx/pop.mp3" data-start="9.125" data-duration="0.5" data-track-index="40" data-volume="0.3" data-hf-media-start-basis="local"></audio>
-        <audio id="s01-fx3" src="assets/sfx/pop.mp3" data-start="14.333" data-duration="0.5" data-track-index="40" data-volume="0.3" data-hf-media-start-basis="local"></audio>
-        <audio id="s01-fx4" src="assets/sfx/impact.mp3" data-start="23.7" data-duration="1.2" data-track-index="40" data-volume="0.24" data-hf-media-start-basis="local"></audio>
+        <audio id="s01-fx0" src="assets/sfx/stamp.mp3" data-start="2.868" data-duration="1.2" data-track-index="40" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s01-fx2" src="assets/sfx/whoosh.mp3" data-start="5.613" data-duration="0.574" data-track-index="40" data-volume="0.25" data-hf-media-start-basis="local"></audio>
+        <audio id="s01-fx3" src="assets/sfx/pop.mp3" data-start="8.483" data-duration="0.5" data-track-index="40" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s01-fx4" src="assets/sfx/pop.mp3" data-start="14.001" data-duration="0.5" data-track-index="40" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s01-fx5" src="assets/sfx/whoosh.mp3" data-start="17.754" data-duration="0.574" data-track-index="40" data-volume="0.25" data-hf-media-start-basis="local"></audio>
+        <audio id="s01-fx6" src="assets/sfx/impact.mp3" data-start="20.359" data-duration="1.2" data-track-index="40" data-volume="0.24" data-hf-media-start-basis="local"></audio>
       </div>
       <script>
         (function () {
           const root = document.getElementById("s01");
-          const D = 25.6;
+          const D = 23.541;
 
 const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
 const tl=gsap.timeline({paused:true});
@@ -133,16 +140,22 @@ function burst(host,at,n,cx,cy,spread,seed){const H=E1(host);seed=seed||7;const 
     const a=rnd()*Math.PI*2,r=spread*(0.4+rnd()*0.8);
     tl.fromTo(d,{x:0,y:0,opacity:1,scale:0.6+rnd()},{x:Math.cos(a)*r,y:Math.sin(a)*r*0.6+60,opacity:0,duration:1.2+rnd()*0.7,ease:'power3.out',immediateRender:false},at);}}
 
-pop('#s01-c0',3.500);
-pop('#s01-c1',6.417);
-pop('#s01-c2',9.125);
-pop('#s01-c3',14.333);
 
-inn('#s01-name',0.6,{x:-30,y:0});outt('#s01-name',3.6,{x:-30});
-const TT=D-0.6-1.4;
-outt(qa('.fc'),TT-0.2,{x:40});
-tl.fromTo('#s01-dim',{opacity:0},{opacity:1,duration:0.4},TT);
-mask('#s01-title',TT+0.1,0.7,'l');burst('#s01-pts',TT+0.6,36,960,470,700,5);
+kb('#s01-p1 img',0,5.613,{s:1.0},{s:1.1,x:-2});
+kin('#s01-q',0.600,0.03);
+stamp('#s01-no',2.868,-4);
+outt('#s01-g1',5.613-0.35,{d:0.35});
+tl.set('#s01-g2',{opacity:0},0);tl.set('#s01-g2',{opacity:1},5.613-0.05);
+kb('#s01-p2 img',5.613,17.754-5.613,{s:1.05},{s:1.15,x:2});
+inn('#s01-rh',5.613,{y:14});draw('#s01-line',5.613,14.001-5.613+0.4,'none');
+tl.fromTo('#s01-r0',{opacity:0,scale:0.3,rotation:-6},{opacity:1,scale:1,rotation:0,duration:0.5,ease:'back.out(2)'},5.613);tl.fromTo('#s01-r1',{opacity:0,scale:0.3,rotation:-6},{opacity:1,scale:1,rotation:0,duration:0.5,ease:'back.out(2)'},8.483);tl.fromTo('#s01-r2',{opacity:0,scale:0.3,rotation:-6},{opacity:1,scale:1,rotation:0,duration:0.5,ease:'back.out(2)'},14.001);
+tl.to('#s01-r2',{scale:1.08,duration:0.3,yoyo:true,repeat:1},14.001+0.6);
+outt('#s01-g2',17.754-0.35,{d:0.35});
+tl.set('#s01-g3',{opacity:0},0);tl.set('#s01-g3',{opacity:1},17.754-0.05);
+tl.fromTo('#s01-ban',{opacity:0,scale:0.9,rotationX:30,transformPerspective:1400},{opacity:1,scale:1,rotationX:0,duration:0.8,ease:'power3.out'},17.754);
+kb('#s01-ban img',17.754,D-17.754);
+mask('#s01-title',20.059,0.7,'l');inn('#s01-sub',20.059+0.4,{y:12});
+burst('#s01-pts',20.059+0.5,40,960,650,700,5);
 
           ambient();
           window.__timelines["s01"] = tl;

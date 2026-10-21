@@ -69,7 +69,7 @@
 #s04 #s04-dfs{left:1010px;top:446px;width:460px;height:48px;border-radius:24px;background:#e8b931}
 
       </style>
-      <div id="s04" data-composition-id="s04" data-width="1920" data-height="1080" data-duration="31.5">
+      <div id="s04" data-composition-id="s04" data-width="1920" data-height="1080" data-duration="46.303">
         <div class="bg"></div>
         <div class="blob a"></div><div class="blob b"></div><div class="blob c"></div>
 
@@ -117,17 +117,17 @@
           </div>
         </div>
         <audio id="s04-fx0" src="assets/sfx/pop.mp3" data-start="0.35" data-duration="0.5" data-track-index="46" data-volume="0.3" data-hf-media-start-basis="local"></audio>
-        <audio id="s04-fx1" src="assets/sfx/pop.mp3" data-start="6.98" data-duration="0.5" data-track-index="46" data-volume="0.3" data-hf-media-start-basis="local"></audio>
-        <audio id="s04-fx2" src="assets/sfx/whoosh.mp3" data-start="10.75" data-duration="0.574" data-track-index="46" data-volume="0.25" data-hf-media-start-basis="local"></audio>
-        <audio id="s04-fx3" src="assets/sfx/impact.mp3" data-start="21.18" data-duration="1.2" data-track-index="46" data-volume="0.24" data-hf-media-start-basis="local"></audio>
-        <audio id="s04-fx4" src="assets/sfx/whoosh.mp3" data-start="23.49" data-duration="0.574" data-track-index="46" data-volume="0.25" data-hf-media-start-basis="local"></audio>
-        <audio id="s04-fx5" src="assets/sfx/pop.mp3" data-start="27.0" data-duration="0.5" data-track-index="46" data-volume="0.3" data-hf-media-start-basis="local"></audio>
-        <audio id="s04-fx6" src="assets/sfx/pop.mp3" data-start="29.08" data-duration="0.5" data-track-index="46" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s04-fx1" src="assets/sfx/pop.mp3" data-start="9.918" data-duration="0.5" data-track-index="46" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s04-fx2" src="assets/sfx/whoosh.mp3" data-start="15.784" data-duration="0.574" data-track-index="46" data-volume="0.25" data-hf-media-start-basis="local"></audio>
+        <audio id="s04-fx3" src="assets/sfx/impact.mp3" data-start="31.375" data-duration="1.2" data-track-index="46" data-volume="0.24" data-hf-media-start-basis="local"></audio>
+        <audio id="s04-fx4" src="assets/sfx/whoosh.mp3" data-start="35.511" data-duration="0.574" data-track-index="46" data-volume="0.25" data-hf-media-start-basis="local"></audio>
+        <audio id="s04-fx5" src="assets/sfx/pop.mp3" data-start="40.339" data-duration="0.5" data-track-index="46" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s04-fx6" src="assets/sfx/pop.mp3" data-start="43.2" data-duration="0.5" data-track-index="46" data-volume="0.3" data-hf-media-start-basis="local"></audio>
       </div>
       <script>
         (function () {
           const root = document.getElementById("s04");
-          const D = 31.5;
+          const D = 46.303;
 
 const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
 const tl=gsap.timeline({paused:true});
@@ -169,24 +169,24 @@ function burst(host,at,n,cx,cy,spread,seed){const H=E1(host);seed=seed||7;const 
 
 
 grow('#s04-st0',0.350+0.00,0.6,'50% 100%','y');grow('#s04-st1',0.350+0.15,0.6,'50% 100%','y');grow('#s04-st2',0.350+0.30,0.6,'50% 100%','y');grow('#s04-st3',0.350+0.45,0.6,'50% 100%','y');
-inn('#s04-rep',2.040,{y:14});
-tl.to(['#s04-st0','#s04-st1'].map(s=>q(s)),{opacity:0.55,duration:0.4},2.040);
-tl.fromTo(['#s04-st2','#s04-st3'].map(s=>q(s)),{scale:1},{scale:1.04,duration:0.3,yoyo:true,repeat:1,transformOrigin:'50% 100%'},4.120);
-pop('#s04-k0',6.980);pop('#s04-k1',9.710);pop('#s04-k2',9.710+0.5);
-outt('#s04-g1',10.750-0.4,{d:0.4});
-tl.set('#s04-g2',{opacity:0},0);tl.set('#s04-g2',{opacity:1},10.750-0.05);
-kb('#s04-p2 img',10.750,20.240-10.750);inn('#s04-h2',10.750,{x:-30,y:0});
-pop('#s04-c0',11.920);pop('#s04-c1',12.310);pop('#s04-c2',12.830);pop('#s04-c3',13.480);pop('#s04-c4',14.130);pop('#s04-c5',14.780);pop('#s04-c6',15.690);
-pop('#s04-pj0',17.120);pop('#s04-pj1',18.420);
-outt('#s04-g2',20.240-0.4,{d:0.4});
-tl.set('#s04-g3',{opacity:0},0);tl.set('#s04-g3',{opacity:1},20.240-0.05);
-kb('#s04-p3 img',20.240,23.490-20.240);
-slam('#s04-big',20.760,{s:2.2});mask('#s04-b1',21.800,0.7,'l');inn('#s04-b2',20.240+0.2,{y:12});
-outt('#s04-g3',23.490-0.4,{d:0.4});
-tl.set('#s04-g4',{opacity:0},0);tl.set('#s04-g4',{opacity:1},23.490-0.05);
-inn('#s04-h4',23.490-0.05,{y:14});draw('#s04-line',23.490,29.080-23.490,'none');
-pop(['#s04-n0','#s04-d0','#s04-x0'].map(s=>q(s)),23.490,0.06);pop(['#s04-n1','#s04-d1','#s04-x1'].map(s=>q(s)),25.050+0.9,0.06);pop(['#s04-n2','#s04-d2','#s04-x2'].map(s=>q(s)),26.090,0.06);pop(['#s04-n3','#s04-d3','#s04-x3'].map(s=>q(s)),29.080,0.06);
-grow('#s04-dfs',27.000,0.9);pop(['#s04-dd','#s04-dx'].map(s=>q(s)),27.000+0.3,0.06);
+inn('#s04-rep',2.674,{y:14});
+tl.to(['#s04-st0','#s04-st1'].map(s=>q(s)),{opacity:0.55,duration:0.4},2.674);
+tl.fromTo(['#s04-st2','#s04-st3'].map(s=>q(s)),{scale:1},{scale:1.04,duration:0.3,yoyo:true,repeat:1,transformOrigin:'50% 100%'},5.689);
+pop('#s04-k0',9.918);pop('#s04-k1',14.166);pop('#s04-k2',14.166+0.5);
+outt('#s04-g1',15.784-0.4,{d:0.4});
+tl.set('#s04-g2',{opacity:0},0);tl.set('#s04-g2',{opacity:1},15.784-0.05);
+kb('#s04-p2 img',15.784,30.087-15.784);inn('#s04-h2',15.784,{x:-30,y:0});
+pop('#s04-c0',17.625);pop('#s04-c1',18.239);pop('#s04-c2',19.057);pop('#s04-c3',20.080);pop('#s04-c4',21.103);pop('#s04-c5',22.126);pop('#s04-c6',23.558);
+pop('#s04-pj0',25.808);pop('#s04-pj1',27.591);
+outt('#s04-g2',30.087-0.4,{d:0.4});
+tl.set('#s04-g3',{opacity:0},0);tl.set('#s04-g3',{opacity:1},30.087-0.05);
+kb('#s04-p3 img',30.087,35.511-30.087);
+slam('#s04-big',30.955,{s:2.2});mask('#s04-b1',32.691,0.7,'l');inn('#s04-b2',30.087+0.2,{y:12});
+outt('#s04-g3',35.511-0.4,{d:0.4});
+tl.set('#s04-g4',{opacity:0},0);tl.set('#s04-g4',{opacity:1},35.511-0.05);
+inn('#s04-h4',35.511-0.05,{y:14});draw('#s04-line',35.511,43.200-35.511,'none');
+pop(['#s04-n0','#s04-d0','#s04-x0'].map(s=>q(s)),35.511,0.06);pop(['#s04-n1','#s04-d1','#s04-x1'].map(s=>q(s)),37.657+0.9,0.06);pop(['#s04-n2','#s04-d2','#s04-x2'].map(s=>q(s)),39.087,0.06);pop(['#s04-n3','#s04-d3','#s04-x3'].map(s=>q(s)),43.200,0.06);
+grow('#s04-dfs',40.339,0.9);pop(['#s04-dd','#s04-dx'].map(s=>q(s)),40.339+0.3,0.06);
 
           ambient();
           window.__timelines["s04"] = tl;

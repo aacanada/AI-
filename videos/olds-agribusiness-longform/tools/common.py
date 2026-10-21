@@ -175,7 +175,7 @@ def ab_map(cid, x, y, w, cities=("Edmonton", "Calgary"), olds=True):
             f'{dots}{pin}</div>')
 
 
-# Deterministic particle burst (gold). Only S01/S12 face text and the S10 key beat use it.
+# Deterministic particle burst (gold). Only the S01 title, the AOS key beat and the closing CTA use it.
 PARTICLES_JS = r"""
 function burst(host,at,n,cx,cy,spread,seed){const H=E1(host);seed=seed||7;const rnd=()=>{seed=(seed*16807)%2147483647;return seed/2147483647;};
   for(let i=0;i<n;i++){const d=document.createElement('div');d.style.cssText='position:absolute;width:12px;height:12px;border-radius:50%;background:#e8b931;opacity:0;left:'+cx+'px;top:'+cy+'px';H.appendChild(d);

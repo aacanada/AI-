@@ -1,14 +1,11 @@
 """Build timing.json (slot layout + per-character speech times). Run from project root:
     python3 -I tools/timing.py
 
-Per narration scene (S02~S11):
+Per scene (all narration, no face video):
   - assets/voice/<sid>.wav present (made by tools/audio_prep.py) -> real duration;
     assets/voice/<sid>.words.json ([{"text","start","end"}]) -> character times by alignment.
   - otherwise provisional: non-space characters x 0.13 s, characters spread linearly.
-Per face scene (S01 / S12):
-  - assets/face/<open|close>.mp4 present (made by tools/face_prep.py) -> real duration;
-    assets/face/<open|close>.words.json -> caption/cue times, else rows spread by characters.
-  - otherwise the placeholder length from script.py (est = 25 s).
+  - once any recording is in, a scene whose recording is missing is LEFT OUT (listed in timing.json "missing").
 """
 import difflib
 import json
@@ -24,8 +21,8 @@ LEAD = 0.35     # scene visible before its narration starts (= gap between scene
 TR = 0.45       # transition inside a chapter (unused: one narration slot per scene)
 CARD = 1.8      # scene title card (brief: 1.5~2 s)
 CTR = 0.6       # transition into a title card
-FACE_LEAD = 0.0
-END_HOLD = 0.0  # S12 CTA plays over the end of the face video
+FIRST_LEAD = 0.6
+END_HOLD = 3.0  # CTA hold after the last line
 
 
 def probe(p):
@@ -78,50 +75,40 @@ def char_times(text, dur, words=None):
 def build():
     out, t = [], 0.0
     chap_of = {c[0]: c for c in CHAPTERS}
-    for i, sc in enumerate(SCENES):
+    any_real = any(os.path.exists(os.path.join("assets", "voice", sc["id"] + ".wav")) for sc in SCENES)
+    scenes = [sc for sc in SCENES if not any_real or os.path.exists(os.path.join("assets", "voice", sc["id"] + ".wav"))]
+    missing = [sc["id"] for sc in SCENES if sc not in scenes]
+    for i, sc in enumerate(scenes):
         ch = sc["ch"]
-        if sc.get("kind") != "face" and chap_of[ch][4]:
+        if chap_of[ch][4]:
             out.append(dict(id=f"c{ch:02d}", kind="card", ch=ch, start=round(t, 3), content=CARD,
                             trans_in=chap_of[ch][4], ov=CTR))
             t += CARD
         text = " ".join(sc["rows"])
-        if sc.get("kind") == "face":
-            src = os.path.join("assets", "face", sc["face"] + ".mp4")
-            wj = os.path.join("assets", "face", sc["face"] + ".words.json")
-            has = os.path.exists(src)
-            vd = round(probe(src), 3) if has else sc["est"]
-            words = json.load(open(wj, encoding="utf-8")) if has and os.path.exists(wj) else None
-            lead = FACE_LEAD
-            # placeholder: speech spread over the middle 90 % (talker pauses ~2 s head/tail)
-            span = vd if words else vd * 0.9
-            times = [round(lead + (0 if words else vd * 0.04) + x, 3) for x in char_times(text, span, words)]
-        else:
-            wav = os.path.join("assets", "voice", sc["id"] + ".wav")
-            wj = os.path.join("assets", "voice", sc["id"] + ".words.json")
-            has = os.path.exists(wav)
-            nchar = sum(1 for c in text if not c.isspace())
-            vd = round(probe(wav), 3) if has else round(nchar * CPS, 3)
-            words = json.load(open(wj, encoding="utf-8")) if has and os.path.exists(wj) else None
-            lead = LEAD
-            times = [round(lead + x, 3) for x in char_times(text, vd, words)]
+        wav = os.path.join("assets", "voice", sc["id"] + ".wav")
+        wj = os.path.join("assets", "voice", sc["id"] + ".words.json")
+        has = os.path.exists(wav)
+        nchar = sum(1 for c in text if not c.isspace())
+        vd = round(probe(wav), 3) if has else round(nchar * CPS, 3)
+        words = json.load(open(wj, encoding="utf-8")) if has and os.path.exists(wj) else None
+        lead = FIRST_LEAD if i == 0 else LEAD
+        times = [round(lead + x, 3) for x in char_times(text, vd, words)]
         rows, pos = [], 0
         for r in sc["rows"]:
             rows.append(dict(t=times[pos], text=r))
             pos += len(r) + 1
-        speech_end = round(lead + vd, 3) if sc.get("kind") != "face" or words else round(vd * 0.94, 3)
         for k, r in enumerate(rows):
-            r["end"] = rows[k + 1]["t"] - 0.1 if k + 1 < len(rows) else speech_end
-        hold = END_HOLD if i == len(SCENES) - 1 else 0
-        prev_card = out and out[-1]["kind"] == "card"
-        out.append(dict(id=sc["id"], kind=sc.get("kind", "vo"), ch=ch, start=round(t, 3), content=round(lead + vd + hold, 3),
+            r["end"] = rows[k + 1]["t"] - 0.1 if k + 1 < len(rows) else round(lead + vd, 3)
+        hold = END_HOLD if i == len(scenes) - 1 else 0
+        out.append(dict(id=sc["id"], kind="vo", ch=ch, start=round(t, 3), content=round(lead + vd + hold, 3),
                         voiceAt=lead, voiceDur=vd, real=has, aligned=bool(words), text=text, chars=times, rows=rows,
-                        face=sc.get("face"), trans_in=None if i == 0 else ("fade" if prev_card else chap_of[ch][4]),
-                        ov=CTR if not prev_card else TR))
+                        trans_in=None if i == 0 else "fade", ov=TR))
         t += lead + vd + hold
     # each slot extends over the next slot's incoming transition
     for k, s in enumerate(out):
         ov = out[k + 1]["ov"] if k + 1 < len(out) else 0
         s["duration"] = round(s["content"] + ov, 3)
+    build.missing = missing
     return out, round(t, 3)
 
 
@@ -129,7 +116,7 @@ if __name__ == "__main__":
     slots, total = build()
     json.dump(dict(total=total, slots=slots), open("timing.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     real = sum(1 for s in slots if s["kind"] == "vo" and s["real"])
-    print(f"slots {len(slots)} total {total:.1f}s ({int(total // 60)}:{total % 60:04.1f}) real-voice scenes {real}/10")
+    print(f"slots {len(slots)} total {total:.1f}s ({int(total // 60)}:{total % 60:04.1f}) real-voice scenes {real}/{len(SCENES)} missing {build.missing}")
     for s in slots:
         if s["kind"] != "vo":
             print(f"  S{s['ch']:02d} @ {int(s['start'] // 60)}:{s['start'] % 60:04.1f}")

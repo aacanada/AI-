@@ -6,3 +6,4 @@ snapshots/
 __pycache__/
 .media/
 !assets/face/*.mp4
+assets/voice/*.wav

@@ -1,11 +1,11 @@
-"""Narration script, scene cards, caption keywords and footnotes (from plans/olds-agribusiness-longform/VIDEO_BRIEF.md).
+"""Narration script, scene cards, caption keywords and footnotes (from plans/olds-agribusiness-longform/VIDEO_BRIEF.md
++ the director's final recording: olds_ch01~12.m4a + olds_ch08b.m4a; ch08b/ch09/ch11 were rewritten before recording).
 
-S02~S11: the director's voice (olds_ch02~11.m4a or olds_voice_full.m4a), recorded verbatim from these rows.
-S01 / S12: the director's face video (olds_face_open.mp4 / olds_face_close.mp4), original sound.
-Change a row only to match the recording (never numbers/facts). Scene JS cues on a phrase with T('phrase').
+Rows are the recorded sentences (final). Scene JS cues on a phrase with T('phrase').
 """
 
 # (scene no, pill label, title-card title, title-card subtitle, transition into the card)
+# Scene numbers are display numbers (S01~S13). The cost scene keeps id s08; the new jobs/wage scene is s08b (= S09).
 CHAPTERS = [
     (1, "오프닝", "", "", None),
     (2, "왜 농업인가", "왜 농업인가", "농사가 아니라 비즈니스", "leak"),
@@ -15,22 +15,23 @@ CHAPTERS = [
     (6, "관심서", "관심서가 핵심", "농사 경험 대신 쓸 이야기", "leak"),
     (7, "8개월 실습", "8개월 실습의 진실", "유급 자리를 잡는 게 핵심", "flash"),
     (8, "비용", "비용", "2026-27 국제학생 기준", "iris"),
-    (9, "PGWP", "PGWP", "졸업 후 취업 비자", "zoom"),
-    (10, "AOS 루트", "영주권 루트 1", "Alberta Opportunity Stream", "leak"),
-    (11, "RRS 루트", "영주권 루트 2", "Rural Renewal Stream", "flash"),
-    (12, "클로징", "", "", "fade"),
+    (9, "취업률·연봉", "취업률과 연봉", "투자하면 얼마나 돌아올까", "zoom"),
+    (10, "PGWP", "PGWP", "졸업 후 취업 비자 최대 3년", "leak"),
+    (11, "AOS 루트", "영주권 루트 1", "Alberta Opportunity Stream", "flash"),
+    (12, "RRS 루트", "영주권 루트 2", "Rural Renewal Stream", "iris"),
+    (13, "정리", "정리", "이런 분께 추천합니다", "zoom"),
 ]
 
-# kind: vo (narration) | face (director on camera, original sound; placeholder card until the file arrives)
+# Every scene is the director's voice (audio = recording file stem) over photos / motion graphics. No face video.
 SCENES = [
-    dict(id="s01", ch=1, name="01-opening-face", kind="face", face="open", est=25.0, rows=[
+    dict(id="s01", ch=1, name="01-opening", audio="olds_ch01", rows=[
         "전문대나 대학 나오셨나요?",
         "농사 경험이 없어도 괜찮습니다.",
         "2년 만에 캐나다 학사를 따고, 8개월은 캐나다 현장에서 월급 받으며 일하고, 그 경력으로 알버타 영주권까지 가는 길이 있습니다.",
         "오늘은 알버타 올즈 컬리지의 농업경영 학사를 정리해 드릴게요."],
         keys=["농사 경험", "2년", "8개월", "알버타 영주권"],
         foot="* 2년 과정(최소 16개월) · 실습은 유급·무급 모두 가능, 유급 자리를 잡는 경우"),
-    dict(id="s02", ch=2, name="02-why-agri", rows=[
+    dict(id="s02", ch=2, audio="olds_ch02", name="02-why-agri", rows=[
         "농업이라고 하면 트랙터 몰고 소 키우는 모습부터 떠오르시죠.",
         "그런데 이 과정은 농사를 배우는 곳이 아닙니다.",
         "농업이라는 큰 산업에서 돈과 사람, 상품을 움직이는 비즈니스를 배우는 곳이에요.",
@@ -38,7 +39,7 @@ SCENES = [
         "영업, 마케팅, 금융, 유통 일을 해 보셨다면 그 경력을 농업 산업으로 옮겨 오는 그림이 그려져요."],
         keys=["비즈니스", "농사를 배우는 곳이 아닙니다", "금융 서비스", "농업 산업"],
         foot="* 진로 분야: Olds College 프로그램 페이지 Career Outcomes"),
-    dict(id="s03", ch=3, name="03-olds-college", rows=[
+    dict(id="s03", ch=3, audio="olds_ch03", name="03-olds-college", rows=[
         "학교는 올즈 컬리지 오브 애그리컬처 앤드 테크놀로지, 줄여서 올즈 컬리지입니다.",
         "1913년에 농업학교로 문을 연, 100년이 넘은 농업·농업기술 전문 공립 칼리지예요.",
         "캠퍼스에는 3,300에이커가 넘는 스마트팜이 있습니다.",
@@ -47,7 +48,7 @@ SCENES = [
         "농업경영 학위가 금융 같은 사무직으로도 이어진다는 예입니다."],
         keys=["올즈 컬리지", "1913년", "100년", "3,300에이커", "스마트팜", "팜 크레딧 캐나다"],
         foot="* 1913년 Olds School of Agriculture 개교 · Smart Farm 3,300에이커 이상 (Olds College 홈페이지)"),
-    dict(id="s04", ch=4, name="04-structure", rows=[
+    dict(id="s04", ch=4, audio="olds_ch04", name="04-structure", rows=[
         "과정 구조를 볼게요.",
         "이 학위는 디플로마나 학위가 있는 사람이 들어와 3학년과 4학년만 하는 구조입니다.",
         "학교 표현으로 2년 과정, 실제로는 최소 16개월이고, 입학은 가을에만 있어요.",
@@ -57,7 +58,7 @@ SCENES = [
         "2027년 9월에 입학하면 2028년 4월에 수업이 끝나고, 5월부터 12월까지 현장에서 일한 뒤 12월에 졸업하는 흐름이에요."],
         keys=["3학년과 4학년", "최소 16개월", "가을에만", "8개월", "2027년 9월", "12월에 졸업"],
         foot="* 예시 일정 · 실제 학기 날짜는 학교 공지 기준"),
-    dict(id="s05", ch=5, name="05-admission", rows=[
+    dict(id="s05", ch=5, audio="olds_ch05", name="05-admission", rows=[
         "입학 조건은 생각보다 단순합니다.",
         "첫째, 디플로마나 학위.",
         "한국 전문대나 4년제 대학 졸업자라면 여기서부터 검토해 볼 수 있어요.",
@@ -67,7 +68,7 @@ SCENES = [
         "다만 농업과 관련 없는 전공이라면 관심서와 이력서를 추가로 내야 합니다."],
         keys=["디플로마나 학위", "GPA 2.5", "전공은 상관없습니다", "6.0", "110점", "관심서와 이력서"],
         foot="* 한국 학력·성적 인정 방식은 학교 심사 기준 · 2027-28 입학 기준은 학교 공지 확인"),
-    dict(id="s06", ch=6, name="06-statement", rows=[
+    dict(id="s06", ch=6, audio="olds_ch06", name="06-statement", rows=[
         "농사 경력이 꼭 있어야 하는 건 아닙니다.",
         "대신 관심서가 합격을 가른다고 보시면 돼요.",
         "학교가 관심서에 쓰라고 하는 건 네 가지예요.",
@@ -78,7 +79,7 @@ SCENES = [
         "어떤 이야기를 꺼낼지 막막하시면 AA Canada와 같이 정리해 보세요."],
         keys=["관심서", "네 가지", "8개월 실습 계획", "농업 금융", "AA Canada"],
         foot="* 관심서 항목: Olds College 입학 요건(비농업 전공 지원자)"),
-    dict(id="s07", ch=7, name="07-paid-dfs", rows=[
+    dict(id="s07", ch=7, audio="olds_ch07", name="07-paid-dfs", rows=[
         "이제 핵심, 8개월 현장 실습입니다.",
         "실습 자리는 학교가 정해 주지 않고 학생이 직접 구합니다.",
         "국제학생은 학생 비자와 함께 코업 퍼밋, 그리고 SIN 번호가 있어야 일할 수 있어요.",
@@ -90,7 +91,7 @@ SCENES = [
         "그래서 3학년 프로젝트 때부터 업계 인맥을 쌓아 두는 게 중요해요."],
         keys=["학생이 직접", "코업 퍼밋", "유급 자리", "주 30시간", "영주권 경력", "업계 인맥"],
         foot="* 유급 여부·급여는 고용주마다 다름 · Olds College WIL 정책"),
-    dict(id="s08", ch=8, name="08-cost", rows=[
+    dict(id="s08", ch=8, audio="olds_ch08", name="08-cost", rows=[
         "비용은 학교가 공개한 2026-27년 국제학생 기준입니다.",
         "가을 학기 1만 1,714달러, 겨울 학기 7,268달러, 8개월 실습 기간 1만 6,242달러.",
         "합치면 약 3만 5,225 캐나다 달러예요.",
@@ -101,18 +102,30 @@ SCENES = [
         "생활비와 집값은 별도입니다."],
         keys=["3만 5,225", "실습 기간", "1만 6,242달러", "5,000달러", "유급 실습 급여"],
         foot="* 2026-27 국제학생 수업료+필수비용 (Olds College 2026-27 Program Dates & Fees) · 2027-28은 달라질 수 있음"),
-    dict(id="s09", ch=9, name="09-pgwp", rows=[
+    dict(id="s08b", ch=9, name="09-jobs-wage", audio="olds_ch08b", rows=[
+        "그럼 이만큼 투자하면 얼마나 돌아올까요?",
+        "올즈 컬리지 자료에 따르면 졸업생 취업률은 95%로, 알버타 칼리지 중 2위입니다.",
+        "연봉도 볼게요.",
+        "학교가 소개하는 이 과정 졸업생의 대표 직업과 평균 시급입니다.",
+        "농업 컨설턴트와 전문가는 시간당 42달러, 연봉으로 약 8만 7천 달러.",
+        "정부 기관은 시간당 45달러, 연봉 약 9만 5천 달러.",
+        "농업 금융 분야도 시간당 33달러, 연봉 약 7만 달러입니다.",
+        "비교해 볼까요?",
+        "알버타 주정부 조사에서 2년제 디플로마 졸업생의 연봉 중간값은 5만 5천 달러 정도예요.",
+        "같은 2년을 공부해도 디플로마로 끝내느냐, 학사로 끝내느냐에 따라 연봉 앞자리가 달라지는 거죠."],
+        keys=["95%", "2위", "42달러", "45달러", "33달러", "5만 5천 달러", "연봉 앞자리"],
+        foot="* 학교 자료(Talent.com 2023 인용) · 주 40시간 환산 · 알버타 주정부 졸업생 조사 2021/22 · 직업별 평균이며 신입 연봉과 다를 수 있음"),
+    dict(id="s09", ch=10, name="10-pgwp", audio="olds_ch09", rows=[
         "졸업하면 졸업 후 취업 비자, PGWP를 신청할 수 있습니다.",
         "학사 과정이라 전공 제한은 없어요.",
         "대신 영어 CLB 7이 필요합니다.",
-        "꼭 알아야 할 점.",
-        "과정이 2년이 안 되면 PGWP는 과정 길이만큼만 나와요.",
-        "그래서 이 과정은 3년이 아니라 약 16개월로 보셔야 합니다.",
-        "시간이 넉넉하지 않죠.",
-        "그래서 실습 기간에 잡오퍼까지 확보하는 전략이 중요합니다."],
-        keys=["PGWP", "CLB 7", "과정 길이만큼만", "약 16개월", "잡오퍼"],
-        foot="* IRCC PGWP 안내 기준 · 개인별 조건은 신청 시점 규정 확인"),
-    dict(id="s10", ch=10, name="10-aos", rows=[
+        "그리고 반가운 점.",
+        "이 과정은 실제 기간은 16개월이지만, 3학년과 4학년 네 학기로 짜인 2년 과정이라 PGWP가 3년까지 나옵니다.",
+        "3년이면 영주권을 준비하기에 충분한 시간이죠.",
+        "실습 기간에 잡오퍼까지 잡아 두면, 졸업하자마자 바로 영주권 경력을 쌓을 수 있어요."],
+        keys=["PGWP", "CLB 7", "2년 과정", "3년까지", "잡오퍼", "영주권 경력"],
+        foot="* 학교 자료: Diploma + 2 years, 8 months of paid directed field study · IRCC PGWP 기준, 개인별 조건은 신청 시점 규정 확인"),
+    dict(id="s10", ch=11, audio="olds_ch10", name="11-aos", rows=[
         "그럼 영주권은 어떻게 갈까요?",
         "첫 번째 길은 알버타 주정부 이민, 알버타 오퍼튜니티 스트림, AOS입니다.",
         "알버타 공립 칼리지 학사 출신 PGWP 소지자는, 최근 18개월 안에 알버타에서 지금 직종 풀타임 경력 6개월이면 됩니다.",
@@ -124,17 +137,18 @@ SCENES = [
         "다만 AOS는 EOI, 관심 표명서를 내고 선발되는 방식이에요."],
         keys=["AOS", "경력 6개월", "풀타임 잡오퍼", "될 수 있다", "EOI", "오늘의 핵심"],
         foot="* Alberta.ca AAIP Alberta Opportunity Stream eligibility · 조건 충족 시 인정 가능, 선발은 별도"),
-    dict(id="s11", ch=11, name="11-rrs", rows=[
+    dict(id="s11", ch=12, name="12-rrs", audio="olds_ch11", rows=[
         "두 번째 길은 농촌 지역 이민, 루럴 리뉴얼 스트림입니다.",
         "올즈 타운은 이니스페일 지정 커뮤니티에 포함돼 있어요.",
         "커뮤니티 추천서와 그 지역 고용주의 풀타임 잡오퍼가 필요하고, 추천서 유효기간은 2026년부터 1년입니다.",
-        "지정 커뮤니티 안 학교에서 2년 과정을 마친 PGWP 소지자는 12개월 경력 요건이 면제돼요.",
-        "다만 이 16개월 과정이 2년 과정으로 인정되는지는 확인되지 않아서, 가능성으로만 봐 주세요.",
-        "2026년부터 커뮤니티별 쿼터가 생겼고, 올즈는 2026년 고용주 접수를 이미 마감했습니다.",
+        "여기서 큰 장점이 있어요.",
+        "지정 커뮤니티 안 학교에서 2년 과정을 마친 PGWP 소지자는 12개월 경력 요건이 면제되는데, 이 과정이 바로 2년 과정으로 인정됩니다.",
+        "올즈에서 졸업하고 올즈에서 잡오퍼를 받으면, 경력 1년을 따로 채우지 않아도 신청할 수 있다는 뜻이에요.",
+        "다만 2026년부터 커뮤니티별 쿼터가 생겼고, 올즈는 2026년 고용주 접수를 이미 마감했습니다.",
         "매년 쿼터가 정해진 길이라 타이밍이 중요해요."],
-        keys=["루럴 리뉴얼 스트림", "이니스페일", "추천서", "면제", "가능성으로만", "쿼터", "타이밍"],
+        keys=["루럴 리뉴얼 스트림", "이니스페일", "큰 장점", "면제", "2년 과정으로 인정", "쿼터", "타이밍"],
         foot="* Alberta.ca RRS eligibility · community designation, investolds.ca (2026-10 확인)"),
-    dict(id="s12", ch=12, name="12-closing-face", kind="face", face="close", est=25.0, rows=[
+    dict(id="s12", ch=13, name="13-closing", audio="olds_ch12", rows=[
         "전문대나 대학을 나온 20대 후반, 30대 직장인, 커리어를 바꾸고 싶은 분께 이 과정을 추천합니다.",
         "농업 경험이 없는데 관심서에 뭘 쓸지 고민되시면 댓글로 물어보세요.",
         "내 경력으로 가능한지, 무료 상담으로 같이 확인해 드릴게요.",

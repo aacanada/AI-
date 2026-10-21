@@ -1,6 +1,6 @@
 """Generate timing.json, compositions/*.html and index.html. Run from project root:
     python3 -I tools/build.py
-Re-run after the recording / face videos arrive (tools/audio_prep.py, tools/face_prep.py) - everything re-times itself.
+Re-run after the recording arrives (tools/audio_prep.py) - everything re-times itself.
 """
 import json
 import os
@@ -14,16 +14,17 @@ from common import FONTS, T_RE, scene_html  # noqa: E402
 from scenes_a import S as SA  # noqa: E402
 from scenes_b import S as SB  # noqa: E402
 from scenes_c import S as SC  # noqa: E402
+from scenes_d import S as SD  # noqa: E402
 from script import CHAPTERS, SCENES  # noqa: E402
-from templates import card, face_bg  # noqa: E402
+from templates import card  # noqa: E402
 
-SPECS = {**SA, **SB, **SC}
+SPECS = {**SA, **SB, **SC, **SD}
 SC_BY = {s["id"]: s for s in SCENES}
 CH = {c[0]: c for c in CHAPTERS}
 os.makedirs("compositions", exist_ok=True)
 
 slots, total = timing.build()
-json.dump(dict(total=total, slots=slots), open("timing.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+json.dump(dict(total=total, missing=timing.build.missing, slots=slots), open("timing.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 
 SFX = {"whoosh": (0.574, 0.25, 30), "pop": (0.5, 0.30, 31), "impact": (1.2, 0.24, 32), "stamp": (1.2, 0.30, 33)}
 MAXC = 22
@@ -83,9 +84,6 @@ for s in slots:
         fn = f"{sid}-card{s['ch']}.html"
     else:
         sp = dict(SPECS[sid])
-        if s["kind"] == "face":
-            fbg, fcss = face_bg(sid, s, 70 + slots.index(s))
-            sp["bg"], sp["css"] = fbg + sp.get("bg", ""), fcss + sp["css"]
         js = resolve_T(sp["js"], s)
         aud, fx = [], []
         for name, expr in sp.get("sfx", []):
@@ -112,7 +110,7 @@ for f in os.listdir("compositions"):
 # ------------------------------------------------------------------ captions
 caps = []  # (start, end, html)
 for s in slots:
-    if s["kind"] in ("vo", "face"):
+    if s["kind"] == "vo":
         keys = sorted(SC_BY[s["id"]].get("keys", []), key=len, reverse=True)
         pos = 0
         for r in s["rows"]:
@@ -187,13 +185,11 @@ for s in slots:
 # ------------------------------------------------------------------ BGM (chain + ducking lane)
 import subprocess  # noqa: E402
 
-LV_BASE, LV_VO, LV_CLIP = 0.18, 0.09, 0.063  # face video (room sound) duck = -24 dB
+LV_BASE, LV_VO = 0.18, 0.09
 win = []
 for s in slots:
     if s["kind"] == "vo":
         win.append((s["start"] + s["voiceAt"], s["start"] + s["voiceAt"] + s["voiceDur"], LV_VO))
-    elif s["kind"] == "face":
-        win.append((s["start"], s["start"] + s["content"], LV_CLIP if s["real"] else LV_VO))
 
 
 def level_points(g0, g1):
@@ -243,7 +239,7 @@ for i, c in enumerate(chs):
     chrome.append(f'      <div id="pill-{c}" class="clip chpill" data-start="{a}" data-duration="{round(b - a, 3)}" data-track-index="6">S{c:02d} · {CH[c][1]}</div>')
 for s in slots:
     f = SC_BY.get(s["id"], {}).get("foot")
-    if f and s["kind"] in ("vo", "face"):
+    if f and s["kind"] == "vo":
         a = round(s["start"] + s["voiceAt"], 3)
         chrome.append(f'      <div id="foot-{s["id"]}" class="clip foot" data-start="{a}" data-duration="{round(s["voiceDur"], 3)}" data-track-index="7">{f}</div>')
 
@@ -293,4 +289,4 @@ index = f"""<!doctype html>
 """
 open("index.html", "w", encoding="utf-8").write(index)
 real = sum(1 for s in slots if s["kind"] == "vo" and s["real"])
-print(f"slots {len(slots)} captions {len(caps)} total {total:.1f}s ({int(total // 60)}:{total % 60:04.1f}) real-voice {real}/10 face-video {sum(1 for s in slots if s['kind'] == 'face' and s['real'])}/2")
+print(f"slots {len(slots)} captions {len(caps)} total {total:.1f}s ({int(total // 60)}:{total % 60:04.1f}) real-voice {real}/{len(SCENES)} missing {timing.build.missing}")

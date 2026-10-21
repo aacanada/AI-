@@ -1,32 +1,7 @@
-"""Scenes S01 (opening face overlay), S02 why agribusiness, S03 Olds College, S04 structure + timeline."""
+"""Scenes S02 why agribusiness, S03 Olds College, S04 structure + timeline (S01 is in scenes_d.py)."""
 from common import ab_map, arrow
 
 S = {}
-
-# ---------------------------------------------------------------- S01 opening (face video underneath)
-chips1 = [("농사 경험 X", "red", "농사 경험이"), ("2년 학사", "gold", "2년 만에"), ("8개월 유급 실습", "gold", "8개월은"), ("알버타 영주권", "green", "알버타 영주권")]
-S["s01"] = dict(
-    css="""
-R .bg,R .blob{display:none}
-R .fc{position:absolute;left:1400px;font-size:40px;padding:16px 34px}
-R #s01-name{left:70px;top:700px;padding:14px 30px;border-radius:16px;background:rgba(6,30,22,.86);border-left:8px solid #00b373;font-weight:800;font-size:34px;white-space:nowrap}
-R #s01-dim{position:absolute;inset:0;background:rgba(8,42,31,.72)}
-R #s01-title{left:0;right:0;top:380px;text-align:center;font-size:150px}
-""",
-    body="".join(f'\n          <div class="chip fc {c}" id="s01-c{i}" style="top:{230 + i * 120}px">{t}</div>' for i, (t, c, _) in enumerate(chips1)) + """
-          <div class="abs" id="s01-name">AA Canada 원장</div>
-          <div class="abs" id="s01-dim"></div>
-          <div class="abs" id="s01-pts" style="inset:0"></div>
-          <div class="abs h" id="s01-title">농사 <span class="gold">몰라도</span> 됩니다</div>""",
-    js="".join(f"pop('#s01-c{i}',T('{cue}'));\n" for i, (_, _, cue) in enumerate(chips1)) + """
-inn('#s01-name',0.6,{x:-30,y:0});outt('#s01-name',3.6,{x:-30});
-const TT=D-0.6-1.4;
-outt(qa('.fc'),TT-0.2,{x:40});
-tl.fromTo('#s01-dim',{opacity:0},{opacity:1,duration:0.4},TT);
-mask('#s01-title',TT+0.1,0.7,'l');burst('#s01-pts',TT+0.6,36,960,470,700,5);
-""",
-    sfx=[("pop", "T('농사 경험이')"), ("pop", "T('2년 만에')"), ("pop", "T('8개월은')"), ("pop", "T('알버타 영주권')"), ("impact", "D-1.9")],
-)
 
 # ---------------------------------------------------------------- S02 why agribusiness
 car1 = [("금융 서비스", "금융 서비스"), ("농업 서비스", "농업 서비스 회사"), ("영업·마케팅", "영업과 마케팅"),
@@ -131,7 +106,7 @@ R #s03-cd{left:420px;top:180px;width:1080px;height:470px;padding:56px 70px}
             <div class="ph frame st" id="s03-s2" style="left:1330px;top:460px"><img src="@P/sf-15-crop-research.jpg" alt="" /></div></div>
           <div class="grp" id="s03-g4">
             <div class="card" id="s03-cd">
-              <div class="l" style="font-size:28px;color:#00b373">졸업생 현장 실습 사례</div>
+              <div class="l" style="font-size:28px;color:#00875a">졸업생 현장 실습 사례</div>
               <div class="t" style="font-size:72px;margin-top:20px">Mikayla Flinn · 2017 졸업</div>
               <div class="t" style="font-size:44px;margin-top:28px">DFS: Farm Credit Canada</div>
               <div class="b" style="font-size:34px;margin-top:8px;color:#14563f">(Red Deer, Calgary)</div>

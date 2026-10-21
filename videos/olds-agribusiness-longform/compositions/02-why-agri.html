@@ -68,7 +68,7 @@
 #s02 #s02-to{border-color:#e8b931;background:rgba(232,185,49,.14)}
 
       </style>
-      <div id="s02" data-composition-id="s02" data-width="1920" data-height="1080" data-duration="25.52">
+      <div id="s02" data-composition-id="s02" data-width="1920" data-height="1080" data-duration="36.865">
         <div class="bg"></div>
         <div class="blob a"></div><div class="blob b"></div><div class="blob c"></div>
 
@@ -103,16 +103,16 @@
             <div class="box" id="s02-to" style="left:1190px;top:300px;width:580px;height:300px"></div>
             <div class="abs h" id="s02-tl" style="left:1190px;top:395px;width:580px;text-align:center;font-size:92px;color:#e8b931">농업 산업</div></div>
         </div>
-        <audio id="s02-fx0" src="assets/sfx/stamp.mp3" data-start="4.64" data-duration="1.2" data-track-index="42" data-volume="0.3" data-hf-media-start-basis="local"></audio>
-        <audio id="s02-fx1" src="assets/sfx/whoosh.mp3" data-start="10.88" data-duration="0.574" data-track-index="42" data-volume="0.25" data-hf-media-start-basis="local"></audio>
-        <audio id="s02-fx2" src="assets/sfx/pop.mp3" data-start="12.44" data-duration="0.5" data-track-index="42" data-volume="0.3" data-hf-media-start-basis="local"></audio>
-        <audio id="s02-fx3" src="assets/sfx/pop.mp3" data-start="18.03" data-duration="0.5" data-track-index="42" data-volume="0.3" data-hf-media-start-basis="local"></audio>
-        <audio id="s02-fx4" src="assets/sfx/whoosh.mp3" data-start="22.06" data-duration="0.574" data-track-index="42" data-volume="0.25" data-hf-media-start-basis="local"></audio>
+        <audio id="s02-fx0" src="assets/sfx/stamp.mp3" data-start="6.473" data-duration="1.2" data-track-index="42" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s02-fx1" src="assets/sfx/whoosh.mp3" data-start="15.267" data-duration="0.574" data-track-index="42" data-volume="0.25" data-hf-media-start-basis="local"></audio>
+        <audio id="s02-fx2" src="assets/sfx/pop.mp3" data-start="17.659" data-duration="0.5" data-track-index="42" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s02-fx3" src="assets/sfx/pop.mp3" data-start="26.231" data-duration="0.5" data-track-index="42" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s02-fx4" src="assets/sfx/whoosh.mp3" data-start="32.164" data-duration="0.574" data-track-index="42" data-volume="0.25" data-hf-media-start-basis="local"></audio>
       </div>
       <script>
         (function () {
           const root = document.getElementById("s02");
-          const D = 25.52;
+          const D = 36.865;
 
 const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
 const tl=gsap.timeline({paused:true});
@@ -153,24 +153,24 @@ function burst(host,at,n,cx,cy,spread,seed){const H=E1(host);seed=seed||7;const 
     tl.fromTo(d,{x:0,y:0,opacity:1,scale:0.6+rnd()},{x:Math.cos(a)*r,y:Math.sin(a)*r*0.6+60,opacity:0,duration:1.2+rnd()*0.7,ease:'power3.out',immediateRender:false},at);}}
 
 
-kb('#s02-p1 img',0,10.880,{s:1.0},{s:1.10,x:-2});
-inn('#s02-q',1.260,{y:40});
-stamp('#s02-x',4.640,-10);
-inn('#s02-eq',9.190,{x:-40,y:0});
-outt('#s02-g1',10.880-0.4,{d:0.4});
-tl.fromTo('#s02-p2',{opacity:0,rotationY:-70,transformPerspective:1400},{opacity:1,rotationY:0,duration:0.7,ease:'power3.out'},10.880);
-kb('#s02-p2 img',10.880,19.590-10.880,{s:1.0},{s:1.08});
-inn('#s02-h2',10.880+0.2,{x:30,y:0});
-pop('#s02-c0',12.440);pop('#s02-c1',13.220);pop('#s02-c2',14.260);pop('#s02-c3',16.080);pop('#s02-c4',16.990);pop('#s02-c5',18.030);
-inn('#s02-src',18.030+0.5,{y:10});
-outt('#s02-g2',19.590-0.4,{d:0.4});
-tl.fromTo('#s02-p3',{opacity:0},{opacity:0.35,duration:0.6},19.590);kb('#s02-p3 img',19.590,D-19.590);
-inn('#s02-from',19.590,{s:0.94,y:0});inn('#s02-fl',19.590+0.1,{y:12});
-pop('#s02-m0',19.590);pop('#s02-m1',19.980);pop('#s02-m2',20.500);pop('#s02-m3',20.890);
-draw('#s02-arr',22.060,0.8);
-inn('#s02-to',22.580,{s:0.9,y:0});mask('#s02-tl',22.580+0.1,0.6,'l');
-tl.set('#s02-g2',{opacity:0},0);tl.set('#s02-g2',{opacity:1},10.880-0.05);
-tl.set('#s02-g3',{opacity:0},0);tl.set('#s02-g3',{opacity:1},19.590-0.05);
+kb('#s02-p1 img',0,15.267,{s:1.0},{s:1.10,x:-2});
+inn('#s02-q',1.687,{y:40});
+stamp('#s02-x',6.473,-10);
+inn('#s02-eq',12.798,{x:-40,y:0});
+outt('#s02-g1',15.267-0.4,{d:0.4});
+tl.fromTo('#s02-p2',{opacity:0,rotationY:-70,transformPerspective:1400},{opacity:1,rotationY:0,duration:0.7,ease:'power3.out'},15.267);
+kb('#s02-p2 img',15.267,28.623-15.267,{s:1.0},{s:1.08});
+inn('#s02-h2',15.267+0.2,{x:30,y:0});
+pop('#s02-c0',17.659);pop('#s02-c1',18.855);pop('#s02-c2',20.450);pop('#s02-c3',23.241);pop('#s02-c4',24.636);pop('#s02-c5',26.231);
+inn('#s02-src',26.231+0.5,{y:10});
+outt('#s02-g2',28.623-0.4,{d:0.4});
+tl.fromTo('#s02-p3',{opacity:0},{opacity:0.35,duration:0.6},28.623);kb('#s02-p3 img',28.623,D-28.623);
+inn('#s02-from',28.623,{s:0.94,y:0});inn('#s02-fl',28.623+0.1,{y:12});
+pop('#s02-m0',28.623);pop('#s02-m1',29.182);pop('#s02-m2',29.928);pop('#s02-m3',30.487);
+draw('#s02-arr',32.164,0.8);
+inn('#s02-to',32.910,{s:0.9,y:0});mask('#s02-tl',32.910+0.1,0.6,'l');
+tl.set('#s02-g2',{opacity:0},0);tl.set('#s02-g2',{opacity:1},15.267-0.05);
+tl.set('#s02-g3',{opacity:0},0);tl.set('#s02-g3',{opacity:1},28.623-0.05);
 
           ambient();
           window.__timelines["s02"] = tl;
