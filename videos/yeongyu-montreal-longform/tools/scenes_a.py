@@ -9,7 +9,7 @@ S["s01"] = dict(
 R .q1{top:150px;font-size:92px}
 R .q2{top:270px;font-size:150px}
 R .kids{position:absolute;left:1430px;top:150px;display:flex;gap:24px}
-R .avg{left:760px;top:500px}
+R .avg{left:760px;top:460px}
 R .amt{top:570px;font-size:230px;color:#C8102E}
 R .amt small{font-size:120px}
 R .intro{left:0;right:0;top:0;bottom:0}
