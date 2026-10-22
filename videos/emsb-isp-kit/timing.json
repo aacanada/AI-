@@ -1,0 +1,34 @@
+{
+  "_readme": "장면 길이는 이 파일 한 곳에서만 바꿉니다. duration=장면 전체 길이(초, 장면 사이 gap 포함). 녹음이 올라오면 `node sync-audio.mjs`가 audio/audioDuration/duration을 자동으로 채웁니다. cues(선택)=장면 안 각 문장의 시작 시각(초) — 비워 두면 글자 수 비율로 자동 배분. 수정 후 `node build.mjs`로 HTML을 다시 만듭니다.",
+  "fps": 30,
+  "gap": 0.4,
+  "lead": 0.3,
+  "tail": 0.3,
+  "longform": {
+    "s01": { "duration": 35 },
+    "s02": { "duration": 40 },
+    "s03": { "duration": 50 },
+    "s04": { "duration": 50 },
+    "s05": { "duration": 45 },
+    "s06": { "duration": 55 },
+    "s07": { "duration": 45 },
+    "s08": { "duration": 45 },
+    "s09": { "duration": 55 },
+    "s10": { "duration": 55 },
+    "s11": { "duration": 40 }
+  },
+  "shorts": {
+    "face": { "duration": 50 },
+    "jfk": { "duration": 42 },
+    "lmac": { "duration": 41 },
+    "lbp": { "duration": 40 },
+    "lha": { "duration": 41 },
+    "mma": { "duration": 47 },
+    "rv": { "duration": 41 },
+    "whs": { "duration": 40 },
+    "fee": { "duration": 48 },
+    "short": { "duration": 46 },
+    "apply": { "duration": 49 },
+    "free": { "duration": 47 }
+  }
+}
