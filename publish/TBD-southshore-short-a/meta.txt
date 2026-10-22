@@ -1,0 +1,10 @@
+type: short
+title: 다운타운 18분, REM 타고 학교 동네로
+channels: youtube shorts, instagram reels
+visibility: public
+publish_order: 2
+publish_after: (원장님이 정함)
+linked_to: TBD-southshore-longform
+files: thumbnail.jpg (1080x1920 커버), upload-text.txt — video.mp4는 녹음 반영 후 렌더링해서 추가
+source: aacanada/AI- branch claude/fervent-allen-gq37dp, videos/southshore-shorts/short-a/
+notes: 준비 중(READY 없음).
