@@ -6,4 +6,4 @@ publish_order: 1
 linked_to: (none)
 files: video.mp4 (1920x1080 30fps, 8:01, 41 MB), thumbnail.jpg (1280x720), upload-text.txt
 source: aacanada/AI- branch claude/jolly-tesla-u70qgi, videos/yeongyu-montreal-longform/
-notes: 원장님 직접 녹음 내레이션 + 전 화면 그래픽(얼굴 없음). READY 없음 — 원장님 검토 후 결정. S08의 "만 5세"로 읽힌 문장은 원장님 결정으로 음성에서 삭제했고, 화면에는 "그해 9월 30일 기준 만 4세"로 표기. 제목·썸네일에 불어 없음. 숏폼 2026-10-22-yeongyu-short-a~f 가 이 본편을 관련 동영상으로 연결합니다.
+notes: 원장님 직접 녹음 내레이션 + 전 화면 그래픽(얼굴 없음). 원장님 검토 완료(2026-10-22), READY 표시. S08의 "만 5세"로 읽힌 문장은 원장님 결정으로 음성에서 삭제했고, 화면에는 "그해 9월 30일 기준 만 4세"로 표기. 제목·썸네일에 불어 없음. 숏폼 2026-10-22-yeongyu-short-a~f 가 이 본편을 관련 동영상으로 연결합니다.
