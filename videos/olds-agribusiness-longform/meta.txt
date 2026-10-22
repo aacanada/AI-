@@ -3,7 +3,7 @@ title: 1년 학업 + 8개월 실습으로 캐나다 학사, 취업률 95% 농업
 channels: youtube
 visibility: public
 publish_order: 1
-publish_after: (게시일 미정 - Aside가 알려 준 뒤 기입)
+publish_after: 2026-10-22
 linked_to: (none)
 files: video.mp4 (9:17.9, 1920x1080 30fps, 204 MB → 브랜치에는 renders/video.part0~4.mp4 5개로 분할, 각 90 MB 미만, 합치기: ffmpeg -f concat -safe 0 -i renders/parts.txt -c copy video.mp4), thumbnail.jpg (1280x720, v3), upload-text.txt
 source: aacanada/AI- branch claude/fervent-knuth-fbxid4, videos/olds-agribusiness-longform/
