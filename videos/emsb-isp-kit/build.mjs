@@ -180,9 +180,12 @@ function writeUploadText(projDir, name, chapters) {
 }
 
 // ---------- longform ----------
-async function buildLongform() {
+// segment: render-only project for ONE scene (time-shifted to 0) under emsb-isp-longform/.segments/<id>,
+// used to re-render just the changed scenes and splice them into the existing longform mp4 (splice.mjs).
+async function buildLongform(segment) {
   const { scenes, SOURCE, thumbnail } = await import("./content/longform.mjs");
-  const projDir = join(REPO, "videos/emsb-isp-longform");
+  const baseDir = join(REPO, "videos/emsb-isp-longform");
+  const projDir = segment ? join(baseDir, ".segments", segment) : baseDir;
   const script = parseLongform(join(PLAN, "SCRIPT.txt"));
   stageRuntime(projDir);
   let t0 = 0;
@@ -191,6 +194,9 @@ async function buildLongform() {
     const sc = timing.longform[s.id];
     const D = +sc.duration, sentences = script[s.id];
     const times = sentenceTimes(sentences, sc, D);
+    if (segment && s.id !== segment) { t0 += D; continue; }
+    const sceneStart = t0;
+    if (segment) t0 = 0;
     const ctx = makeCtx({ t0, D, times, projDir });
     const foot = (s.foot ?? [SOURCE]).map((f) => `<div>${K.md(f)}</div>`).join("");
     parts.push(`<section id="${s.id}" class="scene clip" data-start="${r3(t0)}" data-duration="${r3(D)}" data-track-index="1">
@@ -201,6 +207,11 @@ ${audioTag(projDir, s.id, sc, t0)}
 </section>
 ${capHtml(captions(sentences, times, t0, D, 50), s.foot ? "capup" : "")}`);
     chapters.push({ id: s.id, start: r3(t0), title: s.chapter ? s.chapter.join(" ") : "오프닝" });
+    if (segment) {
+      writeProject(projDir, `emsb-longform-${segment}`, page({ projDir, id: "emsb-longform", W: 1920, H: 1080, fmt: "f169", total: D, body: parts.join("\n") }));
+      console.log(`segment ${segment}: ${D}s (longform ${r3(sceneStart)}-${r3(sceneStart + D)}s) -> ${rel(REPO, projDir)}`);
+      return;
+    }
     t0 += D;
   }
   const html = page({ projDir, id: "emsb-longform", W: 1920, H: 1080, fmt: "f169", total: t0, body: parts.join("\n") });
@@ -245,4 +256,5 @@ ${capHtml(captions(sentences, times, 0, D, 30))}`;
 
 const [what = "all", ...rest] = process.argv.slice(2);
 if (what === "all" || what === "longform") await buildLongform();
+if (what === "segment") for (const id of rest) await buildLongform(id);
 if (what === "all" || what === "shorts") await buildShorts(rest);

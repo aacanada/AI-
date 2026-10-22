@@ -76,7 +76,7 @@ const BODY = {
   free: (c) => `
     ${K.card(c, { box: [60, 430, 960, 250], pre: '<div class="cs" style="margin:0 0 6px">부모 <b>동반만</b> 할 때</div>', count: { value: 12020, pre: "CAD", suf: " / 년" }, t: "자녀 = 국제학생 학비", at: "c1", a: "left" })}
     ${K.card(c, { box: [60, 700, 960, 250], cls: "red", pre: '<div class="cs" style="margin:0 0 6px">부모가 퀘벡에서 <b>학생비자</b>로 공부할 때</div>', big: "학비 면제", t: "동반 자녀 공립학교", at: "c2", a: "right" })}
-    ${K.chips(c, [{ t: "퀘벡 교육부 면제 규정 · 조건 있음", cls: "warn", at: "c3" }], { box: [60, 966, 960], justify: "center" })}
+    ${K.chips(c, [{ t: "다만 몇 가지 조건 있음 · 상담 필요", cls: "warn", at: "c3" }], { box: [60, 966, 960], justify: "center" })}
     ${K.feeTable(c, { box: [60, 1050, 960, 250], at: "c4", grid: "0.8fr 1.2fr 1fr", rowH: 90, headH: 64,
       cols: ["자녀", "동반만(1년)", "학생비자"],
       rows: [

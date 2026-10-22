@@ -4,6 +4,7 @@ import * as K from "../lib/components.mjs";
 
 export const SOURCE = "출처: EMSB 2027-28 International Student Program 자료 (2026.10 기준) · 금액은 모두 캐나다 달러(CAD)";
 export const FREE_NOTE = "※ 학비 면제: 퀘벡 교육부 면제 규정, 부모 학교·체류 조건에 따라 다름 · 상담 필요";
+export const GRAD_NOTE = "※ 졸업률: 퀘벡 영어 공립 교육청 중 졸업률 1위 92.1% (2024-25학년도, EMSB 2026.09 발표)";
 
 const SCHOOL = [1920, 1920];
 const SCHOOL_CROP = [0, 300, 1920, 1100];
@@ -23,19 +24,20 @@ export const scenes = [
       <div class="abs" style="inset:0;background:linear-gradient(90deg,rgba(255,248,242,.97) 0%,rgba(255,248,242,.94) 46%,rgba(255,248,242,.45) 72%,rgba(255,248,242,.12) 100%)"></div>
       <div class="redbar"></div>
       ${K.srctag(c)}
-      ${K.text(c, "몬트리올 영어 공립학교 EMSB 기준", { box: [96, 200, 980], size: 40, at: 0.2, out: "c2" })}
+      ${K.text(c, "몬트리올 영어 공립학교 EMSB 기준", { box: [96, 200, 980], size: 40, at: 0.2, out: "c3" })}
       ${K.title(c, "중학생 아이, 캐나다 공립학교 *1년* 학비는?", { box: [96, 270, 1000], size: 100, at: 0.4, out: "c1" })}
-      ${K.bignum(c, { box: [96, 300, 960], value: 15170, pre: "CAD", size: 210, label: "중고등 1년 · *보험 포함* · 2027-28", at: "c1", out: "c2" })}
-      ${K.text(c, "몬트리올 영어 공립학교", { box: [96, 190, 1000], size: 54, at: "c2", cls: "kicker", style: "color:var(--ink);font-weight:900" })}
-      ${K.title(c, "EMSB *완전정리*", { box: [96, 262, 1100], size: 150, at: "c2+0.2" })}
-      ${K.title(c, "*2027-28*", { box: [96, 440, 1000], size: 120, at: "c2+0.4" })}
-      ${K.chips(c, [{ t: "학비", at: "c2@0.25" }, { t: "입학 조건 · 신청", at: "c2@0.45" }, { t: "고등학교 8곳", at: "c2@0.8", cls: "solid" }], { box: [96, 620, 1100] })}
-      ${K.text(c, "몬트리올 전문 유학원 <span class='num'>AA Canada</span>", { box: [96, 740, 1000], size: 44, at: "c3", style: "color:var(--ink);font-weight:900" })}
+      ${K.bignum(c, { box: [96, 300, 960], value: 15170, pre: "CAD", size: 210, label: "중고등 1년 · *보험 포함* · 2027-28", at: "c1", out: "c3" })}
+      ${K.text(c, "몬트리올 영어 공립학교", { box: [96, 190, 1000], size: 54, at: "c3", cls: "kicker", style: "color:var(--ink);font-weight:900" })}
+      ${K.title(c, "EMSB *완전정리*", { box: [96, 262, 1100], size: 150, at: "c3+0.2" })}
+      ${K.title(c, "*2027-28*", { box: [96, 440, 1000], size: 120, at: "c3+0.4" })}
+      ${K.chips(c, [{ t: "학비", at: "c3@0.2" }, { t: "입학 조건 · 신청", at: "c3@0.4" }, { t: "고등학교 8곳", at: "c3@0.75", cls: "solid" }], { box: [96, 620, 1100] })}
+      ${K.text(c, "몬트리올 전문 유학원 <span class='num'>AA Canada</span>", { box: [96, 740, 1000], size: 44, at: "c4", style: "color:var(--ink);font-weight:900" })}
     `,
   },
   {
     id: "s02",
     chapter: ["1장", "EMSB는 어떤 곳"],
+    foot: [GRAD_NOTE, SOURCE],
     render: (c) => `
       ${bg(c)}
       ${K.title(c, "*EMSB*", { box: [64, 128, 400], size: 72, at: 0.3 })}
@@ -46,7 +48,7 @@ export const scenes = [
       ${K.photo(c, { src: "isp_territory_map.jpg", size: [1920, 1080], box: [64, 420, 880, 440], kb: "in", kbFrom: "c3", at: "c3", a: "pop", label: "EMSB 관할 지역", sub: "몬트리올 섬 중심부 ~ 동쪽 · 지하철·버스 통학" })}
       ${K.card(c, { box: [1000, 150, 856, 200], t: "퀘벡 *최대* 영어 공립 교육청", at: "c1", a: "right" })}
       ${K.card(c, { box: [1000, 380, 856, 200], pre: '<div class="cs" style="margin:0 0 6px">학생 수</div>', count: { value: 35000, pre: "약", suf: "명" }, at: "c1@0.55", a: "right" })}
-      ${K.card(c, { box: [1000, 610, 856, 250], cls: "hl", pre: '<div class="cbig" style="font-size:96px">92.1%</div>', t: "퀘벡 영어 공립 교육청 중 졸업률 1위 92.1%", tsize: 34, s: "(2024-25학년도, EMSB 2026.09 발표)", at: "c2", a: "right" })}
+      ${K.card(c, { box: [1000, 610, 856, 250], cls: "hl", pre: '<div class="cbig" style="font-size:96px">92.1%</div>', t: "퀘벡 영어 공립 교육청 중 졸업률 1위 92.1%", tsize: 34, s: "2024-25학년도", at: "c2", a: "right" })}
     `,
   },
   {
@@ -162,7 +164,7 @@ export const scenes = [
         { t: "지원서 접수", s: "약 2주", at: "c4" },
         { t: "입학허가서", s: "약 2주 · 신청비 CAD 250", at: "c4@0.3" },
         { t: "CAQ + 학생비자", s: "6~20주", at: "c4@0.6" },
-        { t: "도착 후 영어교육 자격증(COE)", s: "약 2주 · 1~3년 유효", at: "c5" },
+        { t: "도착 후 Eligibility 발급", s: "약 2주 · 1~3년 유효", at: "c5" },
         { t: "등교!", s: "", at: "c5@0.75" },
       ], { box: [64, 330, 1792, 250] })}
       ${K.photo(c, { src: "isp_coe.jpg", size: [1920, 1080], crop: [0, 0, 1920, 1080], box: [1256, 610, 600, 300], kb: "in", kbFrom: "c5", at: "c5@0.3", a: "pop", out: "c6" })}
@@ -253,7 +255,7 @@ export const scenes = [
       ${K.title(c, "초등 자녀 부모님이라면 *꼭!*", { box: [64, 140, 1792], size: 62, at: "c2", align: "center" })}
       ${K.card(c, { box: [64, 236, 870, 320], pre: '<div class="cs" style="margin:0 0 6px;font-size:30px">부모 <b>동반만</b> 할 때</div>', count: { value: 12020, pre: "CAD", suf: " / 년" }, t: "자녀 = 국제학생 학비", at: "c3", a: "left" })}
       ${K.card(c, { box: [986, 236, 870, 320], cls: "red", pre: '<div class="cs" style="margin:0 0 6px;font-size:30px">부모가 퀘벡에서 <b>학생비자</b>로 공부할 때</div>', big: "학비 면제", t: "동반 자녀 공립학교", at: "c4", a: "right" })}
-      ${K.chips(c, [{ t: "퀘벡 교육부 면제 규정 · 조건 있음", cls: "warn", at: "c5" }], { box: [986, 574, 870], justify: "center" })}
+      ${K.chips(c, [{ t: "다만 몇 가지 조건 있음 · 상담 필요", cls: "warn", at: "c5" }], { box: [986, 574, 870], justify: "center" })}
       ${K.feeTable(c, {
         box: [64, 650, 1792, 204], at: "c6", grid: "1fr 1fr 1fr", rowH: 72, headH: 60,
         cols: ["자녀 수", "부모 동반만 (1년)", "부모 학생비자 (1년)"],
