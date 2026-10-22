@@ -1,0 +1,10 @@
+type: longform
+title: 1년 학업 + 8개월 실습으로 캐나다 학사, 취업률 95% 농업경영 → 알버타 영주권 루트 (Olds College 농업경영 롱폼)
+channels: youtube
+visibility: public
+publish_order: 1
+publish_after: 2026-10-22
+linked_to: (none)
+files: video.mp4 = 3 parts (9:17.9, 1920x1080 30fps, 204 MB, video.mp4.sha256), thumbnail.jpg (1280x720, v3 콤바인), upload-text.txt
+source: aacanada/AI- branch claude/fervent-knuth-fbxid4, videos/olds-agribusiness-longform/
+notes: Olds College 시리즈 EP1(기획: plans/olds-series/SERIES_PLAN.md). 얼굴 출연 없음(목소리 + 사진·모션그래픽). 이후 EP2 알버타 영주권 지도가 이 롱폼을 관련 동영상으로 연결 예정.
