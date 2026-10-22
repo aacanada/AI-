@@ -63,7 +63,8 @@ R .ct{left:120px;top:150px;font-size:58px}
 R .ct small{font-size:32px;color:#7A1B26;font-family:'Noto Sans KR',sans-serif;font-weight:700;margin-left:16px}
 R .cost{position:absolute;top:260px;width:800px;height:420px;padding:40px 50px}
 R .cost .k{font-weight:900;font-size:42px}
-R .cost .v{font-size:132px;margin-top:22px;white-space:nowrap}
+R .cost .v{font-size:116px;margin-top:22px;white-space:nowrap}
+R .cost .v .ya{font-size:56px;margin-right:22px}
 R .cost .v small{font-size:52px}
 R .cost .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
 R .cost .row span{padding:6px 18px;border-radius:99px;background:#FFD6CF;color:#7A1B26;font-weight:700;font-size:26px}
@@ -87,9 +88,9 @@ R .early{left:0;right:0;top:720px;text-align:center}
 <div class="tag"><i></i>7 · 비용과 일정</div>
 <div class="ph p1">
   <div class="abs bhs ct">조기유학 비용 <small>리버사이드 학생·가족용 학비표 · 2027-28</small></div>
-  <div class="card cost co1"><div class="k">1년 과정 (10개월)</div><div class="v num">약 <span class="red">CAD 32,000</span></div>
+  <div class="card cost co1"><div class="k">1년 과정 (10개월)</div><div class="v num"><span class="ya">약</span><span class="red">CAD 32,000</span></div>
     <div class="row"><span>수업료</span><span>홈스테이</span><span>행정비</span><span>CAQ</span></div></div>
-  <div class="card cost co2"><div class="k">한 학기 (5개월)</div><div class="v num">약 <span class="red">CAD 18,800</span></div>
+  <div class="card cost co2"><div class="k">한 학기 (5개월)</div><div class="v num"><span class="ya">약</span><span class="red">CAD 18,800</span></div>
     <div class="row"><span>학교 예시 금액</span></div></div>
   <div class="abs note">* 학교 예시(CAQ 포함) · 캐나다 달러 · 변경될 수 있음</div>
 </div>
@@ -120,11 +121,11 @@ inn('.tp1',T('2027년 2월 2일'),{y:30});inn('.tp2',T('2027년 9월 8일'),{y:3
 )
 
 # ---------------------------------------------------------------- S09 director's take
-_bg, _ = seq(["sli-garden", "stj-entrance", "cen-sign", "her-bus", "sli-sign"], "T('제가 사우스쇼어를')", 2.4, clip_dur)
+_bg, _ = seq(["sli-garden", "cen-atrium", "her-bus", "stj-gym", "sli-library"], "T('제가 사우스쇼어를')", 2.4, clip_dur)
 S["s09"] = dict(
     css="""
 R .bgr{position:absolute;left:0;top:0;width:1920px;height:1080px;border-radius:0}
-R .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,248,242,.55) 0%,rgba(255,248,242,.92) 46%,rgba(255,248,242,.96) 100%)}
+R .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,248,242,.72) 0%,rgba(255,248,242,.94) 40%,rgba(255,248,242,.96) 100%)}
 R .ln1{top:300px;font-size:92px}
 R .ln2{top:450px;font-size:92px}
 R .steps{position:absolute;left:120px;top:250px;width:1680px;display:flex;align-items:center;gap:30px}
