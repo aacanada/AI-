@@ -60,4 +60,4 @@ def main(roots):
 
 
 if __name__ == "__main__":
-    main(sys.argv[1:] or ["index.html", "compositions/*.html", "thumbnail/*.html", "../yeongyu-montreal-shorts/**/*.html"])
+    main(sys.argv[1:] or ["index.html", "compositions/*.html", "thumbnail/*.html", "../southshore-shorts/**/*.html"])

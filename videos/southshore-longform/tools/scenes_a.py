@@ -10,7 +10,7 @@ from mapkit import cam_html, cam_move_js, cam_set_js, clock, icon, label, pin, r
 S = {}
 _MAP = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "canada_map.json")))
 
-V_ISL = geo.view(45.535, -73.60, 64, cy=440)
+V_ISL = geo.view(45.535, -73.60, 64, cy=380)
 V_S = geo.view(45.522, -73.47, 44, cy=460)
 V_REM = geo.view(45.468, -73.50, 21, cx=1000, cy=440)
 
@@ -130,9 +130,9 @@ R .dtic{{position:absolute}}
       label("l-dt2", "다운타운", *geo.DOWNTOWN, V_S, 30, dx=-150, dy=-34),
       overlay=south_overlay())}
   <div class="card life"><div class="ic">{icon("house", 76)}{icon("tree", 76, "#7A1B26")}{icon("house", 76)}</div>
-    <div class="tx">마당 있는 주택 · 공원<br/><span class="red">조용한 교외</span></div></div>
+    <div class="tx">마당 있는 주택 · 공원</div><div class="tx red">조용한 교외</div></div>
 </div>
-""".replace("<br/>", " "),
+""",
     js=f"""
 inn('.cmap',0.3,{{s:0.94}});tl.fromTo(q('.cpin'),{{opacity:0,y:-80}},{{opacity:1,y:0,duration:0.6,ease:'bounce.out'}},T('먼저 위치부터')+0.6);
 inn('.cpinl',T('먼저 위치부터')+1.0,{{x:-20,y:0}});inn('.qcl',T('먼저 위치부터')+0.3,{{x:40,y:0}});inn('.qcs',T('먼저 위치부터')+0.8,{{x:40,y:0}});
@@ -218,7 +218,7 @@ R .p2 .mid .line{left:40px;top:250px;width:440px}
 {cam_set_js(V_REM)}
 inn('.rt',T('바로 REM'),{{x:-40,y:0}});kin('.rt .a',T('바로 REM')+0.1);
 pop('.badge',T('2023년 7월 31일'));pulse('.badge',T('사우스쇼어 노선이에요'));
-draw('.remline',T('브로사드역에서'),Math.max(2.5,T('중앙역까지')-T('브로사드역에서')+0.4));
+(function(){{const p=q('.remline'),L=p.getTotalLength();p.style.strokeDasharray=L+' '+L;tl.fromTo(p,{{strokeDashoffset:L}},{{strokeDashoffset:0,duration:Math.max(2.5,T('중앙역까지')-T('브로사드역에서')+0.4),ease:'none'}},T('브로사드역에서'));}})();
 tl.set(q('.train'),{{opacity:1}},T('브로사드역에서'));
 (function(){{const p=q('.remline'),c=q('.train'),L=p.getTotalLength(),o={{v:0}};
   const put=()=>{{const pt=p.getPointAtLength(o.v*L);c.setAttribute('cx',pt.x);c.setAttribute('cy',pt.y);}};put();

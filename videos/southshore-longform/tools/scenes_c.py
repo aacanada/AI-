@@ -6,9 +6,9 @@ from mapkit import cam_html, cam_set_js, clock, icon, label, pin, reel, seq
 S = {}
 
 # ---------------------------------------------------------------- S07 elementary
-V_EL = geo.view(45.545, -73.445, 50, cx=860, cy=470)
-_EL_OFF = {"goodshepherd": (30, -10), "napper": (30, 34), "stlambertel": (-250, -40), "gpi": (-330, 20),
-           "cpi": (-200, -76), "boucherville": (30, -30)}
+V_EL = geo.view(45.545, -73.445, 56, cx=860, cy=420)
+_EL_OFF = {"goodshepherd": (30, -10), "napper": (30, 10), "stlambertel": (-250, -40), "gpi": (-330, 20),
+           "cpi": (-330, -60), "boucherville": (30, -30)}
 _el = "".join(pin(f"ep-{k}", la, lo, V_EL, 46) + label(f"el-{k}", n, la, lo, V_EL, 26, dot=False, dx=_EL_OFF[k][0], dy=_EL_OFF[k][1], kind="mtag")
               for k, n, la, lo in geo.ELEM)
 KW = [("kw1", "굿셰퍼드", "영어 84%", "T('브로사드의 굿셰퍼드')"),
@@ -77,7 +77,7 @@ R .in1{left:120px}.in2{left:1000px}
 R .tline{position:absolute;left:180px;top:470px;width:1560px;height:8px;border-radius:4px;background:#C8102E}
 R .tp{position:absolute;top:300px;width:620px;text-align:center}
 R .tp .d{font-size:84px;color:#C8102E}
-R .tp .l{font-weight:900;font-size:40px;margin-top:70px}
+R .tp .l{font-weight:900;font-size:40px;margin-top:120px}
 R .tp .s{font-weight:700;font-size:30px;color:#7A1B26;margin-top:8px}
 R .tp i{position:absolute;left:290px;top:154px;width:40px;height:40px;border-radius:50%;background:#fff;border:8px solid #C8102E}
 R .tp1{left:220px}.tp2{left:1080px}
@@ -130,7 +130,7 @@ R .ln2{top:450px;font-size:92px}
 R .steps{position:absolute;left:120px;top:250px;width:1680px;display:flex;align-items:center;gap:30px}
 R .steps .card{position:relative;flex:1;height:360px;padding:40px;display:flex;flex-direction:column;justify-content:center}
 R .steps .k{font-weight:900;font-size:34px;color:#7A1B26}
-R .steps .v{font-family:'Black Han Sans',sans-serif;font-size:66px;margin-top:16px;line-height:1.15}
+R .steps .v{font-family:'Black Han Sans',sans-serif;font-size:56px;margin-top:16px;line-height:1.2}
 R .steps .ar{font-size:70px;color:#C8102E;font-family:'Black Han Sans',sans-serif}
 """,
     body=f"""

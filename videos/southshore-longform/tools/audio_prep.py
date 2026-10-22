@@ -1,6 +1,6 @@
 """Clean the director's recordings and get word timing. Run from project root:
     YV_ASR_DIR=<folder with sherpa-onnx models> python3 -I tools/audio_prep.py
-Input : ../../plans/yeongyu-montreal-longform/audio/yv_sNN.m4a (one file per scene)
+Input : ../../plans/southshore-longform/audio/ss_sNN.m4a (one file per scene)
 Output: assets/voice/sNN.wav            head/tail trimmed to 0.3 s (edge clicks ignored), inner pauses > 1.0 s cut to 0.7 s,
                                         highpass + light denoise, loudnorm -16 LUFS
         assets/voice/sNN.words.json     [{"text","start","end"}] token timing (sherpa-onnx zipformer-korean)
@@ -16,7 +16,7 @@ import sys
 
 import numpy as np
 
-SRC = os.path.join("..", "..", "plans", "yeongyu-montreal-longform", "audio")
+SRC = os.path.join("..", "..", "plans", "southshore-longform", "audio")
 OUT = os.path.join("assets", "voice")
 ASR = os.environ.get("YV_ASR_DIR", "")
 PAD = 0.3
@@ -97,7 +97,7 @@ def raw_to_out(t, spans):
 
 
 def clean(sid):
-    src = os.path.join(SRC, f"yv_{sid}.m4a")
+    src = os.path.join(SRC, f"ss_{sid}.m4a")
     out = os.path.join(OUT, f"{sid}.wav")
     spans = keep_spans(src, sid)
     parts = "".join(f"[0:a]atrim={a}:{b},asetpts=PTS-STARTPTS,afade=t=in:d=0.02,afade=t=out:st={b - a - 0.02:.3f}:d=0.02[p{i}];"

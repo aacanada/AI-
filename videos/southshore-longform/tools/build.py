@@ -63,8 +63,19 @@ def scene_file(slot, off=0.0, duration=None, cid=None):
             aud.append(f'        <audio id="{cid}-fx{n}" src="assets/sfx/{name}.mp3" data-start="{at:.3f}" data-duration="{d}" '
                        f'data-track-index="30" data-volume="{vol}" data-hf-media-start-basis="local"></audio>')
     body = resolve_body(sp["body"], slot)
-    if off:  # shorts window: shift scene-local media starts
-        body = re.sub(r'data-start="([0-9.]+)"', lambda m: f'data-start="{float(m.group(1)) - off:.3f}"', body)
+    body = re.sub(r'<video [^>]*data-duration="0\.0[0-5]\d"[^>]*></video>', "", body)  # windows trimmed away
+    if off:  # shorts window: re-base scene-local video windows; clip the ones that start before the window
+        def rebase(m):
+            tag = m.group(0)
+            st = float(re.search(r'data-start="([0-9.]+)"', tag).group(1)) - off
+            du = float(re.search(r'data-duration="([0-9.]+)"', tag).group(1))
+            if st + du <= 0.05 or st >= dur:
+                return ""
+            ms = max(0.0, -st)
+            tag = re.sub(r'data-start="[0-9.]+"', f'data-start="{max(0.0, st):.3f}"', tag)
+            tag = re.sub(r'data-duration="[0-9.]+"', f'data-duration="{min(du - ms, dur - max(0.0, st)):.3f}"', tag)
+            return tag.replace(" muted", f' data-media-start="{ms:.3f}" muted') if ms else tag
+        body = re.sub(r'<video [^>]*></video>', rebase, body)
     html = paths(scene_html(cid, dur, mapkit.CSS + sp["css"], body, js, "\n".join(aud), off))
     if "T('" in html:
         raise SystemExit(f"{sid}: unresolved cue")

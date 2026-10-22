@@ -9,6 +9,7 @@ Cue expressions in scene bodies use ⟦expr⟧ (resolved by build.py: T('phrase'
 import geo
 
 CSS = """
+R{word-break:keep-all}
 R .cam{position:absolute;left:0;top:0;width:%dpx;height:%dpx}
 R .cam svg{position:absolute;left:0;top:0}
 R .mlab{position:absolute;white-space:nowrap;font-weight:900;color:#7A1B26;transform-origin:0 50%%}

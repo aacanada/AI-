@@ -1,10 +1,10 @@
-"""9:16 shorts A-F cut from the long-form recordings. Run from the long-form project root after build.py:
+"""9:16 shorts A-E cut from the South Shore long-form recordings. Run from the long-form project root after build.py:
     python3 -I tools/shorts.py
-Writes ../yeongyu-montreal-shorts/short-<x>/ (index.html + compositions/, assets -> the long-form assets). Each short is a list of segments
+Writes ../southshore-shorts/short-<x>/ (index.html + compositions/, assets -> the long-form assets). Each short is a list of segments
 (scene, first row, last row); a segment hosts a window of the same 1920x1080 scene composition (scrubbed from the
 window start, so every cue keeps its real speech time) scaled into the middle of a 1080x1920 frame, with the
 matching slice of that scene's narration wav. Render one with:
-    cd ../yeongyu-montreal-shorts/short-a && npx hyperframes render -o ../renders/short-a.mp4
+    cd ../southshore-shorts/short-a && npx hyperframes render -o ../renders/short-a.mp4
 """
 import json
 import os
@@ -16,17 +16,16 @@ from build import bgm_lane, captions, chunk, hl, scene_file  # noqa: E402
 from common import fonts_css  # noqa: E402
 from script import SCENES  # noqa: E402
 
-OUT = os.path.join("..", "yeongyu-montreal-shorts")
+OUT = os.path.join("..", "southshore-shorts")
 SC_BY = {s["id"]: s for s in SCENES}
-CTA = ("s11", 8, 8)  # "우리 집 예상 비용이 궁금하시면, 카카오톡 아이디 canlog로 편하게 연락 주세요."
+CTA = ("s10", 4, 4)  # "아이 학년과 성향을 카카오톡으로 보내 주시면, ... 보내 드리겠습니다."
 
-SHORTS = {
-    "a": dict(title=["영유에 아이 둘,", "1년 <em>3,580만원</em>"], segs=[("s01", 0, 1), ("s02", 5, 6), ("s05", 1, 6)]),
-    "b": dict(title=["엄마가 어학원만 다녀도", "아이 학비 <em>0원</em>"], segs=[("s06", 0, 1), ("s04", 1, 1), ("s06", 2, 5)]),
-    "c": dict(title=["캐나다 2위 대도시인데", "<em>가장 저렴한</em> 이유"], segs=[("s07", 0, 4), ("s06", 2, 2), CTA]),
-    "d": dict(title=["캐나다엔", "<em>유치원 건물</em>이 없습니다"], segs=[("s08", 0, 5), CTA]),
-    "e": dict(title=["배우는 영어 vs", "<em>몸에 밴 영어</em>"], segs=[("s09", 0, 6), CTA]),
-    "f": dict(title=["한국어까지 <em>4개 국어</em>", "하는 제 아들 이야기"], segs=[("s10", 0, 7)]),
+SHORTS = {  # brief: plans/southshore-longform/VIDEO_BRIEF.md 4장
+    "a": dict(title=["다운타운 <em>18분</em>,", "REM 타고 학교 동네로"], segs=[("s03", 1, 5), ("s03", 7, 7)]),
+    "b": dict(title=["코퀴틀람 <em>11,900명</em>", "vs 생랑베르 <em>50명</em>"], segs=[("s04", 1, 7), CTA]),
+    "c": dict(title=["브로사드 vs 생랑베르,", "<em>솔직 비교</em>"], segs=[("s04", 8, 14)]),
+    "d": dict(title=["몬트리올 영어 공립", "<em>고등학교 4곳</em>"], segs=[("s06", 2, 3), ("s06", 5, 5), ("s06", 7, 8), ("s06", 10, 10)]),
+    "e": dict(title=["캐나다 공립 조기유학", "1년, <em>얼마일까?</em>"], segs=[("s08", 0, 4), CTA]),
 }
 PRE, POST, XF = 0.3, 0.35, 0.3
 S = 1080 / 1920  # scene scale
@@ -53,7 +52,7 @@ def short_html(key, sh, segs, total, slots):
     for f in os.listdir(os.path.join(d, "compositions")):
         os.remove(os.path.join(d, "compositions", f))
     if not os.path.lexists(os.path.join(d, "assets")):
-        os.symlink(os.path.join("..", "..", "yeongyu-montreal-longform", "assets"), os.path.join(d, "assets"))
+        os.symlink(os.path.join("..", "..", "southshore-longform", "assets"), os.path.join(d, "assets"))
     open(os.path.join(d, "hyperframes.json"), "w").write(open(os.path.join(OUT, "hyperframes.json")).read())
     hosts, voice, cap_rows, trans, foots = [], [], [], [], []
     for g in segs:
@@ -67,8 +66,9 @@ def short_html(key, sh, segs, total, slots):
         ms = round(max(0.0, g["a"] - sl["voiceAt"]), 3)
         vstart = round(g["start"] + max(0.0, sl["voiceAt"] - g["a"]), 3)
         vdur = round(min(sl["voiceDur"] - ms, g["b"] - max(g["a"], sl["voiceAt"])), 3)
-        voice.append(f'    <audio id="vo-{cid}" src="assets/voice/{g["sid"]}.wav" data-start="{vstart}" data-media-start="{ms}" '
-                     f'data-duration="{vdur}" data-track-index="10" data-volume="1"></audio>')
+        if sl["real"]:
+            voice.append(f'    <audio id="vo-{cid}" src="assets/voice/{g["sid"]}.wav" data-start="{vstart}" data-media-start="{ms}" '
+                         f'data-duration="{vdur}" data-track-index="10" data-volume="1"></audio>')
         if g["n"]:
             trans.append(f'tl.fromTo("#h-{cid}",{{opacity:0}},{{opacity:1,duration:{XF},ease:"power1.inOut"}},{g["start"]});')
         # rows of this window, re-based to short time

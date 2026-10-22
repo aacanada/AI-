@@ -26,6 +26,7 @@ ASIAN = [  # city key (geo.CITIES), share %, label
     ("stbruno", 1.9, "약 2%"),
 ]
 _CITY = {k: (la, lo) for k, _, la, lo in geo.CITIES}
+V_ASIAN = geo.view(45.525, -73.44, 52, cy=400)
 
 
 def _bubbles(v):
@@ -33,10 +34,10 @@ def _bubbles(v):
     for k, pct, txt in ASIAN:
         la, lo = _CITY[k]
         x, y = geo.map_xy(la, lo)
-        r = (34 + 34 * math.sqrt(pct)) / v["scale"]
+        r = (30 + 20 * math.sqrt(pct)) / v["scale"]
         hot = k == "brossard"
         out.append(f'<div class="bub bub-{k}" style="left:{x - r:.0f}px;top:{y - r:.0f}px;width:{2 * r:.0f}px;height:{2 * r:.0f}px;'
-                   f'font-size:{(46 if hot else 30) / v["scale"]:.1f}px;background:{"rgba(200,16,46,.88)" if hot else "rgba(255,214,207,.95)"};'
+                   f'font-size:{(40 if hot else 26) / v["scale"]:.1f}px;background:{"rgba(200,16,46,.88)" if hot else "rgba(255,214,207,.95)"};'
                    f'color:{"#fff" if hot else "#7A1B26"}">{txt}</div>')
     return "".join(out)
 
@@ -84,8 +85,8 @@ R .pk1{left:120px}.pk2{left:1020px}
   <div class="chip solid pct8">시 인구의 약 8%</div>
 </div>
 <div class="ph p3" style="opacity:0">
-  {cam_html("".join(label(f"bc-{k}", n, la, lo, V_S, 30, dx=-10, dy=-80 if k == 'brossard' else -64, dot=False)
-                    for k, n, la, lo in geo.CITIES if k in _CITY and k in dict((a[0], 1) for a in ASIAN)) + _bubbles(V_S))}
+  {cam_html("".join(label(f"bc-{k}", n, la, lo, V_ASIAN, 28, dx=72 if k != 'brossard' else 130, dy=0, dot=False)
+                    for k, n, la, lo in geo.CITIES if k in dict((a[0], 1) for a in ASIAN)) + _bubbles(V_ASIAN))}
   <div class="abs bhs ttl3">아시아계 비율 <span class="red">(2021 인구조사)</span></div>
   <div class="stamp honest">솔직하게</div>
   <div class="chip pink cv1">아시아 마트·식당 가까움 → 생활 편함</div>
@@ -101,7 +102,7 @@ pop('.kids svg',T('두 번째 포인트는'),0.12);inn('.worry',T('가 보니까
 phase('.p2',T('2021년 캐나다'),'.p1');inn('.ttl',T('2021년 캐나다'),{{y:20}});
 {_bar_js}
 pop('.pct8',T('시 인구의 8%'));
-{cam_set_js(V_S)}
+{cam_set_js(V_ASIAN)}
 phase('.p3',T('아시아계 전체로'),'.p2');inn('.ttl3',T('아시아계 전체로'),{{y:20}});
 pop('.bub-stlambert,.bc-stlambert',T('생랑베르, 부셔빌, 생브루노는')-0.1,0.05);pop('.bub-boucherville,.bc-boucherville',T('부셔빌, 생브루노는'),0.05);
 pop('.bub-stbruno,.bc-stbruno',T('생브루노는 인구의'),0.05);pop('.bub-longueuil,.bc-longueuil',T('생브루노는 인구의')+0.6,0.05);
@@ -152,7 +153,7 @@ R .st1{left:0;height:130px;background:#FFD6CF;color:#7A1B26}.st2{left:300px;heig
 <div class="tag"><i></i>4 · 리버사이드 교육청</div>
 <div class="ph p1">
   {cam_html(label("rsb-sjsr", "생장쉬르리슐리외", geo.SJSR[1], geo.SJSR[2], V_RSB, 28) +
-            label("rsb-dt", "다운타운", *geo.DOWNTOWN, V_RSB, 28, dx=-130, dy=-30), overlay=_terr_overlay())}
+            label("rsb-dt", "다운타운", *geo.DOWNTOWN, V_RSB, 28, dx=-130, dy=34), overlay=_terr_overlay())}
   <div class="abs bhs rq">사우스쇼어의 <span class="red">영어 공립학교</span>는?</div>
   <div class="chip solid rsb">리버사이드 교육청 · Riverside School Board</div>
 </div>
@@ -214,11 +215,13 @@ SCHOOLS = [  # key, cue, next cue, clips, card
 
 
 def _school_items(k, cue, nxt, names):
-    n = len(names)
-    seg = f"(({nxt})-({cue})-0.6)"
-    items = []
-    for i, nm in enumerate(names):
-        items.append((nm, f"{cue}+0.3+{i}*{seg}/{n}", f"min({clip_dur(nm) - 0.05:.3f},{seg}/{n})"))
+    end = f"({nxt})-0.3"
+    items, t = [], 0.0
+    for i in range(12):
+        nm = names[i % len(names)]
+        d = clip_dur(nm) - 0.05
+        items.append((nm, f"{cue}+0.3+{t:.3f}", f"max(0,min({d:.3f},{end}-({cue}+0.3+{t:.3f})))"))
+        t += d
     return items
 
 

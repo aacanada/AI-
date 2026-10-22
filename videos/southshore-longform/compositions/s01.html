@@ -121,6 +121,7 @@
 #s01 .bubble.pink{background:#FFD6CF;color:#7A1B26}
 #s01 svg{overflow:visible}
 
+#s01{word-break:keep-all}
 #s01 .cam{position:absolute;left:0;top:0;width:2107px;height:1834px}
 #s01 .cam svg{position:absolute;left:0;top:0}
 #s01 .mlab{position:absolute;white-space:nowrap;font-weight:900;color:#7A1B26;transform-origin:0 50%}
@@ -222,7 +223,7 @@ function drift(){
 
 
 kin('.q1',0.4,0.06);inn('.q2',3.277,{y:24});stamp('.st1',3.277+0.9,-8);
-tl.set(q('.cam'),{x:-93.3,y:-276.8,scale:1.0,transformOrigin:'0 0'},0.0);
+tl.set(q('.cam'),{x:-93.3,y:-336.8,scale:1.0,transformOrigin:'0 0'},0.0);
 phase('.p2',5.961,'.p1');inn('.l-isl',5.961+0.2,{y:16});
 tl.to(q('.cam'),{x:-1014.7,y:-645.6,scale:1.45455,duration:2.4,ease:'power2.inOut'},8.644-0.4);
 outt('.l-isl',8.644-0.6);
