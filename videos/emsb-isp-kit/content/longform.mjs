@@ -28,7 +28,7 @@ export const scenes = [
       ${K.title(c, "중학생 아이, 캐나다 공립학교 *1년* 학비는?", { box: [96, 270, 1000], size: 100, at: 0.4, out: "c1" })}
       ${K.bignum(c, { box: [96, 300, 960], value: 15170, pre: "CAD", size: 210, label: "중고등 1년 · *보험 포함* · 2027-28", at: "c1", out: "c3" })}
       ${K.text(c, "몬트리올 영어 공립학교", { box: [96, 190, 1000], size: 54, at: "c3", cls: "kicker", style: "color:var(--ink);font-weight:900" })}
-      ${K.title(c, "EMSB *완전정리*", { box: [96, 262, 1100], size: 150, at: "c3+0.2" })}
+      ${K.title(c, "EMSB 완전정리", { box: [96, 262, 1100], size: 150, at: "c3+0.2" })}
       ${K.title(c, "*2027-28*", { box: [96, 440, 1000], size: 120, at: "c3+0.4" })}
       ${K.chips(c, [{ t: "학비", at: "c3@0.2" }, { t: "입학 조건 · 신청", at: "c3@0.4" }, { t: "고등학교 8곳", at: "c3@0.75", cls: "solid" }], { box: [96, 620, 1100] })}
       ${K.text(c, "몬트리올 전문 유학원 <span class='num'>AA Canada</span>", { box: [96, 740, 1000], size: 44, at: "c4", style: "color:var(--ink);font-weight:900" })}
@@ -40,13 +40,13 @@ export const scenes = [
     foot: [GRAD_NOTE, SOURCE],
     render: (c) => `
       ${bg(c)}
-      ${K.title(c, "*EMSB*", { box: [64, 128, 400], size: 72, at: 0.3 })}
+      ${K.title(c, "EMSB", { box: [64, 128, 400], size: 72, at: 0.3 })}
       ${K.text(c, "English Montreal School Board", { box: [300, 150, 680], size: 34, at: 0.5, style: "color:var(--ink);font-weight:900" })}
       ${K.text(c, "몬트리올 영어 교육청", { box: [300, 198, 680], size: 30, at: 0.7 })}
       ${K.img(c, { src: "emsb_isp_logo.png", box: [64, 262, 300, 112], at: 1.0 })}
       ${K.photo(c, { src: "isp_montreal_skyline.jpg", size: [1920, 1080], crop: [430, 120, 1080, 540], box: [64, 420, 880, 440], kb: "in", at: 0.8, out: "c3" })}
       ${K.photo(c, { src: "isp_territory_map.jpg", size: [1920, 1080], box: [64, 420, 880, 440], kb: "in", kbFrom: "c3", at: "c3", a: "pop", label: "EMSB 관할 지역", sub: "몬트리올 섬 중심부 ~ 동쪽 · 지하철·버스 통학" })}
-      ${K.card(c, { box: [1000, 150, 856, 200], t: "퀘벡 *최대* 영어 공립 교육청", at: "c1", a: "right" })}
+      ${K.card(c, { box: [1000, 150, 856, 200], t: "퀘벡 최대 영어 공립 교육청", at: "c1", a: "right" })}
       ${K.card(c, { box: [1000, 380, 856, 200], pre: '<div class="cs" style="margin:0 0 6px">학생 수</div>', count: { value: 35000, pre: "약", suf: "명" }, at: "c1@0.55", a: "right" })}
       ${K.card(c, { box: [1000, 610, 856, 250], cls: "hl", pre: '<div class="cbig" style="font-size:96px">92.1%</div>', t: "퀘벡 영어 공립 교육청 중 졸업률 1위 92.1%", tsize: 34, s: "2024-25학년도", at: "c2", a: "right" })}
     `,
@@ -76,7 +76,7 @@ export const scenes = [
       ${K.checklist(c, [{ t: "단독 유학 + 홈스테이 가능", at: "c2@0.4" }, { t: "성적 양호", at: "c3@0.2" }, { t: "학습장애 진단 없음", at: "c3@0.6" }], { box: [100, 520, 800] })}
       <div class="card hl" ${K.anim(c, "rise", "c4")} style="left:986px;top:350px;width:870px;height:500px;justify-content:flex-start">
         <div class="ct">초등학생 <em>(1~6학년)</em></div>
-        <div class="cs" style="color:var(--sub)">아래 *3가지 중 하나*가 필요해요</div>
+        <div class="cs" style="color:var(--sub)">아래 <em>3가지 중 하나</em>가 필요해요</div>
       </div>
       ${K.checklist(c, [
         { icon: "①", t: "형·누나가 EMSB 고교 국제학생", at: "c6@0.05" },
@@ -226,7 +226,7 @@ export const scenes = [
         ${K.photo(c, { src: "school_westmount.jpg", size: SCHOOL, crop: [0, 600, 1920, 1320], box: [1250, 150, 606, 630], kb: "up", at: 0.4 })}
       `)}
       ${K.group(c, { at: "c4", out: "c6" }, `
-        ${K.title(c, "대신 *지원*도 있어요", { box: [64, 150, 1792], size: 70, at: "c4", align: "center" })}
+        ${K.title(c, "대신 지원도 있어요", { box: [64, 150, 1792], size: 70, at: "c4", align: "center" })}
         ${K.card(c, { box: [160, 330, 760, 360], big: "매주", t: "영어·불어 *온라인 방과후 튜터링*", at: "c5", a: "pop" })}
         ${K.card(c, { box: [1000, 330, 760, 360], big: "24시간", t: "*모국어* 상담 서비스", at: "c5@0.55", a: "pop", cls: "hl" })}
       `)}
@@ -252,7 +252,7 @@ export const scenes = [
         ${K.card(c, { box: [160, 320, 760, 380], big: "✕", t: "EMSB가 *직접 운영하지 않음*", at: "c0+0.2", a: "pop" })}
         ${K.card(c, { box: [1000, 320, 760, 380], big: "추천 업체", t: "+ 후견인 필수", s: "캐나다 시민권자 또는 영주권자", at: "c1", a: "pop", cls: "hl" })}
       `)}
-      ${K.title(c, "초등 자녀 부모님이라면 *꼭!*", { box: [64, 140, 1792], size: 62, at: "c2", align: "center" })}
+      ${K.title(c, "초등 자녀 부모님이라면 꼭!", { box: [64, 140, 1792], size: 62, at: "c2", align: "center" })}
       ${K.card(c, { box: [64, 236, 870, 320], pre: '<div class="cs" style="margin:0 0 6px;font-size:30px">부모 <b>동반만</b> 할 때</div>', count: { value: 12020, pre: "CAD", suf: " / 년" }, t: "자녀 = 국제학생 학비", at: "c3", a: "left" })}
       ${K.card(c, { box: [986, 236, 870, 320], cls: "red", pre: '<div class="cs" style="margin:0 0 6px;font-size:30px">부모가 퀘벡에서 <b>학생비자</b>로 공부할 때</div>', big: "학비 면제", t: "동반 자녀 공립학교", at: "c4", a: "right" })}
       ${K.chips(c, [{ t: "다만 몇 가지 조건 있음 · 상담 필요", cls: "warn", at: "c5" }], { box: [986, 574, 870], justify: "center" })}

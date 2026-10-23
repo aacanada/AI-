@@ -5,6 +5,7 @@ import { SOURCE, FREE_NOTE } from "./longform.mjs";
 
 const SQ = [1920, 1920];
 const SCHOOL_SOURCE = "출처: EMSB 2027-28 International Student Program 자료 · 학교 소개 자료 (2026.10 기준)";
+const MONEY_SOURCE = "출처: EMSB 2027-28 International Student Program 자료 (2026.10 기준) · CAD";
 
 export const shorts = [
   { id: "face", series: ["몬트리올 학교 탐방", "1/8"], hook: "다운타운 한복판<br>예술 공립고", name: "FACE School", photo: "school_face.jpg",
@@ -26,7 +27,7 @@ export const shorts = [
   { id: "fee", series: ["EMSB 2027-28 한눈에", "1/4"], hook: "캐나다 공립학교<br>학비 한눈에<br>(2027-28)", name: "2027-28 국제학생 학비", photo: "school_laurenhill.jpg", money: true },
   { id: "short", series: ["EMSB 2027-28 한눈에", "2/4"], hook: "3개월만 다녀보는<br>캐나다 공립학교", name: "3·4·5개월 단기 스쿨링", photo: "isp_excursions.jpg", size: [1920, 1080], hookCrop: [0, 0, 600, 1060], money: true },
   { id: "apply", series: ["EMSB 2027-28 한눈에", "3/4"], hook: "9월 입학,<br>언제까지 뭘 준비?", name: "신청 일정·서류 체크리스트", photo: "school_lauriermac.jpg", money: true },
-  { id: "free", series: ["EMSB 2027-28 한눈에", "4/4"], hook: "초등 학비<br>CAD 12,020 vs 0", name: "같은 학교, 학비가 다르다?", photo: "school_westmount.jpg", money: true, foot: [FREE_NOTE, SOURCE] },
+  { id: "free", series: ["EMSB 2027-28 한눈에", "4/4"], hook: "초등 학비<br>CAD 12,020 vs 0", name: "같은 학교, 학비가 다르다?", photo: "school_westmount.jpg", money: true, foot: [FREE_NOTE, MONEY_SOURCE] },
 ];
 
 const hookLines = (c, sh, at = 0, out) =>
@@ -40,29 +41,29 @@ const hookPhoto = (c, sh, o = {}) => {
 };
 
 const factChips = (c, facts) =>
-  K.chips(c, facts.map(([at, t, cls]) => ({ at, t, cls: cls ?? "" })), { box: [60, 1012, 960], justify: "center" });
+  K.chips(c, facts.map(([at, t, cls]) => ({ at, t, cls: cls ?? "" })), { box: [60, 1036, 960], justify: "center" });
 
 // ---- topic bodies (photo zone 430..1300) ----
 const BODY = {
   fee: (c) => `
-    ${K.feeTable(c, { box: [60, 430, 960, 470], at: "c1", grid: "0.7fr 1.15fr 1.15fr", rowH: 200, headH: 70,
+    ${K.feeTable(c, { box: [60, 560, 960, 420], at: "c1", grid: "0.7fr 1.15fr 1.15fr", rowH: 175, headH: 70,
       cols: ["구분", "1년(10개월)", "반년(5개월)"],
       rows: [
         { label: "초등", at: "c2", cells: [{ value: 12020, at: "c2@0.1" }, { value: 6260, at: "c4@0.15" }] },
         { label: "중고등", at: "c2@0.45", cells: [{ value: 15170, at: "c2@0.55" }, { value: 7835, at: "c4@0.6" }] },
       ] })}
-    ${K.chips(c, [{ t: "보험 포함", cls: "solid", at: "c3" }], { box: [60, 920, 960], justify: "center" })}
-    ${K.chips(c, [{ t: "신청비 CAD 250", at: "c5@0.05" }, { t: "교통 월 CAD 65", at: "c5@0.35" }, { t: "교복 CAD 250~300", at: "c5@0.7" }, { t: "⚠ CAD 1,000 환불 불가", cls: "warn", at: "c6" }], { box: [60, 1010, 960], justify: "center" })}`,
+    ${K.chips(c, [{ t: "보험 포함", cls: "solid", at: "c3" }], { box: [60, 1000, 960], justify: "center" })}
+    ${K.chips(c, [{ t: "신청비 CAD 250", at: "c5@0.05" }, { t: "교통 월 CAD 65", at: "c5@0.35" }, { t: "교복 CAD 250~300", at: "c5@0.7" }, { t: "⚠ CAD 1,000 환불 불가", cls: "warn", at: "c6" }], { box: [60, 1092, 960], justify: "center" })}`,
   short: (c) => `
-    ${K.photo(c, { src: "isp_excursions.jpg", size: [1920, 1080], crop: [0, 0, 1920, 1080], box: [60, 430, 960, 400], kb: "in", at: 2.2, out: "c5" })}
-    ${K.photo(c, { src: "gb_cover.jpg", size: SQ, crop: [60, 510, 1720, 740], box: [60, 430, 960, 400], kb: "in", kbFrom: "c5", at: "c5", a: "fade" })}
+    ${K.photo(c, { src: "isp_excursions.jpg", size: [1920, 1080], crop: [0, 0, 1920, 1080], box: [60, 560, 960, 330], kb: "in", at: 2.2, out: "c5" })}
+    ${K.photo(c, { src: "gb_cover.jpg", size: SQ, crop: [60, 510, 1720, 740], box: [60, 560, 960, 330], kb: "in", kbFrom: "c5", at: "c5", a: "fade" })}
     ${[["3", 4901, "c2@0.3"], ["4", 6368, "c2@0.75"], ["5", 7835, "c3"]].map(([m, v, cat], i) => K.card(c, {
-      box: [60 + i * 330, 850, 300, 230], at: `c1@${(0.2 + i * 0.25).toFixed(2)}`, a: "pop", cls: i === 0 ? "hl" : "", style: "padding:18px 20px;align-items:center;text-align:center",
+      box: [60 + i * 330, 910, 300, 220], at: `c1@${(0.2 + i * 0.25).toFixed(2)}`, a: "pop", cls: i === 0 ? "hl" : "", style: "padding:18px 20px;align-items:center;text-align:center",
       pre: `<div class="ct" style="font-size:52px"><em>${m}</em>개월</div><div class="cs" style="font-size:26px;margin:4px 0">중고등 CAD</div>`,
       count: { value: v }, countAt: cat })).join("")}
-    ${K.chips(c, [{ t: "3·4개월: 9월 시작", at: "c3@0.1" }, { t: "5개월: 9월 또는 2월", at: "c3@0.6" }, { t: "2월 학기 자리 제한", cls: "warn", at: "c4" }], { box: [60, 1100, 960], justify: "center" })}`,
+    ${K.chips(c, [{ t: "3·4개월: 9월 시작", at: "c3@0.1" }, { t: "5개월: 9월 또는 2월", at: "c3@0.6" }, { t: "2월 학기 자리 제한", cls: "warn", at: "c4" }], { box: [60, 1150, 960], justify: "center" })}`,
   apply: (c) => `
-    ${K.seg(c, { box: [60, 430, 960, 92], text: "*12/1 ~ 5/31* 온라인 신청", at: "c1", size: 50, style: "font-family:var(--display)" })}
+    ${K.seg(c, { box: [60, 560, 960, 84], text: "*12/1 ~ 5/31* 온라인 신청", at: "c1", size: 50, style: "font-family:var(--display)" })}
     ${K.checklist(c, [
       { t: "여권", at: "c2@0.08" },
       { t: "상세 기본증명서 + 공증 번역본", at: "c2@0.2" },
@@ -71,13 +72,13 @@ const BODY = {
       { t: "예방접종 기록", at: "c2@0.68" },
       { t: "학생 계약서 (서명)", at: "c2@0.82" },
       { t: "듀오링고 점수 *5/31까지*", at: "c3", hl: true, icon: "!" },
-    ], { box: [60, 546, 960], size: 34 })}
-    ${K.seg(c, { box: [60, 1182, 960, 96], text: "CAQ+학생비자 *6~20주* → 봄까지 신청!", at: "c4", a: "pop", bg: "var(--ink)", size: 40, style: "font-family:var(--display)" })}`,
+    ], { box: [60, 660, 960], size: 30 })}
+    ${K.seg(c, { box: [60, 1200, 960, 90], text: "CAQ+학생비자 *6~20주* → 봄까지 신청!", at: "c4", a: "pop", bg: "var(--ink)", size: 40, style: "font-family:var(--display)" })}`,
   free: (c) => `
-    ${K.card(c, { box: [60, 430, 960, 250], pre: '<div class="cs" style="margin:0 0 6px">부모 <b>동반만</b> 할 때</div>', count: { value: 12020, pre: "CAD", suf: " / 년" }, t: "자녀 = 국제학생 학비", at: "c1", a: "left" })}
-    ${K.card(c, { box: [60, 700, 960, 250], cls: "red", pre: '<div class="cs" style="margin:0 0 6px">부모가 퀘벡에서 <b>학생비자</b>로 공부할 때</div>', big: "학비 면제", t: "동반 자녀 공립학교", at: "c2", a: "right" })}
-    ${K.chips(c, [{ t: "다만 몇 가지 조건 있음 · 상담 필요", cls: "warn", at: "c3" }], { box: [60, 966, 960], justify: "center" })}
-    ${K.feeTable(c, { box: [60, 1050, 960, 250], at: "c4", grid: "0.8fr 1.2fr 1fr", rowH: 90, headH: 64,
+    ${K.card(c, { box: [60, 560, 960, 220], pre: '<div class="cs" style="margin:0 0 6px">부모 <b>동반만</b> 할 때</div>', count: { value: 12020, pre: "CAD", suf: " / 년" }, t: "자녀 = 국제학생 학비", at: "c1", a: "left" })}
+    ${K.card(c, { box: [60, 796, 960, 220], cls: "red", pre: '<div class="cs" style="margin:0 0 6px">부모가 퀘벡에서 <b>학생비자</b>로 공부할 때</div>', big: "학비 면제", t: "동반 자녀 공립학교", at: "c2", a: "right" })}
+    ${K.chips(c, [{ t: "다만 몇 가지 조건 있음 · 상담 필요", cls: "warn", at: "c3" }], { box: [60, 1030, 960], justify: "center" })}
+    ${K.feeTable(c, { box: [60, 1110, 960, 240], at: "c4", grid: "0.8fr 1.2fr 1fr", rowH: 86, headH: 62,
       cols: ["자녀", "동반만(1년)", "학생비자"],
       rows: [
         { label: "1명", at: "c4@0.1", cells: [{ value: 12020, at: "c4@0.15" }, { value: 0, at: "c4@0.3" }] },
@@ -89,20 +90,20 @@ export function render(c, sh) {
   const size = sh.size ?? SQ;
   const body = BODY[sh.id]
     ? BODY[sh.id](c)
-    : K.photo(c, { src: sh.photo, size, crop: sh.crop ?? [0, 300, 1920, 1200], box: [60, 430, 960, 560], kb: "in", at: 2.2 }) + factChips(c, sh.facts);
-  const foot = (sh.foot ?? [sh.money ? SOURCE : SCHOOL_SOURCE]).map((f) => `<div>${K.md(f)}</div>`).join("");
+    : K.photo(c, { src: sh.photo, size, crop: sh.crop ?? [0, 300, 1920, 1200], box: [60, 560, 960, 460], kb: "in", at: 2.2 }) + factChips(c, sh.facts);
+  const foot = (sh.foot ?? [sh.money ? MONEY_SOURCE : SCHOOL_SOURCE]).map((f) => `<div>${K.md(f)}</div>`).join("");
   return `
   <div class="stage"${K.anim(c, "drift", 0, { d: c.D })}>
-    ${K.blob(c, { box: [700, -200, 640, 640] })}${K.blob(c, { box: [-260, 1500, 620, 620], color: "#ffe9e3" })}
-    ${K.text(c, sh.hook.replace(/<br>/g, " "), { box: [60, 262, 960], size: 40, at: 2.3, style: "color:var(--red);font-weight:900" })}
-    ${K.title(c, sh.name, { box: [60, 320, 960], size: sh.name.length > 18 ? 60 : 76, at: 2.4 })}
+    ${K.blob(c, { box: [720, 1380, 640, 640] })}${K.blob(c, { box: [-280, 1560, 620, 620], color: "#ffe9e3" })}
+    ${K.text(c, sh.hook.replace(/<br>/g, " "), { box: [60, 412, 960], size: 34, at: 2.3, style: "color:var(--red);font-weight:900" })}
+    ${K.title(c, sh.name, { box: [60, 456, 960], size: sh.name.length > 18 ? 54 : 64, at: 2.4 })}
     ${body}
   </div>
   ${hookPhoto(c, sh, { out: 2.4 })}
   ${hookLines(c, sh, 0.15, 2.4)}
   ${K.chapter(c, ...sh.series)}
   <div class="foot"${K.anim(c, "fade", 2.4)}>${foot}</div>
-  ${K.cta(c, { box: [90, 500, 900, 640], at: "end-3", l1: sh.id.length > 0 && sh.money ? "자세한 상담은" : "EMSB 학교 상담은", l2: "AA Canada", l3: "카카오톡 canlog", l4: "☎ 02-567-4345" })}`;
+  ${K.cta(c, { box: [90, 600, 900, 680], at: "end-3", l1: sh.id.length > 0 && sh.money ? "자세한 상담은" : "EMSB 학교 상담은", l2: "AA Canada", l3: "카카오톡 canlog", l4: "☎ 02-567-4345" })}`;
 }
 
 /** 1080x1920 cover frame: hook text + photo (static). */

@@ -5,30 +5,316 @@
   "lead": 0.3,
   "tail": 0.3,
   "longform": {
-    "s01": { "duration": 35 },
-    "s02": { "duration": 40 },
-    "s03": { "duration": 50 },
-    "s04": { "duration": 50 },
-    "s05": { "duration": 45 },
-    "s06": { "duration": 55 },
-    "s07": { "duration": 45 },
-    "s08": { "duration": 45 },
-    "s09": { "duration": 55 },
-    "s10": { "duration": 55 },
-    "s11": { "duration": 40 }
+    "s01": {
+      "duration": 29.421,
+      "audio": "videos/emsb-isp-kit/audio-trimmed/emsb_s01.m4a",
+      "audioDuration": 29.021,
+      "cues": [
+        0.3,
+        5.722,
+        12.096,
+        14.07,
+        24.472
+      ]
+    },
+    "s02": {
+      "duration": 27.703,
+      "audio": "videos/emsb-isp-kit/audio-trimmed/emsb_s02.m4a",
+      "audioDuration": 27.303,
+      "cues": [
+        0.3,
+        6.163,
+        12.142,
+        19.63
+      ]
+    },
+    "s03": {
+      "duration": 46.603,
+      "audio": "videos/emsb-isp-kit/audio-trimmed/emsb_s03.m4a",
+      "audioDuration": 46.203,
+      "cues": [
+        0.3,
+        5.617,
+        14.15,
+        18.133,
+        22.788,
+        24.82,
+        26.631,
+        41.329
+      ]
+    },
+    "s04": {
+      "duration": 36.247,
+      "audio": "videos/emsb-isp-kit/audio-trimmed/emsb_s04.m4a",
+      "audioDuration": 35.847,
+      "cues": [
+        0.3,
+        3.957,
+        6.813,
+        14.406,
+        20.803,
+        28.732
+      ]
+    },
+    "s05": {
+      "duration": 35.597,
+      "audio": "videos/emsb-isp-kit/audio-trimmed/emsb_s05.m4a",
+      "audioDuration": 35.197,
+      "cues": [
+        0.3,
+        4.004,
+        7.881,
+        14.801,
+        18.029,
+        26.515
+      ]
+    },
+    "s06": {
+      "duration": 45.071,
+      "audio": "videos/emsb-isp-kit/audio-trimmed/emsb_s06.m4a",
+      "audioDuration": 44.671,
+      "cues": [
+        0.3,
+        4.561,
+        8.404,
+        21.14,
+        26.226,
+        35.618,
+        39.798
+      ]
+    },
+    "s07": {
+      "duration": 30.721,
+      "audio": "videos/emsb-isp-kit/audio-trimmed/emsb_s07.m4a",
+      "audioDuration": 30.321,
+      "cues": [
+        0.3,
+        3.586,
+        5.513,
+        11.736,
+        16.485,
+        23.648
+      ]
+    },
+    "s08": {
+      "duration": 36.48,
+      "audio": "videos/emsb-isp-kit/audio-trimmed/emsb_s08.m4a",
+      "audioDuration": 36.08,
+      "cues": [
+        0.3,
+        2.541,
+        7.939,
+        17.262,
+        22.301,
+        29.684
+      ]
+    },
+    "s09": {
+      "duration": 52.966,
+      "audio": "videos/emsb-isp-kit/audio-trimmed/emsb_s09.m4a",
+      "audioDuration": 52.566,
+      "cues": [
+        0.3,
+        4.979,
+        9.994,
+        13.593,
+        19.7,
+        21.21,
+        28.941,
+        31.879,
+        38.195,
+        41.329,
+        47.668
+      ]
+    },
+    "s10": {
+      "duration": 39.684,
+      "audio": "videos/emsb-isp-kit/audio-trimmed/emsb_s10.m4a",
+      "audioDuration": 39.284,
+      "cues": [
+        0.3,
+        3.864,
+        9.983,
+        15.277,
+        21.616,
+        28.594,
+        30.463,
+        33.18
+      ]
+    },
+    "s11": {
+      "duration": 32.95,
+      "audio": "videos/emsb-isp-kit/audio-trimmed/emsb_s11.m4a",
+      "audioDuration": 32.55,
+      "cues": [
+        0.3,
+        1.357,
+        7.812,
+        11.283,
+        20.002,
+        27.7,
+        31.438
+      ]
+    }
   },
   "shorts": {
-    "face": { "duration": 50 },
-    "jfk": { "duration": 42 },
-    "lmac": { "duration": 41 },
-    "lbp": { "duration": 40 },
-    "lha": { "duration": 41 },
-    "mma": { "duration": 47 },
-    "rv": { "duration": 41 },
-    "whs": { "duration": 40 },
-    "fee": { "duration": 48 },
-    "short": { "duration": 46 },
-    "apply": { "duration": 49 },
-    "free": { "duration": 47 }
+    "face": {
+      "duration": 34.715,
+      "audio": "videos/emsb-isp-kit/audio-trimmed/emsb_sh_face.m4a",
+      "audioDuration": 34.315,
+      "cues": [
+        0.3,
+        6.093,
+        8.334,
+        15.684,
+        17.576,
+        24.937,
+        28.895
+      ]
+    },
+    "jfk": {
+      "duration": 28.771,
+      "audio": "videos/emsb-isp-kit/audio-trimmed/emsb_sh_jfk.m4a",
+      "audioDuration": 28.371,
+      "cues": [
+        0.3,
+        4.294,
+        7.835,
+        15.312,
+        20.617,
+        22.974
+      ]
+    },
+    "lmac": {
+      "duration": 29.282,
+      "audio": "videos/emsb-isp-kit/audio-trimmed/emsb_sh_lmac.m4a",
+      "audioDuration": 28.882,
+      "cues": [
+        0.3,
+        5.292,
+        11.283,
+        20.385,
+        23.462
+      ]
+    },
+    "lbp": {
+      "duration": 24.823,
+      "audio": "videos/emsb-isp-kit/audio-trimmed/emsb_sh_lbp.m4a",
+      "audioDuration": 24.423,
+      "cues": [
+        0.3,
+        2.935,
+        9.483,
+        14.58,
+        19.433
+      ]
+    },
+    "lha": {
+      "duration": 27.981,
+      "audio": "videos/emsb-isp-kit/audio-trimmed/emsb_sh_lha.m4a",
+      "audioDuration": 27.581,
+      "cues": [
+        0.3,
+        2.808,
+        4.689,
+        13.546,
+        20.303,
+        22.614
+      ]
+    },
+    "mma": {
+      "duration": 31,
+      "audio": "videos/emsb-isp-kit/audio-trimmed/emsb_sh_mma.m4a",
+      "audioDuration": 30.6,
+      "cues": [
+        0.3,
+        6.685,
+        9.124,
+        13.918,
+        17.738,
+        23.032,
+        25.238
+      ]
+    },
+    "rv": {
+      "duration": 29.142,
+      "audio": "videos/emsb-isp-kit/audio-trimmed/emsb_sh_rv.m4a",
+      "audioDuration": 28.742,
+      "cues": [
+        0.3,
+        4.12,
+        11.527,
+        19.422,
+        23.427
+      ]
+    },
+    "whs": {
+      "duration": 31.093,
+      "audio": "videos/emsb-isp-kit/audio-trimmed/emsb_sh_whs.m4a",
+      "audioDuration": 30.693,
+      "cues": [
+        0.3,
+        4.805,
+        6.465,
+        15.254,
+        21.361,
+        24.983
+      ]
+    },
+    "fee": {
+      "duration": 38.291,
+      "audio": "videos/emsb-isp-kit/audio-trimmed/emsb_sh_fee.m4a",
+      "audioDuration": 37.891,
+      "cues": [
+        0.3,
+        4.34,
+        8.299,
+        14.883,
+        16.09,
+        21.489,
+        28.687,
+        33.145
+      ]
+    },
+    "short": {
+      "duration": 33.229,
+      "audio": "videos/emsb-isp-kit/audio-trimmed/emsb_sh_short.m4a",
+      "audioDuration": 32.829,
+      "cues": [
+        0.3,
+        4.898,
+        9.809,
+        16.484,
+        21.592,
+        23.705,
+        28.338
+      ]
+    },
+    "apply": {
+      "duration": 37.083,
+      "audio": "videos/emsb-isp-kit/audio-trimmed/emsb_sh_apply.m4a",
+      "audioDuration": 36.683,
+      "cues": [
+        0.3,
+        4.41,
+        10.47,
+        21.349,
+        24.739,
+        32.262
+      ]
+    },
+    "free": {
+      "duration": 35.319,
+      "audio": "videos/emsb-isp-kit/audio-trimmed/emsb_sh_free.m4a",
+      "audioDuration": 34.919,
+      "cues": [
+        0.3,
+        8.102,
+        18.063,
+        24.727,
+        26.77,
+        29.395
+      ]
+    }
   }
 }

@@ -21,7 +21,7 @@ html, body { width: 1080px; height: 1920px; }
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html, body { overflow: hidden; background: var(--cream); }
-body { font-family: var(--body); color: var(--ink); word-break: keep-all; }
+body { font-family: var(--body); color: var(--ink); word-break: keep-all; letter-spacing: -0.015em; }
 #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: var(--cream); }
 .clip { position: absolute; inset: 0; }
 .scene { overflow: hidden; }
@@ -33,9 +33,10 @@ em { font-style: normal; color: var(--red); }
 .checks[style*="font-size"] .check { font-size: inherit; }
 .pin.pl span { left: auto; right: 24px; top: -58px; }
 .disp { font-family: var(--display); font-weight: 400; line-height: 1.15; }
+.title, .chapter, .card .ct, .card .cbig, .bignum .row, .hook, .cta .c2, .seg, .ftable .money { letter-spacing: -0.01em; }
 
 /* background blobs (decor, drift slowly so no layout is ever fully static) */
-.blob { position: absolute; border-radius: 50%; background: var(--hl); opacity: .55; }
+.blob { position: absolute; border-radius: 50%; background: var(--hl); opacity: .32; }
 .redbar { position: absolute; left: 0; top: 0; bottom: 0; width: 14px; background: var(--red); }
 
 /* chapter tag + source tag */
@@ -65,7 +66,7 @@ em { font-style: normal; color: var(--red); }
 .chip.warn { background: #fff; border-style: dashed; }
 
 /* cards */
-.card { position: absolute; background: #fff; border-radius: 26px; box-shadow: 0 14px 34px rgba(122,27,38,.12);
+.card { position: absolute; background: #fff; border-radius: 14px; box-shadow: 0 6px 0 rgba(122,27,38,.14);
   border-top: 10px solid var(--red); padding: 26px 32px; display: flex; flex-direction: column; justify-content: center; }
 .card .ct { font-family: var(--display); color: var(--ink); line-height: 1.2; }
 .card .ct em { font-style: normal; color: var(--red); }
@@ -76,7 +77,7 @@ em { font-style: normal; color: var(--red); }
 .card.red .ct, .card.red .cs, .card.red .cbig { color: #fff; }
 
 /* photos (frame > inner(scaled, Ken Burns) > img + pins) */
-.photo { position: absolute; overflow: hidden; border-radius: 22px; background: #eee; box-shadow: 0 14px 34px rgba(43,43,43,.16); }
+.photo { position: absolute; overflow: hidden; border-radius: 10px; background: #eee; box-shadow: 0 8px 0 rgba(43,43,43,.12); }
 .photo.bleed { border-radius: 0; box-shadow: none; }
 .photo .inner { position: absolute; }
 .photo .inner img { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
@@ -90,7 +91,7 @@ em { font-style: normal; color: var(--red); }
   padding: 2px 12px 4px; border-radius: 8px; white-space: nowrap; }
 
 /* fee table */
-.ftable { position: absolute; background: #fff; border-radius: 26px; overflow: hidden; box-shadow: 0 14px 34px rgba(122,27,38,.12); }
+.ftable { position: absolute; background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 6px 0 rgba(122,27,38,.14); }
 .ftable .tr { display: grid; align-items: center; border-bottom: 2px solid var(--line); }
 .ftable .tr:last-child { border-bottom: 0; }
 .ftable .th { background: var(--red); color: #fff; font-weight: 900; }
@@ -101,7 +102,7 @@ em { font-style: normal; color: var(--red); }
 
 /* steps flow */
 .flow { position: absolute; display: flex; align-items: stretch; }
-.step { position: relative; flex: 1; background: #fff; border-radius: 22px; border: 3px solid var(--line); padding: 20px 18px;
+.step { position: relative; flex: 1; background: #fff; border-radius: 14px; border: 3px solid var(--line); padding: 20px 18px;
   display: flex; flex-direction: column; align-items: center; text-align: center; justify-content: center; }
 .step .sn { width: 52px; height: 52px; border-radius: 50%; background: var(--red); color: #fff; font-family: var(--display);
   display: flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 10px; }
@@ -127,7 +128,7 @@ em { font-style: normal; color: var(--red); }
 .tick { position: absolute; font-weight: 900; text-align: center; white-space: nowrap; }
 
 /* quote */
-.quote { position: absolute; background: #fff; border-radius: 26px; padding: 40px 48px; box-shadow: 0 14px 34px rgba(122,27,38,.12);
+.quote { position: absolute; background: #fff; border-radius: 14px; padding: 40px 48px; box-shadow: 0 6px 0 rgba(122,27,38,.14);
   border-left: 14px solid var(--red); }
 .quote .qm { font-family: var(--display); color: var(--red); line-height: .6; }
 .quote .qt { font-weight: 700; line-height: 1.55; }
@@ -181,7 +182,7 @@ em { font-style: normal; color: var(--red); }
 .f169 .cta .c4 { font-size: 36px; margin-top: 20px; }
 
 /* ---------- 9:16 sizes ---------- */
-.f916 .chapter { left: 60px; top: 150px; font-size: 38px; }
+.f916 .chapter { left: 60px; top: 112px; font-size: 34px; }
 .f916 .chip { font-size: 38px; padding: 10px 28px 12px; }
 .f916 .card .ct { font-size: 44px; }
 .f916 .card .cs { font-size: 32px; }
@@ -192,9 +193,10 @@ em { font-style: normal; color: var(--red); }
 .f916 .step .ss { font-size: 28px; }
 .f916 .check { font-size: 38px; }
 .f916 .tick { font-size: 32px; }
-.f916 .cap-in { left: 50px; right: 50px; top: 1330px; font-size: 56px; padding: 16px 26px 18px; }
-.f916 .foot { left: 60px; right: 60px; top: 1600px; font-size: 26px; }
-.f916 .aalogo { right: 40px; top: 136px; width: 104px; height: 104px; }
+.f916 .cap-in { left: 50px; right: 50px; top: 215px; font-size: 54px; padding: 16px 26px 18px; background: rgba(122,27,38,.94); color: #fff; letter-spacing: -0.01em; }
+.f916 .cap-in .n { color: var(--hl); }
+.f916 .foot { left: 60px; right: 60px; top: 1372px; font-size: 20px; }
+.f916 .aalogo { right: 44px; top: 100px; width: 92px; height: 92px; }
 .f916 .ftable .tr { font-size: 36px; }
 .f916 .ftable .money { font-size: 66px; }
 .f916 .cta .c1 { font-size: 46px; }
@@ -208,58 +210,58 @@ em { font-style: normal; color: var(--red); }
 </style>
 </head>
 <body>
-<div id="root" class="f916" data-composition-id="emsb-sh-free" data-start="0" data-width="1080" data-height="1920" data-fps="30" data-duration="47">
-<section id="sh-free" class="scene clip" data-start="0" data-duration="47" data-track-index="1">
+<div id="root" class="f916" data-composition-id="emsb-sh-free" data-start="0" data-width="1080" data-height="1920" data-fps="30" data-duration="35.319">
+<section id="sh-free" class="scene clip" data-start="0" data-duration="35.319" data-track-index="1">
 
-  <div class="stage" data-a="drift" data-t="0.000" data-d="47.000">
-    <div class="blob" data-a="float" data-t="0.000" data-d="46.900" style="left:700px;top:-200px;width:640px;height:640px;"></div><div class="blob" data-a="float" data-t="0.000" data-d="46.900" style="left:-260px;top:1500px;width:620px;height:620px;background:#ffe9e3;"></div>
-    <div class="kicker" data-a="rise" data-t="2.300" style="left:60px;top:262px;width:960px;font-size:40px;color:var(--red);font-weight:900">초등 학비 CAD 12,020 vs 0</div>
-    <div class="title " data-a="rise" data-t="2.400" style="left:60px;top:320px;width:960px;font-size:76px;text-align:left;">같은 학교, 학비가 다르다?</div>
+  <div class="stage" data-a="drift" data-t="0.000" data-d="35.319">
+    <div class="blob" data-a="float" data-t="0.000" data-d="35.219" style="left:720px;top:1380px;width:640px;height:640px;"></div><div class="blob" data-a="float" data-t="0.000" data-d="35.219" style="left:-280px;top:1560px;width:620px;height:620px;background:#ffe9e3;"></div>
+    <div class="kicker" data-a="rise" data-t="2.300" style="left:60px;top:412px;width:960px;font-size:34px;color:var(--red);font-weight:900">초등 학비 CAD 12,020 vs 0</div>
+    <div class="title " data-a="rise" data-t="2.400" style="left:60px;top:456px;width:960px;font-size:64px;text-align:left;">같은 학교, 학비가 다르다?</div>
     
-    <div class="card " data-a="left" data-t="9.812" style="left:60px;top:430px;width:960px;height:250px;">
-    <div class="cs" style="margin:0 0 6px">부모 <b>동반만</b> 할 때</div><div class="cbig"><span style="font-size:.5em;color:var(--sub)">CAD </span><span data-a="count" data-t="9.812" data-d="1.300" data-to="12020">12,020</span><span style="font-size:.5em"> / 년</span></div><div class="ct">자녀 = 국제학생 학비</div>
+    <div class="card " data-a="left" data-t="8.102" style="left:60px;top:560px;width:960px;height:220px;">
+    <div class="cs" style="margin:0 0 6px">부모 <b>동반만</b> 할 때</div><div class="cbig"><span style="font-size:.5em;color:var(--sub)">CAD </span><span data-a="count" data-t="8.102" data-d="1.300" data-to="12020">12,020</span><span style="font-size:.5em"> / 년</span></div><div class="ct">자녀 = 국제학생 학비</div>
   </div>
-    <div class="card red" data-a="right" data-t="21.195" style="left:60px;top:700px;width:960px;height:250px;">
+    <div class="card red" data-a="right" data-t="18.063" style="left:60px;top:796px;width:960px;height:220px;">
     <div class="cs" style="margin:0 0 6px">부모가 퀘벡에서 <b>학생비자</b>로 공부할 때</div><div class="cbig">학비 면제</div><div class="ct">동반 자녀 공립학교</div>
   </div>
-    <div class="chips" style="left:60px;top:966px;width:960px;justify-content:center;"><div class="chip warn" data-a="pop" data-t="29.615">다만 몇 가지 조건 있음 · 상담 필요</div></div>
-    <div class="ftable" data-a="rise" data-t="33.202" style="left:60px;top:1050px;width:960px;height:250px;">
-    <div class="tr th" style="grid-template-columns:0.8fr 1.2fr 1fr;height:64px"><div class="td" style="text-align:left">자녀</div><div class="td" style="text-align:right">동반만(1년)</div><div class="td" style="text-align:right">학생비자</div></div>
-    <div class="tr" data-a="left" data-t="33.623" style="grid-template-columns:0.8fr 1.2fr 1fr;height:90px">
+    <div class="chips" style="left:60px;top:1030px;width:960px;justify-content:center;"><div class="chip warn" data-a="pop" data-t="24.727">다만 몇 가지 조건 있음 · 상담 필요</div></div>
+    <div class="ftable" data-a="rise" data-t="26.770" style="left:60px;top:1110px;width:960px;height:240px;">
+    <div class="tr th" style="grid-template-columns:0.8fr 1.2fr 1fr;height:62px"><div class="td" style="text-align:left">자녀</div><div class="td" style="text-align:right">동반만(1년)</div><div class="td" style="text-align:right">학생비자</div></div>
+    <div class="tr" data-a="left" data-t="27.032" style="grid-template-columns:0.8fr 1.2fr 1fr;height:86px">
         <div class="td rowlab" style="font-size:1.25em">1명</div>
-        <div class="td money" data-a="pop" data-t="33.833"><small>CAD</small><span data-a="count" data-t="33.833" data-d="1.100" data-to="12020">12,020</span></div><div class="td money" data-a="pop" data-t="34.465"><small>CAD</small><span data-a="count" data-t="34.465" data-d="1.100" data-to="0">0</span></div>
-      </div><div class="tr" data-a="left" data-t="35.307" style="grid-template-columns:0.8fr 1.2fr 1fr;height:90px">
+        <div class="td money" data-a="pop" data-t="27.164"><small>CAD</small><span data-a="count" data-t="27.164" data-d="1.100" data-to="12020">12,020</span></div><div class="td money" data-a="pop" data-t="27.558"><small>CAD</small><span data-a="count" data-t="27.558" data-d="1.100" data-to="0">0</span></div>
+      </div><div class="tr" data-a="left" data-t="28.082" style="grid-template-columns:0.8fr 1.2fr 1fr;height:86px">
         <div class="td rowlab" style="font-size:1.25em">2명</div>
-        <div class="td money" data-a="pop" data-t="35.517"><small>CAD</small><span data-a="count" data-t="35.517" data-d="1.100" data-to="24040">24,040</span></div><div class="td money" data-a="pop" data-t="36.149"><small>CAD</small><span data-a="count" data-t="36.149" data-d="1.100" data-to="0">0</span></div>
+        <div class="td money" data-a="pop" data-t="28.214"><small>CAD</small><span data-a="count" data-t="28.214" data-d="1.100" data-to="24040">24,040</span></div><div class="td money" data-a="pop" data-t="28.607"><small>CAD</small><span data-a="count" data-t="28.607" data-d="1.100" data-to="0">0</span></div>
       </div>
   </div>
   </div>
   <div class="photo bleed" data-a="fade" data-t="0.000" data-out="2.400" style="left:0px;top:0px;width:1080px;height:1920px;">
-    <div class="inner" data-a="kb" data-t="0.000" data-d="47.000" data-kb="in" style="left:-656.88px;top:-473.77px;width:2393.77px;height:2393.77px;transform-origin:1196.88px 1433.77px;">
+    <div class="inner" data-a="kb" data-t="0.000" data-d="35.319" data-kb="in" style="left:-656.88px;top:-473.77px;width:2393.77px;height:2393.77px;transform-origin:1196.88px 1433.77px;">
       <img src="_kit/assets/school_westmount.jpg" alt="" />
     </div>
     
   </div><div class="hookbg" data-a="fade" data-t="0.000" data-out="2.400"></div>
   <div class="hook" data-a="pop" data-t="0.150" data-out="2.400" style="top:560px;font-size:124px">초등 학비</div><div class="hook" data-a="pop" data-t="0.300" data-out="2.400" style="top:700px;font-size:104px">CAD 12,020 vs 0</div>
   <div class="chapter" data-a="drop" data-t="0.100"><b>EMSB 2027-28 한눈에</b>4/4</div>
-  <div class="foot" data-a="fade" data-t="2.400"><div>※ 학비 면제: 퀘벡 교육부 면제 규정, 부모 학교·체류 조건에 따라 다름 · 상담 필요</div><div>출처: EMSB 2027-28 International Student Program 자료 (2026.10 기준) · 금액은 모두 캐나다 달러(CAD)</div></div>
-  <div class="cta" data-layout-allow-overlap data-a="pop" data-t="44.000" style="left:90px;top:500px;width:900px;height:640px;">
+  <div class="foot" data-a="fade" data-t="2.400"><div>※ 학비 면제: 퀘벡 교육부 면제 규정, 부모 학교·체류 조건에 따라 다름 · 상담 필요</div><div>출처: EMSB 2027-28 International Student Program 자료 (2026.10 기준) · CAD</div></div>
+  <div class="cta" data-layout-allow-overlap data-a="pop" data-t="32.319" style="left:90px;top:600px;width:900px;height:680px;">
     <div class="c1">자세한 상담은</div><div class="c2">AA Canada</div><div class="c3">카카오톡 canlog</div><div class="c4">☎ 02-567-4345</div>
   </div>
-
+<audio id="vo-free" src="_kit/audio/free.m4a" data-start="0" data-duration="34.919" data-track-index="8"></audio>
 </section>
-<div class="cap clip " data-start="0.3" data-duration="2.872" data-track-index="5"><div class="cap-in" data-a="cap" data-t="0.3">몬트리올 영어 공립 초등학교,</div></div>
-<div class="cap clip " data-start="3.172" data-duration="4.486" data-track-index="5"><div class="cap-in" data-a="cap" data-t="3.172">같은 학교인데 학비가 <span class="n">1만 2천 달러</span>일 수도,</div></div>
-<div class="cap clip " data-start="7.658" data-duration="2.154" data-track-index="5"><div class="cap-in" data-a="cap" data-t="7.658"><span class="n">0원</span>일 수도 있습니다.</div></div>
-<div class="cap clip " data-start="9.812" data-duration="3.502" data-track-index="5"><div class="cap-in" data-a="cap" data-t="9.812">부모님이 아이와 함께 지내기만 하면,</div></div>
-<div class="cap clip " data-start="13.314" data-duration="4.203" data-track-index="5"><div class="cap-in" data-a="cap" data-t="13.314">아이는 국제학생이라 <span class="n">2027-28학년도</span> 기준</div></div>
-<div class="cap clip " data-start="17.517" data-duration="3.678" data-track-index="5"><div class="cap-in" data-a="cap" data-t="17.517"><span class="n">1년</span>에 <span class="n">1만 2천 이십 달러</span>를 냅니다.</div></div>
-<div class="cap clip " data-start="21.195" data-duration="4.479" data-track-index="5"><div class="cap-in" data-a="cap" data-t="21.195">그런데 부모님이 퀘벡에서 학생비자로 공부하면,</div></div>
-<div class="cap clip " data-start="25.674" data-duration="3.941" data-track-index="5"><div class="cap-in" data-a="cap" data-t="25.674">동반 자녀는 공립학교 학비가 면제됩니다.</div></div>
-<div class="cap clip " data-start="29.615" data-duration="3.587" data-track-index="5"><div class="cap-in" data-a="cap" data-t="29.615">다만 몇 가지 조건이 있습니다.</div></div>
-<div class="cap clip " data-start="33.202" data-duration="4.21" data-track-index="5"><div class="cap-in" data-a="cap" data-t="33.202">아이가 둘이면 차이는 두 배가 됩니다.</div></div>
-<div class="cap clip " data-start="37.412" data-duration="5.155" data-track-index="5"><div class="cap-in" data-a="cap" data-t="37.412">우리 가족은 어느 쪽이 유리한지, AA Canada,</div></div>
-<div class="cap clip " data-start="42.567" data-duration="4.433" data-track-index="5"><div class="cap-in" data-a="cap" data-t="42.567">카카오톡 canlog로 물어봐 주세요.</div></div>
+<div class="cap clip " data-start="0.3" data-duration="2.355" data-track-index="5"><div class="cap-in" data-a="cap" data-t="0.3">몬트리올 영어 공립 초등학교,</div></div>
+<div class="cap clip " data-start="2.655" data-duration="3.681" data-track-index="5"><div class="cap-in" data-a="cap" data-t="2.655">같은 학교인데 학비가 <span class="n">1만 2천 달러</span>일 수도,</div></div>
+<div class="cap clip " data-start="6.336" data-duration="1.766" data-track-index="5"><div class="cap-in" data-a="cap" data-t="6.336"><span class="n">0원</span>일 수도 있습니다.</div></div>
+<div class="cap clip " data-start="8.102" data-duration="3.065" data-track-index="5"><div class="cap-in" data-a="cap" data-t="8.102">부모님이 아이와 함께 지내기만 하면,</div></div>
+<div class="cap clip " data-start="11.167" data-duration="3.678" data-track-index="5"><div class="cap-in" data-a="cap" data-t="11.167">아이는 국제학생이라 <span class="n">2027-28학년도</span> 기준</div></div>
+<div class="cap clip " data-start="14.845" data-duration="3.218" data-track-index="5"><div class="cap-in" data-a="cap" data-t="14.845"><span class="n">1년</span>에 <span class="n">1만 2천 이십 달러</span>를 냅니다.</div></div>
+<div class="cap clip " data-start="18.063" data-duration="3.545" data-track-index="5"><div class="cap-in" data-a="cap" data-t="18.063">그런데 부모님이 퀘벡에서 학생비자로 공부하면,</div></div>
+<div class="cap clip " data-start="21.608" data-duration="3.119" data-track-index="5"><div class="cap-in" data-a="cap" data-t="21.608">동반 자녀는 공립학교 학비가 면제됩니다.</div></div>
+<div class="cap clip " data-start="24.727" data-duration="2.043" data-track-index="5"><div class="cap-in" data-a="cap" data-t="24.727">다만 몇 가지 조건이 있습니다.</div></div>
+<div class="cap clip " data-start="26.77" data-duration="2.625" data-track-index="5"><div class="cap-in" data-a="cap" data-t="26.77">아이가 둘이면 차이는 두 배가 됩니다.</div></div>
+<div class="cap clip " data-start="29.395" data-duration="3.03" data-track-index="5"><div class="cap-in" data-a="cap" data-t="29.395">우리 가족은 어느 쪽이 유리한지, AA Canada,</div></div>
+<div class="cap clip " data-start="32.425" data-duration="2.894" data-track-index="5"><div class="cap-in" data-a="cap" data-t="32.425">카카오톡 canlog로 물어봐 주세요.</div></div>
 <img class="aalogo" src="_kit/assets/aa-canada-logo.png" alt="AA Canada" />
 </div>
 <script>

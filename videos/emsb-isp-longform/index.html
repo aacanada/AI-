@@ -21,7 +21,7 @@ html, body { width: 1920px; height: 1080px; }
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html, body { overflow: hidden; background: var(--cream); }
-body { font-family: var(--body); color: var(--ink); word-break: keep-all; }
+body { font-family: var(--body); color: var(--ink); word-break: keep-all; letter-spacing: -0.015em; }
 #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: var(--cream); }
 .clip { position: absolute; inset: 0; }
 .scene { overflow: hidden; }
@@ -33,9 +33,10 @@ em { font-style: normal; color: var(--red); }
 .checks[style*="font-size"] .check { font-size: inherit; }
 .pin.pl span { left: auto; right: 24px; top: -58px; }
 .disp { font-family: var(--display); font-weight: 400; line-height: 1.15; }
+.title, .chapter, .card .ct, .card .cbig, .bignum .row, .hook, .cta .c2, .seg, .ftable .money { letter-spacing: -0.01em; }
 
 /* background blobs (decor, drift slowly so no layout is ever fully static) */
-.blob { position: absolute; border-radius: 50%; background: var(--hl); opacity: .55; }
+.blob { position: absolute; border-radius: 50%; background: var(--hl); opacity: .32; }
 .redbar { position: absolute; left: 0; top: 0; bottom: 0; width: 14px; background: var(--red); }
 
 /* chapter tag + source tag */
@@ -65,7 +66,7 @@ em { font-style: normal; color: var(--red); }
 .chip.warn { background: #fff; border-style: dashed; }
 
 /* cards */
-.card { position: absolute; background: #fff; border-radius: 26px; box-shadow: 0 14px 34px rgba(122,27,38,.12);
+.card { position: absolute; background: #fff; border-radius: 14px; box-shadow: 0 6px 0 rgba(122,27,38,.14);
   border-top: 10px solid var(--red); padding: 26px 32px; display: flex; flex-direction: column; justify-content: center; }
 .card .ct { font-family: var(--display); color: var(--ink); line-height: 1.2; }
 .card .ct em { font-style: normal; color: var(--red); }
@@ -76,7 +77,7 @@ em { font-style: normal; color: var(--red); }
 .card.red .ct, .card.red .cs, .card.red .cbig { color: #fff; }
 
 /* photos (frame > inner(scaled, Ken Burns) > img + pins) */
-.photo { position: absolute; overflow: hidden; border-radius: 22px; background: #eee; box-shadow: 0 14px 34px rgba(43,43,43,.16); }
+.photo { position: absolute; overflow: hidden; border-radius: 10px; background: #eee; box-shadow: 0 8px 0 rgba(43,43,43,.12); }
 .photo.bleed { border-radius: 0; box-shadow: none; }
 .photo .inner { position: absolute; }
 .photo .inner img { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
@@ -90,7 +91,7 @@ em { font-style: normal; color: var(--red); }
   padding: 2px 12px 4px; border-radius: 8px; white-space: nowrap; }
 
 /* fee table */
-.ftable { position: absolute; background: #fff; border-radius: 26px; overflow: hidden; box-shadow: 0 14px 34px rgba(122,27,38,.12); }
+.ftable { position: absolute; background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 6px 0 rgba(122,27,38,.14); }
 .ftable .tr { display: grid; align-items: center; border-bottom: 2px solid var(--line); }
 .ftable .tr:last-child { border-bottom: 0; }
 .ftable .th { background: var(--red); color: #fff; font-weight: 900; }
@@ -101,7 +102,7 @@ em { font-style: normal; color: var(--red); }
 
 /* steps flow */
 .flow { position: absolute; display: flex; align-items: stretch; }
-.step { position: relative; flex: 1; background: #fff; border-radius: 22px; border: 3px solid var(--line); padding: 20px 18px;
+.step { position: relative; flex: 1; background: #fff; border-radius: 14px; border: 3px solid var(--line); padding: 20px 18px;
   display: flex; flex-direction: column; align-items: center; text-align: center; justify-content: center; }
 .step .sn { width: 52px; height: 52px; border-radius: 50%; background: var(--red); color: #fff; font-family: var(--display);
   display: flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 10px; }
@@ -127,7 +128,7 @@ em { font-style: normal; color: var(--red); }
 .tick { position: absolute; font-weight: 900; text-align: center; white-space: nowrap; }
 
 /* quote */
-.quote { position: absolute; background: #fff; border-radius: 26px; padding: 40px 48px; box-shadow: 0 14px 34px rgba(122,27,38,.12);
+.quote { position: absolute; background: #fff; border-radius: 14px; padding: 40px 48px; box-shadow: 0 6px 0 rgba(122,27,38,.14);
   border-left: 14px solid var(--red); }
 .quote .qm { font-family: var(--display); color: var(--red); line-height: .6; }
 .quote .qt { font-weight: 700; line-height: 1.55; }
@@ -181,7 +182,7 @@ em { font-style: normal; color: var(--red); }
 .f169 .cta .c4 { font-size: 36px; margin-top: 20px; }
 
 /* ---------- 9:16 sizes ---------- */
-.f916 .chapter { left: 60px; top: 150px; font-size: 38px; }
+.f916 .chapter { left: 60px; top: 112px; font-size: 34px; }
 .f916 .chip { font-size: 38px; padding: 10px 28px 12px; }
 .f916 .card .ct { font-size: 44px; }
 .f916 .card .cs { font-size: 32px; }
@@ -192,9 +193,10 @@ em { font-style: normal; color: var(--red); }
 .f916 .step .ss { font-size: 28px; }
 .f916 .check { font-size: 38px; }
 .f916 .tick { font-size: 32px; }
-.f916 .cap-in { left: 50px; right: 50px; top: 1330px; font-size: 56px; padding: 16px 26px 18px; }
-.f916 .foot { left: 60px; right: 60px; top: 1600px; font-size: 26px; }
-.f916 .aalogo { right: 40px; top: 136px; width: 104px; height: 104px; }
+.f916 .cap-in { left: 50px; right: 50px; top: 215px; font-size: 54px; padding: 16px 26px 18px; background: rgba(122,27,38,.94); color: #fff; letter-spacing: -0.01em; }
+.f916 .cap-in .n { color: var(--hl); }
+.f916 .foot { left: 60px; right: 60px; top: 1380px; font-size: 22px; }
+.f916 .aalogo { right: 44px; top: 100px; width: 92px; height: 92px; }
 .f916 .ftable .tr { font-size: 36px; }
 .f916 .ftable .money { font-size: 66px; }
 .f916 .cta .c1 { font-size: 46px; }
@@ -208,11 +210,11 @@ em { font-style: normal; color: var(--red); }
 </style>
 </head>
 <body>
-<div id="root" class="f169" data-composition-id="emsb-longform" data-start="0" data-width="1920" data-height="1080" data-fps="30" data-duration="515">
-<section id="s01" class="scene clip" data-start="0" data-duration="35" data-track-index="1">
-<div class="stage" data-a="drift" data-t="0.000" data-d="35.000">
+<div id="root" class="f169" data-composition-id="emsb-longform" data-start="0" data-width="1920" data-height="1080" data-fps="30" data-duration="413.443">
+<section id="s01" class="scene clip" data-start="0" data-duration="29.421" data-track-index="1">
+<div class="stage" data-a="drift" data-t="0.000" data-d="29.421">
       <div class="photo bleed" data-a="fade" data-t="0.000" style="left:0px;top:0px;width:1920px;height:1080px;">
-    <div class="inner" data-a="kb" data-t="0.000" data-d="35.000" data-kb="left" style="left:-382.7px;top:-744.32px;width:2802.16px;height:2802.16px;transform-origin:1342.7px 1284.32px;">
+    <div class="inner" data-a="kb" data-t="0.000" data-d="29.421" data-kb="left" style="left:-382.7px;top:-744.32px;width:2802.16px;height:2802.16px;transform-origin:1342.7px 1284.32px;">
       <img src="_kit/assets/gb_cover.jpg" alt="" />
     </div>
     
@@ -220,451 +222,451 @@ em { font-style: normal; color: var(--red); }
       <div class="abs" style="inset:0;background:linear-gradient(90deg,rgba(255,248,242,.97) 0%,rgba(255,248,242,.94) 46%,rgba(255,248,242,.45) 72%,rgba(255,248,242,.12) 100%)"></div>
       <div class="redbar"></div>
       <div class="srctag" data-a="fade" data-t="0.300">EMSB 2027-28 공식 자료 기준</div>
-      <div class="kicker" data-a="rise" data-t="0.200" data-out="17.002" style="left:96px;top:200px;width:980px;font-size:40px;">몬트리올 영어 공립학교 EMSB 기준</div>
-      <div class="title " data-a="rise" data-t="0.400" data-out="6.414" style="left:96px;top:270px;width:1000px;font-size:100px;text-align:left;">중학생 아이, 캐나다 공립학교 <em>1년</em> 학비는?</div>
-      <div class="bignum" data-a="pop" data-t="6.414" data-out="17.002" style="left:96px;top:300px;width:960px;">
-    <div class="row" style="font-size:210px"><span class="unit">CAD</span><span data-a="count" data-t="6.414" data-d="1.400" data-to="15170">15,170</span></div>
+      <div class="kicker" data-a="rise" data-t="0.200" data-out="14.070" style="left:96px;top:200px;width:980px;font-size:40px;">몬트리올 영어 공립학교 EMSB 기준</div>
+      <div class="title " data-a="rise" data-t="0.400" data-out="5.722" style="left:96px;top:270px;width:1000px;font-size:100px;text-align:left;">중학생 아이, 캐나다 공립학교 <em>1년</em> 학비는?</div>
+      <div class="bignum" data-a="pop" data-t="5.722" data-out="14.070" style="left:96px;top:300px;width:960px;">
+    <div class="row" style="font-size:210px"><span class="unit">CAD</span><span data-a="count" data-t="5.722" data-d="1.400" data-to="15170">15,170</span></div>
     <div class="lab" style="font-size:40px">중고등 1년 · <em>보험 포함</em> · 2027-28</div>
   </div>
-      <div class="kicker" data-a="rise" data-t="17.002" style="left:96px;top:190px;width:1000px;font-size:54px;color:var(--ink);font-weight:900">몬트리올 영어 공립학교</div>
-      <div class="title " data-a="rise" data-t="17.202" style="left:96px;top:262px;width:1100px;font-size:150px;text-align:left;">EMSB <em>완전정리</em></div>
-      <div class="title " data-a="rise" data-t="17.402" style="left:96px;top:440px;width:1000px;font-size:120px;text-align:left;"><em>2027-28</em></div>
-      <div class="chips" style="left:96px;top:620px;width:1100px;justify-content:flex-start;"><div class="chip " data-a="pop" data-t="19.328">학비</div><div class="chip " data-a="pop" data-t="21.654">입학 조건 · 신청</div><div class="chip solid" data-a="pop" data-t="25.725">고등학교 8곳</div></div>
-      <div class="kicker" data-a="rise" data-t="28.633" style="left:96px;top:740px;width:1000px;font-size:44px;color:var(--ink);font-weight:900">몬트리올 전문 유학원 <span class='num'>AA Canada</span></div>
+      <div class="kicker" data-a="rise" data-t="14.070" style="left:96px;top:190px;width:1000px;font-size:54px;color:var(--ink);font-weight:900">몬트리올 영어 공립학교</div>
+      <div class="title " data-a="rise" data-t="14.270" style="left:96px;top:262px;width:1100px;font-size:150px;text-align:left;">EMSB 완전정리</div>
+      <div class="title " data-a="rise" data-t="14.470" style="left:96px;top:440px;width:1000px;font-size:120px;text-align:left;"><em>2027-28</em></div>
+      <div class="chips" style="left:96px;top:620px;width:1100px;justify-content:flex-start;"><div class="chip " data-a="pop" data-t="16.150">학비</div><div class="chip " data-a="pop" data-t="18.231">입학 조건 · 신청</div><div class="chip solid" data-a="pop" data-t="21.872">고등학교 8곳</div></div>
+      <div class="kicker" data-a="rise" data-t="24.472" style="left:96px;top:740px;width:1000px;font-size:44px;color:var(--ink);font-weight:900">몬트리올 전문 유학원 <span class='num'>AA Canada</span></div>
     </div>
 
 <div class="foot"><div>출처: EMSB 2027-28 International Student Program 자료 (2026.10 기준) · 금액은 모두 캐나다 달러(CAD)</div></div>
-
+<audio id="vo-s01" src="_kit/audio/s01.m4a" data-start="0" data-duration="29.021" data-track-index="8"></audio>
 </section>
-<div class="cap clip " data-start="0.3" data-duration="6.114" data-track-index="5"><div class="cap-in" data-a="cap" data-t="0.3">중학생 아이를 캐나다 공립학교에 <span class="n">1년</span> 보내면 학비가 얼마일까요?</div></div>
-<div class="cap clip " data-start="6.414" data-duration="7.456" data-track-index="5"><div class="cap-in" data-a="cap" data-t="6.414">몬트리올의 영어 공립 교육청 EMSB라면, <span class="n">1년</span>에 <span class="n">1만 5천 백칠십 달러</span>입니다.</div></div>
-<div class="cap clip " data-start="13.87" data-duration="3.132" data-track-index="5"><div class="cap-in" data-a="cap" data-t="13.87">보험까지 포함한 금액이에요.</div></div>
-<div class="cap clip " data-start="17.002" data-duration="5.242" data-track-index="5"><div class="cap-in" data-a="cap" data-t="17.002">오늘은 <span class="n">2027-28학년도</span> 학비, 입학 조건, 신청 일정,</div></div>
-<div class="cap clip " data-start="22.244" data-duration="6.389" data-track-index="5"><div class="cap-in" data-a="cap" data-t="22.244">그리고 국제학생을 받는 고등학교 <span class="n">8곳</span>까지 한 번에 정리해 드리겠습니다.</div></div>
-<div class="cap clip " data-start="28.633" data-duration="6.367" data-track-index="5"><div class="cap-in" data-a="cap" data-t="28.633">안녕하세요, 몬트리올 전문 유학원 AA Canada입니다.</div></div>
-<section id="s02" class="scene clip" data-start="35" data-duration="40" data-track-index="1">
-<div class="stage" data-a="drift" data-t="35.000" data-d="40.000">
-      <div class="blob" data-a="float" data-t="35.000" data-d="39.900" style="left:1460px;top:-260px;width:760px;height:760px;"></div><div class="blob" data-a="float" data-t="35.000" data-d="39.900" style="left:-240px;top:760px;width:520px;height:520px;background:#ffe9e3;"></div>
-      <div class="title " data-a="rise" data-t="35.300" style="left:64px;top:128px;width:400px;font-size:72px;text-align:left;"><em>EMSB</em></div>
-      <div class="kicker" data-a="rise" data-t="35.500" style="left:300px;top:150px;width:680px;font-size:34px;color:var(--ink);font-weight:900">English Montreal School Board</div>
-      <div class="kicker" data-a="rise" data-t="35.700" style="left:300px;top:198px;width:680px;font-size:30px;">몬트리올 영어 교육청</div>
-      <img class="abs" src="_kit/assets/emsb_isp_logo.png" alt="" data-a="fade" data-t="36.000" style="left:64px;top:262px;width:300px;height:112px;object-fit:contain;" />
-      <div class="photo" data-a="fade" data-t="35.800" data-out="63.133" style="left:64px;top:420px;width:880px;height:440px;">
-    <div class="inner" data-a="kb" data-t="35.000" data-d="40.000" data-kb="in" style="left:-350.37px;top:-97.78px;width:1564.44px;height:880px;transform-origin:790.37px 317.78px;">
+<div class="cap clip " data-start="0.3" data-duration="5.422" data-track-index="5"><div class="cap-in" data-a="cap" data-t="0.3">중학생 아이를 캐나다 공립학교에 <span class="n">1년</span> 보내면 학비가 얼마일까요?</div></div>
+<div class="cap clip " data-start="5.722" data-duration="6.374" data-track-index="5"><div class="cap-in" data-a="cap" data-t="5.722">몬트리올의 영어 공립 교육청 EMSB라면, <span class="n">1년</span>에 <span class="n">1만 5천 백칠십 달러</span>입니다.</div></div>
+<div class="cap clip " data-start="12.096" data-duration="1.974" data-track-index="5"><div class="cap-in" data-a="cap" data-t="12.096">보험까지 포함한 금액이에요.</div></div>
+<div class="cap clip " data-start="14.07" data-duration="4.688" data-track-index="5"><div class="cap-in" data-a="cap" data-t="14.07">오늘은 <span class="n">2027-28학년도</span> 학비, 입학 조건, 신청 일정,</div></div>
+<div class="cap clip " data-start="18.758" data-duration="5.714" data-track-index="5"><div class="cap-in" data-a="cap" data-t="18.758">그리고 국제학생을 받는 고등학교 <span class="n">8곳</span>까지 한 번에 정리해 드리겠습니다.</div></div>
+<div class="cap clip " data-start="24.472" data-duration="4.949" data-track-index="5"><div class="cap-in" data-a="cap" data-t="24.472">안녕하세요, 몬트리올 전문 유학원 AA Canada입니다.</div></div>
+<section id="s02" class="scene clip" data-start="29.421" data-duration="27.703" data-track-index="1">
+<div class="stage" data-a="drift" data-t="29.421" data-d="27.703">
+      <div class="blob" data-a="float" data-t="29.421" data-d="27.603" style="left:1460px;top:-260px;width:760px;height:760px;"></div><div class="blob" data-a="float" data-t="29.421" data-d="27.603" style="left:-240px;top:760px;width:520px;height:520px;background:#ffe9e3;"></div>
+      <div class="title " data-a="rise" data-t="29.721" style="left:64px;top:128px;width:400px;font-size:72px;text-align:left;">EMSB</div>
+      <div class="kicker" data-a="rise" data-t="29.921" style="left:300px;top:150px;width:680px;font-size:34px;color:var(--ink);font-weight:900">English Montreal School Board</div>
+      <div class="kicker" data-a="rise" data-t="30.121" style="left:300px;top:198px;width:680px;font-size:30px;">몬트리올 영어 교육청</div>
+      <img class="abs" src="_kit/assets/emsb_isp_logo.png" alt="" data-a="fade" data-t="30.421" style="left:64px;top:262px;width:300px;height:112px;object-fit:contain;" />
+      <div class="photo" data-a="fade" data-t="30.221" data-out="49.051" style="left:64px;top:420px;width:880px;height:440px;">
+    <div class="inner" data-a="kb" data-t="29.421" data-d="27.703" data-kb="in" style="left:-350.37px;top:-97.78px;width:1564.44px;height:880px;transform-origin:790.37px 317.78px;">
       <img src="_kit/assets/isp_montreal_skyline.jpg" alt="" />
     </div>
     
   </div>
-      <div class="photo" data-a="pop" data-t="63.133" style="left:64px;top:420px;width:880px;height:440px;">
-    <div class="inner" data-a="kb" data-t="63.133" data-d="NaN" data-kb="in" style="left:0px;top:-27.5px;width:880px;height:495px;transform-origin:440px 247.5px;">
+      <div class="photo" data-a="pop" data-t="49.051" style="left:64px;top:420px;width:880px;height:440px;">
+    <div class="inner" data-a="kb" data-t="49.051" data-d="NaN" data-kb="in" style="left:0px;top:-27.5px;width:880px;height:495px;transform-origin:440px 247.5px;">
       <img src="_kit/assets/isp_territory_map.jpg" alt="" />
     </div>
     <div class="plabel">EMSB 관할 지역<small>몬트리올 섬 중심부 ~ 동쪽 · 지하철·버스 통학</small></div>
   </div>
-      <div class="card " data-a="right" data-t="45.265" style="left:1000px;top:150px;width:856px;height:200px;">
-    <div class="ct">퀘벡 <em>최대</em> 영어 공립 교육청</div>
+      <div class="card " data-a="right" data-t="35.584" style="left:1000px;top:150px;width:856px;height:200px;">
+    <div class="ct">퀘벡 최대 영어 공립 교육청</div>
   </div>
-      <div class="card " data-a="right" data-t="49.895" style="left:1000px;top:380px;width:856px;height:200px;">
-    <div class="cs" style="margin:0 0 6px">학생 수</div><div class="cbig"><span style="font-size:.5em;color:var(--sub)">약 </span><span data-a="count" data-t="49.895" data-d="1.300" data-to="35000">35,000</span><span style="font-size:.5em">명</span></div>
+      <div class="card " data-a="right" data-t="38.872" style="left:1000px;top:380px;width:856px;height:200px;">
+    <div class="cs" style="margin:0 0 6px">학생 수</div><div class="cbig"><span style="font-size:.5em;color:var(--sub)">약 </span><span data-a="count" data-t="38.872" data-d="1.300" data-to="35000">35,000</span><span style="font-size:.5em">명</span></div>
   </div>
-      <div class="card hl" data-a="right" data-t="53.683" style="left:1000px;top:610px;width:856px;height:250px;">
+      <div class="card hl" data-a="right" data-t="41.563" style="left:1000px;top:610px;width:856px;height:250px;">
     <div class="cbig" style="font-size:96px">92.1%</div><div class="ct" style="font-size:34px">퀘벡 영어 공립 교육청 중 졸업률 1위 92.1%</div><div class="cs">2024-25학년도</div>
   </div>
     </div>
-<div class="chapter" data-a="drop" data-t="35.100"><b>1장</b>EMSB는 어떤 곳</div>
+<div class="chapter" data-a="drop" data-t="29.521"><b>1장</b>EMSB는 어떤 곳</div>
 <div class="foot" style="bottom:14px"><div>※ 졸업률: 퀘벡 영어 공립 교육청 중 졸업률 1위 92.1% (2024-25학년도, EMSB 2026.09 발표)</div><div>출처: EMSB 2027-28 International Student Program 자료 (2026.10 기준) · 금액은 모두 캐나다 달러(CAD)</div></div>
-
+<audio id="vo-s02" src="_kit/audio/s02.m4a" data-start="29.421" data-duration="27.303" data-track-index="8"></audio>
 </section>
-<div class="cap clip capup" data-start="35.3" data-duration="7.034" data-track-index="5"><div class="cap-in" data-a="cap" data-t="35.3">EMSB는 English Montreal School Board,</div></div>
-<div class="cap clip capup" data-start="42.334" data-duration="2.931" data-track-index="5"><div class="cap-in" data-a="cap" data-t="42.334">몬트리올 영어 교육청입니다.</div></div>
-<div class="cap clip capup" data-start="45.265" data-duration="8.418" data-track-index="5"><div class="cap-in" data-a="cap" data-t="45.265">퀘벡주에서 가장 큰 영어 공립 교육청이고, 학생 수가 약 <span class="n">3만 5천 명</span>입니다.</div></div>
-<div class="cap clip capup" data-start="53.683" data-duration="9.45" data-track-index="5"><div class="cap-in" data-a="cap" data-t="53.683"><span class="n">2024-25학년도</span> 졸업률은 <span class="n">92.1퍼센트</span>, 퀘벡의 영어 공립 교육청 가운데 <span class="n">1</span>위입니다.</div></div>
-<div class="cap clip capup" data-start="63.133" data-duration="5.968" data-track-index="5"><div class="cap-in" data-a="cap" data-t="63.133">학교들이 몬트리올 섬의 중심부부터 동쪽까지 퍼져 있어서,</div></div>
-<div class="cap clip capup" data-start="69.101" data-duration="5.899" data-track-index="5"><div class="cap-in" data-a="cap" data-t="69.101">지하철과 버스로 다니기 편하다는 것도 장점입니다.</div></div>
-<section id="s03" class="scene clip" data-start="75" data-duration="50" data-track-index="1">
-<div class="stage" data-a="drift" data-t="75.000" data-d="50.000">
-      <div class="blob" data-a="float" data-t="75.000" data-d="49.900" style="left:1460px;top:-260px;width:760px;height:760px;"></div><div class="blob" data-a="float" data-t="75.000" data-d="49.900" style="left:-240px;top:760px;width:520px;height:520px;background:#ffe9e3;"></div>
-      <div class="seg" data-a="pop" data-t="75.574" style="left:64px;top:150px;width:155.64px;height:78px;background:var(--sub);color:#fff;font-size:40px;">1</div><div class="seg" data-a="pop" data-t="75.902" style="left:227.64px;top:150px;width:155.64px;height:78px;background:var(--sub);color:#fff;font-size:40px;">2</div><div class="seg" data-a="pop" data-t="76.231" style="left:391.27px;top:150px;width:155.64px;height:78px;background:var(--sub);color:#fff;font-size:40px;">3</div><div class="seg" data-a="pop" data-t="76.559" style="left:554.91px;top:150px;width:155.64px;height:78px;background:var(--sub);color:#fff;font-size:40px;">4</div><div class="seg" data-a="pop" data-t="76.887" style="left:718.55px;top:150px;width:155.64px;height:78px;background:var(--sub);color:#fff;font-size:40px;">5</div><div class="seg" data-a="pop" data-t="77.216" style="left:882.18px;top:150px;width:155.64px;height:78px;background:var(--sub);color:#fff;font-size:40px;">6</div><div class="seg" data-a="pop" data-t="77.544" style="left:1045.82px;top:150px;width:155.64px;height:78px;background:var(--red);color:#fff;font-size:40px;">7</div><div class="seg" data-a="pop" data-t="77.873" style="left:1209.45px;top:150px;width:155.64px;height:78px;background:var(--red);color:#fff;font-size:40px;">8</div><div class="seg" data-a="pop" data-t="78.201" style="left:1373.09px;top:150px;width:155.64px;height:78px;background:var(--red);color:#fff;font-size:40px;">9</div><div class="seg" data-a="pop" data-t="78.530" style="left:1536.73px;top:150px;width:155.64px;height:78px;background:var(--red);color:#fff;font-size:40px;">10</div><div class="seg" data-a="pop" data-t="78.858" style="left:1700.36px;top:150px;width:155.64px;height:78px;background:var(--red);color:#fff;font-size:40px;">11</div>
-      <div class="tick" data-a="fade" data-t="78.584" style="left:64px;top:236px;width:973.82px;color:var(--sub);text-align:center;">초등 1~6학년</div>
-      <div class="tick" data-a="fade" data-t="79.406" style="left:1045.82px;top:236px;width:810.18px;color:var(--red);text-align:center;">중고등 7~11학년</div>
-      <div class="tick" data-a="pop" data-t="83.765" style="left:44px;top:276px;width:195.64px;color:var(--ink);text-align:center;">만 <em>6</em>세</div>
-      <div class="tick" data-a="pop" data-t="85.901" style="left:1025.82px;top:276px;width:195.64px;color:var(--ink);text-align:center;">만 <em>12</em>세</div>
-      <div class="tick" data-a="pop" data-t="88.037" style="left:1680.36px;top:276px;width:195.64px;color:var(--ink);text-align:center;">만 <em>16</em>세</div>
-      <div class="tick" data-a="fade" data-t="81.629" style="left:391.27px;top:286px;width:490.91px;color:var(--muted);text-align:center;font-size:26px;">나이: 그해 <em>9월 30일</em> 기준</div>
-      <div class="card"  data-a="rise" data-t="89.319" style="left:64px;top:350px;width:870px;height:500px;justify-content:flex-start">
+<div class="cap clip capup" data-start="29.721" data-duration="4.139" data-track-index="5"><div class="cap-in" data-a="cap" data-t="29.721">EMSB는 English Montreal School Board,</div></div>
+<div class="cap clip capup" data-start="33.86" data-duration="1.724" data-track-index="5"><div class="cap-in" data-a="cap" data-t="33.86">몬트리올 영어 교육청입니다.</div></div>
+<div class="cap clip capup" data-start="35.584" data-duration="5.979" data-track-index="5"><div class="cap-in" data-a="cap" data-t="35.584">퀘벡주에서 가장 큰 영어 공립 교육청이고, 학생 수가 약 <span class="n">3만 5천 명</span>입니다.</div></div>
+<div class="cap clip capup" data-start="41.563" data-duration="7.488" data-track-index="5"><div class="cap-in" data-a="cap" data-t="41.563"><span class="n">2024-25학년도</span> 졸업률은 <span class="n">92.1퍼센트</span>, 퀘벡의 영어 공립 교육청 가운데 <span class="n">1</span>위입니다.</div></div>
+<div class="cap clip capup" data-start="49.051" data-duration="3.941" data-track-index="5"><div class="cap-in" data-a="cap" data-t="49.051">학교들이 몬트리올 섬의 중심부부터 동쪽까지 퍼져 있어서,</div></div>
+<div class="cap clip capup" data-start="52.992" data-duration="4.132" data-track-index="5"><div class="cap-in" data-a="cap" data-t="52.992">지하철과 버스로 다니기 편하다는 것도 장점입니다.</div></div>
+<section id="s03" class="scene clip" data-start="57.124" data-duration="46.603" data-track-index="1">
+<div class="stage" data-a="drift" data-t="57.124" data-d="46.603">
+      <div class="blob" data-a="float" data-t="57.124" data-d="46.503" style="left:1460px;top:-260px;width:760px;height:760px;"></div><div class="blob" data-a="float" data-t="57.124" data-d="46.503" style="left:-240px;top:760px;width:520px;height:520px;background:#ffe9e3;"></div>
+      <div class="seg" data-a="pop" data-t="57.690" style="left:64px;top:150px;width:155.64px;height:78px;background:var(--sub);color:#fff;font-size:40px;">1</div><div class="seg" data-a="pop" data-t="58.009" style="left:227.64px;top:150px;width:155.64px;height:78px;background:var(--sub);color:#fff;font-size:40px;">2</div><div class="seg" data-a="pop" data-t="58.328" style="left:391.27px;top:150px;width:155.64px;height:78px;background:var(--sub);color:#fff;font-size:40px;">3</div><div class="seg" data-a="pop" data-t="58.647" style="left:554.91px;top:150px;width:155.64px;height:78px;background:var(--sub);color:#fff;font-size:40px;">4</div><div class="seg" data-a="pop" data-t="58.966" style="left:718.55px;top:150px;width:155.64px;height:78px;background:var(--sub);color:#fff;font-size:40px;">5</div><div class="seg" data-a="pop" data-t="59.285" style="left:882.18px;top:150px;width:155.64px;height:78px;background:var(--sub);color:#fff;font-size:40px;">6</div><div class="seg" data-a="pop" data-t="59.604" style="left:1045.82px;top:150px;width:155.64px;height:78px;background:var(--red);color:#fff;font-size:40px;">7</div><div class="seg" data-a="pop" data-t="59.923" style="left:1209.45px;top:150px;width:155.64px;height:78px;background:var(--red);color:#fff;font-size:40px;">8</div><div class="seg" data-a="pop" data-t="60.242" style="left:1373.09px;top:150px;width:155.64px;height:78px;background:var(--red);color:#fff;font-size:40px;">9</div><div class="seg" data-a="pop" data-t="60.561" style="left:1536.73px;top:150px;width:155.64px;height:78px;background:var(--red);color:#fff;font-size:40px;">10</div><div class="seg" data-a="pop" data-t="60.880" style="left:1700.36px;top:150px;width:155.64px;height:78px;background:var(--red);color:#fff;font-size:40px;">11</div>
+      <div class="tick" data-a="fade" data-t="60.614" style="left:64px;top:236px;width:973.82px;color:var(--sub);text-align:center;">초등 1~6학년</div>
+      <div class="tick" data-a="fade" data-t="61.412" style="left:1045.82px;top:236px;width:810.18px;color:var(--red);text-align:center;">중고등 7~11학년</div>
+      <div class="tick" data-a="pop" data-t="65.728" style="left:44px;top:276px;width:195.64px;color:var(--ink);text-align:center;">만 <em>6</em>세</div>
+      <div class="tick" data-a="pop" data-t="67.861" style="left:1025.82px;top:276px;width:195.64px;color:var(--ink);text-align:center;">만 <em>12</em>세</div>
+      <div class="tick" data-a="pop" data-t="69.994" style="left:1680.36px;top:276px;width:195.64px;color:var(--ink);text-align:center;">만 <em>16</em>세</div>
+      <div class="tick" data-a="fade" data-t="63.594" style="left:391.27px;top:286px;width:490.91px;color:var(--muted);text-align:center;font-size:26px;">나이: 그해 <em>9월 30일</em> 기준</div>
+      <div class="card"  data-a="rise" data-t="71.274" style="left:64px;top:350px;width:870px;height:500px;justify-content:flex-start">
         <div class="ct">중고등학생 <em>(7~11학년)</em></div>
         <div class="cs" style="color:var(--red)">혼자 와서 홈스테이로 다닐 수 있어요</div>
       </div>
-      <div class="checks" style="left:100px;top:520px;width:800px;grid-template-columns:repeat(1,1fr);"><div class="check" data-a="left" data-t="91.188"><i>✓</i><span>단독 유학 + 홈스테이 가능</span></div><div class="check" data-a="left" data-t="95.034"><i>✓</i><span>성적 양호</span></div><div class="check" data-a="left" data-t="97.116"><i>✓</i><span>학습장애 진단 없음</span></div></div>
-      <div class="card hl"  data-a="rise" data-t="99.199" style="left:986px;top:350px;width:870px;height:500px;justify-content:flex-start">
+      <div class="checks" style="left:100px;top:520px;width:800px;grid-template-columns:repeat(1,1fr);"><div class="check" data-a="left" data-t="72.867"><i>✓</i><span>단독 유학 + 홈스테이 가능</span></div><div class="check" data-a="left" data-t="76.188"><i>✓</i><span>성적 양호</span></div><div class="check" data-a="left" data-t="78.050"><i>✓</i><span>학습장애 진단 없음</span></div></div>
+      <div class="card hl"  data-a="rise" data-t="79.912" style="left:986px;top:350px;width:870px;height:500px;justify-content:flex-start">
         <div class="ct">초등학생 <em>(1~6학년)</em></div>
-        <div class="cs" style="color:var(--sub)">아래 *3가지 중 하나*가 필요해요</div>
+        <div class="cs" style="color:var(--sub)">아래 <em>3가지 중 하나</em>가 필요해요</div>
       </div>
-      <div class="checks" style="left:1022px;top:520px;width:800px;grid-template-columns:repeat(1,1fr);"><div class="check" data-a="left" data-t="105.748"><i>①</i><span>형·누나가 EMSB 고교 국제학생</span></div><div class="check" data-a="left" data-t="109.794"><i>②</i><span>부모가 EMSB 직업·성인교육 등록</span></div><div class="check" data-a="left" data-t="114.513"><i>③</i><span>부모 동반 거주 (아이 돌봄)</span></div></div>
-      <div class="seg" data-a="pop" data-t="118.559" style="left:986px;top:800px;width:870px;height:70px;background:var(--ink);color:#fff;font-size:34px;">초등 = 가족과 <em>함께</em> 오는 구조</div>
+      <div class="checks" style="left:1022px;top:520px;width:800px;grid-template-columns:repeat(1,1fr);"><div class="check" data-a="left" data-t="84.490"><i>①</i><span>형·누나가 EMSB 고교 국제학생</span></div><div class="check" data-a="left" data-t="88.899"><i>②</i><span>부모가 EMSB 직업·성인교육 등록</span></div><div class="check" data-a="left" data-t="94.044"><i>③</i><span>부모 동반 거주 (아이 돌봄)</span></div></div>
+      <div class="seg" data-a="pop" data-t="98.453" style="left:986px;top:800px;width:870px;height:70px;background:var(--ink);color:#fff;font-size:34px;">초등 = 가족과 <em>함께</em> 오는 구조</div>
     </div>
-<div class="chapter" data-a="drop" data-t="75.100"><b>2장</b>누가 갈 수 있나</div>
+<div class="chapter" data-a="drop" data-t="57.224"><b>2장</b>누가 갈 수 있나</div>
 <div class="foot"><div>출처: EMSB 2027-28 International Student Program 자료 (2026.10 기준) · 금액은 모두 캐나다 달러(CAD)</div></div>
-
+<audio id="vo-s03" src="_kit/audio/s03.m4a" data-start="57.124" data-duration="46.203" data-track-index="8"></audio>
 </section>
-<div class="cap clip " data-start="75.3" data-duration="5.474" data-track-index="5"><div class="cap-in" data-a="cap" data-t="75.3">국제학생 프로그램은 초등 <span class="n">1학년</span>부터 고등 <span class="n">11학년</span>까지 받습니다.</div></div>
-<div class="cap clip " data-start="80.774" data-duration="6.296" data-track-index="5"><div class="cap-in" data-a="cap" data-t="80.774">나이는 그해 <span class="n">9월</span> <span class="n">30일</span> 기준으로, <span class="n">1학년</span>은 만 <span class="n">6세</span>, <span class="n">7학년</span>은 만 <span class="n">12세</span>,</div></div>
-<div class="cap clip " data-start="87.07" data-duration="2.249" data-track-index="5"><div class="cap-in" data-a="cap" data-t="87.07"><span class="n">11학년</span>은 만 <span class="n">16세</span>입니다.</div></div>
-<div class="cap clip " data-start="89.319" data-duration="4.673" data-track-index="5"><div class="cap-in" data-a="cap" data-t="89.319">중고등학생은 혼자 와서 홈스테이로 다닐 수 있습니다.</div></div>
-<div class="cap clip " data-start="93.992" data-duration="5.207" data-track-index="5"><div class="cap-in" data-a="cap" data-t="93.992">대신 성적이 양호해야 하고, 학습장애 진단이 없어야 합니다.</div></div>
-<div class="cap clip " data-start="99.199" data-duration="2.804" data-track-index="5"><div class="cap-in" data-a="cap" data-t="99.199">초등학생은 조건이 있습니다.</div></div>
-<div class="cap clip " data-start="102.003" data-duration="3.071" data-track-index="5"><div class="cap-in" data-a="cap" data-t="102.003">세 가지 중 하나가 필요한데요.</div></div>
-<div class="cap clip " data-start="105.074" data-duration="4.495" data-track-index="5"><div class="cap-in" data-a="cap" data-t="105.074">형이나 누나가 EMSB 고등학교에 국제학생으로 다니거나,</div></div>
-<div class="cap clip " data-start="109.569" data-duration="4.06" data-track-index="5"><div class="cap-in" data-a="cap" data-t="109.569">부모님이 EMSB 직업학교나 성인교육에 등록했거나,</div></div>
-<div class="cap clip " data-start="113.629" data-duration="4.93" data-track-index="5"><div class="cap-in" data-a="cap" data-t="113.629">부모님이 몬트리올에서 아이와 함께 지내면서 돌보는 경우입니다.</div></div>
-<div class="cap clip " data-start="118.559" data-duration="6.441" data-track-index="5"><div class="cap-in" data-a="cap" data-t="118.559">쉽게 말해서 초등학생은 혼자가 아니라 가족과 함께 오는 구조입니다.</div></div>
-<section id="s04" class="scene clip" data-start="125" data-duration="50" data-track-index="1">
-<div class="stage" data-a="drift" data-t="125.000" data-d="50.000">
-      <div class="blob" data-a="float" data-t="125.000" data-d="49.900" style="left:1460px;top:-260px;width:760px;height:760px;"></div><div class="blob" data-a="float" data-t="125.000" data-d="49.900" style="left:-240px;top:760px;width:520px;height:520px;background:#ffe9e3;"></div>
-      <div class="title " data-a="rise" data-t="125.200" style="left:64px;top:140px;width:1300px;font-size:64px;text-align:left;">2027-28 국제학생 학비 <span style='font-size:.6em;color:var(--sub)'>CAD · 보험 포함</span></div>
-      <div class="ftable" data-a="rise" data-t="129.173" style="left:64px;top:240px;width:1140px;height:380px;">
+<div class="cap clip " data-start="57.424" data-duration="5.317" data-track-index="5"><div class="cap-in" data-a="cap" data-t="57.424">국제학생 프로그램은 초등 <span class="n">1학년</span>부터 고등 <span class="n">11학년</span>까지 받습니다.</div></div>
+<div class="cap clip " data-start="62.741" data-duration="6.287" data-track-index="5"><div class="cap-in" data-a="cap" data-t="62.741">나이는 그해 <span class="n">9월</span> <span class="n">30일</span> 기준으로, <span class="n">1학년</span>은 만 <span class="n">6세</span>, <span class="n">7학년</span>은 만 <span class="n">12세</span>,</div></div>
+<div class="cap clip " data-start="69.028" data-duration="2.246" data-track-index="5"><div class="cap-in" data-a="cap" data-t="69.028"><span class="n">11학년</span>은 만 <span class="n">16세</span>입니다.</div></div>
+<div class="cap clip " data-start="71.274" data-duration="3.983" data-track-index="5"><div class="cap-in" data-a="cap" data-t="71.274">중고등학생은 혼자 와서 홈스테이로 다닐 수 있습니다.</div></div>
+<div class="cap clip " data-start="75.257" data-duration="4.655" data-track-index="5"><div class="cap-in" data-a="cap" data-t="75.257">대신 성적이 양호해야 하고, 학습장애 진단이 없어야 합니다.</div></div>
+<div class="cap clip " data-start="79.912" data-duration="2.032" data-track-index="5"><div class="cap-in" data-a="cap" data-t="79.912">초등학생은 조건이 있습니다.</div></div>
+<div class="cap clip " data-start="81.944" data-duration="1.811" data-track-index="5"><div class="cap-in" data-a="cap" data-t="81.944">세 가지 중 하나가 필요한데요.</div></div>
+<div class="cap clip " data-start="83.755" data-duration="4.899" data-track-index="5"><div class="cap-in" data-a="cap" data-t="83.755">형이나 누나가 EMSB 고등학교에 국제학생으로 다니거나,</div></div>
+<div class="cap clip " data-start="88.654" data-duration="4.426" data-track-index="5"><div class="cap-in" data-a="cap" data-t="88.654">부모님이 EMSB 직업학교나 성인교육에 등록했거나,</div></div>
+<div class="cap clip " data-start="93.08" data-duration="5.373" data-track-index="5"><div class="cap-in" data-a="cap" data-t="93.08">부모님이 몬트리올에서 아이와 함께 지내면서 돌보는 경우입니다.</div></div>
+<div class="cap clip " data-start="98.453" data-duration="5.274" data-track-index="5"><div class="cap-in" data-a="cap" data-t="98.453">쉽게 말해서 초등학생은 혼자가 아니라 가족과 함께 오는 구조입니다.</div></div>
+<section id="s04" class="scene clip" data-start="103.727" data-duration="36.247" data-track-index="1">
+<div class="stage" data-a="drift" data-t="103.727" data-d="36.247">
+      <div class="blob" data-a="float" data-t="103.727" data-d="36.147" style="left:1460px;top:-260px;width:760px;height:760px;"></div><div class="blob" data-a="float" data-t="103.727" data-d="36.147" style="left:-240px;top:760px;width:520px;height:520px;background:#ffe9e3;"></div>
+      <div class="title " data-a="rise" data-t="103.927" style="left:64px;top:140px;width:1300px;font-size:64px;text-align:left;">2027-28 국제학생 학비 <span style='font-size:.6em;color:var(--sub)'>CAD · 보험 포함</span></div>
+      <div class="ftable" data-a="rise" data-t="107.684" style="left:64px;top:240px;width:1140px;height:380px;">
     <div class="tr th" style="grid-template-columns:1.1fr 1fr 1fr;height:70px"><div class="td" style="text-align:left">구분</div><div class="td" style="text-align:right">1년 (10개월)</div><div class="td" style="text-align:right">반년 (5개월)</div></div>
-    <div class="tr" data-a="left" data-t="133.719" style="grid-template-columns:1.1fr 1fr 1fr;height:155px">
+    <div class="tr" data-a="left" data-t="110.540" style="grid-template-columns:1.1fr 1fr 1fr;height:155px">
         <div class="td rowlab" style="font-size:1.25em">초등<div style="font-family:var(--body);font-weight:700;font-size:.62em;color:var(--muted)">1~6학년</div></div>
-        <div class="td money" data-a="pop" data-t="135.209"><small>CAD</small><span data-a="count" data-t="135.209" data-d="1.100" data-to="12020">12,020</span></div><div class="td money" data-a="pop" data-t="140.177"><small>CAD</small><span data-a="count" data-t="140.177" data-d="1.100" data-to="6260">6,260</span></div>
-      </div><div class="tr" data-a="left" data-t="143.654" style="grid-template-columns:1.1fr 1fr 1fr;height:155px">
+        <div class="td money" data-a="pop" data-t="111.679"><small>CAD</small><span data-a="count" data-t="111.679" data-d="1.100" data-to="12020">12,020</span></div><div class="td money" data-a="pop" data-t="115.475"><small>CAD</small><span data-a="count" data-t="115.475" data-d="1.100" data-to="6260">6,260</span></div>
+      </div><div class="tr" data-a="left" data-t="118.133" style="grid-template-columns:1.1fr 1fr 1fr;height:155px">
         <div class="td rowlab" style="font-size:1.25em">중고등<div style="font-family:var(--body);font-weight:700;font-size:.62em;color:var(--muted)">7~11학년</div></div>
-        <div class="td money" data-a="pop" data-t="144.917"><small>CAD</small><span data-a="count" data-t="144.917" data-d="1.100" data-to="15170">15,170</span></div><div class="td money" data-a="pop" data-t="149.126"><small>CAD</small><span data-a="count" data-t="149.126" data-d="1.100" data-to="7835">7,835</span></div>
+        <div class="td money" data-a="pop" data-t="119.093"><small>CAD</small><span data-a="count" data-t="119.093" data-d="1.100" data-to="15170">15,170</span></div><div class="td money" data-a="pop" data-t="122.291"><small>CAD</small><span data-a="count" data-t="122.291" data-d="1.100" data-to="7835">7,835</span></div>
       </div>
   </div>
-      <div class="kicker" data-a="rise" data-t="152.073" style="left:1260px;top:244px;width:600px;font-size:34px;color:var(--ink);font-weight:900">추가 비용</div>
-      <div class="card " data-a="right" data-t="152.604" style="left:1260px;top:300px;width:596px;height:100px;padding:16px 28px">
+      <div class="kicker" data-a="rise" data-t="124.530" style="left:1260px;top:244px;width:600px;font-size:34px;color:var(--ink);font-weight:900">추가 비용</div>
+      <div class="card " data-a="right" data-t="124.926" style="left:1260px;top:300px;width:596px;height:100px;padding:16px 28px">
     <div class="ct">신청비 <em>CAD 250</em></div>
   </div>
-      <div class="card " data-a="right" data-t="155.786" style="left:1260px;top:420px;width:596px;height:100px;padding:16px 28px">
+      <div class="card " data-a="right" data-t="127.305" style="left:1260px;top:420px;width:596px;height:100px;padding:16px 28px">
     <div class="ct">교통카드 <em>월 CAD 65</em></div>
   </div>
-      <div class="card " data-a="right" data-t="159.499" style="left:1260px;top:540px;width:596px;height:100px;padding:16px 28px">
+      <div class="card " data-a="right" data-t="130.080" style="left:1260px;top:540px;width:596px;height:100px;padding:16px 28px">
     <div class="ct">교복 <em>CAD 250~300</em></div>
   </div>
-      <div class="seg" data-a="pop" data-t="162.681" style="left:64px;top:670px;width:1792px;height:110px;background:#fff;color:var(--ink);font-size:44px;border:4px dashed var(--red);font-family:var(--body);font-weight:900">⚠ 학비 중 <em>CAD 1,000</em>은 환불 불가 → 일정 확정 후 신청</div>
-      <div class="photo" data-layout-allow-overlap data-a="pop" data-t="170.500" style="left:1100px;top:150px;width:720px;height:444px;">
-    <div class="inner" data-a="kb" data-t="170.500" data-d="4.400" data-kb="in" style="left:-0.07px;top:0px;width:720.15px;height:444px;transform-origin:360.07px 222px;">
+      <div class="seg" data-a="pop" data-t="132.459" style="left:64px;top:670px;width:1792px;height:110px;background:#fff;color:var(--ink);font-size:44px;border:4px dashed var(--red);font-family:var(--body);font-weight:900">⚠ 학비 중 <em>CAD 1,000</em>은 환불 불가 → 일정 확정 후 신청</div>
+      <div class="photo" data-layout-allow-overlap data-a="pop" data-t="135.474" style="left:1100px;top:150px;width:720px;height:444px;">
+    <div class="inner" data-a="kb" data-t="135.474" data-d="4.400" data-kb="in" style="left:-0.07px;top:0px;width:720.15px;height:444px;transform-origin:360.07px 222px;">
       <img src="_kit/assets/isp_fee_table_crop.jpg" alt="" />
     </div>
     <div class="plabel">원본 자료<small>EMSB 2027-28 International Student Program Fees</small></div>
   </div>
     </div>
-<div class="chapter" data-a="drop" data-t="125.100"><b>3장</b>2027-28 학비</div>
+<div class="chapter" data-a="drop" data-t="103.827"><b>3장</b>2027-28 학비</div>
 <div class="foot"><div>출처: EMSB 2027-28 International Student Program 자료 (2026.10 기준) · 금액은 모두 캐나다 달러(CAD)</div></div>
-
+<audio id="vo-s04" src="_kit/audio/s04.m4a" data-start="103.727" data-duration="35.847" data-track-index="8"></audio>
 </section>
-<div class="cap clip " data-start="125.3" data-duration="3.873" data-track-index="5"><div class="cap-in" data-a="cap" data-t="125.3"><span class="n">2027-28학년도</span> 학비입니다.</div></div>
-<div class="cap clip " data-start="129.173" data-duration="4.546" data-track-index="5"><div class="cap-in" data-a="cap" data-t="129.173">보험료를 포함한 금액으로 말씀드릴게요.</div></div>
-<div class="cap clip " data-start="133.719" data-duration="5.732" data-track-index="5"><div class="cap-in" data-a="cap" data-t="133.719">초등학생은 <span class="n">1년</span>, 즉 <span class="n">10개월</span>에 <span class="n">1만 2천 이십 달러</span>,</div></div>
-<div class="cap clip " data-start="139.451" data-duration="4.203" data-track-index="5"><div class="cap-in" data-a="cap" data-t="139.451">반년 <span class="n">5개월</span>은 <span class="n">6천 이백육십 달러</span>입니다.</div></div>
-<div class="cap clip " data-start="143.654" data-duration="8.419" data-track-index="5"><div class="cap-in" data-a="cap" data-t="143.654">중고등학생은 <span class="n">1년</span>에 <span class="n">1만 5천 백칠십 달러</span>, 반년은 <span class="n">7천 팔백삼십오 달러</span>입니다.</div></div>
-<div class="cap clip " data-start="152.073" data-duration="5.873" data-track-index="5"><div class="cap-in" data-a="cap" data-t="152.073">여기에 신청비 <span class="n">250달러</span>, 교통카드가 한 달에 <span class="n">65달러</span>,</div></div>
-<div class="cap clip " data-start="157.946" data-duration="4.735" data-track-index="5"><div class="cap-in" data-a="cap" data-t="157.946">교복이 <span class="n">250</span>에서 <span class="n">300달러</span> 정도 추가됩니다.</div></div>
-<div class="cap clip " data-start="162.681" data-duration="6.934" data-track-index="5"><div class="cap-in" data-a="cap" data-t="162.681">그리고 학비 안에 <span class="n">1천 달러</span>는 환불이 안 되는 금액이 들어 있으니,</div></div>
-<div class="cap clip " data-start="169.615" data-duration="5.385" data-track-index="5"><div class="cap-in" data-a="cap" data-t="169.615">일정을 확실히 정하고 신청하시는 게 좋습니다.</div></div>
-<section id="s05" class="scene clip" data-start="175" data-duration="45" data-track-index="1">
-<div class="stage" data-a="drift" data-t="175.000" data-d="45.000">
-      <div class="blob" data-a="float" data-t="175.000" data-d="44.900" style="left:1460px;top:-260px;width:760px;height:760px;"></div><div class="blob" data-a="float" data-t="175.000" data-d="44.900" style="left:-240px;top:760px;width:520px;height:520px;background:#ffe9e3;"></div>
-      <div class="title " data-a="rise" data-t="175.200" style="left:64px;top:136px;width:1400px;font-size:64px;text-align:left;">1년이 부담스럽다면? <em>3개월부터</em></div>
-      <div class="card hl" data-a="pop" data-t="180.355" style="left:64px;top:236px;width:578px;height:290px;">
-    <div class="ct" style="font-size:56px"><em>3</em>개월</div><div class="cs" style="margin:6px 0 4px">중고등 (보험 포함)</div><div class="cbig"><span style="font-size:.5em;color:var(--sub)">CAD </span><span data-a="count" data-t="187.080" data-d="1.300" data-to="4901">4,901</span></div><div class="cs" style="font-size:24px">초등 CAD 3,956</div>
-  </div><div class="card " data-a="pop" data-t="181.947" style="left:671px;top:236px;width:578px;height:290px;">
-    <div class="ct" style="font-size:56px"><em>4</em>개월</div><div class="cs" style="margin:6px 0 4px">중고등 (보험 포함)</div><div class="cbig"><span style="font-size:.5em;color:var(--sub)">CAD </span><span data-a="count" data-t="190.591" data-d="1.300" data-to="6368">6,368</span></div><div class="cs" style="font-size:24px">초등 CAD 5,108</div>
-  </div><div class="card " data-a="pop" data-t="183.538" style="left:1278px;top:236px;width:578px;height:290px;">
-    <div class="ct" style="font-size:56px"><em>5</em>개월</div><div class="cs" style="margin:6px 0 4px">중고등 (보험 포함)</div><div class="cbig"><span style="font-size:.5em;color:var(--sub)">CAD </span><span data-a="count" data-t="185.730" data-d="1.300" data-to="7835">7,835</span></div><div class="cs" style="font-size:24px">초등 CAD 6,260</div>
+<div class="cap clip " data-start="104.027" data-duration="3.657" data-track-index="5"><div class="cap-in" data-a="cap" data-t="104.027"><span class="n">2027-28학년도</span> 학비입니다.</div></div>
+<div class="cap clip " data-start="107.684" data-duration="2.856" data-track-index="5"><div class="cap-in" data-a="cap" data-t="107.684">보험료를 포함한 금액으로 말씀드릴게요.</div></div>
+<div class="cap clip " data-start="110.54" data-duration="4.381" data-track-index="5"><div class="cap-in" data-a="cap" data-t="110.54">초등학생은 <span class="n">1년</span>, 즉 <span class="n">10개월</span>에 <span class="n">1만 2천 이십 달러</span>,</div></div>
+<div class="cap clip " data-start="114.921" data-duration="3.212" data-track-index="5"><div class="cap-in" data-a="cap" data-t="114.921">반년 <span class="n">5개월</span>은 <span class="n">6천 이백육십 달러</span>입니다.</div></div>
+<div class="cap clip " data-start="118.133" data-duration="6.397" data-track-index="5"><div class="cap-in" data-a="cap" data-t="118.133">중고등학생은 <span class="n">1년</span>에 <span class="n">1만 5천 백칠십 달러</span>, 반년은 <span class="n">7천 팔백삼십오 달러</span>입니다.</div></div>
+<div class="cap clip " data-start="124.53" data-duration="4.389" data-track-index="5"><div class="cap-in" data-a="cap" data-t="124.53">여기에 신청비 <span class="n">250달러</span>, 교통카드가 한 달에 <span class="n">65달러</span>,</div></div>
+<div class="cap clip " data-start="128.919" data-duration="3.54" data-track-index="5"><div class="cap-in" data-a="cap" data-t="128.919">교복이 <span class="n">250</span>에서 <span class="n">300달러</span> 정도 추가됩니다.</div></div>
+<div class="cap clip " data-start="132.459" data-duration="4.067" data-track-index="5"><div class="cap-in" data-a="cap" data-t="132.459">그리고 학비 안에 <span class="n">1천 달러</span>는 환불이 안 되는 금액이 들어 있으니,</div></div>
+<div class="cap clip " data-start="136.526" data-duration="3.448" data-track-index="5"><div class="cap-in" data-a="cap" data-t="136.526">일정을 확실히 정하고 신청하시는 게 좋습니다.</div></div>
+<section id="s05" class="scene clip" data-start="139.974" data-duration="35.597" data-track-index="1">
+<div class="stage" data-a="drift" data-t="139.974" data-d="35.597">
+      <div class="blob" data-a="float" data-t="139.974" data-d="35.497" style="left:1460px;top:-260px;width:760px;height:760px;"></div><div class="blob" data-a="float" data-t="139.974" data-d="35.497" style="left:-240px;top:760px;width:520px;height:520px;background:#ffe9e3;"></div>
+      <div class="title " data-a="rise" data-t="140.174" style="left:64px;top:136px;width:1400px;font-size:64px;text-align:left;">1년이 부담스럽다면? <em>3개월부터</em></div>
+      <div class="card hl" data-a="pop" data-t="144.366" style="left:64px;top:236px;width:578px;height:290px;">
+    <div class="ct" style="font-size:56px"><em>3</em>개월</div><div class="cs" style="margin:6px 0 4px">중고등 (보험 포함)</div><div class="cbig"><span style="font-size:.5em;color:var(--sub)">CAD </span><span data-a="count" data-t="149.585" data-d="1.300" data-to="4901">4,901</span></div><div class="cs" style="font-size:24px">초등 CAD 3,956</div>
+  </div><div class="card " data-a="pop" data-t="145.529" style="left:671px;top:236px;width:578px;height:290px;">
+    <div class="ct" style="font-size:56px"><em>4</em>개월</div><div class="cs" style="margin:6px 0 4px">중고등 (보험 포함)</div><div class="cbig"><span style="font-size:.5em;color:var(--sub)">CAD </span><span data-a="count" data-t="152.699" data-d="1.300" data-to="6368">6,368</span></div><div class="cs" style="font-size:24px">초등 CAD 5,108</div>
+  </div><div class="card " data-a="pop" data-t="146.692" style="left:1278px;top:236px;width:578px;height:290px;">
+    <div class="ct" style="font-size:56px"><em>5</em>개월</div><div class="cs" style="margin:6px 0 4px">중고등 (보험 포함)</div><div class="cbig"><span style="font-size:.5em;color:var(--sub)">CAD </span><span data-a="count" data-t="148.455" data-d="1.300" data-to="7835">7,835</span></div><div class="cs" style="font-size:24px">초등 CAD 6,260</div>
   </div>
-      <div class="tick" data-a="fade" data-t="192.631" style="left:64px;top:556px;width:179.2px;color:var(--muted);text-align:center;font-size:28px;">9월</div><div class="tick" data-a="fade" data-t="192.631" style="left:243.2px;top:556px;width:179.2px;color:var(--muted);text-align:center;font-size:28px;">10월</div><div class="tick" data-a="fade" data-t="192.631" style="left:422.4px;top:556px;width:179.2px;color:var(--muted);text-align:center;font-size:28px;">11월</div><div class="tick" data-a="fade" data-t="192.631" style="left:601.6px;top:556px;width:179.2px;color:var(--muted);text-align:center;font-size:28px;">12월</div><div class="tick" data-a="fade" data-t="192.631" style="left:780.8px;top:556px;width:179.2px;color:var(--muted);text-align:center;font-size:28px;">1월</div><div class="tick" data-a="fade" data-t="192.631" style="left:960px;top:556px;width:179.2px;color:var(--muted);text-align:center;font-size:28px;">2월</div><div class="tick" data-a="fade" data-t="192.631" style="left:1139.2px;top:556px;width:179.2px;color:var(--muted);text-align:center;font-size:28px;">3월</div><div class="tick" data-a="fade" data-t="192.631" style="left:1318.4px;top:556px;width:179.2px;color:var(--muted);text-align:center;font-size:28px;">4월</div><div class="tick" data-a="fade" data-t="192.631" style="left:1497.6px;top:556px;width:179.2px;color:var(--muted);text-align:center;font-size:28px;">5월</div><div class="tick" data-a="fade" data-t="192.631" style="left:1676.8px;top:556px;width:179.2px;color:var(--muted);text-align:center;font-size:28px;">6월</div>
-      <div class="seg" data-a="wipe" data-t="193.337" style="left:64px;top:600px;width:529.6px;height:54px;background:var(--red);color:#fff;font-size:30px;">3개월</div>
-      <div class="seg" data-a="wipe" data-t="194.960" style="left:64px;top:662px;width:708.8px;height:54px;background:var(--red);color:#fff;font-size:30px;">4개월</div>
-      <div class="seg" data-a="wipe" data-t="198.033" style="left:64px;top:724px;width:888px;height:54px;background:var(--sub);color:#fff;font-size:30px;">5개월 (9월~1월)</div>
-      <div class="seg" data-a="wipe" data-t="201.692" style="left:960px;top:724px;width:888px;height:54px;background:var(--sub);color:#fff;font-size:30px;">5개월 (2/1~6/23)</div>
-      <div class="chips" style="left:960px;top:790px;width:900px;justify-content:flex-start;"><div class="chip warn" data-a="pop" data-t="204.828">2월 학기는 자리 제한</div></div>
-      <div class="chips" style="left:64px;top:790px;width:880px;justify-content:flex-start;"><div class="chip solid" data-a="pop" data-t="207.442">교실에 직접 앉아 보는 한 학기</div></div>
+      <div class="tick" data-a="fade" data-t="154.475" style="left:64px;top:556px;width:179.2px;color:var(--muted);text-align:center;font-size:28px;">9월</div><div class="tick" data-a="fade" data-t="154.475" style="left:243.2px;top:556px;width:179.2px;color:var(--muted);text-align:center;font-size:28px;">10월</div><div class="tick" data-a="fade" data-t="154.475" style="left:422.4px;top:556px;width:179.2px;color:var(--muted);text-align:center;font-size:28px;">11월</div><div class="tick" data-a="fade" data-t="154.475" style="left:601.6px;top:556px;width:179.2px;color:var(--muted);text-align:center;font-size:28px;">12월</div><div class="tick" data-a="fade" data-t="154.475" style="left:780.8px;top:556px;width:179.2px;color:var(--muted);text-align:center;font-size:28px;">1월</div><div class="tick" data-a="fade" data-t="154.475" style="left:960px;top:556px;width:179.2px;color:var(--muted);text-align:center;font-size:28px;">2월</div><div class="tick" data-a="fade" data-t="154.475" style="left:1139.2px;top:556px;width:179.2px;color:var(--muted);text-align:center;font-size:28px;">3월</div><div class="tick" data-a="fade" data-t="154.475" style="left:1318.4px;top:556px;width:179.2px;color:var(--muted);text-align:center;font-size:28px;">4월</div><div class="tick" data-a="fade" data-t="154.475" style="left:1497.6px;top:556px;width:179.2px;color:var(--muted);text-align:center;font-size:28px;">5월</div><div class="tick" data-a="fade" data-t="154.475" style="left:1676.8px;top:556px;width:179.2px;color:var(--muted);text-align:center;font-size:28px;">6월</div>
+      <div class="seg" data-a="wipe" data-t="155.098" style="left:64px;top:600px;width:529.6px;height:54px;background:var(--red);color:#fff;font-size:30px;">3개월</div>
+      <div class="seg" data-a="wipe" data-t="156.389" style="left:64px;top:662px;width:708.8px;height:54px;background:var(--red);color:#fff;font-size:30px;">4개월</div>
+      <div class="seg" data-a="wipe" data-t="158.852" style="left:64px;top:724px;width:888px;height:54px;background:var(--sub);color:#fff;font-size:30px;">5개월 (9월~1월)</div>
+      <div class="seg" data-a="wipe" data-t="161.822" style="left:960px;top:724px;width:888px;height:54px;background:var(--sub);color:#fff;font-size:30px;">5개월 (2/1~6/23)</div>
+      <div class="chips" style="left:960px;top:790px;width:900px;justify-content:flex-start;"><div class="chip warn" data-a="pop" data-t="164.367">2월 학기는 자리 제한</div></div>
+      <div class="chips" style="left:64px;top:790px;width:880px;justify-content:flex-start;"><div class="chip solid" data-a="pop" data-t="166.489">교실에 직접 앉아 보는 한 학기</div></div>
     </div>
-<div class="chapter" data-a="drop" data-t="175.100"><b>4장</b>단기 스쿨링</div>
+<div class="chapter" data-a="drop" data-t="140.074"><b>4장</b>단기 스쿨링</div>
 <div class="foot"><div>출처: EMSB 2027-28 International Student Program 자료 (2026.10 기준) · 금액은 모두 캐나다 달러(CAD)</div></div>
-
+<audio id="vo-s05" src="_kit/audio/s05.m4a" data-start="139.974" data-duration="35.197" data-track-index="8"></audio>
 </section>
-<div class="cap clip " data-start="175.3" data-duration="4.525" data-track-index="5"><div class="cap-in" data-a="cap" data-t="175.3"><span class="n">1년</span>이 부담스럽다면 단기 과정도 있습니다.</div></div>
-<div class="cap clip " data-start="179.825" data-duration="5.305" data-track-index="5"><div class="cap-in" data-a="cap" data-t="179.825"><span class="n">3개월</span>, <span class="n">4개월</span>, <span class="n">5개월</span> 중에서 고를 수 있습니다.</div></div>
-<div class="cap clip " data-start="185.13" data-duration="7.801" data-track-index="5"><div class="cap-in" data-a="cap" data-t="185.13">중고등학생 기준으로 <span class="n">3개월</span>은 <span class="n">4천 9백1달러</span>, <span class="n">4개월</span>은 <span class="n">6천 3백68달러</span>입니다.</div></div>
-<div class="cap clip " data-start="192.931" data-duration="4.057" data-track-index="5"><div class="cap-in" data-a="cap" data-t="192.931"><span class="n">3개월</span>과 <span class="n">4개월</span>은 <span class="n">9월</span>에 시작합니다.</div></div>
-<div class="cap clip " data-start="196.988" data-duration="7.143" data-track-index="5"><div class="cap-in" data-a="cap" data-t="196.988"><span class="n">5개월</span> 과정은 <span class="n">9월</span>부터 <span class="n">1월</span>까지, 또는 <span class="n">2월</span> <span class="n">1일</span>부터 <span class="n">6월</span> <span class="n">23일</span>까지인데,</div></div>
-<div class="cap clip " data-start="204.131" data-duration="3.311" data-track-index="5"><div class="cap-in" data-a="cap" data-t="204.131"><span class="n">2월</span> 학기는 자리가 많지 않습니다.</div></div>
-<div class="cap clip " data-start="207.442" data-duration="5.671" data-track-index="5"><div class="cap-in" data-a="cap" data-t="207.442">한 학기 동안 캐나다 공립학교 교실에 직접 앉아 보는 경험,</div></div>
-<div class="cap clip " data-start="213.113" data-duration="6.887" data-track-index="5"><div class="cap-in" data-a="cap" data-t="213.113">영어 실력은 물론이고 아이 진로를 정하는 데도 큰 도움이 됩니다.</div></div>
-<section id="s06" class="scene clip" data-start="220" data-duration="55" data-track-index="1">
-<div class="stage" data-a="drift" data-t="220.000" data-d="55.000">
-      <div class="blob" data-a="float" data-t="220.000" data-d="54.900" style="left:1460px;top:-260px;width:760px;height:760px;"></div><div class="blob" data-a="float" data-t="220.000" data-d="54.900" style="left:-240px;top:760px;width:520px;height:520px;background:#ffe9e3;"></div>
-      <div class="seg" data-a="wipe" data-t="220.500" style="left:64px;top:150px;width:1792px;height:70px;background:var(--red);color:#fff;font-size:40px;font-family:var(--display)">신청 기간 <em>12월 1일</em> ~ <em>5월 31일</em></div>
-      <div class="chips" style="left:64px;top:236px;width:1792px;justify-content:center;"><div class="chip soft" data-a="pop" data-t="225.383">True North 온라인 포털로만 접수</div></div>
-      <div class="abs" data-a="fade" data-t="230.928" data-out="251.034" style="left:0px;top:0px;width:100%;height:100%;">
-        <div class="kicker" data-a="rise" data-t="230.928" style="left:64px;top:330px;width:600px;font-size:36px;color:var(--ink);font-weight:900">준비 서류</div>
-        <div class="checks" style="left:64px;top:390px;width:1792px;grid-template-columns:repeat(2,1fr);"><div class="check" data-a="left" data-t="232.019"><i>✓</i><span>여권</span></div><div class="check" data-a="left" data-t="233.656"><i>✓</i><span>상세 기본증명서 + 공증 번역본</span></div><div class="check" data-a="left" data-t="236.112"><i>✓</i><span>최근 3년치 성적표</span></div><div class="check" data-a="left" data-t="238.432"><i>✓</i><span>현재 학교 추천서</span></div><div class="check" data-a="left" data-t="240.205"><i>✓</i><span>예방접종 기록</span></div><div class="check" data-a="left" data-t="242.115"><i>✓</i><span>학생 계약서 (부모·학생 서명)</span></div><div class="check hl" data-a="left" data-t="244.571"><i>!</i><span>영어: 듀오링고 점수 · <em>5/31까지</em></span></div></div>
+<div class="cap clip " data-start="140.274" data-duration="3.704" data-track-index="5"><div class="cap-in" data-a="cap" data-t="140.274"><span class="n">1년</span>이 부담스럽다면 단기 과정도 있습니다.</div></div>
+<div class="cap clip " data-start="143.978" data-duration="3.877" data-track-index="5"><div class="cap-in" data-a="cap" data-t="143.978"><span class="n">3개월</span>, <span class="n">4개월</span>, <span class="n">5개월</span> 중에서 고를 수 있습니다.</div></div>
+<div class="cap clip " data-start="147.855" data-duration="6.92" data-track-index="5"><div class="cap-in" data-a="cap" data-t="147.855">중고등학생 기준으로 <span class="n">3개월</span>은 <span class="n">4천 9백1달러</span>, <span class="n">4개월</span>은 <span class="n">6천 3백68달러</span>입니다.</div></div>
+<div class="cap clip " data-start="154.775" data-duration="3.228" data-track-index="5"><div class="cap-in" data-a="cap" data-t="154.775"><span class="n">3개월</span>과 <span class="n">4개월</span>은 <span class="n">9월</span>에 시작합니다.</div></div>
+<div class="cap clip " data-start="158.003" data-duration="5.799" data-track-index="5"><div class="cap-in" data-a="cap" data-t="158.003"><span class="n">5개월</span> 과정은 <span class="n">9월</span>부터 <span class="n">1월</span>까지, 또는 <span class="n">2월</span> <span class="n">1일</span>부터 <span class="n">6월</span> <span class="n">23일</span>까지인데,</div></div>
+<div class="cap clip " data-start="163.802" data-duration="2.687" data-track-index="5"><div class="cap-in" data-a="cap" data-t="163.802"><span class="n">2월</span> 학기는 자리가 많지 않습니다.</div></div>
+<div class="cap clip " data-start="166.489" data-duration="4.009" data-track-index="5"><div class="cap-in" data-a="cap" data-t="166.489">한 학기 동안 캐나다 공립학교 교실에 직접 앉아 보는 경험,</div></div>
+<div class="cap clip " data-start="170.498" data-duration="5.073" data-track-index="5"><div class="cap-in" data-a="cap" data-t="170.498">영어 실력은 물론이고 아이 진로를 정하는 데도 큰 도움이 됩니다.</div></div>
+<section id="s06" class="scene clip" data-start="175.571" data-duration="45.071" data-track-index="1">
+<div class="stage" data-a="drift" data-t="175.571" data-d="45.071">
+      <div class="blob" data-a="float" data-t="175.571" data-d="44.971" style="left:1460px;top:-260px;width:760px;height:760px;"></div><div class="blob" data-a="float" data-t="175.571" data-d="44.971" style="left:-240px;top:760px;width:520px;height:520px;background:#ffe9e3;"></div>
+      <div class="seg" data-a="wipe" data-t="176.071" style="left:64px;top:150px;width:1792px;height:70px;background:var(--red);color:#fff;font-size:40px;font-family:var(--display)">신청 기간 <em>12월 1일</em> ~ <em>5월 31일</em></div>
+      <div class="chips" style="left:64px;top:236px;width:1792px;justify-content:center;"><div class="chip soft" data-a="pop" data-t="180.332">True North 온라인 포털로만 접수</div></div>
+      <div class="abs" data-a="fade" data-t="183.975" data-out="201.797" style="left:0px;top:0px;width:100%;height:100%;">
+        <div class="kicker" data-a="rise" data-t="183.975" style="left:64px;top:330px;width:600px;font-size:36px;color:var(--ink);font-weight:900">준비 서류</div>
+        <div class="checks" style="left:64px;top:390px;width:1792px;grid-template-columns:repeat(2,1fr);"><div class="check" data-a="left" data-t="184.994"><i>✓</i><span>여권</span></div><div class="check" data-a="left" data-t="186.522"><i>✓</i><span>상세 기본증명서 + 공증 번역본</span></div><div class="check" data-a="left" data-t="188.815"><i>✓</i><span>최근 3년치 성적표</span></div><div class="check" data-a="left" data-t="190.980"><i>✓</i><span>현재 학교 추천서</span></div><div class="check" data-a="left" data-t="192.635"><i>✓</i><span>예방접종 기록</span></div><div class="check" data-a="left" data-t="194.419"><i>✓</i><span>학생 계약서 (부모·학생 서명)</span></div><div class="check hl" data-a="left" data-t="196.711"><i>!</i><span>영어: 듀오링고 점수 · <em>5/31까지</em></span></div></div>
       </div>
-      <div class="flow" style="left:64px;top:330px;width:1792px;height:250px;"><div class="step" data-a="pop" data-t="251.034" style=""><div class="sn">1</div><div><div class="st">지원서 접수</div><div class="ss">약 2주</div></div></div><div class="arrow" data-a="fade" data-t="254.179" style="">→</div><div class="step" data-a="pop" data-t="254.179" style=""><div class="sn">2</div><div><div class="st">입학허가서</div><div class="ss">약 2주 · 신청비 CAD 250</div></div></div><div class="arrow" data-a="fade" data-t="257.324" style="">→</div><div class="step" data-a="pop" data-t="257.324" style=""><div class="sn">3</div><div><div class="st">CAQ + 학생비자</div><div class="ss">6~20주</div></div></div><div class="arrow" data-a="fade" data-t="261.518" style="">→</div><div class="step" data-a="pop" data-t="261.518" style=""><div class="sn">4</div><div><div class="st">도착 후 Eligibility 발급</div><div class="ss">약 2주 · 1~3년 유효</div></div></div><div class="arrow" data-a="fade" data-t="266.473" style="">→</div><div class="step last" data-a="pop" data-t="266.473" style=""><div class="sn">5</div><div><div class="st">등교!</div></div></div></div>
-      <div class="photo" data-a="pop" data-t="263.500" data-out="268.124" style="left:1256px;top:610px;width:600px;height:300px;">
-    <div class="inner" data-a="kb" data-t="261.518" data-d="NaN" data-kb="in" style="left:0px;top:-18.75px;width:600px;height:337.5px;transform-origin:300px 168.75px;">
+      <div class="flow" style="left:64px;top:330px;width:1792px;height:250px;"><div class="step" data-a="pop" data-t="201.797" style=""><div class="sn">1</div><div><div class="st">지원서 접수</div><div class="ss">약 2주</div></div></div><div class="arrow" data-a="fade" data-t="204.615" style="">→</div><div class="step" data-a="pop" data-t="204.615" style=""><div class="sn">2</div><div><div class="st">입학허가서</div><div class="ss">약 2주 · 신청비 CAD 250</div></div></div><div class="arrow" data-a="fade" data-t="207.432" style="">→</div><div class="step" data-a="pop" data-t="207.432" style=""><div class="sn">3</div><div><div class="st">CAQ + 학생비자</div><div class="ss">6~20주</div></div></div><div class="arrow" data-a="fade" data-t="211.189" style="">→</div><div class="step" data-a="pop" data-t="211.189" style=""><div class="sn">4</div><div><div class="st">도착 후 Eligibility 발급</div><div class="ss">약 2주 · 1~3년 유효</div></div></div><div class="arrow" data-a="fade" data-t="214.324" style="">→</div><div class="step last" data-a="pop" data-t="214.324" style=""><div class="sn">5</div><div><div class="st">등교!</div></div></div></div>
+      <div class="photo" data-a="pop" data-t="212.443" data-out="215.369" style="left:1256px;top:610px;width:600px;height:300px;">
+    <div class="inner" data-a="kb" data-t="211.189" data-d="NaN" data-kb="in" style="left:0px;top:-18.75px;width:600px;height:337.5px;transform-origin:300px 168.75px;">
       <img src="_kit/assets/isp_coe.jpg" alt="" />
     </div>
     
   </div>
-      <div class="seg" data-a="pop" data-t="268.124" style="left:64px;top:640px;width:1100px;height:100px;background:var(--ink);color:#fff;font-size:46px;font-family:var(--display)">9월 입학 → <em>늦어도 봄</em>에는 신청 완료!</div>
+      <div class="seg" data-a="pop" data-t="215.369" style="left:64px;top:640px;width:1100px;height:100px;background:var(--ink);color:#fff;font-size:46px;font-family:var(--display)">9월 입학 → <em>늦어도 봄</em>에는 신청 완료!</div>
     </div>
-<div class="chapter" data-a="drop" data-t="220.100"><b>5장</b>신청 일정·서류</div>
+<div class="chapter" data-a="drop" data-t="175.671"><b>5장</b>신청 일정·서류</div>
 <div class="foot"><div>출처: EMSB 2027-28 International Student Program 자료 (2026.10 기준) · 금액은 모두 캐나다 달러(CAD)</div></div>
-
+<audio id="vo-s06" src="_kit/audio/s06.m4a" data-start="175.571" data-duration="44.671" data-track-index="8"></audio>
 </section>
-<div class="cap clip " data-start="220.3" data-duration="4.883" data-track-index="5"><div class="cap-in" data-a="cap" data-t="220.3">신청 기간은 <span class="n">12월</span> <span class="n">1일</span>부터 <span class="n">5월</span> <span class="n">31일</span>까지입니다.</div></div>
-<div class="cap clip " data-start="225.183" data-duration="5.745" data-track-index="5"><div class="cap-in" data-a="cap" data-t="225.183">이 기간에 True North라는 온라인 포털로만 접수합니다.</div></div>
-<div class="cap clip " data-start="230.928" data-duration="5.802" data-track-index="5"><div class="cap-in" data-a="cap" data-t="230.928">서류는 여권, 상세 기본증명서와 공증 번역본, 최근 <span class="n">3년치</span> 성적표,</div></div>
-<div class="cap clip " data-start="236.73" data-duration="3.607" data-track-index="5"><div class="cap-in" data-a="cap" data-t="236.73">지금 다니는 학교 추천서, 예방접종 기록,</div></div>
-<div class="cap clip " data-start="240.337" data-duration="4.234" data-track-index="5"><div class="cap-in" data-a="cap" data-t="240.337">그리고 부모님과 학생이 서명한 학생 계약서입니다.</div></div>
-<div class="cap clip " data-start="244.571" data-duration="6.463" data-track-index="5"><div class="cap-in" data-a="cap" data-t="244.571">영어 실력은 듀오링고로 확인하고, <span class="n">5월</span> <span class="n">31일</span>까지 점수를 내야 합니다.</div></div>
-<div class="cap clip " data-start="251.034" data-duration="7.784" data-track-index="5"><div class="cap-in" data-a="cap" data-t="251.034">순서는 지원서 접수, 약 <span class="n">2주</span> 뒤 입학허가서, 그다음 퀘벡 유학허가서 CAQ와 학생비자,</div></div>
-<div class="cap clip " data-start="258.818" data-duration="2.7" data-track-index="5"><div class="cap-in" data-a="cap" data-t="258.818">이게 <span class="n">6주</span>에서 <span class="n">20주</span> 걸립니다.</div></div>
-<div class="cap clip " data-start="261.518" data-duration="6.606" data-track-index="5"><div class="cap-in" data-a="cap" data-t="261.518">마지막으로 몬트리올에 도착해서 Eligibility를 받으면 등교합니다.</div></div>
-<div class="cap clip " data-start="268.124" data-duration="6.876" data-track-index="5"><div class="cap-in" data-a="cap" data-t="268.124">그래서 <span class="n">9월</span> 입학이라면 늦어도 봄에는 신청을 마치는 게 안전합니다.</div></div>
-<section id="s07" class="scene clip" data-start="275" data-duration="45" data-track-index="1">
-<div class="stage" data-a="drift" data-t="275.000" data-d="45.000">
-      <div class="blob" data-a="float" data-t="275.000" data-d="44.900" style="left:1460px;top:-260px;width:760px;height:760px;"></div><div class="blob" data-a="float" data-t="275.000" data-d="44.900" style="left:-240px;top:760px;width:520px;height:520px;background:#ffe9e3;"></div>
-      <div class="photo" data-a="fade" data-t="275.200" style="left:64px;top:140px;width:760px;height:730px;">
-    <div class="inner" data-a="kb" data-t="275.000" data-d="45.000" data-kb="in" style="left:-570px;top:-157.5px;width:2280px;height:1140px;transform-origin:950px 522.5px;">
-      <img src="_kit/assets/gb_hs_network_map.jpg" alt="" /><div class="pin" style="left:1066.38px;top:711.31px" data-a="pulse" data-t="282.346"><i></i><span>FACE</span></div><div class="pin" style="left:957.13px;top:476.19px" data-a="pulse" data-t="291.115"><i></i><span>JFK</span></div><div class="pin" style="left:1026px;top:418px" data-a="pulse" data-t="298.788"><i></i><span>Laurier Mac</span></div><div class="pin" style="left:919.13px;top:252.94px" data-a="pulse" data-t="309.435"><i></i><span>LB Pearson</span></div>
+<div class="cap clip " data-start="175.871" data-duration="4.261" data-track-index="5"><div class="cap-in" data-a="cap" data-t="175.871">신청 기간은 <span class="n">12월</span> <span class="n">1일</span>부터 <span class="n">5월</span> <span class="n">31일</span>까지입니다.</div></div>
+<div class="cap clip " data-start="180.132" data-duration="3.843" data-track-index="5"><div class="cap-in" data-a="cap" data-t="180.132">이 기간에 True North라는 온라인 포털로만 접수합니다.</div></div>
+<div class="cap clip " data-start="183.975" data-duration="5.416" data-track-index="5"><div class="cap-in" data-a="cap" data-t="183.975">서류는 여권, 상세 기본증명서와 공증 번역본, 최근 <span class="n">3년치</span> 성적표,</div></div>
+<div class="cap clip " data-start="189.391" data-duration="3.367" data-track-index="5"><div class="cap-in" data-a="cap" data-t="189.391">지금 다니는 학교 추천서, 예방접종 기록,</div></div>
+<div class="cap clip " data-start="192.758" data-duration="3.953" data-track-index="5"><div class="cap-in" data-a="cap" data-t="192.758">그리고 부모님과 학생이 서명한 학생 계약서입니다.</div></div>
+<div class="cap clip " data-start="196.711" data-duration="5.086" data-track-index="5"><div class="cap-in" data-a="cap" data-t="196.711">영어 실력은 듀오링고로 확인하고, <span class="n">5월</span> <span class="n">31일</span>까지 점수를 내야 합니다.</div></div>
+<div class="cap clip " data-start="201.797" data-duration="6.973" data-track-index="5"><div class="cap-in" data-a="cap" data-t="201.797">순서는 지원서 접수, 약 <span class="n">2주</span> 뒤 입학허가서, 그다음 퀘벡 유학허가서 CAQ와 학생비자,</div></div>
+<div class="cap clip " data-start="208.77" data-duration="2.419" data-track-index="5"><div class="cap-in" data-a="cap" data-t="208.77">이게 <span class="n">6주</span>에서 <span class="n">20주</span> 걸립니다.</div></div>
+<div class="cap clip " data-start="211.189" data-duration="4.18" data-track-index="5"><div class="cap-in" data-a="cap" data-t="211.189">마지막으로 몬트리올에 도착해서 Eligibility를 받으면 등교합니다.</div></div>
+<div class="cap clip " data-start="215.369" data-duration="5.273" data-track-index="5"><div class="cap-in" data-a="cap" data-t="215.369">그래서 <span class="n">9월</span> 입학이라면 늦어도 봄에는 신청을 마치는 게 안전합니다.</div></div>
+<section id="s07" class="scene clip" data-start="220.642" data-duration="30.721" data-track-index="1">
+<div class="stage" data-a="drift" data-t="220.642" data-d="30.721">
+      <div class="blob" data-a="float" data-t="220.642" data-d="30.621" style="left:1460px;top:-260px;width:760px;height:760px;"></div><div class="blob" data-a="float" data-t="220.642" data-d="30.621" style="left:-240px;top:760px;width:520px;height:520px;background:#ffe9e3;"></div>
+      <div class="photo" data-a="fade" data-t="220.842" style="left:64px;top:140px;width:760px;height:730px;">
+    <div class="inner" data-a="kb" data-t="220.642" data-d="30.721" data-kb="in" style="left:-570px;top:-157.5px;width:2280px;height:1140px;transform-origin:950px 522.5px;">
+      <img src="_kit/assets/gb_hs_network_map.jpg" alt="" /><div class="pin" style="left:1066.38px;top:711.31px" data-a="pulse" data-t="226.155"><i></i><span>FACE</span></div><div class="pin" style="left:957.13px;top:476.19px" data-a="pulse" data-t="232.378"><i></i><span>JFK</span></div><div class="pin" style="left:1026px;top:418px" data-a="pulse" data-t="237.127"><i></i><span>Laurier Mac</span></div><div class="pin" style="left:919.13px;top:252.94px" data-a="pulse" data-t="244.290"><i></i><span>LB Pearson</span></div>
     </div>
     
   </div>
-      <div class="title " data-a="rise" data-t="275.300" data-out="282.346" style="left:870px;top:140px;width:990px;font-size:60px;text-align:left;">국제학생 받는 고등학교 <em>8곳</em></div>
-      <div class="chips" style="left:870px;top:240px;width:900px;justify-content:flex-start;" data-a="fade" data-t="275.000" data-out="282.346"><div class="chip solid" data-a="pop" data-t="279.528">먼저 동부 4곳</div></div>
-      <div class="photo" data-a="pop" data-t="282.346" style="left:870px;top:140px;width:482px;height:350px;">
-    <div class="inner" data-a="kb" data-t="275.000" data-d="45.000" data-kb="in" style="left:-64.45px;top:-95.45px;width:610.91px;height:610.91px;transform-origin:305.45px 270.45px;">
+      <div class="title " data-a="rise" data-t="220.942" data-out="226.155" style="left:870px;top:140px;width:990px;font-size:60px;text-align:left;">국제학생 받는 고등학교 <em>8곳</em></div>
+      <div class="chips" style="left:870px;top:240px;width:900px;justify-content:flex-start;" data-a="fade" data-t="220.642" data-out="226.155"><div class="chip solid" data-a="pop" data-t="224.228">먼저 동부 4곳</div></div>
+      <div class="photo" data-a="pop" data-t="226.155" style="left:870px;top:140px;width:482px;height:350px;">
+    <div class="inner" data-a="kb" data-t="220.642" data-d="30.721" data-kb="in" style="left:-64.45px;top:-95.45px;width:610.91px;height:610.91px;transform-origin:305.45px 270.45px;">
       <img src="_kit/assets/school_face.jpg" alt="" />
     </div>
     <div class="plabel">FACE<small>다운타운 · 예술(음악·미술·연극·무용)</small></div>
   </div>
-      <div class="photo" data-a="pop" data-t="291.115" style="left:1374px;top:140px;width:482px;height:350px;">
-    <div class="inner" data-a="kb" data-t="275.000" data-d="45.000" data-kb="in" style="left:-64.45px;top:-63.64px;width:610.91px;height:610.91px;transform-origin:305.45px 238.64px;">
+      <div class="photo" data-a="pop" data-t="232.378" style="left:1374px;top:140px;width:482px;height:350px;">
+    <div class="inner" data-a="kb" data-t="220.642" data-d="30.721" data-kb="in" style="left:-64.45px;top:-63.64px;width:610.91px;height:610.91px;transform-origin:305.45px 238.64px;">
       <img src="_kit/assets/school_jfk.jpg" alt="" />
     </div>
     <div class="plabel">John F. Kennedy<small>미디어아트 · 하키 · 로보틱스</small></div>
   </div>
-      <div class="photo" data-a="pop" data-t="298.788" style="left:870px;top:512px;width:482px;height:350px;">
-    <div class="inner" data-a="kb" data-t="275.000" data-d="45.000" data-kb="in" style="left:-64.45px;top:-95.45px;width:610.91px;height:610.91px;transform-origin:305.45px 270.45px;">
+      <div class="photo" data-a="pop" data-t="237.127" style="left:870px;top:512px;width:482px;height:350px;">
+    <div class="inner" data-a="kb" data-t="220.642" data-d="30.721" data-kb="in" style="left:-64.45px;top:-95.45px;width:610.91px;height:610.91px;transform-origin:305.45px 270.45px;">
       <img src="_kit/assets/school_lauriermac.jpg" alt="" />
     </div>
     <div class="plabel">Laurier Macdonald<small>생레오나르 · IB 중등 · 미적분 가속반</small></div>
   </div>
-      <div class="photo" data-a="pop" data-t="309.435" style="left:1374px;top:512px;width:482px;height:350px;">
-    <div class="inner" data-a="kb" data-t="275.000" data-d="45.000" data-kb="in" style="left:-64.45px;top:-63.64px;width:610.91px;height:610.91px;transform-origin:305.45px 238.64px;">
+      <div class="photo" data-a="pop" data-t="244.290" style="left:1374px;top:512px;width:482px;height:350px;">
+    <div class="inner" data-a="kb" data-t="220.642" data-d="30.721" data-kb="in" style="left:-64.45px;top:-63.64px;width:610.91px;height:610.91px;transform-origin:305.45px 238.64px;">
       <img src="_kit/assets/school_lesterbpearson.jpg" alt="" />
     </div>
     <div class="plabel">Lester B. Pearson<small>몬트리올 북쪽 · 스포츠 특화 · 이탈리아어</small></div>
   </div>
     </div>
-<div class="chapter" data-a="drop" data-t="275.100"><b>6장</b>고등학교 8곳 · 동부</div>
+<div class="chapter" data-a="drop" data-t="220.742"><b>6장</b>고등학교 8곳 · 동부</div>
 <div class="foot"><div>출처: EMSB 2027-28 International Student Program 자료 (2026.10 기준) · 금액은 모두 캐나다 달러(CAD)</div></div>
-
+<audio id="vo-s07" src="_kit/audio/s07.m4a" data-start="220.642" data-duration="30.321" data-track-index="8"></audio>
 </section>
-<div class="cap clip " data-start="275.3" data-duration="4.228" data-track-index="5"><div class="cap-in" data-a="cap" data-t="275.3">국제학생을 받는 고등학교는 <span class="n">8곳</span>입니다.</div></div>
-<div class="cap clip " data-start="279.528" data-duration="2.818" data-track-index="5"><div class="cap-in" data-a="cap" data-t="279.528">먼저 동쪽 <span class="n">4곳</span>입니다.</div></div>
-<div class="cap clip " data-start="282.346" data-duration="8.769" data-track-index="5"><div class="cap-in" data-a="cap" data-t="282.346">FACE는 다운타운에 있는 예술 특화 학교로, 음악, 미술, 연극, 무용을 깊이 배웁니다.</div></div>
-<div class="cap clip " data-start="291.115" data-duration="7.673" data-track-index="5"><div class="cap-in" data-a="cap" data-t="291.115">John F. Kennedy는 미디어아트와 하키, 로보틱스 활동이 활발합니다.</div></div>
-<div class="cap clip " data-start="298.788" data-duration="5.062" data-track-index="5"><div class="cap-in" data-a="cap" data-t="298.788">Laurier Macdonald는 생레오나르에 있고,</div></div>
-<div class="cap clip " data-start="303.85" data-duration="5.585" data-track-index="5"><div class="cap-in" data-a="cap" data-t="303.85">IB 중등 과정과 미적분까지 가는 수학 가속반이 있습니다.</div></div>
-<div class="cap clip " data-start="309.435" data-duration="5.461" data-track-index="5"><div class="cap-in" data-a="cap" data-t="309.435">Lester B. Pearson은 몬트리올 북쪽에 있고,</div></div>
-<div class="cap clip " data-start="314.896" data-duration="5.104" data-track-index="5"><div class="cap-in" data-a="cap" data-t="314.896">스포츠 특화반과 이탈리아어 수업이 특징입니다.</div></div>
-<section id="s08" class="scene clip" data-start="320" data-duration="45" data-track-index="1">
-<div class="stage" data-a="drift" data-t="320.000" data-d="45.000">
-      <div class="blob" data-a="float" data-t="320.000" data-d="44.900" style="left:1460px;top:-260px;width:760px;height:760px;"></div><div class="blob" data-a="float" data-t="320.000" data-d="44.900" style="left:-240px;top:760px;width:520px;height:520px;background:#ffe9e3;"></div>
-      <div class="photo" data-a="fade" data-t="320.200" style="left:64px;top:140px;width:760px;height:730px;">
-    <div class="inner" data-a="kb" data-t="320.000" data-d="45.000" data-kb="in" style="left:-570px;top:-157.5px;width:2280px;height:1140px;transform-origin:950px 522.5px;">
-      <img src="_kit/assets/gb_hs_network_map.jpg" alt="" /><div class="pin" style="left:678.06px;top:742.19px" data-a="pulse" data-t="322.730"><i></i><span>LaurenHill</span></div><div class="pin" style="left:946.44px;top:845.5px" data-a="pulse" data-t="330.277"><i></i><span>Marymount</span></div><div class="pin pl" style="left:885.88px;top:865.69px" data-a="pulse" data-t="342.172"><i></i><span>Royal Vale</span></div><div class="pin" style="left:1026px;top:795.63px" data-a="pulse" data-t="348.567"><i></i><span>Westmount</span></div>
+<div class="cap clip " data-start="220.942" data-duration="3.286" data-track-index="5"><div class="cap-in" data-a="cap" data-t="220.942">국제학생을 받는 고등학교는 <span class="n">8곳</span>입니다.</div></div>
+<div class="cap clip " data-start="224.228" data-duration="1.927" data-track-index="5"><div class="cap-in" data-a="cap" data-t="224.228">먼저 동쪽 <span class="n">4곳</span>입니다.</div></div>
+<div class="cap clip " data-start="226.155" data-duration="6.223" data-track-index="5"><div class="cap-in" data-a="cap" data-t="226.155">FACE는 다운타운에 있는 예술 특화 학교로, 음악, 미술, 연극, 무용을 깊이 배웁니다.</div></div>
+<div class="cap clip " data-start="232.378" data-duration="4.749" data-track-index="5"><div class="cap-in" data-a="cap" data-t="232.378">John F. Kennedy는 미디어아트와 하키, 로보틱스 활동이 활발합니다.</div></div>
+<div class="cap clip " data-start="237.127" data-duration="3.405" data-track-index="5"><div class="cap-in" data-a="cap" data-t="237.127">Laurier Macdonald는 생레오나르에 있고,</div></div>
+<div class="cap clip " data-start="240.532" data-duration="3.758" data-track-index="5"><div class="cap-in" data-a="cap" data-t="240.532">IB 중등 과정과 미적분까지 가는 수학 가속반이 있습니다.</div></div>
+<div class="cap clip " data-start="244.29" data-duration="3.528" data-track-index="5"><div class="cap-in" data-a="cap" data-t="244.29">Lester B. Pearson은 몬트리올 북쪽에 있고,</div></div>
+<div class="cap clip " data-start="247.818" data-duration="3.545" data-track-index="5"><div class="cap-in" data-a="cap" data-t="247.818">스포츠 특화반과 이탈리아어 수업이 특징입니다.</div></div>
+<section id="s08" class="scene clip" data-start="251.363" data-duration="36.48" data-track-index="1">
+<div class="stage" data-a="drift" data-t="251.363" data-d="36.480">
+      <div class="blob" data-a="float" data-t="251.363" data-d="36.380" style="left:1460px;top:-260px;width:760px;height:760px;"></div><div class="blob" data-a="float" data-t="251.363" data-d="36.380" style="left:-240px;top:760px;width:520px;height:520px;background:#ffe9e3;"></div>
+      <div class="photo" data-a="fade" data-t="251.563" style="left:64px;top:140px;width:760px;height:730px;">
+    <div class="inner" data-a="kb" data-t="251.363" data-d="36.480" data-kb="in" style="left:-570px;top:-157.5px;width:2280px;height:1140px;transform-origin:950px 522.5px;">
+      <img src="_kit/assets/gb_hs_network_map.jpg" alt="" /><div class="pin" style="left:678.06px;top:742.19px" data-a="pulse" data-t="253.904"><i></i><span>LaurenHill</span></div><div class="pin" style="left:946.44px;top:845.5px" data-a="pulse" data-t="259.302"><i></i><span>Marymount</span></div><div class="pin pl" style="left:885.88px;top:865.69px" data-a="pulse" data-t="268.625"><i></i><span>Royal Vale</span></div><div class="pin" style="left:1026px;top:795.63px" data-a="pulse" data-t="273.664"><i></i><span>Westmount</span></div>
     </div>
     
   </div>
-      <div class="title " data-a="rise" data-t="320.300" data-out="322.730" style="left:870px;top:140px;width:990px;font-size:64px;text-align:left;">서부 <em>4곳</em></div>
-      <div class="photo" data-a="pop" data-t="322.730" style="left:870px;top:140px;width:482px;height:350px;">
-    <div class="inner" data-a="kb" data-t="320.000" data-d="45.000" data-kb="in" style="left:-64.45px;top:-95.45px;width:610.91px;height:610.91px;transform-origin:305.45px 270.45px;">
+      <div class="title " data-a="rise" data-t="251.663" data-out="253.904" style="left:870px;top:140px;width:990px;font-size:64px;text-align:left;">서부 <em>4곳</em></div>
+      <div class="photo" data-a="pop" data-t="253.904" style="left:870px;top:140px;width:482px;height:350px;">
+    <div class="inner" data-a="kb" data-t="251.363" data-d="36.480" data-kb="in" style="left:-64.45px;top:-95.45px;width:610.91px;height:610.91px;transform-origin:305.45px 270.45px;">
       <img src="_kit/assets/school_laurenhill.jpg" alt="" />
     </div>
     <div class="plabel">LaurenHill Academy<small>생로랑 · STEAM · 예술 과정</small></div>
   </div>
-      <div class="photo" data-a="pop" data-t="330.277" style="left:1374px;top:140px;width:482px;height:350px;">
-    <div class="inner" data-a="kb" data-t="320.000" data-d="45.000" data-kb="in" style="left:-64.45px;top:-120.91px;width:610.91px;height:610.91px;transform-origin:305.45px 295.91px;">
+      <div class="photo" data-a="pop" data-t="259.302" style="left:1374px;top:140px;width:482px;height:350px;">
+    <div class="inner" data-a="kb" data-t="251.363" data-d="36.480" data-kb="in" style="left:-64.45px;top:-120.91px;width:610.91px;height:610.91px;transform-origin:305.45px 295.91px;">
       <img src="_kit/assets/school_marymount.jpg" alt="" />
     </div>
     <div class="plabel">Marymount Academy Intl.<small>국제학생 최다 · IB 과정</small></div>
   </div>
-      <div class="photo" data-a="pop" data-t="342.172" style="left:870px;top:512px;width:482px;height:350px;">
-    <div class="inner" data-a="kb" data-t="320.000" data-d="45.000" data-kb="in" style="left:-64.45px;top:-95.45px;width:610.91px;height:610.91px;transform-origin:305.45px 270.45px;">
+      <div class="photo" data-a="pop" data-t="268.625" style="left:870px;top:512px;width:482px;height:350px;">
+    <div class="inner" data-a="kb" data-t="251.363" data-d="36.480" data-kb="in" style="left:-64.45px;top:-95.45px;width:610.91px;height:610.91px;transform-origin:305.45px 270.45px;">
       <img src="_kit/assets/school_royalvale.jpg" alt="" />
     </div>
     <div class="plabel">Royal Vale<small>수학·과학 중심 · 7학년 입학시험</small></div>
   </div>
-      <div class="photo" data-a="pop" data-t="348.567" style="left:1374px;top:512px;width:482px;height:350px;">
-    <div class="inner" data-a="kb" data-t="320.000" data-d="45.000" data-kb="in" style="left:-64.45px;top:-95.45px;width:610.91px;height:610.91px;transform-origin:305.45px 270.45px;">
+      <div class="photo" data-a="pop" data-t="273.664" style="left:1374px;top:512px;width:482px;height:350px;">
+    <div class="inner" data-a="kb" data-t="251.363" data-d="36.480" data-kb="in" style="left:-64.45px;top:-95.45px;width:610.91px;height:610.91px;transform-origin:305.45px 270.45px;">
       <img src="_kit/assets/school_westmount.jpg" alt="" />
     </div>
     <div class="plabel">Westmount High<small>1873년 개교 · AP 과정</small></div>
   </div>
-      <div class="abs"  data-a="fade" data-t="357.265" style="inset:0;background:rgba(255,248,242,.82)"></div>
-      <div class="flow" style="left:260px;top:380px;width:1400px;height:260px;"><div class="step" data-a="pop" data-t="357.365" style=""><div class="sn">1</div><div><div class="st">희망 학교 <em>3곳</em> 제출</div><div class="ss">지원서에 순위대로</div></div></div><div class="arrow" data-a="fade" data-t="361.134" style="">→</div><div class="step last" data-a="pop" data-t="361.134" style=""><div class="sn">2</div><div><div class="st">EMSB가 최종 배정</div><div class="ss">자리 상황에 따라</div></div></div></div>
+      <div class="abs"  data-a="fade" data-t="281.047" style="inset:0;background:rgba(255,248,242,.82)"></div>
+      <div class="flow" style="left:260px;top:380px;width:1400px;height:260px;"><div class="step" data-a="pop" data-t="281.147" style=""><div class="sn">1</div><div><div class="st">희망 학교 <em>3곳</em> 제출</div><div class="ss">지원서에 순위대로</div></div></div><div class="arrow" data-a="fade" data-t="284.400" style="">→</div><div class="step last" data-a="pop" data-t="284.400" style=""><div class="sn">2</div><div><div class="st">EMSB가 최종 배정</div><div class="ss">자리 상황에 따라</div></div></div></div>
     </div>
-<div class="chapter" data-a="drop" data-t="320.100"><b>7장</b>고등학교 8곳 · 서부</div>
+<div class="chapter" data-a="drop" data-t="251.463"><b>7장</b>고등학교 8곳 · 서부</div>
 <div class="foot"><div>출처: EMSB 2027-28 International Student Program 자료 (2026.10 기준) · 금액은 모두 캐나다 달러(CAD)</div></div>
-
+<audio id="vo-s08" src="_kit/audio/s08.m4a" data-start="251.363" data-duration="36.08" data-track-index="8"></audio>
 </section>
-<div class="cap clip " data-start="320.3" data-duration="2.43" data-track-index="5"><div class="cap-in" data-a="cap" data-t="320.3">다음은 서쪽 <span class="n">4곳</span>입니다.</div></div>
-<div class="cap clip " data-start="322.73" data-duration="4.064" data-track-index="5"><div class="cap-in" data-a="cap" data-t="322.73">LaurenHill Academy는 생로랑에 있고,</div></div>
-<div class="cap clip " data-start="326.794" data-duration="3.483" data-track-index="5"><div class="cap-in" data-a="cap" data-t="326.794">STEAM 프로그램과 예술 과정이 강합니다.</div></div>
-<div class="cap clip " data-start="330.277" data-duration="5.178" data-track-index="5"><div class="cap-in" data-a="cap" data-t="330.277">Marymount Academy International은 EMSB</div></div>
-<div class="cap clip " data-start="335.455" data-duration="5.038" data-track-index="5"><div class="cap-in" data-a="cap" data-t="335.455">고등학교 중에서 국제학생과 임시 체류 학생이 가장 많은 학교이고,</div></div>
-<div class="cap clip " data-start="340.493" data-duration="1.679" data-track-index="5"><div class="cap-in" data-a="cap" data-t="340.493">IB 과정이 있습니다.</div></div>
-<div class="cap clip " data-start="342.172" data-duration="6.395" data-track-index="5"><div class="cap-in" data-a="cap" data-t="342.172">Royal Vale은 수학과 과학 중심 학교로, <span class="n">7학년</span> 입학 때 시험을 봅니다.</div></div>
-<div class="cap clip " data-start="348.567" data-duration="4.563" data-track-index="5"><div class="cap-in" data-a="cap" data-t="348.567">Westmount High는 <span class="n">1873년</span>에 문을 연 학교로,</div></div>
-<div class="cap clip " data-start="353.13" data-duration="4.135" data-track-index="5"><div class="cap-in" data-a="cap" data-t="353.13">대학 학점을 미리 딸 수 있는 AP 과정이 있습니다.</div></div>
-<div class="cap clip " data-start="357.265" data-duration="7.735" data-track-index="5"><div class="cap-in" data-a="cap" data-t="357.265">학교는 희망하는 <span class="n">3곳</span>을 적어 내고, 최종 배정은 EMSB가 자리 상황을 보고 결정합니다.</div></div>
-<section id="s09" class="scene clip" data-start="365" data-duration="55" data-track-index="1">
-<div class="stage" data-a="drift" data-t="365.000" data-d="55.000">
-      <div class="blob" data-a="float" data-t="365.000" data-d="54.900" style="left:1460px;top:-260px;width:760px;height:760px;"></div><div class="blob" data-a="float" data-t="365.000" data-d="54.900" style="left:-240px;top:760px;width:520px;height:520px;background:#ffe9e3;"></div>
-      <div class="abs" data-a="fade" data-t="365.000" data-out="385.374" style="left:0px;top:0px;width:100%;height:100%;">
-        <div class="card " data-a="pop" data-t="365.400" style="left:64px;top:150px;width:560px;height:230px;">
+<div class="cap clip " data-start="251.663" data-duration="2.241" data-track-index="5"><div class="cap-in" data-a="cap" data-t="251.663">다음은 서쪽 <span class="n">4곳</span>입니다.</div></div>
+<div class="cap clip " data-start="253.904" data-duration="2.907" data-track-index="5"><div class="cap-in" data-a="cap" data-t="253.904">LaurenHill Academy는 생로랑에 있고,</div></div>
+<div class="cap clip " data-start="256.811" data-duration="2.491" data-track-index="5"><div class="cap-in" data-a="cap" data-t="256.811">STEAM 프로그램과 예술 과정이 강합니다.</div></div>
+<div class="cap clip " data-start="259.302" data-duration="4.058" data-track-index="5"><div class="cap-in" data-a="cap" data-t="259.302">Marymount Academy International은 EMSB</div></div>
+<div class="cap clip " data-start="263.36" data-duration="3.949" data-track-index="5"><div class="cap-in" data-a="cap" data-t="263.36">고등학교 중에서 국제학생과 임시 체류 학생이 가장 많은 학교이고,</div></div>
+<div class="cap clip " data-start="267.309" data-duration="1.316" data-track-index="5"><div class="cap-in" data-a="cap" data-t="267.309">IB 과정이 있습니다.</div></div>
+<div class="cap clip " data-start="268.625" data-duration="5.039" data-track-index="5"><div class="cap-in" data-a="cap" data-t="268.625">Royal Vale은 수학과 과학 중심 학교로, <span class="n">7학년</span> 입학 때 시험을 봅니다.</div></div>
+<div class="cap clip " data-start="273.664" data-duration="3.873" data-track-index="5"><div class="cap-in" data-a="cap" data-t="273.664">Westmount High는 <span class="n">1873년</span>에 문을 연 학교로,</div></div>
+<div class="cap clip " data-start="277.537" data-duration="3.51" data-track-index="5"><div class="cap-in" data-a="cap" data-t="277.537">대학 학점을 미리 딸 수 있는 AP 과정이 있습니다.</div></div>
+<div class="cap clip " data-start="281.047" data-duration="6.796" data-track-index="5"><div class="cap-in" data-a="cap" data-t="281.047">학교는 희망하는 <span class="n">3곳</span>을 적어 내고, 최종 배정은 EMSB가 자리 상황을 보고 결정합니다.</div></div>
+<section id="s09" class="scene clip" data-start="287.843" data-duration="52.966" data-track-index="1">
+<div class="stage" data-a="drift" data-t="287.843" data-d="52.966">
+      <div class="blob" data-a="float" data-t="287.843" data-d="52.866" style="left:1460px;top:-260px;width:760px;height:760px;"></div><div class="blob" data-a="float" data-t="287.843" data-d="52.866" style="left:-240px;top:760px;width:520px;height:520px;background:#ffe9e3;"></div>
+      <div class="abs" data-a="fade" data-t="287.843" data-out="307.543" style="left:0px;top:0px;width:100%;height:100%;">
+        <div class="card " data-a="pop" data-t="288.243" style="left:64px;top:150px;width:560px;height:230px;">
     <div class="cbig">영어</div><div class="ct">모든 수업은 영어로</div>
   </div>
-        <div class="card hl" data-a="pop" data-t="367.947" style="left:650px;top:150px;width:560px;height:230px;">
+        <div class="card hl" data-a="pop" data-t="290.716" style="left:650px;top:150px;width:560px;height:230px;">
     <div class="cbig">불어</div><div class="ct">전 학년 <em>제2언어</em> 필수</div>
   </div>
-        <div class="kicker" data-a="rise" data-t="370.113" style="left:64px;top:404px;width:1150px;font-size:32px;">영어 + 불어 = 두 언어에 자연스럽게 익숙해지는 도시</div>
-        <div class="card red" data-a="pop" data-t="375.396" style="left:64px;top:480px;width:1146px;height:300px;">
-    <div class="ct" style="font-size:46px">과목당</div><div class="cbig"><span data-a="count" data-t="375.396" data-d="1.300" data-to="60">60</span><span style="font-size:.5em">점 이상 = 학점 인정</span></div><div class="cs" style="font-size:30px">1년만 다녀도 똑같이 적용 → 성적 관리 필수</div>
+        <div class="kicker" data-a="rise" data-t="292.822" style="left:64px;top:404px;width:1150px;font-size:32px;">영어 + 불어 = 두 언어에 자연스럽게 익숙해지는 도시</div>
+        <div class="card red" data-a="pop" data-t="297.837" style="left:64px;top:480px;width:1146px;height:300px;">
+    <div class="ct" style="font-size:46px">과목당</div><div class="cbig"><span data-a="count" data-t="297.837" data-d="1.300" data-to="60">60</span><span style="font-size:.5em">점 이상 = 학점 인정</span></div><div class="cs" style="font-size:30px">1년만 다녀도 똑같이 적용 → 성적 관리 필수</div>
   </div>
-        <div class="photo" data-a="fade" data-t="365.400" style="left:1250px;top:150px;width:606px;height:630px;">
-    <div class="inner" data-a="kb" data-t="365.000" data-d="55.000" data-kb="up" style="left:-155.18px;top:-286.36px;width:916.36px;height:916.36px;transform-origin:458.18px 601.36px;">
+        <div class="photo" data-a="fade" data-t="288.243" style="left:1250px;top:150px;width:606px;height:630px;">
+    <div class="inner" data-a="kb" data-t="287.843" data-d="52.966" data-kb="up" style="left:-155.18px;top:-286.36px;width:916.36px;height:916.36px;transform-origin:458.18px 601.36px;">
       <img src="_kit/assets/school_westmount.jpg" alt="" />
     </div>
     
   </div>
       </div>
-      <div class="abs" data-a="fade" data-t="385.374" data-out="395.000" style="left:0px;top:0px;width:100%;height:100%;">
-        <div class="title " data-a="rise" data-t="385.374" style="left:64px;top:150px;width:1792px;font-size:70px;text-align:center;">대신 <em>지원</em>도 있어요</div>
-        <div class="card " data-a="pop" data-t="387.487" style="left:160px;top:330px;width:760px;height:360px;">
+      <div class="abs" data-a="fade" data-t="307.543" data-out="316.784" style="left:0px;top:0px;width:100%;height:100%;">
+        <div class="title " data-a="rise" data-t="307.543" style="left:64px;top:150px;width:1792px;font-size:70px;text-align:center;">대신 지원도 있어요</div>
+        <div class="card " data-a="pop" data-t="309.053" style="left:160px;top:330px;width:760px;height:360px;">
     <div class="cbig">매주</div><div class="ct">영어·불어 <em>온라인 방과후 튜터링</em></div>
   </div>
-        <div class="card hl" data-a="pop" data-t="391.619" style="left:1000px;top:330px;width:760px;height:360px;">
+        <div class="card hl" data-a="pop" data-t="313.305" style="left:1000px;top:330px;width:760px;height:360px;">
     <div class="cbig">24시간</div><div class="ct"><em>모국어</em> 상담 서비스</div>
   </div>
       </div>
-      <div class="abs" data-a="fade" data-t="395.000" data-out="404.039" style="left:0px;top:0px;width:100%;height:100%;">
-        <div class="photo" data-a="fade" data-t="395.000" style="left:64px;top:140px;width:1220px;height:690px;">
-    <div class="inner" data-a="kb" data-t="395.000" data-d="NaN" data-kb="in" style="left:-1.89px;top:0px;width:1249.81px;height:703.02px;transform-origin:611.89px 345px;">
+      <div class="abs" data-a="fade" data-t="316.784" data-out="326.038" style="left:0px;top:0px;width:100%;height:100%;">
+        <div class="photo" data-a="fade" data-t="316.784" style="left:64px;top:140px;width:1220px;height:690px;">
+    <div class="inner" data-a="kb" data-t="316.784" data-d="NaN" data-kb="in" style="left:-1.89px;top:0px;width:1249.81px;height:703.02px;transform-origin:611.89px 345px;">
       <img src="_kit/assets/isp_excursions.jpg" alt="" />
     </div>
     
   </div>
-        <div class="card " data-a="pop" data-t="395.200" style="left:1320px;top:140px;width:536px;height:240px;">
-    <div class="cbig"><span style="font-size:.5em;color:var(--sub)">연 </span><span data-a="count" data-t="395.200" data-d="1.300" data-to="4">4</span><span style="font-size:.5em">회 이상</span></div><div class="ct">현장학습</div>
+        <div class="card " data-a="pop" data-t="316.984" style="left:1320px;top:140px;width:536px;height:240px;">
+    <div class="cbig"><span style="font-size:.5em;color:var(--sub)">연 </span><span data-a="count" data-t="316.984" data-d="1.300" data-to="4">4</span><span style="font-size:.5em">회 이상</span></div><div class="ct">현장학습</div>
   </div>
-        <div class="chips" style="left:1320px;top:420px;width:536px;justify-content:flex-start;"><div class="chip " data-a="pop" data-t="398.352">퀘벡시티</div><div class="chip " data-a="pop" data-t="399.250">스키</div><div class="chip " data-a="pop" data-t="400.746">슈가쉑 (메이플 농장)</div><div class="chip solid" data-a="pop" data-t="402.842">수도 오타와</div></div>
+        <div class="chips" style="left:1320px;top:420px;width:536px;justify-content:flex-start;"><div class="chip " data-a="pop" data-t="320.038">퀘벡시티</div><div class="chip " data-a="pop" data-t="320.985">스키</div><div class="chip " data-a="pop" data-t="322.564">슈가쉑 (메이플 농장)</div><div class="chip solid" data-a="pop" data-t="324.775">수도 오타와</div></div>
       </div>
-      <div class="abs" data-a="fade" data-t="404.039" style="left:0px;top:0px;width:100%;height:100%;">
-        <div class="photo" data-a="fade" data-t="404.039" style="left:64px;top:270px;width:600px;height:420px;">
-    <div class="inner" data-a="kb" data-t="404.039" data-d="NaN" data-kb="out" style="left:-1320px;top:-170px;width:1920px;height:1484px;transform-origin:1620px 380px;">
+      <div class="abs" data-a="fade" data-t="326.038" style="left:0px;top:0px;width:100%;height:100%;">
+        <div class="photo" data-a="fade" data-t="326.038" style="left:64px;top:270px;width:600px;height:420px;">
+    <div class="inner" data-a="kb" data-t="326.038" data-d="NaN" data-kb="out" style="left:-1320px;top:-170px;width:1920px;height:1484px;transform-origin:1620px 380px;">
       <img src="_kit/assets/pamphlet_p2.jpg" alt="" />
     </div>
     
   </div>
-        <div class="quote" data-a="rise" data-t="404.339" style="left:710px;top:170px;width:1146px;height:620px;"><div class="qm">“</div><div class="qt">처음엔 영어와 불어를 동시에 배워야 해서 힘들었어요. 하지만 선생님과 친구들 덕분에 이겨낼 수 있었어요. 완전히 새로운 세상에 눈을 뜨게 해줬어요.</div><div class="qb">- Ji Yeon, 한국 (EMSB 국제학생 팸플릿)</div></div>
+        <div class="quote" data-a="rise" data-t="326.338" style="left:710px;top:170px;width:1146px;height:620px;"><div class="qm">“</div><div class="qt">처음엔 영어와 불어를 동시에 배워야 해서 힘들었어요. 하지만 선생님과 친구들 덕분에 이겨낼 수 있었어요. 완전히 새로운 세상에 눈을 뜨게 해줬어요.</div><div class="qb">- Ji Yeon, 한국 (EMSB 국제학생 팸플릿)</div></div>
       </div>
     </div>
-<div class="chapter" data-a="drop" data-t="365.100"><b>8장</b>학교생활과 지원</div>
+<div class="chapter" data-a="drop" data-t="287.943"><b>8장</b>학교생활과 지원</div>
 <div class="foot"><div>출처: EMSB 2027-28 International Student Program 자료 (2026.10 기준) · 금액은 모두 캐나다 달러(CAD)</div></div>
-
+<audio id="vo-s09" src="_kit/audio/s09.m4a" data-start="287.843" data-duration="52.566" data-track-index="8"></audio>
 </section>
-<div class="cap clip " data-start="365.3" data-duration="4.813" data-track-index="5"><div class="cap-in" data-a="cap" data-t="365.3">수업은 영어로 하고, 모든 학년에서 불어를 제<span class="n">2</span>언어로 배웁니다.</div></div>
-<div class="cap clip " data-start="370.113" data-duration="5.283" data-track-index="5"><div class="cap-in" data-a="cap" data-t="370.113">영어와 불어를 같이 쓰는 도시라서, 자연스럽게 두 언어에 익숙해집니다.</div></div>
-<div class="cap clip " data-start="375.396" data-duration="3.639" data-track-index="5"><div class="cap-in" data-a="cap" data-t="375.396">과목마다 <span class="n">60점</span> 이상이어야 학점이 인정됩니다.</div></div>
-<div class="cap clip " data-start="379.035" data-duration="6.339" data-track-index="5"><div class="cap-in" data-a="cap" data-t="379.035"><span class="n">1년</span>만 다니고 한국에 돌아와도 똑같이 적용되니까, 성적 관리는 꼭 신경 쓰셔야 합니다.</div></div>
-<div class="cap clip " data-start="385.374" data-duration="2.113" data-track-index="5"><div class="cap-in" data-a="cap" data-t="385.374">대신 지원도 있습니다.</div></div>
-<div class="cap clip " data-start="387.487" data-duration="3.427" data-track-index="5"><div class="cap-in" data-a="cap" data-t="387.487">매주 영어와 불어 온라인 방과후 튜터링이 있고,</div></div>
-<div class="cap clip " data-start="390.914" data-duration="4.086" data-track-index="5"><div class="cap-in" data-a="cap" data-t="390.914">모국어로 받을 수 있는 <span class="n">24시간</span> 상담 서비스도 있습니다.</div></div>
-<div class="cap clip " data-start="395" data-duration="3.052" data-track-index="5"><div class="cap-in" data-a="cap" data-t="395"><span class="n">1년</span>에 최소 <span class="n">4번</span> 현장학습도 갑니다.</div></div>
-<div class="cap clip " data-start="398.052" data-duration="5.987" data-track-index="5"><div class="cap-in" data-a="cap" data-t="398.052">퀘벡시티, 스키, 메이플 시럽 농장인 슈가쉑, 그리고 수도 오타와까지 다녀옵니다.</div></div>
-<div class="cap clip " data-start="404.039" data-duration="3.522" data-track-index="5"><div class="cap-in" data-a="cap" data-t="404.039">한국에서 온 지연 학생은 이렇게 말했습니다.</div></div>
-<div class="cap clip " data-start="407.561" data-duration="6.574" data-track-index="5"><div class="cap-in" data-a="cap" data-t="407.561">영어와 불어를 동시에 배워야 해서 처음엔 힘들었지만, 선생님과 친구들 덕분에 이겨냈다고요.</div></div>
-<div class="cap clip " data-start="414.135" data-duration="5.865" data-track-index="5"><div class="cap-in" data-a="cap" data-t="414.135">그리고 이 경험이 완전히 새로운 세상에 눈을 뜨게 해줬다고 했습니다.</div></div>
-<section id="s10" class="scene clip" data-start="420" data-duration="55" data-track-index="1">
-<div class="stage" data-a="drift" data-t="420.000" data-d="55.000">
-      <div class="blob" data-a="float" data-t="420.000" data-d="54.900" style="left:1460px;top:-260px;width:760px;height:760px;"></div><div class="blob" data-a="float" data-t="420.000" data-d="54.900" style="left:-240px;top:760px;width:520px;height:520px;background:#ffe9e3;"></div>
-      <div class="abs" data-a="fade" data-t="420.000" data-out="433.725" style="left:0px;top:0px;width:100%;height:100%;">
-        <div class="title " data-a="rise" data-t="420.200" style="left:64px;top:150px;width:1792px;font-size:72px;text-align:center;">홈스테이는 어떻게?</div>
-        <div class="card " data-a="pop" data-t="420.500" style="left:160px;top:320px;width:760px;height:380px;">
+<div class="cap clip " data-start="288.143" data-duration="4.679" data-track-index="5"><div class="cap-in" data-a="cap" data-t="288.143">수업은 영어로 하고, 모든 학년에서 불어를 제<span class="n">2</span>언어로 배웁니다.</div></div>
+<div class="cap clip " data-start="292.822" data-duration="5.015" data-track-index="5"><div class="cap-in" data-a="cap" data-t="292.822">영어와 불어를 같이 쓰는 도시라서, 자연스럽게 두 언어에 익숙해집니다.</div></div>
+<div class="cap clip " data-start="297.837" data-duration="3.599" data-track-index="5"><div class="cap-in" data-a="cap" data-t="297.837">과목마다 <span class="n">60점</span> 이상이어야 학점이 인정됩니다.</div></div>
+<div class="cap clip " data-start="301.436" data-duration="6.107" data-track-index="5"><div class="cap-in" data-a="cap" data-t="301.436"><span class="n">1년</span>만 다니고 한국에 돌아와도 똑같이 적용되니까, 성적 관리는 꼭 신경 쓰셔야 합니다.</div></div>
+<div class="cap clip " data-start="307.543" data-duration="1.51" data-track-index="5"><div class="cap-in" data-a="cap" data-t="307.543">대신 지원도 있습니다.</div></div>
+<div class="cap clip " data-start="309.053" data-duration="3.526" data-track-index="5"><div class="cap-in" data-a="cap" data-t="309.053">매주 영어와 불어 온라인 방과후 튜터링이 있고,</div></div>
+<div class="cap clip " data-start="312.579" data-duration="4.205" data-track-index="5"><div class="cap-in" data-a="cap" data-t="312.579">모국어로 받을 수 있는 <span class="n">24시간</span> 상담 서비스도 있습니다.</div></div>
+<div class="cap clip " data-start="316.784" data-duration="2.938" data-track-index="5"><div class="cap-in" data-a="cap" data-t="316.784"><span class="n">1년</span>에 최소 <span class="n">4번</span> 현장학습도 갑니다.</div></div>
+<div class="cap clip " data-start="319.722" data-duration="6.316" data-track-index="5"><div class="cap-in" data-a="cap" data-t="319.722">퀘벡시티, 스키, 메이플 시럽 농장인 슈가쉑, 그리고 수도 오타와까지 다녀옵니다.</div></div>
+<div class="cap clip " data-start="326.038" data-duration="3.134" data-track-index="5"><div class="cap-in" data-a="cap" data-t="326.038">한국에서 온 지연 학생은 이렇게 말했습니다.</div></div>
+<div class="cap clip " data-start="329.172" data-duration="6.339" data-track-index="5"><div class="cap-in" data-a="cap" data-t="329.172">영어와 불어를 동시에 배워야 해서 처음엔 힘들었지만, 선생님과 친구들 덕분에 이겨냈다고요.</div></div>
+<div class="cap clip " data-start="335.511" data-duration="5.298" data-track-index="5"><div class="cap-in" data-a="cap" data-t="335.511">그리고 이 경험이 완전히 새로운 세상에 눈을 뜨게 해줬다고 했습니다.</div></div>
+<section id="s10" class="scene clip" data-start="340.809" data-duration="39.684" data-track-index="1">
+<div class="stage" data-a="drift" data-t="340.809" data-d="39.684">
+      <div class="blob" data-a="float" data-t="340.809" data-d="39.584" style="left:1460px;top:-260px;width:760px;height:760px;"></div><div class="blob" data-a="float" data-t="340.809" data-d="39.584" style="left:-240px;top:760px;width:520px;height:520px;background:#ffe9e3;"></div>
+      <div class="abs" data-a="fade" data-t="340.809" data-out="350.792" style="left:0px;top:0px;width:100%;height:100%;">
+        <div class="title " data-a="rise" data-t="341.009" style="left:64px;top:150px;width:1792px;font-size:72px;text-align:center;">홈스테이는 어떻게?</div>
+        <div class="card " data-a="pop" data-t="341.309" style="left:160px;top:320px;width:760px;height:380px;">
     <div class="cbig">✕</div><div class="ct">EMSB가 <em>직접 운영하지 않음</em></div>
   </div>
-        <div class="card hl" data-a="pop" data-t="424.976" style="left:1000px;top:320px;width:760px;height:380px;">
+        <div class="card hl" data-a="pop" data-t="344.673" style="left:1000px;top:320px;width:760px;height:380px;">
     <div class="cbig">추천 업체</div><div class="ct">+ 후견인 필수</div><div class="cs">캐나다 시민권자 또는 영주권자</div>
   </div>
       </div>
-      <div class="title " data-a="rise" data-t="433.725" style="left:64px;top:140px;width:1792px;font-size:62px;text-align:center;">초등 자녀 부모님이라면 <em>꼭!</em></div>
-      <div class="card " data-a="left" data-t="440.965" style="left:64px;top:236px;width:870px;height:320px;">
-    <div class="cs" style="margin:0 0 6px;font-size:30px">부모 <b>동반만</b> 할 때</div><div class="cbig"><span style="font-size:.5em;color:var(--sub)">CAD </span><span data-a="count" data-t="440.965" data-d="1.300" data-to="12020">12,020</span><span style="font-size:.5em"> / 년</span></div><div class="ct">자녀 = 국제학생 학비</div>
+      <div class="title " data-a="rise" data-t="350.792" style="left:64px;top:140px;width:1792px;font-size:62px;text-align:center;">초등 자녀 부모님이라면 꼭!</div>
+      <div class="card " data-a="left" data-t="356.086" style="left:64px;top:236px;width:870px;height:320px;">
+    <div class="cs" style="margin:0 0 6px;font-size:30px">부모 <b>동반만</b> 할 때</div><div class="cbig"><span style="font-size:.5em;color:var(--sub)">CAD </span><span data-a="count" data-t="356.086" data-d="1.300" data-to="12020">12,020</span><span style="font-size:.5em"> / 년</span></div><div class="ct">자녀 = 국제학생 학비</div>
   </div>
-      <div class="card red" data-a="right" data-t="449.412" style="left:986px;top:236px;width:870px;height:320px;">
+      <div class="card red" data-a="right" data-t="362.425" style="left:986px;top:236px;width:870px;height:320px;">
     <div class="cs" style="margin:0 0 6px;font-size:30px">부모가 퀘벡에서 <b>학생비자</b>로 공부할 때</div><div class="cbig">학비 면제</div><div class="ct">동반 자녀 공립학교</div>
   </div>
-      <div class="chips" style="left:986px;top:574px;width:870px;justify-content:center;"><div class="chip warn" data-a="pop" data-t="458.009">다만 몇 가지 조건 있음 · 상담 필요</div></div>
-      <div class="ftable" data-a="rise" data-t="461.479" style="left:64px;top:650px;width:1792px;height:204px;">
+      <div class="chips" style="left:986px;top:574px;width:870px;justify-content:center;"><div class="chip warn" data-a="pop" data-t="369.403">다만 몇 가지 조건 있음 · 상담 필요</div></div>
+      <div class="ftable" data-a="rise" data-t="371.272" style="left:64px;top:650px;width:1792px;height:204px;">
     <div class="tr th" style="grid-template-columns:1fr 1fr 1fr;height:60px"><div class="td" style="text-align:left">자녀 수</div><div class="td" style="text-align:right">부모 동반만 (1년)</div><div class="td" style="text-align:right">부모 학생비자 (1년)</div></div>
-    <div class="tr" data-a="left" data-t="461.901" style="grid-template-columns:1fr 1fr 1fr;height:72px">
+    <div class="tr" data-a="left" data-t="371.544" style="grid-template-columns:1fr 1fr 1fr;height:72px">
         <div class="td rowlab" style="font-size:1.25em">아이 1명</div>
-        <div class="td money" data-a="pop" data-t="462.112"><small>CAD</small><span data-a="count" data-t="462.112" data-d="1.100" data-to="12020">12,020</span></div><div class="td money" data-a="pop" data-t="462.746"><small>CAD</small><span data-a="count" data-t="462.746" data-d="1.100" data-to="0">0</span></div>
-      </div><div class="tr" data-a="left" data-t="463.591" style="grid-template-columns:1fr 1fr 1fr;height:72px">
+        <div class="td money" data-a="pop" data-t="371.680"><small>CAD</small><span data-a="count" data-t="371.680" data-d="1.100" data-to="12020">12,020</span></div><div class="td money" data-a="pop" data-t="372.087"><small>CAD</small><span data-a="count" data-t="372.087" data-d="1.100" data-to="0">0</span></div>
+      </div><div class="tr" data-a="left" data-t="372.631" style="grid-template-columns:1fr 1fr 1fr;height:72px">
         <div class="td rowlab" style="font-size:1.25em">아이 2명</div>
-        <div class="td money" data-a="pop" data-t="463.802"><small>CAD</small><span data-a="count" data-t="463.802" data-d="1.100" data-to="24040">24,040</span></div><div class="td money" data-a="pop" data-t="464.435"><small>CAD</small><span data-a="count" data-t="464.435" data-d="1.100" data-to="0">0</span></div>
+        <div class="td money" data-a="pop" data-t="372.766"><small>CAD</small><span data-a="count" data-t="372.766" data-d="1.100" data-to="24040">24,040</span></div><div class="td money" data-a="pop" data-t="373.174"><small>CAD</small><span data-a="count" data-t="373.174" data-d="1.100" data-to="0">0</span></div>
       </div>
   </div>
     </div>
-<div class="chapter" data-a="drop" data-t="420.100"><b>9장</b>홈스테이 &amp; 초등 부모님</div>
+<div class="chapter" data-a="drop" data-t="340.909"><b>9장</b>홈스테이 &amp; 초등 부모님</div>
 <div class="foot" style="bottom:14px"><div>※ 학비 면제: 퀘벡 교육부 면제 규정, 부모 학교·체류 조건에 따라 다름 · 상담 필요</div><div>출처: EMSB 2027-28 International Student Program 자료 (2026.10 기준) · 금액은 모두 캐나다 달러(CAD)</div></div>
-
+<audio id="vo-s10" src="_kit/audio/s10.m4a" data-start="340.809" data-duration="39.284" data-track-index="8"></audio>
 </section>
-<div class="cap clip capup" data-start="420.3" data-duration="4.676" data-track-index="5"><div class="cap-in" data-a="cap" data-t="420.3">EMSB는 홈스테이를 직접 운영하지 않습니다.</div></div>
-<div class="cap clip capup" data-start="424.976" data-duration="3.774" data-track-index="5"><div class="cap-in" data-a="cap" data-t="424.976">추천 홈스테이 업체를 통해 집을 구하고,</div></div>
-<div class="cap clip capup" data-start="428.75" data-duration="4.975" data-track-index="5"><div class="cap-in" data-a="cap" data-t="428.75">캐나다 시민권자나 영주권자가 후견인을 맡아야 합니다.</div></div>
-<div class="cap clip capup" data-start="433.725" data-duration="7.24" data-track-index="5"><div class="cap-in" data-a="cap" data-t="433.725">그런데 초등학생 자녀를 두신 부모님이라면, 꼭 아셔야 할 게 하나 있습니다.</div></div>
-<div class="cap clip capup" data-start="440.965" data-duration="8.447" data-track-index="5"><div class="cap-in" data-a="cap" data-t="440.965">부모님이 그냥 동반만 하시면, 아이는 국제학생이라서 <span class="n">1년</span>에 <span class="n">1만 2천 이십 달러</span>를 냅니다.</div></div>
-<div class="cap clip capup" data-start="449.412" data-duration="4.814" data-track-index="5"><div class="cap-in" data-a="cap" data-t="449.412">그런데 부모님이 퀘벡에서 학생비자로 공부를 하시면,</div></div>
-<div class="cap clip capup" data-start="454.226" data-duration="3.783" data-track-index="5"><div class="cap-in" data-a="cap" data-t="454.226">동반 자녀는 공립학교 학비가 면제됩니다.</div></div>
-<div class="cap clip capup" data-start="458.009" data-duration="3.47" data-track-index="5"><div class="cap-in" data-a="cap" data-t="458.009">다만 몇 가지 조건이 있습니다.</div></div>
-<div class="cap clip capup" data-start="461.479" data-duration="4.223" data-track-index="5"><div class="cap-in" data-a="cap" data-t="461.479">아이가 둘, 셋이면 차이는 더 커집니다.</div></div>
-<div class="cap clip capup" data-start="465.702" data-duration="4.127" data-track-index="5"><div class="cap-in" data-a="cap" data-t="465.702">부모님 학교 선택에 따라 조건이 달라지니까,</div></div>
-<div class="cap clip capup" data-start="469.829" data-duration="5.171" data-track-index="5"><div class="cap-in" data-a="cap" data-t="469.829">이 부분은 상담에서 자세히 비교해 드리겠습니다.</div></div>
-<section id="s11" class="scene clip" data-start="475" data-duration="40" data-track-index="1">
-<div class="stage" data-a="drift" data-t="475.000" data-d="40.000">
-      <div class="blob" data-a="float" data-t="475.000" data-d="39.900" style="left:1460px;top:-260px;width:760px;height:760px;"></div><div class="blob" data-a="float" data-t="475.000" data-d="39.900" style="left:-240px;top:760px;width:520px;height:520px;background:#ffe9e3;"></div>
-      <div class="abs" data-a="fade" data-t="475.000" data-out="498.340" style="left:0px;top:0px;width:100%;height:100%;">
-        <div class="title " data-a="rise" data-t="475.200" style="left:64px;top:150px;width:1792px;font-size:76px;text-align:left;">정리하겠습니다</div>
-        <div class="checks" style="left:64px;top:290px;width:1792px;grid-template-columns:repeat(1,1fr);font-size:46px;"><div class="check" data-a="left" data-t="477.102"><i>1</i><span>중고등학생은 혼자서도 OK · 1년 학비 <em>CAD 15,170</em> (보험 포함)</span></div><div class="check" data-a="left" data-t="484.696"><i>2</i><span><em>3개월</em>부터 짧게 경험 가능</span></div><div class="check" data-a="left" data-t="488.815"><i>3</i><span>신청 <em>12/1 ~ 5/31</em> · 학교 배정은 자리 상황에 따라 → 일찍 준비</span></div></div>
+<div class="cap clip capup" data-start="341.109" data-duration="3.564" data-track-index="5"><div class="cap-in" data-a="cap" data-t="341.109">EMSB는 홈스테이를 직접 운영하지 않습니다.</div></div>
+<div class="cap clip capup" data-start="344.673" data-duration="2.64" data-track-index="5"><div class="cap-in" data-a="cap" data-t="344.673">추천 홈스테이 업체를 통해 집을 구하고,</div></div>
+<div class="cap clip capup" data-start="347.313" data-duration="3.479" data-track-index="5"><div class="cap-in" data-a="cap" data-t="347.313">캐나다 시민권자나 영주권자가 후견인을 맡아야 합니다.</div></div>
+<div class="cap clip capup" data-start="350.792" data-duration="5.294" data-track-index="5"><div class="cap-in" data-a="cap" data-t="350.792">그런데 초등학생 자녀를 두신 부모님이라면, 꼭 아셔야 할 게 하나 있습니다.</div></div>
+<div class="cap clip capup" data-start="356.086" data-duration="6.339" data-track-index="5"><div class="cap-in" data-a="cap" data-t="356.086">부모님이 그냥 동반만 하시면, 아이는 국제학생이라서 <span class="n">1년</span>에 <span class="n">1만 2천 이십 달러</span>를 냅니다.</div></div>
+<div class="cap clip capup" data-start="362.425" data-duration="3.908" data-track-index="5"><div class="cap-in" data-a="cap" data-t="362.425">그런데 부모님이 퀘벡에서 학생비자로 공부를 하시면,</div></div>
+<div class="cap clip capup" data-start="366.333" data-duration="3.07" data-track-index="5"><div class="cap-in" data-a="cap" data-t="366.333">동반 자녀는 공립학교 학비가 면제됩니다.</div></div>
+<div class="cap clip capup" data-start="369.403" data-duration="1.869" data-track-index="5"><div class="cap-in" data-a="cap" data-t="369.403">다만 몇 가지 조건이 있습니다.</div></div>
+<div class="cap clip capup" data-start="371.272" data-duration="2.717" data-track-index="5"><div class="cap-in" data-a="cap" data-t="371.272">아이가 둘, 셋이면 차이는 더 커집니다.</div></div>
+<div class="cap clip capup" data-start="373.989" data-duration="2.786" data-track-index="5"><div class="cap-in" data-a="cap" data-t="373.989">부모님 학교 선택에 따라 조건이 달라지니까,</div></div>
+<div class="cap clip capup" data-start="376.775" data-duration="3.718" data-track-index="5"><div class="cap-in" data-a="cap" data-t="376.775">이 부분은 상담에서 자세히 비교해 드리겠습니다.</div></div>
+<section id="s11" class="scene clip" data-start="380.493" data-duration="32.95" data-track-index="1">
+<div class="stage" data-a="drift" data-t="380.493" data-d="32.950">
+      <div class="blob" data-a="float" data-t="380.493" data-d="32.850" style="left:1460px;top:-260px;width:760px;height:760px;"></div><div class="blob" data-a="float" data-t="380.493" data-d="32.850" style="left:-240px;top:760px;width:520px;height:520px;background:#ffe9e3;"></div>
+      <div class="abs" data-a="fade" data-t="380.493" data-out="400.495" style="left:0px;top:0px;width:100%;height:100%;">
+        <div class="title " data-a="rise" data-t="380.693" style="left:64px;top:150px;width:1792px;font-size:76px;text-align:left;">정리하겠습니다</div>
+        <div class="checks" style="left:64px;top:290px;width:1792px;grid-template-columns:repeat(1,1fr);font-size:46px;"><div class="check" data-a="left" data-t="381.850"><i>1</i><span>중고등학생은 혼자서도 OK · 1년 학비 <em>CAD 15,170</em> (보험 포함)</span></div><div class="check" data-a="left" data-t="388.305"><i>2</i><span><em>3개월</em>부터 짧게 경험 가능</span></div><div class="check" data-a="left" data-t="391.776"><i>3</i><span>신청 <em>12/1 ~ 5/31</em> · 학교 배정은 자리 상황에 따라 → 일찍 준비</span></div></div>
       </div>
-      <div class="cta" data-layout-allow-overlap data-a="pop" data-t="498.340" style="left:360px;top:170px;width:1200px;height:560px;">
+      <div class="cta" data-layout-allow-overlap data-a="pop" data-t="400.495" style="left:360px;top:170px;width:1200px;height:560px;">
     <div class="c1">우리 아이 학교·일정·학비 절약법까지</div><div class="c2">AA Canada 무료 상담</div><div class="c3">카카오톡 canlog</div><div class="c4">☎ 02-567-4345 · aacanada.co.kr</div>
   </div>
-      <img class="abs" src="_kit/assets/emsb_isp_logo.png" alt="" data-a="fade" data-t="498.940" style="left:810px;top:760px;width:300px;height:112px;object-fit:contain;" />
+      <img class="abs" src="_kit/assets/emsb_isp_logo.png" alt="" data-a="fade" data-t="401.095" style="left:810px;top:760px;width:300px;height:112px;object-fit:contain;" />
     </div>
-<div class="chapter" data-a="drop" data-t="475.100"><b>정리</b>한눈에 보기</div>
+<div class="chapter" data-a="drop" data-t="380.593"><b>정리</b>한눈에 보기</div>
 <div class="foot"><div>출처: EMSB 2027-28 International Student Program 자료 (2026.10 기준) · 금액은 모두 캐나다 달러(CAD)</div></div>
-
+<audio id="vo-s11" src="_kit/audio/s11.m4a" data-start="380.493" data-duration="32.55" data-track-index="8"></audio>
 </section>
-<div class="cap clip " data-start="475.3" data-duration="1.802" data-track-index="5"><div class="cap-in" data-a="cap" data-t="475.3">정리하겠습니다.</div></div>
-<div class="cap clip " data-start="477.102" data-duration="3.359" data-track-index="5"><div class="cap-in" data-a="cap" data-t="477.102">첫째, 중고등학생은 혼자서도 갈 수 있고,</div></div>
-<div class="cap clip " data-start="480.461" data-duration="4.235" data-track-index="5"><div class="cap-in" data-a="cap" data-t="480.461"><span class="n">1년</span> 학비는 보험 포함 <span class="n">1만 5천 백칠십 달러</span>입니다.</div></div>
-<div class="cap clip " data-start="484.696" data-duration="4.119" data-track-index="5"><div class="cap-in" data-a="cap" data-t="484.696">둘째, <span class="n">3개월</span>부터 짧게 경험해 볼 수 있습니다.</div></div>
-<div class="cap clip " data-start="488.815" data-duration="3.98" data-track-index="5"><div class="cap-in" data-a="cap" data-t="488.815">셋째, 신청은 <span class="n">12월</span> <span class="n">1일</span>부터 <span class="n">5월</span> <span class="n">31일</span>까지이고,</div></div>
-<div class="cap clip " data-start="492.795" data-duration="5.545" data-track-index="5"><div class="cap-in" data-a="cap" data-t="492.795">학교 배정은 자리 상황에 따라 정해지니까 일찍 준비하시는 게 좋습니다.</div></div>
-<div class="cap clip " data-start="498.34" data-duration="2.57" data-track-index="5"><div class="cap-in" data-a="cap" data-t="498.34">우리 아이에게 맞는 학교와 일정,</div></div>
-<div class="cap clip " data-start="500.91" data-duration="6.568" data-track-index="5"><div class="cap-in" data-a="cap" data-t="500.91">그리고 학비를 아끼는 방법까지 궁금하시면 AA Canada에 편하게 물어봐 주세요.</div></div>
-<div class="cap clip " data-start="507.478" data-duration="5.277" data-track-index="5"><div class="cap-in" data-a="cap" data-t="507.478">카카오톡 아이디 canlog, 전화 <span class="n">02-567-4345</span>입니다.</div></div>
-<div class="cap clip " data-start="512.755" data-duration="2.245" data-track-index="5"><div class="cap-in" data-a="cap" data-t="512.755">감사합니다.</div></div>
+<div class="cap clip " data-start="380.793" data-duration="1.057" data-track-index="5"><div class="cap-in" data-a="cap" data-t="380.793">정리하겠습니다.</div></div>
+<div class="cap clip " data-start="381.85" data-duration="2.855" data-track-index="5"><div class="cap-in" data-a="cap" data-t="381.85">첫째, 중고등학생은 혼자서도 갈 수 있고,</div></div>
+<div class="cap clip " data-start="384.705" data-duration="3.6" data-track-index="5"><div class="cap-in" data-a="cap" data-t="384.705"><span class="n">1년</span> 학비는 보험 포함 <span class="n">1만 5천 백칠십 달러</span>입니다.</div></div>
+<div class="cap clip " data-start="388.305" data-duration="3.471" data-track-index="5"><div class="cap-in" data-a="cap" data-t="388.305">둘째, <span class="n">3개월</span>부터 짧게 경험해 볼 수 있습니다.</div></div>
+<div class="cap clip " data-start="391.776" data-duration="3.644" data-track-index="5"><div class="cap-in" data-a="cap" data-t="391.776">셋째, 신청은 <span class="n">12월</span> <span class="n">1일</span>부터 <span class="n">5월</span> <span class="n">31일</span>까지이고,</div></div>
+<div class="cap clip " data-start="395.42" data-duration="5.075" data-track-index="5"><div class="cap-in" data-a="cap" data-t="395.42">학교 배정은 자리 상황에 따라 정해지니까 일찍 준비하시는 게 좋습니다.</div></div>
+<div class="cap clip " data-start="400.495" data-duration="2.165" data-track-index="5"><div class="cap-in" data-a="cap" data-t="400.495">우리 아이에게 맞는 학교와 일정,</div></div>
+<div class="cap clip " data-start="402.66" data-duration="5.533" data-track-index="5"><div class="cap-in" data-a="cap" data-t="402.66">그리고 학비를 아끼는 방법까지 궁금하시면 AA Canada에 편하게 물어봐 주세요.</div></div>
+<div class="cap clip " data-start="408.193" data-duration="3.738" data-track-index="5"><div class="cap-in" data-a="cap" data-t="408.193">카카오톡 아이디 canlog, 전화 <span class="n">02-567-4345</span>입니다.</div></div>
+<div class="cap clip " data-start="411.931" data-duration="1.512" data-track-index="5"><div class="cap-in" data-a="cap" data-t="411.931">감사합니다.</div></div>
 <img class="aalogo" src="_kit/assets/aa-canada-logo.png" alt="AA Canada" />
 </div>
 <script>

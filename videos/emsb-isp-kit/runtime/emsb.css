@@ -12,7 +12,7 @@
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html, body { overflow: hidden; background: var(--cream); }
-body { font-family: var(--body); color: var(--ink); word-break: keep-all; }
+body { font-family: var(--body); color: var(--ink); word-break: keep-all; letter-spacing: -0.015em; }
 #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: var(--cream); }
 .clip { position: absolute; inset: 0; }
 .scene { overflow: hidden; }
@@ -24,9 +24,10 @@ em { font-style: normal; color: var(--red); }
 .checks[style*="font-size"] .check { font-size: inherit; }
 .pin.pl span { left: auto; right: 24px; top: -58px; }
 .disp { font-family: var(--display); font-weight: 400; line-height: 1.15; }
+.title, .chapter, .card .ct, .card .cbig, .bignum .row, .hook, .cta .c2, .seg, .ftable .money { letter-spacing: -0.01em; }
 
 /* background blobs (decor, drift slowly so no layout is ever fully static) */
-.blob { position: absolute; border-radius: 50%; background: var(--hl); opacity: .55; }
+.blob { position: absolute; border-radius: 50%; background: var(--hl); opacity: .32; }
 .redbar { position: absolute; left: 0; top: 0; bottom: 0; width: 14px; background: var(--red); }
 
 /* chapter tag + source tag */
@@ -56,7 +57,7 @@ em { font-style: normal; color: var(--red); }
 .chip.warn { background: #fff; border-style: dashed; }
 
 /* cards */
-.card { position: absolute; background: #fff; border-radius: 26px; box-shadow: 0 14px 34px rgba(122,27,38,.12);
+.card { position: absolute; background: #fff; border-radius: 14px; box-shadow: 0 6px 0 rgba(122,27,38,.14);
   border-top: 10px solid var(--red); padding: 26px 32px; display: flex; flex-direction: column; justify-content: center; }
 .card .ct { font-family: var(--display); color: var(--ink); line-height: 1.2; }
 .card .ct em { font-style: normal; color: var(--red); }
@@ -67,7 +68,7 @@ em { font-style: normal; color: var(--red); }
 .card.red .ct, .card.red .cs, .card.red .cbig { color: #fff; }
 
 /* photos (frame > inner(scaled, Ken Burns) > img + pins) */
-.photo { position: absolute; overflow: hidden; border-radius: 22px; background: #eee; box-shadow: 0 14px 34px rgba(43,43,43,.16); }
+.photo { position: absolute; overflow: hidden; border-radius: 10px; background: #eee; box-shadow: 0 8px 0 rgba(43,43,43,.12); }
 .photo.bleed { border-radius: 0; box-shadow: none; }
 .photo .inner { position: absolute; }
 .photo .inner img { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
@@ -81,7 +82,7 @@ em { font-style: normal; color: var(--red); }
   padding: 2px 12px 4px; border-radius: 8px; white-space: nowrap; }
 
 /* fee table */
-.ftable { position: absolute; background: #fff; border-radius: 26px; overflow: hidden; box-shadow: 0 14px 34px rgba(122,27,38,.12); }
+.ftable { position: absolute; background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 6px 0 rgba(122,27,38,.14); }
 .ftable .tr { display: grid; align-items: center; border-bottom: 2px solid var(--line); }
 .ftable .tr:last-child { border-bottom: 0; }
 .ftable .th { background: var(--red); color: #fff; font-weight: 900; }
@@ -92,7 +93,7 @@ em { font-style: normal; color: var(--red); }
 
 /* steps flow */
 .flow { position: absolute; display: flex; align-items: stretch; }
-.step { position: relative; flex: 1; background: #fff; border-radius: 22px; border: 3px solid var(--line); padding: 20px 18px;
+.step { position: relative; flex: 1; background: #fff; border-radius: 14px; border: 3px solid var(--line); padding: 20px 18px;
   display: flex; flex-direction: column; align-items: center; text-align: center; justify-content: center; }
 .step .sn { width: 52px; height: 52px; border-radius: 50%; background: var(--red); color: #fff; font-family: var(--display);
   display: flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 10px; }
@@ -118,7 +119,7 @@ em { font-style: normal; color: var(--red); }
 .tick { position: absolute; font-weight: 900; text-align: center; white-space: nowrap; }
 
 /* quote */
-.quote { position: absolute; background: #fff; border-radius: 26px; padding: 40px 48px; box-shadow: 0 14px 34px rgba(122,27,38,.12);
+.quote { position: absolute; background: #fff; border-radius: 14px; padding: 40px 48px; box-shadow: 0 6px 0 rgba(122,27,38,.14);
   border-left: 14px solid var(--red); }
 .quote .qm { font-family: var(--display); color: var(--red); line-height: .6; }
 .quote .qt { font-weight: 700; line-height: 1.55; }
@@ -172,7 +173,7 @@ em { font-style: normal; color: var(--red); }
 .f169 .cta .c4 { font-size: 36px; margin-top: 20px; }
 
 /* ---------- 9:16 sizes ---------- */
-.f916 .chapter { left: 60px; top: 150px; font-size: 38px; }
+.f916 .chapter { left: 60px; top: 112px; font-size: 34px; }
 .f916 .chip { font-size: 38px; padding: 10px 28px 12px; }
 .f916 .card .ct { font-size: 44px; }
 .f916 .card .cs { font-size: 32px; }
@@ -183,9 +184,10 @@ em { font-style: normal; color: var(--red); }
 .f916 .step .ss { font-size: 28px; }
 .f916 .check { font-size: 38px; }
 .f916 .tick { font-size: 32px; }
-.f916 .cap-in { left: 50px; right: 50px; top: 1330px; font-size: 56px; padding: 16px 26px 18px; }
-.f916 .foot { left: 60px; right: 60px; top: 1600px; font-size: 26px; }
-.f916 .aalogo { right: 40px; top: 136px; width: 104px; height: 104px; }
+.f916 .cap-in { left: 50px; right: 50px; top: 215px; font-size: 54px; padding: 16px 26px 18px; background: rgba(122,27,38,.94); color: #fff; letter-spacing: -0.01em; }
+.f916 .cap-in .n { color: var(--hl); }
+.f916 .foot { left: 60px; right: 60px; top: 1372px; font-size: 20px; }
+.f916 .aalogo { right: 44px; top: 100px; width: 92px; height: 92px; }
 .f916 .ftable .tr { font-size: 36px; }
 .f916 .ftable .money { font-size: 66px; }
 .f916 .cta .c1 { font-size: 46px; }

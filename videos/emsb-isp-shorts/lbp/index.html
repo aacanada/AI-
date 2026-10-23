@@ -21,7 +21,7 @@ html, body { width: 1080px; height: 1920px; }
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html, body { overflow: hidden; background: var(--cream); }
-body { font-family: var(--body); color: var(--ink); word-break: keep-all; }
+body { font-family: var(--body); color: var(--ink); word-break: keep-all; letter-spacing: -0.015em; }
 #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: var(--cream); }
 .clip { position: absolute; inset: 0; }
 .scene { overflow: hidden; }
@@ -33,9 +33,10 @@ em { font-style: normal; color: var(--red); }
 .checks[style*="font-size"] .check { font-size: inherit; }
 .pin.pl span { left: auto; right: 24px; top: -58px; }
 .disp { font-family: var(--display); font-weight: 400; line-height: 1.15; }
+.title, .chapter, .card .ct, .card .cbig, .bignum .row, .hook, .cta .c2, .seg, .ftable .money { letter-spacing: -0.01em; }
 
 /* background blobs (decor, drift slowly so no layout is ever fully static) */
-.blob { position: absolute; border-radius: 50%; background: var(--hl); opacity: .55; }
+.blob { position: absolute; border-radius: 50%; background: var(--hl); opacity: .32; }
 .redbar { position: absolute; left: 0; top: 0; bottom: 0; width: 14px; background: var(--red); }
 
 /* chapter tag + source tag */
@@ -65,7 +66,7 @@ em { font-style: normal; color: var(--red); }
 .chip.warn { background: #fff; border-style: dashed; }
 
 /* cards */
-.card { position: absolute; background: #fff; border-radius: 26px; box-shadow: 0 14px 34px rgba(122,27,38,.12);
+.card { position: absolute; background: #fff; border-radius: 14px; box-shadow: 0 6px 0 rgba(122,27,38,.14);
   border-top: 10px solid var(--red); padding: 26px 32px; display: flex; flex-direction: column; justify-content: center; }
 .card .ct { font-family: var(--display); color: var(--ink); line-height: 1.2; }
 .card .ct em { font-style: normal; color: var(--red); }
@@ -76,7 +77,7 @@ em { font-style: normal; color: var(--red); }
 .card.red .ct, .card.red .cs, .card.red .cbig { color: #fff; }
 
 /* photos (frame > inner(scaled, Ken Burns) > img + pins) */
-.photo { position: absolute; overflow: hidden; border-radius: 22px; background: #eee; box-shadow: 0 14px 34px rgba(43,43,43,.16); }
+.photo { position: absolute; overflow: hidden; border-radius: 10px; background: #eee; box-shadow: 0 8px 0 rgba(43,43,43,.12); }
 .photo.bleed { border-radius: 0; box-shadow: none; }
 .photo .inner { position: absolute; }
 .photo .inner img { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
@@ -90,7 +91,7 @@ em { font-style: normal; color: var(--red); }
   padding: 2px 12px 4px; border-radius: 8px; white-space: nowrap; }
 
 /* fee table */
-.ftable { position: absolute; background: #fff; border-radius: 26px; overflow: hidden; box-shadow: 0 14px 34px rgba(122,27,38,.12); }
+.ftable { position: absolute; background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 6px 0 rgba(122,27,38,.14); }
 .ftable .tr { display: grid; align-items: center; border-bottom: 2px solid var(--line); }
 .ftable .tr:last-child { border-bottom: 0; }
 .ftable .th { background: var(--red); color: #fff; font-weight: 900; }
@@ -101,7 +102,7 @@ em { font-style: normal; color: var(--red); }
 
 /* steps flow */
 .flow { position: absolute; display: flex; align-items: stretch; }
-.step { position: relative; flex: 1; background: #fff; border-radius: 22px; border: 3px solid var(--line); padding: 20px 18px;
+.step { position: relative; flex: 1; background: #fff; border-radius: 14px; border: 3px solid var(--line); padding: 20px 18px;
   display: flex; flex-direction: column; align-items: center; text-align: center; justify-content: center; }
 .step .sn { width: 52px; height: 52px; border-radius: 50%; background: var(--red); color: #fff; font-family: var(--display);
   display: flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 10px; }
@@ -127,7 +128,7 @@ em { font-style: normal; color: var(--red); }
 .tick { position: absolute; font-weight: 900; text-align: center; white-space: nowrap; }
 
 /* quote */
-.quote { position: absolute; background: #fff; border-radius: 26px; padding: 40px 48px; box-shadow: 0 14px 34px rgba(122,27,38,.12);
+.quote { position: absolute; background: #fff; border-radius: 14px; padding: 40px 48px; box-shadow: 0 6px 0 rgba(122,27,38,.14);
   border-left: 14px solid var(--red); }
 .quote .qm { font-family: var(--display); color: var(--red); line-height: .6; }
 .quote .qt { font-weight: 700; line-height: 1.55; }
@@ -181,7 +182,7 @@ em { font-style: normal; color: var(--red); }
 .f169 .cta .c4 { font-size: 36px; margin-top: 20px; }
 
 /* ---------- 9:16 sizes ---------- */
-.f916 .chapter { left: 60px; top: 150px; font-size: 38px; }
+.f916 .chapter { left: 60px; top: 112px; font-size: 34px; }
 .f916 .chip { font-size: 38px; padding: 10px 28px 12px; }
 .f916 .card .ct { font-size: 44px; }
 .f916 .card .cs { font-size: 32px; }
@@ -192,9 +193,10 @@ em { font-style: normal; color: var(--red); }
 .f916 .step .ss { font-size: 28px; }
 .f916 .check { font-size: 38px; }
 .f916 .tick { font-size: 32px; }
-.f916 .cap-in { left: 50px; right: 50px; top: 1330px; font-size: 56px; padding: 16px 26px 18px; }
-.f916 .foot { left: 60px; right: 60px; top: 1600px; font-size: 26px; }
-.f916 .aalogo { right: 40px; top: 136px; width: 104px; height: 104px; }
+.f916 .cap-in { left: 50px; right: 50px; top: 215px; font-size: 54px; padding: 16px 26px 18px; background: rgba(122,27,38,.94); color: #fff; letter-spacing: -0.01em; }
+.f916 .cap-in .n { color: var(--hl); }
+.f916 .foot { left: 60px; right: 60px; top: 1372px; font-size: 20px; }
+.f916 .aalogo { right: 44px; top: 100px; width: 92px; height: 92px; }
 .f916 .ftable .tr { font-size: 36px; }
 .f916 .ftable .money { font-size: 66px; }
 .f916 .cta .c1 { font-size: 46px; }
@@ -208,22 +210,22 @@ em { font-style: normal; color: var(--red); }
 </style>
 </head>
 <body>
-<div id="root" class="f916" data-composition-id="emsb-sh-lbp" data-start="0" data-width="1080" data-height="1920" data-fps="30" data-duration="40">
-<section id="sh-lbp" class="scene clip" data-start="0" data-duration="40" data-track-index="1">
+<div id="root" class="f916" data-composition-id="emsb-sh-lbp" data-start="0" data-width="1080" data-height="1920" data-fps="30" data-duration="24.823">
+<section id="sh-lbp" class="scene clip" data-start="0" data-duration="24.823" data-track-index="1">
 
-  <div class="stage" data-a="drift" data-t="0.000" data-d="40.000">
-    <div class="blob" data-a="float" data-t="0.000" data-d="39.900" style="left:700px;top:-200px;width:640px;height:640px;"></div><div class="blob" data-a="float" data-t="0.000" data-d="39.900" style="left:-260px;top:1500px;width:620px;height:620px;background:#ffe9e3;"></div>
-    <div class="kicker" data-a="rise" data-t="2.300" style="left:60px;top:262px;width:960px;font-size:40px;color:var(--red);font-weight:900">운동 좋아하는 아이라면</div>
-    <div class="title " data-a="rise" data-t="2.400" style="left:60px;top:320px;width:960px;font-size:76px;text-align:left;">Lester B. Pearson</div>
-    <div class="photo" data-a="fade" data-t="2.200" style="left:60px;top:430px;width:960px;height:560px;">
-    <div class="inner" data-a="kb" data-t="0.000" data-d="40.000" data-kb="in" style="left:0px;top:-95px;width:960px;height:960px;transform-origin:480px 375px;">
+  <div class="stage" data-a="drift" data-t="0.000" data-d="24.823">
+    <div class="blob" data-a="float" data-t="0.000" data-d="24.723" style="left:720px;top:1380px;width:640px;height:640px;"></div><div class="blob" data-a="float" data-t="0.000" data-d="24.723" style="left:-280px;top:1560px;width:620px;height:620px;background:#ffe9e3;"></div>
+    <div class="kicker" data-a="rise" data-t="2.300" style="left:60px;top:412px;width:960px;font-size:34px;color:var(--red);font-weight:900">운동 좋아하는 아이라면</div>
+    <div class="title " data-a="rise" data-t="2.400" style="left:60px;top:456px;width:960px;font-size:64px;text-align:left;">Lester B. Pearson</div>
+    <div class="photo" data-a="fade" data-t="2.200" style="left:60px;top:560px;width:960px;height:460px;">
+    <div class="inner" data-a="kb" data-t="0.000" data-d="24.823" data-kb="in" style="left:0px;top:-145px;width:960px;height:960px;transform-origin:480px 375px;">
       <img src="_kit/assets/school_lesterbpearson.jpg" alt="" />
     </div>
     
-  </div><div class="chips" style="left:60px;top:1012px;width:960px;justify-content:center;"><div class="chip " data-a="pop" data-t="6.051">몬트리올 북쪽</div><div class="chip " data-a="pop" data-t="11.669">스포츠 특화반</div><div class="chip " data-a="pop" data-t="16.958">심화 수학·과학</div><div class="chip " data-a="pop" data-t="20.924">제3외국어 이탈리아어</div><div class="chip " data-a="pop" data-t="24.097">수학 경시·로보틱스·체스</div></div>
+  </div><div class="chips" style="left:60px;top:1036px;width:960px;justify-content:center;"><div class="chip " data-a="pop" data-t="3.590">몬트리올 북쪽</div><div class="chip " data-a="pop" data-t="6.864">스포츠 특화반</div><div class="chip " data-a="pop" data-t="9.993">심화 수학·과학</div><div class="chip " data-a="pop" data-t="12.541">제3외국어 이탈리아어</div><div class="chip " data-a="pop" data-t="14.580">수학 경시·로보틱스·체스</div></div>
   </div>
   <div class="photo bleed" data-a="fade" data-t="0.000" data-out="2.400" style="left:0px;top:0px;width:1080px;height:1920px;">
-    <div class="inner" data-a="kb" data-t="0.000" data-d="40.000" data-kb="in" style="left:-656.88px;top:-473.77px;width:2393.77px;height:2393.77px;transform-origin:1196.88px 1433.77px;">
+    <div class="inner" data-a="kb" data-t="0.000" data-d="24.823" data-kb="in" style="left:-656.88px;top:-473.77px;width:2393.77px;height:2393.77px;transform-origin:1196.88px 1433.77px;">
       <img src="_kit/assets/school_lesterbpearson.jpg" alt="" />
     </div>
     
@@ -231,21 +233,21 @@ em { font-style: normal; color: var(--red); }
   <div class="hook" data-a="pop" data-t="0.150" data-out="2.400" style="top:560px;font-size:124px">운동 좋아하는</div><div class="hook" data-a="pop" data-t="0.300" data-out="2.400" style="top:700px;font-size:124px">아이라면</div>
   <div class="chapter" data-a="drop" data-t="0.100"><b>몬트리올 학교 탐방</b>4/8</div>
   <div class="foot" data-a="fade" data-t="2.400"><div>출처: EMSB 2027-28 International Student Program 자료 · 학교 소개 자료 (2026.10 기준)</div></div>
-  <div class="cta" data-layout-allow-overlap data-a="pop" data-t="37.000" style="left:90px;top:500px;width:900px;height:640px;">
+  <div class="cta" data-layout-allow-overlap data-a="pop" data-t="21.823" style="left:90px;top:600px;width:900px;height:680px;">
     <div class="c1">EMSB 학교 상담은</div><div class="c2">AA Canada</div><div class="c3">카카오톡 canlog</div><div class="c4">☎ 02-567-4345</div>
   </div>
-
+<audio id="vo-lbp" src="_kit/audio/lbp.m4a" data-start="0" data-duration="24.423" data-track-index="8"></audio>
 </section>
-<div class="cap clip " data-start="0.3" data-duration="4.627" data-track-index="5"><div class="cap-in" data-a="cap" data-t="0.3">운동을 좋아하는 아이라면 이 학교입니다.</div></div>
-<div class="cap clip " data-start="4.927" data-duration="3.371" data-track-index="5"><div class="cap-in" data-a="cap" data-t="4.927">몬트리올 북쪽의 Lester B.</div></div>
-<div class="cap clip " data-start="8.298" data-duration="4.121" data-track-index="5"><div class="cap-in" data-a="cap" data-t="8.298">Pearson 고등학교에는 공부와 운동을</div></div>
-<div class="cap clip " data-start="12.419" data-duration="3.745" data-track-index="5"><div class="cap-in" data-a="cap" data-t="12.419">같이 하는 스포츠 특화반이 있습니다.</div></div>
-<div class="cap clip " data-start="16.164" data-duration="2.515" data-track-index="5"><div class="cap-in" data-a="cap" data-t="16.164">심화 수학과 과학 과정,</div></div>
-<div class="cap clip " data-start="18.679" data-duration="5.418" data-track-index="5"><div class="cap-in" data-a="cap" data-t="18.679">그리고 제<span class="n">3</span>외국어로 이탈리아어도 배울 수 있습니다.</div></div>
-<div class="cap clip " data-start="24.097" data-duration="3.569" data-track-index="5"><div class="cap-in" data-a="cap" data-t="24.097">수학 경시대회, 로보틱스, 체스,</div></div>
-<div class="cap clip " data-start="27.666" data-duration="3.371" data-track-index="5"><div class="cap-in" data-a="cap" data-t="27.666">해외 여행까지 활동도 많습니다.</div></div>
-<div class="cap clip " data-start="31.037" data-duration="4.228" data-track-index="5"><div class="cap-in" data-a="cap" data-t="31.037">EMSB 학교 상담은 AA Canada,</div></div>
-<div class="cap clip " data-start="35.265" data-duration="4.735" data-track-index="5"><div class="cap-in" data-a="cap" data-t="35.265">카카오톡 canlog로 물어봐 주세요.</div></div>
+<div class="cap clip " data-start="0.3" data-duration="2.635" data-track-index="5"><div class="cap-in" data-a="cap" data-t="0.3">운동을 좋아하는 아이라면 이 학교입니다.</div></div>
+<div class="cap clip " data-start="2.935" data-duration="1.964" data-track-index="5"><div class="cap-in" data-a="cap" data-t="2.935">몬트리올 북쪽의 Lester B.</div></div>
+<div class="cap clip " data-start="4.899" data-duration="2.401" data-track-index="5"><div class="cap-in" data-a="cap" data-t="4.899">Pearson 고등학교에는 공부와 운동을</div></div>
+<div class="cap clip " data-start="7.3" data-duration="2.183" data-track-index="5"><div class="cap-in" data-a="cap" data-t="7.3">같이 하는 스포츠 특화반이 있습니다.</div></div>
+<div class="cap clip " data-start="9.483" data-duration="1.616" data-track-index="5"><div class="cap-in" data-a="cap" data-t="9.483">심화 수학과 과학 과정,</div></div>
+<div class="cap clip " data-start="11.099" data-duration="3.481" data-track-index="5"><div class="cap-in" data-a="cap" data-t="11.099">그리고 제<span class="n">3</span>외국어로 이탈리아어도 배울 수 있습니다.</div></div>
+<div class="cap clip " data-start="14.58" data-duration="2.496" data-track-index="5"><div class="cap-in" data-a="cap" data-t="14.58">수학 경시대회, 로보틱스, 체스,</div></div>
+<div class="cap clip " data-start="17.076" data-duration="2.357" data-track-index="5"><div class="cap-in" data-a="cap" data-t="17.076">해외 여행까지 활동도 많습니다.</div></div>
+<div class="cap clip " data-start="19.433" data-duration="2.4" data-track-index="5"><div class="cap-in" data-a="cap" data-t="19.433">EMSB 학교 상담은 AA Canada,</div></div>
+<div class="cap clip " data-start="21.833" data-duration="2.99" data-track-index="5"><div class="cap-in" data-a="cap" data-t="21.833">카카오톡 canlog로 물어봐 주세요.</div></div>
 <img class="aalogo" src="_kit/assets/aa-canada-logo.png" alt="AA Canada" />
 </div>
 <script>
