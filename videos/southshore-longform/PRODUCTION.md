@@ -3,36 +3,21 @@
 브리프: `plans/southshore-longform/VIDEO_BRIEF.md` · 대본: `plans/southshore-longform/SCRIPT.txt` · 학교 영상: `plans/southshore-longform/assets/school-videos/`
 템플릿: 영유 롱폼(메이플 레드, `claude/jolly-tesla-u70qgi` 의 `videos/yeongyu-montreal-longform`)을 복사해 고친 것.
 
-## 현재 상태 (2026-10-22)
+## 현재 상태 (2026-10-23)
 
-- 녹음 전: **무음 + 가짜 타이밍**(글자당 0.21초)으로 10장면 전체 빌드, `npm run check` 통과(오류 0).
-- 지도: OSM 서버·위성 데이터는 샌드박스에서 막혀 있어 브리프의 대안대로 **실제 좌표 기반 스키매틱 지도**(`tools/geo.py`)를 직접 그림. 캐나다 전도는 svg-maps/canada (CC BY 4.0).
-- B-roll: `tools/clips.py` 가 학교 영상 4개에서 28개 구간을 잘라 `assets/clips/` (16:9, 무음). 구간은 `plans/riverside-video/01_TIMESTAMP_SHEET.md` 기준, 학생 얼굴 클로즈업 제외.
-- 숏폼 5편: `../southshore-shorts/short-a ~ e` (index.html, cover.jpg, upload-text.txt). 음성은 녹음이 오면 자동으로 붙음.
-- 썸네일: `thumbnail/thumbnail.jpg` (기본안 "다운타운 18분인데 한국인이 없다?"), `thumbnail/thumbnail-b.jpg` (대안).
+- 음성: 원장님 녹음 대신 **ElevenLabs "일곱번째"** (voice vxpRrQegUpenYtez6hz1, eleven_multilingual_v2). `tools/tts.py` 가 장면별
+  `plans/southshore-longform/audio/ss_s01~s10.mp3` + with-timestamps 정렬을 만들고, 자막 타이밍은 그 정렬로 맞춤(자막은 대본 원문,
+  TTS에는 숫자를 한국어로 풀어 쓴 발음 텍스트 `SAY`). 총 6:13.6. Whisper로 다시 받아 적어 대본과 대조함(빠진 문장 없음).
+- 대본 수정(원장님 지시): s04 "인구의 2~3% 수준" → "비중이 아주 낮은 편", "아시아계가 인구의 20% 정도" → "아시아계 주민이 꽤 많습니다".
+  화면의 % 표기(아시아계 원 안의 2%·3%·20%)도 삭제, 원 크기만 남김.
+- B-roll: 생랑베르 인터내셔널 입구 클립은 RSB 로고 타이틀 카드가 끝난 뒤 구간(2.3~3.9s)으로 바꿈.
 
-## 녹음이 오면 (Aside가 `plans/southshore-longform/audio/ss_s01.m4a ~ ss_s10.m4a` 업로드)
-
-```bash
-cd videos/southshore-longform
-pip install sherpa-onnx fonttools brotli numpy
-# ASR 모델 (huggingface 막힘, GitHub releases 사용):
-#   github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-zipformer-korean-2024-06-24.tar.bz2
-#   github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-whisper-turbo.tar.bz2
-YV_ASR_DIR=<models dir> YV_REDO_ASR=1 python3 -I tools/audio_prep.py   # 트림(앞뒤 0.3s)·노이즈·-16 LUFS + ASR
-python3 -I tools/asr_check.py > ASR_CHECK.md                           # 대본과 다르게 읽은 줄 + 숫자 누락 표시
-# ↑ 결과를 세션에 보고하고, 다르게 읽은 줄은 tools/script.py 행을 실제 말에 맞춤(숫자·사실은 바꾸지 않음).
-#   더듬은 곳/재녹음 테이크는 tools/voice_edits.json 에 raw 시간으로 적어 잘라냄.
-python3 -I tools/build.py                 # timing.json(실제 길이), compositions/, index.html 재생성
-YV_FONTSRC=<npm pack @fontsource/black-han-sans @fontsource/noto-sans-kr 풀어 둔 폴더> python3 tools/fonts.py
-python3 -I tools/build.py && python3 -I tools/shorts.py && python3 -I tools/thumbnail.py && python3 -I tools/short_covers.py
-python3 -I tools/upload_text.py           # 챕터 시간이 실제 녹음 기준으로 바뀜
-npm run check && npx hyperframes render -q delivery -o renders/video.mp4
-cd ../southshore-shorts/short-a && npx hyperframes render -o ../renders/short-a.mp4   # b~e 동일
-```
-
-- 장면 사이 여백 0.4s, 첫 장면 0.5s, 마지막 엔드카드 4s 유지(`tools/timing.py`).
-- 100MB 넘으면 기존처럼 `video.mp4.part-00/01` + `video.mp4.sha256` 으로 나눔.
+### 디자인 다듬기 (frontend-design 기준, 2026-10-23)
+- 장면 머리표 "— 3 · 제목"(대시+가운뎃점 템플릿 표기) → 빨간 숫자 칸 + 제목. 장(章) 순서라 번호는 유지.
+- 카드: 모든 카드에 같던 큰 반경·흐린 그림자 → 반경 20px, 얇은 와인색 테두리와 짧은 아래 그림자. 빨강 카드는 진한 아래 선, 분홍 카드는 그림자 없음.
+- 배경 점무늬 농도 절반, 큰 제목(Black Han Sans) 자간 -0.02em, 출처 줄 23px + 크림색 외곽으로 지도 위 대비 확보.
+- 쇼츠: 하단 480px 비움(로고는 맨 위, CTA는 제목 아래로 이동), 커버의 장식용 큰 단풍잎 삭제.
+- 썸네일 "한국인이 없다?" → "한국인은 거의 없다?" (원장님 표현 원칙 "한국 사람이 거의 없는"과 맞춤, 단정 표현 제거).
 
 ## 파일 지도
 

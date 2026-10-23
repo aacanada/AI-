@@ -30,14 +30,13 @@ html,body{{width:1080px;height:2100px;overflow:hidden;background:#FFF8F2;font-fa
 .title em{{font-style:normal;color:#C8102E}}
 .sub{{position:absolute;left:0;right:0;top:960px;text-align:center;font-weight:900;font-size:54px;color:#7A1B26}}
 .big{{position:absolute;left:390px;top:1090px;width:300px;height:300px}} .big path{{fill:#C8102E}}
-.logo{{position:absolute;left:0;right:0;top:1460px;display:flex;justify-content:center;align-items:center;gap:16px;font-weight:900;font-size:44px}}
+.logo{{position:absolute;left:0;right:0;top:1180px;display:flex;justify-content:center;align-items:center;gap:16px;font-weight:900;font-size:44px}}
 .logo img{{width:96px;height:93px}}
 </style></head><body><div class="bar"></div>
 <div class="leaf l1"><svg viewBox="0 0 100 100"><path d="{MAPLE}" fill="#C8102E"/></svg></div>
 <div class="leaf l2"><svg viewBox="0 0 100 100"><path d="{MAPLE}" fill="#C8102E"/></svg></div>
 <div class="chip"><span>몬트리올 사우스쇼어</span></div>
 <div class="title">{title}</div><div class="sub">{SUB[key]}</div>
-<svg class="big" viewBox="0 0 100 100"><path d="{MAPLE}"/></svg>
 <div class="logo"><img src="assets/img/aa-canada-logo-transparent.png" alt="" />AA Canada</div>
 </body></html>"""
     hp = os.path.join(d, "cover.html")

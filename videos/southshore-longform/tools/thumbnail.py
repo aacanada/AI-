@@ -74,5 +74,5 @@ def shot(name, html):
     print(f"thumbnail/{name}.jpg")
 
 
-shot("thumbnail", page("다운타운 <em>18분</em>인데", "한국인이<br/>없다?".replace("<br/>", " ").replace(" ", "<br>", 1), "몬트리올 영어 공립학교 동네"))
+shot("thumbnail", page("다운타운 <em>18분</em>인데", "한국인은<br>거의 없다?", "몬트리올 영어 공립학교 동네"))
 shot("thumbnail-b", page("몬트리올 남쪽", "영어 공립<br>학교 동네", "REM으로 다운타운 18분"))
