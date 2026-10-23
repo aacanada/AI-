@@ -1,0 +1,10 @@
+type: longform
+title: 고졸·대졸 누구나, 캐나다 2년 디플로마 3가지 | 졸업 후 워크퍼밋 최대 3년 알버타 올즈컬리지 (Olds 전공 시리즈 EP2)
+channels: youtube, blog, threads, homepage
+visibility: public
+publish_order: 1
+publish_after: 2026-10-26
+linked_to: (none)
+files: video.mp4 (4:09, 1920x1080 30fps, 79 MB), thumbnail.jpg (1280x720), upload-text.txt
+source: aacanada/AI- branch claude/fervent-knuth-fbxid4, videos/olds-diploma-longform/
+notes: blog = 네이버 블로그. 릴스·클립 게시 안 함. 얼굴 없음, 내레이션은 AI 음성(ElevenLabs "일곱번째", 원장님 지시 2026-10-24) - 설명란에 표기함. 설명란에 1편(EP1 농업경영 학사) 링크 포함. 숫자는 upload-text의 출처·기준일 목록 참고(95% 취업률·최상급 표현 없음). 쇼츠 2026-10-30/11-02/11-05 olds-short-* 3편이 이 본편을 관련 동영상으로 연결합니다.
