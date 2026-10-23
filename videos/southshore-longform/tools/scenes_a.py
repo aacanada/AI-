@@ -113,7 +113,7 @@ R .life .tx{{font-weight:900;font-size:40px;line-height:1.35}}
 R .dtic{{position:absolute}}
 """,
     body=f"""
-<div class="tag"><i></i>1 · 사우스쇼어는 어디?</div>
+<div class="tag"><b>1</b>사우스쇼어는 어디?</div>
 <div class="ph p1">
   {canada_svg("cmap")}
   <svg class="cpin" viewBox="0 0 44 60"><path d="M22 58 C 8 38, 2 30, 2 22 A20 20 0 0 1 42 22 C 42 30, 36 38, 22 58 Z" fill="#7A1B26"/><circle cx="22" cy="22" r="8" fill="#fff"/></svg>
@@ -195,7 +195,7 @@ R .p2 .mid .n{font-size:150px;color:#C8102E}
 R .p2 .mid .line{left:40px;top:250px;width:440px}
 """,
     body=f"""
-<div class="tag"><i></i>2 · REM, 다운타운까지 18분</div>
+<div class="tag"><b>2</b>REM, 다운타운까지 18분</div>
 <div class="ph p1">
   {cam_html(_stations(V_REM) + label("champ-tag", "샹플랭 다리", 45.4605, -73.522, V_REM, 30, dot=False, kind="mtag", dy=46),
             overlay=_rem_overlay(V_REM))}

@@ -30,7 +30,7 @@ R .diff{left:780px;top:330px;font-size:44px}
 R .more{left:0;right:0;top:700px;text-align:center;font-size:40px}
 """,
     body=f"""
-<div class="tag"><i></i>6 · 초등학교</div>
+<div class="tag"><b>6</b>초등학교</div>
 <div class="ph p1">
   {cam_html(_el)}
   <div class="abs bhs elt">초등학교는 <span class="red">선택지가 더 많아요</span></div>
@@ -85,7 +85,7 @@ R .tp1{left:220px}.tp2{left:1080px}
 R .early{left:0;right:0;top:720px;text-align:center}
 """,
     body=f"""
-<div class="tag"><i></i>7 · 비용과 일정</div>
+<div class="tag"><b>7</b>비용과 일정</div>
 <div class="ph p1">
   <div class="abs bhs ct">조기유학 비용 <small>리버사이드 학생·가족용 학비표 · 2027-28</small></div>
   <div class="card cost co1"><div class="k">1년 과정 (10개월)</div><div class="v num"><span class="ya">약</span><span class="red">CAD 32,000</span></div>

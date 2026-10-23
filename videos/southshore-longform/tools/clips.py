@@ -26,7 +26,7 @@ CLIPS = {  # name: (video, in, out, label)
     "cen-lab": ("centennial", 40.9, 42.7, "TaG 실험실"),
     "cen-gym": ("centennial", 55.7, 57.5, "체육관"),
     "cen-art": ("centennial", 63.6, 65.3, "미술실"),
-    "sli-sign": ("sli", 0.2, 3.8, "학교 입구"),
+    "sli-sign": ("sli", 2.3, 3.9, "학교 입구 (타이틀 카드 이후)"),
     "sli-library": ("sli", 23.3, 24.8, "도서관"),
     "sli-garden": ("sli", 28.7, 30.5, "야외 정원"),
     "sli-gym": ("sli", 34.7, 36.4, "체육관"),

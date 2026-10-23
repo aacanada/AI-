@@ -175,7 +175,7 @@ def bgm_lane(total, win, base=0.16, duck=0.07):
 CHROME_CSS = """
       .logo { position: absolute; right: 40px; bottom: 34px; z-index: 300; display: flex; align-items: center; gap: 12px; color: #2B2B2B; font-weight: 900; font-size: 26px; }
       .logo img { width: 64px; height: 62px; }
-      .foot { position: absolute; left: 0; right: 0; top: 846px; z-index: 300; text-align: center; color: #7A1B26; font-weight: 500; font-size: 22px; opacity: .85; }
+      .foot { position: absolute; left: 0; right: 0; top: 846px; z-index: 300; text-align: center; color: #7A1B26; font-weight: 500; font-size: 23px; text-shadow: 0 0 6px #FFF8F2, 0 0 2px #FFF8F2, 0 0 1px #FFF8F2; }
       .cap { position: absolute; left: 0; right: 0; top: 896px; height: 110px; z-index: 310; display: flex; justify-content: center; align-items: center; }
       .cap span { display: inline-block; background: #fff; color: #2B2B2B; font-weight: 700; font-size: 50px; line-height: 1.3; padding: 12px 40px; border-radius: 18px; border-bottom: 6px solid #C8102E; white-space: nowrap; box-shadow: 0 10px 26px rgba(122,27,38,.18); }
       .cap b { color: #C8102E; font-weight: 900; }

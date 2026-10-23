@@ -18,12 +18,12 @@ BARS = [  # key, label, value, cue
     ("bou", "부셔빌", 30, "T('부셔빌은 30명')"),
 ]
 BMAX = 1080
-ASIAN = [  # city key (geo.CITIES), share %, label
-    ("brossard", 20.1, "약 20%"),
-    ("longueuil", 3.3, "약 3%"),
-    ("stlambert", 2.8, "약 3%"),
-    ("boucherville", 2.0, "약 2%"),
-    ("stbruno", 1.9, "약 2%"),
+ASIAN = [  # city key (geo.CITIES), share % (bubble size only; no % shown on screen), label
+    ("brossard", 20.1, ""),
+    ("longueuil", 3.3, ""),
+    ("stlambert", 2.8, ""),
+    ("boucherville", 2.0, ""),
+    ("stbruno", 1.9, ""),
 ]
 _CITY = {k: (la, lo) for k, _, la, lo in geo.CITIES}
 V_ASIAN = geo.view(45.525, -73.44, 52, cy=400)
@@ -62,19 +62,19 @@ R .bb{position:absolute;left:0;top:6px;height:44px;border-radius:0 12px 12px 0;b
 R .br-coq .bb{background:#7A1B26}
 R .bv{position:absolute;top:2px;font-size:48px;white-space:nowrap}
 R .br-coq .bv{color:#7A1B26}
-R .pct8{left:1200px;top:296px;font-size:34px}
+R .pct8{left:1200px;top:334px;font-size:34px}
 R .ttl3{left:120px;top:150px;font-size:54px;z-index:5}
 R .bub{position:absolute;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;box-shadow:0 10px 26px rgba(122,27,38,.18)}
 R .honest{left:1290px;top:200px;font-size:54px}
-R .cv1{left:1250px;top:330px;font-size:32px}
-R .cv2{left:1250px;top:410px;font-size:32px}
+R .cv1{left:1250px;top:480px;font-size:32px}
+R .cv2{left:1250px;top:560px;font-size:32px}
 R .pick{position:absolute;top:250px;width:780px;height:420px;padding:44px 50px}
 R .pick .h{font-weight:900;font-size:44px;margin-bottom:26px}
 R .pick .a{font-size:84px;line-height:1.1}
 R .pk1{left:120px}.pk2{left:1020px}
 """,
     body=f"""
-<div class="tag"><i></i>3 · 한국 사람이 거의 없는 동네</div>
+<div class="tag"><b>3</b>한국 사람이 거의 없는 동네</div>
 <div class="ph p1">
   <div class="bubble pink worry">“가 보니까 반에 한국 아이가 너무 많더라…”</div>
   <div class="kids">{"".join(icon("school", 120, c) for c in ["#E9CFCB", "#E9CFCB", "#C8102E", "#E9CFCB"])}</div>
@@ -87,7 +87,7 @@ R .pk1{left:120px}.pk2{left:1020px}
 <div class="ph p3" style="opacity:0">
   {cam_html("".join(label(f"bc-{k}", n, la, lo, V_ASIAN, 28, dx=72 if k != 'brossard' else 130, dy=0, dot=False)
                     for k, n, la, lo in geo.CITIES if k in dict((a[0], 1) for a in ASIAN)) + _bubbles(V_ASIAN))}
-  <div class="abs bhs ttl3">아시아계 비율 <span class="red">(2021 인구조사)</span></div>
+  <div class="abs bhs ttl3">아시아계 주민 비중 <span class="red">(2021 인구조사)</span></div>
   <div class="stamp honest">솔직하게</div>
   <div class="chip pink cv1">아시아 마트·식당 가까움 → 생활 편함</div>
   <div class="chip solid cv2">그래도 한국계 590명 (1% 미만)</div>
@@ -105,9 +105,9 @@ pop('.pct8',T('시 인구의 8%'));
 {cam_set_js(V_ASIAN)}
 phase('.p3',T('아시아계 전체로'),'.p2');inn('.ttl3',T('아시아계 전체로'),{{y:20}});
 pop('.bub-stlambert,.bc-stlambert',T('생랑베르, 부셔빌, 생브루노는')-0.1,0.05);pop('.bub-boucherville,.bc-boucherville',T('부셔빌, 생브루노는'),0.05);
-pop('.bub-stbruno,.bc-stbruno',T('생브루노는 인구의'),0.05);pop('.bub-longueuil,.bc-longueuil',T('생브루노는 인구의')+0.6,0.05);
+pop('.bub-stbruno,.bc-stbruno',T('생브루노는 비중이'),0.05);pop('.bub-longueuil,.bc-longueuil',T('생브루노는 비중이')+0.6,0.05);
 stamp('.honest',T('솔직하게'),-6);slam('.bub-brossard',T('브로사드는 조금'),{{s:2.2}});inn('.bc-brossard',T('브로사드는 조금')+0.3,{{y:-10}});
-pulse('.bub-brossard',T('20% 정도'));inn('.cv1',T('아시아 마트나'),{{x:40,y:0}});inn('.cv2',T('590명'),{{x:40,y:0}});
+pulse('.bub-brossard',T('아시아계 주민이'));inn('.cv1',T('아시아 마트나'),{{x:40,y:0}});inn('.cv2',T('590명'),{{x:40,y:0}});
 phase('.p4',T('그래서 아이가'),'.p3');inn('.pk1',T('영어만 쓰는'),{{x:-60,y:0}});inn('.pk2',T('생활 편의도 같이'),{{x:60,y:0}});
 """,
     sfx=[("pop", "T('가 보니까')"), ("whoosh", "T('2021년 캐나다')-0.3"), ("impact", "T('코퀴틀람에는')+1.2"),
@@ -150,7 +150,7 @@ R .stp{position:absolute;bottom:0;width:280px;border-radius:20px 20px 0 0;backgr
 R .st1{left:0;height:130px;background:#FFD6CF;color:#7A1B26}.st2{left:300px;height:210px;background:#E86A7E}.st3{left:600px;height:300px}
 """,
     body=f"""
-<div class="tag"><i></i>4 · 리버사이드 교육청</div>
+<div class="tag"><b>4</b>리버사이드 교육청</div>
 <div class="ph p1">
   {cam_html(label("rsb-sjsr", "생장쉬르리슐리외", geo.SJSR[1], geo.SJSR[2], V_RSB, 28) +
             label("rsb-dt", "다운타운", *geo.DOWNTOWN, V_RSB, 28, dx=-130, dy=34), overlay=_terr_overlay())}
@@ -257,7 +257,7 @@ R .scard .sch{display:inline-block;padding:8px 24px;border-radius:99px;backgroun
 R .scard .fit{position:absolute;left:40px;right:40px;bottom:36px;font-weight:900;font-size:32px;color:#7A1B26;background:#FFD6CF;border-radius:16px;padding:14px 20px}
 """,
     body=f"""
-<div class="tag"><i></i>5 · 고등학교 4곳</div>
+<div class="tag"><b>5</b>고등학교 4곳</div>
 <div class="ph p1">
   {cam_html(_hs_pins + label("hs-dt", "다운타운", *geo.DOWNTOWN, V_HS, 28, dx=-130, dy=-30))}
   <div class="abs bhs hst">리버사이드 <span class="red">고등학교 4곳</span></div>

@@ -97,7 +97,7 @@ def short_html(key, sh, segs, total, slots):
       html, body {{ margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #FFF8F2; }}
       #root {{ position: relative; width: 1080px; height: 1920px; overflow: hidden; background: #FFF8F2; font-family: 'Noto Sans KR', sans-serif; color: #2B2B2B; }}
       .bar {{ position: absolute; left: 0; right: 0; top: 0; height: 18px; background: #C8102E; }}
-      .title {{ position: absolute; left: 0; right: 0; top: 190px; text-align: center; font-family: 'Black Han Sans', sans-serif; font-size: 96px; line-height: 1.12; }}
+      .title {{ position: absolute; left: 0; right: 0; top: 168px; text-align: center; font-family: 'Black Han Sans', sans-serif; font-size: 96px; line-height: 1.12; }}
       .title em {{ font-style: normal; color: #C8102E; }}
       .frame {{ position: absolute; left: 0; top: {TOP}px; width: 1080px; height: {1080 * S:.0f}px; overflow: hidden; border-top: 6px solid #C8102E; border-bottom: 6px solid #C8102E; background: #FFF8F2; }}
       .scaler {{ position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; transform: scale({S}); transform-origin: 0 0; }}
@@ -106,10 +106,10 @@ def short_html(key, sh, segs, total, slots):
       .cap {{ position: absolute; left: 0; right: 0; top: 1250px; height: 140px; display: flex; justify-content: center; align-items: center; }}
       .cap span {{ display: inline-block; background: #fff; color: #2B2B2B; font-weight: 900; font-size: 66px; line-height: 1.25; padding: 14px 40px; border-radius: 22px; border-bottom: 8px solid #C8102E; white-space: nowrap; box-shadow: 0 10px 26px rgba(122,27,38,.18); }}
       .cap b {{ color: #C8102E; font-weight: 900; }}
-      .cta {{ position: absolute; left: 90px; right: 90px; top: 1470px; text-align: center; font-weight: 900; font-size: 36px; color: #7A1B26; }}
+      .cta {{ position: absolute; left: 90px; right: 90px; top: 424px; text-align: center; font-weight: 900; font-size: 36px; color: #7A1B26; }}
       .cta i {{ font-style: normal; color: #C8102E; }}
-      .logo {{ position: absolute; left: 0; right: 0; top: 1545px; display: flex; justify-content: center; align-items: center; gap: 14px; font-weight: 900; font-size: 34px; }}
-      .logo img {{ width: 72px; height: 70px; }}
+      .logo {{ position: absolute; left: 0; right: 0; top: 52px; display: flex; justify-content: center; align-items: center; gap: 12px; font-weight: 900; font-size: 30px; }}
+      .logo img {{ width: 60px; height: 58px; }}
     </style>
   </head>
   <body>

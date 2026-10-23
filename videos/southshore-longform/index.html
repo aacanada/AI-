@@ -88,7 +88,7 @@
 
       .logo { position: absolute; right: 40px; bottom: 34px; z-index: 300; display: flex; align-items: center; gap: 12px; color: #2B2B2B; font-weight: 900; font-size: 26px; }
       .logo img { width: 64px; height: 62px; }
-      .foot { position: absolute; left: 0; right: 0; top: 846px; z-index: 300; text-align: center; color: #7A1B26; font-weight: 500; font-size: 22px; opacity: .85; }
+      .foot { position: absolute; left: 0; right: 0; top: 846px; z-index: 300; text-align: center; color: #7A1B26; font-weight: 500; font-size: 23px; text-shadow: 0 0 6px #FFF8F2, 0 0 2px #FFF8F2, 0 0 1px #FFF8F2; }
       .cap { position: absolute; left: 0; right: 0; top: 896px; height: 110px; z-index: 310; display: flex; justify-content: center; align-items: center; }
       .cap span { display: inline-block; background: #fff; color: #2B2B2B; font-weight: 700; font-size: 50px; line-height: 1.3; padding: 12px 40px; border-radius: 18px; border-bottom: 6px solid #C8102E; white-space: nowrap; box-shadow: 0 10px 26px rgba(122,27,38,.18); }
       .cap b { color: #C8102E; font-weight: 900; }
@@ -96,213 +96,222 @@
     </style>
   </head>
   <body>
-    <div id="root" data-composition-id="root" data-width="1920" data-height="1080" data-duration="485.22">
-      <div id="el-s01" style="z-index:1" data-composition-id="s01" data-composition-src="compositions/s01.html" data-start="0.0" data-duration="36.28" data-track-index="1" data-width="1920" data-height="1080"></div>
-      <div id="el-s02" style="z-index:2" data-composition-id="s02" data-composition-src="compositions/s02.html" data-start="35.78" data-duration="34.08" data-track-index="2" data-width="1920" data-height="1080"></div>
-      <div id="el-s03" style="z-index:3" data-composition-id="s03" data-composition-src="compositions/s03.html" data-start="69.36" data-duration="52.14" data-track-index="1" data-width="1920" data-height="1080"></div>
-      <div id="el-s04" style="z-index:4" data-composition-id="s04" data-composition-src="compositions/s04.html" data-start="121.0" data-duration="75.87" data-track-index="2" data-width="1920" data-height="1080"></div>
-      <div id="el-s05" style="z-index:5" data-composition-id="s05" data-composition-src="compositions/s05.html" data-start="196.37" data-duration="50.88" data-track-index="1" data-width="1920" data-height="1080"></div>
-      <div id="el-s06" style="z-index:6" data-composition-id="s06" data-composition-src="compositions/s06.html" data-start="246.75" data-duration="66.0" data-track-index="2" data-width="1920" data-height="1080"></div>
-      <div id="el-s07" style="z-index:7" data-composition-id="s07" data-composition-src="compositions/s07.html" data-start="312.25" data-duration="47.52" data-track-index="1" data-width="1920" data-height="1080"></div>
-      <div id="el-s08" style="z-index:8" data-composition-id="s08" data-composition-src="compositions/s08.html" data-start="359.27" data-duration="51.51" data-track-index="2" data-width="1920" data-height="1080"></div>
-      <div id="el-s09" style="z-index:9" data-composition-id="s09" data-composition-src="compositions/s09.html" data-start="410.28" data-duration="29.46" data-track-index="1" data-width="1920" data-height="1080"></div>
-      <div id="el-s10" style="z-index:10" data-composition-id="s10" data-composition-src="compositions/s10.html" data-start="439.24" data-duration="45.98" data-track-index="2" data-width="1920" data-height="1080"></div>
-      <div id="logo" class="clip logo" data-start="0" data-duration="485.22" data-track-index="5"><img src="assets/img/aa-canada-logo-transparent.png" alt="" />AA Canada</div>
-      <div id="foot-s02" class="clip foot" data-start="36.18" data-duration="33.18" data-track-index="7">지도: AA Canada 스키매틱(실제 좌표 기준) · 캐나다 지도 svg-maps/canada (CC BY 4.0)</div>
-      <div id="foot-s03" class="clip foot" data-start="69.76" data-duration="51.24" data-track-index="7">출처: REM 보도자료 2023-07-28 (브로사드–중앙역 16.6km·18분·역 5개, 출퇴근 3분 45초 간격은 개통 당시)</div>
-      <div id="foot-s04" class="clip foot" data-start="121.4" data-duration="74.97" data-track-index="7">출처: 2021 캐나다 인구조사(Statistics Canada, 25% 표본) · 아시아계 = 중국·한국·일본·필리핀·동남아계 합계</div>
-      <div id="foot-s05" class="clip foot" data-start="196.77" data-duration="49.98" data-track-index="7">출처: Riverside School Board 2026-27 브로슈어 (88.5%·몬테레지 1위는 브로슈어 기준)</div>
-      <div id="foot-s06" class="clip foot" data-start="247.15" data-duration="65.1" data-track-index="7">영상: Riverside School Board · 학생 수·특징: 학교 홈페이지, Fraser Institute 2025 퀘벡 고교 평가</div>
-      <div id="foot-s07" class="clip foot" data-start="312.65" data-duration="46.62" data-track-index="7">출처: 각 학교 교육계획·RSB 학교 페이지 · 비중은 학교별 영어반 기준, 바뀔 수 있음</div>
-      <div id="foot-s08" class="clip foot" data-start="359.67" data-duration="50.61" data-track-index="7">출처: RSB 학생·가족용 학비표 2027-28 · 학교 예시(CAQ 포함) · 캐나다 달러 · 변경될 수 있음</div>
-
-      <audio id="wh-s02" src="assets/sfx/whoosh.mp3" data-start="35.78" data-duration="0.574" data-track-index="13" data-volume="0.2"></audio>
-      <audio id="wh-s03" src="assets/sfx/whoosh.mp3" data-start="69.36" data-duration="0.574" data-track-index="13" data-volume="0.2"></audio>
-      <audio id="wh-s04" src="assets/sfx/whoosh.mp3" data-start="121.0" data-duration="0.574" data-track-index="13" data-volume="0.2"></audio>
-      <audio id="wh-s05" src="assets/sfx/whoosh.mp3" data-start="196.37" data-duration="0.574" data-track-index="13" data-volume="0.2"></audio>
-      <audio id="wh-s06" src="assets/sfx/whoosh.mp3" data-start="246.75" data-duration="0.574" data-track-index="13" data-volume="0.2"></audio>
-      <audio id="wh-s07" src="assets/sfx/whoosh.mp3" data-start="312.25" data-duration="0.574" data-track-index="13" data-volume="0.2"></audio>
-      <audio id="wh-s08" src="assets/sfx/whoosh.mp3" data-start="359.27" data-duration="0.574" data-track-index="13" data-volume="0.2"></audio>
-      <audio id="wh-s09" src="assets/sfx/whoosh.mp3" data-start="410.28" data-duration="0.574" data-track-index="13" data-volume="0.2"></audio>
-      <audio id="wh-s10" src="assets/sfx/whoosh.mp3" data-start="439.24" data-duration="0.574" data-track-index="13" data-volume="0.2"></audio>
-      <audio id="bgm-0" src="assets/music/bgm-a.mp3" data-start="0.0" data-duration="259.997" data-track-index="11" data-volume="1" data-automation='{"version": 1, "lanes": [{"target": "volume", "points": [{"t": 0.0, "v": 0.0}, {"t": 2.0, "v": 0.16}, {"t": 2.1, "v": 0.07}, {"t": 35.78, "v": 0.07}, {"t": 35.88, "v": 0.16}, {"t": 36.18, "v": 0.07}, {"t": 36.28, "v": 0.16}, {"t": 69.36, "v": 0.07}, {"t": 69.46, "v": 0.16}, {"t": 69.76, "v": 0.07}, {"t": 69.86, "v": 0.16}, {"t": 121.0, "v": 0.07}, {"t": 121.1, "v": 0.16}, {"t": 121.4, "v": 0.07}, {"t": 121.5, "v": 0.16}, {"t": 196.37, "v": 0.07}, {"t": 196.47, "v": 0.16}, {"t": 196.77, "v": 0.07}, {"t": 196.87, "v": 0.16}, {"t": 246.75, "v": 0.07}, {"t": 246.85, "v": 0.16}, {"t": 247.15, "v": 0.07}, {"t": 247.25, "v": 0.16}, {"t": 259.897, "v": 0.07}, {"t": 259.947, "v": 0.16}, {"t": 259.957, "v": 0.16}, {"t": 259.997, "v": 0.0}]}]}'></audio>
-      <audio id="bgm-1" src="assets/music/bgm-b.mp3" data-start="255.997" data-duration="229.223" data-track-index="12" data-volume="1" data-automation='{"version": 1, "lanes": [{"target": "volume", "points": [{"t": 0.0, "v": 0.0}, {"t": 2.0, "v": 0.16}, {"t": 2.1, "v": 0.07}, {"t": 56.253, "v": 0.07}, {"t": 56.353, "v": 0.16}, {"t": 56.653, "v": 0.07}, {"t": 56.753, "v": 0.16}, {"t": 103.273, "v": 0.07}, {"t": 103.373, "v": 0.16}, {"t": 103.673, "v": 0.07}, {"t": 103.773, "v": 0.16}, {"t": 154.283, "v": 0.07}, {"t": 154.383, "v": 0.16}, {"t": 154.683, "v": 0.07}, {"t": 154.783, "v": 0.16}, {"t": 183.243, "v": 0.07}, {"t": 183.343, "v": 0.16}, {"t": 183.643, "v": 0.07}, {"t": 183.743, "v": 0.16}, {"t": 225.223, "v": 0.07}, {"t": 225.723, "v": 0.16}, {"t": 226.223, "v": 0.16}, {"t": 229.223, "v": 0.0}]}]}'></audio>
-      <div id="cap-000" class="clip cap" data-start="0.800" data-duration="2.457" data-track-index="20"><span>몬트리올은 <b>불어 도시</b>라서,</span></div>
-      <div id="cap-001" class="clip cap" data-start="3.277" data-duration="2.664" data-track-index="20"><span>조기유학 후보에서 빼셨나요?</span></div>
-      <div id="cap-002" class="clip cap" data-start="5.961" data-duration="2.663" data-track-index="20"><span>그런데 몬트리올 다운타운에서</span></div>
-      <div id="cap-003" class="clip cap" data-start="8.644" data-duration="3.283" data-track-index="20"><span>강 하나만 건너면, 수업을 <b>영어로</b> 하는</span></div>
-      <div id="cap-004" class="clip cap" data-start="11.947" data-duration="3.696" data-track-index="20"><span>공립학교들이 모여 있는 동네가 있습니다.</span></div>
-      <div id="cap-005" class="clip cap" data-start="15.663" data-duration="1.218" data-track-index="20"><span>안녕하세요.</span></div>
-      <div id="cap-006" class="clip cap" data-start="16.901" data-duration="2.045" data-track-index="20"><span>캐나다 전문 유학원 AA</span></div>
-      <div id="cap-007" class="clip cap" data-start="18.966" data-duration="2.457" data-track-index="20"><span>Canada 원장입니다.</span></div>
-      <div id="cap-008" class="clip cap" data-start="21.443" data-duration="3.283" data-track-index="20"><span>오늘은 지도를 보면서 몬트리올 남쪽,</span></div>
-      <div id="cap-009" class="clip cap" data-start="24.746" data-duration="3.283" data-track-index="20"><span><b>사우스쇼어</b>를 같이 둘러보겠습니다.</span></div>
-      <div id="cap-010" class="clip cap" data-start="28.049" data-duration="4.108" data-track-index="20"><span>어디에 있는지, 다운타운까지 어떻게 가는지,</span></div>
-      <div id="cap-011" class="clip cap" data-start="32.177" data-duration="3.703" data-track-index="20"><span>그리고 어떤 학교들이 있는지까지요.</span></div>
-      <div id="cap-012" class="clip cap" data-start="36.480" data-duration="2.454" data-track-index="20"><span>먼저 위치부터 보겠습니다.</span></div>
-      <div id="cap-013" class="clip cap" data-start="38.954" data-duration="2.455" data-track-index="20"><span>몬트리올은 <b>세인트로렌스 강</b></span></div>
-      <div id="cap-014" class="clip cap" data-start="41.429" data-duration="2.454" data-track-index="20"><span>한가운데에 있는 섬이에요.</span></div>
-      <div id="cap-015" class="clip cap" data-start="43.903" data-duration="2.661" data-track-index="20"><span>이 강 건너 남쪽을 <b>사우스쇼어</b>,</span></div>
-      <div id="cap-016" class="clip cap" data-start="46.584" data-duration="3.073" data-track-index="20"><span>불어로는 <b>리브쉬드</b>라고 부릅니다.</span></div>
-      <div id="cap-017" class="clip cap" data-start="49.677" data-duration="2.867" data-track-index="20"><span>브로사드, 생랑베르, 롱게일,</span></div>
-      <div id="cap-018" class="clip cap" data-start="52.564" data-duration="4.104" data-track-index="20"><span>그린필드파크, 생위베르, 부셔빌, 생브루노</span></div>
-      <div id="cap-019" class="clip cap" data-start="56.688" data-duration="3.485" data-track-index="20"><span>같은 도시들이 강을 따라 이어져 있어요.</span></div>
-      <div id="cap-020" class="clip cap" data-start="60.193" data-duration="2.867" data-track-index="20"><span>강 건너로 다운타운 빌딩이 보이는</span></div>
-      <div id="cap-021" class="clip cap" data-start="63.080" data-duration="3.073" data-track-index="20"><span>거리인데, 동네는 마당 있는 주택과</span></div>
-      <div id="cap-022" class="clip cap" data-start="66.173" data-duration="3.287" data-track-index="20"><span>공원이 많은 <b>조용한 교외</b>입니다.</span></div>
-      <div id="cap-023" class="clip cap" data-start="70.060" data-duration="1.640" data-track-index="20"><span>이 동네가 요즘 다시</span></div>
-      <div id="cap-024" class="clip cap" data-start="71.720" data-duration="2.471" data-track-index="20"><span>주목받는 이유가 있습니다.</span></div>
-      <div id="cap-025" class="clip cap" data-start="74.211" data-duration="1.848" data-track-index="20"><span>바로 <b>REM</b>이에요.</span></div>
-      <div id="cap-026" class="clip cap" data-start="76.079" data-duration="3.923" data-track-index="20"><span><b>REM</b>은 몬트리올의 새 무인 경전철입니다.</span></div>
-      <div id="cap-027" class="clip cap" data-start="80.022" data-duration="2.470" data-track-index="20"><span><b>2023년</b> <b>7</b>월 <b>31</b>일에 첫</span></div>
-      <div id="cap-028" class="clip cap" data-start="82.512" data-duration="2.886" data-track-index="20"><span>구간이 개통됐는데, 그 첫 구간이</span></div>
-      <div id="cap-029" class="clip cap" data-start="85.418" data-duration="2.678" data-track-index="20"><span>바로 사우스쇼어 노선이에요.</span></div>
-      <div id="cap-030" class="clip cap" data-start="88.116" data-duration="3.508" data-track-index="20"><span>브로사드역에서 출발해서 뒤 카르티에,</span></div>
-      <div id="cap-031" class="clip cap" data-start="91.644" data-duration="0.810" data-track-index="20"><span>파나마,</span></div>
-      <div id="cap-032" class="clip cap" data-start="92.474" data-duration="3.509" data-track-index="20"><span>일데쇠르를 지나 다운타운 중앙역까지.</span></div>
-      <div id="cap-033" class="clip cap" data-start="96.003" data-duration="1.225" data-track-index="20"><span>역은 다섯 개,</span></div>
-      <div id="cap-034" class="clip cap" data-start="97.248" data-duration="3.508" data-track-index="20"><span><b>16.6킬로미터</b>를 <b>18</b>분에 갑니다.</span></div>
-      <div id="cap-035" class="clip cap" data-start="100.776" data-duration="3.508" data-track-index="20"><span>새로 지은 <b>샹플랭 다리</b> 위로 강을 건너고,</span></div>
-      <div id="cap-036" class="clip cap" data-start="104.304" data-duration="3.508" data-track-index="20"><span>개통 당시 기준으로 출퇴근 시간에는 <b>3,</b></span></div>
-      <div id="cap-037" class="clip cap" data-start="107.832" data-duration="2.263" data-track-index="20"><span><b>4</b>분마다 한 대씩 옵니다.</span></div>
-      <div id="cap-038" class="clip cap" data-start="110.115" data-duration="3.509" data-track-index="20"><span>그러니까 아이는 조용한 교외에서 학교를</span></div>
-      <div id="cap-039" class="clip cap" data-start="113.644" data-duration="3.508" data-track-index="20"><span>다니고, 주말에는 <b>18분</b> 만에 다운타운</span></div>
-      <div id="cap-040" class="clip cap" data-start="117.172" data-duration="3.928" data-track-index="20"><span>박물관이나 공연장에 갈 수 있는 거예요.</span></div>
-      <div id="cap-041" class="clip cap" data-start="121.700" data-duration="2.688" data-track-index="20"><span>두 번째 포인트는 사람입니다.</span></div>
-      <div id="cap-042" class="clip cap" data-start="124.408" data-duration="2.688" data-track-index="20"><span>조기유학 상담에서 부모님들이</span></div>
-      <div id="cap-043" class="clip cap" data-start="127.116" data-duration="2.272" data-track-index="20"><span>자주 하시는 걱정이 있죠.</span></div>
-      <div id="cap-044" class="clip cap" data-start="129.408" data-duration="3.521" data-track-index="20"><span>가 보니까 반에 한국 아이가 너무 많더라.</span></div>
-      <div id="cap-045" class="clip cap" data-start="132.949" data-duration="3.938" data-track-index="20"><span><b>2021년</b> 캐나다 인구조사를 보겠습니다.</span></div>
-      <div id="cap-046" class="clip cap" data-start="136.907" data-duration="2.897" data-track-index="20"><span>밴쿠버 옆 <b>코퀴틀람</b>에는 한국계가</span></div>
-      <div id="cap-047" class="clip cap" data-start="139.824" data-duration="2.688" data-track-index="20"><span>약 <b>1만 1,900명</b> 삽니다.</span></div>
-      <div id="cap-048" class="clip cap" data-start="142.532" data-duration="2.271" data-track-index="20"><span>시 인구의 <b>8%</b> 정도예요.</span></div>
-      <div id="cap-049" class="clip cap" data-start="144.823" data-duration="3.314" data-track-index="20"><span>그런데 생랑베르는 <b>50명</b>, 부셔빌은</span></div>
-      <div id="cap-050" class="clip cap" data-start="148.157" data-duration="3.313" data-track-index="20"><span><b>30명</b>, 생브루노는 <b>35명</b>입니다.</span></div>
-      <div id="cap-051" class="clip cap" data-start="151.490" data-duration="3.938" data-track-index="20"><span>인구 <b>25</b>만 명인 롱게일도 <b>425명</b>이에요.</span></div>
-      <div id="cap-052" class="clip cap" data-start="155.448" data-duration="2.480" data-track-index="20"><span>아시아계 전체로 넓혀 봐도,</span></div>
-      <div id="cap-053" class="clip cap" data-start="157.948" data-duration="2.896" data-track-index="20"><span>생랑베르, 부셔빌, 생브루노는</span></div>
-      <div id="cap-054" class="clip cap" data-start="160.864" data-duration="2.688" data-track-index="20"><span>인구의 <b>2~3%</b> 수준입니다.</span></div>
-      <div id="cap-055" class="clip cap" data-start="163.572" data-duration="2.688" data-track-index="20"><span>한 가지 <b>솔직하게</b> 말씀드리면,</span></div>
-      <div id="cap-056" class="clip cap" data-start="166.280" data-duration="2.272" data-track-index="20"><span>브로사드는 조금 달라요.</span></div>
-      <div id="cap-057" class="clip cap" data-start="168.572" data-duration="3.105" data-track-index="20"><span>중국계 커뮤니티가 커서 아시아계가</span></div>
-      <div id="cap-058" class="clip cap" data-start="171.697" data-duration="2.479" data-track-index="20"><span>인구의 <b>20%</b> 정도 됩니다.</span></div>
-      <div id="cap-059" class="clip cap" data-start="174.196" data-duration="2.272" data-track-index="20"><span>대신 아시아 마트나 식당이</span></div>
-      <div id="cap-060" class="clip cap" data-start="176.488" data-duration="2.480" data-track-index="20"><span>가까워서 생활은 편하고요.</span></div>
-      <div id="cap-061" class="clip cap" data-start="178.988" data-duration="2.896" data-track-index="20"><span>한국계는 브로사드도 <b>590명</b>,</span></div>
-      <div id="cap-062" class="clip cap" data-start="181.904" data-duration="1.647" data-track-index="20"><span><b>1%</b>가 안 됩니다.</span></div>
-      <div id="cap-063" class="clip cap" data-start="183.571" data-duration="2.271" data-track-index="20"><span>그래서 아이가 영어만 쓰는</span></div>
-      <div id="cap-064" class="clip cap" data-start="185.862" data-duration="3.522" data-track-index="20"><span>환경을 원하시면 생랑베르나 부셔빌 쪽,</span></div>
-      <div id="cap-065" class="clip cap" data-start="189.404" data-duration="3.521" data-track-index="20"><span>생활 편의도 같이 보신다면 브로사드 쪽.</span></div>
-      <div id="cap-066" class="clip cap" data-start="192.945" data-duration="3.525" data-track-index="20"><span>이렇게 동네를 골라 볼 수 있습니다.</span></div>
-      <div id="cap-067" class="clip cap" data-start="197.070" data-duration="1.847" data-track-index="20"><span>그럼 이 동네 아이들은</span></div>
-      <div id="cap-068" class="clip cap" data-start="198.937" data-duration="2.055" data-track-index="20"><span>어떤 학교에 다닐까요?</span></div>
-      <div id="cap-069" class="clip cap" data-start="201.012" data-duration="2.677" data-track-index="20"><span>사우스쇼어의 영어 공립학교는</span></div>
-      <div id="cap-070" class="clip cap" data-start="203.709" data-duration="3.300" data-track-index="20"><span><b>리버사이드 교육청</b>이 맡고 있습니다.</span></div>
-      <div id="cap-071" class="clip cap" data-start="207.029" data-duration="3.922" data-track-index="20"><span>퀘벡은 영어학교 입학을 법으로 제한하는데,</span></div>
-      <div id="cap-072" class="clip cap" data-start="210.971" data-duration="3.715" data-track-index="20"><span>조기유학생은 교육청 국제학생 프로그램을</span></div>
-      <div id="cap-073" class="clip cap" data-start="214.706" data-duration="2.884" data-track-index="20"><span>통해 영어학교에 다닐 수 있어요.</span></div>
-      <div id="cap-074" class="clip cap" data-start="217.610" data-duration="2.885" data-track-index="20"><span>리버사이드는 초등학교 <b>19곳</b>,</span></div>
-      <div id="cap-075" class="clip cap" data-start="220.515" data-duration="2.677" data-track-index="20"><span>고등학교 <b>4곳</b>을 운영합니다.</span></div>
-      <div id="cap-076" class="clip cap" data-start="223.212" data-duration="4.130" data-track-index="20"><span>교육청 브로슈어에 따르면 졸업·자격 취득률은</span></div>
-      <div id="cap-077" class="clip cap" data-start="227.362" data-duration="3.507" data-track-index="20"><span><b>88.5%</b>, <b>몬테레지 지역 1위</b>예요.</span></div>
-      <div id="cap-078" class="clip cap" data-start="230.889" data-duration="3.092" data-track-index="20"><span>교육청 슬로건이 "Success</span></div>
-      <div id="cap-079" class="clip cap" data-start="234.001" data-duration="3.507" data-track-index="20"><span>in both languages",</span></div>
-      <div id="cap-080" class="clip cap" data-start="237.528" data-duration="2.885" data-track-index="20"><span>영어와 불어 둘 다 잘하기입니다.</span></div>
-      <div id="cap-081" class="clip cap" data-start="240.433" data-duration="3.092" data-track-index="20"><span>수업은 영어로 하고, 불어는 실력에</span></div>
-      <div id="cap-082" class="clip cap" data-start="243.545" data-duration="3.305" data-track-index="20"><span>맞춰 <b>3단계</b>로 나눠서 배웁니다.</span></div>
-      <div id="cap-083" class="clip cap" data-start="247.450" data-duration="3.725" data-track-index="20"><span>고등학교 네 곳을 지도에 찍어 보겠습니다.</span></div>
-      <div id="cap-084" class="clip cap" data-start="251.195" data-duration="2.685" data-track-index="20"><span>실제 학교 영상과 같이 보시죠.</span></div>
-      <div id="cap-085" class="clip cap" data-start="253.900" data-duration="2.477" data-track-index="20"><span>먼저 생위베르의 <b>헤리티지</b>.</span></div>
-      <div id="cap-086" class="clip cap" data-start="256.397" data-duration="3.517" data-track-index="20"><span>학생이 <b>1,600명</b>이 넘는 큰 학교로,</span></div>
-      <div id="cap-087" class="clip cap" data-start="259.934" data-duration="2.061" data-track-index="20"><span>IB 중등 과정, 예술,</span></div>
-      <div id="cap-088" class="clip cap" data-start="262.015" data-duration="3.517" data-track-index="20"><span>스포츠, 컴퓨터 특화반까지 있습니다.</span></div>
-      <div id="cap-089" class="clip cap" data-start="265.552" data-duration="3.101" data-track-index="20"><span>운동이나 예술, IT처럼 좋아하는</span></div>
-      <div id="cap-090" class="clip cap" data-start="268.673" data-duration="2.476" data-track-index="20"><span>게 분명한 아이에게 맞아요.</span></div>
-      <div id="cap-091" class="clip cap" data-start="271.169" data-duration="2.893" data-track-index="20"><span>그린필드파크의 <b>센테니얼</b>은 영재</span></div>
-      <div id="cap-092" class="clip cap" data-start="274.082" data-duration="3.101" data-track-index="20"><span>프로그램 <b>TaG</b>가 있는 학교예요.</span></div>
-      <div id="cap-093" class="clip cap" data-start="277.203" data-duration="3.309" data-track-index="20"><span>프레이저 연구소 평가에서 리버사이드</span></div>
-      <div id="cap-094" class="clip cap" data-start="280.532" data-duration="3.101" data-track-index="20"><span>네 학교 중 점수가 가장 높았습니다.</span></div>
-      <div id="cap-095" class="clip cap" data-start="283.653" data-duration="3.309" data-track-index="20"><span><b>생랑베르 인터내셔널</b>은 학생 <b>400명</b></span></div>
-      <div id="cap-096" class="clip cap" data-start="286.982" data-duration="2.685" data-track-index="20"><span>정도의 작은 IB 학교입니다.</span></div>
-      <div id="cap-097" class="clip cap" data-start="289.687" data-duration="2.269" data-track-index="20"><span>교복을 입고, 수업 중에는</span></div>
-      <div id="cap-098" class="clip cap" data-start="291.976" data-duration="2.685" data-track-index="20"><span>휴대폰을 잠가 두는 학교예요.</span></div>
-      <div id="cap-099" class="clip cap" data-start="294.681" data-duration="2.684" data-track-index="20"><span>작은 학교에서 선생님이 잘 챙겨</span></div>
-      <div id="cap-100" class="clip cap" data-start="297.385" data-duration="2.893" data-track-index="20"><span>주길 바라는 아이에게 좋습니다.</span></div>
-      <div id="cap-101" class="clip cap" data-start="300.298" data-duration="4.142" data-track-index="20"><span>마지막으로 생장쉬르리슐리외의 <b>세인트 존스</b>는</span></div>
-      <div id="cap-102" class="clip cap" data-start="304.460" data-duration="4.141" data-track-index="20"><span>유치원부터 고등학교까지 한 학교라서, 형제나</span></div>
-      <div id="cap-103" class="clip cap" data-start="308.621" data-duration="3.729" data-track-index="20"><span>남매가 같이 가는 경우에 잘 맞습니다.</span></div>
-      <div id="cap-104" class="clip cap" data-start="312.950" data-duration="3.504" data-track-index="20"><span>초등학생이라면 선택지가 더 많습니다.</span></div>
-      <div id="cap-105" class="clip cap" data-start="316.474" data-duration="1.846" data-track-index="20"><span>몇 곳만 짚어 볼게요.</span></div>
-      <div id="cap-106" class="clip cap" data-start="318.340" data-duration="3.711" data-track-index="20"><span>브로사드의 <b>굿셰퍼드</b>는 수업의 <b>80%</b> 넘게</span></div>
-      <div id="cap-107" class="clip cap" data-start="322.071" data-duration="3.297" data-track-index="20"><span>영어로 하는 영어 전용 초등학교라서,</span></div>
-      <div id="cap-108" class="clip cap" data-start="325.388" data-duration="3.089" data-track-index="20"><span>영어를 늘리러 오는 조기유학생에게</span></div>
-      <div id="cap-109" class="clip cap" data-start="328.497" data-duration="2.675" data-track-index="20"><span>저희가 먼저 권하는 곳입니다.</span></div>
-      <div id="cap-110" class="clip cap" data-start="331.192" data-duration="2.675" data-track-index="20"><span>같은 브로사드의 <b>해롤드 내퍼</b>는</span></div>
-      <div id="cap-111" class="clip cap" data-start="333.887" data-duration="2.675" data-track-index="20"><span>올해 증축을 마친 큰 학교고요.</span></div>
-      <div id="cap-112" class="clip cap" data-start="336.582" data-duration="3.711" data-track-index="20"><span>생랑베르 초등학교는 <b>영어 70, 불어 30</b></span></div>
-      <div id="cap-113" class="clip cap" data-start="340.313" data-duration="4.126" data-track-index="20"><span>비율로 배우고, 그린필드파크와 생브루노에는</span></div>
-      <div id="cap-114" class="clip cap" data-start="344.459" data-duration="3.919" data-track-index="20"><span><b>IB 초등</b> 과정을 운영하는 학교도 있습니다.</span></div>
-      <div id="cap-115" class="clip cap" data-start="348.398" data-duration="3.297" data-track-index="20"><span>학교마다 시작 시간이 <b>한 시간 넘게</b> 차이</span></div>
-      <div id="cap-116" class="clip cap" data-start="351.715" data-duration="3.504" data-track-index="20"><span>나기도 해서, 이런 세부 정보는 블로그와</span></div>
-      <div id="cap-117" class="clip cap" data-start="355.239" data-duration="4.131" data-track-index="20"><span>홈페이지에 학교별로 정리해 두었습니다.</span></div>
-      <div id="cap-118" class="clip cap" data-start="359.970" data-duration="1.848" data-track-index="20"><span>비용도 궁금하시죠.</span></div>
-      <div id="cap-119" class="clip cap" data-start="361.838" data-duration="3.092" data-track-index="20"><span>리버사이드 학생·가족용 학비표,</span></div>
-      <div id="cap-120" class="clip cap" data-start="364.950" data-duration="3.300" data-track-index="20"><span><b>2027-28학년도</b> 기준입니다.</span></div>
-      <div id="cap-121" class="clip cap" data-start="368.270" data-duration="3.716" data-track-index="20"><span><b>1년</b> 과정은 수업료, 홈스테이, 행정비,</span></div>
-      <div id="cap-122" class="clip cap" data-start="372.006" data-duration="3.092" data-track-index="20"><span>학습허가 CAQ까지 합쳐서, 학교</span></div>
-      <div id="cap-123" class="clip cap" data-start="375.118" data-duration="3.508" data-track-index="20"><span>예시로 약 <b>3만 2천 캐나다 달러</b>입니다.</span></div>
-      <div id="cap-124" class="clip cap" data-start="378.646" data-duration="1.640" data-track-index="20"><span>한 학기 <b>5</b>개월은 약</span></div>
-      <div id="cap-125" class="clip cap" data-start="380.306" data-duration="2.470" data-track-index="20"><span><b>1만 8,800달러</b>예요.</span></div>
-      <div id="cap-126" class="clip cap" data-start="382.796" data-duration="2.678" data-track-index="20"><span>행정비 안에 의료보험과 통학,</span></div>
-      <div id="cap-127" class="clip cap" data-start="385.494" data-duration="3.300" data-track-index="20"><span>교내 활동이 들어 있고, 홈스테이에는</span></div>
-      <div id="cap-128" class="clip cap" data-start="388.814" data-duration="3.300" data-track-index="20"><span>하루 세 끼와 공항 픽업이 포함됩니다.</span></div>
-      <div id="cap-129" class="clip cap" data-start="392.134" data-duration="1.848" data-track-index="20"><span>일정은 두 가지예요.</span></div>
-      <div id="cap-130" class="clip cap" data-start="394.002" data-duration="2.885" data-track-index="20"><span><b>2027년</b> <b>2월 2일</b>에 시작하는</span></div>
-      <div id="cap-131" class="clip cap" data-start="396.907" data-duration="3.093" data-track-index="20"><span>겨울 학기, 그리고 <b>2027년</b> <b>9</b>월</span></div>
-      <div id="cap-132" class="clip cap" data-start="400.020" data-duration="3.092" data-track-index="20"><span><b>8</b>일에 시작하는 <b>1년</b> 과정입니다.</span></div>
-      <div id="cap-133" class="clip cap" data-start="403.132" data-duration="2.885" data-track-index="20"><span>홈스테이 학생은 빨리 지원할수록</span></div>
-      <div id="cap-134" class="clip cap" data-start="406.037" data-duration="4.343" data-track-index="20"><span>유리하다고 교육청에서도 강조하고 있어요.</span></div>
-      <div id="cap-135" class="clip cap" data-start="410.980" data-duration="2.858" data-track-index="20"><span>제가 사우스쇼어를 권하는 이유를</span></div>
-      <div id="cap-136" class="clip cap" data-start="413.858" data-duration="3.064" data-track-index="20"><span>한 문장으로 정리하면 이렇습니다.</span></div>
-      <div id="cap-137" class="clip cap" data-start="416.942" data-duration="2.858" data-track-index="20"><span>생활은 <b>조용한 영어권 교외</b>에서,</span></div>
-      <div id="cap-138" class="clip cap" data-start="419.820" data-duration="3.064" data-track-index="20"><span>경험은 <b>18분 거리의 대도시</b>에서.</span></div>
-      <div id="cap-139" class="clip cap" data-start="422.904" data-duration="3.886" data-track-index="20"><span>한국 친구들끼리 어울리기 어려운 환경이라,</span></div>
-      <div id="cap-140" class="clip cap" data-start="426.810" data-duration="3.475" data-track-index="20"><span>처음 몇 달은 아이가 조금 힘들 수 있어요.</span></div>
-      <div id="cap-141" class="clip cap" data-start="430.305" data-duration="2.653" data-track-index="20"><span>그런데 그 시간이 지나면 영어가</span></div>
-      <div id="cap-142" class="clip cap" data-start="432.978" data-duration="2.653" data-track-index="20"><span>공부가 아니라 <b>생활</b>이 됩니다.</span></div>
-      <div id="cap-143" class="clip cap" data-start="435.651" data-duration="3.689" data-track-index="20"><span>거기에 <b>불어까지</b> 덤으로 따라오고요.</span></div>
-      <div id="cap-144" class="clip cap" data-start="439.940" data-duration="2.671" data-track-index="20"><span>오늘 내용 정리해 보겠습니다.</span></div>
-      <div id="cap-145" class="clip cap" data-start="442.631" data-duration="2.670" data-track-index="20"><span>첫째, 사우스쇼어는 몬트리올</span></div>
-      <div id="cap-146" class="clip cap" data-start="445.321" data-duration="3.085" data-track-index="20"><span>다운타운에서 <b>REM으로 18분</b>.</span></div>
-      <div id="cap-147" class="clip cap" data-start="448.426" data-duration="2.049" data-track-index="20"><span>둘째, 한국 사람이 거의</span></div>
-      <div id="cap-148" class="clip cap" data-start="450.495" data-duration="2.464" data-track-index="20"><span>없는 영어 공립학교 생활권.</span></div>
-      <div id="cap-149" class="clip cap" data-start="452.979" data-duration="3.292" data-track-index="20"><span>셋째, 리버사이드 교육청의 초등학교</span></div>
-      <div id="cap-150" class="clip cap" data-start="456.291" data-duration="3.498" data-track-index="20"><span><b>19곳</b>, 고등학교 <b>4</b>곳 중에서 아이에게</span></div>
-      <div id="cap-151" class="clip cap" data-start="459.809" data-duration="2.671" data-track-index="20"><span>맞는 학교를 고를 수 있습니다.</span></div>
-      <div id="cap-152" class="clip cap" data-start="462.500" data-duration="3.291" data-track-index="20"><span>아이 학년과 성향을 <b>카카오톡</b>으로 보내</span></div>
-      <div id="cap-153" class="clip cap" data-start="465.811" data-duration="3.499" data-track-index="20"><span>주시면, 어느 동네, 어느 학교가 맞을지</span></div>
-      <div id="cap-154" class="clip cap" data-start="469.330" data-duration="3.912" data-track-index="20"><span>골라서 학교 영상과 함께 보내 드리겠습니다.</span></div>
-      <div id="cap-155" class="clip cap" data-start="473.262" data-duration="2.671" data-track-index="20"><span>학교별 자세한 정보는 설명란의</span></div>
-      <div id="cap-156" class="clip cap" data-start="475.953" data-duration="2.256" data-track-index="20"><span>블로그 링크에 있습니다.</span></div>
-      <div id="cap-157" class="clip cap" data-start="478.229" data-duration="3.071" data-track-index="20"><span>끝까지 봐 주셔서 감사합니다.</span></div>
+    <div id="root" data-composition-id="root" data-width="1920" data-height="1080" data-duration="373.582">
+      <div id="el-s01" style="z-index:1" data-composition-id="s01" data-composition-src="compositions/s01.html" data-start="0.0" data-duration="26.542" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="el-s02" style="z-index:2" data-composition-id="s02" data-composition-src="compositions/s02.html" data-start="26.042" data-duration="25.792" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <div id="el-s03" style="z-index:3" data-composition-id="s03" data-composition-src="compositions/s03.html" data-start="51.334" data-duration="42.371" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="el-s04" style="z-index:4" data-composition-id="s04" data-composition-src="compositions/s04.html" data-start="93.205" data-duration="57.557" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <div id="el-s05" style="z-index:5" data-composition-id="s05" data-composition-src="compositions/s05.html" data-start="150.262" data-duration="38.284" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="el-s06" style="z-index:6" data-composition-id="s06" data-composition-src="compositions/s06.html" data-start="188.046" data-duration="53.098" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <div id="el-s07" style="z-index:7" data-composition-id="s07" data-composition-src="compositions/s07.html" data-start="240.644" data-duration="37.773" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="el-s08" style="z-index:8" data-composition-id="s08" data-composition-src="compositions/s08.html" data-start="277.917" data-duration="39.399" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <div id="el-s09" style="z-index:9" data-composition-id="s09" data-composition-src="compositions/s09.html" data-start="316.816" data-duration="21.937" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="el-s10" style="z-index:10" data-composition-id="s10" data-composition-src="compositions/s10.html" data-start="338.253" data-duration="35.329" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <div id="logo" class="clip logo" data-start="0" data-duration="373.582" data-track-index="5"><img src="assets/img/aa-canada-logo-transparent.png" alt="" />AA Canada</div>
+      <div id="foot-s02" class="clip foot" data-start="26.442" data-duration="24.892" data-track-index="7">지도: AA Canada 스키매틱(실제 좌표 기준) · 캐나다 지도 svg-maps/canada (CC BY 4.0)</div>
+      <div id="foot-s03" class="clip foot" data-start="51.734" data-duration="41.471" data-track-index="7">출처: REM 보도자료 2023-07-28 (브로사드–중앙역 16.6km·18분·역 5개, 출퇴근 3분 45초 간격은 개통 당시)</div>
+      <div id="foot-s04" class="clip foot" data-start="93.605" data-duration="56.657" data-track-index="7">출처: 2021 캐나다 인구조사(Statistics Canada, 25% 표본) · 아시아계 = 중국·한국·일본·필리핀·동남아계 합계</div>
+      <div id="foot-s05" class="clip foot" data-start="150.662" data-duration="37.384" data-track-index="7">출처: Riverside School Board 2026-27 브로슈어 (88.5%·몬테레지 1위는 브로슈어 기준)</div>
+      <div id="foot-s06" class="clip foot" data-start="188.446" data-duration="52.198" data-track-index="7">영상: Riverside School Board · 학생 수·특징: 학교 홈페이지, Fraser Institute 2025 퀘벡 고교 평가</div>
+      <div id="foot-s07" class="clip foot" data-start="241.044" data-duration="36.873" data-track-index="7">출처: 각 학교 교육계획·RSB 학교 페이지 · 비중은 학교별 영어반 기준, 바뀔 수 있음</div>
+      <div id="foot-s08" class="clip foot" data-start="278.317" data-duration="38.499" data-track-index="7">출처: RSB 학생·가족용 학비표 2027-28 · 학교 예시(CAQ 포함) · 캐나다 달러 · 변경될 수 있음</div>
+      <audio id="vo-s01" src="assets/voice/s01.wav" data-start="0.5" data-duration="25.542" data-track-index="10" data-volume="1"></audio>
+      <audio id="vo-s02" src="assets/voice/s02.wav" data-start="26.442" data-duration="24.892" data-track-index="10" data-volume="1"></audio>
+      <audio id="vo-s03" src="assets/voice/s03.wav" data-start="51.734" data-duration="41.471" data-track-index="10" data-volume="1"></audio>
+      <audio id="vo-s04" src="assets/voice/s04.wav" data-start="93.605" data-duration="56.657" data-track-index="10" data-volume="1"></audio>
+      <audio id="vo-s05" src="assets/voice/s05.wav" data-start="150.662" data-duration="37.384" data-track-index="10" data-volume="1"></audio>
+      <audio id="vo-s06" src="assets/voice/s06.wav" data-start="188.446" data-duration="52.198" data-track-index="10" data-volume="1"></audio>
+      <audio id="vo-s07" src="assets/voice/s07.wav" data-start="241.044" data-duration="36.873" data-track-index="10" data-volume="1"></audio>
+      <audio id="vo-s08" src="assets/voice/s08.wav" data-start="278.317" data-duration="38.499" data-track-index="10" data-volume="1"></audio>
+      <audio id="vo-s09" src="assets/voice/s09.wav" data-start="317.216" data-duration="21.037" data-track-index="10" data-volume="1"></audio>
+      <audio id="vo-s10" src="assets/voice/s10.wav" data-start="338.653" data-duration="30.929" data-track-index="10" data-volume="1"></audio>
+      <audio id="wh-s02" src="assets/sfx/whoosh.mp3" data-start="26.042" data-duration="0.574" data-track-index="13" data-volume="0.2"></audio>
+      <audio id="wh-s03" src="assets/sfx/whoosh.mp3" data-start="51.334" data-duration="0.574" data-track-index="13" data-volume="0.2"></audio>
+      <audio id="wh-s04" src="assets/sfx/whoosh.mp3" data-start="93.205" data-duration="0.574" data-track-index="13" data-volume="0.2"></audio>
+      <audio id="wh-s05" src="assets/sfx/whoosh.mp3" data-start="150.262" data-duration="0.574" data-track-index="13" data-volume="0.2"></audio>
+      <audio id="wh-s06" src="assets/sfx/whoosh.mp3" data-start="188.046" data-duration="0.574" data-track-index="13" data-volume="0.2"></audio>
+      <audio id="wh-s07" src="assets/sfx/whoosh.mp3" data-start="240.644" data-duration="0.574" data-track-index="13" data-volume="0.2"></audio>
+      <audio id="wh-s08" src="assets/sfx/whoosh.mp3" data-start="277.917" data-duration="0.574" data-track-index="13" data-volume="0.2"></audio>
+      <audio id="wh-s09" src="assets/sfx/whoosh.mp3" data-start="316.816" data-duration="0.574" data-track-index="13" data-volume="0.2"></audio>
+      <audio id="wh-s10" src="assets/sfx/whoosh.mp3" data-start="338.253" data-duration="0.574" data-track-index="13" data-volume="0.2"></audio>
+      <audio id="bgm-0" src="assets/music/bgm-a.mp3" data-start="0.0" data-duration="259.997" data-track-index="11" data-volume="1" data-automation='{"version": 1, "lanes": [{"target": "volume", "points": [{"t": 0.0, "v": 0.0}, {"t": 2.0, "v": 0.16}, {"t": 2.1, "v": 0.07}, {"t": 26.042, "v": 0.07}, {"t": 26.142, "v": 0.16}, {"t": 26.442, "v": 0.07}, {"t": 26.542, "v": 0.16}, {"t": 51.334, "v": 0.07}, {"t": 51.434, "v": 0.16}, {"t": 51.734, "v": 0.07}, {"t": 51.834, "v": 0.16}, {"t": 93.205, "v": 0.07}, {"t": 93.305, "v": 0.16}, {"t": 93.605, "v": 0.07}, {"t": 93.705, "v": 0.16}, {"t": 150.262, "v": 0.07}, {"t": 150.362, "v": 0.16}, {"t": 150.662, "v": 0.07}, {"t": 150.762, "v": 0.16}, {"t": 188.046, "v": 0.07}, {"t": 188.146, "v": 0.16}, {"t": 188.446, "v": 0.07}, {"t": 188.546, "v": 0.16}, {"t": 240.644, "v": 0.07}, {"t": 240.744, "v": 0.16}, {"t": 241.044, "v": 0.07}, {"t": 241.144, "v": 0.16}, {"t": 259.897, "v": 0.07}, {"t": 259.947, "v": 0.16}, {"t": 259.957, "v": 0.16}, {"t": 259.997, "v": 0.0}]}]}'></audio>
+      <audio id="bgm-1" src="assets/music/bgm-b.mp3" data-start="255.997" data-duration="117.585" data-track-index="12" data-volume="1" data-automation='{"version": 1, "lanes": [{"target": "volume", "points": [{"t": 0.0, "v": 0.0}, {"t": 2.0, "v": 0.16}, {"t": 2.1, "v": 0.07}, {"t": 21.92, "v": 0.07}, {"t": 22.02, "v": 0.16}, {"t": 22.32, "v": 0.07}, {"t": 22.42, "v": 0.16}, {"t": 60.819, "v": 0.07}, {"t": 60.919, "v": 0.16}, {"t": 61.219, "v": 0.07}, {"t": 61.319, "v": 0.16}, {"t": 82.256, "v": 0.07}, {"t": 82.356, "v": 0.16}, {"t": 82.656, "v": 0.07}, {"t": 82.756, "v": 0.16}, {"t": 113.585, "v": 0.07}, {"t": 114.085, "v": 0.16}, {"t": 114.585, "v": 0.16}, {"t": 117.585, "v": 0.0}]}]}'></audio>
+      <div id="cap-000" class="clip cap" data-start="0.500" data-duration="2.302" data-track-index="20"><span>몬트리올은 <b>불어 도시</b>라서,</span></div>
+      <div id="cap-001" class="clip cap" data-start="2.822" data-duration="1.965" data-track-index="20"><span>조기유학 후보에서 빼셨나요?</span></div>
+      <div id="cap-002" class="clip cap" data-start="4.807" data-duration="2.093" data-track-index="20"><span>그런데 몬트리올 다운타운에서</span></div>
+      <div id="cap-003" class="clip cap" data-start="6.920" data-duration="2.453" data-track-index="20"><span>강 하나만 건너면, 수업을 <b>영어로</b> 하는</span></div>
+      <div id="cap-004" class="clip cap" data-start="9.393" data-duration="2.592" data-track-index="20"><span>공립학교들이 모여 있는 동네가 있습니다.</span></div>
+      <div id="cap-005" class="clip cap" data-start="12.005" data-duration="0.758" data-track-index="20"><span>안녕하세요.</span></div>
+      <div id="cap-006" class="clip cap" data-start="12.783" data-duration="1.702" data-track-index="20"><span>캐나다 전문 유학원 AA</span></div>
+      <div id="cap-007" class="clip cap" data-start="14.505" data-duration="1.683" data-track-index="20"><span>Canada 원장입니다.</span></div>
+      <div id="cap-008" class="clip cap" data-start="16.208" data-duration="2.790" data-track-index="20"><span>오늘은 지도를 보면서 몬트리올 남쪽,</span></div>
+      <div id="cap-009" class="clip cap" data-start="19.018" data-duration="2.058" data-track-index="20"><span><b>사우스쇼어</b>를 같이 둘러보겠습니다.</span></div>
+      <div id="cap-010" class="clip cap" data-start="21.096" data-duration="2.767" data-track-index="20"><span>어디에 있는지, 다운타운까지 어떻게 가는지,</span></div>
+      <div id="cap-011" class="clip cap" data-start="23.883" data-duration="2.259" data-track-index="20"><span>그리고 어떤 학교들이 있는지까지요.</span></div>
+      <div id="cap-012" class="clip cap" data-start="26.442" data-duration="1.582" data-track-index="20"><span>먼저 위치부터 보겠습니다.</span></div>
+      <div id="cap-013" class="clip cap" data-start="28.044" data-duration="2.186" data-track-index="20"><span>몬트리올은 <b>세인트로렌스 강</b></span></div>
+      <div id="cap-014" class="clip cap" data-start="30.250" data-duration="1.594" data-track-index="20"><span>한가운데에 있는 섬이에요.</span></div>
+      <div id="cap-015" class="clip cap" data-start="31.864" data-duration="2.429" data-track-index="20"><span>이 강 건너 남쪽을 <b>사우스쇼어</b>,</span></div>
+      <div id="cap-016" class="clip cap" data-start="34.313" data-duration="2.140" data-track-index="20"><span>불어로는 <b>리브쉬드</b>라고 부릅니다.</span></div>
+      <div id="cap-017" class="clip cap" data-start="36.473" data-duration="2.174" data-track-index="20"><span>브로사드, 생랑베르, 롱게일,</span></div>
+      <div id="cap-018" class="clip cap" data-start="38.667" data-duration="3.057" data-track-index="20"><span>그린필드파크, 생위베르, 부셔빌, 생브루노</span></div>
+      <div id="cap-019" class="clip cap" data-start="41.744" data-duration="2.313" data-track-index="20"><span>같은 도시들이 강을 따라 이어져 있어요.</span></div>
+      <div id="cap-020" class="clip cap" data-start="44.077" data-duration="2.464" data-track-index="20"><span>강 건너로 다운타운 빌딩이 보이는</span></div>
+      <div id="cap-021" class="clip cap" data-start="46.561" data-duration="2.604" data-track-index="20"><span>거리인데, 동네는 마당 있는 주택과</span></div>
+      <div id="cap-022" class="clip cap" data-start="49.185" data-duration="2.249" data-track-index="20"><span>공원이 많은 <b>조용한 교외</b>입니다.</span></div>
+      <div id="cap-023" class="clip cap" data-start="51.734" data-duration="1.373" data-track-index="20"><span>이 동네가 요즘 다시</span></div>
+      <div id="cap-024" class="clip cap" data-start="53.127" data-duration="1.594" data-track-index="20"><span>주목받는 이유가 있습니다.</span></div>
+      <div id="cap-025" class="clip cap" data-start="54.741" data-duration="1.082" data-track-index="20"><span>바로 <b>REM</b>이에요.</span></div>
+      <div id="cap-026" class="clip cap" data-start="55.843" data-duration="3.377" data-track-index="20"><span><b>REM</b>은 몬트리올의 새 무인 경전철입니다.</span></div>
+      <div id="cap-027" class="clip cap" data-start="59.240" data-duration="2.621" data-track-index="20"><span><b>2023년</b> <b>7</b>월 <b>31</b>일에 첫</span></div>
+      <div id="cap-028" class="clip cap" data-start="61.881" data-duration="2.117" data-track-index="20"><span>구간이 개통됐는데, 그 첫 구간이</span></div>
+      <div id="cap-029" class="clip cap" data-start="64.018" data-duration="2.185" data-track-index="20"><span>바로 사우스쇼어 노선이에요.</span></div>
+      <div id="cap-030" class="clip cap" data-start="66.223" data-duration="2.778" data-track-index="20"><span>브로사드역에서 출발해서 뒤 카르티에,</span></div>
+      <div id="cap-031" class="clip cap" data-start="69.021" data-duration="0.631" data-track-index="20"><span>파나마,</span></div>
+      <div id="cap-032" class="clip cap" data-start="69.672" data-duration="2.929" data-track-index="20"><span>일데쇠르를 지나 다운타운 중앙역까지.</span></div>
+      <div id="cap-033" class="clip cap" data-start="72.621" data-duration="1.284" data-track-index="20"><span>역은 다섯 개,</span></div>
+      <div id="cap-034" class="clip cap" data-start="73.925" data-duration="2.797" data-track-index="20"><span><b>16.6킬로미터</b>를 <b>18</b>분에 갑니다.</span></div>
+      <div id="cap-035" class="clip cap" data-start="76.742" data-duration="3.301" data-track-index="20"><span>새로 지은 <b>샹플랭 다리</b> 위로 강을 건너고,</span></div>
+      <div id="cap-036" class="clip cap" data-start="80.063" data-duration="2.919" data-track-index="20"><span>개통 당시 기준으로 출퇴근 시간에는 <b>3,</b></span></div>
+      <div id="cap-037" class="clip cap" data-start="83.002" data-duration="1.778" data-track-index="20"><span><b>4</b>분마다 한 대씩 옵니다.</span></div>
+      <div id="cap-038" class="clip cap" data-start="84.800" data-duration="2.963" data-track-index="20"><span>그러니까 아이는 조용한 교외에서 학교를</span></div>
+      <div id="cap-039" class="clip cap" data-start="87.783" data-duration="2.883" data-track-index="20"><span>다니고, 주말에는 <b>18분</b> 만에 다운타운</span></div>
+      <div id="cap-040" class="clip cap" data-start="90.686" data-duration="2.619" data-track-index="20"><span>박물관이나 공연장에 갈 수 있는 거예요.</span></div>
+      <div id="cap-041" class="clip cap" data-start="93.605" data-duration="1.896" data-track-index="20"><span>두 번째 포인트는 사람입니다.</span></div>
+      <div id="cap-042" class="clip cap" data-start="95.521" data-duration="1.710" data-track-index="20"><span>조기유학 상담에서 부모님들이</span></div>
+      <div id="cap-043" class="clip cap" data-start="97.251" data-duration="1.547" data-track-index="20"><span>자주 하시는 걱정이 있죠.</span></div>
+      <div id="cap-044" class="clip cap" data-start="98.818" data-duration="2.955" data-track-index="20"><span>가 보니까 반에 한국 아이가 너무 많더라.</span></div>
+      <div id="cap-045" class="clip cap" data-start="101.793" data-duration="2.461" data-track-index="20"><span><b>2021년</b> 캐나다 인구조사를 보겠습니다.</span></div>
+      <div id="cap-046" class="clip cap" data-start="104.274" data-duration="2.372" data-track-index="20"><span>밴쿠버 옆 <b>코퀴틀람</b>에는 한국계가</span></div>
+      <div id="cap-047" class="clip cap" data-start="106.666" data-duration="1.698" data-track-index="20"><span>약 <b>1만 1,900명</b> 삽니다.</span></div>
+      <div id="cap-048" class="clip cap" data-start="108.384" data-duration="2.325" data-track-index="20"><span>시 인구의 <b>8%</b> 정도예요.</span></div>
+      <div id="cap-049" class="clip cap" data-start="110.729" data-duration="3.213" data-track-index="20"><span>그런데 생랑베르는 <b>50명</b>, 부셔빌은</span></div>
+      <div id="cap-050" class="clip cap" data-start="113.962" data-duration="2.459" data-track-index="20"><span><b>30명</b>, 생브루노는 <b>35명</b>입니다.</span></div>
+      <div id="cap-051" class="clip cap" data-start="116.441" data-duration="3.184" data-track-index="20"><span>인구 <b>25</b>만 명인 롱게일도 <b>425명</b>이에요.</span></div>
+      <div id="cap-052" class="clip cap" data-start="119.645" data-duration="1.722" data-track-index="20"><span>아시아계 전체로 넓혀 봐도,</span></div>
+      <div id="cap-053" class="clip cap" data-start="121.387" data-duration="2.372" data-track-index="20"><span>생랑베르, 부셔빌, 생브루노는</span></div>
+      <div id="cap-054" class="clip cap" data-start="123.779" data-duration="1.686" data-track-index="20"><span>비중이 아주 낮은 편입니다.</span></div>
+      <div id="cap-055" class="clip cap" data-start="125.485" data-duration="1.803" data-track-index="20"><span>한 가지 <b>솔직하게</b> 말씀드리면,</span></div>
+      <div id="cap-056" class="clip cap" data-start="127.308" data-duration="1.559" data-track-index="20"><span>브로사드는 조금 달라요.</span></div>
+      <div id="cap-057" class="clip cap" data-start="128.887" data-duration="1.884" data-track-index="20"><span>중국계 커뮤니티가 커서</span></div>
+      <div id="cap-058" class="clip cap" data-start="130.791" data-duration="2.000" data-track-index="20"><span>아시아계 주민이 꽤 많습니다.</span></div>
+      <div id="cap-059" class="clip cap" data-start="132.811" data-duration="1.884" data-track-index="20"><span>대신 아시아 마트나 식당이</span></div>
+      <div id="cap-060" class="clip cap" data-start="134.715" data-duration="1.756" data-track-index="20"><span>가까워서 생활은 편하고요.</span></div>
+      <div id="cap-061" class="clip cap" data-start="136.491" data-duration="2.728" data-track-index="20"><span>한국계는 브로사드도 <b>590명</b>,</span></div>
+      <div id="cap-062" class="clip cap" data-start="139.239" data-duration="1.157" data-track-index="20"><span><b>1%</b>가 안 됩니다.</span></div>
+      <div id="cap-063" class="clip cap" data-start="140.416" data-duration="1.826" data-track-index="20"><span>그래서 아이가 영어만 쓰는</span></div>
+      <div id="cap-064" class="clip cap" data-start="142.262" data-duration="2.940" data-track-index="20"><span>환경을 원하시면 생랑베르나 부셔빌 쪽,</span></div>
+      <div id="cap-065" class="clip cap" data-start="145.222" data-duration="2.918" data-track-index="20"><span>생활 편의도 같이 보신다면 브로사드 쪽.</span></div>
+      <div id="cap-066" class="clip cap" data-start="148.160" data-duration="2.202" data-track-index="20"><span>이렇게 동네를 골라 볼 수 있습니다.</span></div>
+      <div id="cap-067" class="clip cap" data-start="150.662" data-duration="1.431" data-track-index="20"><span>그럼 이 동네 아이들은</span></div>
+      <div id="cap-068" class="clip cap" data-start="152.113" data-duration="1.513" data-track-index="20"><span>어떤 학교에 다닐까요?</span></div>
+      <div id="cap-069" class="clip cap" data-start="153.646" data-duration="2.557" data-track-index="20"><span>사우스쇼어의 영어 공립학교는</span></div>
+      <div id="cap-070" class="clip cap" data-start="156.223" data-duration="2.104" data-track-index="20"><span><b>리버사이드 교육청</b>이 맡고 있습니다.</span></div>
+      <div id="cap-071" class="clip cap" data-start="158.347" data-duration="3.022" data-track-index="20"><span>퀘벡은 영어학교 입학을 법으로 제한하는데,</span></div>
+      <div id="cap-072" class="clip cap" data-start="161.389" data-duration="2.987" data-track-index="20"><span>조기유학생은 교육청 국제학생 프로그램을</span></div>
+      <div id="cap-073" class="clip cap" data-start="164.396" data-duration="2.151" data-track-index="20"><span>통해 영어학교에 다닐 수 있어요.</span></div>
+      <div id="cap-074" class="clip cap" data-start="166.567" data-duration="2.349" data-track-index="20"><span>리버사이드는 초등학교 <b>19곳</b>,</span></div>
+      <div id="cap-075" class="clip cap" data-start="168.936" data-duration="1.976" data-track-index="20"><span>고등학교 <b>4곳</b>을 운영합니다.</span></div>
+      <div id="cap-076" class="clip cap" data-start="170.932" data-duration="3.398" data-track-index="20"><span>교육청 브로슈어에 따르면 졸업·자격 취득률은</span></div>
+      <div id="cap-077" class="clip cap" data-start="174.350" data-duration="3.656" data-track-index="20"><span><b>88.5%</b>, <b>몬테레지 지역 1위</b>예요.</span></div>
+      <div id="cap-078" class="clip cap" data-start="178.026" data-duration="1.814" data-track-index="20"><span>교육청 슬로건이 "Success</span></div>
+      <div id="cap-079" class="clip cap" data-start="179.860" data-duration="1.455" data-track-index="20"><span>in both languages",</span></div>
+      <div id="cap-080" class="clip cap" data-start="181.335" data-duration="2.128" data-track-index="20"><span>영어와 불어 둘 다 잘하기입니다.</span></div>
+      <div id="cap-081" class="clip cap" data-start="183.483" data-duration="2.151" data-track-index="20"><span>수업은 영어로 하고, 불어는 실력에</span></div>
+      <div id="cap-082" class="clip cap" data-start="185.654" data-duration="2.492" data-track-index="20"><span>맞춰 <b>3단계</b>로 나눠서 배웁니다.</span></div>
+      <div id="cap-083" class="clip cap" data-start="188.446" data-duration="2.662" data-track-index="20"><span>고등학교 네 곳을 지도에 찍어 보겠습니다.</span></div>
+      <div id="cap-084" class="clip cap" data-start="191.128" data-duration="2.569" data-track-index="20"><span>실제 학교 영상과 같이 보시죠.</span></div>
+      <div id="cap-085" class="clip cap" data-start="193.717" data-duration="2.348" data-track-index="20"><span>먼저 생위베르의 <b>헤리티지</b>.</span></div>
+      <div id="cap-086" class="clip cap" data-start="196.085" data-duration="2.822" data-track-index="20"><span>학생이 <b>1,600명</b>이 넘는 큰 학교로,</span></div>
+      <div id="cap-087" class="clip cap" data-start="198.927" data-duration="1.840" data-track-index="20"><span>IB 중등 과정, 예술,</span></div>
+      <div id="cap-088" class="clip cap" data-start="200.787" data-duration="2.778" data-track-index="20"><span>스포츠, 컴퓨터 특화반까지 있습니다.</span></div>
+      <div id="cap-089" class="clip cap" data-start="203.585" data-duration="2.766" data-track-index="20"><span>운동이나 예술, IT처럼 좋아하는</span></div>
+      <div id="cap-090" class="clip cap" data-start="206.371" data-duration="1.826" data-track-index="20"><span>게 분명한 아이에게 맞아요.</span></div>
+      <div id="cap-091" class="clip cap" data-start="208.217" data-duration="2.268" data-track-index="20"><span>그린필드파크의 <b>센테니얼</b>은 영재</span></div>
+      <div id="cap-092" class="clip cap" data-start="210.505" data-duration="2.012" data-track-index="20"><span>프로그램 <b>TaG</b>가 있는 학교예요.</span></div>
+      <div id="cap-093" class="clip cap" data-start="212.537" data-duration="2.696" data-track-index="20"><span>프레이저 연구소 평가에서 리버사이드</span></div>
+      <div id="cap-094" class="clip cap" data-start="215.253" data-duration="2.674" data-track-index="20"><span>네 학교 중 점수가 가장 높았습니다.</span></div>
+      <div id="cap-095" class="clip cap" data-start="217.947" data-duration="2.859" data-track-index="20"><span><b>생랑베르 인터내셔널</b>은 학생 <b>400명</b></span></div>
+      <div id="cap-096" class="clip cap" data-start="220.826" data-duration="1.908" data-track-index="20"><span>정도의 작은 IB 학교입니다.</span></div>
+      <div id="cap-097" class="clip cap" data-start="222.754" data-duration="1.861" data-track-index="20"><span>교복을 입고, 수업 중에는</span></div>
+      <div id="cap-098" class="clip cap" data-start="224.635" data-duration="1.988" data-track-index="20"><span>휴대폰을 잠가 두는 학교예요.</span></div>
+      <div id="cap-099" class="clip cap" data-start="226.643" data-duration="2.198" data-track-index="20"><span>작은 학교에서 선생님이 잘 챙겨</span></div>
+      <div id="cap-100" class="clip cap" data-start="228.861" data-duration="2.139" data-track-index="20"><span>주길 바라는 아이에게 좋습니다.</span></div>
+      <div id="cap-101" class="clip cap" data-start="231.020" data-duration="3.219" data-track-index="20"><span>마지막으로 생장쉬르리슐리외의 <b>세인트 존스</b>는</span></div>
+      <div id="cap-102" class="clip cap" data-start="234.259" data-duration="3.579" data-track-index="20"><span>유치원부터 고등학교까지 한 학교라서, 형제나</span></div>
+      <div id="cap-103" class="clip cap" data-start="237.858" data-duration="2.886" data-track-index="20"><span>남매가 같이 가는 경우에 잘 맞습니다.</span></div>
+      <div id="cap-104" class="clip cap" data-start="241.044" data-duration="2.824" data-track-index="20"><span>초등학생이라면 선택지가 더 많습니다.</span></div>
+      <div id="cap-105" class="clip cap" data-start="243.888" data-duration="1.408" data-track-index="20"><span>몇 곳만 짚어 볼게요.</span></div>
+      <div id="cap-106" class="clip cap" data-start="245.316" data-duration="3.521" data-track-index="20"><span>브로사드의 <b>굿셰퍼드</b>는 수업의 <b>80%</b> 넘게</span></div>
+      <div id="cap-107" class="clip cap" data-start="248.857" data-duration="2.558" data-track-index="20"><span>영어로 하는 영어 전용 초등학교라서,</span></div>
+      <div id="cap-108" class="clip cap" data-start="251.435" data-duration="2.487" data-track-index="20"><span>영어를 늘리러 오는 조기유학생에게</span></div>
+      <div id="cap-109" class="clip cap" data-start="253.942" data-duration="2.012" data-track-index="20"><span>저희가 먼저 권하는 곳입니다.</span></div>
+      <div id="cap-110" class="clip cap" data-start="255.974" data-duration="2.256" data-track-index="20"><span>같은 브로사드의 <b>해롤드 내퍼</b>는</span></div>
+      <div id="cap-111" class="clip cap" data-start="258.250" data-duration="2.371" data-track-index="20"><span>올해 증축을 마친 큰 학교고요.</span></div>
+      <div id="cap-112" class="clip cap" data-start="260.641" data-duration="3.173" data-track-index="20"><span>생랑베르 초등학교는 <b>영어 70, 불어 30</b></span></div>
+      <div id="cap-113" class="clip cap" data-start="263.834" data-duration="3.100" data-track-index="20"><span>비율로 배우고, 그린필드파크와 생브루노에는</span></div>
+      <div id="cap-114" class="clip cap" data-start="266.954" data-duration="3.036" data-track-index="20"><span><b>IB 초등</b> 과정을 운영하는 학교도 있습니다.</span></div>
+      <div id="cap-115" class="clip cap" data-start="270.010" data-duration="2.419" data-track-index="20"><span>학교마다 시작 시간이 <b>한 시간 넘게</b> 차이</span></div>
+      <div id="cap-116" class="clip cap" data-start="272.449" data-duration="2.778" data-track-index="20"><span>나기도 해서, 이런 세부 정보는 블로그와</span></div>
+      <div id="cap-117" class="clip cap" data-start="275.247" data-duration="2.770" data-track-index="20"><span>홈페이지에 학교별로 정리해 두었습니다.</span></div>
+      <div id="cap-118" class="clip cap" data-start="278.317" data-duration="1.338" data-track-index="20"><span>비용도 궁금하시죠.</span></div>
+      <div id="cap-119" class="clip cap" data-start="279.675" data-duration="2.561" data-track-index="20"><span>리버사이드 학생·가족용 학비표,</span></div>
+      <div id="cap-120" class="clip cap" data-start="282.256" data-duration="2.659" data-track-index="20"><span><b>2027-28학년도</b> 기준입니다.</span></div>
+      <div id="cap-121" class="clip cap" data-start="284.935" data-duration="3.184" data-track-index="20"><span><b>1년</b> 과정은 수업료, 홈스테이, 행정비,</span></div>
+      <div id="cap-122" class="clip cap" data-start="288.139" data-duration="2.523" data-track-index="20"><span>학습허가 CAQ까지 합쳐서, 학교</span></div>
+      <div id="cap-123" class="clip cap" data-start="290.682" data-duration="2.836" data-track-index="20"><span>예시로 약 <b>3만 2천 캐나다 달러</b>입니다.</span></div>
+      <div id="cap-124" class="clip cap" data-start="293.538" data-duration="1.300" data-track-index="20"><span>한 학기 <b>5</b>개월은 약</span></div>
+      <div id="cap-125" class="clip cap" data-start="294.858" data-duration="1.609" data-track-index="20"><span><b>1만 8,800달러</b>예요.</span></div>
+      <div id="cap-126" class="clip cap" data-start="296.487" data-duration="2.302" data-track-index="20"><span>행정비 안에 의료보험과 통학,</span></div>
+      <div id="cap-127" class="clip cap" data-start="298.809" data-duration="2.314" data-track-index="20"><span>교내 활동이 들어 있고, 홈스테이에는</span></div>
+      <div id="cap-128" class="clip cap" data-start="301.143" data-duration="2.511" data-track-index="20"><span>하루 세 끼와 공항 픽업이 포함됩니다.</span></div>
+      <div id="cap-129" class="clip cap" data-start="303.674" data-duration="1.432" data-track-index="20"><span>일정은 두 가지예요.</span></div>
+      <div id="cap-130" class="clip cap" data-start="305.126" data-duration="2.313" data-track-index="20"><span><b>2027년</b> <b>2월 2일</b>에 시작하는</span></div>
+      <div id="cap-131" class="clip cap" data-start="307.459" data-duration="2.406" data-track-index="20"><span>겨울 학기, 그리고 <b>2027년</b> <b>9</b>월</span></div>
+      <div id="cap-132" class="clip cap" data-start="309.885" data-duration="2.105" data-track-index="20"><span><b>8</b>일에 시작하는 <b>1년</b> 과정입니다.</span></div>
+      <div id="cap-133" class="clip cap" data-start="312.010" data-duration="2.093" data-track-index="20"><span>홈스테이 학생은 빨리 지원할수록</span></div>
+      <div id="cap-134" class="clip cap" data-start="314.123" data-duration="2.793" data-track-index="20"><span>유리하다고 교육청에서도 강조하고 있어요.</span></div>
+      <div id="cap-135" class="clip cap" data-start="317.216" data-duration="2.012" data-track-index="20"><span>제가 사우스쇼어를 권하는 이유를</span></div>
+      <div id="cap-136" class="clip cap" data-start="319.248" data-duration="2.220" data-track-index="20"><span>한 문장으로 정리하면 이렇습니다.</span></div>
+      <div id="cap-137" class="clip cap" data-start="321.488" data-duration="2.128" data-track-index="20"><span>생활은 <b>조용한 영어권 교외</b>에서,</span></div>
+      <div id="cap-138" class="clip cap" data-start="323.636" data-duration="2.430" data-track-index="20"><span>경험은 <b>18분 거리의 대도시</b>에서.</span></div>
+      <div id="cap-139" class="clip cap" data-start="326.086" data-duration="3.045" data-track-index="20"><span>한국 친구들끼리 어울리기 어려운 환경이라,</span></div>
+      <div id="cap-140" class="clip cap" data-start="329.151" data-duration="2.511" data-track-index="20"><span>처음 몇 달은 아이가 조금 힘들 수 있어요.</span></div>
+      <div id="cap-141" class="clip cap" data-start="331.682" data-duration="2.395" data-track-index="20"><span>그런데 그 시간이 지나면 영어가</span></div>
+      <div id="cap-142" class="clip cap" data-start="334.097" data-duration="1.884" data-track-index="20"><span>공부가 아니라 <b>생활</b>이 됩니다.</span></div>
+      <div id="cap-143" class="clip cap" data-start="336.001" data-duration="2.352" data-track-index="20"><span>거기에 <b>불어까지</b> 덤으로 따라오고요.</span></div>
+      <div id="cap-144" class="clip cap" data-start="338.653" data-duration="1.919" data-track-index="20"><span>오늘 내용 정리해 보겠습니다.</span></div>
+      <div id="cap-145" class="clip cap" data-start="340.592" data-duration="1.872" data-track-index="20"><span>첫째, 사우스쇼어는 몬트리올</span></div>
+      <div id="cap-146" class="clip cap" data-start="342.484" data-duration="1.931" data-track-index="20"><span>다운타운에서 <b>REM으로 18분</b>.</span></div>
+      <div id="cap-147" class="clip cap" data-start="344.435" data-duration="1.512" data-track-index="20"><span>둘째, 한국 사람이 거의</span></div>
+      <div id="cap-148" class="clip cap" data-start="345.967" data-duration="1.849" data-track-index="20"><span>없는 영어 공립학교 생활권.</span></div>
+      <div id="cap-149" class="clip cap" data-start="347.836" data-duration="3.151" data-track-index="20"><span>셋째, 리버사이드 교육청의 초등학교</span></div>
+      <div id="cap-150" class="clip cap" data-start="351.007" data-duration="2.835" data-track-index="20"><span><b>19곳</b>, 고등학교 <b>4</b>곳 중에서 아이에게</span></div>
+      <div id="cap-151" class="clip cap" data-start="353.862" data-duration="1.675" data-track-index="20"><span>맞는 학교를 고를 수 있습니다.</span></div>
+      <div id="cap-152" class="clip cap" data-start="355.557" data-duration="2.464" data-track-index="20"><span>아이 학년과 성향을 <b>카카오톡</b>으로 보내</span></div>
+      <div id="cap-153" class="clip cap" data-start="358.041" data-duration="2.848" data-track-index="20"><span>주시면, 어느 동네, 어느 학교가 맞을지</span></div>
+      <div id="cap-154" class="clip cap" data-start="360.909" data-duration="3.196" data-track-index="20"><span>골라서 학교 영상과 함께 보내 드리겠습니다.</span></div>
+      <div id="cap-155" class="clip cap" data-start="364.125" data-duration="2.174" data-track-index="20"><span>학교별 자세한 정보는 설명란의</span></div>
+      <div id="cap-156" class="clip cap" data-start="366.319" data-duration="1.257" data-track-index="20"><span>블로그 링크에 있습니다.</span></div>
+      <div id="cap-157" class="clip cap" data-start="367.596" data-duration="2.066" data-track-index="20"><span>끝까지 봐 주셔서 감사합니다.</span></div>
     </div>
     <script>
       window.__timelines = window.__timelines || {};
       const tl = gsap.timeline({ paused: true });
-      tl.fromTo("#el-s02",{clipPath:"inset(0% 0% 0% 100%)"},{clipPath:"inset(0% 0% 0% 0%)",duration:0.5,ease:"power3.inOut"},35.78);
-      tl.to("#el-s01",{x:-160,duration:0.5,ease:"power3.inOut"},35.78);
-      tl.fromTo("#el-s03",{clipPath:"circle(0% at 50% 50%)"},{clipPath:"circle(75% at 50% 50%)",duration:0.6,ease:"power2.inOut"},69.36);
-      tl.fromTo("#el-s04",{clipPath:"inset(0% 0% 0% 100%)"},{clipPath:"inset(0% 0% 0% 0%)",duration:0.5,ease:"power3.inOut"},121.0);
-      tl.to("#el-s03",{x:-160,duration:0.5,ease:"power3.inOut"},121.0);
-      tl.fromTo("#el-s05",{clipPath:"circle(0% at 50% 50%)"},{clipPath:"circle(75% at 50% 50%)",duration:0.6,ease:"power2.inOut"},196.37);
-      tl.fromTo("#el-s06",{clipPath:"inset(0% 0% 0% 100%)"},{clipPath:"inset(0% 0% 0% 0%)",duration:0.5,ease:"power3.inOut"},246.75);
-      tl.to("#el-s05",{x:-160,duration:0.5,ease:"power3.inOut"},246.75);
-      tl.fromTo("#el-s07",{clipPath:"circle(0% at 50% 50%)"},{clipPath:"circle(75% at 50% 50%)",duration:0.6,ease:"power2.inOut"},312.25);
-      tl.fromTo("#el-s08",{clipPath:"inset(0% 0% 0% 100%)"},{clipPath:"inset(0% 0% 0% 0%)",duration:0.5,ease:"power3.inOut"},359.27);
-      tl.to("#el-s07",{x:-160,duration:0.5,ease:"power3.inOut"},359.27);
-      tl.fromTo("#el-s09",{clipPath:"circle(0% at 50% 50%)"},{clipPath:"circle(75% at 50% 50%)",duration:0.6,ease:"power2.inOut"},410.28);
-      tl.fromTo("#el-s10",{clipPath:"inset(0% 0% 0% 100%)"},{clipPath:"inset(0% 0% 0% 0%)",duration:0.5,ease:"power3.inOut"},439.24);
-      tl.to("#el-s09",{x:-160,duration:0.5,ease:"power3.inOut"},439.24);
+      tl.fromTo("#el-s02",{clipPath:"inset(0% 0% 0% 100%)"},{clipPath:"inset(0% 0% 0% 0%)",duration:0.5,ease:"power3.inOut"},26.042);
+      tl.to("#el-s01",{x:-160,duration:0.5,ease:"power3.inOut"},26.042);
+      tl.fromTo("#el-s03",{clipPath:"circle(0% at 50% 50%)"},{clipPath:"circle(75% at 50% 50%)",duration:0.6,ease:"power2.inOut"},51.334);
+      tl.fromTo("#el-s04",{clipPath:"inset(0% 0% 0% 100%)"},{clipPath:"inset(0% 0% 0% 0%)",duration:0.5,ease:"power3.inOut"},93.205);
+      tl.to("#el-s03",{x:-160,duration:0.5,ease:"power3.inOut"},93.205);
+      tl.fromTo("#el-s05",{clipPath:"circle(0% at 50% 50%)"},{clipPath:"circle(75% at 50% 50%)",duration:0.6,ease:"power2.inOut"},150.262);
+      tl.fromTo("#el-s06",{clipPath:"inset(0% 0% 0% 100%)"},{clipPath:"inset(0% 0% 0% 0%)",duration:0.5,ease:"power3.inOut"},188.046);
+      tl.to("#el-s05",{x:-160,duration:0.5,ease:"power3.inOut"},188.046);
+      tl.fromTo("#el-s07",{clipPath:"circle(0% at 50% 50%)"},{clipPath:"circle(75% at 50% 50%)",duration:0.6,ease:"power2.inOut"},240.644);
+      tl.fromTo("#el-s08",{clipPath:"inset(0% 0% 0% 100%)"},{clipPath:"inset(0% 0% 0% 0%)",duration:0.5,ease:"power3.inOut"},277.917);
+      tl.to("#el-s07",{x:-160,duration:0.5,ease:"power3.inOut"},277.917);
+      tl.fromTo("#el-s09",{clipPath:"circle(0% at 50% 50%)"},{clipPath:"circle(75% at 50% 50%)",duration:0.6,ease:"power2.inOut"},316.816);
+      tl.fromTo("#el-s10",{clipPath:"inset(0% 0% 0% 100%)"},{clipPath:"inset(0% 0% 0% 0%)",duration:0.5,ease:"power3.inOut"},338.253);
+      tl.to("#el-s09",{x:-160,duration:0.5,ease:"power3.inOut"},338.253);
       window.__timelines["root"] = tl;
     </script>
   </body>

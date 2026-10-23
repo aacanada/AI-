@@ -42,12 +42,12 @@ BASE_CSS = """
 R{position:absolute;inset:0;overflow:hidden;color:#2B2B2B;font-family:'Noto Sans KR',sans-serif}
 R *{box-sizing:border-box}
 R .bg{position:absolute;inset:0;background:#FFF8F2}
-R .bgdots{position:absolute;inset:0;background-image:radial-gradient(rgba(200,16,46,.10) 2px,transparent 2.5px);background-size:44px 44px;opacity:.6}
+R .bgdots{position:absolute;inset:0;background-image:radial-gradient(rgba(200,16,46,.10) 2px,transparent 2.5px);background-size:44px 44px;opacity:.3}
 R .bgleaf{position:absolute;opacity:.07}
 R .stage{position:absolute;inset:0}
 R .ph{position:absolute;inset:0}
 R .abs{position:absolute}
-R .bhs{font-family:'Black Han Sans','Noto Sans KR',sans-serif;font-weight:400;letter-spacing:-.01em;line-height:1.12}
+R .bhs{font-family:'Black Han Sans','Noto Sans KR',sans-serif;font-weight:400;letter-spacing:-.02em;line-height:1.12}
 R .h{font-weight:900;letter-spacing:-.03em;line-height:1.15}
 R .hd{font-weight:700;letter-spacing:-.02em;line-height:1.3}
 R .b{font-weight:500;line-height:1.45}
@@ -56,16 +56,16 @@ R .red{color:#C8102E}
 R .wine{color:#7A1B26}
 R .hl{background:linear-gradient(0deg,#FFD6CF 0 42%,transparent 42%);padding:0 .08em}
 R .center{left:0;right:0;text-align:center}
-R .card{position:absolute;background:#fff;border-radius:28px;box-shadow:0 18px 40px rgba(122,27,38,.14);border:3px solid rgba(200,16,46,.10)}
-R .card.red{background:#C8102E;color:#fff;border-color:#C8102E}
-R .card.pink{background:#FFD6CF;border-color:#FFD6CF}
+R .card{position:absolute;background:#fff;border-radius:20px;box-shadow:0 4px 0 rgba(122,27,38,.10),0 14px 30px rgba(122,27,38,.08);border:2px solid rgba(122,27,38,.12)}
+R .card.red{background:#C8102E;color:#fff;border-color:#C8102E;box-shadow:0 4px 0 #7A1B26}
+R .card.pink{background:#FFD6CF;border-color:#FFD6CF;box-shadow:none}
 R .card.dark{background:#2B2B2B;color:#fff;border-color:#2B2B2B}
 R .chip{position:absolute;white-space:nowrap;border-radius:99px;padding:12px 30px;font-weight:700;font-size:32px;background:#fff;border:3px solid #C8102E;color:#C8102E}
 R .chip.solid{background:#C8102E;color:#fff}
 R .chip.pink{background:#FFD6CF;border-color:#FFD6CF;color:#7A1B26}
 R .chip.dark{background:#2B2B2B;border-color:#2B2B2B;color:#fff}
-R .tag{position:absolute;left:120px;top:96px;display:flex;align-items:center;gap:14px;font-weight:900;font-size:30px;color:#7A1B26;letter-spacing:.02em}
-R .tag i{display:block;width:44px;height:6px;border-radius:3px;background:#C8102E}
+R .tag{position:absolute;left:120px;top:92px;display:flex;align-items:center;gap:16px;font-weight:700;font-size:30px;color:#7A1B26;letter-spacing:-.01em}
+R .tag b{display:flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:12px;background:#C8102E;color:#fff;font-family:'Black Han Sans','Noto Sans KR',sans-serif;font-weight:400;font-size:30px}
 R .stamp{position:absolute;white-space:nowrap;border:8px solid #C8102E;color:#C8102E;border-radius:18px;padding:10px 34px;font-family:'Black Han Sans','Noto Sans KR',sans-serif;background:rgba(255,248,242,.92)}
 R .bar{position:absolute;border-radius:14px 14px 0 0}
 R .line{position:absolute;height:6px;border-radius:3px;background:#C8102E}
@@ -74,7 +74,7 @@ R .strip{display:block}
 R .strip i{display:block;height:1.2em;line-height:1.2em;font-style:normal}
 R .ch{display:inline-block;white-space:pre}
 R .check{display:inline-flex;align-items:center;justify-content:center;width:58px;height:58px;border-radius:50%;background:#C8102E;color:#fff;font-weight:900;font-size:34px;flex:none}
-R .bubble{position:absolute;white-space:nowrap;background:#fff;border-radius:30px;padding:16px 30px;font-weight:700;font-size:34px;box-shadow:0 10px 24px rgba(122,27,38,.12)}
+R .bubble{position:absolute;white-space:nowrap;background:#fff;border-radius:30px;padding:16px 30px;font-weight:700;font-size:34px;box-shadow:0 4px 0 rgba(122,27,38,.10)}
 R .bubble.red{background:#C8102E;color:#fff}
 R .bubble.pink{background:#FFD6CF;color:#7A1B26}
 R svg{overflow:visible}
