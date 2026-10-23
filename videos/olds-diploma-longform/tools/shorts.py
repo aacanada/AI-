@@ -48,7 +48,7 @@ def chunk(text):
     """Caption lines <= MAXC chars, never running across a sentence end."""
     import re
     lines = []
-    for sent in re.split(r"(?<=[.?!])\s+", text.replace("AA Canada", "AA\u00a0Canada")):
+    for sent in re.split(r"(?<=[.?!])\s+", text.replace("AA Canada", "AA\u00a0Canada").replace("1만 9천", "1만\u00a09천").replace("최대 3년", "최대\u00a03년")):
         cur = ""
         for w in sent.split(" "):
             if cur and len(cur) + 1 + len(w) > MAXC:
