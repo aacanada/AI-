@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="assets/vendor/gsap.min.js"></script>
+    <style>
+
+@font-face{font-family:Pretendard;font-weight:500;src:url(assets/fonts/Pretendard-Medium.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:700;src:url(assets/fonts/Pretendard-Bold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:800;src:url(assets/fonts/Pretendard-ExtraBold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:900;src:url(assets/fonts/Pretendard-Black.woff2) format("woff2")}
+
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: #0e2a22; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: #0e2a22; font-family: Pretendard, sans-serif; }
+      [data-composition-id="root"] > div[data-composition-src] { position: absolute; inset: 0; }
+      .brand { position: absolute; left: 56px; top: 40px; z-index: 300; display: flex; align-items: center; gap: 12px; color: rgba(255,255,255,.88); font-weight: 800; font-size: 24px; letter-spacing: .06em; text-shadow: 0 2px 8px rgba(0,0,0,.45); }
+      .brand i { display: block; width: 12px; height: 12px; border-radius: 50%; background: #c8102e; box-shadow: 18px 0 0 #00b373; margin-right: 18px; }
+      .chpill { position: absolute; right: 56px; top: 32px; z-index: 300; display: flex; align-items: center; gap: 12px; padding: 8px 22px; border-radius: 99px; background: rgba(6,30,22,.78); border: 2px solid rgba(243,236,220,.35); color: #fff; font-weight: 800; font-size: 24px; }
+      .chpill i { display: block; width: 14px; height: 14px; border-radius: 50%; }
+      .foot { position: absolute; left: 0; right: 0; top: 836px; z-index: 300; text-align: center; color: rgba(255,255,255,.6); font-weight: 500; font-size: 22px; text-shadow: 0 1px 6px rgba(0,0,0,.6); }
+      .cap { position: absolute; left: 0; right: 0; top: 880px; height: 100px; z-index: 310; display: flex; justify-content: center; align-items: center; }
+      .cap span { display: inline-block; background: rgba(4,24,17,.78); color: #fff; font-weight: 700; font-size: 52px; line-height: 1.3; padding: 12px 36px; border-radius: 16px; white-space: nowrap; }
+      .cap b { color: #e8b931; font-weight: 700; }
+      #fx-flash { position: absolute; inset: 0; z-index: 200; background: #fff; opacity: 0; pointer-events: none; }
+      #fx-leak { position: absolute; left: -400px; top: -300px; width: 2720px; height: 1680px; z-index: 200; opacity: 0; pointer-events: none;
+        background: radial-gradient(ellipse at 35% 45%, rgba(255,214,140,.95) 0%, rgba(255,160,80,.55) 30%, rgba(200,16,46,.25) 55%, rgba(200,16,46,0) 75%); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="root" data-width="1920" data-height="1080" data-duration="249.051">
+      <div id="el-s01" style="z-index:1" data-composition-id="s01" data-composition-src="compositions/01-opening.html" data-start="0.0" data-duration="28.135" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="el-c02" style="z-index:2" data-composition-id="c02" data-composition-src="compositions/c02-card2.html" data-start="27.535" data-duration="2.25" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <div id="el-s02" style="z-index:3" data-composition-id="s02" data-composition-src="compositions/02-why-agri.html" data-start="29.335" data-duration="25.563" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="el-c03" style="z-index:4" data-composition-id="c03" data-composition-src="compositions/c03-card3.html" data-start="54.298" data-duration="2.25" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <div id="el-s03" style="z-index:5" data-composition-id="s03" data-composition-src="compositions/03-olds.html" data-start="56.098" data-duration="26.399" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="el-c04" style="z-index:6" data-composition-id="c04" data-composition-src="compositions/c04-card4.html" data-start="81.897" data-duration="2.25" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <div id="el-s04" style="z-index:7" data-composition-id="s04" data-composition-src="compositions/04-techgronomy.html" data-start="83.697" data-duration="28.86" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="el-c05" style="z-index:8" data-composition-id="c05" data-composition-src="compositions/c05-card5.html" data-start="111.957" data-duration="2.25" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <div id="el-s05" style="z-index:9" data-composition-id="s05" data-composition-src="compositions/05-horticulture.html" data-start="113.757" data-duration="23.845" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="el-c06" style="z-index:10" data-composition-id="c06" data-composition-src="compositions/c06-card6.html" data-start="137.002" data-duration="2.25" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <div id="el-s06" style="z-index:11" data-composition-id="s06" data-composition-src="compositions/06-agmanagement.html" data-start="138.802" data-duration="27.374" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="el-c07" style="z-index:12" data-composition-id="c07" data-composition-src="compositions/c07-card7.html" data-start="165.576" data-duration="2.25" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <div id="el-s07" style="z-index:13" data-composition-id="s07" data-composition-src="compositions/07-tuition.html" data-start="167.376" data-duration="26.167" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="el-c08" style="z-index:14" data-composition-id="c08" data-composition-src="compositions/c08-card8.html" data-start="192.943" data-duration="2.25" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <div id="el-s08" style="z-index:15" data-composition-id="s08" data-composition-src="compositions/08-after.html" data-start="194.743" data-duration="24.17" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="el-c09" style="z-index:16" data-composition-id="c09" data-composition-src="compositions/c09-card9.html" data-start="218.313" data-duration="2.25" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <div id="el-s09" style="z-index:17" data-composition-id="s09" data-composition-src="compositions/09-closing.html" data-start="220.113" data-duration="28.938" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="fx-flash"></div>
+      <div id="fx-leak"></div>
+      <div id="brand" class="clip brand" data-start="0" data-duration="249.051" data-track-index="5"><i></i>AA CANADA  올즈컬리지 전공 시리즈</div>
+      <div id="pill-1" class="clip chpill" data-start="0.0" data-duration="27.535" data-track-index="6"><i style="background:#e8b931"></i>오프닝</div>
+      <div id="pill-2" class="clip chpill" data-start="27.535" data-duration="26.763" data-track-index="6"><i style="background:#e8b931"></i>왜 농업 전공인가</div>
+      <div id="pill-3" class="clip chpill" data-start="54.298" data-duration="27.599" data-track-index="6"><i style="background:#e8b931"></i>올즈컬리지</div>
+      <div id="pill-4" class="clip chpill" data-start="81.897" data-duration="30.06" data-track-index="6"><i style="background:#5fb2ff"></i>정밀농업</div>
+      <div id="pill-5" class="clip chpill" data-start="111.957" data-duration="25.045" data-track-index="6"><i style="background:#ff8fb4"></i>원예</div>
+      <div id="pill-6" class="clip chpill" data-start="137.002" data-duration="28.574" data-track-index="6"><i style="background:#f4a63c"></i>농업경영</div>
+      <div id="pill-7" class="clip chpill" data-start="165.576" data-duration="27.367" data-track-index="6"><i style="background:#e8b931"></i>학비</div>
+      <div id="pill-8" class="clip chpill" data-start="192.943" data-duration="25.37" data-track-index="6"><i style="background:#e8b931"></i>졸업 후</div>
+      <div id="pill-9" class="clip chpill" data-start="218.313" data-duration="30.738" data-track-index="6"><i style="background:#e8b931"></i>정리</div>
+      <div id="foot-s01" class="clip foot" data-start="0.6" data-duration="26.935" data-track-index="7">* IRCC PGWP 전공 요건(컬리지 비학위 과정, 2024-11 시행) · 2026-10 확인</div>
+      <div id="foot-s02" class="clip foot" data-start="29.685" data-duration="24.613" data-track-index="7">* IRCC PGWP 전공 요건 분야 목록 · 2026년 목록 변경 없음 (2026-10-23 확인)</div>
+      <div id="foot-s03" class="clip foot" data-start="56.448" data-duration="25.449" data-track-index="7">* Olds College 홈페이지(역사·Smart Farm) · 학교 자료(2024 커리어페어 참가 기업)</div>
+      <div id="foot-s04" class="clip foot" data-start="84.047" data-duration="27.91" data-track-index="7">* Olds College 전공 페이지 · 2년, 가을 입학, CIP 01.0000 · 유학생은 Co-op 퍼밋 필요 (2026-10-23 확인)</div>
+      <div id="foot-s05" class="clip foot" data-start="114.107" data-duration="22.895" data-track-index="7">* Olds College 전공 페이지 · 2년, 가을 입학, CIP 01.0601 (2026-10-23 확인)</div>
+      <div id="foot-s06" class="clip foot" data-start="139.152" data-duration="26.424" data-track-index="7">* Olds College 전공 페이지 · 2년, 가을 입학, CIP 01.0101 / 01.0301 · 편입 협약은 학교 자료 기준, 세부 학점은 학교 확인</div>
+      <div id="foot-s07" class="clip foot" data-start="167.726" data-duration="25.217" data-track-index="7">* Olds College 2026-27 Program Dates & Fees (2026-08-10판) · 유학생 학비+필수비용, 책값 제외</div>
+      <div id="foot-s08" class="clip foot" data-start="195.093" data-duration="23.22" data-track-index="7">* IRCC PGWP 안내 · 시급: 학교 자료 기준(직업별 평균) · 개인별 조건은 신청 시점 규정 확인</div>
+      <audio id="vo-s01" src="assets/voice/s01.wav" data-start="0.6" data-duration="26.935" data-track-index="10" data-volume="1"></audio>
+      <audio id="vo-s02" src="assets/voice/s02.wav" data-start="29.685" data-duration="24.613" data-track-index="10" data-volume="1"></audio>
+      <audio id="vo-s03" src="assets/voice/s03.wav" data-start="56.448" data-duration="25.449" data-track-index="10" data-volume="1"></audio>
+      <audio id="vo-s04" src="assets/voice/s04.wav" data-start="84.047" data-duration="27.91" data-track-index="10" data-volume="1"></audio>
+      <audio id="vo-s05" src="assets/voice/s05.wav" data-start="114.107" data-duration="22.895" data-track-index="10" data-volume="1"></audio>
+      <audio id="vo-s06" src="assets/voice/s06.wav" data-start="139.152" data-duration="26.424" data-track-index="10" data-volume="1"></audio>
+      <audio id="vo-s07" src="assets/voice/s07.wav" data-start="167.726" data-duration="25.217" data-track-index="10" data-volume="1"></audio>
+      <audio id="vo-s08" src="assets/voice/s08.wav" data-start="195.093" data-duration="23.22" data-track-index="10" data-volume="1"></audio>
+      <audio id="vo-s09" src="assets/voice/s09.wav" data-start="220.463" data-duration="25.588" data-track-index="10" data-volume="1"></audio>
+      <audio id="wh-c02" src="assets/sfx/whoosh.mp3" data-start="27.535" data-duration="0.574" data-track-index="13" data-volume="0.22"></audio>
+      <audio id="wh-s02" src="assets/sfx/whoosh.mp3" data-start="29.335" data-duration="0.574" data-track-index="13" data-volume="0.22"></audio>
+      <audio id="wh-c03" src="assets/sfx/whoosh.mp3" data-start="54.298" data-duration="0.574" data-track-index="13" data-volume="0.22"></audio>
+      <audio id="wh-s03" src="assets/sfx/whoosh.mp3" data-start="56.098" data-duration="0.574" data-track-index="13" data-volume="0.22"></audio>
+      <audio id="wh-c04" src="assets/sfx/whoosh.mp3" data-start="81.897" data-duration="0.574" data-track-index="13" data-volume="0.22"></audio>
+      <audio id="wh-s04" src="assets/sfx/whoosh.mp3" data-start="83.697" data-duration="0.574" data-track-index="13" data-volume="0.22"></audio>
+      <audio id="wh-c05" src="assets/sfx/whoosh.mp3" data-start="111.957" data-duration="0.574" data-track-index="13" data-volume="0.22"></audio>
+      <audio id="wh-s05" src="assets/sfx/whoosh.mp3" data-start="113.757" data-duration="0.574" data-track-index="13" data-volume="0.22"></audio>
+      <audio id="wh-c06" src="assets/sfx/whoosh.mp3" data-start="137.002" data-duration="0.574" data-track-index="13" data-volume="0.22"></audio>
+      <audio id="wh-s06" src="assets/sfx/whoosh.mp3" data-start="138.802" data-duration="0.574" data-track-index="13" data-volume="0.22"></audio>
+      <audio id="wh-c07" src="assets/sfx/whoosh.mp3" data-start="165.576" data-duration="0.574" data-track-index="13" data-volume="0.22"></audio>
+      <audio id="wh-s07" src="assets/sfx/whoosh.mp3" data-start="167.376" data-duration="0.574" data-track-index="13" data-volume="0.22"></audio>
+      <audio id="wh-c08" src="assets/sfx/whoosh.mp3" data-start="192.943" data-duration="0.574" data-track-index="13" data-volume="0.22"></audio>
+      <audio id="wh-s08" src="assets/sfx/whoosh.mp3" data-start="194.743" data-duration="0.574" data-track-index="13" data-volume="0.22"></audio>
+      <audio id="wh-c09" src="assets/sfx/whoosh.mp3" data-start="218.313" data-duration="0.574" data-track-index="13" data-volume="0.22"></audio>
+      <audio id="wh-s09" src="assets/sfx/whoosh.mp3" data-start="220.113" data-duration="0.574" data-track-index="13" data-volume="0.22"></audio>
+      <audio id="bgm-0" src="assets/music/bgm-a.mp3" data-start="0.0" data-duration="249.051" data-track-index="11" data-volume="1" data-automation='{"version": 1, "lanes": [{"target": "volume", "points": [{"t": 0.0, "v": 0.0}, {"t": 0.3, "v": 0.18}, {"t": 0.6, "v": 0.09}, {"t": 27.535, "v": 0.09}, {"t": 27.935, "v": 0.18}, {"t": 29.385, "v": 0.18}, {"t": 29.685, "v": 0.09}, {"t": 54.298, "v": 0.09}, {"t": 54.698, "v": 0.18}, {"t": 56.148, "v": 0.18}, {"t": 56.448, "v": 0.09}, {"t": 81.897, "v": 0.09}, {"t": 82.297, "v": 0.18}, {"t": 83.747, "v": 0.18}, {"t": 84.047, "v": 0.09}, {"t": 111.957, "v": 0.09}, {"t": 112.357, "v": 0.18}, {"t": 113.807, "v": 0.18}, {"t": 114.107, "v": 0.09}, {"t": 137.002, "v": 0.09}, {"t": 137.402, "v": 0.18}, {"t": 138.852, "v": 0.18}, {"t": 139.152, "v": 0.09}, {"t": 165.576, "v": 0.09}, {"t": 165.976, "v": 0.18}, {"t": 167.426, "v": 0.18}, {"t": 167.726, "v": 0.09}, {"t": 192.943, "v": 0.09}, {"t": 193.343, "v": 0.18}, {"t": 194.793, "v": 0.18}, {"t": 195.093, "v": 0.09}, {"t": 218.313, "v": 0.09}, {"t": 218.713, "v": 0.18}, {"t": 220.163, "v": 0.18}, {"t": 220.463, "v": 0.09}, {"t": 246.051, "v": 0.09}, {"t": 246.451, "v": 0.18}, {"t": 249.051, "v": 0}]}]}'></audio>
+      <div id="cap-000" class="clip cap" data-start="0.600" data-duration="2.836" data-track-index="20"><span>캐나다에서 2년 공부하고, 졸업하면</span></div>
+      <div id="cap-001" class="clip cap" data-start="3.456" data-duration="2.871" data-track-index="20"><span><b>최대 3년</b> 일할 수 있는 워크퍼밋까지.</span></div>
+      <div id="cap-002" class="clip cap" data-start="6.347" data-duration="2.499" data-track-index="20"><span>그런데 요즘은 아무 전공이나 되는</span></div>
+      <div id="cap-003" class="clip cap" data-start="8.866" data-duration="2.074" data-track-index="20"><span>게 아니라는 거, 알고 계시죠?</span></div>
+      <div id="cap-004" class="clip cap" data-start="10.960" data-duration="2.136" data-track-index="20"><span>2024년 말부터 컬리지</span></div>
+      <div id="cap-005" class="clip cap" data-start="13.116" data-duration="2.464" data-track-index="20"><span>디플로마는 <b>정부가 정한 전공</b>만</span></div>
+      <div id="cap-006" class="clip cap" data-start="15.600" data-duration="2.197" data-track-index="20"><span>졸업 후 워크퍼밋이 나와요.</span></div>
+      <div id="cap-007" class="clip cap" data-start="17.817" data-duration="1.966" data-track-index="20"><span>오늘은 그 목록에 확실히 들어가</span></div>
+      <div id="cap-008" class="clip cap" data-start="19.803" data-duration="2.929" data-track-index="20"><span>있는 전공, 알버타 올즈컬리지의 2년</span></div>
+      <div id="cap-009" class="clip cap" data-start="22.752" data-duration="2.638" data-track-index="20"><span>디플로마 <b>세 가지</b>를 소개해 드릴게요.</span></div>
+      <div id="cap-010" class="clip cap" data-start="25.410" data-duration="2.375" data-track-index="20"><span><b>농사 경험 없어도</b> 괜찮아요.</span></div>
+      <div id="cap-011" class="clip cap" data-start="29.685" data-duration="2.186" data-track-index="20"><span>캐나다 정부가 컬리지 졸업 후</span></div>
+      <div id="cap-012" class="clip cap" data-start="31.891" data-duration="2.917" data-track-index="20"><span>워크퍼밋을 주는 분야는 <b>여섯 가지</b>예요.</span></div>
+      <div id="cap-013" class="clip cap" data-start="34.828" data-duration="2.442" data-track-index="20"><span><b>농업과 농식품</b>, 교육, 보건,</span></div>
+      <div id="cap-014" class="clip cap" data-start="37.290" data-duration="2.511" data-track-index="20"><span>이공계, 기술직, 운송이요.</span></div>
+      <div id="cap-015" class="clip cap" data-start="39.821" data-duration="2.650" data-track-index="20"><span>이 중에서 농업은 한국 분들이 잘 안</span></div>
+      <div id="cap-016" class="clip cap" data-start="42.491" data-duration="2.569" data-track-index="20"><span>보는 분야라 오히려 <b>기회</b>가 있어요.</span></div>
+      <div id="cap-017" class="clip cap" data-start="45.080" data-duration="1.919" data-track-index="20"><span>그리고 요즘 농업은 밭에서</span></div>
+      <div id="cap-018" class="clip cap" data-start="47.019" data-duration="1.628" data-track-index="20"><span>일하는 것만이 아니에요.</span></div>
+      <div id="cap-019" class="clip cap" data-start="48.667" data-duration="2.047" data-track-index="20"><span><b>드론</b>, 자율주행 트랙터,</span></div>
+      <div id="cap-020" class="clip cap" data-start="50.734" data-duration="1.885" data-track-index="20"><span><b>데이터 분석</b>까지, 기술</span></div>
+      <div id="cap-021" class="clip cap" data-start="52.639" data-duration="1.909" data-track-index="20"><span>회사에 가까운 일이 많아요.</span></div>
+      <div id="cap-022" class="clip cap" data-start="56.448" data-duration="2.557" data-track-index="20"><span>올즈컬리지는 <b>1913년</b>에 문을</span></div>
+      <div id="cap-023" class="clip cap" data-start="59.025" data-duration="2.465" data-track-index="20"><span>연 알버타의 <b>공립 컬리지</b>예요.</span></div>
+      <div id="cap-024" class="clip cap" data-start="61.510" data-duration="2.615" data-track-index="20"><span>캘거리에서 북쪽으로 한 시간쯤 거리에</span></div>
+      <div id="cap-025" class="clip cap" data-start="64.145" data-duration="2.511" data-track-index="20"><span>있고, 학교 안에 <b>스마트팜</b>이 있어요.</span></div>
+      <div id="cap-026" class="clip cap" data-start="66.676" data-duration="3.289" data-track-index="20"><span>학교 자료로는 <b>3,300에이커</b>가</span></div>
+      <div id="cap-027" class="clip cap" data-start="69.985" data-duration="2.627" data-track-index="20"><span>넘는 규모라서, 실제 농장에서</span></div>
+      <div id="cap-028" class="clip cap" data-start="72.632" data-duration="2.546" data-track-index="20"><span>기술을 직접 써보면서 배워요.</span></div>
+      <div id="cap-029" class="clip cap" data-start="75.198" data-duration="3.353" data-track-index="20"><span>학교 <b>커리어페어</b>에는 카길, 뉴트리엔,</span></div>
+      <div id="cap-030" class="clip cap" data-start="78.571" data-duration="3.576" data-track-index="20"><span>BASF 같은 농업 대기업들이 참가해요.</span></div>
+      <div id="cap-031" class="clip cap" data-start="84.047" data-duration="1.687" data-track-index="20"><span>첫 번째는 정밀농업</span></div>
+      <div id="cap-032" class="clip cap" data-start="85.754" data-duration="2.093" data-track-index="20"><span><b>테크고노미</b> 디플로마예요.</span></div>
+      <div id="cap-033" class="clip cap" data-start="87.867" data-duration="1.303" data-track-index="20"><span>이름이 어렵죠?</span></div>
+      <div id="cap-034" class="clip cap" data-start="89.190" data-duration="2.209" data-track-index="20"><span>기술, 테크놀로지와 작물학,</span></div>
+      <div id="cap-035" class="clip cap" data-start="91.419" data-duration="1.988" data-track-index="20"><span>애그로노미를 합친 말이에요.</span></div>
+      <div id="cap-036" class="clip cap" data-start="93.427" data-duration="1.919" data-track-index="20"><span><b>드론과 센서</b>로 모은 데이터를</span></div>
+      <div id="cap-037" class="clip cap" data-start="95.366" data-duration="2.418" data-track-index="20"><span>보고, 어디에 비료를 얼마나</span></div>
+      <div id="cap-038" class="clip cap" data-start="97.804" data-duration="1.966" data-track-index="20"><span>뿌릴지 결정하는 걸 배워요.</span></div>
+      <div id="cap-039" class="clip cap" data-start="99.790" data-duration="1.849" data-track-index="20"><span>2년 과정 중에 <b>4개월</b>은</span></div>
+      <div id="cap-040" class="clip cap" data-start="101.659" data-duration="2.012" data-track-index="20"><span>급여를 받는 <b>인턴십</b>이에요.</span></div>
+      <div id="cap-041" class="clip cap" data-start="103.691" data-duration="2.800" data-track-index="20"><span>졸업하면 알버타 <b>농업전문가협회</b></span></div>
+      <div id="cap-042" class="clip cap" data-start="106.511" data-duration="2.384" data-track-index="20"><span>자격 과정에도 도전할 수 있어요.</span></div>
+      <div id="cap-043" class="clip cap" data-start="108.915" data-duration="1.663" data-track-index="20"><span>컴퓨터나 데이터에 관심</span></div>
+      <div id="cap-044" class="clip cap" data-start="110.598" data-duration="1.609" data-track-index="20"><span>있는 분께 추천해요.</span></div>
+      <div id="cap-045" class="clip cap" data-start="114.107" data-duration="1.338" data-track-index="20"><span>두 번째는 원예</span></div>
+      <div id="cap-046" class="clip cap" data-start="115.465" data-duration="2.360" data-track-index="20"><span>테크놀로지스트 디플로마예요.</span></div>
+      <div id="cap-047" class="clip cap" data-start="117.845" data-duration="3.278" data-track-index="20"><span>식물 재배, <b>온실 관리</b>, 조경 설계,</span></div>
+      <div id="cap-048" class="clip cap" data-start="121.143" data-duration="1.930" data-track-index="20"><span>그리고 원예 창업까지 배워요.</span></div>
+      <div id="cap-049" class="clip cap" data-start="123.093" data-duration="2.976" data-track-index="20"><span>학교 안에 습지, 식물원, 온실이</span></div>
+      <div id="cap-050" class="clip cap" data-start="126.089" data-duration="2.429" data-track-index="20"><span>있어서 캠퍼스 자체가 <b>실습장</b>이에요.</span></div>
+      <div id="cap-051" class="clip cap" data-start="128.538" data-duration="1.931" data-track-index="20"><span>중간에 <b>필드스쿨</b>이 있는데,</span></div>
+      <div id="cap-052" class="clip cap" data-start="130.489" data-duration="2.696" data-track-index="20"><span>업체에서 <b>급여</b>를 받으면서 실습해요.</span></div>
+      <div id="cap-053" class="clip cap" data-start="133.205" data-duration="1.664" data-track-index="20"><span>손으로 만드는 일, 식물</span></div>
+      <div id="cap-054" class="clip cap" data-start="134.889" data-duration="2.363" data-track-index="20"><span>좋아하시는 분께 잘 맞아요.</span></div>
+      <div id="cap-055" class="clip cap" data-start="139.152" data-duration="2.755" data-track-index="20"><span>세 번째는 <b>농업경영</b> 디플로마예요.</span></div>
+      <div id="cap-056" class="clip cap" data-start="141.927" data-duration="2.836" data-track-index="20"><span>회계, 마케팅 같은 경영 과목에 작물과</span></div>
+      <div id="cap-057" class="clip cap" data-start="144.783" data-duration="3.277" data-track-index="20"><span>가축, 농기계까지 농업 전반을 배워요.</span></div>
+      <div id="cap-058" class="clip cap" data-start="148.080" data-duration="2.860" data-track-index="20"><span>전공은 두 가지 중에 고를 수 있어요.</span></div>
+      <div id="cap-059" class="clip cap" data-start="150.960" data-duration="2.662" data-track-index="20"><span>농업 비즈니스 쪽인 <b>애그리커머스</b>,</span></div>
+      <div id="cap-060" class="clip cap" data-start="153.642" data-duration="2.720" data-track-index="20"><span>그리고 생산 쪽인 <b>프로덕션</b>이에요.</span></div>
+      <div id="cap-061" class="clip cap" data-start="156.382" data-duration="1.872" data-track-index="20"><span>학교 자료에 따르면 앨버타</span></div>
+      <div id="cap-062" class="clip cap" data-start="158.274" data-duration="1.733" data-track-index="20"><span>대학교로 이어서 공부할 수</span></div>
+      <div id="cap-063" class="clip cap" data-start="160.027" data-duration="2.047" data-track-index="20"><span>있는 <b>편입 협약</b>도 있어요.</span></div>
+      <div id="cap-064" class="clip cap" data-start="162.094" data-duration="1.988" data-track-index="20"><span>경영이나 영업 경력이</span></div>
+      <div id="cap-065" class="clip cap" data-start="164.102" data-duration="1.724" data-track-index="20"><span>있는 분께 추천해요.</span></div>
+      <div id="cap-066" class="clip cap" data-start="167.726" data-duration="2.306" data-track-index="20"><span>학비는 세 전공이 <b>거의 같아요</b>.</span></div>
+      <div id="cap-067" class="clip cap" data-start="170.052" data-duration="2.774" data-track-index="20"><span>2026년 학교 학비표 기준으로,</span></div>
+      <div id="cap-068" class="clip cap" data-start="172.846" data-duration="2.523" data-track-index="20"><span>유학생 학비와 필수 비용을 합쳐</span></div>
+      <div id="cap-069" class="clip cap" data-start="175.389" data-duration="3.366" data-track-index="20"><span>1년에 약 <b>1만 9천</b> 캐나다 달러예요.</span></div>
+      <div id="cap-070" class="clip cap" data-start="178.775" data-duration="2.132" data-track-index="20"><span>2년이면 약 <b>3만 8천</b></span></div>
+      <div id="cap-071" class="clip cap" data-start="180.927" data-duration="2.104" data-track-index="20"><span>달러고, <b>책값은 따로</b>예요.</span></div>
+      <div id="cap-072" class="clip cap" data-start="183.051" data-duration="2.453" data-track-index="20"><span>학사 과정보다 1년 학비가</span></div>
+      <div id="cap-073" class="clip cap" data-start="185.524" data-duration="1.977" data-track-index="20"><span>훨씬 낮아서, 부담을 줄이고</span></div>
+      <div id="cap-074" class="clip cap" data-start="187.521" data-duration="1.710" data-track-index="20"><span>싶은 분들이 많이 고르세요.</span></div>
+      <div id="cap-075" class="clip cap" data-start="189.251" data-duration="3.942" data-track-index="20"><span>입학은 세 전공 모두 가을, <b>9월</b>이에요.</span></div>
+      <div id="cap-076" class="clip cap" data-start="195.093" data-duration="2.499" data-track-index="20"><span>세 전공 모두 정부의 워크퍼밋</span></div>
+      <div id="cap-077" class="clip cap" data-start="197.612" data-duration="2.244" data-track-index="20"><span>대상 전공 목록에 들어가 있어요.</span></div>
+      <div id="cap-078" class="clip cap" data-start="199.876" data-duration="2.546" data-track-index="20"><span>2년 과정이라 졸업하면 워크퍼밋을</span></div>
+      <div id="cap-079" class="clip cap" data-start="202.442" data-duration="2.128" data-track-index="20"><span><b>최대 3년</b>까지 받을 수 있어요.</span></div>
+      <div id="cap-080" class="clip cap" data-start="204.590" data-duration="2.046" data-track-index="20"><span>학교 자료로 보면, 이 분야</span></div>
+      <div id="cap-081" class="clip cap" data-start="206.656" data-duration="2.685" data-track-index="20"><span>직업들의 <b>평균 시급</b>은 30달러대</span></div>
+      <div id="cap-082" class="clip cap" data-start="209.361" data-duration="2.662" data-track-index="20"><span>초반에서 40달러대 후반이에요.</span></div>
+      <div id="cap-083" class="clip cap" data-start="212.043" data-duration="3.243" data-track-index="20"><span>그리고 알버타는 <b>밴쿠버나 토론토</b>보다</span></div>
+      <div id="cap-084" class="clip cap" data-start="215.306" data-duration="3.257" data-track-index="20"><span>집값과 렌트비 부담이 덜한 편이에요.</span></div>
+      <div id="cap-085" class="clip cap" data-start="220.463" data-duration="1.118" data-track-index="20"><span>정리해 볼게요.</span></div>
+      <div id="cap-086" class="clip cap" data-start="221.601" data-duration="3.532" data-track-index="20"><span>데이터와 기술이 좋으면 <b>정밀농업</b>, 식물과</span></div>
+      <div id="cap-087" class="clip cap" data-start="225.153" data-duration="2.651" data-track-index="20"><span>손으로 하는 일이 좋으면 <b>원예</b>, 경영</span></div>
+      <div id="cap-088" class="clip cap" data-start="227.824" data-duration="2.905" data-track-index="20"><span>경력을 살리고 싶으면 <b>농업경영</b>이에요.</span></div>
+      <div id="cap-089" class="clip cap" data-start="230.749" data-duration="3.277" data-track-index="20"><span>내 학력과 경력으로 어느 전공이 맞을지,</span></div>
+      <div id="cap-090" class="clip cap" data-start="234.046" data-duration="2.934" data-track-index="20"><span>영어 점수는 얼마나 필요할지 궁금하시면</span></div>
+      <div id="cap-091" class="clip cap" data-start="237.000" data-duration="2.692" data-track-index="20"><span><b>AA Canada</b>에 편하게 물어보세요.</span></div>
+      <div id="cap-092" class="clip cap" data-start="239.712" data-duration="3.265" data-track-index="20"><span>고등학교 성적과 영어 점수만 보내주시면,</span></div>
+      <div id="cap-093" class="clip cap" data-start="242.997" data-duration="3.284" data-track-index="20"><span>맞는 전공부터 같이 골라 드릴게요.</span></div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.set("#fx-flash", { opacity: 0 }, 0);
+      tl.set("#fx-leak", { opacity: 0, x: 0 }, 0);
+      tl.fromTo("#fx-leak",{opacity:0,x:-500},{opacity:0.95,x:0,duration:0.33,ease:"power1.in"},27.535);
+      tl.to("#fx-leak",{opacity:0,x:500,duration:0.36,ease:"power2.out"},27.865);
+      tl.fromTo("#el-c02",{opacity:0},{opacity:1,duration:0.05},27.835);
+      tl.fromTo("#el-s02",{opacity:0,scale:1.06},{opacity:1,scale:1,duration:0.45,ease:"power2.out"},29.335);
+      tl.fromTo("#fx-flash",{opacity:0},{opacity:1,duration:0.27,ease:"power2.in"},54.298);
+      tl.to("#fx-flash",{opacity:0,duration:0.33,ease:"power2.out"},54.568000000000005);
+      tl.fromTo("#el-c03",{opacity:0},{opacity:1,duration:0.03},54.556000000000004);
+      tl.fromTo("#el-s03",{opacity:0,scale:1.06},{opacity:1,scale:1,duration:0.45,ease:"power2.out"},56.098);
+      tl.fromTo("#el-c04",{clipPath:"circle(0% at 50% 50%)"},{clipPath:"circle(75% at 50% 50%)",duration:0.6,ease:"power3.inOut"},81.897);
+      tl.to("#el-s03",{scale:0.94,opacity:0.5,duration:0.6,ease:"power2.in"},81.897);
+      tl.fromTo("#el-s04",{opacity:0,scale:1.06},{opacity:1,scale:1,duration:0.45,ease:"power2.out"},83.697);
+      tl.to("#el-s04",{scale:1.22,filter:"blur(14px)",opacity:0,duration:0.6,ease:"power2.in"},111.957);
+      tl.fromTo("#el-c05",{scale:0.86,filter:"blur(14px)",opacity:0},{scale:1,filter:"blur(0px)",opacity:1,duration:0.6,ease:"power2.out"},111.957);
+      tl.fromTo("#el-s05",{opacity:0,scale:1.06},{opacity:1,scale:1,duration:0.45,ease:"power2.out"},113.757);
+      tl.fromTo("#fx-leak",{opacity:0,x:-500},{opacity:0.95,x:0,duration:0.33,ease:"power1.in"},137.002);
+      tl.to("#fx-leak",{opacity:0,x:500,duration:0.36,ease:"power2.out"},137.33200000000002);
+      tl.fromTo("#el-c06",{opacity:0},{opacity:1,duration:0.05},137.30200000000002);
+      tl.fromTo("#el-s06",{opacity:0,scale:1.06},{opacity:1,scale:1,duration:0.45,ease:"power2.out"},138.802);
+      tl.fromTo("#fx-flash",{opacity:0},{opacity:1,duration:0.27,ease:"power2.in"},165.576);
+      tl.to("#fx-flash",{opacity:0,duration:0.33,ease:"power2.out"},165.846);
+      tl.fromTo("#el-c07",{opacity:0},{opacity:1,duration:0.03},165.834);
+      tl.fromTo("#el-s07",{opacity:0,scale:1.06},{opacity:1,scale:1,duration:0.45,ease:"power2.out"},167.376);
+      tl.fromTo("#el-c08",{clipPath:"circle(0% at 50% 50%)"},{clipPath:"circle(75% at 50% 50%)",duration:0.6,ease:"power3.inOut"},192.943);
+      tl.to("#el-s07",{scale:0.94,opacity:0.5,duration:0.6,ease:"power2.in"},192.943);
+      tl.fromTo("#el-s08",{opacity:0,scale:1.06},{opacity:1,scale:1,duration:0.45,ease:"power2.out"},194.743);
+      tl.to("#el-s08",{scale:1.22,filter:"blur(14px)",opacity:0,duration:0.6,ease:"power2.in"},218.313);
+      tl.fromTo("#el-c09",{scale:0.86,filter:"blur(14px)",opacity:0},{scale:1,filter:"blur(0px)",opacity:1,duration:0.6,ease:"power2.out"},218.313);
+      tl.fromTo("#el-s09",{opacity:0,scale:1.06},{opacity:1,scale:1,duration:0.45,ease:"power2.out"},220.113);
+      window.__timelines["root"] = tl;
+    </script>
+  </body>
+</html>

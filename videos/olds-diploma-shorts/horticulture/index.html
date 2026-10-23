@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/vendor/gsap.min.js"></script>
+    <style>
+      @font-face{font-family:Pretendard;font-weight:700;src:url(assets/fonts/Pretendard-Bold.woff2) format("woff2")}
+      @font-face{font-family:Pretendard;font-weight:800;src:url(assets/fonts/Pretendard-ExtraBold.woff2) format("woff2")}
+      @font-face{font-family:Pretendard;font-weight:900;src:url(assets/fonts/Pretendard-Black.woff2) format("woff2")}
+      * { margin:0; padding:0; box-sizing:border-box; }
+      html, body { width:1080px; height:1920px; overflow:hidden; background:#0e2a22; }
+      #root { position:relative; width:1080px; height:1920px; overflow:hidden; color:#fff; font-family:Pretendard,sans-serif;
+        background:#0e2a22; background-image:repeating-linear-gradient(118deg,#ff8fb41f 0 3px,transparent 3px 52px); }
+      .abs { position:absolute; }
+      .brand { z-index:80; left:60px; top:132px; font-weight:800; font-size:30px; letter-spacing:.06em; color:rgba(255,255,255,.85); }
+      .cap { position:absolute; left:0; right:0; top:215px; height:150px; z-index:50; display:flex; justify-content:center; align-items:center; }
+      .cap span { display:inline-block; background:rgba(4,20,15,.82); padding:16px 34px; border-radius:18px; font-weight:900; font-size:74px; line-height:1.15; white-space:nowrap; }
+      .cap b { color:#ffd23f; font-weight:900; }
+      #plate { left:60px; top:450px; width:960px; display:flex; align-items:center; gap:28px; font-weight:900; font-size:70px; line-height:1.05; color:#ff8fb4; }
+      #plate small { display:block; font-size:44px; color:#f3ecdc; margin-top:12px; }
+      .ph { position:absolute; width:900px; height:410px; left:90px; overflow:hidden; border-radius:8px 34px 8px 34px; border:6px solid #f3ecdc; box-shadow:0 24px 50px rgba(0,0,0,.4); }
+      .ph img { width:100%; height:100%; object-fit:cover; display:block; }
+      #p0 { top:740px; } #p1 { top:740px; }
+      .kc { position:relative; display:inline-block; margin:0 16px 18px 0; padding:16px 30px; border-radius:99px; border:3px solid; background:rgba(4,20,15,.75); font-weight:900; font-size:38px; white-space:nowrap; }
+      #chips { left:90px; top:1175px; width:920px; }
+      .fc { position:absolute; left:90px; width:900px; padding:40px 48px; border-radius:8px 34px 8px 34px; background:#f3ecdc; color:#0e2a22; }
+      .fc .l { font-weight:800; font-size:40px; }
+      .fc .v { font-weight:900; font-size:96px; color:#4a0f26; line-height:1.1; }
+      #src { left:90px; top:1300px; width:900px; font-weight:700; font-size:28px; color:rgba(255,255,255,.7); }
+      #cta { position:absolute; inset:0; background:#0b231c; }
+      #cta .aa { position:absolute; left:0; right:0; top:620px; text-align:center; font-weight:900; font-size:130px; letter-spacing:.02em; }
+      #cta .sub { position:absolute; left:0; right:0; top:800px; text-align:center; font-weight:800; font-size:48px; color:#f3ecdc; }
+      #cta .btn { position:absolute; left:140px; top:930px; width:800px; height:130px; border-radius:70px; background:#c8102e; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:56px; }
+      #pill { left:120px; top:1352px; width:840px; height:84px; border-radius:50px; background:#c8102e; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:38px; z-index:60; }
+      #endc { position:absolute; inset:0; background:#0b231c; z-index:70; }
+      #endc div { position:absolute; left:0; right:0; top:820px; text-align:center; font-weight:900; font-size:72px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="root" data-width="1080" data-height="1920" data-duration="43.922">
+      <div class="abs brand">AA CANADA</div>
+      <div class="abs" id="plate"><svg viewBox="0 0 120 120" width="150" height="150"><path d="M24 98 C20 50 50 18 102 16 C104 66 74 100 24 98 Z" fill="#ff8fb4"/><path d="M24 98 C46 72 66 52 88 32" fill="none" stroke="#0e2a22" stroke-width="6" stroke-linecap="round"/></svg><div>원예 테크놀로지스트<small>2년 디플로마 · 알버타 Olds College</small></div></div>
+      <div class="ph" id="p0"><img src="assets/photos/campus-05-central-gardens.jpg" alt=""/></div><div class="ph" id="p1"><img src="assets/photos/sf-13-indoor-ag.jpg" alt=""/></div>
+      <div class="abs" id="chips"><div class="kc" id="k0" style="border-color:#ff8fb4">재배·온실·조경·창업</div><div class="kc" id="k1" style="border-color:#ff8fb4">캠퍼스가 실습장</div><div class="kc" id="k2" style="border-color:#ff8fb4">필드스쿨 급여 실습</div></div>
+      <div class="fc" id="f0" style="top:640px"><div class="l">2년 과정 졸업 후 워크퍼밋</div><div class="v">최대 3년</div></div>
+      <div class="fc" id="f1" style="top:960px"><div class="l">1년 학비 + 필수비용 (유학생)</div><div class="v">약 CAD 19,000</div></div>
+      <div class="abs" id="src">IRCC PGWP 기준 · Olds College 2026-27 학비표(2026-08-10판), 책값 별도</div>
+      <div id="cta"><div class="aa">AA CANADA</div><div class="sub">올즈컬리지 상담</div><div class="btn">카카오톡 canlog</div></div>
+      <div class="abs" id="pill">▶ 전체 영상 4분 정리 · 관련 동영상에서</div>
+      <div id="endc"><div>전체 영상은 관련 동영상에서 ▶</div></div>
+      <audio id="narration" src="assets/audio/narration.wav" data-start="0.3" data-duration="41.342" data-track-index="10" data-volume="1"></audio>
+      <audio id="bgm" src="assets/audio/bgm.mp3" data-start="0" data-duration="43.922" data-track-index="11" data-volume="0.07"></audio>
+      <div id="cap-00" class="clip cap" data-start="0.300" data-duration="1.385" data-track-index="20"><span>식물 좋아하세요?</span></div>
+      <div id="cap-01" class="clip cap" data-start="1.705" data-duration="1.501" data-track-index="20"><span><b>급여</b> 받으며 실습하는</span></div>
+      <div id="cap-02" class="clip cap" data-start="3.226" data-duration="1.315" data-track-index="20"><span>캐나다 <b>원예</b> 전공이</span></div>
+      <div id="cap-03" class="clip cap" data-start="4.561" data-duration="0.645" data-track-index="20"><span>있어요.</span></div>
+      <div id="cap-04" class="clip cap" data-start="5.456" data-duration="1.548" data-track-index="20"><span><b>원예</b> 테크놀로지스트</span></div>
+      <div id="cap-05" class="clip cap" data-start="7.024" data-duration="1.268" data-track-index="20"><span>디플로마예요.</span></div>
+      <div id="cap-06" class="clip cap" data-start="8.312" data-duration="2.268" data-track-index="20"><span>식물 재배, 온실 관리,</span></div>
+      <div id="cap-07" class="clip cap" data-start="10.600" data-duration="1.675" data-track-index="20"><span>조경 설계, 그리고 <b>원예</b></span></div>
+      <div id="cap-08" class="clip cap" data-start="12.295" data-duration="1.245" data-track-index="20"><span>창업까지 배워요.</span></div>
+      <div id="cap-09" class="clip cap" data-start="13.560" data-duration="1.698" data-track-index="20"><span>학교 안에 습지,</span></div>
+      <div id="cap-10" class="clip cap" data-start="15.278" data-duration="1.792" data-track-index="20"><span>식물원, 온실이 있어서</span></div>
+      <div id="cap-11" class="clip cap" data-start="17.090" data-duration="0.943" data-track-index="20"><span>캠퍼스 자체가</span></div>
+      <div id="cap-12" class="clip cap" data-start="18.053" data-duration="0.932" data-track-index="20"><span>실습장이에요.</span></div>
+      <div id="cap-13" class="clip cap" data-start="19.005" data-duration="1.304" data-track-index="20"><span>중간에 필드스쿨이</span></div>
+      <div id="cap-14" class="clip cap" data-start="20.329" data-duration="1.942" data-track-index="20"><span>있는데, 업체에서 <b>급여</b>를</span></div>
+      <div id="cap-15" class="clip cap" data-start="22.291" data-duration="1.361" data-track-index="20"><span>받으면서 실습해요.</span></div>
+      <div id="cap-16" class="clip cap" data-start="23.672" data-duration="1.664" data-track-index="20"><span>손으로 만드는 일, 식물</span></div>
+      <div id="cap-17" class="clip cap" data-start="25.356" data-duration="1.466" data-track-index="20"><span>좋아하시는 분께 잘</span></div>
+      <div id="cap-18" class="clip cap" data-start="26.842" data-duration="0.714" data-track-index="20"><span>맞아요.</span></div>
+      <div id="cap-19" class="clip cap" data-start="28.061" data-duration="1.628" data-track-index="20"><span>2년 과정이라 졸업하면</span></div>
+      <div id="cap-20" class="clip cap" data-start="29.709" data-duration="1.977" data-track-index="20"><span>워크퍼밋을 <b>최대 3년</b>까지</span></div>
+      <div id="cap-21" class="clip cap" data-start="31.706" data-duration="0.944" data-track-index="20"><span>받을 수 있어요.</span></div>
+      <div id="cap-22" class="clip cap" data-start="32.670" data-duration="1.803" data-track-index="20"><span>학비는 1년에 약 1만</span></div>
+      <div id="cap-23" class="clip cap" data-start="34.493" data-duration="1.724" data-track-index="20"><span>9천 캐나다 달러예요.</span></div>
+      <div id="cap-24" class="clip cap" data-start="36.407" data-duration="1.505" data-track-index="20"><span>올즈컬리지 상담은</span></div>
+      <div id="cap-25" class="clip cap" data-start="37.932" data-duration="1.021" data-track-index="20"><span><b>AA Canada</b>,</span></div>
+      <div id="cap-26" class="clip cap" data-start="38.973" data-duration="1.373" data-track-index="20"><span>카카오톡 <b>canlog</b>로</span></div>
+      <div id="cap-27" class="clip cap" data-start="40.366" data-duration="1.051" data-track-index="20"><span>물어봐 주세요.</span></div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      const O = 0.3;
+      tl.set(['#p0','#p1','#chips .kc','#f0','#f1','#src','#cta','#endc'], { opacity: 0 }, 0);
+      tl.fromTo('#plate', { opacity:0, y:40 }, { opacity:1, y:0, duration:0.5, ease:'power3.out' }, 0.15);
+      tl.fromTo('#plate svg', { rotation:-25, scale:0.5 }, { rotation:0, scale:1, duration:0.6, ease:'back.out(1.8)' }, 0.2);
+      tl.fromTo('#p0', { opacity:0, y:60 }, { opacity:1, y:0, duration:0.5, ease:'power3.out' }, O + 5.096);
+      tl.fromTo('#p0 img', { scale:1 }, { scale:1.12, duration:11.69, ease:'none' }, O + 5.096);
+      tl.to('#p0', { opacity:0, duration:0.3 }, O + 16.49);
+      tl.fromTo('#p1', { opacity:0, y:60 }, { opacity:1, y:0, duration:0.5, ease:'power3.out' }, O + 16.79);
+      tl.fromTo('#p1 img', { scale:1 }, { scale:1.12, duration:10.60, ease:'none' }, O + 16.79);
+      tl.fromTo('#k0', { opacity:0, scale:0.4 }, { opacity:1, scale:1, duration:0.4, ease:'back.out(2.2)' }, O + 8.01);
+      tl.fromTo('#k1', { opacity:0, scale:0.4 }, { opacity:1, scale:1, duration:0.4, ease:'back.out(2.2)' }, O + 16.79);
+      tl.fromTo('#k2', { opacity:0, scale:0.4 }, { opacity:1, scale:1, duration:0.4, ease:'back.out(2.2)' }, O + 18.70);
+      tl.to(['#p1','#chips','#plate'], { opacity:0, duration:0.3 }, O + 27.09);
+      tl.fromTo('#f0', { opacity:0, x:-60 }, { opacity:1, x:0, duration:0.5, ease:'power3.out' }, O + 27.39);
+      tl.fromTo('#f1', { opacity:0, x:60 }, { opacity:1, x:0, duration:0.5, ease:'power3.out' }, O + 32.37);
+      tl.fromTo('#src', { opacity:0 }, { opacity:1, duration:0.4 }, O + 32.77);
+      tl.to(['#f0','#f1','#src'], { opacity:0, duration:0.2 }, O + 35.91);
+      tl.fromTo('#cta', { opacity:0 }, { opacity:1, duration:0.4 }, O + 35.91);
+      tl.fromTo('#cta .btn', { scale:1.5, opacity:0 }, { scale:1, opacity:1, duration:0.4, ease:'power4.in' }, O + 38.67);
+      tl.fromTo('#pill', { opacity:0, y:20 }, { opacity:1, y:0, duration:0.4 }, 0.6);
+      tl.to('#pill', { scale:1.05, duration:0.3, yoyo:true, repeat:1 }, 6.0);
+      tl.to('#pill', { scale:1.05, duration:0.3, yoyo:true, repeat:1 }, 12.0);
+      tl.to('#pill', { scale:1.05, duration:0.3, yoyo:true, repeat:1 }, 18.0);
+      tl.to('#pill', { scale:1.05, duration:0.3, yoyo:true, repeat:1 }, 24.0);
+      tl.to('#pill', { scale:1.05, duration:0.3, yoyo:true, repeat:1 }, 30.0);
+      tl.to('#pill', { opacity:0, duration:0.2 }, 41.72);
+      tl.to('#cta', { opacity:0, duration:0.2 }, 41.72);
+      tl.fromTo('#endc', { opacity:0 }, { opacity:1, duration:0.3 }, 41.72);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["root"] = tl;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+
+@font-face{font-family:Pretendard;font-weight:500;src:url(assets/fonts/Pretendard-Medium.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:700;src:url(assets/fonts/Pretendard-Bold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:800;src:url(assets/fonts/Pretendard-ExtraBold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:900;src:url(assets/fonts/Pretendard-Black.woff2) format("woff2")}
+
+
+#s02{position:absolute;inset:0;overflow:hidden;color:#fff;font-family:Pretendard,sans-serif}
+#s02 *{box-sizing:border-box}
+#s02 .bg{position:absolute;inset:0;background:#0e2a22;background-image:repeating-linear-gradient(118deg,rgba(243,236,220,.035) 0 2px,transparent 2px 46px)}
+#s02 .blob{display:none}
+#s02 .blob.a{left:-300px;top:-420px;background:radial-gradient(circle,rgba(0,179,115,.32) 0%,rgba(0,179,115,0) 68%)}
+#s02 .blob.b{left:1050px;top:380px;background:radial-gradient(circle,rgba(0,179,115,.16) 0%,rgba(0,179,115,0) 66%)}
+#s02 .blob.c{left:500px;top:520px;width:900px;height:900px;background:radial-gradient(circle,rgba(232,185,49,.12) 0%,rgba(232,185,49,0) 66%)}
+#s02 .stage{position:absolute;inset:0}
+#s02 .abs{position:absolute}
+#s02 .h{font-weight:900;letter-spacing:-.03em;line-height:1.08}
+#s02 .hd{font-weight:800;letter-spacing:-.02em;line-height:1.2}
+#s02 .b{font-weight:500;line-height:1.45}
+#s02 .l{font-weight:700;letter-spacing:.14em}
+#s02 .num{font-weight:900;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+#s02 .gold{color:#e8b931}
+#s02 .red{color:#c8102e}
+#s02 .full{position:absolute;inset:0;overflow:hidden}
+#s02 .full img,#s02 .ph img{display:block;width:100%;height:100%;object-fit:cover}
+#s02 .dim{position:absolute;inset:0;background:#082a1f}
+#s02 .ph{position:absolute;overflow:hidden;border-radius:22px;box-shadow:0 24px 50px rgba(0,0,0,.38);background:#082a1f}
+#s02 .ph.frame{border:6px solid #f5efe3}
+#s02 .ph .lab{position:absolute;left:0;right:0;bottom:0;padding:14px 20px;background:linear-gradient(0deg,rgba(6,30,22,.88),rgba(6,30,22,0));font-weight:800;font-size:28px}
+#s02 .card{position:absolute;background:#f3ecdc;color:#0e2a22;border-radius:6px 28px 6px 28px;box-shadow:0 18px 40px rgba(0,0,0,.28)}
+#s02 .card .t{font-weight:800;color:#0f3d2e}
+#s02 .chip{position:absolute;white-space:nowrap;border-radius:99px;padding:12px 28px;font-weight:700;font-size:30px;background:rgba(255,255,255,.08);border:2px solid rgba(232,185,49,.75);color:#fff}
+#s02 .chip.cream{background:#f5efe3;border-color:#f5efe3;color:#0f3d2e}
+#s02 .chip.gold{background:#e8b931;border-color:#e8b931;color:#0f3d2e}
+#s02 .chip.red{background:#c8102e;border-color:#c8102e;color:#fff}
+#s02 .chip.green{background:#00b373;border-color:#00b373;color:#0f3d2e}
+#s02 .chip.gray{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.35);color:rgba(255,255,255,.85)}
+#s02 .chip.rel{position:relative}
+#s02 .chip.navy{background:#0f3d2e;border-color:#0f3d2e;color:#f5efe3}
+#s02 .pill{position:absolute;white-space:nowrap;border-radius:99px;padding:10px 26px;font-weight:800;font-size:28px;background:#e8b931;color:#0f3d2e}
+#s02 .sweep{position:absolute;top:-20%;bottom:-20%;left:0;width:34%;background:linear-gradient(90deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.38) 50%,rgba(255,255,255,0) 100%);mix-blend-mode:screen}
+#s02 .reel{display:inline-block;height:1em;overflow:hidden;vertical-align:top}
+#s02 .strip{display:block}
+#s02 .strip i{display:block;height:1em;font-style:normal}
+#s02 .ch{display:inline-block;white-space:pre}
+#s02 .tag{position:absolute;font-weight:700;font-size:22px;letter-spacing:.12em;padding:6px 16px;border-radius:8px;background:#c8102e;color:#fff}
+#s02 svg{overflow:visible}
+#s02 .grp{position:absolute;inset:0}
+#s02 .flow{position:absolute;display:flex;flex-wrap:wrap;gap:22px}
+#s02 .row{position:absolute;display:flex;align-items:center;gap:26px;font-weight:800;color:#0f3d2e;white-space:nowrap}
+#s02 .row svg{flex:none}
+#s02 .ar path{fill:none;stroke:#e8b931;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
+
+#s02 .mtag{display:flex;align-items:center;gap:22px;font-weight:900;letter-spacing:-.02em;white-space:nowrap}
+#s02 .mi{display:flex}
+#s02 .plot{position:absolute;border-radius:6px 26px 6px 26px;padding:30px 34px;color:#0e2a22}
+#s02 .plot b{display:block;font-weight:900;font-size:44px;line-height:1.15}
+#s02 .plot span{display:block;font-weight:700;font-size:28px;margin-top:10px}
+#s02 .furrow{position:absolute;inset:0;opacity:.10}
+
+#s02 .fd{position:absolute;width:500px;height:150px;border-radius:6px 26px 6px 26px;display:flex;align-items:center;padding:0 36px;font-weight:900;font-size:50px;background:rgba(243,236,220,.1);border:2px solid rgba(243,236,220,.25)}
+#s02 #s02-f0{background:#e8b931;border-color:#e8b931;color:#0e2a22}
+#s02 .t3{position:absolute;top:240px;width:520px;height:390px}
+
+      </style>
+      <div id="s02" data-composition-id="s02" data-width="1920" data-height="1080" data-duration="25.563">
+        <div class="bg"></div>
+        <div class="blob a"></div><div class="blob b"></div><div class="blob c"></div>
+
+        <div class="stage">
+
+          <div class="grp" id="s02-g1">
+            <div class="abs hd" id="s02-h" style="left:150px;top:140px;font-size:56px">컬리지 졸업 후 워크퍼밋이 나오는 분야</div>
+            <div class="fd" id="s02-f0" style="left:150px;top:270px">농업 · 농식품</div>
+            <div class="fd" id="s02-f1" style="left:710px;top:270px">교육</div>
+            <div class="fd" id="s02-f2" style="left:1270px;top:270px">보건</div>
+            <div class="fd" id="s02-f3" style="left:150px;top:470px">이공계</div>
+            <div class="fd" id="s02-f4" style="left:710px;top:470px">기술직</div>
+            <div class="fd" id="s02-f5" style="left:1270px;top:470px">운송</div>
+
+            <div class="chip gold" id="s02-op" style="left:150px;top:690px;font-size:38px">한국 분들이 잘 안 보는 분야라 오히려 기회</div></div>
+          <div class="grp" id="s02-g2">
+            <div class="abs hd" id="s02-h2" style="left:150px;top:140px;font-size:56px">요즘 농업은 기술 회사에 가깝다</div>
+            <div class="ph frame t3" id="s02-t0" style="left:150px"><img src="assets/photos/sf-03-drone-flying.jpg" alt="" /><div class="lab">드론</div></div>
+            <div class="ph frame t3" id="s02-t1" style="left:710px"><img src="assets/photos/sf-06-precision-ag.jpg" alt="" /><div class="lab">자율주행 트랙터</div></div>
+            <div class="ph frame t3" id="s02-t2" style="left:1270px"><img src="assets/photos/sf-05-screens.jpg" alt="" /><div class="lab">데이터 분석</div></div>
+          </div>
+        </div>
+        <audio id="s02-fx0" src="assets/sfx/pop.mp3" data-start="5.493" data-duration="0.5" data-track-index="42" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s02-fx1" src="assets/sfx/pop.mp3" data-start="9.58" data-duration="0.5" data-track-index="42" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s02-fx2" src="assets/sfx/whoosh.mp3" data-start="15.745" data-duration="0.574" data-track-index="42" data-volume="0.25" data-hf-media-start-basis="local"></audio>
+        <audio id="s02-fx3" src="assets/sfx/pop.mp3" data-start="19.332" data-duration="0.5" data-track-index="42" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="s02-fx4" src="assets/sfx/pop.mp3" data-start="21.399" data-duration="0.5" data-track-index="42" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+      </div>
+      <script>
+        (function () {
+          const root = document.getElementById("s02");
+          const D = 25.563;
+
+const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
+const tl=gsap.timeline({paused:true});
+const E=el=>typeof el==='string'?qa(el):el, E1=el=>typeof el==='string'?q(el):el;
+function inn(el,at,o){o=o||{};tl.fromTo(E(el),{opacity:0,x:o.x||0,y:(o.y===undefined?30:o.y),scale:(o.s===undefined?1:o.s),rotation:(o.r0===undefined?(o.r||0):o.r0)},
+  {opacity:1,x:0,y:0,scale:1,rotation:o.r||0,duration:o.d||0.6,ease:o.e||'power3.out',stagger:o.st||0},at);}
+function outt(el,at,o){o=o||{};tl.to(E(el),{opacity:o.o||0,y:o.y||0,x:o.x||0,scale:(o.s===undefined?1:o.s),duration:o.d||0.4,ease:'power2.in'},at);}
+function kb(el,at,dur,a,b){a=a||{};b=b||{};
+  tl.fromTo(E(el),{scale:a.s||1,xPercent:a.x||0,yPercent:a.y||0},{scale:b.s||1.10,xPercent:b.x||0,yPercent:b.y||0,duration:Math.max(0.1,dur),ease:'none'},at);}
+function shake(at){const s=q('.stage');tl.to(s,{x:12,y:-7,duration:1/30,ease:'none'},at);tl.to(s,{x:-9,y:6,duration:1/30,ease:'none'},at+1/30);tl.to(s,{x:0,y:0,duration:1/30,ease:'none'},at+2/30);}
+function slam(el,at,o){o=o||{};tl.fromTo(E(el),{opacity:0,scale:o.s||2.2},{opacity:1,scale:1,duration:o.d||0.42,ease:'power4.in'},at);if(o.shake!==false)shake(at+(o.d||0.42));}
+function stamp(el,at,rot){rot=(rot===undefined?-12:rot);tl.fromTo(E(el),{opacity:0,scale:3,rotation:rot},{opacity:1,scale:1,rotation:rot,duration:0.32,ease:'power4.in'},at);shake(at+0.32);}
+function pop(el,at,st){tl.fromTo(E(el),{opacity:0,scale:0.4},{opacity:1,scale:1,duration:0.42,ease:'back.out(2.2)',stagger:(st===undefined?0.08:st)},at);}
+function flip(el,at,o){o=o||{};tl.fromTo(E(el),{opacity:0,rotationY:o.r0||-90,transformPerspective:1400},{opacity:1,rotationY:0,transformPerspective:1400,duration:o.d||0.7,ease:'power3.out',stagger:o.st||0},at);}
+function draw(path,at,d,e){const ps=typeof path==='string'?qa(path):[path];ps.forEach(p=>{const L=p.getTotalLength();p.style.strokeDasharray=L+' '+L;
+  tl.fromTo(p,{strokeDashoffset:L},{strokeDashoffset:0,duration:d||0.9,ease:e||'power2.inOut'},at);});}
+function grow(el,at,d,origin,axis){tl.fromTo(E(el),axis==='y'?{scaleY:0,transformOrigin:origin||'50% 100%'}:{scaleX:0,transformOrigin:origin||'0% 50%'},axis==='y'?{scaleY:1,duration:d||0.7,ease:'power3.out'}:{scaleX:1,duration:d||0.7,ease:'power3.inOut'},at);}
+function mask(el,at,d,dir){const from={l:'inset(0% 100% 0% 0%)',r:'inset(0% 0% 0% 100%)',u:'inset(100% 0% 0% 0%)',d:'inset(0% 0% 100% 0%)'}[dir||'l'];
+  tl.fromTo(E(el),{clipPath:from,opacity:1},{clipPath:'inset(0% 0% 0% 0%)',opacity:1,duration:d||0.8,ease:'power3.inOut'},at);}
+function sweep(el,at){tl.fromTo(E(el),{xPercent:-140,opacity:1},{xPercent:330,opacity:1,duration:1.1,ease:'power2.inOut'},at);}
+function kin(el,at,st){el=E1(el);const t=el.textContent;el.textContent='';
+  for(const c of t){const s=document.createElement('span');s.className='ch';s.textContent=c;el.appendChild(s);}
+  tl.fromTo(el.querySelectorAll('.ch'),{opacity:0,rotationX:90,transformPerspective:700,filter:'blur(12px)'},
+    {opacity:1,rotationX:0,transformPerspective:700,filter:'blur(0px)',duration:0.55,ease:'power3.out',stagger:st||0.03},at);}
+function odo(el,at,dur){el=E1(el);const t=el.textContent;el.textContent='';const reels=[];let k=0;
+  for(const c of t){if(c>='0'&&c<='9'){const d=+c,r=document.createElement('span');r.className='reel';const s=document.createElement('span');s.className='strip';
+      const n=10+d+1;for(let i=0;i<n;i++){const x=document.createElement('i');x.textContent=String(i%10);s.appendChild(x);}r.appendChild(s);el.appendChild(r);reels.push([s,n,k++]);}
+    else{const s=document.createElement('span');s.textContent=c;el.appendChild(s);}}
+  const m=reels.length;reels.forEach(([s,n,i])=>tl.fromTo(s,{yPercent:0},{yPercent:-100*(n-1)/n,duration:(dur||1.4)*(0.65+0.35*(i+1)/m),ease:'power3.out'},at));}
+function ambient(){
+  qa('.blob').forEach((g,i)=>tl.fromTo(g,{x:0,y:0},{x:(i%2?-140:160),y:(i%2?90:-70),duration:D,ease:'sine.inOut'},0));
+  tl.fromTo(q('.stage'),{scale:1,transformOrigin:'50% 48%'},{scale:1.025,duration:D,ease:'none'},0);
+}
+
+function burst(host,at,n,cx,cy,spread,seed){const H=E1(host);seed=seed||7;const rnd=()=>{seed=(seed*16807)%2147483647;return seed/2147483647;};
+  for(let i=0;i<n;i++){const d=document.createElement('div');d.style.cssText='position:absolute;width:12px;height:12px;border-radius:50%;background:#e8b931;opacity:0;left:'+cx+'px;top:'+cy+'px';H.appendChild(d);
+    const a=rnd()*Math.PI*2,r=spread*(0.4+rnd()*0.8);
+    tl.fromTo(d,{x:0,y:0,opacity:1,scale:0.6+rnd()},{x:Math.cos(a)*r,y:Math.sin(a)*r*0.6+60,opacity:0,duration:1.2+rnd()*0.7,ease:'power3.out',immediateRender:false},at);}}
+
+
+inn('#s02-h',0.350,{y:14});
+pop('#s02-f0',5.493);pop('#s02-f1',6.898);pop('#s02-f2',7.397);pop('#s02-f3',7.955);pop('#s02-f4',8.756);pop('#s02-f5',9.580);
+tl.to(['#s02-f1','#s02-f2','#s02-f3','#s02-f4','#s02-f5'].map(s=>q(s)),{opacity:0.3,duration:0.4},10.486);
+tl.to('#s02-f0',{scale:1.08,duration:0.3,yoyo:true,repeat:1},10.486);
+inn('#s02-op',14.607,{y:20});
+outt('#s02-g1',15.745-0.35,{d:0.35});
+tl.set('#s02-g2',{opacity:0},0);tl.set('#s02-g2',{opacity:1},15.745-0.05);
+inn('#s02-h2',15.745,{y:14});
+flip('#s02-t0',19.332);kb('#s02-t0 img',19.332,D-19.332);flip('#s02-t1',19.901);kb('#s02-t1 img',19.901,D-19.901);flip('#s02-t2',21.399);kb('#s02-t2 img',21.399,D-21.399);
+          ambient();
+          window.__timelines["s02"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>
