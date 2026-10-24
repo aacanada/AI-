@@ -1,0 +1,5 @@
+college_*/assets/kit/
+college_*/.segments/
+*.part-*
+render_*.log
+**/.hyperframes/
