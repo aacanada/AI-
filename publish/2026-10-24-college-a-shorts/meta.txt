@@ -1,0 +1,10 @@
+type: shorts
+title: 캐나다 자녀무상교육, 압도적으로 저렴하게 가는 방법 (몬트리올)
+channels: youtube, instagram, threads, blog, clip, homepage
+visibility: public
+publish_order: 1
+publish_after: 2026-10-24
+linked_to: (none)
+files: video.mp4 (1080x1920, 0:45, 5.7 MB), thumbnail.jpg (1080x1920 cover), upload-text.txt
+source: aacanada/AI- branch claude/sweet-galileo-z9wb1w, videos/college-card-shorts/college_a/
+notes: 단독 숏폼(몬트리올 사립컬리지 카드뉴스 A/B 영상판, 같은 주제 A·B는 하루씩 분산). ElevenLabs '일곱번째' AI 음성. 대표님 통합마케팅 승인(2026-10-24). 수치 출처는 설명란 목록. 학비는 2년 총 CAD 22,250 기준, 환율 표시 없음. 연 CAD 6,250 이커머스 과정은 마감되어 언급 금지. 블로그는 숏폼별 새 글, 홈페이지는 같은 주제 기존 글이 있으면 링크만 추가.
