@@ -5,7 +5,7 @@ visibility: public
 publish_order: 1
 publish_after: 2026-10-24
 linked_to: (none)
-files: video.mp4 = 4 parts (video.mp4.part-00 ~ -03, 24MB 단위, video.mp4.sha256 · 6:13.6, 1920x1080 30fps, 86 MB), thumbnail.jpg (1280x720), upload-text.txt
+files: video.mp4 = 9 parts (video.mp4.part-00 ~ -08, 10MB 단위, video.mp4.sha256 · 6:13.6, 1920x1080 30fps, 86 MB), thumbnail.jpg (1280x720), upload-text.txt
 voice: AI 음성 ElevenLabs "일곱번째" (vxpRrQegUpenYtez6hz1), eleven_multilingual_v2 · 유튜브 설명에 AI 음성 고지 포함
 source: aacanada/AI- branch claude/fervent-allen-gq37dp, videos/southshore-longform/ (오디오 plans/southshore-longform/audio/ss_s01~s10.mp3)
 notes: 릴스·클립 게시 금지. 블로그·홈페이지 글은 upload-text.txt 유튜브 설명 기반, Threads는 [Threads] 섹션. 숏폼 5편이 이 롱폼을 관련 동영상으로 연결.
