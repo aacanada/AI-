@@ -365,9 +365,24 @@ function decos(end) {
 }
 `;
 
-function page(P) {
-  const { k, T, S, END, scenes, anim, sfx, bgm } = P;
-  const id = `college_${k}`;
+// 4:5 feed version (1080x1350): same scenes/timing; each scene's 9:16 content band (y 130-1330:
+// brand -> footnote) is placed in a .stage scaled by STAGE.s, captions move to the frame bottom.
+const STAGE = { s: 0.92, top: 26, band: 130 };
+const CSS_4X5 = `
+html, body { height: 1350px; }
+.stage { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; transform-origin: 0 0;
+  transform: translate(${r3((1080 * (1 - STAGE.s)) / 2)}px, ${r3(STAGE.top - STAGE.band * STAGE.s)}px) scale(${STAGE.s}); }
+.cap { padding-bottom: 30px; }
+.cap-in { max-width: 990px; font-size: 46px; padding: 12px 30px 16px; }
+`;
+
+function page(P, fmt = "9x16") {
+  const { k, T, S, END, anim, sfx, bgm } = P;
+  const v45 = fmt === "4x5";
+  const H = v45 ? 1350 : 1920;
+  // wrap scene content (everything inside the full-bleed .sc background) in a .stage for 4:5
+  const scenes = v45 ? P.scenes.map((h) => h.replace(/^(<div class="sc[^>]*>)/, '$1<div class="stage">').replace(/<\/div>\s*$/, "</div></div>")) : P.scenes;
+  const id = v45 ? `college_${k}_4x5` : `college_${k}`;
   const sceneIds = scenes.map((s) => s.match(/id="([^"]+)"/)[1]);
   const secs = scenes.map((html, i) => {
     const start = S[i], stop = i + 1 < S.length ? S[i + 1] + 0.6 : END;
@@ -386,14 +401,14 @@ function page(P) {
 <html lang="ko">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=1080, height=1920" />
+<meta name="viewport" content="width=1080, height=${H}" />
 <script src="assets/kit/gsap.min.js"></script>
 <style>
-${CSS}
+${CSS}${v45 ? CSS_4X5 : ""}
 </style>
 </head>
 <body>
-<div id="root" data-composition-id="${id}" data-start="0" data-width="1080" data-height="1920" data-duration="${END}">
+<div id="root" data-composition-id="${id}" data-start="0" data-width="1080" data-height="${H}" data-duration="${END}">
 ${secs.join("\n")}
 ${capClips.join("\n")}
 <audio id="vo" src="assets/voice.m4a" data-start="0" data-duration="${T.audio}" data-track-index="10" data-volume="1"></audio>
@@ -432,4 +447,10 @@ for (const P of [buildA(), buildB()]) {
   if (!existsSync(join(dir, "hyperframes.json")))
     writeFileSync(join(dir, "hyperframes.json"), JSON.stringify({ $schema: "https://hyperframes.heygen.com/schema/hyperframes.json", paths: { blocks: "compositions", components: "compositions/components", assets: "assets" }, media: { autoProxy: true } }, null, 2) + "\n");
   console.log(`${P.title}: ${P.END}s, scenes at ${P.S.join(", ")}`);
+  // 4:5 feed project: own folder, voice copied in (gitignored assets)
+  const d45 = join(ROOT, `${P.title}_4x5`);
+  copyKit(d45, P.bgm);
+  cpSync(join(dir, "assets/voice.m4a"), join(d45, "assets/voice.m4a"));
+  writeFileSync(join(d45, "index.html"), page(P, "4x5"));
+  cpSync(join(dir, "hyperframes.json"), join(d45, "hyperframes.json"));
 }
