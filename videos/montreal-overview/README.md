@@ -13,13 +13,19 @@
 - `tools/geo.py` → `assets/geo/geo.json` (Natural Earth에서 캐나다 주 경계·몬트리올 섬 경로)
 - `tools/thumb.py` → `thumbnail/thumbnail.png` (1280×720)
 - 최종 믹스: 렌더러가 +2.9dB를 더해 -13.3 LUFS로 나와서, 렌더 후 오디오만 -2.9dB 조정(영상 스트림 복사) → -16.2 LUFS, TP -3.9.
-- 오디오: `assets/audio/narration.m4a` = mtl_clean.flac에 highpass 70Hz + afftdn(nr 8) + loudnorm I=-16 (측정 -16.3 LUFS, TP -1.3). 말 속도 변경 없음. BGM은 버논 롱폼 bgm-a/b, 내레이션보다 약 22dB 낮게(×0.08), 엔드카드에서 살짝 올림.
+- 오디오: `assets/audio/narration.m4a` = mtl_clean.flac에 highpass 70Hz + afftdn(nr 8) + loudnorm I=-16 (v2 편집본 294.98초, 측정 -16.3 LUFS). 말 속도 변경 없음. BGM은 버논 롱폼 bgm-a/b, 내레이션보다 약 22dB 낮게(×0.08), 엔드카드에서 살짝 올림.
 
 ```bash
 python3 -I tools/build.py      # 재생성 (FONT_SRC=<BlackHanSans.ttf, NotoSansKR.ttf 있는 폴더>)
 npx hyperframes check
 npx hyperframes render -o renders/video.mp4
 ```
+
+## 원장님 제공 이미지
+`plans/montreal-overview/assets/owner/` → `python3 -I tools/owner_img.py` → `assets/img/owner/` (팝업용 조각 + rects.json).
+지역 장면은 원장님 지도로 교체 완료. 아래는 처음 교체 절차(참고용).
+## v2 오디오
+편집본 v2에서 283.00~286.45초(3.45초)를 잘라냄. 장면 큐는 v1 시각으로 적혀 있고 `A()`(JS)와 `V()`(build.py)가 283초 이후를 3.45초 앞당긴다. 자막은 v2 TRANSCRIPT를 그대로 쓴다.
 
 ## 지역 장면 교체 (원장님 A~D 지도가 오면)
 지금 지역 장면은 실제 지형(몬트리올 섬 윤곽, 다운타운 위치)만 그리고, A·B·C·D는 지도 위에 놓지 않은 카드로만 보여 준다.

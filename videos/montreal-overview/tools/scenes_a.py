@@ -145,7 +145,9 @@ scene("s05", 28.5, 40.75, "캐나다 2위 대도시", "CANADA", f"""
 <div class="abs" id="s05-badge" style="left:1180px;top:200px;width:640px">
  <div class="kick">CANADA</div>
  <div class="bhs" style="font-size:150px;line-height:1"><span class="red num" id="s05-n">2</span>위</div>
- <div class="h3">캐나다 대도시</div></div>
+ <div class="h3">캐나다 대도시</div>
+ <div class="body" style="margin-top:14px;font-size:34px;color:{SUB}">도시권 인구 약 460만 명</div>
+ <div class="small" style="font-size:28px;font-weight:500">통계청 2025.7.1 추정(CMA)</div></div>
 <div class="abs kick" id="s05-k2" style="left:1180px;top:150px">대도시라서 좋은 점</div>
 {ibox(1, 'school', '교육 수준', 220)}{ibox(2, 'bag', '생활 편의성', 410)}{ibox(3, 'music', '문화 환경', 600)}
 """, """
@@ -232,71 +234,103 @@ tl.fromTo("#s07-pop", { y: 260, opacity: 0, scale: 0.6 }, { y: 0, opacity: 1, sc
 pulse("#s07-pop", 63.9, { s: 1.08 });
 """, glow=(1400, 400))
 
-# ---------------------------------------------------------------- 08 pillars
+# ---------------------------------------------------------------- 08 population chart (director's image) -> pillars
 def pillar(i, ic, t, x):
     return f"""<div class="abs" id="s08-p{i}" style="left:{x}px;top:470px;width:380px;height:400px;transform-origin:50% 100%">
  <div class="ctr" style="width:380px;height:400px;background:#FFFFFF;border:5px solid {INK};border-radius:24px 24px 0 0;flex-direction:column;gap:20px">{I(ic, 110, RED, 4)}<div class="bhs" style="font-size:56px">{t}</div></div></div>"""
 
 
+PW8, PH8 = 1300, 720
 scene("s08", 64.8, 76.0, "캐나다 2위 대도시", "NO.2", f"""
-<div class="abs ctr" id="s08-big" style="left:0;top:150px;width:1920px;flex-direction:column">
- <div class="kick">캐나다에서 두 번째로 큰 대도시</div>
- <div class="bhs" style="font-size:300px;line-height:1"><span class="red">No.</span><span id="s08-n">2</span></div></div>
+<div class="abs" id="s08-chart" style="left:0;top:0;width:1920px;height:1080px;transform-origin:700px 470px">
+ <div class="win" id="s08-win" style="left:90px;top:110px;width:{PW8}px;height:{PH8}px">
+  <div class="pic" id="s08-pic" style="width:1081px;height:608px">
+   <img src="assets/img/owner/city-population.png" style="left:0;top:0;width:1081px;height:608px" alt="캐나다 주요 도시별 인구">
+   <div class="abs" id="s08-dimA" style="left:280px;top:36px;width:801px;height:36px;background-color:rgba(255,255,255,0.62)"></div>
+   <div class="abs" id="s08-dimB" style="left:280px;top:108px;width:801px;height:500px;background-color:rgba(255,255,255,0.62)"></div>
+   <div class="hl" id="s08-hl" style="left:294px;top:70px;width:604px;height:40px"></div>
+   <div class="abs" id="s08-b2" style="left:902px;top:70px"><span class="chip" style="font-size:22px;padding:4px 14px">2위</span></div>
+  </div></div>
+ <div class="abs" id="s08-pan" style="left:1440px;top:150px;width:440px">
+  <div class="kick" style="font-size:30px">몬트리올 도시권 인구</div>
+  <div class="num red" id="s08-n" style="font-size:104px;line-height:1.05;margin-top:12px">0</div>
+  <div class="bhs" style="font-size:44px">천 명 · <span class="red">캐나다 2위</span></div>
+  <div style="margin-top:22px"><span class="chip d" id="s08-c" style="font-size:34px">약 460만 명</span></div>
+  <div class="small" id="s08-src" style="margin-top:40px;font-size:28px;font-weight:500">출처: 캐나다 통계청 Table 17-10-0148-01, 2025년 7월 1일 인구 추정(도시권 CMA)</div>
+ </div>
+</div>
+<div class="abs ctr" id="s08-top" style="left:0;top:130px;width:1920px;flex-direction:column"><div class="kick">캐나다 2위 대도시라서</div><div class="h2">갖춘 것들</div></div>
 <div class="abs" id="s08-roof" style="left:300px;top:330px;width:1320px;height:140px;background:{RED};clip-path:polygon(4% 100%,96% 100%,100% 70%,50% 0,0 70%)"></div>
 <div class="abs ctr bhs" id="s08-rt" style="left:300px;top:380px;width:1320px;font-size:64px;color:#FFFFFF">최고의 조건</div>
 {pillar(1, 'school', '교육 환경', 330)}{pillar(2, 'music', '문화 환경', 770)}{pillar(3, 'bag', '생활 편의성', 1210)}
 <div class="abs" id="s08-sp" style="left:960px;top:400px">{''.join(f'<i class="sp" style="position:absolute;width:18px;height:18px;background:{RED if i % 2 else HI};transform:rotate(45deg)"></i>' for i in range(14))}</div>
-""", """
-slam("#s08-big", 65.1, { from: 2.4 });
-count("#s08-n", 65.3, 1.0, 9, 2, (v) => String(Math.round(v)));
-tl.to("#s08-big .kick", { opacity: 0, duration: 0.3 }, A(68.3));
-tl.to("#s08-big", { scale: 0.42, y: -170, duration: 0.7, ease: "power3.inOut" }, A(68.3));
+""", f"""
+setView("#s08-pic", 64.8, 1.184, 540.5, 304, {PW8}, {PH8});
+tl.fromTo("#s08-win", {{ scale: 0.85, opacity: 0, rotation: -2 }}, {{ scale: 1, opacity: 1, rotation: 0, duration: 0.6, ease: "back.out(1.6)" }}, A(64.9));
+fade("#s08-dimA, #s08-dimB", 66.0, {{ d: 0.4 }});
+view("#s08-pic", 65.9, 1.0, 1.75, 690, 150, {PW8}, {PH8});
+tl.fromTo("#s08-hl", {{ scaleX: 0, transformOrigin: "0 50%" }}, {{ scaleX: 1, duration: 0.5, ease: "power3.out" }}, A(66.2));
+pop("#s08-b2", 66.7, {{ from: 0 }});
+slide("#s08-pan", 65.6, 300);
+count("#s08-n", 65.9, 1.6, 0, 4597.84, (v) => v.toLocaleString("en-US", {{ minimumFractionDigits: 2, maximumFractionDigits: 2 }}));
+pop("#s08-c", 67.3, {{ y: 20 }});
+pulse("#s08-hl", 67.6, {{ s: 1.03 }});
+tl.to("#s08-chart", {{ opacity: 0, scale: 0.9, duration: 0.45, ease: "power2.in" }}, A(68.3));
+rise("#s08-top", 68.7, {{ y: 40 }});
 growY("#s08-p1", 70.0); draw("#s08-p1 .ic", 70.3, 0.7);
 growY("#s08-p2", 70.8); draw("#s08-p2 .ic", 71.1, 0.7);
 growY("#s08-p3", 71.8); draw("#s08-p3 .ic", 72.1, 0.7);
-tl.fromTo("#s08-roof", { y: -400, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "bounce.out" }, A(73.0));
-tl.fromTo("#s08-rt", { y: -400, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "bounce.out" }, A(73.05));
+tl.to("#s08-top", {{ opacity: 0, duration: 0.3 }}, A(72.8));
+tl.fromTo("#s08-roof", {{ y: -400, opacity: 0 }}, {{ y: 0, opacity: 1, duration: 0.6, ease: "bounce.out" }}, A(73.0));
+tl.fromTo("#s08-rt", {{ y: -400, opacity: 0 }}, {{ y: 0, opacity: 1, duration: 0.6, ease: "bounce.out" }}, A(73.05));
 burst("#s08-sp .sp", 73.6);
-cam("#s08 .stage", 73.8, 2.2, { scale: 1.04 }, "sine.inOut");
+cam("#s08 .stage", 73.8, 2.2, {{ scale: 1.04 }}, "sine.inOut");
 """, glow=(660, -100))
 
-# ---------------------------------------------------------------- 09 rent chart (StatCan, real data)
-RENT = [("밴쿠버", 3030), ("토론토", 2650), ("빅토리아", 2640), ("핼리팩스", 2400), ("캘거리", 1890), ("몬트리올", 1820)]
-AVG = 2130
-PX = 0.36  # px per dollar
-X0 = 470
-rows = ""
-for i, (c, v) in enumerate(RENT):
-    m = c == "몬트리올"
-    y = 300 + i * 92
-    rows += (f'<div class="abs bhs" style="left:150px;top:{y}px;width:290px;text-align:right;font-size:50px;line-height:70px;color:{RED if m else INK}">{c}</div>'
-             f'<div class="abs bar" id="s09-b{i}" style="left:{X0}px;top:{y + 6}px;width:{v * PX:.0f}px;height:58px;border-radius:0 14px 14px 0;transform-origin:0 50%;background:{RED if m else MUTE}"></div>'
-             f'<div class="abs num" id="s09-v{i}" style="left:{X0 + v * PX + 20:.0f}px;top:{y}px;font-size:{60 if m else 46}px;line-height:70px;color:{RED if m else INK}">$0</div>')
+# ---------------------------------------------------------------- 09 rent: StatCan infographic (director's image)
+RR = json.load(open(os.path.join(ROOT, "assets/img/owner/rects.json")))["rent"]
+PW9, PH9 = 1060, 770
+sprites = "".join(f'<img class="rs" id="s09-{k}" src="assets/img/owner/rent-{k}.png" style="left:{x0}px;top:{y0}px;width:{x1 - x0}px;height:{y1 - y0}px" alt="">'
+                  for k, (x0, y0, x1, y1) in RR.items())
 scene("s09", 76.0, 91.0, "렌트비 비교", "RENT", f"""
-<div class="abs" id="s09-hd" style="left:110px;top:110px"><div class="kick" id="s09-k">캐나다 통계청 · 2026년 2분기</div>
- <div class="h3" id="s09-h" style="margin-top:6px">방 2개 아파트 평균 월세 <span style="font-size:40px;color:{SUB}">(호가, CAD)</span></div></div>
-<div class="abs" id="s09-ch" style="left:0;top:0;width:1920px;height:1080px;transform-origin:700px 800px">
-{rows}
-<div class="abs" id="s09-avg" style="left:{X0 + AVG * PX:.0f}px;top:282px;width:0;height:570px;border-left:5px dashed {SUB};transform-origin:0 0"></div>
-<div class="abs" id="s09-avl" style="left:{X0 + AVG * PX - 140:.0f}px;top:238px"><span class="chip o" style="font-size:26px;padding:6px 18px;border-color:{SUB};color:{SUB}">전국 평균 $2,130</span></div>
+<div class="win" id="s09-win" style="left:90px;top:100px;width:{PW9}px;height:{PH9}px;background-color:#F2F2F2">
+ <div class="pic" id="s09-pic" style="width:1054px;height:1349px">
+  <img src="assets/img/owner/rent-base.jpg" style="left:0;top:0;width:1054px;height:1349px" alt="캐나다 통계청 인포그래픽: 방 2개 아파트 평균 호가 월세">
+  {sprites}
+  <div class="hl" id="s09-ring" style="left:568px;top:748px;width:162px;height:68px;border-width:6px;border-radius:10px"></div>
+ </div></div>
+<div class="abs" id="s09-pan" style="left:1210px;top:120px;width:660px">
+ <div class="kick" id="s09-k">캐나다 통계청 · 2026년 2분기</div>
+ <div class="h3" id="s09-h" style="margin-top:8px;font-size:56px">방 2개 아파트<br>평균 호가 월세</div>
+ <div id="s09-big" style="margin-top:34px"><div class="bhs" style="font-size:50px">몬트리올</div><div class="num red" id="s09-n" style="font-size:150px;line-height:1">$0</div></div>
+ <div id="s09-call" style="margin-top:26px;transform:rotate(-2deg);transform-origin:0 50%"><div class="card" style="position:relative;display:inline-block;padding:14px 28px;border-color:{RED}"><div class="body" style="font-size:30px;color:{SUB}">캘거리·핼리팩스보다 낮은 월세</div><div class="bhs red" style="font-size:60px"><span class="mkw"><span class="mk" id="s09-mk"></span>중소도시 수준</span></div></div></div>
 </div>
-<div class="abs" id="s09-call" style="left:1420px;top:705px;transform:rotate(-3deg)"><div class="card" style="position:relative;padding:14px 28px;border-color:{RED}"><div class="body" style="font-size:28px;color:{SUB}">캘거리·핼리팩스보다 낮은 월세</div><div class="bhs red" style="font-size:58px"><span class="mkw"><span class="mk" id="s09-mk"></span>중소도시 수준</span></div></div></div>
-<div class="foot" id="s09-src">출처: 캐나다 통계청 Table 46-10-0092-01, 2026년 2분기 (2026.09.09 발표)</div>
+<div class="abs small" id="s09-src" style="left:1210px;top:790px;width:660px;font-size:28px;font-weight:500">출처: 캐나다 통계청 Table 46-10-0092-01, 2026년 2분기 (2026.09.09 발표)</div>
 """, f"""
+setView("#s09-pic", 76.0, 0.571, 527, 674.5, {PW9}, {PH9});
+tl.fromTo("#s09-win", {{ y: 120, opacity: 0, rotation: 2 }}, {{ y: 0, opacity: 1, rotation: 0, duration: 0.7, ease: "back.out(1.5)" }}, A(76.1));
+tl.set("#s09 .rs, #s09-ring", {{ opacity: 0 }}, A(76.0));
 slam("#s09-k", 76.8, {{ from: 1.6 }});
-rise("#s09-h", 77.6, {{ y: 30 }});
-fade("#s09-src", 78.6);
-const RV = {json.dumps([v for _, v in RENT])};
-const BT = [79.6, 80.9, 81.4, 81.8, 82.2, 84.6];
-BT.forEach((t, i) => {{ grow("#s09-b" + i, t, {{ d: i === 5 ? 1.0 : 0.8 }}); count("#s09-v" + i, t, i === 5 ? 1.0 : 0.8, 0, RV[i], (v) => "$" + Math.round(v).toLocaleString("en-US")); fade("#s09-v" + i, t, {{ d: 0.2 }}); }});
-pulse("#s09-b0, #s09-b1", 82.8, {{ s: 1.04, st: 0.15 }});
-pulse("#s09-v5", 85.7, {{ s: 1.25 }});
-tl.fromTo("#s09-avg", {{ scaleY: 0 }}, {{ scaleY: 1, duration: 0.7, ease: "power2.out" }}, A(86.1));
-pop("#s09-avl", 86.5, {{ y: 20 }});
-cam("#s09-ch", 87.6, 1.4, {{ scale: 1.08, y: -40 }}, "power2.inOut");
-slam("#s09-call", 88.3, {{ from: 2, rot: 6, to: -3 }});
-mark("#s09-mk", 89.0);
-""", glow=(1300, 500))
+rise("#s09-h", 77.4, {{ y: 30 }});
+fade("#s09-src", 78.2);
+view("#s09-pic", 78.6, 1.1, 1.08, 520, 790, {PW9}, {PH9});
+const POP = [["van", 79.6], ["tor", 80.9], ["hal", 81.5], ["ott", 81.9], ["cal", 82.3], ["edm", 82.7]];
+POP.forEach(([k, t], i) => tl.fromTo("#s09-" + k, {{ opacity: 0, scale: 0.4, y: -30, transformOrigin: "50% 30%" }}, {{ opacity: 1, scale: 1, y: 0, duration: 0.5, ease: "back.out(2.2)" }}, A(t)));
+pulse("#s09-van, #s09-tor", 83.1, {{ s: 1.12, st: 0.18 }});
+view("#s09-pic", 84.2, 1.0, 1.9, 690, 820, {PW9}, {PH9});
+tl.to("#s09-van, #s09-tor, #s09-hal, #s09-ott, #s09-cal, #s09-edm", {{ opacity: 0.35, duration: 0.4 }}, A(84.3));
+tl.fromTo("#s09-mtl", {{ opacity: 0, scale: 2.4, transformOrigin: "50% 25%" }}, {{ opacity: 1, scale: 1, duration: 0.55, ease: "expo.out" }}, A(84.7));
+tl.fromTo("#s09-ring", {{ opacity: 0, scale: 1.5, transformOrigin: "50% 50%" }}, {{ opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }}, A(85.2));
+fade("#s09-big", 84.8, {{ d: 0.2 }});
+count("#s09-n", 84.8, 1.2, 0, 1820, (v) => "$" + Math.round(v).toLocaleString("en-US"));
+pulse("#s09-n", 86.2, {{ s: 1.12 }});
+pulse("#s09-ring", 86.6, {{ s: 1.08 }});
+view("#s09-pic", 87.8, 1.0, 1.15, 520, 800, {PW9}, {PH9});
+tl.to("#s09-van, #s09-tor, #s09-hal, #s09-ott, #s09-cal, #s09-edm", {{ opacity: 1, duration: 0.4 }}, A(87.9));
+slam("#s09-call", 88.2, {{ from: 2, rot: 6, to: -2 }});
+mark("#s09-mk", 88.9);
+pulse("#s09-ring", 89.6, {{ s: 1.1 }});
+""", glow=(1500, 500))
 
 # ---------------------------------------------------------------- 10 language + math
 def kbox(i, t, x, col):
@@ -318,36 +352,39 @@ flipIn("#s10-l", 94.1); pop("#s10-plus", 94.7); flipIn("#s10-m", 94.95);
 pop("#s10-imp", 95.5, { y: 30 });
 """, glow=(700, 100))
 
-# ---------------------------------------------------------------- 11 PCAP schematic (no per-province numbers)
-def pchip(t, cls=""):
-    return f'<span class="chip {cls} pc" style="font-size:30px;padding:8px 22px">{t}</span>'
-
-
-below = "".join(pchip(t, "o") for t in ["BC", "SK", "MB", "NB", "NS", "PE", "NL"])
+# ---------------------------------------------------------------- 11 PCAP 2023 (director's image)
+PW11, PH11 = 1300, 760
 scene("s11", 96.6, 101.4, "교육 환경", "PCAP", f"""
-<div class="abs" style="left:110px;top:110px"><div class="kick" id="s11-k">CMEC PCAP 2023 · 중2(Secondary II) 수학</div>
- <div class="h3" id="s11-h" style="margin-top:6px">10개 주 중 <span class="red">퀘벡만</span> 캐나다 평균보다 높음</div></div>
-<div class="abs" id="s11-axis" style="left:150px;top:520px;width:1620px;height:10px;background:{INK};border-radius:5px;transform-origin:0 50%"></div>
-<div class="abs" id="s11-avg" style="left:955px;top:330px;width:10px;height:400px;background:{SUB};transform-origin:50% 100%"></div>
-<div class="abs ctr" id="s11-avl" style="left:810px;top:270px;width:300px"><span class="chip d" style="font-size:28px;padding:8px 20px">캐나다 평균 510점</span></div>
-<div class="abs body" id="s11-z1" style="left:220px;top:560px;color:{SUB}">평균 아래</div>
-<div class="abs" id="s11-b" style="left:180px;top:620px;width:600px;display:flex;flex-wrap:wrap;gap:12px">{below}</div>
-<div class="abs body" id="s11-z2" style="left:870px;top:560px;width:180px;text-align:center;color:{SUB}">평균 수준</div>
-<div class="abs" id="s11-m" style="left:860px;top:620px;width:200px;display:flex;flex-direction:column;align-items:center;gap:12px">{pchip('앨버타', 'd')}{pchip('온타리오', 'd')}</div>
-<div class="abs body" id="s11-z3" style="left:1380px;top:560px;color:{RED}">평균 이상</div>
-<div class="abs ctr" id="s11-q" style="left:1220px;top:340px;width:500px;height:150px;border-radius:30px;background:{RED};flex-direction:column"><div class="bhs" style="font-size:84px;color:#FFFFFF">퀘벡</div></div>
-<div class="foot" id="s11-src">출처: CMEC, PCAP 2023 공개 보고서 (주별 결과 요약)</div>
-""", """
-rise("#s11-k, #s11-h", 96.7, { st: 0.12, y: 30 });
-grow("#s11-axis", 96.9, { d: 0.6 });
-growY("#s11-avg", 97.2, { d: 0.5, ease: "power3.out" }); pop("#s11-avl", 97.4, { y: 20 });
-fade("#s11-z1, #s11-z2, #s11-z3", 97.6, { st: 0.1 });
-pop("#s11-b .pc", 97.9, { st: 0.07, y: 40 });
-pop("#s11-m .pc", 98.4, { st: 0.1, y: 40 });
-slam("#s11-q", 99.1, { from: 2.5 });
-tl.fromTo("#s11-q", { y: 0 }, { y: -30, duration: 0.6, ease: "power2.out", immediateRender: false }, A(99.6));
-fade("#s11-src", 97.0);
-""", glow=(1450, 100))
+<div class="win" id="s11-win" style="left:90px;top:100px;width:{PW11}px;height:{PH11}px;background-color:#F2EFEA">
+ <div class="pic" id="s11-pic" style="width:874px;height:491px">
+  <img src="assets/img/owner/pcap2023-math.png" style="left:0;top:0;width:874px;height:491px" alt="PCAP 2023 수학 평균 점수">
+  <div class="abs" id="s11-line" style="left:372px;top:352px;width:466px;height:0;border-top:2px dashed #C8102E;transform-origin:0 50%"></div>
+  <div class="hl" id="s11-qc" style="left:596px;top:298px;width:42px;height:176px;border-width:3px;border-radius:6px"></div>
+  <div class="hl" id="s11-can" style="left:788px;top:328px;width:44px;height:146px;border-width:3px;border-radius:6px;border-color:#2B2B2B"></div>
+ </div></div>
+<div class="abs" id="s11-pan" style="left:1440px;top:130px;width:440px">
+ <div class="kick" style="font-size:30px">CMEC PCAP 2023</div>
+ <div class="body" style="font-size:34px;margin-top:6px">중2(Secondary II) 수학 평균</div>
+ <div id="s11-q" style="margin-top:26px"><div class="bhs" style="font-size:50px">퀘벡</div><div class="num red" id="s11-qn" style="font-size:150px;line-height:1">0</div></div>
+ <div id="s11-c" style="margin-top:14px"><div class="bhs" style="font-size:40px">캐나다 평균 <span class="num" id="s11-cn">0</span></div></div>
+ <div style="margin-top:22px"><span class="chip" id="s11-top" style="font-size:34px">10개 주 중 최고</span></div>
+</div>
+<div class="abs small" id="s11-src" style="left:1440px;top:800px;width:440px;font-size:28px;font-weight:500">출처: CMEC PCAP 2023</div>
+""", f"""
+setView("#s11-pic", 96.6, 1.487, 437, 245.5, {PW11}, {PH11});
+tl.fromTo("#s11-win", {{ scale: 0.88, opacity: 0 }}, {{ scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.6)" }}, A(96.65));
+view("#s11-pic", 97.0, 0.9, 2.6, 605, 360, {PW11}, {PH11});
+slide("#s11-pan", 97.1, 300);
+fade("#s11-src", 97.4);
+fade("#s11-c", 97.8, {{ d: 0.2 }});
+count("#s11-cn", 97.8, 0.8, 400, 510, (v) => String(Math.round(v)) + "점");
+grow("#s11-line", 97.9, {{ d: 0.6, ease: "power2.out" }});
+tl.fromTo("#s11-can", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.3 }}, A(98.0));
+tl.fromTo("#s11-qc", {{ opacity: 0, scale: 1.4, transformOrigin: "50% 50%" }}, {{ opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }}, A(99.1));
+count("#s11-qn", 99.1, 1.0, 400, 537, (v) => String(Math.round(v)) + "점");
+pop("#s11-top", 99.9, {{ y: 20 }});
+pulse("#s11-qc", 100.5, {{ s: 1.08 }});
+""", glow=(1600, 100))
 
 # ---------------------------------------------------------------- 12 bilingual
 scene("s12", 101.4, 109.0, "교육 환경", "BONJOUR", f"""

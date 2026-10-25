@@ -257,7 +257,7 @@ scene("s24", 225.3, 247.6, "AA Canada", "AA CANADA", f"""
  <div class="kick" id="s24-k">AA Canada 이야기</div>
  <div class="card row" id="s24-e1" style="position:relative;margin-top:22px;height:150px;gap:24px;padding:0 34px">{I('school', 84, INK, 4)}<div><div class="body" style="font-size:30px;color:{SUB}">핼리팩스</div><div class="bhs" style="font-size:54px">고등학교 졸업</div></div></div>
  <div class="card row" id="s24-e2" style="position:relative;margin-top:26px;height:150px;gap:24px;padding:0 34px;border-color:{RED}">{I('pin', 84, RED, 4)}<div><div class="body" style="font-size:30px;color:{SUB}">몬트리올</div><div class="bhs" style="font-size:54px">대학 · 직장생활</div></div></div>
- <div class="row" id="s24-e3" style="margin-top:30px;gap:18px"><div class="ctr bhs" style="width:110px;height:110px;border-radius:50%;background:{RED};color:#FFFFFF;font-size:64px">E</div><div><div class="bhs" style="font-size:52px">엘리</div><div class="body" style="font-size:32px;color:{SUB}">한명효 원장</div></div></div>
+ <div class="row" id="s24-e3" style="margin-top:30px;gap:18px"><span class="chip d" style="font-size:44px">제 배우자의 이력</span></div>
 </div>
 <div class="abs ctr" id="s24-big" style="left:0;top:230px;width:1920px;flex-direction:column">
  <div class="row" style="gap:26px"><span class="chip d" id="s24-only" style="font-size:46px">캐나다 유학만</span></div>
@@ -275,7 +275,7 @@ pop("#s24-m", 228.9, {{ from: 0 }});
 rise("#s24-k", 225.5, {{ y: 30 }});
 slide("#s24-e1", 226.0, 500);
 slide("#s24-e2", 228.4, 500);
-pop("#s24-e3", 230.7, {{ y: 40 }});
+pop("#s24-e3", 230.8, {{ y: 40 }});
 pulse("#s24-e3", 232.1, {{ s: 1.06 }});
 tl.to("#s24-mapw, #s24-tl", {{ opacity: 0, scale: 0.9, duration: 0.5, ease: "power2.in" }}, A(235.4));
 slam("#s24-only", 236.0, {{ from: 2 }});
@@ -338,7 +338,7 @@ stamps = "".join(f'<div class="abs ctr stamp" id="s26-s{i}" style="left:{140 + i
 scene("s26", 262.0, 292.6, "진행 절차", "ÉTAPES", f"""
 <div class="abs" style="left:110px;top:120px"><div class="kick" id="s26-k">진행 절차</div><div class="h3" id="s26-h" style="margin-top:6px">입학부터 출국까지 <span class="red">5단계</span></div></div>
 <div class="abs" id="s26-w" style="left:0;top:0;width:2800px;height:1080px;transform-origin:0 0">{cards}{stamps}</div>
-<div class="abs" id="s26-note" style="left:300px;top:790px;width:1320px">
+<div class="abs" id="s26-note" style="left:300px;top:650px;width:1320px">
  <div class="row" style="gap:22px">{I('clock', 76, RED, 4)}<div class="bhs" style="font-size:46px">전체 기간은 <span class="red">프로그램·심사 상황</span>에 따라 달라져요</div></div>
  <div style="margin-top:20px;margin-left:98px;width:900px;height:26px;border-radius:13px;background:{HI};position:relative;overflow:hidden"><div id="s26-flex" style="position:absolute;left:0;top:0;width:60%;height:100%;background:{RED};border-radius:13px;transform-origin:0 50%"></div></div></div>
 """, """
@@ -355,9 +355,9 @@ $$("#s26 .con").forEach((c, i) => tl.fromTo(c, { scaleX: 0 }, { scaleX: 1, durat
 slam("#s26-s2", 271.9, { from: 2.6, rot: 30, to: 8 });
 slam("#s26-s3", 275.6, { from: 2.6, rot: 30, to: 8 });
 pulse("#s26-c4", 281.3, { s: 1.06 });
-tl.to("#s26-w", { x: 40, y: -40, scale: 0.72, duration: 1.0, ease: "power3.inOut" }, A(282.6));
-tl.to("#s26 .stp", { scale: 1, duration: 0.6 }, A(282.6));
-rise("#s26-note", 283.4, { y: 60 });
+tl.to("#s26-w", { x: 60, y: 60, scale: 0.66, duration: 1.0, ease: "power3.inOut" }, A(286.1));
+tl.to("#s26 .stp", { scale: 1, duration: 0.6 }, A(286.1));
+rise("#s26-note", 287.0, { y: 60 });
 tl.fromTo("#s26-flex", { scaleX: 1 }, { scaleX: 1.55, duration: 0.8, ease: "sine.inOut" }, A(289.4));
 tl.to("#s26-flex", { scaleX: 0.6, duration: 0.8, ease: "sine.inOut" }, A(290.6));
 tl.to("#s26-flex", { scaleX: 1, duration: 0.6, ease: "sine.inOut" }, A(291.5));

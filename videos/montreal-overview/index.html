@@ -42,6 +42,11 @@ html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; backgro
 .mk { position: absolute; left: -3%; width: 106%; bottom: 4%; height: 42%; background: #FFD6CF; z-index: -1; transform-origin: 0 50%; border-radius: 8px; }
 .ring { position: absolute; border: 5px solid #C8102E; border-radius: 50%; }
 .icon { display: block; overflow: visible; }
+.win { position: absolute; overflow: hidden; border: 6px solid #C8102E; border-radius: 28px; background-color: #FFFFFF; box-shadow: 14px 14px 0 #FFD6CF; }
+.pic { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+.pic img { position: absolute; display: block; }
+.hl { position: absolute; border: 4px solid #C8102E; border-radius: 8px; }
+.bdg { position: absolute; width: 64px; height: 64px; margin: -32px 0 0 -32px; border-radius: 50%; background-color: #C8102E; border: 4px solid #FFFFFF; color: #FFFFFF; font-family: "Black Han Sans"; font-size: 42px; line-height: 56px; text-align: center; box-shadow: 0 0 0 3px #C8102E; }
 .num { font-family: "Black Han Sans"; font-variant-numeric: tabular-nums; }
 .row { display: flex; align-items: center; }
 .ctr { display: flex; align-items: center; justify-content: center; text-align: center; }
@@ -58,7 +63,7 @@ html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; backgro
 </style>
 </head>
 <body>
-<div id="root" data-composition-id="main" data-start="0" data-duration="304.5" data-width="1920" data-height="1080">
+<div id="root" data-composition-id="main" data-start="0" data-duration="301.05" data-width="1920" data-height="1080">
 <div class="basefill"></div>
 <div id="s01" class="scene"><div class="bgl" id="s01-bg"><svg class="dots" width="2040" height="1200" aria-hidden="true"><defs><pattern id="s01-dp" width="46" height="46" patternUnits="userSpaceOnUse"><circle cx="23" cy="23" r="2.6" fill="#EBD5CB"/></pattern></defs><rect width="2040" height="1200" fill="url(#s01-dp)"/></svg><div class="glow" style="left:650px;top:-800px"></div><div class="ghost" aria-hidden="true" data-layout-ignore style="left:-40px;top:640px">MONTRÉAL</div><svg class="leaf bgleaf" style="left:1500px;top:620px" viewBox="0 0 100 100" width="360" height="360"><path d="M50 2 L57 16 L64 12 L61 36 L74 23 L77 30 L91 27 L86 42 L94 46 L74 61 L77 69 L54 65 L53 86 L52 98 L48 98 L47 86 L46 65 L23 69 L26 61 L6 46 L14 42 L9 27 L23 30 L26 23 L39 36 L36 12 L43 16 L50 2 Z" fill="none" stroke="#F2D2C9" stroke-width="3" stroke-linejoin="round"/></svg></div><div class="stage">
 <div class="abs" id="s01-sky" style="left:0;top:600px;width:1920px;height:560px"><svg class="skyline" viewBox="0 0 1920 560" width="1920" height="560"><g class="sk-back"><path class="sky-back" d="M-20 560 L-20 330 C220 300 360 120 640 110 C900 100 1040 260 1240 300 C1460 340 1700 300 1940 320 L1940 560 Z" fill="#F7DCD5"/><path d="M620 112 V40 M600 62 H640" stroke="#E9B8AE" stroke-width="8" stroke-linecap="round"/></g><g class="sk-mid"><rect x="40" y="260" width="70" height="300" fill="#EFC2B9"/><rect x="130" y="310" width="107" height="250" fill="#EFC2B9"/><rect x="200" y="230" width="104" height="330" fill="#EFC2B9"/><rect x="290" y="350" width="101" height="210" fill="#EFC2B9"/><rect x="380" y="280" width="98" height="280" fill="#EFC2B9"/><rect x="470" y="370" width="95" height="190" fill="#EFC2B9"/><rect x="560" y="260" width="92" height="300" fill="#EFC2B9"/><rect x="1300" y="300" width="89" height="260" fill="#EFC2B9"/><rect x="1390" y="340" width="86" height="220" fill="#EFC2B9"/><rect x="1490" y="260" width="83" height="300" fill="#EFC2B9"/><rect x="1580" y="320" width="80" height="240" fill="#EFC2B9"/><rect x="1680" y="250" width="77" height="310" fill="#EFC2B9"/><rect x="1780" y="290" width="74" height="270" fill="#EFC2B9"/><path d="M1600 560 L1640 560 L1720 250 L1700 244 Z" fill="#E8AFA5"/><path d="M1540 560 Q1640 470 1760 560 Z" fill="#E8AFA5"/></g><g class="sk-front"><rect x="560" y="330" width="70" height="230" fill="#C8102E"/><rect x="640" y="230" width="90" height="330" fill="#C8102E"/><rect x="740" y="300" width="60" height="260" fill="#C8102E"/><rect x="812" y="140" width="110" height="420" fill="#C8102E"/><rect x="827" y="118" width="80" height="24" fill="#C8102E"/><rect x="935" y="200" width="80" height="360" fill="#C8102E"/><rect x="1028" y="90" width="70" height="470" fill="#C8102E"/><path d="M1028 90 L1063.0 20 L1098 90 Z" fill="#C8102E"/><rect x="1110" y="260" width="90" height="300" fill="#C8102E"/><rect x="1212" y="180" width="70" height="380" fill="#C8102E"/><path d="M1212 180 L1222 150 L1272 150 L1282 180 Z" fill="#C8102E"/><rect x="1295" y="310" width="100" height="250" fill="#C8102E"/><rect x="1405" y="360" width="60" height="200" fill="#C8102E"/><rect x="460" y="380" width="90" height="180" fill="#C8102E"/><rect x="1475" y="410" width="80" height="150" fill="#C8102E"/><rect class="win" x="572" y="354" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="598" y="354" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="598" y="400" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="652" y="300" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="652" y="346" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="678" y="346" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="678" y="392" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="752" y="324" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="752" y="370" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="752" y="416" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="752" y="462" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="824" y="164" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="850" y="210" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="876" y="210" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="824" y="302" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="850" y="302" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="876" y="348" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="824" y="394" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="850" y="440" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="876" y="440" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="947" y="270" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="947" y="316" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="973" y="316" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="973" y="362" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="1040" y="114" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="1066" y="114" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="1066" y="160" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="1040" y="298" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="1040" y="344" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="1066" y="344" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="1066" y="390" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="1122" y="330" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="1122" y="376" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="1148" y="376" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="1148" y="422" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="1224" y="250" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="1224" y="296" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="1250" y="296" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="1250" y="342" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="1224" y="480" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="1359" y="334" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="1307" y="380" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="1333" y="426" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="1359" y="426" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="1417" y="384" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="1417" y="430" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="1417" y="476" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="472" y="496" width="12" height="20" rx="2" fill="#FFD6CF"/><rect class="win" x="1487" y="480" width="12" height="20" rx="2" fill="#FFD6CF"/></g><g class="sk-bridge"><path class="bridge" d="M1180 470 L1920 430" stroke="#7A1B26" stroke-width="10" fill="none"/><path class="bridge" d="M1300 466 Q1420 360 1540 455" stroke="#7A1B26" stroke-width="7" fill="none"/><path class="bridge" d="M1560 452 Q1680 350 1800 440" stroke="#7A1B26" stroke-width="7" fill="none"/><path class="bridge" d="M1330 440 L1360 410 L1390 448 L1420 392 L1450 446 L1480 400 L1510 452 M1590 425 L1620 395 L1650 435 L1680 380 L1710 432 L1740 392 L1770 438" stroke="#7A1B26" stroke-width="4" fill="none"/></g><rect x="-20" y="520" width="1960" height="60" fill="#FFD6CF"/></svg></div>
@@ -125,7 +130,9 @@ html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; backgro
 <div class="abs" id="s05-badge" style="left:1180px;top:200px;width:640px">
  <div class="kick">CANADA</div>
  <div class="bhs" style="font-size:150px;line-height:1"><span class="red num" id="s05-n">2</span>위</div>
- <div class="h3">캐나다 대도시</div></div>
+ <div class="h3">캐나다 대도시</div>
+ <div class="body" style="margin-top:14px;font-size:34px;color:#7A1B26">도시권 인구 약 460만 명</div>
+ <div class="small" style="font-size:28px;font-weight:500">통계청 2025.7.1 추정(CMA)</div></div>
 <div class="abs kick" id="s05-k2" style="left:1180px;top:150px">대도시라서 좋은 점</div>
 <div class="card row" id="s05-i1" style="left:1180px;top:220px;width:640px;height:160px;gap:28px;padding:0 36px"><svg class="icon "  viewBox="0 0 64 64" width="92" height="92" fill="none" stroke="#C8102E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 56 H58 M12 56 V28 L32 14 L52 28 V56" class="ic"/><path d="M26 56 V42 H38 V56" class="ic"/><path d="M32 14 V5 L43 8 L32 11" class="ic"/></svg><div class="bhs" style="font-size:58px">교육 수준</div></div><div class="card row" id="s05-i2" style="left:1180px;top:410px;width:640px;height:160px;gap:28px;padding:0 36px"><svg class="icon "  viewBox="0 0 64 64" width="92" height="92" fill="none" stroke="#C8102E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22 H52 L47 58 H17 Z" class="ic"/><path d="M23 22 V17 Q32 4 41 17 V22" class="ic"/></svg><div class="bhs" style="font-size:58px">생활 편의성</div></div><div class="card row" id="s05-i3" style="left:1180px;top:600px;width:640px;height:160px;gap:28px;padding:0 36px"><svg class="icon "  viewBox="0 0 64 64" width="92" height="92" fill="none" stroke="#C8102E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M24 48 V14 L52 8 V42" class="ic"/><circle cx="17" cy="48" r="7" class="ic"/><circle cx="45" cy="42" r="7" class="ic"/></svg><div class="bhs" style="font-size:58px">문화 환경</div></div>
 </div></div>
@@ -166,9 +173,24 @@ html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; backgro
 <div class="abs" id="s07-pop" style="left:620px;top:700px"><div class="card row" style="position:relative;padding:18px 40px;gap:22px;border-color:#C8102E"><svg class="icon "  viewBox="0 0 64 64" width="80" height="80" fill="none" stroke="#C8102E" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M32 55 C9 38 5 26 13 16 C21 7 30 11 32 18 C34 11 43 7 51 16 C59 26 55 38 32 55 Z" class="ic"/></svg><div class="bhs" style="font-size:66px">그래서 <span class="red">인기!</span></div></div></div>
 </div></div>
 <div id="s08" class="scene"><div class="bgl" id="s08-bg"><svg class="dots" width="2040" height="1200" aria-hidden="true"><defs><pattern id="s08-dp" width="46" height="46" patternUnits="userSpaceOnUse"><circle cx="23" cy="23" r="2.6" fill="#EBD5CB"/></pattern></defs><rect width="2040" height="1200" fill="url(#s08-dp)"/></svg><div class="glow" style="left:210px;top:-550px"></div><div class="ghost" aria-hidden="true" data-layout-ignore style="left:-40px;top:640px">NO.2</div><svg class="leaf bgleaf" style="left:1540px;top:-90px" viewBox="0 0 100 100" width="360" height="360"><path d="M50 2 L57 16 L64 12 L61 36 L74 23 L77 30 L91 27 L86 42 L94 46 L74 61 L77 69 L54 65 L53 86 L52 98 L48 98 L47 86 L46 65 L23 69 L26 61 L6 46 L14 42 L9 27 L23 30 L26 23 L39 36 L36 12 L43 16 L50 2 Z" fill="none" stroke="#F2D2C9" stroke-width="3" stroke-linejoin="round"/></svg></div><div class="stage">
-<div class="abs ctr" id="s08-big" style="left:0;top:150px;width:1920px;flex-direction:column">
- <div class="kick">캐나다에서 두 번째로 큰 대도시</div>
- <div class="bhs" style="font-size:300px;line-height:1"><span class="red">No.</span><span id="s08-n">2</span></div></div>
+<div class="abs" id="s08-chart" style="left:0;top:0;width:1920px;height:1080px;transform-origin:700px 470px">
+ <div class="win" id="s08-win" style="left:90px;top:110px;width:1300px;height:720px">
+  <div class="pic" id="s08-pic" style="width:1081px;height:608px">
+   <img src="assets/img/owner/city-population.png" style="left:0;top:0;width:1081px;height:608px" alt="캐나다 주요 도시별 인구">
+   <div class="abs" id="s08-dimA" style="left:280px;top:36px;width:801px;height:36px;background-color:rgba(255,255,255,0.62)"></div>
+   <div class="abs" id="s08-dimB" style="left:280px;top:108px;width:801px;height:500px;background-color:rgba(255,255,255,0.62)"></div>
+   <div class="hl" id="s08-hl" style="left:294px;top:70px;width:604px;height:40px"></div>
+   <div class="abs" id="s08-b2" style="left:902px;top:70px"><span class="chip" style="font-size:22px;padding:4px 14px">2위</span></div>
+  </div></div>
+ <div class="abs" id="s08-pan" style="left:1440px;top:150px;width:440px">
+  <div class="kick" style="font-size:30px">몬트리올 도시권 인구</div>
+  <div class="num red" id="s08-n" style="font-size:104px;line-height:1.05;margin-top:12px">0</div>
+  <div class="bhs" style="font-size:44px">천 명 · <span class="red">캐나다 2위</span></div>
+  <div style="margin-top:22px"><span class="chip d" id="s08-c" style="font-size:34px">약 460만 명</span></div>
+  <div class="small" id="s08-src" style="margin-top:40px;font-size:28px;font-weight:500">출처: 캐나다 통계청 Table 17-10-0148-01, 2025년 7월 1일 인구 추정(도시권 CMA)</div>
+ </div>
+</div>
+<div class="abs ctr" id="s08-top" style="left:0;top:130px;width:1920px;flex-direction:column"><div class="kick">캐나다 2위 대도시라서</div><div class="h2">갖춘 것들</div></div>
 <div class="abs" id="s08-roof" style="left:300px;top:330px;width:1320px;height:140px;background:#C8102E;clip-path:polygon(4% 100%,96% 100%,100% 70%,50% 0,0 70%)"></div>
 <div class="abs ctr bhs" id="s08-rt" style="left:300px;top:380px;width:1320px;font-size:64px;color:#FFFFFF">최고의 조건</div>
 <div class="abs" id="s08-p1" style="left:330px;top:470px;width:380px;height:400px;transform-origin:50% 100%">
@@ -177,16 +199,20 @@ html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; backgro
  <div class="ctr" style="width:380px;height:400px;background:#FFFFFF;border:5px solid #2B2B2B;border-radius:24px 24px 0 0;flex-direction:column;gap:20px"><svg class="icon "  viewBox="0 0 64 64" width="110" height="110" fill="none" stroke="#C8102E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22 H52 L47 58 H17 Z" class="ic"/><path d="M23 22 V17 Q32 4 41 17 V22" class="ic"/></svg><div class="bhs" style="font-size:56px">생활 편의성</div></div></div>
 <div class="abs" id="s08-sp" style="left:960px;top:400px"><i class="sp" style="position:absolute;width:18px;height:18px;background:#FFD6CF;transform:rotate(45deg)"></i><i class="sp" style="position:absolute;width:18px;height:18px;background:#C8102E;transform:rotate(45deg)"></i><i class="sp" style="position:absolute;width:18px;height:18px;background:#FFD6CF;transform:rotate(45deg)"></i><i class="sp" style="position:absolute;width:18px;height:18px;background:#C8102E;transform:rotate(45deg)"></i><i class="sp" style="position:absolute;width:18px;height:18px;background:#FFD6CF;transform:rotate(45deg)"></i><i class="sp" style="position:absolute;width:18px;height:18px;background:#C8102E;transform:rotate(45deg)"></i><i class="sp" style="position:absolute;width:18px;height:18px;background:#FFD6CF;transform:rotate(45deg)"></i><i class="sp" style="position:absolute;width:18px;height:18px;background:#C8102E;transform:rotate(45deg)"></i><i class="sp" style="position:absolute;width:18px;height:18px;background:#FFD6CF;transform:rotate(45deg)"></i><i class="sp" style="position:absolute;width:18px;height:18px;background:#C8102E;transform:rotate(45deg)"></i><i class="sp" style="position:absolute;width:18px;height:18px;background:#FFD6CF;transform:rotate(45deg)"></i><i class="sp" style="position:absolute;width:18px;height:18px;background:#C8102E;transform:rotate(45deg)"></i><i class="sp" style="position:absolute;width:18px;height:18px;background:#FFD6CF;transform:rotate(45deg)"></i><i class="sp" style="position:absolute;width:18px;height:18px;background:#C8102E;transform:rotate(45deg)"></i></div>
 </div></div>
-<div id="s09" class="scene"><div class="bgl" id="s09-bg"><svg class="dots" width="2040" height="1200" aria-hidden="true"><defs><pattern id="s09-dp" width="46" height="46" patternUnits="userSpaceOnUse"><circle cx="23" cy="23" r="2.6" fill="#EBD5CB"/></pattern></defs><rect width="2040" height="1200" fill="url(#s09-dp)"/></svg><div class="glow" style="left:850px;top:50px"></div><div class="ghost" aria-hidden="true" data-layout-ignore style="left:-40px;top:640px">RENT</div><svg class="leaf bgleaf" style="left:1500px;top:620px" viewBox="0 0 100 100" width="360" height="360"><path d="M50 2 L57 16 L64 12 L61 36 L74 23 L77 30 L91 27 L86 42 L94 46 L74 61 L77 69 L54 65 L53 86 L52 98 L48 98 L47 86 L46 65 L23 69 L26 61 L6 46 L14 42 L9 27 L23 30 L26 23 L39 36 L36 12 L43 16 L50 2 Z" fill="none" stroke="#F2D2C9" stroke-width="3" stroke-linejoin="round"/></svg></div><div class="stage">
-<div class="abs" id="s09-hd" style="left:110px;top:110px"><div class="kick" id="s09-k">캐나다 통계청 · 2026년 2분기</div>
- <div class="h3" id="s09-h" style="margin-top:6px">방 2개 아파트 평균 월세 <span style="font-size:40px;color:#7A1B26">(호가, CAD)</span></div></div>
-<div class="abs" id="s09-ch" style="left:0;top:0;width:1920px;height:1080px;transform-origin:700px 800px">
-<div class="abs bhs" style="left:150px;top:300px;width:290px;text-align:right;font-size:50px;line-height:70px;color:#2B2B2B">밴쿠버</div><div class="abs bar" id="s09-b0" style="left:470px;top:306px;width:1091px;height:58px;border-radius:0 14px 14px 0;transform-origin:0 50%;background:#D9B8B1"></div><div class="abs num" id="s09-v0" style="left:1581px;top:300px;font-size:46px;line-height:70px;color:#2B2B2B">$0</div><div class="abs bhs" style="left:150px;top:392px;width:290px;text-align:right;font-size:50px;line-height:70px;color:#2B2B2B">토론토</div><div class="abs bar" id="s09-b1" style="left:470px;top:398px;width:954px;height:58px;border-radius:0 14px 14px 0;transform-origin:0 50%;background:#D9B8B1"></div><div class="abs num" id="s09-v1" style="left:1444px;top:392px;font-size:46px;line-height:70px;color:#2B2B2B">$0</div><div class="abs bhs" style="left:150px;top:484px;width:290px;text-align:right;font-size:50px;line-height:70px;color:#2B2B2B">빅토리아</div><div class="abs bar" id="s09-b2" style="left:470px;top:490px;width:950px;height:58px;border-radius:0 14px 14px 0;transform-origin:0 50%;background:#D9B8B1"></div><div class="abs num" id="s09-v2" style="left:1440px;top:484px;font-size:46px;line-height:70px;color:#2B2B2B">$0</div><div class="abs bhs" style="left:150px;top:576px;width:290px;text-align:right;font-size:50px;line-height:70px;color:#2B2B2B">핼리팩스</div><div class="abs bar" id="s09-b3" style="left:470px;top:582px;width:864px;height:58px;border-radius:0 14px 14px 0;transform-origin:0 50%;background:#D9B8B1"></div><div class="abs num" id="s09-v3" style="left:1354px;top:576px;font-size:46px;line-height:70px;color:#2B2B2B">$0</div><div class="abs bhs" style="left:150px;top:668px;width:290px;text-align:right;font-size:50px;line-height:70px;color:#2B2B2B">캘거리</div><div class="abs bar" id="s09-b4" style="left:470px;top:674px;width:680px;height:58px;border-radius:0 14px 14px 0;transform-origin:0 50%;background:#D9B8B1"></div><div class="abs num" id="s09-v4" style="left:1170px;top:668px;font-size:46px;line-height:70px;color:#2B2B2B">$0</div><div class="abs bhs" style="left:150px;top:760px;width:290px;text-align:right;font-size:50px;line-height:70px;color:#C8102E">몬트리올</div><div class="abs bar" id="s09-b5" style="left:470px;top:766px;width:655px;height:58px;border-radius:0 14px 14px 0;transform-origin:0 50%;background:#C8102E"></div><div class="abs num" id="s09-v5" style="left:1145px;top:760px;font-size:60px;line-height:70px;color:#C8102E">$0</div>
-<div class="abs" id="s09-avg" style="left:1237px;top:282px;width:0;height:570px;border-left:5px dashed #7A1B26;transform-origin:0 0"></div>
-<div class="abs" id="s09-avl" style="left:1097px;top:238px"><span class="chip o" style="font-size:26px;padding:6px 18px;border-color:#7A1B26;color:#7A1B26">전국 평균 $2,130</span></div>
+<div id="s09" class="scene"><div class="bgl" id="s09-bg"><svg class="dots" width="2040" height="1200" aria-hidden="true"><defs><pattern id="s09-dp" width="46" height="46" patternUnits="userSpaceOnUse"><circle cx="23" cy="23" r="2.6" fill="#EBD5CB"/></pattern></defs><rect width="2040" height="1200" fill="url(#s09-dp)"/></svg><div class="glow" style="left:1050px;top:50px"></div><div class="ghost" aria-hidden="true" data-layout-ignore style="left:-40px;top:640px">RENT</div><svg class="leaf bgleaf" style="left:1500px;top:620px" viewBox="0 0 100 100" width="360" height="360"><path d="M50 2 L57 16 L64 12 L61 36 L74 23 L77 30 L91 27 L86 42 L94 46 L74 61 L77 69 L54 65 L53 86 L52 98 L48 98 L47 86 L46 65 L23 69 L26 61 L6 46 L14 42 L9 27 L23 30 L26 23 L39 36 L36 12 L43 16 L50 2 Z" fill="none" stroke="#F2D2C9" stroke-width="3" stroke-linejoin="round"/></svg></div><div class="stage">
+<div class="win" id="s09-win" style="left:90px;top:100px;width:1060px;height:770px;background-color:#F2F2F2">
+ <div class="pic" id="s09-pic" style="width:1054px;height:1349px">
+  <img src="assets/img/owner/rent-base.jpg" style="left:0;top:0;width:1054px;height:1349px" alt="캐나다 통계청 인포그래픽: 방 2개 아파트 평균 호가 월세">
+  <img class="rs" id="s09-van" src="assets/img/owner/rent-van.png" style="left:34px;top:768px;width:176px;height:197px" alt=""><img class="rs" id="s09-tor" src="assets/img/owner/rent-tor.png" style="left:699px;top:973px;width:275px;height:103px" alt=""><img class="rs" id="s09-hal" src="assets/img/owner/rent-hal.png" style="left:832px;top:686px;width:158px;height:261px" alt=""><img class="rs" id="s09-ott" src="assets/img/owner/rent-ott.png" style="left:474px;top:858px;width:282px;height:154px" alt=""><img class="rs" id="s09-cal" src="assets/img/owner/rent-cal.png" style="left:228px;top:935px;width:218px;height:131px" alt=""><img class="rs" id="s09-edm" src="assets/img/owner/rent-edm.png" style="left:247px;top:730px;width:203px;height:172px" alt=""><img class="rs" id="s09-mtl" src="assets/img/owner/rent-mtl.png" style="left:570px;top:708px;width:221px;height:300px" alt="">
+  <div class="hl" id="s09-ring" style="left:568px;top:748px;width:162px;height:68px;border-width:6px;border-radius:10px"></div>
+ </div></div>
+<div class="abs" id="s09-pan" style="left:1210px;top:120px;width:660px">
+ <div class="kick" id="s09-k">캐나다 통계청 · 2026년 2분기</div>
+ <div class="h3" id="s09-h" style="margin-top:8px;font-size:56px">방 2개 아파트<br>평균 호가 월세</div>
+ <div id="s09-big" style="margin-top:34px"><div class="bhs" style="font-size:50px">몬트리올</div><div class="num red" id="s09-n" style="font-size:150px;line-height:1">$0</div></div>
+ <div id="s09-call" style="margin-top:26px;transform:rotate(-2deg);transform-origin:0 50%"><div class="card" style="position:relative;display:inline-block;padding:14px 28px;border-color:#C8102E"><div class="body" style="font-size:30px;color:#7A1B26">캘거리·핼리팩스보다 낮은 월세</div><div class="bhs red" style="font-size:60px"><span class="mkw"><span class="mk" id="s09-mk"></span>중소도시 수준</span></div></div></div>
 </div>
-<div class="abs" id="s09-call" style="left:1420px;top:705px;transform:rotate(-3deg)"><div class="card" style="position:relative;padding:14px 28px;border-color:#C8102E"><div class="body" style="font-size:28px;color:#7A1B26">캘거리·핼리팩스보다 낮은 월세</div><div class="bhs red" style="font-size:58px"><span class="mkw"><span class="mk" id="s09-mk"></span>중소도시 수준</span></div></div></div>
-<div class="foot" id="s09-src">출처: 캐나다 통계청 Table 46-10-0092-01, 2026년 2분기 (2026.09.09 발표)</div>
+<div class="abs small" id="s09-src" style="left:1210px;top:790px;width:660px;font-size:28px;font-weight:500">출처: 캐나다 통계청 Table 46-10-0092-01, 2026년 2분기 (2026.09.09 발표)</div>
 </div></div>
 <div id="s10" class="scene"><div class="bgl" id="s10-bg"><svg class="dots" width="2040" height="1200" aria-hidden="true"><defs><pattern id="s10-dp" width="46" height="46" patternUnits="userSpaceOnUse"><circle cx="23" cy="23" r="2.6" fill="#EBD5CB"/></pattern></defs><rect width="2040" height="1200" fill="url(#s10-dp)"/></svg><div class="glow" style="left:250px;top:-350px"></div><div class="ghost" aria-hidden="true" data-layout-ignore style="left:-40px;top:640px">LANGUAGE</div><svg class="leaf bgleaf" style="left:1540px;top:-90px" viewBox="0 0 100 100" width="360" height="360"><path d="M50 2 L57 16 L64 12 L61 36 L74 23 L77 30 L91 27 L86 42 L94 46 L74 61 L77 69 L54 65 L53 86 L52 98 L48 98 L47 86 L46 65 L23 69 L26 61 L6 46 L14 42 L9 27 L23 30 L26 23 L39 36 L36 12 L43 16 L50 2 Z" fill="none" stroke="#F2D2C9" stroke-width="3" stroke-linejoin="round"/></svg></div><div class="stage">
 <div class="abs" style="left:110px;top:120px"><div class="kick" id="s10-kk">한국은 국·영·수, 캐나다는?</div></div>
@@ -196,19 +222,22 @@ html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; backgro
 <div class="abs ctr" id="s10-m" style="left:1030px;top:330px;width:640px;height:330px;border-radius:40px;background:#C8102E;flex-direction:column"><div class="bhs" style="font-size:110px;color:#FFFFFF">수학</div><div class="body" style="color:#FFD6CF">Math</div></div>
 <div class="abs ctr" id="s10-imp" style="left:0;top:720px;width:1920px"><span class="chip d" style="font-size:44px">가장 중요한 두 과목</span></div>
 </div></div>
-<div id="s11" class="scene"><div class="bgl" id="s11-bg"><svg class="dots" width="2040" height="1200" aria-hidden="true"><defs><pattern id="s11-dp" width="46" height="46" patternUnits="userSpaceOnUse"><circle cx="23" cy="23" r="2.6" fill="#EBD5CB"/></pattern></defs><rect width="2040" height="1200" fill="url(#s11-dp)"/></svg><div class="glow" style="left:1000px;top:-350px"></div><div class="ghost" aria-hidden="true" data-layout-ignore style="left:-40px;top:640px">PCAP</div><svg class="leaf bgleaf" style="left:1500px;top:620px" viewBox="0 0 100 100" width="360" height="360"><path d="M50 2 L57 16 L64 12 L61 36 L74 23 L77 30 L91 27 L86 42 L94 46 L74 61 L77 69 L54 65 L53 86 L52 98 L48 98 L47 86 L46 65 L23 69 L26 61 L6 46 L14 42 L9 27 L23 30 L26 23 L39 36 L36 12 L43 16 L50 2 Z" fill="none" stroke="#F2D2C9" stroke-width="3" stroke-linejoin="round"/></svg></div><div class="stage">
-<div class="abs" style="left:110px;top:110px"><div class="kick" id="s11-k">CMEC PCAP 2023 · 중2(Secondary II) 수학</div>
- <div class="h3" id="s11-h" style="margin-top:6px">10개 주 중 <span class="red">퀘벡만</span> 캐나다 평균보다 높음</div></div>
-<div class="abs" id="s11-axis" style="left:150px;top:520px;width:1620px;height:10px;background:#2B2B2B;border-radius:5px;transform-origin:0 50%"></div>
-<div class="abs" id="s11-avg" style="left:955px;top:330px;width:10px;height:400px;background:#7A1B26;transform-origin:50% 100%"></div>
-<div class="abs ctr" id="s11-avl" style="left:810px;top:270px;width:300px"><span class="chip d" style="font-size:28px;padding:8px 20px">캐나다 평균 510점</span></div>
-<div class="abs body" id="s11-z1" style="left:220px;top:560px;color:#7A1B26">평균 아래</div>
-<div class="abs" id="s11-b" style="left:180px;top:620px;width:600px;display:flex;flex-wrap:wrap;gap:12px"><span class="chip o pc" style="font-size:30px;padding:8px 22px">BC</span><span class="chip o pc" style="font-size:30px;padding:8px 22px">SK</span><span class="chip o pc" style="font-size:30px;padding:8px 22px">MB</span><span class="chip o pc" style="font-size:30px;padding:8px 22px">NB</span><span class="chip o pc" style="font-size:30px;padding:8px 22px">NS</span><span class="chip o pc" style="font-size:30px;padding:8px 22px">PE</span><span class="chip o pc" style="font-size:30px;padding:8px 22px">NL</span></div>
-<div class="abs body" id="s11-z2" style="left:870px;top:560px;width:180px;text-align:center;color:#7A1B26">평균 수준</div>
-<div class="abs" id="s11-m" style="left:860px;top:620px;width:200px;display:flex;flex-direction:column;align-items:center;gap:12px"><span class="chip d pc" style="font-size:30px;padding:8px 22px">앨버타</span><span class="chip d pc" style="font-size:30px;padding:8px 22px">온타리오</span></div>
-<div class="abs body" id="s11-z3" style="left:1380px;top:560px;color:#C8102E">평균 이상</div>
-<div class="abs ctr" id="s11-q" style="left:1220px;top:340px;width:500px;height:150px;border-radius:30px;background:#C8102E;flex-direction:column"><div class="bhs" style="font-size:84px;color:#FFFFFF">퀘벡</div></div>
-<div class="foot" id="s11-src">출처: CMEC, PCAP 2023 공개 보고서 (주별 결과 요약)</div>
+<div id="s11" class="scene"><div class="bgl" id="s11-bg"><svg class="dots" width="2040" height="1200" aria-hidden="true"><defs><pattern id="s11-dp" width="46" height="46" patternUnits="userSpaceOnUse"><circle cx="23" cy="23" r="2.6" fill="#EBD5CB"/></pattern></defs><rect width="2040" height="1200" fill="url(#s11-dp)"/></svg><div class="glow" style="left:1150px;top:-350px"></div><div class="ghost" aria-hidden="true" data-layout-ignore style="left:-40px;top:640px">PCAP</div><svg class="leaf bgleaf" style="left:1500px;top:620px" viewBox="0 0 100 100" width="360" height="360"><path d="M50 2 L57 16 L64 12 L61 36 L74 23 L77 30 L91 27 L86 42 L94 46 L74 61 L77 69 L54 65 L53 86 L52 98 L48 98 L47 86 L46 65 L23 69 L26 61 L6 46 L14 42 L9 27 L23 30 L26 23 L39 36 L36 12 L43 16 L50 2 Z" fill="none" stroke="#F2D2C9" stroke-width="3" stroke-linejoin="round"/></svg></div><div class="stage">
+<div class="win" id="s11-win" style="left:90px;top:100px;width:1300px;height:760px;background-color:#F2EFEA">
+ <div class="pic" id="s11-pic" style="width:874px;height:491px">
+  <img src="assets/img/owner/pcap2023-math.png" style="left:0;top:0;width:874px;height:491px" alt="PCAP 2023 수학 평균 점수">
+  <div class="abs" id="s11-line" style="left:372px;top:352px;width:466px;height:0;border-top:2px dashed #C8102E;transform-origin:0 50%"></div>
+  <div class="hl" id="s11-qc" style="left:596px;top:298px;width:42px;height:176px;border-width:3px;border-radius:6px"></div>
+  <div class="hl" id="s11-can" style="left:788px;top:328px;width:44px;height:146px;border-width:3px;border-radius:6px;border-color:#2B2B2B"></div>
+ </div></div>
+<div class="abs" id="s11-pan" style="left:1440px;top:130px;width:440px">
+ <div class="kick" style="font-size:30px">CMEC PCAP 2023</div>
+ <div class="body" style="font-size:34px;margin-top:6px">중2(Secondary II) 수학 평균</div>
+ <div id="s11-q" style="margin-top:26px"><div class="bhs" style="font-size:50px">퀘벡</div><div class="num red" id="s11-qn" style="font-size:150px;line-height:1">0</div></div>
+ <div id="s11-c" style="margin-top:14px"><div class="bhs" style="font-size:40px">캐나다 평균 <span class="num" id="s11-cn">0</span></div></div>
+ <div style="margin-top:22px"><span class="chip" id="s11-top" style="font-size:34px">10개 주 중 최고</span></div>
+</div>
+<div class="abs small" id="s11-src" style="left:1440px;top:800px;width:440px;font-size:28px;font-weight:500">출처: CMEC PCAP 2023</div>
 </div></div>
 <div id="s12" class="scene"><div class="bgl" id="s12-bg"><svg class="dots" width="2040" height="1200" aria-hidden="true"><defs><pattern id="s12-dp" width="46" height="46" patternUnits="userSpaceOnUse"><circle cx="23" cy="23" r="2.6" fill="#EBD5CB"/></pattern></defs><rect width="2040" height="1200" fill="url(#s12-dp)"/></svg><div class="glow" style="left:510px;top:-150px"></div><div class="ghost" aria-hidden="true" data-layout-ignore style="left:-40px;top:640px">BONJOUR</div><svg class="leaf bgleaf" style="left:1540px;top:-90px" viewBox="0 0 100 100" width="360" height="360"><path d="M50 2 L57 16 L64 12 L61 36 L74 23 L77 30 L91 27 L86 42 L94 46 L74 61 L77 69 L54 65 L53 86 L52 98 L48 98 L47 86 L46 65 L23 69 L26 61 L6 46 L14 42 L9 27 L23 30 L26 23 L39 36 L36 12 L43 16 L50 2 Z" fill="none" stroke="#F2D2C9" stroke-width="3" stroke-linejoin="round"/></svg></div><div class="stage">
 <div class="abs" style="left:110px;top:120px"><div class="kick" id="s12-k">몬트리올 아이들은</div><div class="h2" id="s12-h" style="margin-top:6px">영어 + 불어, <span class="red">둘 다 자연스럽게</span></div></div>
@@ -351,7 +380,7 @@ html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; backgro
  <div class="kick" id="s24-k">AA Canada 이야기</div>
  <div class="card row" id="s24-e1" style="position:relative;margin-top:22px;height:150px;gap:24px;padding:0 34px"><svg class="icon "  viewBox="0 0 64 64" width="84" height="84" fill="none" stroke="#2B2B2B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 56 H58 M12 56 V28 L32 14 L52 28 V56" class="ic"/><path d="M26 56 V42 H38 V56" class="ic"/><path d="M32 14 V5 L43 8 L32 11" class="ic"/></svg><div><div class="body" style="font-size:30px;color:#7A1B26">핼리팩스</div><div class="bhs" style="font-size:54px">고등학교 졸업</div></div></div>
  <div class="card row" id="s24-e2" style="position:relative;margin-top:26px;height:150px;gap:24px;padding:0 34px;border-color:#C8102E"><svg class="icon "  viewBox="0 0 64 64" width="84" height="84" fill="none" stroke="#C8102E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M32 59 C18 41 11 33 11 24 A21 21 0 1 1 53 24 C53 33 46 41 32 59 Z" class="ic"/><circle cx="32" cy="24" r="7" class="ic"/></svg><div><div class="body" style="font-size:30px;color:#7A1B26">몬트리올</div><div class="bhs" style="font-size:54px">대학 · 직장생활</div></div></div>
- <div class="row" id="s24-e3" style="margin-top:30px;gap:18px"><div class="ctr bhs" style="width:110px;height:110px;border-radius:50%;background:#C8102E;color:#FFFFFF;font-size:64px">E</div><div><div class="bhs" style="font-size:52px">엘리</div><div class="body" style="font-size:32px;color:#7A1B26">한명효 원장</div></div></div>
+ <div class="row" id="s24-e3" style="margin-top:30px;gap:18px"><span class="chip d" style="font-size:44px">제 배우자의 이력</span></div>
 </div>
 <div class="abs ctr" id="s24-big" style="left:0;top:230px;width:1920px;flex-direction:column">
  <div class="row" style="gap:26px"><span class="chip d" id="s24-only" style="font-size:46px">캐나다 유학만</span></div>
@@ -389,7 +418,7 @@ html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; backgro
  <svg class="icon "  viewBox="0 0 64 64" width="120" height="120" fill="none" stroke="#2B2B2B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="32" r="26" class="ic"/><path d="M19 33 L28 42 L46 23" class="ic"/></svg><div class="bhs" style="font-size:62px;text-align:center">학생비자</div><div class="body" style="font-size:30px;color:#7A1B26;text-align:center">신청 · 승인</div></div><div class="abs con" style="left:2176px;top:540px;width:78px;height:14px;background:#C8102E;border-radius:7px;transform-origin:0 50%"></div><div class="card stp" id="s26-c4" style="left:2260px;top:330px;width:440px;height:440px;padding:34px 30px;display:flex;flex-direction:column;align-items:center;gap:16px">
  <div class="ctr bhs" style="width:84px;height:84px;border-radius:50%;background:#C8102E;color:#FFFFFF;font-size:50px">5</div>
  <svg class="icon "  viewBox="0 0 64 64" width="120" height="120" fill="none" stroke="#2B2B2B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 36 L59 13 L46 53 L34 41 L26 51 V38 Z" class="ic"/><path d="M34 41 L59 13" class="ic"/></svg><div class="bhs" style="font-size:62px;text-align:center">출국 준비</div><div class="body" style="font-size:30px;color:#7A1B26;text-align:center">본격 시작</div></div><div class="abs ctr stamp" id="s26-s2" style="left:1430px;top:280px;width:220px;height:90px;border:6px solid #C8102E;border-radius:16px;background:#FFFFFF;transform:rotate(8deg)"><span class="bhs red" style="font-size:54px">승인</span></div><div class="abs ctr stamp" id="s26-s3" style="left:1960px;top:280px;width:220px;height:90px;border:6px solid #C8102E;border-radius:16px;background:#FFFFFF;transform:rotate(8deg)"><span class="bhs red" style="font-size:54px">승인</span></div></div>
-<div class="abs" id="s26-note" style="left:300px;top:790px;width:1320px">
+<div class="abs" id="s26-note" style="left:300px;top:650px;width:1320px">
  <div class="row" style="gap:22px"><svg class="icon "  viewBox="0 0 64 64" width="76" height="76" fill="none" stroke="#C8102E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="32" r="25" class="ic"/><path d="M32 17 V32 L43 39" class="ic"/></svg><div class="bhs" style="font-size:46px">전체 기간은 <span class="red">프로그램·심사 상황</span>에 따라 달라져요</div></div>
  <div style="margin-top:20px;margin-left:98px;width:900px;height:26px;border-radius:13px;background:#FFD6CF;position:relative;overflow:hidden"><div id="s26-flex" style="position:absolute;left:0;top:0;width:60%;height:100%;background:#C8102E;border-radius:13px;transform-origin:0 50%"></div></div></div>
 </div></div>
@@ -409,7 +438,7 @@ html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; backgro
    <div class="row ct" style="gap:16px"><svg class="icon "  viewBox="0 0 64 64" width="60" height="60" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 H46 V58 H18 Z" class="ic"/><path d="M27 50 H37" class="ic"/></svg><span class="bhs" style="font-size:58px;color:#FFFFFF">02-567-4345</span></div>
    <div class="row ct" style="gap:16px"><svg class="icon "  viewBox="0 0 64 64" width="60" height="60" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="32" r="25" class="ic"/><path d="M7 32 H57 M32 7 Q19 32 32 57 Q45 32 32 7 M12 19 H52 M12 45 H52" class="ic"/></svg><span class="bhs" style="font-size:58px;color:#FFFFFF">aacanada.co.kr</span></div></div></div></div>
 </div></div>
-<div id="progress" class="clip progress" data-start="0" data-duration="304.5" data-track-index="4"></div>
+<div id="progress" class="clip progress" data-start="0" data-duration="301.05" data-track-index="4"></div>
 <div id="chap-1" class="clip chap" data-start="8.0" data-duration="21.0" data-track-index="5"><span id="chapi-1"><i></i>몬트리올의 장점</span></div>
 <div id="chap-2" class="clip chap" data-start="29.0" data-duration="12.25" data-track-index="5"><span id="chapi-2"><i></i>캐나다 2위 대도시</span></div>
 <div id="chap-3" class="clip chap" data-start="41.25" data-duration="24.05" data-track-index="5"><span id="chapi-3"><i></i>가성비</span></div>
@@ -421,8 +450,8 @@ html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; backgro
 <div id="chap-9" class="clip chap" data-start="187.6" data-duration="16.7" data-track-index="5"><span id="chapi-9"><i></i>영어중심학교 시간표</span></div>
 <div id="chap-10" class="clip chap" data-start="204.3" data-duration="21.5" data-track-index="5"><span id="chapi-10"><i></i>지역 선택</span></div>
 <div id="chap-11" class="clip chap" data-start="225.8" data-duration="36.7" data-track-index="5"><span id="chapi-11"><i></i>AA Canada</span></div>
-<div id="chap-12" class="clip chap" data-start="262.5" data-duration="30.6" data-track-index="5"><span id="chapi-12"><i></i>진행 절차</span></div>
-<img id="logo" class="clip logo" src="assets/img/logo.png" alt="AA Canada" data-start="8.0" data-duration="290.5" data-track-index="6">
+<div id="chap-12" class="clip chap" data-start="262.5" data-duration="27.15" data-track-index="5"><span id="chapi-12"><i></i>진행 절차</span></div>
+<img id="logo" class="clip logo" src="assets/img/logo.png" alt="AA Canada" data-start="8.0" data-duration="287.05" data-track-index="6">
 <div id="cap-000" class="clip cap" data-start="0.5" data-duration="4.12" data-track-index="20"><span class="t">안녕하세요, <b>AA Canada</b>의 심동섭 실장입니다.</span></div>
 <div id="cap-001" class="clip cap" data-start="4.64" data-duration="3.62" data-track-index="20"><span class="t">몬트리올에 대한 전반적인 내용을 요약해서 설명해 드릴게요.</span></div>
 <div id="cap-002" class="clip cap" data-start="8.28" data-duration="5.0" data-track-index="20"><span class="t">몬트리올은 아래와 같은 <b>장점</b>이 있습니다. 사설어학원 또는 사립컬리지.</span></div>
@@ -469,27 +498,31 @@ html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; backgro
 <div id="cap-043" class="clip cap" data-start="209.92" data-duration="6.1" data-track-index="20"><span class="t">A, B, C, D 각각 특징이 있고, 각 가정의 성향에 따라서 선택을 하면 되고,</span></div>
 <div id="cap-044" class="clip cap" data-start="216.04" data-duration="4.68" data-track-index="20"><span class="t">지역 선정은 바로 하실 필요는 없고, <b>출국하실 때까지</b> 고민하실 수 있는 문제입니다.</span></div>
 <div id="cap-045" class="clip cap" data-start="220.74" data-duration="5.48" data-track-index="20"><span class="t">지역이나 자녀 학교에 대한 자세한 내용은 <b>비자를 진행하면서</b> 안내 드리도록 하겠습니다.</span></div>
-<div id="cap-046" class="clip cap" data-start="226.24" data-duration="3.34" data-track-index="20"><span class="t">캐나다 <b>핼리팩스</b>에서 고등학교를 졸업하고, <b>몬트리올</b>에서 대학과</span></div>
-<div id="cap-047" class="clip cap" data-start="229.6" data-duration="7.98" data-track-index="20"><span class="t">직장생활을 한 제 배우자 엘리와, 다른 나라 안 하고</span></div>
-<div id="cap-048" class="clip cap" data-start="237.6" data-duration="6.14" data-track-index="20"><span class="t">오로지 캐나다 유학 업무만 <b>20년 이상</b> 경력이 있는 저희 부부가 고민 없이 선택한</span></div>
-<div id="cap-049" class="clip cap" data-start="243.76" data-duration="4.72" data-track-index="20"><span class="t">도시가 몬트리올이고, 아직까지 높은 만족도를 유지하면서 지내고 있습니다.</span></div>
+<div id="cap-046" class="clip cap" data-start="226.24" data-duration="4.24" data-track-index="20"><span class="t">캐나다 <b>핼리팩스</b>에서 고등학교를 졸업하고, <b>몬트리올</b>에서 대학과</span></div>
+<div id="cap-047" class="clip cap" data-start="230.5" data-duration="7.08" data-track-index="20"><span class="t">직장생활을 한 제 배우자와, 다른 나라 안 하고</span></div>
+<div id="cap-048" class="clip cap" data-start="237.6" data-duration="5.8" data-track-index="20"><span class="t">오로지 캐나다 유학 업무만 <b>20년 이상</b> 경력이 있는 저희 부부가 고민 없이 선택한</span></div>
+<div id="cap-049" class="clip cap" data-start="243.42" data-duration="5.06" data-track-index="20"><span class="t">도시가 몬트리올이고, 아직까지 높은 만족도를 유지하면서 진행하고 있습니다.</span></div>
 <div id="cap-050" class="clip cap" data-start="248.5" data-duration="4.14" data-track-index="20"><span class="t">유학업계에서 압도적으로 많은 숫자를 몬트리올로 보내고 있습니다.</span></div>
 <div id="cap-051" class="clip cap" data-start="252.66" data-duration="4.32" data-track-index="20"><span class="t">몬트리올에 상주하면서 <b>한국-몬트리올 직영</b> 시스템을 갖추고 있는 유학원은</span></div>
 <div id="cap-052" class="clip cap" data-start="257.0" data-duration="4.81" data-track-index="20"><span class="t">저희밖에 없고, 케이스 경험도 정보도 저희가 가장 많습니다.</span></div>
 <div id="cap-053" class="clip cap" data-start="263.26" data-duration="2.8" data-track-index="20"><span class="t"><b>입학 수속</b>을 하면서 학비 납부를 하고요,</span></div>
 <div id="cap-054" class="clip cap" data-start="266.08" data-duration="7.22" data-track-index="20"><span class="t">그리고 <b>입학허가서</b>가 나오면 퀘벡 주정부의 유학허가인 <b>CAQ</b>를 신청해서 승인을 받습니다.</span></div>
 <div id="cap-055" class="clip cap" data-start="273.32" data-duration="5.86" data-track-index="20"><span class="t">그 이후에 <b>학생비자</b>를 신청해서 승인을 받고,</span></div>
-<div id="cap-056" class="clip cap" data-start="279.2" data-duration="4.2" data-track-index="20"><span class="t">비자 승인 이후에 본격적으로 <b>출국 준비</b>를 하게 됩니다.</span></div>
-<div id="cap-057" class="clip cap" data-start="283.42" data-duration="10.02" data-track-index="20"><span class="t">전체적인 진행 기간은 프로그램마다 달라질 수 있고, 심사 기간도 늘어났다 줄어들었다 합니다.</span></div>
-<div id="cap-058" class="clip cap" data-start="293.46" data-duration="5.01" data-track-index="20"><span class="t">몬트리올에서의 <b>부모님 프로그램 정보</b>에 대해서는 별도로 안내를 드리도록 하겠습니다.</span></div>
-<audio id="vo" src="assets/audio/narration.m4a" data-start="0.5" data-duration="298.5" data-track-index="10" data-volume="1"></audio>
+<div id="cap-056" class="clip cap" data-start="279.2" data-duration="4.28" data-track-index="20"><span class="t">비자 승인 이후에 본격적으로 <b>출국 준비</b>를 하게 됩니다.</span></div>
+<div id="cap-057" class="clip cap" data-start="283.5" data-duration="6.49" data-track-index="20"><span class="t">전체적인 진행 기간은 프로그램마다 달라질 수 있고, 심사 기간도 늘어났다 줄어들었다 합니다.</span></div>
+<div id="cap-058" class="clip cap" data-start="290.01" data-duration="5.01" data-track-index="20"><span class="t">몬트리올에서의 <b>부모님 프로그램 정보</b>에 대해서는 별도로 안내를 드리도록 하겠습니다.</span></div>
+<audio id="vo" src="assets/audio/narration.m4a" data-start="0.5" data-duration="295.0" data-track-index="10" data-volume="1"></audio>
 <audio id="bgm-a" src="assets/music/bgm-a.mp3" data-start="0" data-duration="260.0" data-track-index="11" data-volume="1" data-automation='{"version": 1, "lanes": [{"target": "volume", "points": [{"t": 0, "v": 0}, {"t": 1.5, "v": 0.08}, {"t": 256.0, "v": 0.08}, {"t": 260.0, "v": 0}]}]}'></audio>
-<audio id="bgm-b" src="assets/music/bgm-b.mp3" data-start="256.0" data-duration="48.5" data-track-index="12" data-volume="1" data-automation='{"version": 1, "lanes": [{"target": "volume", "points": [{"t": 0, "v": 0}, {"t": 4, "v": 0.08}, {"t": 42.3, "v": 0.08}, {"t": 43.5, "v": 0.17600000000000002}, {"t": 46.0, "v": 0.17600000000000002}, {"t": 48.5, "v": 0}]}]}'></audio>
+<audio id="bgm-b" src="assets/music/bgm-b.mp3" data-start="256.0" data-duration="45.05" data-track-index="12" data-volume="1" data-automation='{"version": 1, "lanes": [{"target": "volume", "points": [{"t": 0, "v": 0}, {"t": 4, "v": 0.08}, {"t": 38.85, "v": 0.08}, {"t": 40.05, "v": 0.17600000000000002}, {"t": 42.55, "v": 0.17600000000000002}, {"t": 45.05, "v": 0}]}]}'></audio>
 </div>
 <script>
 
 const OFF = 0.5;
-const A = (t) => t + OFF;
+// v2 audio: 283.00-286.45 (3.45 s) was cut from the narration. Scene cues are written in v1 narration
+// time, so A() pulls every cue at/after the cut 3.45 s earlier. R() = already-final times (no shift).
+const CUT = 283.0, CUTLEN = 3.45;
+const A = (t) => t + OFF - (t >= CUT ? CUTLEN : 0);
+const R = (t) => t + OFF;
 const $ = (s) => document.querySelector(s);
 const $$ = (s) => Array.from(document.querySelectorAll(s));
 function pop(sel, t, o = {}) {
@@ -548,6 +581,13 @@ function grow(sel, t, o = {}) {
 function growY(sel, t, o = {}) {
   tl.fromTo(sel, { scaleY: 0 }, { scaleY: 1, duration: o.d ?? 0.8, ease: o.ease ?? "back.out(1.4)", stagger: o.st ?? 0.1 }, A(t));
 }
+function view(sel, t, d, s, cx, cy, W, H, ease) {
+  tl.to(sel, { x: W / 2 - cx * s, y: H / 2 - cy * s, scale: s, duration: d, ease: ease || "power3.inOut" }, A(t));
+}
+function setView(sel, t, s, cx, cy, W, H) {
+  const v = { x: W / 2 - cx * s, y: H / 2 - cy * s, scale: s };
+  tl.fromTo(sel, v, Object.assign({ duration: 0.01 }, v), A(t));
+}
 function cam(sel, t, d, to, ease) { tl.to(sel, Object.assign({ duration: d, ease: ease || "power2.inOut" }, to), A(t)); }
 function dim(sel, t, v = 0.35) { tl.to(sel, { opacity: v, duration: 0.4, ease: "power1.out" }, A(t)); }
 function burst(sel, t) {
@@ -562,28 +602,28 @@ const tl = HyperShader.init({
   accentColor: "#C8102E",
   compositionId: "main",
   scenes: ["s01", "s02", "s03", "s04", "s05", "s06", "s07", "s08", "s09", "s10", "s11", "s12", "s13", "s14", "s15", "s16", "s17", "s18", "s19", "s20", "s21", "s22", "s23", "s24", "s25", "s26", "s27"],
-  transitions: [{"time": 7.65, "shader": "domain-warp", "duration": 0.7}, {"time": 12.82, "shader": "whip-pan", "duration": 0.7}, {"time": 20.87, "shader": "cross-warp-morph", "duration": 0.7}, {"time": 28.65, "shader": "sdf-iris", "duration": 0.7}, {"time": 40.9, "shader": "whip-pan", "duration": 0.7}, {"time": 51.15, "shader": "cross-warp-morph", "duration": 0.7}, {"time": 64.95, "shader": "domain-warp", "duration": 0.7}, {"time": 76.15, "shader": "cinematic-zoom", "duration": 0.7}, {"time": 91.15, "shader": "sdf-iris", "duration": 0.7}, {"time": 96.75, "shader": "whip-pan", "duration": 0.7}, {"time": 101.55, "shader": "cross-warp-morph", "duration": 0.7}, {"time": 109.15, "shader": "ripple-waves", "duration": 0.7}, {"time": 119.65, "shader": "flash-through-white", "duration": 0.7}, {"time": 124.85, "shader": "domain-warp", "duration": 0.7}, {"time": 136.9, "shader": "sdf-iris", "duration": 0.7}, {"time": 144.4, "shader": "cross-warp-morph", "duration": 0.7}, {"time": 154.6, "shader": "whip-pan", "duration": 0.7}, {"time": 161.4, "shader": "cross-warp-morph", "duration": 0.7}, {"time": 169.35, "shader": "ripple-waves", "duration": 0.7}, {"time": 179.45, "shader": "cross-warp-morph", "duration": 0.7}, {"time": 187.25, "shader": "sdf-iris", "duration": 0.7}, {"time": 203.95, "shader": "cinematic-zoom", "duration": 0.7}, {"time": 225.45, "shader": "domain-warp", "duration": 0.7}, {"time": 247.75, "shader": "cross-warp-morph", "duration": 0.7}, {"time": 262.15, "shader": "sdf-iris", "duration": 0.7}, {"time": 292.75, "shader": "cross-warp-morph", "duration": 0.7}],
+  transitions: [{"time": 7.65, "shader": "domain-warp", "duration": 0.7}, {"time": 12.82, "shader": "whip-pan", "duration": 0.7}, {"time": 20.87, "shader": "cross-warp-morph", "duration": 0.7}, {"time": 28.65, "shader": "sdf-iris", "duration": 0.7}, {"time": 40.9, "shader": "whip-pan", "duration": 0.7}, {"time": 51.15, "shader": "cross-warp-morph", "duration": 0.7}, {"time": 64.95, "shader": "domain-warp", "duration": 0.7}, {"time": 76.15, "shader": "cinematic-zoom", "duration": 0.7}, {"time": 91.15, "shader": "sdf-iris", "duration": 0.7}, {"time": 96.75, "shader": "whip-pan", "duration": 0.7}, {"time": 101.55, "shader": "cross-warp-morph", "duration": 0.7}, {"time": 109.15, "shader": "ripple-waves", "duration": 0.7}, {"time": 119.65, "shader": "flash-through-white", "duration": 0.7}, {"time": 124.85, "shader": "domain-warp", "duration": 0.7}, {"time": 136.9, "shader": "sdf-iris", "duration": 0.7}, {"time": 144.4, "shader": "cross-warp-morph", "duration": 0.7}, {"time": 154.6, "shader": "whip-pan", "duration": 0.7}, {"time": 161.4, "shader": "cross-warp-morph", "duration": 0.7}, {"time": 169.35, "shader": "ripple-waves", "duration": 0.7}, {"time": 179.45, "shader": "cross-warp-morph", "duration": 0.7}, {"time": 187.25, "shader": "sdf-iris", "duration": 0.7}, {"time": 203.95, "shader": "cinematic-zoom", "duration": 0.7}, {"time": 225.45, "shader": "domain-warp", "duration": 0.7}, {"time": 247.75, "shader": "cross-warp-morph", "duration": 0.7}, {"time": 262.15, "shader": "sdf-iris", "duration": 0.7}, {"time": 289.3, "shader": "cross-warp-morph", "duration": 0.7}],
 });
 window.__timelines["main"] = tl;
-tl.fromTo("#progress", { scaleX: 0 }, { scaleX: 1, duration: 304.5, ease: "none" }, 0);
+tl.fromTo("#progress", { scaleX: 0 }, { scaleX: 1, duration: 301.05, ease: "none" }, 0);
 tl.fromTo("#logo", { scale: 0.4, rotation: -90 }, { scale: 1, rotation: 0, duration: 0.7, ease: "back.out(2)" }, A(7.6));
-tl.fromTo("#chapi-1", { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, A(7.65));
-tl.fromTo("#chapi-2", { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, A(28.65));
-tl.fromTo("#chapi-3", { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, A(40.9));
-tl.fromTo("#chapi-4", { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, A(64.95));
-tl.fromTo("#chapi-5", { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, A(76.15));
-tl.fromTo("#chapi-6", { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, A(91.15));
-tl.fromTo("#chapi-7", { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, A(124.85000000000001));
-tl.fromTo("#chapi-8", { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, A(136.9));
-tl.fromTo("#chapi-9", { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, A(187.25));
-tl.fromTo("#chapi-10", { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, A(203.95000000000002));
-tl.fromTo("#chapi-11", { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, A(225.45000000000002));
-tl.fromTo("#chapi-12", { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, A(262.15));
+tl.fromTo("#chapi-1", { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, R(7.65));
+tl.fromTo("#chapi-2", { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, R(28.65));
+tl.fromTo("#chapi-3", { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, R(40.9));
+tl.fromTo("#chapi-4", { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, R(64.95));
+tl.fromTo("#chapi-5", { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, R(76.15));
+tl.fromTo("#chapi-6", { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, R(91.15));
+tl.fromTo("#chapi-7", { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, R(124.85000000000001));
+tl.fromTo("#chapi-8", { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, R(136.9));
+tl.fromTo("#chapi-9", { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, R(187.25));
+tl.fromTo("#chapi-10", { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, R(203.95000000000002));
+tl.fromTo("#chapi-11", { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, R(225.45000000000002));
+tl.fromTo("#chapi-12", { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, R(262.15));
 // ---- s01 (0.0-7.5)
-tl.fromTo("#s01 .ghost", { x: 0 }, { x: -260, duration: 8.7, ease: "none" }, A(-0.6));
-tl.fromTo("#s01 .glow", { scale: 0.85 }, { scale: 1.15, duration: 8.7, ease: "sine.inOut" }, A(-0.6));
-tl.fromTo("#s01 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 8.7, ease: "sine.inOut" }, A(-0.6));
-tl.fromTo("#s01 .dots", { y: 0 }, { y: -46, duration: 8.7, ease: "none" }, A(-0.6));
+tl.fromTo("#s01 .ghost", { x: 0 }, { x: -260, duration: 8.7, ease: "none" }, R(-0.6));
+tl.fromTo("#s01 .glow", { scale: 0.85 }, { scale: 1.15, duration: 8.7, ease: "sine.inOut" }, R(-0.6));
+tl.fromTo("#s01 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 8.7, ease: "sine.inOut" }, R(-0.6));
+tl.fromTo("#s01 .dots", { y: 0 }, { y: -46, duration: 8.7, ease: "none" }, R(-0.6));
 {
 
 tl.fromTo("#s01 .sk-back", { y: 160 }, { y: 0, duration: 1.4, ease: "power3.out" }, A(0));
@@ -604,10 +644,10 @@ $$("#s01 .sn").forEach((s, i) => tl.fromTo(s, { y: -60 }, { y: 520 + (i % 5) * 4
 }
 
 // ---- s02 (7.5-12.67)
-tl.fromTo("#s02 .ghost", { x: 0 }, { x: -260, duration: 6.37, ease: "none" }, A(6.9));
-tl.fromTo("#s02 .glow", { scale: 0.85 }, { scale: 1.15, duration: 6.37, ease: "sine.inOut" }, A(6.9));
-tl.fromTo("#s02 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 6.37, ease: "sine.inOut" }, A(6.9));
-tl.fromTo("#s02 .dots", { y: 0 }, { y: -46, duration: 6.37, ease: "none" }, A(6.9));
+tl.fromTo("#s02 .ghost", { x: 0 }, { x: -260, duration: 6.37, ease: "none" }, R(6.9));
+tl.fromTo("#s02 .glow", { scale: 0.85 }, { scale: 1.15, duration: 6.37, ease: "sine.inOut" }, R(6.9));
+tl.fromTo("#s02 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 6.37, ease: "sine.inOut" }, R(6.9));
+tl.fromTo("#s02 .dots", { y: 0 }, { y: -46, duration: 6.37, ease: "none" }, R(6.9));
 {
 
 rise("#s02-k", 0.1, { y: 30 });
@@ -622,10 +662,10 @@ pop("#s02-p2", 4.2, { y: 40 });
 }
 
 // ---- s03 (12.67-20.72)
-tl.fromTo("#s03 .ghost", { x: 0 }, { x: -260, duration: 9.25, ease: "none" }, A(12.07));
-tl.fromTo("#s03 .glow", { scale: 0.85 }, { scale: 1.15, duration: 9.25, ease: "sine.inOut" }, A(12.07));
-tl.fromTo("#s03 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 9.25, ease: "sine.inOut" }, A(12.07));
-tl.fromTo("#s03 .dots", { y: 0 }, { y: -46, duration: 9.25, ease: "none" }, A(12.07));
+tl.fromTo("#s03 .ghost", { x: 0 }, { x: -260, duration: 9.25, ease: "none" }, R(12.07));
+tl.fromTo("#s03 .glow", { scale: 0.85 }, { scale: 1.15, duration: 9.25, ease: "sine.inOut" }, R(12.07));
+tl.fromTo("#s03 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 9.25, ease: "sine.inOut" }, R(12.07));
+tl.fromTo("#s03 .dots", { y: 0 }, { y: -46, duration: 9.25, ease: "none" }, R(12.07));
 {
 
 tl.fromTo("#s03-w", { x: 260, scale: 1.12 }, { x: 260, scale: 1.12, duration: 0.01 }, A(12.67));
@@ -646,10 +686,10 @@ pulse("#s03-n2", 19.6, { s: 1.05 });
 }
 
 // ---- s04 (20.72-28.5)
-tl.fromTo("#s04 .ghost", { x: 0 }, { x: -260, duration: 8.98, ease: "none" }, A(20.119999999999997));
-tl.fromTo("#s04 .glow", { scale: 0.85 }, { scale: 1.15, duration: 8.98, ease: "sine.inOut" }, A(20.119999999999997));
-tl.fromTo("#s04 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 8.98, ease: "sine.inOut" }, A(20.119999999999997));
-tl.fromTo("#s04 .dots", { y: 0 }, { y: -46, duration: 8.98, ease: "none" }, A(20.119999999999997));
+tl.fromTo("#s04 .ghost", { x: 0 }, { x: -260, duration: 8.98, ease: "none" }, R(20.119999999999997));
+tl.fromTo("#s04 .glow", { scale: 0.85 }, { scale: 1.15, duration: 8.98, ease: "sine.inOut" }, R(20.119999999999997));
+tl.fromTo("#s04 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 8.98, ease: "sine.inOut" }, R(20.119999999999997));
+tl.fromTo("#s04 .dots", { y: 0 }, { y: -46, duration: 8.98, ease: "none" }, R(20.119999999999997));
 {
 
 rise("#s04-k, #s04-h", 20.8, { st: 0.12 });
@@ -663,10 +703,10 @@ cam("#s04 .stage", 24.2, 3.5, { scale: 1.03 }, "power1.inOut");
 }
 
 // ---- s05 (28.5-40.75)
-tl.fromTo("#s05 .ghost", { x: 0 }, { x: -260, duration: 13.45, ease: "none" }, A(27.9));
-tl.fromTo("#s05 .glow", { scale: 0.85 }, { scale: 1.15, duration: 13.45, ease: "sine.inOut" }, A(27.9));
-tl.fromTo("#s05 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 13.45, ease: "sine.inOut" }, A(27.9));
-tl.fromTo("#s05 .dots", { y: 0 }, { y: -46, duration: 13.45, ease: "none" }, A(27.9));
+tl.fromTo("#s05 .ghost", { x: 0 }, { x: -260, duration: 13.45, ease: "none" }, R(27.9));
+tl.fromTo("#s05 .glow", { scale: 0.85 }, { scale: 1.15, duration: 13.45, ease: "sine.inOut" }, R(27.9));
+tl.fromTo("#s05 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 13.45, ease: "sine.inOut" }, R(27.9));
+tl.fromTo("#s05 .dots", { y: 0 }, { y: -46, duration: 13.45, ease: "none" }, R(27.9));
 {
 
 tl.fromTo("#s05-pv path", { fillOpacity: 0 }, { fillOpacity: 1, duration: 1.2, ease: "power1.out" }, A(29.3));
@@ -687,10 +727,10 @@ pulse("#s05-i1, #s05-i2, #s05-i3", 39.8, { st: 0.12, s: 1.05 });
 }
 
 // ---- s06 (40.75-51.0)
-tl.fromTo("#s06 .ghost", { x: 0 }, { x: -260, duration: 11.45, ease: "none" }, A(40.15));
-tl.fromTo("#s06 .glow", { scale: 0.85 }, { scale: 1.15, duration: 11.45, ease: "sine.inOut" }, A(40.15));
-tl.fromTo("#s06 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 11.45, ease: "sine.inOut" }, A(40.15));
-tl.fromTo("#s06 .dots", { y: 0 }, { y: -46, duration: 11.45, ease: "none" }, A(40.15));
+tl.fromTo("#s06 .ghost", { x: 0 }, { x: -260, duration: 11.45, ease: "none" }, R(40.15));
+tl.fromTo("#s06 .glow", { scale: 0.85 }, { scale: 1.15, duration: 11.45, ease: "sine.inOut" }, R(40.15));
+tl.fromTo("#s06 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 11.45, ease: "sine.inOut" }, R(40.15));
+tl.fromTo("#s06 .dots", { y: 0 }, { y: -46, duration: 11.45, ease: "none" }, R(40.15));
 {
 
 rise("#s06-k", 41.0, { y: 30 }); chars("#s06-h", 41.3, { st: 0.07 });
@@ -707,10 +747,10 @@ mark("#s06-mk", 49.1);
 }
 
 // ---- s07 (51.0-64.8)
-tl.fromTo("#s07 .ghost", { x: 0 }, { x: -260, duration: 15.0, ease: "none" }, A(50.4));
-tl.fromTo("#s07 .glow", { scale: 0.85 }, { scale: 1.15, duration: 15.0, ease: "sine.inOut" }, A(50.4));
-tl.fromTo("#s07 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 15.0, ease: "sine.inOut" }, A(50.4));
-tl.fromTo("#s07 .dots", { y: 0 }, { y: -46, duration: 15.0, ease: "none" }, A(50.4));
+tl.fromTo("#s07 .ghost", { x: 0 }, { x: -260, duration: 15.0, ease: "none" }, R(50.4));
+tl.fromTo("#s07 .glow", { scale: 0.85 }, { scale: 1.15, duration: 15.0, ease: "sine.inOut" }, R(50.4));
+tl.fromTo("#s07 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 15.0, ease: "sine.inOut" }, R(50.4));
+tl.fromTo("#s07 .dots", { y: 0 }, { y: -46, duration: 15.0, ease: "none" }, R(50.4));
 {
 
 rise("#s07-k", 51.1, { y: 30 });
@@ -729,19 +769,28 @@ pulse("#s07-pop", 63.9, { s: 1.08 });
 }
 
 // ---- s08 (64.8-76.0)
-tl.fromTo("#s08 .ghost", { x: 0 }, { x: -260, duration: 12.4, ease: "none" }, A(64.2));
-tl.fromTo("#s08 .glow", { scale: 0.85 }, { scale: 1.15, duration: 12.4, ease: "sine.inOut" }, A(64.2));
-tl.fromTo("#s08 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 12.4, ease: "sine.inOut" }, A(64.2));
-tl.fromTo("#s08 .dots", { y: 0 }, { y: -46, duration: 12.4, ease: "none" }, A(64.2));
+tl.fromTo("#s08 .ghost", { x: 0 }, { x: -260, duration: 12.4, ease: "none" }, R(64.2));
+tl.fromTo("#s08 .glow", { scale: 0.85 }, { scale: 1.15, duration: 12.4, ease: "sine.inOut" }, R(64.2));
+tl.fromTo("#s08 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 12.4, ease: "sine.inOut" }, R(64.2));
+tl.fromTo("#s08 .dots", { y: 0 }, { y: -46, duration: 12.4, ease: "none" }, R(64.2));
 {
 
-slam("#s08-big", 65.1, { from: 2.4 });
-count("#s08-n", 65.3, 1.0, 9, 2, (v) => String(Math.round(v)));
-tl.to("#s08-big .kick", { opacity: 0, duration: 0.3 }, A(68.3));
-tl.to("#s08-big", { scale: 0.42, y: -170, duration: 0.7, ease: "power3.inOut" }, A(68.3));
+setView("#s08-pic", 64.8, 1.184, 540.5, 304, 1300, 720);
+tl.fromTo("#s08-win", { scale: 0.85, opacity: 0, rotation: -2 }, { scale: 1, opacity: 1, rotation: 0, duration: 0.6, ease: "back.out(1.6)" }, A(64.9));
+fade("#s08-dimA, #s08-dimB", 66.0, { d: 0.4 });
+view("#s08-pic", 65.9, 1.0, 1.75, 690, 150, 1300, 720);
+tl.fromTo("#s08-hl", { scaleX: 0, transformOrigin: "0 50%" }, { scaleX: 1, duration: 0.5, ease: "power3.out" }, A(66.2));
+pop("#s08-b2", 66.7, { from: 0 });
+slide("#s08-pan", 65.6, 300);
+count("#s08-n", 65.9, 1.6, 0, 4597.84, (v) => v.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }));
+pop("#s08-c", 67.3, { y: 20 });
+pulse("#s08-hl", 67.6, { s: 1.03 });
+tl.to("#s08-chart", { opacity: 0, scale: 0.9, duration: 0.45, ease: "power2.in" }, A(68.3));
+rise("#s08-top", 68.7, { y: 40 });
 growY("#s08-p1", 70.0); draw("#s08-p1 .ic", 70.3, 0.7);
 growY("#s08-p2", 70.8); draw("#s08-p2 .ic", 71.1, 0.7);
 growY("#s08-p3", 71.8); draw("#s08-p3 .ic", 72.1, 0.7);
+tl.to("#s08-top", { opacity: 0, duration: 0.3 }, A(72.8));
 tl.fromTo("#s08-roof", { y: -400, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "bounce.out" }, A(73.0));
 tl.fromTo("#s08-rt", { y: -400, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "bounce.out" }, A(73.05));
 burst("#s08-sp .sp", 73.6);
@@ -749,32 +798,42 @@ cam("#s08 .stage", 73.8, 2.2, { scale: 1.04 }, "sine.inOut");
 }
 
 // ---- s09 (76.0-91.0)
-tl.fromTo("#s09 .ghost", { x: 0 }, { x: -260, duration: 16.2, ease: "none" }, A(75.4));
-tl.fromTo("#s09 .glow", { scale: 0.85 }, { scale: 1.15, duration: 16.2, ease: "sine.inOut" }, A(75.4));
-tl.fromTo("#s09 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 16.2, ease: "sine.inOut" }, A(75.4));
-tl.fromTo("#s09 .dots", { y: 0 }, { y: -46, duration: 16.2, ease: "none" }, A(75.4));
+tl.fromTo("#s09 .ghost", { x: 0 }, { x: -260, duration: 16.2, ease: "none" }, R(75.4));
+tl.fromTo("#s09 .glow", { scale: 0.85 }, { scale: 1.15, duration: 16.2, ease: "sine.inOut" }, R(75.4));
+tl.fromTo("#s09 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 16.2, ease: "sine.inOut" }, R(75.4));
+tl.fromTo("#s09 .dots", { y: 0 }, { y: -46, duration: 16.2, ease: "none" }, R(75.4));
 {
 
+setView("#s09-pic", 76.0, 0.571, 527, 674.5, 1060, 770);
+tl.fromTo("#s09-win", { y: 120, opacity: 0, rotation: 2 }, { y: 0, opacity: 1, rotation: 0, duration: 0.7, ease: "back.out(1.5)" }, A(76.1));
+tl.set("#s09 .rs, #s09-ring", { opacity: 0 }, A(76.0));
 slam("#s09-k", 76.8, { from: 1.6 });
-rise("#s09-h", 77.6, { y: 30 });
-fade("#s09-src", 78.6);
-const RV = [3030, 2650, 2640, 2400, 1890, 1820];
-const BT = [79.6, 80.9, 81.4, 81.8, 82.2, 84.6];
-BT.forEach((t, i) => { grow("#s09-b" + i, t, { d: i === 5 ? 1.0 : 0.8 }); count("#s09-v" + i, t, i === 5 ? 1.0 : 0.8, 0, RV[i], (v) => "$" + Math.round(v).toLocaleString("en-US")); fade("#s09-v" + i, t, { d: 0.2 }); });
-pulse("#s09-b0, #s09-b1", 82.8, { s: 1.04, st: 0.15 });
-pulse("#s09-v5", 85.7, { s: 1.25 });
-tl.fromTo("#s09-avg", { scaleY: 0 }, { scaleY: 1, duration: 0.7, ease: "power2.out" }, A(86.1));
-pop("#s09-avl", 86.5, { y: 20 });
-cam("#s09-ch", 87.6, 1.4, { scale: 1.08, y: -40 }, "power2.inOut");
-slam("#s09-call", 88.3, { from: 2, rot: 6, to: -3 });
-mark("#s09-mk", 89.0);
+rise("#s09-h", 77.4, { y: 30 });
+fade("#s09-src", 78.2);
+view("#s09-pic", 78.6, 1.1, 1.08, 520, 790, 1060, 770);
+const POP = [["van", 79.6], ["tor", 80.9], ["hal", 81.5], ["ott", 81.9], ["cal", 82.3], ["edm", 82.7]];
+POP.forEach(([k, t], i) => tl.fromTo("#s09-" + k, { opacity: 0, scale: 0.4, y: -30, transformOrigin: "50% 30%" }, { opacity: 1, scale: 1, y: 0, duration: 0.5, ease: "back.out(2.2)" }, A(t)));
+pulse("#s09-van, #s09-tor", 83.1, { s: 1.12, st: 0.18 });
+view("#s09-pic", 84.2, 1.0, 1.9, 690, 820, 1060, 770);
+tl.to("#s09-van, #s09-tor, #s09-hal, #s09-ott, #s09-cal, #s09-edm", { opacity: 0.35, duration: 0.4 }, A(84.3));
+tl.fromTo("#s09-mtl", { opacity: 0, scale: 2.4, transformOrigin: "50% 25%" }, { opacity: 1, scale: 1, duration: 0.55, ease: "expo.out" }, A(84.7));
+tl.fromTo("#s09-ring", { opacity: 0, scale: 1.5, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, A(85.2));
+fade("#s09-big", 84.8, { d: 0.2 });
+count("#s09-n", 84.8, 1.2, 0, 1820, (v) => "$" + Math.round(v).toLocaleString("en-US"));
+pulse("#s09-n", 86.2, { s: 1.12 });
+pulse("#s09-ring", 86.6, { s: 1.08 });
+view("#s09-pic", 87.8, 1.0, 1.15, 520, 800, 1060, 770);
+tl.to("#s09-van, #s09-tor, #s09-hal, #s09-ott, #s09-cal, #s09-edm", { opacity: 1, duration: 0.4 }, A(87.9));
+slam("#s09-call", 88.2, { from: 2, rot: 6, to: -2 });
+mark("#s09-mk", 88.9);
+pulse("#s09-ring", 89.6, { s: 1.1 });
 }
 
 // ---- s10 (91.0-96.6)
-tl.fromTo("#s10 .ghost", { x: 0 }, { x: -260, duration: 6.8, ease: "none" }, A(90.4));
-tl.fromTo("#s10 .glow", { scale: 0.85 }, { scale: 1.15, duration: 6.8, ease: "sine.inOut" }, A(90.4));
-tl.fromTo("#s10 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 6.8, ease: "sine.inOut" }, A(90.4));
-tl.fromTo("#s10 .dots", { y: 0 }, { y: -46, duration: 6.8, ease: "none" }, A(90.4));
+tl.fromTo("#s10 .ghost", { x: 0 }, { x: -260, duration: 6.8, ease: "none" }, R(90.4));
+tl.fromTo("#s10 .glow", { scale: 0.85 }, { scale: 1.15, duration: 6.8, ease: "sine.inOut" }, R(90.4));
+tl.fromTo("#s10 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 6.8, ease: "sine.inOut" }, R(90.4));
+tl.fromTo("#s10 .dots", { y: 0 }, { y: -46, duration: 6.8, ease: "none" }, R(90.4));
 {
 
 rise("#s10-kk", 91.2, { y: 30 });
@@ -785,28 +844,32 @@ pop("#s10-imp", 95.5, { y: 30 });
 }
 
 // ---- s11 (96.6-101.4)
-tl.fromTo("#s11 .ghost", { x: 0 }, { x: -260, duration: 6.0, ease: "none" }, A(96.0));
-tl.fromTo("#s11 .glow", { scale: 0.85 }, { scale: 1.15, duration: 6.0, ease: "sine.inOut" }, A(96.0));
-tl.fromTo("#s11 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 6.0, ease: "sine.inOut" }, A(96.0));
-tl.fromTo("#s11 .dots", { y: 0 }, { y: -46, duration: 6.0, ease: "none" }, A(96.0));
+tl.fromTo("#s11 .ghost", { x: 0 }, { x: -260, duration: 6.0, ease: "none" }, R(96.0));
+tl.fromTo("#s11 .glow", { scale: 0.85 }, { scale: 1.15, duration: 6.0, ease: "sine.inOut" }, R(96.0));
+tl.fromTo("#s11 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 6.0, ease: "sine.inOut" }, R(96.0));
+tl.fromTo("#s11 .dots", { y: 0 }, { y: -46, duration: 6.0, ease: "none" }, R(96.0));
 {
 
-rise("#s11-k, #s11-h", 96.7, { st: 0.12, y: 30 });
-grow("#s11-axis", 96.9, { d: 0.6 });
-growY("#s11-avg", 97.2, { d: 0.5, ease: "power3.out" }); pop("#s11-avl", 97.4, { y: 20 });
-fade("#s11-z1, #s11-z2, #s11-z3", 97.6, { st: 0.1 });
-pop("#s11-b .pc", 97.9, { st: 0.07, y: 40 });
-pop("#s11-m .pc", 98.4, { st: 0.1, y: 40 });
-slam("#s11-q", 99.1, { from: 2.5 });
-tl.fromTo("#s11-q", { y: 0 }, { y: -30, duration: 0.6, ease: "power2.out", immediateRender: false }, A(99.6));
-fade("#s11-src", 97.0);
+setView("#s11-pic", 96.6, 1.487, 437, 245.5, 1300, 760);
+tl.fromTo("#s11-win", { scale: 0.88, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.6)" }, A(96.65));
+view("#s11-pic", 97.0, 0.9, 2.6, 605, 360, 1300, 760);
+slide("#s11-pan", 97.1, 300);
+fade("#s11-src", 97.4);
+fade("#s11-c", 97.8, { d: 0.2 });
+count("#s11-cn", 97.8, 0.8, 400, 510, (v) => String(Math.round(v)) + "점");
+grow("#s11-line", 97.9, { d: 0.6, ease: "power2.out" });
+tl.fromTo("#s11-can", { opacity: 0 }, { opacity: 1, duration: 0.3 }, A(98.0));
+tl.fromTo("#s11-qc", { opacity: 0, scale: 1.4, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, A(99.1));
+count("#s11-qn", 99.1, 1.0, 400, 537, (v) => String(Math.round(v)) + "점");
+pop("#s11-top", 99.9, { y: 20 });
+pulse("#s11-qc", 100.5, { s: 1.08 });
 }
 
 // ---- s12 (101.4-109.0)
-tl.fromTo("#s12 .ghost", { x: 0 }, { x: -260, duration: 8.8, ease: "none" }, A(100.80000000000001));
-tl.fromTo("#s12 .glow", { scale: 0.85 }, { scale: 1.15, duration: 8.8, ease: "sine.inOut" }, A(100.80000000000001));
-tl.fromTo("#s12 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 8.8, ease: "sine.inOut" }, A(100.80000000000001));
-tl.fromTo("#s12 .dots", { y: 0 }, { y: -46, duration: 8.8, ease: "none" }, A(100.80000000000001));
+tl.fromTo("#s12 .ghost", { x: 0 }, { x: -260, duration: 8.8, ease: "none" }, R(100.80000000000001));
+tl.fromTo("#s12 .glow", { scale: 0.85 }, { scale: 1.15, duration: 8.8, ease: "sine.inOut" }, R(100.80000000000001));
+tl.fromTo("#s12 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 8.8, ease: "sine.inOut" }, R(100.80000000000001));
+tl.fromTo("#s12 .dots", { y: 0 }, { y: -46, duration: 8.8, ease: "none" }, R(100.80000000000001));
 {
 
 rise("#s12-k", 101.7, { y: 30 }); rise("#s12-h", 102.0, { y: 40 });
@@ -818,10 +881,10 @@ pop("#s12-many .kd", 107.4, { st: 0.07, y: 30 });
 }
 
 // ---- s13 (109.0-119.5)
-tl.fromTo("#s13 .ghost", { x: 0 }, { x: -260, duration: 11.7, ease: "none" }, A(108.4));
-tl.fromTo("#s13 .glow", { scale: 0.85 }, { scale: 1.15, duration: 11.7, ease: "sine.inOut" }, A(108.4));
-tl.fromTo("#s13 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 11.7, ease: "sine.inOut" }, A(108.4));
-tl.fromTo("#s13 .dots", { y: 0 }, { y: -46, duration: 11.7, ease: "none" }, A(108.4));
+tl.fromTo("#s13 .ghost", { x: 0 }, { x: -260, duration: 11.7, ease: "none" }, R(108.4));
+tl.fromTo("#s13 .glow", { scale: 0.85 }, { scale: 1.15, duration: 11.7, ease: "sine.inOut" }, R(108.4));
+tl.fromTo("#s13 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 11.7, ease: "sine.inOut" }, R(108.4));
+tl.fromTo("#s13 .dots", { y: 0 }, { y: -46, duration: 11.7, ease: "none" }, R(108.4));
 {
 
 rise("#s13-k", 109.1, { y: 30 }); chars("#s13-h", 109.8, { st: 0.06, y: 100 });
@@ -835,10 +898,10 @@ flipIn("#s13-c3", 117.8); draw("#s13-c3 .ic", 118.0, 0.9);
 }
 
 // ---- s14 (119.5-124.7)
-tl.fromTo("#s14 .ghost", { x: 0 }, { x: -260, duration: 6.4, ease: "none" }, A(118.9));
-tl.fromTo("#s14 .glow", { scale: 0.85 }, { scale: 1.15, duration: 6.4, ease: "sine.inOut" }, A(118.9));
-tl.fromTo("#s14 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 6.4, ease: "sine.inOut" }, A(118.9));
-tl.fromTo("#s14 .dots", { y: 0 }, { y: -46, duration: 6.4, ease: "none" }, A(118.9));
+tl.fromTo("#s14 .ghost", { x: 0 }, { x: -260, duration: 6.4, ease: "none" }, R(118.9));
+tl.fromTo("#s14 .glow", { scale: 0.85 }, { scale: 1.15, duration: 6.4, ease: "sine.inOut" }, R(118.9));
+tl.fromTo("#s14 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 6.4, ease: "sine.inOut" }, R(118.9));
+tl.fromTo("#s14 .dots", { y: 0 }, { y: -46, duration: 6.4, ease: "none" }, R(118.9));
 {
 
 rise("#s14-k", 119.8, { y: 30 });
@@ -851,10 +914,10 @@ cam("#s14 .stage", 123.0, 1.7, { scale: 1.05 }, "sine.inOut");
 }
 
 // ---- s15 (124.7-136.75)
-tl.fromTo("#s15 .ghost", { x: 0 }, { x: -260, duration: 13.25, ease: "none" }, A(124.10000000000001));
-tl.fromTo("#s15 .glow", { scale: 0.85 }, { scale: 1.15, duration: 13.25, ease: "sine.inOut" }, A(124.10000000000001));
-tl.fromTo("#s15 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 13.25, ease: "sine.inOut" }, A(124.10000000000001));
-tl.fromTo("#s15 .dots", { y: 0 }, { y: -46, duration: 13.25, ease: "none" }, A(124.10000000000001));
+tl.fromTo("#s15 .ghost", { x: 0 }, { x: -260, duration: 13.25, ease: "none" }, R(124.10000000000001));
+tl.fromTo("#s15 .glow", { scale: 0.85 }, { scale: 1.15, duration: 13.25, ease: "sine.inOut" }, R(124.10000000000001));
+tl.fromTo("#s15 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 13.25, ease: "sine.inOut" }, R(124.10000000000001));
+tl.fromTo("#s15 .dots", { y: 0 }, { y: -46, duration: 13.25, ease: "none" }, R(124.10000000000001));
 {
 
 rise("#s15-k", 125.3, { y: 30 }); rise("#s15-h", 125.6, { y: 40 });
@@ -876,10 +939,10 @@ pop("#s15-frl", 136.1, { y: 30 });
 }
 
 // ---- s16 (136.75-144.25)
-tl.fromTo("#s16 .ghost", { x: 0 }, { x: -260, duration: 8.7, ease: "none" }, A(136.15));
-tl.fromTo("#s16 .glow", { scale: 0.85 }, { scale: 1.15, duration: 8.7, ease: "sine.inOut" }, A(136.15));
-tl.fromTo("#s16 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 8.7, ease: "sine.inOut" }, A(136.15));
-tl.fromTo("#s16 .dots", { y: 0 }, { y: -46, duration: 8.7, ease: "none" }, A(136.15));
+tl.fromTo("#s16 .ghost", { x: 0 }, { x: -260, duration: 8.7, ease: "none" }, R(136.15));
+tl.fromTo("#s16 .glow", { scale: 0.85 }, { scale: 1.15, duration: 8.7, ease: "sine.inOut" }, R(136.15));
+tl.fromTo("#s16 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 8.7, ease: "sine.inOut" }, R(136.15));
+tl.fromTo("#s16 .dots", { y: 0 }, { y: -46, duration: 8.7, ease: "none" }, R(136.15));
 {
 
 rise("#s16-k", 136.9, { y: 30 }); rise("#s16-h", 137.3, { y: 40 });
@@ -890,10 +953,10 @@ tl.fromTo("#s16-sign", { rotationX: -95, opacity: 0, transformPerspective: 900 }
 }
 
 // ---- s17 (144.25-154.45)
-tl.fromTo("#s17 .ghost", { x: 0 }, { x: -260, duration: 11.4, ease: "none" }, A(143.65));
-tl.fromTo("#s17 .glow", { scale: 0.85 }, { scale: 1.15, duration: 11.4, ease: "sine.inOut" }, A(143.65));
-tl.fromTo("#s17 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 11.4, ease: "sine.inOut" }, A(143.65));
-tl.fromTo("#s17 .dots", { y: 0 }, { y: -46, duration: 11.4, ease: "none" }, A(143.65));
+tl.fromTo("#s17 .ghost", { x: 0 }, { x: -260, duration: 11.4, ease: "none" }, R(143.65));
+tl.fromTo("#s17 .glow", { scale: 0.85 }, { scale: 1.15, duration: 11.4, ease: "sine.inOut" }, R(143.65));
+tl.fromTo("#s17 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 11.4, ease: "sine.inOut" }, R(143.65));
+tl.fromTo("#s17 .dots", { y: 0 }, { y: -46, duration: 11.4, ease: "none" }, R(143.65));
 {
 
 rise("#s17-k", 144.4, { y: 30 }); rise("#s17-h", 144.7, { y: 40 });
@@ -908,10 +971,10 @@ slam("#s17-n2", 152.4, { from: 1.8 }); mark("#s17-mk", 152.9);
 }
 
 // ---- s18 (154.45-161.25)
-tl.fromTo("#s18 .ghost", { x: 0 }, { x: -260, duration: 8.0, ease: "none" }, A(153.85));
-tl.fromTo("#s18 .glow", { scale: 0.85 }, { scale: 1.15, duration: 8.0, ease: "sine.inOut" }, A(153.85));
-tl.fromTo("#s18 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 8.0, ease: "sine.inOut" }, A(153.85));
-tl.fromTo("#s18 .dots", { y: 0 }, { y: -46, duration: 8.0, ease: "none" }, A(153.85));
+tl.fromTo("#s18 .ghost", { x: 0 }, { x: -260, duration: 8.0, ease: "none" }, R(153.85));
+tl.fromTo("#s18 .glow", { scale: 0.85 }, { scale: 1.15, duration: 8.0, ease: "sine.inOut" }, R(153.85));
+tl.fromTo("#s18 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 8.0, ease: "sine.inOut" }, R(153.85));
+tl.fromTo("#s18 .dots", { y: 0 }, { y: -46, duration: 8.0, ease: "none" }, R(153.85));
 {
 
 rise("#s18-k", 154.6, { y: 30 }); rise("#s18-h", 154.9, { y: 40 });
@@ -925,10 +988,10 @@ burst("#s18-sp .sp", 160.5);
 }
 
 // ---- s19 (161.25-169.2)
-tl.fromTo("#s19 .ghost", { x: 0 }, { x: -260, duration: 9.15, ease: "none" }, A(160.65));
-tl.fromTo("#s19 .glow", { scale: 0.85 }, { scale: 1.15, duration: 9.15, ease: "sine.inOut" }, A(160.65));
-tl.fromTo("#s19 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 9.15, ease: "sine.inOut" }, A(160.65));
-tl.fromTo("#s19 .dots", { y: 0 }, { y: -46, duration: 9.15, ease: "none" }, A(160.65));
+tl.fromTo("#s19 .ghost", { x: 0 }, { x: -260, duration: 9.15, ease: "none" }, R(160.65));
+tl.fromTo("#s19 .glow", { scale: 0.85 }, { scale: 1.15, duration: 9.15, ease: "sine.inOut" }, R(160.65));
+tl.fromTo("#s19 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 9.15, ease: "sine.inOut" }, R(160.65));
+tl.fromTo("#s19 .dots", { y: 0 }, { y: -46, duration: 9.15, ease: "none" }, R(160.65));
 {
 
 rise("#s19-k", 161.4, { y: 30 }); rise("#s19-h", 162.0, { y: 40 });
@@ -940,10 +1003,10 @@ slam("#s19-up", 168.0, { from: 2.4 });
 }
 
 // ---- s20 (169.2-179.3)
-tl.fromTo("#s20 .ghost", { x: 0 }, { x: -260, duration: 11.3, ease: "none" }, A(168.6));
-tl.fromTo("#s20 .glow", { scale: 0.85 }, { scale: 1.15, duration: 11.3, ease: "sine.inOut" }, A(168.6));
-tl.fromTo("#s20 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 11.3, ease: "sine.inOut" }, A(168.6));
-tl.fromTo("#s20 .dots", { y: 0 }, { y: -46, duration: 11.3, ease: "none" }, A(168.6));
+tl.fromTo("#s20 .ghost", { x: 0 }, { x: -260, duration: 11.3, ease: "none" }, R(168.6));
+tl.fromTo("#s20 .glow", { scale: 0.85 }, { scale: 1.15, duration: 11.3, ease: "sine.inOut" }, R(168.6));
+tl.fromTo("#s20 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 11.3, ease: "sine.inOut" }, R(168.6));
+tl.fromTo("#s20 .dots", { y: 0 }, { y: -46, duration: 11.3, ease: "none" }, R(168.6));
 {
 
 rise("#s20-k", 169.4, { y: 30 }); rise("#s20-h", 170.2, { y: 40 });
@@ -958,10 +1021,10 @@ pop("#s20-cap", 177.8, { y: 30 });
 }
 
 // ---- s21 (179.3-187.1)
-tl.fromTo("#s21 .ghost", { x: 0 }, { x: -260, duration: 9.0, ease: "none" }, A(178.70000000000002));
-tl.fromTo("#s21 .glow", { scale: 0.85 }, { scale: 1.15, duration: 9.0, ease: "sine.inOut" }, A(178.70000000000002));
-tl.fromTo("#s21 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 9.0, ease: "sine.inOut" }, A(178.70000000000002));
-tl.fromTo("#s21 .dots", { y: 0 }, { y: -46, duration: 9.0, ease: "none" }, A(178.70000000000002));
+tl.fromTo("#s21 .ghost", { x: 0 }, { x: -260, duration: 9.0, ease: "none" }, R(178.70000000000002));
+tl.fromTo("#s21 .glow", { scale: 0.85 }, { scale: 1.15, duration: 9.0, ease: "sine.inOut" }, R(178.70000000000002));
+tl.fromTo("#s21 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 9.0, ease: "sine.inOut" }, R(178.70000000000002));
+tl.fromTo("#s21 .dots", { y: 0 }, { y: -46, duration: 9.0, ease: "none" }, R(178.70000000000002));
 {
 
 rise("#s21-k", 179.8, { y: 30 }); rise("#s21-h", 180.4, { y: 40 });
@@ -975,10 +1038,10 @@ pop("#s21-note", 185.5, { y: 30 });
 }
 
 // ---- s22 (187.1-203.8)
-tl.fromTo("#s22 .ghost", { x: 0 }, { x: -260, duration: 17.9, ease: "none" }, A(186.5));
-tl.fromTo("#s22 .glow", { scale: 0.85 }, { scale: 1.15, duration: 17.9, ease: "sine.inOut" }, A(186.5));
-tl.fromTo("#s22 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 17.9, ease: "sine.inOut" }, A(186.5));
-tl.fromTo("#s22 .dots", { y: 0 }, { y: -46, duration: 17.9, ease: "none" }, A(186.5));
+tl.fromTo("#s22 .ghost", { x: 0 }, { x: -260, duration: 17.9, ease: "none" }, R(186.5));
+tl.fromTo("#s22 .glow", { scale: 0.85 }, { scale: 1.15, duration: 17.9, ease: "sine.inOut" }, R(186.5));
+tl.fromTo("#s22 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 17.9, ease: "sine.inOut" }, R(186.5));
+tl.fromTo("#s22 .dots", { y: 0 }, { y: -46, duration: 17.9, ease: "none" }, R(186.5));
 {
 
 rise("#s22-k", 187.3, { y: 30 }); fade("#s22-ex", 188.2);
@@ -999,18 +1062,18 @@ pop("#s22-chat .cb", 201.9, { st: 0.5, y: 20 });
 }
 
 // ---- s23 (203.8-225.3)
-tl.fromTo("#s23 .ghost", { x: 0 }, { x: -260, duration: 22.7, ease: "none" }, A(203.20000000000002));
-tl.fromTo("#s23 .glow", { scale: 0.85 }, { scale: 1.15, duration: 22.7, ease: "sine.inOut" }, A(203.20000000000002));
-tl.fromTo("#s23 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 22.7, ease: "sine.inOut" }, A(203.20000000000002));
-tl.fromTo("#s23 .dots", { y: 0 }, { y: -46, duration: 22.7, ease: "none" }, A(203.20000000000002));
+tl.fromTo("#s23 .ghost", { x: 0 }, { x: -260, duration: 22.7, ease: "none" }, R(203.20000000000002));
+tl.fromTo("#s23 .glow", { scale: 0.85 }, { scale: 1.15, duration: 22.7, ease: "sine.inOut" }, R(203.20000000000002));
+tl.fromTo("#s23 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 22.7, ease: "sine.inOut" }, R(203.20000000000002));
+tl.fromTo("#s23 .dots", { y: 0 }, { y: -46, duration: 22.7, ease: "none" }, R(203.20000000000002));
 {
 }
 
 // ---- s24 (225.3-247.6)
-tl.fromTo("#s24 .ghost", { x: 0 }, { x: -260, duration: 23.5, ease: "none" }, A(224.70000000000002));
-tl.fromTo("#s24 .glow", { scale: 0.85 }, { scale: 1.15, duration: 23.5, ease: "sine.inOut" }, A(224.70000000000002));
-tl.fromTo("#s24 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 23.5, ease: "sine.inOut" }, A(224.70000000000002));
-tl.fromTo("#s24 .dots", { y: 0 }, { y: -46, duration: 23.5, ease: "none" }, A(224.70000000000002));
+tl.fromTo("#s24 .ghost", { x: 0 }, { x: -260, duration: 23.5, ease: "none" }, R(224.70000000000002));
+tl.fromTo("#s24 .glow", { scale: 0.85 }, { scale: 1.15, duration: 23.5, ease: "sine.inOut" }, R(224.70000000000002));
+tl.fromTo("#s24 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 23.5, ease: "sine.inOut" }, R(224.70000000000002));
+tl.fromTo("#s24 .dots", { y: 0 }, { y: -46, duration: 23.5, ease: "none" }, R(224.70000000000002));
 {
 
 fade("#s24-pv", 225.4, { d: 0.6 });
@@ -1020,7 +1083,7 @@ pop("#s24-m", 228.9, { from: 0 });
 rise("#s24-k", 225.5, { y: 30 });
 slide("#s24-e1", 226.0, 500);
 slide("#s24-e2", 228.4, 500);
-pop("#s24-e3", 230.7, { y: 40 });
+pop("#s24-e3", 230.8, { y: 40 });
 pulse("#s24-e3", 232.1, { s: 1.06 });
 tl.to("#s24-mapw, #s24-tl", { opacity: 0, scale: 0.9, duration: 0.5, ease: "power2.in" }, A(235.4));
 slam("#s24-only", 236.0, { from: 2 });
@@ -1036,10 +1099,10 @@ pulse("#s24-heart", 246.2, { s: 1.12 });
 }
 
 // ---- s25 (247.6-262.0)
-tl.fromTo("#s25 .ghost", { x: 0 }, { x: -260, duration: 15.6, ease: "none" }, A(247.0));
-tl.fromTo("#s25 .glow", { scale: 0.85 }, { scale: 1.15, duration: 15.6, ease: "sine.inOut" }, A(247.0));
-tl.fromTo("#s25 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 15.6, ease: "sine.inOut" }, A(247.0));
-tl.fromTo("#s25 .dots", { y: 0 }, { y: -46, duration: 15.6, ease: "none" }, A(247.0));
+tl.fromTo("#s25 .ghost", { x: 0 }, { x: -260, duration: 15.6, ease: "none" }, R(247.0));
+tl.fromTo("#s25 .glow", { scale: 0.85 }, { scale: 1.15, duration: 15.6, ease: "sine.inOut" }, R(247.0));
+tl.fromTo("#s25 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 15.6, ease: "sine.inOut" }, R(247.0));
+tl.fromTo("#s25 .dots", { y: 0 }, { y: -46, duration: 15.6, ease: "none" }, R(247.0));
 {
 
 rise("#s25-k", 248.0, { y: 30 });
@@ -1060,11 +1123,11 @@ slide("#s25-b3", 257.3, -900); draw("#s25-b3 .ic", 257.5, 0.8);
 pulse("#s25-b1, #s25-b2, #s25-b3", 259.4, { st: 0.15, s: 1.04 });
 }
 
-// ---- s26 (262.0-292.6)
-tl.fromTo("#s26 .ghost", { x: 0 }, { x: -260, duration: 31.8, ease: "none" }, A(261.4));
-tl.fromTo("#s26 .glow", { scale: 0.85 }, { scale: 1.15, duration: 31.8, ease: "sine.inOut" }, A(261.4));
-tl.fromTo("#s26 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 31.8, ease: "sine.inOut" }, A(261.4));
-tl.fromTo("#s26 .dots", { y: 0 }, { y: -46, duration: 31.8, ease: "none" }, A(261.4));
+// ---- s26 (262.0-289.15)
+tl.fromTo("#s26 .ghost", { x: 0 }, { x: -260, duration: 28.35, ease: "none" }, R(261.4));
+tl.fromTo("#s26 .glow", { scale: 0.85 }, { scale: 1.15, duration: 28.35, ease: "sine.inOut" }, R(261.4));
+tl.fromTo("#s26 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 28.35, ease: "sine.inOut" }, R(261.4));
+tl.fromTo("#s26 .dots", { y: 0 }, { y: -46, duration: 28.35, ease: "none" }, R(261.4));
 {
 
 rise("#s26-k", 262.1, { y: 30 }); rise("#s26-h", 262.3, { y: 30 });
@@ -1080,19 +1143,19 @@ $$("#s26 .con").forEach((c, i) => tl.fromTo(c, { scaleX: 0 }, { scaleX: 1, durat
 slam("#s26-s2", 271.9, { from: 2.6, rot: 30, to: 8 });
 slam("#s26-s3", 275.6, { from: 2.6, rot: 30, to: 8 });
 pulse("#s26-c4", 281.3, { s: 1.06 });
-tl.to("#s26-w", { x: 40, y: -40, scale: 0.72, duration: 1.0, ease: "power3.inOut" }, A(282.6));
-tl.to("#s26 .stp", { scale: 1, duration: 0.6 }, A(282.6));
-rise("#s26-note", 283.4, { y: 60 });
+tl.to("#s26-w", { x: 60, y: 60, scale: 0.66, duration: 1.0, ease: "power3.inOut" }, A(286.1));
+tl.to("#s26 .stp", { scale: 1, duration: 0.6 }, A(286.1));
+rise("#s26-note", 287.0, { y: 60 });
 tl.fromTo("#s26-flex", { scaleX: 1 }, { scaleX: 1.55, duration: 0.8, ease: "sine.inOut" }, A(289.4));
 tl.to("#s26-flex", { scaleX: 0.6, duration: 0.8, ease: "sine.inOut" }, A(290.6));
 tl.to("#s26-flex", { scaleX: 1, duration: 0.6, ease: "sine.inOut" }, A(291.5));
 }
 
-// ---- s27 (292.6-304.0)
-tl.fromTo("#s27 .ghost", { x: 0 }, { x: -260, duration: 12.6, ease: "none" }, A(292.0));
-tl.fromTo("#s27 .glow", { scale: 0.85 }, { scale: 1.15, duration: 12.6, ease: "sine.inOut" }, A(292.0));
-tl.fromTo("#s27 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 12.6, ease: "sine.inOut" }, A(292.0));
-tl.fromTo("#s27 .dots", { y: 0 }, { y: -46, duration: 12.6, ease: "none" }, A(292.0));
+// ---- s27 (289.15-300.55)
+tl.fromTo("#s27 .ghost", { x: 0 }, { x: -260, duration: 12.6, ease: "none" }, R(288.54999999999995));
+tl.fromTo("#s27 .glow", { scale: 0.85 }, { scale: 1.15, duration: 12.6, ease: "sine.inOut" }, R(288.54999999999995));
+tl.fromTo("#s27 .bgleaf", { rotation: -8 }, { rotation: 14, duration: 12.6, ease: "sine.inOut" }, R(288.54999999999995));
+tl.fromTo("#s27 .dots", { y: 0 }, { y: -46, duration: 12.6, ease: "none" }, R(288.54999999999995));
 {
 
 pop("#s27-doc", 292.9, { from: 0.3 }); draw("#s27-doc .ic", 293.0, 0.9);

@@ -20,7 +20,9 @@ import region  # noqa: E402
 ROOT = os.path.dirname(HERE)
 PLAN = os.path.join(ROOT, "..", "..", "plans", "montreal-overview")
 OFF = 0.5  # lead-in before the narration starts
-END_AUDIO = 304.0  # narration ends 297.6; end card holds to here
+CUT, CUTLEN = 283.0, 3.45  # v2 narration: 283.00-286.45 removed (duplicate "전체적인 진행기간은")
+V = lambda t: round(t - CUTLEN, 3) if t >= CUT else t  # noqa: E731  v1 cue time -> v2 time
+END_AUDIO = V(304.0)  # narration ends 294.2; end card holds to here
 TOTAL = round(END_AUDIO + OFF, 2)
 A = lambda t: round(t + OFF, 3)  # noqa: E731
 
@@ -60,8 +62,8 @@ CAPS = [
     (36, 36, "빨간색이 {다운타운}이고, 부모님의 어학원들은 모두 다운타운에 위치하고 있습니다."),
     (37, 38, "A, B, C, D 각각 특징이 있고, 각 가정의 성향에 따라서 선택을 하면 되고, 지역 선정은 바로 하실 필요는 없고, {출국하실 때까지} 고민하실 수 있는 문제입니다."),
     (39, 39, "지역이나 자녀 학교에 대한 자세한 내용은 {비자를 진행하면서} 안내 드리도록 하겠습니다."),
-    (40, 41, "캐나다 {핼리팩스}에서 고등학교를 졸업하고, {몬트리올}에서 대학과 직장생활을 한 제 배우자 엘리와, 다른 나라 안 하고"),
-    (42, 43, "오로지 캐나다 유학 업무만 {20년 이상} 경력이 있는 저희 부부가 고민 없이 선택한 도시가 몬트리올이고, 아직까지 높은 만족도를 유지하면서 지내고 있습니다."),
+    (40, 41, "캐나다 {핼리팩스}에서 고등학교를 졸업하고, {몬트리올}에서 대학과 직장생활을 한 제 배우자와, 다른 나라 안 하고"),
+    (42, 43, "오로지 캐나다 유학 업무만 {20년 이상} 경력이 있는 저희 부부가 고민 없이 선택한 도시가 몬트리올이고, 아직까지 높은 만족도를 유지하면서 진행하고 있습니다."),
     (44, 44, "유학업계에서 압도적으로 많은 숫자를 몬트리올로 보내고 있습니다."),
     (45, 46, "몬트리올에 상주하면서 {한국-몬트리올 직영} 시스템을 갖추고 있는 유학원은 저희밖에 없고, 케이스 경험도 정보도 저희가 가장 많습니다."),
     (47, 47, "{입학 수속}을 하면서 학비 납부를 하고요,"),
@@ -159,6 +161,8 @@ TD = 0.7
 
 def main():
     assert len(SHADERS) == len(S) - 1, (len(SHADERS), len(S))
+    for sc in S:  # scene boundaries were planned on v1 narration time
+        sc["t0"], sc["t1"] = V(sc["t0"]), V(sc["t1"])
     region.build(os.path.join(ROOT, "compositions", "region.html"))
     scenes_html, scene_js, transitions = [], [], []
     for i, sc in enumerate(S):
@@ -180,10 +184,10 @@ def main():
         sid = sc["id"]
         scene_js.append(
             f'// ---- {sid} ({t0}-{t1})\n'
-            f'tl.fromTo("#{sid} .ghost", {{ x: 0 }}, {{ x: -260, duration: {d}, ease: "none" }}, A({t0 - 0.6}));\n'
-            f'tl.fromTo("#{sid} .glow", {{ scale: 0.85 }}, {{ scale: 1.15, duration: {d}, ease: "sine.inOut" }}, A({t0 - 0.6}));\n'
-            f'tl.fromTo("#{sid} .bgleaf", {{ rotation: -8 }}, {{ rotation: 14, duration: {d}, ease: "sine.inOut" }}, A({t0 - 0.6}));\n'
-            f'tl.fromTo("#{sid} .dots", {{ y: 0 }}, {{ y: -46, duration: {d}, ease: "none" }}, A({t0 - 0.6}));\n'
+            f'tl.fromTo("#{sid} .ghost", {{ x: 0 }}, {{ x: -260, duration: {d}, ease: "none" }}, R({t0 - 0.6}));\n'
+            f'tl.fromTo("#{sid} .glow", {{ scale: 0.85 }}, {{ scale: 1.15, duration: {d}, ease: "sine.inOut" }}, R({t0 - 0.6}));\n'
+            f'tl.fromTo("#{sid} .bgleaf", {{ rotation: -8 }}, {{ rotation: 14, duration: {d}, ease: "sine.inOut" }}, R({t0 - 0.6}));\n'
+            f'tl.fromTo("#{sid} .dots", {{ y: 0 }}, {{ y: -46, duration: {d}, ease: "none" }}, R({t0 - 0.6}));\n'
             + "{\n" + sc["js"] + "}\n")
         if i < len(S) - 1:
             transitions.append({"time": round(A(t1) - TD / 2, 3), "shader": SHADERS[i], "duration": TD})
@@ -203,7 +207,7 @@ def main():
         if not name:
             continue
         chap_html.append(f'<div id="chap-{k}" class="clip chap" data-start="{A(a)}" data-duration="{round(b - a, 3)}" data-track-index="5"><span id="chapi-{k}"><i></i>{name}</span></div>')
-        chap_js.append(f'tl.fromTo("#chapi-{k}", {{ x: -60, opacity: 0 }}, {{ x: 0, opacity: 1, duration: 0.5, ease: "power3.out" }}, A({a + 0.15}));')
+        chap_js.append(f'tl.fromTo("#chapi-{k}", {{ x: -60, opacity: 0 }}, {{ x: 0, opacity: 1, duration: 0.5, ease: "power3.out" }}, R({a + 0.15}));')
 
     caps = caption_items()
     cap_el = "\n".join(
@@ -219,11 +223,11 @@ def main():
     ad = round(min(a_len, TOTAL), 2)
     b_start = round(ad - 4, 2)
     bd = round(TOTAL - b_start, 2)
-    end_t = A(297.8)
+    end_t = A(V(297.8))
     auto_a = {"version": 1, "lanes": [{"target": "volume", "points": [{"t": 0, "v": 0}, {"t": 1.5, "v": LV}, {"t": round(ad - 4, 2), "v": LV}, {"t": ad, "v": 0}]}]}
     auto_b = {"version": 1, "lanes": [{"target": "volume", "points": [{"t": 0, "v": 0}, {"t": 4, "v": LV}, {"t": round(end_t - b_start, 2), "v": LV},
                                                                           {"t": round(end_t - b_start + 1.2, 2), "v": LE}, {"t": round(bd - 2.5, 2), "v": LE}, {"t": bd, "v": 0}]}]}
-    audio = (f'<audio id="vo" src="assets/audio/narration.m4a" data-start="{OFF}" data-duration="298.5" data-track-index="10" data-volume="1"></audio>\n'
+    audio = (f'<audio id="vo" src="assets/audio/narration.m4a" data-start="{OFF}" data-duration="295.0" data-track-index="10" data-volume="1"></audio>\n'
              f'<audio id="bgm-a" src="assets/music/bgm-a.mp3" data-start="0" data-duration="{ad}" data-track-index="11" data-volume="1" data-automation=\'{json.dumps(auto_a)}\'></audio>\n'
              f'<audio id="bgm-b" src="assets/music/bgm-b.mp3" data-start="{b_start}" data-duration="{bd}" data-track-index="12" data-volume="1" data-automation=\'{json.dumps(auto_b)}\'></audio>')
 
@@ -249,7 +253,7 @@ def main():
 {chr(10).join(scenes_html)}
 <div id="progress" class="clip progress" data-start="0" data-duration="{TOTAL}" data-track-index="4"></div>
 {chr(10).join(chap_html)}
-<img id="logo" class="clip logo" src="assets/img/logo.png" alt="AA Canada" data-start="{A(7.5)}" data-duration="{round(A(298.0) - A(7.5), 3)}" data-track-index="6">
+<img id="logo" class="clip logo" src="assets/img/logo.png" alt="AA Canada" data-start="{A(7.5)}" data-duration="{round(A(V(298.0)) - A(7.5), 3)}" data-track-index="6">
 {cap_el}
 {audio}
 </div>

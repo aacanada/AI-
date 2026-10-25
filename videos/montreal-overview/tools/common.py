@@ -143,6 +143,11 @@ html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; backgro
 .mk { position: absolute; left: -3%; width: 106%; bottom: 4%; height: 42%; background: #FFD6CF; z-index: -1; transform-origin: 0 50%; border-radius: 8px; }
 .ring { position: absolute; border: 5px solid #C8102E; border-radius: 50%; }
 .icon { display: block; overflow: visible; }
+.win { position: absolute; overflow: hidden; border: 6px solid #C8102E; border-radius: 28px; background-color: #FFFFFF; box-shadow: 14px 14px 0 #FFD6CF; }
+.pic { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+.pic img { position: absolute; display: block; }
+.hl { position: absolute; border: 4px solid #C8102E; border-radius: 8px; }
+.bdg { position: absolute; width: 64px; height: 64px; margin: -32px 0 0 -32px; border-radius: 50%; background-color: #C8102E; border: 4px solid #FFFFFF; color: #FFFFFF; font-family: "Black Han Sans"; font-size: 42px; line-height: 56px; text-align: center; box-shadow: 0 0 0 3px #C8102E; }
 .num { font-family: "Black Han Sans"; font-variant-numeric: tabular-nums; }
 .row { display: flex; align-items: center; }
 .ctr { display: flex; align-items: center; justify-content: center; text-align: center; }
@@ -159,7 +164,11 @@ html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; backgro
 
 JS_HELPERS = r"""
 const OFF = __OFF__;
-const A = (t) => t + OFF;
+// v2 audio: 283.00-286.45 (3.45 s) was cut from the narration. Scene cues are written in v1 narration
+// time, so A() pulls every cue at/after the cut 3.45 s earlier. R() = already-final times (no shift).
+const CUT = 283.0, CUTLEN = 3.45;
+const A = (t) => t + OFF - (t >= CUT ? CUTLEN : 0);
+const R = (t) => t + OFF;
 const $ = (s) => document.querySelector(s);
 const $$ = (s) => Array.from(document.querySelectorAll(s));
 function pop(sel, t, o = {}) {
@@ -217,6 +226,13 @@ function grow(sel, t, o = {}) {
 }
 function growY(sel, t, o = {}) {
   tl.fromTo(sel, { scaleY: 0 }, { scaleY: 1, duration: o.d ?? 0.8, ease: o.ease ?? "back.out(1.4)", stagger: o.st ?? 0.1 }, A(t));
+}
+function view(sel, t, d, s, cx, cy, W, H, ease) {
+  tl.to(sel, { x: W / 2 - cx * s, y: H / 2 - cy * s, scale: s, duration: d, ease: ease || "power3.inOut" }, A(t));
+}
+function setView(sel, t, s, cx, cy, W, H) {
+  const v = { x: W / 2 - cx * s, y: H / 2 - cy * s, scale: s };
+  tl.fromTo(sel, v, Object.assign({ duration: 0.01 }, v), A(t));
 }
 function cam(sel, t, d, to, ease) { tl.to(sel, Object.assign({ duration: d, ease: ease || "power2.inOut" }, to), A(t)); }
 function dim(sel, t, v = 0.35) { tl.to(sel, { opacity: v, duration: 0.4, ease: "power1.out" }, A(t)); }

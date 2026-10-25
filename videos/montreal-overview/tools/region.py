@@ -1,74 +1,97 @@
 """Region scene (03:24-03:45) as a standalone sub-composition: compositions/region.html.
 
-Kept separate on purpose: the director's own A~D map is not available yet.
-This version shows ONLY real geography (Natural Earth outline of the Island of Montreal, with a
-downtown marker at Ville-Marie's real coordinates) and generic A/B/C/D cards that are NOT placed
-on the map. To swap in the director's map later, see README.md -> "지역 장면 교체".
-Times inside this file are LOCAL (0 = 03:23.8 of the narration).
+Uses the director's map (plans/montreal-overview/assets/owner/region-map-abcd.png), shown as supplied.
+Motion: zoom into the red downtown circle -> pull back -> A/B/C/D badges pop on the blue circles ->
+legend lines appear one by one, each blinking its areas -> "pick before departure" / "details during visa" cards.
+The legend text is cut from the original and laid back at the same pixels (tools/owner_img.py), so the
+finished frame is the original picture. Times inside this file are LOCAL (0 = 03:23.8 of the narration).
 """
 import json
 import os
 
-from common import icon as I, RED, INK, HI, SUB, CSS  # noqa: F401
+from common import icon as I, RED, INK, HI, SUB  # noqa: F401
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-GEO = json.load(open(os.path.join(ROOT, "assets/geo/geo.json")))
+REG = json.load(open(os.path.join(ROOT, "assets/img/owner/rects.json")))["region"]
 T0 = 203.8  # narration time where this scene starts
-DX, DY = 60, 160  # map placement
-dx, dy = GEO["downtown"]
+W, H = 1240, 696  # map window (image 868x487)
+FIT = (1.4286, 434, 243.5)
+DT = (612, 248)  # red downtown circle centre (image px)
+BADGE = {"A": (505, 312), "B": (280, 333), "C": (585, 105), "D": (760, 305)}  # blue circle centres (image px)
+LEG = [("l1", "AC"), ("l2", "BCD"), ("l3", "AB"), ("l4", "ACD")]
+LEG_T = [211.2, 212.9, 214.6, 216.3]
+
+
+def L(t):
+    return round(t - T0, 3)
 
 
 def build(path):
-    cards = "".join(
-        f'<div class="card ctr rg-card" id="rg-c{L}" style="left:{1180 + (i % 2) * 330}px;top:{250 + (i // 2) * 250}px;width:290px;height:210px;flex-direction:column">'
-        f'<div class="bhs red" style="font-size:110px;line-height:1">{L}</div><div class="body" style="font-size:30px;color:{SUB}">지역</div></div>'
-        for i, L in enumerate("ABCD"))
+    legend = "".join(f'<img class="rg-leg" id="rg-{k}" src="assets/img/owner/region-{k}.png" style="left:{x0}px;top:{y0}px;width:{x1 - x0}px;height:{y1 - y0}px" alt="">'
+                     for k, (x0, y0, x1, y1) in REG.items())
+    legbox = "".join(f'<div class="hl rg-lb" id="rg-b{k}" style="left:{x0 - 3}px;top:{y0}px;width:{x1 - x0 + 6}px;height:{y1 - y0}px;border-width:2px;border-radius:4px"></div>'
+                     for k, (x0, y0, x1, y1) in REG.items())
+    badges = "".join(f'<div class="bdg" id="rg-{n}" style="left:{x}px;top:{y}px">{n}</div>' for n, (x, y) in BADGE.items())
+    js = []
+    for (k, areas), t in zip(LEG, LEG_T):
+        js.append(f't.fromTo("#rg-{k}", {{ x: -40, opacity: 0 }}, {{ x: 0, opacity: 1, duration: 0.45, ease: "power3.out" }}, {L(t)});')
+        js.append(f't.fromTo("#rg-b{k}", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.2 }}, {L(t)});')
+        js.append(f't.to("#rg-b{k}", {{ opacity: 0, duration: 0.3 }}, {L(t + 1.55)});')
+        others = [n for n in "ABCD" if n not in areas]
+        if others:
+            js.append(f't.to("{", ".join("#rg-" + n for n in others)}", {{ opacity: 0.35, duration: 0.2 }}, {L(t + 0.1)});')
+            js.append(f't.to("{", ".join("#rg-" + n for n in others)}", {{ opacity: 1, duration: 0.25 }}, {L(t + 1.55)});')
+        js.append(f't.fromTo("{", ".join("#rg-" + n for n in areas)}", {{ scale: 1 }}, {{ scale: 1.45, duration: 0.16, ease: "power2.out", yoyo: true, repeat: 3 }}, {L(t + 0.15)});')
+    s, cx, cy = FIT
+
+    def v(s, cx, cy):
+        return f"x: {W / 2 - cx * s:.1f}, y: {H / 2 - cy * s:.1f}, scale: {s}"
+
     html = f"""<template id="region-template">
 <div data-composition-id="region" data-width="1920" data-height="1080" style="position:absolute;inset:0">
-<style>
-  [data-composition-id="region"] .rg-abs {{ position: absolute; }}
-</style>
-<div class="rg-abs" id="rg-k" style="left:110px;top:120px"><div class="kick">몬트리올 섬</div><div class="h3" style="margin-top:6px">부모님 어학원은 <span class="red">다운타운</span>에</div></div>
-<div class="rg-abs" id="rg-map" style="left:{DX}px;top:{DY}px;width:1000px;height:760px;transform-origin:{dx}px {dy}px">
- <svg width="1000" height="760" viewBox="0 0 1000 760" style="overflow:visible">
-  <path id="rg-laval" d="{GEO['laval']}" fill="#F6E1DA" stroke="#E2BDB4" stroke-width="3"/>
-  <path id="rg-island" d="{GEO['island']}" fill="#FFFFFF" stroke="{INK}" stroke-width="5" stroke-linejoin="round"/>
-  <circle id="rg-dt" cx="{dx}" cy="{dy}" r="70" fill="{RED}" fill-opacity="0.85"/>
-  <circle id="rg-dr" cx="{dx}" cy="{dy}" r="70" fill="none" stroke="{RED}" stroke-width="5"/>
- </svg>
- <div class="rg-abs" id="rg-dl" style="left:{dx + 90}px;top:{dy - 40}px"><span class="chip">다운타운 (Ville-Marie)</span></div>
- {''.join(f'<div class="rg-abs rg-pin" style="left:{dx - 60 + k * 40}px;top:{dy - 110 - (k % 2) * 24}px">{I("school", 54, INK, 5)}</div>' for k in range(3))}
-</div>
-<div class="rg-abs" id="rg-cards" style="left:0;top:0">{cards}</div>
-<div class="rg-abs" id="rg-cap" style="left:1180px;top:770px;width:620px"><div class="bhs" style="font-size:50px">지역마다 <span class="red">특징</span>이 달라요</div><div class="body" style="font-size:32px;color:{SUB}">각 가정의 성향에 맞게 선택</div></div>
-<div class="rg-abs" id="rg-cal" style="left:1150px;top:260px;width:700px">
- <div class="card row" style="position:relative;padding:30px 36px;gap:24px;border-color:{RED}">{I('calendar', 110, RED, 4)}<div><div class="bhs" style="font-size:52px">지역 선택은</div><div class="bhs red" style="font-size:60px">출국 전까지 천천히</div></div></div></div>
-<div class="rg-abs" id="rg-visa" style="left:1150px;top:560px;width:700px">
- <div class="card row" style="position:relative;padding:30px 36px;gap:24px">{I('doc', 100, INK, 4)}<div><div class="body" style="font-size:32px;color:{SUB}">지역 · 자녀 학교 상세</div><div class="bhs" style="font-size:52px">비자 진행하며 안내</div></div></div></div>
-<div class="rg-abs small" style="left:110px;top:240px;font-size:28px">지도: Natural Earth 해안선 개략도</div>
+<div class="win" id="rg-win" style="left:90px;top:110px;width:{W}px;height:{H}px">
+ <div class="pic" id="rg-pic" style="width:868px;height:487px">
+  <img src="assets/img/owner/region-base.png" style="left:0;top:0;width:868px;height:487px" alt="몬트리올 지역 지도 (A~D)">
+  {legend}{legbox}
+  <div class="hl" id="rg-dt" style="left:{DT[0] - 46}px;top:{DT[1] - 58}px;width:92px;height:116px;border-radius:50%;border-width:3px"></div>
+  <div class="abs" id="rg-dl" style="left:{DT[0] + 44}px;top:{DT[1] - 4}px"><span class="chip" style="font-size:14px;padding:3px 10px">다운타운</span></div>
+  <div class="abs" id="rg-sl" style="left:{DT[0] + 40}px;top:{DT[1] - 52}px"><span class="chip d" style="font-size:12px;padding:3px 9px">부모님 어학원</span></div>
+  {badges}
+ </div></div>
+<div class="abs" id="rg-p1" style="left:1380px;top:150px;width:480px">
+ <div class="kick">몬트리올 지역</div>
+ <div class="h3" style="margin-top:8px"><span class="red">빨간 원</span> = 다운타운</div>
+ <div class="body" style="margin-top:16px;font-size:32px">부모님 어학원은 모두 다운타운에</div></div>
+<div class="abs" id="rg-p2" style="left:1380px;top:430px;width:480px">
+ <div class="h3" style="font-size:54px">A·B·C·D</div><div class="body" style="font-size:36px">지역마다 특징이 달라요</div>
+ <div class="small" style="font-size:30px;margin-top:6px">각 가정의 성향에 맞게 선택</div></div>
+<div class="abs" id="rg-cal" style="left:1370px;top:300px;width:500px">
+ <div class="card row" style="position:relative;padding:26px 28px;gap:20px;border-color:{RED}">{I('calendar', 96, RED, 4)}<div><div class="bhs" style="font-size:44px">지역 선택은</div><div class="bhs red" style="font-size:40px">출국 전까지 천천히</div></div></div></div>
+<div class="abs" id="rg-visa" style="left:1370px;top:560px;width:500px">
+ <div class="card row" style="position:relative;padding:26px 28px;gap:20px">{I('doc', 90, INK, 4)}<div><div class="body" style="font-size:30px;color:{SUB}">지역 · 자녀 학교 상세</div><div class="bhs" style="font-size:44px">비자 진행하며 안내</div></div></div></div>
 <script>
 (function () {{
   const t = gsap.timeline({{ paused: true }});
-  const q = (s) => Array.from(document.querySelectorAll(s));
-  const isl = document.getElementById("rg-island"); const L = Math.ceil(isl.getTotalLength() * 1.03);
-  isl.style.strokeDasharray = L + " " + L;
-  t.fromTo("#rg-k", {{ y: 30, opacity: 0 }}, {{ y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }}, 0.1);
-  t.fromTo(isl, {{ strokeDashoffset: L }}, {{ strokeDashoffset: 0, duration: 1.4, ease: "power2.inOut" }}, 0.1);
-  t.fromTo(isl, {{ fillOpacity: 0 }}, {{ fillOpacity: 1, duration: 0.6 }}, 1.2);
-  t.fromTo("#rg-laval", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.6 }}, 0.6);
-  t.fromTo("#rg-dt", {{ scale: 0, transformOrigin: "50% 50%" }}, {{ scale: 1, duration: 0.5, ease: "back.out(2.5)" }}, {1.0});
-  t.fromTo("#rg-dr", {{ attr: {{ r: 70 }}, opacity: 1 }}, {{ attr: {{ r: 150 }}, opacity: 0, duration: 1.4, ease: "power2.out", repeat: 3, repeatDelay: 0.3 }}, 1.3);
-  t.fromTo("#rg-dl", {{ x: -40, opacity: 0 }}, {{ x: 0, opacity: 1, duration: 0.5, ease: "back.out(2)" }}, 1.4);
-  t.fromTo(".rg-pin", {{ y: -120, opacity: 0 }}, {{ y: 0, opacity: 1, duration: 0.6, ease: "bounce.out", stagger: 0.2 }}, {206.2 - T0});
-  t.to("#rg-map", {{ scale: 1.12, x: 40, y: 50, duration: 2.2, ease: "sine.inOut" }}, {206.5 - T0});
-  t.to("#rg-map", {{ scale: 0.92, x: -20, y: 30, duration: 0.9, ease: "power3.inOut" }}, {209.2 - T0});
-  q(".rg-card").forEach((c, i) => t.fromTo(c, {{ scale: 2.4, opacity: 0, rotation: (i - 1.5) * 10 }}, {{ scale: 1, opacity: 1, rotation: 0, duration: 0.45, ease: "expo.out" }}, {209.4 - T0} + i * 0.22));
-  t.fromTo("#rg-cap", {{ y: 40, opacity: 0 }}, {{ y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }}, {211.6 - T0});
-  t.to("#rg-cards, #rg-cap", {{ x: 900, opacity: 0, duration: 0.5, ease: "power2.in" }}, {214.1 - T0});
-  t.fromTo("#rg-cal", {{ x: 700, opacity: 0 }}, {{ x: 0, opacity: 1, duration: 0.7, ease: "power4.out" }}, {214.4 - T0});
-  t.fromTo("#rg-cal .card", {{ scale: 1 }}, {{ scale: 1.06, duration: 0.25, yoyo: true, repeat: 1 }}, {217.6 - T0});
-  t.fromTo("#rg-visa", {{ y: 300, opacity: 0 }}, {{ y: 0, opacity: 1, duration: 0.7, ease: "back.out(1.6)" }}, {220.2 - T0});
-  t.to("#rg-map", {{ scale: 1.05, duration: 3.5, ease: "sine.inOut" }}, {220.6 - T0});
+  t.fromTo("#rg-pic", {{ {v(*FIT)} }}, {{ {v(*FIT)}, duration: 0.01 }}, 0);
+  t.set(".rg-leg, .rg-lb, .bdg, #rg-dt, #rg-dl, #rg-sl", {{ opacity: 0 }}, 0);
+  t.fromTo("#rg-win", {{ scale: 0.86, opacity: 0, rotation: -2 }}, {{ scale: 1, opacity: 1, rotation: 0, duration: 0.6, ease: "back.out(1.5)" }}, 0.05);
+  t.to("#rg-pic", {{ {v(3.3, *DT)}, duration: 1.3, ease: "power3.inOut" }}, {L(204.2)});
+  t.fromTo("#rg-dt", {{ opacity: 0, scale: 1.6, transformOrigin: "50% 50%" }}, {{ opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }}, {L(204.9)});
+  t.fromTo("#rg-dt", {{ scale: 1 }}, {{ scale: 1.12, duration: 0.3, yoyo: true, repeat: 5, ease: "sine.inOut" }}, {L(205.5)});
+  t.fromTo("#rg-dl", {{ opacity: 0, x: -20 }}, {{ opacity: 1, x: 0, duration: 0.4, ease: "back.out(2)" }}, {L(205.0)});
+  t.fromTo("#rg-sl", {{ opacity: 0, y: -14 }}, {{ opacity: 1, y: 0, duration: 0.4, ease: "back.out(2)" }}, {L(206.2)});
+  t.fromTo("#rg-p1", {{ x: 300, opacity: 0 }}, {{ x: 0, opacity: 1, duration: 0.6, ease: "power4.out" }}, {L(204.4)});
+  t.to("#rg-pic", {{ {v(*FIT)}, duration: 0.9, ease: "power3.inOut" }}, {L(208.5)});
+  t.to("#rg-dl, #rg-sl", {{ opacity: 0, duration: 0.3 }}, {L(208.5)});
+  ["#rg-A", "#rg-B", "#rg-C", "#rg-D"].forEach((b, i) => t.fromTo(b, {{ opacity: 0, scale: 2.6, rotation: -30 }}, {{ opacity: 1, scale: 1, rotation: 0, duration: 0.45, ease: "back.out(2.4)" }}, {L(209.4)} + i * 0.22));
+  t.fromTo("#rg-p2", {{ y: 60, opacity: 0 }}, {{ y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }}, {L(209.6)});
+  {chr(10).join("  " + j for j in js).strip()}
+  t.to("#rg-p1, #rg-p2", {{ x: 400, opacity: 0, duration: 0.45, ease: "power2.in" }}, {L(214.1)});
+  t.fromTo("#rg-cal", {{ x: 600, opacity: 0 }}, {{ x: 0, opacity: 1, duration: 0.7, ease: "power4.out" }}, {L(214.4)});
+  t.fromTo("#rg-cal .card", {{ scale: 1 }}, {{ scale: 1.06, duration: 0.25, yoyo: true, repeat: 1 }}, {L(217.6)});
+  t.to("#rg-pic", {{ {v(1.47, 434, 250)}, duration: 3.0, ease: "sine.inOut" }}, {L(217.9)});
+  t.fromTo("#rg-visa", {{ y: 300, opacity: 0 }}, {{ y: 0, opacity: 1, duration: 0.7, ease: "back.out(1.6)" }}, {L(220.2)});
+  t.fromTo(".bdg", {{ scale: 1 }}, {{ scale: 1.18, duration: 0.25, yoyo: true, repeat: 1, stagger: 0.12 }}, {L(222.6)});
   window.__timelines["region"] = t;
 }})();
 </script>
