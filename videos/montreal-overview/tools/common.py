@@ -164,10 +164,10 @@ html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; backgro
 
 JS_HELPERS = r"""
 const OFF = __OFF__;
-// v2 audio: 283.00-286.45 (3.45 s) was cut from the narration. Scene cues are written in v1 narration
-// time, so A() pulls every cue at/after the cut 3.45 s earlier. R() = already-final times (no shift).
-const CUT = 283.0, CUTLEN = 3.45;
-const A = (t) => t + OFF - (t >= CUT ? CUTLEN : 0);
+// The narration was cut three times after the cues were written (v1 time): A() maps a v1 cue time to the
+// current recording (see CUTS in tools/build.py). R() = already-final times (no mapping).
+const CUTS = [[229.18, 232.62], [278.0, 279.65], [283.0, 286.45]];
+const A = (t) => { let o = t; for (const [a, b] of CUTS) { if (t >= b) o -= b - a; else if (t > a) o -= t - a; } return o + OFF; };
 const R = (t) => t + OFF;
 const $ = (s) => document.querySelector(s);
 const $$ = (s) => Array.from(document.querySelectorAll(s));

@@ -20,9 +20,23 @@ import region  # noqa: E402
 ROOT = os.path.dirname(HERE)
 PLAN = os.path.join(ROOT, "..", "..", "plans", "montreal-overview")
 OFF = 0.5  # lead-in before the narration starts
-CUT, CUTLEN = 283.0, 3.45  # v2 narration: 283.00-286.45 removed (duplicate "전체적인 진행기간은")
-V = lambda t: round(t - CUTLEN, 3) if t >= CUT else t  # noqa: E731  v1 cue time -> v2 time
-END_AUDIO = V(304.0)  # narration ends 294.2; end card holds to here
+# Narration cuts in v1 time (v2: duplicate "전체적인 진행기간은"; v3: "직장생활을 한 제 배우자", "비자 승인").
+# Scene cues are written in v1 narration time; V() maps them to the current (v3) recording.
+CUTS = [(229.18, 232.62), (278.00, 279.65), (283.00, 286.45)]
+
+
+def V(t):
+    out = t
+    for a, b in CUTS:
+        if t >= b:
+            out -= b - a
+        elif t > a:
+            out -= t - a  # a cue inside a removed span lands on the cut point
+    return round(out, 3)
+
+
+
+END_AUDIO = V(304.0)  # narration ends 289.1; end card holds to here
 TOTAL = round(END_AUDIO + OFF, 2)
 A = lambda t: round(t + OFF, 3)  # noqa: E731
 
@@ -227,7 +241,7 @@ def main():
     auto_a = {"version": 1, "lanes": [{"target": "volume", "points": [{"t": 0, "v": 0}, {"t": 1.5, "v": LV}, {"t": round(ad - 4, 2), "v": LV}, {"t": ad, "v": 0}]}]}
     auto_b = {"version": 1, "lanes": [{"target": "volume", "points": [{"t": 0, "v": 0}, {"t": 4, "v": LV}, {"t": round(end_t - b_start, 2), "v": LV},
                                                                           {"t": round(end_t - b_start + 1.2, 2), "v": LE}, {"t": round(bd - 2.5, 2), "v": LE}, {"t": bd, "v": 0}]}]}
-    audio = (f'<audio id="vo" src="assets/audio/narration.m4a" data-start="{OFF}" data-duration="295.0" data-track-index="10" data-volume="1"></audio>\n'
+    audio = (f'<audio id="vo" src="assets/audio/narration.m4a" data-start="{OFF}" data-duration="290.0" data-track-index="10" data-volume="1"></audio>\n'
              f'<audio id="bgm-a" src="assets/music/bgm-a.mp3" data-start="0" data-duration="{ad}" data-track-index="11" data-volume="1" data-automation=\'{json.dumps(auto_a)}\'></audio>\n'
              f'<audio id="bgm-b" src="assets/music/bgm-b.mp3" data-start="{b_start}" data-duration="{bd}" data-track-index="12" data-volume="1" data-automation=\'{json.dumps(auto_b)}\'></audio>')
 

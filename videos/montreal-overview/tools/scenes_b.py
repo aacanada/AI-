@@ -275,8 +275,8 @@ pop("#s24-m", 228.9, {{ from: 0 }});
 rise("#s24-k", 225.5, {{ y: 30 }});
 slide("#s24-e1", 226.0, 500);
 slide("#s24-e2", 228.4, 500);
-pop("#s24-e3", 230.8, {{ y: 40 }});
-pulse("#s24-e3", 232.1, {{ s: 1.06 }});
+pop("#s24-e3", 233.6, {{ y: 40 }});
+pulse("#s24-e3", 234.9, {{ s: 1.06 }});
 tl.to("#s24-mapw, #s24-tl", {{ opacity: 0, scale: 0.9, duration: 0.5, ease: "power2.in" }}, A(235.4));
 slam("#s24-only", 236.0, {{ from: 2 }});
 fade("#s24-big", 235.9, {{ d: 0.2 }});
@@ -343,7 +343,7 @@ scene("s26", 262.0, 292.6, "진행 절차", "ÉTAPES", f"""
  <div style="margin-top:20px;margin-left:98px;width:900px;height:26px;border-radius:13px;background:{HI};position:relative;overflow:hidden"><div id="s26-flex" style="position:absolute;left:0;top:0;width:60%;height:100%;background:{RED};border-radius:13px;transform-origin:0 50%"></div></div></div>
 """, """
 rise("#s26-k", 262.1, { y: 30 }); rise("#s26-h", 262.3, { y: 30 });
-const CT = [262.8, 265.6, 267.4, 272.8, 278.2];
+const CT = [262.8, 265.6, 267.4, 272.8, 279.7];
 const PANX = [0, 0, -330, -860, -1390];
 CT.forEach((t, i) => {
   tl.fromTo("#s26-c" + i, { y: 260, opacity: 0, rotation: i % 2 ? 6 : -6 }, { y: 0, opacity: 1, rotation: 0, duration: 0.7, ease: "back.out(1.6)" }, A(t));
