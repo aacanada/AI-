@@ -6,3 +6,4 @@ renders/*.pre.wav
 renders/video_silent.mp4
 video/snap*/
 video/render.log
+renders/video.mp4.part_*
