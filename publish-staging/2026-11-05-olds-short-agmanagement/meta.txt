@@ -1,0 +1,10 @@
+type: shorts
+title: 경영·영업 경력 살리는 캐나다 2년 전공 | 올즈컬리지 농업경영 디플로마 #shorts
+channels: youtube, instagram, threads, blog, clip, homepage
+visibility: public
+publish_order: 1
+publish_after: 2026-11-05
+linked_to: 2026-10-26-olds-diploma-longform
+files: video.mp4 (1080x1920, 0:46, 20 MB), thumbnail.jpg (1080x1920 cover, 제목·브랜드만), upload-text.txt
+source: aacanada/AI- branch claude/fervent-knuth-fbxid4, videos/olds-diploma-shorts/agmanagement/
+notes: 농업경영 디플로마 2년 디플로마 쇼츠. 롱폼 장면 음성 + AI 음성(ElevenLabs "일곱번째") 요약·CTA 문장. 2026-10-26-olds-diploma-longform 의 published.md 에 본편 주소가 생긴 뒤 게시하고, 유튜브 쇼츠 '관련 동영상'에 본편을 연결해 주세요.
