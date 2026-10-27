@@ -1,0 +1,10 @@
+type: shorts
+title: 국제학생이 가장 많은 학교 | Marymount Academy International
+channels: youtube, instagram, threads, blog, clip, homepage
+visibility: public
+publish_order: 11
+publish_after: 2026-11-18
+linked_to: 2026-10-25-emsb-longform
+files: video.mp4 (1080x1920, 0:31, 7 MB), thumbnail.jpg (1080x1920 cover), upload-text.txt
+source: aacanada/AI- branch claude/happy-feynman-0jcjp6, videos/emsb-isp-shorts/mma/
+notes: EMSB 숏폼(mma). ElevenLabs AI 음성 '일곱번째' 사용(원장님 지시 2026-10-24). 2026-10-25-emsb-longform 의 published.md 에 본편 유튜브 주소가 생긴 뒤 게시하고, 쇼츠 '관련 동영상'에 본편을 연결해 주세요. 숫자별 출처·기준일은 upload-text.txt [출처·기준일].
