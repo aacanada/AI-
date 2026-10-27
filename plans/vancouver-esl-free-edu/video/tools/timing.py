@@ -2,6 +2,7 @@
 import json, re, sys, difflib, subprocess
 P = '/home/user/AI-/plans/vancouver-esl-free-edu'
 ASR = sys.argv[1]
+AUD = sys.argv[2] if len(sys.argv) > 2 else 'audio'
 txt = open(P + '/NARRATION.txt', encoding='utf-8').read()
 blocks = dict(re.findall(r'\[(s\d\d)\]\n(.*?)(?=\n\[s\d\d\]|\Z)', txt, re.S))
 LEAD, TAIL = 0.6, 0.8
@@ -30,7 +31,7 @@ def chunks(sentence, maxlen=30):
 
 scenes, cues, t = [], [], 0.0
 for k in sorted(blocks):
-    dur = float(subprocess.check_output(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', f'{P}/audio/vanesl_{k}.mp3']))
+    dur = float(subprocess.check_output(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', f'{P}/{AUD}/vanesl_{k}.mp3']))
     words = [w for w in json.load(open(f'{ASR}/{k}.json'))['words'] if w['type'] == 'word']
     # char-level time map for ASR text
     a_chars, a_t = '', []

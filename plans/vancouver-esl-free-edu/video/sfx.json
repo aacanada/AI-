@@ -1,0 +1,440 @@
+{
+ "total": 314.157,
+ "scenes": [
+  {
+   "id": "s01",
+   "start": 0.0,
+   "audio_start": 0.6,
+   "audio_dur": 23.249,
+   "dur": 24.649
+  },
+  {
+   "id": "s02",
+   "start": 24.649,
+   "audio_start": 25.249,
+   "audio_dur": 28.369,
+   "dur": 29.769
+  },
+  {
+   "id": "s03",
+   "start": 54.418,
+   "audio_start": 55.018,
+   "audio_dur": 28.735,
+   "dur": 30.135
+  },
+  {
+   "id": "s04",
+   "start": 84.553,
+   "audio_start": 85.153,
+   "audio_dur": 50.051,
+   "dur": 51.451
+  },
+  {
+   "id": "s05",
+   "start": 136.004,
+   "audio_start": 136.604,
+   "audio_dur": 24.503,
+   "dur": 25.903
+  },
+  {
+   "id": "s06",
+   "start": 161.907,
+   "audio_start": 162.507,
+   "audio_dur": 49.92,
+   "dur": 51.32
+  },
+  {
+   "id": "s07",
+   "start": 213.227,
+   "audio_start": 213.827,
+   "audio_dur": 48.248,
+   "dur": 49.648
+  },
+  {
+   "id": "s08",
+   "start": 262.875,
+   "audio_start": 263.475,
+   "audio_dur": 28.029,
+   "dur": 29.429
+  },
+  {
+   "id": "s09",
+   "start": 292.304,
+   "audio_start": 292.904,
+   "audio_dur": 16.953,
+   "dur": 21.853
+  }
+ ],
+ "sfx": [
+  {
+   "t": 0.6,
+   "file": "impact-bass-1.mp3",
+   "gain": -15
+  },
+  {
+   "t": 9.681,
+   "file": "impact-bass-2.mp3",
+   "gain": -14
+  },
+  {
+   "t": 10.7,
+   "file": "whoosh-short.mp3",
+   "gain": -18
+  },
+  {
+   "t": 15.48,
+   "file": "whoosh.mp3",
+   "gain": -16
+  },
+  {
+   "t": 16.03,
+   "file": "impact-bass-1.mp3",
+   "gain": -15
+  },
+  {
+   "t": 18.74,
+   "file": "impact-bass-2.mp3",
+   "gain": -17
+  },
+  {
+   "t": 21.28,
+   "file": "chime.mp3",
+   "gain": -20
+  },
+  {
+   "t": 24.199,
+   "file": "whoosh.mp3",
+   "gain": -19
+  },
+  {
+   "t": 31.8,
+   "file": "impact-bass-2.mp3",
+   "gain": -15
+  },
+  {
+   "t": 33.529,
+   "file": "pop.mp3",
+   "gain": -18
+  },
+  {
+   "t": 35.789,
+   "file": "pop.mp3",
+   "gain": -18
+  },
+  {
+   "t": 41.969,
+   "file": "whoosh-short.mp3",
+   "gain": -18
+  },
+  {
+   "t": 47.769,
+   "file": "impact-bass-1.mp3",
+   "gain": -17
+  },
+  {
+   "t": 49.583,
+   "file": "impact-bass-1.mp3",
+   "gain": -17
+  },
+  {
+   "t": 51.849,
+   "file": "impact-bass-2.mp3",
+   "gain": -16
+  },
+  {
+   "t": 53.968,
+   "file": "whoosh.mp3",
+   "gain": -19
+  },
+  {
+   "t": 58.538,
+   "file": "pop.mp3",
+   "gain": -17
+  },
+  {
+   "t": 61.878,
+   "file": "pop.mp3",
+   "gain": -17
+  },
+  {
+   "t": 71.555,
+   "file": "impact-bass-2.mp3",
+   "gain": -14
+  },
+  {
+   "t": 74.618,
+   "file": "impact-bass-1.mp3",
+   "gain": -18
+  },
+  {
+   "t": 78.258,
+   "file": "whoosh-short.mp3",
+   "gain": -18
+  },
+  {
+   "t": 84.103,
+   "file": "whoosh.mp3",
+   "gain": -19
+  },
+  {
+   "t": 85.253,
+   "file": "impact-bass-1.mp3",
+   "gain": -15
+  },
+  {
+   "t": 89.566,
+   "file": "impact-bass-2.mp3",
+   "gain": -14
+  },
+  {
+   "t": 89.773,
+   "file": "whoosh.mp3",
+   "gain": -17
+  },
+  {
+   "t": 98.633,
+   "file": "impact-bass-1.mp3",
+   "gain": -16
+  },
+  {
+   "t": 107.033,
+   "file": "impact-bass-1.mp3",
+   "gain": -16
+  },
+  {
+   "t": 112.553,
+   "file": "impact-bass-1.mp3",
+   "gain": -16
+  },
+  {
+   "t": 122.173,
+   "file": "impact-bass-2.mp3",
+   "gain": -13
+  },
+  {
+   "t": 124.063,
+   "file": "whoosh-short.mp3",
+   "gain": -18
+  },
+  {
+   "t": 126.758,
+   "file": "impact-bass-1.mp3",
+   "gain": -17
+  },
+  {
+   "t": 128.453,
+   "file": "chime.mp3",
+   "gain": -19
+  },
+  {
+   "t": 135.554,
+   "file": "whoosh.mp3",
+   "gain": -19
+  },
+  {
+   "t": 140.284,
+   "file": "whoosh-short.mp3",
+   "gain": -18
+  },
+  {
+   "t": 150.844,
+   "file": "pop.mp3",
+   "gain": -19
+  },
+  {
+   "t": 151.394,
+   "file": "pop.mp3",
+   "gain": -19
+  },
+  {
+   "t": 151.944,
+   "file": "pop.mp3",
+   "gain": -19
+  },
+  {
+   "t": 156.764,
+   "file": "impact-bass-2.mp3",
+   "gain": -16
+  },
+  {
+   "t": 161.457,
+   "file": "whoosh.mp3",
+   "gain": -19
+  },
+  {
+   "t": 167.547,
+   "file": "impact-bass-1.mp3",
+   "gain": -17
+  },
+  {
+   "t": 176.992,
+   "file": "pop.mp3",
+   "gain": -17
+  },
+  {
+   "t": 177.092,
+   "file": "impact-bass-2.mp3",
+   "gain": -16
+  },
+  {
+   "t": 180.727,
+   "file": "pop.mp3",
+   "gain": -17
+  },
+  {
+   "t": 187.387,
+   "file": "pop.mp3",
+   "gain": -17
+  },
+  {
+   "t": 188.787,
+   "file": "pop.mp3",
+   "gain": -17
+  },
+  {
+   "t": 193.361,
+   "file": "click-soft.mp3",
+   "gain": -14
+  },
+  {
+   "t": 194.445,
+   "file": "click-soft.mp3",
+   "gain": -14
+  },
+  {
+   "t": 194.987,
+   "file": "click-soft.mp3",
+   "gain": -14
+  },
+  {
+   "t": 196.312,
+   "file": "click-soft.mp3",
+   "gain": -14
+  },
+  {
+   "t": 199.259,
+   "file": "click-soft.mp3",
+   "gain": -14
+  },
+  {
+   "t": 199.656,
+   "file": "click-soft.mp3",
+   "gain": -14
+  },
+  {
+   "t": 201.592,
+   "file": "click-soft.mp3",
+   "gain": -14
+  },
+  {
+   "t": 203.527,
+   "file": "impact-bass-2.mp3",
+   "gain": -15
+  },
+  {
+   "t": 212.777,
+   "file": "whoosh.mp3",
+   "gain": -19
+  },
+  {
+   "t": 218.947,
+   "file": "whoosh-short.mp3",
+   "gain": -18
+  },
+  {
+   "t": 221.047,
+   "file": "pop.mp3",
+   "gain": -17
+  },
+  {
+   "t": 224.227,
+   "file": "pop.mp3",
+   "gain": -17
+  },
+  {
+   "t": 232.827,
+   "file": "whoosh-short.mp3",
+   "gain": -18
+  },
+  {
+   "t": 234.987,
+   "file": "pop.mp3",
+   "gain": -17
+  },
+  {
+   "t": 238.127,
+   "file": "pop.mp3",
+   "gain": -17
+  },
+  {
+   "t": 241.027,
+   "file": "sparkle.mp3",
+   "gain": -20
+  },
+  {
+   "t": 244.287,
+   "file": "pop.mp3",
+   "gain": -17
+  },
+  {
+   "t": 252.227,
+   "file": "whoosh.mp3",
+   "gain": -18
+  },
+  {
+   "t": 258.9,
+   "file": "impact-bass-2.mp3",
+   "gain": -15
+  },
+  {
+   "t": 260.647,
+   "file": "impact-bass-1.mp3",
+   "gain": -17
+  },
+  {
+   "t": 262.425,
+   "file": "whoosh.mp3",
+   "gain": -19
+  },
+  {
+   "t": 266.695,
+   "file": "pop.mp3",
+   "gain": -16
+  },
+  {
+   "t": 269.835,
+   "file": "pop.mp3",
+   "gain": -16
+  },
+  {
+   "t": 281.575,
+   "file": "pop.mp3",
+   "gain": -16
+  },
+  {
+   "t": 283.117,
+   "file": "impact-bass-2.mp3",
+   "gain": -14
+  },
+  {
+   "t": 291.854,
+   "file": "whoosh.mp3",
+   "gain": -19
+  },
+  {
+   "t": 300.229,
+   "file": "impact-bass-1.mp3",
+   "gain": -17
+  },
+  {
+   "t": 301.579,
+   "file": "impact-bass-1.mp3",
+   "gain": -17
+  },
+  {
+   "t": 307.724,
+   "file": "chime.mp3",
+   "gain": -17
+  }
+ ]
+}

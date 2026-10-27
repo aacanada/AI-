@@ -1,0 +1,8 @@
+hf/.hyperframes/
+hf/node_modules/
+renders/work-*/
+renders/.*transaction*/
+renders/*.pre.wav
+renders/video_silent.mp4
+video/snap*/
+video/render.log

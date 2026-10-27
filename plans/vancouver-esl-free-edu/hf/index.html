@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="ko" data-resolution="landscape">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1920, height=1080" />
+<title>밴쿠버 자녀무상교육 — 영어 점수 없어도 어학연수 1년 무상?</title>
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/shader-transitions.global.js"></script>
+<style>
+@font-face { font-family: "BHS"; src: url("fonts/BlackHanSans-Regular.ttf"); font-weight: 400; }
+@font-face { font-family: "NotoKR"; src: url("fonts/NotoSansKR.ttf"); font-weight: 100 900; }
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { width:1920px; height:1080px; overflow:hidden; background:#FFF8F2; }
+#root { position:relative; width:100%; height:100%; overflow:hidden; font-family:"NotoKR", sans-serif; color:#2B2B2B; }
+.scene { position:absolute; left:0; top:0; width:1920px; height:1080px; overflow:hidden; background-color:#FFF8F2; }
+.maple { position:absolute; }
+.abs { position:absolute; }
+.row { display:flex; flex-direction:row; align-items:center; }
+.col { display:flex; flex-direction:column; }
+.center { position:absolute; left:0; top:0; width:1920px; height:1000px; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+.bh { font-family:"BHS", sans-serif; font-weight:400; letter-spacing:-1px; }
+.nk9 { font-weight:900; letter-spacing:-1px; }
+.nk7 { font-weight:700; }
+.red { color:#C8102E; font-style:normal; }
+.band { display:inline-block; background:#FFD6CF; color:#2B2B2B; padding:10px 28px; border-left:12px solid #C8102E; border-radius:8px; }
+.tag { position:absolute; left:64px; top:40px; display:flex; align-items:center; gap:16px; }
+.tagnum { display:inline-block; background:#C8102E; color:#fff; font-family:"BHS"; font-size:36px; padding:6px 16px; border-radius:12px; }
+.tagtxt { font-weight:900; font-size:34px; color:#7A1B26; }
+.doc { background:#fff; border-radius:14px; box-shadow:0 18px 50px rgba(122,27,38,0.22); overflow:hidden; }
+.doc img { border-radius:14px; }
+.dim { background:rgba(255,248,242,0.72); }
+.hlbox { border:6px solid #C8102E; border-radius:8px; opacity:0; box-shadow:0 0 0 0 rgba(200,16,46,0); }
+.ul { height:6px; background:#C8102E; border-radius:3px; transform-origin:0 50%; }
+.src { left:110px; top:892px; font-size:21px; font-weight:500; color:#7d6a6a; }
+.stamp { display:inline-block; color:#C8102E; border:7px solid #C8102E; border-radius:16px; padding:8px 26px; font-weight:900; background:rgba(255,248,242,0.92); }
+.stampc { width:330px; height:330px; border-radius:50%; border:12px solid #C8102E; color:#C8102E; display:flex; align-items:center; justify-content:center; text-align:center; font-family:"BHS"; font-size:96px; background:rgba(255,248,242,0.94); }
+.chip { background:#fff; border-radius:60px; padding:18px 40px 18px 22px; gap:20px; font-size:48px; font-weight:900; box-shadow:0 10px 30px rgba(122,27,38,0.14); }
+.bigyear { font-family:"BHS"; font-size:130px; color:#C8102E; line-height:1; }
+.bigyear small { font-family:"NotoKR"; font-weight:900; font-size:44px; color:#2B2B2B; margin-left:18px; }
+.check { display:flex; gap:24px; align-items:flex-start; font-size:46px; font-weight:900; line-height:1.3; }
+.check b { display:flex; width:70px; height:70px; flex:none; border-radius:50%; background:#C8102E; color:#fff; align-items:center; justify-content:center; font-size:44px; }
+.xrow { font-size:50px; color:#2B2B2B; text-decoration:line-through; text-decoration-color:#C8102E; text-decoration-thickness:5px; }
+.xrow .red { display:inline-block; text-decoration:none; font-size:70px; margin-left:12px; }
+.card { border-radius:22px; overflow:hidden; box-shadow:0 22px 60px rgba(122,27,38,0.25); }
+.num { left:1150px; top:300px; width:700px; display:flex; gap:26px; align-items:center; opacity:0; }
+.num b { font-family:"BHS"; font-size:110px; color:#C8102E; line-height:1; font-weight:400; }
+.num span { display:block; font-size:52px; font-weight:900; }
+.num small { display:block; font-size:34px; font-weight:700; color:#7A1B26; margin-top:4px; }
+.pill { display:inline-block; background:#FFD6CF; color:#7A1B26; font-weight:900; font-size:34px; padding:10px 26px; border-radius:40px; }
+.pill.big { font-size:46px; padding:16px 36px; background:#C8102E; color:#fff; }
+.slamtag { width:680px; padding:30px 40px; background:#C8102E; color:#fff; border-radius:24px; font-weight:900; font-size:44px; text-align:center; opacity:0; box-shadow:0 20px 50px rgba(200,16,46,0.35); }
+.slamtag b { display:block; font-family:"BHS"; font-weight:400; font-size:132px; line-height:1.1; }
+.vs { width:470px; height:420px; background:#fff; border-radius:26px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; box-shadow:0 14px 40px rgba(122,27,38,0.16); }
+.vs small { font-size:32px; font-weight:700; color:#8a7777; }
+.vs span { font-size:62px; font-weight:900; line-height:1.25; margin:16px 0; }
+.vs b { display:inline-block; font-size:96px; line-height:1; }
+.vsok { border:6px solid #C8102E; }
+.vsok b { color:#C8102E; }
+.fnode { width:330px; height:150px; background:#fff; border-radius:22px; border:5px solid #C8102E; display:flex; flex-direction:column; align-items:center; justify-content:center; box-shadow:0 12px 30px rgba(122,27,38,0.16); }
+.fnode small { font-size:32px; font-weight:700; color:#7A1B26; }
+.fnode span { display:inline-block; font-size:52px; font-weight:900; color:#2B2B2B; }
+#s06-f0 span { color:#C8102E; } #s06-h .red { display:inline-block; }
+#s06-f3 { background:#C8102E; } #s06-f3 small, #s06-f3 span { color:#fff; }
+.farrow { width:70px; height:10px; background:#C8102E; border-radius:5px; transform-origin:0 50%; }
+.glabel { width:190px; flex:none; background:#C8102E; color:#fff; font-weight:900; font-size:34px; text-align:center; padding:26px 0; border-radius:16px; }
+.school { width:330px; height:100px; background:#fff; border:4px solid #C8102E; border-radius:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; font-size:38px; font-weight:900; color:#2B2B2B; opacity:0; white-space:nowrap; letter-spacing:-1px; }
+.school.soon { border:4px dashed #7A1B26; color:#7A1B26; }
+.school small { font-size:22px; font-weight:700; color:#7A1B26; }
+.lane { left:110px; width:1710px; height:150px; background:rgba(255,214,207,0.45); border-radius:22px; }
+.lname { position:absolute; left:28px; top:22px; font-family:"BHS"; font-size:64px; color:#C8102E; line-height:1.05; }
+.lname small { display:block; font-family:"NotoKR"; font-weight:900; font-size:28px; color:#7A1B26; }
+.lnode { height:90px; padding:0 34px; display:flex; align-items:center; background:#fff; border:4px solid #C8102E; border-radius:18px; font-size:40px; font-weight:900; white-space:nowrap; }
+.lnode small { font-size:30px; color:#C8102E; margin-left:8px; }
+.lnode.strong { background:#C8102E; color:#fff; }
+.freebar { height:84px; background:#C8102E; border-radius:42px; transform-origin:0 50%; display:flex; align-items:center; justify-content:center; color:#fff; font-size:42px; font-weight:900; }
+.ck3 { left:110px; width:1080px; display:flex; gap:30px; align-items:center; opacity:0; }
+.ck3 b { display:flex; width:96px; height:96px; flex:none; border-radius:22px; background:#C8102E; color:#fff; font-family:"BHS"; font-weight:400; font-size:64px; align-items:center; justify-content:center; }
+.ck3 span { display:block; font-size:56px; font-weight:900; }
+.ck3 small { display:inline-block; font-size:36px; font-weight:700; color:#7A1B26; margin-top:6px; background-image:linear-gradient(#FFD6CF,#FFD6CF); background-repeat:no-repeat; background-size:0% 100%; padding:0 8px; }
+.ck3 em { font-style:normal; }
+.planbig { font-family:"BHS"; font-size:120px; color:#fff; background:#C8102E; padding:10px 46px; border-radius:26px; }
+.planbig.b { background:#7A1B26; }
+#logo { position:absolute; right:48px; top:26px; width:84px; height:81px; }
+#foot { position:absolute; right:48px; bottom:16px; font-size:24px; font-weight:700; color:#7A1B26; background:rgba(255,248,242,0.85); padding:2px 10px; border-radius:6px; }
+.capc { position:absolute; left:0; top:0; width:1920px; height:1080px; }
+.cap { position:absolute; left:50%; bottom:62px; transform:translateX(-50%); max-width:1640px; white-space:nowrap; background:rgba(43,43,43,0.88); color:#fff; font-size:46px; font-weight:700; padding:12px 34px; border-radius:14px; letter-spacing:-0.5px; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-width="1920" data-height="1080" data-duration="314.157">
+<section id="s01" class="scene"><svg viewBox="-2015 -2000 4030 4030" class="maple" style="right:-140px;top:-120px;width:620px;opacity:1"><path fill="#F9E3DE" d="m-90 2030 45-863a95 95 0 0 0-111-98l-859 151 116-320a65 65 0 0 0-20-73l-941-762 212-99a65 65 0 0 0 34-79l-186-572 542 115a65 65 0 0 0 73-38l105-247 423 454a65 65 0 0 0 111-57l-204-1052 327 189a65 65 0 0 0 91-27l332-652 332 652a65 65 0 0 0 91 27l327-189-204 1052a65 65 0 0 0 111 57l423-454 105 247a65 65 0 0 0 73 38l542-115-186 572a65 65 0 0 0 34 79l212 99-941 762a65 65 0 0 0-20 73l116 320-859-151a95 95 0 0 0-111 98l45 863z"/></svg><svg viewBox="-2015 -2000 4030 4030" class="maple" style="left:-120px;bottom:-160px;width:420px;opacity:1"><path fill="#FBEAE6" d="m-90 2030 45-863a95 95 0 0 0-111-98l-859 151 116-320a65 65 0 0 0-20-73l-941-762 212-99a65 65 0 0 0 34-79l-186-572 542 115a65 65 0 0 0 73-38l105-247 423 454a65 65 0 0 0 111-57l-204-1052 327 189a65 65 0 0 0 91-27l332-652 332 652a65 65 0 0 0 91 27l327-189-204 1052a65 65 0 0 0 111 57l423-454 105 247a65 65 0 0 0 73 38l542-115-186 572a65 65 0 0 0 34 79l212 99-941 762a65 65 0 0 0-20 73l116 320-859-151a95 95 0 0 0-111 98l45 863z"/></svg>
+<div id="s01-a" class="center col">
+  <div id="s01-q" class="bh" style="font-size:150px;color:#2B2B2B">영어 점수 <span style="color:#C8102E">없어도?</span></div>
+  <div id="s01-sub" class="nk9" style="font-size:52px;color:#7A1B26;margin-top:26px">밴쿠버 자녀무상교육</div>
+</div>
+<div id="s01-b" class="abs" style="left:110px;top:250px;width:900px">
+  <div id="s01-b1" class="nk9" style="font-size:58px;color:#2B2B2B">사설 어학원 어학연수로 시작</div>
+  <div id="s01-b2" class="bh" style="font-size:230px;line-height:1.05;color:#C8102E;margin-top:10px">최대 1년</div>
+  <div id="s01-b3" class="band nk9" style="font-size:64px">아이 학비 면제</div>
+</div>
+<div id="s01-doc" class="abs doc" style="left:1040px;top:250px;width:780px">
+  <img src="assets/cap_bc_title.png" style="width:780px;display:block">
+</div>
+<div id="s01-docstamp" class="abs stamp" style="left:1480px;top:640px;font-size:44px">BC주 규정 원문</div>
+<div id="s01-hello" class="abs row" style="left:110px;top:760px">
+  <img src="assets/aa-canada-logo-transparent.png" style="width:92px;height:92px">
+  <div class="nk9" style="font-size:52px;color:#2B2B2B;margin-left:22px">안녕하세요, <span style="color:#C8102E">AA Canada</span>입니다</div>
+</div>
+</section><section id="s02" class="scene"><svg viewBox="-2015 -2000 4030 4030" class="maple" style="right:-140px;top:-120px;width:620px;opacity:1"><path fill="#F9E3DE" d="m-90 2030 45-863a95 95 0 0 0-111-98l-859 151 116-320a65 65 0 0 0-20-73l-941-762 212-99a65 65 0 0 0 34-79l-186-572 542 115a65 65 0 0 0 73-38l105-247 423 454a65 65 0 0 0 111-57l-204-1052 327 189a65 65 0 0 0 91-27l332-652 332 652a65 65 0 0 0 91 27l327-189-204 1052a65 65 0 0 0 111 57l423-454 105 247a65 65 0 0 0 73 38l542-115-186 572a65 65 0 0 0 34 79l212 99-941 762a65 65 0 0 0-20 73l116 320-859-151a95 95 0 0 0-111 98l45 863z"/></svg><svg viewBox="-2015 -2000 4030 4030" class="maple" style="left:-120px;bottom:-160px;width:420px;opacity:1"><path fill="#FBEAE6" d="m-90 2030 45-863a95 95 0 0 0-111-98l-859 151 116-320a65 65 0 0 0-20-73l-941-762 212-99a65 65 0 0 0 34-79l-186-572 542 115a65 65 0 0 0 73-38l105-247 423 454a65 65 0 0 0 111-57l-204-1052 327 189a65 65 0 0 0 91-27l332-652 332 652a65 65 0 0 0 91 27l327-189-204 1052a65 65 0 0 0 111 57l423-454 105 247a65 65 0 0 0 73 38l542-115-186 572a65 65 0 0 0 34 79l212 99-941 762a65 65 0 0 0-20 73l116 320-859-151a95 95 0 0 0-111 98l45 863z"/></svg><div class="tag" id="s02-tag"><span class="tagnum">01</span><span class="tagtxt">원리</span></div>
+<div id="s02-a" class="abs" style="left:0;top:0;width:1920px;height:1080px">
+  <div id="s02-h" class="abs nk9" style="left:110px;top:170px;font-size:60px;color:#2B2B2B">BC주 공립학교 무료 = 아이가 <span style="color:#C8102E">거주자</span>로 인정</div>
+  <div id="s02-r1" class="abs chip row" style="left:110px;top:360px"><svg viewBox="0 0 40 40" style="width:58px;height:58px;flex:none"><circle cx="20" cy="13" r="8" fill="#C8102E"/><path d="M5 38c0-9 7-15 15-15s15 6 15 15z" fill="#C8102E"/></svg><span>시민권자 · 영주권자 부모</span></div>
+  <div id="s02-r2" class="abs chip row" style="left:110px;top:520px"><svg viewBox="0 0 40 40" style="width:58px;height:58px;flex:none"><circle cx="20" cy="13" r="8" fill="#C8102E"/><path d="M5 38c0-9 7-15 15-15s15 6 15 15z" fill="#C8102E"/></svg><span>학생비자 · 취업비자 부모</span><em style="font-style:normal;color:#7A1B26;font-size:32px;margin-left:16px">(일정 조건)</em></div>
+  <div id="s02-arrow" class="abs" style="left:1010px;top:470px;width:300px;height:12px;background:#C8102E;border-radius:6px"></div>
+  <div id="s02-arrowhead" class="abs" style="left:1300px;top:452px;width:0;height:0;border-top:24px solid rgba(200,16,46,0);border-bottom:24px solid rgba(200,16,46,0);border-left:36px solid #C8102E"></div>
+  <div id="s02-stamp" class="abs stampc" style="left:1400px;top:330px">거주자</div>
+  <div id="s02-free" class="abs band nk9" style="left:110px;top:700px;font-size:50px">교육청 학비 ✕ · 공립학교 무료</div>
+</div>
+<div id="s02-b" class="abs" style="left:0;top:0;width:1920px;height:1080px;opacity:0">
+  <div id="s02-btitle" class="abs nk9" style="left:110px;top:130px;font-size:46px;color:#2B2B2B">BC주 교육부 · 운영 지원금 대상 학생 규정</div>
+  <div id="s02-docw" class="abs doc" style="left:250px;top:215px;width:1010px;height:570px">
+    <img src="assets/cap_bc_title.png" style="width:1010px;display:block">
+    <div id="s02-ul1" class="abs ul" style="left:22px;top:392px;width:388px"></div>
+    <div id="s02-ul2" class="abs ul" style="left:418px;top:392px;width:158px"></div>
+    <div id="s02-st" class="abs hlbox" style="left:12px;top:450px;width:160px;height:110px"></div>
+  </div>
+  <div id="s02-y1" class="abs bigyear" style="left:1330px;top:300px">2011<small>시행</small></div>
+  <div id="s02-y2" class="abs bigyear" style="left:1330px;top:470px">2013<small>개정</small></div>
+  <div id="s02-cur" class="abs stamp" style="left:1340px;top:650px;font-size:48px">현재 유효 · Current</div>
+  <div class="abs src">출처: BC Ministry of Education and Child Care, Eligibility of Students for Operating Grant Funding (2026.10.27 확인)</div>
+</div>
+</section><section id="s03" class="scene"><svg viewBox="-2015 -2000 4030 4030" class="maple" style="right:-140px;top:-120px;width:620px;opacity:1"><path fill="#F9E3DE" d="m-90 2030 45-863a95 95 0 0 0-111-98l-859 151 116-320a65 65 0 0 0-20-73l-941-762 212-99a65 65 0 0 0 34-79l-186-572 542 115a65 65 0 0 0 73-38l105-247 423 454a65 65 0 0 0 111-57l-204-1052 327 189a65 65 0 0 0 91-27l332-652 332 652a65 65 0 0 0 91 27l327-189-204 1052a65 65 0 0 0 111 57l423-454 105 247a65 65 0 0 0 73 38l542-115-186 572a65 65 0 0 0 34 79l212 99-941 762a65 65 0 0 0-20 73l116 320-859-151a95 95 0 0 0-111 98l45 863z"/></svg><svg viewBox="-2015 -2000 4030 4030" class="maple" style="left:-120px;bottom:-160px;width:420px;opacity:1"><path fill="#FBEAE6" d="m-90 2030 45-863a95 95 0 0 0-111-98l-859 151 116-320a65 65 0 0 0-20-73l-941-762 212-99a65 65 0 0 0 34-79l-186-572 542 115a65 65 0 0 0 73-38l105-247 423 454a65 65 0 0 0 111-57l-204-1052 327 189a65 65 0 0 0 91-27l332-652 332 652a65 65 0 0 0 91 27l327-189-204 1052a65 65 0 0 0 111 57l423-454 105 247a65 65 0 0 0 73 38l542-115-186 572a65 65 0 0 0 34 79l212 99-941 762a65 65 0 0 0-20 73l116 320-859-151a95 95 0 0 0-111 98l45 863z"/></svg><div class="tag" id="s03-tag"><span class="tagnum">02</span><span class="tagtxt">기본 조건</span></div>
+<div id="s03-h" class="abs nk9" style="left:110px;top:140px;font-size:52px;color:#2B2B2B">부모가 <span style="color:#C8102E">학생</span>일 때 기본 조건 2가지</div>
+<div id="s03-docw" class="abs doc" style="left:90px;top:250px;width:910px;height:675px;transform-origin:0 0">
+  <img src="assets/cap_bc_clause.png" style="width:910px;display:block">
+  <div class="abs dim" style="left:0;top:0;width:910px;height:78px"></div>
+  <div class="abs dim" style="left:0;top:222px;width:910px;height:453px"></div>
+  <div id="s03-g" class="abs hlbox" style="left:26px;top:78px;width:875px;height:144px;border-color:#2E8B3A"></div>
+  <div id="s03-ulp" class="abs ul" style="left:390px;top:186px;width:440px"></div>
+</div>
+<div id="s03-c1" class="abs check" style="left:1060px;top:270px"><b>✓</b><span>1년 이상 학업 허가 학생비자</span></div>
+<div id="s03-c2" class="abs check" style="left:1060px;top:400px"><b>✓</b><span>공립: 학위 · 디플로마<br>사립: <em class="red">학위</em> 과정</span></div>
+<div id="s03-stamp" class="abs stampc" style="left:1240px;top:560px;font-size:64px;width:420px;height:200px;border-radius:30px">사립 = 학위</div>
+<div id="s03-x" class="abs xrow nk9" style="left:1100px;top:800px">사립 디플로마 · 수료증 <span class="red">✕</span></div>
+<div id="s03-card" class="abs card" style="left:1180px;top:200px;width:620px"><img src="assets/card_c1.png" style="width:620px;display:block"></div>
+<div id="s03-assoc" class="abs band nk9" style="left:1010px;top:710px;font-size:42px;white-space:nowrap">사립 컬리지 준학사 = Associate Degree</div>
+</section><section id="s04" class="scene"><svg viewBox="-2015 -2000 4030 4030" class="maple" style="right:-140px;top:-120px;width:620px;opacity:1"><path fill="#F9E3DE" d="m-90 2030 45-863a95 95 0 0 0-111-98l-859 151 116-320a65 65 0 0 0-20-73l-941-762 212-99a65 65 0 0 0 34-79l-186-572 542 115a65 65 0 0 0 73-38l105-247 423 454a65 65 0 0 0 111-57l-204-1052 327 189a65 65 0 0 0 91-27l332-652 332 652a65 65 0 0 0 91 27l327-189-204 1052a65 65 0 0 0 111 57l423-454 105 247a65 65 0 0 0 73 38l542-115-186 572a65 65 0 0 0 34 79l212 99-941 762a65 65 0 0 0-20 73l116 320-859-151a95 95 0 0 0-111 98l45 863z"/></svg><svg viewBox="-2015 -2000 4030 4030" class="maple" style="left:-120px;bottom:-160px;width:420px;opacity:1"><path fill="#FBEAE6" d="m-90 2030 45-863a95 95 0 0 0-111-98l-859 151 116-320a65 65 0 0 0-20-73l-941-762 212-99a65 65 0 0 0 34-79l-186-572 542 115a65 65 0 0 0 73-38l105-247 423 454a65 65 0 0 0 111-57l-204-1052 327 189a65 65 0 0 0 91-27l332-652 332 652a65 65 0 0 0 91 27l327-189-204 1052a65 65 0 0 0 111 57l423-454 105 247a65 65 0 0 0 73 38l542-115-186 572a65 65 0 0 0 34 79l212 99-941 762a65 65 0 0 0-20 73l116 320-859-151a95 95 0 0 0-111 98l45 863z"/></svg><div class="tag" id="s04-tag"><span class="tagnum">03</span><span class="tagtxt">핵심 조항</span></div>
+<div id="s04-a" class="center col">
+  <div id="s04-q" class="bh" style="font-size:120px;color:#2B2B2B">영어 점수가 <span style="color:#C8102E">없는</span> 부모님은?</div>
+  <div id="s04-core" class="stamp" style="font-size:64px;margin-top:40px">오늘의 핵심</div>
+</div>
+<div id="s04-b" class="abs" style="left:0;top:0;width:1920px;height:1080px;opacity:0">
+  <div id="s04-docw" class="abs doc" style="left:80px;top:150px;width:910px;height:675px;transform-origin:0 0">
+    <img src="assets/cap_bc_clause.png" style="width:910px;display:block">
+    <div id="s04-dimtop" class="abs dim" style="left:0;top:0;width:910px;height:228px"></div>
+    <div id="s04-par" class="abs hlbox" style="left:30px;top:228px;width:860px;height:66px;border-color:#7A1B26"></div>
+    <div id="s04-b1" class="abs hlbox" style="left:83px;top:299px;width:819px;height:181px"></div><div id="s04-b2" class="abs hlbox" style="left:83px;top:483px;width:819px;height:108px"></div><div id="s04-b3" class="abs hlbox" style="left:83px;top:593px;width:819px;height:75px"></div>
+    <div id="s04-eqa1" class="abs ul" style="left:470px;top:370px;width:400px"></div>
+    <div id="s04-eqa2" class="abs ul" style="left:90px;top:404px;width:186px"></div>
+    <div id="s04-yr1" class="abs ul" style="left:640px;top:404px;width:240px;height:7px"></div>
+    <div id="s04-yr2" class="abs ul" style="left:90px;top:438px;width:52px;height:7px"></div>
+  </div>
+  <div id="s04-all" class="abs nk9" style="left:1150px;top:170px;font-size:42px;color:#2B2B2B">1년 이상 학업 허가 + <span class="red">3가지 모두</span></div>
+  <div id="s04-n1" class="abs num"><b>①</b><div><span>EQA 인증 기관</span><small>최대 1년 영어 과정 수강</small></div></div>
+  <div id="s04-eqa" class="abs pill" style="left:1220px;top:380px">EQA = BC주 교육품질인증</div>
+  <div id="s04-n2" class="abs num" style="top:470px"><b>②</b><div><span>학위 과정 입학허가</span><small>공립 학위·디플로마 / 사립 학위</small></div></div>
+  <div id="s04-n3" class="abs num" style="top:640px"><b>③</b><div><span>조건부 입학</span><small>영어 과정 수료가 조건</small></div></div>
+  <div id="s04-max" class="abs slamtag" style="left:1180px;top:300px">어학연수 중에도<b>최대 1년</b>거주자 인정</div>
+  <div class="abs src">출처: BC Ministry of Education and Child Care, Eligibility of Students for Operating Grant Funding (2026.10.27 확인)</div>
+</div>
+<div id="s04-c" class="abs" style="left:0;top:0;width:1920px;height:1080px;opacity:0">
+  <div id="s04-vs1" class="abs vs" style="left:110px;top:220px"><small>규정에 없는 말</small><span>'대학 부설'<br>제한</span><b class="red">✕</b></div>
+  <div id="s04-vs2" class="abs vs vsok" style="left:640px;top:220px"><small>규정 문구</small><span>EQA<br>지정 기관</span><b>✓</b></div>
+  <div id="s04-res" class="abs band nk9" style="left:110px;top:720px;font-size:54px">EQA 인증 <span class="red">사설 어학원</span>도 같은 기준</div>
+  <div id="s04-card" class="abs card" style="left:1220px;top:170px;width:600px"><img src="assets/card_c2.png" style="width:600px;display:block"></div>
+</div>
+</section><section id="s05" class="scene"><svg viewBox="-2015 -2000 4030 4030" class="maple" style="right:-140px;top:-120px;width:620px;opacity:1"><path fill="#F9E3DE" d="m-90 2030 45-863a95 95 0 0 0-111-98l-859 151 116-320a65 65 0 0 0-20-73l-941-762 212-99a65 65 0 0 0 34-79l-186-572 542 115a65 65 0 0 0 73-38l105-247 423 454a65 65 0 0 0 111-57l-204-1052 327 189a65 65 0 0 0 91-27l332-652 332 652a65 65 0 0 0 91 27l327-189-204 1052a65 65 0 0 0 111 57l423-454 105 247a65 65 0 0 0 73 38l542-115-186 572a65 65 0 0 0 34 79l212 99-941 762a65 65 0 0 0-20 73l116 320-859-151a95 95 0 0 0-111 98l45 863z"/></svg><svg viewBox="-2015 -2000 4030 4030" class="maple" style="left:-120px;bottom:-160px;width:420px;opacity:1"><path fill="#FBEAE6" d="m-90 2030 45-863a95 95 0 0 0-111-98l-859 151 116-320a65 65 0 0 0-20-73l-941-762 212-99a65 65 0 0 0 34-79l-186-572 542 115a65 65 0 0 0 73-38l105-247 423 454a65 65 0 0 0 111-57l-204-1052 327 189a65 65 0 0 0 91-27l332-652 332 652a65 65 0 0 0 91 27l327-189-204 1052a65 65 0 0 0 111 57l423-454 105 247a65 65 0 0 0 73 38l542-115-186 572a65 65 0 0 0 34 79l212 99-941 762a65 65 0 0 0-20 73l116 320-859-151a95 95 0 0 0-111 98l45 863z"/></svg><div class="tag" id="s05-tag"><span class="tagnum">04</span><span class="tagtxt">밴쿠버 교육청 FAQ</span></div>
+<div id="s05-h" class="abs nk9" style="left:110px;top:140px;font-size:50px;color:#2B2B2B">주정부 문서만이 아닙니다 → <span class="red">밴쿠버 교육청(VSB)</span> 신규 등록 안내</div>
+<div id="s05-docw" class="abs doc" style="left:110px;top:230px;width:1020px;height:505px;transform-origin:0 0">
+  <img src="assets/cap_vsb_ell.png" style="width:1020px;display:block">
+  <div id="s05-q" class="abs hlbox" style="left:10px;top:0;width:1000px;height:102px;border-color:#7A1B26"></div>
+  <div id="s05-k1" class="abs hlbox" style="left:40px;top:186px;width:970px;height:142px"></div>
+  <div id="s05-k2" class="abs hlbox" style="left:40px;top:330px;width:970px;height:70px"></div>
+  <div id="s05-k3" class="abs hlbox" style="left:40px;top:402px;width:970px;height:66px"></div>
+  <div id="s05-u1" class="abs ul" style="left:378px;top:289px;width:600px;height:5px"></div>
+  <div id="s05-u2" class="abs ul" style="left:70px;top:323px;width:772px;height:5px"></div>
+</div>
+<div id="s05-badge" class="abs stamp" style="left:1380px;top:560px;font-size:42px;width:460px;text-align:center">1년 초과 시<br>국제학생 학비 가능</div>
+<div class="abs src">출처: Vancouver School Board, Newcomer Welcome Centre FAQ (2026.10.27 확인)</div>
+</section><section id="s06" class="scene"><svg viewBox="-2015 -2000 4030 4030" class="maple" style="right:-140px;top:-120px;width:620px;opacity:1"><path fill="#F9E3DE" d="m-90 2030 45-863a95 95 0 0 0-111-98l-859 151 116-320a65 65 0 0 0-20-73l-941-762 212-99a65 65 0 0 0 34-79l-186-572 542 115a65 65 0 0 0 73-38l105-247 423 454a65 65 0 0 0 111-57l-204-1052 327 189a65 65 0 0 0 91-27l332-652 332 652a65 65 0 0 0 91 27l327-189-204 1052a65 65 0 0 0 111 57l423-454 105 247a65 65 0 0 0 73 38l542-115-186 572a65 65 0 0 0 34 79l212 99-941 762a65 65 0 0 0-20 73l116 320-859-151a95 95 0 0 0-111 98l45 863z"/></svg><svg viewBox="-2015 -2000 4030 4030" class="maple" style="left:-120px;bottom:-160px;width:420px;opacity:1"><path fill="#FBEAE6" d="m-90 2030 45-863a95 95 0 0 0-111-98l-859 151 116-320a65 65 0 0 0-20-73l-941-762 212-99a65 65 0 0 0 34-79l-186-572 542 115a65 65 0 0 0 73-38l105-247 423 454a65 65 0 0 0 111-57l-204-1052 327 189a65 65 0 0 0 91-27l332-652 332 652a65 65 0 0 0 91 27l327-189-204 1052a65 65 0 0 0 111 57l423-454 105 247a65 65 0 0 0 73 38l542-115-186 572a65 65 0 0 0 34 79l212 99-941 762a65 65 0 0 0-20 73l116 320-859-151a95 95 0 0 0-111 98l45 863z"/></svg><div class="tag" id="s06-tag"><span class="tagnum">05</span><span class="tagtxt">알렉산더 컬리지 조건부 오퍼</span></div>
+<div id="s06-h" class="abs nk9" style="left:110px;top:135px;font-size:48px;color:#2B2B2B">조건부 입학, 실제로 내주는 학교? → <span class="red">Alexander College</span> <span style="font-size:34px;color:#7A1B26">(2026년 10월부터)</span></div>
+<div id="s06-flow" class="abs row" style="left:110px;top:240px;width:1700px;justify-content:space-between"><div id="s06-f0" class="fnode"><small>디포짓</small><span>CAD 5,000</span></div><div id="s06-fa0" class="farrow"></div><div id="s06-f1" class="fnode"><small>조건부</small><span>입학허가</span></div><div id="s06-fa1" class="farrow"></div><div id="s06-f2" class="fnode"><small>협약 어학원 ESL</small><span>최대 1년</span></div><div id="s06-fa2" class="farrow"></div><div id="s06-f3" class="fnode"><small>알렉산더</small><span>준학사</span></div></div>
+<div id="s06-dep" class="abs pill" style="left:110px;top:420px">디포짓은 나중에 알렉산더 학비로 사용</div>
+<div id="s06-grid" class="abs" style="left:110px;top:520px;width:1700px">
+  <div class="row" style="gap:22px"><div class="glabel">지금 가능</div><div id="s06-n0" class="school">ILSC</div><div id="s06-n1" class="school">Kaplan</div><div id="s06-n2" class="school">SGIC</div><div id="s06-n3" class="school" style="font-size:30px">Oxford International</div></div>
+  <div class="row" style="gap:22px;margin-top:22px"><div class="glabel" style="background:#7A1B26">곧 가능</div><div id="s06-s0" class="school soon">VanWest<small>곧 가능</small></div><div id="s06-s1" class="school soon">CCEL<small>곧 가능</small></div><div id="s06-s2" class="school soon">VGC<small>곧 가능</small></div></div>
+</div>
+<div id="s06-eqa" class="abs stamp" style="left:1290px;top:760px;font-size:40px">✓ 모두 BC EQA 지정 기관</div>
+<div id="s06-doc" class="abs pill" style="left:110px;top:800px;background:#2B2B2B;color:#fff">학교: 교육청 확인용 입학 서류 지원 (공식 안내)</div>
+</section><section id="s07" class="scene"><svg viewBox="-2015 -2000 4030 4030" class="maple" style="right:-140px;top:-120px;width:620px;opacity:1"><path fill="#F9E3DE" d="m-90 2030 45-863a95 95 0 0 0-111-98l-859 151 116-320a65 65 0 0 0-20-73l-941-762 212-99a65 65 0 0 0 34-79l-186-572 542 115a65 65 0 0 0 73-38l105-247 423 454a65 65 0 0 0 111-57l-204-1052 327 189a65 65 0 0 0 91-27l332-652 332 652a65 65 0 0 0 91 27l327-189-204 1052a65 65 0 0 0 111 57l423-454 105 247a65 65 0 0 0 73 38l542-115-186 572a65 65 0 0 0 34 79l212 99-941 762a65 65 0 0 0-20 73l116 320-859-151a95 95 0 0 0-111 98l45 863z"/></svg><svg viewBox="-2015 -2000 4030 4030" class="maple" style="left:-120px;bottom:-160px;width:420px;opacity:1"><path fill="#FBEAE6" d="m-90 2030 45-863a95 95 0 0 0-111-98l-859 151 116-320a65 65 0 0 0-20-73l-941-762 212-99a65 65 0 0 0 34-79l-186-572 542 115a65 65 0 0 0 73-38l105-247 423 454a65 65 0 0 0 111-57l-204-1052 327 189a65 65 0 0 0 91-27l332-652 332 652a65 65 0 0 0 91 27l327-189-204 1052a65 65 0 0 0 111 57l423-454 105 247a65 65 0 0 0 73 38l542-115-186 572a65 65 0 0 0 34 79l212 99-941 762a65 65 0 0 0-20 73l116 320-859-151a95 95 0 0 0-111 98l45 863z"/></svg><div class="tag" id="s07-tag"><span class="tagnum">06</span><span class="tagtxt">AA Canada 추천 플랜</span></div>
+<div id="s07-h" class="abs nk9" style="left:110px;top:135px;font-size:50px;color:#2B2B2B">밴쿠버 자녀무상교육 추천 플랜 <span class="red">2가지</span></div>
+<div id="s07-lanes" class="abs" style="left:0;top:0;width:1920px;height:1080px">
+  <div id="s07-la" class="abs lane" style="top:250px"><div class="lname">플랜 A<small>영어 점수 있음</small></div></div>
+  <div id="s07-a1" class="abs lnode" style="left:520px;top:262px">Duolingo 90 / IELTS 5.0</div>
+  <div id="s07-aa" class="abs farrow" style="left:1030px;top:302px;width:90px"></div>
+  <div id="s07-a2" class="abs lnode strong" style="left:1140px;top:262px">알렉산더 준학사 (학위)</div>
+  <div id="s07-ack" class="abs pill" style="left:1140px;top:380px">처음부터 자녀 학비 면제 조건</div>
+  <div id="s07-lb" class="abs lane" style="top:490px"><div class="lname">플랜 B<small>영어 점수 없음</small></div></div>
+  <div id="s07-b1" class="abs lnode" style="left:520px;top:502px">조건부 입학허가</div>
+  <div id="s07-ba1" class="abs farrow" style="left:880px;top:542px;width:60px"></div>
+  <div id="s07-b2" class="abs lnode" style="left:960px;top:502px">협약 어학원 어학연수<small> 최대 1년</small></div>
+  <div id="s07-ba2" class="abs farrow" style="left:1475px;top:542px;width:50px"></div>
+  <div id="s07-b3" class="abs lnode strong" style="left:1545px;top:502px">준학사</div>
+  <div id="s07-bar" class="abs freebar" style="left:520px;top:660px;width:1300px"><span>자녀 공립학교 학비 면제 대상</span></div>
+  <div id="s07-sum" class="abs nk7" style="left:520px;top:780px;font-size:40px;color:#7A1B26">부모님은 영어 준비 · 아이는 처음부터 공립학교</div>
+</div>
+<div id="s07-fee" class="abs" style="left:110px;top:250px;width:1000px;opacity:0">
+  <div class="nk9" style="font-size:44px;color:#2B2B2B">참고: 밴쿠버 교육청 국제학생 학비</div>
+  <div class="row" style="align-items:baseline;margin-top:30px"><span class="bh" style="font-size:72px;color:#7A1B26">CAD</span><span id="s07-fee1" class="bh" style="font-size:200px;color:#C8102E;margin-left:24px">0</span></div>
+  <div class="nk7" style="font-size:40px;color:#2B2B2B">/ 1년 학비</div>
+  <div id="s07-ins" class="row" style="align-items:baseline;margin-top:40px"><span class="nk9" style="font-size:48px;color:#2B2B2B">+ 의료보험 CAD</span><span id="s07-fee2" class="bh" style="font-size:96px;color:#C8102E;margin-left:18px">0</span></div>
+  <div class="nk7" style="font-size:28px;color:#6b5a5a;margin-top:30px">2027-28학년도, VSB 국제교육부</div>
+</div>
+<div id="s07-card" class="abs card" style="left:1240px;top:190px;width:580px"><img src="assets/card_table.png" style="width:580px;display:block"></div>
+</section><section id="s08" class="scene"><svg viewBox="-2015 -2000 4030 4030" class="maple" style="right:-140px;top:-120px;width:620px;opacity:1"><path fill="#F9E3DE" d="m-90 2030 45-863a95 95 0 0 0-111-98l-859 151 116-320a65 65 0 0 0-20-73l-941-762 212-99a65 65 0 0 0 34-79l-186-572 542 115a65 65 0 0 0 73-38l105-247 423 454a65 65 0 0 0 111-57l-204-1052 327 189a65 65 0 0 0 91-27l332-652 332 652a65 65 0 0 0 91 27l327-189-204 1052a65 65 0 0 0 111 57l423-454 105 247a65 65 0 0 0 73 38l542-115-186 572a65 65 0 0 0 34 79l212 99-941 762a65 65 0 0 0-20 73l116 320-859-151a95 95 0 0 0-111 98l45 863z"/></svg><svg viewBox="-2015 -2000 4030 4030" class="maple" style="left:-120px;bottom:-160px;width:420px;opacity:1"><path fill="#FBEAE6" d="m-90 2030 45-863a95 95 0 0 0-111-98l-859 151 116-320a65 65 0 0 0-20-73l-941-762 212-99a65 65 0 0 0 34-79l-186-572 542 115a65 65 0 0 0 73-38l105-247 423 454a65 65 0 0 0 111-57l-204-1052 327 189a65 65 0 0 0 91-27l332-652 332 652a65 65 0 0 0 91 27l327-189-204 1052a65 65 0 0 0 111 57l423-454 105 247a65 65 0 0 0 73 38l542-115-186 572a65 65 0 0 0 34 79l212 99-941 762a65 65 0 0 0-20 73l116 320-859-151a95 95 0 0 0-111 98l45 863z"/></svg><div class="tag" id="s08-tag"><span class="tagnum">07</span><span class="tagtxt">신청 전 꼭 확인할 3가지</span></div>
+<div id="s08-k1" class="abs ck3" style="top:200px"><b>1</b><div><span>부모 학생비자 <em class="red">1년 이상</em></span></div></div>
+<div id="s08-k2" class="abs ck3" style="top:370px"><b>2</b><div><span>학위 과정 <em class="red">조건부 입학</em> 필수</span><small>어학연수만 단독 ✕</small></div></div>
+<div id="s08-k2b" class="abs pill" style="left:220px;top:540px">어학연수 1년 초과 → 국제학생 학비 대상 가능</div>
+<div id="s08-k3" class="abs ck3" style="top:640px"><b>3</b><div><span>최종 판단은 교육청</span><small>등록 서류를 처음부터 제대로</small></div></div>
+<div id="s08-stamp" class="abs stampc" style="left:880px;top:610px;width:330px;height:170px;font-size:44px;border-radius:26px">최종 판단<br>= 교육청</div>
+<div id="s08-card" class="abs card" style="left:1260px;top:200px;width:560px"><img src="assets/card_c3.png" style="width:560px;display:block"></div>
+</section><section id="s09" class="scene"><svg viewBox="-2015 -2000 4030 4030" class="maple" style="right:-140px;top:-120px;width:620px;opacity:1"><path fill="#F9E3DE" d="m-90 2030 45-863a95 95 0 0 0-111-98l-859 151 116-320a65 65 0 0 0-20-73l-941-762 212-99a65 65 0 0 0 34-79l-186-572 542 115a65 65 0 0 0 73-38l105-247 423 454a65 65 0 0 0 111-57l-204-1052 327 189a65 65 0 0 0 91-27l332-652 332 652a65 65 0 0 0 91 27l327-189-204 1052a65 65 0 0 0 111 57l423-454 105 247a65 65 0 0 0 73 38l542-115-186 572a65 65 0 0 0 34 79l212 99-941 762a65 65 0 0 0-20 73l116 320-859-151a95 95 0 0 0-111 98l45 863z"/></svg><svg viewBox="-2015 -2000 4030 4030" class="maple" style="left:-120px;bottom:-160px;width:420px;opacity:1"><path fill="#FBEAE6" d="m-90 2030 45-863a95 95 0 0 0-111-98l-859 151 116-320a65 65 0 0 0-20-73l-941-762 212-99a65 65 0 0 0 34-79l-186-572 542 115a65 65 0 0 0 73-38l105-247 423 454a65 65 0 0 0 111-57l-204-1052 327 189a65 65 0 0 0 91-27l332-652 332 652a65 65 0 0 0 91 27l327-189-204 1052a65 65 0 0 0 111 57l423-454 105 247a65 65 0 0 0 73 38l542-115-186 572a65 65 0 0 0 34 79l212 99-941 762a65 65 0 0 0-20 73l116 320-859-151a95 95 0 0 0-111 98l45 863z"/></svg>
+<div id="s09-l1" class="abs nk9" style="left:110px;top:170px;font-size:54px;color:#2B2B2B">블로그 · 홈페이지에 <span class="red">BC주 규정 원문 링크</span></div>
+<div id="s09-l1b" class="abs nk7" style="left:110px;top:250px;font-size:40px;color:#7A1B26">+ 4개 주 조건 비교 정리</div>
+<div id="s09-ab" class="abs row" style="left:110px;top:360px;gap:30px"><div class="planbig">플랜 A?</div><div class="planbig b">플랜 B?</div></div>
+<div id="s09-l2" class="abs nk7" style="left:110px;top:540px;font-size:42px;color:#2B2B2B">아이 나이 · 부모님 영어 상황을 남겨 주세요</div>
+<div id="s09-kakao" class="abs row" style="left:110px;top:630px;gap:24px"><div class="pill big">댓글</div><div class="pill big" style="background:#2B2B2B;color:#fff">카카오톡 canlog</div><div class="pill big" style="background:#fff;color:#C8102E;border:3px solid #C8102E">02-567-4345</div></div>
+<div id="s09-logo" class="abs col" style="left:1340px;top:250px;align-items:center">
+  <img src="assets/aa-canada-logo-transparent.png" style="width:360px;height:348px">
+  <div class="bh" style="font-size:96px;color:#C8102E;margin-top:20px">AA Canada</div>
+</div>
+<div id="s09-fade" class="abs" style="left:0;top:0;width:1920px;height:1080px;background:#FFF8F2;opacity:0"></div>
+</section>
+
+<img id="logo" class="clip" src="assets/aa-canada-logo-transparent.png" data-start="0.4" data-duration="291.904" data-track-index="2">
+<div id="foot" class="clip" data-start="84.553" data-duration="207.751" data-track-index="3">※ 최종 적용 여부는 거주지 교육청이 결정합니다</div>
+<div id="cap0" class="clip cap" data-start="0.820" data-duration="1.600" data-track-index="1">밴쿠버 자녀무상교육,</div>
+<div id="cap1" class="clip cap" data-start="2.440" data-duration="2.560" data-track-index="1">영어 점수가 없으면 못 한다고 생각하셨나요?</div>
+<div id="cap2" class="clip cap" data-start="5.020" data-duration="2.020" data-track-index="1">이제는 영어 점수가 없어도,</div>
+<div id="cap3" class="clip cap" data-start="7.060" data-duration="3.620" data-track-index="1">사설 어학원 어학연수로 시작해서 최대 1년까지</div>
+<div id="cap4" class="clip cap" data-start="10.700" data-duration="2.570" data-track-index="1">아이 학비 면제를 받을 수 있는 길이 있습니다.</div>
+<div id="cap5" class="clip cap" data-start="13.940" data-duration="1.920" data-track-index="1">말로만 하면 믿기 어려우시니까,</div>
+<div id="cap6" class="clip cap" data-start="15.880" data-duration="2.640" data-track-index="1">오늘은 BC 주정부 규정 원문을</div>
+<div id="cap7" class="clip cap" data-start="18.540" data-duration="2.720" data-track-index="1">화면에 띄워 놓고 하나씩 보여드릴게요.</div>
+<div id="cap8" class="clip cap" data-start="21.280" data-duration="2.370" data-track-index="1">안녕하세요, AA Canada입니다.</div>
+<div id="cap9" class="clip cap" data-start="25.449" data-duration="1.760" data-track-index="1">먼저 원리부터 짚고 갈게요.</div>
+<div id="cap10" class="clip cap" data-start="27.229" data-duration="3.800" data-track-index="1">BC주에서 아이가 공립학교를 무료로 다니려면,</div>
+<div id="cap11" class="clip cap" data-start="31.049" data-duration="2.460" data-track-index="1">아이가 거주자로 인정돼야 합니다.</div>
+<div id="cap12" class="clip cap" data-start="33.529" data-duration="2.240" data-track-index="1">시민권자나 영주권자가 아니어도,</div>
+<div id="cap13" class="clip cap" data-start="35.789" data-duration="3.400" data-track-index="1">부모가 일정 조건의 학생비자나 취업비자를</div>
+<div id="cap14" class="clip cap" data-start="39.209" data-duration="2.940" data-track-index="1">갖고 있으면 교육청이 학비를 받지 않아요.</div>
+<div id="cap15" class="clip cap" data-start="42.169" data-duration="3.060" data-track-index="1">이 기준을 정해 둔 게 BC주 교육부의</div>
+<div id="cap16" class="clip cap" data-start="45.249" data-duration="2.500" data-track-index="1">운영 지원금 대상 학생 규정입니다.</div>
+<div id="cap17" class="clip cap" data-start="47.769" data-duration="3.760" data-track-index="1">2011년에 시행되고 2013년에 개정된 뒤,</div>
+<div id="cap18" class="clip cap" data-start="51.549" data-duration="1.830" data-track-index="1">지금도 유효한 규정이에요.</div>
+<div id="cap19" class="clip cap" data-start="55.178" data-duration="3.340" data-track-index="1">부모가 학생일 때 기본 조건은 두 가지입니다.</div>
+<div id="cap20" class="clip cap" data-start="58.538" data-duration="3.320" data-track-index="1">첫째, 1년 이상 학업이 허가된 학생비자.</div>
+<div id="cap21" class="clip cap" data-start="61.878" data-duration="4.440" data-track-index="1">둘째, BC주 공립 대학이나 컬리지의 학위·디플로마 과정,</div>
+<div id="cap22" class="clip cap" data-start="66.338" data-duration="3.740" data-track-index="1">또는 사립이라면 학위 과정에 다니고 있어야 해요.</div>
+<div id="cap23" class="clip cap" data-start="70.098" data-duration="2.300" data-track-index="1">여기서 중요한 단어가 &#x27;사립은 학위&#x27;입니다.</div>
+<div id="cap24" class="clip cap" data-start="72.418" data-duration="1.880" data-track-index="1">사립 컬리지의 디플로마나</div>
+<div id="cap25" class="clip cap" data-start="74.318" data-duration="2.500" data-track-index="1">수료증 과정은 해당이 안 되고,</div>
+<div id="cap26" class="clip cap" data-start="76.838" data-duration="1.400" data-track-index="1">학위 과정이어야 합니다.</div>
+<div id="cap27" class="clip cap" data-start="78.258" data-duration="3.393" data-track-index="1">그래서 저희가 주목하는 게 사립 컬리지의 준학사,</div>
+<div id="cap28" class="clip cap" data-start="81.671" data-duration="1.777" data-track-index="1">어소시에이트 디그리예요.</div>
+<div id="cap29" class="clip cap" data-start="85.293" data-duration="2.520" data-track-index="1">그럼 영어 점수가 없는 부모님은요?</div>
+<div id="cap30" class="clip cap" data-start="87.833" data-duration="2.220" data-track-index="1">바로 이 부분이 오늘의 핵심입니다.</div>
+<div id="cap31" class="clip cap" data-start="90.073" data-duration="2.840" data-track-index="1">규정 바로 아래에 이런 조항이 있어요.</div>
+<div id="cap32" class="clip cap" data-start="92.933" data-duration="2.500" data-track-index="1">1년 이상 학업이 허가된 부모가,</div>
+<div id="cap33" class="clip cap" data-start="95.453" data-duration="3.160" data-track-index="1">다음 세 가지를 모두 충족하면 됩니다.</div>
+<div id="cap34" class="clip cap" data-start="98.633" data-duration="1.560" data-track-index="1">하나, EQA,</div>
+<div id="cap35" class="clip cap" data-start="100.213" data-duration="3.520" data-track-index="1">그러니까 BC주 교육품질인증을 받은 기관에서</div>
+<div id="cap36" class="clip cap" data-start="103.753" data-duration="3.260" data-track-index="1">최대 1년짜리 영어 과정을 듣고 있을 것.</div>
+<div id="cap37" class="clip cap" data-start="107.033" data-duration="2.220" data-track-index="1">둘, 공립 학위나 디플로마,</div>
+<div id="cap38" class="clip cap" data-start="109.273" data-duration="3.260" data-track-index="1">또는 사립 학위 과정에 입학허가를 받았을 것.</div>
+<div id="cap39" class="clip cap" data-start="112.553" data-duration="2.940" data-track-index="1">셋, 그 입학허가가 영어 과정 수료를</div>
+<div id="cap40" class="clip cap" data-start="115.513" data-duration="2.400" data-track-index="1">조건으로 한 조건부 입학일 것.</div>
+<div id="cap41" class="clip cap" data-start="117.933" data-duration="1.660" data-track-index="1">이 세 가지가 맞으면,</div>
+<div id="cap42" class="clip cap" data-start="119.613" data-duration="2.540" data-track-index="1">부모가 어학연수를 하는 동안에도</div>
+<div id="cap43" class="clip cap" data-start="122.173" data-duration="2.220" data-track-index="1">최대 1년까지 거주자로 봅니다.</div>
+<div id="cap44" class="clip cap" data-start="124.413" data-duration="2.920" data-track-index="1">규정에는 &#x27;대학 부설&#x27;이라는 제한이 없고,</div>
+<div id="cap45" class="clip cap" data-start="127.353" data-duration="2.540" data-track-index="1">EQA 지정 기관이라고만 되어 있어요.</div>
+<div id="cap46" class="clip cap" data-start="129.913" data-duration="2.840" data-track-index="1">그래서 EQA 인증을 받은 사설</div>
+<div id="cap47" class="clip cap" data-start="132.773" data-duration="2.230" data-track-index="1">어학원도 같은 기준이 적용됩니다.</div>
+<div id="cap48" class="clip cap" data-start="136.704" data-duration="3.560" data-track-index="1">이게 주정부 문서에만 있는 얘기가 아닙니다.</div>
+<div id="cap49" class="clip cap" data-start="140.284" data-duration="3.590" data-track-index="1">밴쿠버 교육청 신규 등록 안내에도 똑같이 나와 있어요.</div>
+<div id="cap50" class="clip cap" data-start="144.364" data-duration="3.400" data-track-index="1">학생비자 1년 이상이고 영어 과정을 듣는 부모의</div>
+<div id="cap51" class="clip cap" data-start="147.784" data-duration="3.040" data-track-index="1">자녀가 학비 없이 다닐 수 있느냐는 질문에,</div>
+<div id="cap52" class="clip cap" data-start="150.844" data-duration="2.560" data-track-index="1">이 세 가지 조건을 모두 충족하면</div>
+<div id="cap53" class="clip cap" data-start="153.424" data-duration="1.720" data-track-index="1">된다고 답하고 있습니다.</div>
+<div id="cap54" class="clip cap" data-start="155.164" data-duration="2.960" data-track-index="1">다만 1년이 넘어가면 국제학생 학비를</div>
+<div id="cap55" class="clip cap" data-start="158.144" data-duration="2.750" data-track-index="1">낼 수 있다는 것도 분명히 적혀 있어요.</div>
+<div id="cap56" class="clip cap" data-start="162.687" data-duration="2.220" data-track-index="1">문제는 이 조건부 입학을 실제로</div>
+<div id="cap57" class="clip cap" data-start="164.927" data-duration="2.600" data-track-index="1">내주는 학교가 있느냐였는데요.</div>
+<div id="cap58" class="clip cap" data-start="167.547" data-duration="3.740" data-track-index="1">알렉산더 컬리지가 이번 10월부터 어학원 경로</div>
+<div id="cap59" class="clip cap" data-start="171.307" data-duration="3.420" data-track-index="1">조건부 입학허가를 발급하기 시작했습니다.</div>
+<div id="cap60" class="clip cap" data-start="174.747" data-duration="2.225" data-track-index="1">공인영어성적이 없거나 부족해도,</div>
+<div id="cap61" class="clip cap" data-start="176.992" data-duration="3.715" data-track-index="1">디포짓 5,000달러를 내면 영어 과정</div>
+<div id="cap62" class="clip cap" data-start="180.727" data-duration="2.453" data-track-index="1">이수를 조건으로 한 입학허가서가 나와요.</div>
+<div id="cap63" class="clip cap" data-start="183.200" data-duration="4.167" data-track-index="1">디포짓은 나중에 알렉산더 학비로 쓰이고,</div>
+<div id="cap64" class="clip cap" data-start="187.387" data-duration="3.030" data-track-index="1">어학연수 기간은 최대 1년까지 허용됩니다.</div>
+<div id="cap65" class="clip cap" data-start="190.887" data-duration="4.180" data-track-index="1">지금 바로 연결되는 협약 어학원은 아이엘에스씨, 캐플란,</div>
+<div id="cap66" class="clip cap" data-start="195.087" data-duration="4.120" data-track-index="1">에스지아이씨, 옥스퍼드 인터내셔널 네 곳이고,</div>
+<div id="cap67" class="clip cap" data-start="199.227" data-duration="1.010" data-track-index="1">곧 밴웨스트와 씨씨이엘,</div>
+<div id="cap68" class="clip cap" data-start="201.692" data-duration="1.315" data-track-index="1">브이지씨가 가능합니다.</div>
+<div id="cap69" class="clip cap" data-start="203.027" data-duration="3.900" data-track-index="1">모두 BC 정부 EQA 지정 기관 명단에 있습니다.</div>
+<div id="cap70" class="clip cap" data-start="206.947" data-duration="2.720" data-track-index="1">학교에서도 교육청 확인에 필요한 입학 관련</div>
+<div id="cap71" class="clip cap" data-start="209.687" data-duration="2.510" data-track-index="1">서류를 지원해 준다고 공식 안내했어요.</div>
+<div id="cap72" class="clip cap" data-start="213.947" data-duration="2.480" data-track-index="1">그래서 AA Canada가 추천하는</div>
+<div id="cap73" class="clip cap" data-start="216.447" data-duration="2.480" data-track-index="1">밴쿠버 자녀무상교육 플랜은 두 가지입니다.</div>
+<div id="cap74" class="clip cap" data-start="218.947" data-duration="0.560" data-track-index="1">플랜 A.</div>
+<div id="cap75" class="clip cap" data-start="219.527" data-duration="1.500" data-track-index="1">영어 점수가 있다면,</div>
+<div id="cap76" class="clip cap" data-start="221.047" data-duration="3.160" data-track-index="1">듀오링고 90이나 아이엘츠 5.0부터</div>
+<div id="cap77" class="clip cap" data-start="224.227" data-duration="3.480" data-track-index="1">알렉산더 준학사로 바로 입학하는 방법이에요.</div>
+<div id="cap78" class="clip cap" data-start="227.727" data-duration="2.740" data-track-index="1">학위 과정이니까 처음부터 자녀</div>
+<div id="cap79" class="clip cap" data-start="230.487" data-duration="2.320" data-track-index="1">학비 면제 조건에 들어갑니다.</div>
+<div id="cap80" class="clip cap" data-start="232.827" data-duration="0.540" data-track-index="1">플랜 B.</div>
+<div id="cap81" class="clip cap" data-start="233.387" data-duration="1.580" data-track-index="1">영어 점수가 없다면,</div>
+<div id="cap82" class="clip cap" data-start="234.987" data-duration="3.120" data-track-index="1">알렉산더 조건부 입학허가를 받고 협약</div>
+<div id="cap83" class="clip cap" data-start="238.127" data-duration="2.880" data-track-index="1">어학원에서 어학연수로 시작합니다.</div>
+<div id="cap84" class="clip cap" data-start="241.027" data-duration="3.240" data-track-index="1">어학연수 최대 1년 동안 자녀 무상교육,</div>
+<div id="cap85" class="clip cap" data-start="244.287" data-duration="2.960" data-track-index="1">그다음 준학사로 올라가서 계속 무상교육.</div>
+<div id="cap86" class="clip cap" data-start="247.267" data-duration="1.940" data-track-index="1">부모님은 영어를 준비하고,</div>
+<div id="cap87" class="clip cap" data-start="249.227" data-duration="3.280" data-track-index="1">아이는 처음부터 공립학교에 다니는 구조예요.</div>
+<div id="cap88" class="clip cap" data-start="252.527" data-duration="3.160" data-track-index="1">참고로 밴쿠버 교육청 국제학생 학비는</div>
+<div id="cap89" class="clip cap" data-start="255.707" data-duration="4.020" data-track-index="1">2027-28학년도 기준 1년에 17,000달러,</div>
+<div id="cap90" class="clip cap" data-start="259.747" data-duration="2.030" data-track-index="1">의료보험 1,400달러가 따로 붙습니다.</div>
+<div id="cap91" class="clip cap" data-start="263.655" data-duration="3.020" data-track-index="1">다만 꼭 알아두셔야 할 게 세 가지 있어요.</div>
+<div id="cap92" class="clip cap" data-start="266.695" data-duration="3.120" data-track-index="1">첫째, 부모 학생비자가 1년 이상이어야 합니다.</div>
+<div id="cap93" class="clip cap" data-start="269.835" data-duration="3.180" data-track-index="1">둘째, 어학연수만 따로 하는 건 안 되고,</div>
+<div id="cap94" class="clip cap" data-start="273.035" data-duration="3.160" data-track-index="1">반드시 학위 과정 조건부 입학이 붙어 있어야 해요.</div>
+<div id="cap95" class="clip cap" data-start="276.215" data-duration="2.920" data-track-index="1">어학연수가 1년을 넘으면 그때부터는</div>
+<div id="cap96" class="clip cap" data-start="279.155" data-duration="1.910" data-track-index="1">국제학생 학비 대상이 될 수 있습니다.</div>
+<div id="cap97" class="clip cap" data-start="281.575" data-duration="2.420" data-track-index="1">셋째, 최종 판단은 교육청이 합니다.</div>
+<div id="cap98" class="clip cap" data-start="284.015" data-duration="3.800" data-track-index="1">규정이 있어도 서류를 보고 교육청이 결정하니까,</div>
+<div id="cap99" class="clip cap" data-start="287.835" data-duration="3.430" data-track-index="1">등록 서류를 처음부터 제대로 준비하는 게 중요합니다.</div>
+<div id="cap100" class="clip cap" data-start="293.024" data-duration="2.820" data-track-index="1">BC주 규정 원문 링크와 4개 주 조건</div>
+<div id="cap101" class="clip cap" data-start="295.864" data-duration="3.400" data-track-index="1">비교는 블로그와 홈페이지에 정리해 두었습니다.</div>
+<div id="cap102" class="clip cap" data-start="299.284" data-duration="3.220" data-track-index="1">우리 가족은 플랜 A가 맞을지 B가 맞을지,</div>
+<div id="cap103" class="clip cap" data-start="302.524" data-duration="3.500" data-track-index="1">아이 나이와 부모님 영어 상황을 댓글이나</div>
+<div id="cap104" class="clip cap" data-start="306.044" data-duration="1.960" data-track-index="1">카카오톡 canlog로 남겨 주세요.</div>
+<div id="cap105" class="clip cap" data-start="308.024" data-duration="1.530" data-track-index="1">AA Canada였습니다.</div>
+
+</div>
+<script>
+
+const tl = gsap.timeline({ paused: true });
+function pop(s, t){ tl.fromTo(s, {opacity:0, y:30}, {opacity:1, y:0, duration:0.5, ease:"power3.out"}, t); }
+function slideIn(s, t){ tl.fromTo(s, {opacity:0, x:-80}, {opacity:1, x:0, duration:0.55, ease:"power3.out"}, t); }
+function slam(s, t){ tl.fromTo(s, {opacity:0, scale:1.9}, {opacity:1, scale:1, duration:0.32, ease:"power4.in"}, t);
+  tl.fromTo(s, {x:0}, {x:6, duration:0.05, yoyo:true, repeat:3, ease:"none"}, t + 0.32); }
+function stamp(s, t){ tl.fromTo(s, {opacity:0, scale:2.6, rotation:-14}, {opacity:1, scale:1, rotation:-7, duration:0.28, ease:"power4.in"}, t); }
+function wipe(s, t){ tl.fromTo(s, {opacity:0, clipPath:"inset(0% 100% 0% 0%)"}, {opacity:1, clipPath:"inset(0% 0% 0% 0%)", duration:0.6, ease:"power2.out"}, t); }
+function draw(s, t){ tl.fromTo(s, {scaleX:0}, {scaleX:1, duration:0.6, ease:"power2.out"}, t); }
+function grow(s, t){ tl.fromTo(s, {scaleX:0, transformOrigin:"0% 50%"}, {scaleX:1, duration:0.4, ease:"power2.out"}, t); }
+function boxOn(s, t){ tl.fromTo(s, {opacity:0, scale:1.06}, {opacity:1, scale:1, duration:0.35, ease:"power2.out"}, t);
+  tl.fromTo(s, {boxShadow:"0 0 0 0 rgba(200,16,46,0.55)"}, {boxShadow:"0 0 0 18px rgba(200,16,46,0)", duration:0.9, ease:"power1.out"}, t + 0.2); }
+function numIn(s, t){ tl.fromTo(s, {opacity:0, x:80}, {opacity:1, x:0, duration:0.5, ease:"back.out(1.6)"}, t); }
+function nodeIn(s, t){ tl.fromTo(s, {opacity:0, y:40, scale:0.85}, {opacity:1, y:0, scale:1, duration:0.45, ease:"back.out(1.8)"}, t); }
+function chipIn(s, t){ tl.fromTo(s, {opacity:0, scale:0.5}, {opacity:1, scale:1, duration:0.35, ease:"back.out(2.2)"}, t); }
+function check(s, t){ tl.fromTo(s, {opacity:0, x:60}, {opacity:1, x:0, duration:0.45, ease:"power3.out"}, t);
+  tl.fromTo(s + " b", {scale:0, rotation:-90}, {scale:1, rotation:0, duration:0.4, ease:"back.out(2)"}, t + 0.15); }
+function count(s, to, t, d){ const el = document.querySelector(s); const o = {v:0};
+  tl.fromTo(o, {v:0}, {v:to, duration:d, ease:"power2.out", onUpdate(){ el.textContent = Math.round(o.v).toLocaleString("en-US"); }}, t);
+  tl.fromTo(s, {scale:1}, {scale:1.08, duration:0.12, yoyo:true, repeat:1}, t + d); }
+function sfx_mark(){}
+
+slam("#s01-q", 0.600); sfx_mark();
+pop("#s01-sub", 2.440);
+tl.to("#s01-a", {opacity:0, y:-60, duration:0.45, ease:"power2.in"}, 4.920);
+pop("#s01-b1", 5.320);
+slam("#s01-b2", 9.681);
+wipe("#s01-b3", 10.700);
+tl.fromTo("#s01-doc", {x:900, rotation:18, scale:1.3, opacity:0}, {x:0, rotation:-3, scale:1, opacity:1, duration:0.55, ease:"power4.in"}, 15.480);
+tl.fromTo("#s01-doc", {y:0}, {y:8, duration:0.08, yoyo:true, repeat:1}, 16.030);
+stamp("#s01-docstamp", 18.540);
+pop("#s01-hello", 21.280);
+pop("#s02-tag", 24.999);
+pop("#s02-h", 27.029);
+stamp("#s02-stamp", 31.600);
+slideIn("#s02-r1", 33.529);
+slideIn("#s02-r2", 35.789);
+grow("#s02-arrow", 36.989); pop("#s02-arrowhead", 37.389);
+wipe("#s02-free", 40.110);
+tl.to("#s02-a", {opacity:0, duration:0.4}, 41.969); tl.to("#s02-b", {opacity:1, duration:0.5}, 42.069);
+tl.fromTo("#s02-docw", {scale:0.92, y:40}, {scale:1.0, y:0, duration:1.0, ease:"power3.out"}, 42.169); tl.to("#s02-docw", {scale:1.06, duration:11.05, ease:"none"}, 43.169);
+draw("#s02-ul1", 47.769); slam("#s02-y1", 47.769);
+draw("#s02-ul2", 49.583); slam("#s02-y2", 49.583);
+boxOn("#s02-st", 51.549); stamp("#s02-cur", 51.649);
+pop("#s03-tag", 54.768);
+pop("#s03-h", 55.018);
+tl.fromTo("#s03-docw", {opacity:0, y:50, scale:0.9}, {opacity:1, y:0, scale:1, duration:0.7, ease:"power3.out"}, 55.418);
+boxOn("#s03-g", 58.238);
+check("#s03-c1", 58.538);
+check("#s03-c2", 61.878);
+draw("#s03-ulp", 66.338);
+stamp("#s03-stamp", 71.355);
+pop("#s03-x", 72.418); tl.fromTo("#s03-x .red", {scale:3, opacity:0}, {scale:1, opacity:1, duration:0.3, ease:"power4.in"}, 74.318);
+tl.to(["#s03-c1","#s03-c2","#s03-stamp","#s03-x"], {opacity:0, duration:0.35}, 77.908);
+tl.fromTo("#s03-card", {opacity:0, x:200, rotation:8}, {opacity:1, x:0, rotation:2, duration:0.6, ease:"power3.out"}, 78.258);
+wipe("#s03-assoc", 81.271);
+pop("#s04-tag", 84.903);
+slam("#s04-q", 85.253);
+stamp("#s04-core", 89.366);
+tl.to("#s04-a", {opacity:0, scale:0.9, duration:0.4}, 89.773); tl.to("#s04-b", {opacity:1, duration:0.4}, 89.973);
+tl.fromTo("#s04-docw", {scale:0.85, x:-40}, {scale:1.06, x:0, duration:0.9, ease:"power3.out"}, 90.073);
+boxOn("#s04-par", 92.933); pop("#s04-all", 95.453);
+boxOn("#s04-b1", 98.533); numIn("#s04-n1", 98.633);
+boxOn("#s04-b2", 106.933); numIn("#s04-n2", 107.033);
+tl.to("#s04-b1", {boxShadow:"0 0 0 0 rgba(200,16,46,0)", duration:0.3}, 106.933);
+boxOn("#s04-b3", 112.453); numIn("#s04-n3", 112.553);
+tl.to("#s04-b2", {boxShadow:"0 0 0 0 rgba(200,16,46,0)", duration:0.3}, 112.453);
+pop("#s04-eqa", 100.213); draw("#s04-eqa1", 100.213); draw("#s04-eqa2", 100.563);
+tl.to("#s04-eqa", {opacity:0, duration:0.3}, 106.733);
+tl.to(["#s04-n1","#s04-n2","#s04-n3","#s04-all"], {opacity:0.0, duration:0.35}, 117.833);
+slam("#s04-max", 122.173); draw("#s04-yr1", 122.173); draw("#s04-yr2", 122.473);
+tl.to("#s04-b", {opacity:0, duration:0.4}, 124.063); tl.to("#s04-c", {opacity:1, duration:0.4}, 124.213);
+pop("#s04-vs1", 124.413); tl.fromTo("#s04-vs1 b", {scale:3, opacity:0}, {scale:1, opacity:1, duration:0.3, ease:"power4.in"}, 126.458);
+pop("#s04-vs2", 127.353); tl.fromTo("#s04-vs2 b", {scale:3, opacity:0}, {scale:1, opacity:1, duration:0.3, ease:"power4.in"}, 128.153);
+wipe("#s04-res", 129.913);
+tl.fromTo("#s04-card", {opacity:0, y:120, rotation:-6}, {opacity:1, y:0, rotation:-2, duration:0.6, ease:"power3.out"}, 130.413);
+pop("#s05-tag", 136.354);
+pop("#s05-h", 136.604);
+tl.fromTo("#s05-docw", {opacity:0, scale:1.044, y:40}, {opacity:1, scale:1.160, y:0, duration:0.8, ease:"power3.out"}, 140.284);
+boxOn("#s05-q", 144.364);
+boxOn("#s05-k1", 150.844);
+boxOn("#s05-k2", 151.394);
+boxOn("#s05-k3", 151.944);
+tl.to(["#s05-q","#s05-k1","#s05-k2","#s05-k3"], {opacity:0.25, duration:0.3}, 154.964);
+draw("#s05-u1", 155.164); draw("#s05-u2", 155.764); stamp("#s05-badge", 156.564);
+pop("#s06-tag", 162.257);
+pop("#s06-h", 162.507);
+tl.fromTo("#s06-h .red", {scale:1.6, opacity:0}, {scale:1, opacity:1, duration:0.4, ease:"back.out(2)"}, 167.547);
+nodeIn("#s06-f0", 176.992);
+nodeIn("#s06-f1", 180.727);
+grow("#s06-fa0", 180.377);
+nodeIn("#s06-f2", 187.387);
+grow("#s06-fa1", 187.037);
+nodeIn("#s06-f3", 188.787);
+grow("#s06-fa2", 188.437);
+slam("#s06-f0 span", 177.092);
+pop("#s06-dep", 183.200);
+pop("#s06-grid .glabel", 190.687);
+chipIn("#s06-n0", 193.361);
+chipIn("#s06-n1", 194.445);
+chipIn("#s06-n2", 194.987);
+chipIn("#s06-n3", 196.312);
+chipIn("#s06-s0", 199.259);
+chipIn("#s06-s1", 199.656);
+chipIn("#s06-s2", 201.592);
+stamp("#s06-eqa", 203.327);
+tl.to("#s06-dep", {opacity:0, duration:0.3}, 206.647); pop("#s06-doc", 206.947);
+pop("#s07-tag", 213.577);
+pop("#s07-h", 213.827);
+slideIn("#s07-la", 218.947);
+nodeIn("#s07-a1", 221.047);
+grow("#s07-aa", 224.027); nodeIn("#s07-a2", 224.227);
+pop("#s07-ack", 227.727);
+slideIn("#s07-lb", 232.827);
+nodeIn("#s07-b1", 234.987);
+grow("#s07-ba1", 237.827); nodeIn("#s07-b2", 238.127);
+grow("#s07-ba2", 244.087); nodeIn("#s07-b3", 244.287);
+tl.fromTo("#s07-bar", {scaleX:0}, {scaleX:1, duration:1.6, ease:"power2.inOut"}, 241.027);
+pop("#s07-sum", 247.267);
+tl.to("#s07-lanes", {opacity:0, duration:0.4}, 252.227); tl.to("#s07-fee", {opacity:1, duration:0.4}, 252.527);
+tl.fromTo("#s07-card", {opacity:0, x:160, rotation:6}, {opacity:1, x:0, rotation:1.5, duration:0.6, ease:"power3.out"}, 252.827);
+count("#s07-fee1", 17000, 257.800, 1.1);
+count("#s07-fee2", 1400, 259.747, 0.9);
+pop("#s08-tag", 263.225);
+tl.fromTo("#s08-card", {opacity:0, y:80}, {opacity:1, y:0, duration:0.6, ease:"power3.out"}, 263.475);
+slideIn("#s08-k1", 266.695);
+slideIn("#s08-k2", 269.835);
+slideIn("#s08-k3", 281.575);
+pop("#s08-k2b", 276.215);
+stamp("#s08-stamp", 282.917);
+tl.fromTo("#s08-k3 small", {backgroundSize:"0% 100%"}, {backgroundSize:"100% 100%", duration:0.8}, 287.835);
+pop("#s09-l1", 292.904); pop("#s09-l1b", 295.864);
+slam("#s09-ab .planbig:nth-child(1)", 300.229); slam("#s09-ab .planbig:nth-child(2)", 301.579);
+pop("#s09-l2", 302.524); pop("#s09-kakao", 305.744);
+tl.fromTo("#s09-logo", {opacity:0, scale:0.6, rotation:-20}, {opacity:1, scale:1, rotation:0, duration:0.8, ease:"back.out(1.6)"}, 307.724);
+tl.to("#s09-fade", {opacity:1, duration:1.0}, 313.057);
+HyperShader.init({
+  bgColor: "#FFF8F2", accentColor: "#C8102E",
+  scenes: ["s01", "s02", "s03", "s04", "s05", "s06", "s07", "s08", "s09"],
+  transitions: [{"time": 24.199, "shader": "light-leak", "duration": 0.9}, {"time": 53.968, "shader": "cross-warp-morph", "duration": 0.9}, {"time": 84.103, "shader": "cinematic-zoom", "duration": 0.9}, {"time": 135.554, "shader": "cross-warp-morph", "duration": 0.9}, {"time": 161.457, "shader": "cross-warp-morph", "duration": 0.9}, {"time": 212.777, "shader": "cross-warp-morph", "duration": 0.9}, {"time": 262.425, "shader": "cross-warp-morph", "duration": 0.9}, {"time": 291.854, "shader": "light-leak", "duration": 0.9}],
+  timeline: tl,
+});
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>
