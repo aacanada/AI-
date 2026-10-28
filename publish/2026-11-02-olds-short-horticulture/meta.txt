@@ -7,4 +7,4 @@ publish_after: 2026-11-02
 linked_to: 2026-10-26-olds-diploma-longform
 files: video.mp4 (1080x1920, 0:43, 24 MB), thumbnail.jpg (1080x1920 cover, 제목·브랜드만), upload-text.txt
 source: aacanada/AI- branch claude/fervent-knuth-fbxid4, videos/olds-diploma-shorts/horticulture/
-notes: 원예 테크놀로지스트 2년 디플로마 쇼츠. 롱폼 장면 음성 + AI 음성(ElevenLabs "일곱번째") 요약·CTA 문장. 2026-10-26-olds-diploma-longform 의 published.md 에 본편 주소가 생긴 뒤 게시하고, 유튜브 쇼츠 '관련 동영상'에 본편을 연결해 주세요.
+notes: 원예 테크놀로지스트 2년 디플로마 쇼츠. 롱폼 장면 음성 + AI 음성(ElevenLabs "여덟번째" cbVXtFGe9VfUKWtbYIty, eleven_multilingual_v2) 요약·CTA 문장. 2026-10-26-olds-diploma-longform 의 published.md 에 본편 주소가 생긴 뒤 게시하고, 유튜브 쇼츠 '관련 동영상'에 본편을 연결해 주세요.
