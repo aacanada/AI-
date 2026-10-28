@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="UTF-8" /><meta name="viewport" content="width=1080, height=1920" />
+<script src="vendor/gsap.min.js"></script><style>
+@font-face { font-family:"BHS"; src:url("fonts/BlackHanSans-Regular.ttf"); }
+@font-face { font-family:"NotoKR"; src:url("fonts/NotoSansKR.ttf"); font-weight:100 900; }
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { width:1080px; height:1920px; overflow:hidden; background:#FFF8F2; }
+#root { position:relative; width:100%; height:100%; overflow:hidden; font-family:"NotoKR",sans-serif; color:#2B2B2B; background:#FFF8F2; }
+.maple { position:absolute; }
+.abs { position:absolute; }
+.row { display:flex; align-items:center; }
+.bh { font-family:"BHS"; font-weight:400; letter-spacing:-1px; line-height:1.08; }
+.n9 { font-weight:900; letter-spacing:-1px; }
+.red { color:#C8102E; font-style:normal; }
+.hook { left:0; width:1080px; text-align:center; }
+.band { display:inline-block; background:#FFD6CF; border-left:14px solid #C8102E; padding:12px 30px; border-radius:10px; font-weight:900; }
+.pill { display:inline-block; background:#C8102E; color:#fff; font-weight:900; border-radius:50px; padding:12px 34px; }
+.doc { background:#fff; border-radius:14px; box-shadow:0 18px 50px rgba(122,27,38,0.22); overflow:hidden; transform-origin:0 0; }
+.hl { border:6px solid #C8102E; border-radius:8px; opacity:0; }
+.badge { width:84px; height:84px; border-radius:50%; background:#C8102E; color:#fff; display:flex; align-items:center; justify-content:center; font-family:"BHS"; font-size:56px; opacity:0; box-shadow:0 8px 20px rgba(200,16,46,0.35); }
+.stamp { color:#C8102E; border:9px solid #C8102E; border-radius:22px; padding:10px 34px; font-weight:900; background:rgba(255,248,242,0.95); text-align:center; }
+.slamtag { background:#C8102E; color:#fff; border-radius:28px; font-weight:900; font-size:52px; text-align:center; padding:34px 20px; box-shadow:0 24px 60px rgba(200,16,46,0.35); opacity:0; }
+.slamtag b { display:block; font-family:"BHS"; font-weight:400; font-size:170px; line-height:1.1; }
+.check { display:flex; gap:26px; align-items:flex-start; font-size:52px; font-weight:900; line-height:1.3; opacity:0; }
+.check b { display:flex; width:84px; height:84px; flex:none; border-radius:50%; background:#C8102E; color:#fff; align-items:center; justify-content:center; font-size:50px; }
+.check small { display:block; font-size:38px; font-weight:700; color:#7A1B26; }
+.card { border-radius:24px; overflow:hidden; box-shadow:0 22px 60px rgba(122,27,38,0.25); }
+.lane { left:60px; width:960px; background:rgba(255,214,207,0.5); border-radius:26px; padding:26px 30px; opacity:0; }
+.lname { font-family:"BHS"; font-size:72px; color:#C8102E; }
+.lname small { font-family:"NotoKR"; font-weight:900; font-size:38px; color:#7A1B26; margin-left:18px; }
+.nodes { display:flex; flex-wrap:wrap; align-items:center; gap:14px; margin-top:18px; }
+.node { background:#fff; border:5px solid #C8102E; border-radius:18px; padding:10px 22px; font-size:38px; font-weight:900; white-space:nowrap; opacity:0; }
+.node.strong { background:#C8102E; color:#fff; }
+.arr { font-size:46px; font-weight:900; color:#C8102E; opacity:0; }
+.bar { height:88px; border-radius:44px; background:#C8102E; color:#fff; display:flex; align-items:center; justify-content:center; font-size:44px; font-weight:900; transform-origin:0 50%; }
+.ck3 { left:60px; width:960px; display:flex; gap:30px; align-items:flex-start; opacity:0; }
+.ck3 > b { display:flex; width:110px; height:110px; flex:none; border-radius:26px; background:#C8102E; color:#fff; font-family:"BHS"; font-weight:400; font-size:76px; align-items:center; justify-content:center; }
+.ck3 span { display:block; font-size:60px; font-weight:900; line-height:1.25; }
+.ck3 small { display:inline-block; font-size:40px; font-weight:700; color:#7A1B26; margin-top:8px; }
+.src { left:60px; width:960px; font-size:24px; font-weight:500; color:#7d6a6a; }
+#logo { position:absolute; right:40px; top:60px; width:104px; height:100px; }
+#foot { position:absolute; left:0; width:1080px; top:1500px; text-align:center; font-size:32px; font-weight:700; color:#7A1B26; }
+.cap { position:absolute; left:60px; width:960px; top:1290px; display:flex; justify-content:center; }
+.cap span { background:rgba(43,43,43,0.9); color:#fff; font-size:54px; font-weight:700; line-height:1.3; padding:14px 34px; border-radius:16px; text-align:center; letter-spacing:-0.5px; }
+</style></head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-width="1080" data-height="1920" data-duration="30.900">
+<svg viewBox="-2015 -2000 4030 4030" class="maple" style="right:-200px;top:-120px;width:640px"><path fill="#F9E3DE" d="m-90 2030 45-863a95 95 0 0 0-111-98l-859 151 116-320a65 65 0 0 0-20-73l-941-762 212-99a65 65 0 0 0 34-79l-186-572 542 115a65 65 0 0 0 73-38l105-247 423 454a65 65 0 0 0 111-57l-204-1052 327 189a65 65 0 0 0 91-27l332-652 332 652a65 65 0 0 0 91 27l327-189-204 1052a65 65 0 0 0 111 57l423-454 105 247a65 65 0 0 0 73 38l542-115-186 572a65 65 0 0 0 34 79l212 99-941 762a65 65 0 0 0-20 73l116 320-859-151a95 95 0 0 0-111 98l45 863z"/></svg><svg viewBox="-2015 -2000 4030 4030" class="maple" style="left:-160px;top:1560px;width:520px"><path fill="#FBEAE6" d="m-90 2030 45-863a95 95 0 0 0-111-98l-859 151 116-320a65 65 0 0 0-20-73l-941-762 212-99a65 65 0 0 0 34-79l-186-572 542 115a65 65 0 0 0 73-38l105-247 423 454a65 65 0 0 0 111-57l-204-1052 327 189a65 65 0 0 0 91-27l332-652 332 652a65 65 0 0 0 91 27l327-189-204 1052a65 65 0 0 0 111 57l423-454 105 247a65 65 0 0 0 73 38l542-115-186 572a65 65 0 0 0 34 79l212 99-941 762a65 65 0 0 0-20 73l116 320-859-151a95 95 0 0 0-111 98l45 863z"/></svg>
+<img id="logo" class="clip" src="assets/aa-canada-logo-transparent.png" data-start="0" data-duration="30.900" data-track-index="2">
+
+<div id="d-t" class="abs hook" style="top:150px"><div class="pill" style="font-size:40px">밴쿠버 자녀무상교육</div></div>
+<div id="d-h1" class="abs hook bh" style="top:250px;font-size:112px">신청 전 꼭 확인</div>
+<div id="d-h2" class="abs hook bh" style="top:370px;font-size:170px;color:#C8102E">3가지</div>
+<div id="d-k1" class="abs ck3" style="top:590px"><b>1</b><div><span>부모 학생비자 <em class="red" style="font-style:normal">1년 이상</em></span></div></div>
+<div id="d-k2" class="abs ck3" style="top:740px"><b>2</b><div><span>학위 과정 <em class="red" style="font-style:normal">조건부 입학</em> 필수</span><small>어학연수만 단독 ✕</small></div></div>
+<div id="d-k2b" class="abs" style="left:200px;top:905px;opacity:0"><div class="band" style="font-size:38px">1년 초과 → 국제학생 학비 대상 가능</div></div>
+<div id="d-k3" class="abs ck3" style="top:995px"><b>3</b><div><span>최종 판단은 교육청</span><small>등록 서류를 처음부터 제대로</small></div></div>
+<div id="d-stamp" class="abs" style="left:790px;top:960px;opacity:0"><div class="stamp" style="font-size:38px">최종 판단<br>= 교육청</div></div>
+<div id="end" class="abs hook" style="top:1185px;opacity:0"><div class="pill" style="font-size:44px;background:#2B2B2B">상담: 카카오톡 canlog · 02-567-4345</div></div>
+<div id="foot" class="clip" data-start="0" data-duration="30.900" data-track-index="3">※ 최종 적용 여부는 거주지 교육청이 결정합니다</div>
+<div id="cap0" class="clip cap" data-start="0.330" data-duration="1.330" data-track-index="1"><span>밴쿠버 자녀무상교육,</span></div>
+<div id="cap1" class="clip cap" data-start="2.090" data-duration="3.020" data-track-index="1"><span>다만 꼭 알아두셔야 할 게 세 가지 있어요.</span></div>
+<div id="cap2" class="clip cap" data-start="5.130" data-duration="3.120" data-track-index="1"><span>첫째, 부모 학생비자가 1년 이상이어야 합니다.</span></div>
+<div id="cap3" class="clip cap" data-start="8.270" data-duration="3.180" data-track-index="1"><span>둘째, 어학연수만 따로 하는 건 안 되고,</span></div>
+<div id="cap4" class="clip cap" data-start="11.470" data-duration="3.160" data-track-index="1"><span>반드시 학위 과정 조건부 입학이 붙어 있어야 해요.</span></div>
+<div id="cap5" class="clip cap" data-start="14.650" data-duration="2.920" data-track-index="1"><span>어학연수가 1년을 넘으면 그때부터는</span></div>
+<div id="cap6" class="clip cap" data-start="17.590" data-duration="1.910" data-track-index="1"><span>국제학생 학비 대상이 될 수 있습니다.</span></div>
+<div id="cap7" class="clip cap" data-start="20.010" data-duration="2.420" data-track-index="1"><span>셋째, 최종 판단은 교육청이 합니다.</span></div>
+<div id="cap8" class="clip cap" data-start="22.450" data-duration="3.800" data-track-index="1"><span>규정이 있어도 서류를 보고 교육청이 결정하니까,</span></div>
+<div id="cap9" class="clip cap" data-start="26.270" data-duration="3.430" data-track-index="1"><span>등록 서류를 처음부터 제대로 준비하는 게 중요합니다.</span></div>
+
+</div>
+<script>
+
+const tl = gsap.timeline({ paused: true });
+function pop(s,t){ tl.fromTo(s,{opacity:0,y:40},{opacity:1,y:0,duration:0.45,ease:"power3.out"},t); }
+function slam(s,t){ tl.fromTo(s,{opacity:0,scale:1.9},{opacity:1,scale:1,duration:0.3,ease:"power4.in"},t);
+  tl.fromTo(s,{x:0},{x:7,duration:0.05,yoyo:true,repeat:3,ease:"none"},t+0.3); }
+function stamp(s,t){ tl.fromTo(s,{opacity:0,scale:2.6,rotation:-14},{opacity:1,scale:1,rotation:-7,duration:0.28,ease:"power4.in"},t); }
+function wipe(s,t){ tl.fromTo(s,{opacity:0,clipPath:"inset(0% 100% 0% 0%)"},{opacity:1,clipPath:"inset(0% 0% 0% 0%)",duration:0.55,ease:"power2.out"},t); }
+function box(s,t){ tl.fromTo(s,{opacity:0,scale:1.06},{opacity:1,scale:1,duration:0.35,ease:"power2.out"},t); }
+function chip(s,t){ tl.fromTo(s,{opacity:0,scale:0.6},{opacity:1,scale:1,duration:0.35,ease:"back.out(2)"},t); }
+function out(s,t){ tl.to(s,{opacity:0,duration:0.3},t); }
+function count(s,to,t,d){ const el=document.querySelector(s); const o={v:0};
+  tl.fromTo(o,{v:0},{v:to,duration:d,ease:"power2.out",onUpdate(){ el.textContent=Math.round(o.v).toLocaleString("en-US"); }},t); }
+
+pop("#d-t", 0.05); pop("#d-h1", 0.15); slam("#d-h2", 0.5);
+pop("#d-k1", 5.130);
+pop("#d-k2", 8.270);
+pop("#d-k3", 20.010);
+pop("#d-k2b", 14.650); stamp("#d-stamp", 21.352);
+pop("#end", 29.650);
+tl.to("#root", {opacity:1, duration:0.01}, 30.850);
+window.__timelines["main"] = tl;
+</script>
+</body></html>

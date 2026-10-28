@@ -7,3 +7,9 @@ renders/video_silent.mp4
 video/snap*/
 video/render.log
 renders/video.mp4.part_*
+shorts/*/silent.mp4
+shorts/*/render.log
+shorts/snap/
+shorts/hf/index.html
+shorts/hf/.hyperframes/
+renders/mix_v2.m4a.pre.wav

@@ -1,0 +1,30 @@
+{
+ "total": 30.9,
+ "sfx": [
+  {
+   "t": 0.5,
+   "file": "impact-bass-2.mp3",
+   "gain": -13
+  },
+  {
+   "t": 5.13,
+   "file": "pop.mp3",
+   "gain": -15
+  },
+  {
+   "t": 8.27,
+   "file": "pop.mp3",
+   "gain": -15
+  },
+  {
+   "t": 20.01,
+   "file": "pop.mp3",
+   "gain": -15
+  },
+  {
+   "t": 21.552,
+   "file": "impact-bass-2.mp3",
+   "gain": -13
+  }
+ ]
+}

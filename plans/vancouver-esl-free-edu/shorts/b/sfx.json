@@ -1,0 +1,35 @@
+{
+ "total": 31.56,
+ "sfx": [
+  {
+   "t": 0.6,
+   "file": "impact-bass-2.mp3",
+   "gain": -13
+  },
+  {
+   "t": 5.45,
+   "file": "pop.mp3",
+   "gain": -16
+  },
+  {
+   "t": 8.79,
+   "file": "pop.mp3",
+   "gain": -16
+  },
+  {
+   "t": 18.467,
+   "file": "impact-bass-2.mp3",
+   "gain": -13
+  },
+  {
+   "t": 21.43,
+   "file": "impact-bass-1.mp3",
+   "gain": -17
+  },
+  {
+   "t": 25.17,
+   "file": "whoosh-short.mp3",
+   "gain": -17
+  }
+ ]
+}
