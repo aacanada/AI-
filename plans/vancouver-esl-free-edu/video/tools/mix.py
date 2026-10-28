@@ -14,13 +14,20 @@ for i, s in enumerate(D['scenes']):
     filt.append(f'[{i}:a]aresample=48000,aformat=channel_layouts=stereo,adelay={ms}|{ms}[n{i}]')
     labels.append(f'[n{i}]')
 n = len(inputs) // 2
+# ElevenLabs v2 files come out around -36..-38 LUFS: bring each scene to about -17 LUFS first
+def _lufs(f):
+    r = subprocess.run(['ffmpeg', '-hide_banner', '-i', f, '-af', 'ebur128', '-f', 'null', '-'], capture_output=True, text=True).stderr
+    return float(re.findall(r'I:\s+(-?[\d.]+) LUFS', r)[-1])
+for i, s in enumerate(D['scenes']):
+    g0 = -17.0 - _lufs(f'{P}/{AUD}/vanesl_{s["id"]}.mp3')
+    filt[i] = filt[i].replace(f'[n{i}]', f',volume={g0:.2f}dB[n{i}]')
 filt.append(f'{"".join(labels)}amix=inputs={n}:normalize=0[voice]')
 
 # BGM: loop, -38 LUFS-ish bed (pre-normalized below), fade in/out
 inputs += ['-stream_loop', '-1', '-i', BGM]
 b = n
 filt.append(f'[{b}:a]aresample=48000,aformat=channel_layouts=stereo,atrim=0:{TOTAL:.3f},'
-            f'loudnorm=I=-37:TP=-9:LRA=11,aresample=48000,afade=t=in:d=1.5,afade=t=out:st={TOTAL - 3:.3f}:d=3[bgm]')
+            f'loudnorm=I=-38:TP=-9:LRA=11,aresample=48000,afade=t=in:d=1.5,afade=t=out:st={TOTAL - 3:.3f}:d=3[bgm]')
 
 sl = []
 for j, e in enumerate(D['sfx']):
@@ -42,7 +49,7 @@ def meas(f, af=''):
     return float(re.findall(r'I:\s+(-?[\d.]+) LUFS', r)[-1])
 g = -16.0 - meas(tmp)
 for _ in range(3):
-    af = f'volume={g:.2f}dB,alimiter=limit=0.82:attack=2:release=60:level=false'
+    af = f'volume={g:.2f}dB,alimiter=limit=0.8:attack=2:release=60:level=false'
     got = meas(tmp, af)
     if abs(got + 16.0) < 0.15: break
     g += -16.0 - got
