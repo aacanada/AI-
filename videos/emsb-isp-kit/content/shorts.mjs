@@ -61,7 +61,7 @@ const BODY = {
       box: [60 + i * 330, 910, 300, 220], at: `c1@${(0.2 + i * 0.25).toFixed(2)}`, a: "pop", cls: i === 0 ? "hl" : "", style: "padding:18px 20px;align-items:center;text-align:center",
       pre: `<div class="ct" style="font-size:52px"><em>${m}</em>개월</div><div class="cs" style="font-size:26px;margin:4px 0">중고등 CAD</div>`,
       count: { value: v }, countAt: cat })).join("")}
-    ${K.chips(c, [{ t: "3·4개월: 9월 시작", at: "c3@0.1" }, { t: "5개월: 9월 또는 2월", at: "c3@0.6" }, { t: "2월 학기 자리 제한", cls: "warn", at: "c4" }], { box: [60, 1150, 960], justify: "center" })}`,
+    ${K.chips(c, [{ t: "3·4·5개월 모두 9월 학기 시작", at: "c3@0.1" }], { box: [60, 1150, 960], justify: "center" })}`,
   apply: (c) => `
     ${K.seg(c, { box: [60, 560, 960, 84], text: "*12/1 ~ 5/31* 온라인 신청", at: "c1", size: 50, style: "font-family:var(--display)" })}
     ${K.checklist(c, [

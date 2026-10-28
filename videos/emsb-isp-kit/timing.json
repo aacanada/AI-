@@ -277,17 +277,17 @@
       ]
     },
     "short": {
-      "duration": 33.229,
+      "duration": 37.548,
       "audio": "videos/emsb-isp-kit/audio-trimmed/emsb_sh_short.m4a",
-      "audioDuration": 32.829,
+      "audioDuration": 37.148,
       "cues": [
         0.3,
-        4.898,
-        9.809,
-        16.484,
-        21.592,
-        23.705,
-        28.338
+        4.793,
+        10.122,
+        17.262,
+        22.638,
+        26.155,
+        32.076
       ]
     },
     "apply": {
