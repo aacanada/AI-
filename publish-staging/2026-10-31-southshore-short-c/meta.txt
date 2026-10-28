@@ -5,6 +5,6 @@ visibility: public
 publish_order: 4
 publish_after: 2026-10-31
 linked_to: 2026-10-24-southshore-longform
-files: video.mp4 (30s, 1080x1920 30fps, 3 MB), thumbnail.jpg (1080x1920 커버), upload-text.txt
-voice: AI 음성 ElevenLabs "일곱번째" (vxpRrQegUpenYtez6hz1) · 설명에 AI 음성 고지 포함
+files: video.mp4 (32s, 1080x1920 30fps, 3 MB), thumbnail.jpg (1080x1920 커버), upload-text.txt
+voice: 여덟번째 cbVXtFGe9VfUKWtbYIty, eleven_multilingual_v2
 source: aacanada/AI- branch claude/fervent-allen-gq37dp, videos/southshore-shorts/short-c/
