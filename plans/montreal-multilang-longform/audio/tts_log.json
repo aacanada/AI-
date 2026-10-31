@@ -1,0 +1,224 @@
+{
+ "s01": [
+  {
+   "voice_id": "cbVXtFGe9VfUKWtbYIty",
+   "model_id": "eleven_multilingual_v2",
+   "request_id": "0ZGTHPTJ2RngQzSjvoqs",
+   "chars": 136
+  }
+ ],
+ "s02": [
+  {
+   "voice_id": "cbVXtFGe9VfUKWtbYIty",
+   "model_id": "eleven_multilingual_v2",
+   "request_id": "5RKdZTHlkrWWWKJZPTtu",
+   "chars": 206
+  }
+ ],
+ "s03": [
+  {
+   "voice_id": "cbVXtFGe9VfUKWtbYIty",
+   "model_id": "eleven_multilingual_v2",
+   "request_id": "uZPa3WXyFgDqqjHea9mi",
+   "chars": 203
+  }
+ ],
+ "s04": [
+  {
+   "voice_id": "cbVXtFGe9VfUKWtbYIty",
+   "model_id": "eleven_multilingual_v2",
+   "request_id": "gWmLy5CtGmJ4D075Pa0W",
+   "chars": 309
+  },
+  {
+   "voice_id": "cbVXtFGe9VfUKWtbYIty",
+   "model_id": "eleven_multilingual_v2",
+   "request_id": "c9jHphEiykPGRdOKyJd9",
+   "chars": 309
+  },
+  {
+   "voice_id": "cbVXtFGe9VfUKWtbYIty",
+   "model_id": "eleven_multilingual_v2",
+   "request_id": "XcFPEO2W1k82cKYRsRvI",
+   "chars": 309
+  },
+  {
+   "voice_id": "cbVXtFGe9VfUKWtbYIty",
+   "model_id": "eleven_multilingual_v2",
+   "request_id": "g9Ws9BQ6Vi0aP8aFiNTk",
+   "chars": 309
+  }
+ ],
+ "s05": [
+  {
+   "voice_id": "cbVXtFGe9VfUKWtbYIty",
+   "model_id": "eleven_multilingual_v2",
+   "request_id": "R0pLLhUHRYtXiPz8PE9R",
+   "chars": 158
+  },
+  {
+   "voice_id": "cbVXtFGe9VfUKWtbYIty",
+   "model_id": "eleven_multilingual_v2",
+   "request_id": "YVFt0foGUD3EcCCGb06L",
+   "chars": 158
+  },
+  {
+   "voice_id": "cbVXtFGe9VfUKWtbYIty",
+   "model_id": "eleven_multilingual_v2",
+   "request_id": "HgSvK994Pnr7iNa79ERB",
+   "chars": 158
+  },
+  {
+   "voice_id": "cbVXtFGe9VfUKWtbYIty",
+   "model_id": "eleven_multilingual_v2",
+   "request_id": "oIaxIvaMdcgC4JzffAM1",
+   "chars": 158
+  }
+ ],
+ "s06": [
+  {
+   "voice_id": "cbVXtFGe9VfUKWtbYIty",
+   "model_id": "eleven_multilingual_v2",
+   "request_id": "b7sbbwfDrTAUNR8StC9N",
+   "chars": 176
+  },
+  {
+   "voice_id": "cbVXtFGe9VfUKWtbYIty",
+   "model_id": "eleven_multilingual_v2",
+   "request_id": "cJHybiteM19zrJj1C93m",
+   "chars": 176
+  },
+  {
+   "voice_id": "cbVXtFGe9VfUKWtbYIty",
+   "model_id": "eleven_multilingual_v2",
+   "request_id": "orygcXrJ79fi1xIoqTc0",
+   "chars": 176
+  }
+ ],
+ "s07": [
+  {
+   "voice_id": "cbVXtFGe9VfUKWtbYIty",
+   "model_id": "eleven_multilingual_v2",
+   "request_id": "2I2VmkhVoTScyIgCkwW1",
+   "chars": 145
+  }
+ ],
+ "s08": [
+  {
+   "voice_id": "cbVXtFGe9VfUKWtbYIty",
+   "model_id": "eleven_multilingual_v2",
+   "request_id": "IbzBnxaNY4LbGyPOLwtW",
+   "chars": 152
+  }
+ ],
+ "s09": [
+  {
+   "voice_id": "cbVXtFGe9VfUKWtbYIty",
+   "model_id": "eleven_multilingual_v2",
+   "request_id": "fWPOYmen7DMfzlWOhLEp",
+   "chars": 209
+  },
+  {
+   "voice_id": "cbVXtFGe9VfUKWtbYIty",
+   "model_id": "eleven_multilingual_v2",
+   "request_id": "AKrM0hg9Fh9goZ0IVsPi",
+   "chars": 209
+  },
+  {
+   "voice_id": "cbVXtFGe9VfUKWtbYIty",
+   "model_id": "eleven_multilingual_v2",
+   "request_id": "AFysuIfg0llZoI2bG1n3",
+   "chars": 209
+  },
+  {
+   "voice_id": "cbVXtFGe9VfUKWtbYIty",
+   "model_id": "eleven_multilingual_v2",
+   "request_id": "kW4WVo4BASh6xkrcyjYH",
+   "chars": 209
+  },
+  {
+   "voice_id": "cbVXtFGe9VfUKWtbYIty",
+   "model_id": "eleven_multilingual_v2",
+   "request_id": "n2T91tkXAJbzeDLQWaO1",
+   "chars": 209
+  },
+  {
+   "voice_id": "cbVXtFGe9VfUKWtbYIty",
+   "model_id": "eleven_multilingual_v2",
+   "request_id": "dTr5gC7Q6iegw7zFaj0i",
+   "chars": 209
+  },
+  {
+   "voice_id": "cbVXtFGe9VfUKWtbYIty",
+   "model_id": "eleven_multilingual_v2",
+   "request_id": "aOs1CGMdMqfX6svMxLlh",
+   "chars": 209
+  },
+  {
+   "voice_id": "cbVXtFGe9VfUKWtbYIty",
+   "model_id": "eleven_multilingual_v2",
+   "request_id": "8e7C2RFPv4WAnWBH8OFx",
+   "chars": 209
+  },
+  {
+   "voice_id": "cbVXtFGe9VfUKWtbYIty",
+   "model_id": "eleven_multilingual_v2",
+   "request_id": "78Rwcvm9GSgzrO07zjdR",
+   "chars": 206,
+   "tts_input_overrides": [
+    [
+     "canlog",
+     "캔로그"
+    ]
+   ]
+  },
+  {
+   "voice_id": "cbVXtFGe9VfUKWtbYIty",
+   "model_id": "eleven_multilingual_v2",
+   "request_id": "6eLkoJEHWLHwrOAEGgTB",
+   "chars": 206,
+   "tts_input_overrides": [
+    [
+     "canlog",
+     "캔로그"
+    ]
+   ]
+  },
+  {
+   "voice_id": "cbVXtFGe9VfUKWtbYIty",
+   "model_id": "eleven_multilingual_v2",
+   "request_id": "Q9E4VCuQFFUVp4EVrkb5",
+   "chars": 206,
+   "tts_input_overrides": [
+    [
+     "canlog",
+     "캔로그"
+    ]
+   ]
+  },
+  {
+   "voice_id": "cbVXtFGe9VfUKWtbYIty",
+   "model_id": "eleven_multilingual_v2",
+   "request_id": "NX82OnbvagPC9A7fSW1D",
+   "chars": 207,
+   "tts_input_overrides": [
+    [
+     "canlog",
+     "캔 로그"
+    ]
+   ]
+  },
+  {
+   "voice_id": "cbVXtFGe9VfUKWtbYIty",
+   "model_id": "eleven_multilingual_v2",
+   "request_id": "4rXXVJHaonR1f1sRYnJf",
+   "chars": 207,
+   "tts_input_overrides": [
+    [
+     "canlog",
+     "캔 로그"
+    ]
+   ]
+  }
+ ]
+}

@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="ko" data-resolution="landscape">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1920, height=1080" />
+<title>몬트리올 자녀무상교육 — 우리 아이 영어·불어·스페인어까지 가능할까?</title>
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/shader-transitions.global.js"></script>
+<style>
+@font-face { font-family: "BHS"; src: url("fonts/BlackHanSans-Regular.ttf"); font-weight: 400; }
+@font-face { font-family: "NotoKR"; src: url("fonts/NotoSansKR.ttf"); font-weight: 100 900; }
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { width:1920px; height:1080px; overflow:hidden; background:#FFF8F2; }
+#root { position:relative; width:100%; height:100%; overflow:hidden; font-family:"NotoKR", sans-serif; color:#2B2B2B; }
+.scene { position:absolute; left:0; top:0; width:1920px; height:1080px; overflow:hidden; background-color:#FFF8F2; }
+.maple { position:absolute; }
+.abs { position:absolute; }
+.row { display:flex; flex-direction:row; align-items:center; }
+.col { display:flex; flex-direction:column; }
+.center { position:absolute; left:0; top:0; width:1920px; height:960px; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+.bh { font-family:"BHS", sans-serif; font-weight:400; letter-spacing:-1px; }
+.nk9 { font-weight:900; letter-spacing:-1px; }
+.red { color:#C8102E; font-style:normal; }
+.band { display:inline-block; background:#FFD6CF; color:#2B2B2B; padding:10px 28px; border-left:12px solid #C8102E; border-radius:8px; white-space:nowrap; }
+.tag { position:absolute; left:64px; top:40px; display:flex; align-items:center; gap:16px; }
+.tagnum { display:inline-block; background:#C8102E; color:#fff; font-family:"BHS"; font-size:36px; padding:6px 16px; border-radius:12px; }
+.tagtxt { font-weight:900; font-size:34px; color:#7A1B26; }
+.src { left:66px; top:100px; font-size:28px; font-weight:500; color:#7d6a6a; opacity:0; }
+.kin { font-size:230px; line-height:1; opacity:0; }
+.kin2 { font-size:190px; line-height:1; opacity:0; }
+.doc { background:#fff; border-radius:14px; box-shadow:0 18px 50px rgba(122,27,38,0.22); overflow:hidden; opacity:0; }
+#s04-docw { opacity:1; }
+.hlbox { border:6px solid #C8102E; border-radius:8px; opacity:0; }
+.ul { height:6px; background:#C8102E; border-radius:3px; transform-origin:0 50%; transform:scaleX(0); }
+.stamp { display:inline-block; color:#C8102E; border:7px solid #C8102E; border-radius:16px; padding:8px 26px; font-weight:900; background:rgba(255,248,242,0.94); opacity:0; }
+.stampc { width:330px; height:330px; border-radius:50%; border:12px solid #C8102E; color:#C8102E; display:flex; align-items:center; justify-content:center; text-align:center; font-family:"BHS"; font-size:86px; line-height:1.1; background:rgba(255,248,242,0.94); opacity:0; }
+.slamnum { width:620px; padding:26px 36px; background:#C8102E; color:#fff; border-radius:24px; text-align:center; opacity:0; box-shadow:0 20px 50px rgba(200,16,46,0.3); }
+.slamnum small { display:block; font-weight:900; font-size:36px; }
+.slamnum b { display:block; font-family:"BHS"; font-weight:400; font-size:132px; line-height:1.1; }
+.slamnum b.nw { font-size:112px; white-space:nowrap; }
+.slamnum.grey { background:#fff; color:#2B2B2B; border:5px solid #b9a9a9; box-shadow:0 14px 40px rgba(122,27,38,0.12); }
+.pill { display:inline-block; background:#FFD6CF; color:#7A1B26; font-weight:900; font-size:34px; padding:10px 26px; border-radius:40px; white-space:nowrap; opacity:0; }
+.pill.big { font-size:46px; padding:16px 36px; background:#C8102E; color:#fff; }
+.lawcard { background:#fff; border-radius:26px; padding:46px 60px; box-shadow:0 22px 60px rgba(122,27,38,0.18); border-top:14px solid #C8102E; opacity:0; }
+.lawrule { height:4px; background:#FFD6CF; margin:22px 0 10px; }
+.lawline { display:flex; gap:26px; align-items:flex-start; margin-top:26px; opacity:0; }
+.lawline b { display:flex; width:64px; height:64px; flex:none; border-radius:16px; background:#C8102E; color:#fff; font-family:"BHS"; font-weight:400; font-size:44px; align-items:center; justify-content:center; }
+.lawline span { font-size:46px; font-weight:900; line-height:1.3; }
+.lawline em { font-style:normal; }
+.hl { display:inline-block; background-image:linear-gradient(#FFD6CF,#FFD6CF); background-repeat:no-repeat; background-size:0% 100%; padding:0 6px; }
+.fnode { width:250px; height:180px; background:#fff; border-radius:22px; border:5px solid #C8102E; display:flex; align-items:center; justify-content:center; box-shadow:0 12px 30px rgba(122,27,38,0.16); opacity:0; }
+.fnode span { font-size:54px; font-weight:900; color:#2B2B2B; }
+.farrow { width:80px; height:12px; background:#C8102E; border-radius:6px; transform-origin:0 50%; transform:scaleX(0); }
+.wbox { width:740px; height:350px; background:#C8102E; border-radius:28px; padding:28px 40px; color:#fff; box-shadow:0 22px 60px rgba(200,16,46,0.3); opacity:0; }
+.wtitle { font-family:"BHS"; font-size:66px; line-height:1.1; }
+.wtitle small { font-family:"NotoKR"; font-weight:900; font-size:34px; margin-left:12px; background:#fff; color:#C8102E; padding:2px 14px; border-radius:20px; vertical-align:middle; }
+.wfr { font-size:34px; font-weight:700; font-style:italic; margin:6px 0 18px; opacity:0; }
+.wli { display:inline-block; background:#fff; color:#2B2B2B; font-weight:900; font-size:38px; padding:8px 22px; border-radius:14px; margin:0 12px 12px 0; opacity:0; }
+.wli em { font-style:normal; }
+#s04-dash path { opacity:0; }
+#s04-per { opacity:0; }
+.axis { position:relative; margin-top:20px; width:1300px; height:84px; background:repeating-linear-gradient(90deg, #f0dcd6 0 2px, rgba(255,248,242,0) 2px 100px); border-bottom:4px solid #d9c3bd; }
+.range { position:absolute; left:300px; top:6px; width:560px; height:72px; border-radius:36px; background:#C8102E; color:#fff; font-weight:900; font-size:38px; display:flex; align-items:center; justify-content:center; transform-origin:0 50%; transform:scaleX(0); }
+.gline { height:10px; background:#FFD6CF; border-radius:5px; transform-origin:0 50%; transform:scaleX(0); }
+.gnode { width:110px; height:130px; background:#fff; border:5px solid #C8102E; border-radius:20px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#2B2B2B; opacity:0; }
+.gnode b { font-family:"BHS"; font-weight:400; font-size:66px; line-height:1; }
+.gnode small { font-weight:900; font-size:28px; }
+.ebox { width:480px; padding:26px 32px; background:#fff; border-radius:22px; border-left:14px solid #C8102E; font-size:48px; font-weight:900; box-shadow:0 12px 30px rgba(122,27,38,0.14); opacity:0; }
+.ebox.alt { border-left-color:#7A1B26; }
+.ebox small { display:block; font-size:34px; color:#7A1B26; margin-top:8px; background-image:linear-gradient(#FFD6CF,#FFD6CF); background-repeat:no-repeat; background-size:0% 100%; }
+.ebox em { font-style:normal; }
+.scard { width:400px; height:340px; background:#fff; border-radius:24px; border-top:14px solid #C8102E; padding:26px 30px; box-shadow:0 16px 40px rgba(122,27,38,0.16); opacity:0; }
+.sloc { display:inline-block; background:#FFD6CF; color:#7A1B26; font-weight:900; font-size:30px; padding:4px 18px; border-radius:20px; }
+.sko { font-family:"BHS"; font-size:58px; color:#2B2B2B; margin-top:18px; line-height:1.1; white-space:nowrap; letter-spacing:-1px; }
+.sfr { font-size:28px; font-weight:700; color:#7d6a6a; margin-top:4px; white-space:nowrap; }
+.sdet { font-size:40px; font-weight:900; color:#C8102E; margin-top:30px; }
+.lang { background:#fff; border:5px solid #C8102E; border-radius:22px; padding:20px 40px; font-size:66px; font-weight:900; color:#2B2B2B; opacity:0; }
+.lang.alpha { background:#C8102E; color:#fff; }
+.plus { font-family:"BHS"; font-size:80px; color:#7A1B26; opacity:0; }
+.ck3 { left:110px; width:1150px; display:flex; gap:30px; align-items:center; opacity:0; }
+.ck3 b { display:flex; width:96px; height:96px; flex:none; border-radius:22px; background:#C8102E; color:#fff; font-family:"BHS"; font-weight:400; font-size:64px; align-items:center; justify-content:center; }
+.ck3 span { display:block; font-size:54px; font-weight:900; }
+.ck3 small { display:inline-block; font-size:36px; font-weight:700; color:#7A1B26; margin-top:6px; background-image:linear-gradient(#FFD6CF,#FFD6CF); background-repeat:no-repeat; background-size:0% 100%; padding:0 8px; }
+.ck3 em { font-style:normal; }
+#s08-age { opacity:0; }
+.sumrow { left:110px; display:flex; align-items:center; gap:34px; opacity:0; }
+.sumrow b { width:300px; text-align:center; background:#C8102E; color:#fff; font-family:"BHS"; font-weight:400; font-size:64px; padding:12px 0; border-radius:20px; }
+.sumrow span { font-size:62px; font-weight:900; }
+.qcard { background:#fff; border-radius:28px; padding:30px 44px; box-shadow:0 16px 40px rgba(122,27,38,0.16); }
+.qcard small { display:block; font-size:44px; font-weight:900; color:#7A1B26; margin-bottom:18px; opacity:0; }
+.planbig { font-family:"BHS"; font-size:110px; color:#fff; background:#C8102E; padding:10px 46px; border-radius:26px; opacity:0; }
+.planbig.b { background:#7A1B26; }
+#s09-kakao, #s09-logo { opacity:0; }
+#logo { position:absolute; right:48px; top:26px; width:84px; height:81px; }
+#foot { position:absolute; left:0; bottom:8px; width:1920px; text-align:center; font-size:28px; font-weight:700; color:#7A1B26; }
+.cap { position:absolute; left:50%; bottom:56px; transform:translateX(-50%); width:max-content; max-width:1640px; text-align:center; background:rgba(43,43,43,0.88); color:#fff; font-size:46px; font-weight:700; line-height:1.3; padding:12px 34px; border-radius:14px; letter-spacing:-0.5px; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-width="1920" data-height="1080" data-duration="243.664">
+<section id="s01" class="scene"><svg viewBox="-2015 -2000 4030 4030" class="maple" data-layout-allow-overflow style="right:-140px;top:-120px;width:620px"><path fill="#F9E3DE" d="m-90 2030 45-863a95 95 0 0 0-111-98l-859 151 116-320a65 65 0 0 0-20-73l-941-762 212-99a65 65 0 0 0 34-79l-186-572 542 115a65 65 0 0 0 73-38l105-247 423 454a65 65 0 0 0 111-57l-204-1052 327 189a65 65 0 0 0 91-27l332-652 332 652a65 65 0 0 0 91 27l327-189-204 1052a65 65 0 0 0 111 57l423-454 105 247a65 65 0 0 0 73 38l542-115-186 572a65 65 0 0 0 34 79l212 99-941 762a65 65 0 0 0-20 73l116 320-859-151a95 95 0 0 0-111 98l45 863z"/></svg><svg viewBox="-2015 -2000 4030 4030" class="maple" data-layout-allow-overflow style="left:-120px;bottom:-160px;width:420px"><path fill="#FBEAE6" d="m-90 2030 45-863a95 95 0 0 0-111-98l-859 151 116-320a65 65 0 0 0-20-73l-941-762 212-99a65 65 0 0 0 34-79l-186-572 542 115a65 65 0 0 0 73-38l105-247 423 454a65 65 0 0 0 111-57l-204-1052 327 189a65 65 0 0 0 91-27l332-652 332 652a65 65 0 0 0 91 27l327-189-204 1052a65 65 0 0 0 111 57l423-454 105 247a65 65 0 0 0 73 38l542-115-186 572a65 65 0 0 0 34 79l212 99-941 762a65 65 0 0 0-20 73l116 320-859-151a95 95 0 0 0-111 98l45 863z"/></svg>
+<div id="s01-w" class="abs" style="left:0;top:0;width:1920px;height:1080px">
+  <div id="s01-en" class="abs bh kin" style="left:170px;top:150px;color:#2B2B2B">영어?</div>
+  <div id="s01-fr" class="abs bh kin" style="left:700px;top:340px;color:#C8102E">불어?</div>
+  <div id="s01-es" class="abs bh kin" style="left:1000px;top:530px;color:#7A1B26">스페인어?</div>
+</div>
+<div id="s01-title" class="center col" style="align-items:center">
+  <div id="s01-t1" class="bh" style="font-size:150px;color:#C8102E;line-height:1.05">몬트리올</div>
+  <div id="s01-t2" class="bh" style="font-size:150px;color:#2B2B2B;line-height:1.05">자녀무상교육</div>
+  <div id="s01-t3" class="band nk9" style="font-size:52px;margin-top:34px">숫자와 공식 자료로 답합니다</div>
+</div>
+<div id="s01-hello" class="abs row" style="left:0;top:770px;width:1920px;justify-content:center">
+  <img src="assets/aa-canada-logo-transparent.png" style="width:96px;height:93px">
+  <div class="nk9" style="font-size:52px;color:#2B2B2B;margin-left:22px">안녕하세요, <span class="red">AA Canada</span>입니다</div>
+</div>
+</section><section id="s02" class="scene"><svg viewBox="-2015 -2000 4030 4030" class="maple" data-layout-allow-overflow style="right:-140px;top:-120px;width:620px"><path fill="#F9E3DE" d="m-90 2030 45-863a95 95 0 0 0-111-98l-859 151 116-320a65 65 0 0 0-20-73l-941-762 212-99a65 65 0 0 0 34-79l-186-572 542 115a65 65 0 0 0 73-38l105-247 423 454a65 65 0 0 0 111-57l-204-1052 327 189a65 65 0 0 0 91-27l332-652 332 652a65 65 0 0 0 91 27l327-189-204 1052a65 65 0 0 0 111 57l423-454 105 247a65 65 0 0 0 73 38l542-115-186 572a65 65 0 0 0 34 79l212 99-941 762a65 65 0 0 0-20 73l116 320-859-151a95 95 0 0 0-111 98l45 863z"/></svg><svg viewBox="-2015 -2000 4030 4030" class="maple" data-layout-allow-overflow style="left:-120px;bottom:-160px;width:420px"><path fill="#FBEAE6" d="m-90 2030 45-863a95 95 0 0 0-111-98l-859 151 116-320a65 65 0 0 0-20-73l-941-762 212-99a65 65 0 0 0 34-79l-186-572 542 115a65 65 0 0 0 73-38l105-247 423 454a65 65 0 0 0 111-57l-204-1052 327 189a65 65 0 0 0 91-27l332-652 332 652a65 65 0 0 0 91 27l327-189-204 1052a65 65 0 0 0 111 57l423-454 105 247a65 65 0 0 0 73 38l542-115-186 572a65 65 0 0 0 34 79l212 99-941 762a65 65 0 0 0-20 73l116 320-859-151a95 95 0 0 0-111 98l45 863z"/></svg><div class="tag" id="s02-tag"><span class="tagnum">01</span><span class="tagtxt">숫자로 보는 몬트리올</span></div><div class="abs src" id="s02-src">출처: Statistics Canada, The Daily, 2022.8.17 (2021 인구조사) · 2026.10.31 확인</div>
+<div id="s02-docw" class="abs doc" style="left:90px;top:200px;width:1060px;height:318px">
+  <img src="assets/cap_statcan_montreal.png" style="width:1060px;display:block">
+  <div id="s02-hl1" class="abs hlbox" style="left:605px;top:68px;width:306px;height:40px"></div>
+  <div id="s02-hl2" class="abs hlbox" style="left:62px;top:99px;width:108px;height:40px"></div>
+  <div id="s02-ul" class="abs ul" style="left:422px;top:176px;width:51px"></div>
+</div>
+<div id="s02-n1" class="abs slamnum" style="left:1230px;top:190px"><small>3개 언어로 대화 가능</small><b class="nw">5명 중 1명</b><small>몬트리올 대도시권 · 2021</small></div>
+<div id="s02-n2" class="abs slamnum" style="left:1230px;top:550px"><small>2개 언어 이상</small><b><span id="s02-pct">69.8</span>%</b><small>캐나다 대도시 중 가장 높음</small></div>
+<div id="s02-defw" class="abs doc" style="left:90px;top:610px;width:880px;height:120px">
+  <img src="assets/cap_statcan_definition.png" style="width:880px;display:block">
+</div>
+<div id="s02-defl" class="abs pill" style="left:90px;top:748px">대화 가능 = 본인 응답 · 유창함 보장 ✕</div>
+<div id="s02-band" class="abs band nk9" style="left:1230px;top:870px;font-size:40px">여러 언어가 특별하지 않은 도시</div>
+</section><section id="s03" class="scene"><svg viewBox="-2015 -2000 4030 4030" class="maple" data-layout-allow-overflow style="right:-140px;top:-120px;width:620px"><path fill="#F9E3DE" d="m-90 2030 45-863a95 95 0 0 0-111-98l-859 151 116-320a65 65 0 0 0-20-73l-941-762 212-99a65 65 0 0 0 34-79l-186-572 542 115a65 65 0 0 0 73-38l105-247 423 454a65 65 0 0 0 111-57l-204-1052 327 189a65 65 0 0 0 91-27l332-652 332 652a65 65 0 0 0 91 27l327-189-204 1052a65 65 0 0 0 111 57l423-454 105 247a65 65 0 0 0 73 38l542-115-186 572a65 65 0 0 0 34 79l212 99-941 762a65 65 0 0 0-20 73l116 320-859-151a95 95 0 0 0-111 98l45 863z"/></svg><svg viewBox="-2015 -2000 4030 4030" class="maple" data-layout-allow-overflow style="left:-120px;bottom:-160px;width:420px"><path fill="#FBEAE6" d="m-90 2030 45-863a95 95 0 0 0-111-98l-859 151 116-320a65 65 0 0 0-20-73l-941-762 212-99a65 65 0 0 0 34-79l-186-572 542 115a65 65 0 0 0 73-38l105-247 423 454a65 65 0 0 0 111-57l-204-1052 327 189a65 65 0 0 0 91-27l332-652 332 652a65 65 0 0 0 91 27l327-189-204 1052a65 65 0 0 0 111 57l423-454 105 247a65 65 0 0 0 73 38l542-115-186 572a65 65 0 0 0 34 79l212 99-941 762a65 65 0 0 0-20 73l116 320-859-151a95 95 0 0 0-111 98l45 863z"/></svg><div class="tag" id="s03-tag"><span class="tagnum">02</span><span class="tagtxt">학비</span></div><div class="abs src" id="s03-src">출처: 퀘벡 교육부, 국제학생 학비 면제 지침(2024.1판) 12~13쪽 · 2026.10.31 확인</div>
+<div id="s03-card" class="abs lawcard" style="left:150px;top:170px;width:1240px">
+  <div id="s03-h" class="bh" style="font-size:96px;color:#C8102E;line-height:1.1">퀘벡 교육법 3.1조</div>
+  <div class="lawrule"></div>
+  <div id="s03-l1" class="lawline"><b>1</b><span>부모가 <em id="s03-res" class="hl">퀘벡에 거주</em>하는 미성년 자녀<br>→ <em id="s03-free" class="red hl">공립 초·중등 무상</em></span></div>
+  <div id="s03-l2" class="lawline"><b>2</b><span>필요 서류: 부모-자녀 관계 증빙<br>+ 퀘벡 거주 증빙</span></div>
+  <div id="s03-l3" class="lawline"><b>3</b><span>면제는 <em class="red">수업료</em>, 학용품 등은 별도</span></div>
+</div>
+<div id="s03-stamp" class="abs stampc" style="left:1450px;top:240px">수업료<br>면제</div>
+<div id="s03-final" class="abs stamp" style="left:1420px;top:640px;font-size:46px">최종 판단은 교육청</div>
+</section><section id="s04" class="scene"><svg viewBox="-2015 -2000 4030 4030" class="maple" data-layout-allow-overflow style="right:-140px;top:-120px;width:620px"><path fill="#F9E3DE" d="m-90 2030 45-863a95 95 0 0 0-111-98l-859 151 116-320a65 65 0 0 0-20-73l-941-762 212-99a65 65 0 0 0 34-79l-186-572 542 115a65 65 0 0 0 73-38l105-247 423 454a65 65 0 0 0 111-57l-204-1052 327 189a65 65 0 0 0 91-27l332-652 332 652a65 65 0 0 0 91 27l327-189-204 1052a65 65 0 0 0 111 57l423-454 105 247a65 65 0 0 0 73 38l542-115-186 572a65 65 0 0 0 34 79l212 99-941 762a65 65 0 0 0-20 73l116 320-859-151a95 95 0 0 0-111 98l45 863z"/></svg><svg viewBox="-2015 -2000 4030 4030" class="maple" data-layout-allow-overflow style="left:-120px;bottom:-160px;width:420px"><path fill="#FBEAE6" d="m-90 2030 45-863a95 95 0 0 0-111-98l-859 151 116-320a65 65 0 0 0-20-73l-941-762 212-99a65 65 0 0 0 34-79l-186-572 542 115a65 65 0 0 0 73-38l105-247 423 454a65 65 0 0 0 111-57l-204-1052 327 189a65 65 0 0 0 91-27l332-652 332 652a65 65 0 0 0 91 27l327-189-204 1052a65 65 0 0 0 111 57l423-454 105 247a65 65 0 0 0 73 38l542-115-186 572a65 65 0 0 0 34 79l212 99-941 762a65 65 0 0 0-20 73l116 320-859-151a95 95 0 0 0-111 98l45 863z"/></svg><div class="tag" id="s04-tag"><span class="tagnum">03</span><span class="tagtxt">웰컴 클래스</span></div><div class="abs src" id="s04-src">출처: CSSDM, Ratio maître-élèves (2026.10.31 확인)</div>
+<div id="s04-ok" class="abs nk9" style="left:110px;top:150px;font-size:56px;color:#2B2B2B">불어를 한마디도 못 해도 <span class="red">괜찮습니다</span></div>
+<div id="s04-flow" class="abs" style="left:0;top:0;width:1920px;height:1080px">
+  <div id="s04-f1" class="abs fnode" style="left:110px;top:330px"><span>입학</span></div>
+  <div id="s04-a1" class="abs farrow" style="left:380px;top:420px"></div>
+  <div id="s04-f2" class="abs wbox" style="left:480px;top:250px">
+    <div class="wtitle">웰컴 클래스 <small>불어 집중</small></div>
+    <div id="s04-fr" class="wfr">classe d'accueil</div>
+    <div id="s04-w1" class="wli">말하기 · 읽기 · 쓰기</div>
+    <div id="s04-w2" class="wli">불어 전문 교사</div>
+    <div id="s04-w3" class="wli"><em class="red">최대 17명</em></div>
+  </div>
+  <div id="s04-a2" class="abs farrow" style="left:1250px;top:420px"></div>
+  <div id="s04-f3" class="abs fnode" style="left:1350px;top:330px"><span>일반 반</span></div>
+  <svg id="s04-dash" class="abs" style="left:880px;top:160px;width:640px;height:120px;overflow:visible" viewBox="0 0 640 120">
+    <path id="s04-dpath" d="M10 110 C 160 -20, 470 -20, 620 160" fill="none" stroke="#7A1B26" stroke-width="6" stroke-dasharray="16 12"/>
+  </svg>
+  <div id="s04-dlab" class="abs pill" style="left:1040px;top:110px">학교에 따라 일부 수업은 일반 반에서</div>
+  <div id="s04-per" class="abs" style="left:110px;top:680px;width:1700px">
+    <div class="nk9" style="font-size:40px;color:#2B2B2B">기간: <span class="red">정해진 기간 없음</span> · 아이마다 다름</div>
+    <div class="axis"><div id="s04-range" class="range">보통 10~20개월</div></div>
+  </div>
+</div>
+<div id="s04-cmp" class="abs" style="left:0;top:0;width:1920px;height:1080px;opacity:0">
+  <div id="s04-docw" class="abs doc" style="left:90px;top:170px;width:808px;height:656px">
+    <img src="assets/cap_cssdm_ratio.png" data-layout-allow-overflow style="width:1182px;display:block">
+    <div id="s04-h17" class="abs hlbox" style="left:89px;top:546px;width:261px;height:60px"></div>
+    <div id="s04-h28" class="abs hlbox" style="left:89px;top:172px;width:304px;height:61px"></div>
+  </div>
+  <div id="s04-n17" class="abs slamnum" style="left:1060px;top:190px"><small>웰컴 클래스 (중등) 최대</small><b><span id="s04-c17">17</span>명</b></div>
+  <div id="s04-vs" class="abs bh" style="left:1335px;top:415px;font-size:64px;color:#7A1B26">vs</div>
+  <div id="s04-n28" class="abs slamnum grey" style="left:1060px;top:500px"><small>일반 중등 1학년 최대</small><b><span id="s04-c28">28</span>명</b></div>
+  <div id="s04-small" class="abs band nk9" style="left:1060px;top:800px;font-size:44px">같은 처지 친구들과 <span class="red">작은 반</span>에서 시작</div>
+</div>
+</section><section id="s05" class="scene"><svg viewBox="-2015 -2000 4030 4030" class="maple" data-layout-allow-overflow style="right:-140px;top:-120px;width:620px"><path fill="#F9E3DE" d="m-90 2030 45-863a95 95 0 0 0-111-98l-859 151 116-320a65 65 0 0 0-20-73l-941-762 212-99a65 65 0 0 0 34-79l-186-572 542 115a65 65 0 0 0 73-38l105-247 423 454a65 65 0 0 0 111-57l-204-1052 327 189a65 65 0 0 0 91-27l332-652 332 652a65 65 0 0 0 91 27l327-189-204 1052a65 65 0 0 0 111 57l423-454 105 247a65 65 0 0 0 73 38l542-115-186 572a65 65 0 0 0 34 79l212 99-941 762a65 65 0 0 0-20 73l116 320-859-151a95 95 0 0 0-111 98l45 863z"/></svg><svg viewBox="-2015 -2000 4030 4030" class="maple" data-layout-allow-overflow style="left:-120px;bottom:-160px;width:420px"><path fill="#FBEAE6" d="m-90 2030 45-863a95 95 0 0 0-111-98l-859 151 116-320a65 65 0 0 0-20-73l-941-762 212-99a65 65 0 0 0 34-79l-186-572 542 115a65 65 0 0 0 73-38l105-247 423 454a65 65 0 0 0 111-57l-204-1052 327 189a65 65 0 0 0 91-27l332-652 332 652a65 65 0 0 0 91 27l327-189-204 1052a65 65 0 0 0 111 57l423-454 105 247a65 65 0 0 0 73 38l542-115-186 572a65 65 0 0 0 34 79l212 99-941 762a65 65 0 0 0-20 73l116 320-859-151a95 95 0 0 0-111 98l45 863z"/></svg><div class="tag" id="s05-tag"><span class="tagnum">04</span><span class="tagtxt">영어</span></div><div class="abs src" id="s05-src">출처: 캐나다 통계청 98-200-X2021013 (2021 인구조사) · 퀘벡 교육부 · 2026.10.31 확인</div>
+<div id="s05-h" class="abs nk9" style="left:110px;top:160px;font-size:52px;color:#2B2B2B">퀘벡 초등학교 영어 수업</div>
+<div id="s05-line" class="abs gline" style="left:150px;top:395px;width:880px"></div>
+<div id="s05-gs" class="abs row" style="left:110px;top:330px;gap:42px"><div id="s05-g1" class="gnode"><b>1</b><small>학년</small></div><div id="s05-g2" class="gnode"><b>2</b><small>학년</small></div><div id="s05-g3" class="gnode"><b>3</b><small>학년</small></div><div id="s05-g4" class="gnode"><b>4</b><small>학년</small></div><div id="s05-g5" class="gnode"><b>5</b><small>학년</small></div><div id="s05-g6" class="gnode"><b>6</b><small>학년</small></div></div>
+<div id="s05-reg" class="abs ebox" style="left:110px;top:520px">초1부터 <em class="red">정규 수업</em><small>주 평균 1시간 정도</small></div>
+<div id="s05-int" class="abs ebox alt" style="left:640px;top:520px">5·6학년<small>일부 학교 집중 영어</small></div>
+<div id="s05-n" class="abs slamnum" style="left:1200px;top:240px"><small>영어 · 불어 모두 하는 사람</small><b><span id="s05-pct">56.4</span>%</b><small>몬트리올 대도시권, 2021 인구조사</small></div>
+<div id="s05-out" class="abs band nk9" style="left:1200px;top:640px;font-size:42px">학교 밖에서도 <span class="red">영어</span>를 접할 기회</div>
+</section><section id="s06" class="scene"><svg viewBox="-2015 -2000 4030 4030" class="maple" data-layout-allow-overflow style="right:-140px;top:-120px;width:620px"><path fill="#F9E3DE" d="m-90 2030 45-863a95 95 0 0 0-111-98l-859 151 116-320a65 65 0 0 0-20-73l-941-762 212-99a65 65 0 0 0 34-79l-186-572 542 115a65 65 0 0 0 73-38l105-247 423 454a65 65 0 0 0 111-57l-204-1052 327 189a65 65 0 0 0 91-27l332-652 332 652a65 65 0 0 0 91 27l327-189-204 1052a65 65 0 0 0 111 57l423-454 105 247a65 65 0 0 0 73 38l542-115-186 572a65 65 0 0 0 34 79l212 99-941 762a65 65 0 0 0-20 73l116 320-859-151a95 95 0 0 0-111 98l45 863z"/></svg><svg viewBox="-2015 -2000 4030 4030" class="maple" data-layout-allow-overflow style="left:-120px;bottom:-160px;width:420px"><path fill="#FBEAE6" d="m-90 2030 45-863a95 95 0 0 0-111-98l-859 151 116-320a65 65 0 0 0-20-73l-941-762 212-99a65 65 0 0 0 34-79l-186-572 542 115a65 65 0 0 0 73-38l105-247 423 454a65 65 0 0 0 111-57l-204-1052 327 189a65 65 0 0 0 91-27l332-652 332 652a65 65 0 0 0 91 27l327-189-204 1052a65 65 0 0 0 111 57l423-454 105 247a65 65 0 0 0 73 38l542-115-186 572a65 65 0 0 0 34 79l212 99-941 762a65 65 0 0 0-20 73l116 320-859-151a95 95 0 0 0-111 98l45 863z"/></svg><div class="tag" id="s06-tag"><span class="tagnum">05</span><span class="tagtxt">스페인어</span></div><div class="abs src" id="s06-src">출처: 각 학교 · 몬트리올 교육청 안내 · 2026.10.31 확인</div>
+<div id="s06-h" class="abs bh" style="left:110px;top:150px;font-size:96px;color:#2B2B2B">스페인어 = <span class="red">학교 선택</span></div>
+<div id="s06-pei" class="abs pill" style="left:110px;top:290px;font-size:40px">공립학교 · 국제 교육과정 PEI 운영 학교</div>
+<div id="s06-c0" class="abs scard" style="left:110px;top:430px"><div class="sloc">시내</div><div class="sko">잔 망스</div><div class="sfr">Jeanne-Mance</div><div class="sdet">PEI · 3~5학년</div></div><div id="s06-c1" class="abs scard" style="left:542px;top:430px"><div class="sloc">라신</div><div class="sko">콜레주 생루이</div><div class="sfr">Collège Saint-Louis</div><div class="sdet">PEI · 3~4학년</div></div><div id="s06-c2" class="abs scard" style="left:974px;top:430px"><div class="sloc">서부</div><div class="sko">데 수르스</div><div class="sfr">des Sources</div><div class="sdet">PEI + 선택과목</div></div><div id="s06-c3" class="abs scard" style="left:1406px;top:430px"><div class="sloc">동부</div><div class="sko">장 그루</div><div class="sfr">Jean-Grou</div><div class="sdet">1학년부터</div></div>
+</section><section id="s07" class="scene"><svg viewBox="-2015 -2000 4030 4030" class="maple" data-layout-allow-overflow style="right:-140px;top:-120px;width:620px"><path fill="#F9E3DE" d="m-90 2030 45-863a95 95 0 0 0-111-98l-859 151 116-320a65 65 0 0 0-20-73l-941-762 212-99a65 65 0 0 0 34-79l-186-572 542 115a65 65 0 0 0 73-38l105-247 423 454a65 65 0 0 0 111-57l-204-1052 327 189a65 65 0 0 0 91-27l332-652 332 652a65 65 0 0 0 91 27l327-189-204 1052a65 65 0 0 0 111 57l423-454 105 247a65 65 0 0 0 73 38l542-115-186 572a65 65 0 0 0 34 79l212 99-941 762a65 65 0 0 0-20 73l116 320-859-151a95 95 0 0 0-111 98l45 863z"/></svg><svg viewBox="-2015 -2000 4030 4030" class="maple" data-layout-allow-overflow style="left:-120px;bottom:-160px;width:420px"><path fill="#FBEAE6" d="m-90 2030 45-863a95 95 0 0 0-111-98l-859 151 116-320a65 65 0 0 0-20-73l-941-762 212-99a65 65 0 0 0 34-79l-186-572 542 115a65 65 0 0 0 73-38l105-247 423 454a65 65 0 0 0 111-57l-204-1052 327 189a65 65 0 0 0 91-27l332-652 332 652a65 65 0 0 0 91 27l327-189-204 1052a65 65 0 0 0 111 57l423-454 105 247a65 65 0 0 0 73 38l542-115-186 572a65 65 0 0 0 34 79l212 99-941 762a65 65 0 0 0-20 73l116 320-859-151a95 95 0 0 0-111 98l45 863z"/></svg><div class="tag" id="s07-tag"><span class="tagnum">06</span><span class="tagtxt">4개 국어는 목표</span></div>
+<div id="s07-kin" class="center col" style="align-items:center">
+  <div class="row" style="gap:40px">
+    <div id="s07-k1" class="bh kin2" style="color:#2B2B2B">영어</div><div id="s07-d1" class="bh kin2" style="color:#FFD6CF">·</div>
+    <div id="s07-k2" class="bh kin2" style="color:#C8102E">불어</div><div id="s07-d2" class="bh kin2" style="color:#FFD6CF">·</div>
+    <div id="s07-k3" class="bh kin2" style="color:#7A1B26">독일어</div>
+  </div>
+</div>
+<div id="s07-eq" class="abs row" style="left:0;top:330px;width:1920px;justify-content:center;gap:26px;opacity:0">
+  <div id="s07-e1" class="lang">한국어</div><div id="s07-p1" class="plus">+</div><div id="s07-e2" class="lang">불어</div><div id="s07-p2" class="plus">+</div>
+  <div id="s07-e3" class="lang">영어</div><div id="s07-p3" class="plus">+</div><div id="s07-e4" class="lang alpha">α</div>
+</div>
+<div id="s07-goal" class="abs stamp" style="left:0;top:560px;width:620px;margin-left:650px;text-align:center;font-size:72px">4개 국어 = 목표</div>
+<div id="s07-nostat" class="abs pill" style="left:0;top:740px;margin-left:700px;font-size:38px">※ 공식 통계 없음 · 어디까지나 목표</div>
+</section><section id="s08" class="scene"><svg viewBox="-2015 -2000 4030 4030" class="maple" data-layout-allow-overflow style="right:-140px;top:-120px;width:620px"><path fill="#F9E3DE" d="m-90 2030 45-863a95 95 0 0 0-111-98l-859 151 116-320a65 65 0 0 0-20-73l-941-762 212-99a65 65 0 0 0 34-79l-186-572 542 115a65 65 0 0 0 73-38l105-247 423 454a65 65 0 0 0 111-57l-204-1052 327 189a65 65 0 0 0 91-27l332-652 332 652a65 65 0 0 0 91 27l327-189-204 1052a65 65 0 0 0 111 57l423-454 105 247a65 65 0 0 0 73 38l542-115-186 572a65 65 0 0 0 34 79l212 99-941 762a65 65 0 0 0-20 73l116 320-859-151a95 95 0 0 0-111 98l45 863z"/></svg><svg viewBox="-2015 -2000 4030 4030" class="maple" data-layout-allow-overflow style="left:-120px;bottom:-160px;width:420px"><path fill="#FBEAE6" d="m-90 2030 45-863a95 95 0 0 0-111-98l-859 151 116-320a65 65 0 0 0-20-73l-941-762 212-99a65 65 0 0 0 34-79l-186-572 542 115a65 65 0 0 0 73-38l105-247 423 454a65 65 0 0 0 111-57l-204-1052 327 189a65 65 0 0 0 91-27l332-652 332 652a65 65 0 0 0 91 27l327-189-204 1052a65 65 0 0 0 111 57l423-454 105 247a65 65 0 0 0 73 38l542-115-186 572a65 65 0 0 0 34 79l212 99-941 762a65 65 0 0 0-20 73l116 320-859-151a95 95 0 0 0-111 98l45 863z"/></svg><div class="tag" id="s08-tag"><span class="tagnum">07</span><span class="tagtxt">주의할 점</span></div><div class="abs src" id="s08-src">출처: 각 학교 PEI 입학 안내 · 2026.10.31 확인</div>
+<div id="s08-k1" class="abs ck3" style="top:200px"><b>1</b><div><span>PEI는 <em class="red">선발제</em></span><small>성적과 서류로 선발</small></div></div>
+<div id="s08-k2" class="abs ck3" style="top:380px"><b>2</b><div><span>중간 입학 시 <em class="red">스페인어 보충</em> 필요</span><small>5학년은 입학이 안 되는 학교도</small></div></div>
+<div id="s08-k3" class="abs ck3" style="top:560px"><b>3</b><div><span>프로그램은 <em class="red">매년 변동</em></span><small>지원 전 학교에 꼭 확인</small></div></div>
+<div id="s08-age" class="abs col" style="left:1340px;top:200px;align-items:center">
+  <div class="nk9" style="font-size:44px;color:#2B2B2B">아이가 어릴수록</div>
+  <svg viewBox="0 0 200 300" style="width:170px;height:250px;margin:10px 0"><path id="s08-arr" d="M100 290 L100 40 M40 100 L100 30 L160 100" fill="none" stroke="#C8102E" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <div class="bh" style="font-size:86px;color:#C8102E">선택지 ↑</div>
+</div>
+</section><section id="s09" class="scene"><svg viewBox="-2015 -2000 4030 4030" class="maple" data-layout-allow-overflow style="right:-140px;top:-120px;width:620px"><path fill="#F9E3DE" d="m-90 2030 45-863a95 95 0 0 0-111-98l-859 151 116-320a65 65 0 0 0-20-73l-941-762 212-99a65 65 0 0 0 34-79l-186-572 542 115a65 65 0 0 0 73-38l105-247 423 454a65 65 0 0 0 111-57l-204-1052 327 189a65 65 0 0 0 91-27l332-652 332 652a65 65 0 0 0 91 27l327-189-204 1052a65 65 0 0 0 111 57l423-454 105 247a65 65 0 0 0 73 38l542-115-186 572a65 65 0 0 0 34 79l212 99-941 762a65 65 0 0 0-20 73l116 320-859-151a95 95 0 0 0-111 98l45 863z"/></svg><svg viewBox="-2015 -2000 4030 4030" class="maple" data-layout-allow-overflow style="left:-120px;bottom:-160px;width:420px"><path fill="#FBEAE6" d="m-90 2030 45-863a95 95 0 0 0-111-98l-859 151 116-320a65 65 0 0 0-20-73l-941-762 212-99a65 65 0 0 0 34-79l-186-572 542 115a65 65 0 0 0 73-38l105-247 423 454a65 65 0 0 0 111-57l-204-1052 327 189a65 65 0 0 0 91-27l332-652 332 652a65 65 0 0 0 91 27l327-189-204 1052a65 65 0 0 0 111 57l423-454 105 247a65 65 0 0 0 73 38l542-115-186 572a65 65 0 0 0 34 79l212 99-941 762a65 65 0 0 0-20 73l116 320-859-151a95 95 0 0 0-111 98l45 863z"/></svg>
+<div id="s09-sum" class="abs" style="left:0;top:0;width:1920px;height:1080px">
+  <div id="s09-h" class="abs bh" style="left:110px;top:110px;font-size:80px;color:#2B2B2B">몬트리올 = <span class="red">3개 언어</span>가 흔한 도시</div>
+  <div id="s09-r1" class="abs sumrow" style="top:290px"><b>불어</b><span>웰컴 클래스에서 시작</span></div>
+  <div id="s09-r2" class="abs sumrow" style="top:450px"><b>영어</b><span>정규 수업과 생활</span></div>
+  <div id="s09-r3" class="abs sumrow" style="top:610px"><b>스페인어</b><span>학교 선택으로</span></div>
+</div>
+<div id="s09-cta" class="abs" style="left:0;top:0;width:1920px;height:1080px;opacity:0">
+  <div id="s09-kakao" class="abs row" style="left:110px;top:170px;gap:24px"><div class="pill big" style="background:#2B2B2B;color:#fff;opacity:1">카카오톡 canlog</div><div class="nk9" style="font-size:46px;color:#2B2B2B">자녀 학년만 보내 주세요</div></div>
+  <div id="s09-q" class="abs qcard" style="left:110px;top:340px"><small>우리 아이는?</small><div class="row" style="gap:30px"><div class="planbig">저학년?</div><div class="planbig b">고학년?</div></div></div>
+  <div id="s09-cm" class="abs pill big" style="left:110px;top:700px">댓글로 남겨 주세요</div>
+  <div id="s09-logo" class="abs col" style="left:1300px;top:260px;align-items:center">
+    <img src="assets/aa-canada-logo-transparent.png" style="width:380px;height:368px">
+    <div class="bh" style="font-size:96px;color:#C8102E;margin-top:20px">AA Canada</div>
+  </div>
+</div>
+<div id="s09-fade" class="abs" style="left:0;top:0;width:1920px;height:1080px;background:#FFF8F2;opacity:0"></div>
+</section>
+
+<img id="logo" class="clip" src="assets/aa-canada-logo-transparent.png" data-start="0.4" data-duration="210.653" data-track-index="2">
+<div id="foot" class="clip" data-start="47.147" data-duration="163.906" data-track-index="3">※ 프로그램과 입학 조건은 매년 바뀌며, 최종 판단은 교육청과 학교가 합니다 (2026.10.31 확인)</div>
+<div id="cap0" class="clip cap" data-start="0.700" data-duration="3.120" data-track-index="1">우리 아이가 정말 영어에 불어까지 할 수 있을까요?</div>
+<div id="cap1" class="clip cap" data-start="3.840" data-duration="1.420" data-track-index="1">심지어 스페인어까지요?</div>
+<div id="cap2" class="clip cap" data-start="5.280" data-duration="3.500" data-track-index="1">몬트리올 자녀무상교육을 알아보시는 부모님이라면,</div>
+<div id="cap3" class="clip cap" data-start="8.800" data-duration="1.900" data-track-index="1">한 번쯤 하셨을 생각입니다.</div>
+<div id="cap4" class="clip cap" data-start="10.720" data-duration="3.840" data-track-index="1">오늘은 이 질문에 숫자와 공식 자료로 답해 보겠습니다.</div>
+<div id="cap5" class="clip cap" data-start="14.580" data-duration="2.210" data-track-index="1">안녕하세요, AA Canada입니다.</div>
+<div id="cap6" class="clip cap" data-start="18.731" data-duration="1.040" data-track-index="1">먼저 숫자입니다.</div>
+<div id="cap7" class="clip cap" data-start="19.791" data-duration="3.120" data-track-index="1">캐나다 통계청 2021년 인구조사에서,</div>
+<div id="cap8" class="clip cap" data-start="22.931" data-duration="3.480" data-track-index="1">몬트리올 대도시권은 거의 다섯 명 중 한 명이</div>
+<div id="cap9" class="clip cap" data-start="26.431" data-duration="2.380" data-track-index="1">세 개 언어로 대화할 수 있었습니다.</div>
+<div id="cap10" class="clip cap" data-start="28.831" data-duration="3.280" data-track-index="1">두 개 언어 이상은 69.8퍼센트로,</div>
+<div id="cap11" class="clip cap" data-start="32.131" data-duration="2.640" data-track-index="1">캐나다 대도시 가운데 가장 높습니다.</div>
+<div id="cap12" class="clip cap" data-start="34.791" data-duration="2.920" data-track-index="1">대화할 수 있다는 본인 응답 기준이라서,</div>
+<div id="cap13" class="clip cap" data-start="37.731" data-duration="2.840" data-track-index="1">유창함까지 보장하는 숫자는 아닙니다.</div>
+<div id="cap14" class="clip cap" data-start="40.591" data-duration="2.800" data-track-index="1">그래도 아이가 여러 언어를 쓰는 게</div>
+<div id="cap15" class="clip cap" data-start="43.411" data-duration="2.610" data-track-index="1">특별하지 않은 도시라는 건 분명합니다.</div>
+<div id="cap16" class="clip cap" data-start="47.867" data-duration="1.880" data-track-index="1">그럼 학비는 어떨까요.</div>
+<div id="cap17" class="clip cap" data-start="49.767" data-duration="2.200" data-track-index="1">퀘벡 교육법 3.1조는,</div>
+<div id="cap18" class="clip cap" data-start="51.987" data-duration="3.740" data-track-index="1">부모가 퀘벡에 거주하는 미성년 자녀에게 공립</div>
+<div id="cap19" class="clip cap" data-start="55.747" data-duration="3.310" data-track-index="1">초등학교와 중등학교 교육을 무상으로 보장합니다.</div>
+<div id="cap20" class="clip cap" data-start="59.547" data-duration="2.200" data-track-index="1">퀘벡 교육부 지침은 부모와</div>
+<div id="cap21" class="clip cap" data-start="61.767" data-duration="2.380" data-track-index="1">아이의 관계를 보여 주는 서류와,</div>
+<div id="cap22" class="clip cap" data-start="64.167" data-duration="2.100" data-track-index="1">퀘벡 거주 증빙을 요구합니다.</div>
+<div id="cap23" class="clip cap" data-start="66.287" data-duration="1.800" data-track-index="1">면제되는 건 수업료이고,</div>
+<div id="cap24" class="clip cap" data-start="68.107" data-duration="2.400" data-track-index="1">학용품 같은 비용은 따로 듭니다.</div>
+<div id="cap25" class="clip cap" data-start="70.527" data-duration="2.440" data-track-index="1">최종 판단은 교육청이 하니까,</div>
+<div id="cap26" class="clip cap" data-start="72.987" data-duration="2.890" data-track-index="1">서류는 처음부터 꼼꼼히 준비하셔야 합니다.</div>
+<div id="cap27" class="clip cap" data-start="77.716" data-duration="2.900" data-track-index="1">아이가 불어를 한마디도 못 해도 괜찮습니다.</div>
+<div id="cap28" class="clip cap" data-start="80.636" data-duration="2.740" data-track-index="1">공립학교에는 웰컴 클래스가 있습니다.</div>
+<div id="cap29" class="clip cap" data-start="83.396" data-duration="2.760" data-track-index="1">불어로는 클라스 다쾨이(classe d&#x27;accueil)라고 부릅니다.</div>
+<div id="cap30" class="clip cap" data-start="86.176" data-duration="2.140" data-track-index="1">불어를 못 하는 아이들을 모아서,</div>
+<div id="cap31" class="clip cap" data-start="88.336" data-duration="4.200" data-track-index="1">불어를 가르치는 훈련을 받은 선생님이 말하기, 읽기,</div>
+<div id="cap32" class="clip cap" data-start="92.556" data-duration="2.740" data-track-index="1">쓰기부터 가르치는 어학 위주 반이에요.</div>
+<div id="cap33" class="clip cap" data-start="95.316" data-duration="4.220" data-track-index="1">몬트리올 교육청 기준으로 한 반은 최대 17명입니다.</div>
+<div id="cap34" class="clip cap" data-start="99.556" data-duration="4.000" data-track-index="1">일반 중등 1학년 반은 최대 28명이에요.</div>
+<div id="cap35" class="clip cap" data-start="103.576" data-duration="3.520" data-track-index="1">같은 처지의 친구들과 작은 반에서 시작하니,</div>
+<div id="cap36" class="clip cap" data-start="107.116" data-duration="1.720" data-track-index="1">적응하기 좋은 구조입니다.</div>
+<div id="cap37" class="clip cap" data-start="108.856" data-duration="1.560" data-track-index="1">기간은 정해진 게 없고,</div>
+<div id="cap38" class="clip cap" data-start="110.436" data-duration="3.540" data-track-index="1">보통 열 달에서 스무 달 사이로 아이마다 다릅니다.</div>
+<div id="cap39" class="clip cap" data-start="113.996" data-duration="2.000" data-track-index="1">학교에 따라서는 일부 수업을</div>
+<div id="cap40" class="clip cap" data-start="116.016" data-duration="2.290" data-track-index="1">일반 반에서 함께 듣기도 합니다.</div>
+<div id="cap41" class="clip cap" data-start="120.284" data-duration="1.340" data-track-index="1">영어는 어떨까요.</div>
+<div id="cap42" class="clip cap" data-start="121.644" data-duration="2.660" data-track-index="1">퀘벡 학교에서 영어는 초등학교</div>
+<div id="cap43" class="clip cap" data-start="124.324" data-duration="2.340" data-track-index="1">1학년부터 정규 수업입니다.</div>
+<div id="cap44" class="clip cap" data-start="126.684" data-duration="2.260" data-track-index="1">주 평균 한 시간 정도예요.</div>
+<div id="cap45" class="clip cap" data-start="128.964" data-duration="2.600" data-track-index="1">일부 학교는 5, 6학년에 영어를</div>
+<div id="cap46" class="clip cap" data-start="131.584" data-duration="1.860" data-track-index="1">집중적으로 가르치기도 합니다.</div>
+<div id="cap47" class="clip cap" data-start="133.464" data-duration="2.860" data-track-index="1">그리고 몬트리올은 영어와 불어를 모두</div>
+<div id="cap48" class="clip cap" data-start="136.344" data-duration="3.160" data-track-index="1">하는 사람이 56.4퍼센트라서,</div>
+<div id="cap49" class="clip cap" data-start="139.524" data-duration="2.850" data-track-index="1">학교 밖에서도 영어를 접할 기회가 많습니다.</div>
+<div id="cap50" class="clip cap" data-start="144.234" data-duration="2.760" data-track-index="1">스페인어는 학교 선택에 달려 있습니다.</div>
+<div id="cap51" class="clip cap" data-start="147.014" data-duration="2.283" data-track-index="1">공립학교 중에서도 국제 교육과정,</div>
+<div id="cap52" class="clip cap" data-start="149.317" data-duration="2.377" data-track-index="1">피이아이(PEI)를 운영하는 학교는</div>
+<div id="cap53" class="clip cap" data-start="151.714" data-duration="1.700" data-track-index="1">스페인어를 가르칩니다.</div>
+<div id="cap54" class="clip cap" data-start="153.434" data-duration="3.240" data-track-index="1">시내의 잔 망스(Jeanne-Mance)는 3학년부터 5학년까지,</div>
+<div id="cap55" class="clip cap" data-start="156.694" data-duration="2.220" data-track-index="1">라신의 콜레주 생루이(Collège Saint-Louis)는</div>
+<div id="cap56" class="clip cap" data-start="158.934" data-duration="2.300" data-track-index="1">3학년과 4학년에 배웁니다.</div>
+<div id="cap57" class="clip cap" data-start="161.254" data-duration="3.360" data-track-index="1">서부의 데 수르스(des Sources)는 피이아이(PEI)와 선택과목으로,</div>
+<div id="cap58" class="clip cap" data-start="164.634" data-duration="2.300" data-track-index="1">동부의 장 그루(Jean-Grou)는 1학년부터</div>
+<div id="cap59" class="clip cap" data-start="166.954" data-duration="1.430" data-track-index="1">스페인어 수업이 있습니다.</div>
+<div id="cap60" class="clip cap" data-start="170.297" data-duration="4.520" data-track-index="1">저희 아들도 실제로 영어와 불어에 독일어까지 합니다.</div>
+<div id="cap61" class="clip cap" data-start="174.837" data-duration="2.880" data-track-index="1">한국어를 집에서 이어가면, 한국어, 불어,</div>
+<div id="cap62" class="clip cap" data-start="177.737" data-duration="2.760" data-track-index="1">영어에 하나를 더한 4개 국어가</div>
+<div id="cap63" class="clip cap" data-start="180.517" data-duration="1.520" data-track-index="1">목표가 될 수 있습니다.</div>
+<div id="cap64" class="clip cap" data-start="182.057" data-duration="2.780" data-track-index="1">다만 4개 국어를 하는 아이가</div>
+<div id="cap65" class="clip cap" data-start="184.857" data-duration="2.800" data-track-index="1">얼마나 되는지는 공식 통계가 없어서,</div>
+<div id="cap66" class="clip cap" data-start="187.677" data-duration="2.310" data-track-index="1">어디까지나 목표라는 점은 말씀드립니다.</div>
+<div id="cap67" class="clip cap" data-start="191.897" data-duration="0.875" data-track-index="1">주의할 점도 있습니다.</div>
+<div id="cap68" class="clip cap" data-start="192.792" data-duration="3.645" data-track-index="1">피이아이(PEI)는 성적과 서류로 뽑는 선발제입니다.</div>
+<div id="cap69" class="clip cap" data-start="196.457" data-duration="3.180" data-track-index="1">중간에 들어가면 스페인어 보충 수업이 필요하고,</div>
+<div id="cap70" class="clip cap" data-start="199.657" data-duration="2.500" data-track-index="1">5학년은 입학이 안 되는 학교도 있습니다.</div>
+<div id="cap71" class="clip cap" data-start="202.177" data-duration="3.240" data-track-index="1">그래서 아이가 어릴수록 선택지가 넓습니다.</div>
+<div id="cap72" class="clip cap" data-start="205.437" data-duration="1.800" data-track-index="1">프로그램은 매년 바뀌니까,</div>
+<div id="cap73" class="clip cap" data-start="207.257" data-duration="2.610" data-track-index="1">지원하기 전에 학교에 꼭 확인하셔야 합니다.</div>
+<div id="cap74" class="clip cap" data-start="211.873" data-duration="1.220" data-track-index="1">정리하겠습니다.</div>
+<div id="cap75" class="clip cap" data-start="213.113" data-duration="3.240" data-track-index="1">몬트리올은 세 개 언어가 흔한 도시이고,</div>
+<div id="cap76" class="clip cap" data-start="216.373" data-duration="2.860" data-track-index="1">불어는 웰컴 클래스에서 시작하고,</div>
+<div id="cap77" class="clip cap" data-start="219.253" data-duration="2.460" data-track-index="1">영어는 정규 수업과 생활로,</div>
+<div id="cap78" class="clip cap" data-start="221.733" data-duration="2.920" data-track-index="1">스페인어는 학교 선택으로 더할 수 있습니다.</div>
+<div id="cap79" class="clip cap" data-start="224.673" data-duration="2.860" data-track-index="1">아이 학년에 따라 가능한 길이 달라지니,</div>
+<div id="cap80" class="clip cap" data-start="227.553" data-duration="3.440" data-track-index="1">카카오톡 canlog로 자녀 학년만 보내 주세요.</div>
+<div id="cap81" class="clip cap" data-start="231.013" data-duration="3.400" data-track-index="1">마지막으로, 우리 아이는 저학년에 가까우신가요,</div>
+<div id="cap82" class="clip cap" data-start="234.433" data-duration="1.720" data-track-index="1">고학년에 가까우신가요?</div>
+<div id="cap83" class="clip cap" data-start="236.173" data-duration="1.480" data-track-index="1">댓글로 남겨 주세요.</div>
+<div id="cap84" class="clip cap" data-start="237.673" data-duration="1.290" data-track-index="1">AA Canada였습니다.</div>
+
+</div>
+<script>
+window.__timelines = window.__timelines || {};
+const tl = HyperShader.init({
+  bgColor: "#FFF8F2", accentColor: "#C8102E",
+  scenes: ["s01", "s02", "s03", "s04", "s05", "s06", "s07", "s08", "s09"],
+  transitions: [{"time": 17.481, "shader": "light-leak", "duration": 0.9}, {"time": 46.697, "shader": "cross-warp-morph", "duration": 0.9}, {"time": 76.566, "shader": "cinematic-zoom", "duration": 0.9}, {"time": 118.974, "shader": "cross-warp-morph", "duration": 0.9}, {"time": 143.044, "shader": "cross-warp-morph", "duration": 0.9}, {"time": 169.047, "shader": "light-leak", "duration": 0.9}, {"time": 190.687, "shader": "cross-warp-morph", "duration": 0.9}, {"time": 210.603, "shader": "light-leak", "duration": 0.9}],
+});
+
+function pop(s, t){ tl.fromTo(s, {opacity:0, y:30}, {opacity:1, y:0, duration:0.5, ease:"power3.out"}, t); }
+function slideIn(s, t){ tl.fromTo(s, {opacity:0, x:-80}, {opacity:1, x:0, duration:0.55, ease:"power3.out"}, t); }
+function lineIn(s, t){ tl.fromTo(s, {opacity:0, x:-60}, {opacity:1, x:0, duration:0.5, ease:"power3.out"}, t);
+  tl.fromTo(s + " b", {scale:0, rotation:-90}, {scale:1, rotation:0, duration:0.4, ease:"back.out(2)"}, t + 0.1); }
+function slam(s, t){ tl.fromTo(s, {opacity:0, scale:1.9}, {opacity:1, scale:1, duration:0.32, ease:"power4.in"}, t);
+  tl.fromTo(s, {x:0}, {x:6, duration:0.05, yoyo:true, repeat:3, ease:"none"}, t + 0.32); }
+function stamp(s, t){ tl.fromTo(s, {opacity:0, scale:2.6, rotation:-14}, {opacity:1, scale:1, rotation:-7, duration:0.28, ease:"power4.in"}, t); }
+function wipe(s, t){ tl.fromTo(s, {opacity:0, clipPath:"inset(0% 100% 0% 0%)"}, {opacity:1, clipPath:"inset(0% 0% 0% 0%)", duration:0.6, ease:"power2.out"}, t); }
+function draw(s, t){ tl.fromTo(s, {scaleX:0}, {scaleX:1, duration:0.6, ease:"power2.out"}, t); }
+function grow(s, t){ tl.fromTo(s, {scaleX:0, transformOrigin:"0% 50%"}, {scaleX:1, duration:0.4, ease:"power2.out"}, t); }
+function boxOn(s, t){ tl.fromTo(s, {opacity:0, scale:1.08}, {opacity:1, scale:1, duration:0.35, ease:"power2.out"}, t);
+  tl.fromTo(s, {boxShadow:"0 0 0 0 rgba(200,16,46,0.55)"}, {boxShadow:"0 0 0 18px rgba(200,16,46,0)", duration:0.9, ease:"power1.out"}, t + 0.2); }
+function nodeIn(s, t){ tl.fromTo(s, {opacity:0, y:40, scale:0.85}, {opacity:1, y:0, scale:1, duration:0.45, ease:"back.out(1.8)"}, t); }
+function chipIn(s, t){ tl.fromTo(s, {opacity:0, scale:0.5}, {opacity:1, scale:1, duration:0.35, ease:"back.out(2.2)"}, t); }
+function cardIn(s, t){ tl.fromTo(s, {opacity:0, y:120, rotation:-4}, {opacity:1, y:0, rotation:0, duration:0.55, ease:"back.out(1.5)"}, t); }
+function countUp(s, to, t, d){ const el = document.querySelector(s); const o = {v:0};
+  tl.fromTo(o, {v:0}, {v:to, duration:d, ease:"power2.out", onUpdate(){ el.textContent = Math.round(o.v); }}, t); }
+function countDec(s, to, t, d){ const el = document.querySelector(s); const o = {v:0};
+  tl.fromTo(o, {v:0}, {v:to, duration:d, ease:"power2.out", onUpdate(){ el.textContent = o.v.toFixed(1); }}, t);
+  tl.fromTo(s, {scale:1}, {scale:1.08, duration:0.12, yoyo:true, repeat:1}, t + d); }
+
+slam("#s01-en", 1.821);
+slam("#s01-fr", 2.270);
+slam("#s01-es", 4.320);
+tl.to("#s01-w", {opacity:0, scale:0.86, duration:0.45, ease:"power2.in"}, 4.930);
+slam("#s01-t1", 5.280); slam("#s01-t2", 5.530);
+wipe("#s01-t3", 10.720);
+tl.to("#s01-title", {y:-110, duration:0.6, ease:"power2.inOut"}, 14.080);
+pop("#s01-hello", 14.580);
+pop("#s02-tag", 18.281);
+tl.fromTo("#s02-docw", {x:-900, rotation:-14, scale:1.25, opacity:0}, {x:0, rotation:-1.5, scale:1, opacity:1, duration:0.55, ease:"power4.in"}, 19.491);
+tl.fromTo("#s02-docw", {y:0}, {y:8, duration:0.08, yoyo:true, repeat:1}, 20.041);
+tl.fromTo("#s02-src", {opacity:0}, {opacity:1, duration:0.5}, 19.791);
+boxOn("#s02-hl1", 24.391); boxOn("#s02-hl2", 24.691);
+slam("#s02-n1", 24.891);
+draw("#s02-ul", 28.831); slam("#s02-n2", 28.831); countDec("#s02-pct", 69.8, 28.831, 1.1);
+tl.to(["#s02-hl1","#s02-hl2"], {opacity:0.25, duration:0.3}, 34.591);
+tl.fromTo("#s02-defw", {opacity:0, y:60}, {opacity:1, y:0, duration:0.5, ease:"power3.out"}, 34.791);
+pop("#s02-defl", 35.591);
+wipe("#s02-band", 40.591);
+pop("#s03-tag", 47.497);
+tl.fromTo("#s03-card", {opacity:0, y:50}, {opacity:1, y:0, duration:0.6, ease:"power3.out"}, 47.847);
+slam("#s03-h", 49.767);
+tl.fromTo("#s03-src", {opacity:0}, {opacity:1, duration:0.5}, 49.767);
+lineIn("#s03-l1", 51.987);
+lineIn("#s03-l2", 59.547);
+lineIn("#s03-l3", 66.287);
+tl.fromTo("#s03-res", {backgroundSize:"0% 100%"}, {backgroundSize:"100% 100%", duration:0.7}, 53.240);
+tl.fromTo("#s03-res", {scale:1}, {scale:1.08, duration:0.25, yoyo:true, repeat:1}, 53.240);
+tl.fromTo("#s03-free", {backgroundSize:"0% 100%"}, {backgroundSize:"100% 100%", duration:0.8}, 57.570);
+stamp("#s03-stamp", 67.267);
+stamp("#s03-final", 70.527);
+pop("#s04-tag", 77.366);
+pop("#s04-ok", 77.716);
+nodeIn("#s04-f1", 80.636); grow("#s04-a1", 80.936); nodeIn("#s04-f2", 81.136); grow("#s04-a2", 81.536); nodeIn("#s04-f3", 81.736);
+wipe("#s04-fr", 83.396);
+chipIn("#s04-w1", 91.392); chipIn("#s04-w2", 88.636);
+chipIn("#s04-w3", 94.716);
+tl.to("#s04-flow", {opacity:0, duration:0.4}, 95.216); tl.to("#s04-ok", {opacity:0, duration:0.4}, 95.216); tl.to("#s04-cmp", {opacity:1, duration:0.4}, 95.316);
+tl.fromTo("#s04-src", {opacity:0}, {opacity:1, duration:0.5}, 95.316);
+tl.fromTo("#s04-docw", {scale:0.9, y:40}, {scale:1, y:0, duration:0.8, ease:"power3.out"}, 95.316);
+boxOn("#s04-h17", 97.794); slam("#s04-n17", 98.094); countUp("#s04-c17", 17, 98.094, 0.7);
+boxOn("#s04-h28", 101.528); pop("#s04-vs", 101.528); slam("#s04-n28", 101.828); countUp("#s04-c28", 28, 101.828, 0.7);
+wipe("#s04-small", 103.576);
+tl.to("#s04-cmp", {opacity:0, duration:0.4}, 108.456); tl.set("#s04-src", {opacity:0}, 108.756); tl.to("#s04-flow", {opacity:1, duration:0.4}, 108.556);
+pop("#s04-per", 108.856); tl.fromTo("#s04-range", {scaleX:0}, {scaleX:1, duration:1.2, ease:"power2.out"}, 110.817);
+tl.fromTo("#s04-dpath", {strokeDashoffset:900, opacity:0}, {strokeDashoffset:0, opacity:1, duration:1.0, ease:"power2.out"}, 113.996); pop("#s04-dlab", 114.596);
+tl.set("#s04-dpath", {strokeDasharray:"16 12"}, 0);
+pop("#s05-tag", 119.774);
+pop("#s05-h", 120.024);
+grow("#s05-line", 121.644);
+chipIn("#s05-g1", 121.764);
+chipIn("#s05-g2", 121.884);
+chipIn("#s05-g3", 122.004);
+chipIn("#s05-g4", 122.124);
+chipIn("#s05-g5", 122.244);
+chipIn("#s05-g6", 122.364);
+tl.to("#s05-g1", {backgroundColor:"#C8102E", color:"#fff", scale:1.15, duration:0.3}, 124.324); slideIn("#s05-reg", 124.524);
+tl.fromTo("#s05-reg small", {backgroundSize:"0% 100%"}, {backgroundSize:"100% 100%", duration:0.7}, 126.684);
+tl.to(["#s05-g5","#s05-g6"], {backgroundColor:"#7A1B26", color:"#fff", scale:1.15, duration:0.3}, 129.364); slideIn("#s05-int", 129.564);
+slam("#s05-n", 137.353); countDec("#s05-pct", 56.4, 137.353, 1.0);
+tl.fromTo("#s05-src", {opacity:0}, {opacity:1, duration:0.5}, 137.353);
+wipe("#s05-out", 139.524);
+pop("#s06-tag", 143.844);
+slam("#s06-h", 144.194);
+pop("#s06-pei", 147.014);
+tl.fromTo("#s06-src", {opacity:0}, {opacity:1, duration:0.5}, 147.014);
+cardIn("#s06-c0", 153.434);
+cardIn("#s06-c1", 156.694);
+cardIn("#s06-c2", 161.254);
+cardIn("#s06-c3", 164.634);
+pop("#s07-tag", 169.847);
+slam("#s07-k1", 172.019); slam("#s07-k2", 172.645); slam("#s07-k3", 173.271);
+pop(["#s07-d1","#s07-d2"], 172.645);
+tl.to("#s07-kin", {opacity:0, y:-80, duration:0.4}, 174.537); tl.to("#s07-eq", {opacity:1, duration:0.3}, 174.837);
+chipIn("#s07-e1", 175.137);
+chipIn("#s07-e2", 177.359);
+pop("#s07-p1", 177.209);
+chipIn("#s07-e3", 177.737);
+pop("#s07-p2", 177.587);
+chipIn("#s07-e4", 178.391);
+pop("#s07-p3", 178.241);
+stamp("#s07-goal", 180.517);
+pop("#s07-nostat", 186.126);
+pop("#s08-tag", 191.487);
+slideIn("#s08-k1", 192.792);
+slideIn("#s08-k2", 196.457);
+slideIn("#s08-k3", 205.437);
+tl.fromTo("#s08-src", {opacity:0}, {opacity:1, duration:0.5}, 192.792);
+tl.fromTo("#s08-k2 small", {backgroundSize:"0% 100%"}, {backgroundSize:"100% 100%", duration:0.8}, 199.657);
+tl.fromTo("#s08-age", {opacity:0, y:80}, {opacity:1, y:0, duration:0.6, ease:"back.out(1.6)"}, 202.177);
+tl.fromTo("#s08-k3 small", {backgroundSize:"0% 100%"}, {backgroundSize:"100% 100%", duration:0.8}, 208.692);
+pop("#s09-h", 213.113);
+slideIn("#s09-r1", 216.373);
+slideIn("#s09-r2", 219.253);
+slideIn("#s09-r3", 221.733);
+tl.to("#s09-sum", {opacity:0, duration:0.4}, 226.353); tl.to("#s09-cta", {opacity:1, duration:0.4}, 226.553);
+pop("#s09-kakao", 227.353);
+pop("#s09-q small", 231.013); slam("#s09-q .planbig:nth-child(1)", 232.855); slam("#s09-q .planbig:nth-child(2)", 234.433);
+pop("#s09-cm", 236.173);
+tl.fromTo("#s09-logo", {opacity:0, scale:0.6, rotation:-20}, {opacity:1, scale:1, rotation:0, duration:0.8, ease:"back.out(1.6)"}, 237.273);
+tl.to("#s09-fade", {opacity:1, duration:1.0}, 242.564);
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>
