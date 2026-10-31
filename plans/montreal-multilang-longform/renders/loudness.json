@@ -1,8 +1,8 @@
 {
  "final_gain_db": -0.3,
  "narration_raw_tts": {
-  "I": -35.5,
-  "LRA": 6.1,
+  "I": -35.6,
+  "LRA": 6.2,
   "TP": -6.9
  },
  "narration_alone_normalized": {
@@ -17,17 +17,17 @@
  },
  "bgm_alone_in_final": {
   "I": -34.3,
-  "LRA": 2.9,
+  "LRA": 2.7,
   "TP": -20.4
  },
  "sfx_alone_in_final": {
-  "I": -20.9,
-  "LRA": 23.5,
+  "I": -21.0,
+  "LRA": 24.2,
   "TP": -9.3
  },
  "final_mix": {
-  "I": -16.1,
-  "LRA": 3.5,
+  "I": -16.0,
+  "LRA": 3.3,
   "TP": -2.0
  }
 }

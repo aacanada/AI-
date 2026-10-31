@@ -224,7 +224,10 @@ js(f'tl.set("#s04-dpath", {{strokeDasharray:"16 12"}}, 0);')
 k = 's05'; t0 = SC[k]['start']
 grades = ''.join(f'<div id="s05-g{i}" class="gnode"><b>{i}</b><small>학년</small></div>' for i in range(1, 7))
 s05 = scene(k, '04', '영어', f'''
-<div id="s05-h" class="abs nk9" style="left:110px;top:160px;font-size:52px;color:{INK}">퀘벡 초등학교 영어 수업</div>
+<div class="abs row" style="left:110px;top:150px;gap:20px">
+  <div id="s05-b1" class="board">영어 교육청</div><div id="s05-b2" class="board fr">불어 교육청</div>
+  <div id="s05-h" class="nk9" style="font-size:50px;color:{INK};margin-left:8px">초등학교 영어 수업</div>
+</div>
 <div id="s05-line" class="abs gline" style="left:150px;top:395px;width:880px"></div>
 <div id="s05-gs" class="abs row" style="left:110px;top:330px;gap:42px">{grades}</div>
 <div id="s05-reg" class="abs ebox" style="left:110px;top:520px">초1부터 <em class="red">정규 수업</em><small>주 평균 1시간 정도</small></div>
@@ -232,8 +235,13 @@ s05 = scene(k, '04', '영어', f'''
 <div id="s05-n" class="abs slamnum" style="left:1200px;top:240px"><small>영어 · 불어 모두 하는 사람</small><b><span id="s05-pct">56.4</span>%</b><small>몬트리올 대도시권, 2021 인구조사</small></div>
 <div id="s05-out" class="abs band nk9" style="left:1200px;top:640px;font-size:42px">학교 밖에서도 <span class="red">영어</span>를 접할 기회</div>
 ''', src='출처: 캐나다 통계청 98-200-X2021013 (2021 인구조사) · 퀘벡 교육부 · ' + CHECKED)
-js(f'pop("#s05-h", {t0 + 0.6:.3f});')
-tr = c('퀘벡 학교에서', k)
+tb = c('퀘벡에는', k)
+js(f'chipIn("#s05-b1", {cin("영어 교육청", k):.3f}); chipIn("#s05-b2", {cin("불어 교육청이", k):.3f});')
+sfx(cin('영어 교육청', k), 'pop.mp3', -18); sfx(cin('불어 교육청이', k), 'pop.mp3', -18)
+tf = cin('불어 교육청에서는', k)
+js(f'tl.to("#s05-b1", {{opacity:0.35, scale:0.92, duration:0.35}}, {tf:.3f}); tl.to("#s05-b2", {{scale:1.12, duration:0.35, ease:"back.out(2)"}}, {tf:.3f}); pop("#s05-h", {tf + 0.3:.3f});')
+sfx(tf, 'impact-bass-1.mp3', -18)
+tr = cin('초등학교', k)
 js(f'grow("#s05-line", {tr:.3f});')
 for i in range(1, 7):
     js(f'chipIn("#s05-g{i}", {tr + 0.12 * i:.3f});')
@@ -426,6 +434,9 @@ html, body {{ width:1920px; height:1080px; overflow:hidden; background:{CREAM}; 
 #s04-per {{ opacity:0; }}
 .axis {{ position:relative; margin-top:20px; width:1300px; height:84px; background:repeating-linear-gradient(90deg, #f0dcd6 0 2px, rgba(255,248,242,0) 2px 100px); border-bottom:4px solid #d9c3bd; }}
 .range {{ position:absolute; left:300px; top:6px; width:560px; height:72px; border-radius:36px; background:{RED}; color:#fff; font-weight:900; font-size:38px; display:flex; align-items:center; justify-content:center; transform-origin:0 50%; transform:scaleX(0); }}
+.board {{ font-weight:900; font-size:40px; padding:10px 26px; border-radius:16px; background:#fff; color:{INK}; border:4px solid #b9a9a9; opacity:0; }}
+.board.fr {{ background:{RED}; color:#fff; border-color:{RED}; }}
+#s05-h {{ opacity:0; }}
 .gline {{ height:10px; background:{BAND}; border-radius:5px; transform-origin:0 50%; transform:scaleX(0); }}
 .gnode {{ width:110px; height:130px; background:#fff; border:5px solid {RED}; border-radius:20px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:{INK}; opacity:0; }}
 .gnode b {{ font-family:"BHS"; font-weight:400; font-size:66px; line-height:1; }}

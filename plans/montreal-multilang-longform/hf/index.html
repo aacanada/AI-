@@ -61,6 +61,9 @@ html, body { width:1920px; height:1080px; overflow:hidden; background:#FFF8F2; }
 #s04-per { opacity:0; }
 .axis { position:relative; margin-top:20px; width:1300px; height:84px; background:repeating-linear-gradient(90deg, #f0dcd6 0 2px, rgba(255,248,242,0) 2px 100px); border-bottom:4px solid #d9c3bd; }
 .range { position:absolute; left:300px; top:6px; width:560px; height:72px; border-radius:36px; background:#C8102E; color:#fff; font-weight:900; font-size:38px; display:flex; align-items:center; justify-content:center; transform-origin:0 50%; transform:scaleX(0); }
+.board { font-weight:900; font-size:40px; padding:10px 26px; border-radius:16px; background:#fff; color:#2B2B2B; border:4px solid #b9a9a9; opacity:0; }
+.board.fr { background:#C8102E; color:#fff; border-color:#C8102E; }
+#s05-h { opacity:0; }
 .gline { height:10px; background:#FFD6CF; border-radius:5px; transform-origin:0 50%; transform:scaleX(0); }
 .gnode { width:110px; height:130px; background:#fff; border:5px solid #C8102E; border-radius:20px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#2B2B2B; opacity:0; }
 .gnode b { font-family:"BHS"; font-weight:400; font-size:66px; line-height:1; }
@@ -97,7 +100,7 @@ html, body { width:1920px; height:1080px; overflow:hidden; background:#FFF8F2; }
 </style>
 </head>
 <body>
-<div id="root" data-composition-id="main" data-start="0" data-width="1920" data-height="1080" data-duration="246.929">
+<div id="root" data-composition-id="main" data-start="0" data-width="1920" data-height="1080" data-duration="250.534">
 <section id="s01" class="scene"><svg viewBox="-2015 -2000 4030 4030" class="maple" data-layout-allow-overflow style="right:-140px;top:-120px;width:620px"><path fill="#F9E3DE" d="m-90 2030 45-863a95 95 0 0 0-111-98l-859 151 116-320a65 65 0 0 0-20-73l-941-762 212-99a65 65 0 0 0 34-79l-186-572 542 115a65 65 0 0 0 73-38l105-247 423 454a65 65 0 0 0 111-57l-204-1052 327 189a65 65 0 0 0 91-27l332-652 332 652a65 65 0 0 0 91 27l327-189-204 1052a65 65 0 0 0 111 57l423-454 105 247a65 65 0 0 0 73 38l542-115-186 572a65 65 0 0 0 34 79l212 99-941 762a65 65 0 0 0-20 73l116 320-859-151a95 95 0 0 0-111 98l45 863z"/></svg><svg viewBox="-2015 -2000 4030 4030" class="maple" data-layout-allow-overflow style="left:-120px;bottom:-160px;width:420px"><path fill="#FBEAE6" d="m-90 2030 45-863a95 95 0 0 0-111-98l-859 151 116-320a65 65 0 0 0-20-73l-941-762 212-99a65 65 0 0 0 34-79l-186-572 542 115a65 65 0 0 0 73-38l105-247 423 454a65 65 0 0 0 111-57l-204-1052 327 189a65 65 0 0 0 91-27l332-652 332 652a65 65 0 0 0 91 27l327-189-204 1052a65 65 0 0 0 111 57l423-454 105 247a65 65 0 0 0 73 38l542-115-186 572a65 65 0 0 0 34 79l212 99-941 762a65 65 0 0 0-20 73l116 320-859-151a95 95 0 0 0-111 98l45 863z"/></svg>
 <div id="s01-w" class="abs" style="left:0;top:0;width:1920px;height:1080px">
   <div id="s01-en" class="abs bh kin" style="left:170px;top:150px;color:#2B2B2B">영어?</div>
@@ -172,7 +175,10 @@ html, body { width:1920px; height:1080px; overflow:hidden; background:#FFF8F2; }
   <div id="s04-small" class="abs band nk9" style="left:1060px;top:835px;font-size:44px">같은 처지 친구들과 <span class="red">작은 반</span>에서 시작</div>
 </div>
 </section><section id="s05" class="scene"><svg viewBox="-2015 -2000 4030 4030" class="maple" data-layout-allow-overflow style="right:-140px;top:-120px;width:620px"><path fill="#F9E3DE" d="m-90 2030 45-863a95 95 0 0 0-111-98l-859 151 116-320a65 65 0 0 0-20-73l-941-762 212-99a65 65 0 0 0 34-79l-186-572 542 115a65 65 0 0 0 73-38l105-247 423 454a65 65 0 0 0 111-57l-204-1052 327 189a65 65 0 0 0 91-27l332-652 332 652a65 65 0 0 0 91 27l327-189-204 1052a65 65 0 0 0 111 57l423-454 105 247a65 65 0 0 0 73 38l542-115-186 572a65 65 0 0 0 34 79l212 99-941 762a65 65 0 0 0-20 73l116 320-859-151a95 95 0 0 0-111 98l45 863z"/></svg><svg viewBox="-2015 -2000 4030 4030" class="maple" data-layout-allow-overflow style="left:-120px;bottom:-160px;width:420px"><path fill="#FBEAE6" d="m-90 2030 45-863a95 95 0 0 0-111-98l-859 151 116-320a65 65 0 0 0-20-73l-941-762 212-99a65 65 0 0 0 34-79l-186-572 542 115a65 65 0 0 0 73-38l105-247 423 454a65 65 0 0 0 111-57l-204-1052 327 189a65 65 0 0 0 91-27l332-652 332 652a65 65 0 0 0 91 27l327-189-204 1052a65 65 0 0 0 111 57l423-454 105 247a65 65 0 0 0 73 38l542-115-186 572a65 65 0 0 0 34 79l212 99-941 762a65 65 0 0 0-20 73l116 320-859-151a95 95 0 0 0-111 98l45 863z"/></svg><div class="tag" id="s05-tag"><span class="tagnum">04</span><span class="tagtxt">영어</span></div><div class="abs src" id="s05-src">출처: 캐나다 통계청 98-200-X2021013 (2021 인구조사) · 퀘벡 교육부 · 2026.10.31 확인</div>
-<div id="s05-h" class="abs nk9" style="left:110px;top:160px;font-size:52px;color:#2B2B2B">퀘벡 초등학교 영어 수업</div>
+<div class="abs row" style="left:110px;top:150px;gap:20px">
+  <div id="s05-b1" class="board">영어 교육청</div><div id="s05-b2" class="board fr">불어 교육청</div>
+  <div id="s05-h" class="nk9" style="font-size:50px;color:#2B2B2B;margin-left:8px">초등학교 영어 수업</div>
+</div>
 <div id="s05-line" class="abs gline" style="left:150px;top:395px;width:880px"></div>
 <div id="s05-gs" class="abs row" style="left:110px;top:330px;gap:42px"><div id="s05-g1" class="gnode"><b>1</b><small>학년</small></div><div id="s05-g2" class="gnode"><b>2</b><small>학년</small></div><div id="s05-g3" class="gnode"><b>3</b><small>학년</small></div><div id="s05-g4" class="gnode"><b>4</b><small>학년</small></div><div id="s05-g5" class="gnode"><b>5</b><small>학년</small></div><div id="s05-g6" class="gnode"><b>6</b><small>학년</small></div></div>
 <div id="s05-reg" class="abs ebox" style="left:110px;top:520px">초1부터 <em class="red">정규 수업</em><small>주 평균 1시간 정도</small></div>
@@ -225,8 +231,8 @@ html, body { width:1920px; height:1080px; overflow:hidden; background:#FFF8F2; }
 <div id="s09-fade" class="abs" style="left:0;top:0;width:1920px;height:1080px;background:#FFF8F2;opacity:0"></div>
 </section>
 
-<img id="logo" class="clip" src="assets/aa-canada-logo-transparent.png" data-start="0.4" data-duration="212.037" data-track-index="2">
-<div id="foot" class="clip" data-start="46.546" data-duration="165.891" data-track-index="3">※ 프로그램과 입학 조건은 매년 바뀌며, 최종 판단은 교육청과 학교가 합니다 (2026.10.31 확인)</div>
+<img id="logo" class="clip" src="assets/aa-canada-logo-transparent.png" data-start="0.4" data-duration="215.642" data-track-index="2">
+<div id="foot" class="clip" data-start="46.546" data-duration="169.496" data-track-index="3">※ 프로그램과 입학 조건은 매년 바뀌며, 최종 판단은 교육청과 학교가 합니다 (2026.10.31 확인)</div>
 <div id="cap0" class="clip cap" data-start="0.680" data-duration="2.700" data-track-index="1">우리 아이가 정말 영어에 불어까지 할 수 있을까요?</div>
 <div id="cap1" class="clip cap" data-start="3.400" data-duration="1.400" data-track-index="1">심지어 스페인어까지요?</div>
 <div id="cap2" class="clip cap" data-start="4.820" data-duration="3.560" data-track-index="1">몬트리올 자녀무상교육을 알아보시는 부모님이라면,</div>
@@ -268,50 +274,51 @@ html, body { width:1920px; height:1080px; overflow:hidden; background:#FFF8F2; }
 <div id="cap38" class="clip cap" data-start="111.335" data-duration="4.040" data-track-index="1">보통 10개월에서 20개월 사이로 아이마다 다릅니다.</div>
 <div id="cap39" class="clip cap" data-start="115.395" data-duration="2.200" data-track-index="1">학교에 따라서는 일부 수업을</div>
 <div id="cap40" class="clip cap" data-start="117.615" data-duration="2.010" data-track-index="1">일반 반에서 함께 듣기도 합니다.</div>
-<div id="cap41" class="clip cap" data-start="121.668" data-duration="1.340" data-track-index="1">영어는 어떨까요.</div>
-<div id="cap42" class="clip cap" data-start="123.028" data-duration="2.660" data-track-index="1">퀘벡 학교에서 영어는 초등학교</div>
-<div id="cap43" class="clip cap" data-start="125.708" data-duration="2.340" data-track-index="1">1학년부터 정규 수업입니다.</div>
-<div id="cap44" class="clip cap" data-start="128.068" data-duration="2.260" data-track-index="1">주 평균 한 시간 정도예요.</div>
-<div id="cap45" class="clip cap" data-start="130.348" data-duration="2.600" data-track-index="1">일부 학교는 5, 6학년에 영어를</div>
-<div id="cap46" class="clip cap" data-start="132.968" data-duration="1.860" data-track-index="1">집중적으로 가르치기도 합니다.</div>
-<div id="cap47" class="clip cap" data-start="134.848" data-duration="2.860" data-track-index="1">그리고 몬트리올은 영어와 불어를 모두</div>
-<div id="cap48" class="clip cap" data-start="137.728" data-duration="3.160" data-track-index="1">하는 사람이 56.4퍼센트라서,</div>
-<div id="cap49" class="clip cap" data-start="140.908" data-duration="2.850" data-track-index="1">학교 밖에서도 영어를 접할 기회가 많습니다.</div>
-<div id="cap50" class="clip cap" data-start="145.618" data-duration="2.760" data-track-index="1">스페인어는 학교 선택에 달려 있습니다.</div>
-<div id="cap51" class="clip cap" data-start="148.398" data-duration="2.283" data-track-index="1">공립학교 중에서도 국제 교육과정,</div>
-<div id="cap52" class="clip cap" data-start="150.701" data-duration="2.377" data-track-index="1">피이아이(PEI)를 운영하는 학교는</div>
-<div id="cap53" class="clip cap" data-start="153.098" data-duration="1.700" data-track-index="1">스페인어를 가르칩니다.</div>
-<div id="cap54" class="clip cap" data-start="154.818" data-duration="3.240" data-track-index="1">시내의 잔 망스(Jeanne-Mance)는 3학년부터 5학년까지,</div>
-<div id="cap55" class="clip cap" data-start="158.078" data-duration="2.220" data-track-index="1">라신의 콜레주 생루이(Collège Saint-Louis)는</div>
-<div id="cap56" class="clip cap" data-start="160.318" data-duration="2.300" data-track-index="1">3학년과 4학년에 배웁니다.</div>
-<div id="cap57" class="clip cap" data-start="162.638" data-duration="3.360" data-track-index="1">서부의 데 수르스(des Sources)는 피이아이(PEI)와 선택과목으로,</div>
-<div id="cap58" class="clip cap" data-start="166.018" data-duration="2.300" data-track-index="1">동부의 장 그루(Jean-Grou)는 1학년부터</div>
-<div id="cap59" class="clip cap" data-start="168.338" data-duration="1.430" data-track-index="1">스페인어 수업이 있습니다.</div>
-<div id="cap60" class="clip cap" data-start="171.681" data-duration="4.520" data-track-index="1">저희 아들도 실제로 영어와 불어에 독일어까지 합니다.</div>
-<div id="cap61" class="clip cap" data-start="176.221" data-duration="2.880" data-track-index="1">한국어를 집에서 이어가면, 한국어, 불어,</div>
-<div id="cap62" class="clip cap" data-start="179.121" data-duration="2.760" data-track-index="1">영어에 하나를 더한 4개 국어가</div>
-<div id="cap63" class="clip cap" data-start="181.901" data-duration="1.520" data-track-index="1">목표가 될 수 있습니다.</div>
-<div id="cap64" class="clip cap" data-start="183.441" data-duration="2.780" data-track-index="1">다만 4개 국어를 하는 아이가</div>
-<div id="cap65" class="clip cap" data-start="186.241" data-duration="2.800" data-track-index="1">얼마나 되는지는 공식 통계가 없어서,</div>
-<div id="cap66" class="clip cap" data-start="189.061" data-duration="2.310" data-track-index="1">어디까지나 목표라는 점은 말씀드립니다.</div>
-<div id="cap67" class="clip cap" data-start="193.281" data-duration="0.875" data-track-index="1">주의할 점도 있습니다.</div>
-<div id="cap68" class="clip cap" data-start="194.176" data-duration="3.645" data-track-index="1">피이아이(PEI)는 성적과 서류로 뽑는 선발제입니다.</div>
-<div id="cap69" class="clip cap" data-start="197.841" data-duration="3.180" data-track-index="1">중간에 들어가면 스페인어 보충 수업이 필요하고,</div>
-<div id="cap70" class="clip cap" data-start="201.041" data-duration="2.500" data-track-index="1">5학년은 입학이 안 되는 학교도 있습니다.</div>
-<div id="cap71" class="clip cap" data-start="203.561" data-duration="3.240" data-track-index="1">그래서 아이가 어릴수록 선택지가 넓습니다.</div>
-<div id="cap72" class="clip cap" data-start="206.821" data-duration="1.800" data-track-index="1">프로그램은 매년 바뀌니까,</div>
-<div id="cap73" class="clip cap" data-start="208.641" data-duration="2.610" data-track-index="1">지원하기 전에 학교에 꼭 확인하셔야 합니다.</div>
-<div id="cap74" class="clip cap" data-start="213.257" data-duration="1.160" data-track-index="1">정리하겠습니다.</div>
-<div id="cap75" class="clip cap" data-start="214.437" data-duration="3.760" data-track-index="1">몬트리올은 세 개 언어가 흔한 도시이고,</div>
-<div id="cap76" class="clip cap" data-start="218.217" data-duration="2.820" data-track-index="1">불어는 웰컴 클래스에서 시작하고,</div>
-<div id="cap77" class="clip cap" data-start="221.057" data-duration="1.960" data-track-index="1">영어는 정규 수업과 생활로,</div>
-<div id="cap78" class="clip cap" data-start="223.037" data-duration="3.180" data-track-index="1">스페인어는 학교 선택으로 더할 수 있습니다.</div>
-<div id="cap79" class="clip cap" data-start="226.237" data-duration="3.420" data-track-index="1">아이 학년에 따라 가능한 길이 달라지니,</div>
-<div id="cap80" class="clip cap" data-start="229.677" data-duration="4.660" data-track-index="1">카카오톡 canlog로 자녀 학년만 보내 주세요.</div>
-<div id="cap81" class="clip cap" data-start="234.357" data-duration="3.480" data-track-index="1">마지막으로, 우리 아이는 저학년에 가까우신가요,</div>
-<div id="cap82" class="clip cap" data-start="237.857" data-duration="1.640" data-track-index="1">고학년에 가까우신가요?</div>
-<div id="cap83" class="clip cap" data-start="239.517" data-duration="1.360" data-track-index="1">댓글로 남겨 주세요.</div>
-<div id="cap84" class="clip cap" data-start="240.897" data-duration="1.350" data-track-index="1">AA Canada였습니다.</div>
+<div id="cap41" class="clip cap" data-start="121.608" data-duration="1.260" data-track-index="1">영어는 어떨까요.</div>
+<div id="cap42" class="clip cap" data-start="122.888" data-duration="3.230" data-track-index="1">퀘벡에는 영어 교육청과 불어 교육청이 있는데,</div>
+<div id="cap43" class="clip cap" data-start="126.588" data-duration="2.700" data-track-index="1">불어 교육청에서는 영어가 초등학교</div>
+<div id="cap44" class="clip cap" data-start="129.308" data-duration="2.340" data-track-index="1">1학년부터 정규 수업입니다.</div>
+<div id="cap45" class="clip cap" data-start="131.668" data-duration="2.020" data-track-index="1">주 평균 한 시간 정도예요.</div>
+<div id="cap46" class="clip cap" data-start="133.708" data-duration="2.980" data-track-index="1">일부 학교는 5, 6학년에 영어를</div>
+<div id="cap47" class="clip cap" data-start="136.708" data-duration="1.780" data-track-index="1">집중적으로 가르치기도 합니다.</div>
+<div id="cap48" class="clip cap" data-start="138.508" data-duration="2.720" data-track-index="1">그리고 몬트리올은 영어와 불어를 모두</div>
+<div id="cap49" class="clip cap" data-start="141.248" data-duration="3.140" data-track-index="1">하는 사람이 56.4퍼센트라서,</div>
+<div id="cap50" class="clip cap" data-start="144.408" data-duration="2.970" data-track-index="1">학교 밖에서도 영어를 접할 기회가 많습니다.</div>
+<div id="cap51" class="clip cap" data-start="149.223" data-duration="2.760" data-track-index="1">스페인어는 학교 선택에 달려 있습니다.</div>
+<div id="cap52" class="clip cap" data-start="152.003" data-duration="2.283" data-track-index="1">공립학교 중에서도 국제 교육과정,</div>
+<div id="cap53" class="clip cap" data-start="154.306" data-duration="2.377" data-track-index="1">피이아이(PEI)를 운영하는 학교는</div>
+<div id="cap54" class="clip cap" data-start="156.703" data-duration="1.700" data-track-index="1">스페인어를 가르칩니다.</div>
+<div id="cap55" class="clip cap" data-start="158.423" data-duration="3.240" data-track-index="1">시내의 잔 망스(Jeanne-Mance)는 3학년부터 5학년까지,</div>
+<div id="cap56" class="clip cap" data-start="161.683" data-duration="2.220" data-track-index="1">라신의 콜레주 생루이(Collège Saint-Louis)는</div>
+<div id="cap57" class="clip cap" data-start="163.923" data-duration="2.300" data-track-index="1">3학년과 4학년에 배웁니다.</div>
+<div id="cap58" class="clip cap" data-start="166.243" data-duration="3.360" data-track-index="1">서부의 데 수르스(des Sources)는 피이아이(PEI)와 선택과목으로,</div>
+<div id="cap59" class="clip cap" data-start="169.623" data-duration="2.300" data-track-index="1">동부의 장 그루(Jean-Grou)는 1학년부터</div>
+<div id="cap60" class="clip cap" data-start="171.943" data-duration="1.430" data-track-index="1">스페인어 수업이 있습니다.</div>
+<div id="cap61" class="clip cap" data-start="175.286" data-duration="4.520" data-track-index="1">저희 아들도 실제로 영어와 불어에 독일어까지 합니다.</div>
+<div id="cap62" class="clip cap" data-start="179.826" data-duration="2.880" data-track-index="1">한국어를 집에서 이어가면, 한국어, 불어,</div>
+<div id="cap63" class="clip cap" data-start="182.726" data-duration="2.760" data-track-index="1">영어에 하나를 더한 4개 국어가</div>
+<div id="cap64" class="clip cap" data-start="185.506" data-duration="1.520" data-track-index="1">목표가 될 수 있습니다.</div>
+<div id="cap65" class="clip cap" data-start="187.046" data-duration="2.780" data-track-index="1">다만 4개 국어를 하는 아이가</div>
+<div id="cap66" class="clip cap" data-start="189.846" data-duration="2.800" data-track-index="1">얼마나 되는지는 공식 통계가 없어서,</div>
+<div id="cap67" class="clip cap" data-start="192.666" data-duration="2.310" data-track-index="1">어디까지나 목표라는 점은 말씀드립니다.</div>
+<div id="cap68" class="clip cap" data-start="196.886" data-duration="0.875" data-track-index="1">주의할 점도 있습니다.</div>
+<div id="cap69" class="clip cap" data-start="197.781" data-duration="3.645" data-track-index="1">피이아이(PEI)는 성적과 서류로 뽑는 선발제입니다.</div>
+<div id="cap70" class="clip cap" data-start="201.446" data-duration="3.180" data-track-index="1">중간에 들어가면 스페인어 보충 수업이 필요하고,</div>
+<div id="cap71" class="clip cap" data-start="204.646" data-duration="2.500" data-track-index="1">5학년은 입학이 안 되는 학교도 있습니다.</div>
+<div id="cap72" class="clip cap" data-start="207.166" data-duration="3.240" data-track-index="1">그래서 아이가 어릴수록 선택지가 넓습니다.</div>
+<div id="cap73" class="clip cap" data-start="210.426" data-duration="1.800" data-track-index="1">프로그램은 매년 바뀌니까,</div>
+<div id="cap74" class="clip cap" data-start="212.246" data-duration="2.610" data-track-index="1">지원하기 전에 학교에 꼭 확인하셔야 합니다.</div>
+<div id="cap75" class="clip cap" data-start="216.862" data-duration="1.160" data-track-index="1">정리하겠습니다.</div>
+<div id="cap76" class="clip cap" data-start="218.042" data-duration="3.760" data-track-index="1">몬트리올은 세 개 언어가 흔한 도시이고,</div>
+<div id="cap77" class="clip cap" data-start="221.822" data-duration="2.820" data-track-index="1">불어는 웰컴 클래스에서 시작하고,</div>
+<div id="cap78" class="clip cap" data-start="224.662" data-duration="1.960" data-track-index="1">영어는 정규 수업과 생활로,</div>
+<div id="cap79" class="clip cap" data-start="226.642" data-duration="2.750" data-track-index="1">스페인어는 학교 선택으로 더할 수 있습니다.</div>
+<div id="cap80" class="clip cap" data-start="229.842" data-duration="3.420" data-track-index="1">아이 학년에 따라 가능한 길이 달라지니,</div>
+<div id="cap81" class="clip cap" data-start="233.282" data-duration="4.660" data-track-index="1">카카오톡 canlog로 자녀 학년만 보내 주세요.</div>
+<div id="cap82" class="clip cap" data-start="237.962" data-duration="3.480" data-track-index="1">마지막으로, 우리 아이는 저학년에 가까우신가요,</div>
+<div id="cap83" class="clip cap" data-start="241.462" data-duration="1.640" data-track-index="1">고학년에 가까우신가요?</div>
+<div id="cap84" class="clip cap" data-start="243.122" data-duration="1.360" data-track-index="1">댓글로 남겨 주세요.</div>
+<div id="cap85" class="clip cap" data-start="244.502" data-duration="1.350" data-track-index="1">AA Canada였습니다.</div>
 
 </div>
 <script>
@@ -319,7 +326,7 @@ window.__timelines = window.__timelines || {};
 const tl = HyperShader.init({
   bgColor: "#FFF8F2", accentColor: "#C8102E",
   scenes: ["s01", "s02", "s03", "s04", "s05", "s06", "s07", "s08", "s09"],
-  transitions: [{"time": 16.88, "shader": "light-leak", "duration": 0.9}, {"time": 46.096, "shader": "cross-warp-morph", "duration": 0.9}, {"time": 75.965, "shader": "cinematic-zoom", "duration": 0.9}, {"time": 120.358, "shader": "cross-warp-morph", "duration": 0.9}, {"time": 144.428, "shader": "cross-warp-morph", "duration": 0.9}, {"time": 170.431, "shader": "light-leak", "duration": 0.9}, {"time": 192.071, "shader": "cross-warp-morph", "duration": 0.9}, {"time": 211.987, "shader": "light-leak", "duration": 0.9}],
+  transitions: [{"time": 16.88, "shader": "light-leak", "duration": 0.9}, {"time": 46.096, "shader": "cross-warp-morph", "duration": 0.9}, {"time": 75.965, "shader": "cinematic-zoom", "duration": 0.9}, {"time": 120.358, "shader": "cross-warp-morph", "duration": 0.9}, {"time": 148.033, "shader": "cross-warp-morph", "duration": 0.9}, {"time": 174.036, "shader": "light-leak", "duration": 0.9}, {"time": 195.676, "shader": "cross-warp-morph", "duration": 0.9}, {"time": 215.592, "shader": "light-leak", "duration": 0.9}],
 });
 
 function pop(s, t){ tl.fromTo(s, {opacity:0, y:30}, {opacity:1, y:0, duration:0.5, ease:"power3.out"}, t); }
@@ -391,59 +398,60 @@ pop("#s04-per", 109.695); tl.fromTo("#s04-range", {scaleX:0}, {scaleX:1, duratio
 tl.fromTo("#s04-dpath", {strokeDashoffset:900, opacity:0}, {strokeDashoffset:0, opacity:1, duration:1.0, ease:"power2.out"}, 115.395); pop("#s04-dlab", 115.995);
 tl.set("#s04-dpath", {strokeDasharray:"16 12"}, 0);
 pop("#s05-tag", 121.158);
-pop("#s05-h", 121.408);
-grow("#s05-line", 123.028);
-chipIn("#s05-g1", 123.148);
-chipIn("#s05-g2", 123.268);
-chipIn("#s05-g3", 123.388);
-chipIn("#s05-g4", 123.508);
-chipIn("#s05-g5", 123.628);
-chipIn("#s05-g6", 123.748);
-tl.to("#s05-g1", {backgroundColor:"#C8102E", color:"#fff", scale:1.15, duration:0.3}, 125.708); slideIn("#s05-reg", 125.908);
-tl.fromTo("#s05-reg small", {backgroundSize:"0% 100%"}, {backgroundSize:"100% 100%", duration:0.7}, 128.068);
-tl.to(["#s05-g5","#s05-g6"], {backgroundColor:"#7A1B26", color:"#fff", scale:1.15, duration:0.3}, 130.748); slideIn("#s05-int", 130.948);
-slam("#s05-n", 138.737); countDec("#s05-pct", 56.4, 138.737, 1.0);
-tl.fromTo("#s05-src", {opacity:0}, {opacity:1, duration:0.5}, 138.737);
-wipe("#s05-out", 140.908);
-pop("#s06-tag", 145.228);
-slam("#s06-h", 145.578);
-pop("#s06-pei", 148.398);
-tl.fromTo("#s06-src", {opacity:0}, {opacity:1, duration:0.5}, 148.398);
-cardIn("#s06-c0", 154.818);
-cardIn("#s06-c1", 158.078);
-cardIn("#s06-c2", 162.638);
-cardIn("#s06-c3", 166.018);
-pop("#s07-tag", 171.231);
-slam("#s07-k1", 173.403); slam("#s07-k2", 174.029); slam("#s07-k3", 174.655);
-pop(["#s07-d1","#s07-d2"], 174.029);
-tl.to("#s07-kin", {opacity:0, y:-80, duration:0.4}, 175.921); tl.to("#s07-eq", {opacity:1, duration:0.3}, 176.221);
-chipIn("#s07-e1", 176.521);
-chipIn("#s07-e2", 178.743);
-pop("#s07-p1", 178.593);
-chipIn("#s07-e3", 179.121);
-pop("#s07-p2", 178.971);
-chipIn("#s07-e4", 179.775);
-pop("#s07-p3", 179.625);
-stamp("#s07-goal", 181.901);
-pop("#s07-nostat", 187.510);
-pop("#s08-tag", 192.871);
-slideIn("#s08-k1", 194.176);
-slideIn("#s08-k2", 197.841);
-slideIn("#s08-k3", 206.821);
-tl.fromTo("#s08-src", {opacity:0}, {opacity:1, duration:0.5}, 194.176);
-tl.fromTo("#s08-k2 small", {backgroundSize:"0% 100%"}, {backgroundSize:"100% 100%", duration:0.8}, 201.041);
-tl.fromTo("#s08-age", {opacity:0, y:80}, {opacity:1, y:0, duration:0.6, ease:"back.out(1.6)"}, 203.561);
-tl.fromTo("#s08-k3 small", {backgroundSize:"0% 100%"}, {backgroundSize:"100% 100%", duration:0.8}, 210.076);
-pop("#s09-h", 214.437);
-slideIn("#s09-r1", 218.217);
-slideIn("#s09-r2", 221.057);
-slideIn("#s09-r3", 223.037);
-tl.to("#s09-sum", {opacity:0, duration:0.4}, 228.477); tl.to("#s09-cta", {opacity:1, duration:0.4}, 228.677);
-pop("#s09-kakao", 229.477);
-pop("#s09-q small", 234.357); slam("#s09-q .planbig:nth-child(1)", 236.242); slam("#s09-q .planbig:nth-child(2)", 237.857);
-pop("#s09-cm", 239.517);
-tl.fromTo("#s09-logo", {opacity:0, scale:0.6, rotation:-20}, {opacity:1, scale:1, rotation:0, duration:0.8, ease:"back.out(1.6)"}, 240.497);
-tl.to("#s09-fade", {opacity:1, duration:1.0}, 245.829);
+chipIn("#s05-b1", 123.504); chipIn("#s05-b2", 124.490);
+tl.to("#s05-b1", {opacity:0.35, scale:0.92, duration:0.35}, 126.588); tl.to("#s05-b2", {scale:1.12, duration:0.35, ease:"back.out(2)"}, 126.588); pop("#s05-h", 126.888);
+grow("#s05-line", 128.704);
+chipIn("#s05-g1", 128.824);
+chipIn("#s05-g2", 128.944);
+chipIn("#s05-g3", 129.064);
+chipIn("#s05-g4", 129.184);
+chipIn("#s05-g5", 129.304);
+chipIn("#s05-g6", 129.424);
+tl.to("#s05-g1", {backgroundColor:"#C8102E", color:"#fff", scale:1.15, duration:0.3}, 129.308); slideIn("#s05-reg", 129.508);
+tl.fromTo("#s05-reg small", {backgroundSize:"0% 100%"}, {backgroundSize:"100% 100%", duration:0.7}, 131.668);
+tl.to(["#s05-g5","#s05-g6"], {backgroundColor:"#7A1B26", color:"#fff", scale:1.15, duration:0.3}, 134.108); slideIn("#s05-int", 134.308);
+slam("#s05-n", 142.249); countDec("#s05-pct", 56.4, 142.249, 1.0);
+tl.fromTo("#s05-src", {opacity:0}, {opacity:1, duration:0.5}, 142.249);
+wipe("#s05-out", 144.408);
+pop("#s06-tag", 148.833);
+slam("#s06-h", 149.183);
+pop("#s06-pei", 152.003);
+tl.fromTo("#s06-src", {opacity:0}, {opacity:1, duration:0.5}, 152.003);
+cardIn("#s06-c0", 158.423);
+cardIn("#s06-c1", 161.683);
+cardIn("#s06-c2", 166.243);
+cardIn("#s06-c3", 169.623);
+pop("#s07-tag", 174.836);
+slam("#s07-k1", 177.008); slam("#s07-k2", 177.634); slam("#s07-k3", 178.260);
+pop(["#s07-d1","#s07-d2"], 177.634);
+tl.to("#s07-kin", {opacity:0, y:-80, duration:0.4}, 179.526); tl.to("#s07-eq", {opacity:1, duration:0.3}, 179.826);
+chipIn("#s07-e1", 180.126);
+chipIn("#s07-e2", 182.348);
+pop("#s07-p1", 182.198);
+chipIn("#s07-e3", 182.726);
+pop("#s07-p2", 182.576);
+chipIn("#s07-e4", 183.380);
+pop("#s07-p3", 183.230);
+stamp("#s07-goal", 185.506);
+pop("#s07-nostat", 191.115);
+pop("#s08-tag", 196.476);
+slideIn("#s08-k1", 197.781);
+slideIn("#s08-k2", 201.446);
+slideIn("#s08-k3", 210.426);
+tl.fromTo("#s08-src", {opacity:0}, {opacity:1, duration:0.5}, 197.781);
+tl.fromTo("#s08-k2 small", {backgroundSize:"0% 100%"}, {backgroundSize:"100% 100%", duration:0.8}, 204.646);
+tl.fromTo("#s08-age", {opacity:0, y:80}, {opacity:1, y:0, duration:0.6, ease:"back.out(1.6)"}, 207.166);
+tl.fromTo("#s08-k3 small", {backgroundSize:"0% 100%"}, {backgroundSize:"100% 100%", duration:0.8}, 213.681);
+pop("#s09-h", 218.042);
+slideIn("#s09-r1", 221.822);
+slideIn("#s09-r2", 224.662);
+slideIn("#s09-r3", 226.642);
+tl.to("#s09-sum", {opacity:0, duration:0.4}, 232.082); tl.to("#s09-cta", {opacity:1, duration:0.4}, 232.282);
+pop("#s09-kakao", 233.082);
+pop("#s09-q small", 237.962); slam("#s09-q .planbig:nth-child(1)", 239.847); slam("#s09-q .planbig:nth-child(2)", 241.462);
+pop("#s09-cm", 243.122);
+tl.fromTo("#s09-logo", {opacity:0, scale:0.6, rotation:-20}, {opacity:1, scale:1, rotation:0, duration:0.8, ease:"back.out(1.6)"}, 244.102);
+tl.to("#s09-fade", {opacity:1, duration:1.0}, 249.434);
 window.__timelines["main"] = tl;
 </script>
 </body>

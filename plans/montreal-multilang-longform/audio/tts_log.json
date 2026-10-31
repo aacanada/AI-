@@ -133,6 +133,27 @@
    "model_id": "eleven_multilingual_v2",
    "request_id": "oIaxIvaMdcgC4JzffAM1",
    "chars": 158
+  },
+  {
+   "voice_id": "cbVXtFGe9VfUKWtbYIty",
+   "model_id": "eleven_multilingual_v2",
+   "request_id": "NVvl0Sh7sREGmzaXmNxP",
+   "chars": 186,
+   "tts_input_overrides": []
+  },
+  {
+   "voice_id": "cbVXtFGe9VfUKWtbYIty",
+   "model_id": "eleven_multilingual_v2",
+   "request_id": "QP93GZxExRm5n5kLLbt0",
+   "chars": 186,
+   "tts_input_overrides": []
+  },
+  {
+   "voice_id": "cbVXtFGe9VfUKWtbYIty",
+   "model_id": "eleven_multilingual_v2",
+   "request_id": "xno7AXgKLb3ZAB3p7nmo",
+   "chars": 186,
+   "tts_input_overrides": []
   }
  ],
  "s06": [
