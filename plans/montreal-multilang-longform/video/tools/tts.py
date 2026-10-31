@@ -23,7 +23,9 @@ VID = match[0]['voice_id']
 txt = open(P + '/NARRATION.txt', encoding='utf-8').read()
 blocks = dict(re.findall(r'\[(s\d\d)\]\n(.*?)(?=\n\[s\d\d\]|\Z)', txt, re.S))
 # TTS-input-only respelling (approved 2026-10-31; script/captions keep the original word)
-TTS_ONLY = {'s09': [('canlog', os.environ.get('CANLOG_SAY', '캔로그'))]}
+AA = ('AA Canada', '에이에이 캐나다')  # 2026-10-31 대표님 요청: '에이에이카나다' -> '에이에이캐나다'
+TTS_ONLY = {'s01': [AA], 's04': [('10개월에서 20개월', '십 개월에서 이십 개월')],
+            's09': [('canlog', os.environ.get('CANLOG_SAY', '씨에이앤엘오지')), AA]}
 ids = sys.argv[1:] or sorted(blocks)
 log = json.load(open(P + '/audio/tts_log.json')) if os.path.exists(P + '/audio/tts_log.json') else {}
 for k in ids:

@@ -189,9 +189,9 @@ s04 = scene(k, '03', '웰컴 클래스', f'''
     <div id="s04-h28" class="abs hlbox" style="{rbx(110, 207, 450, 264)}"></div>
   </div>
   <div id="s04-n17" class="abs slamnum" style="left:1060px;top:190px"><small>웰컴 클래스 (중등) 최대</small><b><span id="s04-c17">17</span>명</b></div>
-  <div id="s04-vs" class="abs bh" style="left:1335px;top:415px;font-size:64px;color:{WINE}">vs</div>
-  <div id="s04-n28" class="abs slamnum grey" style="left:1060px;top:500px"><small>일반 중등 1학년 최대</small><b><span id="s04-c28">28</span>명</b></div>
-  <div id="s04-small" class="abs band nk9" style="left:1060px;top:800px;font-size:44px">같은 처지 친구들과 <span class="red">작은 반</span>에서 시작</div>
+  <div id="s04-vs" class="abs bh" style="left:1335px;top:462px;font-size:64px;color:{WINE}">vs</div>
+  <div id="s04-n28" class="abs slamnum grey" style="left:1060px;top:550px"><small>일반 중등 1학년 최대</small><b><span id="s04-c28">28</span>명</b></div>
+  <div id="s04-small" class="abs band nk9" style="left:1060px;top:835px;font-size:44px">같은 처지 친구들과 <span class="red">작은 반</span>에서 시작</div>
 </div>
 ''', src='출처: CSSDM, Ratio maître-élèves (' + CHECKED + ')')
 js(f'pop("#s04-ok", {t0 + 0.7:.3f});')
@@ -214,8 +214,8 @@ js(f'wipe("#s04-small", {c("같은 처지의", k):.3f});')
 tp = c('기간은', k)
 js(f'tl.to("#s04-cmp", {{opacity:0, duration:0.4}}, {tp - 0.4:.3f}); tl.set("#s04-src", {{opacity:0}}, {tp - 0.1:.3f}); tl.to("#s04-flow", {{opacity:1, duration:0.4}}, {tp - 0.3:.3f});')
 sfx(tp - 0.4, 'whoosh-short.mp3', -19)
-js(f'pop("#s04-per", {tp:.3f}); tl.fromTo("#s04-range", {{scaleX:0}}, {{scaleX:1, duration:1.2, ease:"power2.out"}}, {cin("열 달", k):.3f});')
-sfx(cin('열 달', k), 'sparkle.mp3', -21)
+js(f'pop("#s04-per", {tp:.3f}); tl.fromTo("#s04-range", {{scaleX:0}}, {{scaleX:1, duration:1.2, ease:"power2.out"}}, {cin("10개월", k):.3f});')
+sfx(cin('10개월', k), 'sparkle.mp3', -21)
 td = c('학교에 따라서는', k)
 js(f'tl.fromTo("#s04-dpath", {{strokeDashoffset:900, opacity:0}}, {{strokeDashoffset:0, opacity:1, duration:1.0, ease:"power2.out"}}, {td:.3f}); pop("#s04-dlab", {td + 0.6:.3f});')
 js(f'tl.set("#s04-dpath", {{strokeDasharray:"16 12"}}, 0);')

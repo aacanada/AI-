@@ -5,6 +5,30 @@
    "model_id": "eleven_multilingual_v2",
    "request_id": "0ZGTHPTJ2RngQzSjvoqs",
    "chars": 136
+  },
+  {
+   "voice_id": "cbVXtFGe9VfUKWtbYIty",
+   "model_id": "eleven_multilingual_v2",
+   "request_id": "8WSZ7aIYcKKoajjPeQXM",
+   "chars": 135,
+   "tts_input_overrides": [
+    [
+     "AA Canada",
+     "에이에이 캐나다"
+    ]
+   ]
+  },
+  {
+   "voice_id": "cbVXtFGe9VfUKWtbYIty",
+   "model_id": "eleven_multilingual_v2",
+   "request_id": "VDMhwLDEmyLPVPCKkprf",
+   "chars": 135,
+   "tts_input_overrides": [
+    [
+     "AA Canada",
+     "에이에이 캐나다"
+    ]
+   ]
   }
  ],
  "s02": [
@@ -47,6 +71,42 @@
    "model_id": "eleven_multilingual_v2",
    "request_id": "g9Ws9BQ6Vi0aP8aFiNTk",
    "chars": 309
+  },
+  {
+   "voice_id": "cbVXtFGe9VfUKWtbYIty",
+   "model_id": "eleven_multilingual_v2",
+   "request_id": "Z7U0QsVDmfvh4H4Iurqh",
+   "chars": 311,
+   "tts_input_overrides": [
+    [
+     "10개월에서 20개월",
+     "십 개월에서 이십 개월"
+    ]
+   ]
+  },
+  {
+   "voice_id": "cbVXtFGe9VfUKWtbYIty",
+   "model_id": "eleven_multilingual_v2",
+   "request_id": "IbZB1hkr1oKovIRMn70c",
+   "chars": 311,
+   "tts_input_overrides": [
+    [
+     "10개월에서 20개월",
+     "십 개월에서 이십 개월"
+    ]
+   ]
+  },
+  {
+   "voice_id": "cbVXtFGe9VfUKWtbYIty",
+   "model_id": "eleven_multilingual_v2",
+   "request_id": "zh5KIRpomx7IPhuN1cez",
+   "chars": 311,
+   "tts_input_overrides": [
+    [
+     "10개월에서 20개월",
+     "십 개월에서 이십 개월"
+    ]
+   ]
   }
  ],
  "s05": [
@@ -217,6 +277,134 @@
     [
      "canlog",
      "캔 로그"
+    ]
+   ]
+  },
+  {
+   "voice_id": "cbVXtFGe9VfUKWtbYIty",
+   "model_id": "eleven_multilingual_v2",
+   "request_id": "zFm4lJQ73WdA6WGCylwF",
+   "chars": 205,
+   "tts_input_overrides": [
+    [
+     "canlog",
+     "캔로그"
+    ],
+    [
+     "AA Canada",
+     "에이에이 캐나다"
+    ]
+   ]
+  },
+  {
+   "voice_id": "cbVXtFGe9VfUKWtbYIty",
+   "model_id": "eleven_multilingual_v2",
+   "request_id": "QMdyDkQEx5GBABnL0WDU",
+   "chars": 205,
+   "tts_input_overrides": [
+    [
+     "canlog",
+     "캔로그"
+    ],
+    [
+     "AA Canada",
+     "에이에이 캐나다"
+    ]
+   ]
+  },
+  {
+   "voice_id": "cbVXtFGe9VfUKWtbYIty",
+   "model_id": "eleven_multilingual_v2",
+   "request_id": "53n8NPpiGtO3z36lf87S",
+   "chars": 205,
+   "tts_input_overrides": [
+    [
+     "canlog",
+     "캔로그"
+    ],
+    [
+     "AA Canada",
+     "에이에이 캐나다"
+    ]
+   ]
+  },
+  {
+   "voice_id": "cbVXtFGe9VfUKWtbYIty",
+   "model_id": "eleven_multilingual_v2",
+   "request_id": "ijmeuSIgtvoSNJM7OQ8H",
+   "chars": 205,
+   "tts_input_overrides": [
+    [
+     "canlog",
+     "캔로그"
+    ],
+    [
+     "AA Canada",
+     "에이에이 캐나다"
+    ]
+   ]
+  },
+  {
+   "voice_id": "cbVXtFGe9VfUKWtbYIty",
+   "model_id": "eleven_multilingual_v2",
+   "request_id": "zDjUIppNykdSkCkcaPJ7",
+   "chars": 205,
+   "tts_input_overrides": [
+    [
+     "canlog",
+     "캔로그"
+    ],
+    [
+     "AA Canada",
+     "에이에이 캐나다"
+    ]
+   ]
+  },
+  {
+   "voice_id": "cbVXtFGe9VfUKWtbYIty",
+   "model_id": "eleven_multilingual_v2",
+   "request_id": "dtnTMv0hi8EMZF7u7Oam",
+   "chars": 209,
+   "tts_input_overrides": [
+    [
+     "canlog",
+     "씨에이앤엘오지"
+    ],
+    [
+     "AA Canada",
+     "에이에이 캐나다"
+    ]
+   ]
+  },
+  {
+   "voice_id": "cbVXtFGe9VfUKWtbYIty",
+   "model_id": "eleven_multilingual_v2",
+   "request_id": "o9RYF46AL4I1RrLg5K4y",
+   "chars": 209,
+   "tts_input_overrides": [
+    [
+     "canlog",
+     "씨에이앤엘오지"
+    ],
+    [
+     "AA Canada",
+     "에이에이 캐나다"
+    ]
+   ]
+  },
+  {
+   "voice_id": "cbVXtFGe9VfUKWtbYIty",
+   "model_id": "eleven_multilingual_v2",
+   "request_id": "lT3tj14sZLic2RmJ3QX9",
+   "chars": 209,
+   "tts_input_overrides": [
+    [
+     "canlog",
+     "씨에이앤엘오지"
+    ],
+    [
+     "AA Canada",
+     "에이에이 캐나다"
     ]
    ]
   }

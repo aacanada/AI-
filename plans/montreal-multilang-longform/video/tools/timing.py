@@ -9,7 +9,7 @@ blocks = dict(re.findall(r'\[(s\d\d)\]\n(.*?)(?=\n\[s\d\d\]|\Z)', txt, re.S))
 LEAD, TAIL = 0.6, 0.9
 norm = lambda s: re.sub(r'[\s\.,\?\!\'"·~\-]', '', s)
 # caption display only: original script word + its written form (brief: 학교 이름과 용어 병기)
-GLOSS = [('클라스 다쾨이', "클라스 다쾨이(classe d'accueil)"), ('피이아이', '피이아이(PEI)'),
+GLOSS = [('클라스 아께이', "클라스 아께이(classe d'accueil)"), ('피이아이', '피이아이(PEI)'),
          ('잔 망스', '잔 망스(Jeanne-Mance)'), ('콜레주 생루이', '콜레주 생루이(Collège Saint-Louis)'),
          ('데 수르스', '데 수르스(des Sources)'), ('장 그루', '장 그루(Jean-Grou)')]
 
