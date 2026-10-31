@@ -1,0 +1,10 @@
+type: longform
+title: 초등학생이 3~4개 국어, 정말 가능할까? 몬트리올 자녀무상교육 영어·불어·스페인어 (공식 자료로 확인)
+channels: youtube, naver blog, threads, homepage
+visibility: public
+publish_order: 1
+publish_after: 2026-10-31
+linked_to: (none)
+files: video.mp4 (4:10.6, 1920x1080 30fps, 23 MB, video.mp4.sha256), thumbnail.jpg (1280x720), upload-text.txt
+source: aacanada/AI- branch claude/peaceful-heisenberg-dq7ti9, plans/montreal-multilang-longform/ (v3, 대표님 미리보기 승인 2026-10-31)
+notes: 몬트리올 자녀무상교육 롱폼(9장면): 3개 언어 통계, 퀘벡 교육법 3.1조, 웰컴 클래스(클라스 아께이), 불어 교육청 영어 수업, PEI 스페인어 학교 4곳. 얼굴 출연 없음. 내레이션은 ElevenLabs AI 음성 '여덟번째'(eleven_multilingual_v2) — 유튜브 설명에 AI 음성 사용 표기. 인스타 릴스/클립 게시 금지(롱폼). 블로그·Threads·홈페이지 글은 Aside가 따로 작성. 숫자별 출처·기준일은 upload-text.txt [출처·기준일]. 숏폼은 아직 없음(본편 게시 후 제작 예정).
