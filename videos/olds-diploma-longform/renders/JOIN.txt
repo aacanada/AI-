@@ -1,0 +1,3 @@
+합치기 (macOS/Linux):  cat video.mp4.part1 video.mp4.part2 video.mp4.part3 video.mp4.part4 video.mp4.part5 > video.mp4
+합치기 (Windows cmd): copy /b video.mp4.part1+video.mp4.part2+video.mp4.part3+video.mp4.part4+video.mp4.part5 video.mp4
+확인: sha256sum -c video.mp4.sha256  (첫 줄이 합친 video.mp4)
