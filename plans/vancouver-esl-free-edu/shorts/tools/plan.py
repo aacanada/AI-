@@ -11,7 +11,7 @@ SPEC = {
  'c': [('s07', '그래서 AA', '의료보험')],
  'd': [('s01', '밴쿠버', '밴쿠버'), ('s08', '다만 꼭', '등록 서류를')],
 }
-def words(sc): return [w for w in json.load(open(f'{P}/video/asr_v2/{sc}.json'))['words'] if w['type'] == 'word']
+def words(sc): return [w for w in json.load(open(f'{P}/{os.environ.get("ASRDIR", "video/asr_v2")}/{sc}.json'))['words'] if w['type'] == 'word']
 def idx(sc, pre): return next(i for i, c in enumerate(CUES) if c['scene'] == sc and c['text'].startswith(pre))
 def dur(f): return float(subprocess.check_output(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', f]))
 for sid, segs in SPEC.items():
@@ -25,10 +25,11 @@ for sid, segs in SPEC.items():
             cues.append({'text': seg[1], 'start': round(t, 3), 'end': round(t + a1 - a0, 3)})
         else:
             sc, p0, p1 = seg; i0, i1 = idx(sc, p0), idx(sc, p1)
-            base = SC[sc]['audio_start']; f = f'{P}/audio_v2/vanesl_{sc}.mp3'
+            base = SC[sc]['audio_start']; f = f'{P}/{os.environ.get("AUD", "audio_v2")}/vanesl_{sc}.mp3'
             st = CUES[i0]['start'] - base
             en_c = CUES[i1]['end'] - base
-            ws = [w for w in words(sc) if w['end'] <= en_c + 0.05]
+            last_of_scene = i1 + 1 >= len(CUES) or CUES[i1 + 1]['scene'] != sc
+            ws = words(sc) if last_of_scene else [w for w in words(sc) if w['end'] <= en_c + 0.05]
             en = max(w['end'] for w in ws)
             a0, a1 = max(0, st - 0.08), min(dur(f), en + 0.15)
             for c in CUES[i0:i1 + 1]:

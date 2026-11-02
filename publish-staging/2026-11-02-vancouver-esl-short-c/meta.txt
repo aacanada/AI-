@@ -5,7 +5,7 @@ visibility: public
 publish_order: 3
 publish_after: 2026-11-02
 linked_to: 2026-10-28-vancouver-esl-longform
-files: video.mp4 (1080x1920, 0:49, 2.9 MB), video.mp4.sha256, thumbnail.jpg (1080x1920 cover), upload-text.txt
+files: video.mp4 (1080x1920, 0:50, 2.9 MB), video.mp4.sha256, thumbnail.jpg (1080x1920 cover), upload-text.txt
 voice: 여덟번째 cbVXtFGe9VfUKWtbYIty eleven_multilingual_v2
 loudness: -16.0 LUFS, true peak -1.7 dBFS
 source: aacanada/AI- branch claude/beautiful-ptolemy-4l997y, plans/vancouver-esl-free-edu/shorts/ (본편 https://youtu.be/a6GSAfwZMjo)
