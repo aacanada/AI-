@@ -1,0 +1,10 @@
+type: short
+title: 캐나다 학년은 한국보다 반 년 빠릅니다 | 토론토 사립고 입학 시기
+channels: youtube, instagram-reels, threads, naver-clip
+visibility: public
+publish_order: 3
+publish_after: 2026-11-05
+linked_to: https://youtu.be/UDw6TbnewKU
+files: video.mp4 (0:35.0, 1080x1920 30fps), thumbnail.jpg (1080x1920), upload-text.txt
+source: aacanada/AI- branch claude/busy-fermat-uhhvcr, videos/sga-shorts/ (tools/shorts.py #3)
+notes: 나레이션 ElevenLabs "일곱번째" 합성 음성 -> 업로드 때 변경·합성 콘텐츠 표시를 켤 것. 학생 얼굴 노출 없음. 게시일은 하루 1편 이하로 조정 가능.
