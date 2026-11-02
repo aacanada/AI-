@@ -79,7 +79,10 @@ for i, (at, name) in enumerate(fx):
     if d > 0.05:
         aud.append(f'        <audio id="{cid}-fx{i}" src="assets/sfx/{name}.mp3" data-start="{at}" data-duration="{d}" data-track-index="30" data-volume="{vol}" data-hf-media-start-basis="local"></audio>')
 js = resolve(SP["js"]) + f"\ntl.to(q('.stage'),{{opacity:0,duration:0.35,ease:'power1.in'}},{cta_start});\n"  # scene clears under the CTA card
-html = scene_html(cid, total, SP["css"], SP["body"], js, SP.get("bg", ""), "\n".join(aud))
+body = SP["body"]
+for k, e in SP.get("vars", {}).items():  # media start times that follow a spoken phrase
+    body = body.replace(k, f"{eval(resolve(e), {'__builtins__': {}}):.3f}")
+html = scene_html(cid, total, SP["css"], body, js, SP.get("bg", ""), "\n".join(aud))
 os.makedirs("compositions", exist_ok=True)
 for f in os.listdir("compositions"):
     os.remove(os.path.join("compositions", f))

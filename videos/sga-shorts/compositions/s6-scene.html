@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+
+@font-face{font-family:Pretendard;font-weight:500;src:url(assets/fonts/Pretendard-Medium.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:700;src:url(assets/fonts/Pretendard-Bold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:800;src:url(assets/fonts/Pretendard-ExtraBold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:900;src:url(assets/fonts/Pretendard-Black.woff2) format("woff2")}
+
+
+#k6{position:absolute;inset:0;overflow:hidden;color:#fff;font-family:Pretendard,sans-serif}
+#k6 *{box-sizing:border-box}
+#k6 .bg{position:absolute;inset:0;background:linear-gradient(135deg,#14254a 0%,#1a2f5a 55%,#1f3a6b 100%)}
+#k6 .blob{position:absolute;border-radius:50%;width:1200px;height:1200px}
+#k6 .blob.a{left:-420px;top:-300px;background:radial-gradient(circle,rgba(46,84,150,.55) 0%,rgba(46,84,150,0) 68%)}
+#k6 .blob.b{left:300px;top:1100px;background:radial-gradient(circle,rgba(200,16,46,.20) 0%,rgba(200,16,46,0) 66%)}
+#k6 .blob.c{left:-200px;top:700px;width:900px;height:900px;background:radial-gradient(circle,rgba(232,185,49,.12) 0%,rgba(232,185,49,0) 66%)}
+#k6 .stage{position:absolute;inset:0}
+#k6 .abs{position:absolute}
+#k6 .h{font-weight:900;letter-spacing:-.03em;line-height:1.08}
+#k6 .hd{font-weight:800;letter-spacing:-.02em;line-height:1.2}
+#k6 .b{font-weight:500;line-height:1.45}
+#k6 .l{font-weight:700;letter-spacing:.14em}
+#k6 .num{font-weight:900;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+#k6 .gold{color:#e8b931}
+#k6 .red{color:#c8102e}
+#k6 .full{position:absolute;inset:0;overflow:hidden}
+#k6 .full img,#k6 .ph img{display:block;width:100%;height:100%;object-fit:cover}
+#k6 .dim{position:absolute;inset:0;background:#0b1630}
+#k6 .ph{position:absolute;overflow:hidden;border-radius:22px;box-shadow:0 24px 50px rgba(0,0,0,.38);background:#0b1630}
+#k6 .ph.frame{border:6px solid #f5efe3}
+#k6 .ph .lab{position:absolute;left:0;right:0;bottom:0;padding:14px 20px;background:linear-gradient(0deg,rgba(11,22,48,.88),rgba(11,22,48,0));font-weight:800;font-size:28px}
+#k6 .card{position:absolute;background:#f5efe3;color:#14254a;border-radius:28px;box-shadow:0 22px 46px rgba(0,0,0,.30)}
+#k6 .card .t{font-weight:800;color:#14254a}
+#k6 .chip{position:absolute;white-space:nowrap;border-radius:99px;padding:12px 28px;font-weight:700;font-size:30px;background:rgba(255,255,255,.08);border:2px solid rgba(232,185,49,.75);color:#fff}
+#k6 .chip.cream{background:#f5efe3;border-color:#f5efe3;color:#14254a}
+#k6 .chip.gold{background:#e8b931;border-color:#e8b931;color:#14254a}
+#k6 .chip.red{background:#c8102e;border-color:#c8102e;color:#fff}
+#k6 .chip.navy{background:#14254a;border-color:#14254a;color:#f5efe3}
+#k6 .pill{position:absolute;white-space:nowrap;border-radius:99px;padding:10px 26px;font-weight:800;font-size:28px;background:#e8b931;color:#14254a}
+#k6 .sweep{position:absolute;top:-20%;bottom:-20%;left:0;width:34%;background:linear-gradient(90deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.38) 50%,rgba(255,255,255,0) 100%);mix-blend-mode:screen}
+#k6 .reel{display:inline-block;height:1em;overflow:hidden;vertical-align:top}
+#k6 .strip{display:block}
+#k6 .strip i{display:block;height:1em;font-style:normal}
+#k6 .ch{display:inline-block;white-space:pre}
+#k6 .tag{position:absolute;font-weight:700;font-size:22px;letter-spacing:.12em;padding:6px 16px;border-radius:8px;background:#c8102e;color:#fff}
+#k6 svg{overflow:visible}
+
+#k6 .full img{filter:saturate(.6)}
+#k6 .ev{width:840px;height:620px}
+#k6 .evl{left:120px;top:1110px;font-size:40px}
+#k6 #k6-h1{left:0;right:0;top:300px;text-align:center;font-size:84px}
+#k6 .vid{position:absolute;left:60px;top:420px;width:960px;height:540px;border-radius:24px;overflow:hidden;box-shadow:0 24px 50px rgba(0,0,0,.4);border:6px solid #f5efe3;background:#0b1630}
+#k6 .vid video{width:100%;height:100%;object-fit:cover;display:block}
+#k6 .sq{width:480px;height:480px}
+
+      </style>
+      <div id="k6" data-composition-id="k6" data-width="1080" data-height="1920" data-duration="36.577">
+        <div class="bg"></div>
+        <div class="blob a"></div><div class="blob b"></div><div class="blob c"></div>
+        <div class="full" id="k6-bg"><img src="assets/photos/trip-island-03.jpg" alt="" /></div>
+        <div class="dim" style="opacity:.8"></div>
+        <div class="stage">
+
+          <div class="abs h" id="k6-h1">SGA의 <span class="gold">1년</span></div>
+          <div class="abs hd" id="k6-h2" style="left:0;right:0;top:310px;text-align:center;font-size:64px">현장학습</div>
+          <div class="vid" id="k6-v1"><video id="k6-cv1" src="assets/clips/christmas-hall.mp4" data-start="7.147" data-duration="4.0" data-track-index="32" muted playsinline data-hf-media-start-basis="local"></video></div>
+          <div class="vid" id="k6-v2"><video id="k6-cv2" src="assets/clips/centre-island.mp4" data-start="14.371" data-duration="4.0" data-track-index="33" muted playsinline data-hf-media-start-basis="local"></video></div>
+          <div class="ph frame ev" id="k6-e0" style="left:120px;top:400px"><img src="assets/photos/ev-halloween-03.jpg" alt="" style="object-position:50% 50%" /></div><div class="chip gold evl" id="k6-l0">가을 · 할로윈</div><div class="ph frame ev" id="k6-e1" style="left:150px;top:420px"><img src="assets/photos/ev-christmas-01.jpg" alt="" style="object-position:50% 50%" /></div><div class="chip gold evl" id="k6-l1">겨울 · 크리스마스</div><div class="ph frame ev" id="k6-e2" style="left:120px;top:440px"><img src="assets/photos/ev-valentine-01.jpg" alt="" style="object-position:50% 0%" /></div><div class="chip gold evl" id="k6-l2">2월 · 발렌타인</div><div class="ph frame ev" id="k6-e3" style="left:150px;top:400px"><img src="assets/photos/ev-easter-02.jpg" alt="" style="object-position:50% 50%" /></div><div class="chip gold evl" id="k6-l3">봄 · 부활절</div><div class="ph frame ev" id="k6-e4" style="left:120px;top:420px"><img src="assets/photos/ev-persian-01.jpg" alt="" style="object-position:50% 50%" /></div><div class="chip gold evl" id="k6-l4">봄 · 페르시안 새해</div><div class="ph frame ev" id="k6-e5" style="left:150px;top:440px"><img src="assets/photos/ev-korean-01.jpg" alt="" style="object-position:50% 50%" /></div><div class="chip gold evl" id="k6-l5">한국 축제</div><div class="ph frame ev" id="k6-e6" style="left:120px;top:400px"><img src="assets/photos/trip-island-03.jpg" alt="" style="object-position:50% 50%" /></div><div class="chip gold evl" id="k6-l6">센터 아일랜드</div><div class="ph frame ev" id="k6-e7" style="left:150px;top:420px"><img src="assets/photos/trip-niagara-02.jpg" alt="" style="object-position:50% 50%" /></div><div class="chip gold evl" id="k6-l7">나이아가라</div><div class="ph frame ev" id="k6-e8" style="left:120px;top:440px"><img src="assets/photos/trip-rom-01.jpg" alt="" style="object-position:50% 50%" /></div><div class="chip gold evl" id="k6-l8">로열 온타리오 박물관</div>
+          <div class="ph frame sq" id="k6-r" style="left:60px;top:430px"><img src="assets/photos/robotic-02.jpg" alt="" /><div class="lab">로보틱스 동아리</div></div>
+          <div class="ph frame sq" id="k6-y" style="left:540px;top:760px"><img src="assets/photos/ymca-01.jpg" alt="" /><div class="lab">YMCA</div></div>
+          <div class="chip gold" id="k6-yc" style="left:60px;top:1290px;font-size:40px">수영장 · 체육관 1년 내내</div>
+          <div class="card" id="k6-es" style="left:110px;top:560px;width:860px;height:300px;display:flex;flex-direction:column;align-items:center;justify-content:center"><div class="hd" style="font-size:50px">활동 기록 =</div><div class="h red" style="font-size:96px;margin-top:8px;display:block">대학 에세이</div></div>
+        </div>
+        <audio id="k6-fx0" src="assets/sfx/impact.mp3" data-start="0.4" data-duration="1.2" data-track-index="30" data-volume="0.24" data-hf-media-start-basis="local"></audio>
+        <audio id="k6-fx1" src="assets/sfx/pop.mp3" data-start="5.068" data-duration="0.5" data-track-index="30" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="k6-fx2" src="assets/sfx/pop.mp3" data-start="6.647" data-duration="0.5" data-track-index="30" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="k6-fx3" src="assets/sfx/pop.mp3" data-start="8.214" data-duration="0.5" data-track-index="30" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="k6-fx4" src="assets/sfx/pop.mp3" data-start="9.491" data-duration="0.5" data-track-index="30" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="k6-fx5" src="assets/sfx/pop.mp3" data-start="10.618" data-duration="0.5" data-track-index="30" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="k6-fx6" src="assets/sfx/pop.mp3" data-start="12.591" data-duration="0.5" data-track-index="30" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="k6-fx7" src="assets/sfx/whoosh.mp3" data-start="14.371" data-duration="0.574" data-track-index="30" data-volume="0.25" data-hf-media-start-basis="local"></audio>
+        <audio id="k6-fx8" src="assets/sfx/pop.mp3" data-start="19.887" data-duration="0.5" data-track-index="30" data-volume="0.3" data-hf-media-start-basis="local"></audio>
+        <audio id="k6-fx9" src="assets/sfx/impact.mp3" data-start="31.703" data-duration="1.2" data-track-index="30" data-volume="0.24" data-hf-media-start-basis="local"></audio>
+      </div>
+      <script>
+        (function () {
+          const root = document.getElementById("k6");
+          const D = 36.577;
+
+const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
+const tl=gsap.timeline({paused:true});
+const E=el=>typeof el==='string'?qa(el):el, E1=el=>typeof el==='string'?q(el):el;
+function inn(el,at,o){o=o||{};tl.fromTo(E(el),{opacity:0,x:o.x||0,y:(o.y===undefined?30:o.y),scale:(o.s===undefined?1:o.s),rotation:(o.r0===undefined?(o.r||0):o.r0)},
+  {opacity:1,x:0,y:0,scale:1,rotation:o.r||0,duration:o.d||0.6,ease:o.e||'power3.out',stagger:o.st||0},at);}
+function outt(el,at,o){o=o||{};tl.to(E(el),{opacity:o.o||0,y:o.y||0,x:o.x||0,scale:(o.s===undefined?1:o.s),duration:o.d||0.4,ease:'power2.in'},at);}
+function kb(el,at,dur,a,b){a=a||{};b=b||{};
+  tl.fromTo(E(el),{scale:a.s||1,xPercent:a.x||0,yPercent:a.y||0},{scale:b.s||1.10,xPercent:b.x||0,yPercent:b.y||0,duration:Math.max(0.1,dur),ease:'none'},at);}
+function shake(at){const s=q('.stage');tl.to(s,{x:12,y:-7,duration:1/30,ease:'none'},at);tl.to(s,{x:-9,y:6,duration:1/30,ease:'none'},at+1/30);tl.to(s,{x:0,y:0,duration:1/30,ease:'none'},at+2/30);}
+function slam(el,at,o){o=o||{};tl.fromTo(E(el),{opacity:0,scale:o.s||2.2},{opacity:1,scale:1,duration:o.d||0.42,ease:'power4.in'},at);if(o.shake!==false)shake(at+(o.d||0.42));}
+function stamp(el,at,rot){rot=(rot===undefined?-12:rot);tl.fromTo(E(el),{opacity:0,scale:3,rotation:rot},{opacity:1,scale:1,rotation:rot,duration:0.32,ease:'power4.in'},at);shake(at+0.32);}
+function pop(el,at,st){tl.fromTo(E(el),{opacity:0,scale:0.4},{opacity:1,scale:1,duration:0.42,ease:'back.out(2.2)',stagger:(st===undefined?0.08:st)},at);}
+function flip(el,at,o){o=o||{};tl.fromTo(E(el),{opacity:0,rotationY:o.r0||-90,transformPerspective:1400},{opacity:1,rotationY:0,transformPerspective:1400,duration:o.d||0.7,ease:'power3.out',stagger:o.st||0},at);}
+function draw(path,at,d,e){const ps=typeof path==='string'?qa(path):[path];ps.forEach(p=>{const L=p.getTotalLength();p.style.strokeDasharray=L+' '+L;
+  tl.fromTo(p,{opacity:0},{opacity:1,duration:0.01},at);  // hide round line-caps until the stroke starts
+  tl.fromTo(p,{strokeDashoffset:L},{strokeDashoffset:0,duration:d||0.9,ease:e||'power2.inOut'},at);});}
+function grow(el,at,d,origin,axis){tl.fromTo(E(el),axis==='y'?{scaleY:0,transformOrigin:origin||'50% 100%'}:{scaleX:0,transformOrigin:origin||'0% 50%'},axis==='y'?{scaleY:1,duration:d||0.7,ease:'power3.out'}:{scaleX:1,duration:d||0.7,ease:'power3.inOut'},at);}
+function mask(el,at,d,dir){const from={l:'inset(0% 100% 0% 0%)',r:'inset(0% 0% 0% 100%)',u:'inset(100% 0% 0% 0%)',d:'inset(0% 0% 100% 0%)'}[dir||'l'];
+  tl.fromTo(E(el),{clipPath:from,opacity:1},{clipPath:'inset(0% 0% 0% 0%)',opacity:1,duration:d||0.8,ease:'power3.inOut'},at);}
+function sweep(el,at){tl.fromTo(E(el),{xPercent:-140,opacity:1},{xPercent:330,opacity:1,duration:1.1,ease:'power2.inOut'},at);}
+function kin(el,at,st){el=E1(el);const t=el.textContent;el.textContent='';
+  for(const c of t){const s=document.createElement('span');s.className='ch';s.textContent=c;el.appendChild(s);}
+  tl.fromTo(el.querySelectorAll('.ch'),{opacity:0,rotationX:90,transformPerspective:700,filter:'blur(12px)'},
+    {opacity:1,rotationX:0,transformPerspective:700,filter:'blur(0px)',duration:0.55,ease:'power3.out',stagger:st||0.03},at);}
+function odo(el,at,dur){el=E1(el);const t=el.textContent;el.textContent='';const reels=[];let k=0;
+  for(const c of t){if(c>='0'&&c<='9'){const d=+c,r=document.createElement('span');r.className='reel';const s=document.createElement('span');s.className='strip';
+      const n=10+d+1;for(let i=0;i<n;i++){const x=document.createElement('i');x.textContent=String(i%10);s.appendChild(x);}r.appendChild(s);el.appendChild(r);reels.push([s,n,k++]);}
+    else{const s=document.createElement('span');s.textContent=c;el.appendChild(s);}}
+  const m=reels.length;reels.forEach(([s,n,i])=>tl.fromTo(s,{yPercent:0},{yPercent:-100*(n-1)/n,duration:(dur||1.4)*(0.65+0.35*(i+1)/m),ease:'power3.out'},at));}
+function ambient(){
+  qa('.blob').forEach((g,i)=>tl.fromTo(g,{x:0,y:0},{x:(i%2?-140:160),y:(i%2?90:-70),duration:D,ease:'sine.inOut'},0));
+  tl.fromTo(q('.stage'),{scale:1,transformOrigin:'50% 48%'},{scale:1.025,duration:D,ease:'none'},0);
+}
+
+
+kb('#k6-bg img',0,D,{s:1.0},{s:1.1});
+// hook: fast stack of the year
+const EV=qa('.ev'), EL=qa('.evl'), R6=[-4,3,-3,4,-2,3,-3,4,-2];
+tl.fromTo('#k6-h1',{scale:1.4},{scale:1,duration:0.4,ease:'power4.in'},0);shake(0.4);
+for(let i=0;i<6;i++){tl.fromTo(EV[i],{opacity:0},{opacity:1,duration:0.01},0.2+i*0.36);tl.fromTo(EV[i],{y:-260,rotation:R6[i]*2.5},{y:0,rotation:R6[i],duration:0.3,ease:'power3.out'},0.2+i*0.36);}
+tl.to(EV.slice(0,6),{opacity:0,duration:0.2},5.068-0.25);
+// seasons in step with the narration
+const ET=[5.068,6.647,8.214,9.491,10.618,12.591];
+for(let i=0;i<6;i++){tl.to(EV[i],{opacity:1,duration:0.01},ET[i]);tl.fromTo(EV[i],{y:-300,rotation:R6[i]*2.4},{y:0,rotation:R6[i],duration:0.45,ease:'power3.out',immediateRender:false},ET[i]);
+  pop(EL[i],ET[i]+0.15);if(i<5){tl.to(EL[i],{opacity:0,duration:0.2},ET[i+1]);}}
+tl.to(['#k6-h1'].map(s=>q(s)),{opacity:0,duration:0.3},5.068-0.3);
+// christmas clip between winter and february
+tl.fromTo('#k6-v1',{opacity:0,scale:0.9},{opacity:1,scale:1,duration:0.3},6.647+0.5);tl.to('#k6-v1',{opacity:0,duration:0.15},8.214-0.15);
+tl.to(EV.slice(0,6).concat([EL[5]]),{opacity:0,y:-40,duration:0.35,ease:'power2.in'},14.371-0.35);
+inn('#k6-h2',14.371,{y:14});
+tl.fromTo('#k6-v2',{opacity:0,scale:0.9},{opacity:1,scale:1,duration:0.35},14.371);tl.to('#k6-v2',{opacity:0,duration:0.3},15.671-0.2);
+const TT=[14.371+0.05,15.671,16.577];
+for(let i=6;i<9;i++){tl.fromTo(EV[i],{opacity:0},{opacity:1,duration:0.01},TT[i-6]);tl.fromTo(EV[i],{y:-300,rotation:R6[i]*2.4},{y:0,rotation:R6[i],duration:0.45,ease:'power3.out'},TT[i-6]);pop(EL[i],TT[i-6]+0.15);if(i<8)tl.to(EL[i],{opacity:0,duration:0.2},TT[i-5]);}
+tl.to(EV.slice(6).concat(EL.slice(6),[q('#k6-h2')]),{opacity:0,y:-40,duration:0.35,ease:'power2.in'},19.887-0.35);
+flip('#k6-r',19.887);flip('#k6-y',24.259);pop('#k6-yc',27.370);
+tl.to(['#k6-r','#k6-y','#k6-yc'].map(s=>q(s)),{opacity:0,y:-40,duration:0.35,ease:'power2.in'},29.425-0.35);
+inn('#k6-es',29.425,{y:30,s:0.92});tl.fromTo('#k6-es .h',{opacity:0,scale:1.6},{opacity:1,scale:1,duration:0.42,ease:'power4.in'},31.283);shake(31.283+0.42);
+
+tl.to(q('.stage'),{opacity:0,duration:0.35,ease:'power1.in'},33.252);
+
+          ambient();
+          window.__timelines["k6"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

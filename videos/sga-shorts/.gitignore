@@ -5,3 +5,4 @@ renders/
 snapshots/
 __pycache__/
 .media/
+!assets/clips/*.mp4

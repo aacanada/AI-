@@ -261,6 +261,7 @@ stamp('#k3-red',T('9월에만'),-2);
 tl.to('#k3-tlg',{opacity:0,y:-40,duration:0.4,ease:'power2.in'},T('그래서 입학 시기가')-0.4);
 tl.fromTo('#k3-imp',{opacity:0,scale:1.5},{opacity:1,scale:1,duration:0.4,ease:'power4.in'},T('그래서 입학 시기가'));shake(T('그래서 입학 시기가')+0.4);
 tl.to('#k3-imp',{opacity:0,y:-40,duration:0.4,ease:'power2.in'},T('SGA는 9월')-0.4);
+tl.fromTo('#k3-rg',{opacity:0},{opacity:1,duration:0.3,immediateRender:true},T('SGA는 9월')-0.1);
 const MT=[T('SGA는 9월'),T('11월,'),T('2월,'),T('4월,'),T('여름 학기')];
 for(let i=0;i<5;i++){draw('#k3-g'+i,MT[i],0.4,'power2.out');pop('#k3-l'+i,MT[i]);
   if(i>0){tl.to('#k3-b'+i,{opacity:1,duration:0.5},MT[i]-0.1);kb('#k3-b'+i+' img',MT[i]-0.1,6,{s:1.0},{s:1.08});}}
@@ -306,10 +307,10 @@ SHORTS[5] = dict(
 R .full img{filter:saturate(.6)}
 R #k5-big{left:0;right:0;top:330px;text-align:center;font-size:130px;color:#e8b931;perspective:900px}
 R .st{position:absolute;left:90px;width:900px}
-R .bc{position:absolute;left:190px;width:700px;height:330px;padding:24px;display:flex;align-items:center;gap:30px}
+R .bc{position:absolute;left:130px;width:820px;height:330px;padding:24px;display:flex;align-items:center;gap:30px}
 R .bc .im{width:260px;height:260px;border-radius:16px;overflow:hidden;background:#fff;display:flex;align-items:center;justify-content:center;flex:none}
 R .bc .im img{max-width:100%;max-height:100%;object-fit:contain}
-R .bc .t{font-size:46px;line-height:1.25;width:330px}
+R .bc .t{font-size:44px;line-height:1.25;width:450px}
 R .g{width:460px;height:380px}
 """,
     bg="""        <div class="full" id="k5-b0"><img src="@P/town-04.jpg" alt="" /></div>
@@ -332,7 +333,7 @@ R .g{width:460px;height:380px}
           <div class="pill" id="k5-walk" style="left:330px;top:1270px;font-size:44px">걸어서 해결</div>""",
     js="""
 kb('#k5-b0 img',0,D,{s:1.0,x:-1},{s:1.12,x:1});
-tl.fromTo('#k5-big',{scale:1.6},{scale:1,duration:0.4,ease:'power4.in'},0);shake(0.4);
+tl.fromTo('#k5-big',{scale:1.25},{scale:1,duration:0.4,ease:'power4.in'},0);shake(0.4);
 inn('#k5-sub',0.5,{y:16});
 draw('#k5-map .mp-out',0.6,1.2);draw('#k5-map .mp-lake',0.9,1.0);inn('#k5-tor',1.2,{y:10});
 tl.fromTo('#k5-pin',{y:-240,opacity:0},{y:0,opacity:1,duration:0.6,ease:'bounce.out'},T('노스욕 중심가'));
@@ -351,11 +352,239 @@ pop('#k5-walk',T('걸어서'));
 """,
     sfx=[("impact", "0.4"), ("pop", "T('노스욕 중심가')+0.45"), ("whoosh", "T('지하철')"), ("pop", "T('학교에서 5분')"), ("impact", "T('대치동')+0.4"),
          ("pop", "T('큰 도서관')"), ("pop", "T('쇼핑몰')"), ("pop", "T('푸드코트')"), ("pop", "T('아트센터')")],
-    thumb=dict(photo="town-04", lines=[("토론토의", "#fff"), ("대치동", "#e8b931"), ("노스욕", "#fff")], pill="지하철역 앞 관리형 사립고 SGA"),
+    thumb=dict(photo="town-04", lines=[("토론토의", "#fff"), ("대치동", "#e8b931"), ("노스욕", "#fff")], pill="지하철역 가까운 관리형 사립고 SGA"),
     upload=dict(
         title="토론토의 대치동, 노스욕 | 토론토 관리형 사립고 SGA 위치",
         first="캐나다 조기유학 토론토 관리형 사립고 SGA는 토론토 북쪽 노스욕 중심가에 있습니다.",
         body="지하철 노스욕 센터역이 가까워서 겨울 통학도 편하고, 학교에서 5분에서 10분 거리에 토론토 공립교육청과 가톨릭교육청이 모두 있습니다. 옆에는 큰 도서관과 쇼핑몰, 푸드코트, 아트센터까지 걸어서 해결돼요.",
         note="※ 자료: SGA 홈페이지(2026년 10월 확인), 2026 SGA 공식 브로셔.",
         tags="#캐나다조기유학 #토론토조기유학 #토론토사립고 #노스욕 #관리형조기유학 #StGeorgeAcademy #AACanada #shorts"),
+)
+
+# ------------------------------------------------------------------ 4. "영어가 부족해도 시작할 수 있는 이유"
+bars4 = [("1교시", "9:30~12:00", "정규 수업", False), ("2교시", "12:40~3:10", "정규 수업", False), ("3교시", "3:15~4:45", "파운데이션", True)]
+bh4 = "".join(f'<div class="tb{" g" if g else ""}" id="k4-b{i}" style="top:{430 + i * 130}px"><span class="p">{a}</span><span class="tm">{b}</span><span class="k">{c}</span></div>'
+              for i, (a, b, c, g) in enumerate(bars4))
+mini4 = "".join(f'<div class="ms" id="k4-m{i}" style="left:{150 + i * 230}px;top:{1300 - (i + 1) * 80}px;height:{(i + 1) * 80}px">{n}</div>' for i, n in enumerate(["ESL C", "ESL D", "ESL E"]))
+SHORTS[4] = dict(
+    slug="foundation", title="영어가 부족해도 시작할 수 있는 이유", hook=1.8,
+    rows=[
+        ("영어가 아직 부족하다면 어떻게 할까요?", "영어가 아직 부족하다면 어떻게 할까요?"),
+        ("도착하자마자 영어로 수학, 과학 학점을 따라고 하면 버티기 어렵죠.", "도착하자마자 영어로 수학, 과학 학점을 따라고 하면 버티기 어렵죠."),
+        ("그래서 SGA에는 파운데이션 프로그램이 있습니다.", "그래서 에스지에이에는 파운데이션 프로그램이 있습니다."),
+        ("정규 수업 뒤 3교시에 아카데믹 라이팅과 파워 스피킹으로 쓰기와 말하기를 집중 훈련해요.",
+         "정규 수업 뒤 삼 교시에 아카데믹 라이팅과 파워 스피킹으로 쓰기와 말하기를 집중 훈련해요."),
+        ("학점 과목은 아니지만, 다음 영어 단계로 더 빨리 올라가는 데 도움이 됩니다.", "학점 과목은 아니지만, 다음 영어 단계로 더 빨리 올라가는 데 도움이 됩니다."),
+        ("등록 조건에 따라 무료로 들을 수 있으니 상담 때 꼭 확인해 보세요.", "등록 조건에 따라 무료로 들을 수 있으니 상담 때 꼭 확인해 보세요."),
+        ("카카오톡 canlog로 상담해 보세요.", "카카오톡 캔로그로 상담해 보세요."),
+    ],
+    keys=["파운데이션 프로그램", "3교시", "더 빨리", "무료", "canlog"],
+    photos=["exchange-01"], brand=["Oly_5", "Oly_2"],
+    css="""
+R .full img{filter:saturate(.55)}
+R #k4-q{left:0;right:0;top:300px;text-align:center;font-size:96px;color:#e8b931}
+R #k4-oly{left:310px;top:500px;width:460px;height:576px}
+R #k4-oly img,R #k4-oly2 img{width:100%;height:100%;object-fit:contain}
+R #k4-oly2{left:700px;top:930px;width:330px;height:430px}
+R #k4-t1{left:0;right:0;top:470px;text-align:center;font-size:120px;line-height:1.02}
+R .tb{position:absolute;left:70px;width:940px;height:110px;border-radius:18px;background:#f5efe3;color:#14254a;display:flex;align-items:center;padding:0 30px;gap:26px;font-weight:900;font-size:38px}
+R .tb.g{background:#e8b931}
+R .tb .p{width:110px}
+R .tb .tm{font-weight:700;font-size:34px;width:250px}
+R .ms{position:absolute;width:210px;border-radius:14px 14px 0 0;background:#f5efe3;color:#14254a;font-weight:900;font-size:34px;display:flex;justify-content:center;padding-top:14px}
+""",
+    bg="""        <div class="full" id="k4-ph" style="opacity:0"><img src="@P/exchange-01.jpg" alt="" /></div>
+        <div class="dim" style="opacity:.78"></div>""",
+    body=f"""
+          <div class="abs h" id="k4-q">영어가 부족하면?</div>
+          <div class="abs" id="k4-oly"><img src="@B/Oly_5.png" alt="" /></div>
+          <div class="chip" id="k4-c1" style="left:110px;top:1240px;font-size:34px">영어로 수학 학점</div>
+          <div class="chip" id="k4-c2" style="left:560px;top:1240px;font-size:34px">영어로 과학 학점</div>
+          <div class="chip red" id="k4-c3" style="left:330px;top:1100px;font-size:40px">버티기 어려움</div>
+          <div class="abs l gold" id="k4-k" style="left:0;right:0;top:400px;text-align:center;font-size:36px">SGA</div>
+          <div class="abs h" id="k4-t1">FOUNDATION PROGRAM</div>
+          <div class="abs hd gold" id="k4-t2" style="left:0;right:0;top:760px;text-align:center;font-size:58px">파운데이션 프로그램</div>
+          <div class="abs" id="k4-oly2"><img src="@B/Oly_2.png" alt="" /></div>
+          <div class="abs hd" id="k4-h" style="left:70px;top:340px;font-size:42px">하루 시간표</div>{bh4}
+          <div class="chip cream" id="k4-w" style="left:70px;top:830px;font-size:36px">아카데믹 라이팅</div>
+          <div class="chip cream" id="k4-s" style="left:450px;top:830px;font-size:36px">파워 스피킹</div>
+          <div class="chip" id="k4-nc" style="left:70px;top:940px;font-size:32px">학점 과목 아님</div>
+          <div class="abs" id="k4-mini" style="inset:0">{mini4}
+            <svg class="abs" style="left:250px;top:1000px;width:560px;height:220px" viewBox="0 0 560 220"><path id="k4-skip" d="M10 210 C 120 10, 420 -10, 540 140 M505 118 L542 144 L548 100" fill="none" stroke="#e8b931" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div class="abs hd gold" id="k4-up" style="left:560px;top:1000px;font-size:36px;white-space:nowrap">더 빨리</div></div>
+          <div class="pill" id="k4-free" style="left:300px;top:640px;font-size:56px;padding:20px 50px">조건에 따라 무료</div>
+          <div class="abs b" id="k4-note" style="left:0;right:0;top:760px;text-align:center;font-size:30px;color:rgba(255,255,255,.8)">무료 여부는 등록 학점 등 조건에 따라 다릅니다</div>""",
+    js="""
+tl.fromTo('#k4-oly',{scale:1.15,rotation:-4},{scale:1,rotation:0,duration:0.5,ease:'back.out(1.6)'},0);
+tl.fromTo('#k4-q',{scale:1.3},{scale:1,duration:0.4,ease:'power4.in'},0);shake(0.4);
+tl.to('#k4-oly',{y:-120,scale:0.8,duration:0.6,ease:'power2.inOut'},T('도착하자마자'));
+pop('#k4-c1',T('수학'));pop('#k4-c2',T('과학 학점'));stamp('#k4-c3',T('버티기 어렵죠'),-4);
+tl.to(['#k4-q','#k4-oly','#k4-c1','#k4-c2','#k4-c3'].map(s=>q(s)),{opacity:0,y:-60,duration:0.4,ease:'power2.in'},T('그래서 SGA에는')-0.35);
+inn('#k4-k',T('그래서 SGA에는'),{y:10});mask('#k4-t1',T('그래서 SGA에는')+0.2,0.8,'l');inn('#k4-t2',T('파운데이션 프로그램'),{y:14});
+tl.fromTo('#k4-oly2',{opacity:0,y:80},{opacity:1,y:0,duration:0.6,ease:'back.out(1.8)'},T('파운데이션 프로그램')+0.3);
+tl.to(['#k4-k','#k4-t1','#k4-t2'].map(s=>q(s)),{opacity:0,y:-40,duration:0.4,ease:'power2.in'},T('정규 수업 뒤')-0.35);
+tl.to('#k4-oly2',{opacity:0,duration:0.3},T('정규 수업 뒤')-0.35);
+tl.to('#k4-ph',{opacity:1,duration:0.8},T('정규 수업 뒤')-0.35);kb('#k4-ph img',T('정규 수업 뒤')-0.35,D,{s:1.0},{s:1.1});
+inn('#k4-h',T('정규 수업 뒤'),{y:10});grow('#k4-b0',T('정규 수업 뒤'),0.5);grow('#k4-b1',T('정규 수업 뒤')+0.3,0.5);
+grow('#k4-b2',T('3교시에'),0.6);tl.fromTo('#k4-b2',{scaleY:1},{scaleY:1.08,duration:0.3,yoyo:true,repeat:1,immediateRender:false},T('3교시에')+0.7);
+pop('#k4-w',T('아카데믹 라이팅'));pop('#k4-s',T('파워 스피킹'));
+pop('#k4-nc',T('학점 과목은'));
+grow(['#k4-m0','#k4-m1','#k4-m2'].map(s=>q(s)),T('다음 영어 단계로'),0.5,'50% 100%','y');
+draw('#k4-skip',T('더 빨리'),0.8);inn('#k4-up',T('더 빨리')+0.4,{y:10});
+tl.to(['#k4-h','#k4-b0','#k4-b1','#k4-b2','#k4-w','#k4-s','#k4-nc','#k4-mini'].map(s=>q(s)),{opacity:0,y:-40,duration:0.4,ease:'power2.in'},T('등록 조건에')-0.35);
+slam('#k4-free',T('무료로'));inn('#k4-note',T('상담 때'),{y:10});
+tl.fromTo('#k4-oly2',{opacity:0,y:80},{opacity:1,y:0,duration:0.6,ease:'back.out(1.8)',immediateRender:false},T('상담 때'));
+""",
+    sfx=[("pop", "0.0"), ("impact", "0.4"), ("pop", "T('수학')"), ("stamp", "T('버티기 어렵죠')+0.3"), ("whoosh", "T('그래서 SGA에는')+0.2"),
+         ("pop", "T('3교시에')"), ("pop", "T('아카데믹 라이팅')"), ("pop", "T('파워 스피킹')"), ("impact", "T('무료로')+0.42")],
+    thumb=dict(photo="exchange-01", lines=[("영어가", "#fff"), ("부족해도", "#e8b931"), ("시작하는 법", "#fff")], pill="파운데이션 프로그램 · 토론토 SGA"),
+    upload=dict(
+        title="영어가 부족해도 시작할 수 있는 이유 | 토론토 사립고 SGA 파운데이션",
+        first="캐나다 조기유학 토론토 관리형 사립고 SGA의 파운데이션 프로그램을 정리했습니다.",
+        body="도착하자마자 영어로 수학, 과학 학점을 따기는 어렵습니다. SGA는 정규 수업 뒤 3교시에 아카데믹 라이팅과 파워 스피킹으로 쓰기와 말하기를 집중 훈련해요. 학점 과목은 아니지만 다음 영어 단계로 더 빨리 올라가는 데 도움이 되고, 등록 조건에 따라 무료로 들을 수 있습니다.",
+        note="※ 무료 여부는 등록 학점 등 조건에 따라 다릅니다. 자료: 2026 SGA 공식 브로셔, AA Canada-SGA 미팅(2026년 3월).",
+        tags="#캐나다조기유학 #토론토조기유학 #토론토사립고 #관리형조기유학 #ESL #StGeorgeAcademy #AACanada #shorts"),
+)
+
+# ------------------------------------------------------------------ 6. "공부만 하는 학교가 아닙니다, SGA 1년 행사"
+# Only group / wide / back-view shots (face close-ups excluded until SGA confirms permissions).
+ev6 = [("ev-halloween-03", "가을 · 할로윈", "가을엔 할로윈"), ("ev-christmas-01", "겨울 · 크리스마스", "겨울엔 크리스마스"), ("ev-valentine-01", "2월 · 발렌타인", "2월엔 발렌타인"),
+       ("ev-easter-02", "봄 · 부활절", "봄엔 부활절"), ("ev-persian-01", "봄 · 페르시안 새해", "페르시안 새해"), ("ev-korean-01", "한국 축제", "한국 축제")]
+trips6 = [("trip-island-03", "센터 아일랜드", "센터 아일랜드"), ("trip-niagara-02", "나이아가라", "나이아가라"), ("trip-rom-01", "로열 온타리오 박물관", "로열 온타리오")]
+rot6 = [-4, 3, -3, 4, -2, 3, -3, 4, -2]
+cards6 = "".join(f'<div class="ph frame ev" id="k6-e{i}" style="left:{120 + (i % 2) * 30}px;top:{400 + (i % 3) * 20}px"><img src="@P/{n}.jpg" alt="" style="object-position:50% {"0" if "valentine" in n else "50"}%" /></div>'
+                 f'<div class="chip gold evl" id="k6-l{i}">{lab}</div>' for i, (n, lab, _) in enumerate(ev6 + trips6))
+SHORTS[6] = dict(
+    slug="events", title="공부만 하는 학교가 아닙니다, SGA 1년 행사", hook=2.4,
+    rows=[
+        ("공부만 하는 학교가 아닙니다.", "공부만 하는 학교가 아닙니다."),
+        ("가을엔 할로윈, 겨울엔 크리스마스, 2월엔 발렌타인, 봄엔 부활절과 페르시안 새해, 여름 전에는 한국 축제까지.",
+         "가을엔 할로윈, 겨울엔 크리스마스, 이월엔 발렌타인, 봄엔 부활절과 페르시안 새해, 여름 전에는 한국 축제까지."),
+        ("센터 아일랜드와 나이아가라, 로열 온타리오 박물관 현장학습도 있어요.", "센터 아일랜드와 나이아가라, 로열 온타리오 박물관 현장학습도 있어요."),
+        ("로보틱스와 과학 동아리도 있고, 노스욕에서 가장 큰 YMCA와 제휴돼 있어서 수영장과 체육관을 1년 내내 쓸 수 있어요.",
+         "로보틱스와 과학 동아리도 있고, 노스욕에서 가장 큰 와이엠씨에이와 제휴돼 있어서 수영장과 체육관을 일 년 내내 쓸 수 있어요."),
+        ("이런 활동 기록은 나중에 대학 에세이의 재료가 됩니다.", "이런 활동 기록은 나중에 대학 에세이의 재료가 됩니다."),
+        ("카카오톡 canlog로 상담해 보세요.", "카카오톡 캔로그로 상담해 보세요."),
+    ],
+    keys=["공부만 하는 학교", "현장학습", "YMCA", "대학 에세이", "canlog"],
+    photos=[n for n, _, _ in ev6 + trips6] + ["robotic-02", "ymca-01"], clips=["christmas-hall", "centre-island"],
+    vars={"__V1__": "T('겨울엔 크리스마스')+0.5", "__V2__": "T('센터 아일랜드')"},
+    css="""
+R .full img{filter:saturate(.6)}
+R .ev{width:840px;height:620px}
+R .evl{left:120px;top:1110px;font-size:40px}
+R #k6-h1{left:0;right:0;top:300px;text-align:center;font-size:84px}
+R .vid{position:absolute;left:60px;top:420px;width:960px;height:540px;border-radius:24px;overflow:hidden;box-shadow:0 24px 50px rgba(0,0,0,.4);border:6px solid #f5efe3;background:#0b1630}
+R .vid video{width:100%;height:100%;object-fit:cover;display:block}
+R .sq{width:480px;height:480px}
+""",
+    bg="""        <div class="full" id="k6-bg"><img src="@P/trip-island-03.jpg" alt="" /></div>
+        <div class="dim" style="opacity:.8"></div>""",
+    body=f"""
+          <div class="abs h" id="k6-h1">SGA의 <span class="gold">1년</span></div>
+          <div class="abs hd" id="k6-h2" style="left:0;right:0;top:310px;text-align:center;font-size:64px">현장학습</div>
+          <div class="vid" id="k6-v1"><video id="k6-cv1" src="assets/clips/christmas-hall.mp4" data-start="__V1__" data-duration="4.0" data-track-index="32" muted playsinline data-hf-media-start-basis="local"></video></div>
+          <div class="vid" id="k6-v2"><video id="k6-cv2" src="assets/clips/centre-island.mp4" data-start="__V2__" data-duration="4.0" data-track-index="33" muted playsinline data-hf-media-start-basis="local"></video></div>
+          {cards6}
+          <div class="ph frame sq" id="k6-r" style="left:60px;top:430px"><img src="@P/robotic-02.jpg" alt="" /><div class="lab">로보틱스 동아리</div></div>
+          <div class="ph frame sq" id="k6-y" style="left:540px;top:760px"><img src="@P/ymca-01.jpg" alt="" /><div class="lab">YMCA</div></div>
+          <div class="chip gold" id="k6-yc" style="left:60px;top:1290px;font-size:40px">수영장 · 체육관 1년 내내</div>
+          <div class="card" id="k6-es" style="left:110px;top:560px;width:860px;height:300px;display:flex;flex-direction:column;align-items:center;justify-content:center"><div class="hd" style="font-size:50px">활동 기록 =</div><div class="h red" style="font-size:96px;margin-top:8px;display:block">대학 에세이</div></div>""",
+    js="""
+kb('#k6-bg img',0,D,{s:1.0},{s:1.1});
+// hook: fast stack of the year
+const EV=qa('.ev'), EL=qa('.evl'), R6=[-4,3,-3,4,-2,3,-3,4,-2];
+tl.fromTo('#k6-h1',{scale:1.4},{scale:1,duration:0.4,ease:'power4.in'},0);shake(0.4);
+for(let i=0;i<6;i++){tl.fromTo(EV[i],{opacity:0},{opacity:1,duration:0.01},0.2+i*0.36);tl.fromTo(EV[i],{y:-260,rotation:R6[i]*2.5},{y:0,rotation:R6[i],duration:0.3,ease:'power3.out'},0.2+i*0.36);}
+tl.to(EV.slice(0,6),{opacity:0,duration:0.2},T('가을엔 할로윈')-0.25);
+// seasons in step with the narration
+const ET=[T('가을엔 할로윈'),T('겨울엔 크리스마스'),T('2월엔 발렌타인'),T('봄엔 부활절'),T('페르시안 새해'),T('한국 축제')];
+for(let i=0;i<6;i++){tl.to(EV[i],{opacity:1,duration:0.01},ET[i]);tl.fromTo(EV[i],{y:-300,rotation:R6[i]*2.4},{y:0,rotation:R6[i],duration:0.45,ease:'power3.out',immediateRender:false},ET[i]);
+  pop(EL[i],ET[i]+0.15);if(i<5){tl.to(EL[i],{opacity:0,duration:0.2},ET[i+1]);}}
+tl.to(['#k6-h1'].map(s=>q(s)),{opacity:0,duration:0.3},T('가을엔 할로윈')-0.3);
+// christmas clip between winter and february
+tl.fromTo('#k6-v1',{opacity:0,scale:0.9},{opacity:1,scale:1,duration:0.3},T('겨울엔 크리스마스')+0.5);tl.to('#k6-v1',{opacity:0,duration:0.15},T('2월엔 발렌타인')-0.15);
+tl.to(EV.slice(0,6).concat([EL[5]]),{opacity:0,y:-40,duration:0.35,ease:'power2.in'},T('센터 아일랜드')-0.35);
+inn('#k6-h2',T('센터 아일랜드'),{y:14});
+tl.fromTo('#k6-v2',{opacity:0,scale:0.9},{opacity:1,scale:1,duration:0.35},T('센터 아일랜드'));tl.to('#k6-v2',{opacity:0,duration:0.3},T('나이아가라')-0.2);
+const TT=[T('센터 아일랜드')+0.05,T('나이아가라'),T('로열 온타리오')];
+for(let i=6;i<9;i++){tl.fromTo(EV[i],{opacity:0},{opacity:1,duration:0.01},TT[i-6]);tl.fromTo(EV[i],{y:-300,rotation:R6[i]*2.4},{y:0,rotation:R6[i],duration:0.45,ease:'power3.out'},TT[i-6]);pop(EL[i],TT[i-6]+0.15);if(i<8)tl.to(EL[i],{opacity:0,duration:0.2},TT[i-5]);}
+tl.to(EV.slice(6).concat(EL.slice(6),[q('#k6-h2')]),{opacity:0,y:-40,duration:0.35,ease:'power2.in'},T('로보틱스')-0.35);
+flip('#k6-r',T('로보틱스'));flip('#k6-y',T('YMCA'));pop('#k6-yc',T('1년 내내'));
+tl.to(['#k6-r','#k6-y','#k6-yc'].map(s=>q(s)),{opacity:0,y:-40,duration:0.35,ease:'power2.in'},T('이런 활동')-0.35);
+inn('#k6-es',T('이런 활동'),{y:30,s:0.92});tl.fromTo('#k6-es .h',{opacity:0,scale:1.6},{opacity:1,scale:1,duration:0.42,ease:'power4.in'},T('대학 에세이'));shake(T('대학 에세이')+0.42);
+""",
+    sfx=[("impact", "0.4"), ("pop", "T('가을엔 할로윈')"), ("pop", "T('겨울엔 크리스마스')"), ("pop", "T('2월엔 발렌타인')"), ("pop", "T('봄엔 부활절')"),
+         ("pop", "T('페르시안 새해')"), ("pop", "T('한국 축제')"), ("whoosh", "T('센터 아일랜드')"), ("pop", "T('로보틱스')"), ("impact", "T('대학 에세이')+0.42")],
+    thumb=dict(photo="trip-island-03", lines=[("공부만", "#fff"), ("하는 학교가", "#fff"), ("아닙니다", "#e8b931")], pill="토론토 사립고 SGA의 1년 행사"),
+    upload=dict(
+        title="공부만 하는 학교가 아닙니다 | 토론토 사립고 SGA 1년 행사",
+        first="캐나다 토론토 사립고 SGA의 1년 학교 행사를 사진으로 정리했습니다.",
+        body="가을 할로윈, 겨울 크리스마스, 2월 발렌타인, 봄 부활절과 페르시안 새해, 한국 축제까지. 센터 아일랜드, 나이아가라, 로열 온타리오 박물관 현장학습과 로보틱스·과학 동아리, YMCA 제휴 수영장·체육관도 있습니다. 이런 활동 기록은 대학 에세이의 재료가 됩니다. 캐나다 조기유학, 토론토 관리형 사립고를 찾고 계신다면 참고해 보세요.",
+        note="※ 사진·영상: SGA 제공(2026년 10월). 행사와 현장학습은 해마다 달라질 수 있습니다.",
+        tags="#캐나다조기유학 #토론토조기유학 #토론토사립고 #캐나다고등학교 #학교행사 #StGeorgeAcademy #AACanada #shorts"),
+)
+
+# ------------------------------------------------------------------ 7. "레지던스 5곳, 어디에 살까"
+houses7 = "".join(f'<div class="ph frame hs" id="k7-h{i}" style="left:{70 + (i % 3) * 320}px;top:{430 + (i // 3) * 450}px"><img src="@B/res-h{i + 1}.jpg" alt="" /></div>' for i in range(5))
+rooms7 = [("res104-01", "외관"), ("res248-02", "식사 공간"), ("res248-01", "방"), ("res248-03", "주방"), ("res123-01", "거실")]
+SHORTS[7] = dict(
+    slug="residence", title="레지던스 5곳, 어디에 살까", hook=2.0,
+    rows=[
+        ("아이가 지낼 레지던스, 어떤 곳일까요?", "아이가 지낼 레지던스, 어떤 곳일까요?"),
+        ("SGA 레지던스는 학교에서 걸어서 다닐 수 있는 거리에 다섯 곳이 있고, 여학생 전용 하우스도 있습니다.",
+         "에스지에이 레지던스는 학교에서 걸어서 다닐 수 있는 거리에 다섯 곳이 있고, 여학생 전용 하우스도 있습니다."),
+        ("모든 레지던스에 사감 선생님이 상주하며 24시간 생활을 관리해요.", "모든 레지던스에 사감 선생님이 상주하며 이십사 시간 생활을 관리해요."),
+        ("식사는 하루 세 끼, 한식 메뉴도 자주 나오고 알레르기가 있으면 따로 챙겨 줍니다.", "식사는 하루 세 끼, 한식 메뉴도 자주 나오고 알레르기가 있으면 따로 챙겨 줍니다."),
+        ("방 타입은 신청 순서와 잔여 상황에 따라 배정됩니다.", "방 타입은 신청 순서와 잔여 상황에 따라 배정됩니다."),
+        ("카카오톡 canlog로 상담해 보세요.", "카카오톡 캔로그로 상담해 보세요."),
+    ],
+    keys=["다섯 곳", "여학생 전용", "24시간", "하루 세 끼", "canlog"],
+    photos=[n for n, _ in rooms7], brochure=["res-h1", "res-h2", "res-h3", "res-h4", "res-h5", "meals-grid"],
+    css="""
+R .full img{filter:saturate(.6)}
+R .hs{width:300px;height:420px}
+R #k7-cnt{left:0;right:0;top:300px;text-align:center}
+R .rm{width:940px;height:640px;left:70px;top:420px}
+R #k7-meal{left:70px;top:420px;width:940px;height:400px}
+""",
+    bg="""        <div class="full" id="k7-bg"><img src="@P/res104-01.jpg" alt="" /></div>
+        <div class="dim" style="opacity:.8"></div>""",
+    body=f"""
+          <div class="abs" id="k7-cnt"><span class="num gold" style="font-size:150px" id="k7-n">5</span><span class="hd" style="font-size:64px">곳</span></div>
+          {houses7}
+          <div class="chip cream" id="k7-c1" style="left:120px;top:1300px;font-size:38px">도보 통학</div>
+          <div class="chip cream" id="k7-c2" style="left:400px;top:1300px;font-size:38px">여학생 전용 하우스</div>
+          {''.join(f'<div class="ph frame rm" id="k7-r{i}"><img src="@P/{n}.jpg" alt="" /><div class="lab">{l}</div></div>' for i, (n, l) in enumerate(rooms7[1:]))}
+          <div class="pill" id="k7-24" style="left:250px;top:1120px;font-size:52px;padding:18px 44px">사감 24시간 상주</div>
+          <div class="ph frame" id="k7-meal"><img src="@B/meals-grid.jpg" alt="" /></div>
+          <div class="chip gold" id="k7-m1" style="left:90px;top:870px;font-size:38px">하루 3식</div>
+          <div class="chip cream" id="k7-m2" style="left:330px;top:870px;font-size:38px">한식 메뉴</div>
+          <div class="chip cream" id="k7-m3" style="left:610px;top:870px;font-size:38px">알레르기 맞춤</div>
+          <div class="card" id="k7-room" style="left:110px;top:560px;width:860px;height:300px;display:flex;flex-direction:column;align-items:center;justify-content:center"><div class="hd" style="font-size:50px">방 타입 배정</div><div class="h" style="font-size:68px;margin-top:12px">신청 순서 · <span class="red">잔여 상황</span></div></div>""",
+    js="""
+kb('#k7-bg img',0,D,{s:1.0},{s:1.1});
+slam('#k7-cnt',0.0,{s:1.6});odo('#k7-n',0.0,0.8);
+const H=['#k7-h0','#k7-h1','#k7-h2','#k7-h3','#k7-h4'].map(s=>q(s));
+tl.fromTo(H,{opacity:0,y:-140,rotation:(i)=>[-8,5,-4,7,-6][i]},{opacity:1,y:0,rotation:(i)=>[-3,2,-2,3,-2][i],duration:0.6,ease:'power3.out',stagger:0.15},0.3);
+pop('#k7-c1',T('걸어서'));pop('#k7-c2',T('여학생 전용'));
+tl.to(H.concat(['#k7-cnt','#k7-c1','#k7-c2'].map(s=>q(s))),{opacity:0,y:-40,duration:0.35,ease:'power2.in'},T('모든 레지던스에')-0.35);
+const RT=[T('모든 레지던스에'),T('사감 선생님이')+0.2,T('24시간'),T('생활을 관리해요')];
+for(let i=0;i<4;i++){if(i>0)tl.to('#k7-r'+(i-1),{opacity:0,duration:0.3},RT[i]+0.25);tl.fromTo('#k7-r'+i,{opacity:0,x:120,rotation:3},{opacity:1,x:0,rotation:(i%2?1.5:-1.5),duration:0.5,ease:'power3.out'},RT[i]);kb('#k7-r'+i+' img',RT[i],6,{s:1.0},{s:1.08});}
+pop('#k7-24',T('24시간'));
+tl.to(['#k7-r0','#k7-r1','#k7-r2','#k7-r3','#k7-24'].map(s=>q(s)),{opacity:0,y:-40,duration:0.35,ease:'power2.in'},T('식사는')-0.35);
+mask('#k7-meal',T('식사는'),0.8,'d');kb('#k7-meal img',T('식사는'),D,{s:1.0},{s:1.06});
+pop('#k7-m1',T('하루 세 끼'));pop('#k7-m2',T('한식 메뉴'));pop('#k7-m3',T('알레르기'));
+tl.to(['#k7-meal','#k7-m1','#k7-m2','#k7-m3'].map(s=>q(s)),{opacity:0,y:-40,duration:0.35,ease:'power2.in'},T('방 타입은')-0.35);
+inn('#k7-room',T('방 타입은'),{y:30,s:0.92});
+""",
+    sfx=[("impact", "0.4"), ("pop", "T('걸어서')"), ("pop", "T('여학생 전용')"), ("whoosh", "T('모든 레지던스에')"), ("pop", "T('24시간')"),
+         ("pop", "T('하루 세 끼')"), ("pop", "T('한식 메뉴')"), ("pop", "T('알레르기')")],
+    thumb=dict(photo="res104-01", lines=[("레지던스", "#fff"), ("5곳,", "#e8b931"), ("어디에 살까", "#fff")], pill="사감 24시간 상주 · 토론토 SGA"),
+    upload=dict(
+        title="레지던스 5곳, 어디에 살까 | 토론토 사립고 SGA 레지던스",
+        first="캐나다 조기유학 토론토 관리형 사립고 SGA의 학생 레지던스를 정리했습니다.",
+        body="SGA 레지던스는 학교에서 걸어서 다닐 수 있는 거리에 다섯 곳이 있고, 여학생 전용 하우스도 있습니다. 모든 레지던스에 사감 선생님이 상주하며 24시간 생활을 관리하고, 식사는 하루 세 끼(한식 메뉴, 알레르기 맞춤)가 나옵니다. 방 타입은 신청 순서와 잔여 상황에 따라 배정됩니다.",
+        note="※ 자료: 2026 SGA 공식 브로셔(레지던스 5곳). 식사는 격주 일요일 저녁 제외. 사진은 레지던스 일부입니다.",
+        tags="#캐나다조기유학 #토론토조기유학 #토론토사립고 #홈스테이 #레지던스 #StGeorgeAcademy #AACanada #shorts"),
 )
