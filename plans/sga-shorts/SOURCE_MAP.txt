@@ -1,0 +1,57 @@
+campus-01.jpg <- School Photos\Campus Photos\IMG_9535.JPG
+campus-02.jpg <- School Photos\Campus Photos\IMG_9526.JPG
+campus-03.jpg <- School Photos\Campus Photos\IMG_9528.JPG
+campus-04.jpg <- School Photos\Campus Photos\classroom2.jpg
+town-01.jpg <- School Photos\North York Centre Area\IMG_1355.JPG
+town-02.jpg <- School Photos\North York Centre Area\IMG_1323.JPG
+town-03.jpg <- School Photos\North York Centre Area\IMG_1371.JPG
+town-04.jpg <- School Photos\North York Centre Area\IMG_1356.JPG
+res104-01.jpg <- Residence Photos\104 Hollywood\104 Hollywood House.JPG
+res104-02.jpg <- Residence Photos\104 Hollywood\104 Hollywood F1 (1).jpg
+res123-01.jpg <- Residence Photos\123 Elmwood\IMG_6933.JPG
+res123-02.jpg <- Residence Photos\123 Elmwood\123 Elmwood - F1.jpeg
+res248-01.jpg <- Residence Photos\248 Elmwood\248 Elmwood F2.JPG
+res248-02.jpg <- Residence Photos\248 Elmwood\IMG_6947.JPG
+res248-03.jpg <- Residence Photos\248 Elmwood\IMG_6944.JPG
+grad-01.jpg <- Student Activity Photos\Graduation Ceremony\IMG_4465.JPG
+grad-02.jpg <- Student Activity Photos\Graduation Ceremony\IMG_4433.JPG
+grad-03.jpg <- Student Activity Photos\Graduation Ceremony\IMG_4449.JPG
+ymca-01.jpg <- Student Activity Photos\YMCA\YMCA5.JPG
+ymca-02.jpg <- Student Activity Photos\YMCA\YMCA2.JPG
+robotic-01.jpg <- Student Activity Photos\Clubs\Robotic\IMG_2719.JPG
+robotic-02.jpg <- Student Activity Photos\Clubs\Robotic\IMG_2736.JPG
+science-01.jpg <- Student Activity Photos\Clubs\Science\IMG_3123.JPG
+science-02.jpg <- Student Activity Photos\Clubs\Science\IMG_3131.JPG
+exchange-01.jpg <- Student Activity Photos\Clubs\Student Exchange Club\Student Exchange Club.jpg
+exchange-02.jpg <- Student Activity Photos\Clubs\Student Exchange Club\Student Exchange Club(2).jpg
+trip-island-01.jpg <- Student Activity Photos\Field Trip\Centre Island 2025\IMG_4991.JPG
+trip-island-02.jpg <- Student Activity Photos\Field Trip\Centre Island 2025\IMG_4798.JPG
+trip-island-03.jpg <- Student Activity Photos\Field Trip\Centre Island 2025\IMG_4745.JPG
+trip-niagara-01.jpg <- Student Activity Photos\Field Trip\Niagara Fall School\IMG_0387.JPG
+trip-niagara-02.jpg <- Student Activity Photos\Field Trip\Niagara Fall School\IMG_0453.JPG
+trip-niagara-03.jpg <- Student Activity Photos\Field Trip\Niagara Fall School\IMG_0442.JPG
+trip-rom-01.jpg <- Student Activity Photos\Field Trip\ROM 2025\IMG_6825.jpeg
+trip-rom-02.jpg <- Student Activity Photos\Field Trip\ROM 2025\IMG_6661.jpeg
+trip-autumn-01.jpg <- Student Activity Photos\Field Trip\Autumn Leaves 2026\IMG_5931.JPG
+trip-autumn-02.jpg <- Student Activity Photos\Field Trip\Autumn Leaves 2026\IMG_5882.JPG
+trip-autumn-03.jpg <- Student Activity Photos\Field Trip\Autumn Leaves 2026\IMG_5810.JPG
+trip-aquarium-01.jpg <- Student Activity Photos\Field Trip\Aquarium 2026\IMG_5524.JPG
+trip-aquarium-02.jpg <- Student Activity Photos\Field Trip\Aquarium 2026\IMG_5526.JPG
+trip-wonderland-01.jpg <- Student Activity Photos\Field Trip\Wonderland 2025\IMG_4254.JPG
+trip-wonderland-02.jpg <- Student Activity Photos\Field Trip\Wonderland 2025\IMG_4256.JPG
+ev-christmas-01.jpg <- Student Activity Photos\School Events\Christmas\IMG_2618.JPG
+ev-christmas-02.jpg <- Student Activity Photos\School Events\Christmas\IMG_2648.JPG
+ev-christmas-03.jpg <- Student Activity Photos\School Events\Christmas\IMG_4910.JPG
+ev-halloween-01.jpg <- Student Activity Photos\School Events\Halloween\IMG_9133.JPG
+ev-halloween-02.jpg <- Student Activity Photos\School Events\Halloween\IMG_8660.JPG
+ev-halloween-03.jpg <- Student Activity Photos\School Events\Halloween\IMG_8673.JPG
+ev-easter-01.jpg <- Student Activity Photos\School Events\Easter\IMG_9123.JPG
+ev-easter-02.jpg <- Student Activity Photos\School Events\Easter\IMG_9130.JPG
+ev-valentine-01.jpg <- Student Activity Photos\School Events\Valentine\IMG_4158.jpeg
+ev-valentine-02.jpg <- Student Activity Photos\School Events\Valentine\IMG_4234.jpeg
+ev-persian-01.jpg <- Student Activity Photos\School Events\Persian New Year\IMG_7775.jpg
+ev-persian-02.jpg <- Student Activity Photos\School Events\Persian New Year\IMG_7770.jpg
+ev-korean-01.jpg <- Student Activity Photos\School Events\Korean Festival\PXL_20260821_180604461.MP.jpg
+ev-korean-02.jpg <- Student Activity Photos\School Events\Korean Festival\Image (12).jpg
+ev-election-01.jpg <- Student Activity Photos\School Events\Election Day\IMG_2177.JPG
+ev-election-02.jpg <- Student Activity Photos\School Events\Election Day\IMG_2197.JPG
