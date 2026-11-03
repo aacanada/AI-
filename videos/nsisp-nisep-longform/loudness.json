@@ -1,0 +1,40 @@
+{
+ "final_gain_db": 0.0,
+ "narration_per_scene_normalised_target": -16.0,
+ "narration_alone_normalised": {
+  "I": -16.0,
+  "LRA": 3.3,
+  "TP": -1.0
+ },
+ "narration_alone_in_final": {
+  "I": -16.0,
+  "LRA": 3.3,
+  "TP": -1.0
+ },
+ "bgm_alone_in_final": {
+  "I": -34.9,
+  "LRA": 3.8,
+  "TP": -18.4
+ },
+ "bgm_under_voice_in_final": {
+  "I": -35.0,
+  "LRA": 4.2,
+  "TP": -21.0
+ },
+ "sfx_alone_in_final": {
+  "I": -28.3,
+  "LRA": 17.8,
+  "TP": -21.0
+ },
+ "final_mix": {
+  "I": -16.0,
+  "LRA": 3.2,
+  "TP": -2.0
+ },
+ "narration_minus_bgm_under_voice_dB": 19.0,
+ "video_mp4_audio": {
+  "I": -16.0,
+  "LRA": 3.2,
+  "TP": -1.8
+ }
+}

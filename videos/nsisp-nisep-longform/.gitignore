@@ -9,3 +9,4 @@ __pycache__/
 assets/voice/*.wav
 assets/face/
 assets/voice/*.mp3
+!/video_part*.mp4

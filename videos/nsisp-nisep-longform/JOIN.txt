@@ -1,0 +1,10 @@
+video.mp4 (106.3 MB)는 GitHub 100MB 제한 때문에 ffmpeg -c copy로 두 파일로 나눴습니다 (재인코딩 없음, 각 파일 단독 재생 가능).
+  video_part1.mp4  0:00 ~ 2:38
+  video_part2.mp4  2:38 ~ 5:16
+
+합치기 (ffmpeg, 재인코딩 없음):
+  ffmpeg -f concat -safe 0 -i concat.txt -c copy video.mp4
+
+확인: sha256sum -c video.sha256 --ignore-missing
+  (part1/part2 해시 일치 확인. 마지막 줄 video.mp4는 분할 전 원본의 해시이며, concat으로 다시 합친 파일은
+   컨테이너 헤더가 달라 해시가 다를 수 있습니다. 합친 영상 길이 316.1초, 화면·소리는 동일)
