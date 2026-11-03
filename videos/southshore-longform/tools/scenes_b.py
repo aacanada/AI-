@@ -202,7 +202,7 @@ SCHOOLS = [  # key, cue, next cue, clips, card
     ("centennial", "T('그린필드파크의 센테니얼')", "T('생랑베르 인터내셔널은')",
      ["cen-sign", "cen-atrium", "cen-lab", "cen-stage", "cen-library"],
      dict(name="센테니얼", en="Centennial Regional HS", area="그린필드파크", size="학생 약 1,100명",
-          chips=["영재반 TaG"], fit="Fraser 2025 · 리버사이드 4개교 중 점수 1위")),
+          chips=["영재반 TaG"], fit="영재 프로그램 TaG가 있는 학교")),
     ("sli", "T('생랑베르 인터내셔널은')", "T('마지막으로 생장쉬르리슐리외')",
      ["sli-sign", "sli-library", "sli-garden", "sli-gym", "sli-music"],
      dict(name="생랑베르 인터내셔널", en="Saint-Lambert International HS", area="생랑베르", size="학생 약 400명",
