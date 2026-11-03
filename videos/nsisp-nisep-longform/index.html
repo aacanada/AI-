@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="assets/vendor/gsap.min.js"></script>
+    <style>
+@font-face{font-family:Pretendard;font-weight:500;src:url(assets/fonts/Pretendard-Medium.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:700;src:url(assets/fonts/Pretendard-Bold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:800;src:url(assets/fonts/Pretendard-ExtraBold.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:900;src:url(assets/fonts/Pretendard-Black.woff2) format("woff2")}
+
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: #0a1c30; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: #0a1c30; font-family: Pretendard, sans-serif; }
+      [data-composition-id="root"] > div[data-composition-src] { position: absolute; inset: 0; }
+      .face { position: absolute; inset: 0; width: 1920px; height: 1080px; object-fit: cover; z-index: 1; }
+      #face9 { z-index: 19; }
+      #el-s09 { z-index: 20 !important; }
+      .brand { position: absolute; left: 44px; top: 32px; z-index: 300; display: flex; align-items: center; gap: 14px; padding: 6px 24px 6px 6px; border-radius: 99px; background: rgba(7,19,31,.80); color: #f5f0e6; font-weight: 900; font-size: 26px; letter-spacing: .08em; }
+      .brand:before { content: ''; display: block; width: 52px; height: 50px; border-radius: 50%; background: #fff url(assets/img/aa-canada-logo-transparent.png) center/52px 50px no-repeat; }
+      .chpill { position: absolute; right: 48px; top: 36px; z-index: 300; display: flex; align-items: center; gap: 12px; padding: 8px 24px 8px 10px; border-radius: 99px; background: rgba(7,19,31,.80); border: 2px solid rgba(245,240,230,.28); color: #f5f0e6; font-weight: 800; font-size: 26px; }
+      .chpill i { display: none; }
+      .chpill span { display: flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: #2fb5a5; color: #07131f; font-weight: 900; font-size: 22px; }
+      .cap { position: absolute; left: 0; right: 0; top: 884px; height: 100px; z-index: 310; display: flex; justify-content: center; align-items: center; }
+      .cap span { display: inline-block; background: rgba(5,14,24,.82); color: #fff; font-weight: 700; font-size: 50px; line-height: 1.3; padding: 12px 36px; border-radius: 16px; white-space: nowrap; }
+      .cap b { color: #f2c14e; font-weight: 800; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="root" data-width="1920" data-height="1080" data-duration="316.128">
+      <video id="face1" class="clip face" src="assets/face/S1_face.mp4" muted playsinline data-start="0" data-duration="29.2" data-track-index="0"></video>
+      <video id="face9" class="clip face" src="assets/face/S9_face.mp4" muted playsinline data-start="283.061" data-duration="30.066667" data-track-index="0"></video>
+      <div id="el-s01" style="z-index:11" data-composition-id="s01" data-composition-src="compositions/s01.html" data-start="0.0" data-duration="29.2" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <div id="el-s02" style="z-index:12" data-composition-id="s02" data-composition-src="compositions/s02.html" data-start="28.8" data-duration="36.766" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="el-s03" style="z-index:13" data-composition-id="s03" data-composition-src="compositions/s03.html" data-start="65.166" data-duration="27.258" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <div id="el-s04" style="z-index:14" data-composition-id="s04" data-composition-src="compositions/s04.html" data-start="92.024" data-duration="25.821" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="el-s05" style="z-index:15" data-composition-id="s05" data-composition-src="compositions/s05.html" data-start="117.445" data-duration="64.456" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <div id="el-s06" style="z-index:16" data-composition-id="s06" data-composition-src="compositions/s06.html" data-start="181.501" data-duration="47.659" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="el-s07" style="z-index:17" data-composition-id="s07" data-composition-src="compositions/s07.html" data-start="228.76" data-duration="31.019" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <div id="el-s08" style="z-index:18" data-composition-id="s08" data-composition-src="compositions/s08.html" data-start="259.379" data-duration="24.082" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="el-s09" style="z-index:19" data-composition-id="s09" data-composition-src="compositions/s09.html" data-start="283.061" data-duration="30.067" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <div id="el-end" style="z-index:30" data-composition-id="end" data-composition-src="compositions/end.html" data-start="312.728" data-duration="3.4" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="brand" class="clip brand" data-start="0" data-duration="312.728" data-track-index="5">AA CANADA</div>
+      <div id="pill-2" class="clip chpill" data-start="29.2" data-duration="36.366" data-track-index="6"><i></i><span>1</span>두 프로그램은 어떤 곳인가</div>
+      <div id="pill-3" class="clip chpill" data-start="65.566" data-duration="26.858" data-track-index="6"><i></i><span>2</span>학교 배정</div>
+      <div id="pill-4" class="clip chpill" data-start="92.424" data-duration="25.421" data-track-index="6"><i></i><span>3</span>유학생 비율</div>
+      <div id="pill-5" class="clip chpill" data-start="117.845" data-duration="64.056" data-track-index="6"><i></i><span>4</span>비용</div>
+      <div id="pill-6" class="clip chpill" data-start="181.901" data-duration="47.259" data-track-index="6"><i></i><span>5</span>홈스테이 관리</div>
+      <div id="pill-7" class="clip chpill" data-start="229.16" data-duration="30.619" data-track-index="6"><i></i><span>6</span>졸업장과 대학</div>
+      <div id="pill-8" class="clip chpill" data-start="259.779" data-duration="23.282" data-track-index="6"><i></i><span>7</span>우리 아이에게 맞는 곳</div>
+      <audio id="vo-s1" src="assets/voice/S1.wav" data-start="0.0" data-duration="29.2" data-track-index="10" data-volume="1"></audio>
+      <audio id="vo-s2" src="assets/voice/S2.wav" data-start="29.7" data-duration="35.866122" data-track-index="10" data-volume="1"></audio>
+      <audio id="vo-s3" src="assets/voice/S3.wav" data-start="66.066" data-duration="26.357551" data-track-index="10" data-volume="1"></audio>
+      <audio id="vo-s4" src="assets/voice/S4.wav" data-start="92.924" data-duration="24.920816" data-track-index="10" data-volume="1"></audio>
+      <audio id="vo-s5" src="assets/voice/S5.wav" data-start="118.345" data-duration="63.555918" data-track-index="10" data-volume="1"></audio>
+      <audio id="vo-s6" src="assets/voice/S6.wav" data-start="182.401" data-duration="46.759184" data-track-index="10" data-volume="1"></audio>
+      <audio id="vo-s7" src="assets/voice/S7.wav" data-start="229.66" data-duration="30.119184" data-track-index="10" data-volume="1"></audio>
+      <audio id="vo-s8" src="assets/voice/S8.wav" data-start="260.279" data-duration="22.282449" data-track-index="10" data-volume="1"></audio>
+      <audio id="vo-s9" src="assets/voice/S9.wav" data-start="283.061" data-duration="30.066667" data-track-index="10" data-volume="1"></audio>
+      <div id="cap-000" class="clip cap" data-start="0.060" data-duration="1.980" data-track-index="20"><span>캐나다 조기유학 알아보시면</span></div>
+      <div id="cap-001" class="clip cap" data-start="2.060" data-duration="3.100" data-track-index="20"><span><b>NSISP</b>, 노바스코샤 프로그램</span></div>
+      <div id="cap-002" class="clip cap" data-start="5.180" data-duration="1.480" data-track-index="20"><span>많이 들어보셨죠?</span></div>
+      <div id="cap-003" class="clip cap" data-start="6.680" data-duration="1.880" data-track-index="20"><span>주 정부가 학교와 홈스테이를</span></div>
+      <div id="cap-004" class="clip cap" data-start="8.580" data-duration="1.540" data-track-index="20"><span>한 번에 맡아 주니까,</span></div>
+      <div id="cap-005" class="clip cap" data-start="10.140" data-duration="1.980" data-track-index="20"><span>처음 알아보시는 부모님들이</span></div>
+      <div id="cap-006" class="clip cap" data-start="12.140" data-duration="1.600" data-track-index="20"><span>먼저 찾는 곳입니다.</span></div>
+      <div id="cap-007" class="clip cap" data-start="13.760" data-duration="2.700" data-track-index="20"><span>그런데 바로 옆 뉴펀들랜드에도</span></div>
+      <div id="cap-008" class="clip cap" data-start="16.480" data-duration="2.040" data-track-index="20"><span>같은 방식의 프로그램이 있습니다.</span></div>
+      <div id="cap-009" class="clip cap" data-start="18.540" data-duration="3.240" data-track-index="20"><span>이름은 <b>NISEP</b>입니다.</span></div>
+      <div id="cap-010" class="clip cap" data-start="21.800" data-duration="1.920" data-track-index="20"><span>오늘은 이 두 프로그램을</span></div>
+      <div id="cap-011" class="clip cap" data-start="23.740" data-duration="3.320" data-track-index="20"><span>학교, 홈스테이, 비용, 졸업 조건까지</span></div>
+      <div id="cap-012" class="clip cap" data-start="27.080" data-duration="2.210" data-track-index="20"><span>나란히 놓고 비교해 드리겠습니다.</span></div>
+      <div id="cap-013" class="clip cap" data-start="29.760" data-duration="1.940" data-track-index="20"><span>두 곳 모두 캐나다 동쪽</span></div>
+      <div id="cap-014" class="clip cap" data-start="31.720" data-duration="2.040" data-track-index="20"><span><b>대서양 연안</b>에 있습니다.</span></div>
+      <div id="cap-015" class="clip cap" data-start="33.780" data-duration="3.200" data-track-index="20"><span>NSISP는 노바스코샤 주 프로그램으로,</span></div>
+      <div id="cap-016" class="clip cap" data-start="37.000" data-duration="2.500" data-track-index="20"><span>여러 지역 교육청이 함께 참여하고</span></div>
+      <div id="cap-017" class="clip cap" data-start="39.520" data-duration="3.200" data-track-index="20"><span><b>65개 학교</b>에서 유학생을 받습니다.</span></div>
+      <div id="cap-018" class="clip cap" data-start="42.740" data-duration="2.919" data-track-index="20"><span>NISEP은 뉴펀들랜드 래브라도주의</span></div>
+      <div id="cap-019" class="clip cap" data-start="45.679" data-duration="1.361" data-track-index="20"><span>프로그램입니다.</span></div>
+      <div id="cap-020" class="clip cap" data-start="47.060" data-duration="2.580" data-track-index="20"><span>이 주에는 영어 교육청이 하나뿐이라,</span></div>
+      <div id="cap-021" class="clip cap" data-start="49.660" data-duration="1.240" data-track-index="20"><span>공립학교 유학은</span></div>
+      <div id="cap-022" class="clip cap" data-start="50.920" data-duration="2.560" data-track-index="20"><span>NISEP 한 곳에서 맡습니다.</span></div>
+      <div id="cap-023" class="clip cap" data-start="53.500" data-duration="3.080" data-track-index="20"><span>고등학교 약 <b>30곳</b>, 중학교 약 <b>20곳</b>이</span></div>
+      <div id="cap-024" class="clip cap" data-start="56.600" data-duration="1.160" data-track-index="20"><span>참여합니다.</span></div>
+      <div id="cap-025" class="clip cap" data-start="57.780" data-duration="2.880" data-track-index="20"><span>두 곳 모두 7학년부터 12학년,</span></div>
+      <div id="cap-026" class="clip cap" data-start="60.680" data-duration="2.720" data-track-index="20"><span>만 12세부터 18세까지 받고,</span></div>
+      <div id="cap-027" class="clip cap" data-start="63.420" data-duration="2.170" data-track-index="20"><span><b>9월과 2월</b>에 입학합니다.</span></div>
+      <div id="cap-028" class="clip cap" data-start="66.166" data-duration="3.420" data-track-index="20"><span>부모님들이 많이 물어보시는 부분입니다.</span></div>
+      <div id="cap-029" class="clip cap" data-start="69.606" data-duration="2.320" data-track-index="20"><span><b>학교를 고를 수 있느냐.</b></span></div>
+      <div id="cap-030" class="clip cap" data-start="71.946" data-duration="4.180" data-track-index="20"><span>NSISP는 배치 지역을 NSISP가 정하고,</span></div>
+      <div id="cap-031" class="clip cap" data-start="76.146" data-duration="1.020" data-track-index="20"><span>1년이 지나면</span></div>
+      <div id="cap-032" class="clip cap" data-start="77.186" data-duration="2.560" data-track-index="20"><span><b>지역 변경</b>을 신청할 수 있습니다.</span></div>
+      <div id="cap-033" class="clip cap" data-start="79.766" data-duration="2.700" data-track-index="20"><span>NISEP은 특정 학교를 희망한다고</span></div>
+      <div id="cap-034" class="clip cap" data-start="82.486" data-duration="1.560" data-track-index="20"><span><b>요청</b>할 수 있습니다.</span></div>
+      <div id="cap-035" class="clip cap" data-start="84.066" data-duration="2.020" data-track-index="20"><span>도시 학교와 시골 학교 중에서도</span></div>
+      <div id="cap-036" class="clip cap" data-start="86.106" data-duration="1.500" data-track-index="20"><span>고를 수 있습니다.</span></div>
+      <div id="cap-037" class="clip cap" data-start="87.626" data-duration="1.360" data-track-index="20"><span>원하는 동네나 학교가</span></div>
+      <div id="cap-038" class="clip cap" data-start="89.006" data-duration="1.360" data-track-index="20"><span>분명한 가정이라면,</span></div>
+      <div id="cap-039" class="clip cap" data-start="90.386" data-duration="2.270" data-track-index="20"><span>이 차이를 먼저 보시면 됩니다.</span></div>
+      <div id="cap-040" class="clip cap" data-start="93.044" data-duration="2.140" data-track-index="20"><span>영어 환경도 중요하시죠.</span></div>
+      <div id="cap-041" class="clip cap" data-start="95.204" data-duration="3.480" data-track-index="20"><span>NSISP는 한 학교에 같은 나라 학생을</span></div>
+      <div id="cap-042" class="clip cap" data-start="98.704" data-duration="2.520" data-track-index="20"><span>최대 <b>7명</b>까지만 받습니다.</span></div>
+      <div id="cap-043" class="clip cap" data-start="101.244" data-duration="2.720" data-track-index="20"><span>NISEP은 한 학교 유학생을</span></div>
+      <div id="cap-044" class="clip cap" data-start="103.984" data-duration="3.300" data-track-index="20"><span>전교생의 <b>2.5% 이하</b>로 둡니다.</span></div>
+      <div id="cap-045" class="clip cap" data-start="107.304" data-duration="1.820" data-track-index="20"><span>학생이 400명인 학교라면</span></div>
+      <div id="cap-046" class="clip cap" data-start="109.144" data-duration="2.480" data-track-index="20"><span>유학생은 <b>10명 안팎</b>입니다.</span></div>
+      <div id="cap-047" class="clip cap" data-start="111.644" data-duration="1.400" data-track-index="20"><span>두 곳 모두 유학생이</span></div>
+      <div id="cap-048" class="clip cap" data-start="113.064" data-duration="1.740" data-track-index="20"><span>몰리지 않게 관리하고,</span></div>
+      <div id="cap-049" class="clip cap" data-start="114.824" data-duration="1.540" data-track-index="20"><span>캐나다 학생들 사이에서</span></div>
+      <div id="cap-050" class="clip cap" data-start="116.384" data-duration="1.630" data-track-index="20"><span><b>영어로 생활</b>하게 됩니다.</span></div>
+      <div id="cap-051" class="clip cap" data-start="118.385" data-duration="1.960" data-track-index="20"><span>이제 비용입니다.</span></div>
+      <div id="cap-052" class="clip cap" data-start="120.365" data-duration="4.440" data-track-index="20"><span>NISEP 2026-27학년도 1년 비용은</span></div>
+      <div id="cap-053" class="clip cap" data-start="124.825" data-duration="3.700" data-track-index="20"><span>캐나다 달러로 <b>21,950달러</b>입니다.</span></div>
+      <div id="cap-054" class="clip cap" data-start="128.545" data-duration="1.840" data-track-index="20"><span>학비 9,500달러,</span></div>
+      <div id="cap-055" class="clip cap" data-start="130.405" data-duration="2.920" data-track-index="20"><span>10개월 홈스테이 10,850달러,</span></div>
+      <div id="cap-056" class="clip cap" data-start="133.345" data-duration="1.740" data-track-index="20"><span>의료보험 700달러,</span></div>
+      <div id="cap-057" class="clip cap" data-start="135.105" data-duration="3.220" data-track-index="20"><span>그리고 지원비, 행정비, 오리엔테이션 비용이</span></div>
+      <div id="cap-058" class="clip cap" data-start="138.345" data-duration="1.900" data-track-index="20"><span>모두 들어간 금액입니다.</span></div>
+      <div id="cap-059" class="clip cap" data-start="140.265" data-duration="1.620" data-track-index="20"><span><b>공항 픽업</b>이 포함되고,</span></div>
+      <div id="cap-060" class="clip cap" data-start="141.905" data-duration="3.280" data-track-index="20"><span>법적 보호자도 NISEP 디렉터가 맡기 때문에</span></div>
+      <div id="cap-061" class="clip cap" data-start="145.205" data-duration="2.420" data-track-index="20"><span>따로 <b>가디언 비용이 없습니다.</b></span></div>
+      <div id="cap-062" class="clip cap" data-start="147.645" data-duration="3.620" data-track-index="20"><span>2027-28학년도는 홈스테이가 조금 올라</span></div>
+      <div id="cap-063" class="clip cap" data-start="151.285" data-duration="2.740" data-track-index="20"><span><b>22,450달러</b>입니다.</span></div>
+      <div id="cap-064" class="clip cap" data-start="154.045" data-duration="2.220" data-track-index="20"><span>NSISP는 공식 홈페이지에</span></div>
+      <div id="cap-065" class="clip cap" data-start="156.285" data-duration="1.780" data-track-index="20"><span>금액을 공개하지 않습니다.</span></div>
+      <div id="cap-066" class="clip cap" data-start="158.085" data-duration="1.440" data-track-index="20"><span>그래서 유학원마다</span></div>
+      <div id="cap-067" class="clip cap" data-start="159.545" data-duration="2.640" data-track-index="20"><span>안내받는 금액이 다를 수 있습니다.</span></div>
+      <div id="cap-068" class="clip cap" data-start="162.205" data-duration="2.640" data-track-index="20"><span>NISEP은 <b>공식 가격표</b>가 있고,</span></div>
+      <div id="cap-069" class="clip cap" data-start="164.865" data-duration="3.320" data-track-index="20"><span>AA Canada는 이 금액을 그대로 안내해 드립니다.</span></div>
+      <div id="cap-070" class="clip cap" data-start="168.205" data-duration="2.080" data-track-index="20"><span>그 위에 <b>수속비나 추가 금액</b>을</span></div>
+      <div id="cap-071" class="clip cap" data-start="170.305" data-duration="1.580" data-track-index="20"><span>붙이지 않습니다.</span></div>
+      <div id="cap-072" class="clip cap" data-start="171.905" data-duration="2.860" data-track-index="20"><span>입학 수속, 학생비자 신청, 출국 준비는</span></div>
+      <div id="cap-073" class="clip cap" data-start="174.785" data-duration="1.000" data-track-index="20"><span><b>무료</b>이고,</span></div>
+      <div id="cap-074" class="clip cap" data-start="175.805" data-duration="2.500" data-track-index="20"><span>추가 비용은 부모님이 원하실 때 고르는</span></div>
+      <div id="cap-075" class="clip cap" data-start="178.325" data-duration="1.580" data-track-index="20"><span>관리 프로그램뿐입니다.</span></div>
+      <div id="cap-076" class="clip cap" data-start="179.925" data-duration="2.110" data-track-index="20"><span>이 금액도 <b>미리 공개</b>합니다.</span></div>
+      <div id="cap-077" class="clip cap" data-start="182.501" data-duration="2.120" data-track-index="20"><span>아이 혼자 보내는 유학에서</span></div>
+      <div id="cap-078" class="clip cap" data-start="184.641" data-duration="2.760" data-track-index="20"><span>걱정되는 건 <b>홈스테이</b>입니다.</span></div>
+      <div id="cap-079" class="clip cap" data-start="187.421" data-duration="3.340" data-track-index="20"><span>NISEP 홈스테이 가정은</span></div>
+      <div id="cap-080" class="clip cap" data-start="190.781" data-duration="2.940" data-track-index="20"><span>지원서, 인터뷰, 가정 방문을 거쳐</span></div>
+      <div id="cap-081" class="clip cap" data-start="193.741" data-duration="1.280" data-track-index="20"><span><b>선발</b>됩니다.</span></div>
+      <div id="cap-082" class="clip cap" data-start="195.041" data-duration="3.760" data-track-index="20"><span>18세 이상 가족은 모두 <b>범죄경력조회</b>를 받고,</span></div>
+      <div id="cap-083" class="clip cap" data-start="198.821" data-duration="2.040" data-track-index="20"><span><b>3년마다</b> 다시 받습니다.</span></div>
+      <div id="cap-084" class="clip cap" data-start="200.881" data-duration="2.800" data-track-index="20"><span>2년마다 자진 신고서도 냅니다.</span></div>
+      <div id="cap-085" class="clip cap" data-start="203.701" data-duration="2.440" data-track-index="20"><span>한 집에 같은 모국어를 쓰는 유학생은</span></div>
+      <div id="cap-086" class="clip cap" data-start="206.161" data-duration="1.480" data-track-index="20"><span><b>한 명만</b> 들어가고,</span></div>
+      <div id="cap-087" class="clip cap" data-start="207.661" data-duration="3.020" data-track-index="20"><span>가족은 모두 영어가 모국어입니다.</span></div>
+      <div id="cap-088" class="clip cap" data-start="210.701" data-duration="2.300" data-track-index="20"><span>학생 또래의 이성 가족이 없는 집으로</span></div>
+      <div id="cap-089" class="clip cap" data-start="213.021" data-duration="1.300" data-track-index="20"><span>배정합니다.</span></div>
+      <div id="cap-090" class="clip cap" data-start="214.341" data-duration="2.180" data-track-index="20"><span>문제가 생기면 담당 코디네이터가</span></div>
+      <div id="cap-091" class="clip cap" data-start="216.541" data-duration="1.260" data-track-index="20"><span>미팅을 열고,</span></div>
+      <div id="cap-092" class="clip cap" data-start="217.821" data-duration="3.500" data-track-index="20"><span>홈스테이 변경은 마지막 단계로 검토합니다.</span></div>
+      <div id="cap-093" class="clip cap" data-start="221.341" data-duration="3.360" data-track-index="20"><span>NSISP도 홈스테이를 직접 운영하고,</span></div>
+      <div id="cap-094" class="clip cap" data-start="224.721" data-duration="2.560" data-track-index="20"><span>학생 <b>20명당 코디네이터 1명</b>이</span></div>
+      <div id="cap-095" class="clip cap" data-start="227.301" data-duration="1.990" data-track-index="20"><span>가까운 거리에서 관리합니다.</span></div>
+      <div id="cap-096" class="clip cap" data-start="229.780" data-duration="1.840" data-track-index="20"><span>졸업장까지 생각하신다면</span></div>
+      <div id="cap-097" class="clip cap" data-start="231.640" data-duration="1.540" data-track-index="20"><span><b>기간</b>이 다릅니다.</span></div>
+      <div id="cap-098" class="clip cap" data-start="233.200" data-duration="3.180" data-track-index="20"><span>노바스코샤 고등학교 졸업장은 최소 <b>1년</b>,</span></div>
+      <div id="cap-099" class="clip cap" data-start="236.400" data-duration="2.600" data-track-index="20"><span>뉴펀들랜드 졸업장은 최소 <b>2년</b>을</span></div>
+      <div id="cap-100" class="clip cap" data-start="239.020" data-duration="2.900" data-track-index="20"><span>그 주에서 공부해야 받을 수 있습니다.</span></div>
+      <div id="cap-101" class="clip cap" data-start="241.940" data-duration="1.860" data-track-index="20"><span><b>대학 혜택</b>도 있습니다.</span></div>
+      <div id="cap-102" class="clip cap" data-start="243.820" data-duration="2.280" data-track-index="20"><span>노바스코샤 세인트메리스 대학교는</span></div>
+      <div id="cap-103" class="clip cap" data-start="246.120" data-duration="1.820" data-track-index="20"><span>NSISP 졸업생에게</span></div>
+      <div id="cap-104" class="clip cap" data-start="247.960" data-duration="3.280" data-track-index="20"><span>캐나다 <b>국내 학생 수준</b>의 학비를 적용합니다.</span></div>
+      <div id="cap-105" class="clip cap" data-start="251.260" data-duration="3.480" data-track-index="20"><span>같은 대학교가 2026-27학년도부터</span></div>
+      <div id="cap-106" class="clip cap" data-start="254.760" data-duration="1.920" data-track-index="20"><span>NISEP 졸업생에게도</span></div>
+      <div id="cap-107" class="clip cap" data-start="256.700" data-duration="3.230" data-track-index="20"><span>과목당 <b>1,000달러</b> 학비 감면을 제공합니다.</span></div>
+      <div id="cap-108" class="clip cap" data-start="260.439" data-duration="1.600" data-track-index="20"><span>정리해 보겠습니다.</span></div>
+      <div id="cap-109" class="clip cap" data-start="262.059" data-duration="2.020" data-track-index="20"><span>학교를 직접 고르고 싶고,</span></div>
+      <div id="cap-110" class="clip cap" data-start="264.099" data-duration="2.320" data-track-index="20"><span>유학생이 적은 작은 학교에서</span></div>
+      <div id="cap-111" class="clip cap" data-start="266.439" data-duration="2.080" data-track-index="20"><span>2년 이상 지낼 계획이라면</span></div>
+      <div id="cap-112" class="clip cap" data-start="268.539" data-duration="2.440" data-track-index="20"><span><b>NISEP</b>을 함께 보세요.</span></div>
+      <div id="cap-113" class="clip cap" data-start="270.999" data-duration="2.620" data-track-index="20"><span>1년 안에 졸업장을 받는 계획이라면</span></div>
+      <div id="cap-114" class="clip cap" data-start="273.639" data-duration="2.860" data-track-index="20"><span><b>NSISP</b> 일정이 잘 맞습니다.</span></div>
+      <div id="cap-115" class="clip cap" data-start="276.519" data-duration="2.220" data-track-index="20"><span>어느 쪽이든 학교와 홈스테이를</span></div>
+      <div id="cap-116" class="clip cap" data-start="278.759" data-duration="2.100" data-track-index="20"><span>주 프로그램이 함께 관리하는</span></div>
+      <div id="cap-117" class="clip cap" data-start="280.879" data-duration="1.670" data-track-index="20"><span>안정적인 방식입니다.</span></div>
+      <div id="cap-118" class="clip cap" data-start="283.241" data-duration="3.500" data-track-index="20"><span>멀리 보내면 아이 소식이 궁금하시죠.</span></div>
+      <div id="cap-119" class="clip cap" data-start="286.761" data-duration="3.420" data-track-index="20"><span>AA Canada는 NISEP 담당 코디네이터와</span></div>
+      <div id="cap-120" class="clip cap" data-start="290.201" data-duration="3.640" data-track-index="20"><span>직접 연락해 아이의 생활과 학업을 확인하고,</span></div>
+      <div id="cap-121" class="clip cap" data-start="293.861" data-duration="1.580" data-track-index="20"><span>한국어로 정리해 드리는</span></div>
+      <div id="cap-122" class="clip cap" data-start="295.461" data-duration="3.000" data-track-index="20"><span><b>1년 학부모 소통 프로그램</b>을 운영합니다.</span></div>
+      <div id="cap-123" class="clip cap" data-start="298.481" data-duration="3.100" data-track-index="20"><span>입학 수속, 학생비자 신청, 출국 준비는</span></div>
+      <div id="cap-124" class="clip cap" data-start="301.601" data-duration="1.560" data-track-index="20"><span><b>무료</b>로 도와드립니다.</span></div>
+      <div id="cap-125" class="clip cap" data-start="303.181" data-duration="2.900" data-track-index="20"><span>지금 <b>2027년 2월과 9월</b> 학기를</span></div>
+      <div id="cap-126" class="clip cap" data-start="306.101" data-duration="1.480" data-track-index="20"><span>모집하고 있습니다.</span></div>
+      <div id="cap-127" class="clip cap" data-start="307.601" data-duration="2.240" data-track-index="20"><span>아이 학년과 계획을 알려주시면</span></div>
+      <div id="cap-128" class="clip cap" data-start="309.861" data-duration="1.840" data-track-index="20"><span>두 프로그램 중 맞는 곳을</span></div>
+      <div id="cap-129" class="clip cap" data-start="311.721" data-duration="1.570" data-track-index="20"><span>같이 찾아 드리겠습니다.</span></div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#el-s02",{opacity:0,scale:1.04},{opacity:1,scale:1,duration:0.4,ease:"power2.out"},28.8);
+      tl.fromTo("#el-s03",{opacity:0,scale:1.04},{opacity:1,scale:1,duration:0.4,ease:"power2.out"},65.166);
+      tl.fromTo("#el-s04",{opacity:0,scale:1.04},{opacity:1,scale:1,duration:0.4,ease:"power2.out"},92.024);
+      tl.fromTo("#el-s05",{opacity:0,scale:1.04},{opacity:1,scale:1,duration:0.4,ease:"power2.out"},117.445);
+      tl.fromTo("#el-s06",{opacity:0,scale:1.04},{opacity:1,scale:1,duration:0.4,ease:"power2.out"},181.501);
+      tl.fromTo("#el-s07",{opacity:0,scale:1.04},{opacity:1,scale:1,duration:0.4,ease:"power2.out"},228.76);
+      tl.fromTo("#el-s08",{opacity:0,scale:1.04},{opacity:1,scale:1,duration:0.4,ease:"power2.out"},259.379);
+      tl.fromTo("#el-end",{opacity:0},{opacity:1,duration:0.4,ease:"power2.out"},312.728);
+      tl.fromTo("#face9",{opacity:0},{opacity:1,duration:0.4,ease:"power2.out"},283.061);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["root"] = tl;
+    </script>
+  </body>
+</html>

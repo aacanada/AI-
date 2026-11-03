@@ -1,0 +1,11 @@
+node_modules/
+.hyperframes/
+renders/
+*.mp4
+!/video.mp4
+snapshots/
+__pycache__/
+.media/
+assets/voice/*.wav
+assets/face/
+assets/voice/*.mp3
