@@ -1,0 +1,16 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:P;src:url("file:///home/user/AI-/plans/francophone-mobility-longform/video/assets/fonts/Pretendard-Black.woff2");font-weight:900}
+@font-face{font-family:P;src:url("file:///home/user/AI-/plans/francophone-mobility-longform/video/assets/fonts/Pretendard-ExtraBold.woff2");font-weight:800}
+body{margin:0;width:1280px;height:720px;font-family:P;background:radial-gradient(900px 600px at 75% 15%,#1c3d66,#0f2742);color:#fff;overflow:hidden;position:relative}
+.k{position:absolute;left:70px;top:64px;font-size:34px;font-weight:800;color:#0f2742;background:#f2b84b;padding:8px 22px;border-radius:12px}
+.t{position:absolute;left:70px;top:150px;font-size:96px;font-weight:900;line-height:1.12;letter-spacing:-1px}
+.t em{font-style:normal;color:#f2b84b}
+.s{position:absolute;left:70px;bottom:70px;font-size:46px;font-weight:800;background:#d52b1e;padding:14px 30px;border-radius:16px}
+.s b{color:#fff}
+.n{position:absolute;right:70px;bottom:60px;text-align:center;background:#1f5fbf;border-radius:24px;padding:16px 34px}
+.n div{font-size:30px;font-weight:800}.n p{margin:0;font-size:96px;font-weight:900;line-height:1}
+.b{position:absolute;right:70px;top:64px;font-size:30px;font-weight:800;opacity:.75}
+</style></head><body><div class="k">LMIA 면제 · 프랑코폰 모빌리티</div><div class="b">AA Canada</div>
+<div class="t">컬리지 없이<br><em>캐나다 취업비자?</em></div>
+<div class="s">불어 말하기·듣기 NCLC 5면 LMIA 면제</div>
+<div class="n"><div>몬트리올 불어</div><p>1년</p></div></body></html>
