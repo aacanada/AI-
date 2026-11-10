@@ -19,14 +19,14 @@ type: 단독 숏폼 (linked_to 없음, 버논 고등학교 탐방 5/5, publish_a
 - visibility: public
 
 ## blog
-- 학교 글 못 찾음: 블로그 카테고리 112(캐나다 관리형 조기유학) 글 목록, 검색 '블룸'/'Bloom'에 찰스 블룸 세컨더리 학교 글이 없음. 수정하지 않음, 링크 추가 보류 (원칙 5)
+- updated: https://blog.naver.com/allthatcan/224471752887 (2026-11-10 학교 글 새로 작성 후 쇼츠·릴스 링크 추가)
 
 ## clip
 - url: https://clipcreators.naver.com/web/clip/26DBC8163D003214BDF6675B389FA5C322ED
 - visibility: 공개 (카테고리 교육 > 교육, 설명 261자, 커버 thumbnail.jpg, 블로그 224439690104 버논 총정리 연결, AI 활용 끔)
 
 ## homepage
-- 학교 글 못 찾음: 조기유학 > 관리형 유학 ab-1840 목록(ab-1841-1~12)에 찰스 블룸 세컨더리 글이 없음. 수정하지 않음, 링크 추가 보류 (원칙 5)
+- updated: https://aacanada.co.kr/ab-1841-15 (2026-11-10 학교 글 새로 작성 후 쇼츠·릴스 링크 추가)
 
 ## 실패한 채널
 - 없음
