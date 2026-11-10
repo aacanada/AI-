@@ -19,14 +19,14 @@ type: 단독 숏폼 (linked_to 없음, 버논 고등학교 탐방 4/5, publish_a
 - visibility: public
 
 ## blog
-- 학교 글 못 찾음: 블로그 카테고리 112(캐나다 관리형 조기유학), 전체 글 목록, 검색 '풀턴'/'Fulton'에 클래런스 풀턴 세컨더리 학교 글이 없음. 수정하지 않음, 링크 추가 보류 (원칙 5)
+- updated: https://blog.naver.com/allthatcan/224471749709 (2026-11-10 학교 글 새로 작성 후 쇼츠·릴스 링크 추가)
 
 ## clip
 - videoId: 5A422522EB1813E58EADF6C6215E9D21EF08
 - visibility: 공개 (카테고리 교육 > 교육, 설명 238자, 커버 thumbnail.jpg, 블로그 224439690104 버논 총정리 연결, AI 활용 끔)
 
 ## homepage
-- 학교 글 못 찾음: 조기유학 > 관리형 유학 ab-1840 목록(ab-1841-1~11)에 풀턴 세컨더리 글이 없음. 수정하지 않음, 링크 추가 보류 (원칙 5)
+- updated: https://aacanada.co.kr/ab-1841-14 (2026-11-10 학교 글 새로 작성 후 쇼츠·릴스 링크 추가)
 
 ## 실패한 채널
 - 없음
