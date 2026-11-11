@@ -1,0 +1,12 @@
+type: shorts
+title: 버논 조기유학, 홈스테이는 누가 골라 주나요?
+channels: youtube, instagram, threads, blog, clip, homepage
+visibility: public
+publish_order: 1
+publish_after: 2026-11-12
+linked_to: https://youtu.be/gjkMyMmCQPE
+files: video.mp4 (1080x1920 30fps, 0:56.0, 2.0 MB), video.mp4.sha256, thumbnail.jpg (1080x1920 cover), upload-text.txt
+voice: ElevenLabs '아홉번째' 자연톤 (Eleven v4), 롱폼 S4 장면 음성 그대로(첫 문장 '두 번째는 홈스테이입니다.' 2.3초 잘라냄)
+loudness: -16.0 LUFS, true peak -0.7 dBFS
+source: 롱폼 '아이 혼자 버논에 가면 누가 챙기나' 1:44-2:40 (S4 홈스테이 누가 고르나, 그래픽 장면만, 얼굴 없음). 원본 sessions/2026-11-08_nd32sKTBj4AZGf6i/artifacts/vernon_care_longform/
+notes: 버논 관리형 '누가 챙기나' 숏폼 시리즈 1편(시리즈 첫 숏폼). 커스터디언(S3)은 11-08 '혼자 vs 부모' 1편 숏폼과 겹쳐 홈스테이(S4)를 고름. 숫자 2개(호스트 집 19세 이상 성인 범죄경력 조회, 호스트 25세 이상 시민권자·영주권자)는 SD22 Homestay Manual 2026-27 §2 근거(본편 SCRIPT.md 사실 근거 표, 2026-11-08 확인). 최상급·비용 숫자 없음. 쇼츠 '관련 동영상' = 본편 gjkMyMmCQPE. 유튜브 AI 사용 '예'(AI 음성). 쓰레드·인스타·클립 문구에 AI 제작 문구 넣지 않음. 블로그는 새 글 대신 기존 본편 글 https://blog.naver.com/allthatcan/224472383814 수정해 '▶ 숏폼 시리즈 1편' + 쇼츠·릴스 링크 추가(11-08 첫 숏폼들과 같은 방식, 중복 글 금지). 홈페이지는 기존 글 https://aacanada.co.kr/ab-1841-17 수정해 '숏폼 1.' 텍스트 링크 한 줄 추가(새 글 금지, 얼굴 썸네일 금지). 같은 날(11-12) 다른 숏폼: 2026-11-12-nisep-cost-short-a(다른 시리즈, publish_order 2). 버논 학교 시리즈(vernon-school-6-compare, 11-13)는 다른 시리즈. 같은 시리즈 다음 숏폼은 11-13 이후.
