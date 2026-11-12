@@ -20,7 +20,7 @@ const cta = (title) => ({
 
 const sets = {
   A: [
-    { type: 'cover', tag: '2027 캐나다 워킹홀리데이', title: ['인비 기다리는 동안', '<m>지금 해둘 3가지</m>'], sub: '준비한 사람이 먼저 출발합니다' },
+    { type: 'cover', kw: '2027 캐나다<br>워킹홀리데이', hook: '인비 기다리는 동안<br>지금 해둘 3가지', sub: '준비한 사람이 먼저 출발합니다' },
     { type: 'list', kicker: '2027 시즌 현황', title: '지금까지 확인된 것', items: [
       ['신청 연령', '만 18세 ~ 35세'],
       ['풀(Pool) 오픈일', '미발표 · 추후 공지'],
@@ -44,7 +44,7 @@ const sets = {
     cta('2027 워홀 어학 플랜,<br>디테일하게 알려드립니다'),
   ],
   B: [
-    { type: 'cover', tag: '캐나다 워킹홀리데이', title: ['캐나다까지 가서', '<m>한인잡만</m> 하다', '오는 이유'], sub: '차이는 첫 석 달에 만들어집니다' },
+    { type: 'cover', kw: '캐나다<br>워킹홀리데이', hook: '한인잡만 하다<br>오는 이유', sub: '차이는 첫 석 달에 만들어집니다' },
     { type: 'list', kicker: '현실', title: '현지 일자리는<br>영어에서 갈립니다', items: [
       ['영문 이력서', '캐나다 방식은 형식부터 다릅니다'],
       ['인터뷰', '짧은 대화로 채용이 결정됩니다'],
@@ -68,7 +68,7 @@ const sets = {
     cta('내 영어 수준에 맞는<br>어학 플랜을 알려드립니다'),
   ],
   C: [
-    { type: 'cover', tag: '캐나다 워킹홀리데이', title: ['캐나다 워홀', '<m>첫 3개월,</m>', '얼마나 들까?'], sub: '출국 전에 꼭 계산해 볼 항목들' },
+    { type: 'cover', kw: '캐나다<br>워킹홀리데이', hook: '첫 3개월,<br>얼마나 들까?', sub: '출국 전에 꼭 계산해 볼 항목들' },
     { type: 'list', kicker: '비용 항목', title: '초기 비용은<br>네 가지로 나뉩니다', items: [
       ['어학연수', '학비, 등록비, 교재비'],
       ['숙소', '홈스테이, 기숙사, 룸렌트'],
@@ -114,7 +114,7 @@ h2{font-size:84px;font-weight:900;line-height:1.2;margin-top:36px;letter-spacing
 .note{margin-top:26px;font-size:27px;color:${t.sub}}
 .cover{background:${t.coverBg};color:${t.coverInk}}
 .cover .tag{align-self:flex-start;font-size:34px;font-weight:700;border:3px solid ${t.coverInk};padding:14px 30px;border-radius:999px}
-.cover h1{font-size:122px;font-weight:900;line-height:1.16;letter-spacing:-0.045em;margin-top:auto}
+.cover .kw{font-size:152px;font-weight:900;line-height:1.1;letter-spacing:-0.05em;color:${t.coverMark};margin-top:40px}.cover .bar{width:120px;height:12px;border-radius:6px;background:${t.coverInk};margin-top:56px}.cover h1{font-size:92px;font-weight:900;line-height:1.2;letter-spacing:-0.04em;margin-top:auto}
 .cover h1 m{color:${t.coverMark}}
 .cover .sub{font-size:44px;font-weight:700;color:${t.coverSub};margin-top:40px;margin-bottom:60px}
 .cover .foot{color:${t.coverSub}}
@@ -133,8 +133,8 @@ function html(key, card, idx, total) {
   const dots = `<div class="dots">${Array.from({ length: total }, (_, i) => `<i class="${i === idx ? 'on' : ''}"></i>`).join('')}</div>`;
   let body;
   if (card.type === 'cover') {
-    body = `<div class="wrap cover"><div class="ring"></div><div class="tag">${card.tag}</div>
-      <h1>${card.title.join('<br>')}</h1><div class="sub">${card.sub}</div>
+    body = `<div class="wrap cover"><div class="ring"></div><div class="kw">${card.kw}</div><div class="bar"></div>
+      <h1>${card.hook}</h1><div class="sub">${card.sub}</div>
       <div class="foot"><span>옆으로 넘겨보세요 →</span>${dots}</div></div>`;
   } else if (card.type === 'list') {
     body = `<div class="wrap"><div class="kicker">${card.kicker}</div><h2>${card.title}</h2>
