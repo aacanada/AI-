@@ -135,17 +135,17 @@ function html(key, card, idx, total) {
   if (card.type === 'cover') {
     body = `<div class="wrap cover"><div class="ring"></div><div class="kw">${card.kw}</div><div class="bar"></div>
       <h1>${card.hook}</h1><div class="sub">${card.sub}</div>
-      <div class="foot"><span>옆으로 넘겨보세요 →</span>${dots}</div></div>`;
+      <div class="foot"><span>AA Canada × JS Education</span><span>옆으로 넘겨보세요 →</span></div></div>`;
   } else if (card.type === 'list') {
     body = `<div class="wrap"><div class="kicker">${card.kicker}</div><h2>${card.title}</h2>
       <div class="items n${card.items.length}">${card.items.map(([b, s]) => `<div class="item"><b>${b}</b><span>${s}</span></div>`).join('')}</div>
       ${card.note ? `<div class="note">${card.note}</div>` : ''}
-      <div class="foot"><span>캐나다 워홀 어학연수</span>${dots}</div></div>`;
+      <div class="foot"><span>AA Canada × JS Education</span>${dots}</div></div>`;
   } else {
     body = `<div class="wrap cta"><h2>${card.title}</h2>
       <div class="pts">${card.points.map((p) => `<div class="pt"><i></i>${p}</div>`).join('')}</div>
       <div class="btn">${card.button}</div><div class="hint">아래 버튼을 눌러 간단히 신청하세요</div>
-      <div class="foot"><span>캐나다 워홀 어학연수</span>${dots}</div></div>`;
+      <div class="foot"><span>AA Canada × JS Education</span>${dots}</div></div>`;
   }
   return `<!doctype html><html lang="ko"><head><meta charset="utf-8"><style>${css(t)}</style></head><body>${body}</body></html>`;
 }
