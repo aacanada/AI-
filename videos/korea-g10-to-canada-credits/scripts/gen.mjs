@@ -17,9 +17,18 @@ const probe = (p) => Number(execFileSync("ffprobe", ["-v", "error", "-show_entri
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;");
 
 // ── HeyGen 인트로·아웃트로 (영상이 올라오면 자동 사용)
-const AVATAR_TEXT = {
-  intro: "안녕하세요, AA Canada입니다. 한국에서 고1을 마치고 캐나다 11학년으로 가면, 졸업장까지 어떻게 될까요? BC주와 온타리오주를 비교해 드릴게요.",
-  outro: "우리 아이 성적표로는 어느 주가 더 유리할지, AA Canada에서 1:1로 확인해 보세요. 감사합니다.",
+// HeyGen 음성의 실제 문장 구간(초) — silencedetect(-35dB, 0.25s)로 측정한 쉼 사이
+const AVATAR_SEGS = {
+  intro: [
+    [0.1, 2.15, "안녕하세요, 에이에이캐나다입니다."],
+    [2.89, 6.63, "고1 마치고 캐나다로 가면 졸업까지 어떻게 될까요?"],
+    [7.22, 9.46, "BC와 온타리오를 비교해 드릴게요."],
+  ],
+  outro: [
+    [0.1, 3.17, "우리 아이 성적표로는 어느 주가 더 유리할지,"],
+    [3.69, 6.21, "에이에이캐나다에서 일대일로 확인해 보세요."],
+    [6.7, 7.32, "감사합니다."],
+  ],
 };
 
 // ── 내레이션 정렬 정보
@@ -161,6 +170,9 @@ const CSS = `
 .cau .cm { font-size: 72px; font-weight: 900; line-height: 1.25; margin-top: 18px; }
 .src { position: absolute; left: 222px; top: 690px; width: 1500px; font-size: 28px; font-weight: 700; color: #5B6673; line-height: 1.6; }
 `;
+
+// 1920x1080 원본을 0.78배(1498x843)로 놓고 얼굴 중심(원본 약 1000,440)을 둥근 창(616px) 중앙에
+const AV_CROP = "width:1498px;height:843px;left:-472px;top:-30px;inset:auto;object-fit:fill;";
 
 // ── 마크업
 function grid(sid, prov, state, prev, opts = {}) {
@@ -338,7 +350,7 @@ function avatarScene(sc) {
   const tX = left ? 900 : 120;
   const sub = sid === "intro" ? `<div class="as" id="${sid}-sub"><span class="b">BC주</span> vs <span class="o">온타리오주</span></div>` : `<div class="brand" id="${sid}-sub">AA Canada</div>`;
   const inner = sc.video
-    ? `<video id="${sid}-vid" class="clip" src="${sc.video}" data-start="0" data-duration="${r2(sc.dur - 0.4)}" data-has-audio="true" data-track-index="2" playsinline></video>`
+    ? `<video id="${sid}-vid" class="clip" src="${sc.video}" data-start="0" data-duration="${r2(sc.dur - 0.4)}" muted data-track-index="2" playsinline style="${AV_CROP}"></video>`
     : `<div class="ph2">HeyGen 대표님 영상<br/>assets/heygen/${sid}.mp4<br/>(업로드 예정)</div>`;
   if (sid === "intro") {
     tw.push(`tl.fromTo("#${sid}-av", { scale: 0.96 }, { scale: 1, duration: 0.8, ease: "power3.out" }, 0);`);
@@ -390,23 +402,22 @@ const CAPS = [];
 const toScreen = (t) => t.replace(/에이에이캐나다/g, "AA Canada");
 for (const sc of SCENES) {
   if (sc.layout === "avatar") {
-    // HeyGen 영상: 글자 수 비례로 문장 시간 배분 (영상이 오면 실제 길이 기준)
-    const text = AVATAR_TEXT[sc.id];
-    const words = text.split(" ");
-    const groups = [];
-    let g = [];
-    for (const w of words) {
-      g.push(w);
-      if (g.length >= 4 || /[.,?!]$/.test(w)) (groups.push(g), (g = []));
-    }
-    if (g.length) groups.push(g);
-    const total = groups.reduce((n, x) => n + x.join(" ").length, 0);
-    let t = 0.4;
-    const span = sc.dur - 1.0;
-    for (const x of groups) {
-      const d = (span * x.join(" ").length) / total;
-      CAPS.push({ s: r2(sc.start + t), e: r2(sc.start + t + d - 0.05), text: x.join(" ").replace(/[.]$/, "") });
-      t += d;
+    // HeyGen 영상: 문장 구간 안에서 4어절 이하로 나누고 글자 수 비례로 시간 배분
+    for (const [a, b, sent] of AVATAR_SEGS[sc.id]) {
+      const groups = [];
+      let g = [];
+      for (const w of sent.split(" ")) {
+        g.push(w);
+        if (g.length >= 4 || g.join(" ").length >= 18 || /[,]$/.test(w)) (groups.push(g.join(" ")), (g = []));
+      }
+      if (g.length) groups.push(g.join(" "));
+      const total = groups.reduce((n, x) => n + x.length, 0);
+      let t = a;
+      for (const x of groups) {
+        const d = ((b - a) * x.length) / total;
+        CAPS.push({ s: r2(sc.start + t - 0.05), e: r2(sc.start + t + d + 0.15), text: toScreen(x).replace(/[.]$/, "") });
+        t += d;
+      }
     }
     continue;
   }
@@ -472,8 +483,12 @@ const hosts = SCENES.map(
   (sc) =>
     `      <div id="${sc.id}" data-composition-id="${sc.id}" data-composition-src="compositions/${sc.id}.html" data-start="${sc.start}" data-duration="${sc.dur}" data-track-index="1" data-track-kind="graphics" data-width="${W}" data-height="${H}" style="z-index:1"></div>`,
 ).join("\n");
-const vo = SCENES.filter((s) => s.layout !== "avatar")
-  .map((s) => `      <audio id="vo-${s.id}" src="assets/voice/${s.id}.mp3" data-start="${r2(s.start + LEAD)}" data-duration="${r2(s.voiceDur - 0.08)}" data-track-index="10" data-volume="1"></audio>`)
+const vo = SCENES.filter((s) => s.layout !== "avatar" || s.video)
+  .map((s) =>
+    s.layout === "avatar"
+      ? `      <audio id="vo-${s.id}" src="assets/voice/${s.id}-heygen.mp3" data-start="${s.start}" data-duration="${r2(probe(`assets/voice/${s.id}-heygen.mp3`) - 0.08)}" data-track-index="10" data-volume="1.35"></audio>`
+      : `      <audio id="vo-${s.id}" src="assets/voice/${s.id}.mp3" data-start="${r2(s.start + LEAD)}" data-duration="${r2(s.voiceDur - 0.08)}" data-track-index="10" data-volume="1"></audio>`,
+  )
   .join("\n");
 const sfxDur = { "pop.mp3": 0.72, "click.mp3": 0.36, "click-soft.mp3": 0.36, "whoosh-short.mp3": 0.57, "impact-bass-1.mp3": 2.1, "chime.mp3": 2.5, "ping.mp3": 1.3 };
 const sfxHtml = SFX.map(

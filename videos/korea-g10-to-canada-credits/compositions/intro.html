@@ -86,14 +86,14 @@
 .src { position: absolute; left: 222px; top: 690px; width: 1500px; font-size: 28px; font-weight: 700; color: #5B6673; line-height: 1.6; }
 </style>
 <div id="root" data-composition-id="intro" data-width="1920" data-height="1080">
-<div class="av" id="intro-av" style="left:150px"><div class="ph2">HeyGen 대표님 영상<br/>assets/heygen/intro.mp4<br/>(업로드 예정)</div></div>
+<div class="av" id="intro-av" style="left:150px"><video id="intro-vid" class="clip" src="assets/heygen/intro.mp4" data-start="0" data-duration="9.79" muted data-track-index="2" playsinline style="width:1498px;height:843px;left:-472px;top:-30px;inset:auto;object-fit:fill;"></video></div>
 <div class="at" style="left:900px"><div class="ak" id="intro-k">AA Canada 학점 가이드</div><div class="al" id="intro-l">한국 고1 마치고<br/>캐나다 졸업장까지</div><div class="as" id="intro-sub"><span class="b">BC주</span> vs <span class="o">온타리오주</span></div></div>
 </div>
 <script>
   const tl = gsap.timeline({ paused: true });
   tl.fromTo("#intro-av", { scale: 0.96 }, { scale: 1, duration: 0.8, ease: "power3.out" }, 0);
   tl.fromTo("#intro-sub", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 3.5);
-  tl.set({}, {}, 9);
+  tl.set({}, {}, 10.19);
   window.__timelines["intro"] = tl;
 </script>
 </template>

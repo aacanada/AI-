@@ -1,87 +1,87 @@
 {
- "total": 209.16,
+ "total": 209.36,
  "scenes": [
   {
    "id": "intro",
    "start": 0,
-   "dur": 9
+   "dur": 10.19
   },
   {
    "id": "s01",
-   "start": 9,
+   "start": 10.19,
    "dur": 10.94
   },
   {
    "id": "s02",
-   "start": 19.94,
+   "start": 21.13,
    "dur": 13.81
   },
   {
    "id": "s03",
-   "start": 33.75,
+   "start": 34.94,
    "dur": 17.73
   },
   {
    "id": "s04",
-   "start": 51.48,
+   "start": 52.67,
    "dur": 14.54
   },
   {
    "id": "s05",
-   "start": 66.02,
+   "start": 67.21,
    "dur": 16.87
   },
   {
    "id": "s06",
-   "start": 82.89,
+   "start": 84.08,
    "dur": 9.97
   },
   {
    "id": "s07",
-   "start": 92.86,
+   "start": 94.05,
    "dur": 16.29
   },
   {
    "id": "s08",
-   "start": 109.15,
+   "start": 110.34,
    "dur": 14.13
   },
   {
    "id": "s09",
-   "start": 123.28,
+   "start": 124.47,
    "dur": 18.46
   },
   {
    "id": "s10",
-   "start": 141.74,
+   "start": 142.93,
    "dur": 9.5
   },
   {
    "id": "s11",
-   "start": 151.24,
+   "start": 152.43,
    "dur": 15.98
   },
   {
    "id": "s12",
-   "start": 167.22,
+   "start": 168.41,
    "dur": 11.33
   },
   {
    "id": "s13",
-   "start": 178.55,
+   "start": 179.74,
    "dur": 11.75
   },
   {
    "id": "s14",
-   "start": 190.3,
+   "start": 191.49,
    "dur": 9.86
   },
   {
    "id": "outro",
-   "start": 200.16,
-   "dur": 9
+   "start": 201.35,
+   "dur": 8.01
   }
  ],
- "captions": 83,
+ "captions": 82,
  "sfx": 40
 }
