@@ -8,3 +8,4 @@ clip: skipped (롱폼은 클립 제외)
 homepage: new https://aacanada.co.kr/ab-1868-4
 failed: 없음
 source: ccr-3780ccfc-r9uhue videos/korea-g10-to-canada-credits/final/korea-g10-bc-vs-ontario-1080p.mp4 sha256 07275BF5107C1E30499E9A26E9FE2D5826178E473E5C9354CE0F32374979632D
+youtube_description: 블로그·홈페이지 링크 추가 완료 (2026-11-15, 각 1회)
