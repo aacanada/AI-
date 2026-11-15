@@ -1,0 +1,100 @@
+<template>
+<style>
+@font-face { font-family: "Pretendard"; font-weight: 500; src: url("assets/fonts/Pretendard-Medium.woff2") format("woff2"); }
+@font-face { font-family: "Pretendard"; font-weight: 700; src: url("assets/fonts/Pretendard-Bold.woff2") format("woff2"); }
+@font-face { font-family: "Pretendard"; font-weight: 800; src: url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2"); }
+@font-face { font-family: "Pretendard"; font-weight: 900; src: url("assets/fonts/Pretendard-Black.woff2") format("woff2"); }
+#root { position: absolute; inset: 0; overflow: hidden; background: #F4F6F8; color: #16202B;
+  font-family: "Pretendard", sans-serif; letter-spacing: -0.02em; word-break: keep-all; }
+#root * { box-sizing: border-box; margin: 0; padding: 0; }
+.bc { --c: #1F7A4D; --c2: #0F4A2D; --lt: #CFE6D8; --bg: #E7F1EB; }
+.on { --c: #1F5FAD; --c2: #10386B; --lt: #CFDDF0; --bg: #E6EDF7; }
+.head { position: absolute; left: 96px; top: 54px; right: 96px; }
+.act { font-size: 28px; font-weight: 700; color: #5B6673; }
+.hl { font-size: 60px; font-weight: 900; line-height: 1.15; margin-top: 6px; }
+.panels { position: absolute; left: 0; right: 0; top: 214px; bottom: 0; display: flex; }
+.panel { position: relative; height: 100%; background: var(--bg); padding: 44px 64px 0 96px; overflow: hidden; }
+.panel.on { padding-left: 64px; }
+.panel + .panel { border-left: 6px solid #F4F6F8; }
+.ph { display: flex; align-items: baseline; gap: 18px; }
+.pn { font-size: 48px; font-weight: 900; color: var(--c2); }
+.pd { font-size: 30px; font-weight: 700; color: var(--c); }
+.body { display: flex; gap: 56px; margin-top: 34px; align-items: flex-start; }
+.grid { display: grid; gap: 10px; flex: none; }
+.cell { position: relative; height: var(--ch); border-radius: 10px; display: flex; align-items: center; justify-content: center;
+  font-size: var(--fs, 24px); font-weight: 800; text-align: center; line-height: 1.1; padding: 0 4px; }
+.s-open { border: 2px dashed color-mix(in srgb, var(--c) 45%, transparent); color: color-mix(in srgb, var(--c2) 45%, transparent); }
+.s-req { background: var(--c); color: #fff; }
+.s-elec { background: var(--lt); color: var(--c2); }
+.s-eq { background: repeating-linear-gradient(135deg, #FFFFFF 0 10px, #E3E7EC 10px 20px); border: 2px solid #9AA5B1; color: #3D4752; }
+.s-lock { background: #fff; border: 3px solid #D52B1E; color: #B21F14; }
+.s-local { background: #fff; border: 3px solid var(--c); color: var(--c); }
+.s-y11 { background: var(--c); color: #fff; }
+.s-y12 { background: var(--c2); color: #fff; }
+.badge { position: absolute; top: 5px; right: 7px; font-size: 15px; font-weight: 800; opacity: .9; letter-spacing: 0; }
+.lk { position: absolute; top: 6px; right: 7px; width: 18px; height: 18px; color: #D52B1E; }
+.notes { display: flex; flex-direction: column; gap: 30px; min-width: 0; }
+.note { border-left: 8px solid var(--c); padding: 4px 0 4px 22px; }
+.note.red { border-left-color: #D52B1E; }
+.nk { font-size: 36px; font-weight: 900; line-height: 1.22; color: #16202B; }
+.ns { font-size: 28px; font-weight: 700; line-height: 1.3; color: #4A5562; margin-top: 8px; }
+.note.red .nk { color: #B21F14; }
+.big { font-size: 132px; font-weight: 900; color: var(--c); line-height: 1; margin-top: 26px; letter-spacing: -0.04em; }
+.exam { background: #fff; border-radius: 12px; padding: 22px 26px; display: flex; justify-content: space-between; align-items: center; gap: 22px;
+  box-shadow: 0 6px 18px rgba(16, 32, 48, .08); }
+.ek { font-size: 36px; font-weight: 900; }
+.es { font-size: 28px; font-weight: 700; color: #4A5562; margin-top: 6px; }
+.st { flex: none; font-size: 28px; font-weight: 900; padding: 8px 16px; border-radius: 8px; }
+.st-must { background: var(--c); color: #fff; }
+.st-waive { border: 3px solid #C77700; color: #9A5B00; }
+.st-free { background: #E3E7EC; color: #3D4752; }
+.dim { opacity: .32; }
+.mini .cell { border-radius: 6px; font-size: 0; }
+.mini .cell .badge, .mini .cell .lk { display: none; }
+.mini .pd { display: none; }
+.ph { white-space: nowrap; }
+.miniNote { font-size: 30px; font-weight: 700; color: var(--c2); margin-top: 26px; opacity: .7; }
+/* transcript */
+.doc { position: absolute; left: 120px; top: 214px; width: 820px; height: 800px; background: #fff; border-radius: 14px;
+  box-shadow: 0 22px 50px rgba(16, 32, 48, .14); padding: 48px 56px; }
+.dt { font-size: 40px; font-weight: 900; }
+.dm { font-size: 28px; font-weight: 700; color: #4A5562; margin-top: 10px; padding-bottom: 22px; border-bottom: 3px solid #16202B; }
+.row { display: flex; justify-content: space-between; font-size: 30px; font-weight: 700; padding: 13px 4px; border-bottom: 1px solid #DDE2E8; }
+.row b { color: #1F5FAD; font-weight: 800; }
+.stamp { position: absolute; right: 36px; top: 14px; width: 180px; height: 180px; border-radius: 50%; border: 9px solid #D52B1E;
+  color: #D52B1E; display: flex; align-items: center; justify-content: center; font-size: 40px; font-weight: 900; line-height: 1.1; text-align: center; transform: rotate(-14deg); background: rgba(255,255,255,.6); }
+.routes { position: absolute; left: 1040px; top: 300px; width: 780px; display: flex; flex-direction: column; gap: 40px; }
+.rq { font-size: 64px; font-weight: 900; line-height: 1.2; }
+.route { display: flex; align-items: center; gap: 24px; background: var(--c); color: #fff; border-radius: 14px; padding: 30px 36px; }
+.route .rn { font-size: 50px; font-weight: 900; }
+.route .rg { font-size: 34px; font-weight: 700; opacity: .9; }
+/* avatar */
+.av { position: absolute; top: 220px; width: 640px; height: 640px; border-radius: 50%; background: #DDE3EA; border: 12px solid #fff;
+  box-shadow: 0 22px 50px rgba(16, 32, 48, .16); display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; }
+.av .ph2 { font-size: 34px; font-weight: 800; color: #5B6673; line-height: 1.4; border: 3px dashed #9AA5B1; border-radius: 50%;
+  width: 520px; height: 520px; display: flex; align-items: center; justify-content: center; }
+.at { position: absolute; top: 300px; width: 960px; }
+.ak { font-size: 34px; font-weight: 800; color: #D52B1E; }
+.al { font-size: 92px; font-weight: 900; line-height: 1.15; margin-top: 18px; }
+.as { font-size: 52px; font-weight: 800; margin-top: 30px; }
+.as .b { color: #1F7A4D; } .as .o { color: #1F5FAD; }
+.brand { font-size: 96px; font-weight: 900; color: #D52B1E; margin-top: 34px; letter-spacing: -0.03em; }
+/* caution */
+.cau { position: absolute; left: 160px; top: 270px; width: 1500px; border-left: 14px solid #D52B1E; padding-left: 48px; }
+.cau .ck { font-size: 34px; font-weight: 800; color: #D52B1E; }
+.cau .cm { font-size: 72px; font-weight: 900; line-height: 1.25; margin-top: 18px; }
+.src { position: absolute; left: 222px; top: 700px; width: 1500px; font-size: 28px; font-weight: 700; color: #5B6673; line-height: 1.6; }
+</style>
+<div id="root" data-composition-id="s01" data-width="1920" data-height="1080">
+<div class="head"><div class="act">1막 졸업 요건</div><div class="hl">고1을 마친 민준이</div></div>
+<div class="doc"><div class="dt">학교생활기록부 · 교과 성적</div><div class="dm">김민준 (가명) · 고등학교 1학년</div><div class="row"><span>국어</span><b>이수</b></div><div class="row"><span>수학</span><b>이수</b></div><div class="row"><span>영어</span><b>이수</b></div><div class="row"><span>한국사</span><b>이수</b></div><div class="row"><span>통합사회</span><b>이수</b></div><div class="row"><span>통합과학</span><b>이수</b></div><div class="row"><span>과학탐구실험</span><b>이수</b></div><div class="row"><span>체육</span><b>이수</b></div><div class="row"><span>예술</span><b>이수</b></div><div class="row"><span>정보</span><b>이수</b></div><div class="stamp">고1<br/>수료</div></div>
+<div class="routes"><div class="rq">같은 성적표,<br/>두 갈래 길</div>
+<div class="route bc"><span class="rn">BC주</span><span class="rg">Grade 11 편입</span></div>
+<div class="route on"><span class="rn">온타리오주</span><span class="rg">Grade 11 편입</span></div></div>
+</div>
+<script>
+  const tl = gsap.timeline({ paused: true });
+  tl.set({}, {}, 8);
+  window.__timelines["s01"] = tl;
+</script>
+</template>
