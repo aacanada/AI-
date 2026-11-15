@@ -37,3 +37,4 @@ AA Canada(에이에이캐나다) 유튜브·홈페이지용 설명 영상. 한�
 - 공식 원문 미확인 수치(PLAR 16학점 상한 등)는 넣지 않음. 필요하면 "학교별 확인 필요".
 - 주의 문구: 최종 인정 학점은 학교와 교육청의 평가에 따라 달라짐.
 - 출처: BC Graduation Requirements · BC International Student Graduation Credit Policy · Ontario: Earning your high school diploma · Ontario Schools K-12: Student records and transfers
+- 대표님 얼굴(HeyGen)은 **항상 작게**: 둥근 창 지름 520px, 원본을 0.5배로 넣어 머리~어깨와 배경 국기가 보이게. 이보다 크게 하지 않는다.

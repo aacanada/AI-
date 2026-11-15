@@ -153,11 +153,11 @@ const CSS = `
 .route { display: flex; align-items: center; gap: 24px; background: var(--c); color: #fff; border-radius: 14px; padding: 30px 36px; }
 .route .rn { font-size: 50px; font-weight: 900; }
 .route .rg { font-size: 34px; font-weight: 700; opacity: .9; }
-.av { position: absolute; top: 220px; width: 640px; height: 640px; border-radius: 50%; background: #DDE3EA; border: 12px solid #fff;
+.av { position: absolute; top: 280px; width: 520px; height: 520px; border-radius: 50%; background: #DDE3EA; border: 10px solid #fff;
   box-shadow: 0 22px 50px rgba(16, 32, 48, .16); display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; }
 .av video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .av .ph2 { font-size: 34px; font-weight: 800; color: #5B6673; line-height: 1.4; border: 3px dashed #9AA5B1; border-radius: 50%;
-  width: 520px; height: 520px; display: flex; align-items: center; justify-content: center; }
+  width: 420px; height: 420px; display: flex; align-items: center; justify-content: center; }
 .at { position: absolute; top: 280px; width: 960px; }
 .ak { font-size: 34px; font-weight: 800; color: #D52B1E; }
 .al { font-size: 92px; font-weight: 900; line-height: 1.15; margin-top: 18px; }
@@ -171,8 +171,8 @@ const CSS = `
 .src { position: absolute; left: 222px; top: 690px; width: 1500px; font-size: 28px; font-weight: 700; color: #5B6673; line-height: 1.6; }
 `;
 
-// 1920x1080 원본을 0.6배(1152x648)로 놓고 얼굴 중심(원본 약 1000,440)을 둥근 창(616px) 중앙에
-const AV_CROP = "width:1152px;height:648px;left:-292px;top:-10px;inset:auto;object-fit:fill;";
+// 얼굴은 항상 작게(대표님 지시). 1920x1080 원본을 0.5배(960x540)로 놓고 얼굴 중심(원본 약 1000,440)을 둥근 창(안쪽 500px) 중앙에
+const AV_CROP = "width:960px;height:540px;left:-250px;top:-10px;inset:auto;object-fit:fill;";
 
 // ── 마크업
 function grid(sid, prov, state, prev, opts = {}) {
@@ -346,7 +346,7 @@ function transcriptScene(sc) {
 function avatarScene(sc) {
   const sid = sc.id;
   const left = sc.side === "left";
-  const avX = left ? 150 : W - 150 - 640;
+  const avX = left ? 210 : W - 210 - 520;
   const tX = left ? 900 : 120;
   const sub = sid === "intro" ? `<div class="as" id="${sid}-sub"><span class="b">BC주</span> vs <span class="o">온타리오주</span></div>` : `<div class="brand" id="${sid}-sub">AA Canada</div>`;
   const inner = sc.video
