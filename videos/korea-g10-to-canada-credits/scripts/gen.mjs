@@ -171,8 +171,8 @@ const CSS = `
 .src { position: absolute; left: 222px; top: 690px; width: 1500px; font-size: 28px; font-weight: 700; color: #5B6673; line-height: 1.6; }
 `;
 
-// 1920x1080 원본을 0.78배(1498x843)로 놓고 얼굴 중심(원본 약 1000,440)을 둥근 창(616px) 중앙에
-const AV_CROP = "width:1498px;height:843px;left:-472px;top:-30px;inset:auto;object-fit:fill;";
+// 1920x1080 원본을 0.6배(1152x648)로 놓고 얼굴 중심(원본 약 1000,440)을 둥근 창(616px) 중앙에
+const AV_CROP = "width:1152px;height:648px;left:-292px;top:-10px;inset:auto;object-fit:fill;";
 
 // ── 마크업
 function grid(sid, prov, state, prev, opts = {}) {
