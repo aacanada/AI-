@@ -1,10 +1,14 @@
 // node scripts/docs.mjs → STORYBOARD.md, SCRIPT.md, boards/storyboard.html (scenes.mjs 기준)
-import { writeFileSync, readdirSync } from "node:fs";
+import { writeFileSync, readdirSync, readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { SCENES, TOTAL } from "./scenes.mjs";
+import { SCENES } from "./scenes.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
+// 실제 장면 시간(gen.mjs가 내레이션 길이로 계산한 값)을 반영
+const TIMING = JSON.parse(readFileSync(join(ROOT, "scripts/.timing.json"), "utf8"));
+for (const s of SCENES) Object.assign(s, TIMING.scenes.find((x) => x.id === s.id));
+const TOTAL = TIMING.total;
 const fmt = (n) => (Number.isInteger(n) ? `${n}` : n.toFixed(1));
 const mmss = (s) => `${Math.floor(s / 60)}:${String(Math.round(s % 60)).padStart(2, "0")}`;
 const stills = readdirSync(join(ROOT, "boards/stills")).filter((f) => f.startsWith("frame-")).sort();
@@ -24,7 +28,7 @@ SCENES.forEach((s, i) => {
   md += `## Frame ${i + 1} — ${s.title} (${fmt(s.start)}-${fmt(s.start + s.dur)}s)
 
 - act: ${s.act}
-- status: built
+- status: animated
 - src: compositions/${s.id}.html
 - duration: ${s.dur}s
 - poster: ${fmt(s.dur / 2)}
@@ -96,7 +100,7 @@ const html = `<!doctype html>
 <body>
 <header>
   <h1>한국 고1 → 캐나다 졸업장: BC vs 온타리오 (스토리보드)</h1>
-  <p>16:9 · 약 ${mmss(TOTAL)} · 정지 화면은 각 장면의 완성 상태(애니메이션 전). 인트로·아웃트로의 둥근 창은 HeyGen 대표님 영상 자리입니다.<br/>
+  <p>16:9 · 약 ${mmss(TOTAL)} · 정지 화면은 스토리보드 승인본(장면 길이는 실제 내레이션 기준으로 갱신). 인트로·아웃트로의 둥근 창은 HeyGen 대표님 영상 자리입니다.<br/>
   블록 색: 초록/파랑 진한 칸 = 필수 · 연한 칸 = 선택 · 빗금 = 한국 학점 인정 · 빨간 자물쇠 = BC 현지 수강 필수 · 테두리만 = 온타리오 현지 이수 · G11/G12 = 이수 학년</p>
 </header>
 <main>

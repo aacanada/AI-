@@ -104,7 +104,7 @@ export const SCENES = [
     dur: 9,
     layout: "avatar",
     side: "left",
-    kicker: "에이에이캐나다 학점 가이드",
+    kicker: "AA Canada 학점 가이드",
     lines: ["한국 고1 마치고", "캐나다 졸업장까지"],
     sub: "BC주 vs 온타리오주",
     vo: "(HeyGen 영상 음성 — HEYGEN_SCRIPT.md 인트로)",

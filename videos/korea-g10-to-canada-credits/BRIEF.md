@@ -7,7 +7,7 @@ destination: youtube
 aspect: 1920x1080
 language: ko
 audience: 캐나다 자녀 유학·편입을 검토하는 한국 학부모
-length: 약 2분 50초
+length: 약 3분 30초 (실제 내레이션 기준 209초)
 angle: 비교 설명 (한 학생 사례: 졸업 요건 → 한국 학점 인정 → 캐나다 학점 취득)
 voice: ElevenLabs S2nra0Bd5UeFVzGK3oaH (아홉번째 자연톤, eleven_v4, stability 0.8, similarity 0.75, 문단마다 [calm])
 ---

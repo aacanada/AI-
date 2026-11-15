@@ -13,10 +13,9 @@
 .act { font-size: 28px; font-weight: 700; color: #5B6673; }
 .hl { font-size: 60px; font-weight: 900; line-height: 1.15; margin-top: 6px; }
 .panels { position: absolute; left: 0; right: 0; top: 214px; bottom: 0; display: flex; }
-.panel { position: relative; height: 100%; background: var(--bg); padding: 44px 64px 0 96px; overflow: hidden; }
-.panel.on { padding-left: 64px; }
-.panel + .panel { border-left: 6px solid #F4F6F8; }
-.ph { display: flex; align-items: baseline; gap: 18px; }
+.panel { position: relative; flex: none; height: 100%; background: var(--bg); padding: 44px 64px 0 96px; overflow: hidden; }
+.panel.on { padding-left: 64px; border-left: 6px solid #F4F6F8; }
+.ph { display: flex; align-items: baseline; gap: 18px; white-space: nowrap; }
 .pn { font-size: 48px; font-weight: 900; color: var(--c2); }
 .pd { font-size: 30px; font-weight: 700; color: var(--c); }
 .body { display: flex; gap: 56px; margin-top: 34px; align-items: flex-start; }
@@ -34,13 +33,17 @@
 .badge { position: absolute; top: 5px; right: 7px; font-size: 15px; font-weight: 800; opacity: .9; letter-spacing: 0; }
 .lk { position: absolute; top: 6px; right: 7px; width: 18px; height: 18px; color: #D52B1E; }
 .notes { display: flex; flex-direction: column; gap: 30px; min-width: 0; }
+.notes.ex { gap: 20px; }
 .note { border-left: 8px solid var(--c); padding: 4px 0 4px 22px; }
 .note.red { border-left-color: #D52B1E; }
 .nk { font-size: 36px; font-weight: 900; line-height: 1.22; color: #16202B; }
 .ns { font-size: 28px; font-weight: 700; line-height: 1.3; color: #4A5562; margin-top: 8px; }
 .note.red .nk { color: #B21F14; }
+.small .note { padding: 2px 0 2px 18px; }
+.small .nk { font-size: 32px; }
+.small .notes { gap: 16px; }
 .big { font-size: 132px; font-weight: 900; color: var(--c); line-height: 1; margin-top: 26px; letter-spacing: -0.04em; }
-.exam { background: #fff; border-radius: 12px; padding: 22px 26px; display: flex; justify-content: space-between; align-items: center; gap: 22px;
+.exam { background: #fff; border-radius: 12px; padding: 18px 26px; display: flex; justify-content: space-between; align-items: center; gap: 22px;
   box-shadow: 0 6px 18px rgba(16, 32, 48, .08); }
 .ek { font-size: 36px; font-weight: 900; }
 .es { font-size: 28px; font-weight: 700; color: #4A5562; margin-top: 6px; }
@@ -48,50 +51,56 @@
 .st-must { background: var(--c); color: #fff; }
 .st-waive { border: 3px solid #C77700; color: #9A5B00; }
 .st-free { background: #E3E7EC; color: #3D4752; }
-.dim { opacity: .32; }
 .mini .cell { border-radius: 6px; font-size: 0; }
 .mini .cell .badge, .mini .cell .lk { display: none; }
 .mini .pd { display: none; }
-.ph { white-space: nowrap; }
 .miniNote { font-size: 30px; font-weight: 700; color: var(--c2); margin-top: 26px; opacity: .7; }
-/* transcript */
-.doc { position: absolute; left: 120px; top: 214px; width: 820px; height: 800px; background: #fff; border-radius: 14px;
-  box-shadow: 0 22px 50px rgba(16, 32, 48, .14); padding: 48px 56px; }
+.doc { position: absolute; left: 120px; top: 200px; width: 820px; height: 730px; background: #fff; border-radius: 14px;
+  box-shadow: 0 22px 50px rgba(16, 32, 48, .14); padding: 40px 56px; }
 .dt { font-size: 40px; font-weight: 900; }
 .dm { font-size: 28px; font-weight: 700; color: #4A5562; margin-top: 10px; padding-bottom: 22px; border-bottom: 3px solid #16202B; }
-.row { display: flex; justify-content: space-between; font-size: 30px; font-weight: 700; padding: 13px 4px; border-bottom: 1px solid #DDE2E8; }
+.row { display: flex; justify-content: space-between; font-size: 30px; font-weight: 700; padding: 10px 4px; border-bottom: 1px solid #DDE2E8; }
 .row b { color: #1F5FAD; font-weight: 800; }
 .stamp { position: absolute; right: 36px; top: 14px; width: 180px; height: 180px; border-radius: 50%; border: 9px solid #D52B1E;
-  color: #D52B1E; display: flex; align-items: center; justify-content: center; font-size: 40px; font-weight: 900; line-height: 1.1; text-align: center; transform: rotate(-14deg); background: rgba(255,255,255,.6); }
+  color: #D52B1E; display: flex; align-items: center; justify-content: center; font-size: 40px; font-weight: 900; line-height: 1.1; text-align: center; background: rgba(255,255,255,.6); }
 .routes { position: absolute; left: 1040px; top: 300px; width: 780px; display: flex; flex-direction: column; gap: 40px; }
 .rq { font-size: 64px; font-weight: 900; line-height: 1.2; }
 .route { display: flex; align-items: center; gap: 24px; background: var(--c); color: #fff; border-radius: 14px; padding: 30px 36px; }
 .route .rn { font-size: 50px; font-weight: 900; }
 .route .rg { font-size: 34px; font-weight: 700; opacity: .9; }
-/* avatar */
 .av { position: absolute; top: 220px; width: 640px; height: 640px; border-radius: 50%; background: #DDE3EA; border: 12px solid #fff;
   box-shadow: 0 22px 50px rgba(16, 32, 48, .16); display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; }
+.av video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .av .ph2 { font-size: 34px; font-weight: 800; color: #5B6673; line-height: 1.4; border: 3px dashed #9AA5B1; border-radius: 50%;
   width: 520px; height: 520px; display: flex; align-items: center; justify-content: center; }
-.at { position: absolute; top: 300px; width: 960px; }
+.at { position: absolute; top: 280px; width: 960px; }
 .ak { font-size: 34px; font-weight: 800; color: #D52B1E; }
 .al { font-size: 92px; font-weight: 900; line-height: 1.15; margin-top: 18px; }
 .as { font-size: 52px; font-weight: 800; margin-top: 30px; }
 .as .b { color: #1F7A4D; } .as .o { color: #1F5FAD; }
 .brand { font-size: 96px; font-weight: 900; color: #D52B1E; margin-top: 34px; letter-spacing: -0.03em; }
-/* caution */
-.cau { position: absolute; left: 160px; top: 270px; width: 1500px; border-left: 14px solid #D52B1E; padding-left: 48px; }
+.cau { position: absolute; left: 160px; top: 270px; width: 1500px; padding-left: 62px; }
+.cbar { position: absolute; left: 0; top: 0; bottom: 0; width: 14px; background: #D52B1E; transform-origin: top; }
 .cau .ck { font-size: 34px; font-weight: 800; color: #D52B1E; }
 .cau .cm { font-size: 72px; font-weight: 900; line-height: 1.25; margin-top: 18px; }
-.src { position: absolute; left: 222px; top: 700px; width: 1500px; font-size: 28px; font-weight: 700; color: #5B6673; line-height: 1.6; }
+.src { position: absolute; left: 222px; top: 690px; width: 1500px; font-size: 28px; font-weight: 700; color: #5B6673; line-height: 1.6; }
 </style>
 <div id="root" data-composition-id="s05" data-width="1920" data-height="1080">
-<div class="head"><div class="act">1막 졸업 요건</div><div class="hl">온타리오 졸업장: 30학점</div></div>
-<div class="panels"><div class="panel bc mini" style="width:480px"><div class="ph"><div class="pn">BC주</div><div class="pd">Dogwood Diploma</div></div><div class="body"><div class="grid dim" style="grid-template-columns: repeat(5, 56px); --ch: 40px;"><div class="cell s-open">LA 10</div><div class="cell s-open">수학 10</div><div class="cell s-open">과학 10</div><div class="cell s-open">사회 10</div><div class="cell s-open">체육 10</div><div class="cell s-open">CLE</div><div class="cell s-open">예술·ADST</div><div class="cell s-open">LA 11</div><div class="cell s-open">수학 11/12</div><div class="cell s-open">과학 11/12</div><div class="cell s-open">사회 11/12</div><div class="cell s-open">LA 12</div><div class="cell s-open">CLC</div><div class="cell s-open">선택</div><div class="cell s-open">선택</div><div class="cell s-open">선택</div><div class="cell s-open">선택</div><div class="cell s-open">선택</div><div class="cell s-open">선택</div><div class="cell s-open">선택</div></div></div><div class="miniNote">밴쿠버에서</div></div><div class="panel on" style="width:1440px"><div class="ph"><div class="pn">온타리오주</div><div class="pd">OSSD</div></div><div class="body"><div class="grid" style="grid-template-columns: repeat(6, 124px); --ch: 88px;"><div class="cell s-req">영어 9</div><div class="cell s-req">영어 10</div><div class="cell s-req">영어 11</div><div class="cell s-req">영어 12</div><div class="cell s-req">수학 9</div><div class="cell s-req">수학 10</div><div class="cell s-req">수학 11/12</div><div class="cell s-req">과학 9</div><div class="cell s-req">과학 10</div><div class="cell s-req">지리 9</div><div class="cell s-req">역사 10</div><div class="cell s-req">예술</div><div class="cell s-req">체육</div><div class="cell s-req">불어</div><div class="cell s-req">기술</div><div class="cell s-req">진로·시민</div><div class="cell s-req">STEM</div><div class="cell s-elec">선택</div><div class="cell s-elec">선택</div><div class="cell s-elec">선택</div><div class="cell s-elec">선택</div><div class="cell s-elec">선택</div><div class="cell s-elec">선택</div><div class="cell s-elec">선택</div><div class="cell s-elec">선택</div><div class="cell s-elec">선택</div><div class="cell s-elec">선택</div><div class="cell s-elec">선택</div><div class="cell s-elec">선택</div><div class="cell s-elec">선택</div></div><div class="notes"><div class="note"><div class="nk">필수 17 + 선택 13</div><div class="ns">2024년 이후 9학년 입학생 기준</div></div><div class="note"><div class="nk">2023년 이전 입학생</div><div class="ns">필수 18 + 선택 12</div></div><div class="note"><div class="nk">영어는 학년마다 1과목</div><div class="ns">영어 4 · 수학 3 · 과학 2 …</div></div></div></div></div></div>
+<div class="head"><div class="act" id="s05-act">1막 졸업 요건</div><div class="hl" id="s05-hl">온타리오 졸업장: 30학점</div></div><div class="panels"><div class="panel bc mini" id="s05-bc" style="width:480px"><div class="ph"><div class="pn">BC주</div><div class="pd">Dogwood Diploma</div></div><div class="body" id="s05-bc-body"><div class="grid" id="s05-bc-grid" style="grid-template-columns: repeat(5, 56px); --ch: 40px; opacity:.32;"><div class="cell s-open">LA 10</div><div class="cell s-open">수학 10</div><div class="cell s-open">과학 10</div><div class="cell s-open">사회 10</div><div class="cell s-open">체육 10</div><div class="cell s-open">CLE</div><div class="cell s-open">예술·ADST</div><div class="cell s-open">LA 11</div><div class="cell s-open">수학 11/12</div><div class="cell s-open">과학 11/12</div><div class="cell s-open">사회 11/12</div><div class="cell s-open">LA 12</div><div class="cell s-open">CLC</div><div class="cell s-open">선택</div><div class="cell s-open">선택</div><div class="cell s-open">선택</div><div class="cell s-open">선택</div><div class="cell s-open">선택</div><div class="cell s-open">선택</div><div class="cell s-open">선택</div></div></div><div class="miniNote">밴쿠버에서</div></div><div class="panel on" id="s05-on" style="width:1440px"><div class="ph"><div class="pn">온타리오주</div><div class="pd">OSSD</div></div><div class="body" id="s05-on-body"><div class="grid" id="s05-on-grid" style="grid-template-columns: repeat(6, 124px); --ch: 88px;"><div class="cell s-req" data-to="req">영어 9</div><div class="cell s-req" data-to="req">영어 10</div><div class="cell s-req" data-to="req">영어 11</div><div class="cell s-req" data-to="req">영어 12</div><div class="cell s-req" data-to="req">수학 9</div><div class="cell s-req" data-to="req">수학 10</div><div class="cell s-req" data-to="req">수학 11/12</div><div class="cell s-req" data-to="req">과학 9</div><div class="cell s-req" data-to="req">과학 10</div><div class="cell s-req" data-to="req">지리 9</div><div class="cell s-req" data-to="req">역사 10</div><div class="cell s-req" data-to="req">예술</div><div class="cell s-req" data-to="req">체육</div><div class="cell s-req" data-to="req">불어</div><div class="cell s-req" data-to="req">기술</div><div class="cell s-req" data-to="req">진로·시민</div><div class="cell s-req" data-to="req">STEM</div><div class="cell s-elec" data-to="elec">선택</div><div class="cell s-elec" data-to="elec">선택</div><div class="cell s-elec" data-to="elec">선택</div><div class="cell s-elec" data-to="elec">선택</div><div class="cell s-elec" data-to="elec">선택</div><div class="cell s-elec" data-to="elec">선택</div><div class="cell s-elec" data-to="elec">선택</div><div class="cell s-elec" data-to="elec">선택</div><div class="cell s-elec" data-to="elec">선택</div><div class="cell s-elec" data-to="elec">선택</div><div class="cell s-elec" data-to="elec">선택</div><div class="cell s-elec" data-to="elec">선택</div><div class="cell s-elec" data-to="elec">선택</div></div><div class="notes"><div class="note" id="s05-on-n0"><div class="nk">필수 17 + 선택 13</div><div class="ns">2024년 이후 9학년 입학생 기준</div></div><div class="note" id="s05-on-n1"><div class="nk">2023년 이전 입학생</div><div class="ns">필수 18 + 선택 12</div></div><div class="note" id="s05-on-n2"><div class="nk">영어는 학년마다 1과목</div><div class="ns">영어 4 · 수학 3 · 과학 2 …</div></div></div></div></div></div>
 </div>
 <script>
   const tl = gsap.timeline({ paused: true });
-  tl.set({}, {}, 12);
+  tl.fromTo("#s05-bc", { width: 1440 }, { width: 480, duration: 0.8, ease: "power2.inOut" }, 0);
+  tl.fromTo("#s05-bc-body", { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "power2.out" }, 0.6);
+  tl.fromTo("#s05-on", { width: 480 }, { width: 1440, duration: 0.8, ease: "power2.inOut" }, 0);
+  tl.fromTo("#s05-on-body", { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "power2.out" }, 0.6);
+  tl.fromTo("#s05-on-grid .cell[data-to=\"req\"]", { y: -36, scale: 0.86, opacity: 0.15 }, { y: 0, scale: 1, opacity: 1, duration: 0.42, ease: "back.out(1.6)", stagger: 0.05 }, 2.18);
+  tl.fromTo("#s05-on-grid .cell[data-to=\"elec\"]", { y: -36, scale: 0.86, opacity: 0.15 }, { y: 0, scale: 1, opacity: 1, duration: 0.42, ease: "back.out(1.6)", stagger: 0.05 }, 10.1);
+  tl.fromTo("#s05-on-n0", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.55, ease: "power3.out" }, 8.58);
+  tl.fromTo("#s05-on-n1", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.55, ease: "power3.out" }, 10.18);
+  tl.fromTo("#s05-on-n2", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.55, ease: "power3.out" }, 12.02);
+  tl.fromTo("#s05-hl", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.55, ease: "power3.out" }, 0.1);
+  tl.set({}, {}, 16.87);
   window.__timelines["s05"] = tl;
 </script>
 </template>

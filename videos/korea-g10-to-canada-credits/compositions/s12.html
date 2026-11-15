@@ -13,10 +13,9 @@
 .act { font-size: 28px; font-weight: 700; color: #5B6673; }
 .hl { font-size: 60px; font-weight: 900; line-height: 1.15; margin-top: 6px; }
 .panels { position: absolute; left: 0; right: 0; top: 214px; bottom: 0; display: flex; }
-.panel { position: relative; height: 100%; background: var(--bg); padding: 44px 64px 0 96px; overflow: hidden; }
-.panel.on { padding-left: 64px; }
-.panel + .panel { border-left: 6px solid #F4F6F8; }
-.ph { display: flex; align-items: baseline; gap: 18px; }
+.panel { position: relative; flex: none; height: 100%; background: var(--bg); padding: 44px 64px 0 96px; overflow: hidden; }
+.panel.on { padding-left: 64px; border-left: 6px solid #F4F6F8; }
+.ph { display: flex; align-items: baseline; gap: 18px; white-space: nowrap; }
 .pn { font-size: 48px; font-weight: 900; color: var(--c2); }
 .pd { font-size: 30px; font-weight: 700; color: var(--c); }
 .body { display: flex; gap: 56px; margin-top: 34px; align-items: flex-start; }
@@ -34,13 +33,17 @@
 .badge { position: absolute; top: 5px; right: 7px; font-size: 15px; font-weight: 800; opacity: .9; letter-spacing: 0; }
 .lk { position: absolute; top: 6px; right: 7px; width: 18px; height: 18px; color: #D52B1E; }
 .notes { display: flex; flex-direction: column; gap: 30px; min-width: 0; }
+.notes.ex { gap: 20px; }
 .note { border-left: 8px solid var(--c); padding: 4px 0 4px 22px; }
 .note.red { border-left-color: #D52B1E; }
 .nk { font-size: 36px; font-weight: 900; line-height: 1.22; color: #16202B; }
 .ns { font-size: 28px; font-weight: 700; line-height: 1.3; color: #4A5562; margin-top: 8px; }
 .note.red .nk { color: #B21F14; }
+.small .note { padding: 2px 0 2px 18px; }
+.small .nk { font-size: 32px; }
+.small .notes { gap: 16px; }
 .big { font-size: 132px; font-weight: 900; color: var(--c); line-height: 1; margin-top: 26px; letter-spacing: -0.04em; }
-.exam { background: #fff; border-radius: 12px; padding: 22px 26px; display: flex; justify-content: space-between; align-items: center; gap: 22px;
+.exam { background: #fff; border-radius: 12px; padding: 18px 26px; display: flex; justify-content: space-between; align-items: center; gap: 22px;
   box-shadow: 0 6px 18px rgba(16, 32, 48, .08); }
 .ek { font-size: 36px; font-weight: 900; }
 .es { font-size: 28px; font-weight: 700; color: #4A5562; margin-top: 6px; }
@@ -48,50 +51,55 @@
 .st-must { background: var(--c); color: #fff; }
 .st-waive { border: 3px solid #C77700; color: #9A5B00; }
 .st-free { background: #E3E7EC; color: #3D4752; }
-.dim { opacity: .32; }
 .mini .cell { border-radius: 6px; font-size: 0; }
 .mini .cell .badge, .mini .cell .lk { display: none; }
 .mini .pd { display: none; }
-.ph { white-space: nowrap; }
 .miniNote { font-size: 30px; font-weight: 700; color: var(--c2); margin-top: 26px; opacity: .7; }
-/* transcript */
-.doc { position: absolute; left: 120px; top: 214px; width: 820px; height: 800px; background: #fff; border-radius: 14px;
-  box-shadow: 0 22px 50px rgba(16, 32, 48, .14); padding: 48px 56px; }
+.doc { position: absolute; left: 120px; top: 200px; width: 820px; height: 730px; background: #fff; border-radius: 14px;
+  box-shadow: 0 22px 50px rgba(16, 32, 48, .14); padding: 40px 56px; }
 .dt { font-size: 40px; font-weight: 900; }
 .dm { font-size: 28px; font-weight: 700; color: #4A5562; margin-top: 10px; padding-bottom: 22px; border-bottom: 3px solid #16202B; }
-.row { display: flex; justify-content: space-between; font-size: 30px; font-weight: 700; padding: 13px 4px; border-bottom: 1px solid #DDE2E8; }
+.row { display: flex; justify-content: space-between; font-size: 30px; font-weight: 700; padding: 10px 4px; border-bottom: 1px solid #DDE2E8; }
 .row b { color: #1F5FAD; font-weight: 800; }
 .stamp { position: absolute; right: 36px; top: 14px; width: 180px; height: 180px; border-radius: 50%; border: 9px solid #D52B1E;
-  color: #D52B1E; display: flex; align-items: center; justify-content: center; font-size: 40px; font-weight: 900; line-height: 1.1; text-align: center; transform: rotate(-14deg); background: rgba(255,255,255,.6); }
+  color: #D52B1E; display: flex; align-items: center; justify-content: center; font-size: 40px; font-weight: 900; line-height: 1.1; text-align: center; background: rgba(255,255,255,.6); }
 .routes { position: absolute; left: 1040px; top: 300px; width: 780px; display: flex; flex-direction: column; gap: 40px; }
 .rq { font-size: 64px; font-weight: 900; line-height: 1.2; }
 .route { display: flex; align-items: center; gap: 24px; background: var(--c); color: #fff; border-radius: 14px; padding: 30px 36px; }
 .route .rn { font-size: 50px; font-weight: 900; }
 .route .rg { font-size: 34px; font-weight: 700; opacity: .9; }
-/* avatar */
 .av { position: absolute; top: 220px; width: 640px; height: 640px; border-radius: 50%; background: #DDE3EA; border: 12px solid #fff;
   box-shadow: 0 22px 50px rgba(16, 32, 48, .16); display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; }
+.av video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .av .ph2 { font-size: 34px; font-weight: 800; color: #5B6673; line-height: 1.4; border: 3px dashed #9AA5B1; border-radius: 50%;
   width: 520px; height: 520px; display: flex; align-items: center; justify-content: center; }
-.at { position: absolute; top: 300px; width: 960px; }
+.at { position: absolute; top: 280px; width: 960px; }
 .ak { font-size: 34px; font-weight: 800; color: #D52B1E; }
 .al { font-size: 92px; font-weight: 900; line-height: 1.15; margin-top: 18px; }
 .as { font-size: 52px; font-weight: 800; margin-top: 30px; }
 .as .b { color: #1F7A4D; } .as .o { color: #1F5FAD; }
 .brand { font-size: 96px; font-weight: 900; color: #D52B1E; margin-top: 34px; letter-spacing: -0.03em; }
-/* caution */
-.cau { position: absolute; left: 160px; top: 270px; width: 1500px; border-left: 14px solid #D52B1E; padding-left: 48px; }
+.cau { position: absolute; left: 160px; top: 270px; width: 1500px; padding-left: 62px; }
+.cbar { position: absolute; left: 0; top: 0; bottom: 0; width: 14px; background: #D52B1E; transform-origin: top; }
 .cau .ck { font-size: 34px; font-weight: 800; color: #D52B1E; }
 .cau .cm { font-size: 72px; font-weight: 900; line-height: 1.25; margin-top: 18px; }
-.src { position: absolute; left: 222px; top: 700px; width: 1500px; font-size: 28px; font-weight: 700; color: #5B6673; line-height: 1.6; }
+.src { position: absolute; left: 222px; top: 690px; width: 1500px; font-size: 28px; font-weight: 700; color: #5B6673; line-height: 1.6; }
 </style>
 <div id="root" data-composition-id="s12" data-width="1920" data-height="1080">
-<div class="head"><div class="act">3막 캐나다 학점 취득</div><div class="hl">온타리오: 최소 14학점을 2년에</div></div>
-<div class="panels"><div class="panel bc mini" style="width:480px"><div class="ph"><div class="pn">BC주</div><div class="pd">Dogwood Diploma</div></div><div class="body"><div class="grid dim" style="grid-template-columns: repeat(5, 56px); --ch: 40px;"><div class="cell s-y11">LA 10<span class="badge">G11</span></div><div class="cell s-eq">수학 10<span class="badge">인정</span></div><div class="cell s-eq">과학 10<span class="badge">인정</span></div><div class="cell s-eq">사회 10<span class="badge">인정</span></div><div class="cell s-eq">체육 10<span class="badge">인정</span></div><div class="cell s-y11">CLE<span class="badge">G11</span></div><div class="cell s-y11">예술·ADST<span class="badge">G11</span></div><div class="cell s-y11">LA 11<span class="badge">G11</span></div><div class="cell s-y11">수학 11/12<span class="badge">G11</span></div><div class="cell s-y11">과학 11/12<span class="badge">G11</span></div><div class="cell s-y12">사회 11/12<span class="badge">G12</span></div><div class="cell s-y12">LA 12<span class="badge">G12</span></div><div class="cell s-y12">CLC<span class="badge">G12</span></div><div class="cell s-y11">선택<span class="badge">G11</span></div><div class="cell s-y11">선택<span class="badge">G11</span></div><div class="cell s-y12">선택<span class="badge">G12</span></div><div class="cell s-y12">선택<span class="badge">G12</span></div><div class="cell s-y12">선택<span class="badge">G12</span></div><div class="cell s-y12">선택<span class="badge">G12</span></div><div class="cell s-y12">선택<span class="badge">G12</span></div></div></div><div class="miniNote">밴쿠버에서</div></div><div class="panel on" style="width:1440px"><div class="ph"><div class="pn">온타리오주</div><div class="pd">OSSD</div></div><div class="body"><div class="grid" style="grid-template-columns: repeat(6, 124px); --ch: 88px;"><div class="cell s-eq">영어 9<span class="badge">인정</span></div><div class="cell s-eq">영어 10<span class="badge">인정</span></div><div class="cell s-y11">영어 11<span class="badge">G11</span></div><div class="cell s-y12">영어 12<span class="badge">G12</span></div><div class="cell s-eq">수학 9<span class="badge">인정</span></div><div class="cell s-eq">수학 10<span class="badge">인정</span></div><div class="cell s-y11">수학 11/12<span class="badge">G11</span></div><div class="cell s-eq">과학 9<span class="badge">인정</span></div><div class="cell s-eq">과학 10<span class="badge">인정</span></div><div class="cell s-eq">지리 9<span class="badge">인정</span></div><div class="cell s-eq">역사 10<span class="badge">인정</span></div><div class="cell s-eq">예술<span class="badge">인정</span></div><div class="cell s-eq">체육<span class="badge">인정</span></div><div class="cell s-eq">불어<span class="badge">인정</span></div><div class="cell s-eq">기술<span class="badge">인정</span></div><div class="cell s-eq">진로·시민<span class="badge">인정</span></div><div class="cell s-eq">STEM<span class="badge">인정</span></div><div class="cell s-y12">선택<span class="badge">G12</span></div><div class="cell s-y11">선택<span class="badge">G11</span></div><div class="cell s-y12">선택<span class="badge">G12</span></div><div class="cell s-y11">선택<span class="badge">G11</span></div><div class="cell s-y12">선택<span class="badge">G12</span></div><div class="cell s-y11">선택<span class="badge">G11</span></div><div class="cell s-y12">선택<span class="badge">G12</span></div><div class="cell s-y11">선택<span class="badge">G11</span></div><div class="cell s-y12">선택<span class="badge">G12</span></div><div class="cell s-y11">선택<span class="badge">G11</span></div><div class="cell s-y12">선택<span class="badge">G12</span></div><div class="cell s-eq">선택<span class="badge">인정</span></div><div class="cell s-eq">선택<span class="badge">인정</span></div></div><div class="notes"><div class="note"><div class="nk">11학년 · 12학년에 나눠 이수</div><div class="ns">영어 11 · 영어 12 · 수학 11/12 포함</div></div><div class="note red"><div class="nk">관리 포인트</div><div class="ns">OSSLT 시험 · 봉사활동 시간</div></div></div></div></div></div>
+<div class="head"><div class="act" id="s12-act">3막 캐나다 학점 취득</div><div class="hl" id="s12-hl">온타리오: 최소 14학점을 2년에</div></div><div class="panels"><div class="panel bc mini" id="s12-bc" style="width:480px"><div class="ph"><div class="pn">BC주</div><div class="pd">Dogwood Diploma</div></div><div class="body" id="s12-bc-body"><div class="grid" id="s12-bc-grid" style="grid-template-columns: repeat(5, 56px); --ch: 40px; opacity:.32;"><div class="cell s-y11">LA 10<span class="badge">G11</span></div><div class="cell s-eq">수학 10<span class="badge">인정</span></div><div class="cell s-eq">과학 10<span class="badge">인정</span></div><div class="cell s-eq">사회 10<span class="badge">인정</span></div><div class="cell s-eq">체육 10<span class="badge">인정</span></div><div class="cell s-y11">CLE<span class="badge">G11</span></div><div class="cell s-y11">예술·ADST<span class="badge">G11</span></div><div class="cell s-y11">LA 11<span class="badge">G11</span></div><div class="cell s-y11">수학 11/12<span class="badge">G11</span></div><div class="cell s-y11">과학 11/12<span class="badge">G11</span></div><div class="cell s-y12">사회 11/12<span class="badge">G12</span></div><div class="cell s-y12">LA 12<span class="badge">G12</span></div><div class="cell s-y12">CLC<span class="badge">G12</span></div><div class="cell s-y11">선택<span class="badge">G11</span></div><div class="cell s-y11">선택<span class="badge">G11</span></div><div class="cell s-y12">선택<span class="badge">G12</span></div><div class="cell s-y12">선택<span class="badge">G12</span></div><div class="cell s-y12">선택<span class="badge">G12</span></div><div class="cell s-y12">선택<span class="badge">G12</span></div><div class="cell s-y12">선택<span class="badge">G12</span></div></div></div><div class="miniNote">밴쿠버에서</div></div><div class="panel on" id="s12-on" style="width:1440px"><div class="ph"><div class="pn">온타리오주</div><div class="pd">OSSD</div></div><div class="body" id="s12-on-body"><div class="grid" id="s12-on-grid" style="grid-template-columns: repeat(6, 124px); --ch: 88px;"><div class="cell s-eq">영어 9<span class="badge">인정</span></div><div class="cell s-eq">영어 10<span class="badge">인정</span></div><div class="cell s-y11" data-to="y11">영어 11<span class="badge">G11</span></div><div class="cell s-y12" data-to="y12">영어 12<span class="badge">G12</span></div><div class="cell s-eq">수학 9<span class="badge">인정</span></div><div class="cell s-eq">수학 10<span class="badge">인정</span></div><div class="cell s-y11" data-to="y11">수학 11/12<span class="badge">G11</span></div><div class="cell s-eq">과학 9<span class="badge">인정</span></div><div class="cell s-eq">과학 10<span class="badge">인정</span></div><div class="cell s-eq">지리 9<span class="badge">인정</span></div><div class="cell s-eq">역사 10<span class="badge">인정</span></div><div class="cell s-eq">예술<span class="badge">인정</span></div><div class="cell s-eq">체육<span class="badge">인정</span></div><div class="cell s-eq">불어<span class="badge">인정</span></div><div class="cell s-eq">기술<span class="badge">인정</span></div><div class="cell s-eq">진로·시민<span class="badge">인정</span></div><div class="cell s-eq">STEM<span class="badge">인정</span></div><div class="cell s-y12" data-to="y12">선택<span class="badge">G12</span></div><div class="cell s-y11" data-to="y11">선택<span class="badge">G11</span></div><div class="cell s-y12" data-to="y12">선택<span class="badge">G12</span></div><div class="cell s-y11" data-to="y11">선택<span class="badge">G11</span></div><div class="cell s-y12" data-to="y12">선택<span class="badge">G12</span></div><div class="cell s-y11" data-to="y11">선택<span class="badge">G11</span></div><div class="cell s-y12" data-to="y12">선택<span class="badge">G12</span></div><div class="cell s-y11" data-to="y11">선택<span class="badge">G11</span></div><div class="cell s-y12" data-to="y12">선택<span class="badge">G12</span></div><div class="cell s-y11" data-to="y11">선택<span class="badge">G11</span></div><div class="cell s-y12" data-to="y12">선택<span class="badge">G12</span></div><div class="cell s-eq">선택<span class="badge">인정</span></div><div class="cell s-eq">선택<span class="badge">인정</span></div></div><div class="notes"><div class="note" id="s12-on-n0"><div class="nk">11학년 · 12학년에 나눠 이수</div><div class="ns">영어 11 · 영어 12 · 수학 11/12 포함</div></div><div class="note red" id="s12-on-n1"><div class="nk">관리 포인트</div><div class="ns">OSSLT 시험 · 봉사활동 시간</div></div></div></div></div></div>
 </div>
 <script>
   const tl = gsap.timeline({ paused: true });
-  tl.set({}, {}, 10);
+  tl.fromTo("#s12-bc", { width: 1440 }, { width: 480, duration: 0.8, ease: "power2.inOut" }, 0);
+  tl.fromTo("#s12-bc-body", { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "power2.out" }, 0.6);
+  tl.fromTo("#s12-on", { width: 480 }, { width: 1440, duration: 0.8, ease: "power2.inOut" }, 0);
+  tl.fromTo("#s12-on-body", { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "power2.out" }, 0.6);
+  tl.fromTo("#s12-on-grid .cell[data-to=\"y11\"]", { y: -36, scale: 0.86, opacity: 0.15 }, { y: 0, scale: 1, opacity: 1, duration: 0.42, ease: "back.out(1.6)", stagger: 0.05 }, 2.66);
+  tl.fromTo("#s12-on-grid .cell[data-to=\"y12\"]", { y: -36, scale: 0.86, opacity: 0.15 }, { y: 0, scale: 1, opacity: 1, duration: 0.42, ease: "back.out(1.6)", stagger: 0.05 }, 3.56);
+  tl.fromTo("#s12-on-n0", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.55, ease: "power3.out" }, 4.5);
+  tl.fromTo("#s12-on-n1", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.55, ease: "power3.out" }, 6.18);
+  tl.fromTo("#s12-hl", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.55, ease: "power3.out" }, 0.1);
+  tl.set({}, {}, 11.33);
   window.__timelines["s12"] = tl;
 </script>
 </template>
