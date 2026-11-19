@@ -921,16 +921,12 @@
     }
   },
   "checks": {
-    "latest": {
-      "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
-      "id": "6a17f254-161c-4b1c-9b40-94e56c1eb09f"
-    },
+    "latest": null,
     "revisions": {
       "81668c1b-2a9c-49e9-ba81-3758f6473e93": [
         {
           "id": "af1755cd-9cef-4279-a8da-ebe9017cb69a",
           "scope": "project",
-          "report": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/checks/af1755cd-9cef-4279-a8da-ebe9017cb69a.json",
           "metadata": {
             "ok": false,
             "browserSkipped": false,
@@ -960,14 +956,15 @@
           "revision": "81668c1b-2a9c-49e9-ba81-3758f6473e93",
           "inputFingerprint": "3de57adca35711d49e7222f3dafade4c3631ee5f9532d5b5faa357331e7d8e1b",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         }
       ],
       "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e": [
         {
           "id": "6a17f254-161c-4b1c-9b40-94e56c1eb09f",
           "scope": "project",
-          "report": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/checks/6a17f254-161c-4b1c-9b40-94e56c1eb09f.json",
           "metadata": {
             "ok": true,
             "browserSkipped": false,
@@ -997,7 +994,9 @@
           "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
           "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         }
       ]
     },
@@ -1013,7 +1012,6 @@
         {
           "scope": "full",
           "id": "7cd01826-f959-4cfc-b564-a9022502524d-0",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/07dd00a8-09f4-475b-9496-de9e7b7e1638/frame-00-at-32s.png",
           "time": 32,
           "metadata": {
             "width": 1920,
@@ -1028,12 +1026,13 @@
           "revision": "4cfd688b-c6f5-459e-bfc0-60f682ef53bd",
           "inputFingerprint": "0eb934109cca3eb9cd75acffc7b2cd1750379b5957f303bade80ae11bd1e7755",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "7cd01826-f959-4cfc-b564-a9022502524d-1",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/07dd00a8-09f4-475b-9496-de9e7b7e1638/frame-01-at-42s.png",
           "time": 42,
           "metadata": {
             "width": 1920,
@@ -1048,12 +1047,13 @@
           "revision": "4cfd688b-c6f5-459e-bfc0-60f682ef53bd",
           "inputFingerprint": "0eb934109cca3eb9cd75acffc7b2cd1750379b5957f303bade80ae11bd1e7755",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "7cd01826-f959-4cfc-b564-a9022502524d-2",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/07dd00a8-09f4-475b-9496-de9e7b7e1638/frame-02-at-50s.png",
           "time": 50,
           "metadata": {
             "width": 1920,
@@ -1068,12 +1068,13 @@
           "revision": "4cfd688b-c6f5-459e-bfc0-60f682ef53bd",
           "inputFingerprint": "0eb934109cca3eb9cd75acffc7b2cd1750379b5957f303bade80ae11bd1e7755",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "7cd01826-f959-4cfc-b564-a9022502524d-3",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/07dd00a8-09f4-475b-9496-de9e7b7e1638/frame-03-at-58s.png",
           "time": 58,
           "metadata": {
             "width": 1920,
@@ -1088,12 +1089,13 @@
           "revision": "4cfd688b-c6f5-459e-bfc0-60f682ef53bd",
           "inputFingerprint": "0eb934109cca3eb9cd75acffc7b2cd1750379b5957f303bade80ae11bd1e7755",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "7cd01826-f959-4cfc-b564-a9022502524d-4",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/07dd00a8-09f4-475b-9496-de9e7b7e1638/frame-04-at-64s.png",
           "time": 64,
           "metadata": {
             "width": 1920,
@@ -1108,12 +1110,13 @@
           "revision": "4cfd688b-c6f5-459e-bfc0-60f682ef53bd",
           "inputFingerprint": "0eb934109cca3eb9cd75acffc7b2cd1750379b5957f303bade80ae11bd1e7755",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "7cd01826-f959-4cfc-b564-a9022502524d-5",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/07dd00a8-09f4-475b-9496-de9e7b7e1638/frame-05-at-67s.png",
           "time": 67,
           "metadata": {
             "width": 1920,
@@ -1128,12 +1131,13 @@
           "revision": "4cfd688b-c6f5-459e-bfc0-60f682ef53bd",
           "inputFingerprint": "0eb934109cca3eb9cd75acffc7b2cd1750379b5957f303bade80ae11bd1e7755",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "7cd01826-f959-4cfc-b564-a9022502524d-6",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/07dd00a8-09f4-475b-9496-de9e7b7e1638/frame-06-at-74s.png",
           "time": 74,
           "metadata": {
             "width": 1920,
@@ -1148,12 +1152,13 @@
           "revision": "4cfd688b-c6f5-459e-bfc0-60f682ef53bd",
           "inputFingerprint": "0eb934109cca3eb9cd75acffc7b2cd1750379b5957f303bade80ae11bd1e7755",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "7cd01826-f959-4cfc-b564-a9022502524d-7",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/07dd00a8-09f4-475b-9496-de9e7b7e1638/frame-07-at-84s.png",
           "time": 84,
           "metadata": {
             "width": 1920,
@@ -1168,12 +1173,13 @@
           "revision": "4cfd688b-c6f5-459e-bfc0-60f682ef53bd",
           "inputFingerprint": "0eb934109cca3eb9cd75acffc7b2cd1750379b5957f303bade80ae11bd1e7755",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "7cd01826-f959-4cfc-b564-a9022502524d-8",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/07dd00a8-09f4-475b-9496-de9e7b7e1638/frame-08-at-95s.png",
           "time": 95,
           "metadata": {
             "width": 1920,
@@ -1188,12 +1194,13 @@
           "revision": "4cfd688b-c6f5-459e-bfc0-60f682ef53bd",
           "inputFingerprint": "0eb934109cca3eb9cd75acffc7b2cd1750379b5957f303bade80ae11bd1e7755",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "7cd01826-f959-4cfc-b564-a9022502524d-9",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/07dd00a8-09f4-475b-9496-de9e7b7e1638/frame-09-at-104s.png",
           "time": 104,
           "metadata": {
             "width": 1920,
@@ -1208,12 +1215,13 @@
           "revision": "4cfd688b-c6f5-459e-bfc0-60f682ef53bd",
           "inputFingerprint": "0eb934109cca3eb9cd75acffc7b2cd1750379b5957f303bade80ae11bd1e7755",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "7cd01826-f959-4cfc-b564-a9022502524d-10",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/07dd00a8-09f4-475b-9496-de9e7b7e1638/frame-10-at-112s.png",
           "time": 112,
           "metadata": {
             "width": 1920,
@@ -1228,12 +1236,13 @@
           "revision": "4cfd688b-c6f5-459e-bfc0-60f682ef53bd",
           "inputFingerprint": "0eb934109cca3eb9cd75acffc7b2cd1750379b5957f303bade80ae11bd1e7755",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "7cd01826-f959-4cfc-b564-a9022502524d-11",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/07dd00a8-09f4-475b-9496-de9e7b7e1638/frame-11-at-120s.png",
           "time": 120,
           "metadata": {
             "width": 1920,
@@ -1248,12 +1257,13 @@
           "revision": "4cfd688b-c6f5-459e-bfc0-60f682ef53bd",
           "inputFingerprint": "0eb934109cca3eb9cd75acffc7b2cd1750379b5957f303bade80ae11bd1e7755",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "7cd01826-f959-4cfc-b564-a9022502524d-12",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/07dd00a8-09f4-475b-9496-de9e7b7e1638/frame-12-at-595.783s.png",
           "time": 595.783,
           "metadata": {
             "width": 1920,
@@ -1268,14 +1278,15 @@
           "revision": "4cfd688b-c6f5-459e-bfc0-60f682ef53bd",
           "inputFingerprint": "0eb934109cca3eb9cd75acffc7b2cd1750379b5957f303bade80ae11bd1e7755",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         }
       ],
       "529a41c4-5a66-4879-be15-e65c42354072": [
         {
           "scope": "full",
           "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-0",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-00-at-131.11s.png",
           "time": 131.11,
           "metadata": {
             "width": 1920,
@@ -1290,12 +1301,13 @@
           "revision": "529a41c4-5a66-4879-be15-e65c42354072",
           "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-1",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-01-at-140.05s.png",
           "time": 140.05,
           "metadata": {
             "width": 1920,
@@ -1310,12 +1322,13 @@
           "revision": "529a41c4-5a66-4879-be15-e65c42354072",
           "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-2",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-02-at-147.87s.png",
           "time": 147.87,
           "metadata": {
             "width": 1920,
@@ -1330,12 +1343,13 @@
           "revision": "529a41c4-5a66-4879-be15-e65c42354072",
           "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-3",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-03-at-163.85s.png",
           "time": 163.85,
           "metadata": {
             "width": 1920,
@@ -1350,12 +1364,13 @@
           "revision": "529a41c4-5a66-4879-be15-e65c42354072",
           "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-4",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-04-at-177.91s.png",
           "time": 177.91,
           "metadata": {
             "width": 1920,
@@ -1370,12 +1385,13 @@
           "revision": "529a41c4-5a66-4879-be15-e65c42354072",
           "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-5",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-05-at-190.21s.png",
           "time": 190.21,
           "metadata": {
             "width": 1920,
@@ -1390,12 +1406,13 @@
           "revision": "529a41c4-5a66-4879-be15-e65c42354072",
           "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-6",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-06-at-203.15s.png",
           "time": 203.15,
           "metadata": {
             "width": 1920,
@@ -1410,12 +1427,13 @@
           "revision": "529a41c4-5a66-4879-be15-e65c42354072",
           "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-7",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-07-at-212.27s.png",
           "time": 212.27,
           "metadata": {
             "width": 1920,
@@ -1430,12 +1448,13 @@
           "revision": "529a41c4-5a66-4879-be15-e65c42354072",
           "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-8",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-08-at-220.25s.png",
           "time": 220.25,
           "metadata": {
             "width": 1920,
@@ -1450,12 +1469,13 @@
           "revision": "529a41c4-5a66-4879-be15-e65c42354072",
           "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-9",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-09-at-239.07s.png",
           "time": 239.07,
           "metadata": {
             "width": 1920,
@@ -1470,12 +1490,13 @@
           "revision": "529a41c4-5a66-4879-be15-e65c42354072",
           "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-10",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-10-at-256.1s.png",
           "time": 256.1,
           "metadata": {
             "width": 1920,
@@ -1490,12 +1511,13 @@
           "revision": "529a41c4-5a66-4879-be15-e65c42354072",
           "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-11",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-11-at-271.01s.png",
           "time": 271.01,
           "metadata": {
             "width": 1920,
@@ -1510,12 +1532,13 @@
           "revision": "529a41c4-5a66-4879-be15-e65c42354072",
           "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-12",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-12-at-287.01s.png",
           "time": 287.01,
           "metadata": {
             "width": 1920,
@@ -1530,12 +1553,13 @@
           "revision": "529a41c4-5a66-4879-be15-e65c42354072",
           "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-13",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-13-at-298.41s.png",
           "time": 298.41,
           "metadata": {
             "width": 1920,
@@ -1550,12 +1574,13 @@
           "revision": "529a41c4-5a66-4879-be15-e65c42354072",
           "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-14",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-14-at-308.37s.png",
           "time": 308.37,
           "metadata": {
             "width": 1920,
@@ -1570,12 +1595,13 @@
           "revision": "529a41c4-5a66-4879-be15-e65c42354072",
           "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-15",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-15-at-329.55s.png",
           "time": 329.55,
           "metadata": {
             "width": 1920,
@@ -1590,12 +1616,13 @@
           "revision": "529a41c4-5a66-4879-be15-e65c42354072",
           "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-16",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-16-at-348.35s.png",
           "time": 348.35,
           "metadata": {
             "width": 1920,
@@ -1610,12 +1637,13 @@
           "revision": "529a41c4-5a66-4879-be15-e65c42354072",
           "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-17",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-17-at-364.79s.png",
           "time": 364.79,
           "metadata": {
             "width": 1920,
@@ -1630,12 +1658,13 @@
           "revision": "529a41c4-5a66-4879-be15-e65c42354072",
           "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-18",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-18-at-389.51s.png",
           "time": 389.51,
           "metadata": {
             "width": 1920,
@@ -1650,12 +1679,13 @@
           "revision": "529a41c4-5a66-4879-be15-e65c42354072",
           "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-19",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-19-at-409.6s.png",
           "time": 409.6,
           "metadata": {
             "width": 1920,
@@ -1670,12 +1700,13 @@
           "revision": "529a41c4-5a66-4879-be15-e65c42354072",
           "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-20",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-20-at-427.19s.png",
           "time": 427.19,
           "metadata": {
             "width": 1920,
@@ -1690,12 +1721,13 @@
           "revision": "529a41c4-5a66-4879-be15-e65c42354072",
           "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-21",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-21-at-451.14s.png",
           "time": 451.14,
           "metadata": {
             "width": 1920,
@@ -1710,12 +1742,13 @@
           "revision": "529a41c4-5a66-4879-be15-e65c42354072",
           "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-22",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-22-at-469.98s.png",
           "time": 469.98,
           "metadata": {
             "width": 1920,
@@ -1730,12 +1763,13 @@
           "revision": "529a41c4-5a66-4879-be15-e65c42354072",
           "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-23",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-23-at-486.48s.png",
           "time": 486.48,
           "metadata": {
             "width": 1920,
@@ -1750,12 +1784,13 @@
           "revision": "529a41c4-5a66-4879-be15-e65c42354072",
           "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-24",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-24-at-501.11s.png",
           "time": 501.11,
           "metadata": {
             "width": 1920,
@@ -1770,12 +1805,13 @@
           "revision": "529a41c4-5a66-4879-be15-e65c42354072",
           "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-25",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-25-at-510.43s.png",
           "time": 510.43,
           "metadata": {
             "width": 1920,
@@ -1790,12 +1826,13 @@
           "revision": "529a41c4-5a66-4879-be15-e65c42354072",
           "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-26",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-26-at-518.59s.png",
           "time": 518.59,
           "metadata": {
             "width": 1920,
@@ -1810,12 +1847,13 @@
           "revision": "529a41c4-5a66-4879-be15-e65c42354072",
           "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-27",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-27-at-532.4s.png",
           "time": 532.4,
           "metadata": {
             "width": 1920,
@@ -1830,12 +1868,13 @@
           "revision": "529a41c4-5a66-4879-be15-e65c42354072",
           "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-28",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-28-at-544.03s.png",
           "time": 544.03,
           "metadata": {
             "width": 1920,
@@ -1850,12 +1889,13 @@
           "revision": "529a41c4-5a66-4879-be15-e65c42354072",
           "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-29",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-29-at-554.2s.png",
           "time": 554.2,
           "metadata": {
             "width": 1920,
@@ -1870,12 +1910,13 @@
           "revision": "529a41c4-5a66-4879-be15-e65c42354072",
           "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-30",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-30-at-569.29s.png",
           "time": 569.29,
           "metadata": {
             "width": 1920,
@@ -1890,12 +1931,13 @@
           "revision": "529a41c4-5a66-4879-be15-e65c42354072",
           "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-31",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-31-at-581.52s.png",
           "time": 581.52,
           "metadata": {
             "width": 1920,
@@ -1910,12 +1952,13 @@
           "revision": "529a41c4-5a66-4879-be15-e65c42354072",
           "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-32",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-32-at-592.21s.png",
           "time": 592.21,
           "metadata": {
             "width": 1920,
@@ -1930,12 +1973,13 @@
           "revision": "529a41c4-5a66-4879-be15-e65c42354072",
           "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-33",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-33-at-595.783s.png",
           "time": 595.783,
           "metadata": {
             "width": 1920,
@@ -1950,14 +1994,15 @@
           "revision": "529a41c4-5a66-4879-be15-e65c42354072",
           "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         }
       ],
       "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e": [
         {
           "scope": "full",
           "id": "aef3157d-7068-45a2-8c25-d83f189fae60-0",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/0b973ab5-63f2-45a9-b696-a1da16949808/frame-00-at-14.03s.png",
           "time": 14.03,
           "metadata": {
             "width": 1920,
@@ -1972,12 +2017,13 @@
           "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
           "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "aef3157d-7068-45a2-8c25-d83f189fae60-1",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/0b973ab5-63f2-45a9-b696-a1da16949808/frame-01-at-48.23s.png",
           "time": 48.23,
           "metadata": {
             "width": 1920,
@@ -1992,12 +2038,13 @@
           "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
           "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "aef3157d-7068-45a2-8c25-d83f189fae60-2",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/0b973ab5-63f2-45a9-b696-a1da16949808/frame-02-at-95.57s.png",
           "time": 95.57,
           "metadata": {
             "width": 1920,
@@ -2012,12 +2059,13 @@
           "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
           "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "aef3157d-7068-45a2-8c25-d83f189fae60-3",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/0b973ab5-63f2-45a9-b696-a1da16949808/frame-03-at-136.7s.png",
           "time": 136.7,
           "metadata": {
             "width": 1920,
@@ -2032,12 +2080,13 @@
           "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
           "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "aef3157d-7068-45a2-8c25-d83f189fae60-4",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/0b973ab5-63f2-45a9-b696-a1da16949808/frame-04-at-172.63s.png",
           "time": 172.63,
           "metadata": {
             "width": 1920,
@@ -2052,12 +2101,13 @@
           "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
           "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "aef3157d-7068-45a2-8c25-d83f189fae60-5",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/0b973ab5-63f2-45a9-b696-a1da16949808/frame-05-at-208.85s.png",
           "time": 208.85,
           "metadata": {
             "width": 1920,
@@ -2072,12 +2122,13 @@
           "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
           "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "aef3157d-7068-45a2-8c25-d83f189fae60-6",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/0b973ab5-63f2-45a9-b696-a1da16949808/frame-06-at-249.72s.png",
           "time": 249.72,
           "metadata": {
             "width": 1920,
@@ -2092,12 +2143,13 @@
           "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
           "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "aef3157d-7068-45a2-8c25-d83f189fae60-7",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/0b973ab5-63f2-45a9-b696-a1da16949808/frame-07-at-294.13s.png",
           "time": 294.13,
           "metadata": {
             "width": 1920,
@@ -2112,12 +2164,13 @@
           "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
           "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "aef3157d-7068-45a2-8c25-d83f189fae60-8",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/0b973ab5-63f2-45a9-b696-a1da16949808/frame-08-at-341.3s.png",
           "time": 341.3,
           "metadata": {
             "width": 1920,
@@ -2132,12 +2185,13 @@
           "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
           "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "aef3157d-7068-45a2-8c25-d83f189fae60-9",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/0b973ab5-63f2-45a9-b696-a1da16949808/frame-09-at-402.07s.png",
           "time": 402.07,
           "metadata": {
             "width": 1920,
@@ -2152,12 +2206,13 @@
           "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
           "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "aef3157d-7068-45a2-8c25-d83f189fae60-10",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/0b973ab5-63f2-45a9-b696-a1da16949808/frame-10-at-462.92s.png",
           "time": 462.92,
           "metadata": {
             "width": 1920,
@@ -2172,12 +2227,13 @@
           "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
           "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "aef3157d-7068-45a2-8c25-d83f189fae60-11",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/0b973ab5-63f2-45a9-b696-a1da16949808/frame-11-at-506.93s.png",
           "time": 506.93,
           "metadata": {
             "width": 1920,
@@ -2192,12 +2248,13 @@
           "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
           "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "aef3157d-7068-45a2-8c25-d83f189fae60-12",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/0b973ab5-63f2-45a9-b696-a1da16949808/frame-12-at-539.67s.png",
           "time": 539.67,
           "metadata": {
             "width": 1920,
@@ -2212,12 +2269,13 @@
           "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
           "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "aef3157d-7068-45a2-8c25-d83f189fae60-13",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/0b973ab5-63f2-45a9-b696-a1da16949808/frame-13-at-576.93s.png",
           "time": 576.93,
           "metadata": {
             "width": 1920,
@@ -2232,12 +2290,13 @@
           "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
           "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "aef3157d-7068-45a2-8c25-d83f189fae60-14",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/0b973ab5-63f2-45a9-b696-a1da16949808/frame-14-at-0s.png",
           "time": 0,
           "metadata": {
             "width": 1920,
@@ -2252,12 +2311,13 @@
           "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
           "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "aef3157d-7068-45a2-8c25-d83f189fae60-15",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/0b973ab5-63f2-45a9-b696-a1da16949808/frame-15-at-148.9s.png",
           "time": 148.9,
           "metadata": {
             "width": 1920,
@@ -2272,12 +2332,13 @@
           "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
           "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "aef3157d-7068-45a2-8c25-d83f189fae60-16",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/0b973ab5-63f2-45a9-b696-a1da16949808/frame-16-at-166s.png",
           "time": 166,
           "metadata": {
             "width": 1920,
@@ -2292,12 +2353,13 @@
           "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
           "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "aef3157d-7068-45a2-8c25-d83f189fae60-17",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/0b973ab5-63f2-45a9-b696-a1da16949808/frame-17-at-212s.png",
           "time": 212,
           "metadata": {
             "width": 1920,
@@ -2312,12 +2374,13 @@
           "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
           "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "aef3157d-7068-45a2-8c25-d83f189fae60-18",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/0b973ab5-63f2-45a9-b696-a1da16949808/frame-18-at-570.5s.png",
           "time": 570.5,
           "metadata": {
             "width": 1920,
@@ -2332,12 +2395,13 @@
           "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
           "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "aef3157d-7068-45a2-8c25-d83f189fae60-19",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/0b973ab5-63f2-45a9-b696-a1da16949808/frame-19-at-575s.png",
           "time": 575,
           "metadata": {
             "width": 1920,
@@ -2352,12 +2416,13 @@
           "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
           "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "aef3157d-7068-45a2-8c25-d83f189fae60-20",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/0b973ab5-63f2-45a9-b696-a1da16949808/frame-20-at-595.783s.png",
           "time": 595.783,
           "metadata": {
             "width": 1920,
@@ -2372,12 +2437,13 @@
           "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
           "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "db00b5e6-bd13-458b-97c2-50f6ba4f40d9-0",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/001d2825-886c-4766-9600-4c08dc570486/frame-00-at-576.9s.png",
           "time": 576.9,
           "metadata": {
             "width": 1920,
@@ -2392,12 +2458,13 @@
           "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
           "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "db00b5e6-bd13-458b-97c2-50f6ba4f40d9-1",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/001d2825-886c-4766-9600-4c08dc570486/frame-01-at-595.783s.png",
           "time": 595.783,
           "metadata": {
             "width": 1920,
@@ -2412,14 +2479,15 @@
           "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
           "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         }
       ],
       "2d311ad8-bc73-4cb1-a9c2-7c275b8cc6ef": [
         {
           "scope": "full",
           "id": "33aac9ec-73f4-4c2b-a441-b4ffca3696c6-0",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/65bcbce2-5c4a-4af8-9efc-befa63b48698/frame-00-at-258s.png",
           "time": 258,
           "metadata": {
             "width": 1920,
@@ -2434,12 +2502,13 @@
           "revision": "2d311ad8-bc73-4cb1-a9c2-7c275b8cc6ef",
           "inputFingerprint": "9606dd8819d453d028ac551dc370fa64ad47fdedff80a0c9b4a476203c10c605",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "33aac9ec-73f4-4c2b-a441-b4ffca3696c6-1",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/65bcbce2-5c4a-4af8-9efc-befa63b48698/frame-01-at-576.9s.png",
           "time": 576.9,
           "metadata": {
             "width": 1920,
@@ -2454,12 +2523,13 @@
           "revision": "2d311ad8-bc73-4cb1-a9c2-7c275b8cc6ef",
           "inputFingerprint": "9606dd8819d453d028ac551dc370fa64ad47fdedff80a0c9b4a476203c10c605",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         },
         {
           "scope": "full",
           "id": "33aac9ec-73f4-4c2b-a441-b4ffca3696c6-2",
-          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/65bcbce2-5c4a-4af8-9efc-befa63b48698/frame-02-at-595.783s.png",
           "time": 595.783,
           "metadata": {
             "width": 1920,
@@ -2474,7 +2544,9 @@
           "revision": "2d311ad8-bc73-4cb1-a9c2-7c275b8cc6ef",
           "inputFingerprint": "9606dd8819d453d028ac551dc370fa64ad47fdedff80a0c9b4a476203c10c605",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "7541386a-cf7a-4107-b448-dc4bf6d6a83d"
         }
       ],
       "86fa111e-61f1-46d0-873b-2269a9800c37": [
@@ -2705,13 +2777,15 @@
   },
   "renders": {
     "latest": {
-      "id": "7d7bfc3c-5484-457f-ac12-ee8544fa1e3b",
-      "completedAt": 1795103463923,
+      "id": "7541386a-cf7a-4107-b448-dc4bf6d6a83d",
+      "completedAt": 1795105239689,
       "output": "/home/user/AI-/videos/french-why-longform/renders/render_raw.mp4",
       "status": "completed",
-      "revision": null
+      "revision": "86fa111e-61f1-46d0-873b-2269a9800c37"
     },
-    "retainedRevisions": []
+    "retainedRevisions": [
+      "86fa111e-61f1-46d0-873b-2269a9800c37"
+    ]
   },
   "pendingArtifactCleanup": []
 }

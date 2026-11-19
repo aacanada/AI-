@@ -1,15 +1,15 @@
 # STATUS — "영어도 못하는데 불어를?" 롱폼 (2026-11-19)
 
-상태: **렌더 완료, 대표님 미리보기 대기** (publish 브랜치 게시 안 함)
+상태: **렌더 완료 (renders/video.mp4), 대표님 미리보기 대기** (publish 브랜치 게시 안 함)
 
 ## 품질 점검 4줄
 ① 모션그래픽 장면 **14/14** (정지 슬라이드 0, 정지 이미지+확대만 있는 장면 0 · 얼굴/HeyGen 0) — 숫자 카운트업·막대/도표 성장·계단·갈림길·지도 화살표·달력 타임라인·하이라이트·체크리스트·카드 뒤집기·저울·문 열림, 캡처는 휴대폰 프레임 안에서 노란 강조로 이동·확대 + 빨간 테두리
-② 배경음악 **ElevenLabs 음악 생성 신곡 2곡** `audio/bgm/el_bright_acoustic_A.mp3`·`el_bright_acoustic_B.mp3`(밝은 어쿠스틱·피아노, 약 95BPM, 가사 없음)을 A→B→A… 4초 크로스페이드로 이어 깔고, 내레이션을 키로 한 **sidechaincompress 덕킹**(내레이션 대비 __DUCK__ dB 낮음), 시작 1.5초 페이드인·끝 3초 페이드아웃
+② 배경음악 **ElevenLabs 음악 생성 신곡 2곡** `audio/bgm/el_bright_acoustic_A.mp3`·`el_bright_acoustic_B.mp3`(밝은 어쿠스틱·피아노, 약 95BPM, 가사 없음)을 A→B→A… 4초 크로스페이드로 이어 깔고, 내레이션을 키로 한 **sidechaincompress 덕킹**(내레이션 대비 약 23.4 dB 낮음), 시작 1.5초 페이드인·끝 3초 페이드아웃
 ③ 효과음 **59개** (transition_ding 13 · tick 19 · ding 12 · stamp 15) — 어느 60초 구간이든 4~8개, 위치는 HyperFrames 애니메이션 큐 시각과 동일, 내레이션보다 약 12~13dB 낮게, whoosh(거친 스우시) 미사용
-④ 최종 MP4 오디오 **__LUFS__ LUFS / 트루피크 __TP__ dBTP** (목표 -16±0.5 / -1.5 이하), 내레이션은 장면별 -16 LUFS로 맞춘 뒤 마스터 투패스 loudnorm — BGM이 내레이션 아래 약 23dB라 말소리 또렷함
+④ 최종 MP4 오디오 **-16.0 LUFS / 트루피크 -1.9 dBTP** (목표 -16±0.5 / -1.5 이하), 내레이션은 장면별 -16 LUFS로 맞춘 뒤 마스터 투패스 loudnorm — BGM이 내레이션 아래 약 23dB라 말소리 또렷함
 
 ## 산출물
-- `renders/video.mp4` (1920×1080, 30fps, __DUR__) — 90MB 초과 시 `video.mp4.part-00…` + `video.mp4.sha256` 로 분할 커밋 (합치기: `cat video.mp4.part-* > video.mp4 && sha256sum -c video.mp4.sha256`)
+- `renders/video.mp4` (1920×1080, 30fps, 9분 56초, 60MB → 90MB 미만이라 분할하지 않음) — 90MB 초과 시 `video.mp4.part-00…` + `video.mp4.sha256` 로 분할 커밋 (합치기: `cat video.mp4.part-* > video.mp4 && sha256sum -c video.mp4.sha256`)
 - `thumbnail.jpg` / `thumbnail.png` (1280×720, 빨간 스타일, 인물·얼굴 없음)
 - `upload-text.txt` (제목·설명·챕터·태그·AI 사용 공개 메모)
 - HyperFrames 프로젝트: `index.html` + `compositions/s01~s14.html` (원본은 `src/`, `tools/build.py` 로 생성)
@@ -24,6 +24,7 @@
 7. **s10 캡처**: 브리프 표를 우선했습니다(03은 `_01`만 사용; SCRIPT_v2 의 `03_..._03` 파일은 captures/ 에 없음).
 8. **자막**: SCRIPT_v2 표기(AA Canada, LMIA, TCF, canlog, 아라비아 숫자)를 내레이션 타임스탬프에 맞춰 자동 분할했습니다(한 줄 최대 33자).
 9. **오디오 파일 관리**: 무손실 마스터 `audio/mix_master.wav`(약 170MB)는 저장소 용량 제한으로 커밋하지 않고(`tools/mix.py` 로 재생성), 컴포지션에는 AAC 256k 사본 `audio/mix.m4a` 를 연결했습니다. 최종 MP4 오디오는 마스터 WAV 에서 직접 인코딩했습니다.
+11. s14 "벽→문" 장면은 첫 렌더 확인 결과 문이 열린 직후 바로 다음 카드로 넘어가서, 문 열림을 약 0.9초 앞당기고 전환을 늦춘 뒤 재렌더했습니다.
 10. 내레이션 검수: ElevenLabs 음성인식으로 14개 장면 전체를 다시 받아 적어 누락·오독이 없는지 확인했습니다(`audio/vo/stt/`).
 
 ## 다시 만들기
