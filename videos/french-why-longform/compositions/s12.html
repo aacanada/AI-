@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+
+
+      <style>
+        #s12-root { position: absolute; inset: 0; }
+        #s12-root .q { position: absolute; left: 50%; top: 140px; transform: translateX(-50%); padding: 16px 40px; border-radius: 26px; background: #2a221d; color: #fff; font-size: 42px; font-weight: 800; white-space: nowrap; }
+        #s12-root .scale { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+        #s12-root .beam { position: absolute; left: 360px; top: 300px; width: 1200px; height: 18px; border-radius: 9px; background: #2a221d; transform-origin: 50% 50%; }
+        #s12-root .post { position: absolute; left: 950px; top: 300px; width: 20px; height: 500px; border-radius: 10px; background: #2a221d; }
+        #s12-root .foot { position: absolute; left: 810px; top: 790px; width: 300px; height: 24px; border-radius: 12px; background: #2a221d; }
+        #s12-root .knob { position: absolute; left: 936px; top: 286px; width: 48px; height: 48px; border-radius: 50%; background: var(--red); }
+        #s12-root .pan { position: absolute; top: 340px; width: 560px; padding: 30px 32px; }
+        #s12-root .pan.L { left: 180px; }
+        #s12-root .pan.Rr { left: 1180px; }
+        #s12-root .pan .hd { font-size: 40px; font-weight: 900; margin-bottom: 14px; }
+        #s12-root .pan .it { display: flex; align-items: center; gap: 14px; margin-top: 12px; padding: 14px 20px; border-radius: 16px; font-size: 32px; font-weight: 800; }
+        #s12-root .pan.L .it { background: var(--red); color: #fff; }
+        #s12-root .pan.Rr .it { background: #f6efe2; }
+        #s12-root .pan .it i { font-style: normal; font-size: 30px; }
+        #s12-root .tog { display: inline-flex; position: relative; width: 150px; height: 48px; border-radius: 24px; background: #e3d6c2; margin-left: auto; flex: 0 0 150px; }
+        #s12-root .tog span { position: absolute; top: 9px; font-size: 24px; font-weight: 900; color: #6b5d53; }
+        #s12-root .tog .k { position: absolute; left: 4px; top: 4px; width: 70px; height: 40px; border-radius: 20px; background: var(--red); }
+        #s12-root .finb { position: absolute; left: 50%; top: 132px; transform: translateX(-50%); display: flex; gap: 18px; white-space: nowrap; }
+        #s12-root .finb span { padding: 14px 32px; border-radius: 22px; font-size: 44px; font-weight: 900; }
+        #s12-root .finb .a { background: var(--red); color: #fff; }
+        #s12-root .finb .b { background: #2a221d; color: #fff; }
+      </style>
+      <div id="s12-root" data-composition-id="s12" data-width="1920" data-height="1080">
+        <div class="stage">
+          <div class="kicker"><span class="k-num">11</span><span class="k-title">밑져야 본전인 구조</span></div>
+          <div class="q">“불어가 생각보다 늦게 늘면요?”</div>
+          <div class="finb"><span class="a">잘되면 문이 열리고</span><span class="b">늦어져도 잃는 게 없는 선택</span></div>
+          <div class="scale">
+            <div class="post"></div><div class="foot"></div>
+            <div class="beam"></div><div class="knob"></div>
+            <div class="pan L card">
+              <div class="hd red">불어가 되면</div>
+              <div class="it l1"><i>→</i>취업비자 길</div>
+              <div class="it l2"><i>→</i>영주권 길</div>
+            </div>
+            <div class="pan Rr card">
+              <div class="hd">늦어져도</div>
+              <div class="it r1"><i>✓</i>영어로도 생활 가능</div>
+              <div class="it r2"><i>✓</i>수업 영어·불어 선택<div class="tog"><span style="left: 20px">EN</span><span style="left: 92px">FR</span><div class="k"></div></div></div>
+              <div class="it r3"><i>✓</i>자녀 무상교육 그대로</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const C = {"q": 0.7667, "eng": 5.0, "fam": 7.8, "cls": 12.7667, "chg": 16.3667, "free": 17.8667, "same": 21.8667, "fin": 23.3333, "open": 24.6, "lose": 26.6, "L": [[0.7667, 4.2], [5.0, 11.9667], [12.7667, 17.2333], [17.8667, 22.4333], [23.3333, 27.9667]], "D": 29.1333};
+      const H = (function () {
+        const fmtNum = (v, o) => {
+          o = o || {};
+          const d = o.dec || 0;
+          let s = d ? v.toFixed(d) : Math.round(v).toString();
+          if (o.comma) s = s.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+          return (o.pre || "") + s + (o.suf || "");
+        };
+        return {
+          // count-up number (seek-safe proxy, text written in onUpdate)
+          count(tl, el, from, to, t, d, o) {
+            const st = { v: from };
+            el.textContent = fmtNum(from, o);
+            tl.fromTo(st, { v: from }, { v: to, duration: d || 1.2, ease: "power2.out", onUpdate: () => (el.textContent = fmtNum(st.v, o)) }, t);
+            tl.fromTo(el, { scale: 0.7 }, { scale: 1, duration: d || 1.2, ease: "power2.out" }, t);
+          },
+          pop(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 0, scale: o.from || 0.6 }, { opacity: 1, scale: 1, duration: o.d || 0.5, ease: o.ease || "back.out(1.8)", stagger: o.stagger || 0 }, t);
+          },
+          rise(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 0, y: o.y || 40 }, { opacity: 1, y: 0, duration: o.d || 0.55, ease: o.ease || "power3.out", stagger: o.stagger || 0 }, t);
+          },
+          slideX(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 0, x: o.x || -80 }, { opacity: 1, x: 0, duration: o.d || 0.6, ease: o.ease || "power3.out", stagger: o.stagger || 0 }, t);
+          },
+          out(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 1, y: 0 }, { opacity: 0, y: o.y == null ? -30 : o.y, duration: o.d || 0.4, ease: "power2.in", immediateRender: false, stagger: o.stagger || 0 }, t);
+          },
+          fadeOut(tl, els, t, d) {
+            tl.fromTo(els, { opacity: 1 }, { opacity: 0, duration: d || 0.4, ease: "power1.in", immediateRender: false }, t);
+          },
+          // marker sweep behind text: element .hl > .hl-bg
+          mark(tl, el, t, d) {
+            tl.fromTo(el, { scaleX: 0 }, { scaleX: 1, duration: d || 0.5, ease: "power2.inOut" }, t);
+          },
+          growX(tl, el, t, d, to) {
+            tl.fromTo(el, { scaleX: 0 }, { scaleX: to == null ? 1 : to, duration: d || 1, ease: "power3.out" }, t);
+          },
+          growY(tl, el, t, d) {
+            tl.fromTo(el, { scaleY: 0 }, { scaleY: 1, duration: d || 1, ease: "power3.out" }, t);
+          },
+          stamp(tl, el, t) {
+            tl.fromTo(el, { opacity: 0, scale: 2.2, rotation: -14 }, { opacity: 1, scale: 1, rotation: -6, duration: 0.42, ease: "back.out(2.2)" }, t);
+          },
+          // slow ambient breathing, finite repeats within scene duration
+          breathe(tl, els, D, o) {
+            o = o || {};
+            const per = o.per || 3;
+            const n = Math.max(1, Math.floor(D / per) - 1);
+            tl.fromTo(els, { y: 0, rotation: 0 }, { y: o.y || -14, rotation: o.r || 0, duration: per / 2, ease: "sine.inOut", yoyo: true, repeat: n * 2 - 1 }, 0.1);
+          },
+          // camera move on a capture: el is the inner image wrapper
+          cam(tl, el, t, d, s, x, y) {
+            tl.to(el, { scale: s, x: x, y: y, duration: d, ease: "power2.inOut" }, t);
+          },
+          // capture camera: move/zoom a .shot so a highlight band [x0,y0,x1,y1] (native px) is centred
+          camTo(tl, shot, band, natH, s, t, d) {
+            const k = 716 / 538, W = 716, HS = 520;
+            if (!s) s = Math.max(1.12, Math.min(1.6, (0.94 * 538) / (band[2] - band[0])));
+            const cx = ((band[0] + band[2]) / 2) * k, cy = ((band[1] + band[3]) / 2) * k;
+            let x = W / 2 - cx * s, y = HS / 2 - cy * s;
+            x = Math.min(0, Math.max(W - W * s, x));
+            y = Math.min(0, Math.max(Math.min(0, HS - natH * k * s), y));
+            const prev = shot.__cam || { scale: 1, x: 0, y: 0 };
+            tl.fromTo(shot, { scale: prev.scale, x: prev.x, y: prev.y }, { scale: s, x: x, y: y, duration: d || 1.6, ease: "power2.inOut", immediateRender: !shot.__cam }, t);
+            shot.__cam = { scale: s, x: x, y: y };
+          },
+          // red ring drawn around a highlight band inside a .shot
+          ring(tl, shot, band, t) {
+            const k = 716 / 538;
+            const r = document.createElement("div");
+            r.className = "ring";
+            r.style.left = band[0] * k - 10 + "px";
+            r.style.top = band[1] * k - 8 + "px";
+            r.style.width = (band[2] - band[0]) * k + 20 + "px";
+            r.style.height = (band[3] - band[1]) * k + 16 + "px";
+            shot.appendChild(r);
+            tl.fromTo(r, { opacity: 0, scale: 1.25 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, t);
+            return r;
+          },
+          draw(tl, path, t, d, len) {
+            try { len = Math.ceil(path.getTotalLength()) + 4 || len; } catch (e) {}
+            tl.fromTo(path, { opacity: 0 }, { opacity: 1, duration: 0.05 }, t);
+            tl.fromTo(path, { strokeDasharray: len + " " + len, strokeDashoffset: len }, { strokeDashoffset: 0, duration: d || 1, ease: "power2.inOut" }, t);
+          },
+          sceneIn(tl, root) {
+            const k = root.querySelector(".kicker");
+            if (k) {
+              tl.fromTo(k.querySelector(".k-num"), { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 0.05);
+              tl.fromTo(k.querySelector(".k-title"), { opacity: 0, x: -20, clipPath: "inset(0 100% 0 0)" }, { opacity: 1, x: 0, clipPath: "inset(0 0% 0 0)", duration: 0.7, ease: "power3.out" }, 0.18);
+            }
+          },
+          sceneOut(tl, root, D) {
+            const st = root.querySelector(".stage");
+            if (st) tl.fromTo(st, { opacity: 1 }, { opacity: 0, duration: 0.35, ease: "power1.in", immediateRender: false }, D - 0.4);
+          },
+        };
+      })();
+
+          const R = document.getElementById("s12-root");
+          const $ = (s) => R.querySelectorAll(s);
+          const $1 = (s) => R.querySelector(s);
+          const tl = gsap.timeline({ paused: true });
+          H.sceneIn(tl, R);
+          H.pop(tl, $1(".q"), C.q - 0.2, { from: 0.7 });
+          H.rise(tl, $(".post, .foot"), C.q + 0.4, { y: 40, stagger: 0.1 });
+          tl.fromTo($(".beam, .knob"), { opacity: 0, scaleX: 0.3 }, { opacity: 1, scaleX: 1, duration: 0.6, ease: "back.out(1.4)" }, C.q + 0.7);
+          // beam starts tilted toward the french side (left heavy), pans follow the beam ends
+          const tilt = (deg, t, d) => {
+            const dy = Math.sin((deg * Math.PI) / 180) * 600;
+            tl.to($1(".beam"), { rotation: deg, duration: d, ease: "power2.inOut" }, t);
+            tl.to($1(".pan.L"), { y: -dy, duration: d, ease: "power2.inOut" }, t);
+            tl.to($1(".pan.Rr"), { y: dy, duration: d, ease: "power2.inOut" }, t);
+          };
+          tl.fromTo($(".pan"), { opacity: 0 }, { opacity: 1, duration: 0.5, stagger: 0.2 }, C.q + 1.1);
+          tl.set($(".pan .it"), { opacity: 0 }, 0);
+          tl.fromTo($(".pan.L .it"), { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.4, stagger: 0.25 }, C.q + 1.6);
+          tilt(-6, C.q + 1.8, 0.9);
+          // right side fills up while french is slow
+          H.slideX(tl, $1(".r1"), C.eng + 0.2, { x: 30 });
+          tilt(-3, C.eng + 0.3, 0.7);
+          tl.fromTo($1(".r1"), { backgroundColor: "#f6efe2" }, { backgroundColor: "#fbe2e5", duration: 0.4, yoyo: true, repeat: 1 }, C.fam);
+          H.slideX(tl, $1(".r2"), C.cls, { x: 30 });
+          tilt(-1, C.cls + 0.1, 0.7);
+          tl.fromTo($1(".tog .k"), { x: 0 }, { x: 72, duration: 0.4, ease: "power2.inOut", yoyo: true, repeat: 3, repeatDelay: 0.3 }, C.chg - 0.2);
+          H.slideX(tl, $1(".r3"), C.free + 0.2, { x: 30 });
+          tilt(0, C.free + 0.3, 0.8);
+          tl.fromTo($1(".r3"), { backgroundColor: "#f6efe2" }, { backgroundColor: "#fbe2e5", duration: 0.4 }, C.same);
+          // conclusion: both sides win
+          tl.fromTo($1(".q"), { opacity: 1 }, { opacity: 0, duration: 0.3, immediateRender: false }, C.fin - 0.4);
+          tl.fromTo($1(".pan.L"), { boxShadow: "0 18px 50px rgba(80,50,20,0.12)" }, { boxShadow: "0 0 0 10px rgba(200,16,46,0.35)", duration: 0.4 }, C.open - 0.1);
+          tl.fromTo($1(".pan.Rr"), { boxShadow: "0 18px 50px rgba(80,50,20,0.12)" }, { boxShadow: "0 0 0 10px rgba(42,34,29,0.25)", duration: 0.4 }, C.lose - 0.2);
+          H.pop(tl, $1(".finb .a"), C.open - 0.3, { from: 0.7 });
+          H.pop(tl, $1(".finb .b"), C.lose - 0.3, { from: 0.7 });
+          H.sceneOut(tl, R, C.D);
+          window.__timelines["s12"] = tl;
+        })();
+      </script>
+
+    </template>
+  </body>
+</html>

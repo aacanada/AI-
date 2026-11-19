@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+
+
+      <style>
+        #s07-root { position: absolute; inset: 0; }
+        #s07-root .qb { position: absolute; left: 50%; top: 250px; width: 1200px; margin-left: -600px; padding: 50px 60px; text-align: center; }
+        #s07-root .qb .a { font-size: 50px; font-weight: 700; color: var(--muted); }
+        #s07-root .qb .b { margin-top: 10px; font-size: 84px; font-weight: 900; letter-spacing: -0.04em; }
+        #s07-root .gate { position: absolute; left: 50%; top: 600px; margin-left: -300px; width: 600px; padding: 24px 0; text-align: center; border: 7px solid var(--red); border-radius: 22px; color: var(--red); font-size: 58px; font-weight: 900; background: rgba(255, 253, 248, 0.95); }
+        #s07-root .tiles { position: absolute; left: 150px; top: 170px; width: 1620px; display: flex; gap: 30px; }
+        #s07-root .tile { flex: 1; height: 300px; border-radius: 30px; padding: 34px 30px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; background: var(--paper); border: 5px solid var(--line); }
+        #s07-root .tile svg { width: 110px; height: 110px; }
+        #s07-root .tile .nm { font-size: 52px; font-weight: 900; }
+        #s07-root .tile .tg { padding: 6px 18px; border-radius: 12px; font-size: 28px; font-weight: 800; }
+        #s07-root .tile.on .tg { background: var(--red); color: #fff; }
+        #s07-root .tile.off .tg { background: #efe3cf; color: #6b5d53; }
+        #s07-root .gram { position: absolute; left: 50%; top: 540px; margin-left: -560px; width: 1120px; padding: 34px 40px; text-align: center; font-size: 46px; font-weight: 800; }
+        #s07-root .gram .strike { position: absolute; left: 30px; right: 30px; top: 50%; height: 8px; margin-top: -4px; background: var(--red); border-radius: 4px; transform-origin: left center; }
+        #s07-root .gram .no { position: absolute; right: -24px; top: -30px; padding: 8px 18px; border-radius: 14px; background: var(--red); color: #fff; font-size: 30px; font-weight: 900; }
+        #s07-root .tcf { position: absolute; left: 160px; top: 160px; width: 1600px; }
+        #s07-root .tcf .tt { font-size: 46px; font-weight: 900; }
+        #s07-root .rul { position: relative; margin-top: 160px; height: 120px; }
+        #s07-root .rul .lab { position: absolute; left: 0; top: 18px; font-size: 40px; font-weight: 900; width: 200px; }
+        #s07-root .rul .axis { position: absolute; left: 220px; top: 40px; width: 1300px; height: 14px; border-radius: 7px; background: #efe3cf; }
+        #s07-root .rul .tk { position: absolute; top: 64px; width: 60px; margin-left: -30px; text-align: center; font-size: 24px; font-weight: 700; color: var(--muted); }
+        #s07-root .rul .tick { position: absolute; top: 34px; width: 3px; height: 26px; margin-left: -1px; background: #cdbca6; }
+        #s07-root .mk { position: absolute; top: -96px; width: 160px; margin-left: -80px; text-align: center; }
+        #s07-root .mk .v { font-size: 92px; font-weight: 900; line-height: 1; }
+        #s07-root .mk .pin { width: 8px; height: 56px; margin: 4px auto 0; border-radius: 4px; }
+        #s07-root .mk6 .v { color: var(--red); }
+        #s07-root .mk6 .pin { background: var(--red); }
+        #s07-root .mk10 { top: -150px; }
+        #s07-root .mk10 .v { font-size: 52px; color: #6b5d53; }
+        #s07-root .mk10 .pin { height: 112px; background: #b9aa9b; }
+        #s07-root .mk .mcap { font-size: 26px; font-weight: 800; white-space: nowrap; }
+        #s07-root .seg6 { position: absolute; left: 220px; top: 40px; width: 390px; height: 14px; border-radius: 7px; background: var(--red); transform-origin: left center; }
+        #s07-root .lisr { position: relative; margin-top: 110px; height: 110px; }
+        #s07-root .lisr .lab { position: absolute; left: 0; top: 14px; font-size: 40px; font-weight: 900; }
+        #s07-root .lisr .trk { position: absolute; left: 220px; top: 0; width: 1300px; height: 76px; border-radius: 18px; background: #efe3cf; overflow: hidden; }
+        #s07-root .lisr .f { position: absolute; left: 0; top: 0; bottom: 0; width: 686px; background: var(--red); transform-origin: left center; }
+        #s07-root .lisr .v { position: absolute; left: 240px; top: 6px; font-size: 48px; font-weight: 900; color: #fff; font-variant-numeric: tabular-nums; }
+        #s07-root .lisr .mx { position: absolute; left: 1540px; top: 12px; font-size: 38px; font-weight: 800; color: var(--muted); }
+        #s07-root .gE { position: absolute; inset: 0; }
+        #s07-root .bnd { position: absolute; left: 160px; top: 190px; width: 760px; padding: 40px 44px; }
+        #s07-root .bnd .r { display: flex; align-items: center; gap: 20px; font-size: 46px; font-weight: 900; padding: 12px 0; }
+        #s07-root .bnd .r .x { color: #b9aa9b; text-decoration: line-through; text-decoration-thickness: 5px; }
+        #s07-root .bnd .s { margin-top: 14px; font-size: 32px; font-weight: 700; color: var(--muted); }
+        #s07-root .lv { position: absolute; left: 1000px; top: 190px; width: 760px; display: flex; flex-direction: column; gap: 24px; }
+        #s07-root .lv .it { display: flex; align-items: center; gap: 22px; padding: 26px 32px; font-size: 40px; font-weight: 800; }
+        #s07-root .lv .it i { flex: 0 0 56px; height: 56px; border-radius: 50%; background: var(--red); color: #fff; font-style: normal; display: flex; align-items: center; justify-content: center; font-size: 32px; }
+        #s07-root .flu { position: absolute; left: 50%; top: 560px; margin-left: -560px; width: 1120px; display: flex; align-items: center; justify-content: center; gap: 40px; font-size: 64px; font-weight: 900; }
+        #s07-root .flu .x { color: #b9aa9b; position: relative; }
+        #s07-root .flu .x::after { content: ""; position: absolute; left: -8px; right: -8px; top: 52%; height: 7px; background: #b9aa9b; border-radius: 4px; }
+        #s07-root .flu .o { padding: 10px 30px; border-radius: 20px; background: var(--red); color: #fff; }
+      </style>
+      <div id="s07-root" data-composition-id="s07" data-width="1920" data-height="1080">
+        <div class="stage">
+          <div class="kicker"><span class="k-num">06</span><span class="k-title">5레벨은 말하기와 듣기, 20점 만점에 6점</span></div>
+          <div class="grp gA">
+            <div class="qb card"><div class="a">좋은 건 알겠는데…</div><div class="b">제가 <span class="red">할 수 있을까요?</span></div></div>
+            <div class="gate">첫 관문 = 5레벨</div>
+          </div>
+          <div class="grp gB">
+            <div class="tiles">
+              <div class="tile on t1"><svg viewBox="0 0 24 24"><path d="M12 3a3 3 0 0 1 3 3v6a3 3 0 0 1-6 0V6a3 3 0 0 1 3-3zM6 11a6 6 0 0 0 12 0M12 17v4" stroke="#c8102e" stroke-width="2" fill="none" stroke-linecap="round"/></svg><div class="nm">말하기</div><div class="tg">증명</div></div>
+              <div class="tile on t2"><svg viewBox="0 0 24 24"><path d="M6 14a6 6 0 1 1 12 0v3a2 2 0 0 1-2 2h-1v-6h3M6 14v3a2 2 0 0 0 2 2h1v-6H6" stroke="#c8102e" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="nm">듣기</div><div class="tg">증명</div></div>
+              <div class="tile off t3"><svg viewBox="0 0 24 24"><path d="M3 5h7a2 2 0 0 1 2 2v12a2 2 0 0 0-2-2H3zM21 5h-7a2 2 0 0 0-2 2v12a2 2 0 0 1 2-2h7z" stroke="#b9aa9b" stroke-width="2" fill="none" stroke-linejoin="round"/></svg><div class="nm muted">읽기</div><div class="tg">증명 필요 없음</div></div>
+              <div class="tile off t4"><svg viewBox="0 0 24 24"><path d="M4 20l4-1 11-11-3-3L5 16zM14 6l3 3" stroke="#b9aa9b" stroke-width="2" fill="none" stroke-linejoin="round"/></svg><div class="nm muted">쓰기</div><div class="tg">증명 필요 없음</div></div>
+            </div>
+            <div class="gram card">복잡한 철자·문법 시험<div class="strike"></div><div class="no">이 단계에선 안 봄</div></div>
+          </div>
+          <div class="grp gC">
+            <div class="tcf">
+              <div class="tt">TCF 캐나다 · <span class="red">5레벨</span> 최소 점수</div>
+              <div class="rul">
+                <div class="lab">말하기</div>
+                <div class="axis"></div>
+                <div class="seg6"></div>
+                <div class="ticks"></div>
+                <div class="mk mk10" style="left: 870px"><div class="v">10</div><div class="mcap">7레벨</div><div class="pin"></div></div>
+                <div class="mk mk6" style="left: 610px"><div class="v">6</div><div class="pin"></div></div>
+              </div>
+              <div class="lisr">
+                <div class="lab">듣기</div>
+                <div class="trk"><div class="f"></div><div class="v"><span class="n369">0</span> / 699</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="gE">
+            <div class="bnd card">
+              <div class="r"><span class="x">정답률</span></div>
+              <div class="r red">→ 등급 구간</div>
+              <div class="s">공부 없이 나오는 점수는 아닙니다</div>
+            </div>
+            <div class="lv">
+              <div class="it i1"><i>✓</i>익숙한 주제로 천천히 대화</div>
+              <div class="it i2"><i>✓</i>내 경험을 간단히 설명</div>
+            </div>
+            <div class="flu"><span class="x">유창함</span><span>→</span><span class="o">의사소통 되는 수준</span></div>
+          </div>
+          <div class="src">출처: 캐나다 이민부 Francophone Mobility 자격 요건, 언어시험 점수 환산표(TCF Canada)</div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const C = {"q": 0.7667, "gate": 5.0667, "fm": 7.8, "spk": 9.4667, "rw": 12.2667, "gram": 16.8333, "not": 19.9667, "tcf": 21.5667, "s6": 26.4333, "lis": 27.3333, "l369": 29.8667, "s10": 32.0333, "below": 35.8667, "band": 38.6, "nofree": 41.0667, "lvl": 43.6333, "exp": 46.2, "flu": 49.2333, "L": [[0.7667, 3.8], [4.6, 7.1667], [7.8, 14.6], [15.3333, 20.7667], [21.5667, 31.3333], [32.0333, 36.6667], [37.4, 42.8333], [43.6333, 51.9667]], "D": 53.2333};
+      const H = (function () {
+        const fmtNum = (v, o) => {
+          o = o || {};
+          const d = o.dec || 0;
+          let s = d ? v.toFixed(d) : Math.round(v).toString();
+          if (o.comma) s = s.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+          return (o.pre || "") + s + (o.suf || "");
+        };
+        return {
+          // count-up number (seek-safe proxy, text written in onUpdate)
+          count(tl, el, from, to, t, d, o) {
+            const st = { v: from };
+            el.textContent = fmtNum(from, o);
+            tl.fromTo(st, { v: from }, { v: to, duration: d || 1.2, ease: "power2.out", onUpdate: () => (el.textContent = fmtNum(st.v, o)) }, t);
+            tl.fromTo(el, { scale: 0.7 }, { scale: 1, duration: d || 1.2, ease: "power2.out" }, t);
+          },
+          pop(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 0, scale: o.from || 0.6 }, { opacity: 1, scale: 1, duration: o.d || 0.5, ease: o.ease || "back.out(1.8)", stagger: o.stagger || 0 }, t);
+          },
+          rise(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 0, y: o.y || 40 }, { opacity: 1, y: 0, duration: o.d || 0.55, ease: o.ease || "power3.out", stagger: o.stagger || 0 }, t);
+          },
+          slideX(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 0, x: o.x || -80 }, { opacity: 1, x: 0, duration: o.d || 0.6, ease: o.ease || "power3.out", stagger: o.stagger || 0 }, t);
+          },
+          out(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 1, y: 0 }, { opacity: 0, y: o.y == null ? -30 : o.y, duration: o.d || 0.4, ease: "power2.in", immediateRender: false, stagger: o.stagger || 0 }, t);
+          },
+          fadeOut(tl, els, t, d) {
+            tl.fromTo(els, { opacity: 1 }, { opacity: 0, duration: d || 0.4, ease: "power1.in", immediateRender: false }, t);
+          },
+          // marker sweep behind text: element .hl > .hl-bg
+          mark(tl, el, t, d) {
+            tl.fromTo(el, { scaleX: 0 }, { scaleX: 1, duration: d || 0.5, ease: "power2.inOut" }, t);
+          },
+          growX(tl, el, t, d, to) {
+            tl.fromTo(el, { scaleX: 0 }, { scaleX: to == null ? 1 : to, duration: d || 1, ease: "power3.out" }, t);
+          },
+          growY(tl, el, t, d) {
+            tl.fromTo(el, { scaleY: 0 }, { scaleY: 1, duration: d || 1, ease: "power3.out" }, t);
+          },
+          stamp(tl, el, t) {
+            tl.fromTo(el, { opacity: 0, scale: 2.2, rotation: -14 }, { opacity: 1, scale: 1, rotation: -6, duration: 0.42, ease: "back.out(2.2)" }, t);
+          },
+          // slow ambient breathing, finite repeats within scene duration
+          breathe(tl, els, D, o) {
+            o = o || {};
+            const per = o.per || 3;
+            const n = Math.max(1, Math.floor(D / per) - 1);
+            tl.fromTo(els, { y: 0, rotation: 0 }, { y: o.y || -14, rotation: o.r || 0, duration: per / 2, ease: "sine.inOut", yoyo: true, repeat: n * 2 - 1 }, 0.1);
+          },
+          // camera move on a capture: el is the inner image wrapper
+          cam(tl, el, t, d, s, x, y) {
+            tl.to(el, { scale: s, x: x, y: y, duration: d, ease: "power2.inOut" }, t);
+          },
+          // capture camera: move/zoom a .shot so a highlight band [x0,y0,x1,y1] (native px) is centred
+          camTo(tl, shot, band, natH, s, t, d) {
+            const k = 716 / 538, W = 716, HS = 520;
+            if (!s) s = Math.max(1.12, Math.min(1.6, (0.94 * 538) / (band[2] - band[0])));
+            const cx = ((band[0] + band[2]) / 2) * k, cy = ((band[1] + band[3]) / 2) * k;
+            let x = W / 2 - cx * s, y = HS / 2 - cy * s;
+            x = Math.min(0, Math.max(W - W * s, x));
+            y = Math.min(0, Math.max(Math.min(0, HS - natH * k * s), y));
+            const prev = shot.__cam || { scale: 1, x: 0, y: 0 };
+            tl.fromTo(shot, { scale: prev.scale, x: prev.x, y: prev.y }, { scale: s, x: x, y: y, duration: d || 1.6, ease: "power2.inOut", immediateRender: !shot.__cam }, t);
+            shot.__cam = { scale: s, x: x, y: y };
+          },
+          // red ring drawn around a highlight band inside a .shot
+          ring(tl, shot, band, t) {
+            const k = 716 / 538;
+            const r = document.createElement("div");
+            r.className = "ring";
+            r.style.left = band[0] * k - 10 + "px";
+            r.style.top = band[1] * k - 8 + "px";
+            r.style.width = (band[2] - band[0]) * k + 20 + "px";
+            r.style.height = (band[3] - band[1]) * k + 16 + "px";
+            shot.appendChild(r);
+            tl.fromTo(r, { opacity: 0, scale: 1.25 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, t);
+            return r;
+          },
+          draw(tl, path, t, d, len) {
+            try { len = Math.ceil(path.getTotalLength()) + 4 || len; } catch (e) {}
+            tl.fromTo(path, { opacity: 0 }, { opacity: 1, duration: 0.05 }, t);
+            tl.fromTo(path, { strokeDasharray: len + " " + len, strokeDashoffset: len }, { strokeDashoffset: 0, duration: d || 1, ease: "power2.inOut" }, t);
+          },
+          sceneIn(tl, root) {
+            const k = root.querySelector(".kicker");
+            if (k) {
+              tl.fromTo(k.querySelector(".k-num"), { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 0.05);
+              tl.fromTo(k.querySelector(".k-title"), { opacity: 0, x: -20, clipPath: "inset(0 100% 0 0)" }, { opacity: 1, x: 0, clipPath: "inset(0 0% 0 0)", duration: 0.7, ease: "power3.out" }, 0.18);
+            }
+          },
+          sceneOut(tl, root, D) {
+            const st = root.querySelector(".stage");
+            if (st) tl.fromTo(st, { opacity: 1 }, { opacity: 0, duration: 0.35, ease: "power1.in", immediateRender: false }, D - 0.4);
+          },
+        };
+      })();
+
+          const R = document.getElementById("s07-root");
+          const $ = (s) => R.querySelectorAll(s);
+          const $1 = (s) => R.querySelector(s);
+          // speaking ruler ticks 0..20
+          const ticks = $1(".ticks");
+          for (let i = 0; i <= 20; i += 2) {
+            const x = 220 + (1300 * i) / 20;
+            const t = document.createElement("div");
+            t.className = "tick";
+            t.style.left = x + "px";
+            ticks.appendChild(t);
+            const l = document.createElement("div");
+            l.className = "tk";
+            l.style.left = x + "px";
+            l.textContent = i;
+            ticks.appendChild(l);
+          }
+          const tl = gsap.timeline({ paused: true });
+          H.sceneIn(tl, R);
+          // A
+          tl.fromTo($1(".qb"), { opacity: 0, scale: 0.88 }, { opacity: 1, scale: 1, duration: 0.55, ease: "back.out(1.6)" }, C.q - 0.3);
+          H.stamp(tl, $1(".gate"), C.gate);
+          H.out(tl, $1(".gA"), C.fm - 0.5, { y: -40 });
+          // B: only two skills
+          H.rise(tl, $(".tile"), C.fm - 0.2, { stagger: 0.12, y: 60 });
+          tl.fromTo($(".tile.on"), { borderColor: "#e6dac6", backgroundColor: "#fffdf8" }, { borderColor: "#c8102e", backgroundColor: "#fbe2e5", duration: 0.35, stagger: 0.3 }, C.spk);
+          tl.fromTo($(".tile.on"), { scale: 1 }, { scale: 1.06, duration: 0.25, yoyo: true, repeat: 1, stagger: 0.3 }, C.spk);
+          tl.fromTo($(".tile.off"), { opacity: 1 }, { opacity: 0.45, duration: 0.5, stagger: 0.2, immediateRender: false }, C.rw + 0.2);
+          H.rise(tl, $1(".gram"), C.gram - 0.3, { y: 30 });
+          H.growX(tl, $1(".gram .strike"), C.not - 1.2, 0.5);
+          H.pop(tl, $1(".gram .no"), C.not - 0.6, { from: 0.5 });
+          H.out(tl, $1(".gB"), C.tcf - 0.5, { y: -40 });
+          // C: TCF Canada scores
+          H.rise(tl, $1(".tcf .tt"), C.tcf - 0.1, { y: 30 });
+          tl.fromTo($1(".rul"), { opacity: 0 }, { opacity: 1, duration: 0.4 }, C.tcf + 0.3);
+          tl.fromTo($(".ticks > *"), { opacity: 0 }, { opacity: 1, duration: 0.2, stagger: 0.02 }, C.tcf + 0.4);
+          H.growX(tl, $1(".seg6"), C.s6 - 0.8, 0.8);
+          tl.fromTo($1(".mk6"), { opacity: 0, y: -120, scale: 1.6 }, { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: "bounce.out" }, C.s6 - 0.05);
+          tl.fromTo($1(".lisr"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4 }, C.lis - 0.3);
+          tl.fromTo($1(".lisr .f"), { scaleX: 0 }, { scaleX: 1, duration: 1.4, ease: "power2.out" }, C.l369 - 1.2);
+          H.count(tl, $1(".n369"), 0, 369, C.l369 - 1.2, 1.4);
+          tl.fromTo($1(".mk10"), { opacity: 0, y: -40 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, C.s10);
+          tl.fromTo($1(".mk6 .v"), { scale: 1 }, { scale: 1.25, duration: 0.3, yoyo: true, repeat: 1 }, C.below);
+          tl.fromTo($1(".src"), { opacity: 0 }, { opacity: 1, duration: 0.5 }, C.tcf);
+          H.out(tl, $1(".gC"), C.band - 0.6, { y: -40 });
+          // D/E: what the level actually means
+          tl.fromTo($1(".bnd"), { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, C.band - 0.3);
+          H.rise(tl, $(".bnd .r"), C.band, { stagger: 0.8, y: 20 });
+          H.rise(tl, $1(".bnd .s"), C.nofree - 0.2, { y: 20 });
+          H.slideX(tl, $1(".lv .i1"), C.lvl, { x: 60 });
+          H.slideX(tl, $1(".lv .i2"), C.exp, { x: 60 });
+          H.rise(tl, $1(".flu"), C.flu - 0.2, { y: 40 });
+          H.stamp(tl, $1(".flu .o"), C.flu + 1.2);
+          H.sceneOut(tl, R, C.D);
+          window.__timelines["s07"] = tl;
+        })();
+      </script>
+
+    </template>
+  </body>
+</html>

@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+
+
+      <style>
+        #s03-root { position: absolute; inset: 0; }
+        #s03-root .base { position: absolute; left: 110px; top: 780px; width: 1230px; height: 6px; border-radius: 3px; background: var(--line); }
+        #s03-root .step { position: absolute; width: 150px; bottom: 300px; border-radius: 16px 16px 4px 4px; background: #efe3cf; transform-origin: bottom center; }
+        #s03-root .step b { position: absolute; left: 0; right: 0; top: 10px; text-align: center; font-size: 40px; font-weight: 900; color: #a6927f; }
+        #s03-root .step.s5 { background: #f6c7ce; }
+        #s03-root .step.s5 b, #s03-root .step.s7 b { color: #fff; }
+        #s03-root .step.s7 { background: var(--red); }
+        #s03-root .start { position: absolute; left: 70px; top: 800px; display: flex; align-items: center; gap: 12px; font-size: 32px; font-weight: 800; }
+        #s03-root .start i { width: 26px; height: 26px; border-radius: 50%; background: var(--red); display: block; box-shadow: 0 0 0 8px rgba(200, 16, 46, 0.18); }
+        #s03-root .door { position: absolute; left: 1150px; top: 96px; width: 130px; height: 180px; border-radius: 12px 12px 0 0; background: #ffe9a8; overflow: visible; perspective: 600px; }
+        #s03-root .door .leaf { position: absolute; inset: 0; border-radius: 12px 12px 0 0; background: var(--red-dark); transform-origin: left center; }
+        #s03-root .door .leaf::after { content: ""; position: absolute; right: 18px; top: 92px; width: 14px; height: 14px; border-radius: 50%; background: #ffd75e; }
+        #s03-root .door5 { left: 810px; top: 300px; width: 110px; height: 120px; }
+        #s03-root .doorlbl { position: absolute; left: 1300px; top: 120px; padding: 18px 28px; font-size: 40px; font-weight: 900; }
+        #s03-root .goal { position: absolute; left: 1300px; top: 220px; display: flex; align-items: center; gap: 14px; font-size: 36px; font-weight: 800; color: var(--red); }
+        #s03-root .goal .flag { width: 46px; height: 46px; }
+        #s03-root .branch { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; pointer-events: none; }
+        #s03-root .bcard { position: absolute; left: 150px; top: 150px; width: 520px; padding: 34px 36px; }
+        #s03-root .bcard .bt { font-size: 40px; font-weight: 900; line-height: 1.25; letter-spacing: -0.03em; }
+        #s03-root .bcard .chipl { margin-top: 18px; display: flex; flex-direction: column; gap: 12px; }
+        #s03-root .bcard .ch { display: inline-flex; align-self: flex-start; padding: 8px 18px; border-radius: 12px; background: var(--red-soft); color: var(--red-dark); font-size: 29px; font-weight: 800; }
+        #s03-root .bcard .ch.out { background: #2a221d; color: #fff; }
+        #s03-root .badge { position: absolute; left: 1360px; top: 360px; width: 480px; padding: 36px 30px; text-align: center; }
+        #s03-root .badge .yr { font-size: 30px; font-weight: 700; color: var(--muted); }
+        #s03-root .badge .num { font-size: 120px; font-weight: 900; color: var(--red); letter-spacing: -0.04em; line-height: 1.1; font-variant-numeric: tabular-nums; }
+        #s03-root .badge .lb { font-size: 34px; font-weight: 800; line-height: 1.35; }
+        #s03-root .sumb { position: absolute; left: 1360px; top: 340px; width: 480px; padding: 36px 34px; }
+        #s03-root .sumb .r { display: flex; align-items: center; gap: 18px; font-size: 42px; font-weight: 900; padding: 16px 0; }
+        #s03-root .sumb .r + .r { border-top: 3px dashed var(--line); }
+        #s03-root .sumb .tag { flex: 0 0 auto; padding: 6px 16px; border-radius: 12px; color: #fff; font-size: 30px; }
+      </style>
+      <div id="s03-root" data-composition-id="s03" data-width="1920" data-height="1080">
+        <div class="stage">
+          <div class="kicker"><span class="k-num">02</span><span class="k-title">목표는 7레벨, 5레벨에서 먼저 출발할 수도</span></div>
+          <div class="base"></div>
+          <div class="step s1" style="left: 150px; height: 72px"><b>1</b></div>
+          <div class="step s2" style="left: 315px; height: 144px"><b>2</b></div>
+          <div class="step s3" style="left: 480px; height: 216px"><b>3</b></div>
+          <div class="step s4" style="left: 645px; height: 288px"><b>4</b></div>
+          <div class="step s5" style="left: 810px; height: 360px"><b>5</b></div>
+          <div class="step s6" style="left: 975px; height: 432px"><b>6</b></div>
+          <div class="step s7" style="left: 1140px; height: 504px"><b>7</b></div>
+          <div class="start"><i></i>몬트리올 출발</div>
+          <div class="door d7"><div class="leaf"></div></div>
+          <div class="doorlbl card">영주권 <span class="red">불어 추첨</span></div>
+          <div class="goal"><svg class="flag" viewBox="0 0 24 24"><path d="M5 22V3m0 1h12l-3 4 3 4H5" fill="#c8102e" stroke="#c8102e" stroke-width="2" stroke-linejoin="round"/></svg>어학연수 목표 = 7레벨</div>
+          <div class="door door5"><div class="leaf"></div></div>
+          <svg class="branch" viewBox="0 0 1920 1080"><path class="bpath" d="M865 292 C 840 200, 780 250, 694 262" stroke="#c8102e" stroke-width="8" fill="none" stroke-linecap="round"/><path class="bhead" d="M718 240 L692 262 L720 282" stroke="#c8102e" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="bcard card">
+            <div class="bt">5레벨 → <span class="red">영어권 이동</span></div>
+            <div class="chipl">
+              <span class="ch c-a">말하기·듣기 5레벨</span>
+              <span class="ch c-b">고용주 LMIA 면제 취업비자</span>
+              <span class="ch c-c">프랑코폰 모빌리티</span>
+              <span class="ch out c-d">퀘벡 밖 일자리</span>
+            </div>
+          </div>
+          <div class="badge card"><div class="yr">2026년부터 · 주정부 이민</div><div class="num k5">0</div><div class="lb">불어 사용자 위한</div><div class="lb">연방 몫 자리</div></div>
+          <div class="sumb card">
+            <div class="r"><span class="tag" style="background: #c8102e">목표</span>7레벨</div>
+            <div class="r"><span class="tag" style="background: #e58b98">먼저</span>5레벨에서 출발</div>
+            <div class="r" style="font-size: 32px; color: #6b5d53">가족 상황에 맞춰 선택</div>
+          </div>
+          <div class="note">주의: 영주권 불어 추첨은 듣기·말하기·읽기·쓰기 <b>4영역 모두 7레벨</b>. 주정부별 불어 기준은 주마다 다름</div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const C = {"steps": 0.7667, "l7": 4.1333, "goal": 11.7333, "l5": 16.2, "spk": 20.1333, "lmia": 23.0667, "fm": 26.4333, "out": 30.1333, "move": 33.1667, "pnp": 39.4, "k5": 42.8333, "sum": 45.0667, "fam": 51.2333, "L": [[0.7667, 3.3333], [4.1333, 14.2], [14.9333, 19.3333], [20.1333, 28.3667], [29.1667, 36.7667], [37.4, 44.2667], [45.0667, 53.0667]], "D": 54.3333};
+      const H = (function () {
+        const fmtNum = (v, o) => {
+          o = o || {};
+          const d = o.dec || 0;
+          let s = d ? v.toFixed(d) : Math.round(v).toString();
+          if (o.comma) s = s.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+          return (o.pre || "") + s + (o.suf || "");
+        };
+        return {
+          // count-up number (seek-safe proxy, text written in onUpdate)
+          count(tl, el, from, to, t, d, o) {
+            const st = { v: from };
+            el.textContent = fmtNum(from, o);
+            tl.fromTo(st, { v: from }, { v: to, duration: d || 1.2, ease: "power2.out", onUpdate: () => (el.textContent = fmtNum(st.v, o)) }, t);
+            tl.fromTo(el, { scale: 0.7 }, { scale: 1, duration: d || 1.2, ease: "power2.out" }, t);
+          },
+          pop(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 0, scale: o.from || 0.6 }, { opacity: 1, scale: 1, duration: o.d || 0.5, ease: o.ease || "back.out(1.8)", stagger: o.stagger || 0 }, t);
+          },
+          rise(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 0, y: o.y || 40 }, { opacity: 1, y: 0, duration: o.d || 0.55, ease: o.ease || "power3.out", stagger: o.stagger || 0 }, t);
+          },
+          slideX(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 0, x: o.x || -80 }, { opacity: 1, x: 0, duration: o.d || 0.6, ease: o.ease || "power3.out", stagger: o.stagger || 0 }, t);
+          },
+          out(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 1, y: 0 }, { opacity: 0, y: o.y == null ? -30 : o.y, duration: o.d || 0.4, ease: "power2.in", immediateRender: false, stagger: o.stagger || 0 }, t);
+          },
+          fadeOut(tl, els, t, d) {
+            tl.fromTo(els, { opacity: 1 }, { opacity: 0, duration: d || 0.4, ease: "power1.in", immediateRender: false }, t);
+          },
+          // marker sweep behind text: element .hl > .hl-bg
+          mark(tl, el, t, d) {
+            tl.fromTo(el, { scaleX: 0 }, { scaleX: 1, duration: d || 0.5, ease: "power2.inOut" }, t);
+          },
+          growX(tl, el, t, d, to) {
+            tl.fromTo(el, { scaleX: 0 }, { scaleX: to == null ? 1 : to, duration: d || 1, ease: "power3.out" }, t);
+          },
+          growY(tl, el, t, d) {
+            tl.fromTo(el, { scaleY: 0 }, { scaleY: 1, duration: d || 1, ease: "power3.out" }, t);
+          },
+          stamp(tl, el, t) {
+            tl.fromTo(el, { opacity: 0, scale: 2.2, rotation: -14 }, { opacity: 1, scale: 1, rotation: -6, duration: 0.42, ease: "back.out(2.2)" }, t);
+          },
+          // slow ambient breathing, finite repeats within scene duration
+          breathe(tl, els, D, o) {
+            o = o || {};
+            const per = o.per || 3;
+            const n = Math.max(1, Math.floor(D / per) - 1);
+            tl.fromTo(els, { y: 0, rotation: 0 }, { y: o.y || -14, rotation: o.r || 0, duration: per / 2, ease: "sine.inOut", yoyo: true, repeat: n * 2 - 1 }, 0.1);
+          },
+          // camera move on a capture: el is the inner image wrapper
+          cam(tl, el, t, d, s, x, y) {
+            tl.to(el, { scale: s, x: x, y: y, duration: d, ease: "power2.inOut" }, t);
+          },
+          // capture camera: move/zoom a .shot so a highlight band [x0,y0,x1,y1] (native px) is centred
+          camTo(tl, shot, band, natH, s, t, d) {
+            const k = 716 / 538, W = 716, HS = 520;
+            if (!s) s = Math.max(1.12, Math.min(1.6, (0.94 * 538) / (band[2] - band[0])));
+            const cx = ((band[0] + band[2]) / 2) * k, cy = ((band[1] + band[3]) / 2) * k;
+            let x = W / 2 - cx * s, y = HS / 2 - cy * s;
+            x = Math.min(0, Math.max(W - W * s, x));
+            y = Math.min(0, Math.max(Math.min(0, HS - natH * k * s), y));
+            const prev = shot.__cam || { scale: 1, x: 0, y: 0 };
+            tl.fromTo(shot, { scale: prev.scale, x: prev.x, y: prev.y }, { scale: s, x: x, y: y, duration: d || 1.6, ease: "power2.inOut", immediateRender: !shot.__cam }, t);
+            shot.__cam = { scale: s, x: x, y: y };
+          },
+          // red ring drawn around a highlight band inside a .shot
+          ring(tl, shot, band, t) {
+            const k = 716 / 538;
+            const r = document.createElement("div");
+            r.className = "ring";
+            r.style.left = band[0] * k - 10 + "px";
+            r.style.top = band[1] * k - 8 + "px";
+            r.style.width = (band[2] - band[0]) * k + 20 + "px";
+            r.style.height = (band[3] - band[1]) * k + 16 + "px";
+            shot.appendChild(r);
+            tl.fromTo(r, { opacity: 0, scale: 1.25 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, t);
+            return r;
+          },
+          draw(tl, path, t, d, len) {
+            try { len = Math.ceil(path.getTotalLength()) + 4 || len; } catch (e) {}
+            tl.fromTo(path, { opacity: 0 }, { opacity: 1, duration: 0.05 }, t);
+            tl.fromTo(path, { strokeDasharray: len + " " + len, strokeDashoffset: len }, { strokeDashoffset: 0, duration: d || 1, ease: "power2.inOut" }, t);
+          },
+          sceneIn(tl, root) {
+            const k = root.querySelector(".kicker");
+            if (k) {
+              tl.fromTo(k.querySelector(".k-num"), { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 0.05);
+              tl.fromTo(k.querySelector(".k-title"), { opacity: 0, x: -20, clipPath: "inset(0 100% 0 0)" }, { opacity: 1, x: 0, clipPath: "inset(0 0% 0 0)", duration: 0.7, ease: "power3.out" }, 0.18);
+            }
+          },
+          sceneOut(tl, root, D) {
+            const st = root.querySelector(".stage");
+            if (st) tl.fromTo(st, { opacity: 1 }, { opacity: 0, duration: 0.35, ease: "power1.in", immediateRender: false }, D - 0.4);
+          },
+        };
+      })();
+
+          const R = document.getElementById("s03-root");
+          const $ = (s) => R.querySelectorAll(s);
+          const $1 = (s) => R.querySelector(s);
+          const tl = gsap.timeline({ paused: true });
+          H.sceneIn(tl, R);
+          tl.fromTo($1(".base"), { scaleX: 0, transformOrigin: "left center" }, { scaleX: 1, duration: 0.8, ease: "power2.out" }, C.steps - 0.3);
+          H.rise(tl, $1(".start"), C.steps - 0.2, { y: 20 });
+          const steps = $(".step");
+          steps.forEach((s, i) => tl.fromTo(s, { scaleY: 0 }, { scaleY: 1, duration: 0.55, ease: "back.out(1.4)" }, C.steps + 0.2 + i * 0.22));
+          // 7 level door
+          tl.fromTo($1(".d7"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, C.l7 - 0.3);
+          tl.fromTo($1(".d7 .leaf"), { rotationY: 0 }, { rotationY: -70, duration: 1.0, ease: "power2.inOut" }, C.l7 + 0.5);
+          H.pop(tl, $1(".doorlbl"), C.l7 + 0.8);
+          tl.fromTo($1(".s7"), { boxShadow: "0 0 0 0 rgba(200,16,46,0)" }, { boxShadow: "0 0 0 16px rgba(200,16,46,0.18)", duration: 0.5, yoyo: true, repeat: 3 }, C.l7);
+          H.slideX(tl, $1(".goal"), C.goal, { x: 40 });
+          // 5 level: a first door
+          tl.fromTo($1(".s5"), { y: 0 }, { y: -14, duration: 0.3, yoyo: true, repeat: 1, ease: "power2.out" }, C.l5);
+          tl.fromTo($1(".door5"), { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4 }, C.l5 + 0.2);
+          tl.fromTo($1(".door5 .leaf"), { rotationY: 0 }, { rotationY: -70, duration: 0.9, ease: "power2.inOut" }, C.l5 + 0.9);
+          // branch arrow and work-permit card
+          H.draw(tl, $1(".bpath"), C.spk - 0.3, 0.9, 260);
+          tl.fromTo($1(".bhead"), { opacity: 0 }, { opacity: 1, duration: 0.2 }, C.spk + 0.5);
+          tl.fromTo($1(".bcard"), { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.55, ease: "power3.out" }, C.spk + 0.3);
+          H.pop(tl, $1(".c-a"), C.spk + 0.6, { from: 0.7 });
+          H.pop(tl, $1(".c-b"), C.lmia, { from: 0.7 });
+          H.pop(tl, $1(".c-c"), C.fm, { from: 0.7 });
+          H.pop(tl, $1(".c-d"), C.out, { from: 0.7 });
+          tl.fromTo($1(".bcard .bt"), { scale: 1 }, { scale: 1.06, duration: 0.3, yoyo: true, repeat: 1 }, C.move);
+          // PNP federal quota
+          H.out(tl, $1(".bcard"), C.pnp - 0.9, { y: -30 });
+          tl.fromTo($1(".badge"), { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.6)" }, C.pnp - 0.4);
+          H.count(tl, $1(".k5"), 0, 5000, C.k5 - 0.8, 1.0, { comma: true });
+          // summary
+          H.out(tl, $1(".badge"), C.sum - 0.6, { y: -30 });
+          tl.fromTo($1(".sumb"), { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, C.sum - 0.2);
+          H.rise(tl, $(".sumb .r"), C.sum + 0.2, { stagger: 0.9, y: 20 });
+          tl.fromTo($1(".note"), { opacity: 0 }, { opacity: 1, duration: 0.5 }, C.l7 + 1);
+          H.sceneOut(tl, R, C.D);
+          window.__timelines["s03"] = tl;
+        })();
+      </script>
+
+    </template>
+  </body>
+</html>

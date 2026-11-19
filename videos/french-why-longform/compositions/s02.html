@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+
+
+      <style>
+        #s02-root { position: absolute; inset: 0; }
+        #s02-root .grp { position: absolute; inset: 0; }
+        #s02-root .head { position: absolute; left: 0; right: 0; top: 190px; text-align: center; font-size: 84px; font-weight: 900; letter-spacing: -0.04em; }
+        #s02-root .chips { position: absolute; left: 0; right: 0; top: 420px; display: flex; justify-content: center; gap: 60px; }
+        #s02-root .chip { display: flex; align-items: center; gap: 26px; padding: 34px 54px; font-size: 64px; font-weight: 800; }
+        #s02-root .chip .arr { width: 86px; height: 86px; border-radius: 50%; background: var(--red-soft); display: flex; align-items: center; justify-content: center; }
+        #s02-root .chip .arr svg { width: 52px; height: 52px; }
+        #s02-root .upcard { position: absolute; left: 50%; top: 330px; width: 1300px; margin-left: -650px; padding: 50px 60px; display: flex; align-items: center; gap: 50px; }
+        #s02-root .upcard .bigup { flex: 0 0 170px; height: 170px; border-radius: 40px; background: var(--red); display: flex; align-items: center; justify-content: center; }
+        #s02-root .upcard .bigup svg { width: 110px; height: 110px; }
+        #s02-root .upcard .t1 { font-size: 46px; font-weight: 700; color: var(--muted); }
+        #s02-root .upcard .t2 { font-size: 76px; font-weight: 900; letter-spacing: -0.04em; margin-top: 6px; }
+        #s02-root .chart { position: absolute; left: 230px; top: 160px; width: 1460px; height: 640px; padding: 40px 70px 0; }
+        #s02-root .chart .ct { font-size: 46px; font-weight: 800; letter-spacing: -0.03em; }
+        #s02-root .bars { position: absolute; left: 110px; right: 110px; bottom: 80px; height: 440px; display: flex; align-items: flex-end; justify-content: space-around; border-bottom: 4px solid var(--line); }
+        #s02-root .bar { position: relative; width: 170px; }
+        #s02-root .bar .fill { position: absolute; left: 0; right: 0; bottom: 0; border-radius: 18px 18px 0 0; background: #e8a0aa; transform-origin: bottom center; }
+        #s02-root .bar.b4 .fill { background: var(--red); }
+        #s02-root .bar .val { position: absolute; left: -40px; right: -40px; text-align: center; font-size: 56px; font-weight: 900; font-variant-numeric: tabular-nums; }
+        #s02-root .bar .yr { position: absolute; left: -30px; right: -30px; bottom: -64px; text-align: center; font-size: 34px; font-weight: 700; color: var(--muted); }
+        #s02-root .trend { position: absolute; left: 0; top: 0; width: 1460px; height: 640px; overflow: visible; }
+        #s02-root .icons { position: absolute; left: 260px; top: 230px; width: 1000px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 34px 30px; }
+        #s02-root .env { height: 170px; border-radius: 22px; background: var(--paper); border: 4px solid var(--line); display: flex; align-items: center; justify-content: center; }
+        #s02-root .env svg { width: 100px; height: 80px; }
+        #s02-root .env .on { opacity: 0; }
+        #s02-root .env.hot { border-color: var(--red); }
+        #s02-root .ratio { position: absolute; left: 1330px; top: 250px; width: 440px; text-align: center; }
+        #s02-root .ratio .big { font-size: 150px; font-weight: 900; line-height: 1; letter-spacing: -0.04em; }
+        #s02-root .ratio .big small { font-size: 64px; }
+        #s02-root .ratio .lbl { margin-top: 18px; font-size: 38px; font-weight: 800; line-height: 1.3; }
+        #s02-root .cut { position: absolute; left: 160px; top: 200px; width: 1600px; }
+        #s02-root .cut .ct { font-size: 50px; font-weight: 900; margin-bottom: 50px; letter-spacing: -0.03em; }
+        #s02-root .row { position: relative; height: 120px; margin-bottom: 44px; }
+        #s02-root .row .nm { position: absolute; left: 0; top: 30px; width: 330px; font-size: 40px; font-weight: 800; }
+        #s02-root .row .track { position: absolute; left: 340px; top: 18px; width: 1100px; height: 84px; }
+        #s02-root .row .fill { position: absolute; left: 0; top: 0; height: 84px; border-radius: 0 20px 20px 0; transform-origin: left center; }
+        #s02-root .row.fr .fill { width: 790px; background: var(--red); }
+        #s02-root .row.ce .fill { width: 950px; background: #b9aa9b; }
+        #s02-root .row .rng { position: absolute; top: 14px; font-size: 44px; font-weight: 900; color: #fff; right: 24px; }
+        #s02-root .row.fr .rng { left: 560px; right: auto; }
+        #s02-root .row.ce .rng { left: 720px; right: auto; }
+        #s02-root .gapb { position: absolute; left: 1370px; top: 120px; width: 230px; height: 230px; border-radius: 50%; background: var(--paper); border: 7px solid var(--red);
+          display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--red); box-shadow: 0 18px 40px rgba(200, 16, 46, 0.2); }
+        #s02-root .gapb b { font-size: 36px; font-weight: 800; }
+        #s02-root .gapb span { font-size: 64px; font-weight: 900; line-height: 1.05; }
+      </style>
+      <div id="s02-root" data-composition-id="s02" data-width="1920" data-height="1080">
+        <div class="stage">
+          <div class="kicker"><span class="k-num">01</span><span class="k-title">캐나다는 줄이는데, 불어만 늘립니다</span></div>
+          <div class="grp gA">
+            <div class="head">요즘 캐나다 이민 소식 = 온통 <span class="red">“줄인다”</span></div>
+            <div class="chips">
+              <div class="chip card c1"><div class="arr"><svg viewBox="0 0 24 24"><path d="M12 3v15m0 0l-6-6m6 6l6-6" stroke="#c8102e" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>유학생</div>
+              <div class="chip card c2"><div class="arr"><svg viewBox="0 0 24 24"><path d="M12 3v15m0 0l-6-6m6 6l6-6" stroke="#c8102e" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>워크퍼밋</div>
+            </div>
+          </div>
+          <div class="grp gB">
+            <div class="upcard card">
+              <div class="bigup"><svg viewBox="0 0 24 24"><path d="M12 21V6m0 0l-6 6m6-6l6 6" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div><div class="t1">그런데 해마다 비율을 늘리는 그룹</div><div class="t2"><span class="hl"><span class="hl-bg"></span>퀘벡 밖에서 살 불어 사용자</span></div></div>
+            </div>
+          </div>
+          <div class="grp gC">
+            <div class="chart card">
+              <div class="ct">퀘벡 밖 불어 사용 영주권자 <span class="red">목표 비율</span></div>
+              <div class="bars">
+                <div class="bar b1"><div class="fill" style="height: 330px"></div><div class="val" style="bottom: 344px">9%</div><div class="yr">2026</div></div>
+                <div class="bar b2"><div class="fill" style="height: 348px"></div><div class="val" style="bottom: 362px">9.5%</div><div class="yr">2027</div></div>
+                <div class="bar b3"><div class="fill" style="height: 385px"></div><div class="val" style="bottom: 399px">10.5%</div><div class="yr">2028</div></div>
+                <div class="bar b4"><div class="fill" style="height: 440px"></div><div class="val red" style="bottom: 454px">12%</div><div class="yr">2029</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="grp gD">
+            <div class="icons">
+              <div class="env"><svg viewBox="0 0 50 40"><rect x="2" y="2" width="46" height="36" rx="5" fill="none" stroke="#b9aa9b" stroke-width="3"/><path d="M3 5l22 17L47 5" fill="none" stroke="#b9aa9b" stroke-width="3"/></svg></div>
+              <div class="env"><svg viewBox="0 0 50 40"><rect x="2" y="2" width="46" height="36" rx="5" fill="none" stroke="#b9aa9b" stroke-width="3"/><path d="M3 5l22 17L47 5" fill="none" stroke="#b9aa9b" stroke-width="3"/></svg></div>
+              <div class="env"><svg viewBox="0 0 50 40"><rect x="2" y="2" width="46" height="36" rx="5" fill="none" stroke="#b9aa9b" stroke-width="3"/><path d="M3 5l22 17L47 5" fill="none" stroke="#b9aa9b" stroke-width="3"/></svg></div>
+              <div class="env"><svg viewBox="0 0 50 40"><rect x="2" y="2" width="46" height="36" rx="5" fill="none" stroke="#b9aa9b" stroke-width="3"/><path d="M3 5l22 17L47 5" fill="none" stroke="#b9aa9b" stroke-width="3"/></svg></div>
+              <div class="env"><svg viewBox="0 0 50 40"><rect x="2" y="2" width="46" height="36" rx="5" fill="none" stroke="#b9aa9b" stroke-width="3"/><path d="M3 5l22 17L47 5" fill="none" stroke="#b9aa9b" stroke-width="3"/></svg></div>
+              <div class="env"><svg viewBox="0 0 50 40"><rect x="2" y="2" width="46" height="36" rx="5" fill="none" stroke="#b9aa9b" stroke-width="3"/><path d="M3 5l22 17L47 5" fill="none" stroke="#b9aa9b" stroke-width="3"/></svg></div>
+              <div class="env"><svg viewBox="0 0 50 40"><rect x="2" y="2" width="46" height="36" rx="5" fill="none" stroke="#b9aa9b" stroke-width="3"/><path d="M3 5l22 17L47 5" fill="none" stroke="#b9aa9b" stroke-width="3"/></svg></div>
+              <div class="env"><svg viewBox="0 0 50 40"><rect x="2" y="2" width="46" height="36" rx="5" fill="none" stroke="#b9aa9b" stroke-width="3"/><path d="M3 5l22 17L47 5" fill="none" stroke="#b9aa9b" stroke-width="3"/></svg></div>
+              <div class="env"><svg viewBox="0 0 50 40"><rect x="2" y="2" width="46" height="36" rx="5" fill="none" stroke="#b9aa9b" stroke-width="3"/><path d="M3 5l22 17L47 5" fill="none" stroke="#b9aa9b" stroke-width="3"/></svg></div>
+              <div class="env"><svg viewBox="0 0 50 40"><rect x="2" y="2" width="46" height="36" rx="5" fill="none" stroke="#b9aa9b" stroke-width="3"/><path d="M3 5l22 17L47 5" fill="none" stroke="#b9aa9b" stroke-width="3"/></svg></div>
+            </div>
+            <div class="ratio"><div class="big"><span class="red n4">0</span><small>명</small></div><div class="lbl">10명 중 4명</div><div class="lbl red" style="font-size: 34px">불어 능력자 전용 회차</div></div>
+          </div>
+          <div class="grp gE">
+            <div class="cut">
+              <div class="ct">영주권 초청 커트라인 (CRS 점수)</div>
+              <div class="row ce"><div class="nm">캐나다 경력 회차</div><div class="track"><div class="fill"></div><div class="rng">507~523</div></div></div>
+              <div class="row fr"><div class="nm red">불어 회차</div><div class="track"><div class="fill"></div><div class="rng">382~435</div></div></div>
+              <div class="gapb"><b>약</b><span>100점</span><b>낮음</b></div>
+            </div>
+          </div>
+          <div class="note nD">2026.1~10월 Express Entry 기준. <b>2026.11.3 점수 체계 변경 이후 달라질 수 있음</b></div>
+          <div class="src sC">출처: 캐나다 이민부 2027-2029 이민수준계획, Express Entry 회차 결과</div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const C = {"cut": 3.4667, "stu": 5.2333, "work": 6.5333, "grow": 10.1333, "who": 13.0, "goal": 17.4667, "b1": 20.1333, "b4": 22.6, "inv": 25.0, "four": 31.9667, "fr": 32.9333, "cutl": 35.8, "gap": 37.8, "L": [[0.7667, 7.6333], [8.3667, 15.2333], [16.2, 24.2], [25.0, 35.0667], [35.8, 39.1667]], "D": 40.3333};
+      const H = (function () {
+        const fmtNum = (v, o) => {
+          o = o || {};
+          const d = o.dec || 0;
+          let s = d ? v.toFixed(d) : Math.round(v).toString();
+          if (o.comma) s = s.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+          return (o.pre || "") + s + (o.suf || "");
+        };
+        return {
+          // count-up number (seek-safe proxy, text written in onUpdate)
+          count(tl, el, from, to, t, d, o) {
+            const st = { v: from };
+            el.textContent = fmtNum(from, o);
+            tl.fromTo(st, { v: from }, { v: to, duration: d || 1.2, ease: "power2.out", onUpdate: () => (el.textContent = fmtNum(st.v, o)) }, t);
+            tl.fromTo(el, { scale: 0.7 }, { scale: 1, duration: d || 1.2, ease: "power2.out" }, t);
+          },
+          pop(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 0, scale: o.from || 0.6 }, { opacity: 1, scale: 1, duration: o.d || 0.5, ease: o.ease || "back.out(1.8)", stagger: o.stagger || 0 }, t);
+          },
+          rise(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 0, y: o.y || 40 }, { opacity: 1, y: 0, duration: o.d || 0.55, ease: o.ease || "power3.out", stagger: o.stagger || 0 }, t);
+          },
+          slideX(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 0, x: o.x || -80 }, { opacity: 1, x: 0, duration: o.d || 0.6, ease: o.ease || "power3.out", stagger: o.stagger || 0 }, t);
+          },
+          out(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 1, y: 0 }, { opacity: 0, y: o.y == null ? -30 : o.y, duration: o.d || 0.4, ease: "power2.in", immediateRender: false, stagger: o.stagger || 0 }, t);
+          },
+          fadeOut(tl, els, t, d) {
+            tl.fromTo(els, { opacity: 1 }, { opacity: 0, duration: d || 0.4, ease: "power1.in", immediateRender: false }, t);
+          },
+          // marker sweep behind text: element .hl > .hl-bg
+          mark(tl, el, t, d) {
+            tl.fromTo(el, { scaleX: 0 }, { scaleX: 1, duration: d || 0.5, ease: "power2.inOut" }, t);
+          },
+          growX(tl, el, t, d, to) {
+            tl.fromTo(el, { scaleX: 0 }, { scaleX: to == null ? 1 : to, duration: d || 1, ease: "power3.out" }, t);
+          },
+          growY(tl, el, t, d) {
+            tl.fromTo(el, { scaleY: 0 }, { scaleY: 1, duration: d || 1, ease: "power3.out" }, t);
+          },
+          stamp(tl, el, t) {
+            tl.fromTo(el, { opacity: 0, scale: 2.2, rotation: -14 }, { opacity: 1, scale: 1, rotation: -6, duration: 0.42, ease: "back.out(2.2)" }, t);
+          },
+          // slow ambient breathing, finite repeats within scene duration
+          breathe(tl, els, D, o) {
+            o = o || {};
+            const per = o.per || 3;
+            const n = Math.max(1, Math.floor(D / per) - 1);
+            tl.fromTo(els, { y: 0, rotation: 0 }, { y: o.y || -14, rotation: o.r || 0, duration: per / 2, ease: "sine.inOut", yoyo: true, repeat: n * 2 - 1 }, 0.1);
+          },
+          // camera move on a capture: el is the inner image wrapper
+          cam(tl, el, t, d, s, x, y) {
+            tl.to(el, { scale: s, x: x, y: y, duration: d, ease: "power2.inOut" }, t);
+          },
+          // capture camera: move/zoom a .shot so a highlight band [x0,y0,x1,y1] (native px) is centred
+          camTo(tl, shot, band, natH, s, t, d) {
+            const k = 716 / 538, W = 716, HS = 520;
+            if (!s) s = Math.max(1.12, Math.min(1.6, (0.94 * 538) / (band[2] - band[0])));
+            const cx = ((band[0] + band[2]) / 2) * k, cy = ((band[1] + band[3]) / 2) * k;
+            let x = W / 2 - cx * s, y = HS / 2 - cy * s;
+            x = Math.min(0, Math.max(W - W * s, x));
+            y = Math.min(0, Math.max(Math.min(0, HS - natH * k * s), y));
+            const prev = shot.__cam || { scale: 1, x: 0, y: 0 };
+            tl.fromTo(shot, { scale: prev.scale, x: prev.x, y: prev.y }, { scale: s, x: x, y: y, duration: d || 1.6, ease: "power2.inOut", immediateRender: !shot.__cam }, t);
+            shot.__cam = { scale: s, x: x, y: y };
+          },
+          // red ring drawn around a highlight band inside a .shot
+          ring(tl, shot, band, t) {
+            const k = 716 / 538;
+            const r = document.createElement("div");
+            r.className = "ring";
+            r.style.left = band[0] * k - 10 + "px";
+            r.style.top = band[1] * k - 8 + "px";
+            r.style.width = (band[2] - band[0]) * k + 20 + "px";
+            r.style.height = (band[3] - band[1]) * k + 16 + "px";
+            shot.appendChild(r);
+            tl.fromTo(r, { opacity: 0, scale: 1.25 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, t);
+            return r;
+          },
+          draw(tl, path, t, d, len) {
+            try { len = Math.ceil(path.getTotalLength()) + 4 || len; } catch (e) {}
+            tl.fromTo(path, { opacity: 0 }, { opacity: 1, duration: 0.05 }, t);
+            tl.fromTo(path, { strokeDasharray: len + " " + len, strokeDashoffset: len }, { strokeDashoffset: 0, duration: d || 1, ease: "power2.inOut" }, t);
+          },
+          sceneIn(tl, root) {
+            const k = root.querySelector(".kicker");
+            if (k) {
+              tl.fromTo(k.querySelector(".k-num"), { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 0.05);
+              tl.fromTo(k.querySelector(".k-title"), { opacity: 0, x: -20, clipPath: "inset(0 100% 0 0)" }, { opacity: 1, x: 0, clipPath: "inset(0 0% 0 0)", duration: 0.7, ease: "power3.out" }, 0.18);
+            }
+          },
+          sceneOut(tl, root, D) {
+            const st = root.querySelector(".stage");
+            if (st) tl.fromTo(st, { opacity: 1 }, { opacity: 0, duration: 0.35, ease: "power1.in", immediateRender: false }, D - 0.4);
+          },
+        };
+      })();
+
+          const R = document.getElementById("s02-root");
+          const $ = (s) => R.querySelectorAll(s);
+          const $1 = (s) => R.querySelector(s);
+          const tl = gsap.timeline({ paused: true });
+          H.sceneIn(tl, R);
+          // A: everything is shrinking
+          H.rise(tl, $1(".head"), C.L[0][0] - 0.2);
+          tl.fromTo($1(".c1"), { opacity: 0, y: -160 }, { opacity: 1, y: 0, duration: 0.6, ease: "bounce.out" }, C.stu - 0.2);
+          tl.fromTo($1(".c2"), { opacity: 0, y: -160 }, { opacity: 1, y: 0, duration: 0.6, ease: "bounce.out" }, C.work - 0.2);
+          tl.fromTo($(".chip .arr svg"), { y: -6 }, { y: 8, duration: 0.5, ease: "sine.inOut", yoyo: true, repeat: 5 }, C.work + 0.4);
+          H.out(tl, $1(".gA"), C.grow - 1.0, { y: 60 });
+          // B: but one group grows
+          tl.fromTo($1(".upcard"), { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.6, ease: "back.out(1.6)" }, C.grow - 0.6);
+          tl.fromTo($1(".bigup svg"), { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "back.out(2)" }, C.grow - 0.2);
+          H.mark(tl, $1(".upcard .hl-bg"), C.who + 0.2, 0.7);
+          H.out(tl, $1(".gB"), C.goal - 0.7, { y: -50 });
+          // C: target share bars
+          tl.fromTo($1(".chart"), { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, C.goal - 0.4);
+          const bars = ["b1", "b2", "b3", "b4"];
+          const vals = [9, 9.5, 10.5, 12];
+          const span = Math.max(1.6, C.b4 - C.b1);
+          bars.forEach((b, i) => {
+            const t = C.b1 - 0.2 + (span * i) / 3;
+            H.growY(tl, $1(".bar." + b + " .fill"), t, 0.8);
+            const v = $1(".bar." + b + " .val");
+            tl.fromTo(v, { opacity: 0 }, { opacity: 1, duration: 0.2 }, t + 0.1);
+            H.count(tl, v, 0, vals[i], t + 0.1, 0.7, { dec: vals[i] % 1 ? 1 : 0, suf: "%" });
+          });
+          tl.fromTo($1(".sC"), { opacity: 0 }, { opacity: 1, duration: 0.5 }, C.b1);
+          H.out(tl, $1(".gC"), C.inv + 0.6, { y: -50 });
+          // D: 4 of 10 invitations
+          H.pop(tl, $(".env"), C.inv + 0.9, { stagger: 0.05, from: 0.5 });
+          tl.fromTo($1(".ratio"), { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, C.inv + 1.2);
+          tl.fromTo($1(".nD"), { opacity: 0 }, { opacity: 1, duration: 0.5 }, C.inv + 1.2);
+          const envs = $(".env");
+          for (let i = 0; i < 4; i++) {
+            const t = C.four - 0.6 + i * 0.18;
+            tl.to(envs[i], { borderColor: "#c8102e", backgroundColor: "#fbe2e5", duration: 0.2 }, t);
+            tl.to(envs[i].querySelectorAll("rect,path"), { stroke: "#c8102e", duration: 0.2 }, t);
+            tl.fromTo(envs[i], { scale: 1 }, { scale: 1.12, duration: 0.15, yoyo: true, repeat: 1 }, t);
+          }
+          H.count(tl, $1(".n4"), 0, 4, C.four - 0.6, 0.75);
+          H.out(tl, $1(".gD"), C.cutl - 0.7, { y: -50 });
+          // E: cut-off comparison
+          tl.fromTo($1(".cut .ct"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5 }, C.cutl - 0.4);
+          H.slideX(tl, $(".row .nm"), C.cutl - 0.3, { stagger: 0.15 });
+          H.growX(tl, $1(".row.ce .fill"), C.cutl, 0.9);
+          H.growX(tl, $1(".row.fr .fill"), C.cutl + 0.3, 0.9);
+          tl.fromTo($(".row .rng"), { opacity: 0 }, { opacity: 1, duration: 0.3, stagger: 0.3 }, C.cutl + 0.8);
+          H.stamp(tl, $1(".gapb"), C.gap);
+          H.sceneOut(tl, R, C.D);
+          window.__timelines["s02"] = tl;
+        })();
+      </script>
+
+    </template>
+  </body>
+</html>

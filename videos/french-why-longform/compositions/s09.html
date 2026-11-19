@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+
+
+      <style>
+        #s09-root { position: absolute; inset: 0; }
+        #s09-root .bub { position: absolute; left: 160px; top: 150px; padding: 18px 34px; border-radius: 26px; background: #2a221d; color: #fff; font-size: 40px; font-weight: 800; }
+        #s09-root .donut { position: absolute; left: 180px; top: 300px; width: 380px; height: 380px; }
+        #s09-root .donut .lbl { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        #s09-root .donut .lbl b { font-size: 84px; font-weight: 900; color: var(--red); line-height: 1; }
+        #s09-root .donut .lbl span { margin-top: 8px; font-size: 26px; font-weight: 700; color: var(--muted); text-align: center; line-height: 1.3; }
+        #s09-root .donut .cap2 { position: absolute; left: -20px; right: -20px; top: 400px; text-align: center; font-size: 32px; font-weight: 800; }
+        #s09-root .words { position: absolute; left: 680px; top: 170px; width: 1100px; display: grid; grid-template-columns: 1fr 1fr; gap: 26px; perspective: 1200px; }
+        #s09-root .wc { position: relative; height: 200px; transform-style: preserve-3d; }
+        #s09-root .wc .fc { position: absolute; inset: 0; border-radius: 26px; display: flex; flex-direction: column; align-items: center; justify-content: center; backface-visibility: hidden; }
+        #s09-root .wc .en { background: var(--paper); box-shadow: 0 14px 34px rgba(80, 50, 20, 0.12); }
+        #s09-root .wc .fr { background: var(--red); color: #fff; transform: rotateY(180deg); }
+        #s09-root .wc .lang { font-size: 24px; font-weight: 800; letter-spacing: 0.08em; opacity: 0.7; }
+        #s09-root .wc .w { font-size: 56px; font-weight: 800; letter-spacing: -0.01em; }
+        #s09-root .same { position: absolute; left: 680px; top: 640px; width: 1100px; text-align: center; font-size: 36px; font-weight: 800; color: var(--muted); }
+        #s09-root .tenb { position: absolute; left: 50%; top: 330px; margin-left: -620px; width: 1240px; padding: 50px 40px; text-align: center; }
+        #s09-root .tenb .a { font-size: 56px; font-weight: 900; letter-spacing: -0.03em; }
+        #s09-root .tenb .a .n { display: inline-block; min-width: 60px; font-variant-numeric: tabular-nums; }
+        #s09-root .tenb .b { margin-top: 20px; font-size: 72px; font-weight: 900; color: var(--red); letter-spacing: -0.04em; }
+        #s09-root .cmp { position: absolute; left: 140px; top: 160px; width: 1640px; display: flex; gap: 40px; }
+        #s09-root .side { flex: 1; height: 560px; padding: 36px 40px; position: relative; }
+        #s09-root .side .hd { font-size: 46px; font-weight: 900; }
+        #s09-root .side .room { position: absolute; left: 40px; top: 130px; width: 300px; height: 230px; border-radius: 20px; border: 6px solid #2a221d; display: flex; align-items: center; justify-content: center; font-size: 34px; font-weight: 800; }
+        #s09-root .side .msg { position: absolute; left: 40px; right: 40px; bottom: 36px; font-size: 34px; font-weight: 800; }
+        #s09-root .side.kr .room { border-color: #b9aa9b; color: #8f8073; }
+        #s09-root .side.mt .room { border-color: var(--red); color: var(--red); }
+        #s09-root .side .life { position: absolute; left: 380px; top: 120px; display: flex; flex-direction: column; gap: 18px; }
+        #s09-root .side .lf { display: flex; align-items: center; gap: 16px; padding: 14px 24px; border-radius: 16px; background: var(--red-soft); color: var(--red-dark); font-size: 34px; font-weight: 800; }
+        #s09-root .side .lf svg { width: 40px; height: 40px; }
+        #s09-root .side .wave { position: absolute; font-size: 30px; font-weight: 900; color: var(--red); }
+        #s09-root .age { position: absolute; left: 160px; top: 150px; padding: 18px 34px; border-radius: 26px; background: #2a221d; color: #fff; font-size: 40px; font-weight: 800; }
+        #s09-root .graph { position: absolute; left: 160px; top: 240px; width: 1600px; height: 560px; padding: 0; }
+        #s09-root .graph svg { position: absolute; left: 0; top: 0; width: 1600px; height: 560px; overflow: visible; }
+        #s09-root .graph .ax { font-size: 26px; font-weight: 700; fill: #6b5d53; font-family: Pretendard, sans-serif; }
+        #s09-root .graph .tag { position: absolute; padding: 10px 20px; border-radius: 14px; font-size: 30px; font-weight: 900; white-space: nowrap; }
+        #s09-root .graph .tA { left: 210px; top: 30px; background: var(--red); color: #fff; }
+        #s09-root .graph .tC { left: 1060px; top: 30px; background: #efe3cf; color: #5b4c40; }
+        #s09-root .graph .gl { position: absolute; left: 120px; padding: 4px 14px; border-radius: 10px; background: var(--paper); border: 3px solid var(--red); color: var(--red); font-size: 26px; font-weight: 900; }
+        #s09-root .graph .legend { position: absolute; right: 30px; bottom: 74px; display: flex; gap: 28px; font-size: 28px; font-weight: 800; }
+        #s09-root .graph .legend i { display: inline-block; width: 36px; height: 8px; border-radius: 4px; margin-right: 10px; vertical-align: middle; }
+        #s09-root .graph .concept { position: absolute; right: 30px; top: 96px; font-size: 22px; font-weight: 700; color: var(--muted); }
+      </style>
+      <div id="s09-root" data-composition-id="s09" data-width="1920" data-height="1080">
+        <div class="stage">
+          <div class="kicker"><span class="k-num">08</span><span class="k-title">“영어도 못하는데요”, “나이가 많은데요”</span></div>
+          <div class="grp gA">
+            <div class="bub">“영어도 못하는데요…”</div>
+            <div class="donut">
+              <svg viewBox="0 0 200 200" width="380" height="380"><circle cx="100" cy="100" r="80" stroke="#efe3cf" stroke-width="34" fill="none"/><circle class="arc" cx="100" cy="100" r="80" stroke="#c8102e" stroke-width="34" fill="none" stroke-dasharray="167.6 502.7" transform="rotate(-90 100 100)"/></svg>
+              <div class="lbl"><b>약 1/3</b><span>영어 단어 중</span></div>
+              <div class="cap2">불어에서 온 영어 단어</div>
+            </div>
+            <div class="words">
+              <div class="wc c1" data-layout-allow-overlap><div class="fc en"><div class="lang">ENGLISH</div><div class="w">restaurant</div></div><div class="fc fr"><div class="lang">FRANÇAIS</div><div class="w">restaurant</div></div></div>
+              <div class="wc c2" data-layout-allow-overlap><div class="fc en"><div class="lang">ENGLISH</div><div class="w">information</div></div><div class="fc fr"><div class="lang">FRANÇAIS</div><div class="w">information</div></div></div>
+              <div class="wc c3" data-layout-allow-overlap><div class="fc en"><div class="lang">ENGLISH</div><div class="w">situation</div></div><div class="fc fr"><div class="lang">FRANÇAIS</div><div class="w">situation</div></div></div>
+              <div class="wc c4" data-layout-allow-overlap><div class="fc en"><div class="lang">ENGLISH</div><div class="w">important</div></div><div class="fc fr"><div class="lang">FRANÇAIS</div><div class="w">important</div></div></div>
+            </div>
+            <div class="same">철자는 거의 같고, <span class="red">발음만 다릅니다</span></div>
+          </div>
+          <div class="grp gT">
+            <div class="tenb card"><div class="a">학교에서 <span class="n">0</span>년 배운 영어 단어</div><div class="b">= 불어의 밑천</div></div>
+          </div>
+          <div class="grp gB">
+            <div class="cmp">
+              <div class="side kr card">
+                <div class="hd">한국</div>
+                <div class="room">교실</div>
+                <div class="msg muted">교실에서만 → 밖에서 쓸 일이 없음</div>
+              </div>
+              <div class="side mt card">
+                <div class="hd red">몬트리올</div>
+                <div class="room">교실</div>
+                <div class="life">
+                  <div class="lf l1"><svg viewBox="0 0 24 24"><path d="M3 4h2l2 11h11l2-8H6" stroke="#9e0c24" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="9" cy="19" r="1.6" fill="#9e0c24"/><circle cx="17" cy="19" r="1.6" fill="#9e0c24"/></svg>마트</div>
+                  <div class="lf l2"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="14" rx="3" stroke="#9e0c24" stroke-width="2" fill="none"/><path d="M4 11h16M8 20v-3M16 20v-3" stroke="#9e0c24" stroke-width="2"/></svg>버스</div>
+                  <div class="lf l3"><svg viewBox="0 0 24 24"><path d="M3 10l9-6 9 6v10H3z" stroke="#9e0c24" stroke-width="2" fill="none" stroke-linejoin="round"/><path d="M10 20v-5h4v5" stroke="#9e0c24" stroke-width="2" fill="none"/></svg>아이 학교</div>
+                </div>
+                <div class="msg red">교실을 나서도 불어가 들림</div>
+              </div>
+            </div>
+          </div>
+          <div class="grp gC">
+            <div class="age">“나이가 많은데요…”</div>
+            <div class="graph card">
+              <svg viewBox="0 0 1600 560">
+                <rect class="zoneA" x="110" y="20" width="560" height="470" fill="#fbe2e5" rx="16"/>
+                <path d="M110 490 H1560 M110 490 V20" stroke="#cdbca6" stroke-width="4" fill="none"/>
+                <line class="g5l" x1="110" y1="360" x2="1560" y2="360" stroke="#c8102e" stroke-width="3" stroke-dasharray="12 10"/>
+                <line class="g7l" x1="110" y1="290" x2="1560" y2="290" stroke="#c8102e" stroke-width="3" stroke-dasharray="12 10"/>
+                <path class="adult" d="M110 490 C 260 330, 420 230, 700 190 S 1200 160, 1560 150" stroke="#c8102e" stroke-width="10" fill="none" stroke-linecap="round"/>
+                <path class="child" d="M110 490 C 420 430, 760 320, 1000 220 S 1380 70, 1560 50" stroke="#8f8073" stroke-width="10" fill="none" stroke-linecap="round" stroke-dasharray="1 0"/>
+                <text class="ax" x="1560" y="530" text-anchor="end">같은 공부 시간 →</text>
+                <text class="ax" x="96" y="40" text-anchor="end">수준</text>
+              </svg>
+              <div class="tag tA">초반 진도: 어른이 빠름</div>
+              <div class="tag tC">원어민 수준·발음: 아이가 유리</div>
+              <div class="gl g5" style="top: 342px">5레벨</div>
+              <div class="gl g7" style="top: 272px">7레벨</div>
+              <div class="legend"><span><i style="background: #c8102e"></i>어른</span><span><i style="background: #8f8073"></i>아이</span></div>
+              <div class="concept">개념도</div>
+            </div>
+          </div>
+          <div class="src">출처: 영어 어휘의 불어 유래 비율(추정 약 30% 이상), Krashen·Long·Scarcella(1979), Hartshorne 외(2018)</div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const C = {"a0": 0.7667, "eng": 3.5667, "third": 7.3333, "w1": 10.0333, "w2": 11.1667, "w3": 12.3667, "w4": 13.5667, "same": 15.0, "ten": 18.6, "base": 20.8333, "kr": 23.2333, "out": 27.0667, "mtl": 30.1333, "mart": 32.4333, "bus": 33.4667, "sch": 34.3667, "age": 37.4, "fast": 41.0667, "late": 45.8667, "goal": 50.6667, "g5": 52.9333, "g7": 54.2, "strong": 55.5667, "L": [[0.7667, 4.6667], [5.4, 17.3333], [18.0333, 21.8], [22.5333, 36.3667], [37.4, 38.9333], [39.5667, 50.0333], [50.6667, 57.5667]], "D": 58.7333};
+      const H = (function () {
+        const fmtNum = (v, o) => {
+          o = o || {};
+          const d = o.dec || 0;
+          let s = d ? v.toFixed(d) : Math.round(v).toString();
+          if (o.comma) s = s.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+          return (o.pre || "") + s + (o.suf || "");
+        };
+        return {
+          // count-up number (seek-safe proxy, text written in onUpdate)
+          count(tl, el, from, to, t, d, o) {
+            const st = { v: from };
+            el.textContent = fmtNum(from, o);
+            tl.fromTo(st, { v: from }, { v: to, duration: d || 1.2, ease: "power2.out", onUpdate: () => (el.textContent = fmtNum(st.v, o)) }, t);
+            tl.fromTo(el, { scale: 0.7 }, { scale: 1, duration: d || 1.2, ease: "power2.out" }, t);
+          },
+          pop(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 0, scale: o.from || 0.6 }, { opacity: 1, scale: 1, duration: o.d || 0.5, ease: o.ease || "back.out(1.8)", stagger: o.stagger || 0 }, t);
+          },
+          rise(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 0, y: o.y || 40 }, { opacity: 1, y: 0, duration: o.d || 0.55, ease: o.ease || "power3.out", stagger: o.stagger || 0 }, t);
+          },
+          slideX(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 0, x: o.x || -80 }, { opacity: 1, x: 0, duration: o.d || 0.6, ease: o.ease || "power3.out", stagger: o.stagger || 0 }, t);
+          },
+          out(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 1, y: 0 }, { opacity: 0, y: o.y == null ? -30 : o.y, duration: o.d || 0.4, ease: "power2.in", immediateRender: false, stagger: o.stagger || 0 }, t);
+          },
+          fadeOut(tl, els, t, d) {
+            tl.fromTo(els, { opacity: 1 }, { opacity: 0, duration: d || 0.4, ease: "power1.in", immediateRender: false }, t);
+          },
+          // marker sweep behind text: element .hl > .hl-bg
+          mark(tl, el, t, d) {
+            tl.fromTo(el, { scaleX: 0 }, { scaleX: 1, duration: d || 0.5, ease: "power2.inOut" }, t);
+          },
+          growX(tl, el, t, d, to) {
+            tl.fromTo(el, { scaleX: 0 }, { scaleX: to == null ? 1 : to, duration: d || 1, ease: "power3.out" }, t);
+          },
+          growY(tl, el, t, d) {
+            tl.fromTo(el, { scaleY: 0 }, { scaleY: 1, duration: d || 1, ease: "power3.out" }, t);
+          },
+          stamp(tl, el, t) {
+            tl.fromTo(el, { opacity: 0, scale: 2.2, rotation: -14 }, { opacity: 1, scale: 1, rotation: -6, duration: 0.42, ease: "back.out(2.2)" }, t);
+          },
+          // slow ambient breathing, finite repeats within scene duration
+          breathe(tl, els, D, o) {
+            o = o || {};
+            const per = o.per || 3;
+            const n = Math.max(1, Math.floor(D / per) - 1);
+            tl.fromTo(els, { y: 0, rotation: 0 }, { y: o.y || -14, rotation: o.r || 0, duration: per / 2, ease: "sine.inOut", yoyo: true, repeat: n * 2 - 1 }, 0.1);
+          },
+          // camera move on a capture: el is the inner image wrapper
+          cam(tl, el, t, d, s, x, y) {
+            tl.to(el, { scale: s, x: x, y: y, duration: d, ease: "power2.inOut" }, t);
+          },
+          // capture camera: move/zoom a .shot so a highlight band [x0,y0,x1,y1] (native px) is centred
+          camTo(tl, shot, band, natH, s, t, d) {
+            const k = 716 / 538, W = 716, HS = 520;
+            if (!s) s = Math.max(1.12, Math.min(1.6, (0.94 * 538) / (band[2] - band[0])));
+            const cx = ((band[0] + band[2]) / 2) * k, cy = ((band[1] + band[3]) / 2) * k;
+            let x = W / 2 - cx * s, y = HS / 2 - cy * s;
+            x = Math.min(0, Math.max(W - W * s, x));
+            y = Math.min(0, Math.max(Math.min(0, HS - natH * k * s), y));
+            const prev = shot.__cam || { scale: 1, x: 0, y: 0 };
+            tl.fromTo(shot, { scale: prev.scale, x: prev.x, y: prev.y }, { scale: s, x: x, y: y, duration: d || 1.6, ease: "power2.inOut", immediateRender: !shot.__cam }, t);
+            shot.__cam = { scale: s, x: x, y: y };
+          },
+          // red ring drawn around a highlight band inside a .shot
+          ring(tl, shot, band, t) {
+            const k = 716 / 538;
+            const r = document.createElement("div");
+            r.className = "ring";
+            r.style.left = band[0] * k - 10 + "px";
+            r.style.top = band[1] * k - 8 + "px";
+            r.style.width = (band[2] - band[0]) * k + 20 + "px";
+            r.style.height = (band[3] - band[1]) * k + 16 + "px";
+            shot.appendChild(r);
+            tl.fromTo(r, { opacity: 0, scale: 1.25 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, t);
+            return r;
+          },
+          draw(tl, path, t, d, len) {
+            try { len = Math.ceil(path.getTotalLength()) + 4 || len; } catch (e) {}
+            tl.fromTo(path, { opacity: 0 }, { opacity: 1, duration: 0.05 }, t);
+            tl.fromTo(path, { strokeDasharray: len + " " + len, strokeDashoffset: len }, { strokeDashoffset: 0, duration: d || 1, ease: "power2.inOut" }, t);
+          },
+          sceneIn(tl, root) {
+            const k = root.querySelector(".kicker");
+            if (k) {
+              tl.fromTo(k.querySelector(".k-num"), { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 0.05);
+              tl.fromTo(k.querySelector(".k-title"), { opacity: 0, x: -20, clipPath: "inset(0 100% 0 0)" }, { opacity: 1, x: 0, clipPath: "inset(0 0% 0 0)", duration: 0.7, ease: "power3.out" }, 0.18);
+            }
+          },
+          sceneOut(tl, root, D) {
+            const st = root.querySelector(".stage");
+            if (st) tl.fromTo(st, { opacity: 1 }, { opacity: 0, duration: 0.35, ease: "power1.in", immediateRender: false }, D - 0.4);
+          },
+        };
+      })();
+
+          const R = document.getElementById("s09-root");
+          const $ = (s) => R.querySelectorAll(s);
+          const $1 = (s) => R.querySelector(s);
+          const tl = gsap.timeline({ paused: true });
+          H.sceneIn(tl, R);
+          // A: one third of English words came from French
+          H.pop(tl, $1(".bub"), C.eng - 0.4, { from: 0.6 });
+          tl.fromTo($1(".donut"), { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.6)" }, C.third - 1.0);
+          tl.fromTo($1(".donut .arc"), { strokeDasharray: "0 502.7" }, { strokeDasharray: "167.6 502.7", duration: 1.2, ease: "power2.out" }, C.third - 0.4);
+          tl.fromTo($1(".src"), { opacity: 0 }, { opacity: 1, duration: 0.5 }, C.third);
+          const wcs = $(".wc");
+          ["w1", "w2", "w3", "w4"].forEach((k, i) => {
+            tl.fromTo(wcs[i], { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, C[k] - 0.35);
+            tl.fromTo(wcs[i], { rotationY: 0 }, { rotationY: 180, duration: 0.6, ease: "power2.inOut" }, C[k] + 0.25);
+          });
+          H.rise(tl, $1(".same"), C.same - 0.2, { y: 20 });
+          H.out(tl, $1(".gA"), C.ten - 1.0, { y: -40 });
+          // ten years of English words
+          tl.fromTo($1(".tenb"), { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.6)" }, C.ten - 0.7);
+          H.count(tl, $1(".tenb .n"), 0, 10, C.ten - 0.5, 0.6);
+          H.rise(tl, $1(".tenb .b"), C.base - 0.4, { y: 30 });
+          H.out(tl, $1(".gT"), C.kr - 0.5, { y: -40 });
+          // B: classroom only vs classroom + life
+          H.slideX(tl, $1(".side.kr"), C.kr - 0.2, { x: -80 });
+          H.rise(tl, $1(".side.kr .msg"), C.out, { y: 20 });
+          H.slideX(tl, $1(".side.mt"), C.mtl - 0.3, { x: 80 });
+          H.pop(tl, $1(".lf.l1"), C.mart - 0.1);
+          H.pop(tl, $1(".lf.l2"), C.bus - 0.1);
+          H.pop(tl, $1(".lf.l3"), C.sch - 0.1);
+          H.rise(tl, $1(".side.mt .msg"), C.sch + 0.6, { y: 20 });
+          H.out(tl, $1(".gB"), C.age - 0.5, { y: -40 });
+          // C: age - adults are faster early on
+          H.pop(tl, $1(".age"), C.age, { from: 0.6 });
+          tl.fromTo($1(".graph"), { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.5 }, C.age + 0.4);
+          tl.fromTo($1(".legend"), { opacity: 0 }, { opacity: 1, duration: 0.4 }, C.fast - 0.6);
+          H.draw(tl, $1(".adult"), C.fast - 0.4, 1.6, 1600);
+          H.draw(tl, $1(".child"), C.fast - 0.2, 2.2, 1650);
+          tl.fromTo($1(".zoneA"), { opacity: 0 }, { opacity: 1, duration: 0.6 }, C.fast + 1.2);
+          H.pop(tl, $1(".tA"), C.fast + 1.4, { from: 0.6 });
+          H.pop(tl, $1(".tC"), C.late, { from: 0.6 });
+          tl.fromTo($(".g5l, .g7l"), { opacity: 0 }, { opacity: 1, duration: 0.4 }, C.goal);
+          H.pop(tl, $1(".g5"), C.g5 - 0.1, { from: 0.6 });
+          H.pop(tl, $1(".g7"), C.g7 - 0.1, { from: 0.6 });
+          tl.fromTo($1(".zoneA"), { fill: "#fbe2e5" }, { fill: "#f7c3cb", duration: 0.35, yoyo: true, repeat: 3 }, C.strong);
+          tl.fromTo($1(".tA"), { scale: 1 }, { scale: 1.15, duration: 0.3, yoyo: true, repeat: 1 }, C.strong);
+          H.sceneOut(tl, R, C.D);
+          window.__timelines["s09"] = tl;
+        })();
+      </script>
+
+    </template>
+  </body>
+</html>

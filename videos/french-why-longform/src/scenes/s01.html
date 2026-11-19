@@ -1,0 +1,100 @@
+<!--ANCHORS {"q":"L0", "echo":"L1", "every":"매번", "q1":"무엇이", "q2":"필요한", "num":"숫자와", "rev":"후기로", "title":"L4", "brand":"에이에이캐나다"}-->
+<!--SFX [["ding","q"],["tick","q2"],["stamp","brand"]]-->
+      <style>
+        #s01-root { position: absolute; inset: 0; }
+        #s01-root .bubble { position: absolute; left: 260px; top: 250px; width: 1400px; padding: 60px 80px 70px; border-radius: 48px; background: var(--paper);
+          box-shadow: 0 24px 60px rgba(80, 50, 20, 0.14); text-align: center; }
+        #s01-root .bubble::after { content: ""; position: absolute; left: 220px; bottom: -46px; border: 26px solid transparent; border-top: 30px solid var(--paper); border-left: 30px solid var(--paper); }
+        #s01-root .bubble .qm { position: absolute; left: 40px; top: -40px; font-size: 200px; font-weight: 900; color: var(--red); line-height: 1; }
+        #s01-root .bubble .line { font-size: 92px; font-weight: 900; letter-spacing: -0.04em; line-height: 1.2; }
+        #s01-root .bubble .w { display: inline-block; }
+        #s01-root .echo { position: absolute; padding: 18px 30px; border-radius: 24px; background: var(--red-soft); color: var(--red-dark); font-weight: 700; font-size: 32px; }
+        #s01-root .tally { position: absolute; left: 50%; top: 690px; transform: translateX(-50%); display: flex; align-items: center; gap: 22px; font-size: 40px; font-weight: 800; }
+        #s01-root .tally .ck { width: 54px; height: 54px; border-radius: 50%; background: var(--red); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 32px; }
+        #s01-root .qs { position: absolute; left: 160px; top: 250px; width: 1600px; display: flex; flex-direction: column; gap: 36px; }
+        #s01-root .qcard { display: flex; align-items: center; gap: 36px; padding: 40px 56px; }
+        #s01-root .qcard .n { flex: 0 0 96px; height: 96px; border-radius: 50%; background: var(--red); color: #fff; font-size: 54px; font-weight: 900; display: flex; align-items: center; justify-content: center; }
+        #s01-root .qcard .t { font-size: 62px; font-weight: 800; letter-spacing: -0.03em; }
+        #s01-root .tools { position: absolute; left: 160px; top: 650px; width: 1600px; display: flex; gap: 40px; justify-content: center; }
+        #s01-root .tool { display: flex; align-items: center; gap: 24px; padding: 26px 44px; }
+        #s01-root .tool .ic { width: 84px; height: 84px; border-radius: 22px; background: var(--red-soft); display: flex; align-items: flex-end; justify-content: center; gap: 8px; padding: 16px; }
+        #s01-root .tool .ic i { display: block; width: 12px; background: var(--red); border-radius: 3px; transform-origin: bottom center; }
+        #s01-root .tool .ic.chat { align-items: center; }
+        #s01-root .tool .ic.chat i { width: 48px; height: 34px; border-radius: 10px; background: var(--green); }
+        #s01-root .tool span { font-size: 44px; font-weight: 800; }
+        #s01-root .title { position: absolute; left: 0; right: 0; top: 230px; text-align: center; }
+        #s01-root .title .l1, #s01-root .title .l2 { font-size: 118px; font-weight: 900; letter-spacing: -0.045em; line-height: 1.22; }
+        #s01-root .title .l1 span, #s01-root .title .l2 span { display: inline-block; }
+        #s01-root .title .bar { width: 260px; height: 14px; margin: 36px auto 0; background: var(--red); border-radius: 7px; transform-origin: center; }
+        #s01-root .stampbox { position: absolute; left: 50%; top: 640px; margin-left: -230px; width: 460px; padding: 22px 0; border: 7px solid var(--red); border-radius: 20px;
+          color: var(--red); font-size: 64px; font-weight: 900; text-align: center; letter-spacing: 0.02em; background: rgba(255, 253, 248, 0.9); }
+      </style>
+      <div id="s01-root" data-composition-id="s01" data-width="1920" data-height="1080">
+        <div class="stage">
+          <div class="grp g-quote">
+            <div class="bubble">
+              <div class="qm">“</div>
+              <div class="line"><span class="w">영어도</span> <span class="w">못하는데,</span></div>
+              <div class="line"><span class="w">불어를</span> <span class="w">어떻게</span> <span class="w red">해요?</span></div>
+            </div>
+            <div class="echo" style="left: 120px; top: 120px">영어도 못하는데…</div>
+            <div class="echo" style="left: 1430px; top: 140px">불어를 어떻게…</div>
+            <div class="echo" style="left: 1500px; top: 620px">저도 그 걱정이…</div>
+            <div class="echo" style="left: 90px; top: 640px">불어는 너무 어려워서…</div>
+            <div class="tally"><span>몬트리올 상담에서</span><div class="ck">✓</div><div class="ck">✓</div><div class="ck">✓</div><div class="ck">✓</div><span class="red">거의 매번</span></div>
+          </div>
+          <div class="grp g-qs">
+            <div class="qs">
+              <div class="qcard card q1"><div class="n">1</div><div class="t">불어를 하면 캐나다에서 <span class="red">무엇이 달라질까?</span></div></div>
+              <div class="qcard card q2"><div class="n">2</div><div class="t">필요한 불어는 <span class="red">정확히 어느 정도?</span></div></div>
+            </div>
+            <div class="tools">
+              <div class="tool card t-num"><div class="ic"><i style="height: 24px"></i><i style="height: 38px"></i><i style="height: 52px"></i></div><span>숫자로</span></div>
+              <div class="tool card t-rev"><div class="ic chat"><i></i></div><span>카페 실제 후기로</span></div>
+            </div>
+          </div>
+          <div class="grp g-title">
+            <div class="title">
+              <div class="l1"><span>불어,</span> <span>왜 해야 하고</span></div>
+              <div class="l2"><span class="red">정말 할 수 있을까?</span></div>
+              <div class="bar"></div>
+            </div>
+            <div class="stampbox">AA Canada</div>
+          </div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const C = __CUES__;
+__HELPERS__
+          const R = document.getElementById("s01-root");
+          const $ = (s) => R.querySelectorAll(s);
+          const $1 = (s) => R.querySelector(s);
+          const tl = gsap.timeline({ paused: true });
+          // phase 1: the question everyone asks
+          tl.fromTo($1(".bubble"), { opacity: 1, scale: 0.94, y: 0 }, { opacity: 1, scale: 1, y: 0, duration: 0.8, ease: "back.out(1.6)" }, 0);
+          H.pop(tl, $1(".bubble .qm"), C.q - 0.3, { from: 0.3 });
+          H.rise(tl, $(".bubble .w"), C.q, { stagger: 0.32, y: 30 });
+          H.pop(tl, $(".echo"), C.echo, { stagger: 0.35, from: 0.4 });
+          H.breathe(tl, $(".echo"), 8, { per: 2.4, y: -10 });
+          H.rise(tl, $1(".tally"), C.echo + 0.4);
+          tl.set($(".tally .ck"), { opacity: 0 }, 0);
+          H.pop(tl, $(".tally .ck"), C.echo + 1.0, { stagger: 0.22, from: 0.2 });
+          tl.fromTo($1(".tally .red"), { scale: 1 }, { scale: 1.18, duration: 0.25, yoyo: true, repeat: 1, ease: "power2.out" }, C.every);
+          H.out(tl, $1(".g-quote"), C.q1 - 0.9, { y: -60 });
+          // phase 2: two questions
+          H.slideX(tl, $1(".q1"), C.q1 - 0.4, { x: -120 });
+          H.slideX(tl, $1(".q2"), C.q2 - 0.3, { x: -120 });
+          H.pop(tl, $1(".t-num"), C.num - 0.2);
+          H.growY(tl, $(".t-num .ic i"), C.num, 0.6);
+          H.pop(tl, $1(".t-rev"), C.rev - 0.2);
+          H.out(tl, $1(".g-qs"), C.title - 0.6, { y: -50 });
+          // phase 3: title lockup + brand stamp
+          H.rise(tl, $(".title .l1 span"), C.title - 0.1, { stagger: 0.2, y: 60 });
+          tl.fromTo($1(".title .l2"), { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.6, ease: "back.out(1.7)" }, C.title + 0.5);
+          H.growX(tl, $1(".title .bar"), C.title + 0.9, 0.6);
+          H.stamp(tl, $1(".stampbox"), C.brand);
+          H.sceneOut(tl, R, C.D);
+          window.__timelines["s01"] = tl;
+        })();
+      </script>

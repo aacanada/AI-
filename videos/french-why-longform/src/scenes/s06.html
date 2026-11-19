@@ -1,0 +1,102 @@
+<!--ANCHORS {"m1":"L0", "abcd":"에이 비 씨 디도", "m8":"팔 개월", "tch":"선생님과", "mart":"마트나", "m2":"L1", "self":"자존감이", "coffee":"커피", "big":"L2", "size":"크기입니다"}-->
+<!--SFX [["tick", "m8"], ["stamp", "size"]]-->
+      <style>
+        #s06-root { position: absolute; inset: 0; }
+        #s06-root .phone { left: 130px; top: 200px; }
+        #s06-root .cafe-label { left: 150px; top: 160px; }
+        #s06-root .shot.b { opacity: 0; }
+        #s06-root .side { position: absolute; left: 1000px; top: 200px; width: 800px; }
+        #s06-root .tlx { position: relative; height: 520px; }
+        #s06-root .tlx .ln { position: absolute; left: 40px; top: 60px; width: 8px; height: 420px; background: var(--line); border-radius: 4px; }
+        #s06-root .tlx .lnf { position: absolute; left: 40px; top: 60px; width: 8px; height: 420px; background: var(--red); border-radius: 4px; transform-origin: top center; }
+        #s06-root .pt { position: absolute; left: 0; display: flex; align-items: center; gap: 26px; }
+        #s06-root .pt .dot { flex: 0 0 88px; height: 88px; border-radius: 50%; background: var(--paper); border: 6px solid var(--red); display: flex; align-items: center; justify-content: center; font-size: 26px; font-weight: 900; color: var(--red); }
+        #s06-root .pt .tx { font-size: 40px; font-weight: 800; line-height: 1.3; }
+        #s06-root .pt.p1 { top: 20px; }
+        #s06-root .pt.p2 { top: 210px; }
+        #s06-root .pt.p2 .dot { background: var(--red); color: #fff; font-size: 30px; }
+        #s06-root .pt.p3 { top: 400px; }
+        #s06-root .low { position: absolute; left: 1000px; top: 220px; width: 800px; }
+        #s06-root .low .row { display: flex; align-items: center; gap: 24px; padding: 26px 34px; margin-bottom: 26px; font-size: 40px; font-weight: 800; }
+        #s06-root .meter { position: relative; height: 54px; margin-top: 10px; border-radius: 27px; background: #efe3cf; overflow: hidden; }
+        #s06-root .meter .mf { position: absolute; left: 0; top: 0; bottom: 0; width: 100%; background: var(--red); transform-origin: left center; }
+        #s06-root .cup { width: 64px; height: 64px; flex: 0 0 64px; }
+        #s06-root .big { position: absolute; left: 0; right: 0; top: 280px; text-align: center; }
+        #s06-root .big .a { font-size: 62px; font-weight: 800; color: var(--muted); letter-spacing: -0.03em; }
+        #s06-root .big .b { margin-top: 26px; font-size: 92px; font-weight: 900; letter-spacing: -0.045em; line-height: 1.2; }
+        #s06-root .rip { position: absolute; left: 50%; top: 470px; width: 300px; height: 300px; margin: -150px 0 0 -150px; border-radius: 50%; border: 6px solid var(--red); opacity: 0; }
+      </style>
+      <div id="s06-root" data-composition-id="s06" data-width="1920" data-height="1080">
+        <div class="stage">
+          <div class="kicker"><span class="k-num">05</span><span class="k-title">내 생활이 달라집니다</span></div>
+          <div class="grp gP">
+            <div class="phone"><div class="screen">
+              <div class="shot a"><img src="assets/captures/c01_body.png" alt="" /></div>
+              <div class="shot b"><img src="assets/captures/c03_b.png" alt="" /></div>
+            </div></div>
+            <div class="cafe-label"><i></i>AA Montreal 카페 실제 후기</div>
+          </div>
+          <div class="side s1">
+            <div class="tlx">
+              <div class="ln"></div><div class="lnf"></div>
+              <div class="pt p1"><div class="dot">처음</div><div class="tx">불어 a, b, c, d도 헷갈림</div></div>
+              <div class="pt p2"><div class="dot">8개월</div><div class="tx">아이 학교 선생님과<span class="red"> 불어 상담</span></div></div>
+              <div class="pt p3"><div class="dot">✓</div><div class="tx">마트·카페에서 간단한 대화</div></div>
+            </div>
+          </div>
+          <div class="low">
+            <div class="row card r1">처음 왔을 때, 말이 안 통함</div>
+            <div class="row card r2" style="display: block">자존감<div class="meter"><div class="mf"></div></div></div>
+            <div class="row card r3"><svg class="cup" viewBox="0 0 24 24"><path d="M4 8h12v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V8zm12 2h2a2 2 0 0 1 0 4h-2" stroke="#2a221d" stroke-width="2" fill="none"/><path d="M8 3v3M12 3v3" stroke="#c8102e" stroke-width="2" stroke-linecap="round"/></svg>커피 한 잔 사러 가기도 어려움</div>
+          </div>
+          <div class="rip r1x"></div><div class="rip r2x"></div><div class="rip r3x"></div>
+          <div class="big">
+            <div class="a">언어는 시험 점수이기 전에,</div>
+            <div class="b">이 도시에서 <span class="red">내가 할 수 있는</span></div>
+            <div class="b"><span class="hl"><span class="hl-bg"></span>일의 크기</span>입니다</div>
+          </div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const C = __CUES__;
+__HELPERS__
+          const R = document.getElementById("s06-root");
+          const $ = (s) => R.querySelectorAll(s);
+          const $1 = (s) => R.querySelector(s);
+          const tl = gsap.timeline({ paused: true });
+          H.sceneIn(tl, R);
+          tl.fromTo($1(".phone"), { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, C.m1 - 0.4);
+          H.pop(tl, $1(".cafe-label"), C.m1, { from: 0.7 });
+          const A = $1(".shot.a"), B = $1(".shot.b");
+          // member 1: A0 -> 8 months
+          H.camTo(tl, A, [20, 212, 471, 240], 379, null, C.abcd - 0.6, 1.4);
+          H.ring(tl, A, [20, 212, 471, 240], C.abcd + 0.6);
+          H.rise(tl, $1(".tlx .ln"), C.m1 + 0.2, { y: 0 });
+          H.slideX(tl, $1(".p1"), C.abcd, { x: 60 });
+          tl.fromTo($1(".lnf"), { scaleY: 0 }, { scaleY: 0.5, duration: 1.0, ease: "power2.inOut" }, C.m8 - 0.8);
+          H.pop(tl, $1(".p2 .dot"), C.m8);
+          H.slideX(tl, $1(".p2 .tx"), C.tch - 0.2, { x: 40 });
+          H.camTo(tl, A, [20, 308, 476, 336], 379, null, C.mart - 0.7, 1.2);
+          H.ring(tl, A, [20, 308, 476, 336], C.mart + 0.4);
+          tl.fromTo($1(".lnf"), { scaleY: 0.5 }, { scaleY: 1, duration: 0.8, ease: "power2.inOut", immediateRender: false }, C.mart - 0.4);
+          H.slideX(tl, $1(".p3"), C.mart + 0.2, { x: 60 });
+          H.out(tl, $1(".s1"), C.m2 - 0.5, { y: -30 });
+          // member 2: self-esteem at the bottom
+          tl.fromTo(B, { opacity: 0, yPercent: 25 }, { opacity: 1, yPercent: 0, duration: 0.6, ease: "power3.out" }, C.m2 - 0.4);
+          H.camTo(tl, B, [20, 212, 481, 272], 411, null, C.self - 0.8, 1.4);
+          H.ring(tl, B, [20, 212, 481, 272], C.self + 0.4);
+          H.slideX(tl, $1(".low .r1"), C.m2 + 0.3, { x: 60 });
+          H.slideX(tl, $1(".low .r2"), C.self - 0.4, { x: 60 });
+          tl.fromTo($1(".meter .mf"), { scaleX: 0.85 }, { scaleX: 0.08, duration: 1.4, ease: "power2.in" }, C.self);
+          H.slideX(tl, $1(".low .r3"), C.coffee - 0.2, { x: 60 });
+          H.out(tl, $(".gP, .low"), C.big - 0.6, { y: -40 });
+          // the line that matters
+          H.rise(tl, $1(".big .a"), C.big - 0.1, { y: 30 });
+          H.rise(tl, $(".big .b"), C.big + 1.4, { stagger: 0.6, y: 50 });
+          H.mark(tl, $1(".big .hl-bg"), C.size - 0.6, 0.6);
+          [".r1x", ".r2x", ".r3x"].forEach((c, i) => tl.fromTo($1(c), { opacity: 0.5, scale: 0.4 }, { opacity: 0, scale: 5.5, duration: 2.2, ease: "power1.out", immediateRender: false }, C.size - 0.4 + i * 0.45));
+          H.sceneOut(tl, R, C.D);
+          window.__timelines["s06"] = tl;
+        })();
+      </script>

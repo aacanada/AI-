@@ -1,0 +1,127 @@
+<!--ANCHORS {"a0":"L0", "kids":"아이들은", "both":"영어와 불어를", "son":"제 아들도", "move":"영어권으로", "imm":"프렌치 이머전", "can":"들어갈 수 있는", "work":"부모가 취업비자로", "tui":"영주권자 학비가", "cafe":"저희 카페 후기에도", "email":"이메일을", "hw":"숙제를", "tog":"아이와 함께"}-->
+<!--SFX [["ding", "both"], ["tick", "imm"], ["ding", "tog"]]-->
+      <style>
+        #s05-root { position: absolute; inset: 0; }
+        #s05-root .gA .kid { position: absolute; left: 330px; top: 300px; }
+        #s05-root .gA .sb { position: absolute; padding: 22px 38px; border-radius: 30px; font-size: 64px; font-weight: 900; }
+        #s05-root .gA .en { left: 560px; top: 210px; background: #fff; border: 5px solid #2a221d; }
+        #s05-root .gA .fr { left: 600px; top: 420px; background: var(--red); color: #fff; }
+        #s05-root .gA .eq { position: absolute; left: 1100px; top: 300px; width: 680px; padding: 40px 46px; }
+        #s05-root .gA .eq .t { font-size: 58px; font-weight: 900; letter-spacing: -0.03em; }
+        #s05-root .gA .eq .s { margin-top: 18px; font-size: 38px; font-weight: 700; color: var(--muted); }
+        #s05-root .gB .map { position: absolute; left: 140px; top: 170px; width: 1640px; height: 620px; }
+        #s05-root .gB .prov { position: absolute; top: 330px; height: 120px; border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 40px; font-weight: 800; }
+        #s05-root .gB .qc { left: 980px; width: 420px; background: #efe3cf; color: #5b4c40; }
+        #s05-root .gB .en2 { left: 80px; width: 520px; background: var(--red-soft); color: var(--red-dark); }
+        #s05-root .gB .arc { position: absolute; left: 0; top: 0; width: 1640px; height: 620px; overflow: visible; }
+        #s05-root .gB .school { position: absolute; left: 140px; top: 40px; width: 420px; padding: 26px 30px; text-align: center; }
+        #s05-root .gB .school .nm { font-size: 44px; font-weight: 900; }
+        #s05-root .gB .school .tag { display: inline-block; margin-top: 10px; padding: 6px 16px; border-radius: 10px; background: #2a221d; color: #fff; font-size: 26px; font-weight: 700; }
+        #s05-root .gB .ok { position: absolute; left: 160px; top: 500px; font-size: 38px; font-weight: 800; color: var(--red); }
+        #s05-root .gC .tu { position: absolute; left: 260px; top: 170px; width: 1400px; height: 600px; padding: 44px 60px; }
+        #s05-root .gC .tu .t { font-size: 50px; font-weight: 900; letter-spacing: -0.03em; }
+        #s05-root .gC .cols { position: absolute; left: 240px; right: 240px; bottom: 60px; height: 330px; display: flex; align-items: flex-end; justify-content: space-around; border-bottom: 4px solid var(--line); }
+        #s05-root .gC .col { position: relative; width: 240px; }
+        #s05-root .gC .col .f { position: absolute; left: 0; right: 0; bottom: 0; border-radius: 16px 16px 0 0; transform-origin: bottom center; }
+        #s05-root .gC .col .l { position: absolute; left: -60px; right: -60px; bottom: -60px; text-align: center; font-size: 32px; font-weight: 800; }
+        #s05-root .gC .col.int .f { height: 300px; background: #b9aa9b; }
+        #s05-root .gC .col.pr .f { height: 110px; background: var(--red); }
+        #s05-root .gC .down { position: absolute; left: 590px; top: 250px; font-size: 40px; font-weight: 900; color: var(--red); }
+        #s05-root .gD .phone { left: 150px; top: 190px; }
+        #s05-root .gD .cafe-label { left: 170px; top: 150px; }
+        #s05-root .gD .shot.b { opacity: 0; }
+        #s05-root .gD .flow { position: absolute; left: 1000px; top: 220px; width: 780px; display: flex; flex-direction: column; gap: 26px; }
+        #s05-root .gD .flow .st { display: flex; align-items: center; gap: 22px; padding: 26px 32px; font-size: 40px; font-weight: 800; }
+        #s05-root .gD .flow .st i { flex: 0 0 54px; height: 54px; border-radius: 50%; background: var(--red-soft); color: var(--red); font-style: normal; font-weight: 900; font-size: 30px; display: flex; align-items: center; justify-content: center; }
+        #s05-root .gD .flow .st.last { background: var(--red); color: #fff; }
+        #s05-root .gD .flow .st.last i { background: #fff; }
+      </style>
+      <div id="s05-root" data-composition-id="s05" data-width="1920" data-height="1080">
+        <div class="stage">
+          <div class="kicker"><span class="k-num">04</span><span class="k-title">아이에게 돌아오는 것</span></div>
+          <div class="grp gA">
+            <svg class="kid" width="200" height="330" viewBox="0 0 200 330"><circle cx="100" cy="70" r="62" fill="#2a221d"/><path d="M10 330 C10 170 190 170 190 330Z" fill="#c8102e"/></svg>
+            <div class="sb en">Hello!</div>
+            <div class="sb fr">Bonjour!</div>
+            <div class="eq card"><div class="t">영어 + 불어 = <span class="hl"><span class="hl-bg"></span>이중언어</span></div><div class="s">제 아들도 몬트리올에서 영어·불어 이중언어가 됐습니다</div></div>
+          </div>
+          <div class="grp gB">
+            <div class="map">
+              <svg class="arc" viewBox="0 0 1640 620"><path class="ap" d="M1190 330 C 1100 160, 700 160, 500 320" stroke="#c8102e" stroke-width="9" fill="none" stroke-linecap="round" stroke-dasharray="2 22"/><path class="ah" d="M530 290 L498 322 L540 334" stroke="#c8102e" stroke-width="9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="prov qc">몬트리올 (퀘벡)</div>
+              <div class="prov en2">영어권 주로 이사</div>
+              <div class="school card"><div class="nm">프렌치 이머전 학교</div><div class="tag">인기 많아 중간 입학 어려운 학교</div></div>
+              <div class="ok">→ 불어가 되는 아이는 들어갈 수 있는 경우가 있음</div>
+            </div>
+          </div>
+          <div class="grp gC">
+            <div class="tu card">
+              <div class="t">부모가 취업비자로 일하는 동안 · <span class="red">자녀 대학 학비</span></div>
+              <div class="cols">
+                <div class="col int"><div class="f"></div><div class="l">유학생 학비</div></div>
+                <div class="col pr"><div class="f"></div><div class="l red">영주권자 학비 적용</div></div>
+              </div>
+              <div class="down">적용되는 길도 있음 ↓</div>
+            </div>
+          </div>
+          <div class="grp gD">
+            <div class="phone"><div class="screen">
+              <div class="shot a"><img src="assets/captures/c04_a.png" alt="" /></div>
+              <div class="shot b"><img src="assets/captures/c04_b.png" alt="" /></div>
+            </div></div>
+            <div class="cafe-label"><i></i>AA Montreal 카페 실제 후기</div>
+            <div class="flow">
+              <div class="st card s1"><i>1</i>학교 이메일, 번역기로 오해</div>
+              <div class="st card s2"><i>2</i>불어 배우며 숙제를 같이</div>
+              <div class="st card last s3"><i>3</i>아이와 함께 배우는 느낌</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const C = __CUES__;
+__HELPERS__
+          const R = document.getElementById("s05-root");
+          const $ = (s) => R.querySelectorAll(s);
+          const $1 = (s) => R.querySelector(s);
+          const tl = gsap.timeline({ paused: true });
+          H.sceneIn(tl, R);
+          // A: bilingual child
+          H.rise(tl, $1(".kid"), C.a0 + 0.3, { y: 80 });
+          H.pop(tl, $1(".en"), C.kids, { from: 0.4 });
+          H.pop(tl, $1(".fr"), C.both + 0.5, { from: 0.4 });
+          tl.fromTo($(".gA .sb"), { y: 0 }, { y: -12, duration: 0.8, ease: "sine.inOut", yoyo: true, repeat: 7, stagger: 0.4 }, C.both + 1.0);
+          H.slideX(tl, $1(".eq"), C.both + 0.8, { x: 80 });
+          H.mark(tl, $1(".eq .hl-bg"), C.son + 0.4, 0.6);
+          H.rise(tl, $1(".eq .s"), C.son, { y: 20 });
+          H.out(tl, $1(".gA"), C.move - 0.6, { y: -40 });
+          // B: moving to an English province -> French immersion
+          H.pop(tl, $(".gB .prov"), C.move - 0.2, { stagger: 0.25, from: 0.8 });
+          H.draw(tl, $1(".gB .ap"), C.move + 0.2, 1.1, 820);
+          tl.fromTo($1(".gB .ah"), { opacity: 0 }, { opacity: 1, duration: 0.2 }, C.move + 1.2);
+          tl.fromTo($1(".gB .school"), { opacity: 0, y: -40 }, { opacity: 1, y: 0, duration: 0.5, ease: "back.out(1.6)" }, C.imm - 0.2);
+          H.rise(tl, $1(".gB .ok"), C.can, { y: 20 });
+          H.out(tl, $1(".gB"), C.work - 0.6, { y: -40 });
+          // C: tuition
+          tl.fromTo($1(".gC .tu"), { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, C.work - 0.3);
+          H.growY(tl, $1(".gC .int .f"), C.work + 0.6, 0.8);
+          H.growY(tl, $1(".gC .pr .f"), C.tui - 0.3, 0.8);
+          H.pop(tl, $1(".gC .down"), C.tui + 0.4, { from: 0.7 });
+          H.out(tl, $1(".gC"), C.cafe - 0.5, { y: -40 });
+          // D: cafe review capture
+          tl.fromTo($1(".gD .phone"), { opacity: 0, y: 60, rotation: -2 }, { opacity: 1, y: 0, rotation: 0, duration: 0.6, ease: "power3.out" }, C.cafe - 0.2);
+          H.pop(tl, $1(".gD .cafe-label"), C.cafe + 0.2, { from: 0.7 });
+          const A = $1(".shot.a"), B = $1(".shot.b");
+          H.camTo(tl, A, [20, 212, 415, 240], 379, null, C.email - 0.3, 1.6);
+          H.ring(tl, A, [20, 212, 415, 240], C.email + 1.2);
+          H.slideX(tl, $1(".flow .s1"), C.email, { x: 60 });
+          tl.fromTo(B, { opacity: 0, yPercent: 25 }, { opacity: 1, yPercent: 0, duration: 0.6, ease: "power3.out" }, C.hw - 0.6);
+          H.camTo(tl, B, [20, 212, 373, 240], 379, null, C.hw + 0.1, 1.6);
+          H.ring(tl, B, [20, 212, 373, 240], C.tog - 0.2);
+          H.slideX(tl, $1(".flow .s2"), C.hw, { x: 60 });
+          H.slideX(tl, $1(".flow .s3"), C.tog, { x: 60 });
+          H.sceneOut(tl, R, C.D);
+          window.__timelines["s05"] = tl;
+        })();
+      </script>

@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+
+
+      <style>
+        #s04-root { position: absolute; inset: 0; }
+        #s04-root .row { position: absolute; left: 120px; width: 1680px; height: 236px; padding: 30px 44px; }
+        #s04-root .row.r1 { top: 170px; }
+        #s04-root .row.r2 { top: 450px; }
+        #s04-root .row .nm { position: absolute; left: 44px; top: 30px; font-size: 44px; font-weight: 900; letter-spacing: -0.03em; }
+        #s04-root .segs { position: absolute; left: 330px; top: 26px; display: flex; gap: 14px; }
+        #s04-root .seg { padding: 12px 26px; border-radius: 14px; font-size: 32px; font-weight: 800; background: #efe3cf; color: #5b4c40; }
+        #s04-root .r2 .seg { background: var(--red-soft); color: var(--red-dark); }
+        #s04-root .r2 .seg.go { background: var(--red); color: #fff; }
+        #s04-root .seg-arrow { align-self: center; font-size: 34px; font-weight: 900; color: var(--muted); }
+        #s04-root .trk { position: absolute; left: 330px; top: 120px; width: 1100px; height: 76px; }
+        #s04-root .fill { position: absolute; left: 0; top: 0; height: 76px; border-radius: 0 18px 18px 0; transform-origin: left center; }
+        #s04-root .r1 .fill { width: 1100px; background: #b9aa9b; }
+        #s04-root .r2 .fill.a { width: 312px; background: var(--red); }
+        #s04-root .r2 .fill.b { width: 458px; background: repeating-linear-gradient(-45deg, #f2a9b4 0 14px, #f8c9d0 14px 28px); z-index: 0; }
+        #s04-root .amt { position: absolute; top: 116px; font-size: 56px; font-weight: 900; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; white-space: nowrap; }
+        #s04-root .r1 .amt { left: 1450px; }
+        #s04-root .r2 .amt { left: 820px; color: var(--red); }
+        #s04-root .amt small { font-size: 32px; color: var(--muted); font-weight: 700; margin-left: 6px; }
+        #s04-root .free { position: absolute; left: 50%; top: 712px; width: 1180px; margin-left: -590px; display: flex; align-items: center; justify-content: center; gap: 36px; }
+        #s04-root .fam { display: flex; align-items: flex-end; gap: 10px; }
+        #s04-root .fam svg { display: block; }
+        #s04-root .stampx { padding: 18px 40px; border: 7px solid var(--red); border-radius: 22px; color: var(--red); font-size: 54px; font-weight: 900; background: rgba(255, 253, 248, 0.92); letter-spacing: -0.02em; white-space: nowrap; }
+      </style>
+      <div id="s04-root" data-composition-id="s04" data-width="1920" data-height="1080">
+        <div class="stage">
+          <div class="kicker"><span class="k-num">03</span><span class="k-title">돈도 덜 듭니다 · 학비 비교</span></div>
+          <div class="row r1 card">
+            <div class="nm">보통의 길</div>
+            <div class="segs"><div class="seg sa">대학 부설 어학연수 1년</div><div class="seg-arrow">+</div><div class="seg sb">컬리지 2년</div></div>
+            <div class="trk"><div class="fill"></div></div>
+            <div class="amt"><span class="n60">0</span><small>만 원</small></div>
+          </div>
+          <div class="row r2 card">
+            <div class="nm red">불어 길</div>
+            <div class="segs"><div class="seg sa">몬트리올 불어 어학연수 1~2년</div><div class="seg-arrow">→</div><div class="seg go sb">5레벨 되면 바로 취업비자</div></div>
+            <div class="trk"><div class="fill b"></div><div class="fill a"></div></div>
+            <div class="amt">약 <span class="n17">0</span>만~<span class="n25">0</span><small>만 원</small></div>
+          </div>
+          <div class="free">
+            <div class="fam">
+              <svg width="92" height="150" viewBox="0 0 92 150"><circle cx="46" cy="34" r="28" fill="#2a221d"/><path d="M6 150 C6 90 86 90 86 150Z" fill="#2a221d"/></svg>
+              <svg width="66" height="108" viewBox="0 0 66 108"><circle cx="33" cy="24" r="20" fill="#c8102e"/><path d="M4 108 C4 64 62 64 62 108Z" fill="#c8102e"/></svg>
+            </div>
+            <div class="stampx">부모 사설 어학원 = 자녀 무상교육</div>
+          </div>
+          <div class="src">학비 기준 약식 비교 · 개인별 차이 있음</div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const C = {"cost": 0.7667, "r1": 2.4333, "r1c": 5.4667, "k60": 7.7333, "r2": 9.4667, "r2b": 13.6333, "k17": 17.9667, "k25": 19.1667, "free": 21.3333, "freew": 25.6333, "L": [[0.7667, 1.7333], [2.4333, 8.6667], [9.4667, 20.6], [21.3333, 26.7667]], "D": 27.9333};
+      const H = (function () {
+        const fmtNum = (v, o) => {
+          o = o || {};
+          const d = o.dec || 0;
+          let s = d ? v.toFixed(d) : Math.round(v).toString();
+          if (o.comma) s = s.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+          return (o.pre || "") + s + (o.suf || "");
+        };
+        return {
+          // count-up number (seek-safe proxy, text written in onUpdate)
+          count(tl, el, from, to, t, d, o) {
+            const st = { v: from };
+            el.textContent = fmtNum(from, o);
+            tl.fromTo(st, { v: from }, { v: to, duration: d || 1.2, ease: "power2.out", onUpdate: () => (el.textContent = fmtNum(st.v, o)) }, t);
+            tl.fromTo(el, { scale: 0.7 }, { scale: 1, duration: d || 1.2, ease: "power2.out" }, t);
+          },
+          pop(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 0, scale: o.from || 0.6 }, { opacity: 1, scale: 1, duration: o.d || 0.5, ease: o.ease || "back.out(1.8)", stagger: o.stagger || 0 }, t);
+          },
+          rise(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 0, y: o.y || 40 }, { opacity: 1, y: 0, duration: o.d || 0.55, ease: o.ease || "power3.out", stagger: o.stagger || 0 }, t);
+          },
+          slideX(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 0, x: o.x || -80 }, { opacity: 1, x: 0, duration: o.d || 0.6, ease: o.ease || "power3.out", stagger: o.stagger || 0 }, t);
+          },
+          out(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 1, y: 0 }, { opacity: 0, y: o.y == null ? -30 : o.y, duration: o.d || 0.4, ease: "power2.in", immediateRender: false, stagger: o.stagger || 0 }, t);
+          },
+          fadeOut(tl, els, t, d) {
+            tl.fromTo(els, { opacity: 1 }, { opacity: 0, duration: d || 0.4, ease: "power1.in", immediateRender: false }, t);
+          },
+          // marker sweep behind text: element .hl > .hl-bg
+          mark(tl, el, t, d) {
+            tl.fromTo(el, { scaleX: 0 }, { scaleX: 1, duration: d || 0.5, ease: "power2.inOut" }, t);
+          },
+          growX(tl, el, t, d, to) {
+            tl.fromTo(el, { scaleX: 0 }, { scaleX: to == null ? 1 : to, duration: d || 1, ease: "power3.out" }, t);
+          },
+          growY(tl, el, t, d) {
+            tl.fromTo(el, { scaleY: 0 }, { scaleY: 1, duration: d || 1, ease: "power3.out" }, t);
+          },
+          stamp(tl, el, t) {
+            tl.fromTo(el, { opacity: 0, scale: 2.2, rotation: -14 }, { opacity: 1, scale: 1, rotation: -6, duration: 0.42, ease: "back.out(2.2)" }, t);
+          },
+          // slow ambient breathing, finite repeats within scene duration
+          breathe(tl, els, D, o) {
+            o = o || {};
+            const per = o.per || 3;
+            const n = Math.max(1, Math.floor(D / per) - 1);
+            tl.fromTo(els, { y: 0, rotation: 0 }, { y: o.y || -14, rotation: o.r || 0, duration: per / 2, ease: "sine.inOut", yoyo: true, repeat: n * 2 - 1 }, 0.1);
+          },
+          // camera move on a capture: el is the inner image wrapper
+          cam(tl, el, t, d, s, x, y) {
+            tl.to(el, { scale: s, x: x, y: y, duration: d, ease: "power2.inOut" }, t);
+          },
+          // capture camera: move/zoom a .shot so a highlight band [x0,y0,x1,y1] (native px) is centred
+          camTo(tl, shot, band, natH, s, t, d) {
+            const k = 716 / 538, W = 716, HS = 520;
+            if (!s) s = Math.max(1.12, Math.min(1.6, (0.94 * 538) / (band[2] - band[0])));
+            const cx = ((band[0] + band[2]) / 2) * k, cy = ((band[1] + band[3]) / 2) * k;
+            let x = W / 2 - cx * s, y = HS / 2 - cy * s;
+            x = Math.min(0, Math.max(W - W * s, x));
+            y = Math.min(0, Math.max(Math.min(0, HS - natH * k * s), y));
+            const prev = shot.__cam || { scale: 1, x: 0, y: 0 };
+            tl.fromTo(shot, { scale: prev.scale, x: prev.x, y: prev.y }, { scale: s, x: x, y: y, duration: d || 1.6, ease: "power2.inOut", immediateRender: !shot.__cam }, t);
+            shot.__cam = { scale: s, x: x, y: y };
+          },
+          // red ring drawn around a highlight band inside a .shot
+          ring(tl, shot, band, t) {
+            const k = 716 / 538;
+            const r = document.createElement("div");
+            r.className = "ring";
+            r.style.left = band[0] * k - 10 + "px";
+            r.style.top = band[1] * k - 8 + "px";
+            r.style.width = (band[2] - band[0]) * k + 20 + "px";
+            r.style.height = (band[3] - band[1]) * k + 16 + "px";
+            shot.appendChild(r);
+            tl.fromTo(r, { opacity: 0, scale: 1.25 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, t);
+            return r;
+          },
+          draw(tl, path, t, d, len) {
+            try { len = Math.ceil(path.getTotalLength()) + 4 || len; } catch (e) {}
+            tl.fromTo(path, { opacity: 0 }, { opacity: 1, duration: 0.05 }, t);
+            tl.fromTo(path, { strokeDasharray: len + " " + len, strokeDashoffset: len }, { strokeDashoffset: 0, duration: d || 1, ease: "power2.inOut" }, t);
+          },
+          sceneIn(tl, root) {
+            const k = root.querySelector(".kicker");
+            if (k) {
+              tl.fromTo(k.querySelector(".k-num"), { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 0.05);
+              tl.fromTo(k.querySelector(".k-title"), { opacity: 0, x: -20, clipPath: "inset(0 100% 0 0)" }, { opacity: 1, x: 0, clipPath: "inset(0 0% 0 0)", duration: 0.7, ease: "power3.out" }, 0.18);
+            }
+          },
+          sceneOut(tl, root, D) {
+            const st = root.querySelector(".stage");
+            if (st) tl.fromTo(st, { opacity: 1 }, { opacity: 0, duration: 0.35, ease: "power1.in", immediateRender: false }, D - 0.4);
+          },
+        };
+      })();
+
+          const R = document.getElementById("s04-root");
+          const $ = (s) => R.querySelectorAll(s);
+          const $1 = (s) => R.querySelector(s);
+          const tl = gsap.timeline({ paused: true });
+          H.sceneIn(tl, R);
+          // usual route
+          H.slideX(tl, $1(".r1"), C.cost, { x: -100 });
+          H.pop(tl, $1(".r1 .sa"), C.r1 + 0.6, { from: 0.7 });
+          H.pop(tl, $(".r1 .seg-arrow, .r1 .sb"), C.r1c - 0.1, { from: 0.7, stagger: 0.1 });
+          H.growX(tl, $1(".r1 .fill"), C.k60 - 1.0, 1.2);
+          H.count(tl, $1(".n60"), 0, 6000, C.k60 - 1.0, 1.2, { comma: true, pre: "약 " });
+          // french route
+          H.slideX(tl, $1(".r2"), C.r2 - 0.5, { x: -100 });
+          H.pop(tl, $1(".r2 .sa"), C.r2 + 0.3, { from: 0.7 });
+          H.pop(tl, $(".r2 .seg-arrow, .r2 .sb"), C.r2b - 0.1, { from: 0.7, stagger: 0.12 });
+          H.growX(tl, $1(".r2 .fill.a"), C.k17 - 0.8, 0.8);
+          H.growX(tl, $1(".r2 .fill.b"), C.k25 - 0.6, 0.8);
+          H.count(tl, $1(".n17"), 0, 1700, C.k17 - 0.8, 0.8, { comma: true });
+          H.count(tl, $1(".n25"), 0, 2500, C.k25 - 0.6, 0.8, { comma: true });
+          tl.fromTo($1(".r1"), { opacity: 1 }, { opacity: 0.55, duration: 0.5, immediateRender: false }, C.k25 + 0.6);
+          tl.fromTo($1(".src"), { opacity: 0 }, { opacity: 1, duration: 0.5 }, C.k60);
+          // free education stamp
+          H.rise(tl, $(".fam svg"), C.free, { stagger: 0.2, y: 50 });
+          H.stamp(tl, $1(".stampx"), C.freew - 0.1);
+          H.sceneOut(tl, R, C.D);
+          window.__timelines["s04"] = tl;
+        })();
+      </script>
+
+    </template>
+  </body>
+</html>

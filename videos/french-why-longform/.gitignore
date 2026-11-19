@@ -3,3 +3,6 @@ node_modules/
 snapshots/
 *.part-tmp
 renders/*.tmp*
+audio/mix_master.wav
+build/audio/
+.hyperframes/artifacts/

@@ -1,0 +1,84 @@
+<!--ANCHORS {"cost":"L0", "r1":"보통의 길은", "r1c":"컬리지", "k60":"육천만", "r2":"불어 길은", "r2b":"오 레벨이", "k17":"천칠백만", "k25":"이천오백만", "free":"게다가", "freew":"무상교육을"}-->
+<!--SFX [["tick", "k17"], ["stamp", "freew"]]-->
+      <style>
+        #s04-root { position: absolute; inset: 0; }
+        #s04-root .row { position: absolute; left: 120px; width: 1680px; height: 236px; padding: 30px 44px; }
+        #s04-root .row.r1 { top: 170px; }
+        #s04-root .row.r2 { top: 450px; }
+        #s04-root .row .nm { position: absolute; left: 44px; top: 30px; font-size: 44px; font-weight: 900; letter-spacing: -0.03em; }
+        #s04-root .segs { position: absolute; left: 330px; top: 26px; display: flex; gap: 14px; }
+        #s04-root .seg { padding: 12px 26px; border-radius: 14px; font-size: 32px; font-weight: 800; background: #efe3cf; color: #5b4c40; }
+        #s04-root .r2 .seg { background: var(--red-soft); color: var(--red-dark); }
+        #s04-root .r2 .seg.go { background: var(--red); color: #fff; }
+        #s04-root .seg-arrow { align-self: center; font-size: 34px; font-weight: 900; color: var(--muted); }
+        #s04-root .trk { position: absolute; left: 330px; top: 120px; width: 1100px; height: 76px; }
+        #s04-root .fill { position: absolute; left: 0; top: 0; height: 76px; border-radius: 0 18px 18px 0; transform-origin: left center; }
+        #s04-root .r1 .fill { width: 1100px; background: #b9aa9b; }
+        #s04-root .r2 .fill.a { width: 312px; background: var(--red); }
+        #s04-root .r2 .fill.b { width: 458px; background: repeating-linear-gradient(-45deg, #f2a9b4 0 14px, #f8c9d0 14px 28px); z-index: 0; }
+        #s04-root .amt { position: absolute; top: 116px; font-size: 56px; font-weight: 900; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; white-space: nowrap; }
+        #s04-root .r1 .amt { left: 1450px; }
+        #s04-root .r2 .amt { left: 820px; color: var(--red); }
+        #s04-root .amt small { font-size: 32px; color: var(--muted); font-weight: 700; margin-left: 6px; }
+        #s04-root .free { position: absolute; left: 50%; top: 712px; width: 1180px; margin-left: -590px; display: flex; align-items: center; justify-content: center; gap: 36px; }
+        #s04-root .fam { display: flex; align-items: flex-end; gap: 10px; }
+        #s04-root .fam svg { display: block; }
+        #s04-root .stampx { padding: 18px 40px; border: 7px solid var(--red); border-radius: 22px; color: var(--red); font-size: 54px; font-weight: 900; background: rgba(255, 253, 248, 0.92); letter-spacing: -0.02em; white-space: nowrap; }
+      </style>
+      <div id="s04-root" data-composition-id="s04" data-width="1920" data-height="1080">
+        <div class="stage">
+          <div class="kicker"><span class="k-num">03</span><span class="k-title">돈도 덜 듭니다 · 학비 비교</span></div>
+          <div class="row r1 card">
+            <div class="nm">보통의 길</div>
+            <div class="segs"><div class="seg sa">대학 부설 어학연수 1년</div><div class="seg-arrow">+</div><div class="seg sb">컬리지 2년</div></div>
+            <div class="trk"><div class="fill"></div></div>
+            <div class="amt"><span class="n60">0</span><small>만 원</small></div>
+          </div>
+          <div class="row r2 card">
+            <div class="nm red">불어 길</div>
+            <div class="segs"><div class="seg sa">몬트리올 불어 어학연수 1~2년</div><div class="seg-arrow">→</div><div class="seg go sb">5레벨 되면 바로 취업비자</div></div>
+            <div class="trk"><div class="fill b"></div><div class="fill a"></div></div>
+            <div class="amt">약 <span class="n17">0</span>만~<span class="n25">0</span><small>만 원</small></div>
+          </div>
+          <div class="free">
+            <div class="fam">
+              <svg width="92" height="150" viewBox="0 0 92 150"><circle cx="46" cy="34" r="28" fill="#2a221d"/><path d="M6 150 C6 90 86 90 86 150Z" fill="#2a221d"/></svg>
+              <svg width="66" height="108" viewBox="0 0 66 108"><circle cx="33" cy="24" r="20" fill="#c8102e"/><path d="M4 108 C4 64 62 64 62 108Z" fill="#c8102e"/></svg>
+            </div>
+            <div class="stampx">부모 사설 어학원 = 자녀 무상교육</div>
+          </div>
+          <div class="src">학비 기준 약식 비교 · 개인별 차이 있음</div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const C = __CUES__;
+__HELPERS__
+          const R = document.getElementById("s04-root");
+          const $ = (s) => R.querySelectorAll(s);
+          const $1 = (s) => R.querySelector(s);
+          const tl = gsap.timeline({ paused: true });
+          H.sceneIn(tl, R);
+          // usual route
+          H.slideX(tl, $1(".r1"), C.cost, { x: -100 });
+          H.pop(tl, $1(".r1 .sa"), C.r1 + 0.6, { from: 0.7 });
+          H.pop(tl, $(".r1 .seg-arrow, .r1 .sb"), C.r1c - 0.1, { from: 0.7, stagger: 0.1 });
+          H.growX(tl, $1(".r1 .fill"), C.k60 - 1.0, 1.2);
+          H.count(tl, $1(".n60"), 0, 6000, C.k60 - 1.0, 1.2, { comma: true, pre: "약 " });
+          // french route
+          H.slideX(tl, $1(".r2"), C.r2 - 0.5, { x: -100 });
+          H.pop(tl, $1(".r2 .sa"), C.r2 + 0.3, { from: 0.7 });
+          H.pop(tl, $(".r2 .seg-arrow, .r2 .sb"), C.r2b - 0.1, { from: 0.7, stagger: 0.12 });
+          H.growX(tl, $1(".r2 .fill.a"), C.k17 - 0.8, 0.8);
+          H.growX(tl, $1(".r2 .fill.b"), C.k25 - 0.6, 0.8);
+          H.count(tl, $1(".n17"), 0, 1700, C.k17 - 0.8, 0.8, { comma: true });
+          H.count(tl, $1(".n25"), 0, 2500, C.k25 - 0.6, 0.8, { comma: true });
+          tl.fromTo($1(".r1"), { opacity: 1 }, { opacity: 0.55, duration: 0.5, immediateRender: false }, C.k25 + 0.6);
+          tl.fromTo($1(".src"), { opacity: 0 }, { opacity: 1, duration: 0.5 }, C.k60);
+          // free education stamp
+          H.rise(tl, $(".fam svg"), C.free, { stagger: 0.2, y: 50 });
+          H.stamp(tl, $1(".stampx"), C.freew - 0.1);
+          H.sceneOut(tl, R, C.D);
+          window.__timelines["s04"] = tl;
+        })();
+      </script>

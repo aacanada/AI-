@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+
+
+      <style>
+        #s08-root { position: absolute; inset: 0; }
+        #s08-root .ttl { position: absolute; left: 160px; top: 150px; font-size: 46px; font-weight: 900; letter-spacing: -0.03em; }
+        #s08-root .cal { position: absolute; left: 160px; top: 260px; width: 1600px; height: 300px; padding: 0; }
+        #s08-root .months { position: absolute; left: 60px; top: 150px; width: 1480px; height: 46px; display: flex; gap: 4px; }
+        #s08-root .mo { flex: 1; border-radius: 8px; background: #efe3cf; transform-origin: bottom center; }
+        #s08-root .mo.b5 { background: #f3b3bd; }
+        #s08-root .mo.done { background: var(--red); }
+        #s08-root .axisl { position: absolute; top: 206px; font-size: 26px; font-weight: 700; color: var(--muted); width: 120px; margin-left: -60px; text-align: center; }
+        #s08-root .flag { position: absolute; top: 24px; display: flex; flex-direction: column; align-items: center; }
+        #s08-root .flag .fl { padding: 10px 22px; border-radius: 14px; font-size: 34px; font-weight: 900; color: #fff; white-space: nowrap; }
+        #s08-root .flag .st { width: 6px; height: 74px; border-radius: 3px; }
+        #s08-root .f5 { left: 630px; }
+        #s08-root .f5 .fl { background: #e0566c; }
+        #s08-root .f5 .st { background: #e0566c; }
+        #s08-root .f7 { left: 1450px; }
+        #s08-root .f7 .fl { background: var(--red); }
+        #s08-root .f7 .st { background: var(--red); }
+        #s08-root .f0 { left: 0px; }
+        #s08-root .f0 .fl { background: #2a221d; }
+        #s08-root .f0 .st { background: #2a221d; }
+        #s08-root .range { position: absolute; left: 60px; top: 136px; height: 74px; border: 4px dashed #e0566c; border-radius: 12px; }
+        #s08-root .yg { position: absolute; left: 220px; top: 590px; width: 1480px; height: 80px; }
+        #s08-root .yg .ln { position: absolute; left: 0; top: 30px; width: 740px; height: 12px; border-radius: 6px; background: #8f8073; transform-origin: left center; }
+        #s08-root .yg .pin { position: absolute; left: 722px; top: 12px; width: 48px; height: 48px; border-radius: 50%; background: #8f8073; color: #fff; font-size: 22px; font-weight: 900; display: flex; align-items: center; justify-content: center; }
+        #s08-root .yg .lb { position: absolute; left: 790px; top: 14px; font-size: 34px; font-weight: 800; color: #5b4c40; white-space: nowrap; }
+        #s08-root .day { position: absolute; left: 160px; top: 600px; width: 1600px; display: flex; align-items: center; gap: 20px; }
+        #s08-root .day .blk { padding: 24px 34px; font-size: 38px; font-weight: 800; display: flex; align-items: center; gap: 16px; }
+        #s08-root .day .blk.main { background: var(--red); color: #fff; }
+        #s08-root .day .arr { font-size: 40px; font-weight: 900; color: var(--muted); }
+        #s08-root .day .h { font-variant-numeric: tabular-nums; }
+        #s08-root .plan { position: absolute; left: 50%; top: 600px; margin-left: -560px; width: 1120px; padding: 30px 0; text-align: center; font-size: 58px; font-weight: 900; letter-spacing: -0.03em; }
+        #s08-root .plan .red { display: inline-block; }
+        #s08-root .plan .x { color: #b9aa9b; text-decoration: line-through; text-decoration-thickness: 5px; font-size: 42px; display: block; margin-bottom: 6px; }
+      </style>
+      <div id="s08-root" data-composition-id="s08" data-width="1920" data-height="1080">
+        <div class="stage">
+          <div class="kicker"><span class="k-num">07</span><span class="k-title">얼마나 걸릴까요</span></div>
+          <div class="ttl">한국 부모님 기준 · <span class="red">AA Canada 안내 목표</span></div>
+          <div class="cal">
+            <div class="months"></div>
+            <div class="range"></div>
+            <div class="flag f0"><div class="fl">출발</div><div class="st"></div></div>
+            <div class="flag f5"><div class="fl">9~12개월 · 5레벨</div><div class="st"></div></div>
+            <div class="flag f7"><div class="fl">24개월 이내 · 7레벨</div><div class="st"></div></div>
+            <div class="labels"></div>
+          </div>
+          <div class="day">
+            <div class="blk card b1">아이 등교</div><div class="arr">→</div>
+            <div class="blk card main b2">어학원 수업 주 <span class="h">22.5</span>시간</div><div class="arr">→</div>
+            <div class="blk card b3">아이 하교 전에 끝</div>
+          </div>
+          <div class="yg"><div class="ln"></div><div class="pin">7</div><div class="lb">혼자 집중하는 젊은 분: 약 12개월에 7레벨</div></div>
+          <div class="plan card"><span class="x">몇 년씩 막연하게</span><span class="red">계획을 세울 수 있는 시간</span></div>
+          <div class="src">AA Canada 안내 목표 기준이며 개인별로 차이가 있음</div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const C = {"a0": 0.6667, "kr": 4.2, "l5": 6.0333, "m9": 7.7333, "m12": 8.5333, "l7": 9.7333, "y2": 10.7667, "day": 14.5333, "h22": 16.2, "done": 18.9333, "young": 23.2333, "y1": 26.1333, "plan": 30.2, "planw": 32.9333, "L": [[0.6667, 2.9333], [3.6333, 13.7333], [14.5333, 21.6333], [22.5333, 29.4667], [30.2, 34.4333]], "D": 35.6};
+      const H = (function () {
+        const fmtNum = (v, o) => {
+          o = o || {};
+          const d = o.dec || 0;
+          let s = d ? v.toFixed(d) : Math.round(v).toString();
+          if (o.comma) s = s.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+          return (o.pre || "") + s + (o.suf || "");
+        };
+        return {
+          // count-up number (seek-safe proxy, text written in onUpdate)
+          count(tl, el, from, to, t, d, o) {
+            const st = { v: from };
+            el.textContent = fmtNum(from, o);
+            tl.fromTo(st, { v: from }, { v: to, duration: d || 1.2, ease: "power2.out", onUpdate: () => (el.textContent = fmtNum(st.v, o)) }, t);
+            tl.fromTo(el, { scale: 0.7 }, { scale: 1, duration: d || 1.2, ease: "power2.out" }, t);
+          },
+          pop(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 0, scale: o.from || 0.6 }, { opacity: 1, scale: 1, duration: o.d || 0.5, ease: o.ease || "back.out(1.8)", stagger: o.stagger || 0 }, t);
+          },
+          rise(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 0, y: o.y || 40 }, { opacity: 1, y: 0, duration: o.d || 0.55, ease: o.ease || "power3.out", stagger: o.stagger || 0 }, t);
+          },
+          slideX(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 0, x: o.x || -80 }, { opacity: 1, x: 0, duration: o.d || 0.6, ease: o.ease || "power3.out", stagger: o.stagger || 0 }, t);
+          },
+          out(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 1, y: 0 }, { opacity: 0, y: o.y == null ? -30 : o.y, duration: o.d || 0.4, ease: "power2.in", immediateRender: false, stagger: o.stagger || 0 }, t);
+          },
+          fadeOut(tl, els, t, d) {
+            tl.fromTo(els, { opacity: 1 }, { opacity: 0, duration: d || 0.4, ease: "power1.in", immediateRender: false }, t);
+          },
+          // marker sweep behind text: element .hl > .hl-bg
+          mark(tl, el, t, d) {
+            tl.fromTo(el, { scaleX: 0 }, { scaleX: 1, duration: d || 0.5, ease: "power2.inOut" }, t);
+          },
+          growX(tl, el, t, d, to) {
+            tl.fromTo(el, { scaleX: 0 }, { scaleX: to == null ? 1 : to, duration: d || 1, ease: "power3.out" }, t);
+          },
+          growY(tl, el, t, d) {
+            tl.fromTo(el, { scaleY: 0 }, { scaleY: 1, duration: d || 1, ease: "power3.out" }, t);
+          },
+          stamp(tl, el, t) {
+            tl.fromTo(el, { opacity: 0, scale: 2.2, rotation: -14 }, { opacity: 1, scale: 1, rotation: -6, duration: 0.42, ease: "back.out(2.2)" }, t);
+          },
+          // slow ambient breathing, finite repeats within scene duration
+          breathe(tl, els, D, o) {
+            o = o || {};
+            const per = o.per || 3;
+            const n = Math.max(1, Math.floor(D / per) - 1);
+            tl.fromTo(els, { y: 0, rotation: 0 }, { y: o.y || -14, rotation: o.r || 0, duration: per / 2, ease: "sine.inOut", yoyo: true, repeat: n * 2 - 1 }, 0.1);
+          },
+          // camera move on a capture: el is the inner image wrapper
+          cam(tl, el, t, d, s, x, y) {
+            tl.to(el, { scale: s, x: x, y: y, duration: d, ease: "power2.inOut" }, t);
+          },
+          // capture camera: move/zoom a .shot so a highlight band [x0,y0,x1,y1] (native px) is centred
+          camTo(tl, shot, band, natH, s, t, d) {
+            const k = 716 / 538, W = 716, HS = 520;
+            if (!s) s = Math.max(1.12, Math.min(1.6, (0.94 * 538) / (band[2] - band[0])));
+            const cx = ((band[0] + band[2]) / 2) * k, cy = ((band[1] + band[3]) / 2) * k;
+            let x = W / 2 - cx * s, y = HS / 2 - cy * s;
+            x = Math.min(0, Math.max(W - W * s, x));
+            y = Math.min(0, Math.max(Math.min(0, HS - natH * k * s), y));
+            const prev = shot.__cam || { scale: 1, x: 0, y: 0 };
+            tl.fromTo(shot, { scale: prev.scale, x: prev.x, y: prev.y }, { scale: s, x: x, y: y, duration: d || 1.6, ease: "power2.inOut", immediateRender: !shot.__cam }, t);
+            shot.__cam = { scale: s, x: x, y: y };
+          },
+          // red ring drawn around a highlight band inside a .shot
+          ring(tl, shot, band, t) {
+            const k = 716 / 538;
+            const r = document.createElement("div");
+            r.className = "ring";
+            r.style.left = band[0] * k - 10 + "px";
+            r.style.top = band[1] * k - 8 + "px";
+            r.style.width = (band[2] - band[0]) * k + 20 + "px";
+            r.style.height = (band[3] - band[1]) * k + 16 + "px";
+            shot.appendChild(r);
+            tl.fromTo(r, { opacity: 0, scale: 1.25 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, t);
+            return r;
+          },
+          draw(tl, path, t, d, len) {
+            try { len = Math.ceil(path.getTotalLength()) + 4 || len; } catch (e) {}
+            tl.fromTo(path, { opacity: 0 }, { opacity: 1, duration: 0.05 }, t);
+            tl.fromTo(path, { strokeDasharray: len + " " + len, strokeDashoffset: len }, { strokeDashoffset: 0, duration: d || 1, ease: "power2.inOut" }, t);
+          },
+          sceneIn(tl, root) {
+            const k = root.querySelector(".kicker");
+            if (k) {
+              tl.fromTo(k.querySelector(".k-num"), { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 0.05);
+              tl.fromTo(k.querySelector(".k-title"), { opacity: 0, x: -20, clipPath: "inset(0 100% 0 0)" }, { opacity: 1, x: 0, clipPath: "inset(0 0% 0 0)", duration: 0.7, ease: "power3.out" }, 0.18);
+            }
+          },
+          sceneOut(tl, root, D) {
+            const st = root.querySelector(".stage");
+            if (st) tl.fromTo(st, { opacity: 1 }, { opacity: 0, duration: 0.35, ease: "power1.in", immediateRender: false }, D - 0.4);
+          },
+        };
+      })();
+
+          const R = document.getElementById("s08-root");
+          const $ = (s) => R.querySelectorAll(s);
+          const $1 = (s) => R.querySelector(s);
+          // 24 month cells + axis labels (cal-local coords: months start at x=60, width 1480)
+          const mw = 1480 / 24;
+          const months = $1(".months");
+          for (let i = 0; i < 24; i++) {
+            const m = document.createElement("div");
+            m.className = "mo m" + i + (i >= 8 && i < 12 ? " b5" : "");
+            months.appendChild(m);
+          }
+          const labels = $1(".labels");
+          [0, 6, 9, 12, 18, 24].forEach((v) => {
+            const l = document.createElement("div");
+            l.className = "axisl";
+            l.style.left = 60 + mw * v + "px";
+            l.textContent = v + "개월";
+            labels.appendChild(l);
+          });
+          // flag x positions (cal-local)
+          const fx = (m) => 60 + mw * m;
+          $1(".f0").style.left = fx(0) - 40 + "px";
+          $1(".f5").style.left = fx(10.5) - 150 + "px";
+          $1(".f7").style.left = fx(24) - 190 + "px";
+          const rg = $1(".range");
+          rg.style.left = fx(8) - 4 + "px";
+          rg.style.width = mw * 4 + 8 + "px";
+          const tl = gsap.timeline({ paused: true });
+          H.sceneIn(tl, R);
+          H.rise(tl, $1(".ttl"), C.a0, { y: 30 });
+          tl.fromTo($(".mo"), { scaleY: 0 }, { scaleY: 1, duration: 0.35, ease: "back.out(2)", stagger: 0.03 }, C.a0 + 0.4);
+          tl.fromTo($(".axisl"), { opacity: 0 }, { opacity: 1, duration: 0.3, stagger: 0.05 }, C.a0 + 1.0);
+          H.pop(tl, $1(".f0"), C.kr, { from: 0.5 });
+          // 9-12 months: 5 level
+          const mos = $(".mo");
+          for (let i = 0; i < 12; i++) tl.to(mos[i], { backgroundColor: i >= 8 ? "#e0566c" : "#c8102e", duration: 0.12 }, C.l5 + (i * (C.m12 - C.l5)) / 12);
+          tl.fromTo(rg, { opacity: 0, scale: 1.2 }, { opacity: 1, scale: 1, duration: 0.4 }, C.m9);
+          tl.fromTo($1(".f5"), { opacity: 0, y: -50 }, { opacity: 1, y: 0, duration: 0.5, ease: "bounce.out" }, C.m12 - 0.2);
+          // up to 24 months: 7 level
+          for (let i = 12; i < 24; i++) tl.to(mos[i], { backgroundColor: "#c8102e", duration: 0.1 }, C.l7 + ((i - 12) * (C.y2 - C.l7)) / 12);
+          tl.fromTo($1(".f7"), { opacity: 0, y: -50 }, { opacity: 1, y: 0, duration: 0.5, ease: "bounce.out" }, C.y2);
+          tl.fromTo($1(".src"), { opacity: 0 }, { opacity: 1, duration: 0.5 }, C.l5);
+          // daily schedule
+          H.rise(tl, $(".day .blk, .day .arr"), C.day - 0.2, { stagger: 0.18, y: 30 });
+          H.count(tl, $1(".day .h"), 0, 22.5, C.h22 - 0.6, 0.9, { dec: 1 });
+          tl.fromTo($1(".b3"), { backgroundColor: "#fffdf8" }, { backgroundColor: "#fbe2e5", duration: 0.4 }, C.done);
+          H.out(tl, $1(".day"), C.young - 0.6, { y: 30 });
+          // young solo learner comparison
+          H.growX(tl, $1(".yg .ln"), C.young, 1.4);
+          H.pop(tl, $1(".yg .pin"), C.y1);
+          H.slideX(tl, $1(".yg .lb"), C.y1 + 0.2, { x: 30 });
+          H.out(tl, $1(".yg"), C.plan - 0.5, { y: 30 });
+          H.rise(tl, $1(".plan"), C.plan - 0.1, { y: 40 });
+          H.stamp(tl, $1(".plan .red"), C.planw);
+          H.sceneOut(tl, R, C.D);
+          window.__timelines["s08"] = tl;
+        })();
+      </script>
+
+    </template>
+  </body>
+</html>

@@ -1,0 +1,2506 @@
+{
+  "version": 1,
+  "historyId": "923bec65-a696-4b1a-95a9-513ff3fa540a",
+  "currentRevision": "2d311ad8-bc73-4cb1-a9c2-7c275b8cc6ef",
+  "pendingChanges": false,
+  "files": {
+    "AGENTS.md": {
+      "hash": "729e31835a21c7b42ee006e2aacc63016abc05d26883f871ad3bf206943f2cfb",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/72/729e31835a21c7b42ee006e2aacc63016abc05d26883f871ad3bf206943f2cfb"
+    },
+    "CLAUDE.md": {
+      "hash": "729e31835a21c7b42ee006e2aacc63016abc05d26883f871ad3bf206943f2cfb",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/72/729e31835a21c7b42ee006e2aacc63016abc05d26883f871ad3bf206943f2cfb"
+    },
+    "assets/captures/c01_body.png": {
+      "hash": "199244a7aca087113219759e75eaaa13ee56e07ba974f97ccade3c196da9c2c8",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/19/199244a7aca087113219759e75eaaa13ee56e07ba974f97ccade3c196da9c2c8"
+    },
+    "assets/captures/c01_title.png": {
+      "hash": "188624775efe689ba7f31849dd2a527774d8a0480cab145dc3c43f7addcca7aa",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/18/188624775efe689ba7f31849dd2a527774d8a0480cab145dc3c43f7addcca7aa"
+    },
+    "assets/captures/c01b_comment.png": {
+      "hash": "18b6ceda6a0a8e29a849e7cefac72ea43abbc7f5be5ebac94daac17038956049",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/18/18b6ceda6a0a8e29a849e7cefac72ea43abbc7f5be5ebac94daac17038956049"
+    },
+    "assets/captures/c02_b.png": {
+      "hash": "bae9bd6280101b897f3496d3e80263ab16281124e66a5cbe51cbf94ffdf29e73",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/ba/bae9bd6280101b897f3496d3e80263ab16281124e66a5cbe51cbf94ffdf29e73"
+    },
+    "assets/captures/c02_c.png": {
+      "hash": "e8df152d4da449794be800d42e2f0262e02ee5a154d932f8c6db0427dabd1f03",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/e8/e8df152d4da449794be800d42e2f0262e02ee5a154d932f8c6db0427dabd1f03"
+    },
+    "assets/captures/c03_a.png": {
+      "hash": "c7876f61f8360f737cae20f484b844c40f1886cf5daa5eb395bd5e7ecd86fa28",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/c7/c7876f61f8360f737cae20f484b844c40f1886cf5daa5eb395bd5e7ecd86fa28"
+    },
+    "assets/captures/c03_b.png": {
+      "hash": "1044bb82926064e958b82df54fc7bafb13691b3ffd81afe2c30ae1f902a4f2e3",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/10/1044bb82926064e958b82df54fc7bafb13691b3ffd81afe2c30ae1f902a4f2e3"
+    },
+    "assets/captures/c04_a.png": {
+      "hash": "da9d4a56d2f2c502572196ad4ac7fdeb28e9dc1f10dadc2411668fb2d2423fb0",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/da/da9d4a56d2f2c502572196ad4ac7fdeb28e9dc1f10dadc2411668fb2d2423fb0"
+    },
+    "assets/captures/c04_b.png": {
+      "hash": "ee31c47ebb94765ea8ab990f60f258fc1491d58a36252ca63c203e0554c7524b",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/ee/ee31c47ebb94765ea8ab990f60f258fc1491d58a36252ca63c203e0554c7524b"
+    },
+    "assets/captures/c05_a.png": {
+      "hash": "e6e69f11ab289644833985a6c54bbe3e6f164339df16c66f1c9437d51d5942c5",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/e6/e6e69f11ab289644833985a6c54bbe3e6f164339df16c66f1c9437d51d5942c5"
+    },
+    "assets/captures/c05_b.png": {
+      "hash": "69f0e4d45f2b81dcfd73b34eeaf3959c3fe9a45e4a13511b03c8e7ac245469de",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/69/69f0e4d45f2b81dcfd73b34eeaf3959c3fe9a45e4a13511b03c8e7ac245469de"
+    },
+    "assets/captures/c05_title.png": {
+      "hash": "d2698945d34e3d1398a32966e2c0f8edda970263ba15c7433ca7c2cea120170a",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/d2/d2698945d34e3d1398a32966e2c0f8edda970263ba15c7433ca7c2cea120170a"
+    },
+    "assets/captures/c08_a.png": {
+      "hash": "5219b0d0909fbb2f8edd995dafd6f0234a331233b25f6437d98e7786466b0dc4",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/52/5219b0d0909fbb2f8edd995dafd6f0234a331233b25f6437d98e7786466b0dc4"
+    },
+    "assets/captures/c09_a.png": {
+      "hash": "2f17046e0255254ccc3071525142ef18a42f7dab7bafe84f6b83f66cb8d51975",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/2f/2f17046e0255254ccc3071525142ef18a42f7dab7bafe84f6b83f66cb8d51975"
+    },
+    "assets/fonts/Pretendard-Black.woff2": {
+      "hash": "c5fd0c3568fc1368a3edc0d0fbb36df029935954276e3573451b3bae09e27296",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/c5/c5fd0c3568fc1368a3edc0d0fbb36df029935954276e3573451b3bae09e27296"
+    },
+    "assets/fonts/Pretendard-Bold.woff2": {
+      "hash": "4609c3356e536fafe38f4add0daeceb3d8595d3057bce13c428c33ddbd43d362",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/46/4609c3356e536fafe38f4add0daeceb3d8595d3057bce13c428c33ddbd43d362"
+    },
+    "assets/fonts/Pretendard-ExtraBold.woff2": {
+      "hash": "dd7c1e156f508eb962acc7a33a7a1896d1e0b71e11156fad96e731689ceb6dc3",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/dd/dd7c1e156f508eb962acc7a33a7a1896d1e0b71e11156fad96e731689ceb6dc3"
+    },
+    "assets/fonts/Pretendard-Medium.woff2": {
+      "hash": "d03481330eeba0659ab5b87f25ceb504a35de377dd90a0d0aba2982eb2d05e2c",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/d0/d03481330eeba0659ab5b87f25ceb504a35de377dd90a0d0aba2982eb2d05e2c"
+    },
+    "assets/fonts/Pretendard-Regular.woff2": {
+      "hash": "fad853f7f47c6c8b103171e7193fa095708cdcd70850a71d93aa5379e8a61d63",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/fa/fad853f7f47c6c8b103171e7193fa095708cdcd70850a71d93aa5379e8a61d63"
+    },
+    "assets/fonts/Pretendard-SemiBold.woff2": {
+      "hash": "c863f76a7de5c1ddc1ed8b2fa794964530774592c4f31407a84e2a2ae93f17f0",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/c8/c863f76a7de5c1ddc1ed8b2fa794964530774592c4f31407a84e2a2ae93f17f0"
+    },
+    "assets/vendor/gsap.min.js": {
+      "hash": "92bb9a96476f983d212a2bc4f54c889039c1696dd4461d40a736860938570fbb",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/92/92bb9a96476f983d212a2bc4f54c889039c1696dd4461d40a736860938570fbb"
+    },
+    "audio/vo/s01.json": {
+      "hash": "a11a8f2ef0bea74ea6573fa085d428a43a3bc058e9fe4c8b0204cb30dd9daffb",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/a1/a11a8f2ef0bea74ea6573fa085d428a43a3bc058e9fe4c8b0204cb30dd9daffb"
+    },
+    "audio/vo/s01.mp3": {
+      "hash": "fd32783bbd6f5e33d6d4f2786c5ffd20ff6e6adb3f8164b575f1fdf1b51fd5c1",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/fd/fd32783bbd6f5e33d6d4f2786c5ffd20ff6e6adb3f8164b575f1fdf1b51fd5c1"
+    },
+    "audio/vo/s02.json": {
+      "hash": "4e685ad54a3045ac258aa08c3db542eb1299b3c98a5c1ed61779c19ea3a803ff",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/4e/4e685ad54a3045ac258aa08c3db542eb1299b3c98a5c1ed61779c19ea3a803ff"
+    },
+    "audio/vo/s02.mp3": {
+      "hash": "429c0722865710206b945020da2246a01bcce5dd832829dfec4f4f1fa31e4d69",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/42/429c0722865710206b945020da2246a01bcce5dd832829dfec4f4f1fa31e4d69"
+    },
+    "audio/vo/s03.json": {
+      "hash": "c67a3951b1f29ce5cd105a64f0ec6ba15f4fc45f78d3ac70f8e68aa9ede81a5e",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/c6/c67a3951b1f29ce5cd105a64f0ec6ba15f4fc45f78d3ac70f8e68aa9ede81a5e"
+    },
+    "audio/vo/s04.json": {
+      "hash": "cc48fb1dce82a475a0abae30993ed425c24726c11ed622f404c8d8da99f6e405",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/cc/cc48fb1dce82a475a0abae30993ed425c24726c11ed622f404c8d8da99f6e405"
+    },
+    "audio/vo/s04.mp3": {
+      "hash": "b30b205e98d380e7b68a88d27b51a5194e56bec166859e85a2b734c3e0381c70",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/b3/b30b205e98d380e7b68a88d27b51a5194e56bec166859e85a2b734c3e0381c70"
+    },
+    "audio/vo/s05.json": {
+      "hash": "a54fa57af9737fa5fa98af905c52ae5ae9b4e501c0f72e3fc2d999201cf8b26c",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/a5/a54fa57af9737fa5fa98af905c52ae5ae9b4e501c0f72e3fc2d999201cf8b26c"
+    },
+    "audio/vo/s05.mp3": {
+      "hash": "4165d22d5871587a0927de018cc0d3fd087a3fa70db35de063514151a7e4e680",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/41/4165d22d5871587a0927de018cc0d3fd087a3fa70db35de063514151a7e4e680"
+    },
+    "audio/vo/s06.json": {
+      "hash": "5e14711d2147b0cc6268245b91dcb644af9eade3019f3bd2b2376c66db5f36dd",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/5e/5e14711d2147b0cc6268245b91dcb644af9eade3019f3bd2b2376c66db5f36dd"
+    },
+    "audio/vo/s06.mp3": {
+      "hash": "a89b1189995149b1306b3e9eb277c9ee999c66e4e728adc92d9501a5fbf0059e",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/a8/a89b1189995149b1306b3e9eb277c9ee999c66e4e728adc92d9501a5fbf0059e"
+    },
+    "audio/vo/s07.json": {
+      "hash": "381293fd163f24456d7317594410309ba23fc4fdb4eb5f829d08c8f9c47b4845",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/38/381293fd163f24456d7317594410309ba23fc4fdb4eb5f829d08c8f9c47b4845"
+    },
+    "audio/vo/s08.json": {
+      "hash": "653c436a37407337d6488e06a87f1547a8ffaced099ec6e9ae7f421954ae6c74",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/65/653c436a37407337d6488e06a87f1547a8ffaced099ec6e9ae7f421954ae6c74"
+    },
+    "audio/vo/s08.mp3": {
+      "hash": "dab27040b42bd8b777d96fbb6fd3314436af3fbc470436fcb181646eb1ad2e98",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/da/dab27040b42bd8b777d96fbb6fd3314436af3fbc470436fcb181646eb1ad2e98"
+    },
+    "audio/vo/s09.json": {
+      "hash": "3e8c70c8dc792910b0ebc2d6b2ba8299274e8028ee23676abfc5f9b392bda5b1",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/3e/3e8c70c8dc792910b0ebc2d6b2ba8299274e8028ee23676abfc5f9b392bda5b1"
+    },
+    "audio/vo/s10.json": {
+      "hash": "efc5af688075d0145f3943cd676c7a47b6fe4f23f9dc053e7021887746ca5b3d",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/ef/efc5af688075d0145f3943cd676c7a47b6fe4f23f9dc053e7021887746ca5b3d"
+    },
+    "audio/vo/s11.json": {
+      "hash": "2211be18e1cd4a386d41e113a67f8827be39181b5512f461c3443574c01bf8a6",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/22/2211be18e1cd4a386d41e113a67f8827be39181b5512f461c3443574c01bf8a6"
+    },
+    "audio/vo/s12.json": {
+      "hash": "b384bfc0ecd00efb8e9889c9c54d1713fb74253d86d5b06a8d0539db90265320",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/b3/b384bfc0ecd00efb8e9889c9c54d1713fb74253d86d5b06a8d0539db90265320"
+    },
+    "audio/vo/s12.mp3": {
+      "hash": "d4e18891206aa4f3f1bb8c33147d4476653db0edd58d8ebd85373516801cebfc",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/d4/d4e18891206aa4f3f1bb8c33147d4476653db0edd58d8ebd85373516801cebfc"
+    },
+    "audio/vo/s13.json": {
+      "hash": "e0df3e1f5dbdd6cedaf9697b960c059d015efa0ad2a9287bb4212e68aa0168f8",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/e0/e0df3e1f5dbdd6cedaf9697b960c059d015efa0ad2a9287bb4212e68aa0168f8"
+    },
+    "audio/vo/s13.mp3": {
+      "hash": "be7d3cb49eaaae14afc7f4dd41d51410f4c3814b0d3429442838e195d4a1f072",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/be/be7d3cb49eaaae14afc7f4dd41d51410f4c3814b0d3429442838e195d4a1f072"
+    },
+    "audio/vo/s14.json": {
+      "hash": "78d6a31bf8078abad47c76c350b60dfbb5bd4802ce90c68ed116eafdc57fce07",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/78/78d6a31bf8078abad47c76c350b60dfbb5bd4802ce90c68ed116eafdc57fce07"
+    },
+    "audio/vo/s14.mp3": {
+      "hash": "83848f57d5e582559199c2033ca3e460ce587b3ac34622eda8a2bdda1488fcdc",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/83/83848f57d5e582559199c2033ca3e460ce587b3ac34622eda8a2bdda1488fcdc"
+    },
+    "audio/vo/stt/s01.txt": {
+      "hash": "7f59114c6c02212c71c6943fc5e9b156ce2923b05d5cb615bc961a445bdc0417",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/7f/7f59114c6c02212c71c6943fc5e9b156ce2923b05d5cb615bc961a445bdc0417"
+    },
+    "audio/vo/stt/s02.txt": {
+      "hash": "1a06debfc30593b70dd849d995878ee48b9ab8c402a859ba40d1fc2c219ccbb7",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/1a/1a06debfc30593b70dd849d995878ee48b9ab8c402a859ba40d1fc2c219ccbb7"
+    },
+    "audio/vo/stt/s03.txt": {
+      "hash": "78a79b93051cde6bea6e1b56cf2cfb1866460e78d60ff68a246c96a92bd03884",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/78/78a79b93051cde6bea6e1b56cf2cfb1866460e78d60ff68a246c96a92bd03884"
+    },
+    "audio/vo/stt/s04.txt": {
+      "hash": "e2f597b04a9276681016bca1bdc65aa39f1bf7e17bda6426a60722d94fe6b685",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/e2/e2f597b04a9276681016bca1bdc65aa39f1bf7e17bda6426a60722d94fe6b685"
+    },
+    "audio/vo/stt/s05.txt": {
+      "hash": "5b82ab5034204f374cf61bc34eb1c9fbc5ccc393ec9f100daf675dcc826c83cf",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/5b/5b82ab5034204f374cf61bc34eb1c9fbc5ccc393ec9f100daf675dcc826c83cf"
+    },
+    "audio/vo/stt/s06.txt": {
+      "hash": "b55b6bc5570ede017f63bfc99bb8d5fde510e32cb2985e74980bb608faa4f378",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/b5/b55b6bc5570ede017f63bfc99bb8d5fde510e32cb2985e74980bb608faa4f378"
+    },
+    "audio/vo/stt/s07.txt": {
+      "hash": "482c4a1ae5a5ace0da0f0f8f50ea1b31ecaf724c208292ea85766e3fd5f3da1d",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/48/482c4a1ae5a5ace0da0f0f8f50ea1b31ecaf724c208292ea85766e3fd5f3da1d"
+    },
+    "audio/vo/stt/s08.txt": {
+      "hash": "5a3dfd86f6238dddee2f359b8db2c1c0886a240f15ec750a1baa5c9cb6b16802",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/5a/5a3dfd86f6238dddee2f359b8db2c1c0886a240f15ec750a1baa5c9cb6b16802"
+    },
+    "audio/vo/stt/s09.txt": {
+      "hash": "f84132019a7b5279bb2639036a1d3779d8a5bcf0642aecd06101f2d5aca972bf",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/f8/f84132019a7b5279bb2639036a1d3779d8a5bcf0642aecd06101f2d5aca972bf"
+    },
+    "audio/vo/stt/s10.txt": {
+      "hash": "8afcbceeb10cac89d6d60bc9a59a9351ba854e9bdce62891fb23881f002b2ebe",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/8a/8afcbceeb10cac89d6d60bc9a59a9351ba854e9bdce62891fb23881f002b2ebe"
+    },
+    "audio/vo/stt/s11.txt": {
+      "hash": "54bbfc41efea10a403bc4db61d8f251187a2fc9e94cfe80b42c05d392c978b49",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/54/54bbfc41efea10a403bc4db61d8f251187a2fc9e94cfe80b42c05d392c978b49"
+    },
+    "audio/vo/stt/s12.txt": {
+      "hash": "22e065e45fbfbf61e76fad1347a72b63994545ae330be9ecd47732490b2c544c",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/22/22e065e45fbfbf61e76fad1347a72b63994545ae330be9ecd47732490b2c544c"
+    },
+    "audio/vo/stt/s13.txt": {
+      "hash": "5171a64a033b23d3c5135fe7fa50084f53b16d8d3c88038b3c59925f4798b688",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/51/5171a64a033b23d3c5135fe7fa50084f53b16d8d3c88038b3c59925f4798b688"
+    },
+    "audio/vo/stt/s14.txt": {
+      "hash": "6ebafc6680acc6fff5b81f2bd36d88b425a2dbff9c8ddab182aba7ca6c82c131",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/6e/6ebafc6680acc6fff5b81f2bd36d88b425a2dbff9c8ddab182aba7ca6c82c131"
+    },
+    "audio/vo/tts.log": {
+      "hash": "d99c6262db7ce2f9216c8ea7fa2ab0b8aa311d58d7849a89d515c437c3bcbf33",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/d9/d99c6262db7ce2f9216c8ea7fa2ab0b8aa311d58d7849a89d515c437c3bcbf33"
+    },
+    "compositions/s01.html": {
+      "hash": "4fb7fa78c69a404a4a782755c392dda91cbe109d3a9c10d82912e141991cdc1e",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/4f/4fb7fa78c69a404a4a782755c392dda91cbe109d3a9c10d82912e141991cdc1e"
+    },
+    "compositions/s02.html": {
+      "hash": "db0be8874b1ce7732a07be0fb3977c5fd2f4174b3cb30174647397dde85af830",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/db/db0be8874b1ce7732a07be0fb3977c5fd2f4174b3cb30174647397dde85af830"
+    },
+    "compositions/s03.html": {
+      "hash": "5456135702e1ddef97b5ced05636ed7fe72029bf2f7a7c43a0419d7f720a6e2f",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/54/5456135702e1ddef97b5ced05636ed7fe72029bf2f7a7c43a0419d7f720a6e2f"
+    },
+    "compositions/s04.html": {
+      "hash": "02f214be3ba19464fe847de9672e442be35d77fc0aad1883e0dc06b5063c7655",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/02/02f214be3ba19464fe847de9672e442be35d77fc0aad1883e0dc06b5063c7655"
+    },
+    "compositions/s05.html": {
+      "hash": "e6753e5384d68a91c41699cb34522b57ba875e2fce93e23c7eb238490b7f6530",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/e6/e6753e5384d68a91c41699cb34522b57ba875e2fce93e23c7eb238490b7f6530"
+    },
+    "compositions/s06.html": {
+      "hash": "848d69c4459dd639bb0f629e072200b6a2a224ee3c4d8cb59cd57691e1c07a25",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/84/848d69c4459dd639bb0f629e072200b6a2a224ee3c4d8cb59cd57691e1c07a25"
+    },
+    "compositions/s07.html": {
+      "hash": "b60a08835970ef21d7e0894278bc20d395a389a814311e291228da244de0e417",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/b6/b60a08835970ef21d7e0894278bc20d395a389a814311e291228da244de0e417"
+    },
+    "compositions/s08.html": {
+      "hash": "f97e7b6f8cbea891500380eaa06f790adff693f596bc6830e69adb293189ba7b",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/f9/f97e7b6f8cbea891500380eaa06f790adff693f596bc6830e69adb293189ba7b"
+    },
+    "compositions/s09.html": {
+      "hash": "a08425ce72bab146049afca00a7383f6f60db67ca8d0d37baf67da36fbc7d1dc",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/a0/a08425ce72bab146049afca00a7383f6f60db67ca8d0d37baf67da36fbc7d1dc"
+    },
+    "compositions/s10.html": {
+      "hash": "39d61d2176e4f250e796650fffbc2e80923d599fea537388187d7cb5b3844587",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/39/39d61d2176e4f250e796650fffbc2e80923d599fea537388187d7cb5b3844587"
+    },
+    "compositions/s11.html": {
+      "hash": "afc4ff9204848f8fc8932a8b6c66765798662346b372006b622e9825af043d0c",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/af/afc4ff9204848f8fc8932a8b6c66765798662346b372006b622e9825af043d0c"
+    },
+    "compositions/s12.html": {
+      "hash": "8d2673accefde3f6b7b004a258dfc1c6addb3ec36d3bc77db25b6a3e695079c1",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/8d/8d2673accefde3f6b7b004a258dfc1c6addb3ec36d3bc77db25b6a3e695079c1"
+    },
+    "compositions/s13.html": {
+      "hash": "39ab8caab998e1a968b0b3c63e00fe210110086a6d2e3db05dccfd346e50f5de",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/39/39ab8caab998e1a968b0b3c63e00fe210110086a6d2e3db05dccfd346e50f5de"
+    },
+    "compositions/s14.html": {
+      "hash": "3fea3867a1f7d7d47342f33fe76da3d71ccb350962443859b20d55958c00e898",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/3f/3fea3867a1f7d7d47342f33fe76da3d71ccb350962443859b20d55958c00e898"
+    },
+    "hyperframes.json": {
+      "hash": "ad5dadeef78a520800a9e5cdd27a92ff5ac37f11b6a07f611b6b52b9f8c79a17",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/ad/ad5dadeef78a520800a9e5cdd27a92ff5ac37f11b6a07f611b6b52b9f8c79a17"
+    },
+    "index.html": {
+      "hash": "09dbe298e71e07e781820bed310ec4b6c331df5a8e5650c42f5bfe0fc77f0ef3",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/09/09dbe298e71e07e781820bed310ec4b6c331df5a8e5650c42f5bfe0fc77f0ef3"
+    },
+    "meta.json": {
+      "hash": "24cc5d01f6312777b3f98cebf60abc76a65b49543cf4de5dacbd2d19e3bf5449",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/24/24cc5d01f6312777b3f98cebf60abc76a65b49543cf4de5dacbd2d19e3bf5449"
+    },
+    "package.json": {
+      "hash": "fe09f30fbf41d0dee5baf1b3b36857f82f376957bb0cfd2338df6572e2abf3b4",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/fe/fe09f30fbf41d0dee5baf1b3b36857f82f376957bb0cfd2338df6572e2abf3b4"
+    },
+    "src/helpers.js": {
+      "hash": "927fcd2bba76c6e96859c1bcc6841f65fcb25b6a90bb70dff6ec9bea00ac9abb",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/92/927fcd2bba76c6e96859c1bcc6841f65fcb25b6a90bb70dff6ec9bea00ac9abb"
+    },
+    "src/index.tpl.html": {
+      "hash": "99d65f24d194dd9804a153a2fe619aa82558c3413e95f144c41da9fbc88c0074",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/99/99d65f24d194dd9804a153a2fe619aa82558c3413e95f144c41da9fbc88c0074"
+    },
+    "src/placeholder.html": {
+      "hash": "0d1282a7e65cb3537f495bbe14d0487cddfdb334fe5f607e898e92d5958dc2a3",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/0d/0d1282a7e65cb3537f495bbe14d0487cddfdb334fe5f607e898e92d5958dc2a3"
+    },
+    "src/scenes/s01.html": {
+      "hash": "fd77cd66b386b20e05c319c3b9dae38da6d02feed6e9d3d9fd4c46f1acd78195",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/fd/fd77cd66b386b20e05c319c3b9dae38da6d02feed6e9d3d9fd4c46f1acd78195"
+    },
+    "tools/build.py": {
+      "hash": "acf2cc289a449175fa8fbcec8f4e0f83fd1b535eacab70e2fe26a01d1e553b8a",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/ac/acf2cc289a449175fa8fbcec8f4e0f83fd1b535eacab70e2fe26a01d1e553b8a"
+    },
+    "tools/mix.py": {
+      "hash": "d245c089ae2c56613eba4a9738b91079429e2354d63ab8d4f570b7a9dcb5fddf",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/d2/d245c089ae2c56613eba4a9738b91079429e2354d63ab8d4f570b7a9dcb5fddf"
+    },
+    "tools/tts.py": {
+      "hash": "8039dec3e71087d1f56a71b3c4d7cdc6b0526af1c78faefe33e93cf7cab72e1e",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/80/8039dec3e71087d1f56a71b3c4d7cdc6b0526af1c78faefe33e93cf7cab72e1e"
+    },
+    "audio/bgm/el_bright_acoustic_A.mp3": {
+      "hash": "4aa0e8706e3fc23891c374e402fdbf95263e68079d818128dc37728dd56f8dcc",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/4a/4aa0e8706e3fc23891c374e402fdbf95263e68079d818128dc37728dd56f8dcc"
+    },
+    "audio/bgm/el_bright_acoustic_B.mp3": {
+      "hash": "eb44a1be26e1e57c1bd869a4f39c3be1f691584fd0bc6f1eb6f44ee048b0de20",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/eb/eb44a1be26e1e57c1bd869a4f39c3be1f691584fd0bc6f1eb6f44ee048b0de20"
+    },
+    "audio/mix_master.wav": {
+      "hash": "69e0dc101e99250be3ce2d1cbe24d895d8ad9ce4c368cc5acbf78838ddeefa31",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/69/69e0dc101e99250be3ce2d1cbe24d895d8ad9ce4c368cc5acbf78838ddeefa31"
+    },
+    "audio/vo/s03.mp3": {
+      "hash": "e4ad7dc06335bb1b42784cf28aa0e456e0d091e95b30f559036adfaff8737ceb",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/e4/e4ad7dc06335bb1b42784cf28aa0e456e0d091e95b30f559036adfaff8737ceb"
+    },
+    "audio/vo/s07.mp3": {
+      "hash": "8298541008bb2b0ad4e32f2dbe881f0b807d6ce2ef4337ea6246188d5fc65997",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/82/8298541008bb2b0ad4e32f2dbe881f0b807d6ce2ef4337ea6246188d5fc65997"
+    },
+    "audio/vo/s09.mp3": {
+      "hash": "76e52a240961a2e99afd5dc649beb561cf4cbaac6c7108286307405f86345c79",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/76/76e52a240961a2e99afd5dc649beb561cf4cbaac6c7108286307405f86345c79"
+    },
+    "audio/vo/s10.mp3": {
+      "hash": "bc5191f10c3792712a0724ca83569f5e456bfa41a5cc0dbc83f850f797d1b6d7",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/bc/bc5191f10c3792712a0724ca83569f5e456bfa41a5cc0dbc83f850f797d1b6d7"
+    },
+    "audio/vo/s11.mp3": {
+      "hash": "a96e2cdd7046186c818624acf9aefced4a907177ea6d0ee1442be7a7fd16b800",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/a9/a96e2cdd7046186c818624acf9aefced4a907177ea6d0ee1442be7a7fd16b800"
+    },
+    "src/scenes/s02.html": {
+      "hash": "4e66d25a10cbd00c86d5c48fe861c0528b3c63b7d4f691f82af23ee48638da5f",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/4e/4e66d25a10cbd00c86d5c48fe861c0528b3c63b7d4f691f82af23ee48638da5f"
+    },
+    "src/scenes/s03.html": {
+      "hash": "74ea2c3a4ac50046977a4664c789b3daa81f9a5a385759b994b988c5aa7b990c",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/74/74ea2c3a4ac50046977a4664c789b3daa81f9a5a385759b994b988c5aa7b990c"
+    },
+    "src/scenes/s04.html": {
+      "hash": "4033d7d1dd4a5617cd469cc431f4d71a31b028e1dc692b1ab82d9c8163ee1f07",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/40/4033d7d1dd4a5617cd469cc431f4d71a31b028e1dc692b1ab82d9c8163ee1f07"
+    },
+    "src/scenes/s05.html": {
+      "hash": "9f71e0f5aa69b9b8f0b8c04a09b9a36b6b53cb821bce8d1e698987ea26ee146e",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/9f/9f71e0f5aa69b9b8f0b8c04a09b9a36b6b53cb821bce8d1e698987ea26ee146e"
+    },
+    "src/scenes/s06.html": {
+      "hash": "e727fe8c810c5dcb90fff8639e8d13b6950a8348fabf11143766a26c23c52331",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/e7/e727fe8c810c5dcb90fff8639e8d13b6950a8348fabf11143766a26c23c52331"
+    },
+    "src/scenes/s07.html": {
+      "hash": "8de468a374b360b652deb7fe7d124052604841ebbe14c6dd570b7676d37a46e9",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/8d/8de468a374b360b652deb7fe7d124052604841ebbe14c6dd570b7676d37a46e9"
+    },
+    "src/scenes/s08.html": {
+      "hash": "7a59bfdd6e8fc6356fce960460ac6fd6b58f753b29c651007e1306a9ace988e2",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/7a/7a59bfdd6e8fc6356fce960460ac6fd6b58f753b29c651007e1306a9ace988e2"
+    },
+    "src/scenes/s09.html": {
+      "hash": "e1ab1b4c2fe8c804aab4e79f3fe6306158d4047e6074034fc709b5e10fed6ef1",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/e1/e1ab1b4c2fe8c804aab4e79f3fe6306158d4047e6074034fc709b5e10fed6ef1"
+    },
+    "src/scenes/s10.html": {
+      "hash": "1b7aa439cef76f5273e493d10376a02db81c5056b6787b1e88b4785d1cda5ec8",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/1b/1b7aa439cef76f5273e493d10376a02db81c5056b6787b1e88b4785d1cda5ec8"
+    },
+    "src/scenes/s11.html": {
+      "hash": "760a0aa3f429ccf193b36080dc2a2be6844f9daa697e9e5da55dd8aa8c7cf831",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/76/760a0aa3f429ccf193b36080dc2a2be6844f9daa697e9e5da55dd8aa8c7cf831"
+    },
+    "src/scenes/s12.html": {
+      "hash": "8b50e67e1bcbad5b5294beab2c02188eba2c765887f5ea27b569782936624869",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/8b/8b50e67e1bcbad5b5294beab2c02188eba2c765887f5ea27b569782936624869"
+    },
+    "src/scenes/s13.html": {
+      "hash": "c836a490bd1cbd3d5e560c060db7cae517f9e0cb6016b453bf008db89cf838c3",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/c8/c836a490bd1cbd3d5e560c060db7cae517f9e0cb6016b453bf008db89cf838c3"
+    },
+    "src/scenes/s14.html": {
+      "hash": "de5331aa2d2f3f223dcc414e041c6a66266b3296c55522c60b47e7c57ebca83e",
+      "content": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/de/de5331aa2d2f3f223dcc414e041c6a66266b3296c55522c60b47e7c57ebca83e"
+    }
+  },
+  "revisions": {
+    "4cfd688b-c6f5-459e-bfc0-60f682ef53bd": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1795100697785,
+      "endedAt": 1795100697804,
+      "files": {
+        "compositions/s01.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/5d/5d7f3d283dd21bf81e16f8f0a4141ad0960f7540fe22a9cef62c065d059a72f1",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/2e/2e5f43322ce6d1720d1fac5b6a4a10d7da0354f54c51c5c2606661236f805673"
+        },
+        "compositions/s02.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/c1/c1c3db981f1b5b933f569b269af2bdc3634f9c8d048d0de0c2c2e7b787e717e1",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/bd/bdb4b4f1e528933bca00d80f2e7ec5fa4b453819129ee231e56c6aabc64cb00a"
+        },
+        "compositions/s03.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/a6/a67f1ea37a3d1385e262362f422238604c30f77fb2fba1bcef891a2a953de423",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/5d/5d32bb167e7d17638daa06ca94b5443dd7be762c14ffed1580b943d881798aa6"
+        },
+        "index.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/f1/f185bd026b1eb92a84d8d4a8204f7166816160a7d6dc3e86414c1a14a1de5da8",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/bd/bdb5f2db423d4fee8416ab90d060e729fdb47528fda1fdcda09d39317cce1676"
+        },
+        "src/scenes/s01.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/78/78619db088129b53b03ebb47b4aaa1f00452f62145832fd5166c712c3a08a306",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/8b/8b3ceffa5e0d0b4459b9e5be4a9961d21d5e5c042873874d7ab70c50b5bc461c"
+        },
+        "src/scenes/s02.html": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/66/66f18bddfcb9281034df87efc0db649cfe44dd0ccc1fd81d0c37cbed5c5a4302"
+        },
+        "src/scenes/s03.html": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/66/665ba5e33a7db77393931069db6e4c14bd8b1c8bbd3f124d789af7f24af9d24e"
+        },
+        "tools/build.py": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/d2/d21df2acbbb9075650b9dd7391207c7b9799a005a5636fe355ce9895fdad6de1",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/b8/b86c002d1cd46a93c927c318dfc35f85d5ae5d48821fe836ab9db038ab0797c4"
+        }
+      }
+    },
+    "529a41c4-5a66-4879-be15-e65c42354072": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1795101305284,
+      "endedAt": 1795101305314,
+      "files": {
+        "compositions/s01.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/2e/2e5f43322ce6d1720d1fac5b6a4a10d7da0354f54c51c5c2606661236f805673",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/7f/7fca28d82260f4bae38ac9ca1fe6ca56bdf41f1a4e651ecc3635c592b5d09bea"
+        },
+        "compositions/s02.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/bd/bdb4b4f1e528933bca00d80f2e7ec5fa4b453819129ee231e56c6aabc64cb00a",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/cf/cfba84a609f5205811f3763bfeab48c28054a365a8eb57b87dfff98b4b5983b8"
+        },
+        "compositions/s03.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/5d/5d32bb167e7d17638daa06ca94b5443dd7be762c14ffed1580b943d881798aa6",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/42/4249ebad3c78af7becd05536122c1624bac4f4bb31d6542629378053d6a937c1"
+        },
+        "compositions/s04.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/a7/a7496ebf7e642baa6fae2fc008935ee18864315fffcd02492e42ac2647976e1f",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/2d/2db07c17b57962a70d39e8ad7434b940cccd2dae00ef16856c5ff6088a8bcc44"
+        },
+        "compositions/s05.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/8f/8fd19bbd10d1ed14524fc6b056367962466c1d041812b326aca57edb945e6514",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/94/94a4b3ea3819b90936598d27f822179786c107430fbb4295bc38cc7e57b77138"
+        },
+        "compositions/s06.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/ec/ec05eebba76944e375d0452db1d1f634cd0100d87dfc46f2bac06e943e1ae4df",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/db/db90daf1cbc07b064ecfe50a4f2f198cfaa7a53b8aea207c5eb2c3c39481aabe"
+        },
+        "compositions/s07.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/a7/a70753c4e276ccaef4a6e8651f49f4b1f685fd1df67d6f1fb94b3eaba9f1c53c",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/e9/e9967ff432a88bfebf62b9daeebe3eac6319c24916da818e8d293d4cd4c1a5aa"
+        },
+        "compositions/s08.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/76/769f8f88e1595ec4330d7409a5f47c7e81f6917d9e096d01faab94bda58a036d",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/36/3667afa8438b11536fbd3eff266cfa30219af4844a94869ea04f6465f1376c32"
+        },
+        "compositions/s09.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/bd/bdc61d02f4e100053258087ad5f6d9fb41593819456f62c1ef0845104af3ec12",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/74/74c3fa9dbf9adc96b48dbf87d33d18d9d25096f902f30a3b9ea12342fac9d64c"
+        },
+        "compositions/s10.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/1a/1ad6c97d78a8500ab31c66986d4cb9f798491af9728271408fe2e814179f5c92",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/89/89e2e38178bb0d64cb5f4a9b0a77088c05d6517dd85305a56672d0a1082bbbd5"
+        },
+        "compositions/s11.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/ce/ce7456bcd4a8d5ddee8c516af7b6a12df0f9e3d1dbbcb914dd4e948b6176c335",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/66/66cfe47cdcdc59918a53e39be59c5a20404c33f98250839ba4c2bc99e6edb5ff"
+        },
+        "compositions/s12.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/a8/a8e9231eedb5b039b3e291fb7442be126da7076d25b348e4712c39bd3793f438",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/fe/febb88b85325bb1922a56e7177e31f46f61b9e8952ca8cf16ed852c1cd9ce561"
+        },
+        "compositions/s13.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/0b/0b6dc617ec802aa95a768bce42849127676b1c977266e98adc970bb543a1d949",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/34/343342f492e1ab9ab617c68e188754beffaaef618c4ed3e8bbc36d34d91e47c8"
+        },
+        "compositions/s14.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/33/3311631111b881bcc7a099203c92097337fc450fd02757bf3ba258c2bba8a411",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/10/10be9e203b097a9829515344dc3ca7e81bc7d59170459026437481796ab55a44"
+        },
+        "index.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/bd/bdb5f2db423d4fee8416ab90d060e729fdb47528fda1fdcda09d39317cce1676",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/5f/5f8095f180a99462bf1d9b80d6dcc0adc33152e89d7b060ba9080f151fb18523"
+        },
+        "src/helpers.js": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/2f/2fb898edd076f2e4b5cf3f9d4ad0fa62b85984a114b8bb3ecbf3ceb779fbb120",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/ff/ff1d725f1cd4382594e1964a4a02319e7685543e40d9d2ec865dba6922dcc594"
+        },
+        "src/index.tpl.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/1b/1b23ab60f6f8981b885c1ea6eb1565e1d311a1ede8f2345bd51c0009027a8e67",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/b4/b428c4456b8d1f94658696abab809a6d519e2c06058c04e57b27e49d3781c9bf"
+        },
+        "src/scenes/s03.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/66/665ba5e33a7db77393931069db6e4c14bd8b1c8bbd3f124d789af7f24af9d24e",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/05/05e344e68086955ef5fc2d26a8a75c188c5e107a55a35f6d8952c89a71edb1a2"
+        },
+        "src/scenes/s04.html": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/60/60c03c9f9654103ed7b0f6ae7a901dd47c0de9ee016ce9d4650a3fbd2196dab9"
+        },
+        "src/scenes/s05.html": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/c2/c21e42290de1afbeeeaaddafec69f89096eba3a904ec3f8bc7091a7468145df5"
+        },
+        "src/scenes/s06.html": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/de/de63807e724ef98ed5820da7e5c8e608b90a84afbacc731f794620089a2ea5fe"
+        },
+        "src/scenes/s07.html": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/9b/9b7a3a6c42bafbb3e2fe45a89681e06e0fa0686f14ea85529d41a1d8a19d2567"
+        },
+        "src/scenes/s08.html": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/4a/4a79273bbd4c2f8fe96bb9682fc18ea68d30530d6cd82f09891a321a085032d9"
+        },
+        "src/scenes/s09.html": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/b3/b34a414b0ba6f7f4feb4aff28d2ba2a8a0d54ecb583f2b50548003d4ca4ff6b5"
+        },
+        "src/scenes/s10.html": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/2e/2ed777bcb183e487ec8d4581d05d977e826de0d822e4e2b4723d280478ad7696"
+        },
+        "src/scenes/s11.html": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/ef/efe126fd11b85a355660d08cf975882931bf35e15e3f01e5c6bcde74bcb61014"
+        },
+        "src/scenes/s12.html": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/b5/b58ebd8bdc8144a2de0c26ac384925b8a597b19786c7718f8b38624be98b4183"
+        },
+        "src/scenes/s13.html": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/5c/5ce02b88574cf4b37b3f739e5f733e074a291c41eb1afc72aa39e4c9b1533fcf"
+        },
+        "src/scenes/s14.html": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/4d/4d6af25e3d4befad2dc3e4e12ca58364e42325ee0d56416152bc71fefe756b25"
+        }
+      }
+    },
+    "81668c1b-2a9c-49e9-ba81-3758f6473e93": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1795101543231,
+      "endedAt": 1795101544552,
+      "files": {
+        "audio/mix_master.wav": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/6e/6eacccb0621db150a49e18442fe5007ac911d566a04d2299b065a11b683b03e4",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/69/69e0dc101e99250be3ce2d1cbe24d895d8ad9ce4c368cc5acbf78838ddeefa31"
+        },
+        "compositions/s01.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/7f/7fca28d82260f4bae38ac9ca1fe6ca56bdf41f1a4e651ecc3635c592b5d09bea",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/30/309a555ac2062c0d5efe92d47160bb4119180e232949c60faf06856a5f16ddf3"
+        },
+        "compositions/s02.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/cf/cfba84a609f5205811f3763bfeab48c28054a365a8eb57b87dfff98b4b5983b8",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/db/db0be8874b1ce7732a07be0fb3977c5fd2f4174b3cb30174647397dde85af830"
+        },
+        "compositions/s03.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/42/4249ebad3c78af7becd05536122c1624bac4f4bb31d6542629378053d6a937c1",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/54/5456135702e1ddef97b5ced05636ed7fe72029bf2f7a7c43a0419d7f720a6e2f"
+        },
+        "compositions/s04.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/2d/2db07c17b57962a70d39e8ad7434b940cccd2dae00ef16856c5ff6088a8bcc44",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/02/02f214be3ba19464fe847de9672e442be35d77fc0aad1883e0dc06b5063c7655"
+        },
+        "compositions/s05.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/94/94a4b3ea3819b90936598d27f822179786c107430fbb4295bc38cc7e57b77138",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/e6/e6753e5384d68a91c41699cb34522b57ba875e2fce93e23c7eb238490b7f6530"
+        },
+        "compositions/s06.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/db/db90daf1cbc07b064ecfe50a4f2f198cfaa7a53b8aea207c5eb2c3c39481aabe",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/84/848d69c4459dd639bb0f629e072200b6a2a224ee3c4d8cb59cd57691e1c07a25"
+        },
+        "compositions/s07.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/e9/e9967ff432a88bfebf62b9daeebe3eac6319c24916da818e8d293d4cd4c1a5aa",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/8b/8b59298bd95655924d6af6e76ef5c1a8a877d60ee920d6ceeb502ca0ea242f35"
+        },
+        "compositions/s08.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/36/3667afa8438b11536fbd3eff266cfa30219af4844a94869ea04f6465f1376c32",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/f9/f97e7b6f8cbea891500380eaa06f790adff693f596bc6830e69adb293189ba7b"
+        },
+        "compositions/s09.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/74/74c3fa9dbf9adc96b48dbf87d33d18d9d25096f902f30a3b9ea12342fac9d64c",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/69/694ed06b957e0be25e8d7ba9e73f23e4dce4392e5a2eb90f29bb2d8dcae0cde2"
+        },
+        "compositions/s10.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/89/89e2e38178bb0d64cb5f4a9b0a77088c05d6517dd85305a56672d0a1082bbbd5",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/b2/b2511cd8c7a2b98dee206ecb3c88ee241f7a8e3882541790715d2a0bad7edb38"
+        },
+        "compositions/s11.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/66/66cfe47cdcdc59918a53e39be59c5a20404c33f98250839ba4c2bc99e6edb5ff",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/af/afc4ff9204848f8fc8932a8b6c66765798662346b372006b622e9825af043d0c"
+        },
+        "compositions/s12.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/fe/febb88b85325bb1922a56e7177e31f46f61b9e8952ca8cf16ed852c1cd9ce561",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/8d/8d2673accefde3f6b7b004a258dfc1c6addb3ec36d3bc77db25b6a3e695079c1"
+        },
+        "compositions/s13.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/34/343342f492e1ab9ab617c68e188754beffaaef618c4ed3e8bbc36d34d91e47c8",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/6f/6ffa4d7989c105b99e99c2c5a8525636361850f9816464a6832fd09b28855d18"
+        },
+        "compositions/s14.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/10/10be9e203b097a9829515344dc3ca7e81bc7d59170459026437481796ab55a44",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/8a/8a6b9f4a6832a9f96502c83527521b0d386b374cb3df92944c8491f5b25500eb"
+        },
+        "index.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/5f/5f8095f180a99462bf1d9b80d6dcc0adc33152e89d7b060ba9080f151fb18523",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/9f/9fcba1be89260103c25b6a954398c813ee99699aa6ff45d81a63291991ddc504"
+        },
+        "src/helpers.js": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/ff/ff1d725f1cd4382594e1964a4a02319e7685543e40d9d2ec865dba6922dcc594",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/92/927fcd2bba76c6e96859c1bcc6841f65fcb25b6a90bb70dff6ec9bea00ac9abb"
+        },
+        "src/scenes/s01.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/8b/8b3ceffa5e0d0b4459b9e5be4a9961d21d5e5c042873874d7ab70c50b5bc461c",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/50/5020bc33d34faad117b3a254b274e5590d3bede60c491b900f0fc3511e503f5a"
+        },
+        "src/scenes/s02.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/66/66f18bddfcb9281034df87efc0db649cfe44dd0ccc1fd81d0c37cbed5c5a4302",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/4e/4e66d25a10cbd00c86d5c48fe861c0528b3c63b7d4f691f82af23ee48638da5f"
+        },
+        "src/scenes/s03.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/05/05e344e68086955ef5fc2d26a8a75c188c5e107a55a35f6d8952c89a71edb1a2",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/74/74ea2c3a4ac50046977a4664c789b3daa81f9a5a385759b994b988c5aa7b990c"
+        },
+        "src/scenes/s04.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/60/60c03c9f9654103ed7b0f6ae7a901dd47c0de9ee016ce9d4650a3fbd2196dab9",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/40/4033d7d1dd4a5617cd469cc431f4d71a31b028e1dc692b1ab82d9c8163ee1f07"
+        },
+        "src/scenes/s05.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/c2/c21e42290de1afbeeeaaddafec69f89096eba3a904ec3f8bc7091a7468145df5",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/9f/9f71e0f5aa69b9b8f0b8c04a09b9a36b6b53cb821bce8d1e698987ea26ee146e"
+        },
+        "src/scenes/s06.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/de/de63807e724ef98ed5820da7e5c8e608b90a84afbacc731f794620089a2ea5fe",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/e7/e727fe8c810c5dcb90fff8639e8d13b6950a8348fabf11143766a26c23c52331"
+        },
+        "src/scenes/s07.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/9b/9b7a3a6c42bafbb3e2fe45a89681e06e0fa0686f14ea85529d41a1d8a19d2567",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/66/668a1edc4a2d3c592ff186f05184ab3214592116d9d940760761513e56216fc2"
+        },
+        "src/scenes/s08.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/4a/4a79273bbd4c2f8fe96bb9682fc18ea68d30530d6cd82f09891a321a085032d9",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/7a/7a59bfdd6e8fc6356fce960460ac6fd6b58f753b29c651007e1306a9ace988e2"
+        },
+        "src/scenes/s09.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/b3/b34a414b0ba6f7f4feb4aff28d2ba2a8a0d54ecb583f2b50548003d4ca4ff6b5",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/a1/a1da8b208e9c56ee1da4e9b3e84c3d483ad36f2826cf8f0e90bde5940716bc15"
+        },
+        "src/scenes/s11.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/ef/efe126fd11b85a355660d08cf975882931bf35e15e3f01e5c6bcde74bcb61014",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/76/760a0aa3f429ccf193b36080dc2a2be6844f9daa697e9e5da55dd8aa8c7cf831"
+        },
+        "src/scenes/s12.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/b5/b58ebd8bdc8144a2de0c26ac384925b8a597b19786c7718f8b38624be98b4183",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/8b/8b50e67e1bcbad5b5294beab2c02188eba2c765887f5ea27b569782936624869"
+        },
+        "src/scenes/s13.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/5c/5ce02b88574cf4b37b3f739e5f733e074a291c41eb1afc72aa39e4c9b1533fcf",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/44/44384cd4a4f49be8193f1a42f3c6f583b263ff1a7acd43f8b589b043129bf001"
+        },
+        "src/scenes/s14.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/4d/4d6af25e3d4befad2dc3e4e12ca58364e42325ee0d56416152bc71fefe756b25",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/f2/f22fc927d88417642f9545e1342f2ebd7f186d21c7fb676dc37f4d8a31f7b2ee"
+        },
+        "tools/build.py": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/b8/b86c002d1cd46a93c927c318dfc35f85d5ae5d48821fe836ab9db038ab0797c4",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/c8/c8ddc7c91d203aa47e7007eb9911d240e54344f301d8c5fdc4abe029a1b9fb44"
+        }
+      }
+    },
+    "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1795101606125,
+      "endedAt": 1795101606136,
+      "files": {
+        "compositions/s01.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/30/309a555ac2062c0d5efe92d47160bb4119180e232949c60faf06856a5f16ddf3",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/4f/4fb7fa78c69a404a4a782755c392dda91cbe109d3a9c10d82912e141991cdc1e"
+        },
+        "compositions/s09.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/69/694ed06b957e0be25e8d7ba9e73f23e4dce4392e5a2eb90f29bb2d8dcae0cde2",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/a0/a08425ce72bab146049afca00a7383f6f60db67ca8d0d37baf67da36fbc7d1dc"
+        },
+        "compositions/s10.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/b2/b2511cd8c7a2b98dee206ecb3c88ee241f7a8e3882541790715d2a0bad7edb38",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/39/39d61d2176e4f250e796650fffbc2e80923d599fea537388187d7cb5b3844587"
+        },
+        "compositions/s13.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/6f/6ffa4d7989c105b99e99c2c5a8525636361850f9816464a6832fd09b28855d18",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/39/39ab8caab998e1a968b0b3c63e00fe210110086a6d2e3db05dccfd346e50f5de"
+        },
+        "index.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/9f/9fcba1be89260103c25b6a954398c813ee99699aa6ff45d81a63291991ddc504",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/09/09dbe298e71e07e781820bed310ec4b6c331df5a8e5650c42f5bfe0fc77f0ef3"
+        },
+        "src/index.tpl.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/b4/b428c4456b8d1f94658696abab809a6d519e2c06058c04e57b27e49d3781c9bf",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/99/99d65f24d194dd9804a153a2fe619aa82558c3413e95f144c41da9fbc88c0074"
+        },
+        "src/scenes/s01.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/50/5020bc33d34faad117b3a254b274e5590d3bede60c491b900f0fc3511e503f5a",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/fd/fd77cd66b386b20e05c319c3b9dae38da6d02feed6e9d3d9fd4c46f1acd78195"
+        },
+        "src/scenes/s09.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/a1/a1da8b208e9c56ee1da4e9b3e84c3d483ad36f2826cf8f0e90bde5940716bc15",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/e1/e1ab1b4c2fe8c804aab4e79f3fe6306158d4047e6074034fc709b5e10fed6ef1"
+        },
+        "src/scenes/s10.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/2e/2ed777bcb183e487ec8d4581d05d977e826de0d822e4e2b4723d280478ad7696",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/1b/1b7aa439cef76f5273e493d10376a02db81c5056b6787b1e88b4785d1cda5ec8"
+        },
+        "src/scenes/s13.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/44/44384cd4a4f49be8193f1a42f3c6f583b263ff1a7acd43f8b589b043129bf001",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/c8/c836a490bd1cbd3d5e560c060db7cae517f9e0cb6016b453bf008db89cf838c3"
+        },
+        "tools/build.py": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/c8/c8ddc7c91d203aa47e7007eb9911d240e54344f301d8c5fdc4abe029a1b9fb44",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/ac/acf2cc289a449175fa8fbcec8f4e0f83fd1b535eacab70e2fe26a01d1e553b8a"
+        }
+      }
+    },
+    "2d311ad8-bc73-4cb1-a9c2-7c275b8cc6ef": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1795101706320,
+      "endedAt": 1795101706338,
+      "files": {
+        "compositions/s07.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/8b/8b59298bd95655924d6af6e76ef5c1a8a877d60ee920d6ceeb502ca0ea242f35",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/b6/b60a08835970ef21d7e0894278bc20d395a389a814311e291228da244de0e417"
+        },
+        "compositions/s14.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/8a/8a6b9f4a6832a9f96502c83527521b0d386b374cb3df92944c8491f5b25500eb",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/3f/3fea3867a1f7d7d47342f33fe76da3d71ccb350962443859b20d55958c00e898"
+        },
+        "src/scenes/s07.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/66/668a1edc4a2d3c592ff186f05184ab3214592116d9d940760761513e56216fc2",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/8d/8de468a374b360b652deb7fe7d124052604841ebbe14c6dd570b7676d37a46e9"
+        },
+        "src/scenes/s14.html": {
+          "before": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/f2/f22fc927d88417642f9545e1342f2ebd7f186d21c7fb676dc37f4d8a31f7b2ee",
+          "after": "/root/.cache/hyperframes/history/923bec65-a696-4b1a-95a9-513ff3fa540a/blobs/de/de5331aa2d2f3f223dcc414e041c6a66266b3296c55522c60b47e7c57ebca83e"
+        }
+      }
+    }
+  },
+  "checks": {
+    "latest": {
+      "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
+      "id": "6a17f254-161c-4b1c-9b40-94e56c1eb09f"
+    },
+    "revisions": {
+      "81668c1b-2a9c-49e9-ba81-3758f6473e93": [
+        {
+          "id": "af1755cd-9cef-4279-a8da-ebe9017cb69a",
+          "scope": "project",
+          "report": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/checks/af1755cd-9cef-4279-a8da-ebe9017cb69a.json",
+          "metadata": {
+            "ok": false,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 45000,
+              "cache": true,
+              "contrast": true,
+              "craft": true,
+              "strict": false,
+              "snapshots": false,
+              "safeZones": [
+                "tiktok",
+                "reels",
+                "shorts"
+              ],
+              "browserGpuMode": "auto",
+              "includeUnmounted": false
+            }
+          },
+          "createdAt": 1795101570147,
+          "contentHash": "15f57e45053d707919718146f8e2ecbdc14b5a29f52396705db61de7ce5964b6",
+          "revision": "81668c1b-2a9c-49e9-ba81-3758f6473e93",
+          "inputFingerprint": "3de57adca35711d49e7222f3dafade4c3631ee5f9532d5b5faa357331e7d8e1b",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ],
+      "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e": [
+        {
+          "id": "6a17f254-161c-4b1c-9b40-94e56c1eb09f",
+          "scope": "project",
+          "report": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/checks/6a17f254-161c-4b1c-9b40-94e56c1eb09f.json",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 45000,
+              "cache": true,
+              "contrast": true,
+              "craft": true,
+              "strict": false,
+              "snapshots": false,
+              "safeZones": [
+                "tiktok",
+                "reels",
+                "shorts"
+              ],
+              "browserGpuMode": "auto",
+              "includeUnmounted": false
+            }
+          },
+          "createdAt": 1795101633067,
+          "contentHash": "cc341a941a61bee0c7e5abd3ca80f06701c9039535ac0da35b56d8feb5436c9f",
+          "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
+          "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ]
+    },
+    "unversioned": []
+  },
+  "snapshots": {
+    "latest": {
+      "revision": "2d311ad8-bc73-4cb1-a9c2-7c275b8cc6ef",
+      "id": "33aac9ec-73f4-4c2b-a441-b4ffca3696c6-2"
+    },
+    "revisions": {
+      "4cfd688b-c6f5-459e-bfc0-60f682ef53bd": [
+        {
+          "scope": "full",
+          "id": "7cd01826-f959-4cfc-b564-a9022502524d-0",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/07dd00a8-09f4-475b-9496-de9e7b7e1638/frame-00-at-32s.png",
+          "time": 32,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795100705371,
+          "contentHash": "e9bd07a92a9837318e5cd543d3dbd8e1854eb383f4541ff9facb3b84efebae1f",
+          "revision": "4cfd688b-c6f5-459e-bfc0-60f682ef53bd",
+          "inputFingerprint": "0eb934109cca3eb9cd75acffc7b2cd1750379b5957f303bade80ae11bd1e7755",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7cd01826-f959-4cfc-b564-a9022502524d-1",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/07dd00a8-09f4-475b-9496-de9e7b7e1638/frame-01-at-42s.png",
+          "time": 42,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795100705371,
+          "contentHash": "8051a82a315a40807f3a1f520eeb3bfccdf9c11bb022fd5e5c1b84b66784f700",
+          "revision": "4cfd688b-c6f5-459e-bfc0-60f682ef53bd",
+          "inputFingerprint": "0eb934109cca3eb9cd75acffc7b2cd1750379b5957f303bade80ae11bd1e7755",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7cd01826-f959-4cfc-b564-a9022502524d-2",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/07dd00a8-09f4-475b-9496-de9e7b7e1638/frame-02-at-50s.png",
+          "time": 50,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795100705371,
+          "contentHash": "72904403ef1064309de6b2ccacf0f58d95dcd083044cd6260180dcbde16bd5a6",
+          "revision": "4cfd688b-c6f5-459e-bfc0-60f682ef53bd",
+          "inputFingerprint": "0eb934109cca3eb9cd75acffc7b2cd1750379b5957f303bade80ae11bd1e7755",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7cd01826-f959-4cfc-b564-a9022502524d-3",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/07dd00a8-09f4-475b-9496-de9e7b7e1638/frame-03-at-58s.png",
+          "time": 58,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795100705371,
+          "contentHash": "e2dfd89c466433b9b1215d6c1bb12d7dfb46f42790343baf66fe91fd847d15bc",
+          "revision": "4cfd688b-c6f5-459e-bfc0-60f682ef53bd",
+          "inputFingerprint": "0eb934109cca3eb9cd75acffc7b2cd1750379b5957f303bade80ae11bd1e7755",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7cd01826-f959-4cfc-b564-a9022502524d-4",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/07dd00a8-09f4-475b-9496-de9e7b7e1638/frame-04-at-64s.png",
+          "time": 64,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795100705371,
+          "contentHash": "62f061e6ebf3014b91165ccac1cb674a1e3070dcbef6b29bd74a2f54766967eb",
+          "revision": "4cfd688b-c6f5-459e-bfc0-60f682ef53bd",
+          "inputFingerprint": "0eb934109cca3eb9cd75acffc7b2cd1750379b5957f303bade80ae11bd1e7755",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7cd01826-f959-4cfc-b564-a9022502524d-5",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/07dd00a8-09f4-475b-9496-de9e7b7e1638/frame-05-at-67s.png",
+          "time": 67,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795100705371,
+          "contentHash": "0b2389e8d977f8f8839b995043ee9949f1bc37977eb67b57aec40ff2359c840a",
+          "revision": "4cfd688b-c6f5-459e-bfc0-60f682ef53bd",
+          "inputFingerprint": "0eb934109cca3eb9cd75acffc7b2cd1750379b5957f303bade80ae11bd1e7755",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7cd01826-f959-4cfc-b564-a9022502524d-6",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/07dd00a8-09f4-475b-9496-de9e7b7e1638/frame-06-at-74s.png",
+          "time": 74,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795100705371,
+          "contentHash": "c437f63abcf0cc79727bafdaabb375856782a2bdf76e464d806da013122bd3cf",
+          "revision": "4cfd688b-c6f5-459e-bfc0-60f682ef53bd",
+          "inputFingerprint": "0eb934109cca3eb9cd75acffc7b2cd1750379b5957f303bade80ae11bd1e7755",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7cd01826-f959-4cfc-b564-a9022502524d-7",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/07dd00a8-09f4-475b-9496-de9e7b7e1638/frame-07-at-84s.png",
+          "time": 84,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795100705371,
+          "contentHash": "0950cb28a58cf190c68f4b69f3c8a2ff07ec4a31a61ab20dd0d1382bd5d974a6",
+          "revision": "4cfd688b-c6f5-459e-bfc0-60f682ef53bd",
+          "inputFingerprint": "0eb934109cca3eb9cd75acffc7b2cd1750379b5957f303bade80ae11bd1e7755",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7cd01826-f959-4cfc-b564-a9022502524d-8",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/07dd00a8-09f4-475b-9496-de9e7b7e1638/frame-08-at-95s.png",
+          "time": 95,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795100705371,
+          "contentHash": "036872e05416d88dc87c949b250c6e3265bfe93cb36cfa354b0c3bbae8c381e8",
+          "revision": "4cfd688b-c6f5-459e-bfc0-60f682ef53bd",
+          "inputFingerprint": "0eb934109cca3eb9cd75acffc7b2cd1750379b5957f303bade80ae11bd1e7755",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7cd01826-f959-4cfc-b564-a9022502524d-9",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/07dd00a8-09f4-475b-9496-de9e7b7e1638/frame-09-at-104s.png",
+          "time": 104,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795100705371,
+          "contentHash": "96c91616f39a4ac8c5ec39425e1ed7386df10b41aa7a38b354989c6aac9a3753",
+          "revision": "4cfd688b-c6f5-459e-bfc0-60f682ef53bd",
+          "inputFingerprint": "0eb934109cca3eb9cd75acffc7b2cd1750379b5957f303bade80ae11bd1e7755",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7cd01826-f959-4cfc-b564-a9022502524d-10",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/07dd00a8-09f4-475b-9496-de9e7b7e1638/frame-10-at-112s.png",
+          "time": 112,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795100705371,
+          "contentHash": "f8a7cb23e7935867ae7cb57250dfbdb74759d4eebfa7980d4ae3317c00dee553",
+          "revision": "4cfd688b-c6f5-459e-bfc0-60f682ef53bd",
+          "inputFingerprint": "0eb934109cca3eb9cd75acffc7b2cd1750379b5957f303bade80ae11bd1e7755",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7cd01826-f959-4cfc-b564-a9022502524d-11",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/07dd00a8-09f4-475b-9496-de9e7b7e1638/frame-11-at-120s.png",
+          "time": 120,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795100705371,
+          "contentHash": "70c47943d85148f1c26c51b7c0e9735fdc52d5e7a69f02379bb32d8a08222b6b",
+          "revision": "4cfd688b-c6f5-459e-bfc0-60f682ef53bd",
+          "inputFingerprint": "0eb934109cca3eb9cd75acffc7b2cd1750379b5957f303bade80ae11bd1e7755",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7cd01826-f959-4cfc-b564-a9022502524d-12",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/07dd00a8-09f4-475b-9496-de9e7b7e1638/frame-12-at-595.783s.png",
+          "time": 595.783,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795100705371,
+          "contentHash": "be8b27d44d2225893693b1a5c960767d4a242bfbc51ef78ec772a99927dff866",
+          "revision": "4cfd688b-c6f5-459e-bfc0-60f682ef53bd",
+          "inputFingerprint": "0eb934109cca3eb9cd75acffc7b2cd1750379b5957f303bade80ae11bd1e7755",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ],
+      "529a41c4-5a66-4879-be15-e65c42354072": [
+        {
+          "scope": "full",
+          "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-0",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-00-at-131.11s.png",
+          "time": 131.11,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101321251,
+          "contentHash": "b59e99007740bc80f496d98532df7f9a3d7f3a89ffa7fb13f16d556738616e89",
+          "revision": "529a41c4-5a66-4879-be15-e65c42354072",
+          "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-1",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-01-at-140.05s.png",
+          "time": 140.05,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101321251,
+          "contentHash": "61d220c8c3f67240bccfec1212ccb736208ef703a0e4b113814b4c9a6bbea038",
+          "revision": "529a41c4-5a66-4879-be15-e65c42354072",
+          "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-2",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-02-at-147.87s.png",
+          "time": 147.87,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101321251,
+          "contentHash": "e1460912b1a1be00a534b24839b50b2e13846757b0ef996bca1e790ab25abf6f",
+          "revision": "529a41c4-5a66-4879-be15-e65c42354072",
+          "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-3",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-03-at-163.85s.png",
+          "time": 163.85,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101321252,
+          "contentHash": "00c1355a87467788b6f4315da9e58aee216a66f6a6271ae15f66290575f2f030",
+          "revision": "529a41c4-5a66-4879-be15-e65c42354072",
+          "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-4",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-04-at-177.91s.png",
+          "time": 177.91,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101321252,
+          "contentHash": "c001e4dc239dec3e7175e2c3857865c6573be96de5f0277f03bce994df5c6fe3",
+          "revision": "529a41c4-5a66-4879-be15-e65c42354072",
+          "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-5",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-05-at-190.21s.png",
+          "time": 190.21,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101321252,
+          "contentHash": "16de39054ce2cb9795d7a7157f949fb2312f2c9327b187d4708c2ddda9aaa326",
+          "revision": "529a41c4-5a66-4879-be15-e65c42354072",
+          "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-6",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-06-at-203.15s.png",
+          "time": 203.15,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101321252,
+          "contentHash": "b0deef093297b9f892da3eae7d2c12a9b8e9d22df5f57e258048e70d27359a94",
+          "revision": "529a41c4-5a66-4879-be15-e65c42354072",
+          "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-7",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-07-at-212.27s.png",
+          "time": 212.27,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101321252,
+          "contentHash": "c2fa41c25d9ea374ed751e90047e62fcf0a5cd7ef5109df703b327fbbd2429dc",
+          "revision": "529a41c4-5a66-4879-be15-e65c42354072",
+          "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-8",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-08-at-220.25s.png",
+          "time": 220.25,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101321252,
+          "contentHash": "e228f7fc37a6dcde4455d7637f6cd16c319561f1bf9a9ca2a69924e60967ad82",
+          "revision": "529a41c4-5a66-4879-be15-e65c42354072",
+          "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-9",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-09-at-239.07s.png",
+          "time": 239.07,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101321252,
+          "contentHash": "ecf3aa238b9727e53023b1c8d4e3bd9bd76008d09985a5762587a6311dd10760",
+          "revision": "529a41c4-5a66-4879-be15-e65c42354072",
+          "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-10",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-10-at-256.1s.png",
+          "time": 256.1,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101321252,
+          "contentHash": "1e11b4f13a40e850c66a05f1f18c956b422fb543cc5582f08c8d5c4dd86b0d6b",
+          "revision": "529a41c4-5a66-4879-be15-e65c42354072",
+          "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-11",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-11-at-271.01s.png",
+          "time": 271.01,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101321252,
+          "contentHash": "bfe922fd1d77be6dac5d8258c135687e6efcd2e43c55565506b61271db2696f1",
+          "revision": "529a41c4-5a66-4879-be15-e65c42354072",
+          "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-12",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-12-at-287.01s.png",
+          "time": 287.01,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101321252,
+          "contentHash": "e8c5215a091927211dd44c8e459b5886d021259791a1c648b3e9a48787d95163",
+          "revision": "529a41c4-5a66-4879-be15-e65c42354072",
+          "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-13",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-13-at-298.41s.png",
+          "time": 298.41,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101321252,
+          "contentHash": "34ca63a7c328dc61e427d7fcd622c0b5cffb440823c096349ee36f1d00f5bf13",
+          "revision": "529a41c4-5a66-4879-be15-e65c42354072",
+          "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-14",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-14-at-308.37s.png",
+          "time": 308.37,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101321253,
+          "contentHash": "59758addb353336b33212bd65dbd0ddec5fce35493d3ede0ac932794dc8d867b",
+          "revision": "529a41c4-5a66-4879-be15-e65c42354072",
+          "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-15",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-15-at-329.55s.png",
+          "time": 329.55,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101321253,
+          "contentHash": "3dc3b068636f4d58572ee052f459dca5ee4fa3c0b278625137cb161bab3131a5",
+          "revision": "529a41c4-5a66-4879-be15-e65c42354072",
+          "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-16",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-16-at-348.35s.png",
+          "time": 348.35,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101321253,
+          "contentHash": "68cefa45e834a4594503cd79369f83d45f3182f6954947d87fd48dad395a8396",
+          "revision": "529a41c4-5a66-4879-be15-e65c42354072",
+          "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-17",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-17-at-364.79s.png",
+          "time": 364.79,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101321253,
+          "contentHash": "8941a4cb1934d8a5d5832a208feceb3ccb2b380cc89644241528e72b5a23d7ff",
+          "revision": "529a41c4-5a66-4879-be15-e65c42354072",
+          "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-18",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-18-at-389.51s.png",
+          "time": 389.51,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101321253,
+          "contentHash": "b61717fc41209c88869bfb61da3681bd2d0f294df7a7b98d8e228e66548ef05b",
+          "revision": "529a41c4-5a66-4879-be15-e65c42354072",
+          "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-19",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-19-at-409.6s.png",
+          "time": 409.6,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101321253,
+          "contentHash": "83dfa9a3359090ec6507a9aee4a41a94e5df35de38756ab58e84853e43f947c6",
+          "revision": "529a41c4-5a66-4879-be15-e65c42354072",
+          "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-20",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-20-at-427.19s.png",
+          "time": 427.19,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101321253,
+          "contentHash": "49ea3f813ad55627bb999020ab3e687d3cb0593164a191dcbe14676525e31313",
+          "revision": "529a41c4-5a66-4879-be15-e65c42354072",
+          "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-21",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-21-at-451.14s.png",
+          "time": 451.14,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101321253,
+          "contentHash": "55f55ff22c8ea51111d9437158a9fe51a3b15ab2b2db8989509786e0791cd104",
+          "revision": "529a41c4-5a66-4879-be15-e65c42354072",
+          "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-22",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-22-at-469.98s.png",
+          "time": 469.98,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101321254,
+          "contentHash": "2b5170fd17f718aa1c8c2d3325baea03166d38cde69c615a163af456c1f67739",
+          "revision": "529a41c4-5a66-4879-be15-e65c42354072",
+          "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-23",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-23-at-486.48s.png",
+          "time": 486.48,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101321254,
+          "contentHash": "611ed9f62b59d9d55b1ef9d5878ac138da2ce47aced08228909f9f09f630d080",
+          "revision": "529a41c4-5a66-4879-be15-e65c42354072",
+          "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-24",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-24-at-501.11s.png",
+          "time": 501.11,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101321254,
+          "contentHash": "74d7bd1e7a9f964148912d08c6880f9db1a8c286f87ce229063e2164fdbf4fd6",
+          "revision": "529a41c4-5a66-4879-be15-e65c42354072",
+          "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-25",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-25-at-510.43s.png",
+          "time": 510.43,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101321254,
+          "contentHash": "b7b4e9028ce2cb17fbf296671f89d6e29b29641070b3038ee3f8c7e909cfe7b5",
+          "revision": "529a41c4-5a66-4879-be15-e65c42354072",
+          "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-26",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-26-at-518.59s.png",
+          "time": 518.59,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101321254,
+          "contentHash": "c72e0b39ba98b720475b2c040289a02ecbb67ffe5ee0480b306645ee0a8ea586",
+          "revision": "529a41c4-5a66-4879-be15-e65c42354072",
+          "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-27",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-27-at-532.4s.png",
+          "time": 532.4,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101321254,
+          "contentHash": "31c40f4c3d6e2f79fc1844b1456631ee5ef5eb869a392ea1cf36ccf840e20dc1",
+          "revision": "529a41c4-5a66-4879-be15-e65c42354072",
+          "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-28",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-28-at-544.03s.png",
+          "time": 544.03,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101321254,
+          "contentHash": "b1c255ec8ad3349c2749a77f052e0ecdb4a8ca025cb8583f6e0ec8b31015bac9",
+          "revision": "529a41c4-5a66-4879-be15-e65c42354072",
+          "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-29",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-29-at-554.2s.png",
+          "time": 554.2,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101321255,
+          "contentHash": "d8383dbd21bdf9bb17eb44294fb3c97eea07ba6af0c63684b8482a6d69d25305",
+          "revision": "529a41c4-5a66-4879-be15-e65c42354072",
+          "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-30",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-30-at-569.29s.png",
+          "time": 569.29,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101321255,
+          "contentHash": "c782f4a7ab2217897635b2f21966a2adcad25950299d711d7f6b2027084784ca",
+          "revision": "529a41c4-5a66-4879-be15-e65c42354072",
+          "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-31",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-31-at-581.52s.png",
+          "time": 581.52,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101321255,
+          "contentHash": "f254ecad2300d436a3c029b08b1ef496a48d7e5421cb22c3c87783cb28ac1810",
+          "revision": "529a41c4-5a66-4879-be15-e65c42354072",
+          "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-32",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-32-at-592.21s.png",
+          "time": 592.21,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101321255,
+          "contentHash": "d303e586cd5f35e5669f974d082022e2bf259d8ec83b3e197e3a21b03bf0cc90",
+          "revision": "529a41c4-5a66-4879-be15-e65c42354072",
+          "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7820eeb9-108b-4e71-bce6-8f026943a8ef-33",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/54bb1a47-ef86-4510-a238-ef43a7a675b7/frame-33-at-595.783s.png",
+          "time": 595.783,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101321255,
+          "contentHash": "542a7c9cffcfdcd7ff466a9dff80611e9c38260e533902c3b8cfce0ab4db169d",
+          "revision": "529a41c4-5a66-4879-be15-e65c42354072",
+          "inputFingerprint": "c37bc8d9b83e24acfb01cf7bbd52d971fea988b71595a95466c2bf51bda05932",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ],
+      "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e": [
+        {
+          "scope": "full",
+          "id": "aef3157d-7068-45a2-8c25-d83f189fae60-0",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/0b973ab5-63f2-45a9-b696-a1da16949808/frame-00-at-14.03s.png",
+          "time": 14.03,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101653664,
+          "contentHash": "f790ceaa9b164c34d3cf82027ceaa177d9fb83ed15ce48e5e9d1c3f906acf520",
+          "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
+          "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "aef3157d-7068-45a2-8c25-d83f189fae60-1",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/0b973ab5-63f2-45a9-b696-a1da16949808/frame-01-at-48.23s.png",
+          "time": 48.23,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101653665,
+          "contentHash": "1c364dc2f8d27c23047a80ba3cc3dbae89f5b2fea11c02ee75407373ac801042",
+          "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
+          "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "aef3157d-7068-45a2-8c25-d83f189fae60-2",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/0b973ab5-63f2-45a9-b696-a1da16949808/frame-02-at-95.57s.png",
+          "time": 95.57,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101653665,
+          "contentHash": "f5472b53082215f1ce9e53ea10325a9881f62c081a96d055b65ab449ddc88b90",
+          "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
+          "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "aef3157d-7068-45a2-8c25-d83f189fae60-3",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/0b973ab5-63f2-45a9-b696-a1da16949808/frame-03-at-136.7s.png",
+          "time": 136.7,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101653665,
+          "contentHash": "18d4979642c32cd206857eac37a469c3cb3f11bb0c043ab7bcb8330afd11d01f",
+          "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
+          "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "aef3157d-7068-45a2-8c25-d83f189fae60-4",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/0b973ab5-63f2-45a9-b696-a1da16949808/frame-04-at-172.63s.png",
+          "time": 172.63,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101653665,
+          "contentHash": "4551b59e6dce6cbdc0bb2b89dfd511739fa553625ae50d119bbc5ab04890ae29",
+          "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
+          "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "aef3157d-7068-45a2-8c25-d83f189fae60-5",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/0b973ab5-63f2-45a9-b696-a1da16949808/frame-05-at-208.85s.png",
+          "time": 208.85,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101653665,
+          "contentHash": "783bc953fc991434e3e914cf5429d8e856c27bedcd12afa5fa2a02033b1a5336",
+          "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
+          "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "aef3157d-7068-45a2-8c25-d83f189fae60-6",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/0b973ab5-63f2-45a9-b696-a1da16949808/frame-06-at-249.72s.png",
+          "time": 249.72,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101653665,
+          "contentHash": "4b93edfbffa2dced77e187d82ea3cc5d856fffbaf00036f4c2e2267d4274d851",
+          "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
+          "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "aef3157d-7068-45a2-8c25-d83f189fae60-7",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/0b973ab5-63f2-45a9-b696-a1da16949808/frame-07-at-294.13s.png",
+          "time": 294.13,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101653666,
+          "contentHash": "e8c0088107b3b21e2c5979883b66f648e774a4176de38f3678610d79197994a6",
+          "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
+          "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "aef3157d-7068-45a2-8c25-d83f189fae60-8",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/0b973ab5-63f2-45a9-b696-a1da16949808/frame-08-at-341.3s.png",
+          "time": 341.3,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101653666,
+          "contentHash": "0c80b31a7160bcfbf74251c56f60648d8b9139da1119082fa9c780ef8ad1b116",
+          "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
+          "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "aef3157d-7068-45a2-8c25-d83f189fae60-9",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/0b973ab5-63f2-45a9-b696-a1da16949808/frame-09-at-402.07s.png",
+          "time": 402.07,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101653666,
+          "contentHash": "ff04c179040f113f9d31ef44f78d6f36e2c5334daa5a824204fd3c29165667c6",
+          "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
+          "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "aef3157d-7068-45a2-8c25-d83f189fae60-10",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/0b973ab5-63f2-45a9-b696-a1da16949808/frame-10-at-462.92s.png",
+          "time": 462.92,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101653666,
+          "contentHash": "70e53400fe0d82def3c64f264a8c3d4ea51cb1842850c1b3e7512d5a36d20894",
+          "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
+          "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "aef3157d-7068-45a2-8c25-d83f189fae60-11",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/0b973ab5-63f2-45a9-b696-a1da16949808/frame-11-at-506.93s.png",
+          "time": 506.93,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101653666,
+          "contentHash": "a8c6ebcb7ac686c30d10e1c6e414c04f0165b6176e6395f50a2a88052718cbbc",
+          "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
+          "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "aef3157d-7068-45a2-8c25-d83f189fae60-12",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/0b973ab5-63f2-45a9-b696-a1da16949808/frame-12-at-539.67s.png",
+          "time": 539.67,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101653666,
+          "contentHash": "410cfddc72f33f35fc6a2ff00f0b7246b3578c57d4fe791b9f072a6223bb02ab",
+          "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
+          "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "aef3157d-7068-45a2-8c25-d83f189fae60-13",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/0b973ab5-63f2-45a9-b696-a1da16949808/frame-13-at-576.93s.png",
+          "time": 576.93,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101653666,
+          "contentHash": "8efd0404c8c4a88928c4ad07145737226b1e0dc5529a22bddef4c0526982e31c",
+          "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
+          "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "aef3157d-7068-45a2-8c25-d83f189fae60-14",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/0b973ab5-63f2-45a9-b696-a1da16949808/frame-14-at-0s.png",
+          "time": 0,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101653667,
+          "contentHash": "e9f462baaac001f70d9707800a3b1aa190b0d77bf3cbcf7d118f50edb8ba52db",
+          "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
+          "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "aef3157d-7068-45a2-8c25-d83f189fae60-15",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/0b973ab5-63f2-45a9-b696-a1da16949808/frame-15-at-148.9s.png",
+          "time": 148.9,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101653667,
+          "contentHash": "c1bc2f30041b2dfca46b334de7a202aaa25c5314213bfb6008c93c6df29c8e2c",
+          "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
+          "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "aef3157d-7068-45a2-8c25-d83f189fae60-16",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/0b973ab5-63f2-45a9-b696-a1da16949808/frame-16-at-166s.png",
+          "time": 166,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101653667,
+          "contentHash": "6b1c610df991461e410392839f46b956e3be0398d2811d88bf0f8841d199938f",
+          "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
+          "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "aef3157d-7068-45a2-8c25-d83f189fae60-17",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/0b973ab5-63f2-45a9-b696-a1da16949808/frame-17-at-212s.png",
+          "time": 212,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101653667,
+          "contentHash": "ea720f36f82a4ba5a3e6c94f9d4e764071e5ffd291403b55a47978c72241e259",
+          "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
+          "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "aef3157d-7068-45a2-8c25-d83f189fae60-18",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/0b973ab5-63f2-45a9-b696-a1da16949808/frame-18-at-570.5s.png",
+          "time": 570.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101653667,
+          "contentHash": "2e4b78f4c0174b2b2a887500eb43229d7e44aa0c1ff39cbe4e003f22b18b7c97",
+          "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
+          "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "aef3157d-7068-45a2-8c25-d83f189fae60-19",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/0b973ab5-63f2-45a9-b696-a1da16949808/frame-19-at-575s.png",
+          "time": 575,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101653667,
+          "contentHash": "62a641b2e75bd9c8d4a7c62514be56e3cabe730ef88465d4964be8c0060d9ef2",
+          "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
+          "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "aef3157d-7068-45a2-8c25-d83f189fae60-20",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/0b973ab5-63f2-45a9-b696-a1da16949808/frame-20-at-595.783s.png",
+          "time": 595.783,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101653668,
+          "contentHash": "542a7c9cffcfdcd7ff466a9dff80611e9c38260e533902c3b8cfce0ab4db169d",
+          "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
+          "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "db00b5e6-bd13-458b-97c2-50f6ba4f40d9-0",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/001d2825-886c-4766-9600-4c08dc570486/frame-00-at-576.9s.png",
+          "time": 576.9,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101681592,
+          "contentHash": "1cd22687d2de30f73f03e17321cc91cbf610367794c4e8d98ce064454d471013",
+          "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
+          "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "db00b5e6-bd13-458b-97c2-50f6ba4f40d9-1",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/001d2825-886c-4766-9600-4c08dc570486/frame-01-at-595.783s.png",
+          "time": 595.783,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101681592,
+          "contentHash": "542a7c9cffcfdcd7ff466a9dff80611e9c38260e533902c3b8cfce0ab4db169d",
+          "revision": "00f6a5c2-34ed-4928-831c-d6ea70cb7e3e",
+          "inputFingerprint": "b31447a365663b95fef857ebfa8b84aa0b02c73aaf0fe2fe4c6190239b497c43",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ],
+      "2d311ad8-bc73-4cb1-a9c2-7c275b8cc6ef": [
+        {
+          "scope": "full",
+          "id": "33aac9ec-73f4-4c2b-a441-b4ffca3696c6-0",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/65bcbce2-5c4a-4af8-9efc-befa63b48698/frame-00-at-258s.png",
+          "time": 258,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101711470,
+          "contentHash": "d8b7fda74b9472d203270ce9be8e48613953436acf7b454ed0d377d8d89ce593",
+          "revision": "2d311ad8-bc73-4cb1-a9c2-7c275b8cc6ef",
+          "inputFingerprint": "9606dd8819d453d028ac551dc370fa64ad47fdedff80a0c9b4a476203c10c605",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "33aac9ec-73f4-4c2b-a441-b4ffca3696c6-1",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/65bcbce2-5c4a-4af8-9efc-befa63b48698/frame-01-at-576.9s.png",
+          "time": 576.9,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101711471,
+          "contentHash": "102ba714fd4b031c39ad2b0e3bbdeb9af6d2b35710ac94ae439f7192c1931359",
+          "revision": "2d311ad8-bc73-4cb1-a9c2-7c275b8cc6ef",
+          "inputFingerprint": "9606dd8819d453d028ac551dc370fa64ad47fdedff80a0c9b4a476203c10c605",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "33aac9ec-73f4-4c2b-a441-b4ffca3696c6-2",
+          "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/65bcbce2-5c4a-4af8-9efc-befa63b48698/frame-02-at-595.783s.png",
+          "time": 595.783,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795101711471,
+          "contentHash": "542a7c9cffcfdcd7ff466a9dff80611e9c38260e533902c3b8cfce0ab4db169d",
+          "revision": "2d311ad8-bc73-4cb1-a9c2-7c275b8cc6ef",
+          "inputFingerprint": "9606dd8819d453d028ac551dc370fa64ad47fdedff80a0c9b4a476203c10c605",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ]
+    },
+    "unversioned": [
+      {
+        "scope": "full",
+        "id": "f8df3bd5-8f2c-4fc1-9d76-5ef786fe858a-0",
+        "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/c362ae72-daa4-4dad-b85e-db662aabe1c7/frame-00-at-3s.png",
+        "time": 3,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1795100515054,
+        "contentHash": "65da9259974071eb65c83e9e4aba44c0537d53a664228b4b6989426f2092fc3c",
+        "revision": null,
+        "inputFingerprint": "3fd56330a849933c74f7228d8d71c35038677099faa73093dd37d23adbee005c",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "f8df3bd5-8f2c-4fc1-9d76-5ef786fe858a-1",
+        "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/c362ae72-daa4-4dad-b85e-db662aabe1c7/frame-01-at-7.5s.png",
+        "time": 7.5,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1795100515054,
+        "contentHash": "197fac81aecd3da5ba1306787290bb6f9563f790eeac0988de0042a080f30fb1",
+        "revision": null,
+        "inputFingerprint": "3fd56330a849933c74f7228d8d71c35038677099faa73093dd37d23adbee005c",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "f8df3bd5-8f2c-4fc1-9d76-5ef786fe858a-2",
+        "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/c362ae72-daa4-4dad-b85e-db662aabe1c7/frame-02-at-13s.png",
+        "time": 13,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1795100515054,
+        "contentHash": "15fde8551311afdff88d2e91c7808e9bd47deb76cfe954701ce12449669ffd70",
+        "revision": null,
+        "inputFingerprint": "3fd56330a849933c74f7228d8d71c35038677099faa73093dd37d23adbee005c",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "f8df3bd5-8f2c-4fc1-9d76-5ef786fe858a-3",
+        "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/c362ae72-daa4-4dad-b85e-db662aabe1c7/frame-03-at-17s.png",
+        "time": 17,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1795100515054,
+        "contentHash": "f9633f29d216e175384c491e49d50094ebe2385f838c64ecb4ec58053e9d52ee",
+        "revision": null,
+        "inputFingerprint": "3fd56330a849933c74f7228d8d71c35038677099faa73093dd37d23adbee005c",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "f8df3bd5-8f2c-4fc1-9d76-5ef786fe858a-4",
+        "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/c362ae72-daa4-4dad-b85e-db662aabe1c7/frame-04-at-24s.png",
+        "time": 24,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1795100515054,
+        "contentHash": "82811ce03661746946c1cdf4a3695e5e4b2a4e668da5df42cc5f2940ec7b546a",
+        "revision": null,
+        "inputFingerprint": "3fd56330a849933c74f7228d8d71c35038677099faa73093dd37d23adbee005c",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "f8df3bd5-8f2c-4fc1-9d76-5ef786fe858a-5",
+        "image": "/home/user/AI-/videos/french-why-longform/.hyperframes/artifacts/snapshots/c362ae72-daa4-4dad-b85e-db662aabe1c7/frame-05-at-595.783s.png",
+        "time": 595.783,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1795100515054,
+        "contentHash": "be8b27d44d2225893693b1a5c960767d4a242bfbc51ef78ec772a99927dff866",
+        "revision": null,
+        "inputFingerprint": "3fd56330a849933c74f7228d8d71c35038677099faa73093dd37d23adbee005c",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      }
+    ]
+  }
+}

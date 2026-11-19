@@ -1,0 +1,121 @@
+<!--ANCHORS {"a0":"L0", "kr":"한국 부모님", "l5":"오 레벨까지는", "m9":"구 개월에서", "m12":"십이 개월", "l7":"칠 레벨까지는", "y2":"이 년 안에", "day":"아이 등교시키고", "h22":"스물두 시간 반", "done":"하교 전에", "young":"젊은 분이", "y1":"일 년 정도에", "plan":"L4", "planw":"계획을 세울"}-->
+<!--SFX [["tick", "m12"], ["tick", "y2"], ["stamp", "planw"]]-->
+      <style>
+        #s08-root { position: absolute; inset: 0; }
+        #s08-root .ttl { position: absolute; left: 160px; top: 150px; font-size: 46px; font-weight: 900; letter-spacing: -0.03em; }
+        #s08-root .cal { position: absolute; left: 160px; top: 260px; width: 1600px; height: 300px; padding: 0; }
+        #s08-root .months { position: absolute; left: 60px; top: 150px; width: 1480px; height: 46px; display: flex; gap: 4px; }
+        #s08-root .mo { flex: 1; border-radius: 8px; background: #efe3cf; transform-origin: bottom center; }
+        #s08-root .mo.b5 { background: #f3b3bd; }
+        #s08-root .mo.done { background: var(--red); }
+        #s08-root .axisl { position: absolute; top: 206px; font-size: 26px; font-weight: 700; color: var(--muted); width: 120px; margin-left: -60px; text-align: center; }
+        #s08-root .flag { position: absolute; top: 24px; display: flex; flex-direction: column; align-items: center; }
+        #s08-root .flag .fl { padding: 10px 22px; border-radius: 14px; font-size: 34px; font-weight: 900; color: #fff; white-space: nowrap; }
+        #s08-root .flag .st { width: 6px; height: 74px; border-radius: 3px; }
+        #s08-root .f5 { left: 630px; }
+        #s08-root .f5 .fl { background: #e0566c; }
+        #s08-root .f5 .st { background: #e0566c; }
+        #s08-root .f7 { left: 1450px; }
+        #s08-root .f7 .fl { background: var(--red); }
+        #s08-root .f7 .st { background: var(--red); }
+        #s08-root .f0 { left: 0px; }
+        #s08-root .f0 .fl { background: #2a221d; }
+        #s08-root .f0 .st { background: #2a221d; }
+        #s08-root .range { position: absolute; left: 60px; top: 136px; height: 74px; border: 4px dashed #e0566c; border-radius: 12px; }
+        #s08-root .yg { position: absolute; left: 220px; top: 590px; width: 1480px; height: 80px; }
+        #s08-root .yg .ln { position: absolute; left: 0; top: 30px; width: 740px; height: 12px; border-radius: 6px; background: #8f8073; transform-origin: left center; }
+        #s08-root .yg .pin { position: absolute; left: 722px; top: 12px; width: 48px; height: 48px; border-radius: 50%; background: #8f8073; color: #fff; font-size: 22px; font-weight: 900; display: flex; align-items: center; justify-content: center; }
+        #s08-root .yg .lb { position: absolute; left: 790px; top: 14px; font-size: 34px; font-weight: 800; color: #5b4c40; white-space: nowrap; }
+        #s08-root .day { position: absolute; left: 160px; top: 600px; width: 1600px; display: flex; align-items: center; gap: 20px; }
+        #s08-root .day .blk { padding: 24px 34px; font-size: 38px; font-weight: 800; display: flex; align-items: center; gap: 16px; }
+        #s08-root .day .blk.main { background: var(--red); color: #fff; }
+        #s08-root .day .arr { font-size: 40px; font-weight: 900; color: var(--muted); }
+        #s08-root .day .h { font-variant-numeric: tabular-nums; }
+        #s08-root .plan { position: absolute; left: 50%; top: 600px; margin-left: -560px; width: 1120px; padding: 30px 0; text-align: center; font-size: 58px; font-weight: 900; letter-spacing: -0.03em; }
+        #s08-root .plan .red { display: inline-block; }
+        #s08-root .plan .x { color: #b9aa9b; text-decoration: line-through; text-decoration-thickness: 5px; font-size: 42px; display: block; margin-bottom: 6px; }
+      </style>
+      <div id="s08-root" data-composition-id="s08" data-width="1920" data-height="1080">
+        <div class="stage">
+          <div class="kicker"><span class="k-num">07</span><span class="k-title">얼마나 걸릴까요</span></div>
+          <div class="ttl">한국 부모님 기준 · <span class="red">AA Canada 안내 목표</span></div>
+          <div class="cal">
+            <div class="months"></div>
+            <div class="range"></div>
+            <div class="flag f0"><div class="fl">출발</div><div class="st"></div></div>
+            <div class="flag f5"><div class="fl">9~12개월 · 5레벨</div><div class="st"></div></div>
+            <div class="flag f7"><div class="fl">24개월 이내 · 7레벨</div><div class="st"></div></div>
+            <div class="labels"></div>
+          </div>
+          <div class="day">
+            <div class="blk card b1">아이 등교</div><div class="arr">→</div>
+            <div class="blk card main b2">어학원 수업 주 <span class="h">22.5</span>시간</div><div class="arr">→</div>
+            <div class="blk card b3">아이 하교 전에 끝</div>
+          </div>
+          <div class="yg"><div class="ln"></div><div class="pin">7</div><div class="lb">혼자 집중하는 젊은 분: 약 12개월에 7레벨</div></div>
+          <div class="plan card"><span class="x">몇 년씩 막연하게</span><span class="red">계획을 세울 수 있는 시간</span></div>
+          <div class="src">AA Canada 안내 목표 기준이며 개인별로 차이가 있음</div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const C = __CUES__;
+__HELPERS__
+          const R = document.getElementById("s08-root");
+          const $ = (s) => R.querySelectorAll(s);
+          const $1 = (s) => R.querySelector(s);
+          // 24 month cells + axis labels (cal-local coords: months start at x=60, width 1480)
+          const mw = 1480 / 24;
+          const months = $1(".months");
+          for (let i = 0; i < 24; i++) {
+            const m = document.createElement("div");
+            m.className = "mo m" + i + (i >= 8 && i < 12 ? " b5" : "");
+            months.appendChild(m);
+          }
+          const labels = $1(".labels");
+          [0, 6, 9, 12, 18, 24].forEach((v) => {
+            const l = document.createElement("div");
+            l.className = "axisl";
+            l.style.left = 60 + mw * v + "px";
+            l.textContent = v + "개월";
+            labels.appendChild(l);
+          });
+          // flag x positions (cal-local)
+          const fx = (m) => 60 + mw * m;
+          $1(".f0").style.left = fx(0) - 40 + "px";
+          $1(".f5").style.left = fx(10.5) - 150 + "px";
+          $1(".f7").style.left = fx(24) - 190 + "px";
+          const rg = $1(".range");
+          rg.style.left = fx(8) - 4 + "px";
+          rg.style.width = mw * 4 + 8 + "px";
+          const tl = gsap.timeline({ paused: true });
+          H.sceneIn(tl, R);
+          H.rise(tl, $1(".ttl"), C.a0, { y: 30 });
+          tl.fromTo($(".mo"), { scaleY: 0 }, { scaleY: 1, duration: 0.35, ease: "back.out(2)", stagger: 0.03 }, C.a0 + 0.4);
+          tl.fromTo($(".axisl"), { opacity: 0 }, { opacity: 1, duration: 0.3, stagger: 0.05 }, C.a0 + 1.0);
+          H.pop(tl, $1(".f0"), C.kr, { from: 0.5 });
+          // 9-12 months: 5 level
+          const mos = $(".mo");
+          for (let i = 0; i < 12; i++) tl.to(mos[i], { backgroundColor: i >= 8 ? "#e0566c" : "#c8102e", duration: 0.12 }, C.l5 + (i * (C.m12 - C.l5)) / 12);
+          tl.fromTo(rg, { opacity: 0, scale: 1.2 }, { opacity: 1, scale: 1, duration: 0.4 }, C.m9);
+          tl.fromTo($1(".f5"), { opacity: 0, y: -50 }, { opacity: 1, y: 0, duration: 0.5, ease: "bounce.out" }, C.m12 - 0.2);
+          // up to 24 months: 7 level
+          for (let i = 12; i < 24; i++) tl.to(mos[i], { backgroundColor: "#c8102e", duration: 0.1 }, C.l7 + ((i - 12) * (C.y2 - C.l7)) / 12);
+          tl.fromTo($1(".f7"), { opacity: 0, y: -50 }, { opacity: 1, y: 0, duration: 0.5, ease: "bounce.out" }, C.y2);
+          tl.fromTo($1(".src"), { opacity: 0 }, { opacity: 1, duration: 0.5 }, C.l5);
+          // daily schedule
+          H.rise(tl, $(".day .blk, .day .arr"), C.day - 0.2, { stagger: 0.18, y: 30 });
+          H.count(tl, $1(".day .h"), 0, 22.5, C.h22 - 0.6, 0.9, { dec: 1 });
+          tl.fromTo($1(".b3"), { backgroundColor: "#fffdf8" }, { backgroundColor: "#fbe2e5", duration: 0.4 }, C.done);
+          H.out(tl, $1(".day"), C.young - 0.6, { y: 30 });
+          // young solo learner comparison
+          H.growX(tl, $1(".yg .ln"), C.young, 1.4);
+          H.pop(tl, $1(".yg .pin"), C.y1);
+          H.slideX(tl, $1(".yg .lb"), C.y1 + 0.2, { x: 30 });
+          H.out(tl, $1(".yg"), C.plan - 0.5, { y: 30 });
+          H.rise(tl, $1(".plan"), C.plan - 0.1, { y: 40 });
+          H.stamp(tl, $1(".plan .red"), C.planw);
+          H.sceneOut(tl, R, C.D);
+          window.__timelines["s08"] = tl;
+        })();
+      </script>

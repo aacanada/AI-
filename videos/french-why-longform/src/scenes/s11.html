@@ -1,0 +1,156 @@
+<!--ANCHORS {"a0":"L0", "quit":"몇 달 만에", "fail":"실패하는 이유는", "stop":"중간에 멈추기", "rev":"L3", "n20":"스무 명으로", "n15":"열다섯 명이", "her":"그분도", "tch":"선생님이", "time":"시간의 문제지", "nogiv":"포기하지 말라고요", "anti":"반대로", "mo1":"한 달 만에", "why":"왜 불어인가부터", "plan":"L5", "pl5":"오 레벨", "test":"언제 시험", "pl7":"칠 레벨까지요", "h22":"L6", "best":"가장 확실한"}-->
+<!--SFX [["ding", "stop"], ["tick", "n15"], ["ding", "time"], ["stamp", "best"]]-->
+      <style>
+        #s11-root { position: absolute; inset: 0; }
+        #s11-root .chart { position: absolute; left: 160px; top: 160px; width: 1600px; height: 380px; }
+        #s11-root .chart svg { width: 1600px; height: 380px; overflow: visible; }
+        #s11-root .chart .lb { position: absolute; font-size: 32px; font-weight: 800; white-space: nowrap; }
+        #s11-root .verdict { position: absolute; left: 0; right: 0; top: 580px; display: flex; justify-content: center; gap: 80px; }
+        #s11-root .verdict .v { display: flex; align-items: center; gap: 20px; padding: 24px 50px; font-size: 76px; font-weight: 900; }
+        #s11-root .verdict .v i { font-style: normal; width: 90px; height: 90px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 56px; color: #fff; }
+        #s11-root .verdict .v1 i { background: #b9aa9b; }
+        #s11-root .verdict .v1 { color: #8f8073; }
+        #s11-root .verdict .v2 i { background: var(--red); }
+        #s11-root .phone { left: 130px; top: 200px; }
+        #s11-root .cafe-label { left: 150px; top: 160px; }
+        #s11-root .shot { opacity: 0; }
+        #s11-root .ppl { position: absolute; left: 1010px; top: 190px; width: 780px; padding: 30px 34px; }
+        #s11-root .ppl .hd { font-size: 36px; font-weight: 900; display: flex; align-items: baseline; gap: 14px; }
+        #s11-root .ppl .hd .n { font-size: 64px; color: var(--red); font-variant-numeric: tabular-nums; }
+        #s11-root .ppl .grid { margin-top: 18px; display: grid; grid-template-columns: repeat(10, 1fr); gap: 12px; }
+        #s11-root .ppl .p { height: 76px; border-radius: 38px 38px 12px 12px; background: #e3d6c2; position: relative; }
+        #s11-root .ppl .p.me::after { content: "그분"; position: absolute; left: -10px; right: -10px; top: -34px; text-align: center; font-size: 22px; font-weight: 900; color: var(--red); }
+        #s11-root .quote { position: absolute; left: 1010px; top: 560px; width: 780px; padding: 28px 34px; }
+        #s11-root .quote .who { font-size: 26px; font-weight: 800; color: var(--muted); }
+        #s11-root .quote .q1 { margin-top: 8px; font-size: 34px; font-weight: 800; }
+        #s11-root .quote .q2 { margin-top: 6px; font-size: 38px; font-weight: 900; color: var(--red); }
+        #s11-root .anti { position: absolute; left: 1010px; top: 260px; width: 780px; display: flex; flex-direction: column; gap: 24px; }
+        #s11-root .anti .c { padding: 28px 34px; font-size: 40px; font-weight: 800; }
+        #s11-root .anti .c.dark { background: #2a221d; color: #fff; }
+        #s11-root .plan { position: absolute; left: 160px; top: 170px; width: 1000px; padding: 40px 50px; }
+        #s11-root .plan .hd { font-size: 40px; font-weight: 900; }
+        #s11-root .plan .hd small { font-size: 28px; color: var(--muted); font-weight: 700; margin-left: 10px; }
+        #s11-root .plan .ln { display: flex; align-items: center; gap: 26px; padding: 22px 0; border-bottom: 3px dashed var(--line); font-size: 50px; font-weight: 900; }
+        #s11-root .plan .ln:last-child { border-bottom: 0; }
+        #s11-root .plan .ck { width: 64px; height: 64px; border-radius: 16px; border: 5px solid var(--red); display: flex; align-items: center; justify-content: center; color: var(--red); font-size: 40px; }
+        #s11-root .plan .o { display: inline-block; min-width: 70px; padding: 0 12px; border-radius: 12px; background: var(--red-soft); color: var(--red); text-align: center; }
+        #s11-root .wk { position: absolute; left: 1230px; top: 230px; width: 540px; padding: 40px 34px; text-align: center; }
+        #s11-root .wk .n { font-size: 120px; font-weight: 900; color: var(--red); letter-spacing: -0.04em; line-height: 1.05; font-variant-numeric: tabular-nums; }
+        #s11-root .wk .n small { font-size: 48px; }
+        #s11-root .wk .t { font-size: 34px; font-weight: 800; }
+        #s11-root .wk .st { margin-top: 24px; display: inline-block; padding: 12px 26px; border: 6px solid var(--red); border-radius: 18px; color: var(--red); font-size: 38px; font-weight: 900; }
+      </style>
+      <div id="s11-root" data-composition-id="s11" data-width="1920" data-height="1080">
+        <div class="stage">
+          <div class="kicker"><span class="k-num">10</span><span class="k-title">그럼 왜 실패할까요</span></div>
+          <div class="grp gA">
+            <div class="chart">
+              <svg viewBox="0 0 1600 380">
+                <path d="M40 330 H1560" stroke="#e6dac6" stroke-width="5"/>
+                <path class="go" d="M40 330 C 300 300, 520 200, 760 160 L 1560 40" stroke="#c8102e" stroke-width="10" fill="none" stroke-linecap="round" stroke-dasharray="1 0"/>
+                <path class="drop" d="M40 330 C 300 300, 520 200, 760 160 C 800 160, 820 300, 860 330" stroke="#8f8073" stroke-width="10" fill="none" stroke-linecap="round"/>
+                <circle class="xdot" cx="860" cy="330" r="22" fill="#8f8073"/>
+              </svg>
+              <div class="lb l1" style="left: 20px; top: 350px">시작</div>
+              <div class="lb l2 muted" style="left: 800px; top: 350px">몇 달 만에 그만둠</div>
+              <div class="lb l3 red" style="left: 1300px; top: -10px">멈추지 않으면</div>
+            </div>
+            <div class="verdict">
+              <div class="v v1 card"><i>✕</i>재능</div>
+              <div class="v v2 card"><i>○</i>중단</div>
+            </div>
+          </div>
+          <div class="grp gP">
+            <div class="phone"><div class="screen">
+              <div class="shot sa"><img src="assets/captures/c02_b.png" alt="" /></div>
+              <div class="shot sb"><img src="assets/captures/c02_c.png" alt="" /></div>
+              <div class="shot sc"><img src="assets/captures/c08_a.png" alt="" /></div>
+            </div></div>
+            <div class="cafe-label"><i></i>AA Montreal 카페 실제 후기</div>
+          </div>
+          <div class="grp gB">
+            <div class="ppl card"><div class="hd"><span class="n n20">0</span>명 시작 →<span class="n n15">0</span>명 다음 단계로</div><div class="grid"></div></div>
+            <div class="quote card"><div class="who">마지막 날 선생님</div><div class="q1">“한국어와 불어는 거리가 멀다”</div><div class="q2">“그래도 시간의 문제, 포기하지 마세요”</div></div>
+          </div>
+          <div class="anti">
+            <div class="c card dark a1">“배워야 할 강한 동기가 없어서”</div>
+            <div class="c card a2">→ 한 달 만에 그만둠</div>
+            <div class="c card a3">그래서 <span class="red">‘왜 불어인가’</span>부터</div>
+          </div>
+          <div class="plan card">
+            <div class="hd">출국 전 같이 짜는 계획 <small>예시 양식</small></div>
+            <div class="ln l1"><div class="ck">✓</div><span class="o">O</span>개월 차에 5레벨</div>
+            <div class="ln l2"><div class="ck">✓</div>시험 <span class="o">O</span>월</div>
+            <div class="ln l3"><div class="ck">✓</div><span class="o">O</span>개월 차에 7레벨</div>
+          </div>
+          <div class="wk card"><div class="t">주</div><div class="n"><span class="h">22.5</span><small>시간</small></div><div class="t">수업을 빠지지 않고</div><div class="st">가장 확실한 방법</div></div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const C = __CUES__;
+__HELPERS__
+          const R = document.getElementById("s11-root");
+          const $ = (s) => R.querySelectorAll(s);
+          const $1 = (s) => R.querySelector(s);
+          const grid = $1(".ppl .grid");
+          for (let i = 0; i < 20; i++) {
+            const p = document.createElement("div");
+            p.className = "p" + (i === 13 ? " me" : "");
+            grid.appendChild(p);
+          }
+          const tl = gsap.timeline({ paused: true });
+          H.sceneIn(tl, R);
+          // A: stopping, not talent
+          H.draw(tl, $1(".drop"), C.a0 + 0.2, 1.6, 980);
+          H.rise(tl, $1(".l1"), C.a0 + 0.2, { y: 10 });
+          tl.fromTo($1(".xdot"), { scale: 0, transformOrigin: "50% 50%" }, { scale: 1, duration: 0.35, ease: "back.out(2)" }, C.quit + 0.2);
+          H.rise(tl, $1(".l2"), C.quit + 0.3, { y: 10 });
+          H.pop(tl, $1(".v1"), C.fail, { from: 0.6 });
+          H.pop(tl, $1(".v2"), C.stop - 0.1, { from: 0.6 });
+          H.draw(tl, $1(".go"), C.stop + 0.4, 1.4, 1600);
+          H.rise(tl, $1(".l3"), C.stop + 1.4, { y: 10 });
+          H.out(tl, $1(".gA"), C.rev - 0.6, { y: -40 });
+          // B: 20 -> 15 review
+          tl.fromTo($1(".phone"), { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, C.rev - 0.3);
+          H.pop(tl, $1(".cafe-label"), C.rev + 0.1, { from: 0.7 });
+          tl.fromTo($1(".sa"), { opacity: 0 }, { opacity: 1, duration: 0.3 }, C.rev - 0.3);
+          H.camTo(tl, $1(".sa"), [20, 212, 177, 240], 379, 1.6, C.n20 - 0.4, 1.2);
+          H.ring(tl, $1(".sa"), [20, 212, 177, 240], C.n20 + 0.5);
+          tl.fromTo($1(".ppl"), { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, C.n20 - 0.3);
+          H.pop(tl, $(".ppl .p"), C.n20, { stagger: 0.03, from: 0.3 });
+          H.count(tl, $1(".n20"), 0, 20, C.n20, 0.7);
+          const ps = $(".ppl .p");
+          const up = [0, 1, 2, 3, 5, 6, 7, 9, 10, 11, 12, 13, 15, 17, 18];
+          up.forEach((k, i) => tl.to(ps[k], { backgroundColor: "#c8102e", duration: 0.12 }, C.n15 + i * 0.06));
+          H.count(tl, $1(".n15"), 0, 15, C.n15, 0.9);
+          tl.fromTo(ps[13], { scale: 1 }, { scale: 1.3, duration: 0.3, yoyo: true, repeat: 1 }, C.her);
+          H.fadeOut(tl, $1(".sa"), C.tch - 0.2, 0.3);
+          tl.fromTo($1(".sb"), { opacity: 0, yPercent: 20 }, { opacity: 1, yPercent: 0, duration: 0.5 }, C.tch - 0.2);
+          H.camTo(tl, $1(".sb"), [20, 212, 196, 240], 379, 1.6, C.tch + 0.2, 1.2);
+          H.ring(tl, $1(".sb"), [20, 212, 196, 240], C.time);
+          tl.fromTo($1(".quote"), { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.5 }, C.tch);
+          H.rise(tl, $1(".quote .q2"), C.time - 0.2, { y: 16 });
+          H.out(tl, $1(".gB"), C.anti - 0.5, { y: -30 });
+          // C: no strong motivation
+          H.fadeOut(tl, $1(".sb"), C.anti - 0.2, 0.3);
+          tl.fromTo($1(".sc"), { opacity: 0, yPercent: 20 }, { opacity: 1, yPercent: 0, duration: 0.5 }, C.anti - 0.2);
+          H.camTo(tl, $1(".sc"), [20, 213, 493, 273], 411, null, C.anti + 0.3, 1.2);
+          H.ring(tl, $1(".sc"), [20, 213, 493, 273], C.anti + 1.3);
+          H.slideX(tl, $1(".a1"), C.anti + 0.3, { x: 60 });
+          H.slideX(tl, $1(".a2"), C.mo1 - 0.1, { x: 60 });
+          H.slideX(tl, $1(".a3"), C.why - 0.3, { x: 60 });
+          H.out(tl, $(".gP, .anti"), C.plan - 0.5, { y: -40 });
+          // D: plan + 22.5h
+          tl.fromTo($1(".plan"), { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, C.plan - 0.2);
+          H.rise(tl, $1(".plan .l1"), C.pl5 - 0.5, { y: 20 });
+          H.rise(tl, $1(".plan .l2"), C.test - 0.3, { y: 20 });
+          H.rise(tl, $1(".plan .l3"), C.pl7 - 0.3, { y: 20 });
+          H.pop(tl, $(".plan .ck"), C.pl7 + 0.6, { stagger: 0.2, from: 0.3 });
+          tl.fromTo($1(".wk"), { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, C.h22 - 0.2);
+          H.count(tl, $1(".wk .h"), 0, 22.5, C.h22, 1.2, { dec: 1 });
+          H.stamp(tl, $1(".wk .st"), C.best);
+          H.sceneOut(tl, R, C.D);
+          window.__timelines["s11"] = tl;
+        })();
+      </script>

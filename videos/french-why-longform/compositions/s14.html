@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+
+
+      <style>
+        #s14-root { position: absolute; inset: 0; }
+        #s14-root .sum { position: absolute; left: 50%; top: 220px; margin-left: -720px; width: 1440px; display: flex; flex-direction: column; gap: 30px; }
+        #s14-root .sum .s { display: flex; align-items: center; gap: 30px; padding: 36px 48px; font-size: 54px; font-weight: 900; letter-spacing: -0.03em; }
+        #s14-root .sum .s i { flex: 0 0 84px; height: 84px; border-radius: 50%; background: var(--red); color: #fff; font-style: normal; display: flex; align-items: center; justify-content: center; font-size: 44px; }
+        #s14-root .phone { left: 130px; top: 200px; }
+        #s14-root .cafe-label { left: 150px; top: 160px; }
+        #s14-root .dw { position: absolute; left: 1060px; top: 170px; width: 640px; height: 600px; }
+        #s14-root .dw .glow { position: absolute; left: 170px; top: 120px; width: 300px; height: 440px; border-radius: 20px 20px 0 0; background: radial-gradient(circle at 50% 60%, #fff6cf, #ffd75e 70%); }
+        #s14-root .dw .frame { position: absolute; left: 160px; top: 110px; width: 320px; height: 450px; border-radius: 26px 26px 0 0; border: 10px solid #2a221d; border-bottom: 0; perspective: 900px; }
+        #s14-root .dw .leaf { position: absolute; left: 0; top: 0; width: 300px; height: 440px; border-radius: 16px 16px 0 0; background: var(--red); transform-origin: left center; }
+        #s14-root .dw .leaf::after { content: ""; position: absolute; right: 30px; top: 230px; width: 22px; height: 22px; border-radius: 50%; background: #ffd75e; }
+        #s14-root .dw .half { position: absolute; top: 60px; width: 320px; height: 520px; display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 52px; gap: 6px; }
+        #s14-root .dw .half.l { left: 0; }
+        #s14-root .dw .half.r { left: 326px; }
+        #s14-root .dw .half div { border-radius: 6px; background: #b9aa9b; }
+        #s14-root .dw .half div:nth-child(8n + 5), #s14-root .dw .half div:nth-child(8n + 6), #s14-root .dw .half div:nth-child(8n + 7), #s14-root .dw .half div:nth-child(8n + 8) { margin-left: 26px; margin-right: -26px; }
+        #s14-root .dw .dcap { position: absolute; left: 0; right: 0; top: 0; text-align: center; font-size: 48px; font-weight: 900; letter-spacing: -0.03em; }
+        #s14-root .dw .dcap .x { color: #8f8073; }
+        #s14-root .kk { position: absolute; left: 50%; top: 200px; margin-left: -620px; width: 1240px; padding: 46px 56px; display: flex; gap: 50px; align-items: center; }
+        #s14-root .kk .ic { flex: 0 0 200px; height: 200px; border-radius: 48px; background: #fee500; display: flex; align-items: center; justify-content: center; }
+        #s14-root .kk .ic svg { width: 120px; height: 110px; }
+        #s14-root .kk .t1 { font-size: 40px; font-weight: 800; color: var(--muted); }
+        #s14-root .kk .t2 { font-size: 92px; font-weight: 900; letter-spacing: -0.03em; line-height: 1.1; }
+        #s14-root .kk .chips { margin-top: 18px; display: flex; gap: 16px; }
+        #s14-root .kk .chips span { padding: 10px 22px; border-radius: 14px; background: var(--red-soft); color: var(--red-dark); font-size: 32px; font-weight: 800; }
+        #s14-root .cm { position: absolute; left: 50%; top: 560px; margin-left: -620px; width: 1240px; padding: 30px 44px; display: flex; align-items: center; gap: 30px; }
+        #s14-root .cm .b { flex: 0 0 90px; height: 90px; border-radius: 26px; background: #2a221d; display: flex; align-items: center; justify-content: center; }
+        #s14-root .cm .b svg { width: 54px; height: 54px; }
+        #s14-root .cm .t { font-size: 40px; font-weight: 800; }
+        #s14-root .logo { position: absolute; left: 0; right: 0; top: 300px; display: flex; flex-direction: column; align-items: center; gap: 30px; }
+        #s14-root .logo .mk { width: 190px; height: 190px; border-radius: 46px; background: var(--red); display: flex; align-items: center; justify-content: center; }
+        #s14-root .logo .mk svg { width: 130px; height: 130px; }
+        #s14-root .logo .nm { font-size: 120px; font-weight: 900; letter-spacing: -0.03em; }
+        #s14-root .logo .sub { font-size: 38px; font-weight: 700; color: var(--muted); }
+      </style>
+      <div id="s14-root" data-composition-id="s14" data-width="1920" data-height="1080">
+        <div class="stage">
+          <div class="kicker"><span class="k-num">13</span><span class="k-title">정리하겠습니다</span></div>
+          <div class="grp gA">
+            <div class="sum">
+              <div class="s card s1"><i>1</i>캐나다는 불어 하는 사람에게 <span class="red">&nbsp;문을 더 열고 있다</span></div>
+              <div class="s card s2"><i>2</i>목표는 7레벨,&nbsp;<span class="red">5레벨에서 먼저 출발</span>도 가능</div>
+            </div>
+          </div>
+          <div class="grp gB">
+            <div class="phone"><div class="screen"><div class="shot sa"><img src="assets/captures/c09_a.png" alt="" /></div></div></div>
+            <div class="cafe-label"><i></i>AA Montreal 카페 실제 후기</div>
+            <div class="dw">
+              <div class="dcap"><span class="x">벽</span>이 아니라, <span class="red">문</span>이 되시길</div>
+              <div class="glow"></div>
+              <div class="frame"><div class="leaf"></div></div>
+              <div class="half l"></div>
+              <div class="half r"></div>
+            </div>
+          </div>
+          <div class="grp gC">
+            <div class="kk card">
+              <div class="ic"><svg viewBox="0 0 60 55"><path d="M30 4C15 4 3 13.5 3 25.5c0 7.7 5 14.4 12.6 18.3L13 53l10.3-6.8c2.2.3 4.4.5 6.7.5 15 0 27-9.5 27-21.2S45 4 30 4z" fill="#3c1e1e"/></svg></div>
+              <div>
+                <div class="t1">우리 가족이라면 몇 학기 계획? · 카카오톡</div>
+                <div class="t2">canlog</div>
+                <div class="chips"><span>자녀 학년</span><span>부모님 일정</span><span>보내 주세요</span></div>
+              </div>
+            </div>
+            <div class="cm card">
+              <div class="b"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z" stroke="#fff" stroke-width="2" fill="none" stroke-linejoin="round"/></svg></div>
+              <div class="t">불어에서 가장 걱정되는 점, <span class="red">댓글로 남겨 주세요</span> → 다음 영상에서 답변</div>
+            </div>
+          </div>
+          <div class="logo">
+            <div class="mk"><svg viewBox="0 0 100 100"><path fill="#fff" d="M50 4 l7 14 9-4-3 20 13-14 3 8 13-3-5 15 6 3-21 17 3 8-22-4v22h-6V64l-22 4 3-8-21-17 6-3-5-15 13 3 3-8 13 14-3-20 9 4z"/></svg></div>
+            <div class="nm">AA Canada</div>
+            <div class="sub">캐나다 유학·이민 · 카카오톡 canlog</div>
+          </div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const C = {"a0": 0.7667, "open": 2.2, "goal": 6.3667, "rev": 13.1667, "wall": 17.0, "door": 17.9667, "kakao": 19.4, "can": 23.6333, "grade": 24.4333, "cmt": 27.5667, "bye": 33.4667, "L": [[0.7667, 1.5667], [2.2, 5.7333], [6.3667, 12.2], [13.1667, 18.6], [19.4, 26.8333], [27.5667, 32.8333], [33.4667, 34.6]], "D": 38.2};
+      const H = (function () {
+        const fmtNum = (v, o) => {
+          o = o || {};
+          const d = o.dec || 0;
+          let s = d ? v.toFixed(d) : Math.round(v).toString();
+          if (o.comma) s = s.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+          return (o.pre || "") + s + (o.suf || "");
+        };
+        return {
+          // count-up number (seek-safe proxy, text written in onUpdate)
+          count(tl, el, from, to, t, d, o) {
+            const st = { v: from };
+            el.textContent = fmtNum(from, o);
+            tl.fromTo(st, { v: from }, { v: to, duration: d || 1.2, ease: "power2.out", onUpdate: () => (el.textContent = fmtNum(st.v, o)) }, t);
+            tl.fromTo(el, { scale: 0.7 }, { scale: 1, duration: d || 1.2, ease: "power2.out" }, t);
+          },
+          pop(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 0, scale: o.from || 0.6 }, { opacity: 1, scale: 1, duration: o.d || 0.5, ease: o.ease || "back.out(1.8)", stagger: o.stagger || 0 }, t);
+          },
+          rise(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 0, y: o.y || 40 }, { opacity: 1, y: 0, duration: o.d || 0.55, ease: o.ease || "power3.out", stagger: o.stagger || 0 }, t);
+          },
+          slideX(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 0, x: o.x || -80 }, { opacity: 1, x: 0, duration: o.d || 0.6, ease: o.ease || "power3.out", stagger: o.stagger || 0 }, t);
+          },
+          out(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 1, y: 0 }, { opacity: 0, y: o.y == null ? -30 : o.y, duration: o.d || 0.4, ease: "power2.in", immediateRender: false, stagger: o.stagger || 0 }, t);
+          },
+          fadeOut(tl, els, t, d) {
+            tl.fromTo(els, { opacity: 1 }, { opacity: 0, duration: d || 0.4, ease: "power1.in", immediateRender: false }, t);
+          },
+          // marker sweep behind text: element .hl > .hl-bg
+          mark(tl, el, t, d) {
+            tl.fromTo(el, { scaleX: 0 }, { scaleX: 1, duration: d || 0.5, ease: "power2.inOut" }, t);
+          },
+          growX(tl, el, t, d, to) {
+            tl.fromTo(el, { scaleX: 0 }, { scaleX: to == null ? 1 : to, duration: d || 1, ease: "power3.out" }, t);
+          },
+          growY(tl, el, t, d) {
+            tl.fromTo(el, { scaleY: 0 }, { scaleY: 1, duration: d || 1, ease: "power3.out" }, t);
+          },
+          stamp(tl, el, t) {
+            tl.fromTo(el, { opacity: 0, scale: 2.2, rotation: -14 }, { opacity: 1, scale: 1, rotation: -6, duration: 0.42, ease: "back.out(2.2)" }, t);
+          },
+          // slow ambient breathing, finite repeats within scene duration
+          breathe(tl, els, D, o) {
+            o = o || {};
+            const per = o.per || 3;
+            const n = Math.max(1, Math.floor(D / per) - 1);
+            tl.fromTo(els, { y: 0, rotation: 0 }, { y: o.y || -14, rotation: o.r || 0, duration: per / 2, ease: "sine.inOut", yoyo: true, repeat: n * 2 - 1 }, 0.1);
+          },
+          // camera move on a capture: el is the inner image wrapper
+          cam(tl, el, t, d, s, x, y) {
+            tl.to(el, { scale: s, x: x, y: y, duration: d, ease: "power2.inOut" }, t);
+          },
+          // capture camera: move/zoom a .shot so a highlight band [x0,y0,x1,y1] (native px) is centred
+          camTo(tl, shot, band, natH, s, t, d) {
+            const k = 716 / 538, W = 716, HS = 520;
+            if (!s) s = Math.max(1.12, Math.min(1.6, (0.94 * 538) / (band[2] - band[0])));
+            const cx = ((band[0] + band[2]) / 2) * k, cy = ((band[1] + band[3]) / 2) * k;
+            let x = W / 2 - cx * s, y = HS / 2 - cy * s;
+            x = Math.min(0, Math.max(W - W * s, x));
+            y = Math.min(0, Math.max(Math.min(0, HS - natH * k * s), y));
+            const prev = shot.__cam || { scale: 1, x: 0, y: 0 };
+            tl.fromTo(shot, { scale: prev.scale, x: prev.x, y: prev.y }, { scale: s, x: x, y: y, duration: d || 1.6, ease: "power2.inOut", immediateRender: !shot.__cam }, t);
+            shot.__cam = { scale: s, x: x, y: y };
+          },
+          // red ring drawn around a highlight band inside a .shot
+          ring(tl, shot, band, t) {
+            const k = 716 / 538;
+            const r = document.createElement("div");
+            r.className = "ring";
+            r.style.left = band[0] * k - 10 + "px";
+            r.style.top = band[1] * k - 8 + "px";
+            r.style.width = (band[2] - band[0]) * k + 20 + "px";
+            r.style.height = (band[3] - band[1]) * k + 16 + "px";
+            shot.appendChild(r);
+            tl.fromTo(r, { opacity: 0, scale: 1.25 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, t);
+            return r;
+          },
+          draw(tl, path, t, d, len) {
+            try { len = Math.ceil(path.getTotalLength()) + 4 || len; } catch (e) {}
+            tl.fromTo(path, { opacity: 0 }, { opacity: 1, duration: 0.05 }, t);
+            tl.fromTo(path, { strokeDasharray: len + " " + len, strokeDashoffset: len }, { strokeDashoffset: 0, duration: d || 1, ease: "power2.inOut" }, t);
+          },
+          sceneIn(tl, root) {
+            const k = root.querySelector(".kicker");
+            if (k) {
+              tl.fromTo(k.querySelector(".k-num"), { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 0.05);
+              tl.fromTo(k.querySelector(".k-title"), { opacity: 0, x: -20, clipPath: "inset(0 100% 0 0)" }, { opacity: 1, x: 0, clipPath: "inset(0 0% 0 0)", duration: 0.7, ease: "power3.out" }, 0.18);
+            }
+          },
+          sceneOut(tl, root, D) {
+            const st = root.querySelector(".stage");
+            if (st) tl.fromTo(st, { opacity: 1 }, { opacity: 0, duration: 0.35, ease: "power1.in", immediateRender: false }, D - 0.4);
+          },
+        };
+      })();
+
+          const R = document.getElementById("s14-root");
+          const $ = (s) => R.querySelectorAll(s);
+          const $1 = (s) => R.querySelector(s);
+          ["l", "r"].forEach((s) => {
+            const h = $1(".half." + s);
+            for (let i = 0; i < 36; i++) h.appendChild(document.createElement("div"));
+          });
+          const tl = gsap.timeline({ paused: true });
+          H.sceneIn(tl, R);
+          // A: two-line summary
+          H.slideX(tl, $1(".sum .s1"), C.open - 0.3, { x: -80 });
+          H.slideX(tl, $1(".sum .s2"), C.goal - 0.3, { x: -80 });
+          tl.fromTo($(".sum .s i"), { scale: 1 }, { scale: 1.2, duration: 0.25, yoyo: true, repeat: 1, stagger: 2 }, C.open + 0.4);
+          H.out(tl, $1(".gA"), C.rev - 0.6, { y: -40 });
+          // B: the review sentence, wall becomes a door
+          tl.fromTo($1(".dw"), { opacity: 0 }, { opacity: 1, duration: 0.4 }, C.rev + 0.2);
+          tl.fromTo($1(".phone"), { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, C.rev - 0.3);
+          H.pop(tl, $1(".cafe-label"), C.rev + 0.1, { from: 0.7 });
+          H.camTo(tl, $1(".sa"), [46, 213, 466, 241], 379, null, C.rev + 0.6, 1.6);
+          H.ring(tl, $1(".sa"), [46, 213, 466, 241], C.wall - 0.4);
+          tl.fromTo($(".half div"), { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, stagger: 0.012 }, C.rev + 0.4);
+          H.rise(tl, $1(".dw .dcap"), C.wall - 0.3, { y: 20 });
+          tl.fromTo($1(".half.l"), { x: 0 }, { x: -340, opacity: 0, duration: 1.1, ease: "power3.inOut" }, C.door - 0.5);
+          tl.fromTo($1(".half.r"), { x: 0 }, { x: 340, opacity: 0, duration: 1.1, ease: "power3.inOut" }, C.door - 0.5);
+          tl.fromTo($1(".dw .leaf"), { rotationY: 0 }, { rotationY: -75, duration: 1.2, ease: "power2.inOut" }, C.door + 0.3);
+          tl.fromTo($1(".dw .glow"), { opacity: 0.4 }, { opacity: 1, duration: 1.0 }, C.door + 0.4);
+          H.out(tl, $1(".gB"), C.kakao - 0.6, { y: -40 });
+          // C: KakaoTalk + comments
+          tl.fromTo($1(".kk"), { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, C.kakao - 0.3);
+          tl.fromTo($1(".kk .ic"), { rotation: -12, scale: 0.6 }, { rotation: 0, scale: 1, duration: 0.5, ease: "back.out(2)" }, C.kakao);
+          tl.fromTo($1(".kk .t2"), { scale: 1 }, { scale: 1.1, duration: 0.3, yoyo: true, repeat: 1, transformOrigin: "left center" }, C.can);
+          H.pop(tl, $(".kk .chips span"), C.grade - 0.2, { stagger: 0.35, from: 0.6 });
+          H.rise(tl, $1(".cm"), C.cmt - 0.2, { y: 40 });
+          H.out(tl, $1(".gC"), C.bye - 0.6, { y: -40 });
+          // D: logo
+          H.stamp(tl, $1(".logo .mk"), C.bye - 0.2);
+          H.rise(tl, $(".logo .nm, .logo .sub"), C.bye + 0.1, { stagger: 0.25, y: 40 });
+          tl.fromTo($1(".logo"), { opacity: 1 }, { opacity: 0, duration: 1.2, immediateRender: false }, C.D - 1.3);
+          window.__timelines["s14"] = tl;
+        })();
+      </script>
+
+    </template>
+  </body>
+</html>
