@@ -10,3 +10,4 @@ renders/render_raw.mp4
 renders/render.log
 renders/work-*/
 renders/.render_*
+__pycache__/
