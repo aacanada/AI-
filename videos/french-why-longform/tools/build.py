@@ -79,7 +79,12 @@ HANGUL = re.compile(r"[가-힣]+")
 GOOD_END = ("는지", "인지", "하고", "에서", "면", "데", "고", "서", "며", "에", "도", "요", "는", "은")
 
 
-def split_chunks(line, maxlen=27):
+REVISED = ("s03", "s05", "s13", "s14")  # 2nd revision: improved break rules only for re-voiced scenes
+GOOD_END2 = GOOD_END + ("로", "를", "을", "고,", "서,")
+BAD_START = ("수", "위한", "것", "때", "중", "영주권까지", "4영역")
+
+
+def split_chunks(line, maxlen=27, v2=False):
     """split a caption line into display chunks at punctuation, then at natural spaces"""
     parts = re.findall(r"(?:[^,.?!]|[,.](?=\d))+[,.?!]*\"?", line)
     parts = [p.strip() for p in parts if p.strip()]
@@ -98,7 +103,11 @@ def split_chunks(line, maxlen=27):
                 acc = len(" ".join(words[:k]))
                 if acc < 6 or len(c) - acc < 6:
                     continue
-                score = abs(acc - target) - (5 if words[k - 1].rstrip(",").endswith(GOOD_END) else 0)
+                if v2:
+                    score = abs(acc - target) - (5 if words[k - 1].endswith(",") or words[k - 1].rstrip(",").endswith(GOOD_END2) else 0)
+                    score += 12 if words[k].startswith(BAD_START) else 0
+                else:
+                    score = abs(acc - target) - (5 if words[k - 1].rstrip(",").endswith(GOOD_END) else 0)
                 if best is None or score < best[1]:
                     best = (k, score)
             if best is None:
@@ -119,7 +128,7 @@ def caption_chunks(al, sid, slines):
     res = []
     for li, (sl, (a, b)) in enumerate(zip(slines, al.offs)):
         narr = al.text[a:b]
-        chunks = split_chunks(sl)
+        chunks = split_chunks(sl, v2=sid in REVISED)
         ls, le = al.t_start(a), al.t_end(b)
         bounds = [ls]
         npos = 0

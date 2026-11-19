@@ -1,4 +1,4 @@
-<!--ANCHORS {"a0":"L0", "c1":"L1", "out":"퀘벡 주 밖의", "learn":"불어는 몬트리올에서", "work":"일은 다른 주에서", "c2":"L2", "score":"불어 점수만으로", "c3":"L3", "four":"네 영역", "c4":"L4", "chg":"이민 제도는", "chk":"다시 확인"}-->
+<!--ANCHORS {"a0":"L0", "c1":"L1", "out":"퀘벡 주 밖의", "learn":"불어는 몬트리올에서", "work":"일은 다른 주에서", "c2":"L2", "score":"불어 점수만으로", "c3":"L3", "p5":"오 레벨은", "p7":"칠 레벨은", "four":"네 영역", "base":"두 길 모두", "c4":"L4", "chg":"이민 제도는", "chk":"다시 확인"}-->
 <!--SFX [["stamp", "c1"], ["stamp", "c4"]]-->
       <style>
         #s13-root { position: absolute; inset: 0; }
@@ -23,9 +23,16 @@
         #s13-root .doc .sig { position: absolute; left: 30px; bottom: 34px; width: 140px; height: 40px; }
         #s13-root .doc .dl { position: absolute; left: -10px; right: -10px; top: -56px; text-align: center; font-size: 30px; font-weight: 900; }
         #s13-root .pv2 .nope { position: absolute; left: 40px; right: 40px; bottom: 50px; text-align: center; font-size: 34px; font-weight: 800; color: var(--muted); }
-        #s13-root .four { position: absolute; left: 40px; top: 170px; width: 720px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        #s13-root .four div { height: 150px; border-radius: 20px; background: var(--red); color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 34px; font-weight: 900; }
-        #s13-root .four div b { font-size: 50px; }
+        #s13-root .pth { position: absolute; left: 40px; width: 720px; padding: 20px 24px; border-radius: 20px; }
+        #s13-root .pth .lv { display: inline-block; padding: 4px 14px; border-radius: 10px; color: #fff; font-size: 28px; font-weight: 900; }
+        #s13-root .pth .tt { margin-top: 8px; font-size: 36px; font-weight: 900; letter-spacing: -0.02em; }
+        #s13-root .pth.p5 { top: 110px; background: #fdecee; }
+        #s13-root .pth.p5 .lv { background: #e0566c; }
+        #s13-root .pth.p7 { top: 270px; background: #fdecee; border: 4px solid var(--red); }
+        #s13-root .pth.p7 .lv { background: var(--red); }
+        #s13-root .four { margin-top: 12px; display: flex; gap: 10px; }
+        #s13-root .four div { flex: 1; height: 64px; border-radius: 12px; background: var(--red); color: #fff; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 28px; font-weight: 900; }
+        #s13-root .base3 { position: absolute; left: 40px; right: 40px; bottom: 40px; padding: 16px 20px; border-radius: 16px; background: #2a221d; color: #fff; text-align: center; font-size: 30px; font-weight: 800; }
         #s13-root .cal { position: absolute; left: 260px; top: 150px; width: 280px; height: 280px; }
         #s13-root .pv4 .tx { position: absolute; left: 40px; right: 40px; bottom: 70px; text-align: center; font-size: 38px; font-weight: 900; }
       </style>
@@ -35,7 +42,7 @@
           <div class="list">
             <div class="row card r1"><div class="no">첫째</div><div class="tx">프랑코폰 모빌리티는 <span class="red">퀘벡 주 밖</span> 일자리</div><div class="ck">✓</div></div>
             <div class="row card r2"><div class="no">둘째</div><div class="tx">고용주의 <span class="red">채용 제안</span> 필요</div><div class="ck">✓</div></div>
-            <div class="row card r3"><div class="no">셋째</div><div class="tx">영주권 불어 추첨은 <span class="red">4영역 모두 7레벨</span></div><div class="ck">✓</div></div>
+            <div class="row card r3"><div class="no">셋째</div><div class="tx">영주권은 <span class="red">레벨마다 다른 길</span> · 기본 자격 별도</div><div class="ck">✓</div></div>
             <div class="row card r4"><div class="no">넷째</div><div class="tx">이민 제도는 바뀜 · <span class="red">신청 시점 기준 재확인</span></div><div class="ck">✓</div></div>
           </div>
           <div class="panel card">
@@ -53,8 +60,10 @@
               <div class="nope">불어 점수만으로는 비자가 나오지 않음</div>
             </div>
             <div class="pv pv3">
-              <div class="hd">영주권 불어 추첨</div>
-              <div class="four"><div>말하기<b>7</b></div><div>듣기<b>7</b></div><div>읽기<b>7</b></div><div>쓰기<b>7</b></div></div>
+              <div class="hd">영주권, 레벨마다 다른 길</div>
+              <div class="pth p5"><span class="lv">5레벨</span><div class="tt">주정부 이민 우대</div></div>
+              <div class="pth p7"><span class="lv">7레벨</span><div class="tt">연방 Express Entry 불어 추첨</div><div class="four"><div>말하기 7</div><div>듣기 7</div><div>읽기 7</div><div>쓰기 7</div></div></div>
+              <div class="base3">두 길 모두 경력 등 <span style="color: #ffd75e">기본 자격은 따로</span> 갖춰야 함</div>
             </div>
             <div class="pv pv4">
               <div class="hd">이민 제도는 바뀝니다</div>
@@ -99,7 +108,10 @@ __HELPERS__
           H.rise(tl, $1(".pv2 .nope"), C.score - 0.2, { y: 20 });
           // 3: all four areas at 7
           showPV(3, C.c3, 2);
-          H.pop(tl, $(".four div"), C.four - 0.3, { stagger: 0.15, from: 0.5 });
+          H.slideX(tl, $1(".pth.p5"), C.p5 - 0.2, { x: 40 });
+          H.slideX(tl, $1(".pth.p7"), C.p7 - 0.2, { x: 40 });
+          H.pop(tl, $(".four div"), C.four - 0.3, { stagger: 0.12, from: 0.5 });
+          H.rise(tl, $1(".base3"), C.base - 0.2, { y: 20 });
           // 4: rules change
           showPV(4, C.c4, 3);
           tl.fromTo($1(".cal"), { rotation: 0 }, { rotation: 360, duration: 1.2, ease: "power2.inOut", transformOrigin: "50% 50%" }, C.chg);

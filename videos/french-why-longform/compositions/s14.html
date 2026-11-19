@@ -9,7 +9,10 @@
         #s14-root { position: absolute; inset: 0; }
         #s14-root .sum { position: absolute; left: 50%; top: 220px; margin-left: -720px; width: 1440px; display: flex; flex-direction: column; gap: 30px; }
         #s14-root .sum .s { display: flex; align-items: center; gap: 30px; padding: 36px 48px; font-size: 54px; font-weight: 900; letter-spacing: -0.03em; }
-        #s14-root .sum .s i { flex: 0 0 84px; height: 84px; border-radius: 50%; background: var(--red); color: #fff; font-style: normal; display: flex; align-items: center; justify-content: center; font-size: 44px; }
+        #s14-root .sum .s i { flex: 0 0 auto; padding: 10px 22px; border-radius: 18px; background: var(--red); color: #fff; font-style: normal; font-size: 42px; }
+        #s14-root .sum .s.s1 i { background: #e0566c; }
+        #s14-root .sum .s .ar { color: var(--muted); }
+        #s14-root .sum .hd { text-align: center; font-size: 46px; font-weight: 800; color: #5b4c40; margin-bottom: 6px; }
         #s14-root .phone { left: 130px; top: 200px; }
         #s14-root .cafe-label { left: 150px; top: 160px; }
         #s14-root .dw { position: absolute; left: 1060px; top: 170px; width: 640px; height: 600px; }
@@ -46,8 +49,9 @@
           <div class="kicker"><span class="k-num">13</span><span class="k-title">정리하겠습니다</span></div>
           <div class="grp gA">
             <div class="sum">
-              <div class="s card s1"><i>1</i>캐나다는 불어 하는 사람에게 <span class="red">&nbsp;문을 더 열고 있다</span></div>
-              <div class="s card s2"><i>2</i>목표는 7레벨,&nbsp;<span class="red">5레벨에서 먼저 출발</span>도 가능</div>
+              <div class="hd">캐나다는 불어 하는 사람에게 <span class="red">문을 더 열고 있다</span></div>
+              <div class="s card s1"><i>5레벨</i><span class="ar">→</span>취업비자 + 주정부 이민 우대</div>
+              <div class="s card s2"><i>7레벨</i><span class="ar">→</span><span>혼자 힘으로 <span class="red">연방 영주권</span>(Express Entry)</span></div>
             </div>
           </div>
           <div class="grp gB">
@@ -84,7 +88,7 @@
       </div>
       <script>
         (function () {
-          const C = {"a0": 0.7667, "open": 2.2, "goal": 6.3667, "rev": 13.1667, "wall": 17.0, "door": 17.9667, "kakao": 19.4, "can": 23.6333, "grade": 24.4333, "cmt": 27.5667, "bye": 33.4667, "L": [[0.7667, 1.5667], [2.2, 5.7333], [6.3667, 12.2], [13.1667, 18.6], [19.4, 26.8333], [27.5667, 32.8333], [33.4667, 34.6]], "D": 38.2};
+          const C = {"a0": 0.7667, "open": 2.1333, "goal": 6.3667, "l7": 9.9667, "rev": 14.6667, "wall": 18.5333, "door": 19.4, "kakao": 20.9333, "can": 25.1667, "grade": 25.9667, "cmt": 29.0, "bye": 34.9333, "L": [[0.7667, 1.4667], [2.1333, 5.6333], [6.3667, 13.9667], [14.6667, 20.4], [20.9333, 28.2667], [29.0, 34.2667], [34.9333, 36.0333]], "D": 39.7};
       const H = (function () {
         const fmtNum = (v, o) => {
           o = o || {};
@@ -198,9 +202,11 @@
           const tl = gsap.timeline({ paused: true });
           H.sceneIn(tl, R);
           // A: two-line summary
-          H.slideX(tl, $1(".sum .s1"), C.open - 0.3, { x: -80 });
-          H.slideX(tl, $1(".sum .s2"), C.goal - 0.3, { x: -80 });
-          tl.fromTo($(".sum .s i"), { scale: 1 }, { scale: 1.2, duration: 0.25, yoyo: true, repeat: 1, stagger: 2 }, C.open + 0.4);
+          H.rise(tl, $1(".sum .hd"), C.open - 0.2, { y: 30 });
+          H.slideX(tl, $1(".sum .s1"), C.goal - 0.3, { x: -80 });
+          H.slideX(tl, $1(".sum .s2"), C.l7 - 0.3, { x: -80 });
+          tl.fromTo($1(".sum .s1 i"), { scale: 1 }, { scale: 1.2, duration: 0.25, yoyo: true, repeat: 1 }, C.goal + 0.2);
+          tl.fromTo($1(".sum .s2 i"), { scale: 1 }, { scale: 1.2, duration: 0.25, yoyo: true, repeat: 1 }, C.l7 + 0.2);
           H.out(tl, $1(".gA"), C.rev - 0.6, { y: -40 });
           // B: the review sentence, wall becomes a door
           tl.fromTo($1(".dw"), { opacity: 0 }, { opacity: 1, duration: 0.4 }, C.rev + 0.2);

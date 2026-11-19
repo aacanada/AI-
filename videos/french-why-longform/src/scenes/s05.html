@@ -1,5 +1,5 @@
-<!--ANCHORS {"a0":"L0", "kids":"아이들은", "both":"영어와 불어를", "son":"제 아들도", "move":"영어권으로", "imm":"프렌치 이머전", "can":"들어갈 수 있는", "work":"부모가 취업비자로", "tui":"영주권자 학비가", "cafe":"저희 카페 후기에도", "email":"이메일을", "hw":"숙제를", "tog":"아이와 함께"}-->
-<!--SFX [["ding", "both"], ["tick", "imm"], ["ding", "tog"]]-->
+<!--ANCHORS {"a0":"L0", "kids":"아이들은", "both":"영어와 불어를", "son":"제 아들도", "move":"영어권으로", "imm":"프렌치 이머전", "can":"들어갈 수 있는", "tu":"대학 학비도", "int":"국제학생", "dom":"일만 사천오백", "g1":"오만 팔천", "g4":"사 년이면", "fee":"그런데 토론토", "emp":"고용주 지정", "fmw":"프랑코폰", "cafe":"저희 카페 후기에도", "email":"이메일을", "hw":"숙제를", "tog":"아이와 함께"}-->
+<!--SFX [["ding", "both"], ["tick", "int"], ["tick", "g1"], ["stamp", "g4"], ["ding", "fmw"], ["ding", "tog"]]-->
       <style>
         #s05-root { position: absolute; inset: 0; }
         #s05-root .gA .kid { position: absolute; left: 330px; top: 300px; }
@@ -18,15 +18,27 @@
         #s05-root .gB .school .nm { font-size: 44px; font-weight: 900; }
         #s05-root .gB .school .tag { display: inline-block; margin-top: 10px; padding: 6px 16px; border-radius: 10px; background: #2a221d; color: #fff; font-size: 26px; font-weight: 700; }
         #s05-root .gB .ok { position: absolute; left: 160px; top: 500px; font-size: 38px; font-weight: 800; color: var(--red); }
-        #s05-root .gC .tu { position: absolute; left: 260px; top: 170px; width: 1400px; height: 600px; padding: 44px 60px; }
-        #s05-root .gC .tu .t { font-size: 50px; font-weight: 900; letter-spacing: -0.03em; }
-        #s05-root .gC .cols { position: absolute; left: 240px; right: 240px; bottom: 60px; height: 330px; display: flex; align-items: flex-end; justify-content: space-around; border-bottom: 4px solid var(--line); }
-        #s05-root .gC .col { position: relative; width: 240px; }
-        #s05-root .gC .col .f { position: absolute; left: 0; right: 0; bottom: 0; border-radius: 16px 16px 0 0; transform-origin: bottom center; }
-        #s05-root .gC .col .l { position: absolute; left: -60px; right: -60px; bottom: -60px; text-align: center; font-size: 32px; font-weight: 800; }
-        #s05-root .gC .col.int .f { height: 300px; background: #b9aa9b; }
-        #s05-root .gC .col.pr .f { height: 110px; background: var(--red); }
-        #s05-root .gC .down { position: absolute; left: 590px; top: 250px; font-size: 40px; font-weight: 900; color: var(--red); }
+        #s05-root .gC .tu { position: absolute; left: 160px; top: 140px; width: 1600px; height: 660px; padding: 40px 56px; }
+        #s05-root .gC .tu .t { font-size: 46px; font-weight: 900; letter-spacing: -0.03em; }
+        #s05-root .gC .tu .t small { font-size: 30px; color: var(--muted); font-weight: 700; margin-left: 12px; }
+        #s05-root .gC .row { position: absolute; left: 56px; height: 84px; width: 1490px; }
+        #s05-root .gC .row .nm { position: absolute; left: 0; top: 20px; width: 300px; font-size: 36px; font-weight: 900; }
+        #s05-root .gC .row .bar { position: absolute; left: 310px; top: 0; height: 84px; border-radius: 0 20px 20px 0; transform-origin: left center; }
+        #s05-root .gC .row .v { position: absolute; top: 12px; font-size: 52px; font-weight: 900; font-variant-numeric: tabular-nums; white-space: nowrap; }
+        #s05-root .gC .r1 { top: 150px; }
+        #s05-root .gC .r1 .bar { width: 1100px; background: #b9aa9b; }
+        #s05-root .gC .r1 .v { left: 330px; color: #fff; }
+        #s05-root .gC .r2 { top: 262px; }
+        #s05-root .gC .r2 .bar { width: 218px; background: var(--red); }
+        #s05-root .gC .r2 .v { left: 552px; color: var(--red); }
+        #s05-root .gC .gap { position: absolute; left: 366px; top: 384px; display: flex; align-items: center; gap: 30px; }
+        #s05-root .gC .gap .g1 { padding: 14px 28px; border-radius: 18px; background: #2a221d; color: #fff; font-size: 40px; font-weight: 900; }
+        #s05-root .gC .gap .g4 { padding: 12px 28px; border: 7px solid var(--red); border-radius: 18px; color: var(--red); font-size: 50px; font-weight: 900; background: rgba(255, 253, 248, 0.95); }
+        #s05-root .gC .chain { position: absolute; left: 56px; top: 520px; display: flex; align-items: center; gap: 22px; }
+        #s05-root .gC .chain .c { padding: 16px 26px; border-radius: 18px; font-size: 34px; font-weight: 800; background: var(--red-soft); color: var(--red-dark); }
+        #s05-root .gC .chain .c.k { background: var(--red); color: #fff; }
+        #s05-root .gC .chain .ar { font-size: 40px; font-weight: 900; color: var(--muted); }
+        #s05-root .gC .fn { position: absolute; left: 160px; top: 812px; width: 1600px; font-size: 24px; font-weight: 600; color: var(--muted); line-height: 1.4; }
         #s05-root .gD .phone { left: 150px; top: 190px; }
         #s05-root .gD .cafe-label { left: 170px; top: 150px; }
         #s05-root .gD .shot.b { opacity: 0; }
@@ -56,13 +68,13 @@
           </div>
           <div class="grp gC">
             <div class="tu card">
-              <div class="t">부모가 취업비자로 일하는 동안 · <span class="red">자녀 대학 학비</span></div>
-              <div class="cols">
-                <div class="col int"><div class="f"></div><div class="l">유학생 학비</div></div>
-                <div class="col pr"><div class="f"></div><div class="l red">영주권자 학비 적용</div></div>
-              </div>
-              <div class="down">적용되는 길도 있음 ↓</div>
+              <div class="t">토론토 대학교 공대 <span class="red">연간 수업료</span><small>2026-27 · BASc</small></div>
+              <div class="row r1"><div class="nm">국제학생</div><div class="bar"></div><div class="v"><span class="n1">$0</span></div></div>
+              <div class="row r2"><div class="nm red">국내 (온타리오)</div><div class="bar"></div><div class="v"><span class="n2">$0</span></div></div>
+              <div class="gap"><div class="g1">1년 차이 약 $58,400</div><div class="g4">4년 약 $233,600</div></div>
+              <div class="chain"><div class="c k">부모: 고용주 지정 취업비자</div><div class="ar">→</div><div class="c">자녀: 국내 학생 학비 적용</div><div class="ar">=</div><div class="c fmc">프랑코폰 모빌리티 취업비자</div></div>
             </div>
+            <div class="fn">University of Toronto 2026-27 공학(BASc) 수업료, 부대비용 제외 · 학비는 매년 변동 · 국제학생 학비 면제(International Fee Exemption) 자격은 대학 기준 확인 필요</div>
           </div>
           <div class="grp gD">
             <div class="phone"><div class="screen">
@@ -102,12 +114,22 @@ __HELPERS__
           tl.fromTo($1(".gB .ah"), { opacity: 0 }, { opacity: 1, duration: 0.2 }, C.move + 1.2);
           tl.fromTo($1(".gB .school"), { opacity: 0, y: -40 }, { opacity: 1, y: 0, duration: 0.5, ease: "back.out(1.6)" }, C.imm - 0.2);
           H.rise(tl, $1(".gB .ok"), C.can, { y: 20 });
-          H.out(tl, $1(".gB"), C.work - 0.6, { y: -40 });
-          // C: tuition
-          tl.fromTo($1(".gC .tu"), { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, C.work - 0.3);
-          H.growY(tl, $1(".gC .int .f"), C.work + 0.6, 0.8);
-          H.growY(tl, $1(".gC .pr .f"), C.tui - 0.3, 0.8);
-          H.pop(tl, $1(".gC .down"), C.tui + 0.4, { from: 0.7 });
+          H.out(tl, $1(".gB"), C.tu - 0.6, { y: -40 });
+          // C: U of T tuition, international vs domestic
+          tl.fromTo($1(".gC .tu"), { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, C.tu - 0.3);
+          tl.fromTo($1(".gC .fn"), { opacity: 0 }, { opacity: 1, duration: 0.5 }, C.tu + 0.4);
+          H.slideX(tl, $(".gC .row .nm"), C.int - 0.6, { x: -40, stagger: 0.15 });
+          H.growX(tl, $1(".gC .r1 .bar"), C.int - 0.2, 1.4);
+          H.count(tl, $1(".gC .n1"), 0, 72860, C.int - 0.2, 1.4, { comma: true, pre: "$" });
+          H.growX(tl, $1(".gC .r2 .bar"), C.dom - 0.6, 0.9);
+          H.count(tl, $1(".gC .n2"), 0, 14460, C.dom - 0.6, 0.9, { comma: true, pre: "$" });
+          H.pop(tl, $1(".gC .g1"), C.g1 - 0.3, { from: 0.6 });
+          H.stamp(tl, $1(".gC .g4"), C.g4 + 0.2);
+          H.rise(tl, $(".gC .chain .c.k, .gC .chain .ar"), C.fee + 0.6, { y: 20, stagger: 0.1 });
+          H.rise(tl, $1(".gC .chain .c:not(.k):not(.fmc)"), C.fee + 2.2, { y: 20 });
+          H.pop(tl, $1(".gC .fmc"), C.fmw - 0.1, { from: 0.6 });
+          tl.fromTo($1(".gC .r1 .bar"), { scaleX: 1 }, { scaleX: 218 / 1100, duration: 1.0, ease: "power2.inOut", immediateRender: false }, C.fee + 2.4);
+          tl.fromTo($1(".gC .r1 .v"), { opacity: 1 }, { opacity: 0, duration: 0.4, immediateRender: false }, C.fee + 2.3);
           H.out(tl, $1(".gC"), C.cafe - 0.5, { y: -40 });
           // D: cafe review capture
           tl.fromTo($1(".gD .phone"), { opacity: 0, y: 60, rotation: -2 }, { opacity: 1, y: 0, rotation: 0, duration: 0.6, ease: "power3.out" }, C.cafe - 0.2);

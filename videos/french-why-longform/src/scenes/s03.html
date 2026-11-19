@@ -1,40 +1,51 @@
-<!--ANCHORS {"steps":"L0", "l7":"칠 레벨이", "goal":"목표는", "l5":"오 레벨이", "spk":"말하기와", "lmia":"엘엠아이에이", "fm":"프랑코폰", "out":"퀘벡 밖", "move":"영어권 주로", "pnp":"주정부 이민", "k5":"오천", "sum":"정리하면", "fam":"가족 상황"}-->
-<!--SFX [["tick", "l7"], ["ding", "l5"], ["tick", "k5"], ["stamp", "sum"]]-->
+<!--ANCHORS {"steps":"L0", "d1":"첫 번째 문은", "spk":"말하기와 듣기가", "lmia":"엘엠아이에이를", "fm":"프랑코폰", "out":"퀘벡 밖", "move":"영어권 주로", "pr5":"영주권도", "pnp":"주정부 이민에", "k5":"오천", "pref":"우대를", "d2":"두 번째 문은", "ee":"익스프레스 엔트리", "solo":"고용주의 도움 없이", "six":"육 개월", "sum":"L6", "fam":"가족 상황"}-->
+<!--SFX [["ding","d1"],["tick","k5"],["ding","d2"],["tick","six"],["stamp","sum"]]-->
       <style>
         #s03-root { position: absolute; inset: 0; }
         #s03-root .base { position: absolute; left: 110px; top: 780px; width: 1230px; height: 6px; border-radius: 3px; background: var(--line); }
         #s03-root .step { position: absolute; width: 150px; bottom: 300px; border-radius: 16px 16px 4px 4px; background: #efe3cf; transform-origin: bottom center; }
         #s03-root .step b { position: absolute; left: 0; right: 0; top: 10px; text-align: center; font-size: 40px; font-weight: 900; color: #a6927f; }
-        #s03-root .step.s5 { background: #f6c7ce; }
+        #s03-root .step.s5 { background: #e0566c; }
         #s03-root .step.s5 b, #s03-root .step.s7 b { color: #fff; }
         #s03-root .step.s7 { background: var(--red); }
         #s03-root .start { position: absolute; left: 70px; top: 800px; display: flex; align-items: center; gap: 12px; font-size: 32px; font-weight: 800; }
         #s03-root .start i { width: 26px; height: 26px; border-radius: 50%; background: var(--red); display: block; box-shadow: 0 0 0 8px rgba(200, 16, 46, 0.18); }
-        #s03-root .door { position: absolute; left: 1150px; top: 96px; width: 130px; height: 180px; border-radius: 12px 12px 0 0; background: #ffe9a8; overflow: visible; perspective: 600px; }
-        #s03-root .door .leaf { position: absolute; inset: 0; border-radius: 12px 12px 0 0; background: var(--red-dark); transform-origin: left center; }
-        #s03-root .door .leaf::after { content: ""; position: absolute; right: 18px; top: 92px; width: 14px; height: 14px; border-radius: 50%; background: #ffd75e; }
-        #s03-root .door5 { left: 810px; top: 300px; width: 110px; height: 120px; }
-        #s03-root .doorlbl { position: absolute; left: 1300px; top: 120px; padding: 18px 28px; font-size: 40px; font-weight: 900; }
-        #s03-root .goal { position: absolute; left: 1300px; top: 220px; display: flex; align-items: center; gap: 14px; font-size: 36px; font-weight: 800; color: var(--red); }
-        #s03-root .goal .flag { width: 46px; height: 46px; }
-        #s03-root .branch { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; pointer-events: none; }
-        #s03-root .bcard { position: absolute; left: 150px; top: 150px; width: 520px; padding: 34px 36px; }
-        #s03-root .bcard .bt { font-size: 40px; font-weight: 900; line-height: 1.25; letter-spacing: -0.03em; }
-        #s03-root .bcard .chipl { margin-top: 18px; display: flex; flex-direction: column; gap: 12px; }
-        #s03-root .bcard .ch { display: inline-flex; align-self: flex-start; padding: 8px 18px; border-radius: 12px; background: var(--red-soft); color: var(--red-dark); font-size: 29px; font-weight: 800; }
-        #s03-root .bcard .ch.out { background: #2a221d; color: #fff; }
-        #s03-root .badge { position: absolute; left: 1360px; top: 360px; width: 480px; padding: 36px 30px; text-align: center; }
-        #s03-root .badge .yr { font-size: 30px; font-weight: 700; color: var(--muted); }
-        #s03-root .badge .num { font-size: 120px; font-weight: 900; color: var(--red); letter-spacing: -0.04em; line-height: 1.1; font-variant-numeric: tabular-nums; }
-        #s03-root .badge .lb { font-size: 34px; font-weight: 800; line-height: 1.35; }
-        #s03-root .sumb { position: absolute; left: 1360px; top: 340px; width: 480px; padding: 36px 34px; }
-        #s03-root .sumb .r { display: flex; align-items: center; gap: 18px; font-size: 42px; font-weight: 900; padding: 16px 0; }
+        #s03-root .door { position: absolute; border-radius: 10px 10px 0 0; background: #ffe9a8; perspective: 600px; }
+        #s03-root .door .leaf { position: absolute; inset: 0; border-radius: 10px 10px 0 0; transform-origin: left center; }
+        #s03-root .door .leaf::after { content: ""; position: absolute; right: 10px; top: 52%; width: 10px; height: 10px; border-radius: 50%; background: #ffd75e; }
+        #s03-root .door .no { position: absolute; left: 0; right: 0; top: -40px; text-align: center; font-size: 26px; font-weight: 900; }
+        #s03-root .dA { left: 812px; top: 300px; width: 66px; height: 120px; }
+        #s03-root .dA .leaf { background: #9e0c24; }
+        #s03-root .dB { left: 892px; top: 300px; width: 66px; height: 120px; }
+        #s03-root .dB .leaf { background: #2a221d; }
+        #s03-root .d7 { left: 1150px; top: 96px; width: 130px; height: 180px; }
+        #s03-root .d7 .leaf { background: var(--red-dark); }
+        #s03-root .lvtag { position: absolute; padding: 8px 18px; border-radius: 14px; font-size: 30px; font-weight: 900; color: #fff; white-space: nowrap; }
+        #s03-root .t5 { left: 790px; top: 196px; background: #e0566c; }
+        #s03-root .links { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: visible; pointer-events: none; }
+        #s03-root .c5 { position: absolute; left: 140px; width: 480px; padding: 22px 26px; }
+        #s03-root .c5.a { top: 120px; }
+        #s03-root .c5.b { top: 326px; border: 5px solid var(--red); }
+        #s03-root .c5 .k { display: inline-block; padding: 4px 14px; border-radius: 10px; font-size: 26px; font-weight: 900; color: #fff; }
+        #s03-root .c5.a .k { background: #9e0c24; }
+        #s03-root .c5.b .k { background: var(--red); font-size: 30px; }
+        #s03-root .c5 .t { margin-top: 8px; font-size: 36px; font-weight: 900; letter-spacing: -0.03em; line-height: 1.25; }
+        #s03-root .c5 .s { margin-top: 8px; font-size: 28px; font-weight: 700; color: var(--muted); }
+        #s03-root .c5 .s b { color: var(--red); font-variant-numeric: tabular-nums; }
+        #s03-root .c7 { position: absolute; left: 1330px; top: 300px; width: 500px; padding: 28px 30px; border: 5px solid var(--red); }
+        #s03-root .c7 .k { display: inline-block; padding: 4px 14px; border-radius: 10px; background: var(--red); color: #fff; font-size: 30px; font-weight: 900; }
+        #s03-root .c7 .t { margin-top: 10px; font-size: 40px; font-weight: 900; letter-spacing: -0.03em; line-height: 1.2; }
+        #s03-root .c7 .chips { margin-top: 16px; display: flex; flex-direction: column; gap: 10px; }
+        #s03-root .c7 .ch { align-self: flex-start; padding: 8px 18px; border-radius: 12px; background: var(--red-soft); color: var(--red-dark); font-size: 30px; font-weight: 800; }
+        #s03-root .t7 { left: 1300px; top: 140px; background: var(--red); }
+        #s03-root .sumb { position: absolute; left: 140px; top: 150px; width: 480px; padding: 30px 32px; }
+        #s03-root .sumb .r { display: flex; align-items: center; gap: 18px; font-size: 40px; font-weight: 900; padding: 14px 0; }
         #s03-root .sumb .r + .r { border-top: 3px dashed var(--line); }
         #s03-root .sumb .tag { flex: 0 0 auto; padding: 6px 16px; border-radius: 12px; color: #fff; font-size: 30px; }
       </style>
       <div id="s03-root" data-composition-id="s03" data-width="1920" data-height="1080">
         <div class="stage">
-          <div class="kicker"><span class="k-num">02</span><span class="k-title">목표는 7레벨, 5레벨에서 먼저 출발할 수도</span></div>
+          <div class="kicker"><span class="k-num">02</span><span class="k-title">첫 번째 문 5레벨, 두 번째 문 7레벨</span></div>
           <div class="base"></div>
           <div class="step s1" style="left: 150px; height: 72px"><b>1</b></div>
           <div class="step s2" style="left: 315px; height: 144px"><b>2</b></div>
@@ -44,27 +55,24 @@
           <div class="step s6" style="left: 975px; height: 432px"><b>6</b></div>
           <div class="step s7" style="left: 1140px; height: 504px"><b>7</b></div>
           <div class="start"><i></i>몬트리올 출발</div>
+          <div class="lvtag t5">첫 번째 문 · 5레벨</div>
+          <div class="door dA"><div class="leaf"></div><div class="no" style="color: #9e0c24">①</div></div>
+          <div class="door dB"><div class="leaf"></div><div class="no" style="color: #2a221d">②</div></div>
+          <div class="lvtag t7">두 번째 문 · 7레벨</div>
           <div class="door d7"><div class="leaf"></div></div>
-          <div class="doorlbl card">영주권 <span class="red">불어 추첨</span></div>
-          <div class="goal"><svg class="flag" viewBox="0 0 24 24"><path d="M5 22V3m0 1h12l-3 4 3 4H5" fill="#c8102e" stroke="#c8102e" stroke-width="2" stroke-linejoin="round"/></svg>어학연수 목표 = 7레벨</div>
-          <div class="door door5"><div class="leaf"></div></div>
-          <svg class="branch" viewBox="0 0 1920 1080"><path class="bpath" d="M865 292 C 840 200, 780 250, 694 262" stroke="#c8102e" stroke-width="8" fill="none" stroke-linecap="round"/><path class="bhead" d="M718 240 L692 262 L720 282" stroke="#c8102e" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <div class="bcard card">
-            <div class="bt">5레벨 → <span class="red">영어권 이동</span></div>
-            <div class="chipl">
-              <span class="ch c-a">말하기·듣기 5레벨</span>
-              <span class="ch c-b">고용주 LMIA 면제 취업비자</span>
-              <span class="ch c-c">프랑코폰 모빌리티</span>
-              <span class="ch out c-d">퀘벡 밖 일자리</span>
-            </div>
-          </div>
-          <div class="badge card"><div class="yr">2026년부터 · 주정부 이민</div><div class="num k5">0</div><div class="lb">불어 사용자 위한</div><div class="lb">연방 몫 자리</div></div>
+          <svg class="links" viewBox="0 0 1920 1080">
+            <path class="la" d="M845 292 C 800 210, 720 200, 626 205" stroke="#9e0c24" stroke-width="6" fill="none" stroke-linecap="round"/>
+            <path class="lb" d="M925 300 C 900 400, 760 420, 626 420" stroke="#c8102e" stroke-width="6" fill="none" stroke-linecap="round"/>
+          </svg>
+          <div class="c5 a card"><span class="k">① 취업비자</span><div class="t">LMIA 면제 취업비자</div><div class="s">말하기·듣기 5레벨 · 프랑코폰 모빌리티 · 영어권 주로 이동</div></div>
+          <div class="c5 b card"><span class="k">② 영주권</span><div class="t">주정부 이민 우대</div><div class="s">불어 사용자 연방 몫 별도 <b class="k5">0</b>자리 (2026~)</div></div>
+          <div class="c7 card"><span class="k">영주권</span><div class="t">연방 Express Entry 불어 추첨</div><div class="chips"><span class="ch q1">고용주 없이 혼자 신청</span><span class="ch q2">보통 6개월 내 처리</span></div></div>
           <div class="sumb card">
             <div class="r"><span class="tag" style="background: #c8102e">목표</span>7레벨</div>
-            <div class="r"><span class="tag" style="background: #e58b98">먼저</span>5레벨에서 출발</div>
+            <div class="r"><span class="tag" style="background: #e0566c">먼저</span>5레벨에서 출발</div>
             <div class="r" style="font-size: 32px; color: #6b5d53">가족 상황에 맞춰 선택</div>
           </div>
-          <div class="note">주의: 영주권 불어 추첨은 듣기·말하기·읽기·쓰기 <b>4영역 모두 7레벨</b>. 주정부별 불어 기준은 주마다 다름</div>
+          <div class="note">주의: Express Entry 불어 추첨은 <b>4영역 모두 7레벨</b> · 주정부별 불어 기준은 주마다 다름 · 처리 기간은 IRCC 기준 변동 가능</div>
         </div>
       </div>
       <script>
@@ -76,38 +84,39 @@ __HELPERS__
           const $1 = (s) => R.querySelector(s);
           const tl = gsap.timeline({ paused: true });
           H.sceneIn(tl, R);
+          // staircase
           tl.fromTo($1(".base"), { scaleX: 0, transformOrigin: "left center" }, { scaleX: 1, duration: 0.8, ease: "power2.out" }, C.steps - 0.3);
           H.rise(tl, $1(".start"), C.steps - 0.2, { y: 20 });
-          const steps = $(".step");
-          steps.forEach((s, i) => tl.fromTo(s, { scaleY: 0 }, { scaleY: 1, duration: 0.55, ease: "back.out(1.4)" }, C.steps + 0.2 + i * 0.22));
-          // 7 level door
-          tl.fromTo($1(".d7"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, C.l7 - 0.3);
-          tl.fromTo($1(".d7 .leaf"), { rotationY: 0 }, { rotationY: -70, duration: 1.0, ease: "power2.inOut" }, C.l7 + 0.5);
-          H.pop(tl, $1(".doorlbl"), C.l7 + 0.8);
-          tl.fromTo($1(".s7"), { boxShadow: "0 0 0 0 rgba(200,16,46,0)" }, { boxShadow: "0 0 0 16px rgba(200,16,46,0.18)", duration: 0.5, yoyo: true, repeat: 3 }, C.l7);
-          H.slideX(tl, $1(".goal"), C.goal, { x: 40 });
-          // 5 level: a first door
-          tl.fromTo($1(".s5"), { y: 0 }, { y: -14, duration: 0.3, yoyo: true, repeat: 1, ease: "power2.out" }, C.l5);
-          tl.fromTo($1(".door5"), { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4 }, C.l5 + 0.2);
-          tl.fromTo($1(".door5 .leaf"), { rotationY: 0 }, { rotationY: -70, duration: 0.9, ease: "power2.inOut" }, C.l5 + 0.9);
-          // branch arrow and work-permit card
-          H.draw(tl, $1(".bpath"), C.spk - 0.3, 0.9, 260);
-          tl.fromTo($1(".bhead"), { opacity: 0 }, { opacity: 1, duration: 0.2 }, C.spk + 0.5);
-          tl.fromTo($1(".bcard"), { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.55, ease: "power3.out" }, C.spk + 0.3);
-          H.pop(tl, $1(".c-a"), C.spk + 0.6, { from: 0.7 });
-          H.pop(tl, $1(".c-b"), C.lmia, { from: 0.7 });
-          H.pop(tl, $1(".c-c"), C.fm, { from: 0.7 });
-          H.pop(tl, $1(".c-d"), C.out, { from: 0.7 });
-          tl.fromTo($1(".bcard .bt"), { scale: 1 }, { scale: 1.06, duration: 0.3, yoyo: true, repeat: 1 }, C.move);
-          // PNP federal quota
-          H.out(tl, $1(".bcard"), C.pnp - 0.9, { y: -30 });
-          tl.fromTo($1(".badge"), { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.6)" }, C.pnp - 0.4);
+          $(".step").forEach((s, i) => tl.fromTo(s, { scaleY: 0 }, { scaleY: 1, duration: 0.55, ease: "back.out(1.4)" }, C.steps + 0.2 + i * 0.2));
+          // first door: 5 level -> work permit
+          H.pop(tl, $1(".t5"), C.d1, { from: 0.6 });
+          tl.fromTo($(".dA, .dB"), { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, stagger: 0.15 }, C.d1 + 0.3);
+          tl.fromTo($1(".s5"), { y: 0 }, { y: -12, duration: 0.3, yoyo: true, repeat: 1, ease: "power2.out" }, C.d1 + 0.2);
+          tl.fromTo($1(".dA .leaf"), { rotationY: 0 }, { rotationY: -72, duration: 0.9, ease: "power2.inOut" }, C.spk);
+          H.draw(tl, $1(".la"), C.spk + 0.4, 0.6, 160);
+          tl.fromTo($1(".c5.a"), { opacity: 0, x: -50 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, C.spk + 0.6);
+          tl.fromTo($1(".c5.a .t"), { scale: 1 }, { scale: 1.05, duration: 0.25, yoyo: true, repeat: 1, transformOrigin: "left center" }, C.lmia);
+          tl.fromTo($1(".c5.a .s"), { color: "#6b5d53" }, { color: "#9e0c24", duration: 0.4 }, C.move);
+          // ...and permanent residence already at 5 level
+          tl.fromTo($1(".dB .leaf"), { rotationY: 0 }, { rotationY: -72, duration: 0.9, ease: "power2.inOut" }, C.pr5);
+          H.draw(tl, $1(".lb"), C.pr5 + 0.4, 0.7, 260);
+          tl.fromTo($1(".c5.b"), { opacity: 0, x: -50 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, C.pr5 + 0.6);
+          H.stamp(tl, $1(".c5.b .k"), C.pr5 + 0.8);
           H.count(tl, $1(".k5"), 0, 5000, C.k5 - 0.8, 1.0, { comma: true });
-          // summary
-          H.out(tl, $1(".badge"), C.sum - 0.6, { y: -30 });
-          tl.fromTo($1(".sumb"), { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, C.sum - 0.2);
-          H.rise(tl, $(".sumb .r"), C.sum + 0.2, { stagger: 0.9, y: 20 });
-          tl.fromTo($1(".note"), { opacity: 0 }, { opacity: 1, duration: 0.5 }, C.l7 + 1);
+          tl.fromTo($1(".c5.b"), { boxShadow: "0 18px 50px rgba(80,50,20,0.12)" }, { boxShadow: "0 0 0 12px rgba(200,16,46,0.22)", duration: 0.4, yoyo: true, repeat: 1 }, C.pref);
+          // second door: 7 level -> federal express entry
+          H.pop(tl, $1(".t7"), C.d2, { from: 0.6 });
+          tl.fromTo($1(".d7"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, C.d2 + 0.2);
+          tl.fromTo($1(".s7"), { boxShadow: "0 0 0 0 rgba(200,16,46,0)" }, { boxShadow: "0 0 0 16px rgba(200,16,46,0.18)", duration: 0.5, yoyo: true, repeat: 3 }, C.d2 + 0.4);
+          tl.fromTo($1(".d7 .leaf"), { rotationY: 0 }, { rotationY: -70, duration: 1.0, ease: "power2.inOut" }, C.ee - 0.6);
+          tl.fromTo($1(".c7"), { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, C.ee - 0.2);
+          H.pop(tl, $1(".c7 .q1"), C.solo, { from: 0.7 });
+          H.pop(tl, $1(".c7 .q2"), C.six - 0.2, { from: 0.7 });
+          tl.fromTo($1(".note"), { opacity: 0 }, { opacity: 1, duration: 0.5 }, C.d2 + 0.5);
+          // summary replaces the 5-level cards; doors stay open
+          H.out(tl, $(".c5, .la, .lb"), C.sum - 0.5, { y: -20 });
+          tl.fromTo($1(".sumb"), { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, C.sum - 0.1);
+          H.rise(tl, $(".sumb .r"), C.sum + 0.2, { stagger: 1.2, y: 20 });
           H.sceneOut(tl, R, C.D);
           window.__timelines["s03"] = tl;
         })();
