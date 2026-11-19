@@ -209,14 +209,14 @@
           H.camTo(tl, $1(".sa"), [46, 213, 466, 241], 379, null, C.rev + 0.6, 1.6);
           H.ring(tl, $1(".sa"), [46, 213, 466, 241], C.wall - 0.4);
           tl.fromTo($(".half div"), { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, stagger: 0.012 }, C.rev + 0.4);
-          H.rise(tl, $1(".dw .dcap"), C.wall - 0.3, { y: 20 });
-          tl.fromTo($1(".half.l"), { x: 0 }, { x: -340, opacity: 0, duration: 1.1, ease: "power3.inOut" }, C.door - 0.5);
-          tl.fromTo($1(".half.r"), { x: 0 }, { x: 340, opacity: 0, duration: 1.1, ease: "power3.inOut" }, C.door - 0.5);
-          tl.fromTo($1(".dw .leaf"), { rotationY: 0 }, { rotationY: -75, duration: 1.2, ease: "power2.inOut" }, C.door + 0.3);
-          tl.fromTo($1(".dw .glow"), { opacity: 0.4 }, { opacity: 1, duration: 1.0 }, C.door + 0.4);
-          H.out(tl, $1(".gB"), C.kakao - 0.6, { y: -40 });
+          H.rise(tl, $1(".dw .dcap"), C.wall - 0.9, { y: 20 });
+          tl.fromTo($1(".half.l"), { x: 0 }, { x: -340, opacity: 0, duration: 1.0, ease: "power3.inOut" }, C.wall - 0.5);
+          tl.fromTo($1(".half.r"), { x: 0 }, { x: 340, opacity: 0, duration: 1.0, ease: "power3.inOut" }, C.wall - 0.5);
+          tl.fromTo($1(".dw .leaf"), { rotationY: 0 }, { rotationY: -75, duration: 1.1, ease: "power2.inOut" }, C.wall + 0.3);
+          tl.fromTo($1(".dw .glow"), { opacity: 0.4 }, { opacity: 1, duration: 1.0 }, C.wall + 0.4);
+          H.out(tl, $1(".gB"), C.kakao - 0.25, { y: -40 });
           // C: KakaoTalk + comments
-          tl.fromTo($1(".kk"), { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, C.kakao - 0.3);
+          tl.fromTo($1(".kk"), { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, C.kakao + 0.1);
           tl.fromTo($1(".kk .ic"), { rotation: -12, scale: 0.6 }, { rotation: 0, scale: 1, duration: 0.5, ease: "back.out(2)" }, C.kakao);
           tl.fromTo($1(".kk .t2"), { scale: 1 }, { scale: 1.1, duration: 0.3, yoyo: true, repeat: 1, transformOrigin: "left center" }, C.can);
           H.pop(tl, $(".kk .chips span"), C.grade - 0.2, { stagger: 0.35, from: 0.6 });
