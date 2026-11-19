@@ -6,3 +6,7 @@ renders/*.tmp*
 audio/mix_master.wav
 build/audio/
 .hyperframes/artifacts/
+renders/render_raw.mp4
+renders/render.log
+renders/work-*/
+renders/.render_*

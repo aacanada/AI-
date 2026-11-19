@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      @font-face { font-family: "Pretendard"; src: url("../assets/fonts/Pretendard-Black.woff2") format("woff2"); font-weight: 900; }
+      @font-face { font-family: "Pretendard"; src: url("../assets/fonts/Pretendard-ExtraBold.woff2") format("woff2"); font-weight: 800; }
+      @font-face { font-family: "Pretendard"; src: url("../assets/fonts/Pretendard-Bold.woff2") format("woff2"); font-weight: 700; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1280px; height: 720px; overflow: hidden; }
+      body { position: relative; background: #fbf4e6; font-family: "Pretendard", sans-serif; word-break: keep-all; }
+      .glow { position: absolute; left: -200px; top: -260px; width: 900px; height: 900px; border-radius: 50%; background: radial-gradient(circle, rgba(255, 215, 94, 0.45), rgba(255, 215, 94, 0) 65%); }
+      .dots { position: absolute; inset: 0; background-image: radial-gradient(rgba(200, 16, 46, 0.1) 2px, transparent 2.4px); background-size: 34px 34px; }
+      .leaf { position: absolute; right: -60px; top: 20px; width: 560px; height: 560px; opacity: 0.16; transform: rotate(10deg); }
+      .sky { position: absolute; left: 0; right: 0; bottom: 118px; height: 210px; opacity: 0.22; }
+      .topbar { position: absolute; left: 0; right: 0; top: 0; height: 12px; background: #c8102e; }
+      .tag { position: absolute; left: 64px; top: 58px; padding: 14px 30px; border-radius: 26px; background: #2a221d; color: #fff; font-size: 38px; font-weight: 800; letter-spacing: -0.02em; }
+      .tag::after { content: ""; position: absolute; left: 46px; bottom: -20px; border: 12px solid transparent; border-top: 14px solid #2a221d; border-left: 14px solid #2a221d; }
+      .big { position: absolute; left: 56px; top: 150px; font-weight: 900; letter-spacing: -0.06em; line-height: 1.02; }
+      .big .l1 { font-size: 150px; color: #2a221d; text-shadow: 0 6px 0 #fff, 0 -3px 0 #fff, 4px 0 0 #fff, -4px 0 0 #fff, 0 14px 30px rgba(80, 40, 10, 0.18); }
+      .big .l2 { font-size: 196px; color: #c8102e; text-shadow: 0 6px 0 #fff, 0 -3px 0 #fff, 5px 0 0 #fff, -5px 0 0 #fff, 0 16px 34px rgba(200, 16, 46, 0.28); }
+      .band { position: absolute; left: 0; right: 0; bottom: 0; height: 118px; background: #c8102e; display: flex; align-items: center; justify-content: center; }
+      .band span { color: #fff; font-size: 62px; font-weight: 900; letter-spacing: -0.04em; }
+      .brand { position: absolute; right: 44px; top: 44px; display: flex; align-items: center; gap: 10px; font-size: 30px; font-weight: 800; color: #2a221d; }
+      .brand i { width: 36px; height: 36px; border-radius: 10px; background: #c8102e; display: flex; align-items: center; justify-content: center; }
+    </style>
+  </head>
+  <body>
+    <div class="glow"></div>
+    <div class="dots"></div>
+    <svg class="leaf" viewBox="0 0 100 100"><path fill="#c8102e" d="M50 4 l7 14 9-4-3 20 13-14 3 8 13-3-5 15 6 3-21 17 3 8-22-4v22h-6V64l-22 4 3-8-21-17 6-3-5-15 13 3 3-8 13 14-3-20 9 4z"/></svg>
+    <svg class="sky" viewBox="0 0 1280 210" preserveAspectRatio="none">
+      <path fill="#7a1220" d="M0 210 V150 h40 v-30 h30 v40 h26 V96 h34 v64 h22 v-48 h18 v-20 h12 v20 h18 v68 h30 V70 h44 v90 h20 v-36 h40 v36 h18 V40 l14 -26 l14 26 v120 h26 v-60 h46 v60 h22 v-84 h36 v84 h30 v-40 h24 v-30 h28 v70 h20 V88 h40 v72 h30 v-52 h22 v52 h40 V60 h18 l4 -22 l4 22 h18 v100 h30 v-70 h46 v70 h24 v-36 h36 v36 h28 V110 h40 v50 h30 v-80 h34 v80 h26 v-44 h38 v44 h30 v-30 h40 v30 h28 V210 Z" />
+    </svg>
+    <div class="topbar"></div>
+    <div class="brand"><i><svg viewBox="0 0 100 100" width="24" height="24"><path fill="#fff" d="M50 4 l7 14 9-4-3 20 13-14 3 8 13-3-5 15 6 3-21 17 3 8-22-4v22h-6V64l-22 4 3-8-21-17 6-3-5-15 13 3 3-8 13 14-3-20 9 4z"/></svg></i>AA Canada</div>
+    <div class="tag">현실을 솔직하게 얘기해보면…</div>
+    <div class="big"><div class="l1">영어도 못하는데</div><div class="l2">불어를?</div></div>
+    <div class="band"><span>불어 어학연수만으로 취업·영주권까지</span></div>
+  </body>
+</html>
