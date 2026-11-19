@@ -104,12 +104,12 @@ def main():
     pre = os.path.join(BUILD, "premaster.wav")
     run(["ffmpeg", "-y", "-hide_banner", "-i", vo, "-i", ducked, "-i", sfxw, "-filter_complex",
          "[0:a][1:a][2:a]amix=inputs=3:normalize=0:dropout_transition=0[m]", "-map", "[m]", "-c:a", "pcm_s24le", "-ar", str(SR), pre])
-    err = run(["ffmpeg", "-hide_banner", "-nostats", "-i", pre, "-af", "loudnorm=I=-16:TP=-2.0:LRA=11:print_format=json", "-f", "null", "-"])
+    err = run(["ffmpeg", "-hide_banner", "-nostats", "-i", pre, "-af", "loudnorm=I=-16:TP=-3.0:LRA=11:print_format=json", "-f", "null", "-"])
     js = json.loads(err[err.rfind("{"):err.rfind("}") + 1])
-    ln = (f"loudnorm=I=-16:TP=-2.0:LRA=11:linear=true:measured_I={js['input_i']}:measured_TP={js['input_tp']}:"
+    ln = (f"loudnorm=I=-16:TP=-3.0:LRA=11:linear=true:measured_I={js['input_i']}:measured_TP={js['input_tp']}:"
           f"measured_LRA={js['input_lra']}:measured_thresh={js['input_thresh']}:offset={js['target_offset']}")
     master = os.path.join(ROOT, "audio", "mix_master.wav")
-    run(["ffmpeg", "-y", "-hide_banner", "-i", pre, "-af", ln + f",aresample={SR},alimiter=limit=0.79:attack=2:release=50:level=false",
+    run(["ffmpeg", "-y", "-hide_banner", "-i", pre, "-af", ln + f",aresample={SR},alimiter=limit=0.66:attack=1:release=50:level=false",
          "-c:a", "pcm_s24le", "-ar", str(SR), master])
 
     # lightweight copy referenced by index.html (the master wav stays local; final mp4 audio is encoded from it)

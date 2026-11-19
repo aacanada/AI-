@@ -1876,5 +1876,16 @@
         "attribution": "unversioned"
       }
     ]
-  }
+  },
+  "renders": {
+    "latest": {
+      "id": "097725e1-9deb-4620-bed8-1a8213be05aa",
+      "completedAt": 1795114697223,
+      "output": "/home/user/AI-/videos/wh-ece-longform/renders/render_raw.mp4",
+      "status": "completed",
+      "revision": null
+    },
+    "retainedRevisions": []
+  },
+  "pendingArtifactCleanup": []
 }

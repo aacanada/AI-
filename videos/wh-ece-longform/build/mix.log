@@ -1,7 +1,7 @@
 {
- "master_I": -16.0,
- "master_peak": -2.0,
- "master_TP": -2.0,
+ "master_I": -16.1,
+ "master_peak": -3.5,
+ "master_TP": -3.46,
  "vo_I": -16.0,
  "bed_unducked_I": -26.0,
  "bed_under_vo_I": -39.5,
