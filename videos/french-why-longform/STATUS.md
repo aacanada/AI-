@@ -15,10 +15,10 @@
 ① 모션그래픽 장면 **14/14** (정지 슬라이드 0, 정지 이미지+확대만 있는 장면 0 · 얼굴/HeyGen 0) — 숫자 카운트업·막대/도표 성장·계단·갈림길·지도 화살표·달력 타임라인·하이라이트·체크리스트·카드 뒤집기·저울·문 열림, 캡처는 휴대폰 프레임 안에서 노란 강조로 이동·확대 + 빨간 테두리
 ② 배경음악 **ElevenLabs 음악 생성 신곡 2곡** `audio/bgm/el_bright_acoustic_A.mp3`·`el_bright_acoustic_B.mp3`(밝은 어쿠스틱·피아노, 약 95BPM, 가사 없음)을 A→B→A… 4초 크로스페이드로 이어 깔고, 내레이션을 키로 한 **sidechaincompress 덕킹**(장면별 내레이션 대비 평균 22.6dB 낮음, 17.9~25.8dB), 시작 1.5초 페이드인·끝 3초 페이드아웃
 ③ 효과음 **64개** (transition_ding 13 · tick 21 · ding 14 · stamp 16) — 어느 60초 구간이든 4~8개, 위치는 HyperFrames 애니메이션 큐 시각과 동일, 내레이션보다 약 12~13dB 낮게, whoosh(거친 스우시) 미사용
-④ 최종 MP4 오디오 **-16.0 LUFS / 트루피크 -1.9 dBTP** (목표 -16±0.5 / -1.5 이하), 내레이션은 장면별 -16 LUFS로 맞춘 뒤 마스터 투패스 loudnorm — BGM이 내레이션 아래 평균 약 23dB라 말소리 또렷함
+④ 최종 MP4 오디오 **-16.0 LUFS / 트루피크 -1.9 dBTP** (2차 수정 렌더 기준) (목표 -16±0.5 / -1.5 이하), 내레이션은 장면별 -16 LUFS로 맞춘 뒤 마스터 투패스 loudnorm — BGM이 내레이션 아래 평균 약 23dB라 말소리 또렷함
 
 ## 산출물
-- `renders/video.mp4` (1920×1080, 30fps, 10분 44초, __SIZE__) — 90MB 초과 시 `video.mp4.part-00…` + `video.mp4.sha256` 로 분할 커밋 (합치기: `cat video.mp4.part-* > video.mp4 && sha256sum -c video.mp4.sha256`)
+- `renders/video.mp4` (1920×1080, 30fps, 10분 44초, 66MB → 90MB 미만이라 분할하지 않음) — 90MB 초과 시 `video.mp4.part-00…` + `video.mp4.sha256` 로 분할 커밋 (합치기: `cat video.mp4.part-* > video.mp4 && sha256sum -c video.mp4.sha256`)
 - `thumbnail.jpg` / `thumbnail.png` (1280×720, 빨간 스타일, 인물·얼굴 없음)
 - `upload-text.txt` (제목·설명·챕터·태그·AI 사용 공개 메모)
 - HyperFrames 프로젝트: `index.html` + `compositions/s01~s14.html` (원본은 `src/`, `tools/build.py` 로 생성)

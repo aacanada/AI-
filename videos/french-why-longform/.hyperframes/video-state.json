@@ -3342,11 +3342,11 @@
   },
   "renders": {
     "latest": {
-      "id": "7541386a-cf7a-4107-b448-dc4bf6d6a83d",
-      "completedAt": 1795105239689,
+      "id": "6c10c5ed-2226-4307-bcd7-0a28eaa10b9b",
+      "completedAt": 1795108689330,
       "output": "/home/user/AI-/videos/french-why-longform/renders/render_raw.mp4",
       "status": "completed",
-      "revision": "86fa111e-61f1-46d0-873b-2269a9800c37"
+      "revision": null
     },
     "retainedRevisions": [
       "86fa111e-61f1-46d0-873b-2269a9800c37"
