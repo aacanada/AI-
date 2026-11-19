@@ -1,0 +1,155 @@
+<!--ANCHORS {"pub":"공립 컬리지에", "h24":"이십사", "face":"대면이라", "pri":"L2", "open":"오픈", "nolim":"제한이 없어요", "L3":"L3", "van":"밴쿠버에", "onl":"온라인으로", "w46":"사십육", "w38":"삼십팔", "w8":"팔 주 현장", "L4":"L4", "conv":"전환할", "tor":"토론토나", "dc":"그 지역", "L5":"L5", "sched":"근무 시간에", "WIN":"되는 거죠"}-->
+<!--SFX [["tick", "h24"], ["ding", "nolim"], ["ding", "conv"], ["tick", "sched"]]-->
+      <style>
+        #s06-root { position: absolute; inset: 0; }
+        #s06-root .intro { position: absolute; left: 0; right: 0; top: 330px; display: flex; justify-content: center; align-items: center; gap: 40px; font-size: 70px; font-weight: 900; }
+        #s06-root .intro .ib { width: 170px; height: 170px; border-radius: 40px; display: flex; align-items: center; justify-content: center; }
+        #s06-root .intro .ib svg { width: 110px; height: 110px; }
+        #s06-root .g { position: absolute; top: 280px; width: 790px; height: 520px; padding: 36px 42px; }
+        #s06-root .g.a { left: 130px; } #s06-root .g.b { left: 1000px; border: 5px solid var(--red); }
+        #s06-root .g h3 { font-size: 40px; font-weight: 900; letter-spacing: -0.03em; }
+        #s06-root .g.b h3 { color: var(--red); }
+        #s06-root .g .sub { margin-top: 6px; font-size: 28px; font-weight: 700; color: var(--muted); }
+        #s06-root .ga { position: relative; margin-top: 46px; height: 64px; border-radius: 16px; background: #efe3cf; }
+        #s06-root .ga .f { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 16px; transform-origin: left center; }
+        #s06-root .g.a .ga .f { width: 60%; background: #8c7b6b; }
+        #s06-root .g.b .ga .f { width: 100%; background: var(--red); }
+        #s06-root .ga .lim { position: absolute; left: 60%; top: -26px; bottom: -26px; width: 7px; margin-left: -3px; background: var(--red); border-radius: 4px; }
+        #s06-root .ga .limT { position: absolute; left: 60%; top: 82px; transform: translateX(-50%); white-space: nowrap; font-size: 32px; font-weight: 900; color: var(--red); }
+        #s06-root .ga .sc { position: absolute; top: -40px; font-size: 22px; font-weight: 700; color: var(--muted); transform: translateX(-50%); }
+        #s06-root .ga .inf { position: absolute; right: -24px; top: 50%; margin-top: -40px; width: 80px; height: 80px; border-radius: 50%; background: var(--paper); border: 5px solid var(--red); color: var(--red); font-size: 50px; font-weight: 900; display: flex; align-items: center; justify-content: center; }
+        #s06-root .ga .noT { position: absolute; left: 50%; top: 82px; transform: translateX(-50%); white-space: nowrap; font-size: 32px; font-weight: 900; color: var(--red); }
+        #s06-root .pill { position: absolute; left: 42px; bottom: 36px; right: 42px; padding: 18px 24px; border-radius: 18px; font-size: 30px; font-weight: 800; background: #f6eedf; display: flex; align-items: center; gap: 14px; }
+        #s06-root .g.b .pill { background: var(--red-soft); color: var(--red-dark); }
+        #s06-root .map { position: absolute; left: 160px; top: 270px; width: 1600px; height: 430px; }
+        #s06-root .pin { position: absolute; width: 22px; height: 22px; margin: -11px 0 0 -11px; border-radius: 50%; background: var(--ink); border: 4px solid #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.3); }
+        #s06-root .ct { position: absolute; font-size: 28px; font-weight: 900; white-space: nowrap; transform: translate(-50%, 18px); }
+        #s06-root .school { position: absolute; left: 70px; top: 360px; }
+        #s06-root .school .sch { position: absolute; left: -46px; top: -110px; width: 92px; height: 92px; }
+        #s06-root .lap { position: absolute; left: 70px; top: 360px; width: 64px; height: 64px; margin: -64px 0 0 -32px; }
+        #s06-root .mapnote { position: absolute; right: 0; top: -40px; font-size: 22px; font-weight: 700; color: var(--muted); }
+        #s06-root .wk { position: absolute; left: 160px; top: 740px; width: 1600px; height: 84px; }
+        #s06-root .wk .seg { position: absolute; top: 0; height: 84px; display: flex; align-items: center; justify-content: center; font-size: 34px; font-weight: 900; color: #fff; border-radius: 18px; }
+        #s06-root .wk .all { left: 0; width: 1600px; background: var(--ink); }
+        #s06-root .wk .on { left: 0; width: 1312px; background: #e3a21a; }
+        #s06-root .wk .pr { left: 1324px; width: 276px; background: var(--red); }
+        #s06-root .cert { position: absolute; width: 300px; height: 150px; border-radius: 20px; padding: 18px 22px; background: var(--paper); border: 4px solid var(--red); box-shadow: 0 14px 30px rgba(80,50,20,0.18); }
+        #s06-root .cert .t1 { font-size: 22px; font-weight: 800; color: var(--muted); }
+        #s06-root .cert .t2 { margin-top: 6px; font-size: 32px; font-weight: 900; line-height: 1.2; }
+        #s06-root .cert.c0 { left: 100px; top: 470px; }
+        #s06-root .cert.c1 { left: 400px; top: 470px; }
+        #s06-root .cert.c2 { left: 960px; top: 470px; }
+        #s06-root .convT { position: absolute; left: 0; right: 0; top: 780px; text-align: center; }
+        #s06-root .convT span { display: inline-block; background: var(--ink); color: #fff; font-size: 38px; font-weight: 900; padding: 14px 34px; border-radius: 18px; }
+        #s06-root .tt { position: absolute; left: 330px; top: 270px; width: 1260px; padding: 30px 36px; }
+        #s06-root .tt .hd, #s06-root .tt .rw { display: grid; grid-template-columns: 140px repeat(5, 1fr); gap: 10px; margin-bottom: 10px; }
+        #s06-root .tt .hd div { text-align: center; font-size: 28px; font-weight: 900; color: var(--muted); }
+        #s06-root .tt .rw > div:first-child { font-size: 28px; font-weight: 800; color: var(--muted); display: flex; align-items: center; }
+        #s06-root .tt .c { height: 82px; border-radius: 14px; background: #f3eadb; position: relative; }
+        #s06-root .tt .c b { position: absolute; inset: 0; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; font-weight: 900; color: #fff; }
+        #s06-root .tt .c b.w { background: var(--red); }
+        #s06-root .tt .c b.s { background: #e3a21a; }
+        #s06-root .ttT { position: absolute; left: 0; right: 0; top: 700px; display: flex; justify-content: center; gap: 24px; }
+        #s06-root .ttT span { font-size: 36px; font-weight: 900; padding: 14px 30px; border-radius: 18px; background: var(--paper); box-shadow: 0 10px 24px rgba(80,50,20,0.1); }
+        #s06-root .ttT span.r { background: var(--red); color: #fff; }
+      </style>
+      <div id="s06-root" data-composition-id="s06" data-width="1920" data-height="1080">
+        <div class="stage">
+          <div class="intro">
+            <div class="ib card"><svg viewBox="0 0 24 24"><path d="M3 5h7a3 3 0 0 1 3 3v12a2 2 0 0 0-2-2H3z M21 5h-7a3 3 0 0 0-1 0" fill="#e3a21a"/><path d="M21 5h-6a2 2 0 0 0-2 2v13a2 2 0 0 1 2-2h6z" fill="#c8102e"/></svg></div>
+            <span>공부</span><span class="red">+</span><span>일</span>
+            <div class="ib card"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="13" rx="2" fill="#2a221d"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" stroke="#2a221d" stroke-width="2" fill="none"/><rect x="2" y="11" width="20" height="2" fill="#c8102e"/></svg></div>
+          </div>
+          <div class="ph1">
+            <div class="g card a">
+              <h3>공립 컬리지 · 학생비자</h3><div class="sub">학기 중 학교 밖 근무 (주당)</div>
+              <div class="ga"><div class="f"></div><div class="sc" style="left: 0">0</div><div class="sc" style="left: 100%">40시간</div><div class="lim"></div><div class="limT">주 24시간까지</div></div>
+              <div class="pill">대부분 대면 수업 → 학교 근처에 살아야</div>
+            </div>
+            <div class="g card b">
+              <h3>사립 컬리지 · 워홀 비자</h3><div class="sub">별도 학생비자 없이 수강 · 오픈 워크퍼밋</div>
+              <div class="ga"><div class="f"></div><div class="sc" style="left: 0">0</div><div class="inf">∞</div><div class="noT">일하는 시간 제한 없음</div></div>
+              <div class="pill">이론 온라인 → 사는 곳 자유</div>
+            </div>
+          </div>
+          <div class="ph2">
+            <div class="map"><div class="mapnote">지도는 개념도입니다</div></div>
+            <div class="wk" data-layout-allow-overlap><div class="seg all">46주</div><div class="seg on">이론 38주 · 온라인 (어디서든)</div><div class="seg pr">실습 8주 · BC</div></div>
+            <div class="cert c0"><div class="t1">BC주</div><div class="t2">보조교사 자격</div></div>
+            <div class="cert c1"><div class="t1">캘거리 · AB</div><div class="t2">그 지역 데이캐어<br />보조교사</div></div>
+            <div class="cert c2"><div class="t1">토론토 · ON</div><div class="t2">그 지역 데이캐어<br />보조교사</div></div>
+            <div class="convT"><span>BC 보조교사 자격 → 다른 주 자격으로 전환 가능</span></div>
+          </div>
+          <div class="ph3">
+            <div class="tt card">
+              <div class="hd"><div></div><div>월</div><div>화</div><div>수</div><div>목</div><div>금</div></div>
+            </div>
+            <div class="ttT"><span>내가 살고 싶은 도시에서</span><span>내 근무 시간에 맞춰</span><span class="r">실습 8주만 BC주</span></div>
+          </div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const C = __CUES__;
+__HELPERS__
+          const R = document.getElementById("s06-root");
+          const $ = (s) => R.querySelectorAll(s);
+          const $1 = (s) => R.querySelector(s);
+          const map = $1(".map");
+          H.canada.build(map, { bc: true });
+          const cities = H.canada.city;
+          const addPin = (n) => { const [x, y] = cities[n]; const p = document.createElement("div"); p.className = "pin pin-" + n; p.style.left = x + "px"; p.style.top = y + "px"; map.appendChild(p);
+            const t = document.createElement("div"); t.className = "ct ct-" + n; t.style.left = x + "px"; t.style.top = y + "px"; t.textContent = n; map.appendChild(t); };
+          ["캘거리", "토론토", "몬트리올"].forEach(addPin);
+          map.insertAdjacentHTML("beforeend", '<div class="school"><svg class="sch" viewBox="0 0 24 24"><path d="M12 2 2 8h20z" fill="#2a221d"/><rect x="4" y="9" width="16" height="11" fill="#fffdf8" stroke="#2a221d" stroke-width="1.6"/><rect x="10" y="14" width="4" height="6" fill="#c8102e"/></svg><div class="ct" style="left:0;top:0;color:#fff">밴쿠버 학교</div></div>');
+          const lapSvg = '<svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="10" rx="1.5" fill="#2a221d"/><rect x="5.5" y="6.5" width="13" height="7" fill="#ffd75e"/><path d="M2 17h20l-2 2H4z" fill="#2a221d"/></svg>';
+          ["캘거리", "토론토", "몬트리올"].forEach((n) => map.insertAdjacentHTML("beforeend", '<div class="lap lap-' + n + '">' + lapSvg + "</div>"));
+          // timetable
+          const tt = $1(".tt");
+          const rows = [["오전", ["w", "s", "w", "s", "w"]], ["오후", ["w", "w", "w", "w", "w"]], ["저녁", ["s", "", "s", "", "s"]]];
+          rows.forEach(([lb, cs]) => { let h = '<div class="rw"><div>' + lb + "</div>"; cs.forEach((c) => (h += '<div class="c">' + (c ? '<b class="' + c + '">' + (c === "w" ? "근무" : "온라인 수업") + "</b>" : "") + "</div>")); tt.insertAdjacentHTML("beforeend", h + "</div>"); });
+          const tl = gsap.timeline({ paused: true });
+          // intro
+          H.pop(tl, $(".intro > *"), 0.5, { stagger: 0.12 });
+          H.out(tl, $1(".intro"), C.pub - 0.5);
+          // phase 1: gauges
+          tl.fromTo($1(".g.a"), { opacity: 0, x: -100 }, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, C.pub - 0.2);
+          tl.fromTo($1(".g.a .ga .f"), { scaleX: 0 }, { scaleX: 1, duration: 1.1, ease: "power2.out" }, C.h24 - 0.8);
+          tl.fromTo($1(".g.a .lim"), { scaleY: 0 }, { scaleY: 1, duration: 0.35, ease: "back.out(2)" }, C.h24 + 0.2);
+          H.pop(tl, $1(".g.a .limT"), C.h24 + 0.3);
+          H.rise(tl, $1(".g.a .pill"), C.face - 0.3);
+          tl.fromTo($1(".g.b"), { opacity: 0, x: 100 }, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, C.pri - 0.2);
+          tl.fromTo($1(".g.b .ga .f"), { scaleX: 0 }, { scaleX: 1, duration: 1.6, ease: "power2.inOut" }, C.open - 0.2);
+          H.pop(tl, $1(".g.b .inf"), C.nolim - 0.2, { from: 0.2 });
+          H.pop(tl, $1(".g.b .noT"), C.nolim);
+          H.rise(tl, $1(".g.b .pill"), C.nolim + 0.8);
+          H.out(tl, $1(".ph1"), C.L3 - 0.5);
+          // phase 2: map + online laptops + 46 weeks split
+          tl.fromTo($(".map .tile"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", stagger: 0.06 }, C.L3 - 0.1);
+          H.rise(tl, $1(".mapnote"), C.L3 + 0.3, { y: 10 });
+          tl.fromTo($1(".school"), { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2)" }, C.van - 0.3);
+          tl.fromTo($(".map .pin, .map .ct:not(.school .ct)"), { opacity: 0 }, { opacity: 1, duration: 0.4, stagger: 0.05 }, C.onl - 0.4);
+          ["캘거리", "토론토", "몬트리올"].forEach((n, i) => {
+            const [x, y] = cities[n];
+            tl.fromTo($1(".lap-" + n), { opacity: 0, x: 0, y: 0, scale: 0.5 }, { opacity: 1, x: x - 70, y: y - 360 - 30, scale: 1, duration: 1.1, ease: "power2.inOut" }, C.onl + i * 0.3);
+          });
+          tl.fromTo($1(".wk .all"), { scaleX: 0, transformOrigin: "left center" }, { scaleX: 1, duration: 0.8, ease: "power3.out" }, C.w46 - 0.4);
+          tl.fromTo($1(".wk .on"), { opacity: 0 }, { opacity: 1, duration: 0.4 }, C.w38 - 0.1);
+          tl.fromTo($1(".wk .pr"), { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 0.5, ease: "back.out(2)" }, C.w8 - 0.2);
+          tl.to($1(".wk .all"), { opacity: 0, duration: 0.3 }, C.w8 + 0.4);
+          // phase 3: certificate converts
+          tl.to($(".lap, .wk"), { opacity: 0, duration: 0.4 }, C.L4 - 0.5);
+          H.pop(tl, $1(".cert.c0"), C.L4 + 0.2);
+          tl.fromTo($1(".cert.c1"), { opacity: 0, x: -300, rotationY: 90 }, { opacity: 1, x: 0, rotationY: 0, duration: 0.8, ease: "power3.out" }, C.conv - 0.1);
+          tl.fromTo($1(".cert.c2"), { opacity: 0, x: -860, rotationY: 90 }, { opacity: 1, x: 0, rotationY: 0, duration: 1.0, ease: "power3.out" }, C.conv + 0.3);
+          H.rise(tl, $1(".convT"), C.conv + 0.2);
+          tl.fromTo($(".pin-캘거리, .pin-토론토"), { scale: 1 }, { scale: 1.8, duration: 0.3, yoyo: true, repeat: 3 }, C.tor);
+          H.out(tl, $1(".ph2"), C.L5 - 0.5);
+          // phase 4: weekly timetable fills
+          tl.fromTo($1(".tt"), { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, C.L5 - 0.1);
+          tl.fromTo($(".tt .c b"), { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)", stagger: 0.12 }, C.L5 + 0.6);
+          H.pop(tl, $(".ttT span"), C.sched + 0.4, { stagger: 0.5 });
+          H.sceneOut(tl, R, C.D);
+          window.__timelines["s06"] = tl;
+        })();
+      </script>

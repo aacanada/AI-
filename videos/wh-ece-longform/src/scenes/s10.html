@@ -1,0 +1,85 @@
+<!--ANCHORS {"L1":"L1", "post":"포스트베이직", "fee":"만 이천", "L2":"L2", "u3":"세 살 미만", "pay":"급여가", "move":"원하는 지역으로", "refs":"레퍼런스가", "L3":"L3", "conv":"전환할 수", "L4":"L4", "city":"도시로", "pr":"영주권에", "free":"자유롭게", "WIN":"힘입니다"}-->
+<!--SFX [["tick", "fee"], ["ding", "conv"]]-->
+      <style>
+        #s10-root { position: absolute; inset: 0; }
+        #s10-root .cert { position: absolute; left: 180px; top: 290px; width: 640px; height: 400px; padding: 40px; border: 6px solid var(--red); }
+        #s10-root .cert small { font-size: 30px; font-weight: 800; color: var(--muted); }
+        #s10-root .cert b { display: block; margin-top: 8px; font-size: 62px; font-weight: 900; }
+        #s10-root .cert .seal { position: absolute; right: 40px; bottom: 40px; width: 120px; height: 120px; }
+        #s10-root .badge2 { position: absolute; left: 220px; top: 520px; padding: 18px 26px; border-radius: 18px; background: var(--red); color: #fff; font-size: 34px; font-weight: 900; line-height: 1.2; box-shadow: 0 12px 28px rgba(200,16,46,0.3); }
+        #s10-root .badge2 small { display: block; font-size: 24px; font-weight: 700; opacity: 0.9; }
+        #s10-root .fee { position: absolute; left: 920px; top: 290px; width: 840px; padding: 36px 44px; }
+        #s10-root .fee small { font-size: 30px; font-weight: 800; color: var(--muted); }
+        #s10-root .fee .v { margin-top: 6px; font-size: 110px; font-weight: 900; color: var(--red); letter-spacing: -0.05em; line-height: 1.05; }
+        #s10-root .fee .v span { font-size: 44px; color: var(--ink); letter-spacing: 0; margin-left: 10px; }
+        #s10-root .opts { position: absolute; left: 920px; top: 560px; width: 840px; display: flex; flex-wrap: wrap; gap: 16px; }
+        #s10-root .opts span { font-size: 33px; font-weight: 900; padding: 14px 24px; border-radius: 16px; background: var(--paper); box-shadow: 0 10px 24px rgba(80,50,20,0.1); }
+        #s10-root .opts span.r { background: var(--ink); color: #fff; }
+        #s10-root .map { position: absolute; left: 160px; top: 290px; width: 1600px; height: 430px; }
+        #s10-root .map .lines { position: absolute; left: 0; top: 0; width: 1600px; height: 430px; overflow: visible; }
+        #s10-root .mini { position: absolute; width: 120px; height: 72px; margin: -36px 0 0 -60px; border-radius: 12px; background: var(--paper); border: 4px solid var(--red); display: flex; align-items: center; justify-content: center; font-size: 26px; font-weight: 900; color: var(--red); box-shadow: 0 8px 18px rgba(80,50,20,0.18); }
+        #s10-root .mapnote { position: absolute; right: 0; top: -40px; font-size: 22px; font-weight: 700; color: var(--muted); }
+        #s10-root .convT { position: absolute; left: 0; right: 0; top: 745px; text-align: center; }
+        #s10-root .convT span { display: inline-block; background: var(--ink); color: #fff; font-size: 38px; font-weight: 900; padding: 14px 34px; border-radius: 18px; }
+        #s10-root .tags { position: absolute; left: 0; right: 0; top: 745px; display: flex; justify-content: center; gap: 22px; }
+        #s10-root .tags span { font-size: 36px; font-weight: 900; padding: 14px 28px; border-radius: 18px; background: var(--paper); box-shadow: 0 10px 24px rgba(80,50,20,0.12); }
+        #s10-root .tags span.r { background: var(--red); color: #fff; }
+      </style>
+      <div id="s10-root" data-composition-id="s10" data-width="1920" data-height="1080">
+        <div class="stage">
+          <div class="ph1">
+            <div class="cert card"><small>BC주 유아교사 자격</small><b>ECE Five Year</b>
+              <svg class="seal" viewBox="0 0 24 24"><circle cx="12" cy="10" r="7" fill="#c8102e"/><path d="M8.5 15.5 7 23l5-2.5 5 2.5-1.5-7.5" fill="#9e0c24"/><path d="m9 10 2 2 4-4" stroke="#fff" stroke-width="1.8" fill="none"/></svg></div>
+            <div class="badge2"><small>+ 추가 자격</small>영아·유아 포스트베이직</div>
+            <div class="fee card"><small>포스트베이직 학비 (사립 컬리지 기준)</small><div class="v"><b class="n">약 $0</b></div></div>
+            <div class="opts"><span class="o1">만 3세 미만 반까지</span><span class="o2">급여가 더 좋은 곳</span><span class="o3">원하는 지역으로 이직</span><span class="r o4">+ 첫 데이캐어 레퍼런스</span></div>
+          </div>
+          <div class="ph2">
+            <div class="map"><svg class="lines" viewBox="0 0 1600 430"></svg><div class="mapnote">지도는 개념도입니다</div></div>
+            <div class="convT"><span>BC 유아교사 자격 → 캐나다 전역 다른 주 자격으로 전환 가능</span></div>
+            <div class="tags"><span>취업하고 싶은 도시로</span><span>영주권에 더 유리한 주로</span><span class="r">한 곳에 묶이지 않는다</span></div>
+          </div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const C = __CUES__;
+__HELPERS__
+          const R = document.getElementById("s10-root");
+          const $ = (s) => R.querySelectorAll(s);
+          const $1 = (s) => R.querySelector(s);
+          const map = $1(".map");
+          H.canada.build(map, { bc: true });
+          const svg = $1(".lines");
+          const src = [125, 260];
+          H.canada.tiles.slice(1).forEach(([n, x, w, t], i) => {
+            const cx = x + w / 2, cy = t + (410 - t) * 0.62;
+            svg.insertAdjacentHTML("beforeend", '<path class="ln ln' + i + '" d="M' + src[0] + " " + src[1] + " Q " + (src[0] + cx) / 2 + " " + (Math.min(src[1], cy) - 160) + " " + cx + " " + cy + '" stroke="#c8102e" stroke-width="5" fill="none" stroke-dasharray="2 12" stroke-linecap="round"/>');
+            const m = document.createElement("div"); m.className = "mini mini" + i; m.style.left = cx + "px"; m.style.top = cy + "px"; m.textContent = "ECE ✓"; map.appendChild(m);
+          });
+          const mb = document.createElement("div"); mb.className = "mini mbc"; mb.style.left = src[0] + "px"; mb.style.top = src[1] + "px"; mb.textContent = "BC ECE"; map.appendChild(mb);
+          const tl = gsap.timeline({ paused: true });
+          tl.fromTo($1(".cert"), { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0.6);
+          tl.fromTo($1(".badge2"), { opacity: 0, scale: 2, rotation: -12 }, { opacity: 1, scale: 1, rotation: -3, duration: 0.5, ease: "back.out(2)" }, C.post - 0.2);
+          tl.fromTo($1(".fee"), { opacity: 0, x: 80 }, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, C.fee - 1.6);
+          H.count(tl, $1(".fee .n"), 0, 12000, C.fee - 0.6, 1.3, { comma: true, pre: "약 $" });
+          H.pop(tl, $1(".o1"), C.u3 - 0.3);
+          H.pop(tl, $1(".o2"), C.pay - 0.2);
+          H.pop(tl, $1(".o3"), C.move - 0.2);
+          H.pop(tl, $1(".o4"), C.refs - 0.4);
+          H.out(tl, $1(".ph1"), C.L3 - 0.5);
+          tl.fromTo($(".map .tile"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", stagger: 0.06 }, C.L3 - 0.1);
+          H.rise(tl, $1(".mapnote"), C.L3 + 0.3, { y: 10 });
+          H.pop(tl, $1(".mbc"), C.L3 + 0.8);
+          $(".lines .ln").forEach((p, i) => H.draw(tl, p, C.conv - 0.6 + i * 0.25, 0.8, 900));
+          H.pop(tl, $(".map .mini:not(.mbc)"), C.conv + 0.1, { stagger: 0.25 });
+          H.rise(tl, $1(".convT"), C.conv - 0.2);
+          H.out(tl, $1(".convT"), C.L4 - 0.3, { y: 10 });
+          H.pop(tl, $(".tags span")[0], C.city - 0.4);
+          H.pop(tl, $(".tags span")[1], C.pr - 0.2);
+          H.pop(tl, $(".tags span")[2], C.WIN - 2.6);
+          tl.fromTo($(".map .mini:not(.mbc)"), { y: 0 }, { y: -12, duration: 0.3, yoyo: true, repeat: 1, stagger: 0.1, immediateRender: false }, C.free);
+          H.sceneOut(tl, R, C.D);
+          window.__timelines["s10"] = tl;
+        })();
+      </script>

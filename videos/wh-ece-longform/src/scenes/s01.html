@@ -1,0 +1,104 @@
+<!--ANCHORS {"c0":"L0", "cafe":"카페에서", "nam":"남지", "today":"L2", "cert":"자격증과", "career":"경력", "pr":"영주권", "ece":"이씨이", "two":"L3", "pub":"공립", "pri":"사립", "eight":"여덟"}-->
+<!--SFX [["transition_ding", 0.3], ["ding", "nam"], ["ding", "ece"], ["tick", "eight"]]-->
+      <style>
+        #s01-root { position: absolute; inset: 0; }
+        #s01-root .cal { position: absolute; left: 150px; top: 200px; width: 820px; padding: 34px 38px 40px; }
+        #s01-root .cal .hd { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 22px; }
+        #s01-root .cal .hd b { font-size: 40px; font-weight: 900; letter-spacing: -0.03em; }
+        #s01-root .cal .hd .cnt { font-size: 56px; font-weight: 900; color: var(--red); min-width: 220px; text-align: right; }
+        #s01-root .grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+        #s01-root .m { height: 82px; border-radius: 14px; background: #f1e7d6; position: relative; overflow: hidden; font-size: 22px; font-weight: 800; color: #a8977f; display: flex; align-items: flex-end; padding: 8px 12px; }
+        #s01-root .m i { position: absolute; inset: 0; background: var(--red); opacity: 0; }
+        #s01-root .m span { position: relative; }
+        #s01-root .qcard { position: absolute; left: 1040px; top: 270px; width: 760px; padding: 44px 50px; }
+        #s01-root .qcard .cup { width: 92px; height: 92px; }
+        #s01-root .qcard .q { margin-top: 18px; font-size: 54px; font-weight: 900; line-height: 1.3; letter-spacing: -0.035em; }
+        #s01-root .qmark { position: absolute; left: 1580px; top: 150px; font-size: 230px; font-weight: 900; color: var(--red); line-height: 1; }
+        #s01-root .three { position: absolute; left: 0; right: 0; top: 230px; display: flex; justify-content: center; gap: 36px; }
+        #s01-root .chip { padding: 26px 48px; font-size: 52px; font-weight: 900; letter-spacing: -0.03em; }
+        #s01-root .chip.r { background: var(--red); color: #fff; }
+        #s01-root .eceT { position: absolute; left: 0; right: 0; top: 430px; display: flex; justify-content: center; align-items: flex-end; gap: 22px; }
+        #s01-root .blk { width: 190px; height: 190px; border-radius: 26px; display: flex; align-items: center; justify-content: center; font-size: 130px; font-weight: 900; color: #fff;
+          box-shadow: inset 0 -12px 0 rgba(0,0,0,0.14), 0 16px 30px rgba(80,50,20,0.18); }
+        #s01-root .b1 { background: var(--red); } #s01-root .b2 { background: #e3a21a; } #s01-root .b3 { background: #2f8f5b; }
+        #s01-root .eceSub { position: absolute; left: 0; right: 0; top: 660px; text-align: center; font-size: 64px; font-weight: 900; letter-spacing: -0.03em; }
+        #s01-root .crayon { position: absolute; left: 1430px; top: 420px; width: 120px; }
+        #s01-root .vs { position: absolute; left: 0; right: 0; top: 250px; display: flex; justify-content: center; align-items: center; gap: 60px; }
+        #s01-root .side { width: 640px; height: 300px; padding: 40px; text-align: center; display: flex; flex-direction: column; justify-content: center; }
+        #s01-root .side .t { font-size: 66px; font-weight: 900; letter-spacing: -0.04em; }
+        #s01-root .side .s { margin-top: 14px; font-size: 38px; font-weight: 800; color: var(--muted); }
+        #s01-root .side.p2 { border: 5px solid var(--red); }
+        #s01-root .side.p2 .t { color: var(--red); }
+        #s01-root .vsT { font-size: 110px; font-weight: 900; color: var(--ink); font-style: italic; }
+        #s01-root .eight { position: absolute; left: 0; right: 0; top: 620px; display: flex; justify-content: center; align-items: center; gap: 18px; }
+        #s01-root .eight .lb { font-size: 46px; font-weight: 900; margin-right: 16px; }
+        #s01-root .eight .d { width: 70px; height: 70px; border-radius: 50%; background: var(--paper); border: 5px solid var(--red); color: var(--red); font-size: 34px; font-weight: 900; display: flex; align-items: center; justify-content: center; }
+      </style>
+      <div id="s01-root" data-composition-id="s01" data-width="1920" data-height="1080">
+        <div class="stage">
+          <div class="g1">
+            <div class="cal card">
+              <div class="hd"><b>워킹홀리데이</b><span class="cnt">0개월</span></div>
+              <div class="grid"></div>
+            </div>
+            <div class="qcard card">
+              <svg class="cup" viewBox="0 0 24 24"><path d="M4 8h12v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V8zm12 2h2a2 2 0 0 1 0 4h-2" stroke="#2a221d" stroke-width="2" fill="none"/><path d="M8 3v3M12 3v3" stroke="#c8102e" stroke-width="2" stroke-linecap="round"/></svg>
+              <div class="q">“워홀 끝나면<br />나한테 <span class="red">뭐가 남지?</span>”</div>
+            </div>
+            <div class="qmark">?</div>
+          </div>
+          <div class="three"><div class="chip card c1">자격증</div><div class="chip card c2">경력</div><div class="chip r card c3">영주권 가능성</div></div>
+          <div class="eceT"><div class="blk b1">E</div><div class="blk b2">C</div><div class="blk b3">E</div></div>
+          <svg class="crayon" viewBox="0 0 100 100"><g transform="rotate(-35 50 50)"><rect x="40" y="8" width="20" height="70" rx="4" fill="#c8102e"/><path d="M40 78 L60 78 L50 96 Z" fill="#e8b4a0"/><path d="M46 88 L54 88 L50 96 Z" fill="#c8102e"/><rect x="40" y="20" width="20" height="8" fill="#9e0c24"/></g></svg>
+          <div class="eceSub">바로 <span class="hl"><span class="hl-bg"></span>유아교육</span>, ECE</div>
+          <div class="vs">
+            <div class="side card p1"><div class="t">공립 컬리지</div><div class="s">안정성</div></div>
+            <div class="vsT">VS</div>
+            <div class="side card p2"><div class="t">사립 컬리지</div><div class="s">효율성</div></div>
+          </div>
+          <div class="eight"><span class="lb">8가지 포인트</span></div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const C = __CUES__;
+__HELPERS__
+          const R = document.getElementById("s01-root");
+          const $ = (s) => R.querySelectorAll(s);
+          const $1 = (s) => R.querySelector(s);
+          const grid = $1(".grid");
+          for (let i = 1; i <= 24; i++) { const d = document.createElement("div"); d.className = "m"; d.innerHTML = "<i></i><span>" + i + "</span>"; grid.appendChild(d); }
+          const ei = $1(".eight");
+          for (let i = 1; i <= 8; i++) { const d = document.createElement("div"); d.className = "d"; d.textContent = i; ei.appendChild(d); }
+          const tl = gsap.timeline({ paused: true });
+          tl.fromTo($1(".cal"), { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 0.3);
+          const cells = $(".m i");
+          const fillEnd = C.nam - 0.3;
+          const t0 = C.c0 + 0.6;
+          tl.fromTo(cells, { opacity: 0 }, { opacity: 1, duration: 0.18, stagger: (fillEnd - t0) / 24 }, t0);
+          const cnt = $1(".cnt"); const st = { v: 0 };
+          tl.fromTo(st, { v: 0 }, { v: 24, duration: fillEnd - t0 + 0.2, ease: "none", onUpdate: () => (cnt.textContent = Math.round(st.v) + "개월") }, t0);
+          tl.fromTo($(".m span"), { color: "#a8977f" }, { color: "#ffffff", duration: 0.18, stagger: (fillEnd - t0) / 24 }, t0 + 0.05);
+          tl.fromTo($1(".cal"), { rotation: 0 }, { rotation: -2, duration: 0.15, yoyo: true, repeat: 3, ease: "sine.inOut" }, C.nam);
+          tl.fromTo($1(".qcard"), { opacity: 0, x: 80 }, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, C.cafe - 0.3);
+          H.pop(tl, $1(".qmark"), C.nam, { from: 0.2, ease: "back.out(3)" });
+          tl.fromTo($1(".qmark"), { rotation: 0 }, { rotation: 12, duration: 0.6, yoyo: true, repeat: 5, ease: "sine.inOut" }, C.nam + 0.5);
+          H.out(tl, $1(".g1"), C.today - 0.5);
+          H.pop(tl, $1(".c1"), C.cert - 0.1);
+          H.pop(tl, $1(".c2"), C.career - 0.1);
+          H.pop(tl, $1(".c3"), C.pr - 0.1);
+          // ECE blocks drop and stack
+          tl.fromTo($(".blk"), { opacity: 0, y: -420, rotation: (i) => [-25, 18, -12][i] }, { opacity: 1, y: 0, rotation: 0, duration: 0.7, ease: "bounce.out", stagger: 0.18 }, C.ece - 1.0);
+          H.rise(tl, $1(".eceSub"), C.ece - 0.6);
+          H.mark(tl, $1(".eceSub .hl-bg"), C.ece - 0.1);
+          tl.fromTo($1(".crayon"), { opacity: 0, x: 120, rotation: 30 }, { opacity: 1, x: 0, rotation: 0, duration: 0.7, ease: "back.out(1.6)" }, C.ece);
+          H.out(tl, $(".three, .eceT, .eceSub, .crayon"), C.two - 0.5);
+          tl.fromTo($1(".p1"), { opacity: 0, x: -200 }, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, C.two + 0.1);
+          tl.fromTo($1(".p2"), { opacity: 0, x: 200 }, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, C.two + 0.5);
+          H.pop(tl, $1(".vsT"), C.two + 1.0, { from: 2.2 });
+          H.rise(tl, $1(".eight .lb"), C.eight - 0.3);
+          H.pop(tl, $(".eight .d"), C.eight, { stagger: 0.09 });
+          H.sceneOut(tl, R, C.D);
+          window.__timelines["s01"] = tl;
+        })();
+      </script>

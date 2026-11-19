@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+
+
+      <style>
+        #s08-root { position: absolute; inset: 0; }
+        #s08-root .resume { position: absolute; left: 230px; top: 260px; width: 600px; height: 600px; padding: 40px 44px; transform: rotate(-2deg); }
+        #s08-root .resume h4 { font-size: 40px; font-weight: 900; letter-spacing: 0.08em; }
+        #s08-root .resume .sec { margin-top: 26px; }
+        #s08-root .resume .sec b { font-size: 30px; font-weight: 900; color: var(--muted); }
+        #s08-root .resume .ln { height: 14px; border-radius: 7px; background: #efe3cf; margin-top: 12px; }
+        #s08-root .resume .refbox { position: relative; margin-top: 30px; padding: 18px 22px; border-radius: 16px; }
+        #s08-root .resume .refbox b { position: relative; font-size: 38px; font-weight: 900; color: var(--red); }
+        #s08-root .resume .refbox .bg { position: absolute; inset: 0; border-radius: 16px; background: var(--red-soft); border: 5px solid var(--red); transform-origin: left center; }
+        #s08-root .resume .refbox .ln { position: relative; background: #f2c3ca; }
+        #s08-root .side { position: absolute; left: 960px; top: 280px; width: 820px; }
+        #s08-root .side .say { padding: 30px 36px; font-size: 40px; font-weight: 900; line-height: 1.35; letter-spacing: -0.03em; }
+        #s08-root .call { position: relative; margin-top: 30px; height: 260px; }
+        #s08-root .who { position: absolute; top: 120px; width: 250px; padding: 20px; text-align: center; font-size: 32px; font-weight: 900; }
+        #s08-root .who .ic { width: 64px; height: 64px; margin: 0 auto 8px; }
+        #s08-root .who.w1 { left: 0; } #s08-root .who.w2 { right: 0; }
+        #s08-root .line { position: absolute; left: 260px; right: 260px; top: 190px; height: 6px; background: repeating-linear-gradient(90deg, var(--red) 0 18px, transparent 18px 30px); transform-origin: left center; }
+        #s08-root .bub { position: absolute; left: 200px; top: 0; padding: 20px 34px; border-radius: 28px; background: var(--ink); color: #fff; font-size: 40px; font-weight: 900; white-space: nowrap; }
+        #s08-root .bub::after { content: ""; position: absolute; left: 60px; bottom: -22px; border: 12px solid transparent; border-top: 14px solid var(--ink); }
+        #s08-root .easy { margin-top: 20px; display: inline-block; padding: 16px 30px; border-radius: 18px; background: var(--red); color: #fff; font-size: 36px; font-weight: 900; }
+        #s08-root .dc { position: absolute; left: 200px; top: 300px; width: 560px; height: 460px; padding: 30px; text-align: center; }
+        #s08-root .dc svg { width: 300px; height: 280px; }
+        #s08-root .dc b { display: block; font-size: 44px; font-weight: 900; }
+        #s08-root .rb { position: absolute; left: 860px; width: 880px; display: flex; align-items: center; gap: 24px; }
+        #s08-root .rb.r1 { top: 300px; } #s08-root .rb.r2 { top: 470px; }
+        #s08-root .rb .tag { flex: 0 0 200px; padding: 16px 0; text-align: center; border-radius: 16px; background: #ece4d6; font-size: 32px; font-weight: 900; }
+        #s08-root .rb .sb { position: relative; padding: 22px 34px; border-radius: 28px; background: var(--paper); border: 5px solid var(--red); font-size: 42px; font-weight: 900; color: var(--red); box-shadow: 0 12px 28px rgba(80,50,20,0.12); }
+        #s08-root .weapon { position: absolute; left: 860px; top: 650px; padding: 22px 34px; border-radius: 20px; background: var(--ink); color: #fff; font-size: 40px; font-weight: 900; }
+        #s08-root .weapon span { color: var(--gold); }
+        #s08-root .pg { position: absolute; left: 160px; top: 290px; width: 1600px; padding: 40px 50px; }
+        #s08-root .pg .k { font-size: 36px; font-weight: 900; }
+        #s08-root .pg .k .red { font-weight: 900; }
+        #s08-root .pg .tr { position: relative; margin-top: 30px; height: 80px; border-radius: 40px; background: #efe3cf; overflow: hidden; }
+        #s08-root .pg .f { position: absolute; left: 0; top: 0; bottom: 0; width: 100%; background: linear-gradient(90deg, #e8b4a0, var(--red)); transform-origin: left center; }
+        #s08-root .pg .num { position: absolute; right: 50px; top: 30px; font-size: 64px; font-weight: 900; color: var(--red); }
+        #s08-root .pg .lt { margin-top: 22px; font-size: 32px; font-weight: 800; color: var(--muted); }
+        #s08-root .chips { position: absolute; left: 0; right: 0; top: 640px; display: flex; justify-content: center; gap: 22px; }
+        #s08-root .chips span { font-size: 34px; font-weight: 900; padding: 16px 28px; border-radius: 18px; background: var(--paper); box-shadow: 0 10px 24px rgba(80,50,20,0.1); }
+        #s08-root .chips span i { font-style: normal; color: var(--red); margin-right: 8px; }
+        #s08-root .chips span.x i { color: #8c7b6b; }
+        #s08-root .steps { position: absolute; left: 160px; top: 280px; width: 1600px; height: 520px; }
+        #s08-root .stp { position: absolute; width: 470px; padding: 28px 30px; border-radius: 24px; background: var(--paper); box-shadow: 0 14px 34px rgba(80,50,20,0.13); border: 4px solid var(--line); }
+        #s08-root .stp small { display: block; font-size: 26px; font-weight: 800; color: var(--muted); }
+        #s08-root .stp b { display: block; margin-top: 4px; font-size: 44px; font-weight: 900; letter-spacing: -0.03em; }
+        #s08-root .stp.s1 { left: 0; top: 300px; } #s08-root .stp.s2 { left: 560px; top: 160px; border-color: var(--red); } #s08-root .stp.s3 { left: 1120px; top: 20px; }
+        #s08-root .stp.s2 b { color: var(--red); }
+        #s08-root .arrw { position: absolute; width: 90px; height: 60px; }
+        #s08-root .fastT { position: absolute; left: 560px; top: 340px; padding: 14px 26px; border-radius: 16px; background: var(--red); color: #fff; font-size: 34px; font-weight: 900; }
+        #s08-root .fullT { position: absolute; left: 0; top: 460px; font-size: 34px; font-weight: 900; }
+        #s08-root .six { position: absolute; left: 160px; top: 290px; width: 1600px; display: flex; gap: 50px; align-items: center; }
+        #s08-root .six .badge { width: 420px; height: 420px; border-radius: 50%; background: var(--red); color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 0 0 14px #fff, 0 0 0 20px var(--red), 0 30px 60px rgba(200,16,46,0.3); }
+        #s08-root .six .badge b { font-size: 140px; font-weight: 900; letter-spacing: -0.05em; line-height: 1; }
+        #s08-root .six .badge span { font-size: 36px; font-weight: 800; margin-top: 8px; }
+        #s08-root .six .rows { flex: 1; }
+        #s08-root .six .row { display: flex; align-items: center; gap: 22px; padding: 26px 34px; margin-bottom: 24px; font-size: 42px; font-weight: 900; }
+        #s08-root .six .row i { flex: 0 0 62px; height: 62px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-style: normal; color: #fff; font-size: 36px; }
+        #s08-root .six .row.no i { background: #8c7b6b; } #s08-root .six .row.ok i { background: var(--red); }
+        #s08-root .six .row.no { color: #8c7b6b; }
+        #s08-root .six .tip { font-size: 38px; font-weight: 900; color: var(--red); padding-left: 10px; }
+      </style>
+      <div id="s08-root" data-composition-id="s08" data-width="1920" data-height="1080">
+        <div class="stage">
+          <div class="ph1">
+            <div class="resume card">
+              <h4>RESUME</h4>
+              <div class="sec"><b>경력</b><div class="ln" style="width: 90%"></div><div class="ln" style="width: 70%"></div></div>
+              <div class="sec"><b>학력</b><div class="ln" style="width: 80%"></div><div class="ln" style="width: 55%"></div></div>
+              <div class="refbox"><div class="bg"></div><b>References</b><div class="ln" style="width: 75%"></div><div class="ln" style="width: 60%"></div></div>
+            </div>
+            <div class="side">
+              <div class="say card s1">그 업계에서 <span class="red">나에 대해 직접 말해줄 사람</span>이 있는가?</div>
+              <div class="call">
+                <div class="bub">“이 사람 어땠나요?”</div>
+                <div class="who card w1"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2" fill="#2a221d"/><rect x="8" y="3" width="8" height="4" rx="1" fill="none" stroke="#2a221d" stroke-width="2"/></svg>캐나다 고용주</div>
+                <div class="line"></div>
+                <div class="who card w2"><svg class="ic" viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.6 3.6a1 1 0 0 1-.25 1z" fill="#c8102e"/></svg>이전 상사</div>
+              </div>
+              <div class="easy">같은 업계의 믿을 만한 추천인 → 취업이 훨씬 쉬워짐</div>
+            </div>
+          </div>
+          <div class="ph2">
+            <div class="dc card">
+              <svg viewBox="0 0 120 110"><path d="M10 50 60 12l50 38" fill="none" stroke="#c8102e" stroke-width="7" stroke-linejoin="round"/><rect x="20" y="48" width="80" height="58" rx="4" fill="#fffdf8" stroke="#2a221d" stroke-width="4"/><rect x="50" y="74" width="20" height="32" fill="#c8102e"/><rect x="28" y="60" width="16" height="14" fill="#ffd75e"/><rect x="76" y="60" width="16" height="14" fill="#ffd75e"/><rect x="2" y="88" width="14" height="14" rx="2" fill="#e3a21a"/><rect x="104" y="88" width="14" height="14" rx="2" fill="#2f8f5b"/></svg>
+              <b>학교 다니며 일한 데이캐어</b>
+            </div>
+            <div class="rb r1"><div class="tag">원장님</div><div class="sb">“이 사람 추천합니다”</div></div>
+            <div class="rb r2"><div class="tag">선임 교사</div><div class="sb">“이 사람 추천합니다”</div></div>
+            <div class="weapon">졸업 후 풀타임 취업의 <span>가장 강력한 무기</span></div>
+          </div>
+          <div class="ph3">
+            <div class="pg card">
+              <div class="k">Five Year 자격 = 공인 유아교사 밑에서 <span class="red">500시간</span> + 지도 교사 <span class="red">추천서</span></div>
+              <div class="tr"><div class="f"></div></div>
+              <div class="num">0시간</div>
+              <div class="lt">BC주 유아교사 자격도 추천서를 요구합니다</div>
+            </div>
+            <div class="chips"><span class="c1"><i>✓</i>공부 시작한 날부터 계산</span><span class="x c2"><i>✕</i>실습 시간은 제외</span><span class="c3"><i>✓</i>보조교사로 일한 시간 포함 가능</span></div>
+          </div>
+          <div class="ph4">
+            <div class="steps">
+              <div class="stp s1"><small>공부 중</small><b>ECE Assistant</b></div>
+              <div class="stp s2"><small>과정 마치면 바로 정교사</small><b>ECE One Year</b></div>
+              <div class="stp s3"><small>500시간 + 추천서</small><b>ECE Five Year</b></div>
+              <svg class="arrw a1" style="left: 475px; top: 260px" viewBox="0 0 90 60"><path d="M5 50 L70 15 M50 8 L75 13 L68 38" stroke="#c8102e" stroke-width="7" fill="none" stroke-linecap="round"/></svg>
+              <svg class="arrw a2" style="left: 1035px; top: 120px" viewBox="0 0 90 60"><path d="M5 50 L70 15 M50 8 L75 13 L68 38" stroke="#c8102e" stroke-width="7" fill="none" stroke-linecap="round"/></svg>
+              <div class="fastT">공립보다 1년 넘게 빠름</div>
+              <div class="fullT">일하던 데이캐어에서 그대로 <span class="red">정교사 풀타임 채용</span></div>
+            </div>
+          </div>
+          <div class="ph5">
+            <div class="six">
+              <div class="badge"><b>+$6</b><span>/시간 임금 보조</span><span style="font-size: 26px">최대</span></div>
+              <div class="rows">
+                <div class="row card no"><i>✕</i>보조교사 (Assistant)는 대상 아님</div>
+                <div class="row card ok"><i>✓</i>정교사부터 받을 수 있음</div>
+                <div class="tip">→ 빨리 정교사가 될수록 유리</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const C = {"L1": 5.3333, "ref": 9.1667, "ind": 10.8333, "L2": 15.3333, "boss": 18.4333, "how": 21.2333, "rec": 24.9333, "L3": 28.0333, "dir": 33.7333, "refs": 35.7333, "strong": 39.8, "L4": 41.9667, "five": 45.9667, "h500": 49.8, "letter": 53.0, "L5": 54.7667, "start": 56.2667, "prac": 58.2667, "asst": 59.8, "L6": 62.6, "one": 63.8, "full": 69.3333, "fast": 72.2667, "L7": 73.8667, "six": 78.2667, "notA": 80.9333, "WIN": 85.4667, "L": [[0.7667, 4.5333], [5.3333, 14.8667], [15.3333, 27.3333], [28.0333, 41.0667], [41.9667, 54.1333], [54.7667, 61.9667], [62.6, 73.5333], [73.8667, 86.3333]], "D": 87.5333};
+      const H = (function () {
+        const fmtNum = (v, o) => {
+          o = o || {};
+          const d = o.dec || 0;
+          let s = d ? v.toFixed(d) : Math.round(v).toString();
+          if (o.comma) s = s.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+          return (o.pre || "") + s + (o.suf || "");
+        };
+        // schematic Canada map (concept diagram): province tiles in a 1600x430 box. returns city coords
+        const CANADA = {
+          tiles: [["BC", 0, 250, 40], ["AB", 258, 150, 30], ["SK", 416, 140, 30], ["MB", 564, 150, 30], ["ON", 722, 330, 70], ["QC", 1060, 320, 0], ["대서양", 1388, 212, 170]],
+          city: { 밴쿠버: [70, 360], 캘거리: [335, 310], 토론토: [960, 385], 몬트리올: [1250, 345] },
+          build(el, opts) {
+            opts = opts || {};
+            let h = '<svg viewBox="0 0 1600 430" width="1600" height="430" style="position:absolute;left:0;top:0;overflow:visible">';
+            this.tiles.forEach(([n, x, w, t], i) => {
+                const bc = n === "BC" && opts.bc;
+                h += '<g class="tile tile-' + i + '"><rect x="' + x + '" y="' + t + '" width="' + w + '" height="' + (410 - t) + '" rx="22" fill="' + (bc ? "#c8102e" : "#efe3cf") + '" stroke="#fffdf8" stroke-width="4"/>' +
+                  '<text x="' + (x + w / 2) + '" y="' + (t + 60) + '" text-anchor="middle" font-family="Pretendard" font-size="40" font-weight="900" fill="' + (bc ? "#fff" : "#a8977f") + '">' + n + "</text></g>";
+            });
+            h += "</svg>";
+            el.insertAdjacentHTML("beforeend", h);
+          },
+        };
+        return {
+          canada: CANADA,
+          // count-up number (seek-safe proxy, text written in onUpdate)
+          count(tl, el, from, to, t, d, o) {
+            const st = { v: from };
+            el.textContent = fmtNum(from, o);
+            tl.fromTo(st, { v: from }, { v: to, duration: d || 1.2, ease: "power2.out", onUpdate: () => (el.textContent = fmtNum(st.v, o)) }, t);
+            tl.fromTo(el, { scale: 0.7 }, { scale: 1, duration: d || 1.2, ease: "power2.out" }, t);
+          },
+          pop(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 0, scale: o.from || 0.6 }, { opacity: 1, scale: 1, duration: o.d || 0.5, ease: o.ease || "back.out(1.8)", stagger: o.stagger || 0 }, t);
+          },
+          rise(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 0, y: o.y || 40 }, { opacity: 1, y: 0, duration: o.d || 0.55, ease: o.ease || "power3.out", stagger: o.stagger || 0 }, t);
+          },
+          slideX(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 0, x: o.x || -80 }, { opacity: 1, x: 0, duration: o.d || 0.6, ease: o.ease || "power3.out", stagger: o.stagger || 0 }, t);
+          },
+          out(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 1, y: 0 }, { opacity: 0, y: o.y == null ? -30 : o.y, duration: o.d || 0.4, ease: "power2.in", immediateRender: false, stagger: o.stagger || 0 }, t);
+          },
+          fadeOut(tl, els, t, d) {
+            tl.fromTo(els, { opacity: 1 }, { opacity: 0, duration: d || 0.4, ease: "power1.in", immediateRender: false }, t);
+          },
+          // marker sweep behind text: element .hl > .hl-bg
+          mark(tl, el, t, d) {
+            tl.fromTo(el, { scaleX: 0 }, { scaleX: 1, duration: d || 0.5, ease: "power2.inOut" }, t);
+          },
+          growX(tl, el, t, d, to) {
+            tl.fromTo(el, { scaleX: 0 }, { scaleX: to == null ? 1 : to, duration: d || 1, ease: "power3.out" }, t);
+          },
+          growY(tl, el, t, d) {
+            tl.fromTo(el, { scaleY: 0 }, { scaleY: 1, duration: d || 1, ease: "power3.out" }, t);
+          },
+          stamp(tl, el, t) {
+            tl.fromTo(el, { opacity: 0, scale: 2.2, rotation: -14 }, { opacity: 1, scale: 1, rotation: -6, duration: 0.42, ease: "back.out(2.2)" }, t);
+          },
+          // slow ambient breathing, finite repeats within scene duration
+          breathe(tl, els, D, o) {
+            o = o || {};
+            const per = o.per || 3;
+            const n = Math.max(1, Math.floor(D / per) - 1);
+            tl.fromTo(els, { y: 0, rotation: 0 }, { y: o.y || -14, rotation: o.r || 0, duration: per / 2, ease: "sine.inOut", yoyo: true, repeat: n * 2 - 1 }, 0.1);
+          },
+          // camera move on a capture: el is the inner image wrapper
+          cam(tl, el, t, d, s, x, y) {
+            tl.to(el, { scale: s, x: x, y: y, duration: d, ease: "power2.inOut" }, t);
+          },
+          // capture camera: move/zoom a .shot so a highlight band [x0,y0,x1,y1] (native px) is centred
+          camTo(tl, shot, band, natH, s, t, d) {
+            const k = 716 / 538, W = 716, HS = 520;
+            if (!s) s = Math.max(1.12, Math.min(1.6, (0.94 * 538) / (band[2] - band[0])));
+            const cx = ((band[0] + band[2]) / 2) * k, cy = ((band[1] + band[3]) / 2) * k;
+            let x = W / 2 - cx * s, y = HS / 2 - cy * s;
+            x = Math.min(0, Math.max(W - W * s, x));
+            y = Math.min(0, Math.max(Math.min(0, HS - natH * k * s), y));
+            const prev = shot.__cam || { scale: 1, x: 0, y: 0 };
+            tl.fromTo(shot, { scale: prev.scale, x: prev.x, y: prev.y }, { scale: s, x: x, y: y, duration: d || 1.6, ease: "power2.inOut", immediateRender: !shot.__cam }, t);
+            shot.__cam = { scale: s, x: x, y: y };
+          },
+          // red ring drawn around a highlight band inside a .shot
+          ring(tl, shot, band, t) {
+            const k = 716 / 538;
+            const r = document.createElement("div");
+            r.className = "ring";
+            r.style.left = band[0] * k - 10 + "px";
+            r.style.top = band[1] * k - 8 + "px";
+            r.style.width = (band[2] - band[0]) * k + 20 + "px";
+            r.style.height = (band[3] - band[1]) * k + 16 + "px";
+            shot.appendChild(r);
+            tl.fromTo(r, { opacity: 0, scale: 1.25 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, t);
+            return r;
+          },
+          draw(tl, path, t, d, len) {
+            try { len = Math.ceil(path.getTotalLength()) + 4 || len; } catch (e) {}
+            tl.fromTo(path, { opacity: 0 }, { opacity: 1, duration: 0.05 }, t);
+            tl.fromTo(path, { strokeDasharray: len + " " + len, strokeDashoffset: len }, { strokeDashoffset: 0, duration: d || 1, ease: "power2.inOut" }, t);
+          },
+          sceneIn(tl, root) {
+            const k = root.querySelector(".kicker");
+            if (k) {
+              tl.fromTo(k.querySelector(".k-num"), { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 0.05);
+              tl.fromTo(k.querySelector(".k-title"), { opacity: 0, x: -20, clipPath: "inset(0 100% 0 0)" }, { opacity: 1, x: 0, clipPath: "inset(0 0% 0 0)", duration: 0.7, ease: "power3.out" }, 0.18);
+            }
+          },
+          sceneOut(tl, root, D) {
+            const st = root.querySelector(".stage");
+            if (st) tl.fromTo(st, { opacity: 1 }, { opacity: 0, duration: 0.35, ease: "power1.in", immediateRender: false }, D - 0.4);
+          },
+        };
+      })();
+
+          const R = document.getElementById("s08-root");
+          const $ = (s) => R.querySelectorAll(s);
+          const $1 = (s) => R.querySelector(s);
+          const tl = gsap.timeline({ paused: true });
+          // phase 1: resume + references
+          tl.fromTo($1(".resume"), { opacity: 0, y: 80, rotation: -8 }, { opacity: 1, y: 0, rotation: -2, duration: 0.7, ease: "power3.out" }, 0.5);
+          tl.fromTo($1(".refbox .bg"), { scaleX: 0, opacity: 0 }, { scaleX: 1, opacity: 1, duration: 0.5, ease: "power2.out" }, C.ref - 0.3);
+          tl.fromTo($1(".resume"), { scale: 1 }, { scale: 1.06, duration: 0.3, yoyo: true, repeat: 1 }, C.ref + 0.2);
+          H.rise(tl, $1(".side .s1"), C.ind - 0.3);
+          H.out(tl, $1(".side .s1"), C.L2 - 0.4);
+          tl.fromTo($1(".side"), { y: 0 }, { y: -170, duration: 0.5, ease: "power2.inOut" }, C.L2 - 0.2);
+          H.slideX(tl, $1(".who.w1"), C.L2 + 1.5);
+          tl.fromTo($1(".line"), { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "power2.inOut" }, C.boss - 0.2);
+          H.slideX(tl, $1(".who.w2"), C.boss, { x: 60 });
+          H.pop(tl, $1(".bub"), C.how - 0.2);
+          H.pop(tl, $1(".easy"), C.rec - 0.2);
+          H.out(tl, $1(".ph1"), C.L3 - 0.5);
+          // phase 2: daycare references
+          tl.fromTo($1(".dc"), { opacity: 0, x: -80 }, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, C.L3 - 0.1);
+          H.slideX(tl, $(".rb .tag"), C.dir - 0.3, { stagger: 0.4, x: 40 });
+          H.pop(tl, $(".rb .sb"), C.refs - 0.2, { stagger: 0.35, ease: "back.out(2.4)" });
+          H.rise(tl, $1(".weapon"), C.strong - 0.6);
+          H.out(tl, $1(".ph2"), C.L4 - 0.5);
+          // phase 3: 500 hours
+          tl.fromTo($1(".pg"), { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, C.L4 - 0.1);
+          tl.fromTo($1(".pg .f"), { scaleX: 0 }, { scaleX: 1, duration: 2.6, ease: "power1.inOut" }, C.h500 - 0.6);
+          H.count(tl, $1(".pg .num"), 0, 500, C.h500 - 0.6, 2.6, { suf: "시간" });
+          H.rise(tl, $1(".pg .lt"), C.letter - 0.2, { y: 14 });
+          H.pop(tl, $1(".chips .c1"), C.start - 0.5);
+          H.pop(tl, $1(".chips .c2"), C.prac - 0.2);
+          H.pop(tl, $1(".chips .c3"), C.asst - 0.2);
+          H.out(tl, $1(".ph3"), C.L6 - 0.5);
+          // phase 4: certificate ladder
+          H.pop(tl, $1(".stp.s1"), C.L6 - 0.1);
+          tl.fromTo($1(".arrw.a1"), { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.4 }, C.one - 0.4);
+          H.pop(tl, $1(".stp.s2"), C.one - 0.2);
+          H.rise(tl, $1(".fullT"), C.full - 0.6, { y: 20 });
+          tl.fromTo($1(".arrw.a2"), { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.4 }, C.full + 0.4);
+          H.pop(tl, $1(".stp.s3"), C.full + 0.7);
+          H.stamp(tl, $1(".fastT"), C.fast - 0.2);
+          H.out(tl, $1(".ph4"), C.L7 - 0.5);
+          // phase 5: +$6 wage enhancement
+          tl.fromTo($1(".six .badge"), { opacity: 0, scale: 0.3, rotation: -40 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.7, ease: "back.out(1.8)" }, C.L7 - 0.1);
+          H.slideX(tl, $1(".row.no"), C.notA - 0.4, { x: 60 });
+          H.slideX(tl, $1(".row.ok"), C.notA + 1.2, { x: 60 });
+          H.rise(tl, $1(".six .tip"), C.WIN - 1.4, { y: 16 });
+          H.sceneOut(tl, R, C.D);
+          window.__timelines["s08"] = tl;
+        })();
+      </script>
+
+    </template>
+  </body>
+</html>

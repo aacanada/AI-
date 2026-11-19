@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+
+
+      <style>
+        #s13-root { position: absolute; inset: 0; }
+        #s13-root .big { position: absolute; left: 0; right: 0; top: 300px; display: flex; justify-content: center; align-items: center; gap: 50px; }
+        #s13-root .big .sd { width: 520px; padding: 40px; text-align: center; }
+        #s13-root .big .sd small { display: block; font-size: 40px; font-weight: 900; }
+        #s13-root .big .sd b { display: block; font-size: 220px; font-weight: 900; line-height: 1; letter-spacing: -0.05em; }
+        #s13-root .big .sd.a b { color: #5b4d42; } #s13-root .big .sd.b { border: 6px solid var(--red); } #s13-root .big .sd.b small, #s13-root .big .sd.b b { color: var(--red); }
+        #s13-root .big .sd span { display: inline-block; margin-top: 10px; font-size: 30px; font-weight: 800; padding: 6px 18px; border-radius: 10px; background: #ece4d6; }
+        #s13-root .big .sd.b span { background: var(--red); color: #fff; }
+        #s13-root .big .colon { font-size: 150px; font-weight: 900; }
+        #s13-root .fs { position: absolute; left: 810px; top: 170px; width: 300px; height: 120px; border: 8px solid var(--red); border-radius: 20px; color: var(--red); font-size: 56px; font-weight: 900; display: flex; align-items: center; justify-content: center; background: rgba(255,253,248,0.9); }
+        #s13-root .mini { position: absolute; left: 72px; top: 40px; display: flex; align-items: center; gap: 14px; font-size: 32px; font-weight: 900; }
+        #s13-root .mini b { font-size: 40px; } #s13-root .mini .r { color: var(--red); }
+        #s13-root .mini .k { background: var(--ink); color: #fff; padding: 4px 14px; border-radius: 10px; font-size: 24px; letter-spacing: 0.1em; }
+        #s13-root .tbl { position: absolute; left: 80px; top: 112px; width: 1760px; border-radius: 22px; overflow: hidden; background: var(--paper); box-shadow: 0 18px 50px rgba(80,50,20,0.12); }
+        #s13-root .tr { display: grid; grid-template-columns: 250px 610px 900px; border-bottom: 2px solid #efe3cf; }
+        #s13-root .tr > div { padding: 11px 20px; font-size: 25px; font-weight: 700; line-height: 1.32; }
+        #s13-root .tr > div:first-child { font-weight: 900; background: #f8f1e4; }
+        #s13-root .tr > div:last-child { font-weight: 800; color: #7a0a1c; }
+        #s13-root .tr.h > div { font-size: 27px; font-weight: 900; background: var(--ink); color: #fff; }
+        #s13-root .tr.h > div:last-child { background: var(--red); color: #fff; }
+        #s13-root .tr.pg { background: #fff3c4; }
+        #s13-root .tr.pg > div:nth-child(2) { font-weight: 900; color: var(--ink); }
+        #s13-root .pgT { position: absolute; left: 1560px; top: 0; padding: 8px 18px; border-radius: 12px; background: var(--red); color: #fff; font-size: 26px; font-weight: 900; white-space: nowrap; }
+        #s13-root .sum { position: absolute; left: 160px; top: 200px; width: 1600px; }
+        #s13-root .sum .c { display: flex; align-items: center; gap: 28px; padding: 30px 40px; margin-bottom: 26px; font-size: 44px; font-weight: 900; letter-spacing: -0.03em; }
+        #s13-root .sum .c i { flex: 0 0 70px; height: 70px; border-radius: 50%; background: var(--red); color: #fff; font-style: normal; font-size: 38px; display: flex; align-items: center; justify-content: center; }
+        #s13-root .sum .c.k { background: var(--red); color: #fff; } #s13-root .sum .c.k i { background: #fff; color: var(--red); }
+        #s13-root .logo { position: absolute; left: 0; right: 0; top: 280px; text-align: center; }
+        #s13-root .logo .mk { width: 170px; height: 170px; margin: 0 auto; border-radius: 40px; background: var(--red); display: flex; align-items: center; justify-content: center; box-shadow: 0 20px 50px rgba(200,16,46,0.3); }
+        #s13-root .logo .mk svg { width: 112px; height: 112px; }
+        #s13-root .logo b { display: block; margin-top: 26px; font-size: 96px; font-weight: 900; letter-spacing: -0.03em; }
+        #s13-root .logo .url { margin-top: 12px; font-size: 54px; font-weight: 800; color: var(--red); }
+        #s13-root .logo .cta { display: inline-block; margin-top: 30px; padding: 18px 44px; border-radius: 999px; background: var(--ink); color: #fff; font-size: 40px; font-weight: 900; }
+      </style>
+      <div id="s13-root" data-composition-id="s13" data-width="1920" data-height="1080">
+        <div class="stage">
+          <div class="ph0">
+            <div class="big"><div class="sd card a"><small>공립 컬리지</small><b>1</b><span>안정성</span></div><div class="colon">:</div><div class="sd card b"><small>사립 컬리지 + 워홀</small><b>7</b><span>효율성</span></div></div>
+            <div class="fs">FINAL</div>
+          </div>
+          <div class="mini"><span class="k">FINAL</span><span>공립</span><b>1</b><span>:</span><b class="r">7</b><span class="r">사립 + 워홀</span></div>
+          <div class="tbl">
+            <div class="tr h"><div>포인트</div><div>공립 컬리지 (국제학생)</div><div>사립 컬리지 (워홀)</div></div>
+            <div class="tr"><div>기간</div><div>2년</div><div>46주 (11개월 이내)</div></div>
+            <div class="tr"><div>학비</div><div>약 4만 9천 불</div><div>약 2만 불</div></div>
+            <div class="tr"><div>입학·공부</div><div>요건 까다롭고 대면 수업·과제 많음</div><div>상대적으로 수월, 이론 온라인</div></div>
+            <div class="tr"><div>일 병행</div><div>학기 중 주 24시간 제한</div><div>시간 제한 없음</div></div>
+            <div class="tr"><div>수강·근무 지역</div><div>대면 수업, 학교 근처 거주</div><div>이론 38주 온라인(어디서든) + 실습 8주 BC, 보조교사 자격 다른 주로 전환해 그 지역에서 근무</div></div>
+            <div class="tr"><div>졸업 시 현장 레퍼런스</div><div>실습 위주로 제한적</div><div>데이캐어 근무로 원장·선임교사 추천 확보</div></div>
+            <div class="tr"><div>공부 중 수입</div><div>제한적</div><div>보조교사 월 약 2천~4천 불 (세전)</div></div>
+            <div class="tr"><div>정교사 시점</div><div>2년 후</div><div>11개월 후</div></div>
+            <div class="tr pg" style="position: relative"><div>졸업 후 일할 권리</div><div>PGWP 최대 3년</div><div>워홀 잔여 + 2차 워홀로 약 3년</div></div>
+            <div class="tr"><div>업그레이드</div><div>과정에 포함되는 경우 있음</div><div>포스트베이직 약 1만 2천 불</div></div>
+            <div class="tr"><div>자격 후 지역 이동</div><div>같음 (자격 전환 가능)</div><div>BC 자격을 다른 주로 전환, 원하는 지역·영주권 유리한 지역으로 이동</div></div>
+          </div>
+          <div class="sum">
+            <div class="c card c1"><i>1</i>기간 · 학비 · 일 병행 · 수입 · 레퍼런스 · 업그레이드 = 사립의 효율성</div>
+            <div class="c card c2"><i>2</i>졸업 후 일할 권리는 공립이 강점 → 한국인은 워홀 4년으로 채움</div>
+            <div class="c card k c3"><i>3</i>워홀 한국인에게 사립 유아교육 = 효율성 + 안정성 함께</div>
+          </div>
+          <div class="logo">
+            <div class="mk"><svg viewBox="0 0 100 100"><path fill="#fff" d="M50 4 l7 14 9-4-3 20 13-14 3 8 13-3-5 15 6 3-21 17 3 8-22-4v22h-6V64l-22 4 3-8-21-17 6-3-5-15 13 3 3-8 13 14-3-20 9 4z"/></svg></div>
+            <b>AA Canada</b>
+            <div class="url">aacanada.co.kr</div>
+            <div class="cta">내 상황에 맞는 학교·일정 상담 신청</div>
+          </div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const C = {"L0": 0.6667, "L1": 2.8333, "eff": 13.4667, "L2": 15.1667, "fill": 19.4, "L3": 20.7667, "both": 26.6667, "L4": 28.6667, "aa": 31.4667, "ask": 33.2333, "L": [[0.6667, 2.2667], [2.8333, 14.5333], [15.1667, 20.1333], [20.7667, 28.0333], [28.6667, 34.1333]], "D": 38.5667};
+      const H = (function () {
+        const fmtNum = (v, o) => {
+          o = o || {};
+          const d = o.dec || 0;
+          let s = d ? v.toFixed(d) : Math.round(v).toString();
+          if (o.comma) s = s.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+          return (o.pre || "") + s + (o.suf || "");
+        };
+        // schematic Canada map (concept diagram): province tiles in a 1600x430 box. returns city coords
+        const CANADA = {
+          tiles: [["BC", 0, 250, 40], ["AB", 258, 150, 30], ["SK", 416, 140, 30], ["MB", 564, 150, 30], ["ON", 722, 330, 70], ["QC", 1060, 320, 0], ["대서양", 1388, 212, 170]],
+          city: { 밴쿠버: [70, 360], 캘거리: [335, 310], 토론토: [960, 385], 몬트리올: [1250, 345] },
+          build(el, opts) {
+            opts = opts || {};
+            let h = '<svg viewBox="0 0 1600 430" width="1600" height="430" style="position:absolute;left:0;top:0;overflow:visible">';
+            this.tiles.forEach(([n, x, w, t], i) => {
+                const bc = n === "BC" && opts.bc;
+                h += '<g class="tile tile-' + i + '"><rect x="' + x + '" y="' + t + '" width="' + w + '" height="' + (410 - t) + '" rx="22" fill="' + (bc ? "#c8102e" : "#efe3cf") + '" stroke="#fffdf8" stroke-width="4"/>' +
+                  '<text x="' + (x + w / 2) + '" y="' + (t + 60) + '" text-anchor="middle" font-family="Pretendard" font-size="40" font-weight="900" fill="' + (bc ? "#fff" : "#a8977f") + '">' + n + "</text></g>";
+            });
+            h += "</svg>";
+            el.insertAdjacentHTML("beforeend", h);
+          },
+        };
+        return {
+          canada: CANADA,
+          // count-up number (seek-safe proxy, text written in onUpdate)
+          count(tl, el, from, to, t, d, o) {
+            const st = { v: from };
+            el.textContent = fmtNum(from, o);
+            tl.fromTo(st, { v: from }, { v: to, duration: d || 1.2, ease: "power2.out", onUpdate: () => (el.textContent = fmtNum(st.v, o)) }, t);
+            tl.fromTo(el, { scale: 0.7 }, { scale: 1, duration: d || 1.2, ease: "power2.out" }, t);
+          },
+          pop(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 0, scale: o.from || 0.6 }, { opacity: 1, scale: 1, duration: o.d || 0.5, ease: o.ease || "back.out(1.8)", stagger: o.stagger || 0 }, t);
+          },
+          rise(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 0, y: o.y || 40 }, { opacity: 1, y: 0, duration: o.d || 0.55, ease: o.ease || "power3.out", stagger: o.stagger || 0 }, t);
+          },
+          slideX(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 0, x: o.x || -80 }, { opacity: 1, x: 0, duration: o.d || 0.6, ease: o.ease || "power3.out", stagger: o.stagger || 0 }, t);
+          },
+          out(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 1, y: 0 }, { opacity: 0, y: o.y == null ? -30 : o.y, duration: o.d || 0.4, ease: "power2.in", immediateRender: false, stagger: o.stagger || 0 }, t);
+          },
+          fadeOut(tl, els, t, d) {
+            tl.fromTo(els, { opacity: 1 }, { opacity: 0, duration: d || 0.4, ease: "power1.in", immediateRender: false }, t);
+          },
+          // marker sweep behind text: element .hl > .hl-bg
+          mark(tl, el, t, d) {
+            tl.fromTo(el, { scaleX: 0 }, { scaleX: 1, duration: d || 0.5, ease: "power2.inOut" }, t);
+          },
+          growX(tl, el, t, d, to) {
+            tl.fromTo(el, { scaleX: 0 }, { scaleX: to == null ? 1 : to, duration: d || 1, ease: "power3.out" }, t);
+          },
+          growY(tl, el, t, d) {
+            tl.fromTo(el, { scaleY: 0 }, { scaleY: 1, duration: d || 1, ease: "power3.out" }, t);
+          },
+          stamp(tl, el, t) {
+            tl.fromTo(el, { opacity: 0, scale: 2.2, rotation: -14 }, { opacity: 1, scale: 1, rotation: -6, duration: 0.42, ease: "back.out(2.2)" }, t);
+          },
+          // slow ambient breathing, finite repeats within scene duration
+          breathe(tl, els, D, o) {
+            o = o || {};
+            const per = o.per || 3;
+            const n = Math.max(1, Math.floor(D / per) - 1);
+            tl.fromTo(els, { y: 0, rotation: 0 }, { y: o.y || -14, rotation: o.r || 0, duration: per / 2, ease: "sine.inOut", yoyo: true, repeat: n * 2 - 1 }, 0.1);
+          },
+          // camera move on a capture: el is the inner image wrapper
+          cam(tl, el, t, d, s, x, y) {
+            tl.to(el, { scale: s, x: x, y: y, duration: d, ease: "power2.inOut" }, t);
+          },
+          // capture camera: move/zoom a .shot so a highlight band [x0,y0,x1,y1] (native px) is centred
+          camTo(tl, shot, band, natH, s, t, d) {
+            const k = 716 / 538, W = 716, HS = 520;
+            if (!s) s = Math.max(1.12, Math.min(1.6, (0.94 * 538) / (band[2] - band[0])));
+            const cx = ((band[0] + band[2]) / 2) * k, cy = ((band[1] + band[3]) / 2) * k;
+            let x = W / 2 - cx * s, y = HS / 2 - cy * s;
+            x = Math.min(0, Math.max(W - W * s, x));
+            y = Math.min(0, Math.max(Math.min(0, HS - natH * k * s), y));
+            const prev = shot.__cam || { scale: 1, x: 0, y: 0 };
+            tl.fromTo(shot, { scale: prev.scale, x: prev.x, y: prev.y }, { scale: s, x: x, y: y, duration: d || 1.6, ease: "power2.inOut", immediateRender: !shot.__cam }, t);
+            shot.__cam = { scale: s, x: x, y: y };
+          },
+          // red ring drawn around a highlight band inside a .shot
+          ring(tl, shot, band, t) {
+            const k = 716 / 538;
+            const r = document.createElement("div");
+            r.className = "ring";
+            r.style.left = band[0] * k - 10 + "px";
+            r.style.top = band[1] * k - 8 + "px";
+            r.style.width = (band[2] - band[0]) * k + 20 + "px";
+            r.style.height = (band[3] - band[1]) * k + 16 + "px";
+            shot.appendChild(r);
+            tl.fromTo(r, { opacity: 0, scale: 1.25 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, t);
+            return r;
+          },
+          draw(tl, path, t, d, len) {
+            try { len = Math.ceil(path.getTotalLength()) + 4 || len; } catch (e) {}
+            tl.fromTo(path, { opacity: 0 }, { opacity: 1, duration: 0.05 }, t);
+            tl.fromTo(path, { strokeDasharray: len + " " + len, strokeDashoffset: len }, { strokeDashoffset: 0, duration: d || 1, ease: "power2.inOut" }, t);
+          },
+          sceneIn(tl, root) {
+            const k = root.querySelector(".kicker");
+            if (k) {
+              tl.fromTo(k.querySelector(".k-num"), { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 0.05);
+              tl.fromTo(k.querySelector(".k-title"), { opacity: 0, x: -20, clipPath: "inset(0 100% 0 0)" }, { opacity: 1, x: 0, clipPath: "inset(0 0% 0 0)", duration: 0.7, ease: "power3.out" }, 0.18);
+            }
+          },
+          sceneOut(tl, root, D) {
+            const st = root.querySelector(".stage");
+            if (st) tl.fromTo(st, { opacity: 1 }, { opacity: 0, duration: 0.35, ease: "power1.in", immediateRender: false }, D - 0.4);
+          },
+        };
+      })();
+
+          const R = document.getElementById("s13-root");
+          const $ = (s) => R.querySelectorAll(s);
+          const $1 = (s) => R.querySelector(s);
+          const pgRow = $1(".tr.pg");
+          pgRow.insertAdjacentHTML("beforeend", '<span class="pgT">워홀로 보완</span>');
+          const pgT = $1(".pgT"); pgT.style.top = "8px";
+          const tl = gsap.timeline({ paused: true });
+          tl.fromTo($1(".big .sd.a"), { opacity: 0, x: -150 }, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, 0.3);
+          tl.fromTo($1(".big .sd.b"), { opacity: 0, x: 150 }, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, 0.45);
+          H.pop(tl, $1(".big .colon"), 0.7);
+          H.count(tl, $1(".big .sd.a b"), 0, 1, 0.6, 0.8);
+          H.count(tl, $1(".big .sd.b b"), 0, 7, 0.6, 1.2);
+          H.stamp(tl, $1(".fs"), C.L0 + 0.8);
+          H.out(tl, $1(".ph0"), C.L1 + 0.1);
+          H.rise(tl, $1(".mini"), C.L1 + 0.3, { y: -20 });
+          // table rows in order
+          const rows = $(".tbl .tr");
+          tl.fromTo($1(".tbl"), { opacity: 0 }, { opacity: 1, duration: 0.3 }, C.L1 + 0.3);
+          const step = (C.L2 - 0.3 - (C.L1 + 0.4)) / (rows.length - 1);
+          tl.fromTo(rows, { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.35, ease: "power2.out", stagger: step }, C.L1 + 0.4);
+          tl.fromTo(pgRow, { backgroundColor: "#fffdf8" }, { backgroundColor: "#fff3c4", duration: 0.4 }, C.L2);
+          H.pop(tl, pgT, C.fill - 0.4);
+          tl.fromTo(pgRow, { scale: 1 }, { scale: 1.02, duration: 0.3, yoyo: true, repeat: 1 }, C.L2 + 0.4);
+          H.out(tl, $(".tbl, .mini"), C.L3 - 0.5);
+          H.slideX(tl, $1(".sum .c1"), C.L3 - 0.1, { x: 60 });
+          H.slideX(tl, $1(".sum .c2"), C.L3 + 1.4, { x: 60 });
+          H.pop(tl, $1(".sum .c3"), C.both - 0.6);
+          H.out(tl, $1(".sum"), C.L4 - 0.4);
+          tl.fromTo($1(".logo .mk"), { opacity: 0, scale: 0.3, rotation: -30 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.7, ease: "back.out(2)" }, C.L4 - 0.1);
+          H.rise(tl, $1(".logo b"), C.aa - 0.4);
+          H.rise(tl, $1(".logo .url"), C.aa + 0.2);
+          H.pop(tl, $1(".logo .cta"), C.ask - 0.6);
+          tl.fromTo($1(".logo .mk"), { y: 0 }, { y: -12, duration: 0.8, yoyo: true, repeat: 3, ease: "sine.inOut", immediateRender: false }, C.ask + 0.4);
+          window.__timelines["s13"] = tl;
+        })();
+      </script>
+
+    </template>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<!--ANCHORS {"strong":"공립의 강점", "L1":"L1", "pg3":"최대 삼 년짜리", "stable":"안정적으로", "L2":"L2", "WIN":"아닙니다", "L3":"L3", "two":"최대 두 번", "m24":"이십사 개월", "y4":"최대 사 년", "L4":"L4", "y3":"약 삼 년을", "fill":"워홀로 채울"}-->
+<!--SFX [["tick", "pg3"], ["transition_ding", "L3"], ["ding", "y4"]]-->
+      <style>
+        #s09-root { position: absolute; inset: 0; }
+        #s09-root .pc { position: absolute; top: 290px; width: 700px; height: 330px; padding: 36px 40px; }
+        #s09-root .pc.a { left: 160px; border: 5px solid #8c7b6b; }
+        #s09-root .pc.b { left: 1060px; background: #f6efe3; border: 4px dashed #cbbba3; box-shadow: none; }
+        #s09-root .pc small { font-size: 28px; font-weight: 800; color: var(--muted); }
+        #s09-root .pc b { display: block; margin-top: 8px; font-size: 64px; font-weight: 900; letter-spacing: -0.04em; }
+        #s09-root .pc .d { margin-top: 12px; font-size: 32px; font-weight: 800; }
+        #s09-root .pc .sh { position: absolute; right: 30px; top: 30px; width: 90px; height: 90px; }
+        #s09-root .pc.b b { color: #a8977f; }
+        #s09-root .pc.b .x { position: absolute; right: 36px; top: 30px; font-size: 90px; font-weight: 900; color: #b9a990; line-height: 1; }
+        #s09-root .wh { position: absolute; left: 1060px; top: 290px; width: 700px; height: 330px; padding: 30px 36px; border: 5px solid var(--red); }
+        #s09-root .wh small { font-size: 28px; font-weight: 800; color: var(--red); }
+        #s09-root .wh b { display: block; margin-top: 6px; font-size: 58px; font-weight: 900; letter-spacing: -0.04em; }
+        #s09-root .wh .bars { position: relative; margin-top: 24px; height: 70px; }
+        #s09-root .wh .seg { position: absolute; top: 0; height: 70px; border-radius: 14px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 28px; font-weight: 900; transform-origin: left center; }
+        #s09-root .wh .s1 { left: 0; width: 310px; background: var(--red); }
+        #s09-root .wh .s2 { left: 318px; width: 310px; background: var(--red-dark); }
+        #s09-root .comp { position: absolute; left: 860px; top: 400px; width: 200px; text-align: center; padding: 10px 0; border-radius: 14px; background: var(--ink); color: #fff; font-size: 30px; font-weight: 900; }
+        #s09-root .eq { position: absolute; left: 0; right: 0; top: 670px; display: flex; justify-content: center; align-items: center; gap: 28px; }
+        #s09-root .eq span { font-size: 38px; font-weight: 900; padding: 16px 30px; border-radius: 18px; background: var(--paper); box-shadow: 0 10px 24px rgba(80,50,20,0.1); }
+        #s09-root .eq span.r { background: var(--red); color: #fff; }
+        #s09-root .eq i { font-style: normal; font-size: 60px; font-weight: 900; color: var(--red); }
+      </style>
+      <div id="s09-root" data-composition-id="s09" data-width="1920" data-height="1080">
+        <div class="stage">
+          <div class="pc card a">
+            <svg class="sh" viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z" fill="#5b4d42"/><path d="m8.5 12 2.5 2.5 4.5-5" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg>
+            <small>공립 2년 과정 졸업 후</small><b>PGWP 최대 3년</b><div class="d">졸업 후 취업비자 → <span class="red">안정적으로 일할 수 있음</span></div>
+          </div>
+          <div class="pc card b"><div class="x">✕</div><small>사립 컬리지</small><b>PGWP 없음</b><div class="d" style="color: #a8977f">PGWP 대상이 아님</div></div>
+          <div class="wh card">
+            <small>한국인 워킹홀리데이</small><b>최대 4년</b>
+            <div class="bars"><div class="seg s1">1차 · 최대 24개월</div><div class="seg s2">2차 · 최대 24개월</div></div>
+          </div>
+          <div class="comp">워홀로 보완</div>
+          <div class="eq"><span>11개월 공부 후 약 3년 풀타임</span><i>≈</i><span class="r">공립 PGWP 3년과 비슷한 안정성</span></div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const C = __CUES__;
+__HELPERS__
+          const R = document.getElementById("s09-root");
+          const $ = (s) => R.querySelectorAll(s);
+          const $1 = (s) => R.querySelector(s);
+          const tl = gsap.timeline({ paused: true });
+          tl.fromTo($1(".pc.a"), { opacity: 0, x: -100 }, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, C.L1 - 0.2);
+          H.pop(tl, $1(".pc.a .sh"), C.pg3);
+          tl.fromTo($1(".pc.a .d"), { opacity: 0 }, { opacity: 1, duration: 0.4 }, C.stable - 0.4);
+          tl.fromTo($1(".pc.b"), { opacity: 0, x: 100 }, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, C.L2 - 0.2);
+          H.stamp(tl, $1(".pc.b .x"), C.L2 + 1.0);
+          // working holiday card flies in from the right, replaces the private card and lands next to PGWP
+          tl.to($1(".pc.b"), { opacity: 0, y: 40, duration: 0.4, ease: "power2.in" }, C.L3 - 0.2);
+          tl.fromTo($1(".wh"), { opacity: 0, x: 500, rotation: 8 }, { opacity: 1, x: 0, rotation: 0, duration: 0.8, ease: "power3.out" }, C.L3 + 0.1);
+          tl.fromTo($1(".wh .s1"), { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "power2.out" }, C.m24 - 0.4);
+          tl.fromTo($1(".wh .s2"), { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "power2.out" }, C.m24 + 0.4);
+          tl.fromTo($1(".wh b"), { scale: 1 }, { scale: 1.15, duration: 0.25, yoyo: true, repeat: 1, transformOrigin: "left center" }, C.y4);
+          H.pop(tl, $1(".comp"), C.y4 + 0.6);
+          H.pop(tl, $(".eq > *"), C.y3 - 0.5, { stagger: 0.5 });
+          tl.fromTo($1(".eq span.r"), { boxShadow: "0 0 0 0 rgba(200,16,46,0)" }, { boxShadow: "0 0 0 12px rgba(200,16,46,0.2)", duration: 0.4, yoyo: true, repeat: 1 }, C.fill);
+          H.sceneOut(tl, R, C.D);
+          window.__timelines["s09"] = tl;
+        })();
+      </script>

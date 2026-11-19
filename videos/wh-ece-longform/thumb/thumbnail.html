@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="UTF-8" />
+<style>
+@font-face { font-family: "P"; src: url("../assets/fonts/Pretendard-Black.woff2"); font-weight: 900; }
+@font-face { font-family: "P"; src: url("../assets/fonts/Pretendard-ExtraBold.woff2"); font-weight: 800; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { width: 1280px; height: 720px; overflow: hidden; background: #fbf6ec; font-family: "P"; word-break: keep-all; position: relative; }
+.dots { position: absolute; inset: 0; background-image: radial-gradient(rgba(200,16,46,0.09) 2px, transparent 2.4px); background-size: 38px 38px; }
+.tag { position: absolute; left: 0; right: 0; top: 30px; text-align: center; }
+.tag span { display: inline-block; background: #2a221d; color: #fff; font-weight: 800; font-size: 38px; padding: 8px 26px; border-radius: 14px; }
+.side { position: absolute; top: 120px; width: 520px; height: 400px; border-radius: 34px; padding: 34px 30px; text-align: center; }
+.l { left: 40px; background: #e9e1d3; border: 6px solid #8c7b6b; }
+.r { right: 40px; background: #c8102e; border: 6px solid #9e0c24; box-shadow: 0 20px 40px rgba(200,16,46,0.35); }
+.side .h { font-size: 66px; font-weight: 900; letter-spacing: -0.04em; }
+.l .h { color: #5b4d42; } .r .h { color: #fff; }
+.side .big { margin-top: 18px; font-size: 128px; font-weight: 900; line-height: 1.02; letter-spacing: -0.05em; }
+.l .big { color: #6b5d53; } .r .big { color: #fff; }
+.side .sm { margin-top: 10px; font-size: 92px; font-weight: 900; letter-spacing: -0.05em; }
+.l .sm { color: #6b5d53; } .r .sm { color: #ffd75e; }
+.vs { position: absolute; left: 540px; top: 230px; width: 200px; height: 200px; border-radius: 50%; background: #2a221d; color: #fff; font-size: 96px; font-weight: 900; font-style: italic; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 10px #fbf6ec; z-index: 3; }
+.band { position: absolute; left: 0; right: 0; bottom: 0; height: 160px; background: #c8102e; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 92px; font-weight: 900; letter-spacing: -0.04em; }
+.band b { color: #ffd75e; }
+.toy { position: absolute; }
+</style></head><body>
+<div class="dots"></div>
+<svg class="toy" style="left: 560px; top: 440px; width: 160px" viewBox="0 -12 100 72"><rect x="4" y="22" width="34" height="34" rx="5" fill="#e3a21a"/><rect x="40" y="22" width="34" height="34" rx="5" fill="#2f8f5b"/><rect x="22" y="-10" width="34" height="34" rx="5" fill="#c8102e"/><g transform="rotate(-30 88 30)"><rect x="82" y="0" width="12" height="44" rx="3" fill="#c8102e"/><path d="M82 44h12l-6 12z" fill="#e8b4a0"/></g></svg>
+<svg class="toy" style="left: 590px; top: 110px; width: 100px" viewBox="0 0 100 100"><path fill="#c8102e" d="M50 4 l7 14 9-4-3 20 13-14 3 8 13-3-5 15 6 3-21 17 3 8-22-4v22h-6V64l-22 4 3-8-21-17 6-3-5-15 13 3 3-8 13 14-3-20 9 4z"/></svg>
+<div class="tag"><span>캐나다 워홀 × 유아교육(ECE)</span></div>
+<div class="side l"><div class="h">공립</div><div class="big">2년</div><div class="sm">5만 불</div></div>
+<div class="side r"><div class="h">사립</div><div class="big">11개월</div><div class="sm">2만 불</div></div>
+<div class="vs">VS</div>
+<div class="band">워홀이면 <b>&nbsp;둘 다&nbsp;</b> 잡는다</div>
+</body></html>

@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+
+
+      <style>
+        #s05-root { position: absolute; inset: 0; }
+        #s05-root .cl { position: absolute; top: 270px; width: 780px; height: 560px; padding: 38px 44px; }
+        #s05-root .cl.a { left: 130px; } #s05-root .cl.b { left: 1010px; border: 5px solid var(--red); }
+        #s05-root .cl h3 { font-size: 44px; font-weight: 900; letter-spacing: -0.03em; margin-bottom: 22px; display: flex; align-items: center; gap: 16px; }
+        #s05-root .cl.b h3 { color: var(--red); }
+        #s05-root .it { display: flex; align-items: center; gap: 18px; font-size: 36px; font-weight: 800; padding: 13px 0; border-bottom: 2px dashed var(--line); letter-spacing: -0.02em; }
+        #s05-root .it i { flex: 0 0 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-style: normal; font-size: 26px; font-weight: 900; }
+        #s05-root .cl.a .it i { background: #ece4d6; color: #5b4d42; }
+        #s05-root .cl.b .it i { background: var(--red); color: #fff; }
+        #s05-root .meter { position: absolute; left: 44px; right: 44px; bottom: 40px; }
+        #s05-root .meter .lb { font-size: 28px; font-weight: 800; color: var(--muted); margin-bottom: 10px; display: flex; justify-content: space-between; }
+        #s05-root .meter .tr { height: 34px; border-radius: 17px; background: #efe3cf; overflow: hidden; position: relative; }
+        #s05-root .meter .f { position: absolute; left: 0; top: 0; bottom: 0; width: 100%; transform-origin: left center; border-radius: 17px; }
+        #s05-root .cl.a .meter .f { background: #8c7b6b; } #s05-root .cl.b .meter .f { background: var(--red); }
+        #s05-root .books { width: 60px; height: 60px; }
+      </style>
+      <div id="s05-root" data-composition-id="s05" data-width="1920" data-height="1080">
+        <div class="stage">
+          <div class="cl card a">
+            <h3><svg class="books" viewBox="0 0 24 24"><rect x="3" y="14" width="18" height="6" rx="1" fill="#8c7b6b"/><rect x="5" y="8" width="15" height="6" rx="1" fill="#b9a990"/><rect x="4" y="2" width="16" height="6" rx="1" fill="#5b4d42"/></svg>공립 컬리지</h3>
+            <div class="it a1"><i>!</i>입학 요건이 까다로움</div>
+            <div class="it a2"><i>2</i>2년 동안 대면 수업</div>
+            <div class="it a3"><i>+</i>과제 양도 많음</div>
+            <div class="meter"><div class="lb"><span>공부 부담</span><span>높음</span></div><div class="tr"><div class="f"></div></div></div>
+          </div>
+          <div class="cl card b">
+            <h3><svg class="books" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="13" rx="2" fill="#c8102e"/><rect x="4" y="6" width="16" height="9" rx="1" fill="#fff"/><rect x="0" y="18" width="24" height="2.5" rx="1" fill="#9e0c24"/></svg>사립 컬리지</h3>
+            <div class="it b1"><i>✓</i>입학이 상대적으로 수월</div>
+            <div class="it b2"><i>✓</i>이론은 온라인</div>
+            <div class="it b3"><i>✓</i>실습만 현장에서</div>
+            <div class="it b4"><i>✓</i>졸업까지 가는 길도 수월한 편</div>
+            <div class="meter"><div class="lb"><span>공부 부담</span><span>가벼움</span></div><div class="tr"><div class="f"></div></div></div>
+          </div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const C = {"pub": 4.3667, "req": 6.1333, "hw": 9.1667, "pri": 10.9333, "online": 14.6, "field": 16.3667, "easy": 17.7333, "WIN": 19.7333, "L": [[0.7667, 3.5667], [4.3667, 10.1333], [10.9333, 20.5667]], "D": 21.7667};
+      const H = (function () {
+        const fmtNum = (v, o) => {
+          o = o || {};
+          const d = o.dec || 0;
+          let s = d ? v.toFixed(d) : Math.round(v).toString();
+          if (o.comma) s = s.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+          return (o.pre || "") + s + (o.suf || "");
+        };
+        // schematic Canada map (concept diagram): province tiles in a 1600x430 box. returns city coords
+        const CANADA = {
+          tiles: [["BC", 0, 250, 40], ["AB", 258, 150, 30], ["SK", 416, 140, 30], ["MB", 564, 150, 30], ["ON", 722, 330, 70], ["QC", 1060, 320, 0], ["대서양", 1388, 212, 170]],
+          city: { 밴쿠버: [70, 360], 캘거리: [335, 310], 토론토: [960, 385], 몬트리올: [1250, 345] },
+          build(el, opts) {
+            opts = opts || {};
+            let h = '<svg viewBox="0 0 1600 430" width="1600" height="430" style="position:absolute;left:0;top:0;overflow:visible">';
+            this.tiles.forEach(([n, x, w, t], i) => {
+                const bc = n === "BC" && opts.bc;
+                h += '<g class="tile tile-' + i + '"><rect x="' + x + '" y="' + t + '" width="' + w + '" height="' + (410 - t) + '" rx="22" fill="' + (bc ? "#c8102e" : "#efe3cf") + '" stroke="#fffdf8" stroke-width="4"/>' +
+                  '<text x="' + (x + w / 2) + '" y="' + (t + 60) + '" text-anchor="middle" font-family="Pretendard" font-size="40" font-weight="900" fill="' + (bc ? "#fff" : "#a8977f") + '">' + n + "</text></g>";
+            });
+            h += "</svg>";
+            el.insertAdjacentHTML("beforeend", h);
+          },
+        };
+        return {
+          canada: CANADA,
+          // count-up number (seek-safe proxy, text written in onUpdate)
+          count(tl, el, from, to, t, d, o) {
+            const st = { v: from };
+            el.textContent = fmtNum(from, o);
+            tl.fromTo(st, { v: from }, { v: to, duration: d || 1.2, ease: "power2.out", onUpdate: () => (el.textContent = fmtNum(st.v, o)) }, t);
+            tl.fromTo(el, { scale: 0.7 }, { scale: 1, duration: d || 1.2, ease: "power2.out" }, t);
+          },
+          pop(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 0, scale: o.from || 0.6 }, { opacity: 1, scale: 1, duration: o.d || 0.5, ease: o.ease || "back.out(1.8)", stagger: o.stagger || 0 }, t);
+          },
+          rise(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 0, y: o.y || 40 }, { opacity: 1, y: 0, duration: o.d || 0.55, ease: o.ease || "power3.out", stagger: o.stagger || 0 }, t);
+          },
+          slideX(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 0, x: o.x || -80 }, { opacity: 1, x: 0, duration: o.d || 0.6, ease: o.ease || "power3.out", stagger: o.stagger || 0 }, t);
+          },
+          out(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 1, y: 0 }, { opacity: 0, y: o.y == null ? -30 : o.y, duration: o.d || 0.4, ease: "power2.in", immediateRender: false, stagger: o.stagger || 0 }, t);
+          },
+          fadeOut(tl, els, t, d) {
+            tl.fromTo(els, { opacity: 1 }, { opacity: 0, duration: d || 0.4, ease: "power1.in", immediateRender: false }, t);
+          },
+          // marker sweep behind text: element .hl > .hl-bg
+          mark(tl, el, t, d) {
+            tl.fromTo(el, { scaleX: 0 }, { scaleX: 1, duration: d || 0.5, ease: "power2.inOut" }, t);
+          },
+          growX(tl, el, t, d, to) {
+            tl.fromTo(el, { scaleX: 0 }, { scaleX: to == null ? 1 : to, duration: d || 1, ease: "power3.out" }, t);
+          },
+          growY(tl, el, t, d) {
+            tl.fromTo(el, { scaleY: 0 }, { scaleY: 1, duration: d || 1, ease: "power3.out" }, t);
+          },
+          stamp(tl, el, t) {
+            tl.fromTo(el, { opacity: 0, scale: 2.2, rotation: -14 }, { opacity: 1, scale: 1, rotation: -6, duration: 0.42, ease: "back.out(2.2)" }, t);
+          },
+          // slow ambient breathing, finite repeats within scene duration
+          breathe(tl, els, D, o) {
+            o = o || {};
+            const per = o.per || 3;
+            const n = Math.max(1, Math.floor(D / per) - 1);
+            tl.fromTo(els, { y: 0, rotation: 0 }, { y: o.y || -14, rotation: o.r || 0, duration: per / 2, ease: "sine.inOut", yoyo: true, repeat: n * 2 - 1 }, 0.1);
+          },
+          // camera move on a capture: el is the inner image wrapper
+          cam(tl, el, t, d, s, x, y) {
+            tl.to(el, { scale: s, x: x, y: y, duration: d, ease: "power2.inOut" }, t);
+          },
+          // capture camera: move/zoom a .shot so a highlight band [x0,y0,x1,y1] (native px) is centred
+          camTo(tl, shot, band, natH, s, t, d) {
+            const k = 716 / 538, W = 716, HS = 520;
+            if (!s) s = Math.max(1.12, Math.min(1.6, (0.94 * 538) / (band[2] - band[0])));
+            const cx = ((band[0] + band[2]) / 2) * k, cy = ((band[1] + band[3]) / 2) * k;
+            let x = W / 2 - cx * s, y = HS / 2 - cy * s;
+            x = Math.min(0, Math.max(W - W * s, x));
+            y = Math.min(0, Math.max(Math.min(0, HS - natH * k * s), y));
+            const prev = shot.__cam || { scale: 1, x: 0, y: 0 };
+            tl.fromTo(shot, { scale: prev.scale, x: prev.x, y: prev.y }, { scale: s, x: x, y: y, duration: d || 1.6, ease: "power2.inOut", immediateRender: !shot.__cam }, t);
+            shot.__cam = { scale: s, x: x, y: y };
+          },
+          // red ring drawn around a highlight band inside a .shot
+          ring(tl, shot, band, t) {
+            const k = 716 / 538;
+            const r = document.createElement("div");
+            r.className = "ring";
+            r.style.left = band[0] * k - 10 + "px";
+            r.style.top = band[1] * k - 8 + "px";
+            r.style.width = (band[2] - band[0]) * k + 20 + "px";
+            r.style.height = (band[3] - band[1]) * k + 16 + "px";
+            shot.appendChild(r);
+            tl.fromTo(r, { opacity: 0, scale: 1.25 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, t);
+            return r;
+          },
+          draw(tl, path, t, d, len) {
+            try { len = Math.ceil(path.getTotalLength()) + 4 || len; } catch (e) {}
+            tl.fromTo(path, { opacity: 0 }, { opacity: 1, duration: 0.05 }, t);
+            tl.fromTo(path, { strokeDasharray: len + " " + len, strokeDashoffset: len }, { strokeDashoffset: 0, duration: d || 1, ease: "power2.inOut" }, t);
+          },
+          sceneIn(tl, root) {
+            const k = root.querySelector(".kicker");
+            if (k) {
+              tl.fromTo(k.querySelector(".k-num"), { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 0.05);
+              tl.fromTo(k.querySelector(".k-title"), { opacity: 0, x: -20, clipPath: "inset(0 100% 0 0)" }, { opacity: 1, x: 0, clipPath: "inset(0 0% 0 0)", duration: 0.7, ease: "power3.out" }, 0.18);
+            }
+          },
+          sceneOut(tl, root, D) {
+            const st = root.querySelector(".stage");
+            if (st) tl.fromTo(st, { opacity: 1 }, { opacity: 0, duration: 0.35, ease: "power1.in", immediateRender: false }, D - 0.4);
+          },
+        };
+      })();
+
+          const R = document.getElementById("s05-root");
+          const $ = (s) => R.querySelectorAll(s);
+          const $1 = (s) => R.querySelector(s);
+          const tl = gsap.timeline({ paused: true });
+          tl.fromTo($1(".cl.a"), { opacity: 0, x: -100 }, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, 0.5);
+          tl.fromTo($1(".cl.b"), { opacity: 0, x: 100 }, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, 0.8);
+          H.slideX(tl, $1(".a1"), C.req - 0.5, { x: 40 });
+          H.slideX(tl, $1(".a2"), C.hw - 1.4, { x: 40 });
+          H.slideX(tl, $1(".a3"), C.hw - 0.2, { x: 40 });
+          tl.fromTo($1(".cl.a .meter .f"), { scaleX: 0 }, { scaleX: 0.88, duration: 1.2, ease: "power2.out" }, C.hw + 0.4);
+          H.slideX(tl, $1(".b1"), C.pri + 0.3, { x: 40 });
+          H.slideX(tl, $1(".b2"), C.online - 0.3, { x: 40 });
+          H.slideX(tl, $1(".b3"), C.field - 0.4, { x: 40 });
+          H.slideX(tl, $1(".b4"), C.easy - 0.2, { x: 40 });
+          tl.fromTo($1(".cl.b .meter .f"), { scaleX: 0 }, { scaleX: 0.36, duration: 1.0, ease: "power2.out" }, C.easy + 0.6);
+          H.sceneOut(tl, R, C.D);
+          window.__timelines["s05"] = tl;
+        })();
+      </script>
+
+    </template>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!--ANCHORS {"pub":"L1", "pub2":"이 년", "pri":"L2", "w46":"사십육", "m11":"십일 개월", "y1":"일 년 넘게", "tch":"정교사로", "WIN":"효율성"}-->
+<!--SFX [["tick", "w46"]]-->
+      <style>
+        #s03-root { position: absolute; inset: 0; }
+        #s03-root .race { position: absolute; left: 140px; top: 310px; width: 1640px; }
+        #s03-root .axis { position: absolute; left: 300px; top: 0; width: 1300px; height: 340px; }
+        #s03-root .axis .tk { position: absolute; top: 0; bottom: 0; width: 2px; background: #e6dac6; }
+        #s03-root .axis .tl { position: absolute; top: -40px; transform: translateX(-50%); font-size: 26px; font-weight: 700; color: var(--muted); white-space: nowrap; }
+        #s03-root .lane { position: absolute; left: 0; height: 120px; width: 1640px; }
+        #s03-root .lane.a { top: 40px; } #s03-root .lane.b { top: 230px; }
+        #s03-root .lane .nm { position: absolute; left: 0; top: 18px; width: 280px; font-size: 40px; font-weight: 900; letter-spacing: -0.03em; line-height: 1.15; }
+        #s03-root .lane .nm small { display: block; font-size: 28px; font-weight: 700; color: var(--muted); }
+        #s03-root .bar { position: absolute; left: 300px; top: 20px; height: 84px; border-radius: 18px; transform-origin: left center; display: flex; align-items: center; justify-content: flex-end; padding-right: 26px; font-size: 42px; font-weight: 900; color: #fff; }
+        #s03-root .lane.a .bar { width: 1300px; background: #8c7b6b; }
+        #s03-root .lane.b .bar { width: 575px; background: var(--red); }
+        #s03-root .flag { position: absolute; left: 872px; top: 176px; width: 70px; height: 150px; }
+        #s03-root .grad { position: absolute; left: 960px; top: 262px; font-size: 32px; font-weight: 900; color: var(--red); white-space: nowrap; }
+        #s03-root .brk { position: absolute; left: 875px; top: 350px; width: 725px; height: 60px; border: 5px solid var(--red); border-top: none; border-radius: 0 0 18px 18px; transform-origin: left center; }
+        #s03-root .brkT { position: absolute; left: 875px; top: 420px; width: 725px; text-align: center; font-size: 40px; font-weight: 900; color: var(--red); }
+        #s03-root .brkT span { background: var(--paper); padding: 4px 18px; border-radius: 12px; }
+        #s03-root .bottom { position: absolute; left: 0; right: 0; top: 800px; text-align: center; font-size: 46px; font-weight: 900; letter-spacing: -0.03em; }
+      </style>
+      <div id="s03-root" data-composition-id="s03" data-width="1920" data-height="1080">
+        <div class="stage">
+          <div class="race">
+            <div class="axis"></div>
+            <div class="lane a"><div class="nm">공립 컬리지<small>보통 2년</small></div><div class="bar">2년</div></div>
+            <div class="lane b"><div class="nm red">사립 컬리지<small>46주 · 11개월 이내</small></div><div class="bar">46주</div></div>
+            <svg class="flag" viewBox="0 0 70 150"><rect x="4" y="0" width="6" height="150" fill="#2a221d"/><g><rect x="10" y="4" width="54" height="40" fill="#fff" stroke="#2a221d" stroke-width="2"/><rect x="10" y="4" width="13.5" height="10" fill="#2a221d"/><rect x="37" y="4" width="13.5" height="10" fill="#2a221d"/><rect x="23.5" y="14" width="13.5" height="10" fill="#2a221d"/><rect x="50.5" y="14" width="13.5" height="10" fill="#2a221d"/><rect x="10" y="24" width="13.5" height="10" fill="#2a221d"/><rect x="37" y="24" width="13.5" height="10" fill="#2a221d"/><rect x="23.5" y="34" width="13.5" height="10" fill="#2a221d"/><rect x="50.5" y="34" width="13.5" height="10" fill="#2a221d"/></g></svg>
+            <div class="grad">먼저 졸업!</div>
+            <div class="brk"></div>
+            <div class="brkT"><span>1년 넘게 먼저 → 먼저 정교사</span></div>
+          </div>
+          <div class="bottom">첫 라운드는 <span class="hl"><span class="hl-bg"></span><span class="red">사립의 효율성</span></span></div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const C = __CUES__;
+__HELPERS__
+          const R = document.getElementById("s03-root");
+          const $ = (s) => R.querySelectorAll(s);
+          const $1 = (s) => R.querySelector(s);
+          const ax = $1(".axis");
+          [0, 6, 12, 18, 24].forEach((m) => { const x = (m / 24) * 1300;
+            const t = document.createElement("div"); t.className = "tk"; t.style.left = x + "px"; ax.appendChild(t);
+            const l = document.createElement("div"); l.className = "tl"; l.style.left = x + "px"; l.textContent = m === 0 ? "시작" : m + "개월"; ax.appendChild(l); });
+          const tl = gsap.timeline({ paused: true });
+          tl.fromTo(ax, { opacity: 0 }, { opacity: 1, duration: 0.5 }, 0.5);
+          H.slideX(tl, $(".lane .nm"), 0.6, { stagger: 0.15 });
+          // both start; private sprints to its finish first, public keeps going
+          tl.fromTo($1(".lane.a .bar"), { scaleX: 0 }, { scaleX: 1, duration: C.pri + 2.6 - (C.pub - 0.2), ease: "none" }, C.pub - 0.2);
+          tl.fromTo($1(".lane.b .bar"), { scaleX: 0 }, { scaleX: 1, duration: 1.4, ease: "power2.out" }, C.w46 - 0.6);
+          tl.fromTo($1(".flag"), { opacity: 0, y: 40, rotation: -20 }, { opacity: 1, y: 0, rotation: 0, duration: 0.5, ease: "back.out(2)" }, C.w46 + 0.7);
+          H.pop(tl, $1(".grad"), C.m11);
+          tl.fromTo($1(".brk"), { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "power2.inOut" }, C.y1 - 0.2);
+          H.pop(tl, $1(".brkT"), C.y1 + 0.3);
+          H.rise(tl, $1(".bottom"), C.WIN - 1.4);
+          H.mark(tl, $1(".bottom .hl-bg"), C.WIN - 0.4);
+          H.sceneOut(tl, R, C.D);
+          window.__timelines["s03"] = tl;
+        })();
+      </script>

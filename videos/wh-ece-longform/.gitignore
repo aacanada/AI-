@@ -1,0 +1,14 @@
+node_modules/
+.hyperframes/cache/
+snapshots/
+*.part-tmp
+renders/*.tmp*
+audio/mix_master.wav
+build/audio/
+.hyperframes/artifacts/
+renders/render_raw.mp4
+renders/render.log
+renders/work-*/
+renders/.render_*
+__pycache__/
+audio/bgm/*.log

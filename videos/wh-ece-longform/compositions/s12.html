@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+
+
+      <style>
+        #s12-root { position: absolute; inset: 0; }
+        #s12-root .head { position: absolute; left: 160px; top: 175px; font-size: 52px; font-weight: 900; letter-spacing: -0.035em; }
+        #s12-root .list { position: absolute; left: 160px; top: 240px; width: 1600px; }
+        #s12-root .it { position: relative; display: flex; align-items: center; gap: 30px; padding: 30px 40px; margin-bottom: 26px; }
+        #s12-root .it .bx { flex: 0 0 76px; height: 76px; border-radius: 18px; border: 5px solid var(--red); position: relative; }
+        #s12-root .it .bx b { position: absolute; inset: -6px; display: flex; align-items: center; justify-content: center; font-size: 66px; font-weight: 900; color: var(--red); }
+        #s12-root .it .t { font-size: 44px; font-weight: 900; letter-spacing: -0.03em; }
+        #s12-root .it .t small { display: block; margin-top: 4px; font-size: 30px; font-weight: 700; color: var(--muted); }
+        #s12-root .it .num { position: absolute; right: 40px; top: 50%; margin-top: -30px; font-size: 26px; font-weight: 900; color: #fff; background: var(--ink); padding: 10px 18px; border-radius: 12px; }
+        #s12-root .warn { position: absolute; left: 0; right: 0; top: 820px; text-align: center; }
+        #s12-root .warn span { display: inline-block; font-size: 36px; font-weight: 900; padding: 14px 30px; border-radius: 18px; background: #fff3c4; border: 3px solid #e3a21a; }
+      </style>
+      <div id="s12-root" data-composition-id="s12" data-width="1920" data-height="1080">
+        <div class="stage">
+          <div class="kicker"><span class="k-num">PR</span><span class="k-title">영주권으로 연결</span></div>
+          <div class="list">
+            <div class="it card i1"><div class="bx"><b>✓</b></div><div class="t">BC PNP 유아교사 전용 추첨<small>One Year · Five Year 유아교사 자격이 있으면 대상</small></div><div class="num">BC주</div></div>
+            <div class="it card i2"><div class="bx"><b>✓</b></div><div class="t">Express Entry 교육 직종 카테고리<small>유아교사 포함</small></div><div class="num">연방</div></div>
+            <div class="it card i3"><div class="bx"><b>✓</b></div><div class="t">다른 주로 이동해 기회 잡기<small>추첨 시기·점수는 매번 다름 → 자격 전환으로 유리한 주로</small></div><div class="num">전 주</div></div>
+          </div>
+          <div class="warn"><span>내 점수와 지역별 상황은 꼭 따로 확인하세요</span></div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const C = {"L1": 4.5333, "one": 8.1333, "L2": 12.4333, "ee": 12.7667, "L3": 18.0333, "diff": 20.2667, "conv": 23.8, "move": 30.7667, "L4": 33.4, "L": [[0.6667, 3.7333], [4.5333, 11.6333], [12.4333, 17.4], [18.0333, 33.0], [33.4, 36.6]], "D": 37.9333};
+      const H = (function () {
+        const fmtNum = (v, o) => {
+          o = o || {};
+          const d = o.dec || 0;
+          let s = d ? v.toFixed(d) : Math.round(v).toString();
+          if (o.comma) s = s.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+          return (o.pre || "") + s + (o.suf || "");
+        };
+        // schematic Canada map (concept diagram): province tiles in a 1600x430 box. returns city coords
+        const CANADA = {
+          tiles: [["BC", 0, 250, 40], ["AB", 258, 150, 30], ["SK", 416, 140, 30], ["MB", 564, 150, 30], ["ON", 722, 330, 70], ["QC", 1060, 320, 0], ["대서양", 1388, 212, 170]],
+          city: { 밴쿠버: [70, 360], 캘거리: [335, 310], 토론토: [960, 385], 몬트리올: [1250, 345] },
+          build(el, opts) {
+            opts = opts || {};
+            let h = '<svg viewBox="0 0 1600 430" width="1600" height="430" style="position:absolute;left:0;top:0;overflow:visible">';
+            this.tiles.forEach(([n, x, w, t], i) => {
+                const bc = n === "BC" && opts.bc;
+                h += '<g class="tile tile-' + i + '"><rect x="' + x + '" y="' + t + '" width="' + w + '" height="' + (410 - t) + '" rx="22" fill="' + (bc ? "#c8102e" : "#efe3cf") + '" stroke="#fffdf8" stroke-width="4"/>' +
+                  '<text x="' + (x + w / 2) + '" y="' + (t + 60) + '" text-anchor="middle" font-family="Pretendard" font-size="40" font-weight="900" fill="' + (bc ? "#fff" : "#a8977f") + '">' + n + "</text></g>";
+            });
+            h += "</svg>";
+            el.insertAdjacentHTML("beforeend", h);
+          },
+        };
+        return {
+          canada: CANADA,
+          // count-up number (seek-safe proxy, text written in onUpdate)
+          count(tl, el, from, to, t, d, o) {
+            const st = { v: from };
+            el.textContent = fmtNum(from, o);
+            tl.fromTo(st, { v: from }, { v: to, duration: d || 1.2, ease: "power2.out", onUpdate: () => (el.textContent = fmtNum(st.v, o)) }, t);
+            tl.fromTo(el, { scale: 0.7 }, { scale: 1, duration: d || 1.2, ease: "power2.out" }, t);
+          },
+          pop(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 0, scale: o.from || 0.6 }, { opacity: 1, scale: 1, duration: o.d || 0.5, ease: o.ease || "back.out(1.8)", stagger: o.stagger || 0 }, t);
+          },
+          rise(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 0, y: o.y || 40 }, { opacity: 1, y: 0, duration: o.d || 0.55, ease: o.ease || "power3.out", stagger: o.stagger || 0 }, t);
+          },
+          slideX(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 0, x: o.x || -80 }, { opacity: 1, x: 0, duration: o.d || 0.6, ease: o.ease || "power3.out", stagger: o.stagger || 0 }, t);
+          },
+          out(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 1, y: 0 }, { opacity: 0, y: o.y == null ? -30 : o.y, duration: o.d || 0.4, ease: "power2.in", immediateRender: false, stagger: o.stagger || 0 }, t);
+          },
+          fadeOut(tl, els, t, d) {
+            tl.fromTo(els, { opacity: 1 }, { opacity: 0, duration: d || 0.4, ease: "power1.in", immediateRender: false }, t);
+          },
+          // marker sweep behind text: element .hl > .hl-bg
+          mark(tl, el, t, d) {
+            tl.fromTo(el, { scaleX: 0 }, { scaleX: 1, duration: d || 0.5, ease: "power2.inOut" }, t);
+          },
+          growX(tl, el, t, d, to) {
+            tl.fromTo(el, { scaleX: 0 }, { scaleX: to == null ? 1 : to, duration: d || 1, ease: "power3.out" }, t);
+          },
+          growY(tl, el, t, d) {
+            tl.fromTo(el, { scaleY: 0 }, { scaleY: 1, duration: d || 1, ease: "power3.out" }, t);
+          },
+          stamp(tl, el, t) {
+            tl.fromTo(el, { opacity: 0, scale: 2.2, rotation: -14 }, { opacity: 1, scale: 1, rotation: -6, duration: 0.42, ease: "back.out(2.2)" }, t);
+          },
+          // slow ambient breathing, finite repeats within scene duration
+          breathe(tl, els, D, o) {
+            o = o || {};
+            const per = o.per || 3;
+            const n = Math.max(1, Math.floor(D / per) - 1);
+            tl.fromTo(els, { y: 0, rotation: 0 }, { y: o.y || -14, rotation: o.r || 0, duration: per / 2, ease: "sine.inOut", yoyo: true, repeat: n * 2 - 1 }, 0.1);
+          },
+          // camera move on a capture: el is the inner image wrapper
+          cam(tl, el, t, d, s, x, y) {
+            tl.to(el, { scale: s, x: x, y: y, duration: d, ease: "power2.inOut" }, t);
+          },
+          // capture camera: move/zoom a .shot so a highlight band [x0,y0,x1,y1] (native px) is centred
+          camTo(tl, shot, band, natH, s, t, d) {
+            const k = 716 / 538, W = 716, HS = 520;
+            if (!s) s = Math.max(1.12, Math.min(1.6, (0.94 * 538) / (band[2] - band[0])));
+            const cx = ((band[0] + band[2]) / 2) * k, cy = ((band[1] + band[3]) / 2) * k;
+            let x = W / 2 - cx * s, y = HS / 2 - cy * s;
+            x = Math.min(0, Math.max(W - W * s, x));
+            y = Math.min(0, Math.max(Math.min(0, HS - natH * k * s), y));
+            const prev = shot.__cam || { scale: 1, x: 0, y: 0 };
+            tl.fromTo(shot, { scale: prev.scale, x: prev.x, y: prev.y }, { scale: s, x: x, y: y, duration: d || 1.6, ease: "power2.inOut", immediateRender: !shot.__cam }, t);
+            shot.__cam = { scale: s, x: x, y: y };
+          },
+          // red ring drawn around a highlight band inside a .shot
+          ring(tl, shot, band, t) {
+            const k = 716 / 538;
+            const r = document.createElement("div");
+            r.className = "ring";
+            r.style.left = band[0] * k - 10 + "px";
+            r.style.top = band[1] * k - 8 + "px";
+            r.style.width = (band[2] - band[0]) * k + 20 + "px";
+            r.style.height = (band[3] - band[1]) * k + 16 + "px";
+            shot.appendChild(r);
+            tl.fromTo(r, { opacity: 0, scale: 1.25 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, t);
+            return r;
+          },
+          draw(tl, path, t, d, len) {
+            try { len = Math.ceil(path.getTotalLength()) + 4 || len; } catch (e) {}
+            tl.fromTo(path, { opacity: 0 }, { opacity: 1, duration: 0.05 }, t);
+            tl.fromTo(path, { strokeDasharray: len + " " + len, strokeDashoffset: len }, { strokeDashoffset: 0, duration: d || 1, ease: "power2.inOut" }, t);
+          },
+          sceneIn(tl, root) {
+            const k = root.querySelector(".kicker");
+            if (k) {
+              tl.fromTo(k.querySelector(".k-num"), { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 0.05);
+              tl.fromTo(k.querySelector(".k-title"), { opacity: 0, x: -20, clipPath: "inset(0 100% 0 0)" }, { opacity: 1, x: 0, clipPath: "inset(0 0% 0 0)", duration: 0.7, ease: "power3.out" }, 0.18);
+            }
+          },
+          sceneOut(tl, root, D) {
+            const st = root.querySelector(".stage");
+            if (st) tl.fromTo(st, { opacity: 1 }, { opacity: 0, duration: 0.35, ease: "power1.in", immediateRender: false }, D - 0.4);
+          },
+        };
+      })();
+
+          const R = document.getElementById("s12-root");
+          const $ = (s) => R.querySelectorAll(s);
+          const $1 = (s) => R.querySelector(s);
+          const tl = gsap.timeline({ paused: true });
+          H.sceneIn(tl, R);
+          H.slideX(tl, $1(".i1"), C.L1 - 0.2, { x: 80 });
+          H.stamp(tl, $1(".i1 .bx b"), C.one + 1.2);
+          H.slideX(tl, $1(".i2"), C.L2 - 0.2, { x: 80 });
+          H.stamp(tl, $1(".i2 .bx b"), C.ee + 1.2);
+          H.slideX(tl, $1(".i3"), C.diff - 0.4, { x: 80 });
+          H.stamp(tl, $1(".i3 .bx b"), C.move);
+          H.pop(tl, $1(".warn span"), C.L4 - 0.1);
+          H.sceneOut(tl, R, C.D);
+          window.__timelines["s12"] = tl;
+        })();
+      </script>
+
+    </template>
+  </body>
+</html>

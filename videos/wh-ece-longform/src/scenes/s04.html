@@ -1,0 +1,76 @@
+<!--ANCHORS {"pub":"L1", "pubAmt":"사만", "five":"거의", "pri":"L2", "priAmt":"이만 불", "diff":"차이가", "half":"절반", "life":"생활비까지", "WIN":"더 커집니다"}-->
+<!--SFX [["ding", "diff"]]-->
+      <style>
+        #s04-root { position: absolute; inset: 0; }
+        #s04-root .col { position: absolute; bottom: 230px; width: 340px; }
+        #s04-root .col.a { left: 330px; } #s04-root .col.b { left: 900px; }
+        #s04-root .col .bar { position: absolute; bottom: 0; left: 0; width: 340px; border-radius: 22px 22px 0 0; transform-origin: bottom center; }
+        #s04-root .col.a .bar.t { height: 360px; background: #8c7b6b; }
+        #s04-root .col.b .bar.t { height: 149px; background: var(--red); }
+        #s04-root .col .bar.l { border-radius: 22px 22px 0 0; background: repeating-linear-gradient(45deg, rgba(140,123,107,0.28) 0 14px, rgba(140,123,107,0.12) 14px 28px); border: 3px dashed #b9a990; border-bottom: none;
+          display: flex; align-items: center; justify-content: center; font-size: 28px; font-weight: 800; color: var(--muted); }
+        #s04-root .col.a .bar.l { bottom: 360px; height: 110px; }
+        #s04-root .col.b .bar.l { bottom: 149px; height: 50px; background: repeating-linear-gradient(45deg, rgba(200,16,46,0.18) 0 14px, rgba(200,16,46,0.07) 14px 28px); border-color: #e9a3ae; }
+        #s04-root .amt { position: absolute; left: -40px; width: 420px; text-align: center; font-size: 74px; font-weight: 900; letter-spacing: -0.04em; }
+        #s04-root .col.a .amt { bottom: 374px; } #s04-root .col.b .amt { bottom: 163px; color: var(--red); }
+        #s04-root .nm { position: absolute; top: 18px; left: -60px; width: 460px; text-align: center; }
+        #s04-root .nm b { display: block; font-size: 40px; font-weight: 900; }
+        #s04-root .nm span { display: block; margin-top: 4px; font-size: 25px; font-weight: 700; color: var(--muted); line-height: 1.25; }
+        #s04-root .base { position: absolute; left: 230px; right: 640px; top: 850px; height: 6px; background: var(--ink); border-radius: 3px; }
+        #s04-root .diff { position: absolute; left: 1330px; top: 330px; width: 480px; padding: 34px 38px; text-align: center; border: 5px solid var(--red); }
+        #s04-root .diff .k { font-size: 34px; font-weight: 800; color: var(--muted); }
+        #s04-root .diff .v { margin-top: 8px; font-size: 76px; font-weight: 900; color: var(--red); letter-spacing: -0.04em; }
+        #s04-root .more { position: absolute; left: 1330px; top: 600px; width: 480px; padding: 26px 30px; font-size: 36px; font-weight: 900; line-height: 1.35; text-align: center; }
+        #s04-root .gap { position: absolute; left: 1250px; top: 330px; width: 6px; height: 0; }
+        #s04-root .note { left: 1330px; top: 800px; bottom: auto; width: 480px; transform: none; text-align: left; font-size: 26px; line-height: 1.35; }
+      </style>
+      <div id="s04-root" data-composition-id="s04" data-width="1920" data-height="1080">
+        <div class="stage">
+          <div class="col a" style="height: 640px">
+            <div class="bar l">+ 생활비 (2년)</div>
+            <div class="bar t"></div>
+            <div class="amt">$0</div>
+          </div>
+          <div class="col b" style="height: 640px">
+            <div class="bar l">+ 생활비 (11개월)</div>
+            <div class="bar t"></div>
+            <div class="amt">$0</div>
+          </div>
+          <div class="base"></div>
+          <div class="labels">
+            <div class="nm" style="left: 270px; top: 870px"><b>공립 컬리지</b></div>
+            <div class="nm" style="left: 840px; top: 870px"><b class="red">사립 컬리지</b></div>
+          </div>
+          <div class="diff card"><div class="k">차이</div><div class="v">약 3만 불</div></div>
+          <div class="more card">공부 기간 절반 이하<br />→ 생활비까지 보면<br /><span class="red">전체 예산 차이는 더 커짐</span></div>
+          <div class="note">공립 예시: 2026년 BC 공립 컬리지 국제학생 2년 총액 · 사립: 46주 총액 (CAD)</div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const C = __CUES__;
+__HELPERS__
+          const R = document.getElementById("s04-root");
+          const $ = (s) => R.querySelectorAll(s);
+          const $1 = (s) => R.querySelector(s);
+          const tl = gsap.timeline({ paused: true });
+          tl.fromTo($1(".base"), { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "power2.out", transformOrigin: "left center" }, 0.5);
+          H.rise(tl, $(".labels .nm"), 0.7, { stagger: 0.2, y: 20 });
+          tl.fromTo($1(".col.a .bar.t"), { scaleY: 0 }, { scaleY: 1, duration: 1.4, ease: "power3.out" }, C.pubAmt - 0.8);
+          tl.fromTo($1(".col.a .amt"), { opacity: 0 }, { opacity: 1, duration: 0.3 }, C.pubAmt - 0.8);
+          H.count(tl, $1(".col.a .amt"), 0, 49009, C.pubAmt - 0.8, 1.4, { comma: true, pre: "$" });
+          tl.fromTo($1(".col.b .bar.t"), { scaleY: 0 }, { scaleY: 1, duration: 1.2, ease: "power3.out" }, C.priAmt - 0.9);
+          tl.fromTo($1(".col.b .amt"), { opacity: 0 }, { opacity: 1, duration: 0.3 }, C.priAmt - 0.9);
+          H.count(tl, $1(".col.b .amt"), 0, 20282, C.priAmt - 0.9, 1.2, { comma: true, pre: "$" });
+          H.pop(tl, $1(".diff"), C.diff - 0.1, { from: 0.5 });
+          tl.fromTo($1(".diff"), { rotation: 0 }, { rotation: -3, duration: 0.18, yoyo: true, repeat: 3 }, C.diff + 0.5);
+          // living cost stacks: public's is taller (2 years vs 11 months)
+          tl.fromTo($(".bar.l"), { scaleY: 0, opacity: 0 }, { scaleY: 1, opacity: 1, duration: 0.9, ease: "power3.out", stagger: 0.25 }, C.life - 0.3);
+          tl.to($1(".col.a .amt"), { y: -115, duration: 0.9, ease: "power3.out" }, C.life - 0.3);
+          tl.to($1(".col.b .amt"), { y: -52, duration: 0.9, ease: "power3.out" }, C.life - 0.05);
+          H.rise(tl, $1(".more"), C.half - 0.3);
+          H.rise(tl, $1(".note"), C.pubAmt + 0.6, { y: 10 });
+          H.sceneOut(tl, R, C.D);
+          window.__timelines["s04"] = tl;
+        })();
+      </script>

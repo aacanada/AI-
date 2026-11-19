@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="assets/vendor/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-Regular.woff2") format("woff2"); font-weight: 400; }
+      @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-Medium.woff2") format("woff2"); font-weight: 500; }
+      @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2"); font-weight: 600; }
+      @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-Bold.woff2") format("woff2"); font-weight: 700; }
+      @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2"); font-weight: 800; }
+      @font-face { font-family: "Pretendard"; src: url("assets/fonts/Pretendard-Black.woff2") format("woff2"); font-weight: 900; }
+      :root {
+        --cream: #fbf6ec;
+        --cream2: #f4ead8;
+        --paper: #fffdf8;
+        --ink: #2a221d;
+        --muted: #6b5d53;
+        --line: #e6dac6;
+        --red: #c8102e;
+        --red-dark: #9e0c24;
+        --red-soft: #fbe2e5;
+        --gold: #ffd75e;
+        --green: #03c75a;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: var(--cream); }
+      body { font-family: "Pretendard", sans-serif; color: var(--ink); word-break: keep-all; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: var(--cream); }
+
+      /* ---------- persistent background ---------- */
+      #bg { position: absolute; inset: 0; overflow: hidden; }
+      #bg .grain { position: absolute; inset: 0;
+        background-image: radial-gradient(rgba(200, 16, 46, 0.07) 1.6px, transparent 1.8px);
+        background-size: 46px 46px; }
+      #bg .glow { position: absolute; width: 1100px; height: 1100px; border-radius: 50%;
+        background: radial-gradient(circle, rgba(255, 215, 94, 0.22), rgba(255, 215, 94, 0) 65%); }
+      #bg .glow.g1 { left: -300px; top: -380px; }
+      #bg .glow.g2 { right: -380px; bottom: -420px; background: radial-gradient(circle, rgba(200, 16, 46, 0.09), rgba(200, 16, 46, 0) 65%); }
+      #bg .leaf { position: absolute; right: 70px; top: 150px; width: 520px; height: 520px; opacity: 0.045; }
+      #topbar { position: absolute; left: 0; right: 0; top: 0; height: 10px; background: var(--red); }
+      #brand { position: absolute; right: 56px; top: 34px; display: flex; align-items: center; gap: 12px;
+        font-weight: 800; font-size: 26px; color: var(--ink); letter-spacing: -0.01em; }
+      #brand .dot { width: 30px; height: 30px; border-radius: 8px; background: var(--red); display: flex; align-items: center; justify-content: center; }
+      #brand .dot svg { width: 20px; height: 20px; }
+
+
+      /* ---------- toy deco in background ---------- */
+      #bg .toy { position: absolute; opacity: 0.11; }
+      #bg .toy.t1 { left: 40px; bottom: 210px; width: 150px; }
+      #bg .toy.t2 { right: 60px; bottom: 240px; width: 120px; }
+      #bg .toy.t3 { left: 1640px; top: 330px; width: 90px; }
+
+      /* ---------- scoreboard (ROUND 1~8) ---------- */
+      #sb { position: absolute; left: 60px; top: 22px; width: 1800px; height: 128px; }
+      #sb .panel { position: absolute; top: 0; width: 770px; height: 128px; border-radius: 26px; background: var(--paper);
+        box-shadow: 0 12px 34px rgba(80, 50, 20, 0.12); border: 3px solid var(--line); }
+      #sb .pub { left: 0; }
+      #sb .pri { right: 0; border-color: #f0c9cf; }
+      #sb .ico { position: absolute; top: 22px; width: 84px; height: 84px; border-radius: 22px; display: flex; align-items: center; justify-content: center; }
+      #sb .pub .ico { left: 20px; background: #ece4d6; }
+      #sb .pri .ico { right: 20px; background: var(--red-soft); }
+      #sb .ico svg { width: 54px; height: 54px; }
+      #sb .nm { position: absolute; top: 18px; font-size: 36px; font-weight: 900; letter-spacing: -0.03em; white-space: nowrap; }
+      #sb .pub .nm { left: 124px; }
+      #sb .pri .nm { right: 124px; text-align: right; color: var(--red); }
+      #sb .tag { position: absolute; top: 72px; font-size: 25px; font-weight: 800; padding: 3px 14px; border-radius: 10px; white-space: nowrap; }
+      #sb .pub .tag { left: 124px; background: #ece4d6; color: #5b4d42; }
+      #sb .pri .tag { right: 124px; background: var(--red); color: #fff; }
+      #sb .slots { position: absolute; top: 76px; display: flex; gap: 8px; }
+      #sb .pub .slots { left: 268px; }
+      #sb .pri .slots { right: 268px; }
+      #sb .slot { position: relative; width: 36px; height: 36px; border-radius: 50%; border: 3px dashed #c9b89c; color: #7f7463; font-size: 18px; font-weight: 800;
+        display: flex; align-items: center; justify-content: center; }
+      #sb .slot .st { position: absolute; inset: -5px; border-radius: 50%; background: var(--red); color: #fff; font-size: 24px; font-weight: 900;
+        display: flex; align-items: center; justify-content: center; opacity: 0; box-shadow: 0 0 0 3px #fff, 0 0 0 5px var(--red); }
+      #sb .score { position: absolute; top: 10px; width: 120px; height: 108px; }
+      #sb .pub .score { right: 22px; }
+      #sb .pri .score { left: 22px; }
+      #sb .score span { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 86px; font-weight: 900; letter-spacing: -0.04em; opacity: 0; }
+      #sb .pub .score span { color: #5b4d42; }
+      #sb .pri .score span { color: var(--red); }
+      #sb .mid { position: absolute; left: 790px; top: 0; width: 220px; height: 128px; border-radius: 26px; background: var(--ink); color: #fff; text-align: center; }
+      #sb .mid .rl { position: absolute; left: 0; right: 0; top: 12px; font-size: 22px; font-weight: 800; letter-spacing: 0.22em; color: #ffd75e; }
+      #sb .mid .rn { position: absolute; left: 0; right: 0; top: 34px; height: 86px; }
+      #sb .mid .rn span { position: absolute; inset: 0; font-size: 76px; font-weight: 900; line-height: 86px; opacity: 0; }
+      #sb .bigstamp { position: absolute; top: 4px; width: 300px; height: 120px; border: 7px solid var(--red); border-radius: 18px; color: var(--red);
+        background: rgba(255, 253, 248, 0.94); font-size: 52px; font-weight: 900; display: flex; align-items: center; justify-content: center; letter-spacing: 0.02em; opacity: 0; }
+      #sb .bs-pub { left: 330px; }
+      #sb .bs-pri { right: 330px; }
+      #roundtitle { position: absolute; left: 0; right: 0; top: 168px; height: 70px; }
+      #roundtitle .rt { position: absolute; left: 0; right: 0; top: 0; text-align: center; opacity: 0; }
+      #roundtitle .rt b { display: inline-block; font-size: 44px; font-weight: 900; letter-spacing: -0.03em; color: var(--ink); padding: 6px 30px; border-bottom: 6px solid var(--red); }
+
+      /* ---------- shared scene vocabulary (scene content mounts into this document) ---------- */
+      .stage { position: absolute; inset: 0; }
+      .kicker { position: absolute; left: 72px; top: 44px; display: flex; align-items: center; gap: 18px; }
+      .kicker .k-num { background: var(--red); color: #fff; font-weight: 800; font-size: 26px; padding: 6px 16px; border-radius: 10px; letter-spacing: 0.02em; }
+      .kicker .k-title { font-weight: 800; font-size: 34px; color: var(--ink); letter-spacing: -0.02em; }
+      .card { background: var(--paper); border-radius: 28px; box-shadow: 0 18px 50px rgba(80, 50, 20, 0.12), 0 2px 0 rgba(80, 50, 20, 0.05); }
+      .red { color: var(--red); }
+      .muted { color: var(--muted); }
+      .hl { position: relative; display: inline-block; isolation: isolate; }
+      .hl > .hl-bg { position: absolute; left: -6px; right: -6px; bottom: 4%; height: 42%; background: var(--gold); z-index: -1; transform-origin: left center; border-radius: 6px; }
+      .note { position: absolute; left: 50%; bottom: 196px; transform: translateX(-50%); width: 1640px; text-align: center;
+        font-size: 28px; font-weight: 600; color: var(--muted); }
+      .note b { color: var(--red); font-weight: 800; }
+      .src { position: absolute; left: 72px; bottom: 160px; font-size: 26px; font-weight: 600; color: var(--muted); }
+      .phone { position: absolute; width: 760px; height: 564px; border-radius: 40px; background: #1f1a17; padding: 22px; box-shadow: 0 30px 70px rgba(60, 30, 10, 0.25); }
+      .phone .screen { position: relative; width: 716px; height: 520px; border-radius: 22px; overflow: hidden; background: #fff; }
+      .phone .shot { position: absolute; left: 0; top: 0; width: 716px; transform-origin: 0 0; }
+      .phone .shot img { display: block; width: 716px; }
+      .phone .ring { position: absolute; border: 5px solid var(--red); border-radius: 10px; opacity: 0; }
+      .cafe-label { position: absolute; z-index: 2; display: flex; align-items: center; gap: 10px; background: var(--paper); border: 3px solid var(--green);
+        color: #027a37; font-weight: 800; font-size: 28px; padding: 8px 20px; border-radius: 999px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); }
+      .cafe-label i { width: 14px; height: 14px; border-radius: 50%; background: var(--green); display: block; }
+
+      /* ---------- footnote + captions ---------- */
+      #footnote { position: absolute; left: 0; right: 0; bottom: 16px; text-align: center; font-size: 24px; font-weight: 600; color: #66594f; }
+      #captions { position: absolute; left: 0; right: 0; bottom: 66px; height: 84px; }
+      .cap { position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: center; opacity: 0; }
+      .cap span { display: inline-block; max-width: 1640px; background: rgba(42, 34, 29, 0.9); color: #fff; font-weight: 700; font-size: 44px;
+        line-height: 1.3; padding: 12px 34px 14px; border-radius: 18px; letter-spacing: -0.01em; white-space: nowrap; }
+
+      /* ---------- seam wipe ---------- */
+      .wipe { position: absolute; top: 0; bottom: 0; left: 0; width: 100%; transform-origin: left center; transform: scaleX(0); }
+      #wipeA { background: var(--red); }
+      #wipeB { background: var(--cream2); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="541.9333" data-width="1920" data-height="1080">
+      <div id="bg" data-layout-ignore class="clip" data-start="0" data-duration="541.9333" data-track-index="0">
+        <div class="grain"></div>
+        <div class="glow g1"></div>
+        <div class="glow g2"></div>
+        <svg class="leaf" viewBox="0 0 100 100"><path fill="#c8102e" d="M50 4 l7 14 9-4-3 20 13-14 3 8 13-3-5 15 6 3-21 17 3 8-22-4v22h-6V64l-22 4 3-8-21-17 6-3-5-15 13 3 3-8 13 14-3-20 9 4z"/></svg>
+        <svg class="toy t1" viewBox="0 0 100 100"><rect x="6" y="50" width="42" height="42" rx="6" fill="#c8102e"/><rect x="52" y="50" width="42" height="42" rx="6" fill="#e3a21a"/><rect x="29" y="6" width="42" height="42" rx="6" fill="#2f8f5b"/><text x="50" y="38" font-size="26" font-weight="900" fill="#fff" text-anchor="middle" font-family="Pretendard">A</text></svg>
+        <svg class="toy t2" viewBox="0 0 100 100"><g transform="rotate(-35 50 50)"><rect x="40" y="8" width="20" height="70" rx="4" fill="#c8102e"/><path d="M40 78 L60 78 L50 96 Z" fill="#e8b4a0"/><path d="M46 88 L54 88 L50 96 Z" fill="#c8102e"/><rect x="40" y="20" width="20" height="8" fill="#9e0c24"/></g></svg>
+        <svg class="toy t3" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="#e3a21a"/><path d="M10 50 Q50 20 90 50 M10 50 Q50 80 90 50" stroke="#fff" stroke-width="6" fill="none"/><path d="M50 10 V90" stroke="#fff" stroke-width="6"/></svg>
+      </div>
+      <div id="s01" class="clip scene-host" data-composition-id="s01" data-composition-src="compositions/s01.html" data-start="0.0" data-duration="31.6" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="s02" class="clip scene-host" data-composition-id="s02" data-composition-src="compositions/s02.html" data-start="31.6" data-duration="32.1" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="s03" class="clip scene-host" data-composition-id="s03" data-composition-src="compositions/s03.html" data-start="63.7" data-duration="21.3667" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="s04" class="clip scene-host" data-composition-id="s04" data-composition-src="compositions/s04.html" data-start="85.0667" data-duration="26.5" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="s05" class="clip scene-host" data-composition-id="s05" data-composition-src="compositions/s05.html" data-start="111.5667" data-duration="21.7667" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="s06" class="clip scene-host" data-composition-id="s06" data-composition-src="compositions/s06.html" data-start="133.3333" data-duration="64.1" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="s07" class="clip scene-host" data-composition-id="s07" data-composition-src="compositions/s07.html" data-start="197.4333" data-duration="57.7" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="s08" class="clip scene-host" data-composition-id="s08" data-composition-src="compositions/s08.html" data-start="255.1333" data-duration="87.5333" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="s09" class="clip scene-host" data-composition-id="s09" data-composition-src="compositions/s09.html" data-start="342.6667" data-duration="42.9" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="s10" class="clip scene-host" data-composition-id="s10" data-composition-src="compositions/s10.html" data-start="385.5667" data-duration="47.8667" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="s11" class="clip scene-host" data-composition-id="s11" data-composition-src="compositions/s11.html" data-start="433.4333" data-duration="32.0" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="s12" class="clip scene-host" data-composition-id="s12" data-composition-src="compositions/s12.html" data-start="465.4333" data-duration="37.9333" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="s13" class="clip scene-host" data-composition-id="s13" data-composition-src="compositions/s13.html" data-start="503.3667" data-duration="38.5667" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="topbar" class="clip" data-start="0" data-duration="541.9333" data-track-index="3"></div>
+      <div id="brand" class="clip" data-start="0" data-duration="541.9333" data-track-index="4">
+        <div class="dot"><svg viewBox="0 0 100 100"><path fill="#fff" d="M50 4 l7 14 9-4-3 20 13-14 3 8 13-3-5 15 6 3-21 17 3 8-22-4v22h-6V64l-22 4 3-8-21-17 6-3-5-15 13 3 3-8 13 14-3-20 9 4z"/></svg></div>
+        <span>AA Canada</span>
+      </div>
+      <div id="footnote" class="clip" data-start="31.6" data-duration="471.7667" data-track-index="5">비자·이민·자격 요건은 바뀔 수 있으며 개인별로 다릅니다 (2026.11 기준)</div>
+      <div id="captions" class="clip" data-start="0" data-duration="541.9333" data-track-index="6">
+        <div class="cap" id="cap-0"><span>워킹홀리데이로 캐나다에 오신 분들,</span></div>
+        <div class="cap" id="cap-1"><span>한 번쯤 이런 생각 해보셨을 거예요.</span></div>
+        <div class="cap" id="cap-2"><span>"카페에서 일하다 보면 시간 금방 가는데,</span></div>
+        <div class="cap" id="cap-3"><span>워홀 끝나면 나한테 뭐가 남지?"</span></div>
+        <div class="cap" id="cap-4"><span>오늘은 그 시간을 자격증과 경력,</span></div>
+        <div class="cap" id="cap-5"><span>그리고 영주권 가능성으로 바꾸는 방법을 알려드릴게요.</span></div>
+        <div class="cap" id="cap-6"><span>바로 유아교육, ECE입니다.</span></div>
+        <div class="cap" id="cap-7"><span>그리고 유아교육을 공부하는 두 가지 길,</span></div>
+        <div class="cap" id="cap-8"><span>공립 컬리지와 사립 컬리지를</span></div>
+        <div class="cap" id="cap-9"><span>여덟 가지 포인트로 하나씩 비교해 볼게요.</span></div>
+        <div class="cap" id="cap-10"><span>유아교육은 한국인들 사이에서</span></div>
+        <div class="cap" id="cap-11"><span>캐나다 취업률이 가장 높은 직종 중의 하나입니다.</span></div>
+        <div class="cap" id="cap-12"><span>그래서 한국인에게 특히 인기가 많은 직종이기도 해요.</span></div>
+        <div class="cap" id="cap-13"><span>데이캐어는 늘 사람이 필요하고,</span></div>
+        <div class="cap" id="cap-14"><span>자격증만 있으면 바로 일할 수 있고,</span></div>
+        <div class="cap" id="cap-15"><span>영주권과도 연결되기 때문이죠.</span></div>
+        <div class="cap" id="cap-16"><span>실제로 BC주는 주정부 이민 프로그램에서</span></div>
+        <div class="cap" id="cap-17"><span>유아교사만을 위한 추첨을 따로 하고 있습니다.</span></div>
+        <div class="cap" id="cap-18"><span>2026년 11월 13일에도</span></div>
+        <div class="cap" id="cap-19"><span>유아교사 153명이 초청을 받았어요.</span></div>
+        <div class="cap" id="cap-20"><span>첫 번째 라운드, 기간입니다.</span></div>
+        <div class="cap" id="cap-21"><span>공립 컬리지 유아교육 과정은 보통 2년이에요.</span></div>
+        <div class="cap" id="cap-22"><span>사립 컬리지는 46주,</span></div>
+        <div class="cap" id="cap-23"><span>11개월 안에 자격 과정을 마칩니다.</span></div>
+        <div class="cap" id="cap-24"><span>1년 넘게 먼저 졸업해서 그만큼 먼저</span></div>
+        <div class="cap" id="cap-25"><span>정교사로 일할 수 있다는 뜻이에요.</span></div>
+        <div class="cap" id="cap-26"><span>첫 라운드는 사립의 효율성입니다.</span></div>
+        <div class="cap" id="cap-27"><span>두 번째, 학비입니다.</span></div>
+        <div class="cap" id="cap-28"><span>BC주 공립 컬리지 유아교육 2년 과정은</span></div>
+        <div class="cap" id="cap-29"><span>국제학생 기준 학비와 기본 비용을</span></div>
+        <div class="cap" id="cap-30"><span>합쳐 약 4만 9천 불,</span></div>
+        <div class="cap" id="cap-31"><span>거의 5만 불이에요.</span></div>
+        <div class="cap" id="cap-32"><span>사립 컬리지 자격 과정은 등록비와 교재비를</span></div>
+        <div class="cap" id="cap-33"><span>포함해 약 2만 불입니다.</span></div>
+        <div class="cap" id="cap-34"><span>차이가 약 3만 불이고,</span></div>
+        <div class="cap" id="cap-35"><span>공부 기간이 절반 이하라서 생활비까지 생각하면</span></div>
+        <div class="cap" id="cap-36"><span>전체 예산 차이는 더 커집니다.</span></div>
+        <div class="cap" id="cap-37"><span>세 번째, 입학과 공부 부담입니다.</span></div>
+        <div class="cap" id="cap-38"><span>공립 컬리지는 입학 요건이 까다롭고,</span></div>
+        <div class="cap" id="cap-39"><span>2년 동안 대면 수업과 과제 양도 많아요.</span></div>
+        <div class="cap" id="cap-40"><span>사립 컬리지는 입학이 상대적으로 수월하고,</span></div>
+        <div class="cap" id="cap-41"><span>이론은 온라인으로 듣고 실습만 현장에서 합니다.</span></div>
+        <div class="cap" id="cap-42"><span>졸업까지 가는 길도 공립보다 수월한 편이에요.</span></div>
+        <div class="cap" id="cap-43"><span>네 번째, 일과 공부를 같이 할 수 있느냐입니다.</span></div>
+        <div class="cap" id="cap-44"><span>여기서 차이가 커요.</span></div>
+        <div class="cap" id="cap-45"><span>공립 컬리지에 학생비자로 다니는 국제학생은 학기 중에</span></div>
+        <div class="cap" id="cap-46"><span>학교 밖에서 주 24시간까지만 일할 수 있습니다.</span></div>
+        <div class="cap" id="cap-47"><span>수업도 대부분 대면이라 학교 근처에</span></div>
+        <div class="cap" id="cap-48"><span>살면서 시간을 맞춰야 하죠.</span></div>
+        <div class="cap" id="cap-49"><span>반면 워홀 비자를 가진 분은 이 사립 과정을</span></div>
+        <div class="cap" id="cap-50"><span>별도 학생비자 없이 들을 수 있고,</span></div>
+        <div class="cap" id="cap-51"><span>워홀은 오픈 워크퍼밋이라 일하는 시간에 제한이 없어요.</span></div>
+        <div class="cap" id="cap-52"><span>게다가 학교는 밴쿠버에 있지만 이론 수업은</span></div>
+        <div class="cap" id="cap-53"><span>온라인으로 진행됩니다. 46주 가운데 38주 이론 수업은</span></div>
+        <div class="cap" id="cap-54"><span>다른 지역에 살면서도 들을 수 있고,</span></div>
+        <div class="cap" id="cap-55"><span>8주 현장 실습만 BC주에서 하면 돼요.</span></div>
+        <div class="cap" id="cap-56"><span>그리고 BC주 보조교사 자격은</span></div>
+        <div class="cap" id="cap-57"><span>다른 주의 자격으로 전환할 수 있어요.</span></div>
+        <div class="cap" id="cap-58"><span>그래서 토론토나 캘거리에 살면서 온라인으로 공부하고,</span></div>
+        <div class="cap" id="cap-59"><span>그 지역 데이캐어에서 보조교사로 일할 수도 있습니다.</span></div>
+        <div class="cap" id="cap-60"><span>내가 살고 싶은 도시에서, 내 근무 시간에 맞춰 공부하고,</span></div>
+        <div class="cap" id="cap-61"><span>실습 8주만 BC주에서 하면 되는 거죠.</span></div>
+        <div class="cap" id="cap-62"><span>다섯 번째, 공부하면서 돈을 벌 수 있느냐입니다.</span></div>
+        <div class="cap" id="cap-63"><span>BC주에서는 유아교육 과목을</span></div>
+        <div class="cap" id="cap-64"><span>딱 한 과목만 마쳐도 ECE Assistant,</span></div>
+        <div class="cap" id="cap-65"><span>보조교사 자격을 신청할 수 있어요.</span></div>
+        <div class="cap" id="cap-66"><span>아동발달, 아동지도,</span></div>
+        <div class="cap" id="cap-67"><span>아동 건강·안전·영양 중 한 과목이면 됩니다.</span></div>
+        <div class="cap" id="cap-68"><span>그럼 보조교사 수입은 어느 정도일까요?</span></div>
+        <div class="cap" id="cap-69"><span>최근 BC주 보조교사 구인 공고를 보면 시급은</span></div>
+        <div class="cap" id="cap-70"><span>대략 18불 50센트에서 23불 50센트 사이예요.</span></div>
+        <div class="cap" id="cap-71"><span>캐나다 정부 잡뱅크 기준</span></div>
+        <div class="cap" id="cap-72"><span>BC주 중간 시급은 24불입니다.</span></div>
+        <div class="cap" id="cap-73"><span>공부하면서 주 25시간 일하면 한 달에</span></div>
+        <div class="cap" id="cap-74"><span>세전 약 2천에서 2천 5백 불,</span></div>
+        <div class="cap" id="cap-75"><span>풀타임으로 주 40시간 일하면 한 달에</span></div>
+        <div class="cap" id="cap-76"><span>세전 약 3천 2백에서 4천 불 정도예요.</span></div>
+        <div class="cap" id="cap-77"><span>학비를 내면서도 생활비 상당 부분을</span></div>
+        <div class="cap" id="cap-78"><span>직접 벌 수 있는 구조입니다.</span></div>
+        <div class="cap" id="cap-79"><span>공립 2년 과정은 이 단계가 훨씬 늦게 오죠.</span></div>
+        <div class="cap" id="cap-80"><span>여섯 번째, 졸업 후 정교사로 취업하는 힘입니다.</span></div>
+        <div class="cap" id="cap-81"><span>캐나다 취업에서 가장 중요한 것 중</span></div>
+        <div class="cap" id="cap-82"><span>하나가 이력서에 쓰는 레퍼런스예요.</span></div>
+        <div class="cap" id="cap-83"><span>그 업계에서 나에 대해 직접 말해줄 수 있는</span></div>
+        <div class="cap" id="cap-84"><span>사람이 있느냐는 거죠.</span></div>
+        <div class="cap" id="cap-85"><span>한국에서는 낯설 수 있지만,</span></div>
+        <div class="cap" id="cap-86"><span>캐나다 고용주는 이전 상사에게 직접</span></div>
+        <div class="cap" id="cap-87"><span>연락해서 "이 사람 어땠나요?" 라고 물어봅니다.</span></div>
+        <div class="cap" id="cap-88"><span>같은 업계의 믿을 만한 추천인이 있으면</span></div>
+        <div class="cap" id="cap-89"><span>취업이 훨씬 쉬워져요.</span></div>
+        <div class="cap" id="cap-90"><span>학교 다니면서 데이캐어에서</span></div>
+        <div class="cap" id="cap-91"><span>일한 경력이 바로 그 무기입니다.</span></div>
+        <div class="cap" id="cap-92"><span>매일 나를 지켜본 원장님과 선임</span></div>
+        <div class="cap" id="cap-93"><span>교사가 내 레퍼런스가 되어 주니까요.</span></div>
+        <div class="cap" id="cap-94"><span>졸업 후 풀타임 취업에서</span></div>
+        <div class="cap" id="cap-95"><span>이보다 강력한 무기는 없습니다.</span></div>
+        <div class="cap" id="cap-96"><span>실제로 BC주 유아교사 자격도 추천서를 요구해요.</span></div>
+        <div class="cap" id="cap-97"><span>5년짜리 정식 자격을 받으려면</span></div>
+        <div class="cap" id="cap-98"><span>공인 유아교사 밑에서 500시간을 일하고,</span></div>
+        <div class="cap" id="cap-99"><span>나를 직접 지도한 교사의 추천서를 내야 합니다.</span></div>
+        <div class="cap" id="cap-100"><span>이 500시간은 공부를 시작한 날부터 계산돼요.</span></div>
+        <div class="cap" id="cap-101"><span>실습 시간은 빠지지만 보조교사로</span></div>
+        <div class="cap" id="cap-102"><span>일한 시간은 들어갈 수 있습니다.</span></div>
+        <div class="cap" id="cap-103"><span>과정을 마치면 ECE One Year 자격으로</span></div>
+        <div class="cap" id="cap-104"><span>바로 정교사가 될 수 있으니,</span></div>
+        <div class="cap" id="cap-105"><span>일하던 데이캐어에서 그대로 정교사로</span></div>
+        <div class="cap" id="cap-106"><span>풀타임 채용되는 경우가 많아요.</span></div>
+        <div class="cap" id="cap-107"><span>공립보다 1년 넘게 빠르죠.</span></div>
+        <div class="cap" id="cap-108"><span>게다가 BC주는 자격을 갖춘 유아교사에게</span></div>
+        <div class="cap" id="cap-109"><span>시간당 최대 6불의 임금 보조를 주는데,</span></div>
+        <div class="cap" id="cap-110"><span>보조교사는 대상이 아니고 정교사부터 받을 수 있습니다.</span></div>
+        <div class="cap" id="cap-111"><span>빨리 정교사가 될수록 유리한 이유예요.</span></div>
+        <div class="cap" id="cap-112"><span>일곱 번째, 졸업 후 일할 권리입니다.</span></div>
+        <div class="cap" id="cap-113"><span>이번 라운드는 공립의 강점이에요.</span></div>
+        <div class="cap" id="cap-114"><span>공립 2년 과정을 졸업하면</span></div>
+        <div class="cap" id="cap-115"><span>최대 3년짜리 졸업 후 취업비자,</span></div>
+        <div class="cap" id="cap-116"><span>PGWP를 받을 수 있습니다.</span></div>
+        <div class="cap" id="cap-117"><span>졸업 후에도 안정적으로 일할 수 있죠.</span></div>
+        <div class="cap" id="cap-118"><span>사립 컬리지는 PGWP 대상이 아닙니다.</span></div>
+        <div class="cap" id="cap-119"><span>그런데 한국인에게는 해결책이 있어요.</span></div>
+        <div class="cap" id="cap-120"><span>한국인은 워킹홀리데이를 최대 두 번,</span></div>
+        <div class="cap" id="cap-121"><span>한 번에 최대 24개월,</span></div>
+        <div class="cap" id="cap-122"><span>합쳐서 최대 4년까지 할 수 있습니다.</span></div>
+        <div class="cap" id="cap-123"><span>11개월 공부하고 나서도 약 3년을</span></div>
+        <div class="cap" id="cap-124"><span>풀타임으로 일할 수 있으니,</span></div>
+        <div class="cap" id="cap-125"><span>공립의 PGWP 3년과 비슷한 안정성을</span></div>
+        <div class="cap" id="cap-126"><span>워홀로 채울 수 있는 거예요.</span></div>
+        <div class="cap" id="cap-127"><span>마지막 여덟 번째, 업그레이드와 이직입니다.</span></div>
+        <div class="cap" id="cap-128"><span>더 높은 자격이 필요하면 영아·유아</span></div>
+        <div class="cap" id="cap-129"><span>포스트베이직 과정을 들으면 돼요.</span></div>
+        <div class="cap" id="cap-130"><span>사립 컬리지 기준 학비는 약 1만 2천 불입니다.</span></div>
+        <div class="cap" id="cap-131"><span>이 자격이 있으면 만 3세 미만 반까지 맡을 수 있어서,</span></div>
+        <div class="cap" id="cap-132"><span>급여가 더 좋은 곳이나 원하는</span></div>
+        <div class="cap" id="cap-133"><span>지역으로 이직할 선택지가 넓어집니다.</span></div>
+        <div class="cap" id="cap-134"><span>이때도 첫 데이캐어에서 받은</span></div>
+        <div class="cap" id="cap-135"><span>레퍼런스가 든든한 바탕이 돼요.</span></div>
+        <div class="cap" id="cap-136"><span>그리고 하나 더. BC주에서 받은 유아교사 자격은</span></div>
+        <div class="cap" id="cap-137"><span>캐나다 다른 주의 자격으로 전환할 수 있습니다.</span></div>
+        <div class="cap" id="cap-138"><span>그래서 취업하고 싶은 도시로,</span></div>
+        <div class="cap" id="cap-139"><span>또는 그때그때 영주권에 조금 더 유리한 주로,</span></div>
+        <div class="cap" id="cap-140"><span>시기에 맞춰 자유롭게 옮겨 갈 수 있어요.</span></div>
+        <div class="cap" id="cap-141"><span>한 곳에 묶이지 않는다는 것,</span></div>
+        <div class="cap" id="cap-142"><span>이게 자격증이 주는 또 하나의 힘입니다.</span></div>
+        <div class="cap" id="cap-143"><span>그럼 4년을 한 번에 그려볼게요.</span></div>
+        <div class="cap" id="cap-144"><span>첫 11개월은 온라인으로 공부하면서</span></div>
+        <div class="cap" id="cap-145"><span>데이캐어 보조교사로 일하고,</span></div>
+        <div class="cap" id="cap-146"><span>레퍼런스를 만들어 둡니다.</span></div>
+        <div class="cap" id="cap-147"><span>졸업하면 정교사로 풀타임 근무를 시작하고,</span></div>
+        <div class="cap" id="cap-148"><span>500시간을 채워 5년 자격으로 올립니다.</span></div>
+        <div class="cap" id="cap-149"><span>첫 워홀 남은 기간에 두 번째 워홀 24개월을 더하면,</span></div>
+        <div class="cap" id="cap-150"><span>약 3년 동안 풀타임 경력을 쌓을 수 있어요.</span></div>
+        <div class="cap" id="cap-151"><span>공립의 안정성은 워홀로 채우고, 사립의 효율성,</span></div>
+        <div class="cap" id="cap-152"><span>저렴한 학비와 빠른 졸업은 그대로 가져가는 겁니다.</span></div>
+        <div class="cap" id="cap-153"><span>이렇게 쌓은 경력은 영주권으로 이어질 수 있습니다.</span></div>
+        <div class="cap" id="cap-154"><span>BC주 이민 프로그램의 유아교사 전용 추첨은 One Year나</span></div>
+        <div class="cap" id="cap-155"><span>Five Year 유아교사 자격이 있으면 대상이 돼요.</span></div>
+        <div class="cap" id="cap-156"><span>연방 익스프레스 엔트리에도 유아교사가</span></div>
+        <div class="cap" id="cap-157"><span>포함된 교육 직종 카테고리가 있습니다.</span></div>
+        <div class="cap" id="cap-158"><span>다만 추첨 시기와 점수는 매번 달라져요.</span></div>
+        <div class="cap" id="cap-159"><span>그래서 자격증을 다른 주로</span></div>
+        <div class="cap" id="cap-160"><span>전환할 수 있다는 점이 큰 장점입니다.</span></div>
+        <div class="cap" id="cap-161"><span>그 시기에 유아교사 영주권이 더 유리한 주가 있다면,</span></div>
+        <div class="cap" id="cap-162"><span>그쪽으로 옮겨 가서 기회를 잡을 수 있으니까요.</span></div>
+        <div class="cap" id="cap-163"><span>내 점수와 지역별 상황은 꼭 따로 확인해 보세요.</span></div>
+        <div class="cap" id="cap-164"><span>여덟 라운드를 정리해 볼게요.</span></div>
+        <div class="cap" id="cap-165"><span>기간, 학비, 입학과 공부,</span></div>
+        <div class="cap" id="cap-166"><span>어디서든 일하며 공부하기, 보조교사 수입,</span></div>
+        <div class="cap" id="cap-167"><span>레퍼런스와 정교사 취업,</span></div>
+        <div class="cap" id="cap-168"><span>업그레이드까지는 사립의 효율성.</span></div>
+        <div class="cap" id="cap-169"><span>졸업 후 일할 권리는 공립이 강하지만,</span></div>
+        <div class="cap" id="cap-170"><span>한국인은 워홀 4년으로 채울 수 있습니다.</span></div>
+        <div class="cap" id="cap-171"><span>그래서 워홀을 가진 한국인에게는 사립 컬리지 유아교육이</span></div>
+        <div class="cap" id="cap-172"><span>효율성과 안정성을 함께 잡는 길이 될 수 있어요.</span></div>
+        <div class="cap" id="cap-173"><span>내 상황에 맞는 학교와 일정이 궁금하시면</span></div>
+        <div class="cap" id="cap-174"><span>AA Canada 홈페이지에서 상담 신청해 주세요.</span></div>
+      </div>
+      <div id="wipes" class="clip" data-start="0" data-duration="541.9333" data-track-index="7">
+        <div class="wipe" id="wipeB"></div>
+        <div class="wipe" id="wipeA"></div>
+      </div>
+      <div id="sb" class="clip" data-start="63.7" data-duration="369.7333" data-track-index="9">
+        <div class="panel pub"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z" fill="#5b4d42"/><path d="m8.5 12 2.5 2.5 4.5-5" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="nm">공립 컬리지</div><div class="tag">안정성</div><div class="slots"><div class="slot s1">1<div class="st" data-layout-allow-overlap>✓</div></div><div class="slot s2">2<div class="st" data-layout-allow-overlap>✓</div></div><div class="slot s3">3<div class="st" data-layout-allow-overlap>✓</div></div><div class="slot s4">4<div class="st" data-layout-allow-overlap>✓</div></div><div class="slot s5">5<div class="st" data-layout-allow-overlap>✓</div></div><div class="slot s6">6<div class="st" data-layout-allow-overlap>✓</div></div><div class="slot s7">7<div class="st" data-layout-allow-overlap>✓</div></div><div class="slot s8">8<div class="st" data-layout-allow-overlap>✓</div></div></div><div class="score"><span class="v0">0</span><span class="v1">1</span></div></div>
+        <div class="mid"><div class="rl">ROUND</div><div class="rn"><span class="r1">1</span><span class="r2">2</span><span class="r3">3</span><span class="r4">4</span><span class="r5">5</span><span class="r6">6</span><span class="r7">7</span><span class="r8">8</span></div></div>
+        <div class="panel pri"><div class="ico"><svg viewBox="0 0 24 24"><path d="M13.5 2 5 13.5h6L10 22l9-12h-6.2L13.5 2z" fill="#c8102e"/></svg></div><div class="nm">사립 컬리지 + 워홀</div><div class="tag">효율성</div><div class="slots"><div class="slot s1">1<div class="st" data-layout-allow-overlap>✓</div></div><div class="slot s2">2<div class="st" data-layout-allow-overlap>✓</div></div><div class="slot s3">3<div class="st" data-layout-allow-overlap>✓</div></div><div class="slot s4">4<div class="st" data-layout-allow-overlap>✓</div></div><div class="slot s5">5<div class="st" data-layout-allow-overlap>✓</div></div><div class="slot s6">6<div class="st" data-layout-allow-overlap>✓</div></div><div class="slot s7">7<div class="st" data-layout-allow-overlap>✓</div></div><div class="slot s8">8<div class="st" data-layout-allow-overlap>✓</div></div></div><div class="score"><span class="v0">0</span><span class="v1">1</span><span class="v2">2</span><span class="v3">3</span><span class="v4">4</span><span class="v5">5</span><span class="v6">6</span><span class="v7">7</span></div></div>
+        <div class="bigstamp bs-pub" data-layout-allow-overlap>공립 WIN</div><div class="bigstamp bs-pri" data-layout-allow-overlap>사립 WIN</div>
+      </div>
+      <div id="roundtitle" class="clip" data-start="63.7" data-duration="369.7333" data-track-index="10">
+        <div class="rt"><b>ROUND 1 · 기간</b></div><div class="rt"><b>ROUND 2 · 학비</b></div><div class="rt"><b>ROUND 3 · 입학·공부 부담</b></div><div class="rt"><b>ROUND 4 · 일 병행 · 어디서든 수강</b></div>
+        <div class="rt"><b>ROUND 5 · 보조교사 수입</b></div><div class="rt"><b>ROUND 6 · 레퍼런스 · 정교사 취업</b></div><div class="rt"><b>ROUND 7 · 졸업 후 일할 권리</b></div><div class="rt"><b>ROUND 8 · 업그레이드 · 이직 · 지역 이동</b></div>
+      </div>
+      <audio id="mix" src="audio/mix.m4a" data-start="0" data-duration="541.9333" data-track-index="8" data-volume="1"></audio>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      const TOTAL = 541.9333;
+      // ambient background drift (finite)
+      tl.fromTo("#bg .g1", { x: 0, y: 0 }, { x: 160, y: 90, duration: TOTAL / 2, ease: "sine.inOut", yoyo: true, repeat: 1 }, 0);
+      tl.fromTo("#bg .g2", { x: 0, y: 0 }, { x: -140, y: -80, duration: TOTAL / 2, ease: "sine.inOut", yoyo: true, repeat: 1 }, 0);
+      tl.fromTo("#bg .leaf", { rotation: -8 }, { rotation: 8, duration: TOTAL / 4, ease: "sine.inOut", yoyo: true, repeat: 3 }, 0);
+      tl.fromTo("#bg .grain", { backgroundPosition: "0px 0px" }, { backgroundPosition: "46px 230px", duration: TOTAL, ease: "none" }, 0);
+      tl.fromTo("#brand", { opacity: 0, y: -16 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 0.4);
+      tl.fromTo("#footnote", { opacity: 0 }, { opacity: 1, duration: 0.6 }, 31.6 + 0.3);
+      // captions
+      const CAPS = [[1.517, 3.697], [3.817, 7.033], [7.35, 9.797], [9.917, 13.133], [13.283, 15.863], [15.983, 19.463], [19.583, 22.83], [22.95, 25.23], [25.35, 27.463], [27.583, 30.717], [32.317, 34.497], [34.617, 37.463], [37.583, 42.43], [42.55, 44.597], [44.717, 47.063], [47.183, 50.067], [50.217, 53.163], [53.283, 56.03], [56.15, 58.997], [59.117, 62.817], [64.417, 66.967], [67.117, 70.763], [70.883, 72.53], [72.65, 75.933], [76.083, 76.93], [77.05, 80.763], [80.883, 84.35], [85.683, 88.1], [88.25, 91.03], [91.15, 93.663], [93.783, 95.663], [95.783, 98.033], [98.183, 100.863], [100.983, 103.163], [103.283, 104.463], [104.583, 108.23], [108.35, 110.85], [112.283, 115.733], [115.883, 118.23], [118.35, 122.3], [122.45, 124.863], [124.983, 128.463], [128.583, 132.583], [134.05, 137.763], [137.883, 140.33], [140.45, 144.163], [144.283, 147.83], [147.95, 151.03], [151.15, 153.43], [153.55, 156.563], [156.683, 158.73], [158.85, 163.363], [163.483, 166.563], [166.683, 171.597], [171.717, 173.597], [173.717, 177.13], [177.25, 179.53], [179.65, 181.53], [181.65, 185.763], [185.883, 189.93], [190.05, 193.297], [193.417, 196.717], [198.05, 202.467], [202.617, 204.597], [204.717, 206.097], [206.217, 210.197], [210.317, 212.663], [212.783, 216.663], [216.783, 219.833], [220.05, 223.463], [223.583, 227.797], [227.917, 230.197], [230.317, 233.6], [233.75, 236.497], [236.617, 239.53], [239.65, 242.23], [242.35, 245.863], [245.983, 248.263], [248.383, 249.697], [249.817, 254.317], [255.85, 260.267], [260.417, 261.797], [261.917, 264.93], [265.05, 268.197], [268.317, 270.297], [270.417, 271.797], [271.917, 274.763], [274.883, 277.797], [277.917, 280.93], [281.05, 282.997], [283.117, 284.53], [284.65, 286.83], [286.95, 289.73], [289.85, 292.163], [292.283, 293.963], [294.083, 296.8], [297.05, 300.297], [300.417, 302.83], [302.95, 305.797], [305.917, 309.73], [309.85, 312.83], [312.95, 315.33], [315.45, 317.563], [317.683, 319.63], [319.75, 321.363], [321.483, 324.13], [324.25, 325.897], [326.017, 328.83], [328.95, 331.963], [332.083, 334.697], [334.817, 338.43], [338.55, 341.917], [343.383, 346.063], [346.183, 349.83], [349.95, 351.497], [351.617, 354.363], [354.483, 356.463], [356.583, 359.83], [359.95, 363.33], [363.45, 365.663], [365.783, 368.93], [369.05, 371.297], [371.417, 374.667], [374.817, 377.163], [377.283, 378.763], [378.883, 382.23], [382.35, 384.917], [386.283, 390.063], [390.183, 392.563], [392.683, 394.23], [394.35, 398.463], [398.583, 401.997], [402.117, 404.463], [404.583, 406.73], [406.85, 409.363], [409.483, 412.063], [412.183, 415.363], [415.483, 418.963], [419.083, 420.797], [420.917, 424.197], [424.317, 426.73], [426.85, 429.163], [429.283, 432.55], [434.05, 436.997], [437.117, 439.63], [439.75, 441.297], [441.417, 443.667], [443.817, 446.33], [446.45, 450.0], [450.15, 453.53], [453.65, 457.433], [457.583, 460.93], [461.05, 464.817], [466.05, 469.767], [469.917, 473.863], [473.983, 477.667], [477.817, 480.197], [480.317, 483.297], [483.417, 486.43], [486.55, 488.897], [489.017, 491.23], [491.35, 495.297], [495.417, 498.663], [498.783, 502.483], [503.983, 506.03], [506.15, 508.763], [508.883, 512.363], [512.483, 514.597], [514.717, 518.363], [518.483, 520.53], [520.65, 523.963], [524.083, 528.13], [528.25, 531.863], [531.983, 534.397], [534.517, 537.83]];
+      CAPS.forEach(([a, b], i) => {
+        const el = document.getElementById("cap-" + i);
+        tl.fromTo(el, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power1.out" }, Math.max(0, a));
+        tl.to(el, { opacity: 0, duration: 0.1, ease: "power1.in" }, b);
+      });
+      // seam wipes: red leads, cream follows, both exit to the right
+      const SEAMS = [31.6, 63.7, 85.0667, 111.5667, 133.3333, 197.4333, 255.1333, 342.6667, 385.5667, 433.4333, 465.4333, 503.3667];
+      SEAMS.forEach((s) => {
+        tl.fromTo("#wipeA", { scaleX: 0, transformOrigin: "left center" }, { scaleX: 1, duration: 0.26, ease: "power3.in", immediateRender: false }, s - 0.3);
+        tl.fromTo("#wipeB", { scaleX: 0, transformOrigin: "left center" }, { scaleX: 1, duration: 0.26, ease: "power3.in", immediateRender: false }, s - 0.24);
+        tl.fromTo("#wipeA", { scaleX: 1, transformOrigin: "right center" }, { scaleX: 0, duration: 0.3, ease: "power3.out", immediateRender: false }, s + 0.0);
+        tl.fromTo("#wipeB", { scaleX: 1, transformOrigin: "right center" }, { scaleX: 0, duration: 0.3, ease: "power3.out", immediateRender: false }, s + 0.06);
+      });
+
+      // ---------- scoreboard ----------
+      const SB0 = 63.7, SB1 = 433.4333;
+      const RD = [{"r": 1, "w": "pri", "t": 83.1667, "s": 63.7}, {"r": 2, "w": "pri", "t": 109.7333, "s": 85.0667}, {"r": 3, "w": "pri", "t": 131.3, "s": 111.5667}, {"r": 4, "w": "pri", "t": 195.7667, "s": 133.3333}, {"r": 5, "w": "pri", "t": 253.6333, "s": 197.4333}, {"r": 6, "w": "pri", "t": 340.6, "s": 255.1333}, {"r": 7, "w": "pub", "t": 362.4, "s": 342.6667}, {"r": 8, "w": "pri", "t": 431.7667, "s": 385.5667}];
+      tl.fromTo("#sb", { opacity: 0, y: -60 }, { opacity: 1, y: 0, duration: 0.6, ease: "back.out(1.4)" }, SB0 + 0.05);
+      tl.fromTo("#sb", { opacity: 1 }, { opacity: 0, duration: 0.3, immediateRender: false }, SB1 - 0.35);
+      tl.fromTo("#brand", { opacity: 1 }, { opacity: 0, duration: 0.3, immediateRender: false }, SB0 - 0.3);
+      tl.fromTo("#brand", { opacity: 0 }, { opacity: 1, duration: 0.4, immediateRender: false }, SB1);
+      const sbq = (s) => document.querySelector("#sb " + s);
+      tl.set(sbq(".pub .v0"), { opacity: 1 }, SB0);
+      tl.set(sbq(".pri .v0"), { opacity: 1 }, SB0);
+      let pub = 0, pri = 0;
+      const rts = document.querySelectorAll("#roundtitle .rt");
+      RD.forEach((R, i) => {
+        const rn = sbq(".rn .r" + R.r);
+        tl.fromTo(rn, { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2.4)", immediateRender: false }, R.s + 0.1);
+        const rt = rts[R.r - 1];
+        tl.fromTo(rt, { opacity: 0, y: -18 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out", immediateRender: false }, R.s + 0.25);
+        const nextS = i + 1 < RD.length ? RD[i + 1].s : SB1;
+        tl.to(rt, { opacity: 0, duration: 0.25, ease: "power1.in" }, nextS - 0.45);
+        if (i + 1 < RD.length) tl.to(rn, { opacity: 0, scale: 0.6, duration: 0.2, ease: "power1.in" }, nextS - 0.2);
+        const side = R.w === "pub" ? ".pub" : ".pri";
+        // big stamp over the winner panel, then shrink into the round slot
+        const bs = sbq(".bs-" + R.w);
+        tl.fromTo(bs, { opacity: 0, scale: 2.4, rotation: -16 }, { opacity: 1, scale: 1, rotation: -6, duration: 0.4, ease: "back.out(2.2)", immediateRender: false }, R.t);
+        tl.to(bs, { opacity: 0, scale: 0.5, duration: 0.35, ease: "power2.in" }, R.t + 1.5);
+        const st = sbq(side + " .s" + R.r + " .st");
+        tl.set(sbq(side + " .s" + R.r), { color: "#ffffff", borderColor: "#c8102e" }, R.t + 1.6);
+        tl.fromTo(st, { opacity: 0, scale: 2.2, rotation: -20 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.4, ease: "back.out(2.5)", immediateRender: false }, R.t + 1.6);
+        tl.fromTo(sbq(side), { boxShadow: "0 0 0 0 rgba(200,16,46,0.0)" }, { boxShadow: "0 0 0 10px rgba(200,16,46,0.22)", duration: 0.3, yoyo: true, repeat: 1, immediateRender: false }, R.t);
+        const prevV = R.w === "pub" ? pub : pri;
+        const nv = prevV + 1;
+        if (R.w === "pub") pub = nv; else pri = nv;
+        tl.set(sbq(side + " .v" + prevV), { opacity: 0 }, R.t + 1.7);
+        tl.fromTo(sbq(side + " .v" + nv), { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)", immediateRender: false }, R.t + 1.7);
+      });
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

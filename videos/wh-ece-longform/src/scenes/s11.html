@@ -1,0 +1,57 @@
+<!--ANCHORS {"L1":"L1", "ref":"레퍼런스를", "L2":"L2", "h500":"오백 시간을", "L3":"L3", "wh2":"두 번째 워홀", "y3":"약 삼 년", "L4":"L4", "eff":"사립의 효율성"}-->
+<!--SFX [["tick", "wh2"], ["ding", "y3"]]-->
+      <style>
+        #s11-root { position: absolute; inset: 0; }
+        #s11-root .tlw { position: absolute; left: 160px; top: 300px; width: 1600px; height: 460px; }
+        #s11-root .wh { position: absolute; top: 0; height: 56px; border: 4px solid #b9a990; border-bottom: none; border-radius: 14px 14px 0 0; text-align: center; font-size: 28px; font-weight: 900; color: var(--muted); padding-top: 6px; }
+        #s11-root .wh.w1 { left: 0; width: 796px; } #s11-root .wh.w2 { left: 804px; width: 796px; border-color: var(--red); color: var(--red); }
+        #s11-root .track { position: absolute; left: 0; top: 70px; width: 1600px; height: 120px; border-radius: 22px; background: #efe3cf; overflow: hidden; }
+        #s11-root .sg { position: absolute; top: 0; bottom: 0; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 30px; font-weight: 900; color: #fff; line-height: 1.2; transform-origin: left center; }
+        #s11-root .sg.a { left: 0; width: 367px; background: #e3a21a; }
+        #s11-root .sg.b { left: 367px; width: 433px; background: var(--red); }
+        #s11-root .sg.c { left: 800px; width: 800px; background: var(--red-dark); border-left: 4px solid #fff; }
+        #s11-root .ax { position: absolute; top: 200px; transform: translateX(-50%); font-size: 26px; font-weight: 800; color: var(--muted); white-space: nowrap; }
+        #s11-root .ms { position: absolute; top: 250px; width: 300px; padding: 16px 20px; font-size: 28px; font-weight: 900; line-height: 1.25; }
+        #s11-root .ms small { display: block; font-size: 22px; font-weight: 700; color: var(--muted); }
+        #s11-root .brk { position: absolute; left: 367px; top: 380px; width: 1233px; height: 40px; border: 5px solid var(--red); border-top: none; border-radius: 0 0 16px 16px; transform-origin: left center; }
+        #s11-root .brkT { position: absolute; left: 367px; top: 425px; width: 1233px; text-align: center; font-size: 40px; font-weight: 900; color: var(--red); }
+        #s11-root .fin { position: absolute; left: 0; right: 0; top: 790px; display: flex; justify-content: center; gap: 24px; }
+        #s11-root .fin span { font-size: 36px; font-weight: 900; padding: 14px 28px; border-radius: 18px; background: var(--paper); box-shadow: 0 10px 24px rgba(80,50,20,0.12); }
+        #s11-root .fin span.r { background: var(--red); color: #fff; }
+      </style>
+      <div id="s11-root" data-composition-id="s11" data-width="1920" data-height="1080">
+        <div class="stage">
+          <div class="kicker"><span class="k-num">4 YEARS</span><span class="k-title">4년을 한 번에 그려보기</span></div>
+          <div class="tlw">
+            <div class="wh w1">1차 워홀 · 최대 24개월</div><div class="wh w2">2차 워홀 · 최대 24개월</div>
+            <div class="track"><div class="sg a">공부 + 보조교사<br />레퍼런스 만들기</div><div class="sg b">정교사 풀타임<br />500시간 → Five Year</div><div class="sg c">정교사 풀타임 경력 계속</div></div>
+            <div class="ax" style="left: 0">0</div><div class="ax" style="left: 367px">11개월</div><div class="ax" style="left: 800px">24개월</div><div class="ax" style="left: 1600px">48개월</div>
+            <div class="brk"></div><div class="brkT">약 3년 풀타임 경력</div>
+          </div>
+          <div class="fin"><span>공립의 안정성 → 워홀로 채우기</span><span class="r">사립의 효율성 → 저렴한 학비 · 빠른 졸업</span></div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const C = __CUES__;
+__HELPERS__
+          const R = document.getElementById("s11-root");
+          const $ = (s) => R.querySelectorAll(s);
+          const $1 = (s) => R.querySelector(s);
+          const tl = gsap.timeline({ paused: true });
+          H.sceneIn(tl, R);
+          tl.fromTo($1(".track"), { opacity: 0, scaleX: 0.6 }, { opacity: 1, scaleX: 1, duration: 0.7, ease: "power3.out", transformOrigin: "left center" }, 0.5);
+          H.rise(tl, $(".ax"), 0.9, { stagger: 0.1, y: 10 });
+          tl.fromTo($1(".sg.a"), { scaleX: 0 }, { scaleX: 1, duration: 1.2, ease: "power2.out" }, C.L1);
+          tl.fromTo($1(".sg.b"), { scaleX: 0 }, { scaleX: 1, duration: 1.4, ease: "power2.out" }, C.L2);
+          tl.fromTo($1(".wh.w1"), { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5 }, C.L3 - 0.3);
+          tl.fromTo($1(".wh.w2"), { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5 }, C.wh2 - 0.3);
+          tl.fromTo($1(".sg.c"), { scaleX: 0 }, { scaleX: 1, duration: 1.6, ease: "power2.out" }, C.wh2);
+          tl.fromTo($1(".brk"), { scaleX: 0 }, { scaleX: 1, duration: 0.8, ease: "power2.inOut" }, C.y3 - 0.5);
+          H.pop(tl, $1(".brkT"), C.y3);
+          H.pop(tl, $1(".fin span:not(.r)"), C.L4 + 0.1);
+          H.pop(tl, $1(".fin span.r"), C.eff - 0.2);
+          H.sceneOut(tl, R, C.D);
+          window.__timelines["s11"] = tl;
+        })();
+      </script>

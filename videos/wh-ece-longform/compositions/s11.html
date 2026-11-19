@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+
+
+      <style>
+        #s11-root { position: absolute; inset: 0; }
+        #s11-root .tlw { position: absolute; left: 160px; top: 300px; width: 1600px; height: 460px; }
+        #s11-root .wh { position: absolute; top: 0; height: 56px; border: 4px solid #b9a990; border-bottom: none; border-radius: 14px 14px 0 0; text-align: center; font-size: 28px; font-weight: 900; color: var(--muted); padding-top: 6px; }
+        #s11-root .wh.w1 { left: 0; width: 796px; } #s11-root .wh.w2 { left: 804px; width: 796px; border-color: var(--red); color: var(--red); }
+        #s11-root .track { position: absolute; left: 0; top: 70px; width: 1600px; height: 120px; border-radius: 22px; background: #efe3cf; overflow: hidden; }
+        #s11-root .sg { position: absolute; top: 0; bottom: 0; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 30px; font-weight: 900; color: #fff; line-height: 1.2; transform-origin: left center; }
+        #s11-root .sg.a { left: 0; width: 367px; background: #e3a21a; }
+        #s11-root .sg.b { left: 367px; width: 433px; background: var(--red); }
+        #s11-root .sg.c { left: 800px; width: 800px; background: var(--red-dark); border-left: 4px solid #fff; }
+        #s11-root .ax { position: absolute; top: 200px; transform: translateX(-50%); font-size: 26px; font-weight: 800; color: var(--muted); white-space: nowrap; }
+        #s11-root .ms { position: absolute; top: 250px; width: 300px; padding: 16px 20px; font-size: 28px; font-weight: 900; line-height: 1.25; }
+        #s11-root .ms small { display: block; font-size: 22px; font-weight: 700; color: var(--muted); }
+        #s11-root .brk { position: absolute; left: 367px; top: 380px; width: 1233px; height: 40px; border: 5px solid var(--red); border-top: none; border-radius: 0 0 16px 16px; transform-origin: left center; }
+        #s11-root .brkT { position: absolute; left: 367px; top: 425px; width: 1233px; text-align: center; font-size: 40px; font-weight: 900; color: var(--red); }
+        #s11-root .fin { position: absolute; left: 0; right: 0; top: 790px; display: flex; justify-content: center; gap: 24px; }
+        #s11-root .fin span { font-size: 36px; font-weight: 900; padding: 14px 28px; border-radius: 18px; background: var(--paper); box-shadow: 0 10px 24px rgba(80,50,20,0.12); }
+        #s11-root .fin span.r { background: var(--red); color: #fff; }
+      </style>
+      <div id="s11-root" data-composition-id="s11" data-width="1920" data-height="1080">
+        <div class="stage">
+          <div class="kicker"><span class="k-num">4 YEARS</span><span class="k-title">4년을 한 번에 그려보기</span></div>
+          <div class="tlw">
+            <div class="wh w1">1차 워홀 · 최대 24개월</div><div class="wh w2">2차 워홀 · 최대 24개월</div>
+            <div class="track"><div class="sg a">공부 + 보조교사<br />레퍼런스 만들기</div><div class="sg b">정교사 풀타임<br />500시간 → Five Year</div><div class="sg c">정교사 풀타임 경력 계속</div></div>
+            <div class="ax" style="left: 0">0</div><div class="ax" style="left: 367px">11개월</div><div class="ax" style="left: 800px">24개월</div><div class="ax" style="left: 1600px">48개월</div>
+            <div class="brk"></div><div class="brkT">약 3년 풀타임 경력</div>
+          </div>
+          <div class="fin"><span>공립의 안정성 → 워홀로 채우기</span><span class="r">사립의 효율성 → 저렴한 학비 · 빠른 졸업</span></div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const C = {"L1": 3.7333, "ref": 8.3667, "L2": 10.4333, "h500": 13.4667, "L3": 16.7667, "wh2": 18.2, "y3": 20.7667, "L4": 24.2, "eff": 26.6, "L": [[0.6667, 3.0], [3.7333, 9.6333], [10.4333, 15.9667], [16.7667, 23.4], [24.2, 30.9333]], "D": 32.0};
+      const H = (function () {
+        const fmtNum = (v, o) => {
+          o = o || {};
+          const d = o.dec || 0;
+          let s = d ? v.toFixed(d) : Math.round(v).toString();
+          if (o.comma) s = s.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+          return (o.pre || "") + s + (o.suf || "");
+        };
+        // schematic Canada map (concept diagram): province tiles in a 1600x430 box. returns city coords
+        const CANADA = {
+          tiles: [["BC", 0, 250, 40], ["AB", 258, 150, 30], ["SK", 416, 140, 30], ["MB", 564, 150, 30], ["ON", 722, 330, 70], ["QC", 1060, 320, 0], ["대서양", 1388, 212, 170]],
+          city: { 밴쿠버: [70, 360], 캘거리: [335, 310], 토론토: [960, 385], 몬트리올: [1250, 345] },
+          build(el, opts) {
+            opts = opts || {};
+            let h = '<svg viewBox="0 0 1600 430" width="1600" height="430" style="position:absolute;left:0;top:0;overflow:visible">';
+            this.tiles.forEach(([n, x, w, t], i) => {
+                const bc = n === "BC" && opts.bc;
+                h += '<g class="tile tile-' + i + '"><rect x="' + x + '" y="' + t + '" width="' + w + '" height="' + (410 - t) + '" rx="22" fill="' + (bc ? "#c8102e" : "#efe3cf") + '" stroke="#fffdf8" stroke-width="4"/>' +
+                  '<text x="' + (x + w / 2) + '" y="' + (t + 60) + '" text-anchor="middle" font-family="Pretendard" font-size="40" font-weight="900" fill="' + (bc ? "#fff" : "#a8977f") + '">' + n + "</text></g>";
+            });
+            h += "</svg>";
+            el.insertAdjacentHTML("beforeend", h);
+          },
+        };
+        return {
+          canada: CANADA,
+          // count-up number (seek-safe proxy, text written in onUpdate)
+          count(tl, el, from, to, t, d, o) {
+            const st = { v: from };
+            el.textContent = fmtNum(from, o);
+            tl.fromTo(st, { v: from }, { v: to, duration: d || 1.2, ease: "power2.out", onUpdate: () => (el.textContent = fmtNum(st.v, o)) }, t);
+            tl.fromTo(el, { scale: 0.7 }, { scale: 1, duration: d || 1.2, ease: "power2.out" }, t);
+          },
+          pop(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 0, scale: o.from || 0.6 }, { opacity: 1, scale: 1, duration: o.d || 0.5, ease: o.ease || "back.out(1.8)", stagger: o.stagger || 0 }, t);
+          },
+          rise(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 0, y: o.y || 40 }, { opacity: 1, y: 0, duration: o.d || 0.55, ease: o.ease || "power3.out", stagger: o.stagger || 0 }, t);
+          },
+          slideX(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 0, x: o.x || -80 }, { opacity: 1, x: 0, duration: o.d || 0.6, ease: o.ease || "power3.out", stagger: o.stagger || 0 }, t);
+          },
+          out(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 1, y: 0 }, { opacity: 0, y: o.y == null ? -30 : o.y, duration: o.d || 0.4, ease: "power2.in", immediateRender: false, stagger: o.stagger || 0 }, t);
+          },
+          fadeOut(tl, els, t, d) {
+            tl.fromTo(els, { opacity: 1 }, { opacity: 0, duration: d || 0.4, ease: "power1.in", immediateRender: false }, t);
+          },
+          // marker sweep behind text: element .hl > .hl-bg
+          mark(tl, el, t, d) {
+            tl.fromTo(el, { scaleX: 0 }, { scaleX: 1, duration: d || 0.5, ease: "power2.inOut" }, t);
+          },
+          growX(tl, el, t, d, to) {
+            tl.fromTo(el, { scaleX: 0 }, { scaleX: to == null ? 1 : to, duration: d || 1, ease: "power3.out" }, t);
+          },
+          growY(tl, el, t, d) {
+            tl.fromTo(el, { scaleY: 0 }, { scaleY: 1, duration: d || 1, ease: "power3.out" }, t);
+          },
+          stamp(tl, el, t) {
+            tl.fromTo(el, { opacity: 0, scale: 2.2, rotation: -14 }, { opacity: 1, scale: 1, rotation: -6, duration: 0.42, ease: "back.out(2.2)" }, t);
+          },
+          // slow ambient breathing, finite repeats within scene duration
+          breathe(tl, els, D, o) {
+            o = o || {};
+            const per = o.per || 3;
+            const n = Math.max(1, Math.floor(D / per) - 1);
+            tl.fromTo(els, { y: 0, rotation: 0 }, { y: o.y || -14, rotation: o.r || 0, duration: per / 2, ease: "sine.inOut", yoyo: true, repeat: n * 2 - 1 }, 0.1);
+          },
+          // camera move on a capture: el is the inner image wrapper
+          cam(tl, el, t, d, s, x, y) {
+            tl.to(el, { scale: s, x: x, y: y, duration: d, ease: "power2.inOut" }, t);
+          },
+          // capture camera: move/zoom a .shot so a highlight band [x0,y0,x1,y1] (native px) is centred
+          camTo(tl, shot, band, natH, s, t, d) {
+            const k = 716 / 538, W = 716, HS = 520;
+            if (!s) s = Math.max(1.12, Math.min(1.6, (0.94 * 538) / (band[2] - band[0])));
+            const cx = ((band[0] + band[2]) / 2) * k, cy = ((band[1] + band[3]) / 2) * k;
+            let x = W / 2 - cx * s, y = HS / 2 - cy * s;
+            x = Math.min(0, Math.max(W - W * s, x));
+            y = Math.min(0, Math.max(Math.min(0, HS - natH * k * s), y));
+            const prev = shot.__cam || { scale: 1, x: 0, y: 0 };
+            tl.fromTo(shot, { scale: prev.scale, x: prev.x, y: prev.y }, { scale: s, x: x, y: y, duration: d || 1.6, ease: "power2.inOut", immediateRender: !shot.__cam }, t);
+            shot.__cam = { scale: s, x: x, y: y };
+          },
+          // red ring drawn around a highlight band inside a .shot
+          ring(tl, shot, band, t) {
+            const k = 716 / 538;
+            const r = document.createElement("div");
+            r.className = "ring";
+            r.style.left = band[0] * k - 10 + "px";
+            r.style.top = band[1] * k - 8 + "px";
+            r.style.width = (band[2] - band[0]) * k + 20 + "px";
+            r.style.height = (band[3] - band[1]) * k + 16 + "px";
+            shot.appendChild(r);
+            tl.fromTo(r, { opacity: 0, scale: 1.25 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, t);
+            return r;
+          },
+          draw(tl, path, t, d, len) {
+            try { len = Math.ceil(path.getTotalLength()) + 4 || len; } catch (e) {}
+            tl.fromTo(path, { opacity: 0 }, { opacity: 1, duration: 0.05 }, t);
+            tl.fromTo(path, { strokeDasharray: len + " " + len, strokeDashoffset: len }, { strokeDashoffset: 0, duration: d || 1, ease: "power2.inOut" }, t);
+          },
+          sceneIn(tl, root) {
+            const k = root.querySelector(".kicker");
+            if (k) {
+              tl.fromTo(k.querySelector(".k-num"), { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 0.05);
+              tl.fromTo(k.querySelector(".k-title"), { opacity: 0, x: -20, clipPath: "inset(0 100% 0 0)" }, { opacity: 1, x: 0, clipPath: "inset(0 0% 0 0)", duration: 0.7, ease: "power3.out" }, 0.18);
+            }
+          },
+          sceneOut(tl, root, D) {
+            const st = root.querySelector(".stage");
+            if (st) tl.fromTo(st, { opacity: 1 }, { opacity: 0, duration: 0.35, ease: "power1.in", immediateRender: false }, D - 0.4);
+          },
+        };
+      })();
+
+          const R = document.getElementById("s11-root");
+          const $ = (s) => R.querySelectorAll(s);
+          const $1 = (s) => R.querySelector(s);
+          const tl = gsap.timeline({ paused: true });
+          H.sceneIn(tl, R);
+          tl.fromTo($1(".track"), { opacity: 0, scaleX: 0.6 }, { opacity: 1, scaleX: 1, duration: 0.7, ease: "power3.out", transformOrigin: "left center" }, 0.5);
+          H.rise(tl, $(".ax"), 0.9, { stagger: 0.1, y: 10 });
+          tl.fromTo($1(".sg.a"), { scaleX: 0 }, { scaleX: 1, duration: 1.2, ease: "power2.out" }, C.L1);
+          tl.fromTo($1(".sg.b"), { scaleX: 0 }, { scaleX: 1, duration: 1.4, ease: "power2.out" }, C.L2);
+          tl.fromTo($1(".wh.w1"), { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5 }, C.L3 - 0.3);
+          tl.fromTo($1(".wh.w2"), { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5 }, C.wh2 - 0.3);
+          tl.fromTo($1(".sg.c"), { scaleX: 0 }, { scaleX: 1, duration: 1.6, ease: "power2.out" }, C.wh2);
+          tl.fromTo($1(".brk"), { scaleX: 0 }, { scaleX: 1, duration: 0.8, ease: "power2.inOut" }, C.y3 - 0.5);
+          H.pop(tl, $1(".brkT"), C.y3);
+          H.pop(tl, $1(".fin span:not(.r)"), C.L4 + 0.1);
+          H.pop(tl, $1(".fin span.r"), C.eff - 0.2);
+          H.sceneOut(tl, R, C.D);
+          window.__timelines["s11"] = tl;
+        })();
+      </script>
+
+    </template>
+  </body>
+</html>

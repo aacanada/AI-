@@ -1,0 +1,61 @@
+<!--ANCHORS {"pub":"L1", "req":"까다롭고", "hw":"과제", "pri":"L2", "online":"온라인으로", "field":"현장에서", "easy":"졸업까지", "WIN":"수월한 편"}-->
+<!--SFX [["tick", "online"]]-->
+      <style>
+        #s05-root { position: absolute; inset: 0; }
+        #s05-root .cl { position: absolute; top: 270px; width: 780px; height: 560px; padding: 38px 44px; }
+        #s05-root .cl.a { left: 130px; } #s05-root .cl.b { left: 1010px; border: 5px solid var(--red); }
+        #s05-root .cl h3 { font-size: 44px; font-weight: 900; letter-spacing: -0.03em; margin-bottom: 22px; display: flex; align-items: center; gap: 16px; }
+        #s05-root .cl.b h3 { color: var(--red); }
+        #s05-root .it { display: flex; align-items: center; gap: 18px; font-size: 36px; font-weight: 800; padding: 13px 0; border-bottom: 2px dashed var(--line); letter-spacing: -0.02em; }
+        #s05-root .it i { flex: 0 0 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-style: normal; font-size: 26px; font-weight: 900; }
+        #s05-root .cl.a .it i { background: #ece4d6; color: #5b4d42; }
+        #s05-root .cl.b .it i { background: var(--red); color: #fff; }
+        #s05-root .meter { position: absolute; left: 44px; right: 44px; bottom: 40px; }
+        #s05-root .meter .lb { font-size: 28px; font-weight: 800; color: var(--muted); margin-bottom: 10px; display: flex; justify-content: space-between; }
+        #s05-root .meter .tr { height: 34px; border-radius: 17px; background: #efe3cf; overflow: hidden; position: relative; }
+        #s05-root .meter .f { position: absolute; left: 0; top: 0; bottom: 0; width: 100%; transform-origin: left center; border-radius: 17px; }
+        #s05-root .cl.a .meter .f { background: #8c7b6b; } #s05-root .cl.b .meter .f { background: var(--red); }
+        #s05-root .books { width: 60px; height: 60px; }
+      </style>
+      <div id="s05-root" data-composition-id="s05" data-width="1920" data-height="1080">
+        <div class="stage">
+          <div class="cl card a">
+            <h3><svg class="books" viewBox="0 0 24 24"><rect x="3" y="14" width="18" height="6" rx="1" fill="#8c7b6b"/><rect x="5" y="8" width="15" height="6" rx="1" fill="#b9a990"/><rect x="4" y="2" width="16" height="6" rx="1" fill="#5b4d42"/></svg>공립 컬리지</h3>
+            <div class="it a1"><i>!</i>입학 요건이 까다로움</div>
+            <div class="it a2"><i>2</i>2년 동안 대면 수업</div>
+            <div class="it a3"><i>+</i>과제 양도 많음</div>
+            <div class="meter"><div class="lb"><span>공부 부담</span><span>높음</span></div><div class="tr"><div class="f"></div></div></div>
+          </div>
+          <div class="cl card b">
+            <h3><svg class="books" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="13" rx="2" fill="#c8102e"/><rect x="4" y="6" width="16" height="9" rx="1" fill="#fff"/><rect x="0" y="18" width="24" height="2.5" rx="1" fill="#9e0c24"/></svg>사립 컬리지</h3>
+            <div class="it b1"><i>✓</i>입학이 상대적으로 수월</div>
+            <div class="it b2"><i>✓</i>이론은 온라인</div>
+            <div class="it b3"><i>✓</i>실습만 현장에서</div>
+            <div class="it b4"><i>✓</i>졸업까지 가는 길도 수월한 편</div>
+            <div class="meter"><div class="lb"><span>공부 부담</span><span>가벼움</span></div><div class="tr"><div class="f"></div></div></div>
+          </div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const C = __CUES__;
+__HELPERS__
+          const R = document.getElementById("s05-root");
+          const $ = (s) => R.querySelectorAll(s);
+          const $1 = (s) => R.querySelector(s);
+          const tl = gsap.timeline({ paused: true });
+          tl.fromTo($1(".cl.a"), { opacity: 0, x: -100 }, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, 0.5);
+          tl.fromTo($1(".cl.b"), { opacity: 0, x: 100 }, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, 0.8);
+          H.slideX(tl, $1(".a1"), C.req - 0.5, { x: 40 });
+          H.slideX(tl, $1(".a2"), C.hw - 1.4, { x: 40 });
+          H.slideX(tl, $1(".a3"), C.hw - 0.2, { x: 40 });
+          tl.fromTo($1(".cl.a .meter .f"), { scaleX: 0 }, { scaleX: 0.88, duration: 1.2, ease: "power2.out" }, C.hw + 0.4);
+          H.slideX(tl, $1(".b1"), C.pri + 0.3, { x: 40 });
+          H.slideX(tl, $1(".b2"), C.online - 0.3, { x: 40 });
+          H.slideX(tl, $1(".b3"), C.field - 0.4, { x: 40 });
+          H.slideX(tl, $1(".b4"), C.easy - 0.2, { x: 40 });
+          tl.fromTo($1(".cl.b .meter .f"), { scaleX: 0 }, { scaleX: 0.36, duration: 1.0, ease: "power2.out" }, C.easy + 0.6);
+          H.sceneOut(tl, R, C.D);
+          window.__timelines["s05"] = tl;
+        })();
+      </script>

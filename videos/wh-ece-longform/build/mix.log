@@ -1,0 +1,24 @@
+{
+ "master_I": -16.0,
+ "master_peak": -2.0,
+ "master_TP": -2.0,
+ "vo_I": -16.0,
+ "bed_unducked_I": -26.0,
+ "bed_under_vo_I": -39.5,
+ "vo_window_I": -16.0,
+ "duck_gap_dB": 23.5,
+ "sfx_count": 56,
+ "sfx_by_type": {
+  "transition_ding": 14,
+  "tick": 17,
+  "ding": 14,
+  "stamp": 11
+ },
+ "sfx_gain_dB": {
+  "transition_ding": -1.5,
+  "tick": 4.2,
+  "ding": -0.9,
+  "stamp": -7.3
+ },
+ "total_s": 541.9333
+}

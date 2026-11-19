@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+
+
+      <style>
+        #s07-root { position: absolute; inset: 0; }
+        #s07-root .crs { position: absolute; left: 0; right: 0; top: 280px; display: flex; justify-content: center; gap: 30px; }
+        #s07-root .crs .cc { position: relative; width: 420px; padding: 30px; text-align: center; font-size: 38px; font-weight: 900; letter-spacing: -0.03em; }
+        #s07-root .crs .cc small { display: block; font-size: 24px; font-weight: 700; color: var(--muted); margin-bottom: 6px; }
+        #s07-root .crs .ck { position: absolute; right: -14px; top: -14px; width: 56px; height: 56px; border-radius: 50%; background: var(--red); color: #fff; font-size: 34px; font-weight: 900; display: flex; align-items: center; justify-content: center; }
+        #s07-root .oneT { position: absolute; left: 0; right: 0; top: 450px; text-align: center; font-size: 38px; font-weight: 900; color: var(--red); }
+        #s07-root .arr { position: absolute; left: 930px; top: 510px; width: 60px; height: 80px; }
+        #s07-root .acert { position: absolute; left: 610px; top: 600px; width: 700px; padding: 26px 34px; border: 5px solid var(--red); display: flex; align-items: center; gap: 26px; }
+        #s07-root .acert .ic { width: 90px; height: 90px; flex: 0 0 90px; }
+        #s07-root .acert b { display: block; font-size: 46px; font-weight: 900; color: var(--red); }
+        #s07-root .acert span { font-size: 32px; font-weight: 800; }
+        #s07-root .qq { position: absolute; left: 0; right: 0; top: 420px; text-align: center; font-size: 76px; font-weight: 900; letter-spacing: -0.04em; }
+        #s07-root .wage { position: absolute; left: 140px; top: 280px; width: 1640px; padding: 40px 50px; }
+        #s07-root .wage .k { font-size: 32px; font-weight: 800; color: var(--muted); }
+        #s07-root .wage .v { margin-top: 6px; display: flex; align-items: baseline; gap: 20px; font-size: 110px; font-weight: 900; letter-spacing: -0.05em; color: var(--red); }
+        #s07-root .wage .v i { font-style: normal; color: var(--ink); font-size: 80px; }
+        #s07-root .wage .v small { font-size: 40px; color: var(--muted); letter-spacing: 0; }
+        #s07-root .scale { position: relative; margin-top: 40px; height: 120px; }
+        #s07-root .scale .ln { position: absolute; left: 0; right: 0; top: 40px; height: 10px; background: #efe3cf; border-radius: 5px; }
+        #s07-root .scale .rg { position: absolute; top: 30px; height: 30px; background: var(--red); border-radius: 15px; transform-origin: left center; }
+        #s07-root .scale .tk { position: absolute; top: 72px; transform: translateX(-50%); font-size: 26px; font-weight: 700; color: var(--muted); }
+        #s07-root .scale .jb { position: absolute; top: -6px; width: 8px; height: 90px; margin-left: -4px; background: var(--ink); border-radius: 4px; }
+        #s07-root .scale .jbT { position: absolute; top: -56px; transform: translateX(-50%); white-space: nowrap; font-size: 30px; font-weight: 900; background: var(--ink); color: #fff; padding: 4px 14px; border-radius: 10px; }
+        #s07-root .formula { position: absolute; left: 0; right: 0; top: 270px; text-align: center; }
+        #s07-root .formula span { display: inline-block; font-size: 40px; font-weight: 900; padding: 16px 32px; border-radius: 18px; background: var(--paper); box-shadow: 0 10px 26px rgba(80,50,20,0.1); }
+        #s07-root .mb { position: absolute; left: 160px; width: 1600px; height: 130px; }
+        #s07-root .mb.a { top: 400px; } #s07-root .mb.b { top: 580px; }
+        #s07-root .mb .nm { position: absolute; left: 0; top: 22px; width: 330px; font-size: 38px; font-weight: 900; line-height: 1.1; }
+        #s07-root .mb .nm small { display: block; font-size: 26px; font-weight: 700; color: var(--muted); }
+        #s07-root .mb .tr { position: absolute; left: 340px; right: 0; top: 20px; height: 90px; border-radius: 18px; background: #f3eadb; }
+        #s07-root .mb .f { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 18px; transform-origin: left center; background: #e8b4a0; }
+        #s07-root .mb .f2 { position: absolute; top: 0; bottom: 0; border-radius: 0 18px 18px 0; background: var(--red); transform-origin: left center; }
+        #s07-root .mb .amt { position: absolute; top: 22px; font-size: 46px; font-weight: 900; white-space: nowrap; }
+        #s07-root .tax { position: absolute; right: 160px; top: 728px; font-size: 26px; font-weight: 700; color: var(--muted); }
+        #s07-root .small { position: absolute; left: 160px; top: 728px; font-size: 26px; font-weight: 700; color: var(--muted); }
+        #s07-root .fin { position: absolute; left: 0; right: 0; top: 260px; display: flex; justify-content: center; gap: 24px; }
+        #s07-root .fin span { font-size: 34px; font-weight: 900; padding: 14px 28px; border-radius: 18px; background: var(--red); color: #fff; }
+        #s07-root .fin span.g { background: #ece4d6; color: #5b4d42; }
+      </style>
+      <div id="s07-root" data-composition-id="s07" data-width="1920" data-height="1080">
+        <div class="stage">
+          <div class="ph1">
+            <div class="crs">
+              <div class="cc card c1"><small>과목</small>아동발달<div class="ck">✓</div></div>
+              <div class="cc card c2"><small>과목</small>아동지도</div>
+              <div class="cc card c3"><small>과목</small>아동 건강·안전·영양</div>
+            </div>
+            <div class="oneT">이 중 딱 1과목만 마치면</div>
+            <svg class="arr" viewBox="0 0 60 80"><path d="M30 0 V62 M10 44 L30 66 L50 44" stroke="#c8102e" stroke-width="9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div class="acert card"><svg class="ic" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="14" rx="2" fill="#fbe2e5" stroke="#c8102e" stroke-width="1.6"/><circle cx="17" cy="15" r="4" fill="#c8102e"/><path d="M15 18.5 14 23l3-1.5 3 1.5-1-4.5" fill="#c8102e"/><path d="M5 8h9M5 11h7" stroke="#c8102e" stroke-width="1.6"/></svg><div><b>ECE Assistant</b><span>보조교사 자격 신청 가능</span></div></div>
+          </div>
+          <div class="qq">그럼 보조교사 수입은 <span class="red">어느 정도?</span></div>
+          <div class="ph2">
+            <div class="wage card">
+              <div class="k">BC주 보조교사 구인 공고 시급 (대략)</div>
+              <div class="v"><b class="w1">$0</b><i>~</i><b class="w2">$0</b><small>/ 시간</small></div>
+              <div class="scale"><div class="ln"></div><div class="rg"></div><div class="jb"></div><div class="jbT">Job Bank BC 중간 시급 $24</div></div>
+            </div>
+          </div>
+          <div class="ph3">
+            <div class="formula"><span>시급 18.50~23.50 <b class="red">×</b> 주 25시간 <b class="red">×</b> 4.33주</span></div>
+            <div class="mb a"><div class="nm">공부하면서<small>주 25시간</small></div><div class="tr"><div class="f"></div><div class="f2"></div><div class="amt">월 약 2,000~2,550</div></div></div>
+            <div class="mb b"><div class="nm red">풀타임<small>주 40시간</small></div><div class="tr"><div class="f"></div><div class="f2"></div><div class="amt">월 약 3,200~4,070</div></div></div>
+            <div class="small">시급은 지역·데이캐어마다 다름</div>
+            <div class="tax">세전, CAD</div>
+            <div class="fin"><span>학비 내면서 생활비 상당 부분을 직접</span><span class="g">공립 2년 과정은 이 단계가 훨씬 늦게</span></div>
+          </div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const C = {"L1": 5.2333, "one": 7.7333, "asst": 9.9667, "dev": 13.6333, "onec": 17.4667, "L2": 19.4, "L3": 22.6667, "w18": 26.8333, "w23": 28.6667, "jb": 32.1333, "m24": 34.6, "L4": 36.3667, "h25": 37.4667, "pt": 40.2667, "L5": 42.2667, "ft": 45.8667, "L6": 48.6, "late": 55.6333, "WIN": 56.2, "L": [[0.6667, 4.4333], [5.2333, 18.6667], [19.4, 21.8], [22.6667, 35.5667], [36.3667, 41.9667], [42.2667, 48.1333], [48.6, 56.4333]], "D": 57.7};
+      const H = (function () {
+        const fmtNum = (v, o) => {
+          o = o || {};
+          const d = o.dec || 0;
+          let s = d ? v.toFixed(d) : Math.round(v).toString();
+          if (o.comma) s = s.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+          return (o.pre || "") + s + (o.suf || "");
+        };
+        // schematic Canada map (concept diagram): province tiles in a 1600x430 box. returns city coords
+        const CANADA = {
+          tiles: [["BC", 0, 250, 40], ["AB", 258, 150, 30], ["SK", 416, 140, 30], ["MB", 564, 150, 30], ["ON", 722, 330, 70], ["QC", 1060, 320, 0], ["대서양", 1388, 212, 170]],
+          city: { 밴쿠버: [70, 360], 캘거리: [335, 310], 토론토: [960, 385], 몬트리올: [1250, 345] },
+          build(el, opts) {
+            opts = opts || {};
+            let h = '<svg viewBox="0 0 1600 430" width="1600" height="430" style="position:absolute;left:0;top:0;overflow:visible">';
+            this.tiles.forEach(([n, x, w, t], i) => {
+                const bc = n === "BC" && opts.bc;
+                h += '<g class="tile tile-' + i + '"><rect x="' + x + '" y="' + t + '" width="' + w + '" height="' + (410 - t) + '" rx="22" fill="' + (bc ? "#c8102e" : "#efe3cf") + '" stroke="#fffdf8" stroke-width="4"/>' +
+                  '<text x="' + (x + w / 2) + '" y="' + (t + 60) + '" text-anchor="middle" font-family="Pretendard" font-size="40" font-weight="900" fill="' + (bc ? "#fff" : "#a8977f") + '">' + n + "</text></g>";
+            });
+            h += "</svg>";
+            el.insertAdjacentHTML("beforeend", h);
+          },
+        };
+        return {
+          canada: CANADA,
+          // count-up number (seek-safe proxy, text written in onUpdate)
+          count(tl, el, from, to, t, d, o) {
+            const st = { v: from };
+            el.textContent = fmtNum(from, o);
+            tl.fromTo(st, { v: from }, { v: to, duration: d || 1.2, ease: "power2.out", onUpdate: () => (el.textContent = fmtNum(st.v, o)) }, t);
+            tl.fromTo(el, { scale: 0.7 }, { scale: 1, duration: d || 1.2, ease: "power2.out" }, t);
+          },
+          pop(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 0, scale: o.from || 0.6 }, { opacity: 1, scale: 1, duration: o.d || 0.5, ease: o.ease || "back.out(1.8)", stagger: o.stagger || 0 }, t);
+          },
+          rise(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 0, y: o.y || 40 }, { opacity: 1, y: 0, duration: o.d || 0.55, ease: o.ease || "power3.out", stagger: o.stagger || 0 }, t);
+          },
+          slideX(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 0, x: o.x || -80 }, { opacity: 1, x: 0, duration: o.d || 0.6, ease: o.ease || "power3.out", stagger: o.stagger || 0 }, t);
+          },
+          out(tl, els, t, o) {
+            o = o || {};
+            tl.fromTo(els, { opacity: 1, y: 0 }, { opacity: 0, y: o.y == null ? -30 : o.y, duration: o.d || 0.4, ease: "power2.in", immediateRender: false, stagger: o.stagger || 0 }, t);
+          },
+          fadeOut(tl, els, t, d) {
+            tl.fromTo(els, { opacity: 1 }, { opacity: 0, duration: d || 0.4, ease: "power1.in", immediateRender: false }, t);
+          },
+          // marker sweep behind text: element .hl > .hl-bg
+          mark(tl, el, t, d) {
+            tl.fromTo(el, { scaleX: 0 }, { scaleX: 1, duration: d || 0.5, ease: "power2.inOut" }, t);
+          },
+          growX(tl, el, t, d, to) {
+            tl.fromTo(el, { scaleX: 0 }, { scaleX: to == null ? 1 : to, duration: d || 1, ease: "power3.out" }, t);
+          },
+          growY(tl, el, t, d) {
+            tl.fromTo(el, { scaleY: 0 }, { scaleY: 1, duration: d || 1, ease: "power3.out" }, t);
+          },
+          stamp(tl, el, t) {
+            tl.fromTo(el, { opacity: 0, scale: 2.2, rotation: -14 }, { opacity: 1, scale: 1, rotation: -6, duration: 0.42, ease: "back.out(2.2)" }, t);
+          },
+          // slow ambient breathing, finite repeats within scene duration
+          breathe(tl, els, D, o) {
+            o = o || {};
+            const per = o.per || 3;
+            const n = Math.max(1, Math.floor(D / per) - 1);
+            tl.fromTo(els, { y: 0, rotation: 0 }, { y: o.y || -14, rotation: o.r || 0, duration: per / 2, ease: "sine.inOut", yoyo: true, repeat: n * 2 - 1 }, 0.1);
+          },
+          // camera move on a capture: el is the inner image wrapper
+          cam(tl, el, t, d, s, x, y) {
+            tl.to(el, { scale: s, x: x, y: y, duration: d, ease: "power2.inOut" }, t);
+          },
+          // capture camera: move/zoom a .shot so a highlight band [x0,y0,x1,y1] (native px) is centred
+          camTo(tl, shot, band, natH, s, t, d) {
+            const k = 716 / 538, W = 716, HS = 520;
+            if (!s) s = Math.max(1.12, Math.min(1.6, (0.94 * 538) / (band[2] - band[0])));
+            const cx = ((band[0] + band[2]) / 2) * k, cy = ((band[1] + band[3]) / 2) * k;
+            let x = W / 2 - cx * s, y = HS / 2 - cy * s;
+            x = Math.min(0, Math.max(W - W * s, x));
+            y = Math.min(0, Math.max(Math.min(0, HS - natH * k * s), y));
+            const prev = shot.__cam || { scale: 1, x: 0, y: 0 };
+            tl.fromTo(shot, { scale: prev.scale, x: prev.x, y: prev.y }, { scale: s, x: x, y: y, duration: d || 1.6, ease: "power2.inOut", immediateRender: !shot.__cam }, t);
+            shot.__cam = { scale: s, x: x, y: y };
+          },
+          // red ring drawn around a highlight band inside a .shot
+          ring(tl, shot, band, t) {
+            const k = 716 / 538;
+            const r = document.createElement("div");
+            r.className = "ring";
+            r.style.left = band[0] * k - 10 + "px";
+            r.style.top = band[1] * k - 8 + "px";
+            r.style.width = (band[2] - band[0]) * k + 20 + "px";
+            r.style.height = (band[3] - band[1]) * k + 16 + "px";
+            shot.appendChild(r);
+            tl.fromTo(r, { opacity: 0, scale: 1.25 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, t);
+            return r;
+          },
+          draw(tl, path, t, d, len) {
+            try { len = Math.ceil(path.getTotalLength()) + 4 || len; } catch (e) {}
+            tl.fromTo(path, { opacity: 0 }, { opacity: 1, duration: 0.05 }, t);
+            tl.fromTo(path, { strokeDasharray: len + " " + len, strokeDashoffset: len }, { strokeDashoffset: 0, duration: d || 1, ease: "power2.inOut" }, t);
+          },
+          sceneIn(tl, root) {
+            const k = root.querySelector(".kicker");
+            if (k) {
+              tl.fromTo(k.querySelector(".k-num"), { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 0.05);
+              tl.fromTo(k.querySelector(".k-title"), { opacity: 0, x: -20, clipPath: "inset(0 100% 0 0)" }, { opacity: 1, x: 0, clipPath: "inset(0 0% 0 0)", duration: 0.7, ease: "power3.out" }, 0.18);
+            }
+          },
+          sceneOut(tl, root, D) {
+            const st = root.querySelector(".stage");
+            if (st) tl.fromTo(st, { opacity: 1 }, { opacity: 0, duration: 0.35, ease: "power1.in", immediateRender: false }, D - 0.4);
+          },
+        };
+      })();
+
+          const R = document.getElementById("s07-root");
+          const $ = (s) => R.querySelectorAll(s);
+          const $1 = (s) => R.querySelector(s);
+          // wage scale 15..30 over 1540px
+          const sc = $1(".scale"), W = 1540, X = (v) => ((v - 15) / 15) * W;
+          [15, 18.5, 20, 23.5, 25, 30].forEach((v) => { const t = document.createElement("div"); t.className = "tk"; t.style.left = X(v) + "px"; t.textContent = "$" + v; sc.appendChild(t); });
+          const rg = $1(".scale .rg"); rg.style.left = X(18.5) + "px"; rg.style.width = X(23.5) - X(18.5) + "px";
+          $1(".scale .jb").style.left = X(24) + "px"; $1(".scale .jbT").style.left = X(24) + "px";
+          // monthly bars: 0..4500 over 1260px track
+          const TW = 1260, M = (v) => (v / 4500) * TW;
+          [[".mb.a", 2000, 2550], [".mb.b", 3200, 4070]].forEach(([s, lo, hi]) => { const f = $1(s + " .f"), f2 = $1(s + " .f2"), a = $1(s + " .amt");
+            f.style.width = M(lo) + "px"; f2.style.left = M(lo) + "px"; f2.style.width = M(hi) - M(lo) + "px"; a.style.left = M(hi) + 24 + "px"; if (M(hi) + 24 > TW - 420) { a.style.left = "auto"; a.style.right = TW - M(lo) + 24 + "px"; a.style.color = "#2a221d"; } });
+          const tl = gsap.timeline({ paused: true });
+          H.pop(tl, $(".crs .cc"), C.L1 + 0.6, { stagger: 0.15 });
+          H.rise(tl, $1(".oneT"), C.one - 0.3);
+          tl.fromTo($1(".arr"), { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.4 }, C.asst - 0.8);
+          H.pop(tl, $1(".acert"), C.asst - 0.4);
+          tl.fromTo($(".crs .cc"), { boxShadow: "0 0 0 0 rgba(200,16,46,0)" }, { boxShadow: "0 0 0 6px rgba(200,16,46,0.35)", duration: 0.3, stagger: 0.6, yoyo: true, repeat: 1 }, C.dev);
+          H.stamp(tl, $1(".crs .ck"), C.onec);
+          H.out(tl, $1(".ph1"), C.L2 - 0.4);
+          H.pop(tl, $1(".qq"), C.L2, { from: 0.8 });
+          H.out(tl, $1(".qq"), C.L3 - 0.3);
+          tl.fromTo($1(".wage"), { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, C.L3 - 0.1);
+          H.count(tl, $1(".w1"), 0, 18.5, C.w18 - 0.3, 1.0, { dec: 2, pre: "$" });
+          H.count(tl, $1(".w2"), 0, 23.5, C.w23 - 0.3, 1.0, { dec: 2, pre: "$" });
+          tl.fromTo($(".scale .ln, .scale .tk"), { opacity: 0 }, { opacity: 1, duration: 0.4 }, C.w18);
+          tl.fromTo(rg, { scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "power2.out" }, C.w23);
+          tl.fromTo($(".scale .jb, .scale .jbT"), { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.5, ease: "back.out(2)" }, C.m24 - 0.6);
+          H.out(tl, $1(".ph2"), C.L4 - 0.4);
+          H.rise(tl, $1(".formula"), C.L4 - 0.1);
+          H.slideX(tl, $1(".mb.a .nm"), C.h25 - 0.3);
+          tl.fromTo($1(".mb.a .tr"), { opacity: 0 }, { opacity: 1, duration: 0.3 }, C.h25);
+          tl.fromTo($1(".mb.a .f"), { scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "power2.out" }, C.pt - 0.6);
+          tl.fromTo($1(".mb.a .f2"), { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power2.out" }, C.pt + 0.3);
+          H.pop(tl, $1(".mb.a .amt"), C.pt + 0.5);
+          H.slideX(tl, $1(".mb.b .nm"), C.L5);
+          tl.fromTo($1(".mb.b .tr"), { opacity: 0 }, { opacity: 1, duration: 0.3 }, C.L5 + 0.2);
+          tl.fromTo($1(".mb.b .f"), { scaleX: 0 }, { scaleX: 1, duration: 1.0, ease: "power2.out" }, C.ft - 0.6);
+          tl.fromTo($1(".mb.b .f2"), { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power2.out" }, C.ft + 0.4);
+          H.pop(tl, $1(".mb.b .amt"), C.ft + 0.6);
+          H.rise(tl, $(".small, .tax"), C.pt + 1.0, { y: 10 });
+          H.out(tl, $1(".formula"), C.L6 - 0.4);
+          H.pop(tl, $1(".fin span:not(.g)"), C.L6);
+          H.pop(tl, $1(".fin span.g"), C.late - 0.6);
+          H.sceneOut(tl, R, C.D);
+          window.__timelines["s07"] = tl;
+        })();
+      </script>
+
+    </template>
+  </body>
+</html>
