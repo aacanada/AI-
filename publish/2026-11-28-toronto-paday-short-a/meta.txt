@@ -1,0 +1,14 @@
+type: shorts
+title: 토론토 자녀무상교육, PA 데이엔 아이가 학교에 갈까? (TDSB 2026-27)
+channels: youtube, instagram, threads, blog, clip, homepage
+visibility: public
+publish_order: 2
+publish_after: 2026-11-28
+linked_to: https://youtu.be/tGNx1dnY3cg
+files: video.mp4 (1080x1920 30fps, 0:40.4, 3.5 MB), video.mp4.sha256, thumbnail.jpg (1080x1920 cover), upload-text.txt
+voice: ElevenLabs '아홉번째 자연톤' (Eleven v4), 롱폼 S4 장면 음성 그대로(앞뒤 연결 문장 없음)
+loudness: -16.0 LUFS, true peak -1.5 dBFS
+quality(영상제작품질 2026-11-18 기준): 모션그래픽 HyperFrames 세로 장면 1/1(패널 4개: 'PA 데이란?' 선생님 연수·성적 정리 카드와 학생 카드 좌우 등장·'수업 없음' 도장 / 초등 4일·세컨더리 3일 날짜 칩 내레이션 순서 팝·0→4·0→3 카운트·같은 날 빨간 테두리 / 형제 카드 2장 '쉬는 날'·'등교' 칩·'한 아이만 쉬는 날' 도장 / 학기 초 달력 칸 순서 등장·PA 칸 빨강 채움·'미리 표시' 도장, 모션 자막 9줄·진행 막대·엔딩 카드, 상단에 본편 주제 '토론토 자녀무상교육 · TDSB 아이 학교 1년', 정지 슬라이드 0, 학교 제공 사진 없음) / 배경음악 warm_piano_pizzicato_explainer_01.mp3 sidechaincompress 덕킹 / 효과음 4개(stamp·tick·transition_ding·ding) / 소리 -16.0 LUFS, 피크 -1.5 dBTP, 귀 확인 못 함
+source: 롱폼 '토론토 자녀무상교육, 아이 학교 1년은 어떻게 흘러갈까? 개학·방학·PA 데이·방과후 돌봄 (TDSB 2026-27)' S4 PA 데이 1:22.2-2:00.6 (그래픽은 HyperFrames 세로로 새로 만듦, 얼굴 없음). 원본 sessions/2026-11-24_JlraxItwnepYw7hp/artifacts/toronto_1125_longform/, 숏폼 작업 sessions/2026-11-28_gwfwdYEaMkD3mDe1/artifacts/shorts_1128/
+keyword: 자녀무상
+notes: 토론토 학교 1년 롱폼의 첫 숏폼(본편 2026-11-26 공개 tGNx1dnY3cg). 같은 시리즈 숏폼 하루 1개. 화면 숫자는 PA 데이 날짜 7개(초등 11/20·1/15·2/12·6/4, 세컨더리 11/20·2/2·2/12)와 '4일·3일'뿐(사실 표 #4 TDSB School Year Calendar·PA Days, 확인일 2026-11-24), 화면 문구 '※ TDSB 2026-27 학사일정 기준'. 금액·순위·최상급·커미션 없음. 쇼츠 '관련 동영상' = 본편 tGNx1dnY3cg. 유튜브 AI 사용 '예'(AI 음성). 쓰레드·인스타·클립 문구에 AI 제작 문구 넣지 않음. 키워드 댓글 '자녀무상'(본편과 같음: 유튜브 설명 둘째 줄+고정 댓글, 릴스 캡션 마지막 줄, 스레드 마지막 줄). 블로그는 새 글 금지: 본편 글 https://blog.naver.com/allthatcan/224492379371 수정해 '▶ 숏폼' + 쇼츠·릴스 링크 추가. 홈페이지는 새 글 금지: https://aacanada.co.kr/ab-1915-6 의 본편 링크 아래 숏폼 텍스트 링크 한 줄 추가(얼굴 썸네일 금지, 기존 링크 유지, PC·모바일 확인). 같은 날(11-28) 대기 중인 다른 숏폼: nanaimo-february-short-c(publish_order 1), 다른 시리즈.
