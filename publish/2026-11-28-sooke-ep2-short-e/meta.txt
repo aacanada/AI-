@@ -1,0 +1,13 @@
+type: shorts
+title: 캐나다 빅토리아 조기유학, 현관에 고래 뼈가? 학생 약 800명 바닷가 마을 수크 에드워드 밀른 | 수크 교육청
+channels: youtube, instagram, threads, blog, clip, homepage
+visibility: public
+publish_order: 1
+publish_after: 2026-11-28
+linked_to: https://youtu.be/Z4BREwlCIx0
+files: video.mp4 (1080x1920 30fps, 0:23.0), video.mp4.sha256, thumbnail.jpg (1080x1920 cover), upload-text.txt
+voice: ElevenLabs '아홉번째 자연톤' (Eleven v4), 롱폼 EP2 S7 0.88-9.56초 + 14.0-27.56초
+loudness: -16.0 LUFS, true peak -1.8 dBFS
+quality(영상제작품질 2026-11-18 기준): 모션그래픽 HyperFrames 장면 1/1(숏폼 전용 새 장면 s7short: 학교 영상 카드, 학생 수·국제학생 수 카운트업, 야외 활동 칩 순서 등장, 귀신고래 뼈 사진 전환; 정지 슬라이드 0) + 모션 자막(팝 등장, EMCS·800명·활동·고래 뼈 빨강) / 배경음악 seaside_harp_guitar_explainer_01.mp3 sidechaincompress 덕킹(0.16) / 효과음 4개(시작 딩, '800' 틱, 야외 활동 전환 딩, 고래 뼈 등장 도장) / -16.0 LUFS, 피크 -1.8 dBTP, 귀 확인 못 함 / 상단 맥락 칩: '빅토리아 조기유학 · 수크 교육청 고등학교 3곳 비교 · 에드워드 밀른'
+source: 수크 교육청 롱폼 EP2 '고등학교 3곳 비교' 2:27-2:54 (그래픽 장면만, 얼굴 없음). 원본 sessions/2026-11-12_QMt6iIuJ3kEDVtI8/artifacts/sooke_sd62/ep2/
+notes: 수크 교육청 시리즈 EP2의 다섯 번째 숏폼(같은 시리즈 하루 1개, 11-28). 내레이션에서 '세 번째는'과 '국제학생은 50명 정도라서 세 곳 중 가장 아담해요'(다른 학교와 비교)를 잘라냄. 화면도 본편의 3개 학교 막대 비교·'가장 아담한' 제목 대신 숏폼 전용 장면으로 새로 렌더(비교 문구 0). 근거 확인: 문장 8개 모두 교육청 자료 확인(SchoolProfile-EdwardMilneCommunitySchool, Sooke Schools Brochure_10 page p10, International Program Presentation p9, 사진 emcs_whale.jpg). 커미션·제휴 표현 없음. 쇼츠 '관련 동영상' = 본편 Z4BREwlCIx0. 유튜브 AI 사용 '예'(AI 음성). 쓰레드·인스타·클립 문구에 AI 제작 문구 넣지 않음. 블로그는 새 글 대신 EP2 글 https://blog.naver.com/allthatcan/224476921455 수정해 '▶ 숏폼' 링크 추가(중복 글 금지). 홈페이지는 허브 글 https://aacanada.co.kr/ab-1829-22 에 숏폼 텍스트 링크 한 줄만(새 글 금지, 얼굴 썸네일 금지).
